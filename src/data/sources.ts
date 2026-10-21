@@ -126,6 +126,41 @@ export const sourceNotes: SourceNote[] = [
     scope: '历史地名的现代位置',
     note: '坐标用于帮助用户定位历史地点，地名沿革和古今对应关系需要结合具体史料理解。',
   },
+  {
+    id: 'augustus-metmuseum', title: 'Colossal marble head of the emperor Augustus', authorOrInstitution: 'The Metropolitan Museum of Art', urlOrCitation: 'https://www.metmuseum.org/art/collection/search/251114',
+    scope: '屋大维在前27年获奥古斯都称号及共和形式下的权力集中',
+    note: '支持屋大维称号与制度转折；不把单一称号节点解释为罗马疆域突然变化。',
+  },
+  {
+    id: 'constantinople-metmuseum', title: 'Byzantium (ca. 330–1453)', authorOrInstitution: 'The Metropolitan Museum of Art', urlOrCitation: 'https://www.metmuseum.org/ja/essays/byzantium-ca-330-1453',
+    scope: '拜占庭晚期收缩与1453年君士坦丁堡陷落',
+    note: '用于君士坦丁十一世与穆罕默德二世所处的攻守阶段；不从页面外推其他末期政权的具体终年。',
+  },
+  {
+    id: 'columbus-library-congress', title: 'Columbus and the Taíno', authorOrInstitution: 'Library of Congress', urlOrCitation: 'https://wwws.loc.gov/exhibits/exploring-the-early-americas/columbus-and-the-taino.html',
+    scope: '1492年哥伦布抵达加勒比、泰诺社会及后续接触',
+    note: '保留原住民社会主体性；瓜纳哈尼的具体岛屿对应不在本条中强行确定。',
+  },
+  {
+    id: 'westphalia-osnabruck', title: 'Peace of Westphalia', authorOrInstitution: 'City of Osnabrück', urlOrCitation: 'https://friedensstadt.osnabrueck.de/en/die-friedensstadt-wo-frieden-geschichte-und-zukunft-hat/peace-of-westphalia/',
+    scope: '1648年明斯特、奥斯纳布吕克及相关和约文本',
+    note: '支持条约城市、多份文本与战争结束背景；不把和约简化为单一代表或现代主权制度的瞬时起点。',
+  },
+  {
+    id: 'westphalia-lwl', title: 'War and Peace in Europe, 1618–1648', authorOrInstitution: 'LWL-Institut für westfälische Regionalgeschichte', urlOrCitation: 'https://www.lwl.org/westfaelischer-friede-download/wfe-t/wfe-txt1-03.htm',
+    scope: '三十年战争、多方谈判与威斯特伐利亚和约背景',
+    note: '用于交叉核验谈判角色的阶段性政治背景，不逐条重建领土转让。',
+  },
+  {
+    id: 'un-charter-treaty', title: 'Charter of the United Nations', authorOrInstitution: 'United Nations Treaty Collection', urlOrCitation: 'https://treaties.un.org/pages/ViewDetails.aspx?chapter=1&clang=_en&mtdsg_no=I-1&src=IND',
+    scope: '1945年旧金山签署、10月24日生效及宪章第110条',
+    note: '支持联合国成立的法律节点；签署、批准与生效分开表达。',
+  },
+  {
+    id: 'un-history-official', title: 'History of the United Nations', authorOrInstitution: 'United Nations', urlOrCitation: 'https://www.un.org/en/about-us/history-of-the-un',
+    scope: '联合国成立背景、创始成员与旧金山会议',
+    note: '用于交叉核验国际组织形成背景；不把单一国家代表等同于全部创始成员。',
+  },
 ];
 
 export const sourceById = Object.fromEntries(sourceNotes.map((source) => [source.id, source]));

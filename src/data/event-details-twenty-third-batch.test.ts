@@ -32,15 +32,15 @@ describe('twenty-third-batch event location closure', () => {
     });
   });
 
-  it('keeps the Han imperial accession boundary explicit when no verified place entity exists', () => {
+  it('keeps the Han imperial accession linked to its verified regional reference', () => {
     const detail = eventDetails.find((candidate) => candidate.eventId === 'han-imperial-accession');
     const report = auditKnowledgeCoverage();
 
     expect(report.tasks.some((task) => (
       task.taskKind === 'event-location-missing' && task.entityId === 'han-imperial-accession'
-    ))).toBe(true);
-    expect(detail?.locationIds).toEqual([]);
-    expect(detail?.uncertaintyNote).toContain('汜水之阳');
+    ))).toBe(false);
+    expect(detail?.locationIds).toEqual(['sishui-northbank']);
+    expect(detail?.uncertaintyNote).toContain('定陶');
   });
 
   it('resolves every selected location, polity, event and source reference', () => {

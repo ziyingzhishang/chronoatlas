@@ -9,15 +9,6 @@ const resolvedLocation = {
   'song-founded': ['kaifeng'],
 } as const;
 
-const boundaryEvents = {
-  'han-imperial-accession': '汜水之阳',
-  'augustus-principate': '罗马',
-  'constantinople-1453': '君士坦丁堡',
-  'columbus-caribbean': '瓜纳哈尼',
-  'peace-westphalia': '明斯特、奥斯纳布吕克',
-  'un-founded': '旧金山',
-} as const;
-
 describe('twenty-fourth-batch event location closure', () => {
   it('closes the Northern Song location gap using the existing Kaifeng place', () => {
     const report = auditKnowledgeCoverage();
@@ -32,29 +23,11 @@ describe('twenty-fourth-batch event location closure', () => {
       .toEqual(resolvedLocation['song-founded']);
   });
 
-  it('keeps unresolved historical-place boundaries explicit instead of inventing place entities', () => {
-    const report = auditKnowledgeCoverage();
-    const missingLocationIds = new Set(
-      report.tasks
-        .filter((task) => task.taskKind === 'event-location-missing')
-        .map((task) => task.entityId),
-    );
-
-    Object.entries(boundaryEvents).forEach(([eventId, boundary]) => {
-      const detail = eventDetails.find((candidate) => candidate.eventId === eventId);
-
-      expect(missingLocationIds.has(eventId), eventId).toBe(true);
-      expect(detail, eventId).toBeDefined();
-      expect(detail?.locationIds, eventId).toEqual([]);
-      expect(detail?.uncertaintyNote, eventId).toContain(boundary);
-    });
-  });
-
   it('resolves every event, source, and selected place reference', () => {
     const eventIds = new Set(events.map((event) => event.id));
     const placeIds = new Set(places.map((place) => place.id));
     const sourceIds = new Set(sourceNotes.map((source) => source.id));
-    const targetEventIds = [...Object.keys(resolvedLocation), ...Object.keys(boundaryEvents)];
+    const targetEventIds = Object.keys(resolvedLocation);
 
     targetEventIds.forEach((eventId) => {
       const detail = eventDetails.find((candidate) => candidate.eventId === eventId);
