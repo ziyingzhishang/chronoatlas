@@ -7,7 +7,7 @@ describe('Chang’an coverage report', () => {
 
     expect(report.counts).toEqual({
       polityStages: 17,
-      people: 33,
+      people: 34,
       events: 30,
       heritage: 20,
     });
@@ -29,8 +29,8 @@ describe('Chang’an coverage report', () => {
     const report = getChanganCoverageReport();
 
     expect(report.sourceCoverage).toEqual({
-      total: 100,
-      covered: 100,
+      total: 101,
+      covered: 101,
       rate: 1,
       missingNodeIds: [],
     });
@@ -43,7 +43,7 @@ describe('Chang’an coverage report', () => {
 
     expect(report.gapList).toEqual([
       { type: 'polityStages', target: 15, current: 17, shortfall: 0 },
-      { type: 'people', target: 30, current: 33, shortfall: 0 },
+      { type: 'people', target: 30, current: 34, shortfall: 0 },
       { type: 'events', target: 30, current: 30, shortfall: 0 },
       { type: 'heritage', target: 20, current: 20, shortfall: 0 },
     ]);

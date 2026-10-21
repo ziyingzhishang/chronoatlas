@@ -4,7 +4,6 @@ import { capitalHistory } from './capital-history';
 
 const targetPolityIds = ['zhou_eastern', 'wu_zhou', 'zhou_later'] as const;
 const researchPolityIds = [
-  'xin',
   'xiongnu',
   'tuyuhun',
   'turkic',
@@ -64,7 +63,7 @@ describe('sixth-batch capital history audit', () => {
 
   it('keeps unresolved mobile, disputed, or specialist-research items explicit', () => {
     const report = getCapitalCoverageReport();
-    expect(report.summary.qualifiedPolities).toBe(78);
+    expect(report.summary.qualifiedPolities).toBe(79);
     expect(report.polities.filter((polity) => !polity.qualified).map((polity) => polity.polityId))
       .toEqual(researchPolityIds);
 

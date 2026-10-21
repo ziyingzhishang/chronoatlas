@@ -34,7 +34,7 @@ describe('第七批政权建政事件', () => {
       .filter((item) => !item.hasEstablishmentNode)
       .map((item) => `${item.polityId}:${item.name}`);
     console.info('第七批完成后剩余建政节点缺口', remaining);
-    expect(remaining.length).toBeGreaterThan(0);
+    expect(remaining).toEqual([]);
   });
 
   it('每个节点包含完整叙事、阶段、来源和不确定性说明', () => {

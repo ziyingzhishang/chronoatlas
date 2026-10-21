@@ -30,7 +30,8 @@ describe('capital coverage report', () => {
       hasMobileCenterCoverage: true,
       qualified: false,
     });
-    expect(xin?.placeholderRecordIds).toEqual(['xin:0']);
+    expect(xin?.placeholderRecordIds).toEqual([]);
+    expect(xin?.qualified).toBe(true);
   });
 
   it('distinguishes migration, overlapping multi-capital, and mobile-center coverage', () => {

@@ -24,7 +24,7 @@ describe('fifth-batch capital history coverage', () => {
       .map((polity) => polity.polityId);
 
     expect(gaps).toHaveLength(0);
-    expect(report.summary.qualifiedPolities).toBe(78);
+    expect(report.summary.qualifiedPolities).toBe(79);
   });
 
   it('records the historically attested fixed capitals for all selected polities', () => {
