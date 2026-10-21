@@ -4,9 +4,9 @@
 .workspace button,.workspace summary,.workspace input,.workspace select { font-family:system-ui,sans-serif; }
 .workspace button,.workspace summary { cursor:pointer; }
 .workspace button:focus-visible,.workspace summary:focus-visible,.workspace select:focus-visible { outline:2px solid #e7c989; outline-offset:-2px; }
-.workspace-header { position:absolute; inset:0 0 auto; z-index:6; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:10px max(16px,env(safe-area-inset-right)) 16px max(16px,env(safe-area-inset-left)); border-bottom:0; background:transparent; pointer-events:none; }
+.workspace-header { --workspace-edge:16px; --workspace-gap:8px; position:absolute; inset:0 0 auto; z-index:6; display:flex; justify-content:space-between; align-items:flex-start; gap:12px; padding:var(--workspace-edge) max(var(--workspace-edge),env(safe-area-inset-right)) var(--workspace-edge) max(var(--workspace-edge),env(safe-area-inset-left)); border-bottom:0; background:transparent; pointer-events:none; }
 .workspace-header>* { pointer-events:auto; }
-.workspace-header-left { display:grid; width:min(360px,calc(100vw - 180px)); gap:8px; justify-items:start; }
+.workspace-header-left { display:grid; width:min(360px,calc(100vw - 180px)); gap:var(--workspace-gap); justify-items:start; }
 .map-status-hud,.event-search-dock-wrap { width:100%; box-sizing:border-box; }
 .event-search-dock-wrap { position:relative; }
 .event-search-dock { display:grid; gap:4px; width:100%; color:#c9d0bf; font:11px system-ui,sans-serif; }
@@ -20,13 +20,28 @@
 .event-search-results button[aria-selected=true] { background:#354735; border-color:#c6a15b; box-shadow:inset 3px 0 #c6a15b; }
 .event-search-results span { color:#aeb8a8; font:10px system-ui,sans-serif; }
 .event-search-popover>.event-detail { max-height:420px; overflow:auto; margin:8px 0 0; padding:12px; border:1px solid #7b8062; border-radius:6px; background:#202d25; }
+.directory-popover { position:absolute; top:calc(100% + var(--workspace-gap)); left:0; width:100%; max-height:min(62dvh,540px); overflow:hidden; box-sizing:border-box; z-index:15; padding:8px; border:1px solid #7b8062; border-radius:7px; background:#18211ff5; box-shadow:0 12px 28px #07100a88; backdrop-filter:blur(8px); }
+.directory-popover-heading { display:flex; align-items:center; justify-content:space-between; min-height:28px; padding:0 2px 6px; border-bottom:1px solid #61705266; color:#efd79d; font-size:12px; }
+.directory-popover-heading button { min-height:28px !important; padding:0 8px !important; color:#bdc6af !important; font-size:18px !important; }
+.directory-popover-scroll { max-height:calc(min(62dvh,540px) - 44px); overflow:auto; padding-top:8px; }
+.directory-section + .directory-section { margin-top:10px; padding-top:8px; border-top:1px solid #61705266; }
+.directory-section>.eyebrow { display:block; margin-bottom:5px; color:#aeb8a8; }
+.directory-list { display:grid; gap:4px; }
+.directory-list button { display:grid; grid-template-columns:auto 1fr auto; align-items:center; gap:7px; min-width:0; min-height:34px; padding:5px 7px; border:1px solid #536247; border-radius:4px; background:#253329; color:#e8e3d4; text-align:left; }
+.directory-list button:hover { background:#354735; border-color:#c6a15b; }
+.directory-list small { overflow:hidden; color:#aeb8a8; font-size:10px; text-overflow:ellipsis; white-space:nowrap; }
+.directory-dot { width:8px; height:8px; border-radius:50%; box-shadow:0 0 0 1px #f2dfb2aa; }
+.directory-back { width:100%; min-height:32px !important; margin:8px 0; padding:0 8px !important; border:1px solid #536247 !important; border-radius:4px; background:#253329 !important; color:#e8e3d4 !important; text-align:left; }
+.directory-popover .info-panel { max-height:calc(min(62dvh,540px) - 52px); overflow:auto; padding:4px 2px; background:transparent; border:0; }
+.directory-popover .info-panel .panel-kicker { display:none; }
 .workspace-header nav { display:flex; gap:4px; }
 .workspace-tool-nav { gap:2px !important; padding:3px; border:1px solid #7b8062; border-radius:8px; background:#18211fee; box-shadow:0 6px 20px #08120b66; backdrop-filter:blur(6px); }
 .workspace-header button,.controller-handlebar button,.timeline-actions>button,.workspace-panel-heading button { border:0; border-radius:5px; padding:0 12px; min-height:44px; color:#d8ddcd; background:transparent; font:12px system-ui,sans-serif; }
 .workspace-header button[aria-expanded=true],.workspace-header button:hover,.controller-handlebar button:hover { color:#ffe0a4; background:#354038; }
 .workspace-tool-nav .workspace-tool-icon { color:#f0e4c2; border:1px solid transparent; text-shadow:0 1px 2px #07100a; }
 .workspace-tool-nav .workspace-tool-icon[aria-expanded=true] { color:#18241c; background:#c6a15b; border-color:#e4c57d; text-shadow:none; }
-.map-status-hud { display:grid; gap:2px; padding:8px 11px; border:1px solid #7b80624d; border-radius:6px; background:#18211fb8; box-shadow:0 6px 20px #0a140d26; color:#d4dcc8; font:11px/1.4 system-ui,sans-serif; }
+.map-status-hud { display:grid; width:100%; gap:2px; padding:8px 11px; border:1px solid #7b80624d !important; border-radius:6px; background:#18211fb8 !important; box-shadow:0 6px 20px #0a140d26; color:#d4dcc8 !important; font:11px/1.4 system-ui,sans-serif; text-align:left; }
+.map-status-hud:hover,.map-status-hud[aria-expanded=true] { border-color:#c6a15b !important; background:#26372b !important; }
 .map-status-hud strong { color:#f0d79c; font-size:13px; font-weight:500; }
 .map-status-hud span { color:#aeb8a8; }
 .workspace-tool-icon { width:42px; padding:0 !important; font-size:18px !important; }
@@ -149,7 +164,7 @@
   .workspace .year-heading>span { max-width:300px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
 }
 @media(max-width:640px) {
-  .workspace-header { padding:3px 8px 10px; gap:4px; }
+  .workspace-header { padding:var(--workspace-edge) max(var(--workspace-edge),env(safe-area-inset-right)) var(--workspace-edge) max(var(--workspace-edge),env(safe-area-inset-left)); gap:4px; }
   .workspace-header button { padding:0 9px; }
   .workspace-header-left { width:min(300px,calc(100vw - 112px)); }
   .workspace .boundary-coverage { top:60px; left:12px; max-width:calc(100% - 90px); padding:4px 8px; }

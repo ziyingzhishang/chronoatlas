@@ -18,7 +18,7 @@ test('selecting a new year updates the year label, active polity summary, and ma
   act(()=>map.emit('click',{point:{x:1,y:1}}));
   expect(within(screen.getByRole('complementary', { name: '历史信息' })).getByText('后周')).toBeInTheDocument();
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '959');
-  await user.click(screen.getByRole('button',{name:'关闭面板'}));
+  await user.click(screen.getByRole('button',{name:'收起'}));
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
   await user.click(screen.getByRole('button',{name:'悬浮时间控制器'}));
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year','959');
@@ -29,7 +29,7 @@ test('closing a map detail panel dismisses the selected territory',async()=>{
   const map = mapInstances.at(-1)!;
   map.queryRenderedFeatures.mockReturnValue([{layer:{id:'boundary-fill'},properties:{entityId:'tang'}}] as any);
   act(()=>map.emit('click',{point:{x:1,y:1}}));
-  await userEvent.click(screen.getByRole('button',{name:'关闭面板'}));
+  await userEvent.click(screen.getByRole('button',{name:'收起'}));
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
 });
 

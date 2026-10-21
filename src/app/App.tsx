@@ -3,6 +3,7 @@ import { getHistoricalState } from '../domain/history-state';
 import { formatHistoricalYear, getTimelineYears, indexToYear, yearToIndex, type YearWindow } from '../domain/timeline';
 import type { HistoricalEvent, SelectedEntity } from '../domain/types';
 import { EventDetailCard } from '../components/EventDetailCard';
+import { DirectoryPopover } from '../components/DirectoryPopover';
 import { eventYear, eventsAtYear } from '../domain/events';
 import { events } from '../data/events';
 import { InfoPanel } from '../components/InfoPanel';
@@ -37,6 +38,7 @@ function HistoryWorkspace() {
   const [eventSearchRegion,setEventSearchRegion]=useState('');
   const [eventSearchCategory,setEventSearchCategory]=useState('');
   const [eventSearchOpen,setEventSearchOpen]=useState(false);
+  const [directoryOpen,setDirectoryOpen]=useState(false);
   const [focusRequest,setFocusRequest]=useState<{id:string;nonce:number}|undefined>();
   const [mapRefreshToken,setMapRefreshToken]=useState(0);
   const [timelineWindow,setTimelineWindow]=useState<YearWindow>(DEFAULT_TIMELINE_WINDOW);
@@ -96,7 +98,7 @@ function HistoryWorkspace() {
   }
   function selectEntity(entity:Exclude<SelectedEntity,undefined>){
     if(entity.type==='event'){const event=events.find(e=>e.id===entity.id);if(event)selectEvent(event);return;}
-    setSelectedEntity(entity);setPanel('details');
+    setSelectedEntity(entity);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(true);
   }
   function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
   function clearMapSelection(){
@@ -106,6 +108,7 @@ function HistoryWorkspace() {
     }
     if(selectedEntity?.type==='polity'||selectedEntity?.type==='place'){
       setSelectedEntity(undefined);
+      setDirectoryOpen(false);
       if(panel==='details')setPanel(null);
     }
   }
@@ -116,12 +119,15 @@ function HistoryWorkspace() {
   return <main className="workspace">
     <header className="workspace-header">
       <div className="workspace-header-left">
-        <div className="map-status-hud" role="status" aria-label={t('当前历史状态')}>
+        <button className="map-status-hud" type="button" aria-label={t('当前历史状态')} aria-expanded={directoryOpen} aria-controls="directory-popover" onClick={()=>{setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}}>
           <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
           <span>{t('当前视窗')} · {formatHistoricalYear(timelineWindow[0])}—{formatHistoricalYear(timelineWindow[1])}</span>
-        </div>
+        </button>
         <div className="event-search-dock-wrap" onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setEventSearchOpen(false);}}>
-          <label className="event-search-dock">{t('查找历史转折')}<input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>setEventSearchOpen(true)} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
+          <label className="event-search-dock">{t('查找历史转折')}<input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>{setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
+          {directoryOpen&&!eventSearchOpen&&(
+            <DirectoryPopover id="directory-popover" state={historicalState} selectedEntity={selectedEntity} onSelectEntity={selectEntity} onBackToDirectory={()=>setSelectedEntity(undefined)} onClose={()=>{setSelectedEntity(undefined);setDirectoryOpen(false);}} onYearChange={changeYear}/>
+          )}
           {eventSearchOpen&&<div className="event-search-popover">
             <div className="event-search-filters"><select aria-label={t('事件地域')} value={eventSearchRegion} onChange={e=>setEventSearchRegion(e.target.value)}><option value="">{t('全部地域')}</option><option value="china">{t('中国历史')}</option><option value="world">{t('同期世界')}</option></select><select aria-label={t('事件类别')} value={eventSearchCategory} onChange={e=>setEventSearchCategory(e.target.value)}><option value="">{t('全部类别')}</option>{[...new Set(events.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(category=><option key={category} value={category}>{t(category)}</option>)}</select></div>
             <div className="event-search-results" role="listbox" aria-label={t('搜索历史事件')}>
