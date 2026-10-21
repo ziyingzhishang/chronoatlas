@@ -1,5 +1,10 @@
 /* The workspace owns viewport layout. Legacy component styles remain for standalone use. */
 [hidden] { display:none !important; }
+.workspace * { scrollbar-width:thin; scrollbar-color:#7b8062 transparent; }
+.workspace *::-webkit-scrollbar { width:6px; height:6px; }
+.workspace *::-webkit-scrollbar-track { background:transparent; }
+.workspace *::-webkit-scrollbar-thumb { border:1px solid transparent; border-radius:999px; background:#697653; background-clip:padding-box; }
+.workspace *::-webkit-scrollbar-thumb:hover { background:#c6a15b; background-clip:padding-box; }
 .workspace { height:100vh; height:100dvh; min-height:0; position:relative; overflow:hidden; background:#18211f; }
 .workspace button,.workspace summary,.workspace input,.workspace select { font-family:system-ui,sans-serif; }
 .workspace button,.workspace summary { cursor:pointer; }
