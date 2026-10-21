@@ -259,7 +259,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'former-zhao-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-yao', role: '前赵后期君主与政权延续阶段的核心人物', note: '刘曜并非304年称汉王的建政者；本条将其放在前赵后续扩张、迁都与政权延续语境中，避免把不同阶段合并。' },
+    ],
     polityIds: ['former_zhao'],
     causes: ['西晋内乱削弱并州中央控制，刘渊能够动员匈奴刘氏及相关部众。'],
     consequences: ['十六国早期的北方政权竞争展开。', '西晋在北方的统治进一步瓦解，刘氏政权后来改国号为赵。'],
@@ -268,8 +270,8 @@ const details: HistoricalEventDetail[] = [
       { label: '汉赵演变', startYear: 304, endYear: 310, summary: '政权在刘渊、刘聪时期继续扩张并调整国号、都城。' },
       { label: '北方竞争', startYear: 310, endYear: 318, summary: '刘氏政权与西晋及其他北方力量持续争夺。' },
     ],
-    locationIds: [],
-    relatedEventIds: ['later-zhao-founded'],
+    locationIds: ['changan'],
+    relatedEventIds: ['later-zhao-founded', 'eastern-jin'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '304年节点是称王与政权形成，不等同于后续称帝、改赵或控制长安；左国城的现代精确地点本批未独立核验。',
   },
@@ -291,7 +293,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'cheng-han-founded',
-    participants: [],
+    participants: [
+      { personId: 'li-xiong', role: '巴蜀军政集团领袖与成汉建立者', note: '李雄在成都一带建立成汉；304年政权形成与306年称帝是连续但可区分的节点。' },
+    ],
     polityIds: ['cheng_han'],
     causes: ['西晋内乱削弱巴蜀中央控制。', '李特、李雄父子在蜀地形成可持续的军政动员能力。'],
     consequences: ['巴蜀出现十六国早期的独立政权。', '成都成为区域政治中心，巴蜀与关中、江南的关系重新组织。'],
@@ -355,7 +359,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'later-qin-founded',
-    participants: [],
+    participants: [
+      { personId: 'yao-chang', role: '后秦建立者与羌族军政集团领袖', note: '姚苌主导后秦形成；后秦取得长安和姚兴时期的制度发展属于后续阶段。' },
+    ],
     polityIds: ['later_qin'],
     causes: ['前秦崩解后，关中权力真空扩大。', '姚苌及羌族部众形成独立的军政动员体系。'],
     consequences: ['后秦成为关中、陇右的重要政权。', '后秦与前秦残余、后燕及东晋的竞争持续展开。'],
@@ -1237,7 +1243,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'western-jin-founded',
-    participants: [],
+    participants: [
+      { personId: 'sima-yan', role: '接受魏禅并建立西晋的皇帝', note: '司马炎265年受禅建晋；280年灭吴完成统一是后续独立事件。' },
+    ],
     polityIds: ['jin_western'],
     causes: ['司马氏经过高平陵之变及其后的权力重组，控制曹魏中枢军政资源。', '魏廷对司马氏的制衡能力持续下降，受禅成为政权更替的制度出口。'],
     consequences: ['曹魏转入西晋，北方政治秩序重新集中。', '西晋随后继续灭吴和制度整合，265年建政并不等于当年已经完成全国统一。'],
@@ -1580,7 +1588,11 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前403年只是齐的战国分期约年，不是齐国绝对建国日；姜齐、田齐和后期疆域必须分层展示。',
   },
   {
-    eventId: 'xia-sixteen-states-founded-eighth-batch', participants: [], polityIds: ['xia'],
+    eventId: 'xia-sixteen-states-founded-eighth-batch',
+    participants: [
+      { personId: 'heliAN-bobo', role: '夏政权建立者与河套军政整合者', note: '赫连勃勃在朔方建立夏并营建统万城；取得长安是418年的后续阶段。' },
+    ],
+    polityIds: ['xia'],
     causes: ['铁弗部在后秦、北魏竞争中重组，赫连勃勃掌握河套军政资源。', '河套与朔方为独立政权形成提供了战略和交通条件。'],
     consequences: ['十六国夏成为河套、陕北和关中竞争的重要力量。', '统万城建设、取得长安和后续灭亡属于不同阶段。'],
     phases: [
@@ -1592,7 +1604,11 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '407年前后是夏政权形成约年，不把418年取得长安或后期控制范围回填到建政年；赫连勃勃政权与传统夏代必须分开。',
   },
   {
-    eventId: 'xia-early-founded-eighth-batch', participants: [], polityIds: ['xia_early'],
+    eventId: 'xia-early-founded-eighth-batch',
+    participants: [
+      { personId: 'yu-the-great', role: '传统夏代建政叙事中的核心君主', note: '禹的历史年代与夏代国家形成存在文献、传说和考古层次差异，本条不把传说人物等同于已精确核验的建国事实。' },
+    ],
+    polityIds: ['xia_early'],
     causes: ['夏代年代依赖传世文献、传统纪年和考古研究的交叉解释。', '约前2070年是项目采用的传统年表起点，而非可精确核验的单日建国。'],
     consequences: ['夏代成为早期王权、国家形成与考古文化关系研究的重要对象。', '其政治记忆影响后世王朝叙事，但不能由传统年代推导确定疆域。'],
     phases: [
@@ -1600,11 +1616,15 @@ const details: HistoricalEventDetail[] = [
       { label: '传统夏代起点', startYear: -2070, endYear: -2070, summary: '传统年表以约前2070年作为夏代政权形成的导航节点。' },
       { label: '王权与都邑发展', startYear: -2070, endYear: -1800, summary: '早期王权、都邑和区域网络逐步发展，考古对应仍需专题研究。' },
     ],
-    locationIds: [], relatedEventIds: [], sourceIds: ['china-chronology'],
+    locationIds: ['erlitou'], relatedEventIds: [], sourceIds: ['china-chronology', 'erlitou-official'],
     uncertaintyNote: '约前2070年是传统纪年约年；夏代绝对年代、国家形态、考古对应和都邑均存在争议，不能伪造精确建国年或国界。',
   },
   {
-    eventId: 'shang-founded-eighth-batch', participants: [], polityIds: ['shang'],
+    eventId: 'shang-founded-eighth-batch',
+    participants: [
+      { personId: 'wu-ding', role: '商代王权与甲骨文时代的代表君主', note: '武丁不是约前1600年的建政者；本条用其作为可由甲骨文较充分观察的商代人物，并保留早期建政的不确定性。' },
+    ],
+    polityIds: ['shang'],
     causes: ['商代历史由传世文献、甲骨文和考古遗址共同构成。', '约前1600年是常用分期节点，不替代精确可证的建国日期。'],
     consequences: ['商代王权、青铜礼制与文字传统进入传统分期。', '都邑迁徙和区域控制持续变化，不能把约前1600年视作统一疆域的起点。'],
     phases: [
@@ -1612,11 +1632,17 @@ const details: HistoricalEventDetail[] = [
       { label: '传统商代起点', startYear: -1600, endYear: -1600, summary: '传统年表以约前1600年作为商代开始。' },
       { label: '都邑与王权发展', startYear: -1600, endYear: -1300, summary: '商王权、青铜礼制和都邑体系继续发展，盘庚迁殷属于后续节点。' },
     ],
-    locationIds: [], relatedEventIds: [], sourceIds: ['china-chronology'],
+    locationIds: ['erlitou'], relatedEventIds: [], sourceIds: ['china-chronology', 'erlitou-official'],
     uncertaintyNote: '约前1600年是常用传统分期，绝对年代、早期都邑和直接控制范围仍需结合甲骨文与考古材料，不能伪造精确建国年。',
   },
   {
-    eventId: 'western-zhou-founded-eighth-batch', participants: [], polityIds: ['zhou_western'],
+    eventId: 'western-zhou-founded-eighth-batch',
+    participants: [
+      { personId: 'ji-chang', role: '克商前周人政治资源的整合者', note: '姬昌在周武王克商前整合周人资源，其活动属于建政前准备阶段。' },
+      { personId: 'zhou-wu', role: '克商建周的周王与军事统帅', note: '姬发是约前1046年克商和西周建政叙事中的核心人物。' },
+      { personId: 'zhou-gong-dan', role: '西周早期礼制与王室秩序建设者', note: '周公旦主要参与建政后的制度建设，不能被简化为克商战场指挥者。' },
+    ],
+    polityIds: ['zhou_western'],
     causes: ['周人在关中和渭河流域积累政治、军事与礼制资源。', '商周关系在战争、联盟和政治秩序变化中转向王朝更替。'],
     consequences: ['西周王室与诸侯分封网络形成。', '礼制、宗法和青铜文化成为后续政治秩序的重要基础。'],
     phases: [
@@ -1624,11 +1650,15 @@ const details: HistoricalEventDetail[] = [
       { label: '克商建周', startYear: -1046, endYear: -1046, summary: '约前1046年周克商，西周阶段开始。' },
       { label: '分封与秩序展开', startYear: -1046, endYear: -1000, summary: '周王室在建政后逐步建立分封、宗法和都邑网络。' },
     ],
-    locationIds: [], relatedEventIds: ['zhou-conquest'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    locationIds: ['changan'], relatedEventIds: ['zhou-conquest'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '约前1046年是常用克商和西周起始约年，绝对年代存在不同学说；周初分封和直接控制不能压缩到克商当日。',
   },
   {
-    eventId: 'eastern-zhou-founded-eighth-batch', participants: [], polityIds: ['zhou_eastern'],
+    eventId: 'eastern-zhou-founded-eighth-batch',
+    participants: [
+      { personId: 'ji-yijiu', role: '东迁洛邑后的周平王与王室秩序承继者', note: '姬宜臼代表周王室东迁阶段；其王权是名义秩序，不能等同于对诸侯的直接行政控制。' },
+    ],
+    polityIds: ['zhou_eastern'],
     causes: ['西周末年政治危机和外部冲击使王室原有中心受损。', '平王东迁后，周王室在洛邑延续名义王统。'],
     consequences: ['东周王室阶段开始，春秋战国诸侯竞争展开。', '王室礼制和名义秩序延续，但诸侯直接权力逐步上升。'],
     phases: [
@@ -1640,7 +1670,11 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '约前770年是东迁和传统分期节点，不是周王室重新建立统一帝国；洛邑王畿与诸侯疆域必须分开。',
   },
   {
-    eventId: 'qin-state-founded-eighth-batch', participants: [], polityIds: ['qin_state'],
+    eventId: 'qin-state-founded-eighth-batch',
+    participants: [
+      { personId: 'qin-mugong', role: '秦国早期扩张与国家整合的代表君主', note: '秦穆公晚于约前770年的列侯节点；本条用其代表秦国早期发展，不能视为秦国建政当年的当事人。' },
+    ],
+    polityIds: ['qin_state'],
     causes: ['秦嬴氏长期经营关中西部边地并积累军事资源。', '周平王东迁后秦襄公列为诸侯，秦获得更明确的诸侯身份。'],
     consequences: ['秦进入统一前的秦国分期。', '秦随后经营关中、变法扩张并为前221年秦帝国建立提供基础。'],
     phases: [
@@ -1648,7 +1682,7 @@ const details: HistoricalEventDetail[] = [
       { label: '列为诸侯', startYear: -770, endYear: -770, summary: '约前770年秦襄公因护送周平王东迁而列为诸侯，秦国分期形成。' },
       { label: '关中扩展', startYear: -770, endYear: -350, summary: '秦逐步经营关中并调整都邑、军政和地方控制网络。' },
     ],
-    locationIds: [], relatedEventIds: ['zhou-eastward', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    locationIds: ['xianyang'], relatedEventIds: ['zhou-eastward', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '约前770年是列为诸侯和传统分期约年，不是秦氏政治实体首次出现；秦国与前221年秦帝国必须保持节点分离。',
   },
 ];
