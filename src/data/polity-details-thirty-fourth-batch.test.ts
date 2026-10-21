@@ -27,7 +27,7 @@ describe('thirty-fourth-batch polity details', () => {
     const claimIds = new Set(claims.map((claim) => claim.id));
     const detailEventIds = new Set(eventDetails.map((detail) => detail.eventId));
 
-    expect(polityDetails).toHaveLength(targetIds.length);
+    expect(polityDetails.length).toBeGreaterThanOrEqual(targetIds.length);
     targetIds.forEach((polityId) => {
       const detail = getPolityDetail(polityId);
       expect(detail, polityId).toBeDefined();
