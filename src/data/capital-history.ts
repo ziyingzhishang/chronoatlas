@@ -31,6 +31,11 @@ const thirteenthBatchAuditNotes: Record<string, string> = {
   ming_southern: '保留南京、福州、广州的阶段性实际中心，区分南明并立政权与单一国家首都；不做全期固定都城判断。',
   turkic: '保留两个突厥汗国阶段的于都斤／鄂尔浑区域政治核心，区分汗廷网络与固定城市；不升级为正式固定首都。',
 };
+const fourteenthBatchAuditNotes: Record<string, string> = {
+  xia_early: '第十四轮首都证据复核：补充晚期二里头文化核心的近似阶段说明；二里头都邑可作为夏文化与早期王权形成的候选中心，但不能把考古文化直接等同为已证实的夏代固定首都，继续保留 disputed／uncertain／low。',
+  shang: '第十四轮首都证据复核：补充早期二里头相关候选的证据边界；二里头遗址可用于夏晚期至早商文化传承研究，但商代存在多次迁都，不能以该遗址代表商代固定都城，继续保留 disputed／uncertain／low。',
+  western_qin: '第十四轮首都证据复核：补充西秦复国后河湟／枹罕阶段的区域性政治中心说明；现有地点目录没有枹罕独立地点实体，姑臧仅作河西参照，不能把代理坐标当作枹罕精确定位或全期固定首都。',
+};
 const seed = (polityId:string, [placeId, _name, validFrom, validTo, role='primary', status='formal', confidence='medium', notes]:Seed): CapitalTerm => ({
   polityId,
   placeId,
@@ -46,7 +51,7 @@ const seed = (polityId:string, [placeId, _name, validFrom, validTo, role='primar
     const auditNote = thirteenthBatchAuditNotes[polityId]
       ? `第十三轮证据复核：现代对应：${modernName}；角色：${role}；来源ID：${resolvedSourceIds.join('、')}。${thirteenthBatchAuditNotes[polityId]}`
       : undefined;
-    return [notes, twelfthBatchAuditNotes[polityId], auditNote].filter(Boolean).join(' ');
+    return [notes, twelfthBatchAuditNotes[polityId], auditNote, fourteenthBatchAuditNotes[polityId]].filter(Boolean).join(' ');
   })(),
 });
 
