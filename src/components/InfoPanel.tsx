@@ -26,6 +26,7 @@ interface InfoPanelProps {
   selectedEntity: SelectedEntity;
   onYearChange?: (year:number)=>void;
   onOpenEntity?: (entity: DetailEntity) => void;
+  polityDetailMode?: 'summary' | 'drawer';
 }
 
 const controlLabels = {
@@ -40,7 +41,7 @@ const range = (from:number,to:number) => from===to ? formatHistoricalYear(from) 
 const sourceYear = (year:number) => year===0 ? '0（来源边界值，非公元0年）' : formatHistoricalYear(year);
 const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `${sourceYear(from)}—${sourceYear(to)}`;
 
-export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity }: InfoPanelProps) {
+export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
   const prose = (value:string) => locale==='en' && /[\u3400-\u9fff]/.test(value) && t(value)===value
     ? 'Verification note retained in the Chinese data record; consult the linked source for details.' : t(value);
@@ -110,7 +111,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity }:
           <span className="eyebrow">{t("历史政权")}</span>
           <h2>{selected.name}</h2>
           <p className="panel-intro">{t(selected.description)}</p>
-          {getPolityDetail(selected.id) && <PolityDetail detail={getPolityDetail(selected.id)!} onOpenEntity={onOpenEntity} />}
+          {getPolityDetail(selected.id) && <PolityDetail detail={getPolityDetail(selected.id)!} mode={polityDetailMode} onOpenEntity={onOpenEntity} />}
           {sovereigntyNoticesFor(state.year, selected.id).map(notice => <section className="sovereignty-notice" data-testid="taiwan-sovereignty-notice" key={notice.id}>
             <h3>{t(notice.title)}</h3>
             <p>{t(notice.statement)}</p>

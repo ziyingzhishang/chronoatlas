@@ -47,3 +47,16 @@ test('opens a deep entity drawer from the polity study view and supports back na
   await userEvent.click(within(screen.getByRole('dialog', { name: '李世民' })).getByRole('button', { name: '关闭详情' }));
   expect(screen.queryByRole('dialog', { name: '李世民' })).not.toBeInTheDocument();
 });
+
+test('opens polity detail from the compact card in the existing entity drawer', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: '展开政权详情' }));
+
+  const drawer = screen.getByRole('dialog', { name: '唐' });
+  expect(drawer).toHaveClass('entity-drawer');
+  expect(within(drawer).getByRole('heading', { name: '建立过程' })).toBeInTheDocument();
+  expect(screen.getAllByRole('dialog', { name: '唐' })).toHaveLength(1);
+  expect(within(drawer).queryByRole('button', { name: '展开政权详情' })).not.toBeInTheDocument();
+});

@@ -116,6 +116,7 @@ function HistoryWorkspace() {
   }
   function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
   function openDetail(entity: DetailEntity) {
+    if (detailEntity?.type === entity.type && detailEntity.id === entity.id) return;
     if (detailEntity && (detailEntity.type !== entity.type || detailEntity.id !== entity.id)) {
       const title = detailTitle(detailEntity);
       setDetailHistory((history) => [...history, { entity: detailEntity, title }].slice(-12));
@@ -187,7 +188,7 @@ function HistoryWorkspace() {
         {detailEntity.type === 'event' && (() => { const event = events.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
         {detailEntity.type === 'heritage' && (() => { const asset = heritageById[detailEntity.id]; const detail = getHeritageDetail(detailEntity.id); return asset && detail ? <HeritageDetail detail={detail} heritageName={asset.name} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录遗产详情')}</p>; })()}
         {(detailEntity.type === 'polity' || detailEntity.type === 'place') && (
-          <InfoPanel state={historicalState} selectedEntity={detailEntity} onYearChange={changeYear} onOpenEntity={openDetail}/>
+          <InfoPanel state={historicalState} selectedEntity={detailEntity} onYearChange={changeYear} onOpenEntity={openDetail} polityDetailMode={detailEntity.type === 'polity' ? 'drawer' : 'summary'}/>
         )}
       </EntityDrawer>}
     <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>

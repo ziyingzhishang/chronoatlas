@@ -1,6 +1,6 @@
 import { render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
-import { expect, test } from 'vitest';
+import { expect, test, vi } from 'vitest';
 import { getHistoricalState } from '../domain/history-state';
 import { InfoPanel } from './InfoPanel';
 import { LocaleProvider } from '../i18n/locale';
@@ -69,18 +69,26 @@ test('shows evidence level, derivation, review state and citation for a curated 
   expect(screen.getByRole('link', {name:/Cliopatria/})).toBeInTheDocument();
 });
 
-test('keeps the polity summary compact and expands the sourced polity perspective details', async () => {
+test('opens full polity details through the entity callback instead of expanding the summary card', async () => {
   const user = userEvent.setup();
-  render(<LocaleProvider><InfoPanel state={getHistoricalState(-218)} selectedEntity={{type:'polity', id:'qin'}} /></LocaleProvider>);
+  const onOpenEntity = vi.fn();
+  render(<LocaleProvider><InfoPanel state={getHistoricalState(-218)} selectedEntity={{type:'polity', id:'qin'}} onOpenEntity={onOpenEntity} /></LocaleProvider>);
 
   expect(screen.getByText('秦统一六国后建立的中央集权帝国。')).toBeInTheDocument();
-  expect(screen.getByTestId('polity-detail')).not.toHaveAttribute('open');
+  expect(screen.getByRole('button', { name: '展开政权详情' })).toBeInTheDocument();
 
-  await user.click(screen.getByText('展开政权详情'));
+  await user.click(screen.getByRole('button', { name: '展开政权详情' }));
 
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'qin' });
+  expect(screen.queryByRole('heading', { name: '建立过程' })).not.toBeInTheDocument();
+});
+
+test('renders the complete polity detail directly when the info panel is inside its entity drawer', () => {
+  render(<LocaleProvider><InfoPanel state={getHistoricalState(-218)} selectedEntity={{type:'polity', id:'qin'}} polityDetailMode="drawer" /></LocaleProvider>);
+
+  expect(screen.queryByRole('button', { name: '展开政权详情' })).not.toBeInTheDocument();
   expect(screen.getByRole('heading', { name: '建立过程' })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: '关键转折' })).toBeInTheDocument();
   expect(screen.getByText(/秦帝国以统一战争结束战国列国/)).toBeInTheDocument();
   expect(screen.getByRole('link', { name: '嬴政' })).toBeInTheDocument();
-  expect(screen.getAllByText('秦统一六国').length).toBeGreaterThan(0);
 });

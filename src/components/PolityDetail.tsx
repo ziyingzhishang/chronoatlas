@@ -11,6 +11,7 @@ import { useLocale } from '../i18n/locale';
 interface PolityDetailProps {
   detail: PolityDetailRecord;
   onOpenEntity?: (entity: DetailEntity) => void;
+  mode?: 'summary' | 'drawer';
 }
 
 const range = (from: number, to: number) => from === to ? formatHistoricalYear(from) : `${formatHistoricalYear(from)}—${formatHistoricalYear(to)}`;
@@ -20,15 +21,13 @@ function EntityLink({ label, entity, onOpenEntity }: { label: string; entity: De
   return <a href={`#${entity.type}-${entity.id}`} onClick={(event) => { event.preventDefault(); onOpenEntity(entity); }}>{label}</a>;
 }
 
-export function PolityDetail({ detail, onOpenEntity }: PolityDetailProps) {
+export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityDetailProps) {
   const { t } = useLocale();
   const personById = new Map(people.map((person) => [person.id, person]));
   const eventById = new Map(events.map((event) => [event.id, event]));
   const placeById = new Map(places.map((place) => [place.id, place]));
 
-  return <details className="polity-detail" data-testid="polity-detail">
-    <summary>{t('展开政权详情')}</summary>
-    <article className="polity-detail-body">
+  const body = <article className="polity-detail-body">
       <p className="event-lead">{t(detail.perspectiveSummary)}</p>
 
       <section className="polity-detail-section">
@@ -77,6 +76,10 @@ export function PolityDetail({ detail, onOpenEntity }: PolityDetailProps) {
         })}</ul>
         <p className="uncertainty-note">{t('不确定性：')}{t(detail.uncertaintyNote)}</p>
       </section>
-    </article>
-  </details>;
+    </article>;
+
+  if (mode === 'drawer') return body;
+  return <div className="polity-detail-summary" data-testid="polity-detail-summary">
+    <button type="button" onClick={() => onOpenEntity?.({ type: 'polity', id: detail.polityId })}>{t('展开政权详情')}</button>
+  </div>;
 }
