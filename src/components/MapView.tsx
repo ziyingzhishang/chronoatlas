@@ -26,6 +26,7 @@ export function MapView(props: MapViewProps) {
   const { t } = useLocale();
   const { state, selectedEntity, visibleLayers, onSelectEntity } = props;
   const [basemap, setBasemap] = useState<Basemap>('relief');
+  const [projection, setProjection] = useState<'mercator' | 'globe'>('mercator');
   const [camera, setCamera] = useState<CameraState>(ASIA_VIEW);
   const [showReference, setShowReference] = useState(true);
   const [worldSearch, setWorldSearch] = useState('');
@@ -63,10 +64,11 @@ export function MapView(props: MapViewProps) {
     </div>
     </>)}
     <div className="map-stage">
-      <HistoricalMapCanvas ref={map} {...props} state={displayed} basemap={basemap} refreshToken={props.refreshToken??0} onCameraChange={setCamera} onRenderedYearChange={setRenderedYear} onCameraHistoryChange={setCanGoBackCamera} />
+      <HistoricalMapCanvas ref={map} {...props} state={displayed} basemap={basemap} projection={projection} refreshToken={props.refreshToken??0} onCameraChange={setCamera} onRenderedYearChange={setRenderedYear} onCameraHistoryChange={setCanGoBackCamera} />
       <div className="map-navigation" role="group" aria-label={t("地图视角操作")}>
         <button aria-label={t("放大地图")} title={t("放大")} onClick={() => act('zoomIn')}>＋</button>
         <button aria-label={t("缩小地图")} title={t("缩小")} onClick={() => act('zoomOut')}>−</button>
+        <button className="projection-button" aria-label={t(projection === 'globe' ? '切换平铺视图' : '切换球形视图')} aria-pressed={projection === 'globe'} title={t(projection === 'globe' ? '切换平铺视图' : '切换球形视图')} onClick={() => setProjection(value => value === 'globe' ? 'mercator' : 'globe')}>{projection === 'globe' ? '◉' : '◌'}</button>
         {workspace&&props.workspacePanel!=='layers'&&<details className="quick-layer-control">
           <summary aria-label={t('地图图层')} title={t('地图图层')}>◈</summary>
           <fieldset className="quick-layer-popover" aria-label={t('快捷图层')}>

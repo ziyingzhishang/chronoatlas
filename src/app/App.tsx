@@ -6,7 +6,6 @@ import { EventExplorer } from '../components/EventExplorer';
 import { eventYear } from '../domain/events';
 import { events } from '../data/events';
 import { InfoPanel } from '../components/InfoPanel';
-import { LayerToggle } from '../components/LayerToggle';
 import { Legend } from '../components/Legend';
 import { MapView, allLayers, type MapLayer } from '../components/MapView';
 import { TimeController } from '../workspace/TimeController';
@@ -95,7 +94,7 @@ function HistoryWorkspace() {
         <span>{t('当前视窗')} · {formatHistoricalYear(timelineWindow[0])}—{formatHistoricalYear(timelineWindow[1])}</span>
       </div>
       <nav aria-label={t('工作台工具')}>
-        {(['layers','events','details','more'] as const).map((name,i)=><button className="workspace-tool-icon" key={name} aria-label={t(['图层','事件','详情','更多'][i])} title={t(['图层','事件','详情','更多'][i])} aria-expanded={panel===name} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p===name?null:name);}}>{['◈','◆','ⓘ','⋯'][i]}</button>)}
+        {(['events','details','more'] as const).map((name,i)=><button className="workspace-tool-icon" key={name} aria-label={t(['事件','详情','更多'][i])} title={t(['事件','详情','更多'][i])} aria-expanded={panel===name} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p===name?null:name);}}>{['◆','ⓘ','⋯'][i]}</button>)}
       </nav>
     </header>
     <div className="workspace-map-area">
@@ -103,10 +102,6 @@ function HistoryWorkspace() {
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel title={t(titles[panel])} onClose={()=>setPanel(null)}>
         {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear}/>}
-        {panel==='layers'&&<>
-          <LayerToggle visibleLayers={visibleLayers} onChange={updateLayer}/>
-          <section className="world-controls" aria-label={t('同期世界设置')}><label><input type="checkbox" checked={showWorld} onChange={e=>{setShowWorld(e.target.checked);setSelectedEntity(undefined);}}/>{t('同期世界疆域')}</label><span>{t(worldMessage)}</span>{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</section>
-        </>}
         {panel==='events'&&<EventExplorer year={currentYear} selectedId={selectedEntity?.type==='event'?selectedEntity.id:undefined} onSelect={selectEvent} onYearChange={changeYear} groupIds={eventGroup} onClearGroup={()=>setEventGroup(undefined)} onBackToList={()=>setSelectedEntity(undefined)} onLocate={event=>{
           setVisibleLayers(layers=>new Set([...layers,'events']));
           setFocusRequest(previous=>({id:event.id,nonce:(previous?.nonce??0)+1}));

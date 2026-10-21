@@ -24,7 +24,7 @@ test('selecting a new year updates the year label, active polity summary, and ma
 
 test('closing a switched auxiliary panel returns focus to its latest opener',async()=>{
   render(<App/>);
-  await userEvent.click(screen.getByRole('button',{name:'图层'}));
+  await userEvent.click(screen.getByRole('button',{name:'详情'}));
   await userEvent.click(screen.getByRole('button',{name:'事件'}));
   await userEvent.click(screen.getByRole('button',{name:'关闭面板'}));
   expect(screen.getByRole('button',{name:'事件'})).toHaveFocus();

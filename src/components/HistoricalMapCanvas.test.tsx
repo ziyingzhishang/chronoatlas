@@ -10,7 +10,22 @@ import { mapInstances } from '../test/maplibre-mock';
 
 const props = () => ({ state: getHistoricalState(800), selectedEntity: undefined, refreshToken:0,
   visibleLayers: new Set(allLayers), basemap: 'relief' as const,
+  projection: 'mercator' as const,
   onSelectEntity: vi.fn(), onCameraChange: vi.fn(), onRenderedYearChange:vi.fn() });
+
+test('switches projection on the existing map without recreating it', () => {
+  const initial = props();
+  const { rerender } = render(<HistoricalMapCanvas {...initial} />);
+  const map = mapInstances.at(-1)!;
+  act(() => map.emit('style.load'));
+  map.setProjection.mockClear();
+
+  rerender(<HistoricalMapCanvas {...initial} projection="globe" />);
+
+  expect(mapInstances.at(-1)).toBe(map);
+  expect(map.setProjection).toHaveBeenCalledWith({ type: 'globe' });
+  expect(map.remove).not.toHaveBeenCalled();
+});
 
 test('satellite enhances territory fill and restores relief styling without replacing the map', () => {
   const initial=props();

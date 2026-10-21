@@ -22,6 +22,7 @@ interface Props {
   selectedEntity: SelectedEntity;
   visibleLayers: Set<MapLayer>;
   basemap: Basemap;
+  projection: 'mercator' | 'globe';
   refreshToken:number;
   onSelectEntity: (entity: Exclude<SelectedEntity, undefined>) => void;
   onCameraChange: (camera: CameraState) => void;
@@ -169,6 +170,7 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
     map.on('style.load', () => {
       readyMap.current = map;
       historyUpdater.current?.flush(latest.current.state);
+      map.setProjection({ type: latest.current.projection });
       updatePresentation(map, latest.current);
       updateScale();
       setReady(true);
@@ -215,6 +217,10 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
   useEffect(() => {
     if (ready && mapRef.current && readyMap.current === mapRef.current) historyUpdater.current?.push(props.state);
   }, [ready, props.state,t]);
+
+  useEffect(() => {
+    if (ready && mapRef.current && readyMap.current === mapRef.current) mapRef.current.setProjection({ type: props.projection });
+  }, [ready, props.projection]);
 
   useEffect(()=>{
     if(lastRefreshToken.current===props.refreshToken)return;

@@ -63,6 +63,15 @@ test('offers a compact layer shortcut without opening the full workspace panel',
   expect(screen.getByRole('checkbox', { name: '历史疆域' })).toBeInTheDocument();
 });
 
+test('offers mercator and globe projection controls in the map toolbar', async () => {
+  const user = userEvent.setup();
+  render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} workspacePanel={null} />);
+
+  expect(screen.getByRole('button', { name: '切换球形视图' })).toBeInTheDocument();
+  await user.click(screen.getByRole('button', { name: '切换球形视图' }));
+  expect(screen.getByRole('button', { name: '切换平铺视图' })).toHaveAttribute('aria-pressed', 'true');
+});
+
 test('labels the maximum reference with its source period and allows hiding it', async () => {
   const state = getHistoricalState(937);
   const base = state.boundaries[0];

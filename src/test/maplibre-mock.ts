@@ -20,6 +20,7 @@ export class TestMap {
   easeTo = vi.fn();
   flyTo = vi.fn();
   fitBounds = vi.fn();
+  setProjection = vi.fn();
   queryRenderedFeatures = vi.fn(() => []);
   constructor(public options: MapOptions) {
     mapInstances.push(this);
