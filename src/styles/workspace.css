@@ -146,6 +146,10 @@
 .timeline-event-markers button:hover { background:#526247; border-radius:4px; }
 .event-meta,.event-verification,.event-list-caption { color:#b9c3ad; font:11px/1.8 system-ui,sans-serif; }
 .event-detail { padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #536247; }
+.time-evidence-review { margin:12px 0 18px; padding:10px 12px; border:1px solid #536247; border-radius:6px; background:rgba(20,31,25,.45); }
+.time-evidence-review h4 { margin:0 0 5px; color:#f2dfb9; font-size:13px; }
+.time-evidence-review p { margin:4px 0; }
+.time-evidence-review strong { color:#e4c989; }
 .event-back-to-list { min-height:36px; padding:0 10px; color:#e2c987; border:1px solid #536247; border-radius:4px; background:#27362a; }
 .event-detail h3 { color:#f2dfb9; font-size:23px; line-height:1.5; margin:8px 0; font-weight:500; }
 .event-detail .event-lead { color:#e0e3d7; font-size:14px; line-height:1.9; }

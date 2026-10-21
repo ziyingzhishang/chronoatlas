@@ -67,4 +67,31 @@ describe('PersonDetail', () => {
 
     expect(screen.getByText('暂无已收录人物详情')).toBeInTheDocument();
   });
+
+  it('shows the audited confirmed time evidence and timeline permission', () => {
+    render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={[]} />);
+
+    expect(screen.getByText('已确证')).toBeInTheDocument();
+    expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
+    expect(screen.getByText(/现有人物目录同时记录生年与卒年/)).toBeInTheDocument();
+  });
+
+  it('shows approximate and unknown states without inventing a life date', () => {
+    const approximatePerson = {
+      ...person,
+      id: 'yu-the-great',
+      name: '大禹',
+      birthYear: undefined,
+      deathYear: undefined,
+    };
+    render(<PersonDetail person={approximatePerson} detail={getPersonDetail('yu-the-great')} year={2200} claims={[]} />);
+
+    expect(screen.getByText('约年')).toBeInTheDocument();
+    expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
+    expect(screen.getByText(/不将其扩展为完整生卒区间/)).toBeInTheDocument();
+
+    render(<PersonDetail person={{ ...person, id: 'not-in-review', name: '未审计人物' }} detail={getPersonDetail('li-shimin')} year={620} claims={[]} />);
+    expect(screen.getByText('未知')).toBeInTheDocument();
+    expect(screen.getByText(/暂不允许时间轴定位/)).toBeInTheDocument();
+  });
 });

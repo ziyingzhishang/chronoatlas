@@ -23,3 +23,25 @@ test('renders a clear empty state when no detail record exists', () => {
 
   expect(screen.getByText('暂无已收录事件详情')).toBeInTheDocument();
 });
+
+test('renders the audited approximate time evidence and timeline permission', () => {
+  const event = events.find((item) => item.id === 'nanzhao-founded')!;
+  render(<LocaleProvider><EventDetail event={event} onNavigate={vi.fn()} /></LocaleProvider>);
+
+  expect(screen.getByText('约年')).toBeInTheDocument();
+  expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
+  expect(screen.getByText('738年前后表示南诏形成，部族联盟、唐廷册封与区域整合是连续过程。')).toBeInTheDocument();
+  expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
+});
+
+test('renders confirmed and unknown event time review states separately', () => {
+  const confirmedEvent = events.find((item) => item.id === 'an-lushan-rebellion')!;
+  render(<LocaleProvider><EventDetail event={confirmedEvent} onNavigate={vi.fn()} /></LocaleProvider>);
+  expect(screen.getByText('已确证')).toBeInTheDocument();
+  expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
+
+  const unreviewedEvent = events.find((item) => item.id === 'tang-founded')!;
+  render(<LocaleProvider><EventDetail event={unreviewedEvent} onNavigate={vi.fn()} /></LocaleProvider>);
+  expect(screen.getByText('未知')).toBeInTheDocument();
+  expect(screen.getByText(/暂不允许时间轴定位/)).toBeInTheDocument();
+});

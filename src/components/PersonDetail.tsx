@@ -2,6 +2,7 @@ import type { HistoricalClaim, HistoricalEvent, Person, PersonDetail as PersonDe
 import { groupPersonRelationships, type PersonRelationship } from '../domain/relationships';
 import { formatHistoricalYear } from '../domain/timeline';
 import { sourceById } from '../data/sources';
+import { buildPersonTimeCoverageReport, type PersonTimeReview, type PersonTimeReviewStatus } from '../data/person-time-review';
 import { useLocale } from '../i18n/locale';
 
 export interface PersonDetailProps {
@@ -36,12 +37,14 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
   const polityById = new Map(polities.map((item) => [item.id, item]));
   const eventById = new Map(events.map((item) => [item.id, item]));
   const sources = [...new Set(detail.sourceIds)].map((sourceId) => sourceById[sourceId]).filter(Boolean);
+  const timeReview = buildPersonTimeCoverageReport().byPersonId[person.id] ?? unknownPersonTimeReview(person);
 
   return <article className="event-detail person-detail" aria-label={t('人物详情')}>
     <div className="event-meta">{t(person.roles?.join('／') ?? '历史人物')} · {formatLife(person.birthYear, person.deathYear)}</div>
     <h3>{t(person.name)}</h3>
     {detail.aliases.length > 0 && <p className="aliases">{t('别名：')}{detail.aliases.map(t).join('、')}</p>}
     <p className="event-lead">{t(detail.biography)}</p>
+    <TimeEvidenceReview review={timeReview} t={t} />
 
     <section className="person-detail-section">
       <h4>{t('任职经历')}</h4>
@@ -64,6 +67,32 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
     </details>
     {detail.uncertaintyNote && <p className="uncertainty-note">{t('不确定性：')}{t(detail.uncertaintyNote)}</p>}
   </article>;
+}
+
+function TimeEvidenceReview({ review, t }: { review: PersonTimeReview; t: (text: string) => string }) {
+  const sourceNames = review.evidenceSourceIds.map((sourceId) => sourceById[sourceId]?.title ?? sourceId);
+  return <section className="time-evidence-review" aria-label={t('时间证据审计')}>
+    <h4>{t('时间证据审计')}</h4>
+    <p><strong>{t(personTimeStatusLabel(review.status))}</strong> · {t(review.allowTimelinePosition ? '可定位到时间轴' : '暂不允许时间轴定位')}</p>
+    <p className="detail-note">{t(review.explanation)}</p>
+    <p className="detail-note">{t('证据来源：')}{sourceNames.length > 0 ? sourceNames.map(t).join('、') : t('暂无可解析来源')}</p>
+  </section>;
+}
+
+function personTimeStatusLabel(status: PersonTimeReviewStatus) {
+  return status === 'confirmed' ? '已确证' : status === 'approximate' ? '约年' : '未知';
+}
+
+function unknownPersonTimeReview(person: Person): PersonTimeReview {
+  return {
+    personId: person.id,
+    personName: person.name,
+    status: 'unknown',
+    evidence: [],
+    evidenceSourceIds: [],
+    allowTimelinePosition: false,
+    explanation: `${person.name}尚未纳入人物时间证据审计目录，暂不升级为已确证年份。`,
+  };
 }
 
 function RelationSection({ title, types, grouped, people, polities, events, onOpenEntity, t }: { title: string; types: PersonRelationType[]; grouped: ReturnType<typeof groupPersonRelationships>; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {

@@ -8,6 +8,7 @@ import { people } from '../data/people';
 import { polities } from '../data/polities';
 import { places } from '../data/places';
 import { sourceById } from '../data/sources';
+import { reviewEventTimeCoverage, type EventTimeReviewEntry, type EventTimeReviewStatus } from '../data/event-time-review';
 import { formatHistoricalYear } from '../domain/timeline';
 
 export interface EventDetailProps {
@@ -43,11 +44,13 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
   const polityById = new Map(polities.map((polity) => [polity.id, polity]));
   const placeById = new Map(places.map((place) => [place.id, place]));
   const eventById = new Map(events.map((item) => [item.id, item]));
+  const timeReview = reviewEventTimeCoverage().records.find((record) => record.eventId === event.id) ?? unknownEventTimeReview(event.id);
 
   return <article className="event-detail" aria-label={t('事件详情')}>
     <div className="event-meta">{t(eventDate(event))} · {t(event.region === 'world' ? '同期世界' : '中国历史')} · {t(event.category ?? '历史转折')}</div>
     <h3>{t(event.title)}</h3>
     <p className="event-lead">{t(event.summary)}</p>
+    <TimeEvidenceReview review={timeReview} t={t} />
 
     <section className="event-detail-section">
       <h4>{t('原因')}</h4>
@@ -104,4 +107,29 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
       {detail.uncertaintyNote && <p className="detail-note"><strong>{t('不确定性')}</strong>：{t(detail.uncertaintyNote)}</p>}
     </section>
   </article>;
+}
+
+function TimeEvidenceReview({ review, t }: { review: Pick<EventTimeReviewEntry, 'eventId' | 'status' | 'explanation' | 'timelineStrategy'> & { sourceIds: string[] }; t: (text: string) => string }) {
+  const sourceNames = review.sourceIds.map((sourceId) => sourceById[sourceId]?.title ?? sourceId);
+  const allowTimelinePosition = review.timelineStrategy !== 'unknown-window';
+  return <section className="time-evidence-review" aria-label={t('时间证据审计')}>
+    <h4>{t('时间证据审计')}</h4>
+    <p><strong>{t(eventTimeStatusLabel(review.status))}</strong> · {t(allowTimelinePosition ? '可定位到时间轴' : '暂不允许时间轴定位')}</p>
+    <p className="detail-note">{t(review.explanation)}</p>
+    <p className="detail-note">{t('证据来源：')}{sourceNames.length > 0 ? sourceNames.map(t).join('、') : t('暂无可解析来源')}</p>
+  </section>;
+}
+
+function eventTimeStatusLabel(status: EventTimeReviewStatus) {
+  return status === 'confirmed' ? '已确证' : status === 'approximate' ? '约年' : '未知';
+}
+
+function unknownEventTimeReview(eventId: string): Pick<EventTimeReviewEntry, 'eventId' | 'status' | 'explanation' | 'timelineStrategy'> & { sourceIds: string[] } {
+  return {
+    eventId,
+    status: 'unknown',
+    explanation: '当前事件尚未纳入时间证据审计目录，暂不把目录年份升级为已确证时间。',
+    timelineStrategy: 'unknown-window',
+    sourceIds: [],
+  };
 }
