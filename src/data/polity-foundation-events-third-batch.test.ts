@@ -60,7 +60,7 @@ describe('政权建政事件第三批', () => {
     }
   });
 
-  it('使第三批目标政权获得建政覆盖，但保留尚未补齐的人物关系缺口', () => {
+  it('使第三批目标政权获得建政与已核人物关系覆盖', () => {
     const report = auditPolityCoverage();
 
     for (const target of targets) {
@@ -70,7 +70,7 @@ describe('政权建政事件第三批', () => {
       });
     }
 
-    expect(report.byPolity('wei_eastern').gaps).toEqual(expect.arrayContaining([
+    expect(report.byPolity('wei_eastern').gaps).not.toEqual(expect.arrayContaining([
       expect.objectContaining({ code: 'missing-associated-person' }),
     ]));
   });
