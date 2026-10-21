@@ -107,8 +107,15 @@ const tenthBatchOverrides: Record<string, Seed[]> = {
   ],
 };
 
+const sixteenthBatchOverrides: Record<string, Seed[]> = {
+  mongol: [
+    ['mongol_karakorum', '和林', 1206, 1234, 'de_facto', 'actual', 'medium', '第十六轮首都证据复核：蒙古汗国建立初期仍以移动汗廷和阶段性政治中心为主，不能把后来建成的和林城反推为1206年即已存在的固定正式都城。'],
+    ['mongol_karakorum', '和林', 1235, 1260, 'primary', 'formal', 'high', '第十六轮首都证据复核：和林城建成并被确立为蒙古帝国都城的阶段，现代对应今蒙古国前杭爱省哈拉和林遗址；1260年后不以和林单独推断后续固定都城。'],
+  ],
+};
+
 export const capitalHistory: CapitalTerm[] = polities.flatMap(polity => {
-  const records = tenthBatchOverrides[polity.id] ?? explicit[polity.id];
+  const records = sixteenthBatchOverrides[polity.id] ?? tenthBatchOverrides[polity.id] ?? explicit[polity.id];
   if (records) return records.map(record => seed(polity.id, record));
   if (polity.capitalPlaceId) return [seed(polity.id, [polity.capitalPlaceId, '目录首都', polity.startYear, polity.endYear, 'primary', 'formal', 'medium', '沿用现有目录首都字段，待逐段补充迁都史。'])];
   return [seed(polity.id, ['changan', '未细分政治中心', polity.startYear, polity.endYear, 'disputed', 'uncertain', 'low', '目录暂缺固定首都资料，使用关中参照点仅为数据覆盖占位，需后续来源核验。'])];
