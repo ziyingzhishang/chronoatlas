@@ -893,7 +893,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'liu-yu-captures-changan',
-    participants: [],
+    participants: [
+      { personId: 'liu-yu', role: '统率东晋北伐并攻取长安的军事领袖', note: '刘裕是417年攻取长安行动的核心统帅；东晋短暂控制关中不等于建立稳定的北方行政体系。' },
+    ],
     polityIds: ['jin_eastern', 'later_qin'],
     causes: ['东晋希望利用后秦衰弱恢复对关中的影响。', '刘裕军队沿黄河与关中方向推进并攻取长安。'],
     consequences: ['东晋短暂控制长安。', '南北政权围绕关中的竞争延续，北方政局未被长期稳定重构。'],
@@ -905,7 +907,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'western-wei-changan',
-    participants: [],
+    participants: [
+      { personId: 'yu-wen-tai', role: '主持关中军政并推动西魏以长安为都的权臣', note: '宇文泰是西魏关中军政整合的实际推动者；元宝炬等皇室端点在本事件中不重复虚构，长安定都与控制范围分开记录。' },
+    ],
     polityIds: ['wei_western'],
     causes: ['北魏分裂后，关中军政集团需要建立独立政权。'],
     consequences: ['西魏以长安为都，长安恢复北朝西部政治中心地位。', '关中与河东、陇右的军事资源被重新组织。'],
@@ -917,7 +921,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-zhou-changan',
-    participants: [],
+    participants: [
+      { personId: 'yu-wen-tai', role: '承接西魏军政基础并推动北周建政的核心权臣', note: '宇文泰代表北周建立前的关中军政基础；557年政权转换与其后制度建设属于连续但可区分的阶段。' },
+    ],
     polityIds: ['zhou_northern'],
     causes: ['北周承接西魏的关中政治与军事体系。'],
     consequences: ['长安的北朝西部都城地位延续。', '北周为隋的统一和大兴城建设提供制度与城市基础。'],
@@ -1171,7 +1177,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'republic-founded',
-    participants: [],
+    participants: [
+      { personId: 'sun-yat-sen', role: '就任临时大总统并代表共和临时政府成立的政治领袖', note: '孙中山对应1912年临时政府成立节点；南北议和、清帝退位和政权交接仍需按独立阶段展示。' },
+    ],
     polityIds: ['republic'],
     causes: ['辛亥革命改变清朝中央政权结构。', '革命后各方需要建立新的共和中央政府。'],
     consequences: ['中华民国临时政府成立，共和政权的组织形式确立。', '南北议和、清帝退位与政权转移仍需分别考察。'],
@@ -1187,7 +1195,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'prc-founded',
-    participants: [],
+    participants: [
+      { personId: 'mao-zedong', role: '宣告中央人民政府成立的政治领袖', note: '毛泽东对应1949年中央人民政府成立与开国典礼节点；中央政权建立、各地接管和制度建设按不同时间过程展示。' },
+    ],
     polityIds: ['prc'],
     causes: ['长期战争与政治竞争导致旧有中央政权结构发生根本变化。', '新的中央政府以共同纲领和国家机构建设为基础组织政权。'],
     consequences: ['中华人民共和国中央人民政府成立。', '各地区的政权接管、制度建设与边界问题仍具有各自时间过程。'],
@@ -1361,7 +1371,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'qing-enters-pass',
-    participants: [],
+    participants: [
+      { personId: 'dorgon', role: '主持清军入关与顺治初年中央政务的摄政王', note: '多尔衮是1644年清军入关及中央权力转移的重要执行者；入关、北京中心转移与全国整合属于不同阶段。' },
+    ],
     polityIds: ['qing'],
     causes: ['明末北京政权更迭与关外军事力量进入关内，改变了明清鼎革的政治条件。', '清廷此前已在沈阳建立关外政治中心，入关后需要转移中央政治机构。'],
     consequences: ['清廷进入北京并把政治中心转入关内。', '各地归属与清朝全国性统治仍经历后续战争和行政整合，不能压缩为1644年一日完成。'],
@@ -1395,7 +1407,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'liu-song-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-yu', role: '掌握东晋军政并受禅建立刘宋的君主', note: '刘裕是420年禅代建宋的核心人物；其平乱、北伐、掌权与正式受禅按连续阶段区分。' },
+    ],
     polityIds: ['song_southern'],
     causes: ['东晋末年中央权力衰弱，刘裕通过北伐、平乱和控制建康取得军政主导权。', '司马氏皇权在连续内乱后缺乏维持旧政权的实际能力。'],
     consequences: ['东晋转入南朝刘宋，建康继续作为南方政治中心。', '刘宋与北方政权的对峙、北伐和领土变化延续到建政之后。'],
@@ -1556,7 +1570,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'western-liao-founded',
-    participants: [],
+    participants: [
+      { personId: 'yelu-dashi', role: '辽亡后率部西行并重建契丹政权的统治者', note: '耶律大石是西辽形成阶段的核心人物；1124年前后为迁徙建政约年，后续称帝、建都和中亚扩张属于不同阶段。' },
+    ],
     polityIds: ['western_liao'],
     causes: ['辽朝灭亡后，耶律大石率部西行并重新组织契丹政治力量。', '中亚草原与绿洲政治格局为流亡政权转化为区域政权提供条件。'],
     consequences: ['西辽成为跨越中亚交通网络的重要政权。', '西辽与喀喇汗、塞尔柱及东方政权的关系重组。'],
