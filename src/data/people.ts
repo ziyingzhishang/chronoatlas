@@ -85,6 +85,9 @@ export const people: Person[] = [
   { id: 'shunzhi', name: '福临', aliases: ['顺治帝'], birthYear: 1638, deathYear: 1661, roles: ['皇帝'], polityIds: ['qing'], description: '顺治帝时期清廷于1644年入关并迁入北京，清的政治中心由盛京转向北京。', sourceIds: ['china-chronology'] },
   { id: 'sun-yat-sen', name: '孙中山', aliases: ['孙文'], birthYear: 1866, deathYear: 1925, roles: ['临时大总统', '革命家'], polityIds: ['republic'], description: '孙中山于1912年在南京就任中华民国临时大总统，中华民国临时政府由此成立。', sourceIds: ['china-chronology'] },
   { id: 'mao-zedong', name: '毛泽东', birthYear: 1893, deathYear: 1976, roles: ['国家领导人', '政治家'], polityIds: ['prc'], description: '毛泽东在1949年中华人民共和国成立典礼上宣告中央人民政府成立，成为新中国成立历史记忆中的重要人物。', sourceIds: ['china-chronology'] },
+  { id: 'cao-cao', name: '曹操', aliases: ['魏武帝', '曹孟德'], birthYear: 155, deathYear: 220, roles: ['政治家', '军事领袖', '权臣'], polityIds: ['han_eastern', 'wei_three'], description: '曹操在东汉末年整合北方军政资源，挟天子以令诸侯并封魏王，为曹魏政权形成奠定基础。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'liu-bei', name: '刘备', aliases: ['汉昭烈帝', '刘玄德'], birthYear: 161, deathYear: 223, roles: ['皇帝', '军事领袖', '政治家'], polityIds: ['han_eastern', 'shu_three'], description: '刘备以汉室宗亲名义参与东汉末年政治与军事竞争，221年在成都称帝建立蜀汉。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'sun-quan', name: '孙权', aliases: ['吴大帝', '孙仲谋'], birthYear: 182, deathYear: 252, roles: ['皇帝', '军事领袖', '政治家'], polityIds: ['han_eastern', 'wu_three'], description: '孙权继承江东军政基础，在赤壁之战后与刘备形成阶段性联盟，后建立孙吴政权。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

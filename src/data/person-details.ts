@@ -432,6 +432,27 @@ export const personDetails: PersonDetail[] = [
     aliases: [], offices: [{ title: '中华人民共和国中央人民政府主要领导人', polityId: 'prc', placeId: 'beijing', validFrom: 1949, validTo: 1976, datePrecision: 'range', sourceIds: ['china-chronology'] }],
     keyEvents: ['prc-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1949年建国典礼是政权成立节点，毛泽东后续政治角色和政策阶段需要结合不同事件、制度与史料分别展示。',
   },
+  {
+    personId: 'cao-cao', biography: '曹操在东汉末年掌握朝廷与北方军政资源，官渡之战后逐步形成北方核心势力；赤壁之战失利后，曹魏仍以其政治与制度基础为重要来源。',
+    aliases: ['魏武帝', '曹孟德'], offices: [
+      { title: '东汉丞相', polityId: 'han_eastern', validFrom: 208, validTo: 216, datePrecision: 'range', sourceIds: ['zizhi-tongjian'] },
+      { title: '魏王与曹魏奠基者', polityId: 'wei_three', validFrom: 216, validTo: 220, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+    ], keyEvents: ['red-cliffs', 'three-kingdoms'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '曹操生前以东汉丞相、魏王身份掌权，曹魏作为正式帝国政权通常以曹丕220年代汉为节点；本详情不把追尊与生前称帝混为一谈。',
+  },
+  {
+    personId: 'liu-bei', biography: '刘备以汉室宗亲身份参与群雄竞争，在荆州、益州经营政治与军事基础；赤壁后与孙权合作，最终于成都建立蜀汉。',
+    aliases: ['汉昭烈帝', '刘玄德'], offices: [
+      { title: '东汉左将军与益州牧', polityId: 'han_eastern', placeId: 'chengdu', validFrom: 214, validTo: 220, datePrecision: 'range', sourceIds: ['zizhi-tongjian'] },
+      { title: '蜀汉皇帝', polityId: 'shu_three', placeId: 'chengdu', validFrom: 221, validTo: 223, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+    ], keyEvents: ['red-cliffs', 'three-kingdoms'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘备的汉室宗亲身份、政治合法性主张与蜀汉称帝分别属于不同层次；赤壁联盟是阶段性军事合作，不等同于长期同盟。',
+  },
+  {
+    personId: 'sun-quan', biography: '孙权继承孙氏在江东的军政基础，赤壁之战中与刘备共同抵抗曹操，随后在建业经营孙吴并完成称帝建国。',
+    aliases: ['吴大帝', '孙仲谋'], offices: [
+      { title: '东汉讨虏将军与江东统治者', polityId: 'han_eastern', placeId: 'jiankang', validFrom: 200, validTo: 220, datePrecision: 'range', sourceIds: ['zizhi-tongjian'] },
+      { title: '孙吴皇帝', polityId: 'wu_three', placeId: 'jiankang', validFrom: 222, validTo: 252, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+    ], keyEvents: ['red-cliffs', 'three-kingdoms'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '孙权在称帝前长期以汉臣和江东实际统治者身份活动，222年吴王阶段与229年正式称帝应与孙吴全期分层展示。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));
