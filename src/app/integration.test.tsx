@@ -56,15 +56,30 @@ test('ordinary year navigation returns the timeline search to the current window
 test('choosing an event changes the map year and keeps its details open',async()=>{
   render(<App/>);
   await userEvent.type(screen.getByRole('searchbox',{name:'搜索历史事件'}),'秦统一');
-  await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
+  const eventOption=screen.getByRole('option',{name:/秦统一六国/});
+  await userEvent.click(eventOption);
   expect(screen.getByRole('region',{name:'历史地图'})).toHaveAttribute('data-year','-221');
   expect(screen.getByRole('article',{name:'事件详情'})).toHaveTextContent('秦统一六国');
+  expect(eventOption).toHaveAttribute('aria-selected','true');
+  expect(screen.getByRole('listbox').compareDocumentPosition(screen.getByRole('article',{name:'事件详情'})) & Node.DOCUMENT_POSITION_FOLLOWING).toBeTruthy();
   expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button',{name:/返回事件列表/}));
   expect(screen.queryByRole('article',{name:'事件详情'})).not.toBeInTheDocument();
   expect(screen.getByRole('option',{name:/秦统一六国/})).toBeInTheDocument();
   await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
   await userEvent.click(screen.getByRole('button',{name:'下一年'}));
+  expect(screen.queryByRole('article',{name:'事件详情'})).not.toBeInTheDocument();
+});
+
+test('changing the event query hides a stale detail card and clears timeline groups',async()=>{
+  render(<App/>);
+  await userEvent.click(screen.getByRole('button',{name:/查看前1046年附近/}));
+  await userEvent.type(screen.getByRole('searchbox',{name:'搜索历史事件'}),'秦统一');
+  await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
+  expect(screen.getByRole('article',{name:'事件详情'})).toBeInTheDocument();
+  await userEvent.clear(screen.getByRole('searchbox',{name:'搜索历史事件'}));
+  expect(screen.getByRole('option',{name:/秦统一六国/})).toBeInTheDocument();
+  await userEvent.type(screen.getByRole('searchbox',{name:'搜索历史事件'}),'安史');
   expect(screen.queryByRole('article',{name:'事件详情'})).not.toBeInTheDocument();
 });
 

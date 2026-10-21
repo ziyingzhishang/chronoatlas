@@ -98,7 +98,7 @@ function HistoryWorkspace() {
     if(entity.type==='event'){const event=events.find(e=>e.id===entity.id);if(event)selectEvent(event);return;}
     setSelectedEntity(entity);setPanel('details');
   }
-  function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
+  function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
   function clearMapSelection(){
     if(selectedEntity?.type==='event'){
       setSelectedEntity(undefined);
@@ -111,7 +111,7 @@ function HistoryWorkspace() {
   }
   const worldMessage=!showWorld?'开启后随所选年份显示全球政权。':world.status==='loading'?'正在加载本世纪世界资料…':world.status==='error'?'世界资料加载失败；中国图层不受影响。':world.status==='unavailable'?'世界来源仅覆盖前3400—2024年，本年不沿用旧图。':`世界 ${historicalState.activePolities.filter(p=>p.region==='world').length} 个来源实体 · 未逐国独立校勘`;
   const visibleSearchEvents=eventSearchQuery.trim()?eventSearchMatches:timelineEvents;
-  const selectedSearchEvent=selectedEntity?.type==='event'?localizedEvents.find(event=>event.id===selectedEntity.id):undefined;
+  const selectedSearchEvent=selectedEntity?.type==='event'?visibleSearchEvents.find(event=>event.id===selectedEntity.id):undefined;
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
   return <main className="workspace">
     <header className="workspace-header">
