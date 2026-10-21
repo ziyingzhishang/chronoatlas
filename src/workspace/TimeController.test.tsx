@@ -26,3 +26,9 @@ test('mobile forces docking without discarding the desktop preference',()=>{
   window.innerWidth=1200;fireEvent(window,new Event('resize'));
   expect(screen.getByRole('button',{name:'停靠时间控制器'})).toBeInTheDocument();
 });
+
+test('exploration HUD keeps the controller label visually compact while retaining an accessible name', () => {
+  render(<Demo />);
+  expect(screen.getByRole('button', { name: '切换时间控制器密度' })).toBeInTheDocument();
+  expect(screen.getByText('时间导航')).toHaveClass('controller-title');
+});

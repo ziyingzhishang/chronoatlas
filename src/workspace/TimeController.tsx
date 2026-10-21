@@ -70,7 +70,7 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
           if(!floating)return;
           const delta:Record<string,Point>={ArrowLeft:{x:-16,y:0},ArrowRight:{x:16,y:0},ArrowUp:{x:0,y:-16},ArrowDown:{x:0,y:16}};
           if(delta[e.key]){e.preventDefault();move({x:preference.position.x+delta[e.key].x,y:preference.position.y+delta[e.key].y});}
-        }}><span aria-hidden="true">⠿</span><span>{t("时间导航")}</span></button>
+      }}><span aria-hidden="true">⠿</span><span className="controller-title">{t("时间导航")}</span></button>
       <div className="controller-layout-actions">
         {!mobile && <button aria-label={t(floating?'停靠时间控制器':'悬浮时间控制器')} onClick={()=>setPreference(p=>({...p,mode:floating?'docked':'floating'}))}>{t(floating?'停靠':'悬浮')}</button>}
         {floating && <button onClick={()=>move({x:24,y:80})}>{t("归位")}</button>}

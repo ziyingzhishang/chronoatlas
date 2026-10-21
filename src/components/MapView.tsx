@@ -3,7 +3,7 @@ import { useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
 import { createPortal } from 'react-dom';
 import type { PanelName } from '../workspace/WorkspacePanel';
 import type { HistoricalState, SelectedEntity } from '../domain/types';
-import { ASIA_VIEW, type Basemap, type CameraState, type MapAction, type MapLayer } from '../map/history-map';
+import { ASIA_VIEW, allLayers, type Basemap, type CameraState, type MapAction, type MapLayer } from '../map/history-map';
 import { HistoricalMapCanvas, type MapHandle } from './HistoricalMapCanvas';
 import { formatHistoricalYear } from '../domain/timeline';
 
@@ -13,6 +13,9 @@ interface MapViewProps {
   refreshToken?:number;
   selectedEntity: SelectedEntity;
   visibleLayers: Set<MapLayer>;
+  onLayerChange?: (layer:MapLayer, visible:boolean)=>void;
+  showWorld?: boolean;
+  onShowWorldChange?: (visible:boolean)=>void;
   onSelectEntity: (entity: Exclude<SelectedEntity, undefined>) => void;
   workspacePanel?: PanelName|null;
   panelTarget?: HTMLDivElement|null;
@@ -64,6 +67,15 @@ export function MapView(props: MapViewProps) {
       <div className="map-navigation" role="group" aria-label={t("地图视角操作")}>
         <button aria-label={t("放大地图")} title={t("放大")} onClick={() => act('zoomIn')}>＋</button>
         <button aria-label={t("缩小地图")} title={t("缩小")} onClick={() => act('zoomOut')}>−</button>
+        {workspace&&props.workspacePanel!=='layers'&&<details className="quick-layer-control">
+          <summary aria-label={t('地图图层')} title={t('地图图层')}>◈</summary>
+          <fieldset className="quick-layer-popover" aria-label={t('快捷图层')}>
+            <legend>{t('地图图层')}</legend>
+            {allLayers.map(layer=><label key={layer}><input type="checkbox" checked={visibleLayers.has(layer)} onChange={event=>props.onLayerChange?.(layer,event.target.checked)}/>{t(({boundaries:'历史疆域',places:'历史地名',modernReference:'现代参照',events:'历史事件'} as const)[layer])}</label>)}
+            <div className="quick-basemap"><span>{t('地图底图')}</span><button type="button" aria-pressed={basemap==='relief'} onClick={()=>setBasemap('relief')}>{t('地形晕渲')}</button><button type="button" aria-pressed={basemap==='satellite'} onClick={()=>setBasemap('satellite')}>{t('卫星影像')}</button></div>
+            {props.onShowWorldChange&&<label><input type="checkbox" checked={props.showWorld??false} onChange={event=>props.onShowWorldChange?.(event.target.checked)}/>{t('同期世界疆域')}</label>}
+          </fieldset>
+        </details>}
         {workspace&&<button className="map-reset" onClick={()=>act('asia')}>{t("复位")}</button>}
         {canGoBackCamera&&<button className="map-back" aria-label={t("返回上个视角")} title={t("返回上个视角")} onClick={()=>map.current?.restorePrevious()}>{t("返回")}</button>}
         <details className="map-angle" open={workspace?undefined:true}><summary>{t("视角")}</summary>

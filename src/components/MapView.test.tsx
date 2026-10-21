@@ -53,6 +53,16 @@ test('readers can switch basemaps and use accessible zoom and rotate controls', 
   expect(mapInstances.at(-1)!.rotateTo).toHaveBeenCalledWith(60, expect.anything());
 });
 
+test('offers a compact layer shortcut without opening the full workspace panel', async () => {
+  const user = userEvent.setup();
+  render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} onLayerChange={vi.fn()} workspacePanel={null} />);
+
+  await user.click(screen.getByText('◈', { exact: true }));
+
+  expect(screen.getByRole('group', { name: '快捷图层' })).toBeInTheDocument();
+  expect(screen.getByRole('checkbox', { name: '历史疆域' })).toBeInTheDocument();
+});
+
 test('labels the maximum reference with its source period and allows hiding it', async () => {
   const state = getHistoricalState(937);
   const base = state.boundaries[0];

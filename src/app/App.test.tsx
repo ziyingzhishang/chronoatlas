@@ -5,7 +5,8 @@ import userEvent from '@testing-library/user-event';
 
 test('keeps secondary controls closed until requested', async () => {
   render(<App />);
-  expect(screen.getByRole('heading', { level: 1 })).toBeInTheDocument();
+  expect(screen.queryByRole('heading', { level: 1 })).not.toBeInTheDocument();
+  expect(screen.getByRole('status', { name: '当前历史状态' })).toHaveTextContent('800年');
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'全历史'})).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));

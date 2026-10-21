@@ -4,7 +4,7 @@ import { chineseText } from './chinese';
 // historical names deliberately remain unchanged rather than being guessed.
 const english: Record<string, string> = {
   '山河变迁':'Lands Through Time', '中国历史地图':'China Historical Map', '中国历史 · 山河变迁':'China History · Lands Through Time',
-  '工作台工具':'Workspace tools', '图层':'Layers', '事件':'Events', '详情':'Details', '更多':'More',
+  '工作台工具':'Workspace tools', '当前历史状态':'Current historical state', '快捷图层':'Quick layers', '图层':'Layers', '事件':'Events', '详情':'Details', '更多':'More',
   '图层与底图':'Layers and basemap', '历史转折':'Historical turning points', '地域与政权':'Places and polities', '阅读说明与来源':'Reading guide and sources', '显示语言':'Display language',
   '同期世界设置':'Contemporary world settings', '同期世界疆域':'Contemporary world territories', '重试世界资料':'Retry world data',
   '开启后随所选年份显示全球政权。':'Enable to show world polities for the selected year.',

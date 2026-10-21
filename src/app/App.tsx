@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getHistoricalState } from '../domain/history-state';
-import { getTimelineYears, indexToYear, yearToIndex, type YearWindow } from '../domain/timeline';
+import { formatHistoricalYear, getTimelineYears, indexToYear, yearToIndex, type YearWindow } from '../domain/timeline';
 import type { HistoricalEvent, SelectedEntity } from '../domain/types';
 import { EventExplorer } from '../components/EventExplorer';
 import { eventYear } from '../domain/events';
@@ -90,11 +90,16 @@ function HistoryWorkspace() {
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
   return <main className="workspace">
     <header className="workspace-header">
-      <h1>{t('山河变迁')}<span>{t('中国历史地图')}</span></h1>
-      <nav aria-label={t('工作台工具')}>{(['layers','events','details','more'] as const).map((name,i)=><button key={name} aria-expanded={panel===name} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p===name?null:name);}}>{t(['图层','事件','详情','更多'][i])}</button>)}</nav>
+      <div className="map-status-hud" role="status" aria-label={t('当前历史状态')}>
+        <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
+        <span>{t('当前视窗')} · {formatHistoricalYear(timelineWindow[0])}—{formatHistoricalYear(timelineWindow[1])}</span>
+      </div>
+      <nav aria-label={t('工作台工具')}>
+        {(['layers','events','details','more'] as const).map((name,i)=><button className="workspace-tool-icon" key={name} aria-label={t(['图层','事件','详情','更多'][i])} title={t(['图层','事件','详情','更多'][i])} aria-expanded={panel===name} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p===name?null:name);}}>{['◈','◆','ⓘ','⋯'][i]}</button>)}
+      </nav>
     </header>
     <div className="workspace-map-area">
-      <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onSelectEntity={selectEntity} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
+      <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onLayerChange={updateLayer} showWorld={showWorld} onShowWorldChange={value=>{setShowWorld(value);setSelectedEntity(undefined);}} onSelectEntity={selectEntity} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel title={t(titles[panel])} onClose={()=>setPanel(null)}>
         {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear}/>}

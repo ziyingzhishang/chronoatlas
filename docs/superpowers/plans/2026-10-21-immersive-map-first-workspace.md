@@ -33,6 +33,9 @@
 - Modify: `src/styles/workspace.css` — 地图优先 HUD、底部时间条、抽屉/遮罩、分析模式布局和 reduced-motion 样式。
 - Modify: `src/app/integration.test.tsx`、`src/components/Timeline.test.tsx`、`src/components/EventExplorer.test.tsx`、`src/components/MapView.test.tsx`、`src/workspace/TimeController.test.tsx` — 覆盖新交互契约。
 - Modify: `README.md` — 更新探索模式、分析模式和返回操作说明。
+- Modify: `src/components/MapView.tsx`、`src/app/App.tsx` — 将文字工具导航收敛为地图悬浮控制入口和当前状态胶囊。
+- Modify: `src/components/LayerToggle.tsx`、`src/workspace/TimeController.tsx` — 支持快捷图层浮层和极简底部时间 HUD。
+- Modify: `src/styles/workspace.css` — 删除固定标题栏视觉重量，建立悬浮控制条、状态胶囊和安全区样式。
 
 ---
 
@@ -258,6 +261,50 @@ git commit -m "feat: add reversible event drawer navigation"
 说明探索模式、分析模式、时间轴返回、地图镜头返回、事件详情返回，以及桌面/移动端面板行为。
 
 - [ ] **Step 5: Run the complete verification suite**
+
+### Task 7: 收敛为全屏地图与悬浮控制层
+
+**Interfaces:**
+
+- `HistoryWorkspace` 保留 `panel` 作为按需打开的辅助层，不再用常驻文字导航承担地图主操作。
+- `MapView` 提供地图快捷控制组：缩放、图层浮层、定位/复位和返回上个视角；每个图标保留 `aria-label` 与 Tooltip。
+- `TimeController` 在探索模式只显示底部 HUD，分析模式才显示完整时间轴。
+
+- [ ] **Step 1: Add UI contract tests**
+
+在 `src/app/App.test.tsx`、`src/components/MapView.test.tsx` 和 `src/workspace/TimeController.test.tsx` 验证：默认不显示“山河变迁”常驻标题；图层快捷入口可打开图层浮层；时间 HUD 保留当前年份、播放、展开入口；完整分析时间轴仍可打开。
+
+- [ ] **Step 2: Replace text navigation with compact controls**
+
+在 `App.tsx` 将文字导航改为图标按钮和可访问标签；保留面板标题与辅助语义，不删除键盘入口。将当前年份、时期和时间视窗移入地图左上状态胶囊。
+
+- [ ] **Step 3: Add the floating layer popover**
+
+在 `MapView.tsx` 或独立的 `MapQuickControls.tsx` 中增加图层快捷按钮；打开时显示高频图层开关和地形/卫星切换，点击外部或 Escape 关闭，且不改变地图尺寸。
+
+- [ ] **Step 4: Compress the exploration timeline HUD**
+
+调整 `TimeController.tsx` 与 `workspace.css`：探索模式默认只显示当前年份、前后步进、播放和展开入口；分析模式保留完整时间轴、视窗返回和资料节点。
+
+- [ ] **Step 5: Add responsive safe-area styles**
+
+让悬浮控件避开地图版权署名、底部抽屉和当前对象提示；移动端保持可触达的 44px 点击区域，桌面端使用 Tooltip，不将低频旋转/俯仰控件堆叠到主缩放条。
+
+- [ ] **Step 6: Run visual and automated verification**
+
+```bash
+npm test -- --run src/app/App.test.tsx src/components/MapView.test.tsx src/workspace/TimeController.test.tsx
+npm run build
+```
+
+使用本地浏览器分别检查桌面默认探索态、时间轴分析态、图层浮层和 390px 移动端视图；确认地图仍是第一视觉层，且所有图标操作可通过键盘访问。
+
+- [ ] **Step 7: Commit**
+
+```bash
+git add src/app/App.tsx src/app/App.test.tsx src/components/MapView.tsx src/components/MapView.test.tsx src/components/LayerToggle.tsx src/workspace/TimeController.tsx src/workspace/TimeController.test.tsx src/styles/workspace.css docs/superpowers/specs/2026-10-21-immersive-map-first-workspace-design.md docs/superpowers/plans/2026-10-21-immersive-map-first-workspace.md
+git commit -m "feat: simplify map controls into floating HUD"
+```
 
 ```bash
 npm test -- --run
