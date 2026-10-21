@@ -61,4 +61,31 @@ describe('person relationship coverage audit', () => {
       report.records.filter((record) => record.knowledgeTask).map((record) => record.personId),
     );
   });
+
+  it('uses the default applicability directory to separate required gaps from review items', () => {
+    const report = buildPersonRelationshipCoverageReport();
+    const xuanzang = report.byPersonId['xuan-zang'];
+    const banGu = report.byPersonId['ban-gu'];
+
+    expect(xuanzang.categories.governance.applicabilityStatus).toBe('not-applicable');
+    expect(xuanzang.categories.governance.status).toBe('not-applicable');
+    expect(report.requiredMissingByCategory.governance).not.toContain('xuan-zang');
+    expect(report.needsSupplementPersonIds).not.toContain('xuan-zang');
+    expect(report.needsReviewPersonIds).toContain('xuan-zang');
+
+    expect(banGu.requiredMissingCategoryKeys).toContain('governance');
+    expect(report.needsSupplementPersonIds).toContain('ban-gu');
+  });
+
+  it('reports per-category applicability counts and excludes not-applicable entries from coverage denominators', () => {
+    const report = buildPersonRelationshipCoverageReport();
+    const governance = report.coverageByCategory.governance;
+    const counts = report.applicabilityStatusCounts.governance;
+
+    expect(counts.required + counts['not-applicable'] + counts.review).toBe(170);
+    expect(governance.totalPeople).toBe(170);
+    expect(governance.notApplicable).toBe(counts['not-applicable']);
+    expect(governance.coverageRate).toBeGreaterThanOrEqual(0);
+    expect(governance.coverageRate).toBeLessThanOrEqual(1);
+  });
 });

@@ -20,19 +20,21 @@ import { heritageDetails as defaultHeritageDetails, type HeritageDetail } from '
 import { personDetails as defaultPersonDetails } from './person-details';
 import { polityDetails as defaultPolityDetails } from './polity-details';
 import { sourceNotes as defaultSourceNotes } from './sources';
+import {
+  buildPersonRelationshipApplicabilityCatalog,
+  personRelationshipApplicability,
+  personRelationshipApplicabilityCategoryKeys,
+  type PersonRelationshipApplicabilityCatalog,
+  type PersonRelationshipApplicabilityStatus,
+} from './person-relationship-applicability';
 
-export const personRelationshipCategoryKeys = [
-  'governance',
-  'kinship',
-  'allianceConflict',
-  'eventParticipation',
-] as const;
-
+export const personRelationshipCategoryKeys = personRelationshipApplicabilityCategoryKeys;
 export type PersonRelationshipCategory = typeof personRelationshipCategoryKeys[number];
 export type PersonRelationshipCategoryStatus = 'covered' | 'missing' | 'not-applicable';
 
 export interface PersonRelationshipCategoryCoverage {
   status: PersonRelationshipCategoryStatus;
+  applicabilityStatus: PersonRelationshipApplicabilityStatus;
   evidenceIds: string[];
   relatedIds: string[];
   note: string;
@@ -50,6 +52,7 @@ export interface PersonRelationshipCoverageCatalog extends KnowledgeCoverageCata
 export interface PersonRelationshipCoverageOptions {
   catalog?: PersonRelationshipCoverageCatalog;
   notApplicableByPersonId?: Partial<Record<string, readonly PersonRelationshipCategory[]>>;
+  applicabilityCatalog?: PersonRelationshipApplicabilityCatalog;
 }
 
 export interface PersonRelationshipCoverageRecord {
@@ -62,6 +65,8 @@ export interface PersonRelationshipCoverageRecord {
   genericRelationClaimIds: string[];
   categories: Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage>;
   missingCategoryKeys: PersonRelationshipCategory[];
+  requiredMissingCategoryKeys: PersonRelationshipCategory[];
+  reviewCategoryKeys: PersonRelationshipCategory[];
   notApplicableCategoryKeys: PersonRelationshipCategory[];
   knowledgeRelationshipStatus: CoverageStatus;
   knowledgeTask: boolean;
@@ -77,8 +82,20 @@ export interface PersonRelationshipCoverageReport {
   incompletePersonIds: string[];
   genericOnlyPersonIds: string[];
   missingByCategory: Record<PersonRelationshipCategory, string[]>;
+  requiredMissingByCategory: Record<PersonRelationshipCategory, string[]>;
+  reviewByCategory: Record<PersonRelationshipCategory, string[]>;
   notApplicableByCategory: Record<PersonRelationshipCategory, string[]>;
+  applicabilityStatusCounts: PersonRelationshipApplicabilityCatalog['statusCounts'];
+  coverageByCategory: Record<PersonRelationshipCategory, {
+    totalPeople: number;
+    covered: number;
+    requiredMissing: number;
+    review: number;
+    notApplicable: number;
+    coverageRate: number;
+  }>;
   needsSupplementPersonIds: string[];
+  needsReviewPersonIds: string[];
   knowledgeTaskPersonIds: string[];
   knowledgeRelationshipCoveredButIncompletePersonIds: string[];
   knowledgeStatusMismatches: string[];
@@ -113,12 +130,14 @@ function unique(values: readonly string[]): string[] {
   return [...new Set(values)].sort();
 }
 
-function emptyCategories(): Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage> {
+function emptyCategories(
+  applicability: Record<PersonRelationshipCategory, PersonRelationshipApplicabilityStatus>,
+): Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage> {
   return {
-    governance: { status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 served、appointed、succeeded 或 ruled 关系。' },
-    kinship: { status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 parent、child、sibling 或 spouse 关系。' },
-    allianceConflict: { status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 ally 或 enemy 关系。' },
-    eventParticipation: { status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到参与事件 claim 或事件详情参与记录。' },
+    governance: { applicabilityStatus: applicability.governance, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 served、appointed、succeeded 或 ruled 关系。' },
+    kinship: { applicabilityStatus: applicability.kinship, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 parent、child、sibling 或 spouse 关系。' },
+    allianceConflict: { applicabilityStatus: applicability.allianceConflict, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 ally 或 enemy 关系。' },
+    eventParticipation: { applicabilityStatus: applicability.eventParticipation, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到参与事件 claim 或事件详情参与记录。' },
   };
 }
 
@@ -158,8 +177,11 @@ function categoryCoverage(
   polities: Set<string>,
   events: Set<string>,
   notApplicable: Set<PersonRelationshipCategory>,
+  applicability: Record<PersonRelationshipCategory, { status: PersonRelationshipApplicabilityStatus; rationale: string }>,
 ): { categories: Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage>; relationshipClaimIds: string[]; genericRelationClaimIds: string[]; reachable: boolean } {
-  const categories = emptyCategories();
+  const categories = emptyCategories(Object.fromEntries(
+    personRelationshipCategoryKeys.map((category) => [category, applicability[category].status]),
+  ) as Record<PersonRelationshipCategory, PersonRelationshipApplicabilityStatus>);
   const relationshipClaims = claims.filter((claim) => (
     (claim.subjectId === person.id || claim.objectId === person.id)
     && knownEndpoint(claim, person.id, people, polities, events)
@@ -188,12 +210,19 @@ function categoryCoverage(
     const entry = categories[category];
     entry.evidenceIds = unique(entry.evidenceIds);
     entry.relatedIds = unique(entry.relatedIds);
-    if (notApplicable.has(category)) {
+    if (notApplicable.has(category) || applicability[category].status === 'not-applicable') {
       entry.status = 'not-applicable';
-      entry.note = '该类别由调用方明确标记为当前人物不适用，不能等同于已补齐。';
+      entry.applicabilityStatus = 'not-applicable';
+      entry.note = notApplicable.has(category)
+        ? '该类别由调用方明确标记为当前人物不适用，不能等同于已补齐。'
+        : applicability[category].rationale;
     } else if (entry.evidenceIds.length > 0) {
       entry.status = 'covered';
       entry.note = '至少存在一条可解析且属于该类别的关系证据。';
+    } else {
+      entry.note = applicability[category].status === 'required'
+        ? `${entry.note} 适用性目录将其列为必须补齐。`
+        : `${entry.note} 适用性目录将其列为需要人工复核。`;
     }
   });
 
@@ -210,13 +239,25 @@ function buildRecord(
   catalog: PersonRelationshipCoverageCatalog,
   knowledge: ReturnType<typeof auditKnowledgeCoverage>,
   notApplicable: Set<PersonRelationshipCategory>,
+  applicability: PersonRelationshipApplicabilityCatalog,
 ): PersonRelationshipCoverageRecord {
   const people = new Set(catalog.people.map((item) => item.id));
   const polities = new Set(catalog.polities.map((item) => item.id));
   const events = new Set(catalog.events.map((item) => item.id));
-  const coverage = categoryCoverage(person, catalog.claims, catalog.eventDetails, people, polities, events, notApplicable);
+  const applicabilityRecord = applicability.byPersonId[person.id];
+  const applicabilityByCategory = Object.fromEntries(personRelationshipCategoryKeys.map((category) => [
+    category,
+    applicabilityRecord?.categories[category] ?? {
+      status: 'review' as const,
+      rationale: '人物不在适用性目录中，必须人工复核。',
+      evidenceIds: [],
+    },
+  ])) as unknown as Record<PersonRelationshipCategory, { status: PersonRelationshipApplicabilityStatus; rationale: string }>;
+  const coverage = categoryCoverage(person, catalog.claims, catalog.eventDetails, people, polities, events, notApplicable, applicabilityByCategory);
   const categories = coverage.categories;
   const missingCategoryKeys = personRelationshipCategoryKeys.filter((key) => categories[key].status === 'missing');
+  const requiredMissingCategoryKeys = personRelationshipCategoryKeys.filter((key) => categories[key].status === 'missing' && categories[key].applicabilityStatus === 'required');
+  const reviewCategoryKeys = personRelationshipCategoryKeys.filter((key) => categories[key].status === 'missing' && categories[key].applicabilityStatus === 'review');
   const notApplicableCategoryKeys = personRelationshipCategoryKeys.filter((key) => categories[key].status === 'not-applicable');
   const complete = missingCategoryKeys.length === 0;
   const knowledgeEntity = knowledge.byKey[`person:${person.id}`];
@@ -232,6 +273,8 @@ function buildRecord(
     genericRelationClaimIds: coverage.genericRelationClaimIds,
     categories,
     missingCategoryKeys,
+    requiredMissingCategoryKeys,
+    reviewCategoryKeys,
     notApplicableCategoryKeys,
     knowledgeRelationshipStatus,
     knowledgeTask,
@@ -243,11 +286,21 @@ export function buildPersonRelationshipCoverageReport(
 ): PersonRelationshipCoverageReport {
   const catalog = options.catalog ?? defaultCatalog;
   const knowledge = auditKnowledgeCoverage(catalog);
+  const applicability = options.applicabilityCatalog ?? (
+    catalog === defaultCatalog
+      ? personRelationshipApplicability
+      : buildPersonRelationshipApplicabilityCatalog({
+        people: catalog.people,
+        claims: catalog.claims,
+        eventDetails: catalog.eventDetails,
+      })
+  );
   const records = catalog.people.map((person) => buildRecord(
     person,
     catalog,
     knowledge,
     new Set(options.notApplicableByPersonId?.[person.id] ?? []),
+    applicability,
   ));
   const byPersonId = Object.fromEntries(records.map((record) => [record.personId, record]));
   const missingByCategory = Object.fromEntries(personRelationshipCategoryKeys.map((key) => [
@@ -258,6 +311,29 @@ export function buildPersonRelationshipCoverageReport(
     key,
     records.filter((record) => record.notApplicableCategoryKeys.includes(key)).map((record) => record.personId),
   ])) as Record<PersonRelationshipCategory, string[]>;
+  const requiredMissingByCategory = Object.fromEntries(personRelationshipCategoryKeys.map((key) => [
+    key,
+    records.filter((record) => record.requiredMissingCategoryKeys.includes(key)).map((record) => record.personId),
+  ])) as Record<PersonRelationshipCategory, string[]>;
+  const reviewByCategory = Object.fromEntries(personRelationshipCategoryKeys.map((key) => [
+    key,
+    records.filter((record) => record.reviewCategoryKeys.includes(key)).map((record) => record.personId),
+  ])) as Record<PersonRelationshipCategory, string[]>;
+  const coverageByCategory = Object.fromEntries(personRelationshipCategoryKeys.map((key) => {
+    const covered = records.filter((record) => record.categories[key].status === 'covered').length;
+    const requiredMissing = requiredMissingByCategory[key].length;
+    const review = reviewByCategory[key].length;
+    const notApplicable = notApplicableByCategory[key].length;
+    const denominator = records.length - notApplicable;
+    return [key, {
+      totalPeople: records.length,
+      covered,
+      requiredMissing,
+      review,
+      notApplicable,
+      coverageRate: denominator === 0 ? 1 : covered / denominator,
+    }];
+  })) as PersonRelationshipCoverageReport['coverageByCategory'];
   const incompletePersonIds = records.filter((record) => !record.complete).map((record) => record.personId);
   return {
     totalPeople: records.length,
@@ -269,8 +345,17 @@ export function buildPersonRelationshipCoverageReport(
     incompletePersonIds,
     genericOnlyPersonIds: records.filter((record) => record.genericOnly).map((record) => record.personId),
     missingByCategory,
+    requiredMissingByCategory,
+    reviewByCategory,
     notApplicableByCategory,
-    needsSupplementPersonIds: incompletePersonIds,
+    applicabilityStatusCounts: Object.fromEntries(personRelationshipCategoryKeys.map((key) => {
+      const counts = { required: 0, 'not-applicable': 0, review: 0 };
+      records.forEach((record) => { counts[record.categories[key].applicabilityStatus] += 1; });
+      return [key, counts];
+    })) as PersonRelationshipCoverageReport['applicabilityStatusCounts'],
+    coverageByCategory,
+    needsSupplementPersonIds: records.filter((record) => record.requiredMissingCategoryKeys.length > 0).map((record) => record.personId),
+    needsReviewPersonIds: records.filter((record) => record.reviewCategoryKeys.length > 0).map((record) => record.personId),
     knowledgeTaskPersonIds: records.filter((record) => record.knowledgeTask).map((record) => record.personId),
     knowledgeRelationshipCoveredButIncompletePersonIds: records
       .filter((record) => record.knowledgeRelationshipStatus === 'covered' && !record.complete)
