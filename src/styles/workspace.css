@@ -69,8 +69,6 @@
 .quick-layer-popover legend { padding:0 4px; color:#efd79d; font-size:12px; }
 .quick-layer-popover label { display:flex; align-items:center; gap:8px; min-height:32px; font-size:12px; }
 .quick-layer-popover input { accent-color:#c6a15b; }
-.quick-directory-button { min-height:32px; padding:0 8px; border:1px solid #687358; border-radius:4px; background:#253329; color:#e1e4d6; text-align:left; font:12px system-ui,sans-serif; }
-.quick-directory-button:hover { border-color:#c6a15b; color:#f0e4c2; }
 .quick-basemap { display:grid; grid-template-columns:1fr 1fr; gap:4px; margin-top:4px; padding-top:8px; border-top:1px solid #61705266; }
 .quick-basemap span { grid-column:1/-1; color:#aeb8a8; font-size:11px; }
 .quick-basemap button { width:auto !important; min-height:32px !important; padding:0 5px !important; border:1px solid #566449 !important; font-size:11px !important; }

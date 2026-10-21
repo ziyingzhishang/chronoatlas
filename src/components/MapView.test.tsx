@@ -60,19 +60,6 @@ test('readers can switch basemaps and use accessible zoom and rotate controls', 
   expect(mapInstances.at(-1)!.rotateTo).toHaveBeenCalledWith(60, expect.anything());
 });
 
-test('offers a compact layer shortcut without opening the full workspace panel', async () => {
-  const user = userEvent.setup();
-  const onOpenDetails=vi.fn();
-  render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} onLayerChange={vi.fn()} onOpenDetails={onOpenDetails} workspacePanel={null} />);
-
-  await user.click(screen.getByText('◈', { exact: true }));
-
-  expect(screen.getByRole('group', { name: '快捷图层' })).toBeInTheDocument();
-  expect(screen.getByRole('checkbox', { name: '历史疆域' })).toBeInTheDocument();
-  await user.click(screen.getByRole('button',{name:'政权与地点目录'}));
-  expect(onOpenDetails).toHaveBeenCalledOnce();
-});
-
 test('offers mercator and globe projection controls in the map toolbar', async () => {
   const user = userEvent.setup();
   render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} workspacePanel={null} />);
