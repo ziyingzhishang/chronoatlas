@@ -342,6 +342,61 @@ export const personDetails: PersonDetail[] = [
     aliases: ['西夏景宗'], offices: [{ title: '西夏皇帝', polityId: 'western_xia', placeId: 'xingqing', validFrom: 1038, validTo: 1048, datePrecision: 'range', sourceIds }],
     keyEvents: ['western-xia-founded'], sourceIds, uncertaintyNote: '1038年是称帝与国号形成节点，不把西夏后期的扩张范围提前回填到建国当年。',
   },
+  {
+    personId: 'yu-the-great', biography: '禹是传统夏代建政叙事中的核心人物，治水、受禅与夏王朝形成在后世文献中相互连接。',
+    aliases: ['大禹', '夏禹'], offices: [{ title: '传统夏代先王', polityId: 'xia_early', datePrecision: 'unknown', sourceIds: ['china-chronology'] }],
+    keyEvents: [], sourceIds: ['china-chronology'], uncertaintyNote: '夏代年代、禹的个人事迹及“建立夏”的具体历史过程存在文献与考古层面的争议，本详情不把传统叙事当作已证实的逐年编年。',
+  },
+  {
+    personId: 'wu-ding', biography: '武丁是商代重要君主，甲骨文记录了其祭祀、战争和王室活动，反映出晚商国家组织的一部分面貌。',
+    aliases: ['殷高宗'], offices: [{ title: '商王', polityId: 'shang', datePrecision: 'approximate', sourceIds: ['china-chronology'] }],
+    keyEvents: [], sourceIds: ['china-chronology'], uncertaintyNote: '武丁在位年代采用商代分期的约年范围；甲骨卜辞的纪事性质与后世王年换算不能简单等同。',
+  },
+  {
+    personId: 'ji-chang', biography: '姬昌即周文王，在商周更替前整合周人政治资源，为周武王克商和西周王室秩序奠定基础。',
+    aliases: ['周文王'], offices: [{ title: '周方伯与先王', polityId: 'zhou_western', datePrecision: 'approximate', sourceIds: ['china-chronology', 'western-zhou-national-museum'] }],
+    keyEvents: ['zhou-conquest'], sourceIds: ['china-chronology', 'western-zhou-national-museum'], uncertaintyNote: '文王生卒与“文王时期周人势力范围”存在不同重建，本详情只将其与周克商叙事建立阶段性导航。',
+  },
+  {
+    personId: 'ji-yijiu', biography: '姬宜臼即周平王，周室东迁后以洛邑为政治中心，东周王室由此进入新的历史阶段。',
+    aliases: ['周平王'], offices: [{ title: '东周王室国王', polityId: 'zhou_eastern', placeId: 'luoyang', validFrom: -770, validTo: -720, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['zhou-eastward'], sourceIds: ['china-chronology'], uncertaintyNote: '东迁涉及周王室、诸侯与军事保护等多重过程；洛邑作为王室中心不等同于对诸侯地区的直接行政控制。',
+  },
+  {
+    personId: 'qin-mugong', biography: '秦穆公时期秦国在西部诸侯格局中扩展影响，秦国的崛起为后来的统一提供了长期政治与军事积累。',
+    aliases: ['秦穆公'], offices: [{ title: '秦国国君', polityId: 'qin_state', datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '秦国早期年代与疆域需按诸侯国阶段核验，不能把秦穆公时期的影响范围提前等同于秦帝国版图。',
+  },
+  {
+    personId: 'zhao-wuling', biography: '赵武灵王推行胡服骑射，推动赵国军事组织和边疆防务转型，是战国政治改革的重要案例。',
+    aliases: ['赵武灵王'], offices: [{ title: '赵国国君', polityId: 'zhao_warring', datePrecision: 'range', sourceIds: ['zizhi-tongjian'] }],
+    keyEvents: [], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '胡服骑射的具体实施过程和年代按战国编年概括，改革成效不应直接推导为赵国全境同时改变。',
+  },
+  {
+    personId: 'modu-chanyu', biography: '冒顿单于整合匈奴部众并建立强势草原政治秩序，汉初北方格局因此发生重要变化。',
+    aliases: ['冒顿单于'], offices: [{ title: '匈奴单于', polityId: 'xiongnu', datePrecision: 'range', sourceIds: ['zizhi-tongjian'] }],
+    keyEvents: [], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '匈奴政治中心具有移动性，冒顿“建立”更多指部众整合和权力重组，不应套用固定都城或行政疆界概念。',
+  },
+  {
+    personId: 'esen-taishi', biography: '也先是北元中期蒙古政治中的重要军事与权力人物，曾拥立脱脱不花并在其后争夺汗权。',
+    aliases: ['也先太师'], offices: [{ title: '瓦剌太师与北元军政核心', polityId: 'northern_yuan', datePrecision: 'range', sourceIds: ['northern-yuan-yesen'] }],
+    keyEvents: [], sourceIds: ['northern-yuan-yesen'], uncertaintyNote: '也先与脱脱不花的关系在拥立、共治和争夺汗权之间变化，不能用单一“辅臣”标签覆盖全部阶段。',
+  },
+  {
+    personId: 'tuotuobuhua', biography: '脱脱不花是北元中期被拥立的蒙古大汗，其汗位与也先的军事权力并存。',
+    aliases: ['脱脱不花汗'], offices: [{ title: '北元大汗', polityId: 'northern_yuan', datePrecision: 'range', sourceIds: ['northern-yuan-early-ming', 'northern-yuan-yesen'] }],
+    keyEvents: [], sourceIds: ['northern-yuan-early-ming', 'northern-yuan-yesen'], uncertaintyNote: '北元作为元室北迁后的历史称谓存在分期和定义差异；脱脱不花的汗位、实际控制与也先权力需分层展示。',
+  },
+  {
+    personId: 'zhu-yousong', biography: '朱由崧即弘光帝，是南明诸政权中的重要君主之一；其政权以南京为主要政治中心，存续时间较短。',
+    aliases: ['弘光帝'], offices: [{ title: '南明弘光帝', polityId: 'ming_southern', placeId: 'jiankang', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南明是明室南迁后多个政权阶段的合称，朱由崧政权不能代表南明全部政权，也不能由南京名义控制推导完整疆域。',
+  },
+  {
+    personId: 'shi-kefa', biography: '史可法是南明弘光时期的重要军政人物，负责扬州防务，与朱由崧朝廷存在阶段性君臣关系。',
+    aliases: ['道邻'], offices: [{ title: '南明督师', polityId: 'ming_southern', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '史可法与弘光朝廷的关系以任职和军事防务为核心，不把后世忠烈评价直接替代当时政治关系的史料核验。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

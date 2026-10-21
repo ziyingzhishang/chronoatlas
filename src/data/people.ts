@@ -67,6 +67,17 @@ export const people: Person[] = [
   { id: 'zhao-kuangyin', name: '赵匡胤', aliases: ['宋太祖'], birthYear: 927, deathYear: 976, roles: ['皇帝', '军事领袖'], polityIds: ['song_northern'], description: '赵匡胤通过陈桥兵变受禅建立北宋，开封成为北宋的政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'wanyan-aguda', name: '完颜阿骨打', aliases: ['金太祖'], birthYear: 1068, deathYear: 1123, roles: ['皇帝', '军事领袖'], polityIds: ['jin_jurchen'], description: '完颜阿骨打整合女真诸部并于会宁称帝建立金，金与辽、宋的政治竞争由此展开。', sourceIds: ['zizhi-tongjian'] },
   { id: 'li-yuanhao', name: '李元昊', aliases: ['西夏景宗'], birthYear: 1003, deathYear: 1048, roles: ['皇帝', '军事领袖'], polityIds: ['western_xia'], description: '李元昊于1038年称帝建立西夏，兴庆府成为其政权的政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'yu-the-great', name: '禹', aliases: ['大禹', '夏禹'], roles: ['君主', '治水者'], polityIds: ['xia_early'], description: '禹是传统夏代建政叙事中的核心人物，治水与夏王朝形成相连，但其历史年代和个人事迹仍需区分传说、文献与考古证据。', sourceIds: ['china-chronology'] },
+  { id: 'wu-ding', name: '武丁', aliases: ['殷高宗'], roles: ['君主'], polityIds: ['shang'], description: '武丁是商代重要君主，甲骨文材料为其统治、祭祀与战争提供了较丰富的同时代线索。', sourceIds: ['china-chronology'] },
+  { id: 'ji-chang', name: '姬昌', aliases: ['周文王'], roles: ['君主', '政治家'], polityIds: ['zhou_western'], description: '姬昌即周文王，在商周更替前整合周人政治资源，为周武王克商和西周秩序建立奠定基础。', sourceIds: ['china-chronology', 'western-zhou-national-museum'] },
+  { id: 'ji-yijiu', name: '姬宜臼', aliases: ['周平王'], deathYear: -720, roles: ['君主'], polityIds: ['zhou_eastern'], description: '姬宜臼即周平王，周室东迁后以洛邑为政治中心，东周王室由此进入新的历史阶段。', sourceIds: ['china-chronology'] },
+  { id: 'qin-mugong', name: '嬴任好', aliases: ['秦穆公'], deathYear: -621, roles: ['君主', '诸侯'], polityIds: ['qin_state'], description: '秦穆公时期秦国在西部诸侯格局中扩展影响，秦国的崛起仍应与前221年建立的秦帝国分开叙述。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'zhao-wuling', name: '赵雍', aliases: ['赵武灵王'], birthYear: -340, deathYear: -295, roles: ['君主', '军事改革者'], polityIds: ['zhao_warring'], description: '赵武灵王推行胡服骑射并重组赵国军事体系，是战国赵国制度与军事变革的重要人物。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'modu-chanyu', name: '冒顿', aliases: ['冒顿单于'], deathYear: -174, roles: ['单于', '军事领袖'], polityIds: ['xiongnu'], description: '冒顿单于整合匈奴部众并建立强势草原政治秩序，匈奴的部众结构与中心迁徙不能套用定都王朝模型。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'esen-taishi', name: '也先', aliases: ['也先太师'], birthYear: 1407, deathYear: 1455, roles: ['军事领袖', '权臣'], polityIds: ['northern_yuan'], description: '也先是北元中期蒙古政治中的重要军事与权力人物，曾拥立脱脱不花并在其后争夺汗权。', sourceIds: ['northern-yuan-yesen'] },
+  { id: 'tuotuobuhua', name: '脱脱不花', aliases: ['脱脱不花汗'], birthYear: 1422, deathYear: 1457, roles: ['大汗', '君主'], polityIds: ['northern_yuan'], description: '脱脱不花是北元中期被拥立的蒙古大汗，其汗位与也先的军事权力并存，关系应按阶段而非单一君臣结构理解。', sourceIds: ['northern-yuan-early-ming', 'northern-yuan-yesen'] },
+  { id: 'zhu-yousong', name: '朱由崧', aliases: ['弘光帝'], birthYear: 1607, deathYear: 1646, roles: ['皇帝', '南明君主'], polityIds: ['ming_southern'], description: '朱由崧即弘光帝，是南明诸政权中的首位重要君主之一；南明是明室南迁后多个阶段性政权的合称。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'shi-kefa', name: '史可法', aliases: ['道邻'], birthYear: 1601, deathYear: 1645, roles: ['督师', '官员', '军事领袖'], polityIds: ['ming_southern'], description: '史可法是南明弘光时期的重要军政人物，负责扬州防务，与朱由崧朝廷存在阶段性君臣关系。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
