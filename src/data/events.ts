@@ -268,7 +268,7 @@ const catalog: HistoricalEvent[] = [
   {
     id: 'zhou-eastward', year: -770, title: '周王室东迁',
     summary: '周王室迁都洛阳，东周时期开始。',
-    datePrecision: 'year', region: 'china', category: '迁都／迁徙', sourceIds: [], verification: 'checked', placeId: 'luoyang',
+    datePrecision: 'year', region: 'china', category: '迁都／迁徙', sourceIds: ['china-chronology'], verification: 'checked', placeId: 'luoyang',
     background: '西周末年的政治危机使王室原有统治秩序难以维持。',
     process: '王室于前770年把都城迁至洛阳，历史分期由西周转入东周。',
     impact: '王室权威下降，诸侯的自主性增强；后来的春秋与战国格局经历了长期演变。',
@@ -535,7 +535,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'song-founded', year: 960, title: '宋建立', summary: '赵匡胤通过陈桥兵变建立宋朝。',
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: [], verification: 'checked', placeId: 'kaifeng',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian', 'china-chronology'], verification: 'checked', placeId: 'kaifeng',
     background: '赵匡胤担任后周殿前都点检，掌握重要军事力量。',
     process: '960年陈桥兵变后，赵匡胤建立宋朝，史称北宋。',
     impact: '中原王朝更替进入宋的阶段；地区间的并立与后续整合仍在继续，不能把建国等同于完成统一。',
