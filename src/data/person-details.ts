@@ -375,7 +375,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'modu-chanyu', biography: '冒顿单于整合匈奴部众并建立强势草原政治秩序，汉初北方格局因此发生重要变化。',
     aliases: ['冒顿单于'], offices: [{ title: '匈奴单于', polityId: 'xiongnu', datePrecision: 'range', sourceIds: ['zizhi-tongjian'] }],
-    keyEvents: [], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '匈奴政治中心具有移动性，冒顿“建立”更多指部众整合和权力重组，不应套用固定都城或行政疆界概念。',
+    keyEvents: ['xiongnu-founded'], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '匈奴政治中心具有移动性，冒顿“建立”更多指部众整合和权力重组，不应套用固定都城或行政疆界概念。',
   },
   {
     personId: 'esen-taishi', biography: '也先是北元中期蒙古政治中的重要军事与权力人物，曾拥立脱脱不花并在其后争夺汗权。',
@@ -482,6 +482,36 @@ export const personDetails: PersonDetail[] = [
     personId: 'murong-tuyuhun', biography: '慕容吐谷浑率部众向西迁徙，吐谷浑名称和河湟—青海区域政治共同体在其后逐步形成。',
     aliases: ['吐谷浑'], offices: [{ title: '吐谷浑部众首领', polityId: 'tuyuhun', validFrom: 296, validTo: 317, datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['tuyuhun-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '313年前后是吐谷浑形成阶段的约年，迁徙过程、首领体系与后续政权建制不能全部归结为慕容吐谷浑个人完成。',
+  },
+  {
+    personId: 'songtsen-gampo', biography: '松赞干布继承并扩大吐蕃高原政治基础，推动诸部整合、对外关系和王权中心建设，吐蕃由此进入帝国形成阶段。',
+    aliases: ['弃宗弄赞'], offices: [{ title: '吐蕃赞普', polityId: 'tibetan_empire', validFrom: 629, validTo: 650, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['tibetan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '吐蕃形成不是单一年份完成的国家化过程，松赞干布时期的高原整合、拉萨中心和唐蕃关系需按不同阶段阅读。',
+  },
+  {
+    personId: 'piluo-ge', biography: '皮罗阁在洱海区域经营蒙舍诏并整合六诏力量，南诏在唐廷册封和地方扩张的交错过程中形成。',
+    aliases: ['阁罗凤之父'], offices: [{ title: '南诏王', polityId: 'nanzhao', validFrom: 728, validTo: 748, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '738年册封与南诏地方整合是相关但不同的节点；唐廷承认不等同于南诏当年已完成对西南全部地区的直接控制。',
+  },
+  {
+    personId: 'duan-siping', biography: '段思平在后南诏时期的洱海政治格局中取得主导地位，建立大理并延续西南地方王国的制度与文化传统。',
+    aliases: ['大理太祖'], offices: [{ title: '大理国王', polityId: 'dali', validFrom: 937, validTo: 944, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['dali-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '大理建立年代和段思平事迹主要依赖后世编年与地方传统，937年作为政权形成节点使用，不据此恢复全域边界。',
+  },
+  {
+    personId: 'duan-ye', biography: '段业在后凉衰乱后的河西张掖被推立为君，北凉由此进入形成阶段；其统治随后被沮渠蒙逊等力量改造。',
+    aliases: ['北凉君主'], offices: [{ title: '北凉君主', polityId: 'northern_liang', placeId: 'zhangye', validFrom: 397, validTo: 401, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '397年是段业被推立与北凉分期的形成节点，北凉后续由沮渠氏掌政，不能把段业个人统治等同于北凉全期。',
+  },
+  {
+    personId: 'qifu-guoren', biography: '乞伏国仁在前秦衰乱后于陇右建立西秦，西秦的政治中心和控制范围随与前秦、后秦的战争而多次变化。',
+    aliases: ['西秦宣烈王'], offices: [{ title: '西秦君主', polityId: 'western_qin', validFrom: 385, validTo: 388, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '385年是西秦形成阶段的起点，乞伏国仁称王、政权迁徙和后续复立属于连续但不同的历史节点。',
+  },
+  {
+    personId: 'murong-huang', biography: '慕容皝在辽东与河北重建慕容氏势力，337年称燕王，前燕随后发展为十六国时期的重要政权。',
+    aliases: ['前燕文明帝'], offices: [{ title: '前燕君主', polityId: 'former_yan', placeId: 'ye', validFrom: 337, validTo: 348, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['former-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '337年称燕王是前燕形成的重要节点，前燕在辽东、河北的控制范围随战争变化，不能回填为固定疆域。',
   },
 ];
 

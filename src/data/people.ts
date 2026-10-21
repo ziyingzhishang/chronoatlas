@@ -94,6 +94,12 @@ export const people: Person[] = [
   { id: 'jumong', name: '朱蒙', aliases: ['高朱蒙', '东明圣王'], birthYear: -58, deathYear: -19, roles: ['国王', '建国者'], polityIds: ['goguryeo'], description: '朱蒙是高句丽建国叙事中的核心人物，传统纪年以公元前37年作为其建立高句丽的节点。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'park-hyeokgeose', name: '朴赫居世', aliases: ['赫居世居西干'], birthYear: -69, deathYear: 4, roles: ['国王', '建国者'], polityIds: ['silla'], description: '朴赫居世是新罗早期王权传统中的开国君主，传统纪年以公元前57年即位作为新罗起始节点。', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'] },
   { id: 'murong-tuyuhun', name: '慕容吐谷浑', aliases: ['吐谷浑'], birthYear: 246, deathYear: 317, roles: ['部族首领', '迁徙领袖'], polityIds: ['tuyuhun'], description: '慕容吐谷浑率部众向西迁徙，吐谷浑名称和河湟—青海区域政治共同体由此形成并持续发展。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'songtsen-gampo', name: '松赞干布', aliases: ['弃宗弄赞'], birthYear: 617, deathYear: 650, roles: ['赞普', '建国者', '军事领袖'], polityIds: ['tibetan_empire'], description: '松赞干布整合高原诸部并推动吐蕃进入帝国形成阶段，拉萨及雅鲁藏布江中游成为其政治活动的重要区域。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'piluo-ge', name: '皮罗阁', aliases: ['阁罗凤之父'], deathYear: 748, roles: ['南诏王', '地方统治者'], polityIds: ['nanzhao'], description: '皮罗阁在洱海区域整合蒙舍诏等力量，南诏在唐廷册封与地方扩张的交错过程中进入形成阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'duan-siping', name: '段思平', aliases: ['大理太祖'], birthYear: 893, deathYear: 944, roles: ['国王', '建国者', '军事领袖'], polityIds: ['dali'], description: '段思平整合洱海区域政治资源建立大理，承接南诏之后的地方政权传统。', sourceIds: ['china-chronology'] },
+  { id: 'duan-ye', name: '段业', aliases: ['北凉君主'], deathYear: 401, roles: ['君主', '地方统治者'], polityIds: ['northern_liang'], description: '段业在河西张掖一带被推立为君，北凉由此进入形成阶段；其后沮渠蒙逊掌握政权并改变北凉政治结构。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'qifu-guoren', name: '乞伏国仁', aliases: ['西秦宣烈王'], deathYear: 388, roles: ['君主', '部族首领', '军事领袖'], polityIds: ['western_qin'], description: '乞伏国仁在陇右建立西秦，政权经历与前秦、后秦的阶段性竞争，不能用固定首都或连续疆域概括。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'murong-huang', name: '慕容皝', aliases: ['前燕文明帝'], birthYear: 297, deathYear: 348, roles: ['皇帝', '军事领袖'], polityIds: ['former_yan'], description: '慕容皝在辽东、河北重建燕政权并于337年称燕王，前燕由此进入形成阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
