@@ -453,6 +453,36 @@ export const personDetails: PersonDetail[] = [
       { title: '孙吴皇帝', polityId: 'wu_three', placeId: 'jiankang', validFrom: 222, validTo: 252, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
     ], keyEvents: ['red-cliffs', 'three-kingdoms'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '孙权在称帝前长期以汉臣和江东实际统治者身份活动，222年吴王阶段与229年正式称帝应与孙吴全期分层展示。',
   },
+  {
+    personId: 'han-qian', biography: '韩虔即韩景侯，三家分晋后韩在前403年获周王室承认，韩作为战国诸侯国进入传统编年。',
+    aliases: ['韩景侯'], offices: [{ title: '韩国诸侯', polityId: 'han_warring', validFrom: -403, validTo: -400, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['han-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '前403年是周王室册命与战国分期的传统节点，不等同于韩在此前没有独立政治活动，也不据此推导完整疆域。',
+  },
+  {
+    personId: 'wei-wenhou', biography: '魏斯即魏文侯，三家分晋后成为魏国早期君主，通过任用李悝等人和经营河东奠定魏国发展基础。',
+    aliases: ['魏文侯'], offices: [{ title: '魏国诸侯', polityId: 'wei_warring', validFrom: -403, validTo: -396, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['wei-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '魏文侯改革与三家分晋是相互关联但不同的历史层次；改革内容和年代以传统文献叙述为主，不能简化为单一诏令。',
+  },
+  {
+    personId: 'zhao-liehou', biography: '赵籍即赵烈侯，三家分晋后赵在前403年获周王室承认，赵国由此进入战国诸侯的传统分期。',
+    aliases: ['赵烈侯'], offices: [{ title: '赵国诸侯', polityId: 'zhao_warring', validFrom: -403, validTo: -400, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['zhao-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '前403年只标记周王室承认和传统编年节点，不把后来的赵武灵王改革或赵国疆域提前归入赵烈侯时期。',
+  },
+  {
+    personId: 'jumong', biography: '朱蒙是高句丽建国叙事中的核心人物，传统纪年以公元前37年作为其在东北亚建立高句丽的节点。',
+    aliases: ['高朱蒙', '东明圣王'], offices: [{ title: '高句丽国王', polityId: 'goguryeo', validFrom: -37, validTo: -19, datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['goguryeo-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '高句丽早期建国年代、都城迁移和国家形态具有传统纪年与考古年代差异，朱蒙的建国叙事不能直接推导后期疆域。',
+  },
+  {
+    personId: 'park-hyeokgeose', biography: '朴赫居世是新罗早期王权传统中的开国君主，传统纪年以公元前57年即位作为新罗起始节点。',
+    aliases: ['赫居世居西干'], offices: [{ title: '新罗早期君主', polityId: 'silla', validFrom: -57, validTo: 4, datePrecision: 'approximate', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'] }],
+    keyEvents: ['silla-founded'], sourceIds: ['silla-encykorea', 'silla-samguksagi-db'], uncertaintyNote: '前57年是新罗传统起始纪年，早期辰韩诸部整合是持续过程；王统记载与考古年代不应机械等同。',
+  },
+  {
+    personId: 'murong-tuyuhun', biography: '慕容吐谷浑率部众向西迁徙，吐谷浑名称和河湟—青海区域政治共同体在其后逐步形成。',
+    aliases: ['吐谷浑'], offices: [{ title: '吐谷浑部众首领', polityId: 'tuyuhun', validFrom: 296, validTo: 317, datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['tuyuhun-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '313年前后是吐谷浑形成阶段的约年，迁徙过程、首领体系与后续政权建制不能全部归结为慕容吐谷浑个人完成。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

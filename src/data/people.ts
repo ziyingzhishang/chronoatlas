@@ -88,6 +88,12 @@ export const people: Person[] = [
   { id: 'cao-cao', name: '曹操', aliases: ['魏武帝', '曹孟德'], birthYear: 155, deathYear: 220, roles: ['政治家', '军事领袖', '权臣'], polityIds: ['han_eastern', 'wei_three'], description: '曹操在东汉末年整合北方军政资源，挟天子以令诸侯并封魏王，为曹魏政权形成奠定基础。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'liu-bei', name: '刘备', aliases: ['汉昭烈帝', '刘玄德'], birthYear: 161, deathYear: 223, roles: ['皇帝', '军事领袖', '政治家'], polityIds: ['han_eastern', 'shu_three'], description: '刘备以汉室宗亲名义参与东汉末年政治与军事竞争，221年在成都称帝建立蜀汉。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'sun-quan', name: '孙权', aliases: ['吴大帝', '孙仲谋'], birthYear: 182, deathYear: 252, roles: ['皇帝', '军事领袖', '政治家'], polityIds: ['han_eastern', 'wu_three'], description: '孙权继承江东军政基础，在赤壁之战后与刘备形成阶段性联盟，后建立孙吴政权。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'han-qian', name: '韩虔', aliases: ['韩景侯'], roles: ['诸侯', '君主'], polityIds: ['han_warring'], description: '韩虔即韩景侯，三家分晋后韩在前403年获周王室承认，战国韩的诸侯身份由此进入传统编年。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'wei-wenhou', name: '魏斯', aliases: ['魏文侯'], birthYear: -472, deathYear: -396, roles: ['诸侯', '君主', '政治改革者'], polityIds: ['wei_warring'], description: '魏斯即魏文侯，三家分晋后获周王室承认，并通过用人、变法和经营河东奠定魏国早期发展基础。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'zhao-liehou', name: '赵籍', aliases: ['赵烈侯'], deathYear: -400, roles: ['诸侯', '君主'], polityIds: ['zhao_warring'], description: '赵籍即赵烈侯，三家分晋后赵在前403年获周王室承认，赵国作为战国诸侯国进入传统分期。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'jumong', name: '朱蒙', aliases: ['高朱蒙', '东明圣王'], birthYear: -58, deathYear: -19, roles: ['国王', '建国者'], polityIds: ['goguryeo'], description: '朱蒙是高句丽建国叙事中的核心人物，传统纪年以公元前37年作为其建立高句丽的节点。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'park-hyeokgeose', name: '朴赫居世', aliases: ['赫居世居西干'], birthYear: -69, deathYear: 4, roles: ['国王', '建国者'], polityIds: ['silla'], description: '朴赫居世是新罗早期王权传统中的开国君主，传统纪年以公元前57年即位作为新罗起始节点。', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'] },
+  { id: 'murong-tuyuhun', name: '慕容吐谷浑', aliases: ['吐谷浑'], birthYear: 246, deathYear: 317, roles: ['部族首领', '迁徙领袖'], polityIds: ['tuyuhun'], description: '慕容吐谷浑率部众向西迁徙，吐谷浑名称和河湟—青海区域政治共同体由此形成并持续发展。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
