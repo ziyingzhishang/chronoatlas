@@ -13,7 +13,7 @@ const state: HistoricalState = { year: -221, displayLabel: '公元前221年', ac
 describe('historical content localization', () => {
   it('translates every English event narrative without changing evidence or filters', () => {
     const result = localizeEvents(events, 'en');
-    expect(result).toHaveLength(26);
+    expect(result).toHaveLength(events.length);
     result.forEach((item, index) => {
       const original = events[index];
       for (const key of ['title','summary','background','process','impact','mapNote'] as const) {
