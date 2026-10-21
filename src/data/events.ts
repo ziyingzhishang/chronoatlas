@@ -113,7 +113,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'southern-song-founded', year: 1127, title: '南宋建立', summary: '赵构在应天府即位，宋室南渡政权由此形成。', placeId: 'yingtian', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '靖康之变后北宋都城失守，宋宗室与官僚在北方旧秩序瓦解中重新组织皇统与军事力量。',
     process: '1127年赵构在应天府即皇帝位，延续宋的国号；随后政权经历扬州、建康等地的迁移，临安成为后来的主要政治中心。',
     impact: '宋朝统治重心转向江南，南宋与金、西夏及后来蒙古长期并立；1127年建政不能等同于临安定都或南宋最终疆域。',
@@ -574,7 +574,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'qing-founded', year: 1636, title: '清建立', summary: '皇太极改国号为清，后金政权转入清朝阶段。',
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['china-chronology'], verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['china-chronology'], verification: 'checked',
     background: '后金已经在关外建立稳定的统治与军事体系，皇太极进一步调整国号和国家制度。',
     process: '崇德元年，皇太极改国号为清，后金由此进入清朝政权阶段；1644年入关是另一项后续事件。',
     impact: '清作为新的国号与政权身份形成，关外统治继续发展；建国号不等于当年已经控制明朝全境。',
@@ -601,7 +601,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'qing-enters-pass', year: 1644, title: '清入关', summary: '清军入关并进入北京，清廷随后迁入北京。',
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: [], verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['china-chronology'], verification: 'checked',
     background: '明末战争使北京政权更迭，清朝此前已在关外建立统治中心。',
     process: '1644年清军入关，顺治帝随后由沈阳进京，清廷的政治中心转至北京。',
     impact: '清在关内的统治进入新阶段；“入关”与清朝最初建立、后来各地战争结束是不同节点。',
@@ -619,7 +619,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'republic-founded', year: 1912, title: '民国建立', summary: '孙中山在南京就任临时大总统，中华民国临时政府成立。',
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['china-chronology'], verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['china-chronology'], verification: 'checked',
     background: '辛亥革命后的政治变化，使在南京建立共和政权成为重要节点。',
     process: '1912年1月1日，孙中山在南京宣誓就任中华民国临时大总统，临时政府成立。',
     impact: '共和政府的成立改变了中央政权的组织形式；之后的南北议和、政权转移与地区控制需另行考察。',
@@ -682,7 +682,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'wuyue-founded', year: 907, title: '吴越政权建立', summary: '钱镠受封吴越王，钱氏在两浙的地方政权进入吴越阶段。', placeId: 'hangzhou', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末两浙藩镇竞争中，钱镠已控制杭州及浙东、浙西部分军政资源，并与中原政权保持复杂的册封关系。',
     process: '907年唐亡后，钱镠受后梁封为吴越王，吴越地方政权进入明确的十国分期；其政治独立性与名义臣属关系在不同阶段并存。',
     impact: '两浙形成长期稳定的区域政权，杭州成为政治、经济和海贸中心；吴越并非在907年立即拥有后期全境，控制范围须按阶段展示。',
@@ -691,7 +691,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'min-founded', year: 909, title: '闽政权建立', summary: '王审知受封闽王，福建地方政权进入闽国阶段。', placeId: 'fuzhou', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末福建山海阻隔、藩镇分立，王审知兄弟在福州经营地方军政并逐渐取得对闽地的控制。',
     process: '909年王审知受后梁封为闽王，福州一带的地方政权进入闽国分期；名义册封、地方自治与后续称帝建国的关系需要分层说明。',
     impact: '福建形成延续数十年的区域政权，福州成为政治中心；闽与中原、吴越及南汉的关系随阶段变化，不能用后期范围覆盖909年初始格局。',
@@ -709,7 +709,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'ma-chu-founded', year: 907, title: '马楚政权建立', summary: '马殷受封楚王，湖湘地方政权进入马楚阶段。', placeId: 'changsha', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末湖南军政秩序瓦解，马殷在潭州及湖湘地区扩张势力，并通过接受中原册封巩固地方统治。',
     process: '907年马殷受后梁封为楚王，湖湘地方政权进入史称马楚的十国分期；受封、实际自治与927年正式称国王之间存在阶段差异。',
     impact: '湖南形成以潭州为中心的区域政权，马楚与南唐、南汉及中原王朝保持互动；907年不能代表马楚后期全部影响范围。',
@@ -772,7 +772,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'later-jin-founded', year: 1616, title: '后金建立', summary: '努尔哈赤建立后金，女真诸部进入新的政治整合阶段。', sourceIds: ['china-chronology'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '建州女真在长期战争、联盟和八旗组织发展中形成较强的军事政治动员能力，明朝边疆秩序也处于持续变化之中。',
     process: '1616年努尔哈赤建立后金并确立汗国体制；1636年皇太极改国号为清，1644年入关，均是后续不同阶段。',
     impact: '东北亚政治格局发生重大变化，后金成为明与蒙古、朝鲜之间的重要力量；1616年建政不等于已经控制明朝关内地区。',

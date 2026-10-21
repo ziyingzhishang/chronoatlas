@@ -131,17 +131,25 @@ describe('event detail coverage audit', () => {
       .toContain('城市');
   });
 
-  it('closes the first high-value exact-year event detail batch without unresolved records', () => {
+  it('closes the forty-eighth batch of exact-year, source-backed event details', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 43, 'needs-review': 56, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 51, 'needs-review': 48, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
       'later-liang-founded',
       'jurchen-jin-founded',
       'southern-tang-founded',
+      'southern-song-founded',
+      'later-jin-founded',
+      'qing-founded',
+      'qing-enters-pass',
+      'republic-founded',
+      'wuyue-founded',
+      'min-founded',
+      'ma-chu-founded',
     ]));
   });
 
