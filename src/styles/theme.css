@@ -236,6 +236,23 @@ main { min-height: 100vh; }
 .study-heritage-list summary { display:flex; justify-content:space-between; gap:12px; cursor:pointer; }
 .study-heritage-detail { padding:8px 0 2px 14px; color:var(--paper-muted); line-height:1.6; }
 .study-heritage-detail p { margin:4px 0; }
+.study-chip-list button,.study-list button,.study-heritage-list summary button { border:0; padding:0; color:inherit; background:transparent; text-align:left; }
+.study-chip-list button:hover,.study-list button:hover,.study-heritage-list summary button:hover { color:var(--gold); }
+.city-history-timeline { padding:10px; border:1px solid rgba(198,161,91,.2); background:rgba(8,12,16,.18); }
+.city-history-timeline-heading { display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
+.city-history-timeline-heading h2 { margin:2px 0 8px; color:var(--gold); font-size:15px; font-weight:500; }
+.city-history-timeline-filters { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
+.city-history-timeline-filters button { border:1px solid rgba(198,161,91,.3); padding:3px 7px; color:var(--paper-muted); background:transparent; font-size:11px; }
+.city-history-timeline-filters button[aria-pressed="true"] { color:var(--panel); background:var(--gold); }
+.city-history-timeline-missing { margin-bottom:8px; padding:6px 8px; border-left:2px solid #c67b5c; color:var(--paper-muted); font-size:11px; }
+.city-history-timeline-missing p { margin:2px 0; }
+.city-history-timeline-list { position:relative; display:grid; gap:5px; list-style:none; margin:0; padding:0 0 0 12px; }
+.city-history-timeline-list::before { position:absolute; top:4px; bottom:4px; left:3px; width:1px; background:rgba(198,161,91,.35); content:""; }
+.city-history-timeline-list li { position:relative; display:grid; grid-template-columns:74px 1fr; gap:8px; align-items:center; min-height:28px; }
+.city-history-timeline-list li::before { position:absolute; left:-12px; width:6px; height:6px; border:1px solid var(--gold); border-radius:50%; background:var(--panel); content:""; }
+.city-history-timeline-year { color:var(--paper-muted); font-size:10px; white-space:nowrap; }
+.city-history-timeline-list li button { border:0; padding:3px 5px; color:var(--paper); background:transparent; text-align:left; font-size:12px; }
+.city-history-timeline-list li button:hover { color:var(--gold); background:rgba(198,161,91,.1); }
 .relationship-graph { overflow:hidden; border:1px solid rgba(198,161,91,.16); padding:8px; background:rgba(8,12,16,.26); }
 .relationship-graph svg { display:block; width:100%; min-height:150px; }
 .relationship-edge line { stroke:rgba(198,161,91,.45); stroke-width:1; }
@@ -245,6 +262,8 @@ main { min-height: 100vh; }
 .relationship-node-heritage circle { fill:rgba(164,125,85,.7); }
 .relationship-node text { fill:var(--paper); font-size:10px; }
 .relationship-graph-text { list-style:none; margin:4px 0 0; padding:0; color:var(--paper-muted); font-size:11px; line-height:1.6; }
+.relationship-graph-text button { border:0; padding:2px 0; color:inherit; background:transparent; text-align:left; }
+.relationship-graph-text button:hover { color:var(--gold); }
 .year-steppers { flex-wrap:wrap; }
 
 @media (max-width: 1100px) {

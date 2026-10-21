@@ -1,3 +1,5 @@
+import type { KeyboardEvent } from 'react';
+import type { DetailEntity } from '../domain/detail-entity';
 import type { PolityStudyView } from '../domain/study-view';
 import type { HistoricalClaim } from '../domain/types';
 import { useLocale } from '../i18n/locale';
@@ -10,7 +12,7 @@ interface GraphNode {
 
 const edgeLabel: Record<string, string> = { founded: '建立', ruled: '统治', commissioned: '营建', 'left-heritage': '遗留' };
 
-export function RelationshipGraph({ view }: { view: PolityStudyView }) {
+export function RelationshipGraph({ view, onOpenEntity }: { view: PolityStudyView; onOpenEntity?: (entity: DetailEntity) => void }) {
   const { t } = useLocale();
   const nodes: GraphNode[] = [
     { id: view.subject.id, label: view.subject.name, kind: 'polity' },
@@ -21,13 +23,25 @@ export function RelationshipGraph({ view }: { view: PolityStudyView }) {
   const edges = view.claims.filter((claim) => claim.objectId && nodeById.has(claim.subjectId) && nodeById.has(claim.objectId));
   const positions = new Map(nodes.map((node, index) => [node.id, { x: 30 + (index % 3) * 130, y: 30 + Math.floor(index / 3) * 58 }]));
 
+  const openNode = (node: GraphNode) => onOpenEntity?.({ type: node.kind, id: node.id });
+  const handleNodeKeyDown = (event: KeyboardEvent<SVGGElement>, node: GraphNode) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    event.preventDefault();
+    openNode(node);
+  };
+
   return (
     <div className="relationship-graph" role="img" aria-label={t('人物关系网络')}>
-      <svg viewBox="0 0 420 190" aria-hidden="true">
+      <svg viewBox="0 0 420 190">
         {edges.map((claim) => <GraphEdge key={claim.id} claim={claim} positions={positions} label={t(edgeLabel[claim.predicate] ?? claim.predicate)} />)}
-        {nodes.map((node) => { const position = positions.get(node.id)!; return <g key={node.id} className={`relationship-node relationship-node-${node.kind}`} transform={`translate(${position.x},${position.y})`}><circle r="14" /><text x="20" y="4">{node.label}</text></g>; })}
+        {nodes.map((node) => { const position = positions.get(node.id)!; return <g key={node.id} className={`relationship-node relationship-node-${node.kind}`} transform={`translate(${position.x},${position.y})`} role="link" tabIndex={0} aria-label={node.label} onClick={() => openNode(node)} onKeyDown={(event) => handleNodeKeyDown(event, node)}><circle r="14" /><text x="20" y="4">{node.label}</text></g>; })}
       </svg>
-      <ul className="relationship-graph-text">{edges.map((claim) => <li key={`text-${claim.id}`}>{nodeById.get(claim.subjectId)?.label} · {t(edgeLabel[claim.predicate] ?? claim.predicate)} · {nodeById.get(claim.objectId!)?.label}</li>)}</ul>
+      <ul className="relationship-graph-text">{edges.map((claim) => {
+        const subject = nodeById.get(claim.subjectId);
+        const object = nodeById.get(claim.objectId!);
+        const label = `${subject?.label} · ${t(edgeLabel[claim.predicate] ?? claim.predicate)} · ${object?.label}`;
+        return <li key={`text-${claim.id}`}><button type="button" aria-label={label} onClick={() => object && openNode(object)}>{label}</button></li>;
+      })}</ul>
     </div>
   );
 }

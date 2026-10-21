@@ -5,6 +5,8 @@ import { groupPersonRelationships } from '../domain/relationships';
 import { getHeritageDetail } from '../data/heritage-details';
 import { RelationshipGraph } from './RelationshipGraph';
 import type { DetailEntity } from '../domain/detail-entity';
+import { buildCityHistoryTimeline } from '../domain/city-timeline';
+import { CityHistoryTimeline } from './CityHistoryTimeline';
 
 type StudyView = CityStudyView | PolityStudyView;
 
@@ -13,6 +15,11 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
   const cityView = view.kind === 'city' ? view : undefined;
   const polityView = view.kind === 'polity' ? view : undefined;
   const relationshipLabel: Record<string, string> = { founded: '建立', ruled: '统治', succeeded: '承接', commissioned: '营建' };
+  const cityTimeline = cityView ? buildCityHistoryTimeline(cityView.subject.id, {
+    places: [cityView.subject], polities: cityView.polities, people: cityView.people,
+    heritage: cityView.heritage, events: cityView.events, claims: cityView.claims,
+    capitalTerms: cityView.capitalTerms,
+  }) : undefined;
 
   return (
     <section className="study-relations" aria-label={t('历史关系研究视图')}>
@@ -20,6 +27,9 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
         <span className="eyebrow">{t(cityView ? '城市视角' : '政权视角')}</span>
         <span className="study-year">{t('截至')} {formatHistoricalYear(view.year)}</span>
       </div>
+      {cityView && <div className="study-block">
+        {cityTimeline && <CityHistoryTimeline nodes={cityTimeline.nodes} missingData={cityTimeline.missingData} onOpenEntity={(entity) => onOpenEntity?.(entity)} />}
+      </div>}
       {cityView && <div className="study-block">
         <h3>{t('曾以此地为政治中心的政权')}</h3>
         <ul className="study-chip-list">{cityView.polities.map((polity) => <li key={polity.id}>{polity.name}</li>)}</ul>
@@ -34,7 +44,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
       </div>}
       {polityView && <div className="study-block">
         <h3>{t('关系网络')}</h3>
-        <RelationshipGraph view={polityView} />
+        <RelationshipGraph view={polityView} onOpenEntity={onOpenEntity} />
       </div>}
       <div className="study-block">
         <h3>{t('相关事件')}</h3>
