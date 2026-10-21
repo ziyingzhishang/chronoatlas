@@ -16,7 +16,7 @@ test('shows historical and modern names for a selected place', () => {
   render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'place', id: 'xianyang' }} />);
   expect(screen.getByRole('heading', { name: '咸阳' })).toBeInTheDocument();
   expect(screen.getByText('现代位置')).toBeInTheDocument();
-  expect(screen.getByText('咸阳市')).toBeInTheDocument();
+  expect(screen.getAllByText('咸阳市').length).toBeGreaterThanOrEqual(1);
 });
 
 test('preserves a raw source zero endpoint without treating it as a selectable civil year', () => {

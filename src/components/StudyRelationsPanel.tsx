@@ -20,6 +20,9 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
     heritage: cityView.heritage, events: cityView.events, claims: cityView.claims,
     capitalTerms: cityView.capitalTerms,
   }) : undefined;
+  const featuredEvents = polityView
+    ? view.events.filter((event) => event.year >= polityView.subject.startYear - 10 && event.year <= polityView.subject.startYear + 10).slice(0, 5)
+    : view.events.slice(-5);
 
   return (
     <section className="study-relations" aria-label={t('历史关系研究视图')}>
@@ -48,7 +51,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
       </div>}
       <div className="study-block">
         <h3>{t('相关事件')}</h3>
-        {view.events.length > 0 ? <ul className="study-list">{view.events.slice(-5).map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{formatHistoricalYear(event.year)}</span></li>)}</ul> : <p className="detail-note">{t('暂无已关联事件')}</p>}
+        {featuredEvents.length > 0 ? <ul className="study-list">{featuredEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{formatHistoricalYear(event.year)}</span></li>)}</ul> : <p className="detail-note">{t('暂无已关联事件')}</p>}
       </div>
       <div className="study-block">
         <h3>{t('遗产与城市记忆')}</h3>

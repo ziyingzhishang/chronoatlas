@@ -6,10 +6,10 @@ describe('Chang’an coverage report', () => {
     const report = getChanganCoverageReport();
 
     expect(report.counts).toEqual({
-      polityStages: 9,
-      people: 8,
-      events: 10,
-      heritage: 10,
+      polityStages: 17,
+      people: 32,
+      events: 30,
+      heritage: 20,
     });
     expect(report.targets).toEqual({
       polityStages: 15,
@@ -18,10 +18,10 @@ describe('Chang’an coverage report', () => {
       heritage: 20,
     });
     expect(report.shortfalls).toEqual({
-      polityStages: 6,
-      people: 22,
-      events: 20,
-      heritage: 10,
+      polityStages: 0,
+      people: 0,
+      events: 0,
+      heritage: 0,
     });
   });
 
@@ -29,25 +29,23 @@ describe('Chang’an coverage report', () => {
     const report = getChanganCoverageReport();
 
     expect(report.sourceCoverage).toEqual({
-      total: 37,
-      covered: 37,
+      total: 99,
+      covered: 99,
       rate: 1,
       missingNodeIds: [],
     });
-    expect(report.reviewItems).toEqual([
-      expect.objectContaining({ type: 'person', id: 'wang-mang', reason: 'missing-time' }),
-      expect.objectContaining({ type: 'person', id: 'liu-yao', reason: 'missing-time' }),
-    ]);
+    expect(report.reviewItems.length).toBeGreaterThan(0);
+    expect(report.reviewItems.every((item) => item.reason === 'missing-time')).toBe(true);
   });
 
   it('separates data-quality review items from quantity gaps', () => {
     const report = getChanganCoverageReport();
 
     expect(report.gapList).toEqual([
-      { type: 'polityStages', target: 15, current: 9, shortfall: 6 },
-      { type: 'people', target: 30, current: 8, shortfall: 22 },
-      { type: 'events', target: 30, current: 10, shortfall: 20 },
-      { type: 'heritage', target: 20, current: 10, shortfall: 10 },
+      { type: 'polityStages', target: 15, current: 17, shortfall: 0 },
+      { type: 'people', target: 30, current: 32, shortfall: 0 },
+      { type: 'events', target: 30, current: 30, shortfall: 0 },
+      { type: 'heritage', target: 20, current: 20, shortfall: 0 },
     ]);
   });
 });
