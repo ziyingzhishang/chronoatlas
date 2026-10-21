@@ -648,6 +648,11 @@ export const personDetails: PersonDetail[] = [
     aliases: ['南诏王'], offices: [{ title: '南诏王', polityId: 'nanzhao', validFrom: 748, validTo: 779, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '阁罗凤即位晚于738年南诏形成节点；本条把南诏建立作为承接性历史阶段，不把其误写为南诏开国者或把唐南诏战争简化为个人关系。',
   },
+  {
+    personId: 'liu-min', biography: '刘旻初名刘崇，是后汉建立者刘知远的弟弟。后汉覆亡后，他据太原称帝建立北汉，河东成为北汉与后周竞争的核心区域。',
+    aliases: ['刘崇', '北汉世祖'], offices: [{ title: '北汉皇帝', polityId: 'northern_han', placeId: 'taiyuan', validFrom: 951, validTo: 954, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘旻的早期姓名、后汉宗室身份和北汉建立可按不同阶段阅读；951年建政不等于北汉立即控制河东以外的全部区域，契丹援助也不能替代其自身政权建构。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

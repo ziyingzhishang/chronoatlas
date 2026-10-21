@@ -127,6 +127,7 @@ export const people: Person[] = [
   { id: 'dorgon', name: '多尔衮', aliases: ['睿亲王'], birthYear: 1612, deathYear: 1650, roles: ['摄政王', '军事领袖', '政治家'], polityIds: ['qing'], description: '多尔衮在顺治初年主持清军入关与中央政务，推动清廷由盛京向北京的政治中心转移。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'mongke', name: '蒙哥', aliases: ['蒙哥汗'], birthYear: 1209, deathYear: 1259, roles: ['大汗', '君主', '军事领袖'], polityIds: ['mongol'], description: '蒙哥承接成吉思汗家族的共同汗权并推动蒙古帝国扩张，其统治是蒙古汗国与元朝建立之间的重要承接阶段。', sourceIds: ['china-chronology', 'yuan-nationalities-history'] },
   { id: 'geluofeng', name: '阁罗凤', aliases: ['南诏王'], deathYear: 779, roles: ['南诏王', '军事领袖'], polityIds: ['nanzhao'], description: '阁罗凤继承皮罗阁的南诏政治基础，扩展洱海及滇西军政网络，并在唐—南诏关系转折中发挥关键作用。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'liu-min', name: '刘旻', aliases: ['刘崇', '北汉世祖'], birthYear: 895, deathYear: 954, roles: ['皇帝', '军事领袖', '地方统治者'], polityIds: ['northern_han'], description: '刘旻（初名刘崇）在后汉覆亡后据太原建立北汉，依托河东军政网络并与后周长期对峙。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
