@@ -45,7 +45,8 @@ describe('event details thirty-first batch', () => {
     });
   });
 
-  it('preserves the frozen former Liang participant boundary', () => {
-    expect(eventDetails.find((detail) => detail.eventId === 'former-liang-founded')?.participants).toEqual([]);
+  it('keeps the former Liang founder boundary while recording its stage-aware endpoints', () => {
+    expect(eventDetails.find((detail) => detail.eventId === 'former-liang-founded')?.participants.map((participant) => participant.personId))
+      .toEqual(['zhang-gui', 'zhang-shi']);
   });
 });

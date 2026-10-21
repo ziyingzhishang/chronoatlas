@@ -52,14 +52,15 @@ describe('event details twenty-eighth batch', () => {
     });
   });
 
-  it('keeps the Southern Chen boundary when the founder endpoint is not catalogued', () => {
+  it('keeps the Southern Chen founder boundary while allowing a successor-stage endpoint', () => {
     const missingParticipantIds = new Set(
       auditKnowledgeCoverage().tasks
         .filter((task) => task.taskKind === 'event-participant-missing')
         .map((task) => task.entityId),
     );
 
-    expect(missingParticipantIds.has(boundaryEventId)).toBe(true);
-    expect(eventDetails.find((detail) => detail.eventId === boundaryEventId)?.participants).toEqual([]);
+    expect(missingParticipantIds.has(boundaryEventId)).toBe(false);
+    expect(eventDetails.find((detail) => detail.eventId === boundaryEventId)?.participants.map((participant) => participant.personId))
+      .toEqual(['chen-xu']);
   });
 });

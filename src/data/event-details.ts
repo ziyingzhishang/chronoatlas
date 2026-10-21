@@ -59,7 +59,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'nanzhao-founded',
-    participants: [],
+    participants: [
+      { personId: 'piluo-ge', role: '整合洱海诸诏并获唐廷册封的南诏形成阶段君主', note: '皮罗阁对应738年前后南诏形成节点，部族联盟、唐廷册封与区域整合是连续过程，不能简化为单一册封事件。' },
+      { personId: 'geluofeng', role: '南诏形成后的继承君主与区域扩展者', note: '阁罗凤属于南诏建立后的承接和扩展阶段，不把其活动前推为738年唯一建政者。' },
+    ],
     polityIds: ['nanzhao'],
     causes: ['洱海诸诏长期竞争，蒙舍诏逐步取得区域军政优势。', '皮罗阁借助部族联盟和唐廷册封重组西南政治秩序。'],
     consequences: ['南诏成为西南持续数百年的区域政治主体。', '唐与南诏之间的外交、战争和交通关系进入新的阶段。'],
@@ -298,7 +301,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'former-liang-founded',
-    participants: [],
+    participants: [
+      { personId: 'zhang-gui', role: '以西晋凉州刺史身份奠定张氏河西军政基础的前置人物', note: '张轨以晋臣名义经营凉州，属于前凉形成的前置积累阶段；本条不把其活动写成一次正式受禅建国。' },
+      { personId: 'zhang-shi', role: '承接张轨并延续张氏河西政权的继承者', note: '张寔对应314年后的延续和加强阶段，前凉从地方军镇向连续政权发展不能归结为其个人单独创建。' },
+    ],
     polityIds: ['former_liang'],
     causes: ['永嘉之乱后西晋中央权力衰落，凉州军政集团承担河西地方秩序。'],
     consequences: ['河西形成延续数十年的张氏地方政权。', '前凉成为十六国时期连接中原与西域的重要政治节点。'],
@@ -440,7 +446,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-yan-founded',
-    participants: [],
+    participants: [
+      { personId: 'murong-de', role: '率后燕余部南下并在山东重建燕政权的核心君主', note: '慕容德对应398年南燕形成及400年广固称帝阶段；南下、建政与称帝按连续但不同节点理解。' },
+      { personId: 'murong-chao', role: '南燕末期在广固防御并承接政权的君主', note: '慕容超属于南燕末期继承与防御阶段，不能替代慕容德建政，也不代表南燕全期控制范围。' },
+    ],
     polityIds: ['southern_yan'],
     causes: ['后燕在北魏压力下失去河北核心。', '慕容德率部南下并在山东重新组织燕政权。'],
     consequences: ['山东形成南燕政权。', '南燕与北魏、东晋及后秦发生持续的区域性互动。'],
@@ -456,7 +465,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'western-qin-founded',
-    participants: [],
+    participants: [
+      { personId: 'qifu-guoren', role: '在陇右建立西秦的核心首领与初代君主', note: '乞伏国仁对应385年西秦形成节点；政权迁徙、称王和后续复立属于不同阶段。' },
+      { personId: 'qifu-gangui', role: '西秦后续称王、降附与复立阶段的核心君主', note: '乞伏乾归主要对应西秦形成后的继承和复立阶段，不能把其活动前推为385年唯一建政者。' },
+    ],
     polityIds: ['western_qin'],
     causes: ['前秦崩解后，陇右与河湟地区出现新的权力空间。', '乞伏部在迁徙与战争中形成独立军政组织。'],
     consequences: ['西秦成为河湟、陇右竞争的重要参与者。', '其与后秦、后凉、北凉之间的关系随降附、复立和战争反复变化。'],
@@ -508,7 +520,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-yan-founded',
-    participants: [],
+    participants: [
+      { personId: 'gao-yun', role: '后燕末年在龙城被拥立并开启北燕形成阶段的君主', note: '高云对应407年北燕建政节点；其个人统治与409年冯跋掌权应按不同阶段区分。' },
+      { personId: 'feng-ba', role: '承接高云政权并掌握北燕统治的继任君主', note: '冯跋对应409年北燕统治结构转换阶段，不把其与高云的政权转换压缩为同一建政节点。' },
+      { personId: 'feng-hong', role: '北燕后期承接冯氏统治并面对北魏压力的君主', note: '冯弘属于北燕后期统治阶段，不能替代高云、冯跋对应的建政与政权转换节点。' },
+    ],
     polityIds: ['northern_yan'],
     causes: ['后燕末年皇位与军政集团冲突加剧。', '高云、冯氏等力量在辽西取得相对独立的政治主导权。'],
     consequences: ['北燕成为十六国末期辽西的重要区域政权。', '北燕在北魏、柔然等力量之间维持有限而不稳定的统治。'],
@@ -1266,7 +1282,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-chen-founded',
-    participants: [],
+    participants: [
+      { personId: 'chen-xu', role: '南陈建立后的后期君主与建康政权承接者', note: '陈顼活动晚于557年陈霸先受禅建陈，属于南陈后期承接和整合阶段；当前人物目录无陈霸先可靠端点，不能将陈顼虚写为开国者。' },
+    ],
     polityIds: ['chen_southern'],
     causes: ['侯景之乱削弱梁朝中央权力。', '江南军政集团围绕皇位与地方控制持续竞争。'],
     consequences: ['南陈成为南朝最后一个主要政权。', '南北对峙延续，直至589年隋灭陈。'],

@@ -21,6 +21,10 @@ const targetLocations = {
 } as const;
 
 const reviewedParticipantEvents = new Set([
+  'nanzhao-founded',
+  'western-qin-founded',
+  'northern-yan-founded',
+  'southern-yan-founded',
   'goguryeo-founded',
   'silla-founded',
   'tuyuhun-founded',

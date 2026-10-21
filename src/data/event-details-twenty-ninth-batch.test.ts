@@ -56,14 +56,15 @@ describe('event details twenty-ninth batch', () => {
     });
   });
 
-  it('preserves the former Liang boundary when no reliable person endpoint is catalogued', () => {
+  it('keeps the former Liang founder boundary while recording its stage-aware endpoints', () => {
     const missingParticipantIds = new Set(
       auditKnowledgeCoverage().tasks
         .filter((task) => task.taskKind === 'event-participant-missing')
         .map((task) => task.entityId),
     );
 
-    expect(missingParticipantIds.has(boundaryEventId)).toBe(true);
-    expect(eventDetails.find((detail) => detail.eventId === boundaryEventId)?.participants).toEqual([]);
+    expect(missingParticipantIds.has(boundaryEventId)).toBe(false);
+    expect(eventDetails.find((detail) => detail.eventId === boundaryEventId)?.participants.map((participant) => participant.personId))
+      .toEqual(['zhang-gui', 'zhang-shi']);
   });
 });
