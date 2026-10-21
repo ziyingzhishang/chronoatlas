@@ -588,6 +588,41 @@ export const personDetails: PersonDetail[] = [
     aliases: ['丞相伯颜'], offices: [{ title: '元军统帅与中书右丞相', polityId: 'yuan', validFrom: 1274, validTo: 1295, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'yuan-goryeo-records'] }],
     keyEvents: ['song-southward'], sourceIds: ['yuan-nationalities-history', 'yuan-goryeo-records'], uncertaintyNote: '伯颜参与的是1270年代后期元宋战争与行政接收，不把其军事活动简化为元朝1271年建国本身。',
   },
+  {
+    personId: 'han-kangzi', biography: '韩康子是晋国韩氏后期领袖。韩氏与赵、魏共同削弱晋国公室和智氏势力，前403年周王室册命三家是其政治谱系进入战国诸侯分期的制度节点。',
+    aliases: ['韩虎'], offices: [{ title: '晋国韩氏领袖／韩国早期政治人物', polityId: 'han_warring', validFrom: -453, validTo: -403, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '韩康子活动跨越晋国卿族分权与周王室册命两个层次；前403年是制度确认节点，不等于韩康子个人在当日完成建国。',
+  },
+  {
+    personId: 'zhao-xiangzi', biography: '赵襄子在晋国卿族竞争中领导赵氏，参与消灭智氏并扩大赵氏在晋北的政治与军事基础，三家分晋由此具备现实权力前提。',
+    aliases: ['赵毋恤'], offices: [{ title: '晋国赵氏领袖／赵国先导', polityId: 'zhao_warring', validFrom: -453, validTo: -425, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '赵襄子主要对应晋国权力重组阶段；前403年周王室册命晚于其活动高峰，不能把正式册命与其个人生前称号混为一谈。',
+  },
+  {
+    personId: 'wei-huanzi', biography: '魏桓子是晋国魏氏后期领袖，与韩、赵共同参与晋国权力重组。魏氏获得周王室承认后，魏国进入战国诸侯分期并继续发展。',
+    aliases: ['魏驹'], offices: [{ title: '晋国魏氏领袖／魏国早期政治人物', polityId: 'wei_warring', validFrom: -424, validTo: -396, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '魏桓子与魏文侯之间存在继承和分期问题，传统纪年并非所有年份都能精确对应个人任期；本条只标记其在晋国解体与魏国形成链路中的位置。',
+  },
+  {
+    personId: 'qi-we-wang', biography: '齐威王整顿齐国政治，重用能臣并加强军事组织，使齐在战国诸侯格局中成为东方强国。',
+    aliases: ['田因齐'], offices: [{ title: '齐国诸侯', polityId: 'qi_warring', validFrom: -356, validTo: -320, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['qi-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '齐威王生活年代晚于前403年战国分期入口；本条把他作为齐国后续强国化阶段的代表人物，不将其活动前推为齐国首次出现。',
+  },
+  {
+    personId: 'chu-we-wang', biography: '楚威王统治时期楚国继续经营江汉、江淮和长江中下游网络，在战国大国竞争中保持南方强国地位。',
+    aliases: ['熊商'], offices: [{ title: '楚国诸侯', polityId: 'chu_warring', validFrom: -339, validTo: -329, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['chu-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '楚威王是楚国战国中期君主；前403年条目是战国分期入口，不应被理解为楚威王个人建国或楚国绝对起源。',
+  },
+  {
+    personId: 'yan-zhaowang', biography: '燕昭王在燕国政治危机后重建君臣秩序，招纳乐毅等人才，推动燕国在北方诸侯竞争中恢复力量。',
+    aliases: ['姬职'], offices: [{ title: '燕国诸侯', polityId: 'yan_warring', validFrom: -311, validTo: -279, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['yan-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '燕昭王属于燕国后续复兴阶段；蓟和北方交通网络的早期形成与其统治不能压缩为同一建国年份。',
+  },
+  {
+    personId: 'qin-xiaogong', biography: '秦孝公任用商鞅变法，推动秦国军功、户籍和财政制度重组，为秦国后来完成统一提供制度与资源基础。',
+    aliases: ['嬴渠梁'], offices: [{ title: '秦国诸侯', polityId: 'qin_state', validFrom: -361, validTo: -338, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['qin-state-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '秦孝公改革属于秦国发展阶段，前770年是秦列为诸侯的传统导航约年；不能把变法、秦国建政与前221年帝国建立混为一事。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

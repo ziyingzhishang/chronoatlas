@@ -115,6 +115,13 @@ export const people: Person[] = [
   { id: 'zhu-yuanzhang', name: '朱元璋', aliases: ['明太祖'], birthYear: 1328, deathYear: 1398, roles: ['皇帝', '军事领袖'], polityIds: ['ming'], description: '朱元璋以应天为中心建立明朝，1368年称帝并北伐攻取大都，元明政权转换由此展开。', sourceIds: ['china-chronology'] },
   { id: 'toghon-temur', name: '妥懽帖睦尔', aliases: ['元顺帝', '惠宗'], birthYear: 1320, deathYear: 1370, roles: ['皇帝', '大汗'], polityIds: ['yuan', 'northern_yuan'], description: '妥懽帖睦尔即元顺帝，1368年明军攻取大都后北走，元廷北迁与北元阶段形成相连。', sourceIds: ['northern-yuan-early-ming', 'china-chronology'] },
   { id: 'bayan', name: '伯颜', aliases: ['丞相伯颜'], deathYear: 1295, roles: ['军事领袖', '宰相'], polityIds: ['yuan'], description: '伯颜是元灭南宋战争中的核心将领与宰相，奉忽必烈之命推进江南战事，参与宋元政权转换。', sourceIds: ['yuan-nationalities-history', 'yuan-goryeo-records'] },
+  { id: 'han-kangzi', name: '韩康子', aliases: ['韩虎'], roles: ['卿族', '政治家'], polityIds: ['han_warring'], description: '韩康子是晋国韩氏的重要领袖，韩氏在三家分晋前后已掌握独立军政资源，前403年韩获周王室承认是其政治谱系的制度节点。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'zhao-xiangzi', name: '赵襄子', aliases: ['赵毋恤'], roles: ['卿族', '军事领袖', '政治家'], polityIds: ['zhao_warring'], description: '赵襄子领导赵氏在晋国权力竞争中击败智氏并扩大北方政治基础，三家分晋的制度确认与其政治遗产相连。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'wei-huanzi', name: '魏桓子', aliases: ['魏驹'], roles: ['卿族', '政治家'], polityIds: ['wei_warring'], description: '魏桓子是晋国魏氏后期领袖，与韩、赵共同参与晋国权力重组；前403年魏获周王室承认，标志魏由卿族转入战国诸侯分期。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'qi-we-wang', name: '齐威王', aliases: ['田因齐'], birthYear: -378, deathYear: -320, roles: ['诸侯', '君主', '政治改革者'], polityIds: ['qi_warring'], description: '齐威王整顿齐国政治并任用邹忌、孙膑等人，齐国在战国诸侯格局中成为东方强国。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'chu-we-wang', name: '楚威王', aliases: ['熊商'], roles: ['诸侯', '君主', '军事领袖'], polityIds: ['chu_warring'], description: '楚威王在江汉与江淮政治网络中扩展楚国影响，代表战国楚由长期王统进入大国竞争的阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'yan-zhaowang', name: '燕昭王', aliases: ['姬职'], roles: ['诸侯', '君主', '政治家'], polityIds: ['yan_warring'], description: '燕昭王在燕国经历内乱后重建政治秩序，招贤纳士并增强燕在北方诸侯竞争中的力量。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'qin-xiaogong', name: '秦孝公', aliases: ['嬴渠梁'], birthYear: -381, deathYear: -338, roles: ['诸侯', '君主', '政治改革者'], polityIds: ['qin_state'], description: '秦孝公任用商鞅推行变法，强化秦国军政与财政制度，为秦由西方诸侯走向统一帝国奠定基础。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
