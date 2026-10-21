@@ -1,4 +1,4 @@
-import type { HistoricalClaim, PersonDetail } from '../domain/types';
+import type { PersonDetail } from '../domain/types';
 
 const sourceIds = ['zizhi-tongjian'];
 
@@ -172,14 +172,56 @@ export const personDetails: PersonDetail[] = [
     aliases: ['唐庄宗'], offices: [{ title: '后唐皇帝', polityId: 'tang_later', validFrom: 923, validTo: 926, datePrecision: 'range', sourceIds }],
     keyEvents: ['tang-changan-end', 'five-dynasties'], sourceIds, uncertaintyNote: '“唐庄宗”是后唐庙号称谓，与唐朝本身需区分；不据称谓虚构其与长安的直接任职关系。',
   },
-];
-
-export const personRelationshipClaims: HistoricalClaim[] = [
-  { id: 'claim-li-yuan-parent-li-shimin', subjectId: 'li-yuan', predicate: 'parent-of', objectId: 'li-shimin', validFrom: 598, validTo: 635, datePrecision: 'range', perspective: 'person', evidenceType: 'explicit-record', confidence: 'high', sourceIds },
-  { id: 'claim-li-shimin-served-li-yuan', subjectId: 'li-shimin', predicate: 'served', objectId: 'li-yuan', validFrom: 618, validTo: 626, datePrecision: 'range', perspective: 'person', evidenceType: 'cross-checked', confidence: 'medium', sourceIds },
-  { id: 'claim-li-yuan-appointed-li-shimin', subjectId: 'li-yuan', predicate: 'appointed', objectId: 'li-shimin', validFrom: 618, validTo: 626, datePrecision: 'range', perspective: 'person', evidenceType: 'explicit-record', confidence: 'medium', sourceIds, uncertaintyNote: '此处仅保留任用关系的方向，具体职衔与时间应结合分项史料。' },
-  { id: 'claim-li-yuan-ally-li-shimin', subjectId: 'li-yuan', predicate: 'ally-of', objectId: 'li-shimin', validFrom: 618, validTo: 626, datePrecision: 'range', perspective: 'person', evidenceType: 'cross-checked', confidence: 'medium', sourceIds },
-  { id: 'claim-wang-mang-enemy-liu-xiu', subjectId: 'wang-mang', predicate: 'enemy-of', objectId: 'liu-xiu', validFrom: 23, validTo: 25, datePrecision: 'range', perspective: 'person', evidenceType: 'inference', confidence: 'low', sourceIds, uncertaintyNote: '“对立”是关系层的概括，不能替代具体战事和政治立场的分阶段说明。' },
+  {
+    personId: 'yuan-hong', biography: '元宏即北魏孝文帝，迁都洛阳并推动官制、礼制与族群身份表达的改革。',
+    aliases: ['拓跋宏', '北魏孝文帝'], offices: [{ title: '北魏皇帝', polityId: 'wei_northern', placeId: 'luoyang', validFrom: 471, validTo: 499, datePrecision: 'range', sourceIds }],
+    keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '孝文帝改革涉及制度、语言和族群认同等多个层面，详情不把后世“汉化”标签当作单一政策结果。',
+  },
+  {
+    personId: 'tuoba-tao', biography: '拓跋焘即北魏太武帝，长期以平城为核心推进北魏的军事整合与北方扩张。',
+    aliases: ['北魏太武帝'], offices: [{ title: '北魏皇帝', polityId: 'wei_northern', placeId: 'pingcheng', validFrom: 423, validTo: 452, datePrecision: 'range', sourceIds }],
+    keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '建政事件节点早于拓跋焘即位，本处用于时间轴导航；其具体军事控制范围需按战事阶段区分。',
+  },
+  {
+    personId: 'xiao-daocheng', biography: '萧道成在刘宋末年掌握军政要务，受禅建立南齐，建康仍是南朝核心都城。',
+    aliases: ['齐高帝'], offices: [{ title: '南齐皇帝', polityId: 'qi_southern', placeId: 'jiankang', validFrom: 479, validTo: 482, datePrecision: 'range', sourceIds }],
+    keyEvents: ['southern-qi-founded'], sourceIds, uncertaintyNote: '479年受禅与南齐对各地的实际整合是不同过程，详情不从称帝节点推导完整疆域。',
+  },
+  {
+    personId: 'chen-baxian', biography: '陈霸先在侯景之乱后的江南军政重组中取得主导地位，受梁禅位建立南陈。',
+    aliases: ['陈武帝'], offices: [{ title: '南陈皇帝', polityId: 'chen_southern', placeId: 'jiankang', validFrom: 557, validTo: 559, datePrecision: 'range', sourceIds }],
+    keyEvents: ['southern-chen-founded'], sourceIds, uncertaintyNote: '南陈建立与其后统一江南部分地区有时间差，建康的都城身份不代表建国当年所有地区均已稳定归附。',
+  },
+  {
+    personId: 'shi-jingtang', biography: '石敬瑭在后唐末年借助契丹军事力量受册立为帝，建立后晋并进入中原政治竞争。',
+    aliases: ['晋高祖'], offices: [{ title: '后晋皇帝', polityId: 'jin_later', placeId: 'kaifeng', validFrom: 936, validTo: 942, datePrecision: 'range', sourceIds }],
+    keyEvents: ['jin-later-founded'], sourceIds, uncertaintyNote: '后晋建立与契丹援助、燕云割让及中原控制分别属于不同层次的事实，不能合并为单一因果判断。',
+  },
+  {
+    personId: 'liu-zhiyuan', biography: '刘知远在后晋覆亡后于太原即位，随后进入开封建立后汉的中原统治。',
+    aliases: ['汉高祖'], offices: [{ title: '后汉皇帝', polityId: 'han_later', placeId: 'kaifeng', validFrom: 947, validTo: 948, datePrecision: 'range', sourceIds }],
+    keyEvents: ['han-later-founded'], sourceIds, uncertaintyNote: '后汉建立经历太原即位与进入开封两个阶段，不能将单一即位地点等同于全政权即时控制范围。',
+  },
+  {
+    personId: 'guo-wei', biography: '郭威是后汉禁军与中原军政体系中的关键将领，受禅建立后周。',
+    aliases: ['周太祖'], offices: [{ title: '后周皇帝', polityId: 'zhou_later', placeId: 'kaifeng', validFrom: 951, validTo: 954, datePrecision: 'range', sourceIds }],
+    keyEvents: ['zhou-later-founded'], sourceIds, uncertaintyNote: '后周受禅、军镇归附和后续制度整顿并非同一时点，详情按政权建立节点与任职阶段分开表达。',
+  },
+  {
+    personId: 'yelu-abaoji', biography: '耶律阿保机整合契丹诸部并于916年称帝，辽上京及其后五京体系逐步成为政治空间。',
+    aliases: ['辽太祖'], offices: [{ title: '契丹／辽皇帝', polityId: 'khitan', placeId: 'liao_shangjing', validFrom: 916, validTo: 926, datePrecision: 'range', sourceIds }],
+    keyEvents: ['liao-founded'], sourceIds, uncertaintyNote: '契丹、辽的国号和政权分期存在不同叙述口径，本详情沿用项目目录并保留建国节点与后续国号变化的区别。',
+  },
+  {
+    personId: 'wang-jian', biography: '王建在唐末经营巴蜀军政资源，907年在成都称帝，前蜀由此形成。',
+    aliases: ['前蜀高祖'], offices: [{ title: '前蜀皇帝', polityId: 'former_shu', placeId: 'chengdu', validFrom: 907, validTo: 918, datePrecision: 'range', sourceIds }],
+    keyEvents: ['former-shu-founded'], sourceIds, uncertaintyNote: '907年称帝标志前蜀政权形成，但巴蜀各地的实际控制仍需结合阶段性军事与行政资料。',
+  },
+  {
+    personId: 'meng-zhixiang', biography: '孟知祥在后唐蜀地军政基础上取得独立地位，934年在成都称帝建立后蜀。',
+    aliases: ['后蜀高祖'], offices: [{ title: '后蜀皇帝', polityId: 'later_shu', placeId: 'chengdu', validFrom: 934, validTo: 934, datePrecision: 'year', sourceIds }],
+    keyEvents: ['later-shu-founded'], sourceIds, uncertaintyNote: '孟知祥称帝后不久去世，后蜀的长期统治由后继者延续；本详情不把个人在位期等同于政权存续期。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

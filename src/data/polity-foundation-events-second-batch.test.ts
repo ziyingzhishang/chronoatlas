@@ -49,7 +49,7 @@ describe('政权建政事件第二批', () => {
     }
   });
 
-  it('使第二批目标政权全部获得建政覆盖，但不伪造人物关系', () => {
+  it('使第二批目标政权全部获得建政与已核人物关系覆盖', () => {
     const report = auditPolityCoverage();
 
     for (const target of targets) {
@@ -59,7 +59,7 @@ describe('政权建政事件第二批', () => {
       });
     }
 
-    expect(report.byPolity('wei_northern').gaps).toEqual(expect.arrayContaining([
+    expect(report.byPolity('wei_northern').gaps).not.toEqual(expect.arrayContaining([
       expect.objectContaining({ code: 'missing-associated-person' }),
       expect.objectContaining({ code: 'missing-explicit-relationship' }),
     ]));

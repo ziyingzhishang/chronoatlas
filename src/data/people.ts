@@ -33,6 +33,16 @@ export const people: Person[] = [
   { id: 'an-lushan', name: '安禄山', birthYear: 703, deathYear: 757, roles: ['将领', '叛乱领袖'], polityIds: ['tang'], description: '安禄山发动叛乱，安史之乱使长安政治秩序受到重大冲击。', sourceIds: ['zizhi-tongjian'] },
   { id: 'zhu-wen', name: '朱温', aliases: ['朱全忠'], birthYear: 852, deathYear: 912, roles: ['皇帝', '军事领袖'], polityIds: ['liang_later'], description: '朱温建立后梁，唐亡后长安不再是中原王朝持续稳定的首都。', sourceIds: ['zizhi-tongjian'] },
   { id: 'li-cunxu', name: '李存勖', aliases: ['唐庄宗'], birthYear: 885, deathYear: 926, roles: ['皇帝', '军事领袖'], polityIds: ['tang_later'], description: '李存勖建立后唐，五代时期长安的政治地位已不同于唐代。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'yuan-hong', name: '元宏', aliases: ['拓跋宏', '北魏孝文帝'], birthYear: 467, deathYear: 499, roles: ['皇帝', '改革者'], polityIds: ['wei_northern'], description: '北魏孝文帝，迁都洛阳并推动汉化与制度改革。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'tuoba-tao', name: '拓跋焘', aliases: ['北魏太武帝'], birthYear: 408, deathYear: 452, roles: ['皇帝', '军事领袖'], polityIds: ['wei_northern'], description: '北魏太武帝，长期以平城为政治中心并推动北魏北方扩张。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'xiao-daocheng', name: '萧道成', aliases: ['齐高帝'], birthYear: 427, deathYear: 482, roles: ['皇帝', '军事领袖'], polityIds: ['qi_southern'], description: '萧道成受禅建立南齐，建康继续作为南朝都城。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'chen-baxian', name: '陈霸先', aliases: ['陈武帝'], birthYear: 503, deathYear: 559, roles: ['皇帝', '军事领袖'], polityIds: ['chen_southern'], description: '陈霸先在梁末军政竞争中取得主导地位，受禅建立南陈。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'shi-jingtang', name: '石敬瑭', aliases: ['晋高祖'], birthYear: 892, deathYear: 942, roles: ['皇帝', '军事领袖'], polityIds: ['jin_later'], description: '石敬瑭借助契丹力量建立后晋，开封成为后晋的中原政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'liu-zhiyuan', name: '刘知远', aliases: ['汉高祖'], birthYear: 895, deathYear: 948, roles: ['皇帝', '军事领袖'], polityIds: ['han_later'], description: '刘知远在后晋覆亡后建立后汉，先据太原，后进入开封。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'guo-wei', name: '郭威', aliases: ['周太祖'], birthYear: 904, deathYear: 954, roles: ['皇帝', '军事领袖'], polityIds: ['zhou_later'], description: '郭威受禅建立后周，成为五代后期中原政权整顿的关键人物。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'yelu-abaoji', name: '耶律阿保机', aliases: ['辽太祖'], birthYear: 872, deathYear: 926, roles: ['皇帝', '军事领袖'], polityIds: ['khitan'], description: '耶律阿保机整合契丹诸部并称帝，辽政权由此进入新的国家阶段。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'wang-jian', name: '王建', aliases: ['前蜀高祖'], birthYear: 847, deathYear: 918, roles: ['皇帝', '军事领袖'], polityIds: ['former_shu'], description: '王建经营巴蜀军政资源，唐亡后在成都称帝建立前蜀。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'meng-zhixiang', name: '孟知祥', aliases: ['后蜀高祖'], birthYear: 874, deathYear: 934, roles: ['皇帝', '军事领袖'], polityIds: ['later_shu'], description: '孟知祥在后唐蜀地军政基础上建立后蜀，成都继续作为政治中心。', sourceIds: ['zizhi-tongjian'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
