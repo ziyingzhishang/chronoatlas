@@ -6,15 +6,15 @@ import { eventsAtYear, queryEvents } from '../domain/events';
 import { formatHistoricalYear, indexToYear, yearToIndex, TIMELINE_MIN_YEAR, TIMELINE_MAX_YEAR } from '../domain/timeline';
 import { contentSearchText, localizeEvents } from '../i18n/content';
 import { formatSourceField } from '../i18n/source-display';
-export interface EventExplorerProps { items?:HistoricalEvent[]; year:number;selectedId?:string;onSelect:(event:HistoricalEvent)=>void;onYearChange:(year:number)=>void;onLocate?:(event:HistoricalEvent)=>void;groupIds?:string[];onClearGroup?:()=>void;onBackToList?:()=>void;queryValue?:string;onQueryChange?:(query:string)=>void;hideSearch?:boolean }
+export interface EventExplorerProps { items?:HistoricalEvent[]; year:number;selectedId?:string;onSelect:(event:HistoricalEvent)=>void;onYearChange:(year:number)=>void;onLocate?:(event:HistoricalEvent)=>void;groupIds?:string[];onClearGroup?:()=>void;onBackToList?:()=>void;queryValue?:string;onQueryChange?:(query:string)=>void;regionValue?:string;onRegionChange?:(region:string)=>void;categoryValue?:string;onCategoryChange?:(category:string)=>void;hideSearch?:boolean }
 export function eventDate(event:HistoricalEvent){
   return `${event.datePrecision==='approximate'?'约 ':''}${formatHistoricalYear(event.year)}${event.endYear&&event.endYear!==event.year?`—${formatHistoricalYear(event.endYear)}`:''}`;
 }
-export function EventExplorer({items=events,year,selectedId,onSelect,onYearChange,onLocate,groupIds,onClearGroup,onBackToList,queryValue,onQueryChange,hideSearch}:EventExplorerProps){
+export function EventExplorer({items=events,year,selectedId,onSelect,onYearChange,onLocate,groupIds,onClearGroup,onBackToList,queryValue,onQueryChange,regionValue,onRegionChange,categoryValue,onCategoryChange,hideSearch}:EventExplorerProps){
   const { locale, t } = useLocale();
   const [localQuery,setLocalQuery]=useState('');
-  const [region,setRegion]=useState('');
-  const [category,setCategory]=useState('');
+  const [localRegion,setLocalRegion]=useState('');
+  const [localCategory,setLocalCategory]=useState('');
   const [showFilters,setShowFilters]=useState(false);
   const [view,setView]=useState<'current'|'nearby'|'all'>('current');
   const detail=useRef<HTMLElement>(null);
@@ -28,6 +28,10 @@ export function EventExplorer({items=events,year,selectedId,onSelect,onYearChang
   const localizedItems=useMemo(()=>localizeEvents(items,locale),[items,locale]);
   const query=queryValue??localQuery;
   const setQuery=onQueryChange??setLocalQuery;
+  const region=regionValue??localRegion;
+  const setRegion=onRegionChange??setLocalRegion;
+  const category=categoryValue??localCategory;
+  const setCategory=onCategoryChange??setLocalCategory;
   const filtered=queryEvents(localizedItems,{region,category}).filter(event=>!query.trim()||contentSearchText(event).includes(query.trim().toLocaleLowerCase()));
   const searching=!!(query.trim()||region||category);
   const selected=localizedItems.find(e=>e.id===selectedId);
