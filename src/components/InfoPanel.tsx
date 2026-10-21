@@ -17,11 +17,13 @@ import { places } from '../data/places';
 import { polities } from '../data/polities';
 import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
+import type { DetailEntity } from '../domain/detail-entity';
 
 interface InfoPanelProps {
   state: HistoricalState;
   selectedEntity: SelectedEntity;
   onYearChange?: (year:number)=>void;
+  onOpenEntity?: (entity: DetailEntity) => void;
 }
 
 const controlLabels = {
@@ -36,7 +38,7 @@ const range = (from:number,to:number) => from===to ? formatHistoricalYear(from) 
 const sourceYear = (year:number) => year===0 ? '0（来源边界值，非公元0年）' : formatHistoricalYear(year);
 const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `${sourceYear(from)}—${sourceYear(to)}`;
 
-export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProps) {
+export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity }: InfoPanelProps) {
   const { locale, t } = useLocale();
   const prose = (value:string) => locale==='en' && /[\u3400-\u9fff]/.test(value) && t(value)===value
     ? 'Verification note retained in the Chinese data record; consult the linked source for details.' : t(value);
@@ -98,7 +100,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
           </dl>
           {selected.notes && <p className="detail-note">{t(selected.notes)}</p>}
           <p className="detail-note">{t("此处为精选古地名参照，尚未逐年校勘更名与归属；名称不保证适用于所选年的每个时点。")}</p>
-          {studyView && <StudyRelationsPanel view={studyView} />}
+          {studyView && <StudyRelationsPanel view={studyView} onOpenEntity={onOpenEntity} />}
         </>
       )}
       {selectedEntity?.type === 'polity' && selected && 'name' in selected && (
@@ -149,7 +151,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
             {boundariesByPolity.get(selected.id)?.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}{t(b.areaKm2 ? ` · 约${(b.areaKm2/10000).toFixed(0)}万 km²` : '')}</button>)}
           </div></details>}
           {selected.sourceIds.map(id => sourceById[id]).filter(Boolean).map(s => {const field=sourceField('documentTitle',s.title);return <p className="detail-note" key={s.id}>{field.label}{field.value} · {prose(s.note)}</p>;})}
-          {studyView && <StudyRelationsPanel view={studyView} />}
+          {studyView && <StudyRelationsPanel view={studyView} onOpenEntity={onOpenEntity} />}
         </>
       )}
       {selectedEntity?.type === 'event' && selected && 'title' in selected && (

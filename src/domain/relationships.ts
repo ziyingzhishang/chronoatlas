@@ -1,19 +1,32 @@
-import type { HistoricalClaim } from './types';
+import type { HistoricalClaim, PersonRelationType } from './types';
 
 export type PersonRelationshipKind = 'person-person' | 'person-polity' | 'person-event' | 'person-heritage';
 
 export interface PersonRelationship {
   kind: PersonRelationshipKind;
+  relationType: PersonRelationType;
   claim: HistoricalClaim;
 }
 
+export type GroupedPersonRelationships = Record<PersonRelationshipKind, PersonRelationship[]> & Record<PersonRelationType, PersonRelationship[]>;
+
 const predicateKinds: Record<string, PersonRelationshipKind> = {
+  'parent-of': 'person-person', 'child-of': 'person-person', 'spouse-of': 'person-person',
+  'sibling-of': 'person-person', 'teacher-of': 'person-person', 'student-of': 'person-person',
+  served: 'person-person', appointed: 'person-person', 'ally-of': 'person-person', 'enemy-of': 'person-person',
   founded: 'person-polity',
   ruled: 'person-polity',
   succeeded: 'person-polity',
   'related-to': 'person-person',
   'participated-in': 'person-event',
   commissioned: 'person-heritage',
+};
+
+const predicateRelationTypes: Record<string, PersonRelationType> = {
+  'parent-of': 'parent-of', 'child-of': 'child-of', 'spouse-of': 'spouse-of', 'sibling-of': 'sibling-of',
+  'teacher-of': 'teacher-of', 'student-of': 'student-of', served: 'served', appointed: 'appointed',
+  succeeded: 'succeeded', founded: 'founded', ruled: 'ruled', 'ally-of': 'ally-of', 'enemy-of': 'enemy-of',
+  'related-to': 'related-to', 'participated-in': 'participated-in', commissioned: 'commissioned',
 };
 
 const activeAt = (claim: HistoricalClaim, year: number) =>
@@ -23,14 +36,21 @@ const activeAt = (claim: HistoricalClaim, year: number) =>
 export function findPersonRelationships(personId: string, year: number, sourceClaims: HistoricalClaim[]): PersonRelationship[] {
   return sourceClaims
     .filter((claim) => claim.subjectId === personId && activeAt(claim, year))
-    .map((claim) => ({ claim, kind: predicateKinds[claim.predicate] }))
-    .filter((relation): relation is PersonRelationship => relation.kind !== undefined);
+    .map((claim) => ({ claim, kind: predicateKinds[claim.predicate], relationType: predicateRelationTypes[claim.predicate] }))
+    .filter((relation): relation is PersonRelationship => relation.kind !== undefined && relation.relationType !== undefined)
+    .sort((left, right) => (left.claim.validFrom ?? Number.MAX_SAFE_INTEGER) - (right.claim.validFrom ?? Number.MAX_SAFE_INTEGER) || left.claim.id.localeCompare(right.claim.id));
 }
 
-export function groupPersonRelationships(personId: string, year: number, sourceClaims: HistoricalClaim[]) {
-  const grouped: Record<PersonRelationshipKind, PersonRelationship[]> = {
+export function groupPersonRelationships(personId: string, year: number, sourceClaims: HistoricalClaim[]): GroupedPersonRelationships {
+  const grouped = {
     'person-person': [], 'person-polity': [], 'person-event': [], 'person-heritage': [],
-  };
-  for (const relation of findPersonRelationships(personId, year, sourceClaims)) grouped[relation.kind].push(relation);
+  } as unknown as GroupedPersonRelationships;
+  for (const relationType of Object.values(predicateRelationTypes) as PersonRelationType[]) {
+    Object.defineProperty(grouped, relationType, { value: [], enumerable: false, writable: true });
+  }
+  for (const relation of findPersonRelationships(personId, year, sourceClaims)) {
+    grouped[relation.kind].push(relation);
+    grouped[relation.relationType]!.push(relation);
+  }
   return grouped;
 }

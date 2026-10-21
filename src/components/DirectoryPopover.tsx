@@ -1,6 +1,7 @@
 import { useLocale } from '../i18n/locale';
 import type { HistoricalState, SelectedEntity } from '../domain/types';
 import { InfoPanel } from './InfoPanel';
+import type { DetailEntity } from '../domain/detail-entity';
 
 interface DirectoryPopoverProps {
   id?: string;
@@ -10,9 +11,10 @@ interface DirectoryPopoverProps {
   onBackToDirectory: () => void;
   onClose: () => void;
   onYearChange?: (year: number) => void;
+  onOpenEntity?: (entity: DetailEntity) => void;
 }
 
-export function DirectoryPopover({ id, state, selectedEntity, onSelectEntity, onBackToDirectory, onClose, onYearChange }: DirectoryPopoverProps) {
+export function DirectoryPopover({ id, state, selectedEntity, onSelectEntity, onBackToDirectory, onClose, onYearChange, onOpenEntity }: DirectoryPopoverProps) {
   const { t } = useLocale();
   return <aside id={id} className="directory-popover" aria-label={t('政权目录')}>
     <div className="directory-popover-heading">
@@ -21,7 +23,7 @@ export function DirectoryPopover({ id, state, selectedEntity, onSelectEntity, on
     </div>
     {selectedEntity ? <>
       <button className="directory-back" type="button" onClick={onBackToDirectory}>← {t('返回目录')}</button>
-      <InfoPanel state={state} selectedEntity={selectedEntity} onYearChange={onYearChange} />
+      <InfoPanel state={state} selectedEntity={selectedEntity} onYearChange={onYearChange} onOpenEntity={onOpenEntity} />
     </> : <div className="directory-popover-scroll">
       <section className="directory-section">
         <span className="eyebrow">{t('本年政权目录')}</span>

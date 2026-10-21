@@ -95,6 +95,45 @@ export interface Person {
   sourceIds: string[];
 }
 
+export type PersonRelationType =
+  | 'parent-of'
+  | 'child-of'
+  | 'spouse-of'
+  | 'sibling-of'
+  | 'teacher-of'
+  | 'student-of'
+  | 'served'
+  | 'appointed'
+  | 'succeeded'
+  | 'founded'
+  | 'ruled'
+  | 'ally-of'
+  | 'enemy-of'
+  | 'related-to'
+  | 'participated-in'
+  | 'commissioned';
+
+export interface PersonOffice {
+  title: string;
+  polityId?: string;
+  placeId?: string;
+  validFrom?: number;
+  validTo?: number;
+  datePrecision: 'year' | 'range' | 'approximate' | 'unknown';
+  sourceIds: string[];
+  uncertaintyNote?: string;
+}
+
+export interface PersonDetail {
+  personId: string;
+  biography: string;
+  offices: PersonOffice[];
+  aliases: string[];
+  keyEvents: string[];
+  sourceIds: string[];
+  uncertaintyNote?: string;
+}
+
 export interface HeritageAsset {
   id: string;
   name: string;
@@ -168,6 +207,32 @@ export interface HistoricalEvent {
   verification?: 'checked' | 'partial';
   coordinates?: [number, number];
   locationPrecision?: 'approximate' | 'confirmed';
+}
+
+export interface EventParticipant {
+  personId: string;
+  role: string;
+  note?: string;
+}
+
+export interface EventPhase {
+  label: string;
+  startYear?: number;
+  endYear?: number;
+  summary: string;
+}
+
+export interface HistoricalEventDetail {
+  eventId: string;
+  participants: EventParticipant[];
+  polityIds: string[];
+  causes: string[];
+  consequences: string[];
+  phases?: EventPhase[];
+  locationIds: string[];
+  relatedEventIds: string[];
+  sourceIds: string[];
+  uncertaintyNote?: string;
 }
 
 export interface SourceNote {

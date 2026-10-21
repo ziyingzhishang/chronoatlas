@@ -19,6 +19,18 @@ import { localizeState } from '../i18n/content';
 import { contentSearchText, localizeEvents } from '../i18n/content';
 import { queryEvents } from '../domain/events';
 import { MapReadingGuide } from '../components/MapReadingGuide';
+import { EntityDrawer } from '../components/EntityDrawer';
+import { PersonDetail } from '../components/PersonDetail';
+import { EventDetail } from '../components/EventDetail';
+import { HeritageDetail } from '../components/HeritageDetail';
+import type { DetailEntity, DetailHistoryEntry } from '../domain/detail-entity';
+import { people } from '../data/people';
+import { heritageById } from '../data/heritage';
+import { getPersonDetail } from '../data/person-details';
+import { getHeritageDetail } from '../data/heritage-details';
+import { claims } from '../data/claims';
+import { polities } from '../data/polities';
+import { places } from '../data/places';
 
 export function App() {
   return <LocaleProvider><HistoryWorkspace/></LocaleProvider>;
@@ -44,6 +56,8 @@ function HistoryWorkspace() {
   const [timelineWindow,setTimelineWindow]=useState<YearWindow>(DEFAULT_TIMELINE_WINDOW);
   const [timelineViewLabel,setTimelineViewLabel]=useState('王朝至今');
   const [timelineHistory,setTimelineHistory]=useState<Array<{window:YearWindow;label:string}>>([]);
+  const [detailEntity, setDetailEntity] = useState<DetailEntity>();
+  const [detailHistory, setDetailHistory] = useState<DetailHistoryEntry[]>([]);
   const world = useWorldSlice(currentYear, showWorld);
   const historicalState = useMemo(() => localizeState(getHistoricalState(currentYear, {world:world.slice}),locale), [currentYear,world.slice,locale]);
   const localizedEvents=useMemo(()=>localizeEvents(events,locale),[locale]);
@@ -101,6 +115,20 @@ function HistoryWorkspace() {
     setSelectedEntity(entity);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(true);
   }
   function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
+  function openDetail(entity: DetailEntity) {
+    if (detailEntity && (detailEntity.type !== entity.type || detailEntity.id !== entity.id)) {
+      const title = detailTitle(detailEntity);
+      setDetailHistory((history) => [...history, { entity: detailEntity, title }].slice(-12));
+    }
+    setDetailEntity(entity);
+  }
+  function closeDetail() { setDetailEntity(undefined); setDetailHistory([]); }
+  function backDetail() {
+    const previous = detailHistory.at(-1);
+    if (!previous) return;
+    setDetailHistory((history) => history.slice(0, -1));
+    setDetailEntity(previous.entity);
+  }
   function clearMapSelection(){
     if(selectedEntity?.type==='event'){
       setSelectedEntity(undefined);
@@ -126,7 +154,7 @@ function HistoryWorkspace() {
         <div className="event-search-dock-wrap" onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setEventSearchOpen(false);}}>
           <label className="event-search-dock">{t('查找历史转折')}<input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>{setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
           {directoryOpen&&!eventSearchOpen&&(
-            <DirectoryPopover id="directory-popover" state={historicalState} selectedEntity={selectedEntity} onSelectEntity={selectEntity} onBackToDirectory={()=>setSelectedEntity(undefined)} onClose={()=>{setSelectedEntity(undefined);setDirectoryOpen(false);}} onYearChange={changeYear}/>
+              <DirectoryPopover id="directory-popover" state={historicalState} selectedEntity={selectedEntity} onSelectEntity={selectEntity} onBackToDirectory={()=>setSelectedEntity(undefined)} onClose={()=>{setSelectedEntity(undefined);setDirectoryOpen(false);}} onYearChange={changeYear} onOpenEntity={openDetail}/>
           )}
           {eventSearchOpen&&<div className="event-search-popover">
             <div className="event-search-filters"><select aria-label={t('事件地域')} value={eventSearchRegion} onChange={e=>setEventSearchRegion(e.target.value)}><option value="">{t('全部地域')}</option><option value="china">{t('中国历史')}</option><option value="world">{t('同期世界')}</option></select><select aria-label={t('事件类别')} value={eventSearchCategory} onChange={e=>setEventSearchCategory(e.target.value)}><option value="">{t('全部类别')}</option>{[...new Set(events.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(category=><option key={category} value={category}>{t(category)}</option>)}</select></div>
@@ -149,11 +177,27 @@ function HistoryWorkspace() {
       <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onLayerChange={updateLayer} showWorld={showWorld} onShowWorldChange={value=>{setShowWorld(value);setSelectedEntity(undefined);}} onSelectEntity={selectEntity} onClearSelection={clearMapSelection} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
-        {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear}/>}
+        {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear} onOpenEntity={openDetail}/>}
         {panel==='more'&&<><label className="language-setting">{t('显示语言')}<select aria-label={t('显示语言')} value={locale} onChange={e=>setLocale(readLocale(e.target.value))}>{Object.entries(localeNames).map(([value,name])=><option key={value} value={value}>{name}</option>)}</select></label><MapReadingGuide year={currentYear}/><Legend/><p className="detail-note">{t('时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。')}</p><p className="detail-note">{t('桌面可停靠或悬浮时间控制器；手机使用收起、紧凑和展开三档。拖动年份不会改变地图视角。独立网页应用试用版，尚未公开发布。')}</p></>}
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
     </div>
+      {detailEntity && <EntityDrawer title={detailTitle(detailEntity)} entityType={detailEntity.type} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0}>
+        {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={getPersonDetail(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
+        {detailEntity.type === 'event' && (() => { const event = events.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
+        {detailEntity.type === 'heritage' && (() => { const asset = heritageById[detailEntity.id]; const detail = getHeritageDetail(detailEntity.id); return asset && detail ? <HeritageDetail detail={detail} heritageName={asset.name} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录遗产详情')}</p>; })()}
+        {(detailEntity.type === 'polity' || detailEntity.type === 'place') && (
+          <InfoPanel state={historicalState} selectedEntity={detailEntity} onYearChange={changeYear} onOpenEntity={openDetail}/>
+        )}
+      </EntityDrawer>}
     <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
   </main>;
+}
+
+function detailTitle(entity: DetailEntity): string {
+  if (entity.type === 'person') return people.find((item) => item.id === entity.id)?.name ?? '人物详情';
+  if (entity.type === 'event') return events.find((item) => item.id === entity.id)?.title ?? '事件详情';
+  if (entity.type === 'heritage') return heritageById[entity.id]?.name ?? '遗产详情';
+  if (entity.type === 'polity') return polities.find((item) => item.id === entity.id)?.name ?? '政权详情';
+  return places.find((item) => item.id === entity.id)?.historicalName ?? '地点详情';
 }

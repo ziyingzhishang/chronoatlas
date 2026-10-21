@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { render, screen, within } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { App } from './App';
 import userEvent from '@testing-library/user-event';
@@ -35,4 +35,15 @@ test('opens the more information as a bottom-right HUD', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '更多' }));
   expect(screen.getByRole('dialog', { name: '阅读说明与来源' })).toHaveClass('workspace-hud');
+});
+
+test('opens a deep entity drawer from the polity study view and supports back navigation', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /李世民/ }));
+  expect(screen.getByRole('dialog', { name: '李世民' })).toHaveClass('entity-drawer');
+  expect(screen.getByText('人物关系')).toBeInTheDocument();
+  await userEvent.click(within(screen.getByRole('dialog', { name: '李世民' })).getByRole('button', { name: '关闭详情' }));
+  expect(screen.queryByRole('dialog', { name: '李世民' })).not.toBeInTheDocument();
 });
