@@ -5,8 +5,33 @@ type Seed =
   | [string, string, number, number]
   | [string, string, number, number, CapitalRole, CapitalStatus, ('high'|'medium'|'low')?, string?];
 const sourceIds = ['capital-history-reference'];
+const twelfthBatchAuditNotes: Record<string, string> = {
+  xiongnu: '最终证据复核：保留移动汗廷；龙城／单于庭仅作今蒙古国南部至杭爱地区的候选区域参照，来源为 capital-history-reference。',
+  tuyuhun: '最终证据复核：保留候选王都；伏俟城对应今青海省共和县一带，不能据此确认全期固定首都，来源为 capital-history-reference。',
+  xia_early: '最终证据复核：保留考古候选；二里头对应今河南省洛阳市偃师区二里头村附近，不能等同为已证实的夏代固定首都，来源为 capital-history-reference 与 erlitou-official。',
+  shang: '最终证据复核：保留早期候选；二里头对应今河南省洛阳市偃师区，商代多次迁都且现有地点不能代替晚商殷墟（今河南省安阳市）独立地点实体，来源为 capital-history-reference。',
+  western_qin: '最终证据复核：保留阶段性中心；金城及河湟／河西参照对应今兰州市、武威市一带，不能合并推定为全期固定首都，来源为 capital-history-reference。',
+  northern_yuan: '最终证据复核：保留移动汗廷；蒙古汗廷仅对应今蒙古高原中部的阶段性区域，多个汗廷阶段不能压缩为单一固定首都，来源为 capital-history-reference 与 northern-yuan-early-ming。',
+  ming_southern: '最终证据复核：保留阶段性中心；南京、福州、广州分别对应今江苏省南京市、福建省福州市、广东省广州市，南明诸政权并立，不能宣称全期单一固定首都，来源为 capital-history-reference。',
+  turkic: '最终证据复核：保留移动汗廷；于都斤／鄂尔浑政治核心对应今蒙古国中部，两个汗国阶段均为移动性汗廷，不是固定城市首都，来源为 capital-history-reference、turkic-history-db 与 turkic-orkhon-heritage。',
+};
+const twelfthBatchSourceIds: Record<string, string[]> = {
+  xia_early: ['erlitou-official'],
+  northern_yuan: ['northern-yuan-early-ming'],
+  turkic: ['turkic-history-db', 'turkic-orkhon-heritage'],
+};
 const seed = (polityId:string, [placeId, _name, validFrom, validTo, role='primary', status='formal', confidence='medium', notes]:Seed): CapitalTerm => ({
-  polityId, placeId, validFrom, validTo, role, status, confidence, sourceIds, notes,
+  polityId,
+  placeId,
+  validFrom,
+  validTo,
+  role,
+  status,
+  confidence,
+  sourceIds: [...new Set([...sourceIds, ...(twelfthBatchSourceIds[polityId] ?? [])])],
+  notes: notes && twelfthBatchAuditNotes[polityId]
+    ? `${notes} ${twelfthBatchAuditNotes[polityId]}`
+    : twelfthBatchAuditNotes[polityId] ?? notes,
 });
 
 const explicit: Record<string, Seed[]> = {
