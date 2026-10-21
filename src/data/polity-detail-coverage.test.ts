@@ -39,7 +39,7 @@ describe('polity detail coverage audit', () => {
     expect(report.totalPolities).toBe(87);
     expect(report.items).toHaveLength(87);
     expect(report.coveredPolityIds).toContain('qin');
-    expect(report.uncoveredPolityIds).toContain('han_warring');
+    expect(report.uncoveredPolityIds).toContain('chu_warring');
     expect(report.uncoveredPolityIds.length).toBeGreaterThan(0);
     expect(report.detailCoverageRate).toBeLessThan(1);
     expect(report.items.find((item) => item.polityId === 'qin')?.knowledgeDetailStatus)
