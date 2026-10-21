@@ -733,6 +733,46 @@ export const personDetails: PersonDetail[] = [
     aliases: ['刘道和'], offices: [{ title: '东晋中书监与军政谋臣', polityId: 'jin_eastern', validFrom: 400, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }, { title: '刘宋建政前的军政谋臣', polityId: 'song_southern', validFrom: 416, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['liu-song-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘宋正式建立于420年，刘穆之卒于417年，故本条表达建宋前的军政准备与权力网络，不把他写成420年受禅现场人物。',
   },
+  {
+    personId: 'zhang-gui', biography: '张轨是西晋凉州刺史，在中央秩序衰落时维持河西军政与交通，张氏地方政权由此获得连续的政治基础。',
+    aliases: ['前凉武公'], offices: [{ title: '西晋凉州刺史', polityId: 'former_liang', placeId: 'guzang', validFrom: 301, validTo: 314, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['former-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '张轨以晋臣名义经营凉州，前凉形成是地方军政延续与后续独立化过程，不能简单等同于一次正式受禅建国。',
+  },
+  {
+    personId: 'zhang-shi', biography: '张寔承继张轨的凉州军政资源，在河西延续张氏统治并加强姑臧等地的行政与军事组织。',
+    aliases: ['前凉昭公'], offices: [{ title: '前凉继承者与凉州刺史', polityId: 'former_liang', placeId: 'guzang', validFrom: 314, validTo: 320, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['former-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '张寔属于张轨之后的延续阶段；本详情不把其写成314年张氏政权最初形成的唯一创建者。',
+  },
+  {
+    personId: 'qifu-gangui', biography: '乞伏乾归是西秦后续阶段的核心君主，经历称王、降附后秦与复立等过程，体现陇右政权的阶段性和迁徙性。',
+    aliases: ['西秦武元王'], offices: [{ title: '西秦君主', polityId: 'western_qin', validFrom: 388, validTo: 400, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }, { title: '西秦复立后的君主', polityId: 'western_qin', validFrom: 409, validTo: 412, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '西秦形成节点为385年，乞伏乾归主要对应其后的继承、降附与复立阶段，不能把所有阶段压缩为连续稳定的早期建政。',
+  },
+  {
+    personId: 'wang-sengbian', biography: '王僧辩是梁末江南军政重建的重要将领，与陈霸先共同平定侯景之乱，后因陈梁政权安排发生政治冲突。',
+    aliases: ['王僧辨'], offices: [{ title: '南梁军政将领', polityId: 'liang_southern', placeId: 'jiankang', validFrom: 552, validTo: 555, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-chen-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '王僧辩参与的是南陈建立前的江南重建和梁陈权力转换，不是557年陈霸先受禅时的南陈君主。',
+  },
+  {
+    personId: 'li-gang', biography: '李纲在靖康之变前后参与宋廷危局处置并主张整军御敌，连接北宋覆亡前后的中枢决策与南宋重建。',
+    aliases: ['李伯纪'], offices: [{ title: '北宋尚书右丞与抗金主张者', polityId: 'song_northern', validFrom: 1126, validTo: 1127, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['song-southward'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '李纲与南渡事件的关系主要在靖康危局和宋廷军政决策阶段，不将其写成主持全部南迁路线的单一人物。',
+  },
+  {
+    personId: 'zong-ze', biography: '宗泽在汴梁失守后留守开封、组织防务并主张迎回二帝，活动连接北宋覆亡与南宋初年军事重建。',
+    aliases: ['宗汝霖'], offices: [{ title: '东京留守', polityId: 'song_northern', placeId: 'kaifeng', validFrom: 1127, validTo: 1128, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }, { title: '南宋初年军政将领', polityId: 'song_south', validFrom: 1127, validTo: 1128, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['song-southward'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '宗泽主要对应汴梁失守后的留守和北方防务阶段；南宋南渡的朝廷迁驻与其军政活动不能混为同一行动。',
+  },
+  {
+    personId: 'zhang-jun', biography: '张浚是南宋初年重要军政官员，参与朝廷重建、抗金部署和将帅协调，体现南渡后中央与战区的互动。',
+    aliases: ['张德远'], offices: [{ title: '南宋宰执与军事统筹者', polityId: 'song_south', validFrom: 1127, validTo: 1135, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['song-southward'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '张浚主要属于南宋初年南渡后的军政重建阶段，不能把其后续抗金部署倒推为1127年南迁现场决策。',
+  },
+  {
+    personId: 'gao-hongtu', biography: '高弘图是弘光政权时期的内阁大臣，参与南京朝廷政务，代表南明多中心体系中的一个阶段性政治角色。',
+    aliases: ['高文斗'], offices: [{ title: '弘光朝内阁大学士', polityId: 'ming_southern', placeId: 'yingtian', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['southern-ming-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '高弘图只对应弘光阶段，南明是多个政权和政治中心的后世总称，不能由其任职推导南明全期制度。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

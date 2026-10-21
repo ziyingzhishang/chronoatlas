@@ -144,6 +144,14 @@ export const people: Person[] = [
   { id: 'murong-chao', name: '慕容超', aliases: ['南燕末主'], birthYear: 385, deathYear: 410, roles: ['皇帝', '军事领袖'], polityIds: ['southern_yan'], description: '慕容超继承南燕，在广固统治至410年刘裕北伐灭燕，代表南燕末期的君主与军事防御阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'yelu-yilie', name: '耶律夷列', aliases: ['西辽仁宗'], deathYear: 1163, roles: ['皇帝', '君主'], polityIds: ['western_liao'], description: '耶律夷列承接耶律大石建立的西辽，在七河流域维持契丹政权的继承与行政秩序。', sourceIds: ['china-chronology'] },
   { id: 'liu-muzi', name: '刘穆之', aliases: ['刘道和'], birthYear: 360, deathYear: 417, roles: ['宰相', '谋臣', '官员'], polityIds: ['jin_eastern', 'song_southern'], description: '刘穆之是刘裕北伐、平定内乱和建宋前夕的重要谋臣与行政组织者，参与东晋向刘宋过渡的军政准备。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'zhang-gui', name: '张轨', aliases: ['前凉武公'], birthYear: 255, deathYear: 314, roles: ['地方统治者', '刺史', '军政领袖'], polityIds: ['former_liang'], description: '张轨在西晋衰乱中经营凉州军政，维持河西地方秩序并奠定张氏前凉形成的基础。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'zhang-shi', name: '张寔', aliases: ['前凉昭公'], birthYear: 278, deathYear: 320, roles: ['地方统治者', '刺史', '继承者'], polityIds: ['former_liang'], description: '张寔承接张轨在河西的军政基础，在西晋中央衰弱后延续张氏政权，推动前凉从地方军镇向连续政权发展。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'qifu-gangui', name: '乞伏乾归', aliases: ['西秦武元王'], birthYear: 365, deathYear: 412, roles: ['君主', '部族首领', '军事领袖'], polityIds: ['western_qin'], description: '乞伏乾归承接乞伏国仁建立的西秦，在陇右与河湟竞争中经历称王、降附与复立等阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'wang-sengbian', name: '王僧辩', aliases: ['王僧辨'], birthYear: 495, deathYear: 555, roles: ['将领', '军政领袖', '梁臣'], polityIds: ['liang_southern'], description: '王僧辩是梁末江南军政重建的重要将领，与陈霸先共同应对侯景之乱，后在陈梁政权转换中与陈霸先发生冲突。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'li-gang', name: '李纲', aliases: ['李伯纪'], birthYear: 1083, deathYear: 1140, roles: ['宰相', '官员', '抗金主张者'], polityIds: ['song_northern', 'song_south'], description: '李纲在靖康之变前后主张整军御敌并参与宋廷危局处置，代表北宋覆亡与南宋重建之间的军政连续性。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'zong-ze', name: '宗泽', aliases: ['宗汝霖'], birthYear: 1060, deathYear: 1128, roles: ['将领', '东京留守', '抗金将领'], polityIds: ['song_northern', 'song_south'], description: '宗泽在汴梁失守后留守开封、组织防务并迎接赵构南渡前后的军政重建，是北宋覆亡至南宋初年过渡阶段的重要将领。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'zhang-jun', name: '张浚', aliases: ['张德远'], birthYear: 1097, deathYear: 1164, roles: ['宰相', '军事统筹者', '官员'], polityIds: ['song_south'], description: '张浚在南宋初年参与朝廷重建与抗金军事部署，体现南渡后中央决策与地方军镇之间的互动。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'gao-hongtu', name: '高弘图', aliases: ['高文斗'], birthYear: 1603, deathYear: 1645, roles: ['内阁大学士', '官员', '南明大臣'], polityIds: ['ming_southern'], description: '高弘图是弘光政权时期的内阁大臣，参与南明初期南京朝廷的政务运作，反映南明多中心体系中的弘光阶段。', sourceIds: ['china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
