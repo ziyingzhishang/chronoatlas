@@ -59,12 +59,25 @@ export interface ChanganStudyBundle {
 
 export function getChanganStudyBundle(): ChanganStudyBundle {
   const politySet = new Set(changanPolityIds);
+  const selectedPolities = polities.filter((polity) => politySet.has(polity.id));
+  const selectedPeople = people.filter((person) => person.polityIds?.some((id) => politySet.has(id)));
+  const selectedHeritage = heritageAssets.filter((asset) => asset.placeId === changanCityId);
+  const entityIds = new Set([
+    changanCityId,
+    ...selectedPolities.map((polity) => polity.id),
+    ...selectedPeople.map((person) => person.id),
+    ...selectedHeritage.map((asset) => asset.id),
+  ]);
   return {
     city: places.find((place) => place.id === changanCityId)!,
-    polities: polities.filter((polity) => politySet.has(polity.id)),
-    people: people.filter((person) => person.polityIds?.some((id) => politySet.has(id))),
-    heritage: heritageAssets.filter((asset) => asset.placeId === changanCityId),
+    polities: selectedPolities,
+    people: selectedPeople,
+    heritage: selectedHeritage,
     events: changanEvents,
-    claims: claims.filter((claim) => claim.subjectId === changanCityId || claim.objectId === changanCityId || politySet.has(claim.subjectId) || politySet.has(claim.objectId ?? '')),
+    claims: claims.filter((claim) => (
+      (claim.subjectId === changanCityId || claim.objectId === changanCityId || politySet.has(claim.subjectId) || politySet.has(claim.objectId ?? ''))
+      && entityIds.has(claim.subjectId)
+      && (!claim.objectId || entityIds.has(claim.objectId))
+    )),
   };
 }
