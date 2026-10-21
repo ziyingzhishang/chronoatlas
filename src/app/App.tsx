@@ -31,6 +31,7 @@ function HistoryWorkspace() {
   const [panel,setPanel]=useState<PanelName|null>(null);
   const [panelTarget,setPanelTarget]=useState<HTMLDivElement|null>(null);
   const [eventGroup,setEventGroup]=useState<string[]|undefined>();
+  const [eventSearchQuery,setEventSearchQuery]=useState('');
   const [focusRequest,setFocusRequest]=useState<{id:string;nonce:number}|undefined>();
   const [mapRefreshToken,setMapRefreshToken]=useState(0);
   const [timelineWindow,setTimelineWindow]=useState<YearWindow>(DEFAULT_TIMELINE_WINDOW);
@@ -89,9 +90,12 @@ function HistoryWorkspace() {
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
   return <main className="workspace">
     <header className="workspace-header">
-      <div className="map-status-hud" role="status" aria-label={t('当前历史状态')}>
-        <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
-        <span>{t('当前视窗')} · {formatHistoricalYear(timelineWindow[0])}—{formatHistoricalYear(timelineWindow[1])}</span>
+      <div className="workspace-header-left">
+        <div className="map-status-hud" role="status" aria-label={t('当前历史状态')}>
+          <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
+          <span>{t('当前视窗')} · {formatHistoricalYear(timelineWindow[0])}—{formatHistoricalYear(timelineWindow[1])}</span>
+        </div>
+        <label className="event-search-dock">{t('查找历史转折')}<input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
       </div>
       <nav className="workspace-tool-nav" aria-label={t('工作台工具')}>
         {(['events','details','more'] as const).map((name,i)=><button className="workspace-tool-icon" key={name} aria-label={t(['事件','详情','更多'][i])} title={t(['事件','详情','更多'][i])} aria-expanded={panel===name} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p===name?null:name);}}>{['◆','ⓘ','⋯'][i]}</button>)}
@@ -100,9 +104,9 @@ function HistoryWorkspace() {
     <div className="workspace-map-area">
       <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onLayerChange={updateLayer} showWorld={showWorld} onShowWorldChange={value=>{setShowWorld(value);setSelectedEntity(undefined);}} onSelectEntity={selectEntity} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
-      {panel && <WorkspacePanel title={t(titles[panel])} onClose={()=>setPanel(null)}>
+      {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
         {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear}/>}
-        {panel==='events'&&<EventExplorer year={currentYear} selectedId={selectedEntity?.type==='event'?selectedEntity.id:undefined} onSelect={selectEvent} onYearChange={changeYear} groupIds={eventGroup} onClearGroup={()=>setEventGroup(undefined)} onBackToList={()=>setSelectedEntity(undefined)} onLocate={event=>{
+        {panel==='events'&&<EventExplorer hideSearch queryValue={eventSearchQuery} onQueryChange={setEventSearchQuery} year={currentYear} selectedId={selectedEntity?.type==='event'?selectedEntity.id:undefined} onSelect={selectEvent} onYearChange={changeYear} groupIds={eventGroup} onClearGroup={()=>setEventGroup(undefined)} onBackToList={()=>setSelectedEntity(undefined)} onLocate={event=>{
           setVisibleLayers(layers=>new Set([...layers,'events']));
           setFocusRequest(previous=>({id:event.id,nonce:(previous?.nonce??0)+1}));
         }}/>}

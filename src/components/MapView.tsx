@@ -46,11 +46,11 @@ export function MapView(props: MapViewProps) {
 
   return <section className="map-view" aria-label={t("历史地图")} data-year={state.year} data-rendered-year={renderedYear} aria-busy={renderedYear!==state.year}>
     {!workspace && <div className="map-heading"><div><span className="eyebrow">{t("山川与形势")}</span><h2>{state.displayLabel} {t("· 政权与地域")}</h2></div><span className="map-note">{t("来源矢量 · 历史范围参考")}</span></div>}
-    <div className={`boundary-coverage ${state.coverage.mode}`} role="status" aria-label={t("疆域资料状态")}>
+    {!workspace&&<div className={`boundary-coverage ${state.coverage.mode}`} role="status" aria-label={t("疆域资料状态")}>
       <div><strong>{t(state.coverage.mode==='missing' ? '中国及周边目录本年暂无可用疆域资料' : `中国及周边目录 · 按${state.displayLabel}查询 · ${state.coverage.intervalCount ?? 0} 个来源时段图形${state.coverage.maximumCount ? ` · ${state.coverage.maximumCount} 个最大范围参考${showReference?'':'（已隐藏）'}` : ''}`)}{worldCount>0 && t(`；同期世界：${worldCount} 个来源时段图形`)}</strong>
         {!workspace&&<p>{t("实线为来源时段模型，不代表逐年独立考证。虚线“最大参考”取本政权已收录记录中面积最大的单个轮廓，并非本年实况或已证实的历史极大值；不同年代参考可能重叠。点击政权查看年代与来源。")}</p>}</div>
       {!workspace&&!!state.coverage.maximumCount && <label><input type="checkbox" checked={showReference} onChange={e => setShowReference(e.target.checked)} />{t("显示最大范围参考")}</label>}
-    </div>
+    </div>}
     {auxiliary('layers',<>
     {workspace&&<><p className="detail-note">{t("实线为来源时段模型，非逐年独立考证。虚线是已收录的最大单条范围参考，非本年实况。")}</p><label className="reference-toggle"><input type="checkbox" checked={showReference} onChange={e=>setShowReference(e.target.checked)}/>{t("显示最大范围参考")}</label></>}
     <div className="map-toolbar">
