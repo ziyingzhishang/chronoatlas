@@ -481,7 +481,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'qin-unification',
-    participants: [],
+    participants: [
+      { personId: 'qin-shi-huang', role: '秦王政与统一战争的最高决策者', note: '完成六国兼并并建立秦帝国；具体战役由多位将领分阶段执行。' },
+      { personId: 'meng-tian', role: '秦将与统一后北方军事整备者', note: '其主要活动集中在统一完成后的北方防务，不能替代六国各战场的将领谱系。' },
+    ],
     polityIds: ['qin', 'han_warring', 'zhao_warring', 'wei_warring', 'chu_warring', 'yan_warring', 'qi_warring'],
     causes: ['秦经过连续战争，先后击败韩、赵、魏、楚、燕等主要对手。', '齐成为战国后期仍保持独立的主要对手。'],
     consequences: ['列国并立的主要政治格局结束，秦帝国建立。', '郡县、文字和度量衡等制度成为后世反复沿用和调整的框架。'],
@@ -561,7 +564,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'jin-unification',
-    participants: [],
+    participants: [
+      { personId: 'sima-yan', role: '西晋皇帝与统一战争的最高决策者', note: '司马炎承接曹魏北方资源并组织灭吴，具体水陆进军由诸将分路执行。' },
+    ],
     polityIds: ['jin_western', 'wu_three'],
     causes: ['西晋承接曹魏的北方政治资源，并从长江上游和北岸部署攻吴。', '吴的防线和内部政治已难以抵挡晋军的多路推进。'],
     consequences: ['孙吴独立政权结束，三国鼎立格局终结。', '长江南北进入西晋重新组织统一秩序的阶段。'],
@@ -577,7 +582,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'eastern-jin',
-    participants: [],
+    participants: [
+      { personId: 'sima-rui', role: '江东重建晋室的核心宗室与即位者', note: '司马睿先在建康即晋王位，次年即皇帝位，两个节点共同构成东晋形成过程。' },
+    ],
     polityIds: ['jin_eastern'],
     causes: ['长安失守后，西晋中央在北方的统治崩溃。', '江东的司马睿成为重建晋朝政权的核心。'],
     consequences: ['晋政权在江南延续，形成以建康为中心的政治格局。', '北方继续由多个政权竞争，南北分裂加深。'],
@@ -627,7 +634,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'an-lushan-rebellion',
-    participants: [],
+    participants: [
+      { personId: 'an-lushan', role: '范阳起兵的叛军首领', note: '755年发动叛乱并攻取洛阳；其死后叛军仍由史思明、史朝义等继续。' },
+      { personId: 'li-longji', role: '安史之乱爆发时的唐朝皇帝', note: '唐廷的军事与政治应对跨越玄宗、肃宗等多个阶段，本条只列玄宗作为事件起点的核心人物。' },
+    ],
     polityIds: ['tang'],
     causes: ['安禄山掌握强大的边镇兵力，和朝廷的矛盾加深。', '中央对军事力量的约束受到挑战，边镇与中央之间形成结构性张力。'],
     consequences: ['战争严重破坏北方社会与唐的统治结构。', '部分降将继续掌握河北军镇，藩镇问题成为唐后期政治的重要背景。'],
@@ -899,7 +909,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'han-eastern-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-xiu', role: '河北起兵、即皇帝位并重建汉室的核心人物', note: '25年称帝是政权重建节点，洛阳成为后续稳定政治中心；即位地点本身不在本目录中精确定位。' },
+    ],
     polityIds: ['han_eastern'],
     causes: ['新莽末年群雄并起，更始政权无法稳定控制各地。', '刘秀在河北形成独立的政治与军事基础。'],
     consequences: ['东汉作为汉朝延续政权开始形成。', '统一秩序仍需通过后续战争、招抚和行政重建逐步恢复。'],
@@ -908,14 +920,16 @@ const details: HistoricalEventDetail[] = [
       { label: '即皇帝位', startYear: 25, endYear: 25, summary: '刘秀即皇帝位，仍以汉为国号。' },
       { label: '恢复统一秩序', startYear: 25, endYear: 36, summary: '东汉通过战争与招抚逐步整合各地。' },
     ],
-    locationIds: [],
+    locationIds: ['ye', 'luoyang'],
     relatedEventIds: ['eastern-jin'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '25年是刘秀称帝与政权重建节点，不表示东汉当年已经控制汉朝旧境，也不指定未经独立核验的即位地点。',
   },
   {
     eventId: 'sui-founded',
-    participants: [],
+    participants: [
+      { personId: 'yang-jian', role: '受禅建隋的创建者与皇帝', note: '581年建立隋朝，589年灭陈统一南北是后续独立节点。' },
+    ],
     polityIds: ['sui'],
     causes: ['北周末年皇室与外戚权力重新分配。', '杨坚掌握朝廷和关中军事资源。'],
     consequences: ['隋中央政权建立。', '隋获得继续经营北方并在589年南下统一的政治基础。'],
@@ -924,14 +938,16 @@ const details: HistoricalEventDetail[] = [
       { label: '受禅建隋', startYear: 581, endYear: 581, summary: '北周禅位，杨坚即皇帝位并改国号为隋。' },
       { label: '准备统一', startYear: 581, endYear: 588, summary: '隋巩固北方并准备灭陈战争。' },
     ],
-    locationIds: [],
+    locationIds: ['changan'],
     relatedEventIds: ['sui-unification', 'tang-founded'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '建国与589年统一南北是两个节点；本条不把581年直接扩展为隋已控制全国。',
   },
   {
     eventId: 'wu-zhou-founded',
-    participants: [],
+    participants: [
+      { personId: 'wu-zhao', role: '改国号为周并即皇帝位者', note: '武周以洛阳为主要政治中心，同时保留长安的制度与宫廷联系。' },
+    ],
     polityIds: ['wu_zhou'],
     causes: ['武则天长期以皇太后身份掌握唐朝核心权力。', '宫廷与行政体系已为改国号和称帝准备条件。'],
     consequences: ['唐朝国号与皇统叙事发生变化，武周阶段开始。', '705年复唐成为后续政权转折。'],
@@ -940,14 +956,16 @@ const details: HistoricalEventDetail[] = [
       { label: '改唐为周', startYear: 690, endYear: 690, summary: '武则天改国号为周并即皇帝位。' },
       { label: '武周延续', startYear: 690, endYear: 704, summary: '武周以唐制为基础维持中央统治。' },
     ],
-    locationIds: [],
+    locationIds: ['luoyang', 'changan'],
     relatedEventIds: ['tang-founded'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '武周是国号与统治结构变化，不据此推导疆域突然变化，也不把705年复唐并入690年事件。',
   },
   {
     eventId: 'tang-later-founded',
-    participants: [],
+    participants: [
+      { personId: 'li-cunxu', role: '晋王集团领袖与后唐创建者', note: '923年称帝及随后攻灭后梁是连续但可区分的阶段，洛阳是后唐建立后的核心政治中心。' },
+    ],
     polityIds: ['tang_later'],
     causes: ['后梁与晋王李存勖长期争夺中原。', '后梁内部政治与军事压力持续加重。'],
     consequences: ['后唐成为五代第二个中原王朝。', '后梁的覆亡与后唐控制中原仍经历后续战争。'],
@@ -956,7 +974,7 @@ const details: HistoricalEventDetail[] = [
       { label: '即位建唐', startYear: 923, endYear: 923, summary: '李存勖即皇帝位，国号唐，史称后唐。' },
       { label: '后梁覆亡', startYear: 923, endYear: 923, summary: '后唐军队攻灭后梁，新的中原秩序形成。' },
     ],
-    locationIds: [],
+    locationIds: ['luoyang'],
     relatedEventIds: ['five-dynasties'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '“后唐”用于区别618年的唐朝；923年称帝、后梁覆亡和实际控制范围扩展不是同一瞬间完成。',
