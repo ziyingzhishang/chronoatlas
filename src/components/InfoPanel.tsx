@@ -8,6 +8,15 @@ import { formatSourceField } from '../i18n/source-display';
 import { sovereigntyNoticesFor } from '../data/sovereignty';
 import { boundaryStatusLabel } from '../map/presentation';
 import { activeCapitalRecords } from '../data/capital-history';
+import { capitalHistory } from '../data/capital-history';
+import { claims } from '../data/claims';
+import { changanEvents } from '../data/changan-study';
+import { heritageAssets } from '../data/heritage';
+import { people } from '../data/people';
+import { places } from '../data/places';
+import { polities } from '../data/polities';
+import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
+import { StudyRelationsPanel } from './StudyRelationsPanel';
 
 interface InfoPanelProps {
   state: HistoricalState;
@@ -36,6 +45,11 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
   const capital = selected && 'capitalPlaceId' in selected && selected.capitalPlaceId ? state.places.find(place=>place.id===selected.capitalPlaceId) : undefined;
   const currentCapitalTerms = selected && 'name' in selected ? activeCapitalRecords(state.year, selected.id) : [];
   const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalRecords(state.year).filter(record=>record.placeId===selected.id) : [];
+  const studyView = selectedEntity?.type === 'polity'
+    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: changanEvents, claims, capitalTerms: capitalHistory })
+    : selectedEntity?.type === 'place'
+      ? buildCityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: changanEvents, claims, capitalTerms: capitalHistory })
+      : undefined;
   const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
 
   return (
@@ -84,6 +98,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
           </dl>
           {selected.notes && <p className="detail-note">{t(selected.notes)}</p>}
           <p className="detail-note">{t("此处为精选古地名参照，尚未逐年校勘更名与归属；名称不保证适用于所选年的每个时点。")}</p>
+          {studyView && <StudyRelationsPanel view={studyView} />}
         </>
       )}
       {selectedEntity?.type === 'polity' && selected && 'name' in selected && (
@@ -134,6 +149,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
             {boundariesByPolity.get(selected.id)?.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}{t(b.areaKm2 ? ` · 约${(b.areaKm2/10000).toFixed(0)}万 km²` : '')}</button>)}
           </div></details>}
           {selected.sourceIds.map(id => sourceById[id]).filter(Boolean).map(s => {const field=sourceField('documentTitle',s.title);return <p className="detail-note" key={s.id}>{field.label}{field.value} · {prose(s.note)}</p>;})}
+          {studyView && <StudyRelationsPanel view={studyView} />}
         </>
       )}
       {selectedEntity?.type === 'event' && selected && 'title' in selected && (
