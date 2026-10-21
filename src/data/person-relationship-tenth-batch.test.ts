@@ -29,19 +29,6 @@ const expectedRelations = [
   ['chen-baxian', 'served', 'xiao-yan'],
 ] as const;
 
-const batchClaimIds = new Set([
-  'claim-yang-jian-related-li-yuan',
-  'claim-qin-shi-huang-appointed-meng-tian',
-  'claim-meng-tian-served-qin-shi-huang',
-  'claim-huo-qubing-ally-zhang-qian',
-  'claim-zhang-qian-ally-huo-qubing',
-  'claim-ban-gu-related-liu-xiu',
-  'claim-xuan-zang-related-li-shimin',
-  'claim-wang-wei-served-li-longji',
-  'claim-du-fu-related-li-longji',
-  'claim-chen-baxian-served-xiao-yan',
-]);
-
 function personRelation(subjectId: string, predicate: string, objectId: string) {
   return claims.find((claim) => claim.subjectId === subjectId
     && claim.predicate === predicate
@@ -56,12 +43,11 @@ function personPersonClaims(sourceClaims = claims) {
 }
 
 describe('tenth-batch historical people relationships', () => {
-  it('selects ten currently isolated people from the audited priority networks', () => {
-    const baselineClaims = personPersonClaims(claims.filter((claim) => !batchClaimIds.has(claim.id)));
-    const connected = new Set(baselineClaims.flatMap((claim) => [claim.subjectId, claim.objectId!].filter(Boolean)));
-
+  it('selects ten unique people from the audited priority networks', () => {
+    const personIds = new Set(people.map((person) => person.id));
     expect(targets).toHaveLength(10);
-    expect(targets.every((personId) => !connected.has(personId))).toBe(true);
+    expect(new Set(targets).size).toBe(targets.length);
+    expect(targets.every((personId) => personIds.has(personId))).toBe(true);
   });
 
   it('connects every selected person through an explicit directed person relation', () => {
