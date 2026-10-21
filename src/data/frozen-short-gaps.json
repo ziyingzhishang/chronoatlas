@@ -1,0 +1,1807 @@
+{
+  "frozenAt": "2026-10-20",
+  "auditSha256": "d2edbb23083b145da40027f5c5e6821e6fff471d86b3444ea9028365019bc88b",
+  "count": 65,
+  "rows": [
+    {
+      "id": "gap-han_warring--230--230",
+      "polityId": "han_warring",
+      "polityName": "韩",
+      "from": -230,
+      "to": -230,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-659-han_warring--247",
+        "from": -247,
+        "to": -231,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-427-han_warring--350"
+        ]
+      }
+    },
+    {
+      "id": "gap-chu_warring--223--223",
+      "polityId": "chu_warring",
+      "polityName": "楚",
+      "from": -223,
+      "to": -223,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-697-chu_warring--225",
+        "from": -225,
+        "to": -224,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-566-chu_warring--284"
+        ]
+      }
+    },
+    {
+      "id": "gap-yan_warring--222--222",
+      "polityId": "yan_warring",
+      "polityName": "燕",
+      "from": -222,
+      "to": -222,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-552-yan_warring--291",
+        "from": -291,
+        "to": -223,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-552-yan_warring--291"
+        ]
+      }
+    },
+    {
+      "id": "gap-qin--221--219",
+      "polityId": "qin",
+      "polityName": "秦",
+      "from": -221,
+      "to": -219,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-731-qin--218",
+        "from": -218,
+        "to": -213,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "qin-unification",
+          "year": -221,
+          "endYear": -221,
+          "title": "秦统一六国",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-756-qin--210"
+        ]
+      }
+    },
+    {
+      "id": "gap-qin--208--206",
+      "polityId": "qin",
+      "polityName": "秦",
+      "from": -208,
+      "to": -206,
+      "civilYearLength": 3,
+      "adjacentBefore": {
+        "id": "clio-756-qin--210",
+        "from": -210,
+        "to": -209,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [
+        {
+          "id": "chu-han-contention",
+          "year": -206,
+          "endYear": -202,
+          "title": "楚汉之际",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-756-qin--210"
+        ]
+      }
+    },
+    {
+      "id": "gap-han_western--206--203",
+      "polityId": "han_western",
+      "polityName": "西汉",
+      "from": -206,
+      "to": -203,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-825-han_western--202",
+        "from": -202,
+        "to": -198,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "chu-han-contention",
+          "year": -206,
+          "endYear": -202,
+          "title": "楚汉之际",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1032-han_western--50"
+        ]
+      }
+    },
+    {
+      "id": "gap-han_western-6-9",
+      "polityId": "han_western",
+      "polityName": "西汉",
+      "from": 6,
+      "to": 9,
+      "civilYearLength": 4,
+      "adjacentBefore": {
+        "id": "clio-1066-han_western--36",
+        "from": -36,
+        "to": 5,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1032-han_western--50"
+        ]
+      }
+    },
+    {
+      "id": "gap-han_eastern-25-29",
+      "polityId": "han_eastern",
+      "polityName": "东汉",
+      "from": 25,
+      "to": 29,
+      "civilYearLength": 5,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1141-han_eastern-30",
+        "from": 30,
+        "to": 42,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1213-han_eastern-91"
+        ]
+      }
+    },
+    {
+      "id": "gap-wei_three-220-223",
+      "polityId": "wei_three",
+      "polityName": "魏",
+      "from": 220,
+      "to": 223,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1331-wei_three-224",
+        "from": 224,
+        "to": 237,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "three-kingdoms",
+          "year": 220,
+          "endYear": 220,
+          "title": "三国开始",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1371-wei_three-263"
+        ]
+      }
+    },
+    {
+      "id": "gap-wei_three-265-265",
+      "polityId": "wei_three",
+      "polityName": "魏",
+      "from": 265,
+      "to": 265,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1371-wei_three-263",
+        "from": 263,
+        "to": 264,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1371-wei_three-263"
+        ]
+      }
+    },
+    {
+      "id": "gap-shu_three-221-223",
+      "polityId": "shu_three",
+      "polityName": "蜀汉",
+      "from": 221,
+      "to": 223,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1327-shu_three-224",
+        "from": 224,
+        "to": 237,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1327-shu_three-224"
+        ]
+      }
+    },
+    {
+      "id": "gap-shu_three-263-263",
+      "polityId": "shu_three",
+      "polityName": "蜀汉",
+      "from": 263,
+      "to": 263,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1364-shu_three-261",
+        "from": 261,
+        "to": 262,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1327-shu_three-224"
+        ]
+      }
+    },
+    {
+      "id": "gap-cheng_han-304-305",
+      "polityId": "cheng_han",
+      "polityName": "成汉",
+      "from": 304,
+      "to": 305,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1423-cheng_han-306",
+        "from": 306,
+        "to": 310,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1423-cheng_han-306"
+        ]
+      }
+    },
+    {
+      "id": "gap-cheng_han-347-347",
+      "polityId": "cheng_han",
+      "polityName": "成汉",
+      "from": 347,
+      "to": 347,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1459-cheng_han-338",
+        "from": 338,
+        "to": 346,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1423-cheng_han-306"
+        ]
+      }
+    },
+    {
+      "id": "gap-former_zhao-304-305",
+      "polityId": "former_zhao",
+      "polityName": "前赵",
+      "from": 304,
+      "to": 305,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1428-former_zhao-306",
+        "from": 306,
+        "to": 310,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1434-former_zhao-311"
+        ]
+      }
+    },
+    {
+      "id": "gap-former_qin-351-352",
+      "polityId": "former_qin",
+      "polityName": "前秦",
+      "from": 351,
+      "to": 352,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1485-former_qin-353",
+        "from": 353,
+        "to": 370,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1528-former_qin-378"
+        ]
+      }
+    },
+    {
+      "id": "gap-former_qin-394-394",
+      "polityId": "former_qin",
+      "polityName": "前秦",
+      "from": 394,
+      "to": 394,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1572-former_qin-392",
+        "from": 392,
+        "to": 393,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1528-former_qin-378"
+        ]
+      }
+    },
+    {
+      "id": "gap-later_yan-384-386",
+      "polityId": "later_yan",
+      "polityName": "后燕",
+      "from": 384,
+      "to": 386,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1553-later_yan-387",
+        "from": 387,
+        "to": 389,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1581-later_yan-394"
+        ]
+      }
+    },
+    {
+      "id": "gap-later_qin-384-386",
+      "polityId": "later_qin",
+      "polityName": "后秦",
+      "from": 384,
+      "to": 386,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1555-later_qin-387",
+        "from": 387,
+        "to": 393,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1645-later_qin-407"
+        ]
+      }
+    },
+    {
+      "id": "gap-later_qin-417-417",
+      "polityId": "later_qin",
+      "polityName": "后秦",
+      "from": 417,
+      "to": 417,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1677-later_qin-414",
+        "from": 414,
+        "to": 416,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1645-later_qin-407"
+        ]
+      }
+    },
+    {
+      "id": "gap-xia-407-409",
+      "polityId": "xia",
+      "polityName": "夏",
+      "from": 407,
+      "to": 409,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1660-xia-410",
+        "from": 410,
+        "to": 413,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1713-xia-426"
+        ]
+      }
+    },
+    {
+      "id": "gap-wei_northern-386-386",
+      "polityId": "wei_northern",
+      "polityName": "北魏",
+      "from": 386,
+      "to": 386,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1543-wei_northern-387",
+        "from": 387,
+        "to": 393,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1880-wei_northern-476"
+        ]
+      }
+    },
+    {
+      "id": "gap-wei_northern-534-534",
+      "polityId": "wei_northern",
+      "polityName": "北魏",
+      "from": 534,
+      "to": 534,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1967-wei_northern-523",
+        "from": 523,
+        "to": 533,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1880-wei_northern-476"
+        ]
+      }
+    },
+    {
+      "id": "gap-qi_southern-479-479",
+      "polityId": "qi_southern",
+      "polityName": "南齐",
+      "from": 479,
+      "to": 479,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1897-qi_southern-480",
+        "from": 480,
+        "to": 499,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1897-qi_southern-480"
+        ]
+      }
+    },
+    {
+      "id": "gap-chen_southern-557-560",
+      "polityId": "chen_southern",
+      "polityName": "南陈",
+      "from": 557,
+      "to": 560,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-2110-chen_southern-561",
+        "from": 561,
+        "to": 586,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-2169-chen_southern-587"
+        ]
+      }
+    },
+    {
+      "id": "gap-qi_northern-550-554",
+      "polityId": "qi_northern",
+      "polityName": "北齐",
+      "from": 550,
+      "to": 554,
+      "civilYearLength": 5,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-2068-qi_northern-555",
+        "from": 555,
+        "to": 560,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-2135-qi_northern-569"
+        ]
+      }
+    },
+    {
+      "id": "gap-qi_northern-577-577",
+      "polityId": "qi_northern",
+      "polityName": "北齐",
+      "from": 577,
+      "to": 577,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-2135-qi_northern-569",
+        "from": 569,
+        "to": 576,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-2135-qi_northern-569"
+        ]
+      }
+    },
+    {
+      "id": "gap-zhou_northern-557-560",
+      "polityId": "zhou_northern",
+      "polityName": "北周",
+      "from": 557,
+      "to": 560,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-2114-zhou_northern-561",
+        "from": 561,
+        "to": 576,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-2147-zhou_northern-577"
+        ]
+      }
+    },
+    {
+      "id": "gap-tang-618-622",
+      "polityId": "tang",
+      "polityName": "唐",
+      "from": 618,
+      "to": 622,
+      "civilYearLength": 5,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-2281-tang-623",
+        "from": 623,
+        "to": 625,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "tang-founded",
+          "year": 618,
+          "endYear": 618,
+          "title": "唐建立",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-2520-tang-661"
+        ]
+      }
+    },
+    {
+      "id": "gap-liang_later-907-910",
+      "polityId": "liang_later",
+      "polityName": "后梁",
+      "from": 907,
+      "to": 910,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3620-liang_later-911",
+        "from": 911,
+        "to": 921,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "five-dynasties",
+          "year": 907,
+          "endYear": 907,
+          "title": "五代开始",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3663-liang_later-922"
+        ]
+      }
+    },
+    {
+      "id": "gap-tang_later-923-925",
+      "polityId": "tang_later",
+      "polityName": "后唐",
+      "from": 923,
+      "to": 925,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3731-tang_later-926",
+        "from": 926,
+        "to": 935,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3731-tang_later-926"
+        ]
+      }
+    },
+    {
+      "id": "gap-tang_later-936-936",
+      "polityId": "tang_later",
+      "polityName": "后唐",
+      "from": 936,
+      "to": 936,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-3731-tang_later-926",
+        "from": 926,
+        "to": 935,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3731-tang_later-926"
+        ]
+      }
+    },
+    {
+      "id": "gap-jin_later-947-947",
+      "polityId": "jin_later",
+      "polityName": "后晋",
+      "from": 947,
+      "to": 947,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-3744-jin_later-936",
+        "from": 936,
+        "to": 946,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3744-jin_later-936"
+        ]
+      }
+    },
+    {
+      "id": "gap-xiongnu--209--209",
+      "polityId": "xiongnu",
+      "polityName": "匈奴",
+      "from": -209,
+      "to": -209,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-769-xiongnu--208",
+        "from": -208,
+        "to": -207,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-899-xiongnu--144"
+        ]
+      }
+    },
+    {
+      "id": "gap-goguryeo--37--37",
+      "polityId": "goguryeo",
+      "polityName": "高句丽",
+      "from": -37,
+      "to": -37,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1069-goguryeo--36",
+        "from": -36,
+        "to": 22,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1896-goguryeo-480"
+        ]
+      }
+    },
+    {
+      "id": "gap-turkic-552-554",
+      "polityId": "turkic",
+      "polityName": "突厥",
+      "from": 552,
+      "to": 554,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-2093-turkic-555",
+        "from": 555,
+        "to": 560,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-2109-turkic-561"
+        ]
+      }
+    },
+    {
+      "id": "gap-tibetan_empire-618-622",
+      "polityId": "tibetan_empire",
+      "polityName": "吐蕃",
+      "from": 618,
+      "to": 622,
+      "civilYearLength": 5,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-2278-tibetan_empire-623",
+        "from": 623,
+        "to": 626,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "tang-founded",
+          "year": 618,
+          "endYear": 618,
+          "title": "唐建立",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3093-tibetan_empire-830"
+        ]
+      }
+    },
+    {
+      "id": "gap-nanzhao-738-740",
+      "polityId": "nanzhao",
+      "polityName": "南诏",
+      "from": 738,
+      "to": 740,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-2753-nanzhao-741",
+        "from": 741,
+        "to": 749,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3094-nanzhao-830"
+        ]
+      }
+    },
+    {
+      "id": "gap-zhou_eastern--256--256",
+      "polityId": "zhou_eastern",
+      "polityName": "东周王室",
+      "from": -256,
+      "to": -256,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-419-zhou_eastern--350",
+        "from": -350,
+        "to": -257,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-177-zhou_eastern--750"
+        ]
+      }
+    },
+    {
+      "id": "gap-gengshi-23-25",
+      "polityId": "gengshi",
+      "polityName": "更始政权",
+      "from": 23,
+      "to": 25,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "control-centers",
+        "reviewStatus": "reviewed",
+        "sourceBoundaryIds": []
+      }
+    },
+    {
+      "id": "gap-wu_zhou-705-705",
+      "polityId": "wu_zhou",
+      "polityName": "武周",
+      "from": 705,
+      "to": 705,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-2626-wu_zhou-692",
+        "from": 692,
+        "to": 704,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-2626-wu_zhou-692"
+        ]
+      }
+    },
+    {
+      "id": "gap-western_qin-385-386",
+      "polityId": "western_qin",
+      "polityName": "西秦",
+      "from": 385,
+      "to": 386,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1542-western_qin-387",
+        "from": 387,
+        "to": 393,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1697-western_qin-417"
+        ]
+      }
+    },
+    {
+      "id": "gap-western_qin-409-409",
+      "polityId": "western_qin",
+      "polityName": "西秦",
+      "from": 409,
+      "to": 409,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1609-western_qin-397",
+        "from": 397,
+        "to": 400,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": {
+        "id": "clio-1653-western_qin-410",
+        "from": 410,
+        "to": 413,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1697-western_qin-417"
+        ]
+      }
+    },
+    {
+      "id": "gap-later_liang-386-386",
+      "polityId": "later_liang",
+      "polityName": "后凉",
+      "from": 386,
+      "to": 386,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1552-later_liang-387",
+        "from": 387,
+        "to": 396,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1552-later_liang-387"
+        ]
+      }
+    },
+    {
+      "id": "gap-southern_liang-414-414",
+      "polityId": "southern_liang",
+      "polityName": "南凉",
+      "from": 414,
+      "to": 414,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1658-southern_liang-410",
+        "from": 410,
+        "to": 413,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1605-southern_liang-397"
+        ]
+      }
+    },
+    {
+      "id": "gap-southern_yan-398-401",
+      "polityId": "southern_yan",
+      "polityName": "南燕",
+      "from": 398,
+      "to": 401,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1627-southern_yan-402",
+        "from": 402,
+        "to": 406,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1627-southern_yan-402"
+        ]
+      }
+    },
+    {
+      "id": "gap-southern_yan-410-410",
+      "polityId": "southern_yan",
+      "polityName": "南燕",
+      "from": 410,
+      "to": 410,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-1648-southern_yan-407",
+        "from": 407,
+        "to": 409,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1627-southern_yan-402"
+        ]
+      }
+    },
+    {
+      "id": "gap-northern_yan-407-409",
+      "polityId": "northern_yan",
+      "polityName": "北燕",
+      "from": 407,
+      "to": 409,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-1657-northern_yan-410",
+        "from": 410,
+        "to": 425,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-1720-northern_yan-426"
+        ]
+      }
+    },
+    {
+      "id": "gap-song_northern-960-960",
+      "polityId": "song_northern",
+      "polityName": "北宋",
+      "from": 960,
+      "to": 960,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3909-song_northern-961",
+        "from": 961,
+        "to": 969,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "song-founded",
+          "year": 960,
+          "endYear": 960,
+          "title": "宋建立",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-4444-song_northern-1056"
+        ]
+      }
+    },
+    {
+      "id": "gap-song_south-1279-1279",
+      "polityId": "song_south",
+      "polityName": "南宋",
+      "from": 1279,
+      "to": 1279,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-5854-song_south-1272",
+        "from": 1272,
+        "to": 1278,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-4844-song_south-1139"
+        ]
+      }
+    },
+    {
+      "id": "gap-western_xia-1227-1227",
+      "polityId": "western_xia",
+      "polityName": "西夏",
+      "from": 1227,
+      "to": 1227,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-5454-western_xia-1220",
+        "from": 1220,
+        "to": 1226,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-4847-western_xia-1139"
+        ]
+      }
+    },
+    {
+      "id": "gap-western_liao-1124-1125",
+      "polityId": "western_liao",
+      "polityName": "西辽",
+      "from": 1124,
+      "to": 1125,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-4803-western_liao-1126",
+        "from": 1126,
+        "to": 1138,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-4944-western_liao-1147"
+        ]
+      }
+    },
+    {
+      "id": "gap-ming_southern-1644-1644",
+      "polityId": "ming_southern",
+      "polityName": "南明",
+      "from": 1644,
+      "to": 1644,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-8922-ming_southern-1645",
+        "from": 1645,
+        "to": 1647,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "qing-enters-pass",
+          "year": 1644,
+          "endYear": 1644,
+          "title": "清入关",
+          "verification": "partial"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-8922-ming_southern-1645"
+        ]
+      }
+    },
+    {
+      "id": "gap-ming_southern-1659-1662",
+      "polityId": "ming_southern",
+      "polityName": "南明",
+      "from": 1659,
+      "to": 1662,
+      "civilYearLength": 4,
+      "adjacentBefore": {
+        "id": "clio-9019-ming_southern-1653",
+        "from": 1653,
+        "to": 1658,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-8922-ming_southern-1645"
+        ]
+      }
+    },
+    {
+      "id": "gap-later_jin-1616-1618",
+      "polityId": "later_jin",
+      "polityName": "后金",
+      "from": 1616,
+      "to": 1618,
+      "civilYearLength": 3,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-8647-later_jin-1619",
+        "from": 1619,
+        "to": 1621,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-8779-later_jin-1632"
+        ]
+      }
+    },
+    {
+      "id": "gap-later_jin-1636-1636",
+      "polityId": "later_jin",
+      "polityName": "后金",
+      "from": 1636,
+      "to": 1636,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-8779-later_jin-1632",
+        "from": 1632,
+        "to": 1635,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-8779-later_jin-1632"
+        ]
+      }
+    },
+    {
+      "id": "gap-qing-1912-1912",
+      "polityId": "qing",
+      "polityName": "清",
+      "from": 1912,
+      "to": 1912,
+      "civilYearLength": 1,
+      "adjacentBefore": {
+        "id": "clio-12287-qing-1911",
+        "from": 1911,
+        "to": 1911,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [
+        {
+          "id": "republic-founded",
+          "year": 1912,
+          "endYear": 1912,
+          "title": "民国建立",
+          "verification": "partial"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-10357-qing-1794"
+        ]
+      }
+    },
+    {
+      "id": "gap-prc-1949-1949",
+      "polityId": "prc",
+      "polityName": "中华人民共和国",
+      "from": 1949,
+      "to": 1949,
+      "civilYearLength": 1,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-13106-prc-1950",
+        "from": 1950,
+        "to": 1952,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "prc-founded",
+          "year": 1949,
+          "endYear": 1949,
+          "title": "新中国成立",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-13566-prc-2000"
+        ]
+      }
+    },
+    {
+      "id": "gap-prc-2025-2026",
+      "polityId": "prc",
+      "polityName": "中华人民共和国",
+      "from": 2025,
+      "to": 2026,
+      "civilYearLength": 2,
+      "adjacentBefore": {
+        "id": "clio-13616-prc-2024",
+        "from": 2024,
+        "to": 2024,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "adjacentAfter": null,
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-13566-prc-2000"
+        ]
+      }
+    },
+    {
+      "id": "gap-wuyue-907-910",
+      "polityId": "wuyue",
+      "polityName": "吴越",
+      "from": 907,
+      "to": 910,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3631-wuyue-911",
+        "from": 911,
+        "to": 946,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "five-dynasties",
+          "year": 907,
+          "endYear": 907,
+          "title": "五代开始",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3817-wuyue-947"
+        ]
+      }
+    },
+    {
+      "id": "gap-min-909-910",
+      "polityId": "min",
+      "polityName": "闽",
+      "from": 909,
+      "to": 910,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3596-min-911",
+        "from": 911,
+        "to": 935,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3596-min-911"
+        ]
+      }
+    },
+    {
+      "id": "gap-chu_ten-907-910",
+      "polityId": "chu_ten",
+      "polityName": "马楚",
+      "from": 907,
+      "to": 910,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3641-chu_ten-911",
+        "from": 911,
+        "to": 925,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "five-dynasties",
+          "year": 907,
+          "endYear": 907,
+          "title": "五代开始",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3641-chu_ten-911"
+        ]
+      }
+    },
+    {
+      "id": "gap-former_shu-907-910",
+      "polityId": "former_shu",
+      "polityName": "前蜀",
+      "from": 907,
+      "to": 910,
+      "civilYearLength": 4,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3618-former_shu-911",
+        "from": 911,
+        "to": 921,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [
+        {
+          "id": "five-dynasties",
+          "year": 907,
+          "endYear": 907,
+          "title": "五代开始",
+          "verification": "checked"
+        }
+      ],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3618-former_shu-911"
+        ]
+      }
+    },
+    {
+      "id": "gap-later_shu-934-935",
+      "polityId": "later_shu",
+      "polityName": "后蜀",
+      "from": 934,
+      "to": 935,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3784-later_shu-936",
+        "from": 936,
+        "to": 946,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3784-later_shu-936"
+        ]
+      }
+    },
+    {
+      "id": "gap-jingnan-924-925",
+      "polityId": "jingnan",
+      "polityName": "荆南",
+      "from": 924,
+      "to": 925,
+      "civilYearLength": 2,
+      "adjacentBefore": null,
+      "adjacentAfter": {
+        "id": "clio-3728-jingnan-926",
+        "from": 926,
+        "to": 935,
+        "sourceIds": [
+          "cliopatria"
+        ],
+        "evidenceLevel": "A"
+      },
+      "knownTransitionEvents": [],
+      "initialDecision": {
+        "verdict": "maximum-record",
+        "reviewStatus": "pending",
+        "sourceBoundaryIds": [
+          "clio-3728-jingnan-926"
+        ]
+      }
+    }
+  ]
+}

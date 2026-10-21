@@ -1,0 +1,15 @@
+{
+  "status": "research-only",
+  "reviewNumber": null,
+  "reviewExpiresAt": null,
+  "checkedSources": [
+    {"id":"modern-reference","license":"Natural Earth public domain via world-atlas 2.0.2","attribution":"Physical island outline: Natural Earth / world-atlas"},
+    {"id":"cliopatria","license":"CC BY 4.0","attribution":"Bennett et al. (2025), Cliopatria v0.2.1"},
+    {"id":"historical-basemaps","license":"GPL-3.0","attribution":"Historical Basemaps / André Ourednik and contributors"}
+  ],
+  "requiredNotices": [
+    "Display the valid map review number in the required page position",
+    "Retain source attribution and the Taiwan sovereignty statement",
+    "Re-run review after map content or presentation changes that require renewed approval"
+  ]
+}

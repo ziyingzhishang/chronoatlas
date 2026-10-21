@@ -1,0 +1,6 @@
+Cliopatria v0.2.1 — Bennett et al. / Seshat Global History Databank
+https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.1
+https://doi.org/10.1038/s41597-025-04516-9
+Licensed under Creative Commons Attribution 4.0 International (CC BY 4.0).
+https://creativecommons.org/licenses/by/4.0/
+Changes: name mapping, temporal filtering and packaging. Original geometry coordinates unchanged.

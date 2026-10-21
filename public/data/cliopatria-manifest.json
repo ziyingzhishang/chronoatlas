@@ -1,0 +1,483 @@
+{
+  "version": "0.2.1",
+  "sourceUrl": "https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.1",
+  "license": "CC-BY-4.0",
+  "licenseUrl": "https://creativecommons.org/licenses/by/4.0/",
+  "attribution": "Bennett et al. (2025), Cliopatria, Seshat Global History Databank. DOI:10.1038/s41597-025-04516-9",
+  "inputSha256": "fc6f0d1e4cc42f45da83522b3696db6f2cc85ec0d12259a85c89b31347b8fc0a",
+  "sourceRecords": 13797,
+  "chinaRecords": 625,
+  "chinaPolities": 85,
+  "worldRecords": 11402,
+  "worldEntities": 1458,
+  "transformations": "Original geometries retained. Explicit name/date mapping; Chinese intervals clipped to catalog; composites and RELATION records excluded; world geometries deduplicated per century. Maximum means largest available single source record, NOT verified historical maximum.",
+  "exclusions": [
+    {
+      "index": 1118,
+      "name": "Han Dynasty",
+      "reason": "6—13年汉朝面积异常残片"
+    },
+    {
+      "index": 3683,
+      "name": "Former Jin",
+      "reason": "922—925年晋/后唐过渡别名跨改号；未逐年核定前暂隔离，避免从世界层与后唐重复叠置"
+    },
+    {
+      "index": 9070,
+      "name": "Southern Ming",
+      "reason": "台湾/三藩时期不得混为南明本体"
+    },
+    {
+      "index": 9161,
+      "name": "Southern Ming",
+      "reason": "台湾/三藩时期不得混为南明本体"
+    },
+    {
+      "index": 9180,
+      "name": "Southern Ming",
+      "reason": "台湾/三藩时期不得混为南明本体"
+    }
+  ],
+  "chunks": [
+    {
+      "start": -3400,
+      "end": -3301,
+      "filename": "-3400.json",
+      "records": 1,
+      "bytes": 2633,
+      "sha256": "eaa31f2a78c0049c40b49624120003925302bc648c783332fe279438f10c0dc8"
+    },
+    {
+      "start": -3300,
+      "end": -3201,
+      "filename": "-3300.json",
+      "records": 1,
+      "bytes": 2633,
+      "sha256": "64c8efce9d3cf016eaf2ff67853ebede02477af84d9d490b5f4b6ebbdc207c06"
+    },
+    {
+      "start": -3200,
+      "end": -3101,
+      "filename": "-3200.json",
+      "records": 2,
+      "bytes": 4667,
+      "sha256": "ed28f7f2c258cab07519b80c9bdd49aec2b29d0f14288d36e37f9d2d0af00dce"
+    },
+    {
+      "start": -3100,
+      "end": -3001,
+      "filename": "-3100.json",
+      "records": 2,
+      "bytes": 4667,
+      "sha256": "3b15b87f503ffebb096ba08c3cda2ce373efd1eeb4e880d288186a090e3f8a96"
+    },
+    {
+      "start": -3000,
+      "end": -2901,
+      "filename": "-3000.json",
+      "records": 4,
+      "bytes": 10341,
+      "sha256": "f9d19acabf7cd81b619d28c7e2ac4267b6f5981f6ac93f42891d2477adce4573"
+    },
+    {
+      "start": -2900,
+      "end": -2801,
+      "filename": "-2900.json",
+      "records": 4,
+      "bytes": 10341,
+      "sha256": "10ea4f3353d921e710fdcb4241a5acfa4715ff93253f4f542e1e04d13c546d10"
+    },
+    {
+      "start": -2800,
+      "end": -2701,
+      "filename": "-2800.json",
+      "records": 4,
+      "bytes": 10341,
+      "sha256": "91349378b64ee811c969f8c7a8c0e40bce9b1854609c5d6928d52e5a41a78f0e"
+    },
+    {
+      "start": -2700,
+      "end": -2601,
+      "filename": "-2700.json",
+      "records": 3,
+      "bytes": 10024,
+      "sha256": "609628e462f7b0124682c963ecdc125416d0b0935a195857ad17ee113556c2af"
+    },
+    {
+      "start": -2600,
+      "end": -2501,
+      "filename": "-2600.json",
+      "records": 3,
+      "bytes": 10024,
+      "sha256": "713249b302c376862ffbd4b7189f742faa1ed07368f9de6c6f315b610fd83e32"
+    },
+    {
+      "start": -2500,
+      "end": -2401,
+      "filename": "-2500.json",
+      "records": 3,
+      "bytes": 13423,
+      "sha256": "94c9c5826dc6b8c417b2949dd8cb53324ddb7fcecb5dbd33a01f4a91bbdd4a97"
+    },
+    {
+      "start": -2400,
+      "end": -2301,
+      "filename": "-2400.json",
+      "records": 3,
+      "bytes": 13423,
+      "sha256": "04ba4bdf6948547e2404d78b96d6dd494e202a0a1a547fa31267782824dedc98"
+    },
+    {
+      "start": -2300,
+      "end": -2201,
+      "filename": "-2300.json",
+      "records": 6,
+      "bytes": 29122,
+      "sha256": "d829cee7d07fdb26cc67a4b9aaf0823e4c8255a9a27517bd21268a3a283a0d20"
+    },
+    {
+      "start": -2200,
+      "end": -2101,
+      "filename": "-2200.json",
+      "records": 5,
+      "bytes": 22396,
+      "sha256": "1dd4f24b71e0ba70960af6c3a4071113555f9c7c7ec17dd61f3b21ec6eb66660"
+    },
+    {
+      "start": -2100,
+      "end": -2001,
+      "filename": "-2100.json",
+      "records": 6,
+      "bytes": 22595,
+      "sha256": "17599a855582f2bf3dbd88b4ffed99ff39161dbddf09b44c514fe5ffe03043ed"
+    },
+    {
+      "start": -2000,
+      "end": -1901,
+      "filename": "-2000.json",
+      "records": 4,
+      "bytes": 18456,
+      "sha256": "a1d509ab7d82159e688a6599ec97aa4a30d3d08f8076e26fb5aac0e67b62571b"
+    },
+    {
+      "start": -1900,
+      "end": -1801,
+      "filename": "-1900.json",
+      "records": 4,
+      "bytes": 18456,
+      "sha256": "bb4e82780c8a686927e87011e72fe1ebd00d31f85ec27c132b45cb7274db244f"
+    },
+    {
+      "start": -1800,
+      "end": -1701,
+      "filename": "-1800.json",
+      "records": 13,
+      "bytes": 42878,
+      "sha256": "06e69e11de63c47cd626e89fa5fd08b4df61dafcfd42f668896b88afd8d2891d"
+    },
+    {
+      "start": -1700,
+      "end": -1601,
+      "filename": "-1700.json",
+      "records": 6,
+      "bytes": 19195,
+      "sha256": "133c557f0cb7230cf9355ea4edac8062866096247422fb07a7e4bcef42ce7856"
+    },
+    {
+      "start": -1600,
+      "end": -1501,
+      "filename": "-1600.json",
+      "records": 10,
+      "bytes": 32950,
+      "sha256": "121650853cc6b2bc1d62c6ddcb32be58878013f8903c4c1fc584be00dcf150ac"
+    },
+    {
+      "start": -1500,
+      "end": -1401,
+      "filename": "-1500.json",
+      "records": 10,
+      "bytes": 37735,
+      "sha256": "c8ff95615b6c77fbc63821138d4c8c558519b70bfb796a9e804e565c1da70a31"
+    },
+    {
+      "start": -1400,
+      "end": -1301,
+      "filename": "-1400.json",
+      "records": 7,
+      "bytes": 33095,
+      "sha256": "745444e916a347e1ce8a34b86e4e6b497e5de136e4af56dcf14896f032d7eb4b"
+    },
+    {
+      "start": -1300,
+      "end": -1201,
+      "filename": "-1300.json",
+      "records": 15,
+      "bytes": 78752,
+      "sha256": "27436524076bc1789614a0b6abe40c00849dbaf9d2c27ce9597c09a96b1746c5"
+    },
+    {
+      "start": -1200,
+      "end": -1101,
+      "filename": "-1200.json",
+      "records": 13,
+      "bytes": 63793,
+      "sha256": "a7fdb47d2bb5b6fdeaecfee17bb86b43f9da6009952113d0e1f915e4698b00cd"
+    },
+    {
+      "start": -1100,
+      "end": -1001,
+      "filename": "-1100.json",
+      "records": 8,
+      "bytes": 31962,
+      "sha256": "3814fc0018a16069a8acc5070408e63446676021fd56b4f2411cf337760c392c"
+    },
+    {
+      "start": -1000,
+      "end": -901,
+      "filename": "-1000.json",
+      "records": 10,
+      "bytes": 30353,
+      "sha256": "9c0aa65ccce5b05fb9865145ac9849a64a957a92931c886d713dfcfd96e44500"
+    },
+    {
+      "start": -900,
+      "end": -801,
+      "filename": "-900.json",
+      "records": 13,
+      "bytes": 41596,
+      "sha256": "71533844763d4ee40cd65141f5b858891d16aa51ba9e4d218d1a97e8527b7c4e"
+    },
+    {
+      "start": -800,
+      "end": -701,
+      "filename": "-800.json",
+      "records": 39,
+      "bytes": 122536,
+      "sha256": "5e202cd3fd581560c6a770aa6a7bd4adeafa068bf866672cd06d2d2a60f533b6"
+    },
+    {
+      "start": -700,
+      "end": -601,
+      "filename": "-700.json",
+      "records": 59,
+      "bytes": 301460,
+      "sha256": "33d33e9abc3d53377331206b820629595f94c41217e21f68fc2ff11bb7601fc8"
+    },
+    {
+      "start": -600,
+      "end": -501,
+      "filename": "-600.json",
+      "records": 71,
+      "bytes": 333862,
+      "sha256": "6313cc52e18d6cecb109e1997376646d826d656f5ab9e383616830c54180b2c4"
+    },
+    {
+      "start": -500,
+      "end": -401,
+      "filename": "-500.json",
+      "records": 99,
+      "bytes": 420882,
+      "sha256": "b2299d192914d31ce1e4d380b279686a579ae7d16124c519c9bfe9804dd94050"
+    },
+    {
+      "start": -400,
+      "end": -301,
+      "filename": "-400.json",
+      "records": 137,
+      "bytes": 934178,
+      "sha256": "77217adcc2e51d5da6a3e93e4904096625e50cb37bf035af1144c17b6dafe10f"
+    },
+    {
+      "start": -300,
+      "end": -201,
+      "filename": "-300.json",
+      "records": 272,
+      "bytes": 1792553,
+      "sha256": "ffbdf239c72a34f2b6ea0754e735f9ea492ef09c86e763b010924491d9e2ee4d"
+    },
+    {
+      "start": -200,
+      "end": -101,
+      "filename": "-200.json",
+      "records": 147,
+      "bytes": 861802,
+      "sha256": "08d0ca4d7f8f9e6240e57a149d3c63be55068e8e5230af16db257cf5584496dd"
+    },
+    {
+      "start": -100,
+      "end": -1,
+      "filename": "-100.json",
+      "records": 179,
+      "bytes": 1527670,
+      "sha256": "6774658b4a16cce40b062411d288d15b690c75d1e4c615fa09e8351131b4cf4f"
+    },
+    {
+      "start": 0,
+      "end": 99,
+      "filename": "0.json",
+      "records": 114,
+      "bytes": 967720,
+      "sha256": "31dbea83f8850334bc4fc99786485dc1597227da4539606ce1ce288d648a3b7d"
+    },
+    {
+      "start": 100,
+      "end": 199,
+      "filename": "100.json",
+      "records": 113,
+      "bytes": 1068709,
+      "sha256": "b5850c213af0e09c47155acea7753dfe8cb05bda87efd3e84d9d302b3824f56c"
+    },
+    {
+      "start": 200,
+      "end": 299,
+      "filename": "200.json",
+      "records": 133,
+      "bytes": 1192750,
+      "sha256": "715d386b28a8d257cfdaad8296961d21a9139d8eceb8bfd098c03343c879be1e"
+    },
+    {
+      "start": 300,
+      "end": 399,
+      "filename": "300.json",
+      "records": 164,
+      "bytes": 1829368,
+      "sha256": "e6ada62d10b3b701312dfedc78307ff8c39293b371a4c494e0039c329dfddcaa"
+    },
+    {
+      "start": 400,
+      "end": 499,
+      "filename": "400.json",
+      "records": 240,
+      "bytes": 1606440,
+      "sha256": "dee064d54268d7a3140c4188ab5e86710a78f0e80b2216f1f541afe558246829"
+    },
+    {
+      "start": 500,
+      "end": 599,
+      "filename": "500.json",
+      "records": 231,
+      "bytes": 1594548,
+      "sha256": "d5ea19d44ab7069199d1cf60cd41696617adcb94001998b7582363808645502b"
+    },
+    {
+      "start": 600,
+      "end": 699,
+      "filename": "600.json",
+      "records": 352,
+      "bytes": 2454326,
+      "sha256": "61660ebb4cc13f8591b5a915751ca021ab3da02e6621b7dfb0e9be344707b510"
+    },
+    {
+      "start": 700,
+      "end": 799,
+      "filename": "700.json",
+      "records": 335,
+      "bytes": 2012490,
+      "sha256": "065a272f311ca0b08d15f8eece9cf4d24e4d53df3e283f5c291e80dcb58dbc45"
+    },
+    {
+      "start": 800,
+      "end": 899,
+      "filename": "800.json",
+      "records": 508,
+      "bytes": 2927822,
+      "sha256": "f8853182af5b85e713386ca0cee7e98244e16e9b1a963bbcefde9e27190f0231"
+    },
+    {
+      "start": 900,
+      "end": 999,
+      "filename": "900.json",
+      "records": 477,
+      "bytes": 2237508,
+      "sha256": "928d8fefcc3f320808ce4798504f349a456f1245ff355b4f909ab42560e52972"
+    },
+    {
+      "start": 1000,
+      "end": 1099,
+      "filename": "1000.json",
+      "records": 703,
+      "bytes": 2983282,
+      "sha256": "29f2ea79930da008bb7a9dcfc9eea7eaa030fb91cd4c43f30839e343ab89fccc"
+    },
+    {
+      "start": 1100,
+      "end": 1199,
+      "filename": "1100.json",
+      "records": 526,
+      "bytes": 2152159,
+      "sha256": "3c9e9a863acbf762f5f9579292303a50f765f186ace602056ddaa344111fcb7a"
+    },
+    {
+      "start": 1200,
+      "end": 1299,
+      "filename": "1200.json",
+      "records": 829,
+      "bytes": 3395649,
+      "sha256": "e4465850ddd3bdb3410022111d0d7741af841ab9c575e2595138cb3fc0fdc03f"
+    },
+    {
+      "start": 1300,
+      "end": 1399,
+      "filename": "1300.json",
+      "records": 768,
+      "bytes": 3651427,
+      "sha256": "6f1b7d1cd20761fe80190c3a160ed955dbb125e20cb8a2a9b574d961cf00876d"
+    },
+    {
+      "start": 1400,
+      "end": 1499,
+      "filename": "1400.json",
+      "records": 863,
+      "bytes": 5275771,
+      "sha256": "3df806e3ffdc34fe2af90978094f6ea673b28f6c5859ac1e3b725527c1d1a592"
+    },
+    {
+      "start": 1500,
+      "end": 1599,
+      "filename": "1500.json",
+      "records": 810,
+      "bytes": 6290074,
+      "sha256": "cc3fab57557f566c5eec91806f945608cf82f2f949052f9db6a1fd7ed86d4280"
+    },
+    {
+      "start": 1600,
+      "end": 1699,
+      "filename": "1600.json",
+      "records": 745,
+      "bytes": 7937940,
+      "sha256": "c9887daa9d6f7e51b2287d2c02998f5125bb05ed1b7f886165227a2623baea98"
+    },
+    {
+      "start": 1700,
+      "end": 1799,
+      "filename": "1700.json",
+      "records": 1027,
+      "bytes": 12472766,
+      "sha256": "2c1e6c7bf9bcce76feab873643cd1f33be9a9962fde4cebed2488cdc66fe08ac"
+    },
+    {
+      "start": 1800,
+      "end": 1899,
+      "filename": "1800.json",
+      "records": 1553,
+      "bytes": 19473791,
+      "sha256": "9164117a5968aed451a694731964ce1554041b5d1c4b9259dfc1cc73d2740f32"
+    },
+    {
+      "start": 1900,
+      "end": 1999,
+      "filename": "1900.json",
+      "records": 1294,
+      "bytes": 20374733,
+      "sha256": "54afdb694c5f79a116a9d78e3e7057ca16666484931e0bf1324f2ac7a7c59d72"
+    },
+    {
+      "start": 2000,
+      "end": 2024,
+      "filename": "2000.json",
+      "records": 410,
+      "bytes": 2253176,
+      "sha256": "ae9d1f1c3126e97dd8d1b9c96e8f97d11ef301d9f117717f8d3e77b9948bac0f"
+    }
+  ]
+}

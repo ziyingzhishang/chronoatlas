@@ -1,0 +1,50 @@
+{
+  "name": "zizhi-tongjian-historical-map",
+  "private": true,
+  "version": "0.1.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "tsc -b && vite build",
+    "preview": "vite preview",
+    "test": "vitest",
+    "audit:coverage": "node scripts/audit-coverage.mjs",
+    "freeze:short-gaps": "node scripts/freeze-short-gaps.mjs",
+    "review:short-gaps": "node scripts/review-short-gaps.mjs",
+    "report:short-gaps": "node scripts/build-short-gap-report.mjs",
+    "freeze:medium-gaps": "node scripts/freeze-medium-gaps.mjs",
+    "review:medium-gaps": "node scripts/review-medium-gaps.mjs",
+    "review:silla-gap": "node scripts/review-silla-gap.mjs",
+    "review:turkic-gap": "node scripts/review-turkic-gap.mjs",
+    "review:western-zhou-gap": "node scripts/review-western-zhou-gap.mjs",
+    "review:yuan-gap": "node scripts/review-yuan-gap.mjs",
+    "review:northern-yuan-gap": "node scripts/review-northern-yuan-gap.mjs",
+    "review:southern-tang-gap": "node scripts/review-southern-tang-gap.mjs",
+    "build:curated-boundaries": "node scripts/build-curated-boundaries.mjs",
+    "build:modern-reference": "node scripts/build-modern-sovereignty-reference.mjs",
+    "verify:map-release": "node scripts/verify-map-release.mjs"
+  },
+  "dependencies": {
+    "d3-geo": "^3.1.1",
+    "maplibre-gl": "^6.14.0",
+    "opencc-js": "1.3.1",
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1",
+    "topojson-client": "^3.1.0",
+    "world-atlas": "^2.0.2"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "^6.6.3",
+    "@testing-library/react": "^16.1.0",
+    "@testing-library/user-event": "^14.5.2",
+    "@types/d3-geo": "^3.1.0",
+    "@types/react": "^18.3.18",
+    "@types/react-dom": "^18.3.5",
+    "@types/topojson-client": "^3.1.0",
+    "@vitejs/plugin-react": "^4.3.4",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.7.3",
+    "vite": "^6.0.11",
+    "vitest": "^3.0.5"
+  }
+}

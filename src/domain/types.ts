@@ -1,0 +1,153 @@
+export type ControlType = 'direct' | 'indirect' | 'disputed' | 'influence' | 'unspecified';
+export type Confidence = 'high' | 'medium' | 'low';
+export type PolityType = 'dynasty' | 'kingdom' | 'regime' | 'tribal_polity' | 'local_rule';
+export type EvidenceLevel = 'A' | 'B' | 'C' | 'D';
+export type BoundaryDerivation =
+  | 'direct-source'
+  | 'licensed-digitization'
+  | 'nearest-same-polity'
+  | 'maximum-record'
+  | 'administrative-synthesis'
+  | 'cultural-core'
+  | 'control-centers'
+  | 'influence-area';
+export type ReviewStatus = 'pending' | 'source-checked' | 'cross-checked';
+
+export interface EvidenceCitation {
+  title: string;
+  urlOrCitation: string;
+  version?: string;
+  pageOrRecord?: string;
+  license?: string;
+}
+
+export interface BoundaryEvidence {
+  evidenceLevel: EvidenceLevel;
+  derivation: BoundaryDerivation;
+  reviewStatus: ReviewStatus;
+  citations: EvidenceCitation[];
+  uncertaintyNote: string;
+}
+
+export interface LocalizedNameMeta {
+  status: 'verified' | 'source-original';
+  mapLabel: string;
+  sourceName?: string;
+}
+
+export interface Polity {
+  id: string;
+  name: string;
+  type: PolityType;
+  startYear: number;
+  endYear: number;
+  capitalPlaceId?: string;
+  color: string;
+  description: string;
+  sourceIds: string[];
+  region?: 'world';
+  originalName?: string;
+  referenceUrl?: string;
+  localizedName?: LocalizedNameMeta;
+}
+
+export interface Place {
+  id: string;
+  historicalName: string;
+  aliases: string[];
+  modernName?: string;
+  modernAdministrativeUnit?: string;
+  longitude: number;
+  latitude: number;
+  geometry?: GeoJSON.Geometry;
+  validFrom?: number;
+  validTo?: number;
+  notes?: string;
+  sourceIds: string[];
+}
+
+export interface BoundaryState {
+  id: string;
+  polityId: string;
+  validFrom: number;
+  validTo: number;
+  snapshotYear: number;
+  sourceName: string;
+  sourceUrl: string;
+  vertexCount: number;
+  geometry: GeoJSON.Geometry;
+  controlType: ControlType;
+  confidence: Confidence;
+  sourceIds: string[];
+  notes?: string;
+  temporalKind?: 'interval';
+  presentation?: 'interval' | 'snapshot' | 'reference' | 'maximum';
+  sourceFrom?: number;
+  sourceTo?: number;
+  sourceRecord?: number;
+  areaKm2?: number;
+  memberOf?: string;
+  evidence: BoundaryEvidence;
+}
+
+export interface HistoricalEvent {
+  id: string;
+  year: number;
+  title: string;
+  summary: string;
+  placeId?: string;
+  sourceIds: string[];
+  endYear?: number;
+  datePrecision?: 'year' | 'approximate' | 'range';
+  region?: 'china' | 'world';
+  category?: string;
+  background?: string;
+  process?: string;
+  impact?: string;
+  mapNote?: string;
+  references?: Array<{ title: string; url: string; detail?: string }>;
+  verification?: 'checked' | 'partial';
+  coordinates?: [number, number];
+  locationPrecision?: 'approximate' | 'confirmed';
+}
+
+export interface SourceNote {
+  id: string;
+  title: string;
+  authorOrInstitution?: string;
+  urlOrCitation?: string;
+  scope: string;
+  note: string;
+}
+
+export interface HistoricalState {
+  year: number;
+  displayLabel: string;
+  activePolities: Polity[];
+  boundaries: BoundaryState[];
+  places: Place[];
+  events: HistoricalEvent[];
+  coverage: {
+    mode: 'snapshot' | 'reference' | 'missing' | 'interval' | 'mixed' | 'maximum';
+    snapshotYear?: number;
+    missingPolityIds: string[];
+    maximumCount?: number;
+    intervalCount?: number;
+  };
+}
+
+export interface WorldSlice {
+  start: number;
+  end: number;
+  polities: Polity[];
+  boundaries: BoundaryState[];
+}
+
+export type SelectedEntity = { type: 'polity' | 'place' | 'event'; id: string } | undefined;
+
+export interface AppState {
+  currentYear: number;
+  selectedEntity: SelectedEntity;
+  visibleLayers: Set<'boundaries' | 'places' | 'modernReference' | 'events'>;
+  isPlaying: boolean;
+}

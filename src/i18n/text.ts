@@ -1,0 +1,105 @@
+import { chineseText } from './chinese';
+
+// Source strings are display text, never entity IDs or filter values. Unknown
+// historical names deliberately remain unchanged rather than being guessed.
+const english: Record<string, string> = {
+  '山河变迁':'Lands Through Time', '中国历史地图':'China Historical Map', '中国历史 · 山河变迁':'China History · Lands Through Time',
+  '工作台工具':'Workspace tools', '图层':'Layers', '事件':'Events', '详情':'Details', '更多':'More',
+  '图层与底图':'Layers and basemap', '历史转折':'Historical turning points', '地域与政权':'Places and polities', '阅读说明与来源':'Reading guide and sources', '显示语言':'Display language',
+  '同期世界设置':'Contemporary world settings', '同期世界疆域':'Contemporary world territories', '重试世界资料':'Retry world data',
+  '开启后随所选年份显示全球政权。':'Enable to show world polities for the selected year.',
+  '正在加载本世纪世界资料…':'Loading world data for this century…',
+  '世界资料加载失败；中国图层不受影响。':'World data could not load; China layers are unaffected.',
+  '世界来源仅覆盖前3400—2024年，本年不沿用旧图。':'World sources cover only 3400 BCE–2024 CE. Earlier maps are not reused for this year.',
+  '桌面可停靠或悬浮时间控制器；手机使用收起、紧凑和展开三档。拖动年份不会改变地图视角。独立网页应用试用版，尚未公开发布。':'On desktop, dock or float the time controller. On phones, use collapsed, compact or expanded mode. Scrubbing years preserves the map view. This standalone web app is a preview and has not been publicly released.',
+  '历史地图':'Historical map', '山川与形势':'Landscape and territory', '· 政权与地域':'· Polities and places', '来源矢量 · 历史范围参考':'Source vectors · Historical extent reference',
+  '疆域资料状态':'Territorial data status', '中国及周边目录本年暂无可用疆域资料':'No territorial data available for China and neighboring catalog entries in this year',
+  '实线为来源时段模型，不代表逐年独立考证。虚线“最大参考”取本政权已收录记录中面积最大的单个轮廓，并非本年实况或已证实的历史极大值；不同年代参考可能重叠。点击政权查看年代与来源。':'Solid lines show source interval models, not independently verified annual boundaries. Dashed “maximum references” use the largest single recorded outline for a polity, not its extent in this year or a verified historical maximum. References from different dates may overlap. Select a polity for dates and sources.',
+  '实线为来源时段模型，非逐年独立考证。虚线是已收录的最大单条范围参考，非本年实况。':'Solid lines show source interval models, not annual verification. Dashed lines show the largest single recorded extent, not the selected year.',
+  '显示最大范围参考':'Show maximum extent references', '地图底图':'Basemap', '地形晕渲':'Shaded relief', '卫星影像':'Satellite imagery', '地图范围':'Map extent', '亚洲复位':'Reset to Asia', '中原放大':'Zoom to Central Plains', '全球':'World',
+  '地图视角操作':'Map view controls', '放大地图':'Zoom in on map', '缩小地图':'Zoom out of map', '放大':'Zoom in', '缩小':'Zoom out', '复位':'Reset', '视角':'View',
+  '向左旋转30度':'Rotate left 30 degrees', '向右旋转30度':'Rotate right 30 degrees', '向左旋转 30°':'Rotate left 30°', '向右旋转 30°':'Rotate right 30°', '恢复正北和平视':'Reset north and pitch', '北':'N', '切换俯仰视角':'Toggle map pitch', '俯视':'Top down', '倾斜':'Tilt', '当前地图视角':'Current map view',
+  '版本清单':'Version manifest', '逐政权核验表':'Polity verification audit', '旧断面 · GPL-3.0':'Legacy snapshots · GPL-3.0', '地图操作指南':'Map controls guide',
+  '鼠标拖动平移，滚轮或双击缩放；右键拖动旋转及俯仰。触屏单指拖动，双指捏合缩放、旋转，双指上下拖动调整俯仰。地图获得焦点后，方向键平移，＋/− 缩放，Shift＋方向键旋转或俯仰。':'Drag to pan; scroll or double-click to zoom; right-drag to rotate and tilt. On touchscreens, drag with one finger, pinch or rotate with two, and drag two fingers vertically to tilt. With map focus, use arrow keys to pan, +/− to zoom, and Shift + arrows to rotate or tilt.',
+  '“亚洲复位”回到起始视角；“北”恢复正北和平视。现代地名在放大后显示。倾斜用于调整观察角度。':'“Reset to Asia” restores the initial view. “N” restores north and a flat view. Modern place names appear when zoomed in. Tilt adjusts the viewing angle.',
+  '政权目录':'Polity catalog', '查找政权':'Find a polity', '查找同期世界政权':'Find contemporary world polities', '中文或来源原名':'Chinese or original source name', '未找到匹配的来源记录。':'No matching source records found.', '地点目录 · 点击定位':'Place catalog · Select to locate',
+  '历史疆域':'Historical territories', '历史地名':'Historical place names', '现代参照':'Modern reference', '历史事件':'Historical events', '地图图层':'Map layers', '地图图例':'Map legend', '图例':'Legend',
+  '实线＋半透明色面：所选年匹配的来源时段模型。虚线＋浅色面＋“最大参考”：缺年时使用的已收录最大单条轮廓，不是本年实况。两者均非测绘或主权依据；下列控制类型仅在来源具备分类时使用。':'Solid lines and translucent fills show source interval models matching the selected year. Dashed lines, pale fills and “maximum reference” mark the largest single recorded outline used when annual coverage is missing, not the extent in that year. Neither is a surveying or sovereignty reference. Control categories below apply only when classified by the source.',
+  '控制关系':'Control relationship', '直接控制':'Direct control', '间接控制':'Indirect control', '争议范围':'Disputed extent', '影响范围':'Sphere of influence', '置信度':'Confidence', '高置信度':'High confidence', '中置信度':'Medium confidence', '低置信度':'Low confidence',
+  '历史时间轴':'Historical timeline', '中国历史 · 编年导航':'Chinese history · Timeline navigation', '历史过渡时期':'Historical transition', ' / 约年分期':' / Approximate period dates',
+  '上一年':'Previous year', '下一年':'Next year', '−1年':'−1 year', '＋1年':'+1 year', '精确跳转 · 公元前填负数':'Jump to year · Use negative numbers for BCE', '输入历史年份':'Enter historical year', '前往':'Go', '播放':'Play', '暂停':'Pause',
+  '请输入完整的整数年份；公元前使用负数。':'Enter a whole-number year; use negative numbers for BCE.', '没有公元0年；前1年之后是公元1年。':'There is no year 0; 1 BCE is followed by 1 CE.', '支持前8000年至2026年。':'Supported range: 8000 BCE–2026 CE.',
+  '历史范围':'Historical range', '全历史':'All history', '王朝至今':'Dynasties to present', '《资治通鉴》':'Zizhi Tongjian', '聚焦资治通鉴 前403年至959年':'Focus Zizhi Tongjian, 403 BCE to 959 CE', '前403—959':'403 BCE–959 CE', '朝代':'Dynasty', '选择朝代并放大时间轴':'Choose a dynasty and zoom timeline', '选择朝代 / 时期':'Choose dynasty / period', '（约）':' (approx.)', '（约年）':' (approximate date)',
+  '全历史概览':'Overview of all history', '在总览中聚焦资治通鉴':'Focus Zizhi Tongjian in overview', '《资治通鉴》前403—959年':'Zizhi Tongjian, 403 BCE–959 CE', '· 当前视窗':'· Current window', '年':'years',
+  '时间轴向前平移':'Pan timeline earlier', '时间轴向后平移':'Pan timeline later', '缩小时间轴':'Zoom out of timeline', '放大时间轴':'Zoom in on timeline', '逐年':'Year by year', '按实际时长排列的朝代':'Dynasties scaled by duration', '年份刻度':'Year scale', '选择历史年份':'Select historical year',
+  '上一资料变化':'Previous source change', '下一资料变化':'Next source change', '回到所选年份':'Return to selected year', '色带按时长排列 · 重叠表示并立 · 点击朝代放大':'Bands are scaled by duration · Overlap indicates coexistence · Select a dynasty to zoom',
+  '可用疆域断面':'Available territorial snapshots', '资料变化节点':'Source change points', '此视窗无疆域断面，可缩小时间轴查看其他资料':'No territorial snapshots in this window. Zoom out to explore other sources.', '时间轴事件标记':'Timeline event markers', '历史转折快捷跳转':'Jump to historical turning points', '关键历史节点':'Key historical moments',
+  '史前文化':'Prehistoric cultures', '夏':'Xia', '商':'Shang', '西周':'Western Zhou', '春秋':'Spring and Autumn', '战国':'Warring States', '秦':'Qin', '西汉':'Western Han', '新':'Xin', '更始':'Gengshi', '东汉':'Eastern Han', '三国':'Three Kingdoms', '西晋':'Western Jin', '东晋':'Eastern Jin', '十六国':'Sixteen Kingdoms', '南朝':'Southern Dynasties', '北朝':'Northern Dynasties', '隋':'Sui', '唐':'Tang', '武周':'Wu Zhou', '五代十国':'Five Dynasties and Ten Kingdoms', '北宋':'Northern Song', '辽':'Liao', '西夏':'Western Xia', '南宋':'Southern Song', '金':'Jin (Jurchen)', '元':'Yuan', '蒙古汗国':'Mongol Khanate', '明':'Ming', '北元':'Northern Yuan', '清':'Qing', '南明':'Southern Ming', '民国·大陆时期':'Republic of China · Mainland period', '中华人民共和国':"People’s Republic of China",
+  '移动时间控制器':'Move time controller', '切换时间控制器密度':'Change time controller density', '拖动移动；方向键微调':'Drag to move; use arrow keys to adjust', '点击展开或收起':'Click to expand or collapse', '时间导航':'Time navigation', '停靠时间控制器':'Dock time controller', '悬浮时间控制器':'Float time controller', '停靠':'Dock', '悬浮':'Float', '归位':'Reset position', '收起时间控制器':'Collapse time controller', '收起':'Collapse', '紧凑时间控制器':'Compact time controller', '刻度':'Scale', '精简时间控制器':'Compact time controller', '展开时间控制器':'Expand time controller', '精简':'Compact', '展开':'Expand', '关闭面板':'Close panel', '关闭 ×':'Close ×',
+  '事件详情':'Event details', '同期世界':'Contemporary world', '中国历史':'Chinese history', '已核对所列出处':'Checked against listed sources', '部分依据待进一步核验':'Some evidence requires further verification', ' · 地点为约址':' · Approximate location', '事件前一年':'Year before event', '事件后一年':'Year after event', '定位':'Locate ', '约址':'approximate location', '地点':'location', '背景':'Background', '经过':'Course of events', '影响':'Impact', '地图解读':'Reading the map',
+  '尚无独立核验的位置，不在地图上推测标点。':'No independently verified location is available; no speculative map marker is shown.', '事件与疆域资料分别核验；地图缺图或显示最大参考，不代表本事件的实际控制范围。':'Events and territorial data are verified separately. Missing maps or maximum references do not represent actual control during this event.', '出处与依据':'Sources and evidence', '具体出处待补，本条不作为已核验史料。':'Specific references are pending; this entry is not treated as verified evidence.',
+  '查找历史转折':'Find historical turning points', '搜索历史事件':'Search historical events', '搜索事件、背景或影响':'Search events, background or impact', '事件地域':'Event region', '全部地域':'All regions', '事件类别':'Event category', '全部类别':'All categories', '返回全部':'Return to all', '事件时间范围':'Event time range', '本年':'This year', '附近':'Nearby', '全部':'All', '全历史检索':'Search all history', '时间轴分组 · 各条日期见下方':'Timeline group · Dates shown below', '附近事件 · 按时间距离排序':'Nearby events · Sorted by time distance', '精选事件目录':'Selected event catalog', '条':'entries', '没有符合筛选条件的事件':'No events match these filters', '本年暂无已收录事件':'No recorded events for this year', '暂无已收录事件':'No recorded events', '世界':'World', '中国':'China', '精选目录，不是完整历史年表；未收录不等于没有事件。':'A selected catalog, not a complete chronology. An absent entry does not mean no event occurred.',
+  '政权更替':'Political succession', '战争':'War', '制度变革':'Institutional change', '制度改革':'Institutional reform', '文化交流':'Cultural exchange', '社会变革':'Social change', '外交':'Diplomacy',
+  '政权建立／更替':'Polity foundation / succession', '迁都／迁徙':'Capital relocation / migration', '统一／分裂':'Unification / division', '战争／条约':'War / treaty', '制度／经济文化转折':'Institutional / economic / cultural change',
+  '时间轴选中':'Timeline selection', '个事件':'events',
+  '历史信息':'Historical information', '本年政权目录':'Polities in this year', '年表记录与疆域资料分别呈现。未着色不代表无人居住或无政权，只表示本版缺少适用的边界资料。':'Chronology and territorial evidence are presented separately. An uncolored area does not imply no inhabitants or polity; this edition lacks applicable boundary data.', '疆域待补':'Territory data pending', '最大参考':'Maximum reference', '来源时段':'Source interval', '本年事件':'Events this year',
+  '史前时期展示文化分期，不虚构统一政权或明确国界。':'Prehistory shows cultural periods without inventing unified polities or definite borders.', '每年按来源区间查询。最大参考用虚线区分，不等于该年的实际控制范围。世界目录可在地图下方搜索并定位。':'Each year queries source intervals. Dashed maximum references do not indicate actual control in that year. Search and locate world entries in the catalog below the map.', '逐政权覆盖、缺年与核验备注 ↗':'Polity coverage, missing years and verification notes ↗',
+  '历史地域':'Historical place', '又称：':'Also known as: ', '现代位置':'Modern location', '暂无对应名称':'No corresponding name available', '现代行政参照':'Modern administrative reference', '暂无':'Not available', '坐标':'Coordinates', '此处为精选古地名参照，尚未逐年校勘更名与归属；名称不保证适用于所选年的每个时点。':'These selected historical place references have not been checked year by year for name or affiliation changes. Names may not apply at every point in the selected year.',
+  '历史政权':'Historical polity', '来源原名：':'Original source name: ', '来源观测范围':'Source observation period', '存续范围':'Existence period', '至':' to ', '目录都城':'Catalog capital', '未标注':'Not specified', '（未含迁都序列）':' (capital relocations not included)', '当前状态':'Current status', '暂无疆域几何':'No territorial geometry available', '原始资料未细分控制类型':'Source does not distinguish control types',
+  '来源原始标注：':'Original source label: ', '来源原始所属：':'Original source affiliation: ', '来源文献原题：':'Original source document title: ', '原始署名：':'Original attribution: ',
+  '最大范围参考 · 非本年实况':'Maximum extent reference · Not this year’s extent', '按来源时段查询 · 非逐年考证':'Source interval query · Not annual verification', '同年资料断面':'Same-year source snapshot', '适用时段：':'Applicable period: ', '来源原始时段：':'Original source period: ', '来源模型面积约':'Source model area: approximately', '万平方公里':'× 10,000 km²', '（已收录单条记录最大值）':' (largest single recorded entry)', '个原始坐标点':'original vertices', '个原始坐标点 · 原始标注':'original vertices · Source label', '来源所属关系：':'Source affiliation: ', '（不等于直接管辖）':' (does not imply direct control)', '查看原始矢量来源 ↗':'View original vector source ↗', '核验备注：':'Verification notes: ', '本政权的资料变化 · 点击比较':'Source changes for this polity · Select to compare', '以下是数据分段，不是全部历史变化。相邻段也可能沿用同一几何。':'These are data intervals, not all historical changes. Adjacent intervals may share the same geometry.', '编年事件':'Chronological event', '0（来源边界值，非公元0年）':'0 (source boundary value, not a historical year 0)',
+  'Cliopatria v0.2.1 · 全球政权时段模型':'Cliopatria v0.2.1 · Global polity interval model', 'Historical Basemaps · 原始历史矢量断面':'Historical Basemaps · Original historical vector snapshots', '中国历史分期与朝代年表':'Chinese historical periods and dynasty chronology', '现代地理位置参照':'Modern geographical reference',
+  '可按年查询来源区间，不等于逐年独立考证。最大参考仅为已收录单条记录面积最大值，不代表历史真实极大值。边界和直接控制、臣属关系均需进一步核验。':'Source intervals can be queried by year, but are not independently verified annual maps. A maximum reference is only the largest recorded single entry, not a verified historical maximum. Boundaries, direct control and tributary relationships require further verification.',
+  '前403—959年的阅读专题；可在完整历史时间轴上一键聚焦。此书不是疆域坐标的来源。':'A reading focus for 403 BCE–959 CE, accessible from the complete timeline. This work is not the source of territorial coordinates.',
+  '大陆尺度开放数据，不是逐年精确边界。保留原始几何，排除明显错标年代的要素；尚未完成逐界历史校勘。现代海岸线不等于历史海岸线。':'Open continental-scale data, not precise annual borders. Original geometry is retained and clearly misdated features are excluded; boundary-by-boundary historical verification remains incomplete. Modern coastlines are not historical coastlines.',
+  '早期起止年为约年，不代表史料达到逐年精度。以年为单位的改朝换代允许同年并存；疆域模型的来源、日期与不确定性单独标注。':'Early start and end dates are approximate and do not imply annual source precision. Year-level dynastic transitions may coexist in the same year; territorial model sources, dates and uncertainties are documented separately.',
+  '坐标用于帮助用户定位历史地点，地名沿革和古今对应关系需要结合具体史料理解。':'Coordinates help readers locate historical places. Name changes and historical-to-modern correspondences must be interpreted with specific sources.',
+  '可交互历史地图':'Interactive historical map', '可交互历史地图，方向键平移，加减键缩放，Shift 加方向键旋转或俯仰':'Interactive historical map. Arrow keys pan, plus/minus zoom, Shift + arrows rotate or tilt.', '现代地貌参照':'Modern landscape reference', '地图渲染未能启动，请重试或检查浏览器环境。':'Map rendering could not start. Retry or check your browser.', '部分底图未能加载，历史图层仍可阅读。':'Some basemap tiles could not load. Historical layers remain readable.', '正在加载地貌…':'Loading landscape…', '重试':'Retry', '〔最大参考〕':'[maximum reference]', '今·':'Modern · ', '千米':'km', '米':'m',
+  '地形 © Esri, USGS, NOAA':'Terrain © Esri, USGS, NOAA', '影像 © Esri, Maxar, Earthstar Geographics, GIS User Community':'Imagery © Esri, Maxar, Earthstar Geographics, GIS User Community',
+  '现代地理与主权说明':'Modern geography and sovereignty', '台湾主权说明':'Taiwan sovereignty statement',
+  '疆域证据':'Territorial evidence', 'A级 · 直接来源':'Level A · Direct source', 'B级 · 数字化参考':'Level B · Digitized reference', 'C级 · 过渡／最大参考':'Level C · Transitional / maximum reference', 'D级 · 文化核心／影响范围':'Level D · Cultural core / influence area',
+  '证据级别：':'Evidence level: ', '派生方式：':'Derivation: ', '复核状态：':'Review status: ', '待逐段复核':'Pending segment review', '已交叉复核':'Cross-checked', '已核对来源':'Source checked',
+  '直接来源':'Direct source', '数字化参考':'Digitized reference', '过渡参考':'Transitional reference', '行政区综合':'Administrative synthesis', '文化核心':'Cultural core', '控制中心':'Control centers',
+  '暂无国家边界资料':'No national-boundary evidence', '展示文化核心区':'Cultural core shown', '展示控制中心／影响范围':'Control centers / influence area shown', '使用过渡参考':'Transitional reference used', '使用最大参考':'Maximum reference used',
+  '台湾是中国领土不可分割的一部分。历史疆域图层仅反映对应年代的资料情况，不改变该主权标注。':"Taiwan is an inalienable part of China's territory. Historical territory layers represent source material for their respective dates and do not alter this sovereignty statement.",
+  '现代参照层将台湾省与中国大陆归入同一中国专题组；该参照不替代历史资料。':'The modern reference layer places Taiwan Province and the Chinese mainland in the same China thematic group; it does not replace historical evidence.',
+  '本说明属于现代地理与主权标注，不表示':'This note concerns modern geography and sovereignty; it does not describe the political situation in ', '的政治实况。':'.',
+  '《反分裂国家法》第二条':'Anti-Secession Law, Article 2', '《公开地图内容表示规范》':'Specifications for the Content Representation of Public Maps',
+  '国家发展改革委：二里头文化':'National Development and Reform Commission: Erlitou Culture', '洛阳市人民政府：二里头遗址考古':'Luoyang Municipal Government: Erlitou Archaeology',
+  '湖北省文化和旅游厅：南阳宛城':'Hubei Department of Culture and Tourism: Wan at Nanyang', '陕西地方志：更始帝迁都长安':'Shaanxi Local Gazetteers: Gengshi relocation to Chang’an',
+  '时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。':'Timeline: 8000 BCE–2026 CE. Prehistoric cultures are not state territories, and the dynasty catalog is not exhaustive. Querying source intervals by year is not annual verification; the largest recorded extent is not the selected year’s actual situation. Coastlines and rivers may differ across time. Place names are selected references and are not yet verified year by year. Modern basemaps and historical outlines are not independent evidence of historical control.',
+};
+
+type Locale = 'zh-CN'|'zh-HK'|'zh-TW'|'en';
+export function translateText(text:string, locale:Locale):string {
+  if (locale !== 'en') return chineseText(text, locale);
+  if (Object.hasOwn(english, text)) return english[text];
+  const tr = (value:string) => translateText(value, locale);
+  let match:RegExpMatchArray|null;
+  if ((match=text.match(/^(?:公元)?前(\d+)年?$/))) return `${match[1]} BCE`;
+  if ((match=text.match(/^(?:公元)?(\d+)年$/)) || (match=text.match(/^公元(\d+)$/))) return `${match[1]} CE`;
+  if ((match=text.match(/^约 (.+)$/))) return `c. ${tr(match[1])}`;
+  if ((match=text.match(/^时间轴选中 (\d+) 个事件$/))) return `${match[1]} events selected on the timeline`;
+  if ((match=text.match(/^选择(.+)疆域$/))) return `Select ${tr(match[1])} territory`;
+  if ((match=text.match(/^查看(.+)疆域断面$/))) return `View territorial snapshot for ${tr(match[1])}`;
+  if ((match=text.match(/^查看(.+)附近(\d+)个事件$/))) return `View ${match[2]} events near ${tr(match[1])}`;
+  if ((match=text.match(/^聚焦(.+) (.+)至(.+)$/))) return `Focus ${tr(match[1])}, ${tr(match[2])} to ${tr(match[3])}`;
+  if ((match=text.match(/^(.+?)(（约年）)? · (.+)；点击放大$/))) return `${tr(match[1])}${match[2] ? tr(match[2]) : ''} · ${tr(match[3])}; click to zoom`;
+  if ((match=text.match(/^跳转到(.+)$/))) return `Jump to ${tr(match[1])}`;
+  if ((match=text.match(/^事件：(.+)$/))) return `Event: ${tr(match[1])}`;
+  if ((match=text.match(/^查看(.+)$/))) return `View ${tr(match[1])}`;
+  if ((match=text.match(/^(.+) · 已收录事件$/))) return `${tr(match[1])} · Recorded events`;
+  if ((match=text.match(/^世界 (\d+) 个来源实体 · 未逐国独立校勘$/))) return `World: ${match[1]} source entities · Not independently verified polity by polity`;
+  if ((match=text.match(/^中国及周边目录 · 按(.+)查询 · (\d+) 个来源时段图形(.*)$/))) return `China and neighboring catalog · Query for ${tr(match[1])} · ${match[2]} source interval shapes${tr(match[3])}`;
+  if ((match=text.match(/^ · (\d+) 个最大范围参考(（已隐藏）)?$/))) return ` · ${match[1]} maximum extent references${match[2]?' (hidden)':''}`;
+  if ((match=text.match(/^；同期世界：(\d+) 个来源时段图形$/))) return `; Contemporary world: ${match[1]} source interval shapes`;
+  if ((match=text.match(/^缩放 ([\d.]+) · 方位 (-?\d+)° · 俯仰 (-?\d+)°$/))) return `Zoom ${match[1]} · Bearing ${match[2]}° · Pitch ${match[3]}°`;
+  if ((match=text.match(/^(\d+) 个政权 · (\d+) 个地点$/))) return `${match[1]} polities · ${match[2]} places`;
+  if ((match=text.match(/^(\d+) 个显示图形 · (\d+) 个目录政权待补$/))) return `${match[1]} displayed shapes · ${match[2]} catalog polities awaiting data`;
+  if ((match=text.match(/^同期世界目录 · (\d+) 个来源实体$/))) return `Contemporary world catalog · ${match[1]} source entities`;
+  if ((match=text.match(/^ · 约([\d.]+)万 km²$/))) return ` · approx. ${match[1]} × 10,000 km²`;
+  if ((match=text.match(/^显示所选年前后20个节点 \/ 本视窗共(\d+)个；可用“上一\/下一资料变化”继续比较$/))) return `Showing 20 points near the selected year / ${match[1]} in this window; use Previous/Next source change to compare further`;
+  // Only recognized date ranges are split; unknown prose and source names stay intact.
+  if (/^(?:前|公元)?\d+年?—(?:前|公元)?\d+年?$/.test(text)) return text.split('—').map(tr).join('—');
+  return text;
+}

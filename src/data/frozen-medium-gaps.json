@@ -1,0 +1,457 @@
+{
+  "frozenAt": "2026-10-20",
+  "auditSha256": "a02047c3dbe574f0ee3b14540efef239545f2364ee58c017ef0f97150b4167d7",
+  "count": 18,
+  "rows": [
+    {
+      "id": "gap-later_zhao-319-336",
+      "polityId": "later_zhao",
+      "polityName": "后赵",
+      "from": 319,
+      "to": 336,
+      "civilYearLength": 18,
+      "initialDecision": {
+        "id": "gap-later_zhao-319-336",
+        "polityId": "later_zhao",
+        "from": 319,
+        "to": 336,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-1469-later_zhao-347"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "后赵319—336尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "后赵319—336暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-song_southern-420-425",
+      "polityId": "song_southern",
+      "polityName": "刘宋",
+      "from": 420,
+      "to": 425,
+      "civilYearLength": 6,
+      "initialDecision": {
+        "id": "gap-song_southern-420-425",
+        "polityId": "song_southern",
+        "from": 420,
+        "to": 425,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-1724-song_southern-439"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "刘宋420—425尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "刘宋420—425暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-liang_southern-502-509",
+      "polityId": "liang_southern",
+      "polityName": "南梁",
+      "from": 502,
+      "to": 509,
+      "civilYearLength": 8,
+      "initialDecision": {
+        "id": "gap-liang_southern-502-509",
+        "polityId": "liang_southern",
+        "from": 502,
+        "to": 509,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-1937-liang_southern-510"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "南梁502—509尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "南梁502—509暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-sui-581-586",
+      "polityId": "sui",
+      "polityName": "隋",
+      "from": 581,
+      "to": 586,
+      "civilYearLength": 6,
+      "initialDecision": {
+        "id": "gap-sui-581-586",
+        "polityId": "sui",
+        "from": 581,
+        "to": 586,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-2247-sui-612"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "隋581—586尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "隋581—586暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-zhou_later-951-959",
+      "polityId": "zhou_later",
+      "polityName": "后周",
+      "from": 951,
+      "to": 959,
+      "civilYearLength": 9,
+      "initialDecision": {
+        "id": "gap-zhou_later-951-959",
+        "polityId": "zhou_later",
+        "from": 951,
+        "to": 959,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-3861-zhou_later-960"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "后周951—959尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "后周951—959暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-zhou_eastern--770--751",
+      "polityId": "zhou_eastern",
+      "polityName": "东周王室",
+      "from": -770,
+      "to": -751,
+      "civilYearLength": 20,
+      "initialDecision": {
+        "id": "gap-zhou_eastern--770--751",
+        "polityId": "zhou_eastern",
+        "from": -770,
+        "to": -751,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-177-zhou_eastern--750"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "东周王室-770—-751尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "东周王室-770—-751暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-qin_state--770--751",
+      "polityId": "qin_state",
+      "polityName": "秦国",
+      "from": -770,
+      "to": -751,
+      "civilYearLength": 20,
+      "initialDecision": {
+        "id": "gap-qin_state--770--751",
+        "polityId": "qin_state",
+        "from": -770,
+        "to": -751,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-723-qin_state--222"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "秦国-770—-751尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "秦国-770—-751暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-former_liang-314-323",
+      "polityId": "former_liang",
+      "polityName": "前凉",
+      "from": 314,
+      "to": 323,
+      "civilYearLength": 10,
+      "initialDecision": {
+        "id": "gap-former_liang-314-323",
+        "polityId": "former_liang",
+        "from": 314,
+        "to": 323,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-1517-former_liang-373"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "前凉314—323尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "前凉314—323暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-western_liang-400-406",
+      "polityId": "western_liang",
+      "polityName": "西凉",
+      "from": 400,
+      "to": 406,
+      "civilYearLength": 7,
+      "initialDecision": {
+        "id": "gap-western_liang-400-406",
+        "polityId": "western_liang",
+        "from": 400,
+        "to": 406,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-1651-western_liang-407"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "西凉400—406尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "西凉400—406暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-western_liang-410-421",
+      "polityId": "western_liang",
+      "polityName": "西凉",
+      "from": 410,
+      "to": 421,
+      "civilYearLength": 12,
+      "initialDecision": {
+        "id": "gap-western_liang-410-421",
+        "polityId": "western_liang",
+        "from": 410,
+        "to": 421,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-1651-western_liang-407"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "西凉410—421尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "西凉410—421暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-song_south-1127-1138",
+      "polityId": "song_south",
+      "polityName": "南宋",
+      "from": 1127,
+      "to": 1138,
+      "civilYearLength": 12,
+      "initialDecision": {
+        "id": "gap-song_south-1127-1138",
+        "polityId": "song_south",
+        "from": 1127,
+        "to": 1138,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-4844-song_south-1139"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "南宋1127—1138尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "南宋1127—1138暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-jin_jurchen-1115-1125",
+      "polityId": "jin_jurchen",
+      "polityName": "金",
+      "from": 1115,
+      "to": 1125,
+      "civilYearLength": 11,
+      "initialDecision": {
+        "id": "gap-jin_jurchen-1115-1125",
+        "polityId": "jin_jurchen",
+        "from": 1115,
+        "to": 1125,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-5293-jin_jurchen-1206"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "金1115—1125尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "金1115—1125暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-dali-937-946",
+      "polityId": "dali",
+      "polityName": "大理",
+      "from": 937,
+      "to": 946,
+      "civilYearLength": 10,
+      "initialDecision": {
+        "id": "gap-dali-937-946",
+        "polityId": "dali",
+        "from": 937,
+        "to": 946,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-3812-dali-947"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "大理937—946尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "大理937—946暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-northern_yuan-1368-1374",
+      "polityId": "northern_yuan",
+      "polityName": "北元",
+      "from": 1368,
+      "to": 1374,
+      "civilYearLength": 7,
+      "initialDecision": {
+        "id": "gap-northern_yuan-1368-1374",
+        "polityId": "northern_yuan",
+        "from": 1368,
+        "to": 1374,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-7855-northern_yuan-1519"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "北元1368—1374尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "北元1368—1374暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-ming-1368-1374",
+      "polityId": "ming",
+      "polityName": "明",
+      "from": 1368,
+      "to": 1374,
+      "civilYearLength": 7,
+      "initialDecision": {
+        "id": "gap-ming-1368-1374",
+        "polityId": "ming",
+        "from": 1368,
+        "to": 1374,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-7038-ming-1422"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "明1368—1374尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "明1368—1374暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-republic-1916-1929",
+      "polityId": "republic",
+      "polityName": "中华民国（大陆时期）",
+      "from": 1916,
+      "to": 1929,
+      "civilYearLength": 14,
+      "initialDecision": {
+        "id": "gap-republic-1916-1929",
+        "polityId": "republic",
+        "from": 1916,
+        "to": 1929,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-12320-republic-1912"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "中华民国（大陆时期）1916—1929尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "中华民国（大陆时期）1916—1929暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-wu_ten-902-910",
+      "polityId": "wu_ten",
+      "polityName": "杨吴",
+      "from": 902,
+      "to": 910,
+      "civilYearLength": 9,
+      "initialDecision": {
+        "id": "gap-wu_ten-902-910",
+        "polityId": "wu_ten",
+        "from": 902,
+        "to": 910,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-3646-wu_ten-911"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "杨吴902—910尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "杨吴902—910暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    },
+    {
+      "id": "gap-northern_han-951-959",
+      "polityId": "northern_han",
+      "polityName": "北汉",
+      "from": 951,
+      "to": 959,
+      "civilYearLength": 9,
+      "initialDecision": {
+        "id": "gap-northern_han-951-959",
+        "polityId": "northern_han",
+        "from": 951,
+        "to": 959,
+        "verdict": "maximum-record",
+        "sourceBoundaryIds": [
+          "clio-3859-northern_han-960"
+        ],
+        "citationIds": [
+          "cliopatria"
+        ],
+        "historicalTransitionCheck": "北汉951—959尚未完成逐段历史转折复核；当前记录明确保持待复核状态。",
+        "rationale": "北汉951—959暂以同一政权已收录的最大单条来源轮廓作为C级参考，不解释为所选年份实况。",
+        "reviewStatus": "pending",
+        "reviewedAt": null
+      }
+    }
+  ]
+}

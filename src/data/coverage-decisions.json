@@ -1,0 +1,1526 @@
+[
+  {
+    "id": "gap-han_warring--230--230",
+    "polityId": "han_warring",
+    "from": -230,
+    "to": -230,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-han_warring--230--230逐段复核：前230年为韩被秦灭亡之年，年内控制变化使前一年轮廓不能代表全年。",
+    "rationale": "前230年为韩被秦灭亡之年，年内控制变化使前一年轮廓不能代表全年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-chu_warring--223--223",
+    "polityId": "chu_warring",
+    "from": -223,
+    "to": -223,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-chu_warring--223--223逐段复核：前223年为楚被秦攻灭的转折年，不能把前224年的残存范围平移为全年疆域。",
+    "rationale": "前223年为楚被秦攻灭的转折年，不能把前224年的残存范围平移为全年疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-yan_warring--222--222",
+    "polityId": "yan_warring",
+    "from": -222,
+    "to": -222,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-yan_warring--222--222逐段复核：前222年为燕最终灭亡阶段，辽东残余与秦接管过程不宜压成单一面。",
+    "rationale": "前222年为燕最终灭亡阶段，辽东残余与秦接管过程不宜压成单一面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-qin--221--219",
+    "polityId": "qin",
+    "from": -221,
+    "to": -219,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-qin--221--219逐段复核：前221年完成灭齐统一，随后仍在重组郡县并向南北扩展，三年并非稳定断面。",
+    "rationale": "前221年完成灭齐统一，随后仍在重组郡县并向南北扩展，三年并非稳定断面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-qin--208--206",
+    "polityId": "qin",
+    "from": -208,
+    "to": -206,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-qin--208--206逐段复核：前208至前206年处在秦末战争和秦政权覆亡阶段，最大版图会严重夸大实际控制。",
+    "rationale": "前208至前206年处在秦末战争和秦政权覆亡阶段，最大版图会严重夸大实际控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-han_western--206--203",
+    "polityId": "han_western",
+    "from": -206,
+    "to": -203,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-han_western--206--203逐段复核：前206至前203年处在受封汉王及楚汉战争阶段，不能反推后来的西汉统一疆域。",
+    "rationale": "前206至前203年处在受封汉王及楚汉战争阶段，不能反推后来的西汉统一疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-han_western-6-9",
+    "polityId": "han_western",
+    "from": 6,
+    "to": 9,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-han_western-6-9逐段复核：6至9年包含西汉末期权力转移及新朝建立，前期轮廓不能覆盖整个区间。",
+    "rationale": "6至9年包含西汉末期权力转移及新朝建立，前期轮廓不能覆盖整个区间。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-han_eastern-25-29",
+    "polityId": "han_eastern",
+    "from": 25,
+    "to": 29,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-han_eastern-25-29逐段复核：25至29年为东汉建立及逐步恢复控制阶段，30年轮廓不能倒推至建国初年。",
+    "rationale": "25至29年为东汉建立及逐步恢复控制阶段，30年轮廓不能倒推至建国初年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-wei_three-220-223",
+    "polityId": "wei_three",
+    "from": 220,
+    "to": 223,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-wei_three-220-223逐段复核：220至223年包含曹魏建国、蜀汉与孙吴名号变化，三方控制仍在调整。",
+    "rationale": "220至223年包含曹魏建国、蜀汉与孙吴名号变化，三方控制仍在调整。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-wei_three-265-265",
+    "polityId": "wei_three",
+    "from": 265,
+    "to": 265,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-wei_three-265-265逐段复核：265年发生魏晋禅代，曹魏终年轮廓具有明显的年内时点歧义。",
+    "rationale": "265年发生魏晋禅代，曹魏终年轮廓具有明显的年内时点歧义。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-shu_three-221-223",
+    "polityId": "shu_three",
+    "from": 221,
+    "to": 223,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-shu_three-221-223逐段复核：221至223年包含蜀汉建国、夷陵战争与刘备去世，不能用224年断面回填。",
+    "rationale": "221至223年包含蜀汉建国、夷陵战争与刘备去世，不能用224年断面回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-shu_three-263-263",
+    "polityId": "shu_three",
+    "from": 263,
+    "to": 263,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-shu_three-263-263逐段复核：263年蜀汉在魏灭蜀战争中覆亡，上一年轮廓不代表该年持续变化的控制。",
+    "rationale": "263年蜀汉在魏灭蜀战争中覆亡，上一年轮廓不代表该年持续变化的控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-cheng_han-304-305",
+    "polityId": "cheng_han",
+    "from": 304,
+    "to": 305,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-cheng_han-304-305逐段复核：304至305年为成汉政权草创期，306年的控制面不能直接回推。",
+    "rationale": "304至305年为成汉政权草创期，306年的控制面不能直接回推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-cheng_han-347-347",
+    "polityId": "cheng_han",
+    "from": 347,
+    "to": 347,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-cheng_han-347-347逐段复核：347年成汉被东晋桓温所灭，终结年不采用此前最大范围。",
+    "rationale": "347年成汉被东晋桓温所灭，终结年不采用此前最大范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-former_zhao-304-305",
+    "polityId": "former_zhao",
+    "from": 304,
+    "to": 305,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-former_zhao-304-305逐段复核：304至305年为汉赵政权建立初期，名号与控制范围尚未形成稳定年度断面。",
+    "rationale": "304至305年为汉赵政权建立初期，名号与控制范围尚未形成稳定年度断面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_zhao-319-336",
+    "polityId": "later_zhao",
+    "from": 319,
+    "to": 336,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-later_zhao-319-336逐段复核：319至336年覆盖后赵政权建立、迁都与兼并扩张阶段，337年来源断面不能代表十八年间的连续变化。",
+    "rationale": "319至336年覆盖后赵政权建立、迁都与兼并扩张阶段，337年来源断面不能代表十八年间的连续变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-former_qin-351-352",
+    "polityId": "former_qin",
+    "from": 351,
+    "to": 352,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-former_qin-351-352逐段复核：351至352年为前秦建立和称帝阶段，353年轮廓不反推至草创期。",
+    "rationale": "351至352年为前秦建立和称帝阶段，353年轮廓不反推至草创期。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-former_qin-394-394",
+    "polityId": "former_qin",
+    "from": 394,
+    "to": 394,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-former_qin-394-394逐段复核：394年为前秦灭亡年，末期据点变化不适合用此前疆域替代。",
+    "rationale": "394年为前秦灭亡年，末期据点变化不适合用此前疆域替代。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_yan-384-386",
+    "polityId": "later_yan",
+    "from": 384,
+    "to": 386,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-later_yan-384-386逐段复核：384至386年为后燕建立与扩张阶段，387年断面不能代表此前三年。",
+    "rationale": "384至386年为后燕建立与扩张阶段，387年断面不能代表此前三年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_qin-384-386",
+    "polityId": "later_qin",
+    "from": 384,
+    "to": 386,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-later_qin-384-386逐段复核：384至386年为后秦建立及早期战争阶段，后续轮廓不作逆向平移。",
+    "rationale": "384至386年为后秦建立及早期战争阶段，后续轮廓不作逆向平移。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_qin-417-417",
+    "polityId": "later_qin",
+    "from": 417,
+    "to": 417,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-later_qin-417-417逐段复核：417年后秦被东晋刘裕所灭，灭亡年的实际控制不能用416年前轮廓代替。",
+    "rationale": "417年后秦被东晋刘裕所灭，灭亡年的实际控制不能用416年前轮廓代替。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-xia-407-409",
+    "polityId": "xia",
+    "from": 407,
+    "to": 409,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-xia-407-409逐段复核：407至409年为赫连氏夏政权建立初期；本条不是上古夏代，410年轮廓不回填。",
+    "rationale": "407至409年为赫连氏夏政权建立初期；本条不是上古夏代，410年轮廓不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-wei_northern-386-386",
+    "polityId": "wei_northern",
+    "from": 386,
+    "to": 386,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-wei_northern-386-386逐段复核：386年为北魏重建并改国号的起点，387年轮廓不足以证明建国当年边界。",
+    "rationale": "386年为北魏重建并改国号的起点，387年轮廓不足以证明建国当年边界。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-wei_northern-534-534",
+    "polityId": "wei_northern",
+    "from": 534,
+    "to": 534,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-wei_northern-534-534逐段复核：534年北魏分裂为东魏、西魏，旧政权终年没有可稳定表达的单一疆域。",
+    "rationale": "534年北魏分裂为东魏、西魏，旧政权终年没有可稳定表达的单一疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-song_southern-420-425",
+    "polityId": "song_southern",
+    "from": 420,
+    "to": 425,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-song_southern-420-425逐段复核：420至425年处在刘宋代晋建国及早期北方战事阶段，426年后的轮廓不宜回填。",
+    "rationale": "420至425年处在刘宋代晋建国及早期北方战事阶段，426年后的轮廓不宜回填。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-qi_southern-479-479",
+    "polityId": "qi_southern",
+    "from": 479,
+    "to": 479,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-qi_southern-479-479逐段复核：479年发生宋齐禅代，南齐建立当年的接管过程不等同于480年断面。",
+    "rationale": "479年发生宋齐禅代，南齐建立当年的接管过程不等同于480年断面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-liang_southern-502-509",
+    "polityId": "liang_southern",
+    "from": 502,
+    "to": 509,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-liang_southern-502-509逐段复核：502至509年包含梁代齐建国及初期南北战争，后续最大范围会掩盖逐年控制变化。",
+    "rationale": "502至509年包含梁代齐建国及初期南北战争，后续最大范围会掩盖逐年控制变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-chen_southern-557-560",
+    "polityId": "chen_southern",
+    "from": 557,
+    "to": 560,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-chen_southern-557-560逐段复核：557至560年为陈朝建立并应对周边战争的初期，561年轮廓不向前外推。",
+    "rationale": "557至560年为陈朝建立并应对周边战争的初期，561年轮廓不向前外推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-qi_northern-550-554",
+    "polityId": "qi_northern",
+    "from": 550,
+    "to": 554,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-qi_northern-550-554逐段复核：550至554年为北齐建国初期及北方格局调整期，555年轮廓不回填。",
+    "rationale": "550至554年为北齐建国初期及北方格局调整期，555年轮廓不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-qi_northern-577-577",
+    "polityId": "qi_northern",
+    "from": 577,
+    "to": 577,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-qi_northern-577-577逐段复核：577年北齐被北周攻灭，灭亡年不能沿用576年的完整控制范围。",
+    "rationale": "577年北齐被北周攻灭，灭亡年不能沿用576年的完整控制范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-zhou_northern-557-560",
+    "polityId": "zhou_northern",
+    "from": 557,
+    "to": 560,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-zhou_northern-557-560逐段复核：557至560年为北周建国初期，西魏旧制转换与对外战争使边界并不稳定。",
+    "rationale": "557至560年为北周建国初期，西魏旧制转换与对外战争使边界并不稳定。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-sui-581-586",
+    "polityId": "sui",
+    "from": 581,
+    "to": 586,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-sui-581-586逐段复核：581至586年为隋代周建国并整合北方阶段，灭陈统一尚未发生，不能使用后期最大版图。",
+    "rationale": "581至586年为隋代周建国并整合北方阶段，灭陈统一尚未发生，不能使用后期最大版图。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-tang-618-622",
+    "polityId": "tang",
+    "from": 618,
+    "to": 622,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-tang-618-622逐段复核：618至622年为唐建立并逐步消灭各地割据势力的统一战争阶段。",
+    "rationale": "618至622年为唐建立并逐步消灭各地割据势力的统一战争阶段。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-liang_later-907-910",
+    "polityId": "liang_later",
+    "from": 907,
+    "to": 910,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-liang_later-907-910逐段复核：907至910年为后梁代唐及五代格局形成期，911年断面不能倒推。",
+    "rationale": "907至910年为后梁代唐及五代格局形成期，911年断面不能倒推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-tang_later-923-925",
+    "polityId": "tang_later",
+    "from": 923,
+    "to": 925,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-tang_later-923-925逐段复核：923至925年包含后唐建国、灭后梁及灭前蜀，控制范围快速变化。",
+    "rationale": "923至925年包含后唐建国、灭后梁及灭前蜀，控制范围快速变化。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-tang_later-936-936",
+    "polityId": "tang_later",
+    "from": 936,
+    "to": 936,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-tang_later-936-936逐段复核：936年后唐灭亡并由后晋取代，终结年不采用此前疆域。",
+    "rationale": "936年后唐灭亡并由后晋取代，终结年不采用此前疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-jin_later-947-947",
+    "polityId": "jin_later",
+    "from": 947,
+    "to": 947,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-jin_later-947-947逐段复核：947年后晋覆亡并出现契丹接管与中原政权重组，不宜画成固定面。",
+    "rationale": "947年后晋覆亡并出现契丹接管与中原政权重组，不宜画成固定面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-zhou_later-951-959",
+    "polityId": "zhou_later",
+    "from": 951,
+    "to": 959,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-zhou_later-951-959逐段复核：951至959年为后周建国、北伐与政权扩张阶段，且紧接960年宋代周，单一最大面不可靠。",
+    "rationale": "951至959年为后周建国、北伐与政权扩张阶段，且紧接960年宋代周，单一最大面不可靠。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-xiongnu--209--209",
+    "polityId": "xiongnu",
+    "from": -209,
+    "to": -209,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-xiongnu--209--209逐段复核：前209年前后处在冒顿单于权力重组阶段，前208年断面不能证明起始年范围。",
+    "rationale": "前209年前后处在冒顿单于权力重组阶段，前208年断面不能证明起始年范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-goguryeo--37--37",
+    "polityId": "goguryeo",
+    "from": -37,
+    "to": -37,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-goguryeo--37--37逐段复核：前37年是高句丽传统建国纪年，后一年来源断面不足以证明建国当年疆域。",
+    "rationale": "前37年是高句丽传统建国纪年，后一年来源断面不足以证明建国当年疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-silla--57-377",
+    "polityId": "silla",
+    "from": -57,
+    "to": 377,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "silla-encykorea",
+      "silla-samguksagi-db",
+      "silla-periodization",
+      "cliopatria"
+    ],
+    "historicalTransitionCheck": "新罗前57—377年逐年核对435个民用年：按王统与阶段事件复核后，早期建国、地方整合、4世纪王权增强及377/382年对外关系变化均不能转换为可重发布的年度边界；全部年份明确留空。",
+    "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 682—891年统一新罗最大轮廓与前57—377年历史阶段不相容，不能回填；王统编年、外交记录和影响范围也不等于直接控制边界。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-21"
+  },
+  {
+    "id": "gap-turkic-552-554",
+    "polityId": "turkic",
+    "from": 552,
+    "to": 554,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-turkic-552-554逐段复核：552至554年为突厥汗国建立与快速扩张阶段，555年轮廓不作逆推。",
+    "rationale": "552至554年为突厥汗国建立与快速扩张阶段，555年轮廓不作逆推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-turkic-661-744",
+    "polityId": "turkic",
+    "from": 661,
+    "to": 744,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "turkic-history-db",
+      "turkic-orkhon-heritage",
+      "turkic-orkhon-collection",
+      "cliopatria",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "突厥661—744年逐年核对84个民用年：先区分西突厥余部、唐朝羁縻体系与682年后突厥复兴，再核对汗位更迭、碑铭年代和744年覆亡；没有任何年份具备可重发布的直接控制边界，全部明确留空。",
+    "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 561—576年第一突厥汗国最大轮廓不能跨越政权重组、后突厥复兴和744年继承转换回填；臣属、征伐、碑铭叙事与文化影响范围均不直接等于现代意义国界。法律与发布标注：仅保留来源与许可说明，不复制现代译文或受保护图件；项目当前仍为research-only，未取得审图号，不作为公开标准地图发布。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-21"
+  },
+  {
+    "id": "gap-tibetan_empire-618-622",
+    "polityId": "tibetan_empire",
+    "from": 618,
+    "to": 622,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-tibetan_empire-618-622逐段复核：618至622年处在吐蕃早期整合阶段，同时期唐建国事件不构成吐蕃边界证据。",
+    "rationale": "618至622年处在吐蕃早期整合阶段，同时期唐建国事件不构成吐蕃边界证据。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-nanzhao-738-740",
+    "polityId": "nanzhao",
+    "from": 738,
+    "to": 740,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-nanzhao-738-740逐段复核：738至740年为南诏受封和早期整合阶段，741年轮廓不能自动代表前三年。",
+    "rationale": "738至740年为南诏受封和早期整合阶段，741年轮廓不能自动代表前三年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-xia_early--2070--1600",
+    "polityId": "xia_early",
+    "from": -2070,
+    "to": -1600,
+    "verdict": "cultural-core",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "erlitou-official"
+    ],
+    "historicalTransitionCheck": "夏代约年跨度缺少可重发布的国家边界资料；二里头来源只支持文化核心定位，不能外推封闭疆界。",
+    "rationale": "以二里头遗址附近的D级文化核心点替代空白提示，但明确不作为夏代国界或完整文化分布。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-zhou_western--1046--1001",
+    "polityId": "zhou_western",
+    "from": -1046,
+    "to": -1001,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "western-zhou-national-museum",
+      "western-zhou-epic",
+      "china-chronology",
+      "zizhi-tongjian",
+      "cliopatria",
+      "map-regulation"
+    ],
+    "historicalTransitionCheck": "西周前1046—前1001年逐年核对46个民用年：按灭商接管、周公摄政、成王东征、分封秩序和康王早期分期复核；王室直辖、诸侯封国、征服与来服关系无法转换为可重发布的年度单一边界，全部明确留空。",
+    "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria前1000年以后轮廓不能回填前1046—前1001年；西周早期的分封、军事征服、盟誓和影响范围不等同于王室直接控制。合规标注：不复制未明确授权的历史地图或现代图件，保留来源与版本；依据《地图管理条例》公开地图和历史地图可能涉及审核与审图号，项目当前仍为research-only，不作为官方标准地图发布。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-21"
+  },
+  {
+    "id": "gap-zhou_eastern--770--751",
+    "polityId": "zhou_eastern",
+    "from": -770,
+    "to": -751,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-zhou_eastern--770--751逐段复核：前770至前751年始于周王室东迁，早期王畿与诸侯关系处在重组阶段，后期轮廓无法回推。",
+    "rationale": "前770至前751年始于周王室东迁，早期王畿与诸侯关系处在重组阶段，后期轮廓无法回推。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-zhou_eastern--256--256",
+    "polityId": "zhou_eastern",
+    "from": -256,
+    "to": -256,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-zhou_eastern--256--256逐段复核：前256年秦灭东周王室，王畿终结年的范围不能由前257年前记录平移。",
+    "rationale": "前256年秦灭东周王室，王畿终结年的范围不能由前257年前记录平移。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-qin_state--770--751",
+    "polityId": "qin_state",
+    "from": -770,
+    "to": -751,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-qin_state--770--751逐段复核：前770至前751年为秦受封并经营关中早期，来源未提供足以重建这二十年逐界变化的几何。",
+    "rationale": "前770至前751年为秦受封并经营关中早期，来源未提供足以重建这二十年逐界变化的几何。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-gengshi-23-25",
+    "polityId": "gengshi",
+    "from": 23,
+    "to": 25,
+    "verdict": "control-centers",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "gengshi-official"
+    ],
+    "historicalTransitionCheck": "已核对23年宛城与洛阳、24年由洛阳迁都长安、25年政权覆亡前后的中心变化；资料不足以形成连续边界。",
+    "rationale": "按年显示宛城、洛阳、长安的D级控制中心，不连接成面，也不声称是更始政权疆域。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-wu_zhou-705-705",
+    "polityId": "wu_zhou",
+    "from": 705,
+    "to": 705,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-wu_zhou-705-705逐段复核：705年神龙政变后武周结束、唐复辟，政权更替年不保留旧朝完整疆域面。",
+    "rationale": "705年神龙政变后武周结束、唐复辟，政权更替年不保留旧朝完整疆域面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-former_liang-314-323",
+    "polityId": "former_liang",
+    "from": 314,
+    "to": 323,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-former_liang-314-323逐段复核：314至323年处在前凉政权形成及西北局势重组期，后续来源面不代表草创十年。",
+    "rationale": "314至323年处在前凉政权形成及西北局势重组期，后续来源面不代表草创十年。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-western_qin-385-386",
+    "polityId": "western_qin",
+    "from": 385,
+    "to": 386,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-western_qin-385-386逐段复核：385至386年为西秦建立初期，387年断面不足以支持向前回填。",
+    "rationale": "385至386年为西秦建立初期，387年断面不足以支持向前回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-western_qin-409-409",
+    "polityId": "western_qin",
+    "from": 409,
+    "to": 409,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-western_qin-409-409逐段复核：409年为西秦复国节点，前后来源属于不同存续阶段，不能机械桥接。",
+    "rationale": "409年为西秦复国节点，前后来源属于不同存续阶段，不能机械桥接。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_liang-386-386",
+    "polityId": "later_liang",
+    "from": 386,
+    "to": 386,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-later_liang-386-386逐段复核：386年为后凉政权形成初期，387年来源轮廓不证明起始年控制范围。",
+    "rationale": "386年为后凉政权形成初期，387年来源轮廓不证明起始年控制范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-southern_liang-414-414",
+    "polityId": "southern_liang",
+    "from": 414,
+    "to": 414,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-southern_liang-414-414逐段复核：414年南凉覆亡并归于西秦，终结年不采用此前完整控制面。",
+    "rationale": "414年南凉覆亡并归于西秦，终结年不采用此前完整控制面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-southern_yan-398-401",
+    "polityId": "southern_yan",
+    "from": 398,
+    "to": 401,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-southern_yan-398-401逐段复核：398至401年为南燕建立和定都过程，402年断面不能回填草创阶段。",
+    "rationale": "398至401年为南燕建立和定都过程，402年断面不能回填草创阶段。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-southern_yan-410-410",
+    "polityId": "southern_yan",
+    "from": 410,
+    "to": 410,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-southern_yan-410-410逐段复核：410年南燕被东晋刘裕攻灭，灭亡年控制范围持续收缩。",
+    "rationale": "410年南燕被东晋刘裕攻灭，灭亡年控制范围持续收缩。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-western_liang-400-406",
+    "polityId": "western_liang",
+    "from": 400,
+    "to": 406,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-western_liang-400-406逐段复核：400至406年为西凉建立及河西诸政权竞争阶段，不以其他年份最大轮廓替代。",
+    "rationale": "400至406年为西凉建立及河西诸政权竞争阶段，不以其他年份最大轮廓替代。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-western_liang-410-421",
+    "polityId": "western_liang",
+    "from": 410,
+    "to": 421,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-western_liang-410-421逐段复核：410至421年西凉在河西战争中持续调整并最终覆亡，单一参考面会夸大稳定性。",
+    "rationale": "410至421年西凉在河西战争中持续调整并最终覆亡，单一参考面会夸大稳定性。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-northern_yan-407-409",
+    "polityId": "northern_yan",
+    "from": 407,
+    "to": 409,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-northern_yan-407-409逐段复核：407至409年为北燕政权形成与内部更替阶段，410年断面不作逆推。",
+    "rationale": "407至409年为北燕政权形成与内部更替阶段，410年断面不作逆推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-song_northern-960-960",
+    "polityId": "song_northern",
+    "from": 960,
+    "to": 960,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-song_northern-960-960逐段复核：960年北宋建立但统一战争尚未完成，961年轮廓也不能等同于建国当日。",
+    "rationale": "960年北宋建立但统一战争尚未完成，961年轮廓也不能等同于建国当日。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-song_south-1127-1138",
+    "polityId": "song_south",
+    "from": 1127,
+    "to": 1138,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-song_south-1127-1138逐段复核：1127至1138年包括南宋建立、迁驻与宋金战争，政治中心和实际控制均多次变化。",
+    "rationale": "1127至1138年包括南宋建立、迁驻与宋金战争，政治中心和实际控制均多次变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-song_south-1279-1279",
+    "polityId": "song_south",
+    "from": 1279,
+    "to": 1279,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-song_south-1279-1279逐段复核：1279年南宋在崖山战役后灭亡，上一年轮廓不能代表终结年实际控制。",
+    "rationale": "1279年南宋在崖山战役后灭亡，上一年轮廓不能代表终结年实际控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-western_xia-1227-1227",
+    "polityId": "western_xia",
+    "from": 1227,
+    "to": 1227,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-western_xia-1227-1227逐段复核：1227年西夏在蒙古战争中灭亡，终结年不沿用1226年的完整疆域。",
+    "rationale": "1227年西夏在蒙古战争中灭亡，终结年不沿用1226年的完整疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-jin_jurchen-1115-1125",
+    "polityId": "jin_jurchen",
+    "from": 1115,
+    "to": 1125,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-jin_jurchen-1115-1125逐段复核：1115至1125年为金建国、灭辽并向宋推进的快速扩张期，不能以1126年以后轮廓倒推。",
+    "rationale": "1115至1125年为金建国、灭辽并向宋推进的快速扩张期，不能以1126年以后轮廓倒推。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-western_liao-1124-1125",
+    "polityId": "western_liao",
+    "from": 1124,
+    "to": 1125,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-western_liao-1124-1125逐段复核：1124至1125年为西辽建立与向中亚迁移扩张阶段，1126年断面不回填。",
+    "rationale": "1124至1125年为西辽建立与向中亚迁移扩张阶段，1126年断面不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-dali-937-946",
+    "polityId": "dali",
+    "from": 937,
+    "to": 946,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-dali-937-946逐段复核：937至946年为大理政权建立与早期整合阶段，947年来源断面不足以覆盖此前十年。",
+    "rationale": "937至946年为大理政权建立与早期整合阶段，947年来源断面不足以覆盖此前十年。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-yuan-1271-1293",
+    "polityId": "yuan",
+    "from": 1271,
+    "to": 1293,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "yuan-nationalities-history",
+      "yuan-li-bingzhong",
+      "yuan-goryeo-records",
+      "cliopatria",
+      "zizhi-tongjian",
+      "map-regulation"
+    ],
+    "historicalTransitionCheck": "元1271—1293年逐年核对23个民用年：按改国号、南宋接管、1279年覆亡、统一后整合、对日战争、行省建置与边疆军政变化复核；没有任何年份具备可重发布的直接控制边界，全部明确留空。",
+    "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 1352年轮廓不能回填1271—1293年的建国、战争、接管和行政整合过程；元朝名义疆域、行省范围、军镇和属国关系不自动等于逐年直接控制边界。合规标注：不复制未明确授权的历史地图或现代译文，保留来源与版本；依据《地图管理条例》公开历史地图和互联网地图服务需核验审核与审图号，项目当前仍为research-only。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-21"
+  },
+  {
+    "id": "gap-northern_yuan-1368-1374",
+    "polityId": "northern_yuan",
+    "from": 1368,
+    "to": 1374,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-northern_yuan-1368-1374逐段复核：1368至1374年为元廷退出大都后北迁重组阶段，控制范围与明军推进同步变化。",
+    "rationale": "1368至1374年为元廷退出大都后北迁重组阶段，控制范围与明军推进同步变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-northern_yuan-1440-1467",
+    "polityId": "northern_yuan",
+    "from": 1440,
+    "to": 1467,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "northern-yuan-early-ming",
+      "northern-yuan-yesen",
+      "cliopatria",
+      "china-chronology",
+      "map-regulation"
+    ],
+    "historicalTransitionCheck": "北元1440—1467年逐年核对28个民用年：按也先扩张、明蒙战争、1449年土木之变、也先与脱脱不花并立、1454年分裂及其后瓦剌与鞑靼重组复核；政权身份和直接控制均不稳定，没有可重发布的年度单一边界，全部明确留空。",
+    "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 1519年北元轮廓不能回填1440—1467年的部族联盟、汗权竞争和明蒙边疆战争；明方防御线、蒙古名义汗统、瓦剌军事权力和部众影响范围不自动等于北元直接控制边界。合规标注：不复制未明确授权的历史地图或现代译文，保留来源与版本；依据《地图管理条例》公开历史地图和互联网地图服务需核验审核与审图号，项目当前仍为research-only。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-21"
+  },
+  {
+    "id": "gap-ming-1368-1374",
+    "polityId": "ming",
+    "from": 1368,
+    "to": 1374,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-ming-1368-1374逐段复核：1368至1374年为明建国、北伐及全国整合阶段，后续轮廓不能代表每个起始年份。",
+    "rationale": "1368至1374年为明建国、北伐及全国整合阶段，后续轮廓不能代表每个起始年份。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-ming_southern-1644-1644",
+    "polityId": "ming_southern",
+    "from": 1644,
+    "to": 1644,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-ming_southern-1644-1644逐段复核：1644年南明建立且多方政权并立，1645年的来源面不能代表全年。",
+    "rationale": "1644年南明建立且多方政权并立，1645年的来源面不能代表全年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-ming_southern-1659-1662",
+    "polityId": "ming_southern",
+    "from": 1659,
+    "to": 1662,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-ming_southern-1659-1662逐段复核：1659至1662年为南明残余政权持续收缩并终结阶段，最大轮廓会夸大控制。",
+    "rationale": "1659至1662年为南明残余政权持续收缩并终结阶段，最大轮廓会夸大控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_jin-1616-1618",
+    "polityId": "later_jin",
+    "from": 1616,
+    "to": 1618,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-later_jin-1616-1618逐段复核：1616至1618年为后金建立和早期扩张阶段，1619年断面不向前平移。",
+    "rationale": "1616至1618年为后金建立和早期扩张阶段，1619年断面不向前平移。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_jin-1636-1636",
+    "polityId": "later_jin",
+    "from": 1636,
+    "to": 1636,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-later_jin-1636-1636逐段复核：1636年后金改国号为清，旧政权终年与新政权转换不能画作稳定旧疆域。",
+    "rationale": "1636年后金改国号为清，旧政权终年与新政权转换不能画作稳定旧疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-qing-1912-1912",
+    "polityId": "qing",
+    "from": 1912,
+    "to": 1912,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-qing-1912-1912逐段复核：1912年清帝退位并建立共和政权，年内政权转换不采用1911年轮廓。",
+    "rationale": "1912年清帝退位并建立共和政权，年内政权转换不采用1911年轮廓。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-republic-1916-1929",
+    "polityId": "republic",
+    "from": 1916,
+    "to": 1929,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-republic-1916-1929逐段复核：1916至1929年经历中央权威分裂、军阀割据和北伐，名义疆域不能冒充统一实际控制。",
+    "rationale": "1916至1929年经历中央权威分裂、军阀割据和北伐，名义疆域不能冒充统一实际控制。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-prc-1949-1949",
+    "polityId": "prc",
+    "from": 1949,
+    "to": 1949,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-prc-1949-1949逐段复核：1949年中华人民共和国成立且全国控制格局仍在变化，1950年轮廓不回填建国年。",
+    "rationale": "1949年中华人民共和国成立且全国控制格局仍在变化，1950年轮廓不回填建国年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-prc-2025-2026",
+    "polityId": "prc",
+    "from": 2025,
+    "to": 2026,
+    "verdict": "nearest-same-polity",
+    "sourceBoundaryIds": [
+      "clio-13616-prc-2024"
+    ],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology"
+    ],
+    "historicalTransitionCheck": "gap-prc-2025-2026逐段复核：2025至2026年没有已知政权更替，采用同一政权2024年来源轮廓仅作C级临近参考。",
+    "rationale": "2025至2026年没有已知政权更替，采用同一政权2024年来源轮廓仅作C级临近参考。该轮廓不是2025或2026年独立测绘结果，也不是公开发布所需的官方标准地图。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-wu_ten-902-910",
+    "polityId": "wu_ten",
+    "from": 902,
+    "to": 910,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-wu_ten-902-910逐段复核：902至910年处在杨吴政权形成、唐亡和地方秩序重组期，911年断面不作逆推。",
+    "rationale": "902至910年处在杨吴政权形成、唐亡和地方秩序重组期，911年断面不作逆推。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-southern_tang-937-959",
+    "polityId": "southern_tang",
+    "from": 937,
+    "to": 959,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "southern-tang-nanjing",
+      "southern-tang-periods",
+      "southern-tang-local-administration",
+      "cliopatria",
+      "zizhi-tongjian",
+      "map-regulation"
+    ],
+    "historicalTransitionCheck": "南唐937—959年逐年核对23个民用年：按杨吴禅代、南唐建国、939年改国号、闽地战争、楚亡、后周南征、958年割地称臣及959年政局转折复核；没有任何年份具备可重发布的直接控制边界，全部明确留空。",
+    "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 960年轮廓不能回填937—959年的建国、区域战争、行政整合和后周南征收缩；节度辖区、战争占领、奉正朔和臣属关系不自动等于南唐逐年直接控制边界。合规标注：不复制未明确授权的历史地图或现代译文，保留来源与版本；依据《地图管理条例》公开历史地图和互联网地图服务需核验审核与审图号，项目当前仍为research-only。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-21"
+  },
+  {
+    "id": "gap-wuyue-907-910",
+    "polityId": "wuyue",
+    "from": 907,
+    "to": 910,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-wuyue-907-910逐段复核：907至910年处在唐亡后吴越政权名号与区域秩序重组期，911年断面不回填。",
+    "rationale": "907至910年处在唐亡后吴越政权名号与区域秩序重组期，911年断面不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-min-909-910",
+    "polityId": "min",
+    "from": 909,
+    "to": 910,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-min-909-910逐段复核：909至910年为闽政权形成初期，911年来源面不足以证明此前控制范围。",
+    "rationale": "909至910年为闽政权形成初期，911年来源面不足以证明此前控制范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-chu_ten-907-910",
+    "polityId": "chu_ten",
+    "from": 907,
+    "to": 910,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-chu_ten-907-910逐段复核：907至910年为马楚在唐亡后的政权形成期，911年断面不作逆推。",
+    "rationale": "907至910年为马楚在唐亡后的政权形成期，911年断面不作逆推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-former_shu-907-910",
+    "polityId": "former_shu",
+    "from": 907,
+    "to": 910,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-former_shu-907-910逐段复核：907至910年为前蜀称帝和制度建立阶段，911年轮廓不能自动代表建国初期。",
+    "rationale": "907至910年为前蜀称帝和制度建立阶段，911年轮廓不能自动代表建国初期。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-later_shu-934-935",
+    "polityId": "later_shu",
+    "from": 934,
+    "to": 935,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-later_shu-934-935逐段复核：934至935年为后蜀建立初期，936年来源轮廓不向前外推。",
+    "rationale": "934至935年为后蜀建立初期，936年来源轮廓不向前外推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-jingnan-924-925",
+    "polityId": "jingnan",
+    "from": 924,
+    "to": 925,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-jingnan-924-925逐段复核：924至925年为荆南政权形成初期，926年断面不足以证明草创期疆域。",
+    "rationale": "924至925年为荆南政权形成初期，926年断面不足以证明草创期疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  },
+  {
+    "id": "gap-northern_han-951-959",
+    "polityId": "northern_han",
+    "from": 951,
+    "to": 959,
+    "verdict": "leave-unfilled",
+    "sourceBoundaryIds": [],
+    "citationIds": [
+      "cliopatria",
+      "china-chronology",
+      "zizhi-tongjian"
+    ],
+    "historicalTransitionCheck": "gap-northern_han-951-959逐段复核：951至959年为北汉建立及与后周、辽关系调整阶段，960年后来源面不能回填。",
+    "rationale": "951至959年为北汉建立及与后周、辽关系调整阶段，960年后来源面不能回填。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+    "reviewStatus": "reviewed",
+    "reviewedAt": "2026-10-20"
+  }
+]
