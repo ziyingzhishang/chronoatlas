@@ -10,7 +10,7 @@ export const allLayers = ['boundaries', 'places', 'modernReference', 'events'] a
 export type MapLayer = (typeof allLayers)[number];
 export type Basemap = 'relief' | 'satellite';
 export type MapAction = 'zoomIn' | 'zoomOut' | 'rotateLeft' | 'rotateRight' | 'north' | 'pitch' | 'asia' | 'china' | 'world';
-export interface CameraState { zoom: number; bearing: number; pitch: number }
+export interface CameraState { center: [number, number]; zoom: number; bearing: number; pitch: number }
 export const ASIA_VIEW = { center: [105, 35] as [number, number], zoom: 2.8, bearing: 0, pitch: 0 };
 export const BASEMAPS = {
   relief: {

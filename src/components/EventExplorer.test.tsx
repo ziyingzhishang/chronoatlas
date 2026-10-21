@@ -26,3 +26,12 @@ test('event details expose evidence and uncertainty without inventing a location
   await userEvent.click(screen.getByRole('button',{name:'事件后一年'}));
   expect(year).toHaveBeenCalledWith(2);
 });
+
+test('returns from event detail to the filtered list', async () => {
+  const onBackToList = vi.fn();
+  render(<EventExplorer items={items} year={1} selectedId="transition" onSelect={vi.fn()} onYearChange={vi.fn()} onBackToList={onBackToList} />);
+
+  await userEvent.click(screen.getByRole('button', { name: /返回事件列表/ }));
+
+  expect(onBackToList).toHaveBeenCalledOnce();
+});

@@ -1,6 +1,6 @@
 import { useEffect, useMemo, useState } from 'react';
 import { getHistoricalState } from '../domain/history-state';
-import { getTimelineYears, indexToYear, yearToIndex } from '../domain/timeline';
+import { getTimelineYears, indexToYear, yearToIndex, type YearWindow } from '../domain/timeline';
 import type { HistoricalEvent, SelectedEntity } from '../domain/types';
 import { EventExplorer } from '../components/EventExplorer';
 import { eventYear } from '../domain/events';
@@ -10,6 +10,7 @@ import { LayerToggle } from '../components/LayerToggle';
 import { Legend } from '../components/Legend';
 import { MapView, allLayers, type MapLayer } from '../components/MapView';
 import { TimeController } from '../workspace/TimeController';
+import { DEFAULT_TIMELINE_WINDOW } from '../components/Timeline';
 import { WorkspacePanel, type PanelName } from '../workspace/WorkspacePanel';
 import '../styles/workspace.css';
 import { useWorldSlice } from '../data/world';
@@ -33,6 +34,9 @@ function HistoryWorkspace() {
   const [eventGroup,setEventGroup]=useState<string[]|undefined>();
   const [focusRequest,setFocusRequest]=useState<{id:string;nonce:number}|undefined>();
   const [mapRefreshToken,setMapRefreshToken]=useState(0);
+  const [timelineWindow,setTimelineWindow]=useState<YearWindow>(DEFAULT_TIMELINE_WINDOW);
+  const [timelineViewLabel,setTimelineViewLabel]=useState('王朝至今');
+  const [timelineHistory,setTimelineHistory]=useState<Array<{window:YearWindow;label:string}>>([]);
   const world = useWorldSlice(currentYear, showWorld);
   const historicalState = useMemo(() => localizeState(getHistoricalState(currentYear, {world:world.slice}),locale), [currentYear,world.slice,locale]);
 
@@ -65,6 +69,18 @@ function HistoryWorkspace() {
 
   function changeYear(year:number){setCurrentYear(year);setSelectedEntity(undefined);setEventGroup(undefined);setIsPlaying(false);}
   function commitYear(year:number){changeYear(year);setMapRefreshToken(token=>token+1);}
+  function navigateTimelineView(next:YearWindow,label:string){
+    setTimelineHistory(previous=>[...previous,{window:timelineWindow,label:timelineViewLabel}].slice(-20));
+    setTimelineWindow(next);
+    setTimelineViewLabel(label);
+  }
+  function backTimelineView(){
+    const previous=timelineHistory.at(-1);
+    if(!previous)return;
+    setTimelineHistory(history=>history.slice(0,-1));
+    setTimelineWindow(previous.window);
+    setTimelineViewLabel(previous.label);
+  }
   function selectEntity(entity:Exclude<SelectedEntity,undefined>){
     if(entity.type==='event'){const event=events.find(e=>e.id===entity.id);if(event)selectEvent(event);return;}
     setSelectedEntity(entity);setPanel('details');
@@ -86,7 +102,7 @@ function HistoryWorkspace() {
           <LayerToggle visibleLayers={visibleLayers} onChange={updateLayer}/>
           <section className="world-controls" aria-label={t('同期世界设置')}><label><input type="checkbox" checked={showWorld} onChange={e=>{setShowWorld(e.target.checked);setSelectedEntity(undefined);}}/>{t('同期世界疆域')}</label><span>{t(worldMessage)}</span>{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</section>
         </>}
-        {panel==='events'&&<EventExplorer year={currentYear} selectedId={selectedEntity?.type==='event'?selectedEntity.id:undefined} onSelect={selectEvent} onYearChange={changeYear} groupIds={eventGroup} onClearGroup={()=>setEventGroup(undefined)} onLocate={event=>{
+        {panel==='events'&&<EventExplorer year={currentYear} selectedId={selectedEntity?.type==='event'?selectedEntity.id:undefined} onSelect={selectEvent} onYearChange={changeYear} groupIds={eventGroup} onClearGroup={()=>setEventGroup(undefined)} onBackToList={()=>setSelectedEntity(undefined)} onLocate={event=>{
           setVisibleLayers(layers=>new Set([...layers,'events']));
           setFocusRequest(previous=>({id:event.id,nonce:(previous?.nonce??0)+1}));
         }}/>}
@@ -94,6 +110,6 @@ function HistoryWorkspace() {
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
     </div>
-    <TimeController year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel('events');setSelectedEntity(undefined);}}/>
+    <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel('events');setSelectedEntity(undefined);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
   </main>;
 }

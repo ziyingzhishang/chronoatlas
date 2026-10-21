@@ -145,6 +145,20 @@ test('camera controls rotate relative to current bearing, reset north, and focus
   expect(map.flyTo).toHaveBeenCalledWith(expect.objectContaining({ center: [108.94, 34.34], zoom: 5.5 }));
 });
 
+test('focus keeps one reversible camera checkpoint', () => {
+  const ref = createRef<MapHandle>();
+  const onCameraHistoryChange = vi.fn();
+  render(<HistoricalMapCanvas ref={ref} {...props()} onCameraHistoryChange={onCameraHistoryChange} />);
+  const map = mapInstances.at(-1)!;
+
+  ref.current!.focus({ type: 'place', id: 'changan' });
+  expect(onCameraHistoryChange).toHaveBeenLastCalledWith(true);
+
+  ref.current!.restorePrevious();
+  expect(map.flyTo).toHaveBeenLastCalledWith(expect.objectContaining({ center: [105, 35], zoom: 4.3 }));
+  expect(onCameraHistoryChange).toHaveBeenLastCalledWith(false);
+});
+
 test('explicit event locations can be focused without assigning unlocated events a place',()=>{
   const ref=createRef<MapHandle>();
   const state=getHistoricalState(800);

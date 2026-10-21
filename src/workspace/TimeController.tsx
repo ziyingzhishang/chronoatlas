@@ -10,7 +10,7 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
   const [preference, setPreference] = useState(() => {
     try { return readPreference(localStorage.getItem(storageKey)); } catch { return readPreference(null); }
   });
-  const [density, setDensity] = useState<'collapsed'|'compact'|'expanded'>('compact');
+  const [density, setDensity] = useState<'collapsed'|'compact'|'expanded'>('collapsed');
   const box = useRef<HTMLDivElement>(null);
   const drag = useRef<{pointer:number;start:Point;position:Point}|null>(null);
   const {mobile,short} = layoutFor(viewport.width, viewport.height);
@@ -52,7 +52,8 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
     setPreference(previous=>({...previous,position:clamped}));
   }
 
-  return <div className={`time-controller ${floating?'is-floating':'is-docked'}`} data-density={effectiveDensity}
+  const mode = props.mode ?? 'explore';
+  return <div className={`time-controller ${floating?'is-floating':'is-docked'} mode-${mode}`} data-density={effectiveDensity}
     ref={box} style={floating?{left:preference.position.x,top:preference.position.y}:undefined}>
     <div className="controller-handlebar">
       <button className="controller-grip" aria-label={t(floating?'移动时间控制器':'切换时间控制器密度')} title={t(floating?'拖动移动；方向键微调':'点击展开或收起')}

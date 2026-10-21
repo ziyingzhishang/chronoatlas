@@ -59,13 +59,21 @@ test('event shortcut can open the shared event detail rather than only changing 
   expect(select).toHaveBeenCalledWith(expect.objectContaining({id:'red-cliffs',year:208}));
 });
 
-test('focuses the chosen dynasty without treating the reference year as the input year', async () => {
+test('focuses the chosen dynasty without changing the current year', async () => {
   const onYearChange = vi.fn();
   render(<Timeline year={800} onYearChange={onYearChange} isPlaying={false} onPlayToggle={vi.fn()} />);
   await userEvent.selectOptions(screen.getByRole('combobox'), 'ming');
-  expect(onYearChange).toHaveBeenLastCalledWith(1368);
+  expect(onYearChange).not.toHaveBeenCalled();
   expect(screen.getByRole('slider')).toHaveAttribute('min', String(yearToIndex(1368)));
   expect(screen.getByRole('slider')).toHaveAttribute('max', String(yearToIndex(1644)));
+});
+
+test('exposes a semantic back action after a range drill-down', async () => {
+  const onBackView = vi.fn();
+  render(<Timeline year={800} onYearChange={vi.fn()} isPlaying={false} onPlayToggle={vi.fn()} viewLabel="《资治通鉴》" canGoBack onBackView={onBackView} />);
+  expect(screen.getByRole('button', { name: '返回上一级' })).toBeInTheDocument();
+  await userEvent.click(screen.getByRole('button', { name: '返回上一级' }));
+  expect(onBackView).toHaveBeenCalledOnce();
 });
 
 test('selects the Tongjian range without removing access to all history', async () => {

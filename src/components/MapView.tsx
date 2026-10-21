@@ -27,6 +27,7 @@ export function MapView(props: MapViewProps) {
   const [showReference, setShowReference] = useState(true);
   const [worldSearch, setWorldSearch] = useState('');
   const [renderedYear,setRenderedYear]=useState<number>();
+  const [canGoBackCamera,setCanGoBackCamera]=useState(false);
   const map = useRef<MapHandle>(null);
   useEffect(()=>{if(props.focusRequest)map.current?.focus({type:'event',id:props.focusRequest.id});},[props.focusRequest]);
   const act = (action: MapAction) => map.current?.perform(action);
@@ -59,11 +60,12 @@ export function MapView(props: MapViewProps) {
     </div>
     </>)}
     <div className="map-stage">
-      <HistoricalMapCanvas ref={map} {...props} state={displayed} basemap={basemap} refreshToken={props.refreshToken??0} onCameraChange={setCamera} onRenderedYearChange={setRenderedYear} />
+      <HistoricalMapCanvas ref={map} {...props} state={displayed} basemap={basemap} refreshToken={props.refreshToken??0} onCameraChange={setCamera} onRenderedYearChange={setRenderedYear} onCameraHistoryChange={setCanGoBackCamera} />
       <div className="map-navigation" role="group" aria-label={t("地图视角操作")}>
         <button aria-label={t("放大地图")} title={t("放大")} onClick={() => act('zoomIn')}>＋</button>
         <button aria-label={t("缩小地图")} title={t("缩小")} onClick={() => act('zoomOut')}>−</button>
         {workspace&&<button className="map-reset" onClick={()=>act('asia')}>{t("复位")}</button>}
+        {canGoBackCamera&&<button className="map-back" aria-label={t("返回上个视角")} title={t("返回上个视角")} onClick={()=>map.current?.restorePrevious()}>{t("返回")}</button>}
         <details className="map-angle" open={workspace?undefined:true}><summary>{t("视角")}</summary>
         <span className="nav-divider" />
         <button aria-label={t("向左旋转30度")} title={t("向左旋转 30°")} onClick={() => act('rotateLeft')}>↶</button>

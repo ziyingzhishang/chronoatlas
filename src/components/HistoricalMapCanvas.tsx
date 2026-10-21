@@ -15,6 +15,7 @@ import { formatSourceField } from '../i18n/source-display';
 export interface MapHandle {
   perform: (action: MapAction) => void;
   focus: (entity: Exclude<SelectedEntity, undefined>) => void;
+  restorePrevious: () => void;
 }
 interface Props {
   state: HistoricalState;
@@ -25,6 +26,7 @@ interface Props {
   onSelectEntity: (entity: Exclude<SelectedEntity, undefined>) => void;
   onCameraChange: (camera: CameraState) => void;
   onRenderedYearChange:(year:number|undefined)=>void;
+  onCameraHistoryChange?: (canBack:boolean)=>void;
 }
 
 function updateLocalHistory(map:GLMap,state:HistoricalState,t:(text:string)=>string){
@@ -99,6 +101,7 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
   const [scale,setScale]=useState<ReturnType<typeof metricScale>>(null);
   const container = useRef<HTMLDivElement>(null);
   const mapRef = useRef<GLMap>();
+  const previousCamera = useRef<CameraState>();
   const readyMap = useRef<GLMap>();
   const historyUpdater=useRef<ReturnType<typeof createLatestFrameUpdater<HistoricalState>>>();
   const worldUpdater=useRef<ReturnType<typeof createLatestFrameUpdater<{state:HistoricalState;revision:number}>>>();
@@ -114,6 +117,8 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
 
   useEffect(() => {
     if (!container.current) return;
+    previousCamera.current = undefined;
+    latest.current.onCameraHistoryChange?.(false);
     latest.current.onRenderedYearChange(undefined);
     readyMap.current = undefined;
     lastAppliedRevision.current=0;
@@ -159,7 +164,7 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
       const right=map.unproject([width/2+pixels/2,height/2]);
       setScale(left&&right?metricScale(left.distanceTo(right),pixels):null);
     };
-    const reportCamera = () => latest.current.onCameraChange({ zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() });
+    const reportCamera = () => latest.current.onCameraChange({ center: map.getCenter().toArray() as [number,number], zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() });
     map.on('style.load', () => {
       readyMap.current = map;
       historyUpdater.current?.flush(latest.current.state);
@@ -228,6 +233,14 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
   }, [ready, props.basemap]);
 
   useImperativeHandle(ref, () => ({
+    restorePrevious() {
+      const map = mapRef.current;
+      const previous = previousCamera.current;
+      if (!map || !previous || fatal) return;
+      previousCamera.current = undefined;
+      latest.current.onCameraHistoryChange?.(false);
+      map.flyTo({ center: previous.center, zoom: previous.zoom, bearing: previous.bearing, pitch: previous.pitch, duration: 500 });
+    },
     perform(action) {
       const map = mapRef.current;
       if (!map || fatal) return;
@@ -246,6 +259,8 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
     focus(entity) {
       const map = mapRef.current;
       if (!map || fatal) return;
+      previousCamera.current = { center: map.getCenter().toArray() as [number,number], zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
+      latest.current.onCameraHistoryChange?.(true);
       if (entity.type === 'place') {
         const place = latest.current.state.places.find(p => p.id === entity.id);
         if (place) map.flyTo({ center: [place.longitude, place.latitude], zoom: Math.max(5.5, map.getZoom()), duration: 650 });

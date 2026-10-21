@@ -36,6 +36,7 @@ export class TestMap {
   getCanvas() { return this.canvas; }
   getContainer() { return this.canvas; }
   getZoom() { return 4.3; }
+  getCenter() { return { toArray: () => (this.options.center ?? [105, 35]) as [number, number] }; }
   getBearing() { return 30; }
   getPitch() { return 45; }
   isSourceLoaded() { return true; }

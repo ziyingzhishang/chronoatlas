@@ -52,6 +52,7 @@ test('choosing an event changes the map year and keeps its details open',async()
 
 test('rapid timeline dragging commits the final territory year without recreating or moving the map',async()=>{
   render(<App/>);
+  await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));
   const map=mapInstances.at(-1)!;
   const instanceCount=mapInstances.length;
   act(()=>map.emit('style.load'));

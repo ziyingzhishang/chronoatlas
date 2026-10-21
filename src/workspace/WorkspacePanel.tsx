@@ -17,8 +17,8 @@ export function WorkspacePanel({title,onClose,children}:{title:string;onClose:()
     if(active instanceof HTMLElement && !close.current?.closest('.workspace-panel')?.contains(active))opener.current=active;
     close.current?.focus();
   },[title]);
-  return <section className="workspace-panel" id="workspace-panel" aria-label={t(title)}>
+  return <><button className="workspace-panel-backdrop" aria-label={t("关闭面板")} onClick={onClose} /><section className="workspace-panel" id="workspace-panel" role="dialog" aria-modal="true" aria-label={t(title)}>
     <div className="workspace-panel-heading"><h2>{t(title)}</h2><button ref={close} aria-label={t("关闭面板")} onClick={onClose}>{t("关闭 ×")}</button></div>
     <div className="workspace-panel-scroll">{children}</div>
-  </section>;
+  </section></>;
 }

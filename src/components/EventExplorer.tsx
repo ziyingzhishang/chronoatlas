@@ -6,11 +6,11 @@ import { eventsAtYear, queryEvents } from '../domain/events';
 import { formatHistoricalYear, indexToYear, yearToIndex, TIMELINE_MIN_YEAR, TIMELINE_MAX_YEAR } from '../domain/timeline';
 import { contentSearchText, localizeEvents } from '../i18n/content';
 import { formatSourceField } from '../i18n/source-display';
-export interface EventExplorerProps { items?:HistoricalEvent[]; year:number;selectedId?:string;onSelect:(event:HistoricalEvent)=>void;onYearChange:(year:number)=>void;onLocate?:(event:HistoricalEvent)=>void;groupIds?:string[];onClearGroup?:()=>void }
+export interface EventExplorerProps { items?:HistoricalEvent[]; year:number;selectedId?:string;onSelect:(event:HistoricalEvent)=>void;onYearChange:(year:number)=>void;onLocate?:(event:HistoricalEvent)=>void;groupIds?:string[];onClearGroup?:()=>void;onBackToList?:()=>void }
 export function eventDate(event:HistoricalEvent){
   return `${event.datePrecision==='approximate'?'约 ':''}${formatHistoricalYear(event.year)}${event.endYear&&event.endYear!==event.year?`—${formatHistoricalYear(event.endYear)}`:''}`;
 }
-export function EventExplorer({items=events,year,selectedId,onSelect,onYearChange,onLocate,groupIds,onClearGroup}:EventExplorerProps){
+export function EventExplorer({items=events,year,selectedId,onSelect,onYearChange,onLocate,groupIds,onClearGroup,onBackToList}:EventExplorerProps){
   const { locale, t } = useLocale();
   const [query,setQuery]=useState('');
   const [region,setRegion]=useState('');
@@ -27,6 +27,7 @@ export function EventExplorer({items=events,year,selectedId,onSelect,onYearChang
   const listed=groupIds&&!searching?filtered.filter(e=>groupIds.includes(e.id)):searching||view==='all'?filtered:view==='current'?inYear:[...filtered].sort((a,b)=>distance(a)-distance(b)||a.year-b.year).slice(0,8);
   return <div className="event-explorer">
     {selected&&<article ref={detail} className="event-detail" aria-label={t("事件详情")}>
+      {onBackToList&&<button className="event-back-to-list" type="button" onClick={onBackToList}>← {t("返回事件列表")}</button>}
       <div className="event-meta">{t(eventDate(selected))} · {t(selected.region==='world'?'同期世界':'中国历史')} · {t(selected.category??'历史转折')}</div>
       <h3>{t(selected.title)}</h3><p className="event-lead">{t(selected.summary)}</p>
       <p className="event-verification">{t(selected.verification==='checked'?'已核对所列出处':'部分依据待进一步核验')}{t(selected.locationPrecision==='approximate'?' · 地点为约址':'')}</p>

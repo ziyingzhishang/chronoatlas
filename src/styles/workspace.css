@@ -1,16 +1,17 @@
 /* The workspace owns viewport layout. Legacy component styles remain for standalone use. */
 [hidden] { display:none !important; }
-.workspace { height:100vh; height:100dvh; min-height:0; display:grid; grid-template-rows:auto minmax(0,1fr) auto; overflow:hidden; background:#18211f; }
+.workspace { height:100vh; height:100dvh; min-height:0; position:relative; overflow:hidden; background:#18211f; }
 .workspace button,.workspace summary,.workspace input,.workspace select { font-family:system-ui,sans-serif; }
 .workspace button,.workspace summary { cursor:pointer; }
 .workspace button:focus-visible,.workspace summary:focus-visible,.workspace select:focus-visible { outline:2px solid #e7c989; outline-offset:-2px; }
-.workspace-header { display:flex; justify-content:space-between; align-items:center; gap:12px; padding:6px max(16px,env(safe-area-inset-right)) 6px max(16px,env(safe-area-inset-left)); border-bottom:1px solid #4a5142; background:#18211f; }
+.workspace-header { position:absolute; inset:0 0 auto; z-index:6; display:flex; justify-content:space-between; align-items:center; gap:12px; padding:6px max(16px,env(safe-area-inset-right)) 12px max(16px,env(safe-area-inset-left)); border-bottom:0; background:linear-gradient(180deg,#18211fe8 0%,#18211fa8 55%,transparent 100%); pointer-events:none; }
+.workspace-header>* { pointer-events:auto; }
 .workspace-header h1 { margin:0; color:#efdfba; font-weight:500; font-size:20px; letter-spacing:.12em; white-space:nowrap; }
 .workspace-header h1 span { margin-left:18px; color:#aab2a5; font:11px system-ui,sans-serif; letter-spacing:.1em; }
 .workspace-header nav { display:flex; gap:4px; }
 .workspace-header button,.controller-handlebar button,.timeline-actions>button,.workspace-panel-heading button { border:0; border-radius:5px; padding:0 12px; min-height:44px; color:#d8ddcd; background:transparent; font:12px system-ui,sans-serif; }
 .workspace-header button[aria-expanded=true],.workspace-header button:hover,.controller-handlebar button:hover { color:#ffe0a4; background:#354038; }
-.workspace-map-area { min-height:0; position:relative; display:flex; }
+.workspace-map-area { width:100%; height:100%; min-height:0; position:relative; display:flex; }
 .workspace .map-view { position:relative; padding:0; border:0; flex:1; display:flex; flex-direction:column; min-height:0; background:#b3ccd5; }
 .workspace .map-stage { flex:1; min-height:0; border:0; border-radius:0; }
 .workspace .interactive-map-wrap,.workspace .interactive-map { height:100%; min-height:0; }
@@ -20,6 +21,7 @@
 .workspace .terrain-attribution { max-width:calc(100% - 116px); font-size:10px; padding:3px 7px; }
 .workspace .map-navigation { top:14px; right:14px; z-index:2; border-color:#5c6658; box-shadow:0 3px 12px #18241b26; }
 .workspace .map-navigation button { width:44px; min-height:44px; display:block; }
+.workspace .map-navigation .map-back { background:#27382b; color:#f1d692; }
 .workspace .map-navigation .map-reset,.workspace .map-angle summary { font:12px system-ui,sans-serif; }
 .map-angle summary { min-height:44px; display:flex; align-items:center; justify-content:center; list-style:none; border-top:1px solid #52604f; }
 .map-angle summary::-webkit-details-marker { display:none; }
@@ -29,6 +31,7 @@
 .world-status.error { border-left:3px solid #b64b38; }
 .world-status button { background:transparent; color:inherit; border:1px solid; margin-left:8px; min-height:32px; }
 .workspace-panel { flex:none; width:360px; max-width:42%; min-height:0; z-index:4; display:flex; flex-direction:column; background:#1c2722; border-left:1px solid #56634e; }
+.workspace-panel-backdrop { display:none; }
 .workspace-panel-heading { display:flex; justify-content:space-between; align-items:center; flex:none; padding:4px 12px 4px 20px; border-bottom:1px solid #45523f; }
 .workspace-panel-heading h2 { font-size:15px; font-weight:500; color:#e6d6b0; }
 .workspace-panel-scroll { overflow:auto; overscroll-behavior:contain; min-height:0; padding:18px; }
@@ -42,13 +45,16 @@
 .workspace-panel .legend-group { margin:8px 0; }
 .workspace .map-footer { flex-direction:column; }
 .time-controller { color:#e8e5d6; background:#1c2722; border-top:1px solid #536247; min-width:0; z-index:5; padding-bottom:env(safe-area-inset-bottom); }
-.time-controller.is-docked { grid-row:3; }
+.time-controller.is-docked { position:absolute; left:0; right:0; bottom:0; background:linear-gradient(0deg,#18211ff5 0%,#1c2722ee 72%,#1c2722cc 100%); }
 .time-controller.is-floating { position:fixed; width:min(760px,calc(100vw - 24px)); border:1px solid #788064; border-radius:10px; overflow:hidden; box-shadow:0 12px 36px #0b160f55; }
 .controller-handlebar { min-height:36px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; border-bottom:1px solid #a2ac881c; }
 .controller-grip { display:flex; align-items:center; gap:8px; color:#bdc6af !important; }
 .is-floating .controller-grip { cursor:move; touch-action:none; }
 .controller-layout-actions { display:flex; gap:2px; }
 .controller-content { max-height:calc(55dvh - 48px); overflow:auto; overscroll-behavior:contain; }
+.mode-explore .controller-content { max-height:calc(42dvh - 48px); }
+.mode-explore[data-density="collapsed"] .controller-content { max-height:64px; overflow:hidden; }
+.mode-explore[data-density="compact"] .controller-content { max-height:150px; }
 .workspace .timeline-panel { padding:6px 24px 10px !important; margin:0; border:0; background:none; }
 .workspace .section-heading { align-items:center; gap:12px; }
 .workspace .year-heading { gap:14px; }
@@ -62,6 +68,9 @@
 .workspace .year-tick>span { top:11px; }
 .workspace .timeline-bottom-line { margin-bottom:8px; }
 .workspace .density-expanded .timeline-navigation { margin-top:10px; }
+.timeline-view-context { display:flex; align-items:center; gap:8px; margin-top:6px; color:#c7cdbb; font:11px/1.4 system-ui,sans-serif; }
+.timeline-view-context button { min-height:32px; padding:0 8px; color:#f1d692; border:1px solid #566449; border-radius:4px; background:#27362acc; }
+.timeline-out-of-view { color:#f0c58f; font:11px/1.5 system-ui,sans-serif; }
 .workspace .density-expanded .history-overview { margin:16px 0; }
 .workspace .density-expanded button:not(.dynasty-band):not(.overview-tongjian) { min-height:36px; }
 .workspace .density-collapsed .year-heading>span { max-width:230px; overflow:hidden; text-overflow:ellipsis; white-space:nowrap; }
@@ -73,6 +82,7 @@
 .timeline-event-markers button:hover { background:#526247; border-radius:4px; }
 .event-meta,.event-verification,.event-list-caption { color:#b9c3ad; font:11px/1.8 system-ui,sans-serif; }
 .event-detail { padding-bottom:20px; margin-bottom:20px; border-bottom:1px solid #536247; }
+.event-back-to-list { min-height:36px; padding:0 10px; color:#e2c987; border:1px solid #536247; border-radius:4px; background:#27362a; }
 .event-detail h3 { color:#f2dfb9; font-size:23px; line-height:1.5; margin:8px 0; font-weight:500; }
 .event-detail .event-lead { color:#e0e3d7; font-size:14px; line-height:1.9; }
 .event-paragraph h4 { color:#caae73; font-size:12px; margin:20px 0 6px; }
@@ -104,7 +114,8 @@
   .workspace-header button { padding:0 9px; }
   .workspace .boundary-coverage { padding:4px 10px; }
   .workspace .boundary-coverage strong { font-size:10px; }
-  .workspace-panel { width:100%; max-width:100%; top:auto; bottom:44px; max-height:75%; border-radius:12px 12px 0 0; }
+  .workspace-panel-backdrop { display:block; position:fixed; inset:0; z-index:3; border:0; background:#07100a88; }
+  .workspace-panel { width:100%; max-width:100%; top:auto; bottom:44px; max-height:75%; border-radius:12px 12px 0 0; box-shadow:0 -12px 34px #07100a66; }
   .workspace-panel-scroll { padding:12px 16px; }
   .workspace .map-navigation { right:8px; top:8px; }
   .controller-handlebar { padding:0 6px; }
