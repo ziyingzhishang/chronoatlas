@@ -20,7 +20,7 @@ describe('fourth-batch capital history coverage', () => {
     const report = getCapitalCoverageReport();
 
     expect(report.summary.totalPolities).toBe(87);
-    expect(report.summary.qualifiedPolities).toBe(67);
+    expect(report.summary.qualifiedPolities).toBe(75);
     expect(report.summary.gapPolityIds).not.toEqual(expect.arrayContaining([...targetPolityIds]));
 
     for (const polityId of targetPolityIds) {
