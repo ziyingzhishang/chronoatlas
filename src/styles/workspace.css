@@ -11,13 +11,15 @@
 .event-search-dock-wrap { position:relative; }
 .event-search-dock { display:grid; gap:4px; width:100%; color:#c9d0bf; font:11px system-ui,sans-serif; }
 .event-search-dock input { width:100%; box-sizing:border-box; min-height:40px; padding:7px 10px; border:1px solid #7b8062; border-radius:6px; background:#18211fe8; color:#e0e5d6; box-shadow:0 6px 20px #08120b44; font:12px system-ui,sans-serif; backdrop-filter:blur(6px); }
-.event-search-popover { position:absolute; top:calc(100% + 6px); left:0; width:100%; box-sizing:border-box; z-index:15; padding:8px; border:1px solid #7b8062; border-radius:7px; background:#18211ff5; box-shadow:0 12px 28px #07100a88; backdrop-filter:blur(8px); }
+.event-search-popover { position:absolute; top:calc(100% + 6px); left:0; width:100%; max-height:min(72dvh,680px); overflow:auto; box-sizing:border-box; z-index:15; padding:8px; border:1px solid #7b8062; border-radius:7px; background:#18211ff5; box-shadow:0 12px 28px #07100a88; backdrop-filter:blur(8px); }
 .event-search-filters { display:grid; grid-template-columns:1fr 1fr; gap:6px; }
 .event-search-filters select { min-width:0; min-height:36px; padding:5px 7px; border:1px solid #59664d; border-radius:4px; background:#162119; color:#e0e5d6; font:11px system-ui,sans-serif; }
 .event-search-results { display:grid; gap:4px; margin-top:7px; }
 .event-search-results button { display:grid; gap:2px; min-width:0; padding:7px 8px; text-align:left; border:1px solid #536247; border-radius:4px; background:#253329; color:#e8e3d4; }
 .event-search-results button:hover { background:#354735; border-color:#c6a15b; }
+.event-search-results button[aria-selected=true] { background:#354735; border-color:#c6a15b; box-shadow:inset 3px 0 #c6a15b; }
 .event-search-results span { color:#aeb8a8; font:10px system-ui,sans-serif; }
+.event-search-popover>.event-detail { max-height:420px; overflow:auto; margin:8px 0 0; padding:12px; border:1px solid #7b8062; border-radius:6px; background:#202d25; }
 .workspace-header nav { display:flex; gap:4px; }
 .workspace-tool-nav { gap:2px !important; padding:3px; border:1px solid #7b8062; border-radius:8px; background:#18211fee; box-shadow:0 6px 20px #08120b66; backdrop-filter:blur(6px); }
 .workspace-header button,.controller-handlebar button,.timeline-actions>button,.workspace-panel-heading button { border:0; border-radius:5px; padding:0 12px; min-height:44px; color:#d8ddcd; background:transparent; font:12px system-ui,sans-serif; }

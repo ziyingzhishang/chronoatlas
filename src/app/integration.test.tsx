@@ -44,13 +44,13 @@ test('clicking blank map closes an open territory detail panel',async()=>{
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
 });
 
-test('ordinary year navigation clears an old timeline event group',async()=>{
+test('ordinary year navigation returns the timeline search to the current window',async()=>{
   render(<App/>);
   await userEvent.click(screen.getByRole('button',{name:/查看前1046年附近/}));
-  expect(screen.getByRole('button',{name:'返回全部'})).toBeInTheDocument();
+  expect(screen.getByRole('option',{name:/周克商/})).toBeInTheDocument();
+  expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button',{name:'下一年'}));
-  expect(screen.queryByRole('button',{name:'返回全部'})).not.toBeInTheDocument();
-  expect(screen.getByText('本年暂无已收录事件')).toBeInTheDocument();
+  expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
 });
 
 test('choosing an event changes the map year and keeps its details open',async()=>{
@@ -59,6 +59,11 @@ test('choosing an event changes the map year and keeps its details open',async()
   await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
   expect(screen.getByRole('region',{name:'历史地图'})).toHaveAttribute('data-year','-221');
   expect(screen.getByRole('article',{name:'事件详情'})).toHaveTextContent('秦统一六国');
+  expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
+  await userEvent.click(screen.getByRole('button',{name:/返回事件列表/}));
+  expect(screen.queryByRole('article',{name:'事件详情'})).not.toBeInTheDocument();
+  expect(screen.getByRole('option',{name:/秦统一六国/})).toBeInTheDocument();
+  await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
   await userEvent.click(screen.getByRole('button',{name:'下一年'}));
   expect(screen.queryByRole('article',{name:'事件详情'})).not.toBeInTheDocument();
 });

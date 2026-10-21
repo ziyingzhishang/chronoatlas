@@ -2,7 +2,7 @@ import { useEffect, useMemo, useState } from 'react';
 import { getHistoricalState } from '../domain/history-state';
 import { formatHistoricalYear, getTimelineYears, indexToYear, yearToIndex, type YearWindow } from '../domain/timeline';
 import type { HistoricalEvent, SelectedEntity } from '../domain/types';
-import { EventExplorer } from '../components/EventExplorer';
+import { EventDetailCard } from '../components/EventDetailCard';
 import { eventYear, eventsAtYear } from '../domain/events';
 import { events } from '../data/events';
 import { InfoPanel } from '../components/InfoPanel';
@@ -48,9 +48,10 @@ function HistoryWorkspace() {
   const eventSearchMatches=useMemo(()=>queryEvents(localizedEvents,{region:eventSearchRegion,category:eventSearchCategory}).filter(event=>!eventSearchQuery.trim()||contentSearchText(event).includes(eventSearchQuery.trim().toLocaleLowerCase())).slice(0,6),[localizedEvents,eventSearchQuery,eventSearchRegion,eventSearchCategory]);
   const timelineEvents=useMemo(()=>{
     const filtered=queryEvents(localizedEvents,{region:eventSearchRegion,category:eventSearchCategory}).filter(event=>event.year <= timelineWindow[1] && (event.endYear ?? event.year) >= timelineWindow[0]);
+    if(eventGroup?.length)return filtered.filter(event=>eventGroup.includes(event.id));
     const current=eventsAtYear(filtered,currentYear);
     return (current.length ? current : [...filtered].sort((a,b)=>Math.abs(a.year-currentYear)-Math.abs(b.year-currentYear))).slice(0,6);
-  },[localizedEvents,currentYear,eventSearchRegion,eventSearchCategory,timelineWindow]);
+  },[localizedEvents,currentYear,eventSearchRegion,eventSearchCategory,timelineWindow,eventGroup]);
 
   useEffect(() => {
     if (!isPlaying) return undefined;
@@ -97,8 +98,12 @@ function HistoryWorkspace() {
     if(entity.type==='event'){const event=events.find(e=>e.id===entity.id);if(event)selectEvent(event);return;}
     setSelectedEntity(entity);setPanel('details');
   }
-  function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setSelectedEntity({type:'event',id:event.id});setPanel('events');}
+  function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
   function clearMapSelection(){
+    if(selectedEntity?.type==='event'){
+      setSelectedEntity(undefined);
+      return;
+    }
     if(selectedEntity?.type==='polity'||selectedEntity?.type==='place'){
       setSelectedEntity(undefined);
       if(panel==='details')setPanel(null);
@@ -106,6 +111,7 @@ function HistoryWorkspace() {
   }
   const worldMessage=!showWorld?'开启后随所选年份显示全球政权。':world.status==='loading'?'正在加载本世纪世界资料…':world.status==='error'?'世界资料加载失败；中国图层不受影响。':world.status==='unavailable'?'世界来源仅覆盖前3400—2024年，本年不沿用旧图。':`世界 ${historicalState.activePolities.filter(p=>p.region==='world').length} 个来源实体 · 未逐国独立校勘`;
   const visibleSearchEvents=eventSearchQuery.trim()?eventSearchMatches:timelineEvents;
+  const selectedSearchEvent=selectedEntity?.type==='event'?localizedEvents.find(event=>event.id===selectedEntity.id):undefined;
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
   return <main className="workspace">
     <header className="workspace-header">
@@ -119,9 +125,13 @@ function HistoryWorkspace() {
           {eventSearchOpen&&<div className="event-search-popover">
             <div className="event-search-filters"><select aria-label={t('事件地域')} value={eventSearchRegion} onChange={e=>setEventSearchRegion(e.target.value)}><option value="">{t('全部地域')}</option><option value="china">{t('中国历史')}</option><option value="world">{t('同期世界')}</option></select><select aria-label={t('事件类别')} value={eventSearchCategory} onChange={e=>setEventSearchCategory(e.target.value)}><option value="">{t('全部类别')}</option>{[...new Set(events.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(category=><option key={category} value={category}>{t(category)}</option>)}</select></div>
             <div className="event-search-results" role="listbox" aria-label={t('搜索历史事件')}>
-              {visibleSearchEvents.map((event:HistoricalEvent)=><button key={event.id} type="button" role="option" onClick={()=>{selectEvent(event);setEventSearchOpen(false);}}><strong>{t(event.title)}</strong><span>{t(event.category??'历史转折')} · {t(event.region==='world'?'同期世界':'中国历史')}</span></button>)}
+              {visibleSearchEvents.map((event:HistoricalEvent)=><button key={event.id} type="button" role="option" aria-selected={selectedEntity?.type==='event'&&selectedEntity.id===event.id} onClick={()=>selectEvent(event)}><strong>{t(event.title)}</strong><span>{t(event.category??'历史转折')} · {t(event.region==='world'?'同期世界':'中国历史')}</span></button>)}
               {!visibleSearchEvents.length&&<p className="detail-note">{t(eventSearchQuery.trim()?'没有符合筛选条件的事件':'本年暂无已收录事件')}</p>}
             </div>
+            {selectedSearchEvent&&<EventDetailCard event={selectedSearchEvent} year={currentYear} onYearChange={changeYear} onBack={()=>setSelectedEntity(undefined)} onLocate={event=>{
+              setVisibleLayers(layers=>new Set([...layers,'events']));
+              setFocusRequest(previous=>({id:event.id,nonce:(previous?.nonce??0)+1}));
+            }}/>}
           </div>}
         </div>
       </div>
@@ -134,14 +144,10 @@ function HistoryWorkspace() {
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
         {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear}/>}
-        {panel==='events'&&<EventExplorer hideSearch queryValue={eventSearchQuery} onQueryChange={setEventSearchQuery} regionValue={eventSearchRegion} onRegionChange={setEventSearchRegion} categoryValue={eventSearchCategory} onCategoryChange={setEventSearchCategory} year={currentYear} selectedId={selectedEntity?.type==='event'?selectedEntity.id:undefined} onSelect={selectEvent} onYearChange={changeYear} groupIds={eventGroup} onClearGroup={()=>setEventGroup(undefined)} onBackToList={()=>setSelectedEntity(undefined)} onLocate={event=>{
-          setVisibleLayers(layers=>new Set([...layers,'events']));
-          setFocusRequest(previous=>({id:event.id,nonce:(previous?.nonce??0)+1}));
-        }}/>}
         {panel==='more'&&<><label className="language-setting">{t('显示语言')}<select aria-label={t('显示语言')} value={locale} onChange={e=>setLocale(readLocale(e.target.value))}>{Object.entries(localeNames).map(([value,name])=><option key={value} value={value}>{name}</option>)}</select></label><MapReadingGuide year={currentYear}/><Legend/><p className="detail-note">{t('时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。')}</p><p className="detail-note">{t('桌面可停靠或悬浮时间控制器；手机使用收起、紧凑和展开三档。拖动年份不会改变地图视角。独立网页应用试用版，尚未公开发布。')}</p></>}
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
     </div>
-    <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel('events');setSelectedEntity(undefined);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
+    <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
   </main>;
 }

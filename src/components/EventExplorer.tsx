@@ -3,9 +3,9 @@ import type { HistoricalEvent } from '../domain/types';
 import { useEffect, useMemo, useRef, useState } from 'react';
 import { events } from '../data/events';
 import { eventsAtYear, queryEvents } from '../domain/events';
-import { formatHistoricalYear, indexToYear, yearToIndex, TIMELINE_MIN_YEAR, TIMELINE_MAX_YEAR } from '../domain/timeline';
+import { formatHistoricalYear, yearToIndex } from '../domain/timeline';
 import { contentSearchText, localizeEvents } from '../i18n/content';
-import { formatSourceField } from '../i18n/source-display';
+import { EventDetailCard } from './EventDetailCard';
 export interface EventExplorerProps { items?:HistoricalEvent[]; year:number;selectedId?:string;onSelect:(event:HistoricalEvent)=>void;onYearChange:(year:number)=>void;onLocate?:(event:HistoricalEvent)=>void;groupIds?:string[];onClearGroup?:()=>void;onBackToList?:()=>void;queryValue?:string;onQueryChange?:(query:string)=>void;regionValue?:string;onRegionChange?:(region:string)=>void;categoryValue?:string;onCategoryChange?:(category:string)=>void;hideSearch?:boolean }
 export function eventDate(event:HistoricalEvent){
   return `${event.datePrecision==='approximate'?'约 ':''}${formatHistoricalYear(event.year)}${event.endYear&&event.endYear!==event.year?`—${formatHistoricalYear(event.endYear)}`:''}`;
@@ -41,23 +41,7 @@ export function EventExplorer({items=events,year,selectedId,onSelect,onYearChang
   const filterControls=<div className="event-filters"><select aria-label={t("事件地域")} value={region} onChange={e=>setRegion(e.target.value)}><option value="">{t("全部地域")}</option><option value="china">{t("中国历史")}</option><option value="world">{t("同期世界")}</option></select>
     <select aria-label={t("事件类别")} value={category} onChange={e=>setCategory(e.target.value)}><option value="">{t("全部类别")}</option>{[...new Set(items.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(c=><option key={c} value={c}>{t(c)}</option>)}</select></div>;
   return <div className="event-explorer">
-    {selected&&<article ref={detail} className="event-detail" aria-label={t("事件详情")}>
-      {onBackToList&&<button className="event-back-to-list" type="button" onClick={onBackToList}>← {t("返回事件列表")}</button>}
-      <div className="event-meta">{t(eventDate(selected))} · {t(selected.region==='world'?'同期世界':'中国历史')} · {t(selected.category??'历史转折')}</div>
-      <h3>{t(selected.title)}</h3><p className="event-lead">{t(selected.summary)}</p>
-      <p className="event-verification">{t(selected.verification==='checked'?'已核对所列出处':'部分依据待进一步核验')}{t(selected.locationPrecision==='approximate'?' · 地点为约址':'')}</p>
-      <div className="event-jumps">
-        <button disabled={selected.year===TIMELINE_MIN_YEAR} onClick={()=>onYearChange(indexToYear(yearToIndex(selected.year)-1))}>{t("事件前一年")}</button>
-        <button disabled={(selected.endYear??selected.year)===TIMELINE_MAX_YEAR} onClick={()=>onYearChange(indexToYear(yearToIndex(selected.endYear??selected.year)+1))}>{t("事件后一年")}</button>
-        {selected.coordinates&&onLocate&&<button onClick={()=>onLocate(selected)}>{t("定位")}{t(selected.locationPrecision==='approximate'?'约址':'地点')}</button>}
-      </div>
-      {([['背景',selected.background],['经过',selected.process],['影响',selected.impact],['地图解读',selected.mapNote]] as const).map(([label,text])=>text&&<section className="event-paragraph" key={label}><h4>{t(label)}</h4><p>{t(text)}</p></section>)}
-      {!selected.coordinates&&<p className="detail-note">{t("尚无独立核验的位置，不在地图上推测标点。")}</p>}
-      <p className="detail-note">{t("事件与疆域资料分别核验；地图缺图或显示最大参考，不代表本事件的实际控制范围。")}</p>
-      <details className="event-sources" open><summary>{t("出处与依据")}</summary>
-        {selected.references?.length?selected.references.map((source,i)=>{const field=formatSourceField('documentTitle',source.title,locale);return <p key={`${source.url}-${i}`}><span className="source-field-label">{field.label}</span><a href={source.url} target="_blank" rel="noreferrer">{field.value}</a>{source.detail&&<small>{source.detail}</small>}</p>; }):<p>{t("具体出处待补，本条不作为已核验史料。")}</p>}
-      </details>
-    </article>}
+    {selected&&<EventDetailCard event={selected} year={year} onYearChange={onYearChange} onBack={onBackToList} onLocate={onLocate}/>}
     {!hideSearch&&<div className="event-search"><label>{t("查找历史转折")}<input type="search" aria-label={t("搜索历史事件")} placeholder={t("搜索事件、背景或影响")} value={query} onChange={e=>setQuery(e.target.value)}/></label>
       <button className="event-filter-toggle" type="button" aria-expanded={showFilters} onClick={()=>setShowFilters(value=>!value)}>{t(showFilters ? "收起筛选" : "筛选")}</button>
       {showFilters&&filterControls}
