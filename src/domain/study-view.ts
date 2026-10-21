@@ -121,12 +121,21 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
   const subject = data.polities.find((polity) => polity.id === polityId);
   if (!subject) return undefined;
   const capitalTerms = data.capitalTerms.filter((term) => term.polityId === polityId && active(term.validFrom, term.validTo, year));
-  const claims = data.claims.filter((claim) => claimTouches(claim, polityId) && active(claim.validFrom, claim.validTo, year));
   const people = data.people.filter((person) => person.polityIds?.includes(polityId));
-  const heritageIds = new Set(claims.filter((claim) => claim.predicate === 'left-heritage').map((claim) => claim.objectId));
+  const events = data.events.filter((event) => event.year <= year && (event.endYear === undefined || year <= event.endYear) && event.sourceIds.some((sourceId) => subject.sourceIds.includes(sourceId)));
+  const polityClaims = data.claims.filter((claim) => claimTouches(claim, polityId) && active(claim.validFrom, claim.validTo, year));
+  const heritageIds = new Set(polityClaims.filter((claim) => claim.predicate === 'left-heritage').map((claim) => claim.objectId));
+  const entityIds = new Set([
+    polityId,
+    ...people.map((person) => person.id),
+    ...events.map((event) => event.id),
+    ...heritageIds,
+  ]);
+  const claims = data.claims.filter((claim) => active(claim.validFrom, claim.validTo, year)
+    && (claimTouches(claim, polityId) || (claim.objectId !== undefined && entityIds.has(claim.subjectId) && entityIds.has(claim.objectId))));
   return {
     kind: 'polity', subject, year, capitalTerms,
-    events: data.events.filter((event) => event.year <= year && (event.endYear === undefined || year <= event.endYear) && event.sourceIds.some((sourceId) => subject.sourceIds.includes(sourceId))),
+    events,
     people, heritage: data.heritage.filter((asset) => heritageIds.has(asset.id)), claims,
   };
 }

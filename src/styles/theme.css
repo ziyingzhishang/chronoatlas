@@ -256,6 +256,11 @@ main { min-height: 100vh; }
 .relationship-graph { overflow:hidden; border:1px solid rgba(198,161,91,.16); padding:8px; background:rgba(8,12,16,.26); }
 .relationship-graph svg { display:block; width:100%; min-height:150px; }
 .relationship-edge line { stroke:rgba(198,161,91,.45); stroke-width:1; }
+.relationship-edge-governance line { stroke:rgba(198,161,91,.72); }
+.relationship-edge-kinship line { stroke:rgba(214,167,135,.72); }
+.relationship-edge-allianceConflict line { stroke:rgba(167,135,184,.72); }
+.relationship-edge-eventParticipation line { stroke:rgba(119,160,178,.72); }
+.relationship-edge-heritage line { stroke:rgba(164,125,85,.72); }
 .relationship-edge text { fill:var(--paper-muted); font-size:9px; text-anchor:middle; }
 .relationship-node circle { stroke:var(--gold); stroke-width:1; fill:var(--panel); }
 .relationship-node-person circle { fill:rgba(119,145,129,.7); }
@@ -264,6 +269,10 @@ main { min-height: 100vh; }
 .relationship-graph-text { list-style:none; margin:4px 0 0; padding:0; color:var(--paper-muted); font-size:11px; line-height:1.6; }
 .relationship-graph-text button { border:0; padding:2px 0; color:inherit; background:transparent; text-align:left; }
 .relationship-graph-text button:hover { color:var(--gold); }
+.relationship-category { margin-top:8px; }
+.relationship-category h4 { margin:0; color:var(--paper); font-size:11px; }
+.relationship-category ul { list-style:none; margin:2px 0 0; padding:0; }
+.relationship-category-empty { margin:2px 0 0; color:var(--paper-muted); font-size:10px; }
 .year-steppers { flex-wrap:wrap; }
 
 @media (max-width: 1100px) {

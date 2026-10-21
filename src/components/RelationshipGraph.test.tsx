@@ -18,8 +18,28 @@ describe('RelationshipGraph', () => {
     render(<RelationshipGraph view={view!} />);
 
     expect(screen.getByRole('img', { name: '人物关系网络' })).toBeInTheDocument();
-    expect(screen.getByText(/李世民 · 统治 · 唐/)).toBeInTheDocument();
-    expect(screen.getByText(/唐 · 遗留 · 大明宫遗址/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐 · 626—649年/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /唐 · 遗产关联 · 遗留 · 方向：唐 → 大明宫遗址/ })).toBeInTheDocument();
+  });
+
+  it('groups claims into five categories and exposes direction, time precision, and source state', () => {
+    const bundle = getChanganStudyBundle();
+    const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
+    const graphView = {
+      ...view!,
+      claims: [...view!.claims, {
+        id: 'fixture-unknown-source-relationship', subjectId: 'li-shimin', predicate: 'ally-of', objectId: 'li-yuan',
+        validFrom: 618, validTo: 626, datePrecision: 'approximate' as const, perspective: 'person' as const,
+        evidenceType: 'inference' as const, confidence: 'low' as const, sourceIds: ['missing-fixture-source'],
+      }],
+    };
+    render(<RelationshipGraph view={graphView} />);
+
+    for (const heading of ['治理／君臣', '亲属', '联盟与对立', '事件参与', '遗产关联']) {
+      expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
+    }
+    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐 · 626—649年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 联盟与对立 · 联盟 · 方向：李世民 → 李渊 · 618—626年 · 时间精度：约年 · 来源：待解析/ })).toBeInTheDocument();
   });
 
   it('opens a person entity from a focusable SVG node', () => {
@@ -52,7 +72,7 @@ describe('RelationshipGraph', () => {
     const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
     render(<RelationshipGraph view={view!} onOpenEntity={onOpenEntity} />);
 
-    fireEvent.click(screen.getByRole('button', { name: '李世民 · 统治 · 唐' }));
+    fireEvent.click(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐/ }));
 
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'tang' });
   });
