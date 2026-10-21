@@ -33,7 +33,7 @@ interface Props {
 
 function updateLocalHistory(map:GLMap,state:HistoricalState,t:(text:string)=>string){
   const data=buildLocalMapData(state,t);
-  const sourceOrder=['boundaries','polityLabels','places','events','modernSovereignty'] as const;
+  const sourceOrder=['boundaries','polityLabels','places','capitalPlaces','events','modernSovereignty'] as const;
   for (const id of sourceOrder) {
     (map.getSource(id) as GeoJSONSource).setData(data[id]);
   }
@@ -53,7 +53,7 @@ function updateWorldHistory(map:GLMap,state:HistoricalState,t:(text:string)=>str
 }
 
 const boundaryLayerVariants=(id:string)=>[id,`world-${id}`];
-const interactiveMapLayers=['place-dots','place-names','event-rings',...[
+const interactiveMapLayers=['place-dots','place-names','capital-dots','capital-names','event-rings',...[
   'boundary-fill','boundary-d-area','boundary-line','boundary-digitized','boundary-maximum','boundary-d-centers',
   'boundary-indirect','boundary-disputed','boundary-influence','boundary-selected','boundary-digitized-selected',
   'boundary-d-centers-selected','boundary-indirect-selected','boundary-disputed-selected','boundary-influence-selected','boundary-maximum-selected',
@@ -94,7 +94,7 @@ function updatePresentation(map: GLMap, props: Props) {
   }
   map.setPaintProperty('modern-sovereignty-fill', 'fill-color', ['get', dark ? 'satelliteColor' : 'color']);
   map.setPaintProperty('modern-sovereignty-line', 'line-color', ['get', dark ? 'satelliteColor' : 'color']);
-  for (const id of ['polity-names','world-polity-names', 'place-names', 'modern-names', 'modern-sovereignty-label']) {
+  for (const id of ['polity-names','world-polity-names', 'place-names', 'capital-names', 'modern-names', 'modern-sovereignty-label']) {
     map.setPaintProperty(id, 'text-color', dark ? '#fff4d8' : id === 'modern-names' ? '#596555' : '#253731');
     map.setPaintProperty(id, 'text-halo-color', dark ? '#182b27' : '#fff7df');
   }
@@ -198,9 +198,9 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
     map.on('click', event => {
       if (!map.getLayer('place-dots')) { latest.current.onClearSelection?.(); return; }
       const hits = map.queryRenderedFeatures(event.point, { layers: interactiveMapLayers });
-      const hit = hits.find(f => f.layer.id === 'place-dots' || f.layer.id === 'place-names') ?? hits[0];
+      const hit = hits.find(f => f.layer.id === 'place-dots' || f.layer.id === 'place-names' || f.layer.id === 'capital-dots' || f.layer.id === 'capital-names') ?? hits[0];
       if (!hit?.properties?.entityId) { latest.current.onClearSelection?.(); return; }
-      const type = hit.layer.id.startsWith('place-') ? 'place' : hit.layer.id === 'event-rings' ? 'event' : 'polity';
+      const type = hit.layer.id.startsWith('place-') || hit.layer.id.startsWith('capital-') ? 'place' : hit.layer.id === 'event-rings' ? 'event' : 'polity';
       latest.current.onSelectEntity({ type, id: String(hit.properties.entityId) });
     });
     const observer = new ResizeObserver(() => {map.resize();updateScale();});

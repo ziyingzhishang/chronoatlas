@@ -3,6 +3,7 @@ import { events } from '../data/events';
 import { eventsAtYear } from './events';
 import { places } from '../data/places';
 import { polities } from '../data/polities';
+import { activeCapitalRecords } from '../data/capital-history';
 import type { BoundaryState, HistoricalState, SelectedEntity, WorldSlice } from './types';
 import { formatHistoricalYear, yearToIndex } from './timeline';
 
@@ -34,7 +35,8 @@ export function getHistoricalState(year: number, options: { maximumFallback?: bo
     boundaries.push(...worldBoundaries.map(b => ({ ...b, presentation:'interval' as const })));
   }
   // Legacy place labels only cover the original reading period, not prehistory or modern times.
-  const activePlaces = places.filter(p => (p.validFrom ?? -403) <= year && year <= (p.validTo ?? 959));
+  const capitalPlaceIds = new Set(activeCapitalRecords(year).map(record => record.placeId));
+  const activePlaces = places.filter(p => capitalPlaceIds.has(p.id) || ((p.validFrom ?? -403) <= year && year <= (p.validTo ?? 959)));
   return {
     year, displayLabel: formatHistoricalYear(year), activePolities, boundaries, places: activePlaces,
     events: eventsAtYear(events, year),

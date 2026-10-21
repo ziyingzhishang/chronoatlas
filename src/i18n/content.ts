@@ -83,5 +83,7 @@ export function localizeState(state:HistoricalState,locale:Locale):HistoricalSta
 }
 
 export function contentSearchText(item:HistoricalEvent|Place|Polity):string {
-  return `${Object.values(item).filter(value=>typeof value==='string').join(' ')} ${originalSearch.get(item) ?? ''}`.toLocaleLowerCase();
+  const localized = Object.values(item).filter(value=>typeof value==='string').join(' ').toLocaleLowerCase();
+  const original = originalSearch.get(item) ?? '';
+  return `${localized} ${original} ${original.toLocaleLowerCase()}`;
 }

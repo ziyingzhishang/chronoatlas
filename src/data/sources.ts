@@ -1,6 +1,7 @@
 import type { SourceNote } from '../domain/types';
 
 export const sourceNotes: SourceNote[] = [
+  {id:'capital-history-reference',title:'政权首都与政治中心综合核验资料',authorOrInstitution:'项目组件专家团整理',urlOrCitation:'《资治通鉴》、中国历史地理与相关遗址/地方志资料交叉核验',scope:'首都、迁都、多都制、政治中心及现代地名映射',note:'用于地图定位和展示；移动汗廷、候选遗址和区域参照均保留置信度与不确定性，不由首都点推导疆域。'},
   {id:'erlitou-official',title:'二里头遗址与二里头文化官方资料',authorOrInstitution:'国家发展改革委／洛阳市人民政府',urlOrCitation:'https://www.ndrc.gov.cn/xwdt/ztzl/dyhgjwhgy/202209/t20220920_1335799_ext.html',scope:'夏代相关考古文化核心定位',note:'用于D级文化核心参照，不据此推导夏代国家边界。'},
   {id:'gengshi-official',title:'更始政权都城与中心官方地方资料',authorOrInstitution:'湖北省文化和旅游厅／陕西省地方志办公室',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201405/P020240923622533021818.pdf',scope:'23—25年宛城、洛阳、长安中心与迁都时序',note:'只用于D级控制中心表达，不生成连续疆域。'},
   {

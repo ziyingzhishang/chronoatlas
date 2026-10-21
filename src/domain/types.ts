@@ -12,6 +12,8 @@ export type BoundaryDerivation =
   | 'control-centers'
   | 'influence-area';
 export type ReviewStatus = 'pending' | 'source-checked' | 'cross-checked';
+export type CapitalRole = 'primary' | 'secondary' | 'seasonal' | 'temporary' | 'de_facto' | 'military' | 'mobile_court' | 'disputed';
+export type CapitalStatus = 'formal' | 'actual' | 'claimed' | 'uncertain';
 
 export interface EvidenceCitation {
   title: string;
@@ -42,6 +44,7 @@ export interface Polity {
   startYear: number;
   endYear: number;
   capitalPlaceId?: string;
+  capitalTerms?: CapitalTerm[];
   color: string;
   description: string;
   sourceIds: string[];
@@ -49,6 +52,18 @@ export interface Polity {
   originalName?: string;
   referenceUrl?: string;
   localizedName?: LocalizedNameMeta;
+}
+
+export interface CapitalTerm {
+  polityId: string;
+  placeId: string;
+  validFrom: number;
+  validTo: number;
+  role: CapitalRole;
+  status: CapitalStatus;
+  confidence: Confidence;
+  sourceIds: string[];
+  notes?: string;
 }
 
 export interface Place {
@@ -64,6 +79,9 @@ export interface Place {
   validTo?: number;
   notes?: string;
   sourceIds: string[];
+  mappingStatus?: 'exact' | 'approximate' | 'regional' | 'debated';
+  pointType?: 'ancient-city-site' | 'modern-city-centre' | 'archaeological-site' | 'regional-reference' | 'mobile-centre';
+  confidence?: Confidence;
 }
 
 export interface BoundaryState {

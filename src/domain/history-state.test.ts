@@ -16,6 +16,7 @@ test('supports early and later Chinese history without inventing boundaries', ()
   expect(getHistoricalState(1900).activePolities.map(p => p.name)).toContain('清');
   expect(getHistoricalState(2026).activePolities.map(p => p.name)).toContain('中华人民共和国');
   expect(getHistoricalState(-8000).boundaries).toHaveLength(0);
+  expect(getHistoricalState(1100).places.map(place => place.id)).toContain('kaifeng');
 });
 
 test('exposes the original interval rather than pretending annual precision', () => {

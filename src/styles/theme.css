@@ -196,6 +196,7 @@ main { min-height: 100vh; }
 .legend-group { display: inline-flex; flex-wrap: wrap; gap: 8px 14px; margin: 0 20px 0 0; color: var(--paper-muted); font-size: 12px; }
 .legend-title { color: var(--paper); }
 .legend-swatch, .legend-opacity { display: inline-block; width: 18px; height: 8px; margin-right: 4px; vertical-align: middle; border: 1px solid var(--paper-muted); }
+.legend-capital { display: inline-block; width: 10px; height: 10px; margin: 0 6px 0 2px; vertical-align: middle; border-radius: 50%; background: var(--gold); border: 2px solid #5e3724; }
 .legend-swatch.direct { background: var(--gold); }
 .legend-swatch.indirect { background: repeating-linear-gradient(90deg, var(--gold), var(--gold) 6px, transparent 6px, transparent 10px); }
 .legend-swatch.disputed { border-style: dashed; }

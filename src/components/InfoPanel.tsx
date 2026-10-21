@@ -7,6 +7,7 @@ import { mappingNotes } from '../data/cliopatria-mapping';
 import { formatSourceField } from '../i18n/source-display';
 import { sovereigntyNoticesFor } from '../data/sovereignty';
 import { boundaryStatusLabel } from '../map/presentation';
+import { activeCapitalRecords } from '../data/capital-history';
 
 interface InfoPanelProps {
   state: HistoricalState;
@@ -33,6 +34,8 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
   const listSeparator=locale==='en' ? ', ' : '、';
   const selected = selectedEntity ? selectedEntity.type==='polity' ? state.activePolities.find(p=>p.id===selectedEntity.id) : selectedEntity.type==='place' ? state.places.find(p=>p.id===selectedEntity.id) : state.events.find(e=>e.id===selectedEntity.id) : undefined;
   const capital = selected && 'capitalPlaceId' in selected && selected.capitalPlaceId ? state.places.find(place=>place.id===selected.capitalPlaceId) : undefined;
+  const currentCapitalTerms = selected && 'name' in selected ? activeCapitalRecords(state.year, selected.id) : [];
+  const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalRecords(state.year).filter(record=>record.placeId===selected.id) : [];
   const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
 
   return (
@@ -74,6 +77,10 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
             <dd>{t(selected.modernAdministrativeUnit ?? '暂无')}</dd>
             <dt>{t("坐标")}</dt>
             <dd>{selected.latitude.toFixed(2)}°N{locale==='en'?', ':'，'}{selected.longitude.toFixed(2)}°E</dd>
+            {selectedPlaceCapitalTerms.length > 0 && <>
+              <dt>{t("政权角色")}</dt>
+              <dd>{selectedPlaceCapitalTerms.map(record => `${t(record.role==='primary'?'首都':record.role==='secondary'?'陪都／副都':record.role==='mobile_court'?'移动政治中心':'政治中心')} · ${t(record.status==='uncertain'?'待核验':'已核验')}`).join(listSeparator)}</dd>
+            </>}
           </dl>
           {selected.notes && <p className="detail-note">{t(selected.notes)}</p>}
           <p className="detail-note">{t("此处为精选古地名参照，尚未逐年校勘更名与归属；名称不保证适用于所选年的每个时点。")}</p>
@@ -94,8 +101,13 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
           <dl className="detail-list">
             <dt>{t(selected.region==='world'?'来源观测范围':'存续范围')}</dt>
             <dd>{t(formatHistoricalYear(selected.startYear))}{t("至")}{t(formatHistoricalYear(selected.endYear))}</dd>
-            <dt>{t("目录都城")}</dt>
-            <dd>{t(capital && 'historicalName' in capital ? capital.historicalName : '未标注')}{t("（未含迁都序列）")}</dd>
+            <dt>{t("当前都城／政治中心")}</dt>
+            <dd>{currentCapitalTerms.length > 0 ? currentCapitalTerms.map(record => {
+              const place = state.places.find(item=>item.id===record.placeId);
+              return `${t(place?.historicalName ?? record.placeId)}${place?.modernName ? `（${t('今·')}${t(place.modernName)}）` : ''}`;
+            }).join(listSeparator) : t(capital && 'historicalName' in capital ? capital.historicalName : '未标注')}</dd>
+            <dt>{t("首都沿革")}</dt>
+            <dd>{currentCapitalTerms.length > 0 ? currentCapitalTerms.map(record => `${t(formatHistoricalYear(record.validFrom))}—${t(formatHistoricalYear(record.validTo))}`).join(listSeparator) : t("暂无已核验沿革")}</dd>
             <dt>{t("当前状态")}</dt>
             <dd>{state.boundaries.filter((boundary) => boundary.polityId === selected.id).map((boundary) => t(controlLabels[boundary.controlType])).join(listSeparator) || t('暂无疆域几何')}</dd>
           </dl>

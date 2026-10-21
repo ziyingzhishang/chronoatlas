@@ -11,4 +11,5 @@ test('explains all four evidence levels separately from control relationships', 
   expect(screen.getByText('C级 · 过渡／最大参考')).toBeInTheDocument();
   expect(screen.getByText('D级 · 文化核心／影响范围')).toBeInTheDocument();
   expect(screen.getByText('控制关系')).toBeInTheDocument();
+  expect(screen.getByText('首都／政治中心')).toBeInTheDocument();
 });

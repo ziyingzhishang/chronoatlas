@@ -5,6 +5,8 @@ import type { StyleSpecification, SymbolLayerSpecification } from 'maplibre-gl';
 import type { HistoricalState } from '../domain/types';
 import { satelliteColor } from './presentation';
 import { modernSovereigntyFeatures } from '../data/modern-reference';
+import { activeCapitalRecords } from '../data/capital-history';
+import { places as allPlaces } from '../data/places';
 
 export const allLayers = ['boundaries', 'places', 'modernReference', 'events'] as const;
 export type MapLayer = (typeof allLayers)[number];
@@ -63,6 +65,19 @@ export function buildLocalMapData(state:HistoricalState,t:(text:string)=>string=
   const events = collection(state.events.flatMap(event => {
     return event.coordinates && event.locationPrecision ? [point(event.coordinates, { entityId: event.id, name: event.title })] : [];
   }));
+  const placeById = new Map([...allPlaces, ...state.places].map(place => [place.id, place]));
+  const capitalPlaces = collection(activeCapitalRecords(state.year).flatMap(record => {
+    const place = placeById.get(record.placeId);
+    const polity = state.activePolities.find(item => item.id === record.polityId);
+    if (!place || !polity) return [];
+    return [point([place.longitude, place.latitude], {
+      entityId: place.id, placeId: place.id, polityId: record.polityId,
+      historicalName: place.historicalName, name: place.historicalName,
+      modernName: place.modernName ?? '',
+      polityName: polity.name, role: record.role, status: record.status,
+      confidence: record.confidence, note: record.notes ?? '',
+    })];
+  }));
   const modernSovereignty = {
     ...modernSovereigntyFeatures(state.year),
     features: modernSovereigntyFeatures(state.year).features.map(feature => ({...feature, properties:{
@@ -70,7 +85,7 @@ export function buildLocalMapData(state:HistoricalState,t:(text:string)=>string=
       satelliteColor:satelliteColor('#b76c5d'),
     }})),
   };
-  return {boundaries:local.boundaries,polityLabels:local.labels,places,events,modernSovereignty};
+  return {boundaries:local.boundaries,polityLabels:local.labels,places,capitalPlaces,events,modernSovereignty};
 }
 
 export function buildWorldMapData(state:HistoricalState,t:(text:string)=>string=text=>text){
@@ -85,7 +100,7 @@ export function buildMapData(state: HistoricalState, t:(text:string)=>string=tex
 const boundaryLayerIds=['boundary-fill', 'boundary-d-area', 'boundary-line', 'boundary-digitized', 'boundary-maximum', 'boundary-d-centers', 'boundary-indirect', 'boundary-disputed', 'boundary-influence', 'boundary-selected', 'boundary-digitized-selected', 'boundary-d-centers-selected', 'boundary-indirect-selected', 'boundary-disputed-selected', 'boundary-influence-selected', 'boundary-maximum-selected'] as const;
 export const layerGroups: Record<MapLayer, string[]> = {
   boundaries: [...boundaryLayerIds,...boundaryLayerIds.map(id=>`world-${id}`),'polity-names','world-polity-names'],
-  places: ['place-dots', 'place-selected', 'place-names'],
+  places: ['place-dots', 'place-selected', 'place-names', 'capital-dots', 'capital-names'],
   modernReference: ['modern-names', 'modern-sovereignty-fill', 'modern-sovereignty-line', 'modern-sovereignty-label'],
   events: ['event-rings'],
 };
@@ -108,6 +123,7 @@ export function createMapStyle(): StyleSpecification {
       boundaries: { type: 'geojson', data: empty, tolerance: 0.1, attribution: 'Cliopatria / Seshat · CC BY 4.0; Historical Basemaps / André Ourednik · GPL-3.0' },
       worldBoundaries: { type: 'geojson', data: empty, tolerance: 0.1, attribution: 'Cliopatria / Seshat · CC BY 4.0; Historical Basemaps / André Ourednik · GPL-3.0' },
       places: { type: 'geojson', data: empty },
+      capitalPlaces: { type: 'geojson', data: empty },
       polityLabels: { type: 'geojson', data: empty },
       worldPolityLabels: { type: 'geojson', data: empty },
       events: { type: 'geojson', data: empty },
@@ -141,6 +157,7 @@ export function createMapStyle(): StyleSpecification {
         'text-letter-spacing': 0.15, 'text-padding': 10, 'text-max-width': 6,
       }, paint: labelPaint },
       { id: 'place-dots', type: 'circle', source: 'places', paint: { 'circle-radius': 4, 'circle-color': '#953f32', 'circle-stroke-color': '#fff5de', 'circle-stroke-width': 1.5 } },
+      { id: 'capital-dots', type: 'circle', source: 'capitalPlaces', paint: { 'circle-radius': 7, 'circle-color': '#c6a15b', 'circle-stroke-color': '#5e3724', 'circle-stroke-width': 2 } },
       { id: 'place-selected', type: 'circle', source: 'places', filter: ['==', ['get', 'entityId'], ''], paint: { 'circle-radius': 9, 'circle-color': '#c6a15b', 'circle-opacity': 0.35, 'circle-stroke-color': '#703222', 'circle-stroke-width': 2 } },
       { id: 'event-rings', type: 'circle', source: 'events', paint: { 'circle-radius': 11, 'circle-color': '#ba4b3e', 'circle-opacity': 0.15, 'circle-stroke-color': '#ba4b3e', 'circle-stroke-width': 2 } },
       { id: 'place-names', type: 'symbol', source: 'places', layout: {
@@ -148,6 +165,10 @@ export function createMapStyle(): StyleSpecification {
         'text-variable-anchor': ['top', 'bottom', 'left', 'right'], 'text-radial-offset': 0.8,
         'text-padding': 3, 'text-max-width': 7,
       }, paint: labelPaint },
+      { id: 'capital-names', type: 'symbol', source: 'capitalPlaces', layout: {
+        'text-field': ['format', ['get', 'name'], {}, '\n', {}, ['get', 'modernName'], {}], 'text-font': font, 'text-size': 14,
+        'text-variable-anchor': ['top', 'bottom', 'left', 'right'], 'text-radial-offset': 0.9, 'text-padding': 3,
+      }, paint: { ...labelPaint, 'text-color': '#6d4b22' } },
       { id: 'modern-names', type: 'symbol', source: 'places', minzoom: 4.5, layout: {
         'text-field': ['get', 'modernName'], 'text-font': font, 'text-size': 10,
         'text-anchor': 'top', 'text-offset': [0, 2.3], 'text-padding': 2,

@@ -10,6 +10,14 @@ test('map data follows the year and keeps stable entity identifiers', () => {
   expect(song.boundaries.features.some(f => f.properties?.polityId === 'tang')).toBe(false);
   expect(song.boundaries.features.some(f => f.properties?.polityId === 'song_northern')).toBe(true);
   expect(tang.places.features.find(f => f.properties?.entityId === 'xianyang')?.geometry.coordinates).toEqual([108.7, 34.33]);
+  expect(song.capitalPlaces.features.find(f => f.properties?.placeId === 'kaifeng')?.properties).toMatchObject({ modernName: '开封市', historicalName: '开封' });
+});
+
+test('capital map data only includes capitals active in the selected year', () => {
+  const before = buildMapData(getHistoricalState(493));
+  const after = buildMapData(getHistoricalState(495));
+  expect(before.capitalPlaces.features.filter(f => f.properties?.polityId === 'wei_northern').map(f => f.properties?.placeId)).toEqual(['pingcheng']);
+  expect(after.capitalPlaces.features.filter(f => f.properties?.polityId === 'wei_northern').map(f => f.properties?.placeId)).toEqual(['luoyang']);
 });
 
 test('separates local and world boundaries into independent sources',()=>{

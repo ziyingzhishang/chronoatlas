@@ -13,6 +13,10 @@ export function Legend() {
         <span><i className="legend-evidence level-d" />{t("D级 · 文化核心／影响范围")}</span>
       </div>
       <div className="legend-group">
+        <span className="legend-title">{t("首都／政治中心")}</span>
+        <span><i className="legend-capital" />{t("金色标记：历史首都；标签下方显示今地名")}</span>
+      </div>
+      <div className="legend-group">
         <span className="legend-title">{t("控制关系")}</span>
         <span><i className="legend-swatch direct" />{t("直接控制")}</span>
         <span><i className="legend-swatch indirect" />{t("间接控制")}</span>
