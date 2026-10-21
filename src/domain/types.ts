@@ -14,6 +14,8 @@ export type BoundaryDerivation =
 export type ReviewStatus = 'pending' | 'source-checked' | 'cross-checked';
 export type CapitalRole = 'primary' | 'secondary' | 'seasonal' | 'temporary' | 'de_facto' | 'military' | 'mobile_court' | 'disputed';
 export type CapitalStatus = 'formal' | 'actual' | 'claimed' | 'uncertain';
+export type ClaimPerspective = 'polity' | 'city' | 'person' | 'heritage' | 'source' | 'overview';
+export type ClaimEvidenceType = 'explicit-record' | 'archaeology' | 'cross-checked' | 'inference' | 'tradition';
 
 export interface EvidenceCitation {
   title: string;
@@ -64,6 +66,21 @@ export interface CapitalTerm {
   confidence: Confidence;
   sourceIds: string[];
   notes?: string;
+}
+
+export interface HistoricalClaim {
+  id: string;
+  subjectId: string;
+  predicate: string;
+  objectId?: string;
+  validFrom?: number;
+  validTo?: number;
+  datePrecision: 'day' | 'year' | 'approximate' | 'range' | 'century' | 'unknown';
+  perspective: ClaimPerspective;
+  evidenceType: ClaimEvidenceType;
+  confidence: Confidence;
+  sourceIds: string[];
+  uncertaintyNote?: string;
 }
 
 export interface Place {
