@@ -1097,7 +1097,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'zhou-later-founded',
-    participants: [],
+    participants: [
+      { personId: 'guo-wei', role: '掌握后汉禁军并受禅建立后周的君主', note: '郭威于951年受禅建立后周；其前期军政积累、受禅和后续整顿属于连续但可区分的阶段。' },
+    ],
     polityIds: ['zhou_later'],
     causes: ['后汉末年皇室与禁军将领的矛盾加剧。', '郭威在中原军政体系中掌握关键力量。'],
     consequences: ['后周成为五代最后一个中原王朝。', '后周随后推进财政、军事和地方秩序整顿。'],
@@ -1113,7 +1115,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'yuan-founded',
-    participants: [],
+    participants: [
+      { personId: 'kublai', role: '定国号为大元并主持元初国家整合的君主', note: '忽必烈于1271年定国号为大元；南宋灭亡、完整中原控制和后续制度整合属于不同阶段。' },
+      { personId: 'liu-bingzhong', role: '参与元初国号、都城与制度设计的政治家', note: '刘秉忠是元初制度设计的重要参与者，但不替代忽必烈作为定国号和建政的君主端点。' },
+      { personId: 'bayan', role: '推进灭宋战争并参与元朝南方整合的军事与行政负责人', note: '伯颜的主要作用属于元与南宋并立后的战争阶段，用于连接元建国与后续统合，不能前推为1271年现场人物。' },
+    ],
     polityIds: ['yuan'],
     causes: ['蒙古政权在东亚和欧亚展开长期扩张，忽必烈需要以新的国号和制度统合统治。', '南宋仍然存在，元的建国号与灭宋是不同节点。'],
     consequences: ['元朝国号正式确立。', '元继续推进对南宋及其他地区的战争与行政整合。'],
@@ -1129,7 +1135,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'ming-founded',
-    participants: [],
+    participants: [
+      { personId: 'zhu-yuanzhang', role: '在应天称帝建立明朝的君主', note: '朱元璋于1368年称帝，明军攻取大都是同年后续阶段；称帝与元明实际控制转换不能压缩为单一瞬间。' },
+    ],
     polityIds: ['ming'],
     causes: ['元末战争中朱元璋逐步形成以应天为中心的军事政治力量。', '元朝统治中心与地方控制在战争中持续变化。'],
     consequences: ['明朝中央政权建立。', '明军继续北进，元室北撤，政权转换并未在称帝日立即完成。'],
@@ -1313,7 +1321,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-han-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-zhiyuan', role: '后汉覆亡后在太原延续刘氏政权的君主', note: '刘知远于948年去世，北汉由其弟刘崇在951年建立；本端点用于连接刘氏政治谱系，不将刘知远误写为北汉正式建国者。' },
+    ],
     polityIds: ['northern_han'],
     causes: ['后汉覆亡后，刘知远家族与河东军政集团在太原维持独立力量。', '北汉需要寻求契丹支持以对抗后周。'],
     consequences: ['北汉成为十国中位于北方的主要政权。', '北汉与后周、辽长期互动，最终至979年灭亡。'],
@@ -1414,7 +1424,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'yang-wu-founded',
-    participants: [],
+    participants: [
+      { personId: 'yang-xingmi', role: '经营淮南并推动杨吴政权形成的地方军事领袖', note: '杨行密在扬州及淮南建立持续军政基础；902年受封吴王是分期节点，不能等同于完全脱离唐廷的正式称帝。' },
+    ],
     polityIds: ['wu_ten'],
     causes: ['唐末藩镇竞争削弱中央对淮南的实际控制。', '杨行密在扬州及江淮逐步建立可持续的军政动员能力。'],
     consequences: ['江淮形成延续性的杨吴地方政权。', '杨吴的受封、地方自治和后续南唐禅代需要按不同节点展示。'],
@@ -1430,7 +1442,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'wuyue-founded',
-    participants: [],
+    participants: [
+      { personId: 'qian-liu', role: '经营两浙并受封吴越王的地方统治者', note: '钱镠控制杭州及两浙核心资源；907年受封吴越王是十国分期节点，名义臣属与实际自治并存。' },
+    ],
     polityIds: ['wuyue'],
     causes: ['唐末两浙藩镇竞争使钱镠获得杭州及两浙部分地区的军政主导权。', '唐亡后中原册封制度为地方政权延续提供了名义框架。'],
     consequences: ['两浙形成长期稳定的吴越政权，杭州成为政治、经济和海贸中心。', '吴越的名义臣属与实际自治并存，后期控制范围不能回填到907年。'],
@@ -1446,7 +1460,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'min-founded',
-    participants: [],
+    participants: [
+      { personId: 'wang-shenzhi', role: '经营福建并受封闽王的地方统治者', note: '王审知与兄长共同经营福建，909年受封闽王是政权分期节点；不能把兄弟共同经营简化为单一人物独立建国。' },
+    ],
     polityIds: ['min'],
     causes: ['唐末福建地区的山海阻隔和藩镇分立削弱中央直接控制。', '王审知兄弟在福州经营军政资源并取得闽地核心区域的主导权。'],
     consequences: ['福建形成延续数十年的闽政权，福州成为政治中心。', '闽与中原、吴越、南汉的关系和实际控制范围随阶段变化。'],
@@ -1480,7 +1496,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'ma-chu-founded',
-    participants: [],
+    participants: [
+      { personId: 'ma-yin', role: '经营潭州及湖湘并受封楚王的地方统治者', note: '马殷在唐末军政竞争中取得湖湘核心资源；907年受封楚王是十国分期节点，不等于后期马楚范围已在同日完成。' },
+    ],
     polityIds: ['chu_ten'],
     causes: ['唐末湖南军政秩序瓦解，马殷在潭州及湖湘地区扩张势力。', '接受中原册封为地方统治提供了名义合法性和外交空间。'],
     consequences: ['湖南形成以潭州为中心的马楚政权。', '马楚与南唐、南汉及中原王朝的关系持续变化，受封范围不等于直接控制范围。'],
@@ -1548,7 +1566,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'dali-founded',
-    participants: [],
+    participants: [
+      { personId: 'duan-siping', role: '整合洱海区域并建立大理政权的建国君主', note: '段思平代表南诏秩序瓦解后重组地方政治的核心人物；937年前后是形成约年，早期联盟与直接控制范围仍需分阶段理解。' },
+    ],
     polityIds: ['dali'],
     causes: ['南诏后期政权瓦解，洱海地区多个地方势力展开竞争。', '段思平通过军政联盟取得重组地方秩序的条件。'],
     consequences: ['大理成为云南及周边延续数百年的区域政权。', '西南山地、东南亚与中原之间的交往网络重新组织。'],
@@ -1580,7 +1600,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-yuan-founded',
-    participants: [],
+    participants: [
+      { personId: 'toghon-temur', role: '大都失守后北撤并延续元皇室汗权的君主', note: '妥懽帖睦尔在1368年北走，北元是元廷北迁后的后世分期称谓，不是其另行宣布的新朝国号。' },
+    ],
     polityIds: ['northern_yuan'],
     causes: ['明军攻取大都后，元皇室和蒙古政治军事力量向北转移。', '元廷的中原统治与草原延续在1368年前后发生阶段性分化。'],
     consequences: ['蒙古大汗政权在漠北延续，后世形成“北元”历史称谓。', '明与蒙古高原政权展开长期竞争，政治边界和部众关系不断重组。'],
