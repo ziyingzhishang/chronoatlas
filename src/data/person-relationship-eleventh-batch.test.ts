@@ -93,7 +93,7 @@ describe('eleventh-batch historical people relationship selection', () => {
     }
   });
 
-  it('leaves only the four unselected people without a direct person relation', () => {
+  it('leaves no unconnected people after subsequent relationship batches', () => {
     const personIds = new Set(people.map((person) => person.id));
     const connected = new Set(claims
       .filter((claim) => claim.perspective === 'person'
@@ -105,6 +105,6 @@ describe('eleventh-batch historical people relationship selection', () => {
       .map((person) => person.id)
       .sort();
 
-    expect(isolated).toEqual(['li-xiong', 'li-yuanhao', 'wanyan-aguda', 'wu-ding']);
+    expect(isolated).toEqual([]);
   });
 });
