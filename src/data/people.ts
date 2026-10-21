@@ -100,6 +100,13 @@ export const people: Person[] = [
   { id: 'duan-ye', name: '段业', aliases: ['北凉君主'], deathYear: 401, roles: ['君主', '地方统治者'], polityIds: ['northern_liang'], description: '段业在河西张掖一带被推立为君，北凉由此进入形成阶段；其后沮渠蒙逊掌握政权并改变北凉政治结构。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'qifu-guoren', name: '乞伏国仁', aliases: ['西秦宣烈王'], deathYear: 388, roles: ['君主', '部族首领', '军事领袖'], polityIds: ['western_qin'], description: '乞伏国仁在陇右建立西秦，政权经历与前秦、后秦的阶段性竞争，不能用固定首都或连续疆域概括。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'murong-huang', name: '慕容皝', aliases: ['前燕文明帝'], birthYear: 297, deathYear: 348, roles: ['皇帝', '军事领袖'], polityIds: ['former_yan'], description: '慕容皝在辽东、河北重建燕政权并于337年称燕王，前燕由此进入形成阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'shi-le', name: '石勒', aliases: ['后赵高祖'], birthYear: 274, deathYear: 333, roles: ['皇帝', '军事领袖'], polityIds: ['later_zhao'], description: '石勒在北方战乱中整合羯人及地方军政资源，319年建立后赵，襄国成为其重要政治中心。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'murong-de', name: '慕容德', aliases: ['南燕献武帝'], birthYear: 336, deathYear: 405, roles: ['皇帝', '军事领袖'], polityIds: ['southern_yan'], description: '慕容德在后燕衰败后率部南下，于山东地区重建燕政权，南燕由此形成。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'lv-guang', name: '吕光', aliases: ['后凉懿武帝'], birthYear: 337, deathYear: 399, roles: ['君主', '军事领袖'], polityIds: ['later_liang'], description: '吕光以淝水之战前后的前秦西征军为基础控制河西，386年前后建立后凉。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'juqu-mengxun', name: '沮渠蒙逊', aliases: ['北凉武宣王'], birthYear: 368, deathYear: 433, roles: ['君主', '军事领袖'], polityIds: ['northern_liang'], description: '沮渠蒙逊在河西军政竞争中取代段业并稳固北凉，使张掖成为北凉重要政治中心。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'li-hao', name: '李暠', aliases: ['西凉武昭王'], birthYear: 351, deathYear: 417, roles: ['君主', '地方统治者'], polityIds: ['western_liang'], description: '李暠在敦煌、酒泉一带建立西凉，维系河西西部的地方政权与交通网络。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'gao-jixing', name: '高季兴', aliases: ['南平武信王'], birthYear: 858, deathYear: 929, roles: ['地方统治者', '军事领袖'], polityIds: ['jingnan'], description: '高季兴以江陵为中心经营荆南，在五代更替中维持地方政权的连续性。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'feng-ba', name: '冯跋', aliases: ['北燕文成帝'], deathYear: 430, roles: ['皇帝', '军事领袖'], polityIds: ['northern_yan'], description: '冯跋在后燕末年于辽西建立北燕，承接慕容氏燕政权在东北地区的政治遗产。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

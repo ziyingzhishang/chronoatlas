@@ -513,6 +513,41 @@ export const personDetails: PersonDetail[] = [
     aliases: ['前燕文明帝'], offices: [{ title: '前燕君主', polityId: 'former_yan', placeId: 'ye', validFrom: 337, validTo: 348, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['former-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '337年称燕王是前燕形成的重要节点，前燕在辽东、河北的控制范围随战争变化，不能回填为固定疆域。',
   },
+  {
+    personId: 'shi-le', biography: '石勒在西晋末年北方战争中积累军政资源，脱离前赵控制后于319年建立后赵，并以襄国为重要政治中心。',
+    aliases: ['后赵高祖'], offices: [{ title: '后赵皇帝', polityId: 'later_zhao', placeId: 'xiangguo', validFrom: 319, validTo: 333, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-zhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '319年称赵王是后赵形成节点，石勒此前的依附、战争和政权整合不能压缩为单一建国日。',
+  },
+  {
+    personId: 'murong-de', biography: '慕容德是慕容氏宗室，在后燕失去河北后率部南下，于398年在广固重建燕政权，史称南燕。',
+    aliases: ['南燕献武帝'], offices: [{ title: '南燕皇帝', polityId: 'southern_yan', placeId: 'guanggu', validFrom: 398, validTo: 405, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '398年是南燕形成节点，南迁、建都广固和后续对山东地区的控制属于连续但不同的阶段。',
+  },
+  {
+    personId: 'lv-guang', biography: '吕光奉前秦之命经营西域，淝水之战后控制河西并在386年前后建立后凉。',
+    aliases: ['后凉懿武帝'], offices: [{ title: '后凉君主', polityId: 'later_liang', placeId: 'guzang', validFrom: 386, validTo: 399, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '386年前后是吕光在河西建立独立政权的形成阶段，前秦西征军身份与后凉君主身份需分开叙述。',
+  },
+  {
+    personId: 'juqu-mengxun', biography: '沮渠蒙逊在北凉内部竞争中于401年取代段业，随后长期经营河西，使北凉进入稳定发展阶段。',
+    aliases: ['北凉武宣王'], offices: [{ title: '北凉君主', polityId: 'northern_liang', placeId: 'zhangye', validFrom: 401, validTo: 433, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北凉建政事件覆盖397年段业被推立至后续政权重组，本详情将沮渠蒙逊的401年掌权单独标出。',
+  },
+  {
+    personId: 'li-hao', biography: '李暠在河西西部经营敦煌、酒泉等地，400年前后建立西凉并维系地方政权与丝路交通。',
+    aliases: ['西凉武昭王'], offices: [{ title: '西凉君主', polityId: 'western_liang', placeId: 'dunhuang', validFrom: 400, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-liang-state-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '400年前后为西凉形成约年，敦煌和酒泉之间的政治中心变化不能简化为固定单一都城。',
+  },
+  {
+    personId: 'gao-jixing', biography: '高季兴在五代中原政权更替中经营江陵，924年前后形成荆南地方政权并维持其相对独立。',
+    aliases: ['南平武信王'], offices: [{ title: '荆南节度使与国主', polityId: 'jingnan', placeId: 'jiangling', validFrom: 907, validTo: 929, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['jingnan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '高季兴早期受中原政权任命，924年前后才进入荆南政权分期；藩镇任职与地方独立不能混为一谈。',
+  },
+  {
+    personId: 'feng-ba', biography: '冯跋在后燕末年于辽西拥立高云并最终掌握政权，409年前后建立北燕，延续东北地区的燕政权传统。',
+    aliases: ['北燕文成帝'], offices: [{ title: '北燕皇帝', polityId: 'northern_yan', placeId: 'longcheng', validFrom: 409, validTo: 430, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北燕形成涉及高云被拥立、冯跋掌权等连续阶段，本详情不把后燕末期与北燕正式分期压缩为单一事件。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));
