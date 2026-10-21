@@ -314,6 +314,52 @@ git status --short --branch
 
 Expected: 全部测试通过，生产构建通过，工作区只包含已提交内容。
 
+### Task 8: 顶部遮挡、球形视图与控制入口收敛
+
+**Files:**
+- Modify: `src/app/App.tsx`, `src/app/App.test.tsx`
+- Modify: `src/components/MapView.tsx`, `src/components/MapView.test.tsx`
+- Modify: `src/components/HistoricalMapCanvas.tsx`, `src/components/HistoricalMapCanvas.test.tsx`
+- Modify: `src/map/history-map.ts`, `src/i18n/text.ts`, `src/styles/workspace.css`, `README.md`
+
+**Interfaces:**
+
+- `HistoricalMapCanvas` adds `projection: 'mercator' | 'globe'` to its map state and calls MapLibre `setProjection({ type: projection })` after the style is ready and when the control changes.
+- `MapView` owns the projection toggle and renders it inside the existing map navigation group; it passes the selected projection to `HistoricalMapCanvas`.
+- `HistoryWorkspace` renders only `事件`, `详情`, and `更多` in the top-right workspace navigation; layer and basemap controls remain in the map navigation group.
+
+- [ ] **Step 1: Add failing projection and subtraction tests**
+
+在 `HistoricalMapCanvas.test.tsx` 验证默认使用 `mercator`，切换为 `globe` 后调用 `setProjection({type:'globe'})`；在 `App.test.tsx` 验证顶部没有“图层”按钮且仍有“事件”“详情”“更多”；在 `MapView.test.tsx` 验证控制条存在平铺/球形切换入口。
+
+- [ ] **Step 2: Implement projection state and MapLibre update**
+
+给 `HistoricalMapCanvas` 增加 `projection` prop，初始化 MapLibre 时设置对应投影，并在 `projection` 改变时调用 `map.setProjection({type: projection})`。不要重建地图实例，不清空历史图层，也不重置 camera。
+
+- [ ] **Step 3: Move projection into the floating control bar**
+
+在 `MapView` 的地图控制条中增加一个原生 `details` 或紧凑按钮组，使用图标、Tooltip 和 `aria-pressed` 表达平铺/球形；保留 44px 触控区域。同步补充中英文文案。
+
+- [ ] **Step 4: Remove duplicate top controls and top overlay background**
+
+移除 `App.tsx` 中的图层入口；调整 `workspace.css`，让顶部只保留 HUD 和事件/详情/更多图标，不绘制黑色渐变背景；必要时增加 HUD 自身轻量边界和阴影，避免文字直接压在底图上。
+
+- [ ] **Step 5: Update docs and run focused verification**
+
+```bash
+npm test -- --run src/app/App.test.tsx src/components/MapView.test.tsx src/components/HistoricalMapCanvas.test.tsx
+npm run build
+```
+
+使用浏览器验证默认平铺、切换球形、切回平铺、图层快捷入口和右上角入口数量；确认切换过程中地图年份、图层、镜头未被重置。
+
+- [ ] **Step 6: Commit**
+
+```bash
+git add src/app/App.tsx src/app/App.test.tsx src/components/MapView.tsx src/components/MapView.test.tsx src/components/HistoricalMapCanvas.tsx src/components/HistoricalMapCanvas.test.tsx src/map/history-map.ts src/i18n/text.ts src/styles/workspace.css README.md
+git commit -m "feat: add globe projection to map controls"
+```
+
 - [ ] **Step 6: Commit the completed phase**
 
 ```bash
