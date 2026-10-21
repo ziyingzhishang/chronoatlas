@@ -2,8 +2,29 @@ import type { HistoricalEventDetail } from '../domain/types';
 
 const details: HistoricalEventDetail[] = [
   {
+    eventId: 'zhou-conquest',
+    participants: [
+      { personId: 'ji-chang', role: '克商前整合周人政治资源的周文王', note: '姬昌在周克商前去世，属于周人崛起与王朝更替的前置人物，不作为前1046年战场上的统帅。' },
+      { personId: 'zhou-wu', role: '周军统帅与克商建周的核心君主', note: '姬发主导牧野之战及商周更替；前1046年绝对年代采用项目通行约年，具体年代仍有学术讨论。' },
+    ],
+    polityIds: [],
+    causes: ['周人在关中及其周边积累了相对稳定的政治、军事和宗族组织。', '商王朝晚期的统治危机与诸侯关系变化，为周对商的军事取代创造条件。'],
+    consequences: ['商周王朝更替完成，西周王朝进入建政阶段。', '分封、宗法和礼制等秩序在后续周公辅政与东征过程中继续展开，不能压缩为克商当日完成。'],
+    phases: [
+      { label: '周人崛起', startYear: -1050, endYear: -1047, summary: '周文王时期周人扩大关中政治资源，周武王继承并继续组织对商行动。' },
+      { label: '牧野克商', startYear: -1046, endYear: -1046, summary: '周武王率军击败商军，商王朝的中央统治崩溃。' },
+      { label: '西周建政', startYear: -1046, endYear: -1043, summary: '周王室在克商后重组王朝秩序，东征与分封属于后续建政过程。' },
+    ],
+    locationIds: ['changan'],
+    relatedEventIds: ['zhou-eastward', 'shang-founded-eighth-batch', 'western-zhou-founded-eighth-batch'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '前1046年是常用王朝更替约年；长安仅作为关中周人政治核心的现代城市参照，不代表牧野战场或丰镐遗址的精确位置，也不替代克商年代诸说。',
+  },
+  {
     eventId: 'xin-founded',
-    participants: [],
+    participants: [
+      { personId: 'wang-mang', role: '接受禅让并建立新朝的统治者', note: '王莽是新朝建政的核心人物；其外戚、摄政和受禅阶段按连续过程区分。' },
+    ],
     polityIds: ['xin'],
     causes: ['王莽长期控制西汉朝廷，汉室名义权威和外戚政治秩序持续弱化。'],
     consequences: ['西汉转入新朝阶段。', '新朝改革与地方反抗是建政后的连续过程，不能合并为同一日完成。'],
@@ -13,13 +34,16 @@ const details: HistoricalEventDetail[] = [
       { label: '新朝整合', startYear: 9, endYear: 15, summary: '新朝推行制度改革并继续处理地方与边疆秩序。' },
     ],
     locationIds: ['changan'],
-    relatedEventIds: ['gengshi-enters-changan'],
+    relatedEventIds: ['gengshi-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '公元9年是受禅和改国号节点；长安是中央政治中心，不表示新朝当年已稳定控制西汉旧境全部地区。',
   },
   {
     eventId: 'gengshi-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-xuan', role: '更始政权的拥立君主', note: '刘玄在宛城一带被拥立，随后进入洛阳、长安；更始军政联盟不等于全国直接控制。' },
+      { personId: 'liu-xiu', role: '更始集团中的宗室军事领袖与后续东汉建立者', note: '刘秀参与更始时期的军事与政治网络，但其独立建政和东汉称帝属于后续事件。' },
+    ],
     polityIds: ['gengshi'],
     causes: ['新末反莽力量扩张，需要以刘氏宗室重建汉室政治名义。', '绿林军与地方势力之间的联盟并不等于统一的中央直接控制。'],
     consequences: ['更始政权进入汉室复起的形成阶段。', '宛城、洛阳、长安先后成为政治中心参照，政权最终未能稳定整合各地。'],
@@ -28,8 +52,8 @@ const details: HistoricalEventDetail[] = [
       { label: '向关中推进', startYear: 23, endYear: 24, summary: '更始军取得洛阳并向长安推进。' },
       { label: '长安阶段', startYear: 24, endYear: 25, summary: '更始政权进入长安，但地方军政力量仍保持较强独立性。' },
     ],
-    locationIds: ['changan'],
-    relatedEventIds: ['gengshi-enters-changan', 'eastern-han-restores-changan'],
+    locationIds: ['luoyang', 'changan'],
+    relatedEventIds: ['xin-founded', 'han-eastern-founded'],
     sourceIds: ['zizhi-tongjian', 'gengshi-official'],
     uncertaintyNote: '公元23年是拥立与政权形成节点，不设置单一固定首都；长安控制也不等于全国直接统治。',
   },
@@ -131,7 +155,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'eastern-wei-founded',
-    participants: [],
+    participants: [
+      { personId: 'gao-huan', role: '控制邺城并主导东魏军政重组的权臣', note: '高欢是东魏实际军政基础的建立者；元善见即位的皇室端点未纳入当前人物目录，故不虚构人物记录。' },
+    ],
     polityIds: ['wei_eastern'],
     causes: ['北魏末年的军事集团冲突使洛阳中央政权失去对东部地区的稳定控制。'],
     consequences: ['北魏分裂为东魏、西魏两个政治中心。', '东魏与西魏的军事竞争延续至北齐、北周取代。'],
@@ -147,7 +173,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'western-wei-founded',
-    participants: [],
+    participants: [
+      { personId: 'yu-wen-tai', role: '关中军政集团领袖与西魏形成期的实际掌权者', note: '宇文泰主持关中军政整合；元宝炬即位的皇室端点未纳入当前人物目录，保留权力结构说明。' },
+    ],
     polityIds: ['wei_western'],
     causes: ['孝武帝西奔后，关中军政力量需要以魏宗室重建西部政治秩序。'],
     consequences: ['西魏在长安延续北魏名义并与东魏并立。', '关中、陇右与河北、山东之间的竞争进入新阶段。'],
@@ -163,7 +191,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-liang-founded',
-    participants: [],
+    participants: [
+      { personId: 'xiao-yan', role: '受禅建立南梁并在建康即位的君主', note: '萧衍在南齐末年掌握江南军政资源，502年受禅建梁；其前期掌权与正式即位分开记录。' },
+    ],
     polityIds: ['liang_southern', 'southern_liang'],
     causes: ['南齐末年皇室权力衰落，萧衍控制朝廷与江南核心军政资源。'],
     consequences: ['南朝政权从南齐转入梁朝。', '建康继续作为江南政治、文化中心，南北对峙延续。'],
@@ -211,7 +241,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'jurchen-jin-founded',
-    participants: [],
+    participants: [
+      { personId: 'wanyan-aguda', role: '整合女真诸部并在会宁称帝建金的君主', note: '完颜阿骨打主导女真建国；会宁建国与后续灭辽、南下宋境是不同阶段。' },
+    ],
     polityIds: ['jin_jurchen'],
     causes: ['女真诸部在完颜阿骨打领导下逐步整合，并与辽的边疆秩序发生冲突。'],
     consequences: ['金成为东北亚具有独立军事与外交能力的政权。', '辽、宋、金之间的政治格局和战争关系重新组织。'],
@@ -227,7 +259,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'western-xia-founded',
-    participants: [],
+    participants: [
+      { personId: 'li-yuanhao', role: '在兴庆府称帝并建立西夏的君主', note: '李元昊的称帝与国号形成是1038年的制度节点，党项李氏此前的地方经营属于建政前阶段。' },
+    ],
     polityIds: ['western_xia'],
     causes: ['党项李氏在夏州、银州和河套西部长期经营，已形成相对独立的军政资源。'],
     consequences: ['西夏成为宋、辽之间的重要独立政权。', '宋夏、辽夏外交与战争构成西北政治格局的长期主线。'],
@@ -327,7 +361,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'former-qin-founded',
-    participants: [],
+    participants: [
+      { personId: 'fu-jian', role: '前秦宗室与建政后关中整合的关键君主', note: '苻坚不是351年建立前秦的苻健；本条将其限定在357年后前秦整合阶段，避免把同姓不同人的历史角色混同。' },
+    ],
     polityIds: ['former_qin'],
     causes: ['后赵瓦解后，关中军政力量重新分化。', '苻氏在关中拥有建立独立政权的军事与行政基础。'],
     consequences: ['前秦成为关中与北方竞争的重要政权。', '苻坚时期的北方整合具有前秦早期建政的制度基础。'],
@@ -343,7 +379,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'later-yan-founded',
-    participants: [],
+    participants: [
+      { personId: 'murong-chui', role: '前秦崩解后重建燕政权的核心领袖', note: '慕容垂主导384年前后后燕形成，386年称帝是后续制度节点；早期活动区域与后期最大范围分开记录。' },
+    ],
     polityIds: ['later_yan'],
     causes: ['前秦在淝水之战后失去对北方诸部的整合能力。', '慕容垂在河北重建慕容氏的军政基础。'],
     consequences: ['后燕成为十六国后期河北、辽东的重要力量。', '后燕与北魏、后秦等政权展开长期竞争。'],
@@ -352,8 +390,8 @@ const details: HistoricalEventDetail[] = [
       { label: '燕政权重建', startYear: 384, endYear: 384, summary: '慕容垂在北方重建燕政权。' },
       { label: '称帝与扩张', startYear: 386, endYear: 395, summary: '慕容垂称帝后，后燕继续经营河北与辽东。' },
     ],
-    locationIds: [],
-    relatedEventIds: [],
+    locationIds: ['ye'],
+    relatedEventIds: ['former-yan-founded', 'former-qin-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '384年采用政权形成约年，386年称帝是后续节点；后燕早期活动区域不能用后期最大范围替代。',
   },
@@ -457,7 +495,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'zhou-eastward',
-    participants: [],
+    participants: [
+      { personId: 'ji-yijiu', role: '周王室东迁后的即位君主', note: '姬宜臼即周平王，洛邑成为东迁后的政治中心；迁徙路线与具体王城位置仍按考古分层理解。' },
+    ],
     polityIds: ['zhou_western', 'zhou_eastern'],
     causes: ['西周末年的政治危机削弱了王室对旧都及关中秩序的控制。'],
     consequences: ['周王室迁入洛阳，东周的政治格局由此展开。', '诸侯的自主性上升，王室权威下降。'],
@@ -506,7 +546,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'chu-han-contention',
-    participants: [{ personId: 'liu-bang', role: '汉方核心领袖', note: '项羽等其他关键人物尚未纳入当前人物目录。' }],
+    participants: [
+      { personId: 'liu-bang', role: '汉方核心领袖与后续汉帝国建立者', note: '刘邦代表汉方政治与军事主线；项羽等其他关键人物尚未纳入当前人物目录，不以其他人物占位。' },
+      { personId: 'han-xin', role: '汉方重要军事统帅', note: '韩信参与楚汉战争中后期的关键军事行动，不能代表所有汉方将领或全部战场。' },
+      { personId: 'xiao-he', role: '汉方行政与后勤组织者', note: '萧何负责关中与汉方后勤、行政支持，体现战争中的政务角色而非前线统帅。' },
+    ],
     polityIds: ['qin', 'han_western'],
     causes: ['秦统治瓦解后，各路反秦力量争夺关中和诸侯分封秩序。', '秦亡后的政治真空使项羽、刘邦等势力展开长期竞争。'],
     consequences: ['多方分封与战争逐渐转为汉主导的政治秩序。', '汉初仍保留诸侯王，胜利不等于地方权力立即完全统一。'],
@@ -515,7 +559,7 @@ const details: HistoricalEventDetail[] = [
       { label: '楚汉战争', startYear: -205, endYear: -203, summary: '楚、汉围绕关中、河南和淮北等地持续交战。' },
       { label: '楚败汉兴', startYear: -202, endYear: -202, summary: '项羽败亡，刘邦取得建立汉帝国的政治条件。' },
     ],
-    locationIds: ['xianyang'],
+    locationIds: ['xianyang', 'luoyang'],
     relatedEventIds: ['qin-unification', 'han-imperial-accession'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '咸阳只代表秦亡与分封背景的一部分；持续战争的战场远超单一地点，未据此推定完整战区。',
