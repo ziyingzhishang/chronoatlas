@@ -808,6 +808,66 @@ export const personDetails: PersonDetail[] = [
     aliases: ['南诏王'], offices: [{ title: '南诏王', polityId: 'nanzhao', placeId: 'tahe-city', validFrom: 824, validTo: 859, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '劝丰祐属于南诏中后期继承阶段；其统治只能作为南诏长期政权的后续节点，不能倒推为738年建政参与者。',
   },
+  {
+    personId: 'octavian', biography: '屋大维在罗马共和国晚期内战中胜出，前27年由元老院授予奥古斯都称号，成为元首制形成阶段的核心人物。',
+    aliases: ['奥古斯都'], offices: [{ title: '罗马政治主导者', validFrom: -31, validTo: 14, datePrecision: 'range', sourceIds: ['augustus-metmuseum'] }],
+    keyEvents: ['augustus-principate'], sourceIds: ['augustus-metmuseum'], uncertaintyNote: '前27年是称号与政治形式转折的标志节点；元首制的形成是长期过程，不把该年写成共和制度瞬时消失或疆域突然改变。',
+  },
+  {
+    personId: 'mark-antony', biography: '马克·安东尼是罗马共和国晚期的将领与政治家，曾与屋大维共同处于内战后的权力重组网络，后转为竞争关系。',
+    aliases: ['Marcus Antonius', '安东尼'], offices: [{ title: '罗马将领与政治家', validFrom: -44, validTo: -30, datePrecision: 'range', sourceIds: ['augustus-metmuseum'] }],
+    keyEvents: ['augustus-principate'], sourceIds: ['augustus-metmuseum'], uncertaintyNote: '本详情只用于解释前27年制度转折的前置权力竞争，不把安东尼写成前27年称号授予现场人物。',
+  },
+  {
+    personId: 'constantine-xi', biography: '君士坦丁十一世是拜占庭末代皇帝，在1453年奥斯曼围攻中守卫君士坦丁堡，最终与城市一同进入帝国终结的历史阶段。',
+    aliases: ['君士坦丁十一世·巴列奥略'], offices: [{ title: '拜占庭皇帝', validFrom: 1449, validTo: 1453, datePrecision: 'range', sourceIds: ['constantinople-metmuseum'] }],
+    keyEvents: ['constantinople-1453'], sourceIds: ['constantinople-metmuseum'], uncertaintyNote: '其“末代皇帝”身份只对应君士坦丁堡的拜占庭统治终结，不等同于所有拜占庭传统、东正教网络或希腊文化在1453年消失。',
+  },
+  {
+    personId: 'mehmed-ii', biography: '穆罕默德二世率奥斯曼军队攻占君士坦丁堡，使城市控制权从拜占庭转入奥斯曼阶段。',
+    aliases: ['征服者穆罕默德'], offices: [{ title: '奥斯曼苏丹', validFrom: 1451, validTo: 1481, datePrecision: 'range', sourceIds: ['constantinople-metmuseum'] }],
+    keyEvents: ['constantinople-1453'], sourceIds: ['constantinople-metmuseum'], uncertaintyNote: '本详情只表达1453年城市攻陷与统治转折，不把攻城结果外推为奥斯曼在同年完成全部相关地区的征服。',
+  },
+  {
+    personId: 'christopher-columbus', biography: '哥伦布率领西班牙资助的航队跨越大西洋，于1492年抵达加勒比并与泰诺社会接触，开启持续的殖民与跨大西洋交换阶段。',
+    aliases: ['哥伦布'], offices: [{ title: '远洋航行组织者', validFrom: 1492, validTo: 1493, datePrecision: 'range', sourceIds: ['columbus-library-congress'] }],
+    keyEvents: ['columbus-caribbean'], sourceIds: ['columbus-library-congress'], uncertaintyNote: '“抵达”不等于发现无人之地；加勒比已有泰诺等原住民社会，瓜纳哈尼的现代岛屿对应也不在本详情中强行确定。',
+  },
+  {
+    personId: 'guacanagari', biography: '瓜卡纳加里克斯是伊斯帕尼奥拉岛泰诺政治领袖，在哥伦布抵达后的接触阶段出现于欧洲航海记录，代表原住民社会的地方政治主体。',
+    aliases: ['Guacanagaríx', '瓜卡纳加里'], offices: [{ title: '泰诺地方政治领袖', datePrecision: 'unknown', sourceIds: ['columbus-library-congress'] }],
+    keyEvents: ['columbus-caribbean'], sourceIds: ['columbus-library-congress'], uncertaintyNote: '该人物与哥伦布的接触属于1492年首次抵达后的后续阶段，不能把伊斯帕尼奥拉岛的接触地点冒充瓜纳哈尼的确切登陆点，也不能代表全部泰诺社会。',
+  },
+  {
+    personId: 'oxenstierna', biography: '奥克森谢纳代表瑞典参与威斯特伐利亚和约谈判，体现多国、多文本和平协商中的一方外交角色。',
+    aliases: ['Johan Oxenstierna'], offices: [{ title: '瑞典谈判代表', datePrecision: 'range', sourceIds: ['westphalia-osnabruck', 'westphalia-lwl'] }],
+    keyEvents: ['peace-westphalia'], sourceIds: ['westphalia-osnabruck', 'westphalia-lwl'], uncertaintyNote: '其角色是瑞典代表之一，不把其写成全部战争缔约方或唯一和平缔造者。',
+  },
+  {
+    personId: 'trauttmansdorff', biography: '特劳特曼斯多夫代表哈布斯堡方面参与威斯特伐利亚和约谈判，处理帝国战争、多方利益和宗教政治安排。',
+    aliases: ['Maximilian von Trauttmansdorff'], offices: [{ title: '哈布斯堡谈判代表', datePrecision: 'range', sourceIds: ['westphalia-osnabruck', 'westphalia-lwl'] }],
+    keyEvents: ['peace-westphalia'], sourceIds: ['westphalia-osnabruck', 'westphalia-lwl'], uncertaintyNote: '条约是多方、多文本协商结果；本详情不将哈布斯堡代表的角色扩展为全部签署方的立场。',
+  },
+  {
+    personId: 'chigi', biography: '基吉作为教廷使节参与威斯特伐利亚和平谈判，体现教廷调停与欧洲宗教政治在条约过程中的角色。',
+    aliases: ['Fabio Chigi'], offices: [{ title: '教廷调停代表', datePrecision: 'range', sourceIds: ['westphalia-osnabruck', 'westphalia-lwl'] }],
+    keyEvents: ['peace-westphalia'], sourceIds: ['westphalia-osnabruck', 'westphalia-lwl'], uncertaintyNote: '教廷代表参与谈判不等于所有缔约文本都由其签署；其角色与各国正式签约代表分开记录。',
+  },
+  {
+    personId: 'franklin-roosevelt', biography: '罗斯福在二战时期推动战后国际合作框架，并在联合国宪章签署前去世，因此属于倡议与政治命名阶段的人物。',
+    aliases: ['罗斯福'], offices: [{ title: '美国总统与国际组织倡议者', validFrom: 1933, validTo: 1945, datePrecision: 'range', sourceIds: ['un-history-official'] }],
+    keyEvents: ['un-founded'], sourceIds: ['un-history-official'], uncertaintyNote: '罗斯福不是1945年旧金山宪章签署现场人物；本条明确区分倡议阶段与签署、生效阶段。',
+  },
+  {
+    personId: 'harry-truman', biography: '杜鲁门承接美国政府在战后国际组织建设中的政治责任，并在旧金山会议结束阶段代表美国发表讲话。',
+    aliases: ['杜鲁门'], offices: [{ title: '美国总统', validFrom: 1945, validTo: 1953, datePrecision: 'range', sourceIds: ['un-charter-treaty', 'un-history-official'] }],
+    keyEvents: ['un-founded'], sourceIds: ['un-charter-treaty', 'un-history-official'], uncertaintyNote: '联合国成立是多国共同缔结与批准的结果；杜鲁门的美国总统身份不能代表全部创始成员。',
+  },
+  {
+    personId: 'edward-stettinius', biography: '斯退丁纽斯主持美国方面的旧金山会议组织工作，是联合国宪章形成、谈判与签署阶段的关键代表。',
+    aliases: ['Edward Stettinius Jr.'], offices: [{ title: '美国国务卿与旧金山会议主席', validFrom: 1944, validTo: 1945, datePrecision: 'range', sourceIds: ['un-charter-treaty', 'un-history-official'] }],
+    keyEvents: ['un-founded'], sourceIds: ['un-charter-treaty', 'un-history-official'], uncertaintyNote: '其角色是美国代表与会议组织者，不等于个人代表所有国家的批准行为；签署与10月24日生效仍是不同节点。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

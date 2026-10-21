@@ -1940,7 +1940,7 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'augustus-principate',
-    participants: [],
+    participants: [{ personId: 'octavian', role: '获授奥古斯都称号的罗马政治核心', note: '前27年称号授予是元首制形成的标志节点；元老院与共和形式仍保留，制度转折不等于单日改朝换代。' }],
     polityIds: [],
     causes: ['罗马共和国晚期内战与权力集中持续重塑政治秩序。'],
     consequences: ['屋大维获得奥古斯都称号，元首制进入形成阶段。', '共和制度形式与实际权力结构并存，不能简化为单日改朝换代。'],
@@ -1952,7 +1952,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'constantinople-1453',
-    participants: [],
+    participants: [
+      { personId: 'constantine-xi', role: '拜占庭末代皇帝与守城统治者', note: '对应君士坦丁堡在拜占庭方面的守城阶段，不代表拜占庭传统在1453年全部消失。' },
+      { personId: 'mehmed-ii', role: '率奥斯曼军队攻城并占领城市的苏丹', note: '对应1453年城市控制权转折，不把攻城结果外推为同年完成所有相关地区征服。' },
+    ],
     polityIds: [],
     causes: ['拜占庭晚期领土收缩，君士坦丁堡仍是帝国核心城市。'],
     consequences: ['奥斯曼攻占君士坦丁堡，拜占庭在该城的统治结束。', '东地中海政治与文化网络继续以多种形式延续。'],
@@ -1964,7 +1967,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'columbus-caribbean',
-    participants: [],
+    participants: [
+      { personId: 'christopher-columbus', role: '率航队抵达加勒比的航海组织者', note: '抵达发生在已有泰诺社会的加勒比世界，不使用“发现无人大陆”叙事，也不确定瓜纳哈尼现代岛屿对应。' },
+      { personId: 'guacanagari', role: '抵达后续接触中的泰诺地方政治领袖', note: '其接触属于1492年抵达后的伊斯帕尼奥拉阶段，不把他写成瓜纳哈尼首日现场或全部泰诺社会代表。' },
+    ],
     polityIds: [],
     causes: ['加勒比已有泰诺等原住民社会与航海网络，欧洲航行者寻求跨大西洋联系。'],
     consequences: ['哥伦布与加勒比原住民社会发生接触，欧洲殖民扩张进入新的阶段。', '后续殖民、疫病和社会冲击是持续过程，不能压缩为单次“发现”。'],
@@ -1976,7 +1982,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'peace-westphalia',
-    participants: [],
+    participants: [
+      { personId: 'oxenstierna', role: '瑞典方面谈判代表', note: '代表多方谈判中的瑞典一方，不是全部和约文本的唯一签署人。' },
+      { personId: 'trauttmansdorff', role: '哈布斯堡方面谈判代表', note: '对应帝国方面的协商阶段；威斯特伐利亚和约由多份文本和多方代表共同形成。' },
+      { personId: 'chigi', role: '教廷调停与谈判代表', note: '体现教廷调停角色，不等同于所有缔约文本由其签署。' },
+    ],
     polityIds: [],
     causes: ['三十年战争及相关欧洲冲突牵涉多方势力，政治、宗教与领土安排需要谈判。'],
     consequences: ['1648年明斯特与奥斯纳布吕克的多份条约推动相关战争结束。', '条约影响多个政治体，不能由谈判城市推导欧洲整体边界或现代主权体系起点。'],
@@ -1988,7 +1998,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'un-founded',
-    participants: [],
+    participants: [
+      { personId: 'franklin-roosevelt', role: '战时国际组织倡议者', note: '罗斯福在宪章签署前去世，属于倡议与命名阶段，不是旧金山签署现场人物。' },
+      { personId: 'harry-truman', role: '美国总统与成立过渡阶段政治承接者', note: '代表美国在会议结束与组织成立过渡阶段的政治承接，不代表全部创始成员。' },
+      { personId: 'edward-stettinius', role: '美国代表与旧金山会议组织者', note: '对应宪章谈判与签署阶段；联合国成立仍是多国签署、批准并于10月24日生效的共同过程。' },
+    ],
     polityIds: [],
     causes: ['第二次世界大战末期，各国推动建立维护和平与开展国际合作的组织。'],
     consequences: ['《联合国宪章》达到批准条件并生效，联合国正式成立。', '签署地点、法律生效地点与后来总部所在地不是同一概念。'],

@@ -316,7 +316,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'augustus-principate', year: -27, title: '屋大维获奥古斯都称号', summary: '罗马元首制的形成通常以前27年作为重要起点。',
-    datePrecision: 'year', region: 'world', category: '制度／经济文化转折', sourceIds: [], verification: 'checked',
+    datePrecision: 'year', region: 'world', category: '制度／经济文化转折', sourceIds: ['augustus-metmuseum'], verification: 'checked',
     background: '长期内战之后，屋大维掌握军事与政治优势，需要为权力安排建立稳定形式。',
     process: '元老院授予屋大维“奥古斯都”称号。共和制度形式得以保留，实际权力集中于元首。',
     impact: '罗马由共和晚期走向帝制的过程获得标志性节点；制度变化并非在某一天完成。',
@@ -583,7 +583,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'constantinople-1453', year: 1453, title: '君士坦丁堡陷落', summary: '奥斯曼占领君士坦丁堡，拜占庭帝国失去首都。',
-    datePrecision: 'year', region: 'world', category: '战争／条约', sourceIds: [], verification: 'checked',
+    datePrecision: 'year', region: 'world', category: '战争／条约', sourceIds: ['constantinople-metmuseum'], verification: 'checked',
     background: '拜占庭晚期的领土已大幅收缩，君士坦丁堡仍是王朝的核心城市。',
     process: '1453年奥斯曼攻占君士坦丁堡，结束以该城为中心的拜占庭帝国统治。',
     impact: '东地中海的重要政治中心易手；其他拜占庭传统政权和文化并非同时消失。',
@@ -592,7 +592,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'columbus-caribbean', year: 1492, title: '哥伦布抵达加勒比', summary: '哥伦布航队抵达加勒比，与当地泰诺人接触，跨大西洋殖民扩张进入新阶段。',
-    datePrecision: 'year', region: 'world', category: '制度／经济文化转折', sourceIds: [], verification: 'checked',
+    datePrecision: 'year', region: 'world', category: '制度／经济文化转折', sourceIds: ['columbus-library-congress'], verification: 'checked',
     background: '加勒比早已有泰诺等原住民社会及航海、农业网络；欧洲航行者寻求新的远洋联系。',
     process: '1492年哥伦布抵达瓜纳哈尼，与泰诺人接触，并向西班牙君主报告航行见闻与占有主张。',
     impact: '欧洲持续的殖民活动随之展开，疫病等冲击给当地社会带来灾难。原住民文化仍以多种形式延续。',
@@ -610,7 +610,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'peace-westphalia', year: 1648, title: '威斯特伐利亚和约', summary: '在明斯特、奥斯纳布吕克达成的一组和约结束了三十年战争等冲突。',
-    datePrecision: 'year', region: 'world', category: '战争／条约', sourceIds: [], verification: 'checked',
+    datePrecision: 'year', region: 'world', category: '战争／条约', sourceIds: ['westphalia-osnabruck', 'westphalia-lwl'], verification: 'checked',
     background: '长期战争牵涉欧洲多方势力，政治、领土与宗教安排成为谈判的重要议题。',
     process: '1648年在明斯特和奥斯纳布吕克达成相关条约，推动三十年战争和荷兰独立战争的结束。',
     impact: '条约调整若干政治、宗教和领土关系；其意义不应简化为现代主权国家体系在某天突然诞生。',
@@ -628,7 +628,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'un-founded', year: 1945, title: '联合国成立', summary: '《联合国宪章》生效，联合国正式成立。',
-    datePrecision: 'year', region: 'world', category: '制度／经济文化转折', sourceIds: [], verification: 'checked',
+    datePrecision: 'year', region: 'world', category: '制度／经济文化转折', sourceIds: ['un-charter-treaty', 'un-history-official'], verification: 'checked',
     background: '第二次世界大战末期，各国推动建立维护和平与开展合作的国际组织。',
     process: '1945年6月在旧金山签署宪章；10月24日满足批准条件后，宪章生效，联合国正式成立。',
     impact: '联合国为国际和平、安全与合作提供持续运作的组织框架；签署与生效是不同法律节点。',
