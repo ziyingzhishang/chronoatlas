@@ -55,6 +55,18 @@ export const people: Person[] = [
   { id: 'xiao-yan', name: '萧衍', aliases: ['梁武帝'], birthYear: 464, deathYear: 549, roles: ['皇帝', '军事领袖'], polityIds: ['liang_southern'], description: '萧衍受禅建立南梁，建康继续作为南朝政治与文化中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'tuoba-gui', name: '拓跋珪', aliases: ['魏道武帝'], birthYear: 371, deathYear: 409, roles: ['皇帝', '军事领袖'], polityIds: ['wei_northern'], description: '拓跋珪复代改魏，北魏政权由此形成，平城成为早期政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'han-shizhong', name: '韩世忠', aliases: ['韩良臣'], birthYear: 1089, deathYear: 1151, roles: ['将领', '抗金将领'], polityIds: ['song_south'], description: '韩世忠是南宋重要将领，参与宋金战争并与岳飞等将领共同构成南宋军事网络。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'sima-rui', name: '司马睿', aliases: ['晋元帝'], birthYear: 276, deathYear: 323, roles: ['皇帝', '宗室'], polityIds: ['jin_eastern'], description: '司马睿在西晋北方秩序崩解后于建康重建晋室，东晋政权由此形成。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'yuwen-yong', name: '宇文邕', aliases: ['北周武帝'], birthYear: 543, deathYear: 578, roles: ['皇帝', '军事领袖'], polityIds: ['zhou_northern'], description: '宇文邕是北周重要君主，推进北周军政整合并为隋统一北方奠定条件。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'li-yu', name: '李煜', aliases: ['南唐后主', '李后主'], birthYear: 937, deathYear: 978, roles: ['君主', '词人'], polityIds: ['southern_tang'], description: '李煜是南唐末代君主，南唐覆亡后被北宋迁置，其文学作品成为政权末期的重要文化记忆。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'yang-xingmi', name: '杨行密', aliases: ['吴太祖'], birthYear: 852, deathYear: 905, roles: ['军事领袖', '地方统治者'], polityIds: ['wu_ten'], description: '杨行密在唐末经营淮南军政资源，扬州及江淮成为杨吴形成的核心区域。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'qian-liu', name: '钱镠', aliases: ['吴越武肃王'], birthYear: 852, deathYear: 932, roles: ['地方统治者', '军事领袖'], polityIds: ['wuyue'], description: '钱镠控制两浙并以杭州为政治中心，吴越政权在唐末册封体系中延续发展。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'wang-shenzhi', name: '王审知', aliases: ['闽太祖'], birthYear: 862, deathYear: 925, roles: ['地方统治者', '军事领袖'], polityIds: ['min'], description: '王审知与兄长共同经营福建军政，受封闽王后福州成为闽政权的政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'liu-yin', name: '刘隐', aliases: ['南汉奠基者'], birthYear: 874, deathYear: 911, roles: ['地方统治者', '军事领袖'], polityIds: ['southern_han'], description: '刘隐在岭南经营广州及周边军政资源，为其弟刘龑后来称帝建立南汉奠定基础。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'ma-yin', name: '马殷', aliases: ['楚武穆王'], birthYear: 852, deathYear: 930, roles: ['地方统治者', '军事领袖'], polityIds: ['chu_ten'], description: '马殷在潭州及湖湘地区扩张势力，受封楚王后马楚政权进入稳定发展阶段。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'sima-yan', name: '司马炎', aliases: ['晋武帝'], birthYear: 236, deathYear: 290, roles: ['皇帝', '宗室'], polityIds: ['jin_western'], description: '司马炎受魏禅建立西晋，并于280年灭吴，完成短暂的南北统一。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'zhao-kuangyin', name: '赵匡胤', aliases: ['宋太祖'], birthYear: 927, deathYear: 976, roles: ['皇帝', '军事领袖'], polityIds: ['song_northern'], description: '赵匡胤通过陈桥兵变受禅建立北宋，开封成为北宋的政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'wanyan-aguda', name: '完颜阿骨打', aliases: ['金太祖'], birthYear: 1068, deathYear: 1123, roles: ['皇帝', '军事领袖'], polityIds: ['jin_jurchen'], description: '完颜阿骨打整合女真诸部并于会宁称帝建立金，金与辽、宋的政治竞争由此展开。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'li-yuanhao', name: '李元昊', aliases: ['西夏景宗'], birthYear: 1003, deathYear: 1048, roles: ['皇帝', '军事领袖'], polityIds: ['western_xia'], description: '李元昊于1038年称帝建立西夏，兴庆府成为其政权的政治中心。', sourceIds: ['zizhi-tongjian'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

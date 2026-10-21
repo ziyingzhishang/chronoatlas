@@ -282,6 +282,66 @@ export const personDetails: PersonDetail[] = [
     aliases: ['韩良臣'], offices: [{ title: '南宋将领', polityId: 'song_south', validFrom: 1127, validTo: 1151, datePrecision: 'range', sourceIds }],
     keyEvents: ['song-southward'], sourceIds, uncertaintyNote: '韩世忠与岳飞的同僚和协同关系需按具体战役核验，本详情不把二人的关系简化为持续无变化的政治联盟。',
   },
+  {
+    personId: 'sima-rui', biography: '司马睿是西晋宗室，北方秩序崩解后在江东士族支持下于建康重建晋室，东晋由此展开。',
+    aliases: ['晋元帝'], offices: [{ title: '东晋皇帝', polityId: 'jin_eastern', placeId: 'jiankang', validFrom: 317, validTo: 323, datePrecision: 'range', sourceIds }],
+    keyEvents: ['eastern-jin'], sourceIds, uncertaintyNote: '317年称晋王、318年称帝是连续但不同的建政节点；建康政治中心身份不代表东晋当年已恢复西晋旧境。',
+  },
+  {
+    personId: 'yuwen-yong', biography: '宇文邕是北周武帝，在宇文泰建立的关中军政基础上推进制度和军事整合，北周由此具备继续北伐的能力。',
+    aliases: ['北周武帝'], offices: [{ title: '北周皇帝', polityId: 'zhou_northern', placeId: 'changan', validFrom: 560, validTo: 578, datePrecision: 'range', sourceIds }],
+    keyEvents: [], sourceIds, uncertaintyNote: '项目当前没有单独的北周建政事件节点，本详情只链接北周政权和家族关系，不以其他政权事件替代。',
+  },
+  {
+    personId: 'li-yu', biography: '李煜是南唐末代君主，南唐在其统治末期与北宋对峙并于975年覆亡，词作保留了政权末期的文化记忆。',
+    aliases: ['南唐后主', '李后主'], offices: [{ title: '南唐国主', polityId: 'southern_tang', placeId: 'jiankang', validFrom: 961, validTo: 975, datePrecision: 'range', sourceIds }],
+    keyEvents: ['southern-tang-founded'], sourceIds, uncertaintyNote: '南唐建政事件早于李煜即位，本处以事件作为政权导航，不把李煜个人统治期前移为南唐建立期。',
+  },
+  {
+    personId: 'yang-xingmi', biography: '杨行密在唐末淮南军镇竞争中积累军政资源，受封吴王后杨吴进入独立发展的分期。',
+    aliases: ['吴太祖'], offices: [{ title: '杨吴实际统治者', polityId: 'wu_ten', placeId: 'yangzhou', validFrom: 902, validTo: 905, datePrecision: 'range', sourceIds }],
+    keyEvents: ['yang-wu-founded'], sourceIds, uncertaintyNote: '902年是受封与政权分期节点，不等同于正式称帝或完整主权独立；扬州是政治中心参照。',
+  },
+  {
+    personId: 'qian-liu', biography: '钱镠控制两浙并以杭州为中心维持地方政权，吴越在中原册封和地方自治之间延续。',
+    aliases: ['吴越武肃王'], offices: [{ title: '吴越国王', polityId: 'wuyue', placeId: 'hangzhou', validFrom: 907, validTo: 932, datePrecision: 'range', sourceIds }],
+    keyEvents: ['wuyue-founded'], sourceIds, uncertaintyNote: '907年受封标记吴越政权分期，不把册封范围直接等同于两浙全部地区的稳定直接控制。',
+  },
+  {
+    personId: 'wang-shenzhi', biography: '王审知与兄长在福建经营军政资源，受封闽王后以福州为中心维持闽地地方政权。',
+    aliases: ['闽太祖'], offices: [{ title: '闽王', polityId: 'min', placeId: 'fuzhou', validFrom: 909, validTo: 925, datePrecision: 'range', sourceIds }],
+    keyEvents: ['min-founded'], sourceIds, uncertaintyNote: '909年是受封与政权分期节点，福建各地的实际归属仍需按阶段核验；王审知并非以称帝节点定义全部闽国史。',
+  },
+  {
+    personId: 'liu-yin', biography: '刘隐在岭南经营广州及周边军政资源，为刘龑后来称帝和南汉国号形成提供了政治基础。',
+    aliases: ['南汉奠基者'], offices: [{ title: '清海军政核心', polityId: 'southern_han', placeId: 'guangzhou', validFrom: 904, validTo: 911, datePrecision: 'range', sourceIds }],
+    keyEvents: ['southern-han-founded'], sourceIds, uncertaintyNote: '刘隐是南汉形成的奠基者而非917年称帝者；事件链接用于呈现政权前史，不把兄弟继承关系简化为同一建国行为。',
+  },
+  {
+    personId: 'ma-yin', biography: '马殷在潭州及湖湘地区扩张势力，受封楚王后建立相对稳定的地方政治秩序。',
+    aliases: ['楚武穆王'], offices: [{ title: '楚王', polityId: 'chu_ten', placeId: 'changsha', validFrom: 907, validTo: 930, datePrecision: 'range', sourceIds }],
+    keyEvents: ['ma-chu-founded'], sourceIds, uncertaintyNote: '907年受封标记马楚政权分期，不把中原册封直接等同于湖湘所有地区同日完成直接控制。',
+  },
+  {
+    personId: 'sima-yan', biography: '司马炎承接司马氏在曹魏中枢形成的权力，受禅建立西晋，并在280年灭吴实现短暂统一。',
+    aliases: ['晋武帝'], offices: [{ title: '西晋皇帝', polityId: 'jin_western', placeId: 'luoyang', validFrom: 265, validTo: 290, datePrecision: 'range', sourceIds }],
+    keyEvents: ['western-jin-founded'], sourceIds, uncertaintyNote: '265年受禅建立西晋与280年灭吴分别是建政和统一节点，不能把后者的版图回填到建国当年。',
+  },
+  {
+    personId: 'zhao-kuangyin', biography: '赵匡胤在后周军政体系中崛起，经陈桥兵变受禅建立北宋，开封继续作为中原政治中心。',
+    aliases: ['宋太祖'], offices: [{ title: '北宋皇帝', polityId: 'song_northern', placeId: 'kaifeng', validFrom: 960, validTo: 976, datePrecision: 'range', sourceIds }],
+    keyEvents: ['northern-song-founded'], sourceIds, uncertaintyNote: '960年受禅是北宋建政节点，统一南方诸国是后续过程，不由北宋后期范围倒推建国初期控制。',
+  },
+  {
+    personId: 'wanyan-aguda', biography: '完颜阿骨打整合女真诸部，于1115年在会宁称帝建立金，随后与辽和北宋展开长期战争。',
+    aliases: ['金太祖'], offices: [{ title: '金皇帝', polityId: 'jin_jurchen', placeId: 'huining', validFrom: 1115, validTo: 1123, datePrecision: 'range', sourceIds }],
+    keyEvents: ['jurchen-jin-founded'], sourceIds, uncertaintyNote: '1115年是会宁建国节点，不以金灭辽和占领北宋后的范围倒推早期女真政权控制区。',
+  },
+  {
+    personId: 'li-yuanhao', biography: '李元昊整合党项军政资源，于1038年称帝建立西夏，兴庆府成为其政权的政治中心。',
+    aliases: ['西夏景宗'], offices: [{ title: '西夏皇帝', polityId: 'western_xia', placeId: 'xingqing', validFrom: 1038, validTo: 1048, datePrecision: 'range', sourceIds }],
+    keyEvents: ['western-xia-founded'], sourceIds, uncertaintyNote: '1038年是称帝与国号形成节点，不把西夏后期的扩张范围提前回填到建国当年。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));
