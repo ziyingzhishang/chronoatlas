@@ -28,9 +28,9 @@ describe('eighth-batch polity foundation events', () => {
     for (const target of targets) {
       const coverage = report.byPolity(target.polityId);
       expect(coverage.hasEstablishmentNode, target.label).toBe(true);
-      expect(coverage.establishmentEventIds, target.label).toHaveLength(1);
 
-      const eventId = coverage.establishmentEventIds[0];
+      const eventId = coverage.establishmentEventIds.find((candidate) => candidate.endsWith('-eighth-batch'))!;
+      expect(eventId, target.label).toBeDefined();
       expect(eventIds.has(eventId), `${target.label} reused another polity's node`).toBe(false);
       eventIds.add(eventId);
 

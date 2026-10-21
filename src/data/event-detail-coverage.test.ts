@@ -135,7 +135,7 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 42, 'needs-review': 57, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 43, 'needs-review': 56, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -143,5 +143,28 @@ describe('event detail coverage audit', () => {
       'jurchen-jin-founded',
       'southern-tang-founded',
     ]));
+  });
+
+  it('closes the forty-seventh batch key links without changing orphan classification', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+
+    expect(detailsById.get('zhou-conquest')?.polityIds).toEqual(['shang', 'zhou_western']);
+    expect(detailsById.get('cheng-han-founded')?.relatedEventIds).toEqual(['eastern-jin']);
+    expect(detailsById.get('former-yan-founded')?.relatedEventIds).toEqual([
+      'later-yan-founded',
+      'northern-yan-founded',
+    ]);
+    expect(detailsById.get('southern-song-founded')?.relatedEventIds).toEqual([
+      'northern-song-founded',
+      'song-southward',
+    ]);
+    expect(detailsById.get('song-founded')?.polityIds).toEqual(['song_northern']);
+
+    expect(report.coveredEventIds).toEqual(expect.arrayContaining([
+      'song-founded',
+    ]));
+    expect(report.orphanDetailEventIds).toHaveLength(20);
+    expect(report.orphanDetails.every((item) => item.kind === 'city-history-auxiliary')).toBe(true);
   });
 });

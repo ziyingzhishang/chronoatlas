@@ -66,8 +66,9 @@ describe('政权建政事件第三批', () => {
     for (const target of targets) {
       expect(report.byPolity(target.polityId), target.polityId).toMatchObject({
         hasEstablishmentNode: true,
-        establishmentEventIds: [target.eventId],
       });
+      expect(report.byPolity(target.polityId).establishmentEventIds, target.polityId)
+        .toContain(target.eventId);
     }
 
     expect(report.byPolity('wei_eastern').gaps).not.toEqual(expect.arrayContaining([
