@@ -26,6 +26,7 @@ const expectedRelations = [
 ] as const;
 
 const batchClaimIds = new Set([
+  'claim-zhou-wu-sibling-zhou-gong-dan-fortythird',
   'claim-zhou-gong-dan-served-zhou-wu',
   'claim-xiao-daocheng-related-xiao-yan',
   'claim-yelu-abaoji-enemy-li-cunxu',

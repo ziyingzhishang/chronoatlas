@@ -20,6 +20,8 @@ const expectedRelations = [
 ] as const;
 
 const batchClaimIds = new Set([
+  'claim-yang-jian-ruled-sui-fortythird',
+  'claim-wu-zhao-participated-wu-zhou-fortythird',
   'claim-qin-shi-huang-participated-qin-unification',
   'claim-liu-bang-participated-han-imperial-accession',
   'claim-yang-jian-participated-sui-founded',
