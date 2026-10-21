@@ -5,6 +5,7 @@ import type {
   HeritageAsset,
   Person,
   PersonDetail,
+  Place,
   Polity,
   SourceNote,
 } from '../domain/types';
@@ -16,6 +17,7 @@ import { heritageDetails as defaultHeritageDetails, type HeritageDetail } from '
 import { people as defaultPeople } from './people';
 import { personDetails as defaultPersonDetails } from './person-details';
 import { polities as defaultPolities } from './polities';
+import { places as defaultPlaces } from './places';
 import { sourceNotes as defaultSourceNotes } from './sources';
 
 export type KnowledgeEntityType = 'polity' | 'person' | 'event' | 'heritage';
@@ -27,6 +29,13 @@ export type CoverageGapKind =
   | 'uncertain'
   | 'not-applicable';
 export type CoverageStatus = 'covered' | CoverageGapKind;
+export type CoveragePerspective = 'polity' | 'city';
+export type CoverageTaskKind =
+  | 'polity-heritage-missing'
+  | 'person-person-relationship-missing'
+  | 'event-participant-missing'
+  | 'event-location-missing'
+  | 'relationship-missing';
 
 export interface KnowledgeCoverageAnnotation {
   entityType: KnowledgeEntityType;
@@ -47,6 +56,7 @@ export interface KnowledgeCoverageCatalog {
   personDetails: PersonDetail[];
   claims: HistoricalClaim[];
   sourceNotes: SourceNote[];
+  places?: Place[];
   annotations?: KnowledgeCoverageAnnotation[];
 }
 
@@ -96,6 +106,34 @@ export interface KnowledgeCoveragePolityReport {
   polityName: string;
   entityKeys: string[];
   gaps: KnowledgeCoverageGap[];
+  taskCounts: CoverageTaskCounts;
+  summary: string;
+}
+
+export type CoverageTaskCounts = Record<CoverageTaskKind, number>;
+
+export interface KnowledgeCoverageTask {
+  taskKind: CoverageTaskKind;
+  perspective: CoveragePerspective;
+  subjectId: string;
+  subjectKey: string;
+  subjectLabel: string;
+  entityType: KnowledgeEntityType;
+  entityId: string;
+  polityIds: string[];
+  placeIds: string[];
+  evidenceIds: string[];
+  relatedIds: string[];
+  note: string;
+}
+
+export interface KnowledgeCoverageCityReport {
+  placeId: string;
+  cityName: string;
+  entityKeys: string[];
+  gaps: KnowledgeCoverageGap[];
+  taskCounts: CoverageTaskCounts;
+  summary: string;
 }
 
 export interface KnowledgeCoverageReport {
@@ -104,6 +142,8 @@ export interface KnowledgeCoverageReport {
   byKey: Record<string, KnowledgeCoverageEntity>;
   byType: Record<KnowledgeEntityType, KnowledgeCoverageTypeReport>;
   byPolity: Record<string, KnowledgeCoveragePolityReport>;
+  tasks: KnowledgeCoverageTask[];
+  byCity: Record<string, KnowledgeCoverageCityReport>;
 }
 
 const dimensions: CoverageDimension[] = ['summary', 'detail', 'source', 'relationship', 'time'];
@@ -134,6 +174,16 @@ function emptyGapCounts(): CoverageGapCounts {
     'relationship-missing': 0,
     'source-missing': 0,
     uncertain: 0,
+  };
+}
+
+function emptyTaskCounts(): CoverageTaskCounts {
+  return {
+    'polity-heritage-missing': 0,
+    'person-person-relationship-missing': 0,
+    'event-participant-missing': 0,
+    'event-location-missing': 0,
+    'relationship-missing': 0,
   };
 }
 
@@ -401,6 +451,133 @@ function buildGaps(entity: KnowledgeCoverageEntity): KnowledgeCoverageGap[] {
     }));
 }
 
+function task(
+  entity: KnowledgeCoverageEntity,
+  taskKind: CoverageTaskKind,
+  perspective: CoveragePerspective,
+  note: string,
+  placeIds: string[] = [],
+  evidenceIds: string[] = [],
+  relatedIds: string[] = [],
+): KnowledgeCoverageTask {
+  return {
+    taskKind,
+    perspective,
+    subjectId: entity.entityId,
+    subjectKey: entity.entityKey,
+    subjectLabel: entity.label,
+    entityType: entity.entityType,
+    entityId: entity.entityId,
+    polityIds: entity.polityIds,
+    placeIds: unique(placeIds),
+    evidenceIds: unique(evidenceIds),
+    relatedIds: unique(relatedIds),
+    note,
+  };
+}
+
+function buildTasks(
+  entities: KnowledgeCoverageEntity[],
+  catalog: KnowledgeCoverageCatalog,
+  detailById: Map<string, HistoricalEventDetail>,
+): KnowledgeCoverageTask[] {
+  const personIds = new Set(catalog.people.map((person) => person.id));
+  return entities.flatMap((entity) => {
+    const relationshipCheck = entity.checks.find((checkItem) => checkItem.dimension === 'relationship');
+    if (relationshipCheck?.status === 'not-applicable') return [];
+    if (entity.entityType === 'polity') {
+      const hasHeritage = catalog.heritageDetails.some((detail) => detail.associatedPolities.includes(entity.entityId));
+      if (hasHeritage) return [];
+      const polity = catalog.polities.find((candidate) => candidate.id === entity.entityId);
+      return [task(
+        entity,
+        'polity-heritage-missing',
+        'polity',
+        '政权尚未关联可核验的遗产实体，需从政权视角补充重要地点或遗存。',
+        unique([polity?.capitalPlaceId ?? '', ...(polity?.capitalTerms ?? []).map((term) => term.placeId)].filter(Boolean)),
+      )];
+    }
+    if (entity.entityType === 'person') {
+      const hasPersonRelation = catalog.claims.some((claim) => (
+        claim.subjectId === entity.entityId && Boolean(claim.objectId) && personIds.has(claim.objectId as string)
+      ) || (
+        claim.objectId === entity.entityId && personIds.has(claim.subjectId)
+      ));
+      return hasPersonRelation
+        ? []
+        : [task(entity, 'person-person-relationship-missing', 'polity', '人物尚未建立可核验的人物—人物关系，需补充君臣、亲属、同僚、联盟或对立关系。')];
+    }
+    if (entity.entityType === 'event') {
+      const detail = detailById.get(entity.entityId);
+      const event = catalog.events.find((candidate) => candidate.id === entity.entityId);
+      const missing: KnowledgeCoverageTask[] = [];
+      if (!detail || detail.participants.length === 0) {
+        missing.push(task(entity, 'event-participant-missing', 'polity', '事件详情没有参与人物，需补充事件中的人物及其角色。', event?.placeId ? [event.placeId] : [], detail ? [`event-detail:${entity.entityId}`] : []));
+      }
+      if (!detail || detail.locationIds.length === 0) {
+        missing.push(task(entity, 'event-location-missing', 'city', '事件详情没有地点关联，需补充发生地点或影响地点，以闭合城市视角。', event?.placeId ? [event.placeId] : [], detail ? [`event-detail:${entity.entityId}`] : []));
+      }
+      return missing;
+    }
+    return [];
+  });
+}
+
+function taskCounts(tasks: KnowledgeCoverageTask[]): CoverageTaskCounts {
+  const counts = emptyTaskCounts();
+  tasks.forEach((item) => { counts[item.taskKind] += 1; });
+  return counts;
+}
+
+function readableSummary(subjectName: string, gaps: KnowledgeCoverageGap[], tasks: KnowledgeCoverageTask[]): string {
+  const labels: Record<CoverageTaskKind, string> = {
+    'polity-heritage-missing': '遗产关联',
+    'person-person-relationship-missing': '人物关系',
+    'event-participant-missing': '事件参与人物',
+    'event-location-missing': '事件地点',
+    'relationship-missing': '其他关系',
+  };
+  const counts = taskCounts(tasks);
+  const parts = (Object.keys(counts) as CoverageTaskKind[])
+    .filter((kind) => counts[kind] > 0)
+    .map((kind) => `${labels[kind]} ${counts[kind]} 项`);
+  if (parts.length === 0 && gaps.length === 0) return `${subjectName}：学习闭环已覆盖。`;
+  if (parts.length === 0) return `${subjectName}：有 ${gaps.length} 项待核验缺口。`;
+  return `${subjectName}：有 ${tasks.length} 项学习闭环任务，待补${parts.join('、')}。`;
+}
+
+function placeIdsForEntities(
+  entities: KnowledgeCoverageEntity[],
+  catalog: KnowledgeCoverageCatalog,
+  detailById: Map<string, HistoricalEventDetail>,
+): Map<string, string[]> {
+  const result = new Map<string, string[]>();
+  const add = (entityKey: string, placeIds: string[]) => {
+    result.set(entityKey, unique([...(result.get(entityKey) ?? []), ...placeIds]));
+  };
+  entities.forEach((entity) => {
+    if (entity.entityType === 'polity') {
+      const polity = catalog.polities.find((candidate) => candidate.id === entity.entityId);
+      add(entity.entityKey, [polity?.capitalPlaceId ?? '', ...(polity?.capitalTerms ?? []).map((term) => term.placeId)].filter(Boolean));
+    }
+    if (entity.entityType === 'event') {
+      const event = catalog.events.find((candidate) => candidate.id === entity.entityId);
+      add(entity.entityKey, [event?.placeId ?? '', ...(detailById.get(entity.entityId)?.locationIds ?? [])].filter(Boolean));
+    }
+    if (entity.entityType === 'heritage') {
+      const heritage = catalog.heritageAssets.find((candidate) => candidate.id === entity.entityId);
+      add(entity.entityKey, heritage?.placeId ? [heritage.placeId] : []);
+    }
+  });
+  catalog.eventDetails.forEach((detail) => {
+    const event = catalog.events.find((candidate) => candidate.id === detail.eventId);
+    detail.participants.forEach((participant) => {
+      if (event?.placeId) add(`person:${participant.personId}`, [event.placeId]);
+    });
+  });
+  return result;
+}
+
 function buildTypeReport(entities: KnowledgeCoverageEntity[], gaps: KnowledgeCoverageGap[]): KnowledgeCoverageTypeReport {
   const statusCounts = emptyStatusCounts();
   const gapCounts = emptyGapCounts();
@@ -424,6 +601,7 @@ export function auditKnowledgeCoverage(catalog: KnowledgeCoverageCatalog = {
   personDetails: defaultPersonDetails,
   claims: defaultClaims,
   sourceNotes: defaultSourceNotes,
+  places: defaultPlaces,
 }): KnowledgeCoverageReport {
   const detailById = new Map(catalog.eventDetails.map((detail) => [detail.eventId, detail]));
   const personDetailById = new Map(catalog.personDetails.map((detail) => [detail.personId, detail]));
@@ -441,20 +619,53 @@ export function auditKnowledgeCoverage(catalog: KnowledgeCoverageCatalog = {
   ];
   const byKey = Object.fromEntries(entities.map((entity) => [entity.entityKey, entity]));
   const gaps = entities.flatMap(buildGaps);
+  const tasks = buildTasks(entities, catalog, detailById);
   const byType = Object.fromEntries(entityTypes.map((entityType) => {
     const typeEntities = entities.filter((entity) => entity.entityType === entityType);
     return [entityType, buildTypeReport(typeEntities, gaps.filter((gap) => gap.entityType === entityType))];
   })) as Record<KnowledgeEntityType, KnowledgeCoverageTypeReport>;
   const byPolity = Object.fromEntries(catalog.polities.map((polity) => {
     const polityEntities = entities.filter((entity) => entity.polityIds.includes(polity.id));
+    const polityGaps = gaps.filter((gap) => gap.polityIds.includes(polity.id));
+    const polityTasks = tasks.filter((item) => item.polityIds.includes(polity.id));
+    const counts = taskCounts(polityTasks);
     return [polity.id, {
       polityId: polity.id,
       polityName: polity.name,
       entityKeys: polityEntities.map((entity) => entity.entityKey).sort(),
-      gaps: gaps.filter((gap) => gap.polityIds.includes(polity.id)),
+      gaps: polityGaps,
+      taskCounts: counts,
+      summary: readableSummary(polity.name, polityGaps, polityTasks),
     }];
   })) as Record<string, KnowledgeCoveragePolityReport>;
-  return { entities, gaps, byKey, byType, byPolity };
+  const placeIdsByEntity = placeIdsForEntities(entities, catalog, detailById);
+  const entityKeysByPlace = new Map<string, string[]>();
+  const addEntityToPlace = (placeId: string, entityKey: string) => {
+    entityKeysByPlace.set(placeId, unique([...(entityKeysByPlace.get(placeId) ?? []), entityKey]));
+  };
+  placeIdsByEntity.forEach((placeIds, entityKey) => placeIds.forEach((placeId) => addEntityToPlace(placeId, entityKey)));
+  const tasksByPlace = new Map<string, KnowledgeCoverageTask[]>();
+  tasks.forEach((item) => item.placeIds.forEach((placeId) => {
+    tasksByPlace.set(placeId, [...(tasksByPlace.get(placeId) ?? []), item]);
+  }));
+  const knownPlaces = new Map((catalog.places ?? []).map((place) => [place.id, place]));
+  const allPlaceIds = unique([...entityKeysByPlace.keys(), ...tasksByPlace.keys()]);
+  const byCity = Object.fromEntries(allPlaceIds.map((placeId) => {
+    const entityKeys = entityKeysByPlace.get(placeId) ?? [];
+    const cityTasks = tasksByPlace.get(placeId) ?? [];
+    const cityGaps = gaps.filter((gap) => entityKeys.includes(gap.entityKey));
+    const place = knownPlaces.get(placeId);
+    const cityName = place?.modernName || place?.historicalName || placeId;
+    return [placeId, {
+      placeId,
+      cityName,
+      entityKeys: entityKeys.sort(),
+      gaps: cityGaps,
+      taskCounts: taskCounts(cityTasks),
+      summary: readableSummary(cityName, cityGaps, cityTasks),
+    }];
+  })) as Record<string, KnowledgeCoverageCityReport>;
+  return { entities, gaps, byKey, byType, byPolity, tasks, byCity };
 }
 
 export const knowledgeCoverageDimensions = dimensions;

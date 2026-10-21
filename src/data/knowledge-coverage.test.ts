@@ -4,6 +4,7 @@ import type {
   HistoricalEvent,
   HistoricalEventDetail,
   HeritageAsset,
+  Place,
   Person,
   Polity,
   SourceNote,
@@ -193,5 +194,99 @@ describe('knowledge coverage audit', () => {
     expect(report.byPolity.tang.entityKeys).toContain('polity:tang');
     expect(Object.keys(report.byType).sort()).toEqual(['event', 'heritage', 'person', 'polity']);
     expect(new Set(report.entities.map((item) => item.entityKey)).size).toBe(report.entities.length);
+  });
+
+  it('turns learning-loop relationship gaps into actionable polity, person, event, and city tasks', () => {
+    const place: Place = {
+      id: 'fixture-place',
+      historicalName: '测试城',
+      aliases: [],
+      modernName: '今测试城',
+      longitude: 0,
+      latitude: 0,
+      sourceIds: ['fixture-source'],
+    };
+    const report = auditKnowledgeCoverage({
+      ...catalog,
+      places: [place],
+      events: [{ ...event, id: 'event-without-links', placeId: 'fixture-place' }],
+      eventDetails: [{
+        ...eventDetail,
+        eventId: 'event-without-links',
+        participants: [],
+        locationIds: [],
+      }],
+      heritageAssets: [],
+      heritageDetails: [],
+      claims: [],
+    });
+
+    expect(report.tasks).toEqual(expect.arrayContaining([
+      expect.objectContaining({
+        taskKind: 'polity-heritage-missing',
+        perspective: 'polity',
+        subjectId: 'fixture-polity',
+      }),
+      expect.objectContaining({
+        taskKind: 'person-person-relationship-missing',
+        perspective: 'polity',
+        subjectId: 'fixture-person',
+      }),
+      expect.objectContaining({
+        taskKind: 'event-participant-missing',
+        perspective: 'polity',
+        subjectId: 'event-without-links',
+      }),
+      expect.objectContaining({
+        taskKind: 'event-location-missing',
+        perspective: 'city',
+        subjectId: 'event-without-links',
+      }),
+    ]));
+    expect(report.byPolity['fixture-polity'].summary).toContain('遗产关联');
+    expect(report.byPolity['fixture-polity'].taskCounts['person-person-relationship-missing']).toBe(1);
+    expect(report.byCity['fixture-place'].cityName).toBe('今测试城');
+    expect(report.byCity['fixture-place'].summary).toContain('事件地点');
+    expect(report.byCity['fixture-place'].taskCounts['event-location-missing']).toBe(1);
+  });
+
+  it('does not create specific tasks when the corresponding graph edge is present', () => {
+    const secondPerson: Person = {
+      ...person,
+      id: 'fixture-person-2',
+      name: '第二位人物',
+    };
+    const report = auditKnowledgeCoverage({
+      ...catalog,
+      people: [person, secondPerson],
+      claims: [{
+        id: 'person-relation',
+        subjectId: 'fixture-person',
+        objectId: 'fixture-person-2',
+        predicate: 'ally-of',
+        datePrecision: 'year',
+        perspective: 'person',
+        evidenceType: 'explicit-record',
+        confidence: 'high',
+        sourceIds: ['fixture-source'],
+      }],
+      eventDetails: [{ ...eventDetail, locationIds: ['fixture-place'] }],
+      places: [{
+        id: 'fixture-place',
+        historicalName: '测试城',
+        aliases: [],
+        modernName: '今测试城',
+        longitude: 0,
+        latitude: 0,
+        sourceIds: ['fixture-source'],
+      }],
+    });
+
+    expect(report.tasks).not.toEqual(expect.arrayContaining([
+      expect.objectContaining({ taskKind: 'polity-heritage-missing' }),
+      expect.objectContaining({ taskKind: 'person-person-relationship-missing' }),
+      expect.objectContaining({ taskKind: 'event-participant-missing' }),
+      expect.objectContaining({ taskKind: 'event-location-missing' }),
+    ]));
   });
 });
