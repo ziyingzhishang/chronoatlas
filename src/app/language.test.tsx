@@ -12,8 +12,8 @@ test('all supported languages change labels while retaining year, renderer and c
   await userEvent.click(screen.getByTitle('地图图层'));
   await userEvent.click(screen.getByRole('button',{name:'卫星影像'}));
   await userEvent.click(screen.getByRole('checkbox',{name:'历史地名'}));
-  await userEvent.click(screen.getByRole('button',{name:'详情'}));
-  await userEvent.click(screen.getByRole('button',{name:'选择唐疆域'}));
+  map.queryRenderedFeatures.mockReturnValue([{layer:{id:'boundary-fill'},properties:{entityId:'tang'}}] as any);
+  act(()=>map.emit('click',{point:{x:1,y:1}}));
   await userEvent.click(screen.getByRole('button',{name:'更多'}));
   const selector=screen.getByRole('combobox',{name:'显示语言'});
   for(const [locale,tool,mapLabel,mapRegion] of [
@@ -31,7 +31,8 @@ test('all supported languages change labels while retaining year, renderer and c
   await userEvent.click(screen.getByTitle('地图图层'));
   expect(screen.getByRole('button',{name:'卫星影像'})).toHaveAttribute('aria-pressed','true');
   expect(screen.getByRole('checkbox',{name:'历史地名'})).not.toBeChecked();
-  await userEvent.click(screen.getByRole('button',{name:'详情'}));
+  map.queryRenderedFeatures.mockReturnValue([{layer:{id:'boundary-fill'},properties:{entityId:'tang'}}] as any);
+  act(()=>map.emit('click',{point:{x:1,y:1}}));
   expect(screen.getByRole('heading',{name:'唐'})).toBeInTheDocument();
   expect(mapInstances.at(-1)).toBe(map);
   expect(map.flyTo).not.toHaveBeenCalled();

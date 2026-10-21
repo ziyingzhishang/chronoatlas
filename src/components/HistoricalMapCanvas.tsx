@@ -25,6 +25,7 @@ interface Props {
   projection: 'mercator' | 'globe';
   refreshToken:number;
   onSelectEntity: (entity: Exclude<SelectedEntity, undefined>) => void;
+  onClearSelection?: () => void;
   onCameraChange: (camera: CameraState) => void;
   onRenderedYearChange:(year:number|undefined)=>void;
   onCameraHistoryChange?: (canBack:boolean)=>void;
@@ -52,6 +53,11 @@ function updateWorldHistory(map:GLMap,state:HistoricalState,t:(text:string)=>str
 }
 
 const boundaryLayerVariants=(id:string)=>[id,`world-${id}`];
+const interactiveMapLayers=['place-dots','place-names','event-rings',...[
+  'boundary-fill','boundary-d-area','boundary-line','boundary-digitized','boundary-maximum','boundary-d-centers',
+  'boundary-indirect','boundary-disputed','boundary-influence','boundary-selected','boundary-digitized-selected',
+  'boundary-d-centers-selected','boundary-indirect-selected','boundary-disputed-selected','boundary-influence-selected','boundary-maximum-selected',
+].flatMap(boundaryLayerVariants),'polity-names','world-polity-names'];
 
 function updatePresentation(map: GLMap, props: Props) {
   for (const id of ['relief', 'satellite']) {
@@ -190,10 +196,10 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
       if (event.sourceId === latest.current.basemap && event.isSourceLoaded && !failedSources.current.has(event.sourceId)) setTileStatus('ready');
     });
     map.on('click', event => {
-      if (!map.getLayer('place-dots')) return;
-      const hits = map.queryRenderedFeatures(event.point, { layers: ['place-dots', 'place-names', 'event-rings', 'polity-names','world-polity-names', 'boundary-fill','world-boundary-fill'] });
+      if (!map.getLayer('place-dots')) { latest.current.onClearSelection?.(); return; }
+      const hits = map.queryRenderedFeatures(event.point, { layers: interactiveMapLayers });
       const hit = hits.find(f => f.layer.id === 'place-dots' || f.layer.id === 'place-names') ?? hits[0];
-      if (!hit?.properties?.entityId) return;
+      if (!hit?.properties?.entityId) { latest.current.onClearSelection?.(); return; }
       const type = hit.layer.id.startsWith('place-') ? 'place' : hit.layer.id === 'event-rings' ? 'event' : 'polity';
       latest.current.onSelectEntity({ type, id: String(hit.properties.entityId) });
     });

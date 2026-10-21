@@ -17,6 +17,8 @@ interface MapViewProps {
   showWorld?: boolean;
   onShowWorldChange?: (visible:boolean)=>void;
   onSelectEntity: (entity: Exclude<SelectedEntity, undefined>) => void;
+  onClearSelection?: () => void;
+  onOpenDetails?: () => void;
   workspacePanel?: PanelName|null;
   panelTarget?: HTMLDivElement|null;
   focusRequest?: {id:string;nonce:number};
@@ -76,6 +78,7 @@ export function MapView(props: MapViewProps) {
             {allLayers.map(layer=><label key={layer}><input type="checkbox" checked={visibleLayers.has(layer)} onChange={event=>props.onLayerChange?.(layer,event.target.checked)}/>{t(({boundaries:'历史疆域',places:'历史地名',modernReference:'现代参照',events:'历史事件'} as const)[layer])}</label>)}
             <div className="quick-basemap"><span>{t('地图底图')}</span><button type="button" aria-pressed={basemap==='relief'} onClick={()=>setBasemap('relief')}>{t('地形晕渲')}</button><button type="button" aria-pressed={basemap==='satellite'} onClick={()=>setBasemap('satellite')}>{t('卫星影像')}</button></div>
             {props.onShowWorldChange&&<label><input type="checkbox" checked={props.showWorld??false} onChange={event=>props.onShowWorldChange?.(event.target.checked)}/>{t('同期世界疆域')}</label>}
+            {props.onOpenDetails&&<button type="button" className="quick-directory-button" onClick={props.onOpenDetails}>{t('政权与地点目录')}</button>}
           </fieldset>
         </details>}
         {workspace&&<button className="map-reset" onClick={()=>act('asia')}>{t("复位")}</button>}

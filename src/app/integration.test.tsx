@@ -13,7 +13,9 @@ test('selecting a new year updates the year label, active polity summary, and ma
   await user.type(screen.getByRole('spinbutton', { name: '输入历史年份' }), '959{Enter}');
 
   expect(screen.getByRole('heading', { name: '959年' })).toBeInTheDocument();
-  await user.click(screen.getByRole('button',{name:'详情'}));
+  const map = mapInstances.at(-1)!;
+  map.queryRenderedFeatures.mockReturnValue([{layer:{id:'boundary-fill'},properties:{entityId:'later_zhou'}}] as any);
+  act(()=>map.emit('click',{point:{x:1,y:1}}));
   expect(within(screen.getByRole('complementary', { name: '历史信息' })).getByText('后周')).toBeInTheDocument();
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '959');
   await user.click(screen.getByRole('button',{name:'关闭面板'}));
@@ -22,12 +24,24 @@ test('selecting a new year updates the year label, active polity summary, and ma
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year','959');
 });
 
-test('closing a switched auxiliary panel returns focus to its latest opener',async()=>{
+test('closing a map detail panel dismisses the selected territory',async()=>{
   render(<App/>);
-  await userEvent.click(screen.getByRole('button',{name:'详情'}));
-  await userEvent.click(screen.getByRole('button',{name:'事件'}));
+  const map = mapInstances.at(-1)!;
+  map.queryRenderedFeatures.mockReturnValue([{layer:{id:'boundary-fill'},properties:{entityId:'tang'}}] as any);
+  act(()=>map.emit('click',{point:{x:1,y:1}}));
   await userEvent.click(screen.getByRole('button',{name:'关闭面板'}));
-  expect(screen.getByRole('button',{name:'事件'})).toHaveFocus();
+  expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
+});
+
+test('clicking blank map closes an open territory detail panel',async()=>{
+  render(<App/>);
+  const map = mapInstances.at(-1)!;
+  map.queryRenderedFeatures.mockReturnValue([{layer:{id:'boundary-fill'},properties:{entityId:'tang'}}] as any);
+  act(()=>map.emit('click',{point:{x:1,y:1}}));
+  expect(screen.getByRole('complementary',{name:'历史信息'})).toBeInTheDocument();
+  map.queryRenderedFeatures.mockReturnValue([] as any);
+  act(()=>map.emit('click',{point:{x:2,y:2}}));
+  expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
 });
 
 test('ordinary year navigation clears an old timeline event group',async()=>{
@@ -41,9 +55,8 @@ test('ordinary year navigation clears an old timeline event group',async()=>{
 
 test('choosing an event changes the map year and keeps its details open',async()=>{
   render(<App/>);
-  await userEvent.click(screen.getByRole('button',{name:'事件'}));
   await userEvent.type(screen.getByRole('searchbox',{name:'搜索历史事件'}),'秦统一');
-  await userEvent.click(screen.getByRole('button',{name:/秦统一六国/}));
+  await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
   expect(screen.getByRole('region',{name:'历史地图'})).toHaveAttribute('data-year','-221');
   expect(screen.getByRole('article',{name:'事件详情'})).toHaveTextContent('秦统一六国');
   await userEvent.click(screen.getByRole('button',{name:'下一年'}));

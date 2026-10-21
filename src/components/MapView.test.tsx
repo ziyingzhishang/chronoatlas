@@ -24,6 +24,13 @@ test('renders the current polity names and selects a polity when its area is cli
   expect(onSelectEntity).toHaveBeenCalledWith({ type: 'polity', id: 'qin' });
 });
 
+test('clears the selected map entity when a blank map area is clicked', () => {
+  const onClearSelection = vi.fn();
+  render(<MapView state={getHistoricalState(-221)} selectedEntity={{ type: 'polity', id: 'qin' }} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} onClearSelection={onClearSelection} />);
+  act(() => mapInstances.at(-1)!.emit('click', { point: { x: 1, y: 1 } }));
+  expect(onClearSelection).toHaveBeenCalledOnce();
+});
+
 test('marks the map with the current historical year', () => {
   render(
     <MapView
@@ -55,12 +62,15 @@ test('readers can switch basemaps and use accessible zoom and rotate controls', 
 
 test('offers a compact layer shortcut without opening the full workspace panel', async () => {
   const user = userEvent.setup();
-  render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} onLayerChange={vi.fn()} workspacePanel={null} />);
+  const onOpenDetails=vi.fn();
+  render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} onLayerChange={vi.fn()} onOpenDetails={onOpenDetails} workspacePanel={null} />);
 
   await user.click(screen.getByText('◈', { exact: true }));
 
   expect(screen.getByRole('group', { name: '快捷图层' })).toBeInTheDocument();
   expect(screen.getByRole('checkbox', { name: '历史疆域' })).toBeInTheDocument();
+  await user.click(screen.getByRole('button',{name:'政权与地点目录'}));
+  expect(onOpenDetails).toHaveBeenCalledOnce();
 });
 
 test('offers mercator and globe projection controls in the map toolbar', async () => {

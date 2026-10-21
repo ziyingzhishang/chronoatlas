@@ -3,7 +3,7 @@ import { getHistoricalState } from '../domain/history-state';
 import { formatHistoricalYear, getTimelineYears, indexToYear, yearToIndex, type YearWindow } from '../domain/timeline';
 import type { HistoricalEvent, SelectedEntity } from '../domain/types';
 import { EventExplorer } from '../components/EventExplorer';
-import { eventYear } from '../domain/events';
+import { eventYear, eventsAtYear } from '../domain/events';
 import { events } from '../data/events';
 import { InfoPanel } from '../components/InfoPanel';
 import { Legend } from '../components/Legend';
@@ -46,6 +46,11 @@ function HistoryWorkspace() {
   const historicalState = useMemo(() => localizeState(getHistoricalState(currentYear, {world:world.slice}),locale), [currentYear,world.slice,locale]);
   const localizedEvents=useMemo(()=>localizeEvents(events,locale),[locale]);
   const eventSearchMatches=useMemo(()=>queryEvents(localizedEvents,{region:eventSearchRegion,category:eventSearchCategory}).filter(event=>!eventSearchQuery.trim()||contentSearchText(event).includes(eventSearchQuery.trim().toLocaleLowerCase())).slice(0,6),[localizedEvents,eventSearchQuery,eventSearchRegion,eventSearchCategory]);
+  const timelineEvents=useMemo(()=>{
+    const filtered=queryEvents(localizedEvents,{region:eventSearchRegion,category:eventSearchCategory}).filter(event=>event.year <= timelineWindow[1] && (event.endYear ?? event.year) >= timelineWindow[0]);
+    const current=eventsAtYear(filtered,currentYear);
+    return (current.length ? current : [...filtered].sort((a,b)=>Math.abs(a.year-currentYear)-Math.abs(b.year-currentYear))).slice(0,6);
+  },[localizedEvents,currentYear,eventSearchRegion,eventSearchCategory,timelineWindow]);
 
   useEffect(() => {
     if (!isPlaying) return undefined;
@@ -93,7 +98,14 @@ function HistoryWorkspace() {
     setSelectedEntity(entity);setPanel('details');
   }
   function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setSelectedEntity({type:'event',id:event.id});setPanel('events');}
+  function clearMapSelection(){
+    if(selectedEntity?.type==='polity'||selectedEntity?.type==='place'){
+      setSelectedEntity(undefined);
+      if(panel==='details')setPanel(null);
+    }
+  }
   const worldMessage=!showWorld?'开启后随所选年份显示全球政权。':world.status==='loading'?'正在加载本世纪世界资料…':world.status==='error'?'世界资料加载失败；中国图层不受影响。':world.status==='unavailable'?'世界来源仅覆盖前3400—2024年，本年不沿用旧图。':`世界 ${historicalState.activePolities.filter(p=>p.region==='world').length} 个来源实体 · 未逐国独立校勘`;
+  const visibleSearchEvents=eventSearchQuery.trim()?eventSearchMatches:timelineEvents;
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
   return <main className="workspace">
     <header className="workspace-header">
@@ -106,19 +118,19 @@ function HistoryWorkspace() {
           <label className="event-search-dock">{t('查找历史转折')}<input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>setEventSearchOpen(true)} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
           {eventSearchOpen&&<div className="event-search-popover">
             <div className="event-search-filters"><select aria-label={t('事件地域')} value={eventSearchRegion} onChange={e=>setEventSearchRegion(e.target.value)}><option value="">{t('全部地域')}</option><option value="china">{t('中国历史')}</option><option value="world">{t('同期世界')}</option></select><select aria-label={t('事件类别')} value={eventSearchCategory} onChange={e=>setEventSearchCategory(e.target.value)}><option value="">{t('全部类别')}</option>{[...new Set(events.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(category=><option key={category} value={category}>{t(category)}</option>)}</select></div>
-            {eventSearchQuery.trim()&&<div className="event-search-results" role="listbox" aria-label={t('搜索历史事件')}>
-              {eventSearchMatches.map(event=><button key={event.id} type="button" role="option" onClick={()=>{selectEvent(event);setEventSearchOpen(false);}}><strong>{t(event.title)}</strong><span>{t(event.category??'历史转折')} · {t(event.region==='world'?'同期世界':'中国历史')}</span></button>)}
-              {!eventSearchMatches.length&&<p className="detail-note">{t('没有符合筛选条件的事件')}</p>}
-            </div>}
+            <div className="event-search-results" role="listbox" aria-label={t('搜索历史事件')}>
+              {visibleSearchEvents.map((event:HistoricalEvent)=><button key={event.id} type="button" role="option" onClick={()=>{selectEvent(event);setEventSearchOpen(false);}}><strong>{t(event.title)}</strong><span>{t(event.category??'历史转折')} · {t(event.region==='world'?'同期世界':'中国历史')}</span></button>)}
+              {!visibleSearchEvents.length&&<p className="detail-note">{t(eventSearchQuery.trim()?'没有符合筛选条件的事件':'本年暂无已收录事件')}</p>}
+            </div>
           </div>}
         </div>
       </div>
       <nav className="workspace-tool-nav" aria-label={t('工作台工具')}>
-        {(['events','details','more'] as const).map((name,i)=><button className="workspace-tool-icon" key={name} aria-label={t(['事件','详情','更多'][i])} title={t(['事件','详情','更多'][i])} aria-expanded={panel===name} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p===name?null:name);}}>{['◆','ⓘ','⋯'][i]}</button>)}
+        <button className="workspace-tool-icon" aria-label={t('更多')} title={t('更多')} aria-expanded={panel==='more'} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p==='more'?null:'more');}}>⋯</button>
       </nav>
     </header>
     <div className="workspace-map-area">
-      <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onLayerChange={updateLayer} showWorld={showWorld} onShowWorldChange={value=>{setShowWorld(value);setSelectedEntity(undefined);}} onSelectEntity={selectEntity} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
+      <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onLayerChange={updateLayer} showWorld={showWorld} onShowWorldChange={value=>{setShowWorld(value);setSelectedEntity(undefined);}} onSelectEntity={selectEntity} onClearSelection={clearMapSelection} onOpenDetails={()=>setPanel('details')} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
         {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear}/>}
