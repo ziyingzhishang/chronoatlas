@@ -122,6 +122,11 @@ export const people: Person[] = [
   { id: 'chu-we-wang', name: '楚威王', aliases: ['熊商'], roles: ['诸侯', '君主', '军事领袖'], polityIds: ['chu_warring'], description: '楚威王在江汉与江淮政治网络中扩展楚国影响，代表战国楚由长期王统进入大国竞争的阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'yan-zhaowang', name: '燕昭王', aliases: ['姬职'], roles: ['诸侯', '君主', '政治家'], polityIds: ['yan_warring'], description: '燕昭王在燕国经历内乱后重建政治秩序，招贤纳士并增强燕在北方诸侯竞争中的力量。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'qin-xiaogong', name: '秦孝公', aliases: ['嬴渠梁'], birthYear: -381, deathYear: -338, roles: ['诸侯', '君主', '政治改革者'], polityIds: ['qin_state'], description: '秦孝公任用商鞅推行变法，强化秦国军政与财政制度，为秦由西方诸侯走向统一帝国奠定基础。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'asina-tumen', name: '阿史那土门', aliases: ['土门', '伊利可汗'], roles: ['可汗', '军事领袖', '建国者'], polityIds: ['turkic'], description: '阿史那土门在柔然统治秩序中崛起并建立突厥汗国，突厥早期政治中心与部众网络具有草原流动性。', sourceIds: ['turkic-history-db', 'china-chronology'] },
+  { id: 'gao-yun', name: '高云', aliases: ['北燕惠懿帝'], deathYear: 409, roles: ['皇帝', '君主'], polityIds: ['northern_yan'], description: '高云在后燕末年被拥立于龙城，北燕政权由此进入形成阶段；其后冯跋掌握政权，分期需与高云个人统治区分。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'dorgon', name: '多尔衮', aliases: ['睿亲王'], birthYear: 1612, deathYear: 1650, roles: ['摄政王', '军事领袖', '政治家'], polityIds: ['qing'], description: '多尔衮在顺治初年主持清军入关与中央政务，推动清廷由盛京向北京的政治中心转移。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'mongke', name: '蒙哥', aliases: ['蒙哥汗'], birthYear: 1209, deathYear: 1259, roles: ['大汗', '君主', '军事领袖'], polityIds: ['mongol'], description: '蒙哥承接成吉思汗家族的共同汗权并推动蒙古帝国扩张，其统治是蒙古汗国与元朝建立之间的重要承接阶段。', sourceIds: ['china-chronology', 'yuan-nationalities-history'] },
+  { id: 'geluofeng', name: '阁罗凤', aliases: ['南诏王'], deathYear: 779, roles: ['南诏王', '军事领袖'], polityIds: ['nanzhao'], description: '阁罗凤继承皮罗阁的南诏政治基础，扩展洱海及滇西军政网络，并在唐—南诏关系转折中发挥关键作用。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

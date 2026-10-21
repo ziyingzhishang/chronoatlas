@@ -623,6 +623,31 @@ export const personDetails: PersonDetail[] = [
     aliases: ['嬴渠梁'], offices: [{ title: '秦国诸侯', polityId: 'qin_state', validFrom: -361, validTo: -338, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['qin-state-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '秦孝公改革属于秦国发展阶段，前770年是秦列为诸侯的传统导航约年；不能把变法、秦国建政与前221年帝国建立混为一事。',
   },
+  {
+    personId: 'asina-tumen', biography: '阿史那土门在柔然秩序中崛起，552年前后击败柔然并建立突厥汗国，开启突厥在欧亚草原的共同汗权阶段。',
+    aliases: ['土门', '伊利可汗'], offices: [{ title: '突厥可汗', polityId: 'turkic', validFrom: 552, validTo: 553, datePrecision: 'approximate', sourceIds: ['turkic-history-db', 'china-chronology'] }],
+    keyEvents: ['turkic-founded'], sourceIds: ['turkic-history-db', 'china-chronology'], uncertaintyNote: '突厥建国年代、土门与伊利可汗称号的译写及早期汗廷位置存在史料和译名差异；本条不把草原部众网络压缩成固定国界。',
+  },
+  {
+    personId: 'gao-yun', biography: '高云在后燕末年被拥立于龙城，北燕由此从后燕政治危机中形成；409年后冯跋掌握政权，北燕分期不能只归于单一人物。',
+    aliases: ['北燕惠懿帝'], offices: [{ title: '北燕君主', polityId: 'northern_yan', validFrom: 407, validTo: 409, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '高云被拥立与冯跋掌权属于连续的政权转换阶段；本详情区分高云名义君位、冯跋实际权力与后续北燕统治。',
+  },
+  {
+    personId: 'dorgon', biography: '多尔衮是清初摄政王与军事领袖，1644年主持入关及顺治朝早期政务，清廷政治中心遂由盛京转向北京。',
+    aliases: ['睿亲王'], offices: [{ title: '清摄政王', polityId: 'qing', placeId: 'beijing', validFrom: 1644, validTo: 1650, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['qing-enters-pass'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '入关、进京、顺治亲政及各地战争整合并非同一时点；多尔衮的摄政权力与顺治帝的名义皇权需分层表达。',
+  },
+  {
+    personId: 'mongke', biography: '蒙哥承接蒙古共同汗权，1251年即大汗并推动对宋、南亚和西亚方向的军事行动，是蒙古汗国与忽必烈元朝之间的关键承接人物。',
+    aliases: ['蒙哥汗'], offices: [{ title: '蒙古大汗', polityId: 'mongol', validFrom: 1251, validTo: 1259, datePrecision: 'range', sourceIds: ['china-chronology', 'yuan-nationalities-history'] }],
+    keyEvents: ['mongol-founded'], sourceIds: ['china-chronology', 'yuan-nationalities-history'], uncertaintyNote: '蒙哥生于1206年统一大会之后，故“蒙古汗国形成”仅作为其政治继承的前置历史阶段导航，不把蒙哥写成1206年建国事件参与者。',
+  },
+  {
+    personId: 'geluofeng', biography: '阁罗凤继承皮罗阁经营的南诏，扩大洱海—滇西军政网络，并在唐天宝以后南诏与唐关系恶化及重组中成为核心君主。',
+    aliases: ['南诏王'], offices: [{ title: '南诏王', polityId: 'nanzhao', validFrom: 748, validTo: 779, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '阁罗凤即位晚于738年南诏形成节点；本条把南诏建立作为承接性历史阶段，不把其误写为南诏开国者或把唐南诏战争简化为个人关系。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));
