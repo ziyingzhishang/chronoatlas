@@ -136,6 +136,14 @@ export const people: Person[] = [
   { id: 'yuan-shanjian', name: '元善见', aliases: ['东魏孝静帝'], birthYear: 524, deathYear: 552, roles: ['皇帝', '名义君主'], polityIds: ['wei_eastern'], description: '元善见在北魏分裂后于邺即位，成为东魏名义皇帝；东魏实际军政权力主要由高欢及其集团掌握。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'liu-yilong', name: '刘义隆', aliases: ['宋文帝'], birthYear: 407, deathYear: 453, roles: ['皇帝', '政治家'], polityIds: ['song_southern'], description: '刘义隆继承刘裕建立的刘宋，在元嘉时期整顿江南政权并推进对北方的军事与外交活动。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'chen-xu', name: '陈顼', aliases: ['陈宣帝'], birthYear: 530, deathYear: 582, roles: ['皇帝', '军事领袖'], polityIds: ['chen_southern'], description: '陈顼是南陈后期君主，承接陈霸先建立的政权，在南北对峙中维持建康朝廷并参与江南军政整合。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'yuri-goguryeo', name: '琉璃明王', aliases: ['朱留王', '高句丽琉璃王'], deathYear: 18, roles: ['国王', '迁都君主'], polityIds: ['goguryeo'], description: '琉璃明王承接朱蒙建立的高句丽王权，并将政治中心由纥升骨城迁往国内城，推动早期国家秩序延续。', sourceIds: ['china-chronology'] },
+  { id: 'naemul-isageum', name: '内物王', aliases: ['奈勿尼师今', '奈勿王'], deathYear: 402, roles: ['国王', '早期统治者'], polityIds: ['silla'], description: '内物王是新罗早期王权整合的重要君主，面对高句丽影响和倭寇压力，推动新罗在三国竞争中的政治延续。', sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'silla-periodization'] },
+  { id: 'istemi', name: '室点密', aliases: ['瑟帝米', '突厥室点密可汗'], deathYear: 576, roles: ['可汗', '军事领袖', '外交统治者'], polityIds: ['turkic'], description: '室点密是突厥早期向中亚扩展的核心统治者，在阿史那土门建立汗权后经营西部部众与丝路政治网络。', sourceIds: ['turkic-history-db', 'turkic-orkhon-collection'] },
+  { id: 'tridu-songtsen', name: '赤松德赞', aliases: ['乞黎苏笼猎赞'], birthYear: 742, deathYear: 797, roles: ['赞普', '宗教与制度推动者', '政治家'], polityIds: ['tibetan_empire'], description: '赤松德赞是吐蕃中期的重要赞普，强化中央权力并推动佛教制度化，使吐蕃帝国进入成熟阶段。', sourceIds: ['china-chronology'] },
+  { id: 'feng-hong', name: '冯弘', aliases: ['北燕昭成帝'], deathYear: 438, roles: ['皇帝', '军事领袖'], polityIds: ['northern_yan'], description: '冯弘承接冯跋后的北燕政权，在辽西维持燕室统治至北魏压力下政权终结。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'murong-chao', name: '慕容超', aliases: ['南燕末主'], birthYear: 385, deathYear: 410, roles: ['皇帝', '军事领袖'], polityIds: ['southern_yan'], description: '慕容超继承南燕，在广固统治至410年刘裕北伐灭燕，代表南燕末期的君主与军事防御阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'yelu-yilie', name: '耶律夷列', aliases: ['西辽仁宗'], deathYear: 1163, roles: ['皇帝', '君主'], polityIds: ['western_liao'], description: '耶律夷列承接耶律大石建立的西辽，在七河流域维持契丹政权的继承与行政秩序。', sourceIds: ['china-chronology'] },
+  { id: 'liu-muzi', name: '刘穆之', aliases: ['刘道和'], birthYear: 360, deathYear: 417, roles: ['宰相', '谋臣', '官员'], polityIds: ['jin_eastern', 'song_southern'], description: '刘穆之是刘裕北伐、平定内乱和建宋前夕的重要谋臣与行政组织者，参与东晋向刘宋过渡的军政准备。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

@@ -693,6 +693,46 @@ export const personDetails: PersonDetail[] = [
     aliases: ['陈宣帝'], offices: [{ title: '南陈皇帝', polityId: 'chen_southern', placeId: 'jiankang', validFrom: 569, validTo: 582, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['southern-chen-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南陈建立节点为557年，陈顼属于后续继承与整合阶段；其统治不应被写成陈霸先建国事件的直接替代。',
   },
+  {
+    personId: 'yuri-goguryeo', biography: '琉璃明王承接朱蒙建立的高句丽王权，并迁都国内城，国内城与初期王权整合成为高句丽早期国家化的重要阶段。',
+    aliases: ['朱留王', '高句丽琉璃王'], offices: [{ title: '高句丽国王', polityId: 'goguryeo', validFrom: -19, validTo: 18, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['goguryeo-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '高句丽建国传统节点为前37年，琉璃明王属于朱蒙之后的继承与迁都阶段；早期年代与城址对应需结合文献和考古材料阅读。',
+  },
+  {
+    personId: 'naemul-isageum', biography: '内物王是新罗早期王权整合的重要君主，三国时期新罗在其统治阶段面对高句丽影响、倭寇压力与王统延续问题。',
+    aliases: ['奈勿尼师今', '奈勿王'], offices: [{ title: '新罗国王', polityId: 'silla', validFrom: 356, validTo: 402, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'silla-periodization'] }],
+    keyEvents: ['silla-founded'], sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'silla-periodization'], uncertaintyNote: '新罗前57年为传统建国纪年，内物王属于数百年后的王权整合阶段；王统年代与早期国家化过程需区分传统编年与考古证据。',
+  },
+  {
+    personId: 'istemi', biography: '室点密在突厥早期汗权形成后经营西部部众，参与突厥向中亚扩展并与萨珊、拜占庭等势力建立外交和军事联系。',
+    aliases: ['瑟帝米'], offices: [{ title: '突厥西部统治者', polityId: 'turkic', validFrom: 552, validTo: 576, datePrecision: 'range', sourceIds: ['turkic-history-db', 'turkic-orkhon-collection'] }],
+    keyEvents: ['turkic-founded'], sourceIds: ['turkic-history-db', 'turkic-orkhon-collection'], uncertaintyNote: '突厥汗国建立节点为552年，室点密是其后西部扩张与分工阶段人物；称号译写、年代和其与土门的具体亲属关系存在史料差异。',
+  },
+  {
+    personId: 'tridu-songtsen', biography: '赤松德赞是吐蕃中期赞普，强化王权并推动佛教制度化，使吐蕃帝国在松赞干布时代形成的基础上进入成熟阶段。',
+    aliases: ['乞黎苏笼猎赞'], offices: [{ title: '吐蕃赞普', polityId: 'tibetan_empire', validFrom: 755, validTo: 797, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['tibetan-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '吐蕃形成是多代王权整合过程，赤松德赞属于后续成熟阶段；本详情不把其活动前推为618年前后的建政节点。',
+  },
+  {
+    personId: 'feng-hong', biography: '冯弘承接冯跋后的北燕王位，在辽西维持燕室统治，并在北魏压力下迁徙与寻求外援，最终见证北燕政权终结。',
+    aliases: ['北燕昭成帝'], offices: [{ title: '北燕皇帝', polityId: 'northern_yan', validFrom: 430, validTo: 436, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北燕形成节点为407年，冯弘属于其后期统治者；北燕建立、冯氏继承和436年灭亡应按连续但不同阶段叙述。',
+  },
+  {
+    personId: 'murong-chao', biography: '慕容超是南燕末代君主，统治中心在广固，410年刘裕北伐攻灭南燕，南燕由此结束。',
+    aliases: ['南燕末主'], offices: [{ title: '南燕皇帝', polityId: 'southern_yan', placeId: 'guanggu', validFrom: 405, validTo: 410, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南燕形成节点为398年，慕容超属于末期防御阶段；其统治不能替代慕容德建政，也不代表南燕全期控制范围。',
+  },
+  {
+    personId: 'yelu-yilie', biography: '耶律夷列承接耶律大石建立的西辽，在七河流域维持契丹政权的继承秩序与行政运作。',
+    aliases: ['西辽仁宗'], offices: [{ title: '西辽皇帝', polityId: 'western_liao', validFrom: 1150, validTo: 1163, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '西辽形成节点为1124年前后，耶律夷列属于耶律大石之后的继承阶段；中亚政权的迁徙性与多族群治理不能简化为单一王朝疆域。',
+  },
+  {
+    personId: 'liu-muzi', biography: '刘穆之是刘裕北伐、平定内乱和建宋前夕的重要谋臣与行政组织者，承担军政协调和后勤制度建设。',
+    aliases: ['刘道和'], offices: [{ title: '东晋中书监与军政谋臣', polityId: 'jin_eastern', validFrom: 400, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }, { title: '刘宋建政前的军政谋臣', polityId: 'song_southern', validFrom: 416, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['liu-song-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘宋正式建立于420年，刘穆之卒于417年，故本条表达建宋前的军政准备与权力网络，不把他写成420年受禅现场人物。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));
