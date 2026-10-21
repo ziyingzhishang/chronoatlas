@@ -1,4 +1,5 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { expect, test } from 'vitest';
 import { getHistoricalState } from '../domain/history-state';
 import { InfoPanel } from './InfoPanel';
@@ -66,4 +67,20 @@ test('shows evidence level, derivation, review state and citation for a curated 
   expect(screen.getByText('派生方式：最大参考')).toBeInTheDocument();
   expect(screen.getByText('复核状态：待逐段复核')).toBeInTheDocument();
   expect(screen.getByRole('link', {name:/Cliopatria/})).toBeInTheDocument();
+});
+
+test('keeps the polity summary compact and expands the sourced polity perspective details', async () => {
+  const user = userEvent.setup();
+  render(<LocaleProvider><InfoPanel state={getHistoricalState(-218)} selectedEntity={{type:'polity', id:'qin'}} /></LocaleProvider>);
+
+  expect(screen.getByText('秦统一六国后建立的中央集权帝国。')).toBeInTheDocument();
+  expect(screen.getByTestId('polity-detail')).not.toHaveAttribute('open');
+
+  await user.click(screen.getByText('展开政权详情'));
+
+  expect(screen.getByRole('heading', { name: '建立过程' })).toBeInTheDocument();
+  expect(screen.getByRole('heading', { name: '关键转折' })).toBeInTheDocument();
+  expect(screen.getByText(/秦帝国以统一战争结束战国列国/)).toBeInTheDocument();
+  expect(screen.getByRole('link', { name: '嬴政' })).toBeInTheDocument();
+  expect(screen.getAllByText('秦统一六国').length).toBeGreaterThan(0);
 });

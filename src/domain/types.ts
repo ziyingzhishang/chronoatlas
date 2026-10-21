@@ -56,6 +56,36 @@ export interface Polity {
   localizedName?: LocalizedNameMeta;
 }
 
+export interface PolityTurningPoint {
+  year: number;
+  title: string;
+  summary: string;
+  eventId?: string;
+}
+
+export interface PolityCapitalPhase {
+  placeId: string;
+  validFrom: number;
+  validTo: number;
+  role: CapitalRole;
+  status: CapitalStatus;
+  note?: string;
+}
+
+export interface PolityDetail {
+  polityId: string;
+  perspectiveSummary: string;
+  foundationProcess: string[];
+  turningPoints: PolityTurningPoint[];
+  principalFigureIds: string[];
+  capitalPhases: PolityCapitalPhase[];
+  heritageIds: string[];
+  eventIds: string[];
+  claimIds: string[];
+  sourceIds: string[];
+  uncertaintyNote: string;
+}
+
 export interface CapitalTerm {
   polityId: string;
   placeId: string;

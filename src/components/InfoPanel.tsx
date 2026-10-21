@@ -18,6 +18,8 @@ import { polities } from '../data/polities';
 import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
 import type { DetailEntity } from '../domain/detail-entity';
+import { getPolityDetail } from '../data/polity-details';
+import { PolityDetail } from './PolityDetail';
 
 interface InfoPanelProps {
   state: HistoricalState;
@@ -108,6 +110,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity }:
           <span className="eyebrow">{t("历史政权")}</span>
           <h2>{selected.name}</h2>
           <p className="panel-intro">{t(selected.description)}</p>
+          {getPolityDetail(selected.id) && <PolityDetail detail={getPolityDetail(selected.id)!} onOpenEntity={onOpenEntity} />}
           {sovereigntyNoticesFor(state.year, selected.id).map(notice => <section className="sovereignty-notice" data-testid="taiwan-sovereignty-notice" key={notice.id}>
             <h3>{t(notice.title)}</h3>
             <p>{t(notice.statement)}</p>

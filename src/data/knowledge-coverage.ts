@@ -7,6 +7,7 @@ import type {
   PersonDetail,
   Place,
   Polity,
+  PolityDetail,
   SourceNote,
 } from '../domain/types';
 import { claims as defaultClaims } from './claims';
@@ -16,6 +17,7 @@ import { heritageAssets as defaultHeritageAssets } from './heritage';
 import { heritageDetails as defaultHeritageDetails, type HeritageDetail } from './heritage-details';
 import { people as defaultPeople } from './people';
 import { personDetails as defaultPersonDetails } from './person-details';
+import { polityDetails as defaultPolityDetails } from './polity-details';
 import { polities as defaultPolities } from './polities';
 import { places as defaultPlaces } from './places';
 import { sourceNotes as defaultSourceNotes } from './sources';
@@ -54,6 +56,7 @@ export interface KnowledgeCoverageCatalog {
   heritageAssets: HeritageAsset[];
   heritageDetails: HeritageDetail[];
   personDetails: PersonDetail[];
+  polityDetails?: PolityDetail[];
   claims: HistoricalClaim[];
   sourceNotes: SourceNote[];
   places?: Place[];
@@ -225,8 +228,18 @@ function summaryCheck(summary: string): KnowledgeCoverageCheck {
     : check('summary', 'data-missing', '摘要字段为空。');
 }
 
-function polityDetailCheck(): KnowledgeCoverageCheck {
-  return check('detail', 'data-missing', '当前目录没有独立的政权详情记录，需由后续批次补充。');
+function polityDetailCheck(detail: PolityDetail | undefined): KnowledgeCoverageCheck {
+  if (!detail) return check('detail', 'data-missing', '当前目录没有独立的政权详情记录，需由后续批次补充。');
+  const complete = present(detail.perspectiveSummary)
+    && detail.foundationProcess.length > 0
+    && detail.turningPoints.length > 0
+    && detail.principalFigureIds.length > 0
+    && detail.capitalPhases.length > 0
+    && detail.eventIds.length > 0
+    && present(detail.uncertaintyNote);
+  return complete
+    ? check('detail', 'covered', '政权详情包含政权视角摘要、建立过程、转折、人物、首都阶段、事件关联与不确定性。', [detail.polityId])
+    : check('detail', 'data-missing', '政权详情记录存在但缺少政权视角、建立过程、关键转折、人物、首都阶段、事件关联或不确定性字段。', [detail.polityId]);
 }
 
 function personDetailCheck(detail: PersonDetail | undefined): KnowledgeCoverageCheck {
@@ -393,6 +406,7 @@ function buildEntity(
   catalog: KnowledgeCoverageCatalog,
   detailById: Map<string, HistoricalEventDetail>,
   personDetailById: Map<string, PersonDetail>,
+  polityDetailById: Map<string, PolityDetail>,
   heritageDetailById: Map<string, HeritageDetail>,
   knownSourceIds: Set<string>,
   annotations: Map<string, KnowledgeCoverageAnnotation>,
@@ -401,11 +415,13 @@ function buildEntity(
   const eventDetail = entityType === 'event' ? detailById.get(entityId) : undefined;
   const personDetail = entityType === 'person' ? personDetailById.get(entityId) : undefined;
   const heritageDetail = entityType === 'heritage' ? heritageDetailById.get(entityId) : undefined;
-  const detailSourceIds = personDetail?.sourceIds ?? eventDetail?.sourceIds ?? heritageDetail?.sourceIds ?? [];
+  const detailSourceIds = entityType === 'polity'
+    ? polityDetailById.get(entityId)?.sourceIds ?? []
+    : personDetail?.sourceIds ?? eventDetail?.sourceIds ?? heritageDetail?.sourceIds ?? [];
   const checks = [
     summaryCheck(entityType === 'event' ? (entity as HistoricalEvent).summary : (entity as Polity | Person | HeritageAsset).description),
     entityType === 'polity'
-      ? polityDetailCheck()
+      ? polityDetailCheck(polityDetailById.get(entityId))
       : entityType === 'person'
         ? personDetailCheck(personDetail)
         : entityType === 'event'
@@ -599,12 +615,14 @@ export function auditKnowledgeCoverage(catalog: KnowledgeCoverageCatalog = {
   heritageAssets: defaultHeritageAssets,
   heritageDetails: defaultHeritageDetails,
   personDetails: defaultPersonDetails,
+  polityDetails: defaultPolityDetails,
   claims: defaultClaims,
   sourceNotes: defaultSourceNotes,
   places: defaultPlaces,
 }): KnowledgeCoverageReport {
   const detailById = new Map(catalog.eventDetails.map((detail) => [detail.eventId, detail]));
   const personDetailById = new Map(catalog.personDetails.map((detail) => [detail.personId, detail]));
+  const polityDetailById = new Map((catalog.polityDetails ?? []).map((detail) => [detail.polityId, detail]));
   const heritageDetailById = new Map(catalog.heritageDetails.map((detail) => [detail.heritageId, detail]));
   const knownSourceIds = new Set(catalog.sourceNotes.map((source) => source.id));
   const annotations = new Map((catalog.annotations ?? []).map((annotation) => [
@@ -612,10 +630,10 @@ export function auditKnowledgeCoverage(catalog: KnowledgeCoverageCatalog = {
     annotation,
   ]));
   const entities = [
-    ...catalog.polities.map((entity) => buildEntity('polity', entity, catalog, detailById, personDetailById, heritageDetailById, knownSourceIds, annotations)),
-    ...catalog.people.map((entity) => buildEntity('person', entity, catalog, detailById, personDetailById, heritageDetailById, knownSourceIds, annotations)),
-    ...catalog.events.map((entity) => buildEntity('event', entity, catalog, detailById, personDetailById, heritageDetailById, knownSourceIds, annotations)),
-    ...catalog.heritageAssets.map((entity) => buildEntity('heritage', entity, catalog, detailById, personDetailById, heritageDetailById, knownSourceIds, annotations)),
+    ...catalog.polities.map((entity) => buildEntity('polity', entity, catalog, detailById, personDetailById, polityDetailById, heritageDetailById, knownSourceIds, annotations)),
+    ...catalog.people.map((entity) => buildEntity('person', entity, catalog, detailById, personDetailById, polityDetailById, heritageDetailById, knownSourceIds, annotations)),
+    ...catalog.events.map((entity) => buildEntity('event', entity, catalog, detailById, personDetailById, polityDetailById, heritageDetailById, knownSourceIds, annotations)),
+    ...catalog.heritageAssets.map((entity) => buildEntity('heritage', entity, catalog, detailById, personDetailById, polityDetailById, heritageDetailById, knownSourceIds, annotations)),
   ];
   const byKey = Object.fromEntries(entities.map((entity) => [entity.entityKey, entity]));
   const gaps = entities.flatMap(buildGaps);
