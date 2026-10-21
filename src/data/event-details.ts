@@ -209,7 +209,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-song-founded',
-    participants: [],
+    participants: [
+      { personId: 'zhao-kuangyin', role: '陈桥兵变后受禅建立北宋的君主', note: '赵匡胤是960年建宋与受禅的核心人物；陈桥拥立、回师开封和受禅是连续但可区分的阶段。' },
+    ],
     polityIds: ['song_northern'],
     causes: ['后周末年军政体系不稳，赵匡胤掌握殿前军和京师附近的关键力量。'],
     consequences: ['中原王朝进入宋代阶段。', '宋仍须面对辽、北汉及南方诸政权，统一过程延续多年。'],
@@ -225,7 +227,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-song-founded',
-    participants: [],
+    participants: [
+      { personId: 'zhao-gou', role: '在应天府即位并重建宋室政权的君主', note: '赵构于1127年即位开启南宋阶段；南渡和临安定都属于后续政治迁移过程。' },
+    ],
     polityIds: ['song_south'],
     causes: ['靖康之变使北宋中央在汴梁的统治崩溃，宋宗室与官僚需要重建皇统。'],
     consequences: ['宋廷政治重心转向江南，南宋与金、西夏及后来的蒙古长期并立。', '南渡、迁驻和临安定都成为连续而不同的阶段。'],
@@ -711,7 +715,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'five-dynasties',
-    participants: [],
+    participants: [
+      { personId: 'zhu-wen', role: '控制唐末朝廷并建立后梁的军政领袖', note: '朱温代表907年前后中原政权转换的核心人物；五代并非在同一日由单一人物完成全部更替。' },
+      { personId: 'li-cunxu', role: '后续建立后唐并开启五代第二阶段的晋王集团领袖', note: '李存勖属于五代展开后的后唐阶段，用于连接中原王朝更替，不前置为907年建梁参与者。' },
+    ],
     polityIds: ['tang', 'liang_later'],
     causes: ['唐末中央权力衰落，朱全忠控制朝廷。', '地方军政势力已具较强独立性，唐的统一秩序难以维持。'],
     consequences: ['中原进入后梁等五代相继更替的阶段。', '地方割据早已出现，十国并非在907年同时建立。'],
@@ -1039,7 +1046,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'jin-later-founded',
-    participants: [],
+    participants: [
+      { personId: 'shi-jingtang', role: '借助契丹支持受册称帝并建立后晋的君主', note: '石敬瑭的反唐、求援、受册称帝和后唐覆亡跨越多个阶段；本条不把后晋后期范围前置。' },
+    ],
     polityIds: ['jin_later'],
     causes: ['后唐末年皇位继承与军事集团冲突激化。', '石敬瑭借助契丹军事力量反叛并争取帝位。'],
     consequences: ['后晋成为五代第三个中原王朝。', '燕云等地的割让及其后果成为北方政治的重要背景。'],
@@ -1048,14 +1057,16 @@ const details: HistoricalEventDetail[] = [
       { label: '受册称帝', startYear: 936, endYear: 936, summary: '石敬瑭受册立为大晋皇帝。' },
       { label: '后唐覆亡', startYear: 936, endYear: 937, summary: '后唐在中原战事中覆亡，后晋接管部分中原政权。' },
     ],
-    locationIds: [],
+    locationIds: ['kaifeng'],
     relatedEventIds: ['tang-later-founded'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '称帝、军事支持和后唐覆亡涉及不同阶段；不以受册地点或后晋名义范围替代逐年实际控制。',
   },
   {
     eventId: 'han-later-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-zhiyuan', role: '在太原起兵并建立后汉的君主', note: '刘知远先在太原取得军政支持，随后进入中原；起兵、称帝与开封阶段应分开理解。' },
+    ],
     polityIds: ['han_later'],
     causes: ['契丹南下导致后晋政权崩溃。', '中原军政集团需要重新确立皇帝与中央政权。'],
     consequences: ['后汉成为五代第四个中原王朝。', '地方军镇与北方势力仍对后汉的实际控制构成限制。'],
@@ -1064,7 +1075,7 @@ const details: HistoricalEventDetail[] = [
       { label: '即位建汉', startYear: 947, endYear: 947, summary: '刘知远即皇帝位，国号汉。' },
       { label: '进入中原', startYear: 947, endYear: 948, summary: '后汉政权进入中原并建立中央统治。' },
     ],
-    locationIds: [],
+    locationIds: ['taiyuan', 'kaifeng'],
     relatedEventIds: ['jin-later-founded', 'zhou-later-founded'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '后汉经历太原起兵、称帝和进入中原的过程，不以单一地点代表947年的完整控制范围。',
@@ -1119,7 +1130,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'qing-founded',
-    participants: [],
+    participants: [
+      { personId: 'hongtaiji', role: '在盛京改国号为清并重组国家制度的君主', note: '皇太极主持1636年改国号；清入关和北京成为全国政治中心是后续历史阶段。' },
+    ],
     polityIds: ['qing'],
     causes: ['后金已经在关外形成稳定的统治与军事体系。', '皇太极需要调整国号与国家制度以适应更广泛的统治。'],
     consequences: ['清作为新的国号与政权身份形成。', '1644年入关及后续全国性战争仍是另行发生的阶段。'],
@@ -1128,7 +1141,7 @@ const details: HistoricalEventDetail[] = [
       { label: '改国号为清', startYear: 1636, endYear: 1636, summary: '皇太极改国号为清。' },
       { label: '关外政权延续', startYear: 1636, endYear: 1643, summary: '清在入关前继续经营关外政治与军事资源。' },
     ],
-    locationIds: [],
+    locationIds: ['shengjing'],
     relatedEventIds: ['qing-enters-pass'],
     sourceIds: ['china-chronology'],
     uncertaintyNote: '1636年是改国号节点，不等于清已控制明朝全境；1644年入关和后续统一战争不能提前并入本事件。',
@@ -1231,7 +1244,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'liao-founded',
-    participants: [],
+    participants: [
+      { personId: 'yelu-abaoji', role: '整合契丹诸部并称帝建立辽朝阶段的君主', note: '耶律阿保机是916年称帝与契丹国家阶段转换的核心人物；辽后期五京体系属于后续发展。' },
+    ],
     polityIds: ['khitan'],
     causes: ['契丹诸部在耶律阿保机领导下逐步整合。', '草原部落联盟向更稳定的政治体制转变。'],
     consequences: ['契丹政权进入辽朝阶段，成为北方与东北亚长期重要政权。', '辽与五代、北宋及西夏形成持续互动。'],
@@ -1247,7 +1262,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'former-shu-founded',
-    participants: [],
+    participants: [
+      { personId: 'wang-jian', role: '经营巴蜀并在成都称帝建立前蜀的君主', note: '王建在唐末逐步控制巴蜀，907年称帝与前蜀形成是连续但可分层的过程。' },
+    ],
     polityIds: ['former_shu'],
     causes: ['唐末中央权力衰落。', '王建在蜀地经营军政资源并取得巴蜀地区主导地位。'],
     consequences: ['巴蜀形成相对独立的十国政权。', '前蜀与中原王朝及周边政权保持复杂关系。'],
@@ -1263,7 +1280,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'later-shu-founded',
-    participants: [],
+    participants: [
+      { personId: 'meng-zhixiang', role: '在成都称帝建立后蜀的地方统治者', note: '孟知祥在后唐蜀地军政基础上建政，称帝后的继承与扩张属于后续阶段。' },
+    ],
     polityIds: ['later_shu'],
     causes: ['后唐在蜀地的控制与地方军政力量之间矛盾加深。', '孟知祥逐步建立独立统治基础。'],
     consequences: ['巴蜀再次形成独立政权。', '后蜀成为五代十国后期西南政治与文化的重要中心。'],
@@ -1521,7 +1540,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'later-jin-founded',
-    participants: [],
+    participants: [
+      { personId: 'nurhaci', role: '整合建州女真并建立后金的汗王', note: '努尔哈赤是1616年后金建政的核心人物；后续迁都与改国号为清属于不同阶段。' },
+    ],
     polityIds: ['later_jin'],
     causes: ['建州女真在战争、联盟和八旗组织发展中形成较强的军事政治动员能力。', '明朝辽东边疆秩序持续变化，为女真政权独立化提供空间。'],
     consequences: ['后金成为东北亚重要政权。', '明、后金、蒙古和朝鲜之间的政治与军事关系重新组织。'],
@@ -1530,7 +1551,7 @@ const details: HistoricalEventDetail[] = [
       { label: '后金建政', startYear: 1616, endYear: 1616, summary: '努尔哈赤建立后金并确立汗国体制。' },
       { label: '关外扩张', startYear: 1616, endYear: 1635, summary: '后金继续整合辽东和女真诸部，为改国号和入关准备条件。' },
     ],
-    locationIds: [],
+    locationIds: ['heturnala'],
     relatedEventIds: ['qing-founded'],
     sourceIds: ['china-chronology'],
     uncertaintyNote: '1616年是后金建政节点；1636年改国号为清、1644年入关是后续阶段，不能把清入关后的范围回填到建政当年。',
