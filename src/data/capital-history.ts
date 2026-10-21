@@ -17,7 +17,10 @@ const explicit: Record<string, Seed[]> = {
   xin:[['changan','长安',9,23,'primary','formal','high','新朝以长安为正式都城，今陕西省西安市；不将洛阳等临时驻地误写为正式迁都。']], xiongnu:[['xiongnu_core','龙城／单于庭',-209,93,'mobile_court','uncertain','low','匈奴采用单于庭、龙城等会聚中心，政治核心随部众和季节移动；龙城具体位置存在争议，不将其视作固定城市首都。']],
   goguryeo:[['wunvshan','纥升骨城',-37,2],['guonei','国内城',3,426],['pyongyang','平壤',427,668]],
   silla:[['jincheng_silla','金城／徐罗伐',-57,935,'primary','formal','high']], tuyuhun:[['tuyuhun_core','伏俟城',313,663,'disputed','uncertain','low','伏俟城是吐谷浑后期王都候选，今青海共和县一带仅作区域参照；遗址与各阶段政治中心的对应仍有争议，不能确认全期固定首都。']],
-  turkic:[['uhtuken','于都斤／鄂尔浑政治核心',552,744,'mobile_court','actual','low','于都斤／鄂尔浑是汗廷与草原政治核心的区域参照，汗廷随季节和军事活动移动，不是可唯一定位的固定城市首都。']], tibetan_empire:[['yalong','雅砻',618,629,'de_facto','actual','medium'],['luosie','逻些',630,842]],
+  turkic:[
+    ['uhtuken','于都斤／鄂尔浑政治核心',552,630,'mobile_court','actual','low','第一突厥汗国阶段以于都斤／鄂尔浑作为汗廷与草原政治核心的区域参照，今蒙古国中部；汗廷随季节和军事活动移动，不是可唯一定位的固定城市首都。'],
+    ['uhtuken','于都斤／鄂尔浑政治核心',682,744,'mobile_court','actual','low','后突厥汗国阶段延续于都斤／鄂尔浑区域政治核心，今蒙古国中部；汗廷、营地和部众网络具有移动性，不是可唯一定位的固定城市首都。'],
+  ], tibetan_empire:[['yalong','雅砻',618,629,'de_facto','actual','medium'],['luosie','逻些',630,842]],
   nanzhao:[['taihe','太和城',738,778],['yangjumei','羊苴咩城',779,902]], khitan:[['liao_shangjing','上京临潢府',916,1125,'primary','formal','high'],['liao_dongjing','东京辽阳府',916,1125,'secondary','formal','high'],['liao_nanjing','南京析津府',916,1125,'secondary','formal','high'],['liao_zhongjing','中京大定府',1007,1125,'secondary','formal','high'],['liao_xijing','西京大同府',916,1125,'secondary','formal','high']],
   xia_early:[['erlitou','二里头',-2070,-1600,'disputed','uncertain','low','二里头可作夏代早期考古文化参照，今河南偃师一带；考古文化与夏王朝及都城的对应仍未获一致证明，不据此确认固定首都。']], shang:[['erlitou','早期都城候选',-1600,-1300,'disputed','uncertain','low','商代有多次迁都传统，早期地点与考古文化的对应不能由单一遗址确认；现有地点仅作候选参照，不把二里头视为商代固定首都。']],
   zhou_western:[['changan','镐京／宗周',-1046,-771],['luoyang','洛邑／成周',-1046,-771,'secondary','formal','medium','东周前的东都/成周体系。']], zhou_eastern:[['luoyang','洛邑／洛阳',-770,-256,'primary','formal','high','东周王室以洛邑（洛阳）为都，今河南省洛阳市；春秋战国诸侯并立，不将王都等同于周王室实际控制范围。']], qin_state:[['xianyang','咸阳',-350,-222],['changan','雍',-770,-351,'secondary','formal','medium','秦早期中心以雍为主，现用长安坐标作关中近似参照。']],
@@ -51,8 +54,15 @@ const explicit: Record<string, Seed[]> = {
   former_zhao:[['changan','长安',304,329]], later_zhao:[['xiangguo','襄国',319,334],['ye','邺',335,351]], former_yan:[['longcheng','龙城',337,341],['ji','蓟',342,350,'de_facto','actual','medium'],['ye','邺',351,370]], later_yan:[['ye','邺',384,397],['longcheng','龙城',398,407]],
 };
 
+const tenthBatchOverrides: Record<string, Seed[]> = {
+  turkic: [
+    ['uhtuken','于都斤／鄂尔浑政治核心',552,630,'mobile_court','actual','low','第一突厥汗国阶段以于都斤／鄂尔浑作为汗廷与草原政治核心的区域参照，今蒙古国中部；汗廷随季节和军事活动移动，不是可唯一定位的固定城市首都。'],
+    ['uhtuken','于都斤／鄂尔浑政治核心',682,744,'mobile_court','actual','low','后突厥汗国阶段延续于都斤／鄂尔浑区域政治核心，今蒙古国中部；汗廷、营地和部众网络具有移动性，不是可唯一定位的固定城市首都。'],
+  ],
+};
+
 export const capitalHistory: CapitalTerm[] = polities.flatMap(polity => {
-  const records = explicit[polity.id];
+  const records = tenthBatchOverrides[polity.id] ?? explicit[polity.id];
   if (records) return records.map(record => seed(polity.id, record));
   if (polity.capitalPlaceId) return [seed(polity.id, [polity.capitalPlaceId, '目录首都', polity.startYear, polity.endYear, 'primary', 'formal', 'medium', '沿用现有目录首都字段，待逐段补充迁都史。'])];
   return [seed(polity.id, ['changan', '未细分政治中心', polity.startYear, polity.endYear, 'disputed', 'uncertain', 'low', '目录暂缺固定首都资料，使用关中参照点仅为数据覆盖占位，需后续来源核验。'])];
