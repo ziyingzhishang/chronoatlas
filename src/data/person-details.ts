@@ -773,6 +773,41 @@ export const personDetails: PersonDetail[] = [
     aliases: ['高文斗'], offices: [{ title: '弘光朝内阁大学士', polityId: 'ming_southern', placeId: 'yingtian', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['china-chronology'] }],
     keyEvents: ['southern-ming-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '高弘图只对应弘光阶段，南明是多个政权和政治中心的后世总称，不能由其任职推导南明全期制度。',
   },
+  {
+    personId: 'zhang-mao', biography: '张茂承接张氏在河西的军政基础，在前凉形成后的延续阶段维持凉州秩序与张氏政权。',
+    aliases: ['前凉成王'], offices: [{ title: '凉州刺史与前凉继承者', polityId: 'former_liang', placeId: 'guzang', validFrom: 320, validTo: 324, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['former-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '张茂属于张轨、张寔之后的前凉延续阶段；前凉形成是地方军政逐步独立化过程，不把其写成314年最初建政者。',
+  },
+  {
+    personId: 'qifu-chipan', biography: '乞伏炽磐在乞伏乾归之后统治西秦，完成复立后的政权整合并维持陇右、河湟地区的政治网络。',
+    aliases: ['西秦文昭王'], offices: [{ title: '西秦君主', polityId: 'western_qin', validFrom: 412, validTo: 428, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '西秦形成节点为385年，乞伏炽磐属于乞伏乾归之后的复立与整合阶段，不能替代乞伏国仁的早期建政位置。',
+  },
+  {
+    personId: 'feng-sufo', biography: '冯素弗是北燕建立初期的关键军政人物，与兄冯跋共同维持辽西政权的军事与行政运作。',
+    aliases: ['北燕重臣'], offices: [{ title: '北燕军政大臣', polityId: 'northern_yan', placeId: 'longcheng', validFrom: 409, validTo: 415, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '冯素弗主要对应冯跋掌权后的北燕早期治理阶段；北燕407年高云被拥立与409年冯氏掌权需分期表达。',
+  },
+  {
+    personId: 'hou-andu', biography: '侯安都是梁陈之际的重要将领，参与陈霸先集团的军事行动，并在南陈建立初期承担江南军政任务。',
+    aliases: ['侯安都侯'], offices: [{ title: '南陈将领', polityId: 'chen_southern', placeId: 'jiankang', validFrom: 552, validTo: 563, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-chen-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '侯安都参与的是梁陈转换及南陈早期军政阶段，不把将领活动等同于557年陈霸先受禅的单一建国仪式。',
+  },
+  {
+    personId: 'chen-qian', biography: '陈蒨承接陈霸先建立的南陈，在即位后整顿江南政权并处理南北对峙，代表南陈早期继承阶段。',
+    aliases: ['陈文帝'], offices: [{ title: '南陈皇帝', polityId: 'chen_southern', placeId: 'jiankang', validFrom: 559, validTo: 566, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-chen-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '陈蒨属于557年建陈后的继承阶段；本详情不把其即位前的宗室与军政活动前推为南陈建立者。',
+  },
+  {
+    personId: 'yimouxun', biography: '异牟寻承接阁罗凤之后的南诏政权，通过与唐重新建立册封与外交关系，调整洱海及滇西的政治秩序。',
+    aliases: ['南诏孝惠王'], offices: [{ title: '南诏王', polityId: 'nanzhao', placeId: 'tahe-city', validFrom: 779, validTo: 808, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南诏形成节点为738年，异牟寻属于阁罗凤之后的外交调整与王权继承阶段，不是南诏最初形成的现场人物。',
+  },
+  {
+    personId: 'quanfengyou', biography: '劝丰祐延续异牟寻之后的南诏王权，在唐末前维持洱海区域的地方政权与对外关系。',
+    aliases: ['南诏王'], offices: [{ title: '南诏王', polityId: 'nanzhao', placeId: 'tahe-city', validFrom: 824, validTo: 859, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '劝丰祐属于南诏中后期继承阶段；其统治只能作为南诏长期政权的后续节点，不能倒推为738年建政参与者。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

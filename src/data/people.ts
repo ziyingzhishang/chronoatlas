@@ -152,6 +152,13 @@ export const people: Person[] = [
   { id: 'zong-ze', name: '宗泽', aliases: ['宗汝霖'], birthYear: 1060, deathYear: 1128, roles: ['将领', '东京留守', '抗金将领'], polityIds: ['song_northern', 'song_south'], description: '宗泽在汴梁失守后留守开封、组织防务并迎接赵构南渡前后的军政重建，是北宋覆亡至南宋初年过渡阶段的重要将领。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'zhang-jun', name: '张浚', aliases: ['张德远'], birthYear: 1097, deathYear: 1164, roles: ['宰相', '军事统筹者', '官员'], polityIds: ['song_south'], description: '张浚在南宋初年参与朝廷重建与抗金军事部署，体现南渡后中央决策与地方军镇之间的互动。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'gao-hongtu', name: '高弘图', aliases: ['高文斗'], birthYear: 1603, deathYear: 1645, roles: ['内阁大学士', '官员', '南明大臣'], polityIds: ['ming_southern'], description: '高弘图是弘光政权时期的内阁大臣，参与南明初期南京朝廷的政务运作，反映南明多中心体系中的弘光阶段。', sourceIds: ['china-chronology'] },
+  { id: 'zhang-mao', name: '张茂', aliases: ['前凉成王'], birthYear: 278, deathYear: 324, roles: ['地方统治者', '凉州刺史', '继承者'], polityIds: ['former_liang'], description: '张茂承接张氏在河西的军政基础，在前凉形成后的延续阶段维持凉州秩序与张氏政权。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'qifu-chipan', name: '乞伏炽磐', aliases: ['西秦文昭王'], deathYear: 428, roles: ['君主', '部族首领', '军事领袖'], polityIds: ['western_qin'], description: '乞伏炽磐在乞伏乾归之后统治西秦，完成复立后的政权整合并维持陇右、河湟地区的政治网络。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'feng-sufo', name: '冯素弗', aliases: ['北燕重臣'], deathYear: 415, roles: ['军政大臣', '将领', '地方统治者'], polityIds: ['northern_yan'], description: '冯素弗是北燕建立初期的关键军政人物，与兄冯跋共同维持辽西政权的军事与行政运作。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'hou-andu', name: '侯安都', aliases: ['侯安都侯'], birthYear: 520, deathYear: 563, roles: ['将领', '军政领袖', '南陈将领'], polityIds: ['chen_southern'], description: '侯安都是梁陈之际的重要将领，参与陈霸先集团的军事行动，并在南陈建立初期承担江南军政任务。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'chen-qian', name: '陈蒨', aliases: ['陈文帝'], birthYear: 522, deathYear: 566, roles: ['皇帝', '继承者', '军事领袖'], polityIds: ['chen_southern'], description: '陈蒨承接陈霸先建立的南陈，在即位后整顿江南政权并处理南北对峙，代表南陈早期继承阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'yimouxun', name: '异牟寻', aliases: ['南诏孝惠王'], deathYear: 808, roles: ['南诏王', '外交统治者', '地方统治者'], polityIds: ['nanzhao'], description: '异牟寻承接阁罗凤之后的南诏政权，通过与唐重新建立册封与外交关系，调整洱海及滇西的政治秩序。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'quanfengyou', name: '劝丰祐', aliases: ['南诏王'], deathYear: 859, roles: ['南诏王', '地方统治者', '继承者'], polityIds: ['nanzhao'], description: '劝丰祐延续异牟寻之后的南诏王权，在唐末前维持洱海区域的地方政权与对外关系。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
