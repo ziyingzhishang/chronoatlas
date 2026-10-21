@@ -653,6 +653,46 @@ export const personDetails: PersonDetail[] = [
     aliases: ['刘崇', '北汉世祖'], offices: [{ title: '北汉皇帝', polityId: 'northern_han', placeId: 'taiyuan', validFrom: 951, validTo: 954, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['northern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘旻的早期姓名、后汉宗室身份和北汉建立可按不同阶段阅读；951年建政不等于北汉立即控制河东以外的全部区域，契丹援助也不能替代其自身政权建构。',
   },
+  {
+    personId: 'daemusin', biography: '大武神王是高句丽早期君主，承接朱蒙建立的王权并推动高句丽向鸭绿江、辽东方向扩展。',
+    aliases: ['无恤王'], offices: [{ title: '高句丽国王', polityId: 'goguryeo', validFrom: 18, validTo: 44, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['goguryeo-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '高句丽建国节点早于大武神王即位，本详情把其作为早期王权承接与扩展阶段人物，不将其写成前37年开国者。',
+  },
+  {
+    personId: 'namhae-chachaung', biography: '南解次次雄承接朴赫居世之后的新罗王统，早期统治围绕辰韩诸部关系、王权继承与对外防御展开。',
+    aliases: ['南解王'], offices: [{ title: '新罗国王', polityId: 'silla', validFrom: -4, validTo: 24, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'] }],
+    keyEvents: ['silla-founded'], sourceIds: ['silla-encykorea', 'silla-samguksagi-db'], uncertaintyNote: '新罗前57年建国为传统纪年，南解次次雄属于其后王统承接阶段；早期王号、年代与国家化过程需与考古材料交叉理解。',
+  },
+  {
+    personId: 'huhanye', biography: '呼韩邪单于在匈奴内部竞争中取得南匈奴一支的领导地位，并通过与汉朝建立和亲、朝贡与册立关系维持政治空间。',
+    aliases: ['郅支单于之兄'], offices: [{ title: '匈奴单于', polityId: 'xiongnu', validFrom: -58, validTo: -31, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['xiongnu-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '匈奴形成节点早于呼韩邪单于数百年；本详情表达其在分裂后阶段的政治继承与重组，不将其写成匈奴开国者或固定首都君主。',
+  },
+  {
+    personId: 'namri-songtsen', biography: '朗日松赞是松赞干布之父，推动悉补野部在雅砻及高原东部扩张，为吐蕃进入帝国形成阶段积累政治与军事基础。',
+    aliases: ['南日松赞'], offices: [{ title: '吐蕃赞普', polityId: 'tibetan_empire', validFrom: 600, validTo: 629, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['tibetan-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '吐蕃形成是多代王权整合过程；朗日松赞是前置积累阶段人物，不能把其活动单独等同于松赞干布时期的完整国家化。',
+  },
+  {
+    personId: 'tuoba-si', biography: '拓跋嗣即北魏明元帝，继承拓跋珪建立的政权，在平城巩固北魏早期王权与北方军政秩序。',
+    aliases: ['北魏明元帝'], offices: [{ title: '北魏皇帝', polityId: 'wei_northern', placeId: 'pingcheng', validFrom: 409, validTo: 423, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-wei-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北魏建立节点为386年，拓跋嗣属于建政后的继承与巩固阶段；其在位期不能替代北魏早期形成过程。',
+  },
+  {
+    personId: 'yuan-shanjian', biography: '元善见即东魏孝静帝，534年在邺即位，东魏由此形成；高欢及其集团掌握主要实际军政权力。',
+    aliases: ['东魏孝静帝'], offices: [{ title: '东魏皇帝', polityId: 'wei_eastern', placeId: 'ye', validFrom: 534, validTo: 550, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['eastern-wei-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '东魏名义皇统与高欢、高澄家族的实际权力需要分层记录；元善见即位不等于其独立掌握全部军政资源。',
+  },
+  {
+    personId: 'liu-yilong', biography: '刘义隆即宋文帝，继承刘裕建立的刘宋，在元嘉时期整顿江南政权并参与南北军事与外交竞争。',
+    aliases: ['宋文帝'], offices: [{ title: '刘宋皇帝', polityId: 'song_southern', placeId: 'jiankang', validFrom: 424, validTo: 453, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['liu-song-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘宋建立节点为420年，刘义隆属于其后继承与治理阶段；元嘉北伐和南北对峙不能回填为建国当年的事实。',
+  },
+  {
+    personId: 'chen-xu', biography: '陈顼即陈宣帝，是南陈后期君主，承接陈霸先建立的建康政权并在南北对峙中维持江南政治秩序。',
+    aliases: ['陈宣帝'], offices: [{ title: '南陈皇帝', polityId: 'chen_southern', placeId: 'jiankang', validFrom: 569, validTo: 582, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-chen-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南陈建立节点为557年，陈顼属于后续继承与整合阶段；其统治不应被写成陈霸先建国事件的直接替代。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

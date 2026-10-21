@@ -128,6 +128,14 @@ export const people: Person[] = [
   { id: 'mongke', name: '蒙哥', aliases: ['蒙哥汗'], birthYear: 1209, deathYear: 1259, roles: ['大汗', '君主', '军事领袖'], polityIds: ['mongol'], description: '蒙哥承接成吉思汗家族的共同汗权并推动蒙古帝国扩张，其统治是蒙古汗国与元朝建立之间的重要承接阶段。', sourceIds: ['china-chronology', 'yuan-nationalities-history'] },
   { id: 'geluofeng', name: '阁罗凤', aliases: ['南诏王'], deathYear: 779, roles: ['南诏王', '军事领袖'], polityIds: ['nanzhao'], description: '阁罗凤继承皮罗阁的南诏政治基础，扩展洱海及滇西军政网络，并在唐—南诏关系转折中发挥关键作用。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'liu-min', name: '刘旻', aliases: ['刘崇', '北汉世祖'], birthYear: 895, deathYear: 954, roles: ['皇帝', '军事领袖', '地方统治者'], polityIds: ['northern_han'], description: '刘旻（初名刘崇）在后汉覆亡后据太原建立北汉，依托河东军政网络并与后周长期对峙。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'daemusin', name: '大武神王', aliases: ['无恤王'], birthYear: 4, deathYear: 44, roles: ['国王', '军事领袖'], polityIds: ['goguryeo'], description: '大武神王是高句丽早期君主，承接朱蒙建立的王权并扩大高句丽在鸭绿江与辽东方向的政治、军事影响。', sourceIds: ['china-chronology'] },
+  { id: 'namhae-chachaung', name: '南解次次雄', aliases: ['南解王'], birthYear: -50, deathYear: 24, roles: ['国王', '早期统治者'], polityIds: ['silla'], description: '南解次次雄承接朴赫居世之后的新罗早期王统，维持辰韩诸部整合和新罗王权的延续。', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'] },
+  { id: 'huhanye', name: '呼韩邪单于', aliases: ['郅支单于之兄'], roles: ['单于', '外交统治者'], polityIds: ['xiongnu'], description: '呼韩邪单于在匈奴分裂后重建南匈奴一支的政治秩序，并通过与汉朝和亲及朝贡关系维持其阶段性地位。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'namri-songtsen', name: '朗日松赞', aliases: ['南日松赞'], deathYear: 629, roles: ['赞普', '军事领袖'], polityIds: ['tibetan_empire'], description: '朗日松赞是松赞干布之父，推动悉补野部在雅砻及高原东部的权力扩展，为吐蕃形成阶段提供前置政治基础。', sourceIds: ['china-chronology'] },
+  { id: 'tuoba-si', name: '拓跋嗣', aliases: ['北魏明元帝'], birthYear: 392, deathYear: 423, roles: ['皇帝', '君主'], polityIds: ['wei_northern'], description: '拓跋嗣承接拓跋珪建立的北魏，在平城巩固王权与北方军政秩序，是北魏早期国家化的重要继承者。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'yuan-shanjian', name: '元善见', aliases: ['东魏孝静帝'], birthYear: 524, deathYear: 552, roles: ['皇帝', '名义君主'], polityIds: ['wei_eastern'], description: '元善见在北魏分裂后于邺即位，成为东魏名义皇帝；东魏实际军政权力主要由高欢及其集团掌握。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'liu-yilong', name: '刘义隆', aliases: ['宋文帝'], birthYear: 407, deathYear: 453, roles: ['皇帝', '政治家'], polityIds: ['song_southern'], description: '刘义隆继承刘裕建立的刘宋，在元嘉时期整顿江南政权并推进对北方的军事与外交活动。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'chen-xu', name: '陈顼', aliases: ['陈宣帝'], birthYear: 530, deathYear: 582, roles: ['皇帝', '军事领袖'], polityIds: ['chen_southern'], description: '陈顼是南陈后期君主，承接陈霸先建立的政权，在南北对峙中维持建康朝廷并参与江南军政整合。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
