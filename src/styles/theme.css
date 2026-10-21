@@ -273,6 +273,22 @@ main { min-height: 100vh; }
 .relationship-category h4 { margin:0; color:var(--paper); font-size:11px; }
 .relationship-category ul { list-style:none; margin:2px 0 0; padding:0; }
 .relationship-category-empty { margin:2px 0 0; color:var(--paper-muted); font-size:10px; }
+.relationship-coverage-summary { margin:8px 0 12px; padding:8px; border:1px solid rgba(198,161,91,.2); background:rgba(8,12,16,.18); }
+.relationship-coverage-summary h5 { margin:0; color:var(--gold); font-size:11px; }
+.relationship-coverage-audit-note { margin:4px 0 7px; color:var(--paper-muted); font-size:10px; line-height:1.5; }
+.relationship-coverage-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; list-style:none; margin:0; padding:0; }
+.relationship-coverage-item { display:grid; grid-template-columns:1fr auto; gap:2px 7px; padding:5px 6px; border-left:2px solid var(--gold-soft); background:rgba(255,255,255,.025); }
+.relationship-coverage-item strong { font-size:10px; font-weight:500; }
+.relationship-coverage-category { color:var(--paper); font-size:11px; }
+.relationship-coverage-note { grid-column:1 / -1; color:var(--paper-muted); font-size:10px; line-height:1.4; }
+.relationship-coverage-covered { border-left-color:#8fa68b; }
+.relationship-coverage-covered strong { color:#c4d4bb; }
+.relationship-coverage-required { border-left-color:var(--vermilion); }
+.relationship-coverage-required strong { color:#f0ae91; }
+.relationship-coverage-review { border-left-color:var(--gold); }
+.relationship-coverage-review strong { color:#d9c79c; }
+.relationship-coverage-not-applicable { border-left-color:#71808a; }
+.relationship-coverage-not-applicable strong { color:#aebbc1; }
 .year-steppers { flex-wrap:wrap; }
 
 @media (max-width: 1100px) {
@@ -298,4 +314,5 @@ main { min-height: 100vh; }
   .map-navigation { top:10px; right:10px; }
   .map-caption { top:10px; left:10px; }
   .map-caption span { display:none; }
+  .relationship-coverage-grid { grid-template-columns:1fr; }
 }

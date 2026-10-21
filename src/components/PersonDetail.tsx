@@ -3,6 +3,12 @@ import { groupPersonRelationships, type PersonRelationship } from '../domain/rel
 import { formatHistoricalYear } from '../domain/timeline';
 import { sourceById } from '../data/sources';
 import { buildPersonTimeCoverageReport, type PersonTimeReview, type PersonTimeReviewStatus } from '../data/person-time-review';
+import {
+  buildPersonRelationshipCoverageReport,
+  personRelationshipCategoryKeys,
+  type PersonRelationshipCategory,
+  type PersonRelationshipCategoryCoverage,
+} from '../data/person-relationship-coverage';
 import { useLocale } from '../i18n/locale';
 
 export interface PersonDetailProps {
@@ -28,6 +34,13 @@ const relationLabels: Partial<Record<PersonRelationType, string>> = {
   'teacher-of': '师承', 'student-of': '弟子', served: '侍奉／效力', appointed: '任用', succeeded: '承接', 'ally-of': '盟友', 'enemy-of': '对立',
 };
 
+const relationshipCoverageLabels: Record<PersonRelationshipCategory, string> = {
+  governance: '君臣／治理',
+  kinship: '亲属',
+  allianceConflict: '联盟／对立',
+  eventParticipation: '事件参与',
+};
+
 export function PersonDetail({ person, detail, year, claims, people = [], polities = [], events = [], onOpenEntity }: PersonDetailProps) {
   const { t } = useLocale();
   if (!detail) return <article className="event-detail person-detail" aria-label={t('人物详情')}><h3>{t(person.name)}</h3><p className="detail-note">{t('暂无已收录人物详情')}</p></article>;
@@ -38,6 +51,7 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
   const eventById = new Map(events.map((item) => [item.id, item]));
   const sources = [...new Set(detail.sourceIds)].map((sourceId) => sourceById[sourceId]).filter(Boolean);
   const timeReview = buildPersonTimeCoverageReport().byPersonId[person.id] ?? unknownPersonTimeReview(person);
+  const relationshipCoverage = buildPersonRelationshipCoverageReport().byPersonId[person.id];
 
   return <article className="event-detail person-detail" aria-label={t('人物详情')}>
     <div className="event-meta">{t(person.roles?.join('／') ?? '历史人物')} · {formatLife(person.birthYear, person.deathYear)}</div>
@@ -58,6 +72,7 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
 
     <section className="person-detail-section" aria-label={t('人物关系')}>
       <h4>{t('人物关系')}</h4>
+      {relationshipCoverage && <RelationshipCoverageSummary record={relationshipCoverage} t={t} />}
       {relationSections.map((section) => <RelationSection key={section.title} title={section.title} types={section.types} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />)}
       {grouped['person-heritage'].length > 0 && <RelationSection title="其他关系" types={['commissioned']} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />}
     </section>
@@ -67,6 +82,36 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
     </details>
     {detail.uncertaintyNote && <p className="uncertainty-note">{t('不确定性：')}{t(detail.uncertaintyNote)}</p>}
   </article>;
+}
+
+function RelationshipCoverageSummary({ record, t }: { record: { categories: Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage> }; t: (text: string) => string }) {
+  return <section className="relationship-coverage-summary" aria-label={t('人物关系覆盖审计')}>
+    <h5>{t('覆盖状态')}</h5>
+    <p className="relationship-coverage-audit-note">{t('以下状态来自人物关系覆盖审计；待补与待复核均不等同于已覆盖。')}</p>
+    <ul className="relationship-coverage-grid">
+      {personRelationshipCategoryKeys.map((category) => {
+        const coverage = record.categories[category];
+        const status = relationshipCoverageStatus(coverage);
+        return <li key={category} className={`relationship-coverage-item relationship-coverage-${status}`}>
+          <span className="relationship-coverage-category">{t(relationshipCoverageLabels[category])}</span>
+          <strong data-relationship-coverage-status={status}>{t(relationshipCoverageStatusLabel(status))}</strong>
+          <span className="relationship-coverage-note">{t(coverage.note)}</span>
+        </li>;
+      })}
+    </ul>
+  </section>;
+}
+
+type RelationshipCoverageStatus = 'covered' | 'required' | 'review' | 'not-applicable';
+
+function relationshipCoverageStatus(coverage: PersonRelationshipCategoryCoverage): RelationshipCoverageStatus {
+  if (coverage.status === 'covered') return 'covered';
+  if (coverage.status === 'not-applicable') return 'not-applicable';
+  return coverage.applicabilityStatus === 'required' ? 'required' : 'review';
+}
+
+function relationshipCoverageStatusLabel(status: RelationshipCoverageStatus) {
+  return status === 'covered' ? '已覆盖' : status === 'required' ? '待补' : status === 'review' ? '待复核' : '不适用';
 }
 
 function TimeEvidenceReview({ review, t }: { review: PersonTimeReview; t: (text: string) => string }) {

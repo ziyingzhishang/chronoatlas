@@ -2,6 +2,7 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import type { HistoricalClaim, HistoricalEvent, Person } from '../domain/types';
 import { getPersonDetail } from '../data/person-details';
+import { LocaleProvider } from '../i18n/locale';
 import { PersonDetail } from './PersonDetail';
 
 const person: Person = {
@@ -93,5 +94,30 @@ describe('PersonDetail', () => {
     render(<PersonDetail person={{ ...person, id: 'not-in-review', name: '未审计人物' }} detail={getPersonDetail('li-shimin')} year={620} claims={[]} />);
     expect(screen.getByText('未知')).toBeInTheDocument();
     expect(screen.getByText(/暂不允许时间轴定位/)).toBeInTheDocument();
+  });
+
+  it('shows relationship coverage audit status above the existing relationship list', () => {
+    render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} />);
+
+    const audit = screen.getByRole('region', { name: '人物关系覆盖审计' });
+    expect(audit).toBeInTheDocument();
+    expect(screen.getByText('君臣／治理')).toBeInTheDocument();
+    expect(screen.getByText('亲属')).toBeInTheDocument();
+    expect(screen.getByText('联盟／对立')).toBeInTheDocument();
+    expect(screen.getByText('事件参与')).toBeInTheDocument();
+    expect(audit.querySelectorAll('[data-relationship-coverage-status]')).toHaveLength(4);
+    expect(audit.querySelectorAll('.relationship-coverage-note')).toHaveLength(4);
+    expect(screen.getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
+  });
+
+  it('keeps relationship coverage status labels available in English', () => {
+    localStorage.setItem('history-locale', 'en');
+    render(<LocaleProvider><PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} /></LocaleProvider>);
+
+    expect(screen.getByRole('region', { name: 'Person relationship coverage audit' })).toBeInTheDocument();
+    expect(screen.getByText('Coverage status')).toBeInTheDocument();
+    expect(screen.getByText('Governance / ruler-subject')).toBeInTheDocument();
+    expect(screen.getByText('Alliance / conflict')).toBeInTheDocument();
+    localStorage.removeItem('history-locale');
   });
 });
