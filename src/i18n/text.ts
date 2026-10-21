@@ -43,6 +43,7 @@ const english: Record<string, string> = {
   '政权建立／更替':'Polity foundation / succession', '迁都／迁徙':'Capital relocation / migration', '统一／分裂':'Unification / division', '战争／条约':'War / treaty', '制度／经济文化转折':'Institutional / economic / cultural change',
   '时间轴选中':'Timeline selection', '个事件':'events',
   '历史关系研究视图':'Historical relations study view', '城市视角':'City perspective', '政权视角':'Polity perspective', '截至':'As of', '曾以此地为政治中心的政权':'Polities that used this place as a political center', '相关人物':'Related people', '相关事件':'Related events', '遗产与城市记忆':'Heritage and city memory', '暂无已关联事件':'No linked events', '暂无已关联遗产':'No linked heritage', '现存':'Extant', '遗址':'Archaeological site',
+  '关闭详情':'Close details', '返回上一个实体':'Back to previous entity',
   '建立':'Founded', '统治':'Ruled', '承接':'Succeeded', '营建':'Commissioned', '不确定性：':'Uncertainty: ',
   '关系网络':'Relationship network', '人物关系网络':'Historical relationship network', '遗留':'Left heritage',
   '历史信息':'Historical information', '本年政权目录':'Polities in this year', '年表记录与疆域资料分别呈现。未着色不代表无人居住或无政权，只表示本版缺少适用的边界资料。':'Chronology and territorial evidence are presented separately. An uncolored area does not imply no inhabitants or polity; this edition lacks applicable boundary data.', '疆域待补':'Territory data pending', '最大参考':'Maximum reference', '来源时段':'Source interval', '本年事件':'Events this year',

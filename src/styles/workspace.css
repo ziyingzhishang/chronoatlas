@@ -88,6 +88,17 @@
 .workspace-panel-heading { display:flex; justify-content:space-between; align-items:center; flex:none; padding:4px 12px 4px 20px; border-bottom:1px solid #45523f; }
 .workspace-panel-heading h2 { font-size:15px; font-weight:500; color:#e6d6b0; }
 .workspace-panel-scroll { overflow:auto; overscroll-behavior:contain; min-height:0; padding:18px; }
+.entity-drawer-backdrop { position:fixed; inset:0; z-index:20; border:0; background:#07100a88; }
+.entity-drawer { position:fixed; top:0; right:0; bottom:0; z-index:21; display:flex; width:50vw; max-width:760px; min-width:420px; flex-direction:column; border-left:1px solid #7b8062; background:#1c2722; box-shadow:-14px 0 42px #07100acc; }
+.entity-drawer-heading { display:flex; align-items:center; justify-content:space-between; flex:none; min-height:58px; padding:0 18px; border-bottom:1px solid #45523f; }
+.entity-drawer-heading-actions { display:flex; align-items:center; gap:8px; min-width:0; }
+.entity-drawer-heading h2 { overflow:hidden; margin:0; color:#e6d6b0; font-size:17px; font-weight:500; text-overflow:ellipsis; white-space:nowrap; }
+.entity-drawer-heading button { min-width:36px; min-height:36px; border:0; border-radius:5px; color:#d8ddcd; background:transparent; font-size:24px; }
+.entity-drawer-heading button:hover { color:#18241c; background:#c6a15b; }
+.entity-drawer-scroll { min-height:0; overflow:auto; padding:24px; overscroll-behavior:contain; }
+@media (max-width:720px) {
+  .entity-drawer { width:100vw; min-width:0; max-width:none; }
+}
 .workspace .info-panel { padding:0; background:none; border:0; }
 .workspace .map-toolbar { margin-top:16px; }
 .workspace .world-controls { margin:16px 0; }
