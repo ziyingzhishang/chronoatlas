@@ -397,6 +397,41 @@ export const personDetails: PersonDetail[] = [
     aliases: ['道邻'], offices: [{ title: '南明督师', polityId: 'ming_southern', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '史可法与弘光朝廷的关系以任职和军事防务为核心，不把后世忠烈评价直接替代当时政治关系的史料核验。',
   },
+  {
+    personId: 'temujin', biography: '铁木真在草原部众竞争中逐步整合力量，1206年被推举为成吉思汗，蒙古汗国进入共同汗权阶段。',
+    aliases: ['成吉思汗'], offices: [{ title: '蒙古大汗', polityId: 'mongol', validFrom: 1206, validTo: 1227, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['mongol-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1206年大会标志共同汗权形成，但蒙古诸部的整合、扩张和后续帝国化是分阶段过程，不能把后期疆域回填到建政节点。',
+  },
+  {
+    personId: 'jamukha', biography: '札木合曾与铁木真结为安答并共同活动，后因部众、联盟和汗权竞争与铁木真分裂，成为蒙古统一前的重要对手。',
+    aliases: ['札答阑部首领'], offices: [{ title: '草原部落联盟首领', polityId: 'mongol', datePrecision: 'approximate', sourceIds: ['china-chronology'] }],
+    keyEvents: ['mongol-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '札木合与铁木真的结盟、分裂和对立经历多个阶段，具体年份与部众构成应结合蒙古史料分别核验。',
+  },
+  {
+    personId: 'nurhaci', biography: '努尔哈赤整合女真诸部，1616年建立后金，早期以赫图阿拉为政治中心，后迁辽阳与沈阳。',
+    aliases: ['清太祖'], offices: [{ title: '后金汗', polityId: 'later_jin', validFrom: 1616, validTo: 1626, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['later-jin-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '后金建立、女真部众整合与都城迁移是不同阶段；赫图阿拉、辽阳和沈阳不能合并为同一时期的首都。',
+  },
+  {
+    personId: 'hongtaiji', biography: '皇太极继承努尔哈赤的后金政治基础，在盛京推进制度重组，1636年改国号为清。',
+    aliases: ['清太宗'], offices: [{ title: '后金汗', polityId: 'later_jin', validFrom: 1626, validTo: 1636, datePrecision: 'range', sourceIds: ['china-chronology'] }, { title: '清皇帝', polityId: 'qing', validFrom: 1636, validTo: 1643, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['qing-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1636年改国号为清与1644年入关属于不同历史阶段，本详情不把入关后的北京政治中心提前到盛京时期。',
+  },
+  {
+    personId: 'shunzhi', biography: '福临即顺治帝，在多尔衮等辅政力量支持下承继清朝，1644年入关并迁入北京，清廷政治中心随之转移。',
+    aliases: ['顺治帝'], offices: [{ title: '清皇帝', polityId: 'qing', validFrom: 1643, validTo: 1661, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['qing-enters-pass'], sourceIds: ['china-chronology'], uncertaintyNote: '顺治即位、清军入关和迁入北京是连续但不同的节点，入关不等于当年已经完成对各地的稳定控制。',
+  },
+  {
+    personId: 'sun-yat-sen', biography: '孙中山是近代中国革命家，1912年在南京就任临时大总统，中华民国临时政府由此成立。',
+    aliases: ['孙文'], offices: [{ title: '中华民国临时大总统', polityId: 'republic', placeId: 'yingtian', validFrom: 1912, validTo: 1912, datePrecision: 'year', sourceIds: ['china-chronology'] }],
+    keyEvents: ['republic-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1912年南京临时政府成立与其后政权迁都、政治权力转移属于不同节点，本详情不把临时政府等同于整个大陆时期民国的持续控制。',
+  },
+  {
+    personId: 'mao-zedong', biography: '毛泽东是中国共产党和中华人民共和国历史中的重要政治人物，1949年在北京成立典礼上宣告中央人民政府成立。',
+    aliases: [], offices: [{ title: '中华人民共和国中央人民政府主要领导人', polityId: 'prc', placeId: 'beijing', validFrom: 1949, validTo: 1976, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['prc-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1949年建国典礼是政权成立节点，毛泽东后续政治角色和政策阶段需要结合不同事件、制度与史料分别展示。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));
