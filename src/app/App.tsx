@@ -93,7 +93,7 @@ function HistoryWorkspace() {
         <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
         <span>{t('当前视窗')} · {formatHistoricalYear(timelineWindow[0])}—{formatHistoricalYear(timelineWindow[1])}</span>
       </div>
-      <nav aria-label={t('工作台工具')}>
+      <nav className="workspace-tool-nav" aria-label={t('工作台工具')}>
         {(['events','details','more'] as const).map((name,i)=><button className="workspace-tool-icon" key={name} aria-label={t(['事件','详情','更多'][i])} title={t(['事件','详情','更多'][i])} aria-expanded={panel===name} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p===name?null:name);}}>{['◆','ⓘ','⋯'][i]}</button>)}
       </nav>
     </header>
