@@ -120,4 +120,28 @@ describe('event detail coverage audit', () => {
     expect(report.orphanDetailEventIds.length).toBeGreaterThan(0);
     expect(report.items.every((item) => item.eventId.length > 0)).toBe(true);
   });
+
+  it('classifies every orphan detail as a city-history auxiliary record', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+
+    expect(report.orphanDetails).toHaveLength(report.orphanDetailEventIds.length);
+    expect(report.orphanDetails).toHaveLength(20);
+    expect(report.orphanDetails.every((item) => item.kind === 'city-history-auxiliary')).toBe(true);
+    expect(report.orphanDetails.find((item) => item.eventId === 'daxing-capital')?.rationale)
+      .toContain('城市');
+  });
+
+  it('closes the first high-value exact-year event detail batch without unresolved records', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+
+    expect(report.unresolvedEventIds).toEqual([]);
+    expect(report.statusCounts).toEqual({ covered: 42, 'needs-review': 57, unresolved: 0 });
+    expect(report.coveredEventIds).toEqual(expect.arrayContaining([
+      'northern-wei-founded',
+      'former-qin-founded',
+      'later-liang-founded',
+      'jurchen-jin-founded',
+      'southern-tang-founded',
+    ]));
+  });
 });

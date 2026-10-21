@@ -17,6 +17,7 @@ import { polityDetails as defaultPolityDetails } from './polity-details';
 import { sourceNotes as defaultSourceNotes } from './sources';
 
 export type EventDetailCoverageStatus = 'covered' | 'needs-review' | 'unresolved';
+export type EventDetailOrphanKind = 'city-history-auxiliary' | 'unclassified';
 export type EventDetailCoverageCheck =
   | 'detail'
   | 'causes'
@@ -71,6 +72,13 @@ export interface EventDetailCoverageReport {
   statusCounts: Record<EventDetailCoverageStatus, number>;
   items: EventDetailCoverageItem[];
   orphanDetailEventIds: string[];
+  orphanDetails: EventDetailOrphan[];
+}
+
+export interface EventDetailOrphan {
+  eventId: string;
+  kind: EventDetailOrphanKind;
+  rationale: string;
 }
 
 export interface EventDetailCoverageOptions {
@@ -106,6 +114,29 @@ function emptyUnresolved(): EventDetailUnresolvedReferences {
 function emptyStatusCounts(): Record<EventDetailCoverageStatus, number> {
   return { covered: 0, 'needs-review': 0, unresolved: 0 };
 }
+
+const cityHistoryAuxiliaryOrphanIds = new Set([
+  'court-moves-luoyang',
+  'daxing-capital',
+  'dong-zhuo-changan',
+  'eastern-han-moves-luoyang',
+  'eastern-han-restores-changan',
+  'former-zhao-capital-changan',
+  'gengshi-enters-changan',
+  'han-changan-new-city',
+  'han-wudi-expands-changan',
+  'huang-chao-changan',
+  'later-qin-falls-changan',
+  'liu-yu-captures-changan',
+  'northern-zhou-changan',
+  'qin-xianyang-capital',
+  'qin-xianyang-unification',
+  'tang-changan-occupation',
+  'western-jin-loses-changan',
+  'western-wei-changan',
+  'xuanwu-gate',
+  'zhou-fenghao-capital',
+]);
 
 function sourceIdsFor(event: HistoricalEvent, detail: HistoricalEventDetail | undefined): string[] {
   return unique([...event.sourceIds, ...(detail?.sourceIds ?? [])]);
@@ -249,6 +280,19 @@ export function buildEventDetailCoverageReport(
   const orphanDetailEventIds = unique(catalog.eventDetails
     .map((detail) => detail.eventId)
     .filter((eventId) => !eventIds.has(eventId)));
+  const orphanDetails: EventDetailOrphan[] = orphanDetailEventIds.map((eventId) => (
+    cityHistoryAuxiliaryOrphanIds.has(eventId)
+      ? {
+        eventId,
+        kind: 'city-history-auxiliary',
+        rationale: '该详情描述城市、都城或城市阶段变化，作为城市史辅助节点保留，不冒充主事件目录中的独立历史事件。',
+      }
+      : {
+        eventId,
+        kind: 'unclassified',
+        rationale: '该孤立详情尚未完成与主事件目录的证据绑定，暂不进入主事件覆盖率。',
+      }
+  ));
 
   return {
     totalEvents: items.length,
@@ -259,6 +303,7 @@ export function buildEventDetailCoverageReport(
     statusCounts,
     items,
     orphanDetailEventIds,
+    orphanDetails,
   };
 }
 
