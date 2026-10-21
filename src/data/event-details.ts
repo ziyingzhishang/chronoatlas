@@ -1372,7 +1372,12 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'song-southward',
-    participants: [],
+    participants: [
+      { personId: 'zhao-gou', role: '靖康后在应天即位并重建宋室政权的核心君主', note: '赵构在1127年应天即位，标志南宋阶段开始；其后多次迁驻与临安中心形成属于南渡的后续阶段。' },
+      { personId: 'yue-fei', role: '南宋重建与北方防御阶段的抗金将领', note: '岳飞主要参与南宋南渡后的军事重建和北方防御，不将其写成宋廷全部迁移决策的参与者。' },
+      { personId: 'han-shizhong', role: '南宋早期军事重建阶段的抗金将领', note: '韩世忠连接南渡后宋军重建与宋金军事对峙，其角色属于后续军政阶段，不等同于1127年宫廷迁移的决策者。' },
+      { personId: 'qin-hui', role: '南宋中期朝政与宋金和议阶段的宰相', note: '秦桧的活动主要在南渡后的朝政和和议阶段，晚于1127年南渡开端；本条不把其前推为北宋覆亡当日人物。' },
+    ],
     polityIds: ['song_northern', 'song_south'],
     causes: ['金军攻占汴梁，北宋中央政治结构崩溃。', '宋宗室与官僚需要在南方重建皇统与行政秩序。'],
     consequences: ['北宋阶段结束，南宋阶段开始。', '宋廷经历应天、扬州、建康等阶段性迁移，临安后来成为主要政治中心。'],
@@ -1383,7 +1388,7 @@ const details: HistoricalEventDetail[] = [
     ],
     locationIds: ['kaifeng', 'yingtian', 'linan'],
     relatedEventIds: ['northern-song-founded', 'southern-song-founded', 'jurchen-jin-founded'],
-    sourceIds: ['china-chronology', 'capital-history-reference'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '1127年同时包含汴梁失守、赵构即位和南渡开端；应天、建康、临安是不同阶段的中心，不能把后来的临安定都提前为北宋覆亡当日事实。',
   },
   {
@@ -1677,7 +1682,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-ming-founded',
-    participants: [],
+    participants: [
+      { personId: 'zhu-yousong', role: '弘光阶段在南京承接明统的南明君主', note: '朱由崧代表1644—1645年弘光政权，是南明多阶段体系中的首个重要君主之一，不等同于全部南明政权。' },
+      { personId: 'shi-kefa', role: '弘光朝廷负责扬州防务的军政领袖', note: '史可法属于弘光阶段的军政人物，与朱由崧朝廷存在阶段性君臣关系；其角色不覆盖隆武、永历等后续南明中心。' },
+    ],
     polityIds: ['ming_southern'],
     causes: ['1644年明廷在北方的中央统治崩溃。', '南方明宗室、官僚、军镇和地方社会仍拥有维持明统的政治资源。'],
     consequences: ['弘光、隆武、绍武、永历等南方政权先后建立。', '明清鼎革转为长期、多中心的战争和政治竞争。'],
