@@ -236,6 +236,15 @@ main { min-height: 100vh; }
 .study-heritage-list summary { display:flex; justify-content:space-between; gap:12px; cursor:pointer; }
 .study-heritage-detail { padding:8px 0 2px 14px; color:var(--paper-muted); line-height:1.6; }
 .study-heritage-detail p { margin:4px 0; }
+.relationship-graph { overflow:hidden; border:1px solid rgba(198,161,91,.16); padding:8px; background:rgba(8,12,16,.26); }
+.relationship-graph svg { display:block; width:100%; min-height:150px; }
+.relationship-edge line { stroke:rgba(198,161,91,.45); stroke-width:1; }
+.relationship-edge text { fill:var(--paper-muted); font-size:9px; text-anchor:middle; }
+.relationship-node circle { stroke:var(--gold); stroke-width:1; fill:var(--panel); }
+.relationship-node-person circle { fill:rgba(119,145,129,.7); }
+.relationship-node-heritage circle { fill:rgba(164,125,85,.7); }
+.relationship-node text { fill:var(--paper); font-size:10px; }
+.relationship-graph-text { list-style:none; margin:4px 0 0; padding:0; color:var(--paper-muted); font-size:11px; line-height:1.6; }
 .year-steppers { flex-wrap:wrap; }
 
 @media (max-width: 1100px) {

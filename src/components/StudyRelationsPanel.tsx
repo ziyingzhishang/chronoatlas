@@ -3,6 +3,7 @@ import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
 import { groupPersonRelationships } from '../domain/relationships';
 import { getHeritageDetail } from '../data/heritage-details';
+import { RelationshipGraph } from './RelationshipGraph';
 
 type StudyView = CityStudyView | PolityStudyView;
 
@@ -29,6 +30,10 @@ export function StudyRelationsPanel({ view }: { view: StudyView }) {
           const relationList = Object.values(relations).flat();
           return <li key={person.id}>{person.name}{relationList.length > 0 && <span className="study-relation-label"> · {relationList.map((relation) => t(relationshipLabel[relation.claim.predicate] ?? relation.claim.predicate)).join('、')}</span>}</li>;
         })}</ul>
+      </div>}
+      {polityView && <div className="study-block">
+        <h3>{t('关系网络')}</h3>
+        <RelationshipGraph view={polityView} />
       </div>}
       <div className="study-block">
         <h3>{t('相关事件')}</h3>

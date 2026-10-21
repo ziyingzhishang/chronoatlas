@@ -22,8 +22,8 @@ describe('StudyRelationsPanel integration', () => {
     render(<StudyRelationsPanel view={view!} />);
 
     expect(screen.getByText('政权视角')).toBeInTheDocument();
-    expect(screen.getByText(/李世民/)).toBeInTheDocument();
-    expect(screen.getByText(/统治/)).toBeInTheDocument();
+    expect(screen.getAllByText(/李世民/).length).toBeGreaterThanOrEqual(2);
+    expect(screen.getAllByText(/统治/).length).toBeGreaterThanOrEqual(2);
     expect(screen.getByText('唐在长安建立')).toBeInTheDocument();
   });
 
