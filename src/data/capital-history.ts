@@ -1,5 +1,6 @@
 import type { CapitalRole, CapitalStatus, CapitalTerm } from '../domain/types';
 import { polities } from './polities';
+import { places } from './places';
 
 type Seed =
   | [string, string, number, number]
@@ -20,6 +21,16 @@ const twelfthBatchSourceIds: Record<string, string[]> = {
   northern_yuan: ['northern-yuan-early-ming'],
   turkic: ['turkic-history-db', 'turkic-orkhon-heritage'],
 };
+const thirteenthBatchAuditNotes: Record<string, string> = {
+  xiongnu: '保留龙城／单于庭的候选区域参照，不将会聚中心解释为固定城市首都；位置与汗廷移动性仍有争议。',
+  tuyuhun: '保留伏俟城后期王都候选，不将候选遗址扩展为全期固定首都；遗址比定与阶段对应仍不充分。',
+  xia_early: '保留二里头考古文化候选，不把文化核心直接等同为夏代国家都城；年代与政权对应仍属研究问题。',
+  shang: '保留早期都城候选，不以二里头替代商代多次迁都传统或晚商殷墟地点；本轮不新增未经地点目录支持的阶段记录。',
+  western_qin: '保留金城及河湟／河西阶段性中心，区分实际政治中心与固定正式都城；现有时段不足以支持全期单一都城。',
+  northern_yuan: '保留蒙古汗廷区域参照，区分移动汗廷与固定城市；北元多阶段政治核心不能压缩为单一都城。',
+  ming_southern: '保留南京、福州、广州的阶段性实际中心，区分南明并立政权与单一国家首都；不做全期固定都城判断。',
+  turkic: '保留两个突厥汗国阶段的于都斤／鄂尔浑区域政治核心，区分汗廷网络与固定城市；不升级为正式固定首都。',
+};
 const seed = (polityId:string, [placeId, _name, validFrom, validTo, role='primary', status='formal', confidence='medium', notes]:Seed): CapitalTerm => ({
   polityId,
   placeId,
@@ -29,9 +40,14 @@ const seed = (polityId:string, [placeId, _name, validFrom, validTo, role='primar
   status,
   confidence,
   sourceIds: [...new Set([...sourceIds, ...(twelfthBatchSourceIds[polityId] ?? [])])],
-  notes: notes && twelfthBatchAuditNotes[polityId]
-    ? `${notes} ${twelfthBatchAuditNotes[polityId]}`
-    : twelfthBatchAuditNotes[polityId] ?? notes,
+  notes: (() => {
+    const resolvedSourceIds = [...new Set([...sourceIds, ...(twelfthBatchSourceIds[polityId] ?? [])])];
+    const modernName = places.find((place) => place.id === placeId)?.modernName ?? '现代位置待核';
+    const auditNote = thirteenthBatchAuditNotes[polityId]
+      ? `第十三轮证据复核：现代对应：${modernName}；角色：${role}；来源ID：${resolvedSourceIds.join('、')}。${thirteenthBatchAuditNotes[polityId]}`
+      : undefined;
+    return [notes, twelfthBatchAuditNotes[polityId], auditNote].filter(Boolean).join(' ');
+  })(),
 });
 
 const explicit: Record<string, Seed[]> = {
