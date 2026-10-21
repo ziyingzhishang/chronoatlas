@@ -228,9 +228,14 @@ main { min-height: 100vh; }
 .study-block h3 { margin:0 0 8px; color:var(--gold); font-size:13px; font-weight:500; }
 .study-chip-list { display:flex; flex-wrap:wrap; gap:6px; list-style:none; margin:0; padding:0; }
 .study-chip-list li { border:1px solid rgba(198,161,91,.28); padding:4px 8px; color:var(--paper); font-size:12px; }
+.study-relation-label { color:var(--paper-muted); }
 .study-list { display:grid; gap:7px; list-style:none; margin:0; padding:0; }
 .study-list li { display:flex; justify-content:space-between; gap:12px; color:var(--paper); font-size:12px; }
 .study-list li span { color:var(--paper-muted); white-space:nowrap; }
+.study-heritage-list li { display:block; }
+.study-heritage-list summary { display:flex; justify-content:space-between; gap:12px; cursor:pointer; }
+.study-heritage-detail { padding:8px 0 2px 14px; color:var(--paper-muted); line-height:1.6; }
+.study-heritage-detail p { margin:4px 0; }
 .year-steppers { flex-wrap:wrap; }
 
 @media (max-width: 1100px) {
