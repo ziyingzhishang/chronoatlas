@@ -36,6 +36,7 @@ function updateLocalHistory(map:GLMap,state:HistoricalState,t:(text:string)=>str
     (map.getSource(id) as GeoJSONSource).setData(data[id]);
   }
 }
+const mapDuration = (duration:number) => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 0 : duration;
 
 const emptyFeatures:GeoJSON.FeatureCollection={type:'FeatureCollection',features:[]};
 function clearWorldHistory(map:GLMap){
@@ -239,34 +240,36 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
       if (!map || !previous || fatal) return;
       previousCamera.current = undefined;
       latest.current.onCameraHistoryChange?.(false);
-      map.flyTo({ center: previous.center, zoom: previous.zoom, bearing: previous.bearing, pitch: previous.pitch, duration: 500 });
+      map.flyTo({ center: previous.center, zoom: previous.zoom, bearing: previous.bearing, pitch: previous.pitch, duration: mapDuration(500) });
     },
     perform(action) {
       const map = mapRef.current;
       if (!map || fatal) return;
       switch (action) {
-        case 'zoomIn': map.zoomIn({ duration: 280 }); break;
-        case 'zoomOut': map.zoomOut({ duration: 280 }); break;
-        case 'rotateLeft': map.rotateTo(map.getBearing() - 30, { duration: 280 }); break;
-        case 'rotateRight': map.rotateTo(map.getBearing() + 30, { duration: 280 }); break;
-        case 'north': map.resetNorthPitch({ duration: 350 }); break;
-        case 'pitch': map.easeTo({ pitch: map.getPitch() > 5 ? 0 : 45, duration: 400 }); break;
-        case 'asia': map.flyTo({ ...ASIA_VIEW, duration: 700 }); break;
-        case 'china': map.flyTo({ center: [110, 34], zoom: 4.3, bearing: 0, pitch: 0, duration: 700 }); break;
-        case 'world': map.fitBounds([[-175, -60], [175, 75]], { padding: 25, bearing: 0, pitch: 0, duration: 700 }); break;
+        case 'zoomIn': map.zoomIn({ duration: mapDuration(280) }); break;
+        case 'zoomOut': map.zoomOut({ duration: mapDuration(280) }); break;
+        case 'rotateLeft': map.rotateTo(map.getBearing() - 30, { duration: mapDuration(280) }); break;
+        case 'rotateRight': map.rotateTo(map.getBearing() + 30, { duration: mapDuration(280) }); break;
+        case 'north': map.resetNorthPitch({ duration: mapDuration(350) }); break;
+        case 'pitch': map.easeTo({ pitch: map.getPitch() > 5 ? 0 : 45, duration: mapDuration(400) }); break;
+        case 'asia': map.flyTo({ ...ASIA_VIEW, duration: mapDuration(700) }); break;
+        case 'china': map.flyTo({ center: [110, 34], zoom: 4.3, bearing: 0, pitch: 0, duration: mapDuration(700) }); break;
+        case 'world': map.fitBounds([[-175, -60], [175, 75]], { padding: 25, bearing: 0, pitch: 0, duration: mapDuration(700) }); break;
       }
     },
     focus(entity) {
       const map = mapRef.current;
       if (!map || fatal) return;
-      previousCamera.current = { center: map.getCenter().toArray() as [number,number], zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
-      latest.current.onCameraHistoryChange?.(true);
+      const checkpoint = () => {
+        previousCamera.current = { center: map.getCenter().toArray() as [number,number], zoom: map.getZoom(), bearing: map.getBearing(), pitch: map.getPitch() };
+        latest.current.onCameraHistoryChange?.(true);
+      };
       if (entity.type === 'place') {
         const place = latest.current.state.places.find(p => p.id === entity.id);
-        if (place) map.flyTo({ center: [place.longitude, place.latitude], zoom: Math.max(5.5, map.getZoom()), duration: 650 });
+        if (place) { checkpoint(); map.flyTo({ center: [place.longitude, place.latitude], zoom: Math.max(5.5, map.getZoom()), duration: mapDuration(650) }); }
       } else if(entity.type==='event') {
         const event=latest.current.state.events.find(e=>e.id===entity.id);
-        if(event?.coordinates&&event.locationPrecision)map.flyTo({center:event.coordinates,zoom:Math.max(5,map.getZoom()),duration:650});
+        if(event?.coordinates&&event.locationPrecision) { checkpoint(); map.flyTo({center:event.coordinates,zoom:Math.max(5,map.getZoom()),duration:mapDuration(650)}); }
       } else if (entity.type === 'polity') {
         const features=latest.current.state.boundaries.filter(b=>b.polityId===entity.id).map(b=>({type:'Feature' as const,properties:{},geometry:b.geometry}));
         if(features.length) {
@@ -281,7 +284,7 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
             const distance=(i===longitudes.length-1?next+360:next)-lon;
             if(distance>gap){gap=distance;west=next;east=lon+(lon<next?360:0);}
           });
-          if([west,south,east,north].every(Number.isFinite)) map.fitBounds([[west,south],[east,north]],{padding:70,maxZoom:6,bearing:0,pitch:0,duration:700});
+          if([west,south,east,north].every(Number.isFinite)) { checkpoint(); map.fitBounds([[west,south],[east,north]],{padding:70,maxZoom:6,bearing:0,pitch:0,duration:mapDuration(700)}); }
         }
       }
     },

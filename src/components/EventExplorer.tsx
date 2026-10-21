@@ -17,7 +17,13 @@ export function EventExplorer({items=events,year,selectedId,onSelect,onYearChang
   const [category,setCategory]=useState('');
   const [view,setView]=useState<'current'|'nearby'|'all'>('current');
   const detail=useRef<HTMLElement>(null);
-  useEffect(()=>{const pane=detail.current?.closest('.workspace-panel-scroll');if(pane)pane.scrollTop=0;},[selectedId]);
+  const listScrollTop=useRef(0);
+  useEffect(()=>{
+    const pane=detail.current?.closest('.workspace-panel-scroll');
+    if(!pane)return;
+    if(selectedId){ listScrollTop.current=pane.scrollTop; pane.scrollTop=0; }
+    else pane.scrollTop=listScrollTop.current;
+  },[selectedId]);
   const localizedItems=useMemo(()=>localizeEvents(items,locale),[items,locale]);
   const filtered=queryEvents(localizedItems,{region,category}).filter(event=>!query.trim()||contentSearchText(event).includes(query.trim().toLocaleLowerCase()));
   const searching=!!(query.trim()||region||category);

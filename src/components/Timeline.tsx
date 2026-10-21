@@ -90,8 +90,6 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   useEffect(() => {
     setDraft(String(year));
     setError('');
-    setWindow(previous => year < previous[0] || year > previous[1]
-      ? fitWindow(yearToIndex(year), yearToIndex(previous[1]) - yearToIndex(previous[0])) : previous);
   }, [year]);
 
   function chooseRange(range: YearWindow) {
