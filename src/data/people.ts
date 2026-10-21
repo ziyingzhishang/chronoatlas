@@ -78,6 +78,12 @@ export const people: Person[] = [
   { id: 'tuotuobuhua', name: '脱脱不花', aliases: ['脱脱不花汗'], birthYear: 1422, deathYear: 1457, roles: ['大汗', '君主'], polityIds: ['northern_yuan'], description: '脱脱不花是北元中期被拥立的蒙古大汗，其汗位与也先的军事权力并存，关系应按阶段而非单一君臣结构理解。', sourceIds: ['northern-yuan-early-ming', 'northern-yuan-yesen'] },
   { id: 'zhu-yousong', name: '朱由崧', aliases: ['弘光帝'], birthYear: 1607, deathYear: 1646, roles: ['皇帝', '南明君主'], polityIds: ['ming_southern'], description: '朱由崧即弘光帝，是南明诸政权中的首位重要君主之一；南明是明室南迁后多个阶段性政权的合称。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'shi-kefa', name: '史可法', aliases: ['道邻'], birthYear: 1601, deathYear: 1645, roles: ['督师', '官员', '军事领袖'], polityIds: ['ming_southern'], description: '史可法是南明弘光时期的重要军政人物，负责扬州防务，与朱由崧朝廷存在阶段性君臣关系。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'temujin', name: '铁木真', aliases: ['成吉思汗'], birthYear: 1162, deathYear: 1227, roles: ['大汗', '军事领袖'], polityIds: ['mongol'], description: '铁木真在1206年被推举为成吉思汗，统一蒙古高原主要部众，蒙古汗国由此进入共同汗权阶段。', sourceIds: ['china-chronology'] },
+  { id: 'nurhaci', name: '努尔哈赤', aliases: ['清太祖'], birthYear: 1559, deathYear: 1626, roles: ['汗', '军事领袖'], polityIds: ['later_jin'], description: '努尔哈赤于1616年建立后金，早期以赫图阿拉为政治中心，后迁都辽阳与沈阳阶段。', sourceIds: ['china-chronology'] },
+  { id: 'hongtaiji', name: '皇太极', aliases: ['清太宗'], birthYear: 1592, deathYear: 1643, roles: ['皇帝', '政治家'], polityIds: ['later_jin', 'qing'], description: '皇太极在盛京继承并改造后金国家体系，1636年改国号为清。', sourceIds: ['china-chronology'] },
+  { id: 'shunzhi', name: '福临', aliases: ['顺治帝'], birthYear: 1638, deathYear: 1661, roles: ['皇帝'], polityIds: ['qing'], description: '顺治帝时期清廷于1644年入关并迁入北京，清的政治中心由盛京转向北京。', sourceIds: ['china-chronology'] },
+  { id: 'sun-yat-sen', name: '孙中山', aliases: ['孙文'], birthYear: 1866, deathYear: 1925, roles: ['临时大总统', '革命家'], polityIds: ['republic'], description: '孙中山于1912年在南京就任中华民国临时大总统，中华民国临时政府由此成立。', sourceIds: ['china-chronology'] },
+  { id: 'mao-zedong', name: '毛泽东', birthYear: 1893, deathYear: 1976, roles: ['国家领导人', '政治家'], polityIds: ['prc'], description: '毛泽东在1949年中华人民共和国成立典礼上宣告中央人民政府成立，成为新中国成立历史记忆中的重要人物。', sourceIds: ['china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
