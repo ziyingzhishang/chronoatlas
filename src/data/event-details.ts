@@ -1203,7 +1203,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-wei-founded',
-    participants: [],
+    participants: [
+      { personId: 'tuoba-gui', role: '复称代王、改国号为魏并建立北魏的君主', note: '拓跋珪对应386年复代、改国号和政权形成节点；平城及后续北魏统一北方属于不同阶段，不据此倒推建国当年疆域。' },
+    ],
     polityIds: ['wei_northern'],
     causes: ['前秦崩溃后，拓跋部重新聚合。', '北方草原与河套地区的权力秩序发生重组。'],
     consequences: ['北魏政权形成并进入北朝前期政治格局。', '平城成为早期政治中心，后续统一北方与迁都洛阳仍属不同阶段。'],
@@ -1219,7 +1221,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-qi-founded',
-    participants: [],
+    participants: [
+      { personId: 'xiao-daocheng', role: '控制刘宋末年军政资源并受禅建立南齐的皇帝', note: '萧道成是479年受禅建齐的核心人物；南齐建政节点与南朝既有建康政治中心相连，不表示当年已稳定控制后期全部范围。' },
+    ],
     polityIds: ['qi_southern'],
     causes: ['刘宋末年皇室与军政集团关系紧张。', '萧道成在中央军政体系中逐步取得主导地位。'],
     consequences: ['南齐成为南朝第二个主要政权。', '建康继续作为南朝政治中心，北方格局未因南方禅代同时改变。'],
@@ -1251,7 +1255,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-qi-founded',
-    participants: [],
+    participants: [
+      { personId: 'gao-yang', role: '承接高氏东魏军政基础并受禅建立北齐的皇帝', note: '高洋是550年东魏禅代、北齐建立的核心人物；高氏集团此前的军政积累与高洋个人即位按阶段区分。' },
+    ],
     polityIds: ['qi_northern'],
     causes: ['东魏末年高氏家族掌握东部军政资源。', '东魏皇室的实际权力持续收缩。'],
     consequences: ['北齐取代东魏，成为北朝东部主要政权。', '北齐与西魏、北周的竞争延续至577年。'],
@@ -1584,7 +1590,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'mongol-founded',
-    participants: [],
+    participants: [
+      { personId: 'temujin', role: '统一蒙古高原主要部众并被推举为成吉思汗的大汗', note: '铁木真在1206年大会上被推举为成吉思汗，代表共同汗权形成；蒙古汗国、蒙古帝国与后续元朝不能视为同一阶段或同一疆域。' },
+    ],
     polityIds: ['mongol'],
     causes: ['蒙古高原诸部长期竞争，铁木真通过战争、联盟和分封逐步整合草原力量。', '统一后的政治组织需要新的共同汗权和部众秩序。'],
     consequences: ['蒙古汗国形成统一的草原政治框架。', '随后对金、西夏、中亚等地的战争和扩张进入新的阶段。'],
