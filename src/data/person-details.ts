@@ -548,6 +548,46 @@ export const personDetails: PersonDetail[] = [
     aliases: ['北燕文成帝'], offices: [{ title: '北燕皇帝', polityId: 'northern_yan', placeId: 'longcheng', validFrom: 409, validTo: 430, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北燕形成涉及高云被拥立、冯跋掌权等连续阶段，本详情不把后燕末期与北燕正式分期压缩为单一事件。',
   },
+  {
+    personId: 'li-bian', biography: '李昪原名徐知诰，在杨吴政治体系中逐步掌握权力，937年受禅建立齐，939年改国号为唐，后世称南唐。',
+    aliases: ['徐知诰'], offices: [{ title: '杨吴权臣／南唐皇帝', polityId: 'southern_tang', placeId: 'jiankang', validFrom: 927, validTo: 943, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-tang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '937年受禅建齐与939年改国号为唐是两个制度节点；本详情保留徐知诰、李昪两个姓名阶段。',
+  },
+  {
+    personId: 'liu-yan', biography: '刘龑承接兄长刘隐在广州经营的岭南军政资源，917年称帝，918年改国号为汉，南汉进入正式建政阶段。',
+    aliases: ['刘岩', '南汉高祖'], offices: [{ title: '南汉皇帝', polityId: 'southern_han', placeId: 'guangzhou', validFrom: 917, validTo: 942, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '917年国号为越、918年改称汉；“南汉”是后世通称，不能把刘龑称帝日与岭南全域整合混为一谈。',
+  },
+  {
+    personId: 'yelu-dashi', biography: '耶律大石在辽亡后率契丹部众西行，重组政治与军事网络，西辽在七河流域及中亚逐步形成。',
+    aliases: ['西辽德宗'], offices: [{ title: '西辽皇帝与西行部众领袖', polityId: 'western_liao', placeId: 'balasagun', validFrom: 1124, validTo: 1143, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1124年前后是西辽形成约年；西行路线、称帝、建都和七河流域整合属于不同阶段，不能把辽旧疆域直接移植为西辽边界。',
+  },
+  {
+    personId: 'kublai', biography: '忽必烈在蒙古汗权和东亚战争体系基础上建立元朝，1271年定国号为大元，随后继续完成对南宋的军事与行政整合。',
+    aliases: ['元世祖'], offices: [{ title: '蒙古大汗／元皇帝', polityId: 'yuan', placeId: 'dadu', validFrom: 1260, validTo: 1294, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'] }],
+    keyEvents: ['yuan-founded'], sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'], uncertaintyNote: '1260年汗位、1271年改国号和1279年南宋覆亡是连续但不同的节点；元朝国号不等于当年已经完成南方控制。',
+  },
+  {
+    personId: 'liu-bingzhong', biography: '刘秉忠在忽必烈政权中参与国号、都城和制度设计，元初国家建构与大都政治空间均与其活动相连。',
+    aliases: ['子聪'], offices: [{ title: '元初政治家与制度设计者', polityId: 'yuan', placeId: 'dadu', validFrom: 1260, validTo: 1274, datePrecision: 'range', sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history'] }],
+    keyEvents: ['yuan-founded'], sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history'], uncertaintyNote: '刘秉忠参与元初制度建构，但国号、都城与行政整合是集体政治过程，不能归结为个人单独决定。',
+  },
+  {
+    personId: 'zhu-yuanzhang', biography: '朱元璋在元末群雄竞争中以应天为基地建立明朝，1368年称帝并北伐攻取大都，明初政权转换由此展开。',
+    aliases: ['明太祖'], offices: [{ title: '明皇帝', polityId: 'ming', placeId: 'yingtian', validFrom: 1368, validTo: 1398, datePrecision: 'range', sourceIds: ['china-chronology'] }],
+    keyEvents: ['ming-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '应天称帝与攻取大都是1368年的不同阶段；明建立不代表当年已稳定控制元旧境全部地区。',
+  },
+  {
+    personId: 'toghon-temur', biography: '妥懽帖睦尔即元顺帝，元末在大都维持元廷统治；1368年明军攻取大都后北走，元廷北迁与北元阶段相连。',
+    aliases: ['元顺帝', '惠宗'], offices: [{ title: '元皇帝／北元汗廷前期君主', polityId: 'northern_yuan', placeId: 'beiyuan_core', validFrom: 1333, validTo: 1370, datePrecision: 'range', sourceIds: ['northern-yuan-early-ming', 'china-chronology'] }],
+    keyEvents: ['northern-yuan-founded'], sourceIds: ['northern-yuan-early-ming', 'china-chronology'], uncertaintyNote: '1368年表示元廷失去大都并向北迁移的阶段转折，不是另立新朝的单日；北元称谓和政治中心存在分期差异。',
+  },
+  {
+    personId: 'bayan', biography: '伯颜是元世祖时期的重要将领与宰相，负责推进元军南下和宋元政权转换，南宋覆亡属于其军政活动的关键背景。',
+    aliases: ['丞相伯颜'], offices: [{ title: '元军统帅与中书右丞相', polityId: 'yuan', validFrom: 1274, validTo: 1295, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'yuan-goryeo-records'] }],
+    keyEvents: ['song-southward'], sourceIds: ['yuan-nationalities-history', 'yuan-goryeo-records'], uncertaintyNote: '伯颜参与的是1270年代后期元宋战争与行政接收，不把其军事活动简化为元朝1271年建国本身。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

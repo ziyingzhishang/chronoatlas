@@ -107,6 +107,14 @@ export const people: Person[] = [
   { id: 'li-hao', name: '李暠', aliases: ['西凉武昭王'], birthYear: 351, deathYear: 417, roles: ['君主', '地方统治者'], polityIds: ['western_liang'], description: '李暠在敦煌、酒泉一带建立西凉，维系河西西部的地方政权与交通网络。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'gao-jixing', name: '高季兴', aliases: ['南平武信王'], birthYear: 858, deathYear: 929, roles: ['地方统治者', '军事领袖'], polityIds: ['jingnan'], description: '高季兴以江陵为中心经营荆南，在五代更替中维持地方政权的连续性。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'feng-ba', name: '冯跋', aliases: ['北燕文成帝'], deathYear: 430, roles: ['皇帝', '军事领袖'], polityIds: ['northern_yan'], description: '冯跋在后燕末年于辽西建立北燕，承接慕容氏燕政权在东北地区的政治遗产。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'li-bian', name: '李昪', aliases: ['徐知诰'], birthYear: 889, deathYear: 943, roles: ['皇帝', '政治家'], polityIds: ['southern_tang', 'wu_ten'], description: '李昪原名徐知诰，在杨吴权力体系中掌权并于937年受禅建立齐，后改国号为唐，南唐政权由此形成。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'liu-yan', name: '刘龑', aliases: ['刘岩', '南汉高祖'], birthYear: 889, deathYear: 942, roles: ['皇帝', '地方统治者'], polityIds: ['southern_han'], description: '刘龑在广州承接刘隐经营的岭南军政基础，917年称帝，918年改国号为汉，南汉由此进入正式建政阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'yelu-dashi', name: '耶律大石', aliases: ['西辽德宗'], deathYear: 1143, roles: ['皇帝', '军事领袖', '迁徙领袖'], polityIds: ['western_liao'], description: '耶律大石在辽亡后率部西行，于中亚重建契丹政治力量，西辽在其组织下形成并发展。', sourceIds: ['china-chronology'] },
+  { id: 'kublai', name: '忽必烈', aliases: ['元世祖'], birthYear: 1215, deathYear: 1294, roles: ['皇帝', '大汗', '政治家'], polityIds: ['mongol', 'yuan'], description: '忽必烈在蒙古汗权基础上建立元朝，1271年定国号为大元，随后继续推进对南宋的战争与行政整合。', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'] },
+  { id: 'liu-bingzhong', name: '刘秉忠', aliases: ['子聪'], birthYear: 1216, deathYear: 1274, roles: ['政治家', '制度设计者', '宰相'], polityIds: ['yuan'], description: '刘秉忠是忽必烈时期的重要政治家与制度设计者，参与元初国号、都城和国家制度安排。', sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history'] },
+  { id: 'zhu-yuanzhang', name: '朱元璋', aliases: ['明太祖'], birthYear: 1328, deathYear: 1398, roles: ['皇帝', '军事领袖'], polityIds: ['ming'], description: '朱元璋以应天为中心建立明朝，1368年称帝并北伐攻取大都，元明政权转换由此展开。', sourceIds: ['china-chronology'] },
+  { id: 'toghon-temur', name: '妥懽帖睦尔', aliases: ['元顺帝', '惠宗'], birthYear: 1320, deathYear: 1370, roles: ['皇帝', '大汗'], polityIds: ['yuan', 'northern_yuan'], description: '妥懽帖睦尔即元顺帝，1368年明军攻取大都后北走，元廷北迁与北元阶段形成相连。', sourceIds: ['northern-yuan-early-ming', 'china-chronology'] },
+  { id: 'bayan', name: '伯颜', aliases: ['丞相伯颜'], deathYear: 1295, roles: ['军事领袖', '宰相'], polityIds: ['yuan'], description: '伯颜是元灭南宋战争中的核心将领与宰相，奉忽必烈之命推进江南战事，参与宋元政权转换。', sourceIds: ['yuan-nationalities-history', 'yuan-goryeo-records'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));
