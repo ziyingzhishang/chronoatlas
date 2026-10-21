@@ -12,8 +12,17 @@ test('search finds events outside the selected year and does not mix nearby even
   await userEvent.type(screen.getByRole('searchbox',{name:'搜索历史事件'}),'跨年');
   await userEvent.click(screen.getByRole('button',{name:/跨年转折/}));
   expect(select).toHaveBeenCalledWith(items[0]);
+  await userEvent.click(screen.getByRole('button',{name:'筛选'}));
   await userEvent.selectOptions(screen.getByRole('combobox',{name:'事件地域'}),'world');
   expect(screen.getByText('没有符合筛选条件的事件')).toBeInTheDocument();
+});
+
+test('keeps secondary event filters collapsed until requested', async () => {
+  render(<EventExplorer items={items} year={1} onSelect={vi.fn()} onYearChange={vi.fn()} />);
+
+  expect(screen.queryByRole('combobox', { name: '事件地域' })).not.toBeInTheDocument();
+  await userEvent.click(screen.getByRole('button', { name: '筛选' }));
+  expect(screen.getByRole('combobox', { name: '事件地域' })).toBeInTheDocument();
 });
 test('event details expose evidence and uncertainty without inventing a location; before/after skips zero',async()=>{
   const year=vi.fn();

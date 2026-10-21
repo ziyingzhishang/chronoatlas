@@ -15,6 +15,7 @@ export function EventExplorer({items=events,year,selectedId,onSelect,onYearChang
   const [query,setQuery]=useState('');
   const [region,setRegion]=useState('');
   const [category,setCategory]=useState('');
+  const [showFilters,setShowFilters]=useState(false);
   const [view,setView]=useState<'current'|'nearby'|'all'>('current');
   const detail=useRef<HTMLElement>(null);
   const listScrollTop=useRef(0);
@@ -50,8 +51,9 @@ export function EventExplorer({items=events,year,selectedId,onSelect,onYearChang
       </details>
     </article>}
     <div className="event-search"><label>{t("查找历史转折")}<input type="search" aria-label={t("搜索历史事件")} placeholder={t("搜索事件、背景或影响")} value={query} onChange={e=>setQuery(e.target.value)}/></label>
-      <div className="event-filters"><select aria-label={t("事件地域")} value={region} onChange={e=>setRegion(e.target.value)}><option value="">{t("全部地域")}</option><option value="china">{t("中国历史")}</option><option value="world">{t("同期世界")}</option></select>
-        <select aria-label={t("事件类别")} value={category} onChange={e=>setCategory(e.target.value)}><option value="">{t("全部类别")}</option>{[...new Set(items.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(c=><option key={c} value={c}>{t(c)}</option>)}</select></div>
+      <button className="event-filter-toggle" type="button" aria-expanded={showFilters} onClick={()=>setShowFilters(value=>!value)}>{t(showFilters ? "收起筛选" : "筛选")}</button>
+      {showFilters&&<div className="event-filters"><select aria-label={t("事件地域")} value={region} onChange={e=>setRegion(e.target.value)}><option value="">{t("全部地域")}</option><option value="china">{t("中国历史")}</option><option value="world">{t("同期世界")}</option></select>
+        <select aria-label={t("事件类别")} value={category} onChange={e=>setCategory(e.target.value)}><option value="">{t("全部类别")}</option>{[...new Set(items.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(c=><option key={c} value={c}>{t(c)}</option>)}</select></div>}
     </div>
     {groupIds&&!searching?<div className="event-view-tabs">{t("时间轴选中")} {listed.length} {t("个事件")} <button onClick={onClearGroup}>{t("返回全部")}</button></div>:!searching&&<div className="event-view-tabs" role="group" aria-label={t("事件时间范围")}>{(['current','nearby','all'] as const).map((v,i)=><button key={v} aria-pressed={view===v} onClick={()=>setView(v)}>{t(['本年','附近','全部'][i])}</button>)}</div>}
     <p className="event-list-caption">{t(searching?'全历史检索':groupIds?'时间轴分组 · 各条日期见下方':view==='nearby'?'附近事件 · 按时间距离排序':view==='all'?'精选事件目录':`${formatHistoricalYear(year)} · 已收录事件`)} · {listed.length} {t("条")}</p>

@@ -99,9 +99,9 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
             <dt>{t("当前状态")}</dt>
             <dd>{state.boundaries.filter((boundary) => boundary.polityId === selected.id).map((boundary) => t(controlLabels[boundary.controlType])).join(listSeparator) || t('暂无疆域几何')}</dd>
           </dl>
-          {state.boundaries.filter(b => b.polityId === selected.id).map(b => <div className="boundary-source" key={b.id}>
-            <strong>{t(b.presentation==='maximum' ? '最大范围参考 · 非本年实况' : b.temporalKind==='interval' ? '按来源时段查询 · 非逐年考证' : '同年资料断面')}</strong>
-            <p>{t('证据级别：')}{b.evidence.evidenceLevel}</p>
+          {state.boundaries.filter(b => b.polityId === selected.id).map(b => <details className="boundary-source" data-testid="boundary-evidence" key={b.id}>
+            <summary><strong>{t(b.presentation==='maximum' ? '最大范围参考 · 非本年实况' : b.temporalKind==='interval' ? '按来源时段查询 · 非逐年考证' : '同年资料断面')}</strong><span>{t('证据级别：')}{b.evidence.evidenceLevel} · {t(range(b.validFrom,b.validTo))}</span></summary>
+            <div className="boundary-source-body"><p>{t('证据级别：')}{b.evidence.evidenceLevel}</p>
             <p>{t('派生方式：')}{t({
               'direct-source':'直接来源', 'licensed-digitization':'数字化参考', 'nearest-same-polity':'过渡参考',
               'maximum-record':'最大参考', 'administrative-synthesis':'行政区综合', 'cultural-core':'文化核心',
@@ -116,7 +116,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange }: InfoPanelProp
             {b.notes && <p>{prose(b.notes)}</p>}
             <ul className="source-links">{b.evidence.citations.map(citation=><li key={`${b.id}-${citation.title}-${citation.pageOrRecord??''}`}><a href={citation.urlOrCitation} target="_blank" rel="noreferrer">{t(citation.title)}{citation.version?` · ${citation.version}`:''}{citation.pageOrRecord?` · ${prose(citation.pageOrRecord)}`:''}</a></li>)}</ul>
             <a href={b.sourceUrl} target="_blank" rel="noreferrer">{t("查看原始矢量来源 ↗")}</a>
-          </div>)}
+            </div></details>)}
           {mappingNotes[selected.id] && <p className="detail-note">{t("核验备注：")}{prose(mappingNotes[selected.id])}</p>}
           {onYearChange && !!boundariesByPolity.get(selected.id)?.length && <details className="boundary-history"><summary>{t("本政权的资料变化 · 点击比较")}</summary><p>{t("以下是数据分段，不是全部历史变化。相邻段也可能沿用同一几何。")}</p><div>
             {boundariesByPolity.get(selected.id)?.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}{t(b.areaKm2 ? ` · 约${(b.areaKm2/10000).toFixed(0)}万 km²` : '')}</button>)}

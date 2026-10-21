@@ -61,6 +61,7 @@ test('shows evidence level, derivation, review state and citation for a curated 
   const base = state.boundaries[0];
   state.boundaries.push({...base, id:'test-southern-tang-maximum', polityId:'southern_tang', validFrom:937, validTo:959, snapshotYear:937, presentation:'maximum', evidence:{...base.evidence, evidenceLevel:'C', derivation:'maximum-record', reviewStatus:'pending'}});
   render(<LocaleProvider><InfoPanel state={state} selectedEntity={{type:'polity', id:'southern_tang'}} /></LocaleProvider>);
+  expect(screen.getAllByTestId('boundary-evidence')[0]).not.toHaveAttribute('open');
   expect(screen.getByText('证据级别：C')).toBeInTheDocument();
   expect(screen.getByText('派生方式：最大参考')).toBeInTheDocument();
   expect(screen.getByText('复核状态：待逐段复核')).toBeInTheDocument();
