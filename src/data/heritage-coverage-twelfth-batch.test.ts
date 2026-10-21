@@ -45,7 +45,7 @@ describe('heritage coverage twelfth batch', () => {
 
     expect(missing).toEqual([]);
     expect(twelfthBatch).toHaveLength(10);
-    expect(remainingUnlinkedPolities).toHaveLength(10);
+    expect(remainingUnlinkedPolities).toHaveLength(5);
   });
 
   it('provides source-backed, time-aware details for every selected heritage node', () => {
