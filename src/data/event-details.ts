@@ -315,7 +315,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'later-zhao-founded',
-    participants: [],
+    participants: [
+      { personId: 'shi-le', role: '整合北方军政力量并在襄国建立后赵的君主', note: '石勒是319年襄国建赵的核心人物；其早期依附、独立建政与后来灭前赵应按阶段区分。' },
+    ],
     polityIds: ['later_zhao'],
     causes: ['石勒在北方战争中积累军政资源，前赵内部变化为其摆脱名义从属提供条件。'],
     consequences: ['后赵成为河北和中原的重要政权。', '前赵、后赵及其他十六国力量的竞争重塑北方格局。'],
@@ -349,7 +351,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'former-yan-founded',
-    participants: [],
+    participants: [
+      { personId: 'murong-huang', role: '经营辽东并于337年称燕王的前燕君主', note: '慕容皝是前燕337年政权形成阶段的核心人物；其后慕容儁称帝及南进扩张属于制度升级和后续阶段。' },
+    ],
     polityIds: ['former_yan'],
     causes: ['慕容氏在辽东长期经营并积累军政资源。', '北方政局变化为其从地方势力转为独立政权提供条件。'],
     consequences: ['前燕成为十六国东北部的重要政权。', '辽东、河北与中原之间的政治竞争加剧。'],
@@ -451,7 +455,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'later-liang-founded',
-    participants: [],
+    participants: [
+      { personId: 'lv-guang', role: '以河西西征军为基础在姑臧建立后凉的军事领袖', note: '吕光是386年姑臧建政的核心人物；其西征军脱离前秦控制、建立后凉与后续河西整合是连续但可区分的阶段。' },
+    ],
     polityIds: ['later_liang'],
     causes: ['前秦西征军因中原局势突变无法返回中央。', '吕光在河西掌握了足以独立统治的军政资源。'],
     consequences: ['后凉成为河西走廊的重要政权。', '凉州交通与地方秩序在后凉及其他凉州政权竞争中重新组织。'],
@@ -467,7 +473,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-tang-founded',
-    participants: [],
+    participants: [
+      { personId: 'li-bian', role: '在杨吴权力体系中掌权并受禅建立南唐前身的君主', note: '李昪于937年受禅建立齐，939年改国号为唐；受禅、改号和南唐制度巩固是连续但可区分的阶段。' },
+    ],
     polityIds: ['southern_tang'],
     causes: ['杨吴后期权力集中于徐知诰。', '江淮、江南军政体系需要在禅代后重新安排国号和皇统。'],
     consequences: ['江南政权进入南唐阶段。', '金陵成为重要政治文化中心，南唐与周边十国长期互动。'],
@@ -1380,7 +1388,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'northern-liang-founded',
-    participants: [],
+    participants: [
+      { personId: 'duan-ye', role: '在张掖被推立并开启北凉政权形成阶段的君主', note: '段业是397年张掖受拥立的早期君主；沮渠蒙逊后来掌权，北凉政权演变不能归于单一人物。' },
+      { personId: 'juqu-mengxun', role: '取代段业并稳固北凉的河西军事领袖', note: '沮渠蒙逊代表北凉由张掖受拥立向沮渠氏实际掌权的后续阶段，不将其前置为397年唯一建政者。' },
+    ],
     polityIds: ['northern_liang'],
     causes: ['后凉内部的军政矛盾和河西地方势力离心。', '沮渠蒙逊等部众在张掖一带拥有建立新政权的军事与地方基础。'],
     consequences: ['河西走廊形成北凉政权，成为十六国后期西域与中原之间的重要节点。', '段业时期、沮渠氏掌权和姑臧阶段属于连续但不同的政权演变。'],
@@ -1444,7 +1455,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'southern-han-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-yan', role: '在广州称帝并推动南汉正式建政的君主', note: '刘龑于917年称帝、918年改国号为汉；称帝与改号是连续但可区分的制度节点。' },
+    ],
     polityIds: ['southern_han'],
     causes: ['唐末岭南藩镇获得较大自主空间。', '刘隐及刘龑控制广州和岭南核心地区，具备独立称帝的军政基础。'],
     consequences: ['岭南形成南汉政权，广州成为区域政治与海贸中心。', '917年称帝、国号由越改汉和后期岭南扩展属于连续而不同的节点。'],
@@ -1476,7 +1489,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'jingnan-founded',
-    participants: [],
+    participants: [
+      { personId: 'gao-jixing', role: '以江陵为中心维持荆南地方政权的军事与地方统治者', note: '高季兴在五代更替中经营江陵，924年前后荆南分期形成；名义受封与实际自治需分层理解。' },
+    ],
     polityIds: ['jingnan'],
     causes: ['五代更替使江陵成为中原、巴蜀和江南之间的战略交通节点。', '高季兴在江陵维持地方军政力量，并利用中原政权更替扩大自治空间。'],
     consequences: ['荆南形成延续较久的小型区域政权。', '江陵成为五代十国时期的缓冲、转运与外交节点，名义臣属和实际自治并存。'],
@@ -1492,7 +1507,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'western-liang-state-founded',
-    participants: [],
+    participants: [
+      { personId: 'li-hao', role: '在敦煌、酒泉一带建立西凉的河西地方统治者', note: '李暠代表后凉分裂后河西西部的地方建政过程；敦煌与酒泉等节点的控制范围随阶段变化。' },
+    ],
     polityIds: ['western_liang'],
     causes: ['后凉分裂使河西西部地方军政力量获得更大自主空间。', '李暠在敦煌、酒泉一带形成独立统治基础。'],
     consequences: ['西凉成为十六国时期河西西部的重要地方政权。', '敦煌等丝路节点的政治与交通秩序重新组织。'],
