@@ -28,7 +28,7 @@ describe('HeritageDetail', () => {
     render(<HeritageDetail detail={detail} onNavigate={onNavigate} />);
 
     fireEvent.click(screen.getByRole('button', { name: '玄奘' }));
-    expect(onNavigate).toHaveBeenCalledWith({ type: 'person', id: 'xuanzang' });
+    expect(onNavigate).toHaveBeenCalledWith({ type: 'person', id: 'xuan-zang' });
 
     fireEvent.click(screen.getByRole('button', { name: '唐' }));
     expect(onNavigate).toHaveBeenCalledWith({ type: 'polity', id: 'tang' });

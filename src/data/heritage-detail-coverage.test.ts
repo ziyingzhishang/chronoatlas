@@ -63,7 +63,7 @@ describe('heritage detail coverage audit', () => {
     expect(report.detailCoverageRate).toBeLessThanOrEqual(1);
   });
 
-  it('keeps the current global audit explicit and does not hide unresolved historical endpoints', () => {
+  it('keeps unresolved event endpoints explicit after normalizing existing person references', () => {
     const report = buildHeritageDetailCoverageReport();
 
     expect(report.totalHeritageAssets).toBe(99);
@@ -78,8 +78,21 @@ describe('heritage detail coverage audit', () => {
     expect(report.uncoveredHeritageIds).toEqual([]);
     expect(report.sourceCompleteHeritageIds).toHaveLength(99);
     expect(report.sourceCoverageRate).toBe(1);
-    expect(report.items.find((item) => item.heritageId === 'big-wild-goose-pagoda')
-      ?.unresolvedReferenceIds.people).toEqual(['xuanzang']);
+    const reviewItems = report.items.filter((item) => [
+      'big-wild-goose-pagoda',
+      'qinglong-temple-site',
+      'xian-beilin',
+      'xiao-yan-ta',
+      'ximing-temple-site',
+    ].includes(item.heritageId));
+    expect(reviewItems.every((item) => item.unresolvedReferenceIds.people.length === 0)).toBe(true);
+    expect(reviewItems.map((item) => item.unresolvedReferenceIds.events)).toEqual([
+      ['xuanzang-translations'],
+      ['xuanzang-translations'],
+      ['xuanzang-translations'],
+      ['xuanzang-translations'],
+      ['xuanzang-translations'],
+    ]);
   });
 
   it('marks a fully sourced and resolvable detail as complete', () => {
