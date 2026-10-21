@@ -524,7 +524,14 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'partition-jin',
-    participants: [],
+    participants: [
+      { personId: 'han-kangzi', role: '韩氏后期卿族领袖与晋国分权参与者', note: '韩康子代表韩氏在三家分晋前掌握晋国军政资源的阶段；不将其等同于前403年周王室正式册命的在场人物。' },
+      { personId: 'zhao-xiangzi', role: '赵氏后期卿族领袖与晋国权力重组推动者', note: '赵襄子在晋国权力竞争中击败智氏并扩大赵氏基础，属于分晋长期过程的关键人物；其活动早于前403年册命。' },
+      { personId: 'wei-huanzi', role: '魏氏后期卿族领袖与三家分权参与者', note: '魏桓子代表魏氏在晋国权力重组中的前期阶段；前403年周王室册命的直接君主端点另以魏文侯记录。' },
+      { personId: 'han-qian', role: '前403年受周王室册命的韩氏诸侯', note: '韩虔即韩景侯，是周威烈王册命三晋为诸侯时的韩氏君主；该节点是长期分晋过程的制度确认。' },
+      { personId: 'zhao-liehou', role: '前403年受周王室册命的赵氏诸侯', note: '赵籍即赵烈侯，是前403年周王室册命赵为诸侯的君主端点；不把册命日误写成晋国突然解体。' },
+      { personId: 'wei-wenhou', role: '前403年受周王室册命的魏氏诸侯', note: '魏斯即魏文侯，是前403年周王室册命魏为诸侯的君主端点；魏国后续改革与扩张属于册命后的阶段。' },
+    ],
     polityIds: ['zhou_eastern', 'han_warring', 'zhao_warring', 'wei_warring'],
     causes: ['韩、赵、魏已经掌握晋国的重要权力与土地。', '周王室面对的是既成的权力分化，而非单一日期突然发生的分裂。'],
     consequences: ['韩、赵、魏获得周王室正式承认，战国诸侯格局进一步成形。', '晋国的解体过程被固定为一个制度与政治节点。'],
@@ -1638,7 +1645,10 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前209年前后是匈奴联盟政权形成的约年，不是固定城市建国事件；龙城／单于庭是蒙古高原中部的候选会聚与政治中心区域，不能视为已确定的固定首都。单于庭位置、部众关系和直接控制范围均需采用移动政治中心口径。',
   },
   {
-    eventId: 'han-warring-founded-eighth-batch', participants: [], polityIds: ['han_warring'],
+    eventId: 'han-warring-founded-eighth-batch', participants: [
+      { personId: 'han-kangzi', role: '韩氏后期卿族领袖与韩国形成前的军政经营者', note: '韩康子代表韩氏在晋国分权阶段积累资源的前置阶段；不把其活动直接等同于前403年册命。' },
+      { personId: 'han-qian', role: '周王室册命后进入战国分期的韩景侯', note: '韩虔是前403年韩获诸侯名义确认的君主端点；韩国后续整合与迁都属于更长的形成过程。' },
+    ], polityIds: ['han_warring'],
     causes: ['晋国卿族长期分权，韩氏已形成独立军政资源。', '前403年周王室册命三晋是传统编年中的制度确认节点。'],
     consequences: ['韩进入战国诸侯分期。', '新郑等政治中心和韩国实际控制范围在后续整合中变化。'],
     phases: [
@@ -1650,7 +1660,10 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前403年是周王室册命和传统分期约年，不是韩氏政治实体首次出现的精确建国日；新郑是韩国后续稳定政治中心的现今地名参照，不将其后期中心提前等同于册命现场。',
   },
   {
-    eventId: 'zhao-warring-founded-eighth-batch', participants: [], polityIds: ['zhao_warring'],
+    eventId: 'zhao-warring-founded-eighth-batch', participants: [
+      { personId: 'zhao-xiangzi', role: '赵氏后期卿族领袖与赵国形成前的北方军政经营者', note: '赵襄子代表赵氏在晋国分权阶段扩展资源的前置阶段；其活动早于前403年周王室册命。' },
+      { personId: 'zhao-liehou', role: '周王室册命后进入战国分期的赵烈侯', note: '赵籍是前403年赵获诸侯名义确认的君主端点；邯郸成为重要中心是后续阶段。' },
+    ], polityIds: ['zhao_warring'],
     causes: ['赵氏在晋国卿族竞争中长期控制北方军政资源。', '周王室册命为赵由卿族转为诸侯提供名义确认。'],
     consequences: ['赵进入战国诸侯分期。', '邯郸及北方边疆网络成为后续政治与军事中心。'],
     phases: [
@@ -1662,7 +1675,10 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前403年是传统分期和册命节点，不是赵国完整国家形态的精确起点；邯郸是后续重要政治中心的现今地名参照，不能前推为册命现场或当年完整疆域。',
   },
   {
-    eventId: 'wei-warring-founded-eighth-batch', participants: [], polityIds: ['wei_warring'],
+    eventId: 'wei-warring-founded-eighth-batch', participants: [
+      { personId: 'wei-huanzi', role: '魏氏后期卿族领袖与魏国形成前的中原军政经营者', note: '魏桓子代表魏氏在晋国分权阶段积累资源的前置阶段；不把其活动直接等同于前403年册命。' },
+      { personId: 'wei-wenhou', role: '周王室册命后进入战国分期的魏文侯', note: '魏斯是前403年魏获诸侯名义确认的君主端点；安邑至大梁的政治中心调整属于后续历史过程。' },
+    ], polityIds: ['wei_warring'],
     causes: ['魏氏控制晋国核心资源并形成独立军政体系。', '三家分晋后周王室册命确认魏的诸侯身份。'],
     consequences: ['魏进入战国诸侯分期。', '安邑、大梁先后成为政治中心，国家范围随迁都和战争变化。'],
     phases: [
@@ -1674,7 +1690,9 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前403年是传统册命约年，不是魏氏政治实体首次出现；安邑是魏早期政治中心的现今地名参照，大梁迁都及后续范围不能合并为单一建国边界。',
   },
   {
-    eventId: 'chu-warring-founded-eighth-batch', participants: [], polityIds: ['chu_warring'],
+    eventId: 'chu-warring-founded-eighth-batch', participants: [
+      { personId: 'chu-we-wang', role: '战国中期楚国强盛阶段的君主代表', note: '楚威王活动晚于前403年，作为楚国进入战国大国竞争阶段的后续人物端点；不宣称其亲历三家分晋或前403年册命。' },
+    ], polityIds: ['chu_warring'],
     causes: ['楚拥有早于战国的王统和江汉、江淮政治网络。', '前403年作为三家分晋后的战国分期入口。'],
     consequences: ['楚进入战国诸侯并立的目录分期。', '楚继续参与南北战争、礼制竞争和江汉江淮区域整合。'],
     phases: [
@@ -1686,7 +1704,9 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前403年只是楚的战国分期约年，不是楚国绝对建国日；郢是战国阶段重要政治中心的遗址参照，楚早期王统、迁都和疆域存在更长时段，不能压缩为册命地点。',
   },
   {
-    eventId: 'yan-warring-founded-eighth-batch', participants: [], polityIds: ['yan_warring'],
+    eventId: 'yan-warring-founded-eighth-batch', participants: [
+      { personId: 'yan-zhaowang', role: '战国中期燕国重建阶段的君主代表', note: '燕昭王活动晚于前403年，作为燕国后续整合北方网络阶段的人物端点；不宣称其亲历战国分期入口。' },
+    ], polityIds: ['yan_warring'],
     causes: ['燕国王统和北方政治网络早于战国分期存在。', '三家分晋后的前403年被用作战国诸侯格局的传统入口。'],
     consequences: ['燕进入战国诸侯并立的目录分期。', '燕与赵、齐及北方族群之间的战争和交通关系持续发展。'],
     phases: [
@@ -1698,7 +1718,9 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前403年是传统战国分期约年，不是燕国首次建国的精确日期；蓟是燕后续政治中心的区域性现今地名参照，古城位置存在考证口径，不能用后期辽西范围前推。',
   },
   {
-    eventId: 'qi-warring-founded-eighth-batch', participants: [], polityIds: ['qi_warring'],
+    eventId: 'qi-warring-founded-eighth-batch', participants: [
+      { personId: 'qi-we-wang', role: '战国中期齐国强盛阶段的君主代表', note: '齐威王活动晚于前403年，作为齐国后续东方大国发展阶段的人物端点；不宣称其亲历战国分期入口。' },
+    ], polityIds: ['qi_warring'],
     causes: ['齐拥有姜齐、田齐等早于战国的政治层次。', '前403年作为战国诸侯格局成形的传统编年入口。'],
     consequences: ['齐进入战国诸侯并立的目录分期。', '临淄及沿海经济网络支撑齐在军事、思想和外交中的重要地位。'],
     phases: [
