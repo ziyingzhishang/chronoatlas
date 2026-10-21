@@ -33,7 +33,7 @@ describe('forty-fourth batch high-confidence participated-in claims', () => {
         objectId,
         validFrom,
         validTo,
-        datePrecision: expect.any(String),
+        datePrecision: expect.stringMatching(/^(year|range|approximate)$/),
         perspective: 'person',
         evidenceType: expect.stringMatching(/^(explicit-record|cross-checked)$/),
         confidence: 'high',
