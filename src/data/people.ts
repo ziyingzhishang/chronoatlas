@@ -43,6 +43,18 @@ export const people: Person[] = [
   { id: 'yelu-abaoji', name: '耶律阿保机', aliases: ['辽太祖'], birthYear: 872, deathYear: 926, roles: ['皇帝', '军事领袖'], polityIds: ['khitan'], description: '耶律阿保机整合契丹诸部并称帝，辽政权由此进入新的国家阶段。', sourceIds: ['zizhi-tongjian'] },
   { id: 'wang-jian', name: '王建', aliases: ['前蜀高祖'], birthYear: 847, deathYear: 918, roles: ['皇帝', '军事领袖'], polityIds: ['former_shu'], description: '王建经营巴蜀军政资源，唐亡后在成都称帝建立前蜀。', sourceIds: ['zizhi-tongjian'] },
   { id: 'meng-zhixiang', name: '孟知祥', aliases: ['后蜀高祖'], birthYear: 874, deathYear: 934, roles: ['皇帝', '军事领袖'], polityIds: ['later_shu'], description: '孟知祥在后唐蜀地军政基础上建立后蜀，成都继续作为政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'gao-huan', name: '高欢', aliases: ['齐神武帝'], birthYear: 496, deathYear: 547, roles: ['军事领袖', '权臣'], polityIds: ['wei_eastern'], description: '高欢控制东魏军政并以邺为核心重组北魏东部秩序，北齐建立前的权力基础由此形成。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'gao-yang', name: '高洋', aliases: ['北齐文宣帝'], birthYear: 529, deathYear: 559, roles: ['皇帝'], polityIds: ['qi_northern'], description: '高洋承接高氏在东魏的军政基础，受禅建立北齐。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'zhao-gou', name: '赵构', aliases: ['宋高宗'], birthYear: 1107, deathYear: 1187, roles: ['皇帝'], polityIds: ['song_south'], description: '赵构在靖康之变后于应天府即位，重建宋室政权并开启南宋阶段。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'yue-fei', name: '岳飞', aliases: ['岳鹏举'], birthYear: 1103, deathYear: 1142, roles: ['将领', '抗金将领'], polityIds: ['song_south'], description: '岳飞是南宋重要将领，参与宋金战争，其军事活动与南宋重建和北方防御相连。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'qin-hui', name: '秦桧', aliases: ['秦会之'], birthYear: 1090, deathYear: 1155, roles: ['宰相', '官员'], polityIds: ['song_south'], description: '秦桧在南宋朝廷任宰相，其政治路线与岳飞所代表的军事主张形成重要冲突。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'liu-yu', name: '刘裕', aliases: ['宋武帝'], birthYear: 363, deathYear: 422, roles: ['皇帝', '军事领袖'], polityIds: ['song_southern'], description: '刘裕在东晋末年掌握军政资源并受禅建立刘宋，建康成为南朝政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'murong-chui', name: '慕容垂', aliases: ['后燕成武帝'], birthYear: 326, deathYear: 396, roles: ['皇帝', '军事领袖'], polityIds: ['later_yan'], description: '慕容垂在前秦解体后重建燕政权，后燕由此进入形成阶段。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'shi-hu', name: '石虎', aliases: ['后赵武帝'], birthYear: 295, deathYear: 349, roles: ['皇帝', '军事领袖'], polityIds: ['later_zhao'], description: '石虎是后赵的重要军事与政治人物，后期控制后赵朝政并参与其扩张。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'li-xiong', name: '李雄', aliases: ['成汉武帝'], birthYear: 274, deathYear: 334, roles: ['皇帝', '军事领袖'], polityIds: ['cheng_han'], description: '李雄在巴蜀建立成汉政权，成都成为其早期政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'xiao-yan', name: '萧衍', aliases: ['梁武帝'], birthYear: 464, deathYear: 549, roles: ['皇帝', '军事领袖'], polityIds: ['liang_southern'], description: '萧衍受禅建立南梁，建康继续作为南朝政治与文化中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'tuoba-gui', name: '拓跋珪', aliases: ['魏道武帝'], birthYear: 371, deathYear: 409, roles: ['皇帝', '军事领袖'], polityIds: ['wei_northern'], description: '拓跋珪复代改魏，北魏政权由此形成，平城成为早期政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'han-shizhong', name: '韩世忠', aliases: ['韩良臣'], birthYear: 1089, deathYear: 1151, roles: ['将领', '抗金将领'], polityIds: ['song_south'], description: '韩世忠是南宋重要将领，参与宋金战争并与岳飞等将领共同构成南宋军事网络。', sourceIds: ['zizhi-tongjian'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

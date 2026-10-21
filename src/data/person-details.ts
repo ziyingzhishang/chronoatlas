@@ -222,6 +222,66 @@ export const personDetails: PersonDetail[] = [
     aliases: ['后蜀高祖'], offices: [{ title: '后蜀皇帝', polityId: 'later_shu', placeId: 'chengdu', validFrom: 934, validTo: 934, datePrecision: 'year', sourceIds }],
     keyEvents: ['later-shu-founded'], sourceIds, uncertaintyNote: '孟知祥称帝后不久去世，后蜀的长期统治由后继者延续；本详情不把个人在位期等同于政权存续期。',
   },
+  {
+    personId: 'gao-huan', biography: '高欢在北魏末年掌握东部军政资源，控制邺城并拥立元善见，东魏由此形成。',
+    aliases: ['齐神武帝'], offices: [{ title: '东魏权臣与军政核心', polityId: 'wei_eastern', placeId: 'ye', validFrom: 534, validTo: 547, datePrecision: 'range', sourceIds }],
+    keyEvents: ['eastern-wei-founded'], sourceIds, uncertaintyNote: '高欢是东魏实际军政核心，但东魏皇帝仍为元善见；本详情区分名义皇统与实际权力结构。',
+  },
+  {
+    personId: 'gao-yang', biography: '高洋承接高欢家族在东魏的军政基础，550年受禅建立北齐。',
+    aliases: ['北齐文宣帝'], offices: [{ title: '北齐皇帝', polityId: 'qi_northern', placeId: 'ye', validFrom: 550, validTo: 559, datePrecision: 'range', sourceIds }],
+    keyEvents: ['northern-qi-founded'], sourceIds, uncertaintyNote: '550年受禅是北齐建政节点，不把北齐后期控制范围回填到禅代当年。',
+  },
+  {
+    personId: 'zhao-gou', biography: '赵构在靖康之变后于应天府即位，重建宋室中央并开启南宋阶段，政权随后经历多地迁驻。',
+    aliases: ['宋高宗'], offices: [{ title: '南宋皇帝', polityId: 'song_south', placeId: 'yingtian', validFrom: 1127, validTo: 1162, datePrecision: 'range', sourceIds }],
+    keyEvents: ['southern-song-founded', 'song-southward'], sourceIds, uncertaintyNote: '应天即位、南渡迁移与临安主要政治中心形成是连续但不同节点，不能将后来的临安定都提前到1127年。',
+  },
+  {
+    personId: 'yue-fei', biography: '岳飞是南宋抗金战争中的重要将领，活动连接南宋政权重建、北方防御与宋金军事竞争。',
+    aliases: ['岳鹏举'], offices: [{ title: '南宋将领', polityId: 'song_south', validFrom: 1127, validTo: 1142, datePrecision: 'range', sourceIds }],
+    keyEvents: ['song-southward'], sourceIds, uncertaintyNote: '岳飞的军事行动需按具体战役与阶段核验；“抗金”不等于由单一人物代表南宋全部对外政策。',
+  },
+  {
+    personId: 'qin-hui', biography: '秦桧是南宋宰相，任相期间参与宋金和议与朝廷权力运作，并与岳飞形成重大政治冲突。',
+    aliases: ['秦会之'], offices: [{ title: '南宋宰相', polityId: 'song_south', validFrom: 1138, validTo: 1155, datePrecision: 'range', sourceIds }],
+    keyEvents: ['song-southward'], sourceIds, uncertaintyNote: '秦桧与岳飞的关系包含制度、军事和政治评价多个层面，本详情保留可核验的任相与政策冲突，不把后世评价当作单一事实。',
+  },
+  {
+    personId: 'liu-yu', biography: '刘裕在东晋末年通过北伐与军政整合取得权力，最终受禅建立刘宋，开启南朝新阶段。',
+    aliases: ['宋武帝'], offices: [{ title: '刘宋皇帝', polityId: 'song_southern', placeId: 'jiankang', validFrom: 420, validTo: 422, datePrecision: 'range', sourceIds }],
+    keyEvents: ['eastern-jin'], sourceIds, uncertaintyNote: '东晋末年掌权、北伐和420年受禅建宋是连续过程；本详情用东晋政权节点导航，不把其等同于单一战役。',
+  },
+  {
+    personId: 'murong-chui', biography: '慕容垂曾在前秦体系中任职，淝水之战后重建慕容氏政权，后燕由此形成。',
+    aliases: ['后燕成武帝'], offices: [{ title: '后燕皇帝', polityId: 'later_yan', validFrom: 384, validTo: 396, datePrecision: 'range', sourceIds }],
+    keyEvents: ['later-yan-founded'], sourceIds, uncertaintyNote: '384年前后是后燕形成阶段，386年称帝是后续节点；其与前秦既有阶段性效力也有后续对立，不能简化为单一关系。',
+  },
+  {
+    personId: 'shi-hu', biography: '石虎是后赵重要军事人物，石勒时期已参与核心军事事务，后期进一步掌握后赵朝政。',
+    aliases: ['后赵武帝'], offices: [{ title: '后赵皇帝', polityId: 'later_zhao', placeId: 'ye', validFrom: 334, validTo: 349, datePrecision: 'range', sourceIds }],
+    keyEvents: ['later-zhao-founded'], sourceIds, uncertaintyNote: '后赵建立早于石虎即位，本详情以建政节点作为政权导航，不把石虎个人统治期回填为后赵建国期。',
+  },
+  {
+    personId: 'li-xiong', biography: '李雄在巴蜀军政动荡中建立成汉，成都成为其政权形成与持续运作的核心城市。',
+    aliases: ['成汉武帝'], offices: [{ title: '成汉皇帝', polityId: 'cheng_han', placeId: 'chengdu', validFrom: 304, validTo: 334, datePrecision: 'range', sourceIds }],
+    keyEvents: ['cheng-han-founded'], sourceIds, uncertaintyNote: '304年前后是成汉形成阶段，306年称帝是后续节点；不能将形成阶段和正式称帝压缩为同一年。',
+  },
+  {
+    personId: 'xiao-yan', biography: '萧衍在南齐末年掌握建康朝廷与江南军政资源，502年受禅建立南梁。',
+    aliases: ['梁武帝'], offices: [{ title: '南梁皇帝', polityId: 'liang_southern', placeId: 'jiankang', validFrom: 502, validTo: 549, datePrecision: 'range', sourceIds }],
+    keyEvents: ['southern-liang-founded'], sourceIds, uncertaintyNote: '502年受禅与南梁对各地的实际整合是不同过程，建康政治中心身份不代表建国当年已完成全域控制。',
+  },
+  {
+    personId: 'tuoba-gui', biography: '拓跋珪在前秦崩溃后的北方重建部众，复代改魏，北魏政权由此形成。',
+    aliases: ['魏道武帝'], offices: [{ title: '北魏皇帝', polityId: 'wei_northern', placeId: 'pingcheng', validFrom: 386, validTo: 409, datePrecision: 'range', sourceIds }],
+    keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '386年复代、改国号与随后北魏制度和控制范围扩展分属不同阶段；平城是早期政治中心参照。',
+  },
+  {
+    personId: 'han-shizhong', biography: '韩世忠是南宋重要将领，参与宋金战争并与岳飞共同构成南宋军事网络。',
+    aliases: ['韩良臣'], offices: [{ title: '南宋将领', polityId: 'song_south', validFrom: 1127, validTo: 1151, datePrecision: 'range', sourceIds }],
+    keyEvents: ['song-southward'], sourceIds, uncertaintyNote: '韩世忠与岳飞的同僚和协同关系需按具体战役核验，本详情不把二人的关系简化为持续无变化的政治联盟。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));
