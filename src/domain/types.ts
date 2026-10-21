@@ -83,6 +83,30 @@ export interface HistoricalClaim {
   uncertaintyNote?: string;
 }
 
+export interface Person {
+  id: string;
+  name: string;
+  aliases?: string[];
+  birthYear?: number;
+  deathYear?: number;
+  roles?: string[];
+  polityIds?: string[];
+  description: string;
+  sourceIds: string[];
+}
+
+export interface HeritageAsset {
+  id: string;
+  name: string;
+  placeId: string;
+  type: 'palace' | 'city-site' | 'tomb' | 'temple' | 'inscription' | 'museum' | 'other';
+  constructionFrom?: number;
+  constructionTo?: number;
+  modernStatus: 'extant' | 'archaeological-site' | 'relocated' | 'lost' | 'uncertain';
+  description: string;
+  sourceIds: string[];
+}
+
 export interface Place {
   id: string;
   historicalName: string;
