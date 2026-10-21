@@ -57,14 +57,10 @@ describe('event details twenty-seventh batch', () => {
     });
   });
 
-  it('keeps the Xiongnu boundary when no reliable person endpoint exists in this batch', () => {
-    const missingParticipantIds = new Set(
-      auditKnowledgeCoverage().tasks
-        .filter((task) => task.taskKind === 'event-participant-missing')
-        .map((task) => task.entityId),
-    );
+  it('keeps the Xiongnu participant evidence phase-aware after the boundary review', () => {
+    const xiongnu = eventDetails.find((detail) => detail.eventId === 'xiongnu-founded');
 
-    expect(missingParticipantIds.has('xiongnu-founded')).toBe(true);
-    expect(eventDetails.find((detail) => detail.eventId === 'xiongnu-founded')?.participants).toEqual([]);
+    expect(xiongnu?.participants.map((participant) => participant.personId)).toEqual(['modu-chanyu', 'huhanye']);
+    expect(xiongnu?.participants[1].note).toContain('不把其写成匈奴原始建国者');
   });
 });

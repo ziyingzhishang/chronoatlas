@@ -75,7 +75,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'goguryeo-founded',
-    participants: [],
+    participants: [
+      { personId: 'jumong', role: '高句丽传统建国叙事中的核心建立者', note: '朱蒙对应前37年传统建国节点；早期国家形成与后续都城迁移不能压缩为单一事件。' },
+      { personId: 'daemusin', role: '建国后早期王权扩展阶段的继承君主', note: '大武神王活动晚于前37年，本条连接高句丽早期国家化，不把其写成原始建国者。' },
+      { personId: 'yuri-goguryeo', role: '朱蒙之后的继承君主与迁都阶段人物', note: '琉璃明王属于建国后的王统承接和迁都阶段，不把其活动前推为前37年建国。' },
+    ],
     polityIds: ['goguryeo'],
     causes: ['辽东及浑江流域族群和地方政治网络重组。', '朱蒙建国传统与早期王权整合共同构成高句丽形成叙事。'],
     consequences: ['东北亚形成长期延续的高句丽政治主体。', '早期都城、部族关系和势力范围继续在多个阶段发展。'],
@@ -91,7 +95,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'silla-founded',
-    participants: [],
+    participants: [
+      { personId: 'park-hyeokgeose', role: '新罗传统建国叙事中的即位君主', note: '朴赫居世对应前57年传统起始节点；早期辰韩诸部整合是持续过程。' },
+      { personId: 'namhae-chachaung', role: '传统建国后的早期王统承接者', note: '南解次次雄活动晚于前57年，本条连接早期王权承接，不把其写成原始建国者。' },
+      { personId: 'naemul-isageum', role: '新罗后续王权整合阶段的君主', note: '内物王活动距前57年已有数百年，本条用于连接王权整合，不把其统治追溯为建国节点。' },
+    ],
     polityIds: ['silla'],
     causes: ['辰韩诸部的聚落与首领网络逐步整合。', '早期王权需要在半岛东南部的多部族关系中取得承认。'],
     consequences: ['新罗成为朝鲜半岛三国时期的重要政治主体。', '王权强化、对外关系和统一新罗阶段均属于后续历史过程。'],
@@ -107,7 +115,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'tuyuhun-founded',
-    participants: [],
+    participants: [
+      { personId: 'murong-tuyuhun', role: '吐谷浑部众西迁与政权形成传统中的核心首领', note: '慕容吐谷浑与313年前后形成阶段相连；后续建制由其后继者和部众共同完成。' },
+    ],
     polityIds: ['tuyuhun'],
     causes: ['慕容部内部迁徙与西北地方势力重组，使吐谷浑部众脱离原有政治中心。', '河湟和青海的牧地、交通网络为新的区域政权提供了条件。'],
     consequences: ['吐谷浑成为青海、河湟一带持续性的区域政权。', '其与十六国、南北朝政权的关系在战争、通使和部众流动中不断变化。'],
@@ -123,7 +133,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'turkic-founded',
-    participants: [],
+    participants: [
+      { personId: 'asina-tumen', role: '击败柔然并建立突厥汗权的核心首领', note: '阿史那土门对应552年前后汗国形成节点；汗廷位置和部众范围仍具有流动性。' },
+      { personId: 'istemi', role: '汗国建立后西部扩张与外交阶段的核心人物', note: '室点密属于突厥建立后的西部扩张阶段，不把其写成552年唯一建国者。' },
+    ],
     polityIds: ['turkic'],
     causes: ['突厥部在阿史那氏领导下形成军事、冶铁和部众组织能力。', '突厥与柔然宗主秩序的冲突推动共同汗权建立。'],
     consequences: ['欧亚草原与东亚北方出现新的强大汗国。', '突厥与中原、粟特和中亚交通网络的关系重新组织。'],
@@ -139,7 +152,11 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'tibetan-founded',
-    participants: [],
+    participants: [
+      { personId: 'songtsen-gampo', role: '吐蕃形成阶段的核心统治者与高原整合者', note: '松赞干布对应618—629年形成阶段；吐蕃国家化是多阶段过程。' },
+      { personId: 'namri-songtsen', role: '吐蕃形成前置积累阶段的统治者', note: '朗日松赞活动早于松赞干布的国家化阶段，本条不把其单独等同于完整建政。' },
+      { personId: 'tridu-songtsen', role: '吐蕃形成后的制度成熟阶段统治者', note: '赤松德赞活动晚于618年前后建政节点，本条连接后续成熟阶段，不将其活动前推。' },
+    ],
     polityIds: ['tibetan_empire'],
     causes: ['悉补野部在青藏高原诸部竞争中崛起。', '松赞干布继承并整合高原核心权力，具备扩大政治联盟的条件。'],
     consequences: ['吐蕃成为青藏高原长期延续的政治主体。', '其与唐、南诏及中亚政权的外交和战争关系进入新阶段。'],
@@ -1676,7 +1693,10 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'xiongnu-founded',
-    participants: [],
+    participants: [
+      { personId: 'modu-chanyu', role: '整合主要部众并推动匈奴联盟政权形成的核心单于', note: '冒顿对应前209年前后形成节点；“形成”表示部众与权力中心重组，不表示固定首都。' },
+      { personId: 'huhanye', role: '匈奴形成后的分裂与重组阶段单于', note: '呼韩邪单于活动晚于冒顿数百年，本条用于连接政治继承与重组，不把其写成匈奴原始建国者。' },
+    ],
     polityIds: ['xiongnu'],
     causes: ['秦末汉初草原力量重新组合，部落竞争为冒顿取得领导权提供条件。', '冒顿通过军事与联盟整合主要部众。'],
     consequences: ['匈奴成为汉代以前后北方重要的草原政治主体。', '匈奴与汉地之间的战争、和亲、贸易和边疆秩序进入新阶段。'],

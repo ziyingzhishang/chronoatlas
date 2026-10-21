@@ -20,8 +20,17 @@ const targetLocations = {
   'xiongnu-founded': ['xiongnu_core'],
 } as const;
 
+const reviewedParticipantEvents = new Set([
+  'goguryeo-founded',
+  'silla-founded',
+  'tuyuhun-founded',
+  'turkic-founded',
+  'tibetan-founded',
+  'xiongnu-founded',
+]);
+
 describe('twenty-second-batch event location closure', () => {
-  it('closes ten selected location gaps without changing the participant-gap boundary', () => {
+  it('closes ten selected location gaps while leaving only unresolved participant gaps', () => {
     const report = auditKnowledgeCoverage();
     const missingLocationIds = new Set(
       report.tasks
@@ -36,11 +45,11 @@ describe('twenty-second-batch event location closure', () => {
 
     Object.keys(targetLocations).forEach((eventId) => {
       expect(missingLocationIds.has(eventId), eventId).toBe(false);
-      expect(missingParticipantIds.has(eventId), eventId).toBe(true);
+      expect(missingParticipantIds.has(eventId), eventId).toBe(!reviewedParticipantEvents.has(eventId));
     });
   });
 
-  it('resolves each location, polity, event, source, and preserves empty participant endpoints', () => {
+  it('resolves each location, polity, event, source, and participant endpoint', () => {
     const eventIds = new Set(events.map((event) => event.id));
     const peopleIds = new Set(people.map((person) => person.id));
     const placeIds = new Set(places.map((place) => place.id));
@@ -51,7 +60,11 @@ describe('twenty-second-batch event location closure', () => {
       const detail = eventDetails.find((candidate) => candidate.eventId === eventId);
 
       expect(detail, eventId).toBeDefined();
-      expect(detail?.participants, eventId).toEqual([]);
+      if (reviewedParticipantEvents.has(eventId)) {
+        expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      } else {
+        expect(detail?.participants, eventId).toEqual([]);
+      }
       expect(detail?.locationIds, eventId).toEqual(expectedPlaceIds);
       expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
       expect(detail?.uncertaintyNote, eventId).toBeTruthy();
