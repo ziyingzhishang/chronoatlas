@@ -22,7 +22,7 @@ describe('eighty-third-batch capital evidence boundary audit', () => {
 
     expect(report.summary.totalPolities).toBe(87);
     expect(report.summary.qualifiedPolities).toBe(79);
-    expect(report.summary.gapPolityIds).toEqual(expect.arrayContaining(unresolvedIds));
+    expect(report.summary.gapPolityIds).toEqual(expect.arrayContaining([...unresolvedIds]));
     expect(report.summary.gapPolityIds).toHaveLength(unresolvedIds.length);
 
     for (const polityId of unresolvedIds) {
