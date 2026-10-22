@@ -358,4 +358,56 @@ describe('event detail coverage audit', () => {
     expect(detailsById.get('xiongnu-founded')?.relatedEventIds).toEqual(['han-imperial-accession']);
     expect(detailsById.get('tuyuhun-founded')?.relatedEventIds).toEqual(['western-jin-founded']);
   });
+
+  it('enriches the fifty-sixth high-evidence batch without changing date precision', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const selectedIds = [
+      'an-lushan-rebellion',
+      'chu-han-contention',
+      'eastern-jin',
+      'tibetan-founded',
+      'western-liao-founded',
+      'dali-founded',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    expect(eventsById.get('an-lushan-rebellion')?.datePrecision).toBe('range');
+    expect(eventsById.get('chu-han-contention')?.datePrecision).toBe('range');
+    expect(eventsById.get('eastern-jin')?.datePrecision).toBe('range');
+    expect(eventsById.get('tibetan-founded')?.datePrecision).toBe('approximate');
+    expect(eventsById.get('western-liao-founded')?.datePrecision).toBe('approximate');
+    expect(eventsById.get('dali-founded')?.datePrecision).toBe('approximate');
+
+    for (const eventId of selectedIds) {
+      expect(detailsById.get(eventId)?.causes.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detailsById.get(eventId)?.consequences.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detailsById.get(eventId)?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(3);
+      expect(detailsById.get(eventId)?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.relatedEventIds.length, eventId).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('an-lushan-rebellion')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '战后藩镇延续', startYear: 763 }),
+    ]));
+    expect(detailsById.get('chu-han-contention')?.locationIds).toEqual(expect.arrayContaining([
+      'sishui-northbank',
+    ]));
+    expect(detailsById.get('eastern-jin')?.relatedEventIds).toEqual(expect.arrayContaining([
+      'western-jin-founded',
+    ]));
+    expect(detailsById.get('tibetan-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '高原核心整合', startYear: 618 }),
+    ]));
+    expect(detailsById.get('western-liao-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '巴拉沙衮政治中心', startYear: 1132 }),
+    ]));
+    expect(detailsById.get('dali-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '洱海核心整合', startYear: 937 }),
+    ]));
+  });
 });
