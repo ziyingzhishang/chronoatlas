@@ -1,7 +1,9 @@
 import { render, screen } from '@testing-library/react';
+import userEvent from '@testing-library/user-event';
 import { expect, test, vi } from 'vitest';
 import { LocaleProvider } from '../i18n/locale';
 import { events } from '../data/events';
+import { changanEvents } from '../data/changan-study';
 import { EventDetail } from './EventDetail';
 
 const event = events.find((item) => item.id === 'tang-founded')!;
@@ -44,4 +46,32 @@ test('renders confirmed and unknown event time review states separately', () => 
   render(<LocaleProvider><EventDetail event={unreviewedEvent} onNavigate={vi.fn()} /></LocaleProvider>);
   expect(screen.getByText('未知')).toBeInTheDocument();
   expect(screen.getByText(/暂不允许时间轴定位/)).toBeInTheDocument();
+});
+
+test('resolves and navigates a related city-history event by its catalog title', async () => {
+  const onNavigate = vi.fn();
+  const event = changanEvents.find((item) => item.id === 'han-changan-new-city')!;
+  render(<LocaleProvider><EventDetail event={event} onNavigate={onNavigate} /></LocaleProvider>);
+
+  const relatedEvent = screen.getByRole('button', { name: '汉定都长安' });
+  await userEvent.click(relatedEvent);
+
+  expect(onNavigate).toHaveBeenCalledWith({ type: 'event', id: 'changan-han-capital' });
+});
+
+test('navigates every event detail relationship category', async () => {
+  const onNavigate = vi.fn();
+  render(<LocaleProvider><EventDetail event={event} onNavigate={onNavigate} /></LocaleProvider>);
+
+  await userEvent.click(screen.getByRole('button', { name: '李渊' }));
+  await userEvent.click(screen.getByRole('button', { name: '唐' }));
+  await userEvent.click(screen.getByRole('button', { name: '长安' }));
+  await userEvent.click(screen.getByRole('button', { name: '隋统一南北' }));
+
+  expect(onNavigate.mock.calls).toEqual([
+    [{ type: 'person', id: 'li-yuan' }],
+    [{ type: 'polity', id: 'tang' }],
+    [{ type: 'place', id: 'changan' }],
+    [{ type: 'event', id: 'sui-unification' }],
+  ]);
 });

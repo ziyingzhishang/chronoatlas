@@ -3,6 +3,7 @@ import type { DetailEntity } from '../domain/detail-entity';
 import type { HistoricalEvent, HistoricalEventDetail } from '../domain/types';
 import { eventDate } from './EventDetailCard';
 import { events } from '../data/events';
+import { changanEvents } from '../data/changan-study';
 import { getEventDetail } from '../data/event-details';
 import { people } from '../data/people';
 import { polities } from '../data/polities';
@@ -43,7 +44,8 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
   const participantById = new Map(people.map((person) => [person.id, person]));
   const polityById = new Map(polities.map((polity) => [polity.id, polity]));
   const placeById = new Map(places.map((place) => [place.id, place]));
-  const eventById = new Map(events.map((item) => [item.id, item]));
+  const detailEvents = [...events, ...changanEvents.filter((item) => !events.some((eventItem) => eventItem.id === item.id))];
+  const eventById = new Map(detailEvents.map((item) => [item.id, item]));
   const timeReview = reviewEventTimeCoverage().records.find((record) => record.eventId === event.id) ?? unknownEventTimeReview(event.id);
 
   return <article className="event-detail" aria-label={t('事件详情')}>
