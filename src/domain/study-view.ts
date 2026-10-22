@@ -15,6 +15,7 @@ export interface PolityStudyView {
   subject: Polity;
   year: number;
   capitalTerms: CapitalTerm[];
+  capitalPlaces: Place[];
   events: HistoricalEvent[];
   people: Person[];
   heritage: HeritageAsset[];
@@ -121,6 +122,8 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
   const subject = data.polities.find((polity) => polity.id === polityId);
   if (!subject) return undefined;
   const capitalTerms = data.capitalTerms.filter((term) => term.polityId === polityId && active(term.validFrom, term.validTo, year));
+  const capitalPlaceIds = new Set(capitalTerms.map((term) => term.placeId));
+  const capitalPlaces = uniqueById(data.places.filter((place) => capitalPlaceIds.has(place.id)));
   const people = data.people.filter((person) => person.polityIds?.includes(polityId));
   const events = data.events.filter((event) => event.year <= year && (event.endYear === undefined || year <= event.endYear) && event.sourceIds.some((sourceId) => subject.sourceIds.includes(sourceId)));
   const polityClaims = data.claims.filter((claim) => claimTouches(claim, polityId) && active(claim.validFrom, claim.validTo, year));
@@ -134,7 +137,7 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
   const claims = data.claims.filter((claim) => active(claim.validFrom, claim.validTo, year)
     && (claimTouches(claim, polityId) || (claim.objectId !== undefined && entityIds.has(claim.subjectId) && entityIds.has(claim.objectId))));
   return {
-    kind: 'polity', subject, year, capitalTerms,
+    kind: 'polity', subject, year, capitalTerms, capitalPlaces,
     events,
     people, heritage: data.heritage.filter((asset) => heritageIds.has(asset.id)), claims,
   };

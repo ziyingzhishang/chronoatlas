@@ -38,6 +38,13 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
         <ul className="study-chip-list">{cityView.polities.map((polity) => <li key={polity.id}>{polity.name}</li>)}</ul>
       </div>}
       {polityView && <div className="study-block">
+        <h3>{t('首都／政治中心')}</h3>
+        {polityView.capitalPlaces.length > 0 ? <ul className="study-list">{polityView.capitalPlaces.map((place) => {
+          const terms = polityView.capitalTerms.filter((term) => term.placeId === place.id);
+          return <li key={place.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'place', id: place.id })}><strong>{t(place.historicalName)}</strong></button><span>{place.modernName ? `${t('今·')}${t(place.modernName)} · ` : ''}{terms.map((term) => formatHistoricalYear(term.validFrom)).join('、')}</span></li>;
+        })}</ul> : <p className="detail-note">{t('暂无已核验沿革')}</p>}
+      </div>}
+      {polityView && <div className="study-block">
         <h3>{t('相关人物')}</h3>
         <ul className="study-chip-list">{polityView.people.map((person) => {
           const relations = groupPersonRelationships(person.id, view.year, view.claims);

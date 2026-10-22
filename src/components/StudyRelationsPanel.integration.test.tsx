@@ -1,5 +1,6 @@
 import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import userEvent from '@testing-library/user-event';
+import { describe, expect, it, vi } from 'vitest';
 import { getChanganStudyBundle } from '../data/changan-study';
 import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
@@ -37,5 +38,15 @@ describe('StudyRelationsPanel integration', () => {
     expect(screen.getByText('Heritage and city memory')).toBeInTheDocument();
     expect(screen.getAllByText(/Daming Palace Site|大明宫遗址/).length).toBeGreaterThanOrEqual(1);
     localStorage.removeItem('history-locale');
+  });
+
+  it('opens a capital place from the polity perspective summary', async () => {
+    const view = buildPolityStudyView('tang', 640, data);
+    const onOpenEntity = vi.fn();
+    render(<StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} />);
+
+    await userEvent.click(screen.getByRole('button', { name: '长安' }));
+
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'place', id: 'changan' });
   });
 });

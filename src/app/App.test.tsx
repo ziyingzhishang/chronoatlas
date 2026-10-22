@@ -88,3 +88,14 @@ test('opens event and heritage details from the polity study summary', async () 
   expect(heritageDrawer).toHaveClass('entity-drawer');
   expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
 });
+
+test('opens the capital place detail from the polity study summary', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: '长安' }));
+
+  const placeDrawer = screen.getByRole('dialog', { name: '长安' });
+  expect(placeDrawer).toHaveClass('entity-drawer');
+  expect(within(placeDrawer).getByRole('button', { name: '西安市' })).toBeInTheDocument();
+});
