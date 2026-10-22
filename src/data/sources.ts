@@ -161,6 +161,16 @@ export const sourceNotes: SourceNote[] = [
     scope: '联合国成立背景、创始成员与旧金山会议',
     note: '用于交叉核验国际组织形成背景；不把单一国家代表等同于全部创始成员。',
   },
+  {
+    id: 'shuhan-chengdu-official', title: '刘备在成都称帝与蜀汉建立资料', authorOrInstitution: '重庆市地方志办公室', urlOrCitation: 'https://dfz.cq.gov.cn/fzyd/qk/202311/P020200609568017419302.pdf',
+    scope: '221年刘备在成都称帝、国号汉及蜀汉政权形成',
+    note: '用于成都建政事件的城市节点核验；称帝建政与后续蜀地整合分层表达。',
+  },
+  {
+    id: 'ye-city-official', title: '和合共生——临漳邺城佛造像展', authorOrInstitution: '中华人民共和国文化和旅游部', urlOrCitation: 'https://www.mct.gov.cn/ggfw/zyjzzt/zhanlan/zhanlanwqhg/201908/t20190822_845846.html',
+    scope: '邺城遗址现代位置、南北邺城及后赵、前燕、东魏、北齐都城沿革',
+    note: '用于邺城城市与遗址现代定位；各政权具体迁都年份仍以编年史料分层核对。',
+  },
 ];
 
 export const sourceById = Object.fromEntries(sourceNotes.map((source) => [source.id, source]));
