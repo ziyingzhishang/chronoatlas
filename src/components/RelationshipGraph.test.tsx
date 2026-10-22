@@ -3,6 +3,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { getChanganStudyBundle } from '../data/changan-study';
 import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
+import { events } from '../data/events';
 import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
 import { places } from '../data/places';
@@ -57,6 +58,21 @@ describe('RelationshipGraph', () => {
 
     expect(screen.getByRole('heading', { name: '历史关联' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /李世民 · 历史关联 · 历史关联 · 方向：李世民 → 李渊 · 618—626年/ })).toBeInTheDocument();
+  });
+
+  it('renders the fifty-fifth batch event edges in the event participation category', () => {
+    const bundle = getChanganStudyBundle();
+    const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
+    const graphView = {
+      ...view!,
+      people: [...view!.people, people.find((person) => person.id === 'cao-cao')!],
+      events: [...view!.events, events.find((event) => event.id === 'three-kingdoms')!],
+      claims: [...view!.claims, claims.find((claim) => claim.id === 'claim-cao-cao-participated-three-kingdoms-fiftyfifth')!],
+    };
+    render(<RelationshipGraph view={graphView} />);
+
+    expect(screen.getByRole('heading', { name: '事件参与' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /曹操 · 事件参与 · 参与事件 · 方向：曹操 → 三国开始 · 220年 · 时间精度：年 · 来源：可用/ })).toBeInTheDocument();
   });
 
   it('opens a person entity from a focusable SVG node', () => {
