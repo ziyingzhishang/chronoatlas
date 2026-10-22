@@ -808,4 +808,58 @@ describe('event detail coverage audit', () => {
       expect.objectContaining({ label: '赵烈侯承接', startYear: -408, endYear: -400 }),
     ]));
   });
+
+  it('enriches the sixty-fifth batch with source-backed political and archaeological phases without upgrading approximate dates', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'chu-warring-founded-eighth-batch',
+      'qi-warring-founded-eighth-batch',
+      'yan-warring-founded-eighth-batch',
+      'western-liang-state-founded',
+      'xia-early-founded-eighth-batch',
+      'shang-founded-eighth-batch',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of batchIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBe('approximate');
+      expect(event?.verification, eventId).toBe('partial');
+      expect(detail?.causes.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.consequences.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(5);
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      expect(report.items.find((item) => item.eventId === eventId)?.sourceComplete, eventId).toBe(true);
+      expect(report.items.find((item) => item.eventId === eventId)?.unresolvedReferenceIds, eventId).toEqual({
+        people: [], places: [], polities: [], relatedEvents: [], sources: [],
+      });
+    }
+
+    expect(detailsById.get('chu-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '楚威王强国阶段', startYear: -350, endYear: -300 }),
+    ]));
+    expect(detailsById.get('qi-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '齐威王整顿与强国阶段', startYear: -350, endYear: -300 }),
+    ]));
+    expect(detailsById.get('yan-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '燕昭王重建阶段', startYear: -350, endYear: -300 }),
+    ]));
+    expect(detailsById.get('western-liang-state-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '敦煌—酒泉交通承接', startYear: 400, endYear: 420 }),
+    ]));
+    expect(detailsById.get('xia-early-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '二里头考古参照', startYear: -2070, endYear: -1600 }),
+    ]));
+    expect(detailsById.get('shang-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '二里头—早商文化参照', startYear: -1600, endYear: -1500 }),
+    ]));
+  });
 });
