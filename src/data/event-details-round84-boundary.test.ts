@@ -61,6 +61,6 @@ describe('event details eighty-fourth batch boundary audit', () => {
 
     expect(precisionGaps).toHaveLength(26);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
-    expect(precisionGaps.every((item) => item.timePrecision !== 'exact')).toBe(true);
+    expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });
 });
