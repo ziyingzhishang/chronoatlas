@@ -4,6 +4,7 @@ import { describe, expect, it, vi } from 'vitest';
 import { getChanganStudyBundle } from '../data/changan-study';
 import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
+import { events as historicalEvents } from '../data/events';
 import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
 import { places } from '../data/places';
@@ -14,6 +15,7 @@ import { LocaleProvider } from '../i18n/locale';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
 
 const data = { polities, places, people, heritage: heritageAssets, events: getChanganStudyBundle().events, claims, capitalTerms: capitalHistory };
+const completeData = { polities, places, people, heritage: heritageAssets, events: historicalEvents, claims, capitalTerms: capitalHistory };
 
 describe('StudyRelationsPanel integration', () => {
   it('renders the polity perspective and its people', () => {
@@ -48,5 +50,30 @@ describe('StudyRelationsPanel integration', () => {
     await userEvent.click(screen.getByRole('button', { name: '长安' }));
 
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'place', id: 'changan' });
+  });
+
+  it('keeps all four polity-summary entry points navigable for a non-Changan polity', async () => {
+    const view = buildPolityStudyView('qin', -221, completeData);
+    const onOpenEntity = vi.fn();
+    render(<StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} />);
+    const panel = screen.getByRole('region', { name: '历史关系研究视图' });
+
+    expect(view?.people.some((person) => person.id === 'qin-shi-huang')).toBe(true);
+    expect(view?.capitalPlaces.some((place) => place.id === 'xianyang')).toBe(true);
+    expect(view?.events.some((event) => event.id === 'qin-unification')).toBe(true);
+    expect(view?.heritage.some((asset) => asset.id === 'qin-xianyang-imperial-palace-site')).toBe(true);
+
+    await userEvent.click(screen.getByRole('button', { name: '嬴政' }));
+    await userEvent.click(screen.getByRole('button', { name: '咸阳' }));
+    await userEvent.click(screen.getByRole('button', { name: '秦统一六国' }));
+    await userEvent.click(screen.getByRole('button', { name: '秦帝国咸阳宫殿与都城遗址层' }));
+
+    expect(onOpenEntity.mock.calls).toEqual(expect.arrayContaining([
+      [{ type: 'person', id: 'qin-shi-huang' }],
+      [{ type: 'place', id: 'xianyang' }],
+      [{ type: 'event', id: 'qin-unification' }],
+      [{ type: 'heritage', id: 'qin-xianyang-imperial-palace-site' }],
+    ]));
+    expect(panel).toBeInTheDocument();
   });
 });

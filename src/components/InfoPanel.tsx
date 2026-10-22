@@ -10,6 +10,7 @@ import { boundaryStatusLabel } from '../map/presentation';
 import { activeCapitalRecords } from '../data/capital-history';
 import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
+import { events as historicalEvents } from '../data/events';
 import { changanEvents } from '../data/changan-study';
 import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
@@ -40,6 +41,7 @@ const controlLabels = {
 const range = (from:number,to:number) => from===to ? formatHistoricalYear(from) : `${formatHistoricalYear(from)}—${formatHistoricalYear(to)}`;
 const sourceYear = (year:number) => year===0 ? '0（来源边界值，非公元0年）' : formatHistoricalYear(year);
 const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `${sourceYear(from)}—${sourceYear(to)}`;
+const polityStudyEvents = [...historicalEvents, ...changanEvents].filter((event, index, all) => all.findIndex((candidate) => candidate.id === event.id) === index);
 
 export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
@@ -51,7 +53,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
   const currentCapitalTerms = selected && 'name' in selected ? activeCapitalRecords(state.year, selected.id) : [];
   const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalRecords(state.year).filter(record=>record.placeId===selected.id) : [];
   const studyView = selectedEntity?.type === 'polity'
-    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: changanEvents, claims, capitalTerms: capitalHistory })
+    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: polityStudyEvents, claims, capitalTerms: capitalHistory })
     : selectedEntity?.type === 'place'
       ? buildCityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: changanEvents, claims, capitalTerms: capitalHistory })
       : undefined;
