@@ -44,7 +44,7 @@ describe('forty-eighth batch high-confidence person relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.byPersonId['yao-chang'].requiredMissingCategoryKeys).not.toContain('allianceConflict');
     expect(report.byPersonId.jamukha.requiredMissingCategoryKeys).not.toContain('eventParticipation');
-    expect(report.byPersonId['chen-xu'].requiredMissingCategoryKeys).toContain('kinship');
+    expect(report.byPersonId['chen-xu'].requiredMissingCategoryKeys).not.toContain('kinship');
     expect(report.requiredMissingByCategory).toMatchObject({
       governance: expect.arrayContaining([]),
       kinship: expect.any(Array),
@@ -52,7 +52,7 @@ describe('forty-eighth batch high-confidence person relationships', () => {
       eventParticipation: expect.any(Array),
     });
     expect(report.requiredMissingByCategory.governance).toHaveLength(41);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(108);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(106);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(100);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     expect(report.needsSupplementPersonIds).toHaveLength(151);
