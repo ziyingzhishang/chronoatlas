@@ -165,7 +165,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['赫连勃勃承接匈奴铁弗部与河套区域军政资源。', '407年前后在河套建立夏政权。', '统万城建成后成为夏的正式都城，并在关中竞争中短暂取得长安。'],
     turningPoints: [turn(407, '夏政权形成', '赫连勃勃在河套建立十六国夏。', 'xia-sixteen-states-founded-eighth-batch'), turn(413, '统万城建成', '夏以统万城为正式都城，城市防御与王权象征加强。'), turn(417, '取得长安', '夏势力进入关中，政治竞争范围扩大。')],
     principalFigureIds: ['heliAN-bobo'], capitalPhases: [capital('zhitong', 413, 431)],
-    heritageIds: ['tongwan-city-site', 'tongwan-south-gate-site'], eventIds: ['xia-sixteen-states-founded-eighth-batch'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['tongwan-city-site', 'tongwan-south-gate-site'], eventIds: ['xia-sixteen-states-founded-eighth-batch', 'xia-capital-tongwan-established'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '本条的“夏”指十六国赫连夏，不是传统纪年夏代；407—412年建政初期中心不能提前套用统万城，统万遗址也只支持夏政权阶段的城市关联。',
   }),
   detail({
@@ -173,7 +173,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['后凉衰落使张掖及河西走廊出现新的军政联盟。', '397年段业政权在张掖形成北凉。', '沮渠蒙逊掌权后迁都姑臧，北凉成为河西重要政权。'],
     turningPoints: [turn(397, '北凉形成', '张掖一带的段业政权进入北凉阶段。', 'northern-liang-founded'), turn(401, '迁都姑臧', '姑臧成为北凉后期正式都城。'), turn(439, '北魏灭北凉', '北魏攻取姑臧，北凉在河西的政权结束。')],
     principalFigureIds: ['duan-ye', 'juqu-mengxun'], capitalPhases: [capital('zhangye', 397, 400), capital('guzang', 401, 439)],
-    heritageIds: ['guzang-ancient-city-site', 'guzang-baita-temple-site'], eventIds: ['northern-liang-founded'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['guzang-ancient-city-site', 'guzang-baita-temple-site'], eventIds: ['northern-liang-founded', 'northern-liang-moved-guzang'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '张掖与姑臧是北凉前后期不同都城阶段；姑臧古城和白塔寺均为多时期河西城市与宗教遗产，不能把全部遗存归为北凉单一时期。',
   }),
   detail({

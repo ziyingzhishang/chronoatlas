@@ -1628,6 +1628,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '397年段业受拥立是北凉形成节点，段业受拥立与沮渠氏掌权不是同一事件；张掖、姑臧代表不同阶段，不能用后期范围倒推早期控制。',
   },
   {
+    eventId: 'northern-liang-moved-guzang',
+    participants: [
+      { personId: 'juqu-mengxun', role: '取得北凉主导权并将政治中心迁至姑臧的君主', note: '沮渠蒙逊对应401年后的北凉姑臧阶段；397年段业受拥立与本次迁都属于不同历史节点。' },
+    ],
+    polityIds: ['northern_liang'],
+    causes: ['沮渠蒙逊在北凉内部竞争中取得主导权。', '姑臧位于河西行政、军事与丝路交通的核心位置，适合作为后期政治中心。'],
+    consequences: ['北凉由张掖阶段转入姑臧正式都城阶段。', '姑臧古城及相关遗址承接前凉、后凉与北凉多个政权层次，不能将城市遗存单一归于北凉。'],
+    phases: [
+      { label: '沮渠氏掌权', startYear: 401, endYear: 401, summary: '沮渠蒙逊取得北凉主导权。' },
+      { label: '姑臧都城阶段', startYear: 401, endYear: 439, summary: '北凉以姑臧为正式都城，河西军政与交通网络围绕该城市展开。' },
+    ],
+    locationIds: ['guzang'], relatedEventIds: ['northern-liang-founded', 'later-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '401年表达北凉由张掖转入姑臧阶段；具体迁都仪式、城市边界和北凉对河西各节点的直接控制仍需按史料分层，不把后期范围前推。',
+  },
+  {
     eventId: 'yang-wu-founded',
     participants: [
       { personId: 'yang-xingmi', role: '经营淮南并推动杨吴政权形成的地方军事领袖', note: '杨行密在扬州及淮南建立持续军政基础；902年受封吴王是分期节点，不能等同于完全脱离唐廷的正式称帝。' },
@@ -2041,6 +2056,21 @@ const details: HistoricalEventDetail[] = [
     ],
     locationIds: ['zhitong'], relatedEventIds: ['later-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '407年作为夏政权形成节点，不把418年取得长安或后期控制范围回填到建政年；赫连勃勃政权与传统夏代必须分开。',
+  },
+  {
+    eventId: 'xia-capital-tongwan-established',
+    participants: [
+      { personId: 'heliAN-bobo', role: '主持营建统万城并确立夏都城阶段的君主', note: '赫连勃勃407年建立夏，413年起营建统万城；建政与都城营建是连续但不同的阶段。' },
+    ],
+    polityIds: ['xia'],
+    causes: ['夏政权407年在朔方形成后，需要稳定的王权、行政与防御中心。', '河套南缘的地理位置适合连接朔方、河套和关中方向的交通与军事组织。'],
+    consequences: ['统万城成为夏政权的正式都城，形成夯土城垣、宫城和城市分区。', '统万城营建、418年取得长安和431年夏亡属于不同阶段，不能压缩为单一事件。'],
+    phases: [
+      { label: '统万城营建', startYear: 413, endYear: 418, summary: '赫连勃勃主持营建统万城，夏都城空间逐步形成。' },
+      { label: '夏都使用阶段', startYear: 418, endYear: 431, summary: '统万城作为夏正式都城承接河套与关中竞争。' },
+    ],
+    locationIds: ['zhitong'], relatedEventIds: ['xia-sixteen-states-founded-eighth-batch', 'later-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '413年采用统万城营建起点；营建持续时间、宫城细部与后续使用层需按考古资料分期，现代遗址不等于完整复原夏代都城。',
   },
   {
     eventId: 'xia-early-founded-eighth-batch',

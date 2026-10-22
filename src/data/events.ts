@@ -708,6 +708,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百八·晋纪三十', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷108', detail: '记载河西后凉分裂、397年段业被拥立及沮渠氏势力上升；401年沮渠蒙逊掌权和迁治姑臧属于后续阶段。' }],
   },
   {
+    id: 'northern-liang-moved-guzang', year: 401, title: '北凉迁都姑臧', summary: '沮渠蒙逊取得北凉主导权后，政治中心由张掖转至姑臧，北凉进入河西核心城市阶段。', placeId: 'guzang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    datePrecision: 'year', region: 'china', category: '政权建立／都城迁移', verification: 'checked',
+    background: '北凉早期以张掖为政治中心，沮渠蒙逊在河西军政竞争中取得主导权，需要控制凉州核心城市与交通节点。',
+    process: '401年沮渠蒙逊掌握北凉后，将政治中心迁至姑臧；此举与397年段业受拥立的政权形成节点不同，标志北凉进入姑臧都城阶段。',
+    impact: '姑臧成为北凉后期的正式都城，并承接河西行政、军事与丝路交通功能；迁都不等于北凉在当年已完成对河西全部地区的直接控制。',
+    mapNote: '地图应把张掖（397—400）与姑臧（401—439）显示为北凉连续政权的不同都城阶段，不将后期范围倒推至迁都当年。',
+    references: [{ title: '《资治通鉴》卷一百八·晋纪三十', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷108', detail: '用于核对沮渠蒙逊掌权及北凉由张掖转向姑臧的阶段；具体城市空间仍按遗址资料分层理解。' }],
+  },
+  {
     id: 'yang-wu-founded', year: 902, title: '杨吴政权建立', summary: '杨行密受封吴王，江淮地方政权进入杨吴阶段。', placeId: 'yangzhou', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末藩镇竞争中，杨行密在淮南逐步控制扬州及江淮军政资源，唐中央对当地的实际约束持续减弱。',
@@ -895,6 +904,15 @@ const catalog: HistoricalEvent[] = [
     impact: '夏成为十六国后期河套、陕北与关中竞争的重要力量，推动后秦、北魏和河西诸政权关系重新组织；431年灭亡是后续阶段。',
     mapNote: '地图应以河套、朔方为407年形成核心，区分统万城建成和418年进入长安等阶段，不能用夏后期范围倒推建政年。',
     references: [{ title: '《资治通鉴》卷一百一十五·晋纪三十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷115', detail: '用于赫连勃勃起兵、夏政权形成和统万城阶段；407年作为形成节点，后续扩张另行表达。' }],
+  },
+  {
+    id: 'xia-capital-tongwan-established', year: 413, title: '夏营建统万城并定为都城', summary: '赫连勃勃开始营建统万城，夏政权由河套建政阶段进入统万城正式都城阶段。', placeId: 'zhitong', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    datePrecision: 'year', region: 'china', category: '都城营建／迁都', verification: 'checked',
+    background: '夏政权407年在朔方形成后，需要在河套南缘建设能够体现王权、组织防御并承接交通的固定都城。',
+    process: '413年起赫连勃勃主持营建统万城；统万城建成后成为夏的正式都城，407年建政与413年都城营建属于连续而不同的阶段。',
+    impact: '统万城将夏政权的军政整合、王权象征与河套城市空间结合起来；418年取得长安等后续军事扩张不能回填为413年已完成的控制范围。',
+    mapNote: '地图应区分407年朔方建政节点与413年统万城营建、431年夏亡；统万城遗址对应今陕西省榆林市靖边县一带。',
+    references: [{ title: '《资治通鉴》卷一百一十五·晋纪三十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷115', detail: '用于核对赫连勃勃营建统万城及夏都阶段；遗址保存状况另由现代地理资料说明。' }],
   },
   {
     id: 'xia-early-founded-eighth-batch', year: -2070, title: '夏代政权建立（传统纪年）', summary: '传统年表以约前2070年作为夏代开始，但其年代与国家形态仍需结合考古和文献讨论。', sourceIds: ['china-chronology'],
