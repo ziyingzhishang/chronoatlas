@@ -1,0 +1,106 @@
+import { describe, expect, it } from 'vitest';
+
+import { changanEvents } from './changan-study';
+import { claims } from './claims';
+import { eventDetails } from './event-details';
+import { events } from './events';
+import { buildPersonRelationshipCoverageReport } from './person-relationship-coverage';
+import { people } from './people';
+import { sourceNotes } from './sources';
+
+const eventParticipationGaps = [
+  { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reason: '城市辅助事件没有霍去病参与字段。' },
+  { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reason: '城市辅助事件没有张骞参与字段。' },
+  { personId: 'ban-gu', eventIds: ['changan-han-capital'], reason: '城市辅助事件没有班固参与字段，且班固属于东汉后期人物。' },
+  { personId: 'li-zhi', eventIds: ['daming-palace-built'], reason: '城市营建事件没有李治参与字段，且现有来源仅支持城市建设层。' },
+  { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reason: '元宏出生于北魏建政之后，不能回填为建政参与者。' },
+  { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], reason: '拓跋焘出生于北魏建政之后，不能以继承统治关系替代参与字段。' },
+  { personId: 'yuwen-yong', eventIds: [], reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
+  { personId: 'zhao-wuling', eventIds: [], reason: '当前事件目录没有同时具备赵武灵王参与字段和来源的事件节点。' },
+  { personId: 'mongke', eventIds: ['mongol-founded'], reason: '蒙哥出生于蒙古汗国形成之后，不能把后续汗位继承阶段回填为形成事件参与。' },
+] as const;
+
+const eventCatalog = [...events, ...changanEvents];
+const peopleById = new Map(people.map((person) => [person.id, person]));
+const sourceIds = new Set(sourceNotes.map((source) => source.id));
+const directKinship = new Set(['parent-of', 'child-of', 'grandparent-of', 'grandchild-of', 'sibling-of', 'spouse-of']);
+const directAlliance = new Set(['ally-of', 'enemy-of']);
+
+function pairClaimExists(left: string, right: string, predicates: Set<string>): boolean {
+  return claims.some((claim) => predicates.has(claim.predicate)
+    && ((claim.subjectId === left && claim.objectId === right)
+      || (claim.subjectId === right && claim.objectId === left)));
+}
+
+describe('round one hundred four person relationship boundary audit', () => {
+  it('keeps every event-participation gap closed only when endpoint, participant field, and source all exist', () => {
+    const report = buildPersonRelationshipCoverageReport();
+
+    expect(report.requiredMissingByCategory.eventParticipation).toEqual(
+      eventParticipationGaps.map(({ personId }) => personId),
+    );
+
+    for (const { personId, eventIds, reason } of eventParticipationGaps) {
+      const person = peopleById.get(personId);
+      expect(person, `${personId}: person endpoint`).toBeDefined();
+      expect(reason.length, `${personId}: audit rationale`).toBeGreaterThan(0);
+      expect(claims.some((claim) => claim.subjectId === personId && claim.predicate === 'participated-in'), `${personId}: no participation claim`).toBe(false);
+
+      for (const eventId of eventIds) {
+        const event = eventCatalog.find((candidate) => candidate.id === eventId);
+        const detail = eventDetails.find((candidate) => candidate.eventId === eventId);
+        const endpointSourceIds = [...(event?.sourceIds ?? []), ...(detail?.sourceIds ?? [])];
+
+        expect(event, `${personId}:${eventId} event endpoint`).toBeDefined();
+        expect(Number.isFinite(event?.year), `${personId}:${eventId} event year`).toBe(true);
+        expect(endpointSourceIds.length, `${personId}:${eventId} source list`).toBeGreaterThan(0);
+        expect(endpointSourceIds.every((sourceId) => sourceIds.has(sourceId)), `${personId}:${eventId} source refs`).toBe(true);
+        expect(detail?.participants.some((participant) => participant.personId === personId) ?? false, `${personId}:${eventId} participant field`).toBe(false);
+      }
+
+      const coverage = report.byPersonId[personId].categories.eventParticipation;
+      expect(coverage.status, `${personId}: coverage status`).toBe('missing');
+      expect(coverage.evidenceIds, `${personId}: evidence`).toEqual([]);
+      expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
+    }
+  });
+
+  it('rejects temporal backfilling from a later ruler into a founding event', () => {
+    for (const [personId, eventId] of [
+      ['yuan-hong', 'northern-wei-founded'],
+      ['tuoba-tao', 'northern-wei-founded'],
+      ['mongke', 'mongol-founded'],
+    ] as const) {
+      const person = peopleById.get(personId)!;
+      const event = eventCatalog.find((candidate) => candidate.id === eventId)!;
+      expect(person.birthYear, `${personId}: birth year`).toBeGreaterThan(event.year);
+      expect(eventDetails.find((detail) => detail.eventId === eventId)?.participants.some((participant) => participant.personId === personId)).toBe(false);
+    }
+  });
+
+  it('does not turn shared polity or cross-generation context into direct kinship or alliance edges', () => {
+    const report = buildPersonRelationshipCoverageReport();
+    const boundaryPairs = [
+      ['yuan-hong', 'tuoba-tao', 'kinship'],
+      ['wei-huanzi', 'wei-wenhou', 'kinship'],
+      ['li-gang', 'zong-ze', 'allianceConflict'],
+      ['liu-yan', 'liu-yin', 'allianceConflict'],
+      ['zhao-wuling', 'qin-shi-huang', 'kinship'],
+    ] as const;
+
+    for (const [left, right, category] of boundaryPairs) {
+      expect(pairClaimExists(left, right, category === 'kinship' ? directKinship : directAlliance), `${left}-${right}: direct edge`).toBe(false);
+    }
+
+    expect(report.byPersonId['yuan-hong'].categories.kinship.status).not.toBe('covered');
+    expect(report.byPersonId['li-gang'].categories.allianceConflict.status).not.toBe('covered');
+    expect(report.byPersonId['zong-ze'].categories.allianceConflict.status).not.toBe('covered');
+  });
+
+  it('retains the full unresolved relationship baseline after the audit', () => {
+    const report = buildPersonRelationshipCoverageReport();
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(102);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(63);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
+  });
+});
