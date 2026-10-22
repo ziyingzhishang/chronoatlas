@@ -135,7 +135,7 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 73, 'needs-review': 32, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -202,7 +202,7 @@ describe('event detail coverage audit', () => {
       'northern-yuan-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 73, 'needs-review': 32, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision).toBe('year');
       expect(eventsById.get(eventId)?.verification).toBe('checked');
@@ -230,7 +230,7 @@ describe('event detail coverage audit', () => {
       'xuanwu-gate',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 73, 'needs-review': 32, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision).toBe('year');
       expect(eventsById.get(eventId)?.verification).toBe('checked');
@@ -265,5 +265,34 @@ describe('event detail coverage audit', () => {
     ]));
     expect(report.orphanDetailEventIds).toHaveLength(14);
     expect(report.orphanDetails.every((item) => item.kind === 'city-history-auxiliary')).toBe(true);
+  });
+
+  it('closes the fifty-third batch of source-backed early polity links without upgrading approximate dates', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const expectedLinks: Record<string, string[]> = {
+      'xia-early-founded-eighth-batch': ['shang-founded-eighth-batch'],
+      'shang-founded-eighth-batch': ['zhou-conquest'],
+      'goguryeo-founded': ['silla-founded'],
+      'silla-founded': ['goguryeo-founded'],
+      'tibetan-founded': ['tang-founded'],
+      'turkic-founded': ['tang-founded'],
+    };
+
+    for (const [eventId, relatedEventIds] of Object.entries(expectedLinks)) {
+      const expectedPrecision = eventId === 'turkic-founded' ? 'year' : 'approximate';
+      expect(eventsById.get(eventId)?.datePrecision, eventId).toBe(expectedPrecision);
+      expect(detailsById.get(eventId)?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.relatedEventIds, eventId).toEqual(relatedEventIds);
+      expect(report.items.find((item) => item.eventId === eventId)?.sourceComplete, eventId).toBe(true);
+      if (expectedPrecision === 'approximate') {
+        expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      } else {
+        expect(report.coveredEventIds, eventId).toContain(eventId);
+      }
+    }
+
+    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
   });
 });
