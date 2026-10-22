@@ -14,7 +14,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'gengshi-founded', year: 23, title: '更始政权建立（形成阶段）', summary: '刘玄被拥立为更始帝，更始政权进入形成阶段。', sourceIds: ['zizhi-tongjian', 'gengshi-official'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '新末反莽力量在各地扩张，绿林军及地方势力需要以刘氏宗室重建汉室名义。',
     process: '公元23年刘玄被拥立为更始帝，更始政权在宛城一带形成；随后迁驻洛阳、进入长安，政治中心和实际控制范围持续变化。',
     impact: '新朝的中央权威受到根本冲击，汉室复起成为各方竞争的政治旗帜；更始政权未能将拥立名义稳定转化为全国直接统治。',
@@ -149,7 +149,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'former-zhao-founded', year: 304, title: '前赵（汉赵）政权建立', summary: '刘渊在左国城称汉王，匈奴刘氏政权由此形成，后改称赵。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '西晋八王之乱与边镇动荡削弱中央控制，匈奴刘氏在并州拥有可动员的部众与军事资源。',
     process: '304年刘渊在左国城称汉王，建立刘汉政权；其后刘聪改国号为赵，现代史学通常合称前赵或汉赵。',
     impact: '十六国早期的政权竞争展开，西晋在北方的统治进一步瓦解；304年的称王与后续称帝、改国号不能压缩为一个完成统一的节点。',
@@ -544,7 +544,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'song-southward', year: 1127, title: '北宋覆亡与南宋开始', summary: '金军占领北宋都城，宋朝统治重心转向南方。',
-    datePrecision: 'year', region: 'china', category: '统一／分裂', sourceIds: [], verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '统一／分裂', sourceIds: [], verification: 'checked',
     background: '女真金取代辽在北方的优势，并向宋的统治区域推进。',
     process: '金军攻占汴梁，北宋结束。宋室在南方延续，1127年通常作为南宋时期的起点。',
     impact: '中国北方与南方分别处于金、宋等政权的统治之下，宋朝的政治和经济重心进一步南移。',
@@ -673,7 +673,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'yang-wu-founded', year: 902, title: '杨吴政权建立', summary: '杨行密受封吴王，江淮地方政权进入杨吴阶段。', placeId: 'yangzhou', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末藩镇竞争中，杨行密在淮南逐步控制扬州及江淮军政资源，唐中央对当地的实际约束持续减弱。',
     process: '902年杨行密受唐廷封为吴王，淮南地方政权由此进入史称杨吴的阶段；905年杨渥继立和927年徐知诰建国是后续节点。',
     impact: '江淮形成具有延续性的十国政权，扬州成为早期政治中心；“受封吴王”、独立运行和后续禅代不应被压缩为同一正式称帝事件。',

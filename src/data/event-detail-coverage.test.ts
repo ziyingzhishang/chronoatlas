@@ -135,7 +135,7 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 51, 'needs-review': 48, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 55, 'needs-review': 44, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -150,6 +150,10 @@ describe('event detail coverage audit', () => {
       'wuyue-founded',
       'min-founded',
       'ma-chu-founded',
+      'gengshi-founded',
+      'former-zhao-founded',
+      'song-southward',
+      'yang-wu-founded',
     ]));
   });
 
