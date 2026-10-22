@@ -52,7 +52,7 @@ describe('fifty-seventh batch high-confidence person relationships', () => {
   it('reduces only the directly evidenced coverage gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.requiredMissingByCategory.governance).toHaveLength(41);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(100);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(98);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(106);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     for (const personId of ['daemusin', 'namhae-chachaung', 'naemul-isageum', 'tridu-songtsen']) {

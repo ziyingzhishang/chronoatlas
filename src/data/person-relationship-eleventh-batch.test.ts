@@ -35,6 +35,7 @@ const batchClaimIds = new Set([
   'claim-ji-yijiu-related-zhou-wu',
   'claim-yu-the-great-related-zhou-wu',
   'claim-zhao-wuling-related-qin-shi-huang',
+  'claim-zhou-gong-dan-ally-zhou-wu-seventythird',
 ]);
 
 function personRelation(subjectId: string, predicate: string, objectId: string) {
