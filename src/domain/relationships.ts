@@ -12,6 +12,7 @@ export type GroupedPersonRelationships = Record<PersonRelationshipKind, PersonRe
 
 const predicateKinds: Record<string, PersonRelationshipKind> = {
   'parent-of': 'person-person', 'child-of': 'person-person', 'spouse-of': 'person-person',
+  'grandparent-of': 'person-person', 'grandchild-of': 'person-person',
   'sibling-of': 'person-person', 'teacher-of': 'person-person', 'student-of': 'person-person',
   served: 'person-person', appointed: 'person-person', 'ally-of': 'person-person', 'enemy-of': 'person-person',
   founded: 'person-polity',
@@ -24,6 +25,7 @@ const predicateKinds: Record<string, PersonRelationshipKind> = {
 
 const predicateRelationTypes: Record<string, PersonRelationType> = {
   'parent-of': 'parent-of', 'child-of': 'child-of', 'spouse-of': 'spouse-of', 'sibling-of': 'sibling-of',
+  'grandparent-of': 'grandparent-of', 'grandchild-of': 'grandchild-of',
   'teacher-of': 'teacher-of', 'student-of': 'student-of', served: 'served', appointed: 'appointed',
   succeeded: 'succeeded', founded: 'founded', ruled: 'ruled', 'ally-of': 'ally-of', 'enemy-of': 'enemy-of',
   'related-to': 'related-to', 'participated-in': 'participated-in', commissioned: 'commissioned',

@@ -102,7 +102,7 @@ export interface PersonRelationshipCoverageReport {
 }
 
 const governancePredicates = new Set(['served', 'appointed', 'succeeded', 'ruled']);
-const kinshipPredicates = new Set(['parent-of', 'child-of', 'sibling-of', 'spouse-of']);
+const kinshipPredicates = new Set(['parent-of', 'child-of', 'grandparent-of', 'grandchild-of', 'sibling-of', 'spouse-of']);
 const allianceConflictPredicates = new Set(['ally-of', 'enemy-of']);
 const genericPredicates = new Set(['related-to']);
 const personPersonPredicates = new Set([
@@ -135,7 +135,7 @@ function emptyCategories(
 ): Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage> {
   return {
     governance: { applicabilityStatus: applicability.governance, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 served、appointed、succeeded 或 ruled 关系。' },
-    kinship: { applicabilityStatus: applicability.kinship, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 parent、child、sibling 或 spouse 关系。' },
+    kinship: { applicabilityStatus: applicability.kinship, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 parent、child、grandparent、grandchild、sibling 或 spouse 关系。' },
     allianceConflict: { applicabilityStatus: applicability.allianceConflict, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 ally 或 enemy 关系。' },
     eventParticipation: { applicabilityStatus: applicability.eventParticipation, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到参与事件 claim 或事件详情参与记录。' },
   };

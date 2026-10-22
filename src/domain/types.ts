@@ -128,6 +128,8 @@ export interface Person {
 export type PersonRelationType =
   | 'parent-of'
   | 'child-of'
+  | 'grandparent-of'
+  | 'grandchild-of'
   | 'spouse-of'
   | 'sibling-of'
   | 'teacher-of'

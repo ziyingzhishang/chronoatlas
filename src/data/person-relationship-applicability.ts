@@ -45,7 +45,7 @@ export interface PersonRelationshipApplicabilityOptions {
 }
 
 const governancePredicates = new Set(['served', 'appointed', 'succeeded', 'ruled']);
-const kinshipPredicates = new Set(['parent-of', 'child-of', 'sibling-of', 'spouse-of']);
+const kinshipPredicates = new Set(['parent-of', 'child-of', 'grandparent-of', 'grandchild-of', 'sibling-of', 'spouse-of']);
 const allianceConflictPredicates = new Set(['ally-of', 'enemy-of']);
 
 const governanceRolePattern = /皇帝|君主|国王|可汗|大汗|单于|汗|赞普|南诏王|苏丹|统治者|领袖|宰相|丞相|官员|大臣|刺史|政治家|权臣|元首|总统|国务卿|使节|代表|酋长|诸侯|摄政|宗室|继承者|改革者|建国者|留守|教廷/;

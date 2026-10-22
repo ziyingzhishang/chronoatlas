@@ -23,14 +23,14 @@ export interface PersonDetailProps {
 }
 
 const relationSections: Array<{ title: string; types: PersonRelationType[] }> = [
-  { title: '亲属关系', types: ['parent-of', 'child-of', 'spouse-of', 'sibling-of', 'teacher-of', 'student-of'] },
+  { title: '亲属关系', types: ['parent-of', 'child-of', 'grandparent-of', 'grandchild-of', 'spouse-of', 'sibling-of', 'teacher-of', 'student-of'] },
   { title: '君臣关系', types: ['served', 'appointed', 'succeeded'] },
   { title: '联盟关系', types: ['ally-of'] },
   { title: '对立关系', types: ['enemy-of'] },
 ];
 
 const relationLabels: Partial<Record<PersonRelationType, string>> = {
-  'parent-of': '父母／子女', 'child-of': '子女／父母', 'spouse-of': '配偶', 'sibling-of': '兄弟姊妹',
+  'parent-of': '父母／子女', 'child-of': '子女／父母', 'grandparent-of': '祖父母／外祖父母', 'grandchild-of': '孙辈／外孙辈', 'spouse-of': '配偶', 'sibling-of': '兄弟姊妹',
   'teacher-of': '师承', 'student-of': '弟子', served: '侍奉／效力', appointed: '任用', succeeded: '承接', 'ally-of': '盟友', 'enemy-of': '对立',
 };
 
