@@ -754,4 +754,58 @@ describe('event detail coverage audit', () => {
       expect.objectContaining({ label: '伏俟城后期参照' }),
     ]));
   });
+
+  it('enriches the sixty-fourth batch with source-backed succession phases without upgrading approximate dates', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'goguryeo-founded',
+      'silla-founded',
+      'tibetan-founded',
+      'han-warring-founded-eighth-batch',
+      'wei-warring-founded-eighth-batch',
+      'zhao-warring-founded-eighth-batch',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of batchIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBe('approximate');
+      expect(event?.verification, eventId).toBe('partial');
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.causes.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.consequences.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(5);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      expect(report.items.find((item) => item.eventId === eventId)?.sourceComplete, eventId).toBe(true);
+      expect(report.items.find((item) => item.eventId === eventId)?.unresolvedReferenceIds, eventId).toEqual({
+        people: [], places: [], polities: [], relatedEvents: [], sources: [],
+      });
+    }
+
+    expect(detailsById.get('goguryeo-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '朱蒙后王统承接', startYear: -19, endYear: 18 }),
+    ]));
+    expect(detailsById.get('silla-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '南解王统承接', startYear: -4, endYear: 24 }),
+    ]));
+    expect(detailsById.get('tibetan-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '唐蕃关系展开', startYear: 641, endYear: 650 }),
+    ]));
+    expect(detailsById.get('han-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '韩景侯承接', startYear: -408, endYear: -400 }),
+    ]));
+    expect(detailsById.get('wei-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '魏文侯早期经营', startYear: -445, endYear: -396 }),
+    ]));
+    expect(detailsById.get('zhao-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '赵烈侯承接', startYear: -408, endYear: -400 }),
+    ]));
+  });
 });

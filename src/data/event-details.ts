@@ -91,6 +91,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '早期部族整合', startYear: -100, endYear: -38, summary: '辽东和朝鲜半岛北部的地方政治网络持续重组。' },
       { label: '高句丽形成', startYear: -37, endYear: -37, summary: '传统纪年以朱蒙建国作为高句丽政权起点。' },
+      { label: '朱蒙后王统承接', startYear: -19, endYear: 18, summary: '琉璃明王承接朱蒙之后的王统并参与早期政治中心调整；该阶段用于连接建国传统与国内城体系，不把继承阶段前推为前37年建国。' },
       { label: '区域扩展', startYear: -37, endYear: 100, summary: '高句丽逐步整合周边部众和交通节点。' },
       { label: '国内城体系承接', startYear: 3, endYear: 100, summary: '高句丽早期政治中心从五女山一带向国内城体系承接，迁移过程与国家化并非单一日期完成。' },
     ],
@@ -112,6 +113,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '辰韩网络', startYear: -100, endYear: -58, summary: '半岛东南部诸部落和聚落维持竞争与交流。' },
       { label: '传统建国', startYear: -57, endYear: -57, summary: '传统纪年以朴赫居世即位作为新罗政权起点。' },
+      { label: '南解王统承接', startYear: -4, endYear: 24, summary: '南解次次雄承接朴赫居世之后的早期王统，金城政治中心与新罗国家化继续展开；不把后续王统前推为前57年建国。' },
       { label: '王权整合', startYear: -57, endYear: 100, summary: '新罗逐步建立王统、礼制和对外关系。' },
       { label: '金城王统承接', startYear: 4, endYear: 24, summary: '朴赫居世之后的早期王统在金城继续承接，新罗国家化不能压缩为前57年单一建国时刻。' },
     ],
@@ -174,6 +176,7 @@ const details: HistoricalEventDetail[] = [
       { label: '吐蕃形成', startYear: 618, endYear: 629, summary: '松赞干布时期高原核心权力逐步整合，吐蕃进入形成阶段。' },
       { label: '高原核心整合', startYear: 618, endYear: 629, summary: '松赞干布以雅砻为核心推进联盟、军事和政治整合，形成后续扩张的基础。' },
       { label: '区域扩展', startYear: 629, endYear: 650, summary: '吐蕃通过军事、婚姻和行政整合扩大区域影响。' },
+      { label: '唐蕃关系展开', startYear: 641, endYear: 650, summary: '松赞干布时期与唐朝的外交、婚姻关系进入新阶段，外部联结与高原内部整合并行；不以此推定618年已完成后续扩张。' },
       { label: '逻些政治中心形成', startYear: 641, endYear: 650, summary: '吐蕃在扩展过程中以逻些等高原节点形成更稳定的政治中心，不能把后续都城形态前推为618年既成事实。' },
     ],
     locationIds: ['yalong', 'luosie'],
@@ -1783,6 +1786,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '晋国卿族分权', startYear: -500, endYear: -404, summary: '韩氏在晋国权力结构中积累军政和土地资源。' },
       { label: '周王室册命', startYear: -403, endYear: -403, summary: '周威烈王册命韩虔为诸侯，韩进入传统战国分期。' },
+      { label: '韩景侯承接', startYear: -408, endYear: -400, summary: '韩虔在周王室册命前后承接韩氏政治资源，前403年的制度确认与其实际统治期相互重叠但不等同于韩国一日建成。' },
       { label: '三晋并列', startYear: -403, endYear: -403, summary: '韩与赵、魏同时获得周王室诸侯名义确认，三家分晋的制度结果在编年中被固定下来。' },
       { label: '韩国整合', startYear: -403, endYear: -350, summary: '韩继续整合中原西部政治资源，国家边界和政治中心逐步稳定。' },
       { label: '新郑政治中心承接', startYear: -375, endYear: -350, summary: '韩迁都新郑后，政治中心与中原交通网络进一步承接；迁都节点晚于前403年册命，不将新郑前推为册命现场。' },
@@ -1800,6 +1804,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '赵氏经营晋北', startYear: -500, endYear: -404, summary: '赵氏在晋国北部积累军政和地方资源。' },
       { label: '周王室册命', startYear: -403, endYear: -403, summary: '周威烈王册命赵籍为诸侯。' },
+      { label: '赵烈侯承接', startYear: -408, endYear: -400, summary: '赵籍在册命前后承接赵氏已有的北方军政资源，前403年的名义确认与赵国长期形成过程需分开记录。' },
       { label: '三晋并列', startYear: -403, endYear: -403, summary: '赵与韩、魏同时获得周王室诸侯名义确认，晋国旧有权力结构转为战国诸侯格局。' },
       { label: '赵国整合', startYear: -403, endYear: -350, summary: '赵继续整合北方城邑、交通线和部众关系。' },
       { label: '邯郸政治中心承接', startYear: -386, endYear: -350, summary: '赵迁都邯郸后，邯郸成为更稳定的政治中心；迁都与前403年周王室册命是不同阶段，不能将后期中心前推为建政现场。' },
@@ -1817,6 +1822,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '魏氏分掌晋国', startYear: -500, endYear: -404, summary: '魏氏在晋国卿族竞争中积累中原军政资源。' },
       { label: '周王室册命', startYear: -403, endYear: -403, summary: '周威烈王册命魏斯为诸侯。' },
+      { label: '魏文侯早期经营', startYear: -445, endYear: -396, summary: '魏斯在册命前后继续经营魏氏已有的中原与河东资源，后续改革与扩张不回填到前403年制度节点。' },
       { label: '三晋并列', startYear: -403, endYear: -403, summary: '魏与韩、赵同时获得周王室诸侯名义确认，晋国分权转化为并列诸侯秩序。' },
       { label: '安邑至大梁', startYear: -403, endYear: -340, summary: '魏在安邑及后来的大梁之间调整政治中心并扩展影响。' },
     ],
