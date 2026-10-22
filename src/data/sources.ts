@@ -211,6 +211,11 @@ export const sourceNotes: SourceNote[] = [
     scope: '邺城遗址现代位置、南北邺城及后赵、前燕、东魏、北齐都城沿革',
     note: '用于邺城城市与遗址现代定位；各政权具体迁都年份仍以编年史料分层核对。',
   },
+  {
+    id: 'southern-tang-imperial-lineage', title: '南唐后主李煜人物与皇室世系资料', authorOrInstitution: '中国文化研究院', urlOrCitation: 'https://chiculture.org.hk/sc/china-five-thousand-years/4405',
+    scope: '南唐三代君主李昪、李璟、李煜的皇室世系与李煜生平',
+    note: '用于确认李昪经李璟至李煜的祖孙链；李昪自称唐室远祖的谱系争议不延伸到南唐三代皇室内部的直系关系。',
+  },
 ];
 
 export const sourceById = Object.fromEntries(sourceNotes.map((source) => [source.id, source]));
