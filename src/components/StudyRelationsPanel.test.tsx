@@ -35,4 +35,19 @@ describe('StudyRelationsPanel', () => {
     await userEvent.click(within(screen.getByRole('region', { name: '城市历史时间轴' })).getByRole('button', { name: '唐在长安建立' }));
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded-changan' });
   });
+
+  it('opens a historical polity from the city regime list', async () => {
+    const bundle = getChanganStudyBundle();
+    const view = buildCityStudyView('changan', 650, {
+      ...bundle,
+      capitalTerms: capitalHistory,
+      places: [bundle.city],
+    });
+    const onOpenEntity = vi.fn();
+    render(<StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} />);
+
+    const regimeBlock = screen.getByRole('heading', { name: '曾以此地为政治中心的政权' }).parentElement!;
+    await userEvent.click(within(regimeBlock).getByRole('button', { name: '隋' }));
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'sui' });
+  });
 });

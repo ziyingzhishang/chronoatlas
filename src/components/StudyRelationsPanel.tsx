@@ -35,7 +35,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
       </div>}
       {cityView && <div className="study-block">
         <h3>{t('曾以此地为政治中心的政权')}</h3>
-        <ul className="study-chip-list">{cityView.polities.map((polity) => <li key={polity.id}>{polity.name}</li>)}</ul>
+        <ul className="study-chip-list">{cityView.polities.map((polity) => <li key={polity.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'polity', id: polity.id })}>{polity.name}</button></li>)}</ul>
       </div>}
       {polityView && <div className="study-block">
         <h3>{t('首都／政治中心')}</h3>
