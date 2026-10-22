@@ -807,7 +807,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一·周纪一', url: 'https://ctext.org/wiki.pl?chapter=648120&if=gb', detail: '记载前403年周王室命韩、赵、魏为诸侯；本条采用传统分期，不声称此前没有韩氏政治实体。' }],
   },
   {
-    id: 'zhao-warring-founded-eighth-batch', year: -403, title: '赵政权建立（传统分期）', summary: '周王室正式承认赵为诸侯，赵作为战国诸侯国进入传统分期。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    id: 'zhao-warring-founded-eighth-batch', year: -403, title: '赵政权建立（传统分期）', summary: '周王室正式承认赵为诸侯，赵作为战国诸侯国进入传统分期。', placeId: 'handan', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '赵氏在晋国卿族竞争中长期积累军政资源，并控制晋北、太原及其周边的重要空间；前403年册命是后世编年常用的制度节点。',
     process: '前403年周威烈王册命赵籍为诸侯，赵由晋国卿族转为战国诸侯国；邯郸成为后续重要政治中心，赵国形成是制度承认与地方整合的连续过程。',
