@@ -597,7 +597,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['楚的王统和区域政治网络早于战国分期存在。', '前403年作为战国诸侯格局成形的传统编年入口，楚在本项目中进入战国阶段。', '郢都失守后，楚的政治中心转向寿春，前223年为秦所灭。'],
     turningPoints: [turn(-403, '战国楚分期形成', '楚进入战国诸侯并立的导航分期。', 'chu-warring-founded-eighth-batch'), turn(-278, '郢都阶段结束', '楚在秦压力下离开郢，政治中心和军事网络转移。'), turn(-223, '楚亡于秦', '秦军攻灭楚，战国楚政权结束。')],
     principalFigureIds: ['chu-we-wang'], capitalPhases: [capital('ying', -403, -279), capital('shouchun', -278, -223)],
-    heritageIds: ['chu-ying-city-site'], eventIds: ['chu-warring-founded-eighth-batch'], claimIds: ['claim-chu-we-wang-participated-chu-warring-founded'], sourceIds: modernSources,
+    heritageIds: ['chu-ying-city-site', 'chu-shouchun-city-site'], eventIds: ['chu-warring-founded-eighth-batch'], claimIds: ['claim-chu-we-wang-participated-chu-warring-founded'], sourceIds: modernSources,
     uncertaintyNote: '前403年是传统战国分期而非楚国绝对建国年；楚威王活动晚于该节点，仅作为后续人物端点。郢、寿春遗址为不同阶段的城市层，不能把后期疆域回填至分期起点。',
   }),
   detail({
