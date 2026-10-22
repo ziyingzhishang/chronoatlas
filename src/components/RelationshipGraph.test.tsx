@@ -75,6 +75,14 @@ describe('RelationshipGraph', () => {
     expect(screen.getByRole('button', { name: /曹操 · 事件参与 · 参与事件 · 方向：曹操 → 三国开始 · 220年 · 时间精度：年 · 来源：可用/ })).toBeInTheDocument();
   });
 
+  it('renders fifty-sixth batch ruler edges in the governance category', () => {
+    const view = buildPolityStudyView('qing', 1643, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
+    render(<RelationshipGraph view={view!} />);
+
+    expect(screen.getByRole('button', { name: /皇太极 · 治理／君臣 · 统治 · 方向：皇太极 → 清 · 1636—1643年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /福临 · 治理／君臣 · 统治 · 方向：福临 → 清 · 1643—1661年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
+  });
+
   it('opens a person entity from a focusable SVG node', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });

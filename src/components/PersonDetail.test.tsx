@@ -2,6 +2,9 @@ import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import type { HistoricalClaim, HistoricalEvent, Person } from '../domain/types';
 import { getPersonDetail } from '../data/person-details';
+import { claims as catalogClaims } from '../data/claims';
+import { people as catalogPeople } from '../data/people';
+import { polities as catalogPolities } from '../data/polities';
 import { LocaleProvider } from '../i18n/locale';
 import { PersonDetail } from './PersonDetail';
 
@@ -108,6 +111,23 @@ describe('PersonDetail', () => {
     expect(audit.querySelectorAll('[data-relationship-coverage-status]')).toHaveLength(4);
     expect(audit.querySelectorAll('.relationship-coverage-note')).toHaveLength(4);
     expect(screen.getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
+  });
+
+  it('shows a fifty-sixth batch ruler relation in the person detail governance section', () => {
+    const hongtaiji = catalogPeople.find((item) => item.id === 'hongtaiji')!;
+    render(
+      <PersonDetail
+        person={hongtaiji}
+        detail={getPersonDetail('hongtaiji')!}
+        year={1640}
+        claims={catalogClaims}
+        people={catalogPeople}
+        polities={catalogPolities}
+      />,
+    );
+
+    expect(screen.getByRole('heading', { name: '君臣关系' })).toBeInTheDocument();
+    expect(screen.getByText(/统治\s+·\s+清/)).toBeInTheDocument();
   });
 
   it('keeps relationship coverage status labels available in English', () => {
