@@ -355,7 +355,7 @@ describe('event detail coverage audit', () => {
     expect(detailsById.get('western-liao-founded')?.relatedEventIds).toEqual([
       'liao-founded', 'jurchen-jin-founded',
     ]);
-    expect(detailsById.get('xiongnu-founded')?.relatedEventIds).toEqual(['han-imperial-accession']);
+    expect(detailsById.get('xiongnu-founded')?.relatedEventIds).toEqual(['han-imperial-accession', 'chu-han-contention']);
     expect(detailsById.get('tuyuhun-founded')?.relatedEventIds).toEqual(['western-jin-founded']);
   });
 
@@ -408,6 +408,55 @@ describe('event detail coverage audit', () => {
     ]));
     expect(detailsById.get('dali-founded')?.phases).toEqual(expect.arrayContaining([
       expect.objectContaining({ label: '洱海核心整合', startYear: 937 }),
+    ]));
+  });
+
+  it('enriches the fifty-seventh batch with cross-node phases without upgrading date precision', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const selectedIds = [
+      'cheng-han-founded',
+      'former-liang-founded',
+      'southern-ming-founded',
+      'western-liao-founded',
+      'dali-founded',
+      'xiongnu-founded',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of selectedIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBeOneOf(['approximate', 'range']);
+      expect(detail?.causes.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.consequences.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(4);
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('cheng-han-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '成都与巴蜀通道整合', startYear: 306 }),
+    ]));
+    expect(detailsById.get('former-liang-founded')?.relatedEventIds).toEqual(expect.arrayContaining([
+      'western-jin-founded',
+    ]));
+    expect(detailsById.get('southern-ming-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '东南抗清阶段', startYear: 1645 }),
+    ]));
+    expect(detailsById.get('western-liao-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '称帝与建都阶段', startYear: 1132 }),
+    ]));
+    expect(detailsById.get('dali-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '羊苴咩城政治中心', startYear: 937 }),
+    ]));
+    expect(detailsById.get('xiongnu-founded')?.relatedEventIds).toEqual(expect.arrayContaining([
+      'chu-han-contention',
     ]));
   });
 });
