@@ -62,7 +62,6 @@ describe('round 107 task B Sui-Tang capital reference audit', () => {
       'sui:changan:hanguang-gate-site',
       'sui:changan:mingde-gate-site',
       'sui:luoyang:dingding-gate-site',
-      'tang:changan:big-wild-goose-pagoda',
       'tang:changan:qianling',
       'tang:changan:ximing-temple-site',
       'tang:changan:huaqing-palace',
