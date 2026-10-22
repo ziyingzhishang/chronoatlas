@@ -28,6 +28,10 @@ const plannedHeritageIds = [
   'dunhuang-western-liang-city-site',
 ] as const;
 
+const laterAddedHeritageIds = [
+  'chu-shouchun-city-site',
+] as const;
+
 const newHeritagePolityLinks: Record<string, string[]> = {
   'han-xinzheng-city-site': ['han_warring'],
   'wei-anyi-city-site': ['wei_warring'],
@@ -42,7 +46,10 @@ const newHeritagePolityLinks: Record<string, string[]> = {
 describe('heritage coverage thirteenth batch', () => {
   it('selects eight currently unassociated polities from reliable capital-site candidates', () => {
     const report = auditKnowledgeCoverage();
-    const priorDetails = heritageDetails.filter((detail) => !plannedHeritageIds.includes(detail.heritageId as (typeof plannedHeritageIds)[number]));
+    const priorDetails = heritageDetails.filter((detail) => (
+      !plannedHeritageIds.includes(detail.heritageId as (typeof plannedHeritageIds)[number])
+      && !laterAddedHeritageIds.includes(detail.heritageId as (typeof laterAddedHeritageIds)[number])
+    ));
     expect(targetPolityIds).toHaveLength(8);
     targetPolityIds.forEach((polityId) => {
       expect(priorDetails.some((detail) => detail.associatedPolities.includes(polityId)), polityId).toBe(false);
