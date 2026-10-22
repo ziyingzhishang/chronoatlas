@@ -21,6 +21,14 @@ describe('HeritageDetail', () => {
     expect(screen.getByText('来源与依据')).toBeInTheDocument();
   });
 
+  it('shows the evidence attached to each construction phase', () => {
+    const detail = getHeritageDetail('big-wild-goose-pagoda')!;
+
+    render(<HeritageDetail detail={detail} heritageName="大雁塔" />);
+
+    expect(screen.getAllByText('阶段依据：')).toHaveLength(detail.constructionHistory.length);
+  });
+
   it('exposes related people, polities, and events as navigation actions', () => {
     const detail = getHeritageDetail('big-wild-goose-pagoda')!;
     const onNavigate = vi.fn();

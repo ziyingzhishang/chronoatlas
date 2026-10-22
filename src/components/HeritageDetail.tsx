@@ -70,6 +70,10 @@ export function HeritageDetail({ detail, heritageName, onNavigate, onOpenEntity 
         {detail.constructionHistory.map((item, index) => <li key={`${item.type}-${item.period}-${index}`} className={`heritage-phase heritage-phase-${item.type}`}>
           <div className="heritage-phase-heading"><strong>{item.label || phaseLabels[item.type]}</strong><span>{item.period}</span></div>
           <p>{item.description}</p>
+          {item.sourceIds.length > 0 && <p className="detail-note heritage-phase-sources">
+            <span>阶段依据：</span>
+            <span>{item.sourceIds.map((sourceId) => sourceById[sourceId]?.title ?? sourceId).join('、')}</span>
+          </p>}
           {item.uncertaintyNote && <p className="detail-note"><span>不确定性：</span><span>{item.uncertaintyNote}</span></p>}
         </li>)}
       </ol>
