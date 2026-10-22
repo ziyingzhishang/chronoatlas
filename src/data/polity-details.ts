@@ -21,7 +21,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘邦在楚汉战争中取得胜利，前202年即皇帝位。', '汉初先都洛阳，前201年后迁都长安。', '中央与诸侯王并存，统一秩序是一个持续整合过程。'],
     turningPoints: [turn(-202, '刘邦称帝', '汉帝国进入重建秩序阶段。', 'han-imperial-accession'), turn(-201, '迁都长安', '长安成为西汉长期政治中心。'), turn(-141, '武帝时期', '对外战争、郡国关系和帝国制度进入扩展阶段。')],
     principalFigureIds: ['liu-bang', 'xiao-he', 'han-xin', 'huo-qubing', 'zhang-qian'], capitalPhases: [capital('luoyang', -206, -202, 'primary', 'formal', '汉初阶段性都城'), capital('changan', -201, 9)],
-    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling'], eventIds: ['han-imperial-accession', 'chu-han-contention'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
+    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling', 'hanyangling'], eventIds: ['han-imperial-accession', 'chu-han-contention'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
     uncertaintyNote: '前206年受封汉王与前202年称帝是不同起算口径；本详情采用政权重建节点，不把西汉全期的实际控制范围压缩成单一时点。',
   }),
   detail({
