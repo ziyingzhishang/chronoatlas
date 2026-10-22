@@ -5,7 +5,6 @@ import { eventDetails } from './event-details';
 const targets = {
   'cheng-han-founded': '形成、称帝与地方承接分层',
   'chu-han-contention': '战争结束与汉初秩序重建分层',
-  'eastern-jin': '晋室名义与江南军政承接',
   'an-lushan-rebellion': '两京恢复与河北承接分层',
   'western-liao-founded': '迁徙政权与稳定中心分层',
   'southern-ming-founded': '南明总称与分阶段政权分层',

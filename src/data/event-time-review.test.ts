@@ -8,9 +8,6 @@ const expectedEventIds = [
   'western-zhou-founded-eighth-batch',
   'eastern-zhou-founded-eighth-batch',
   'qin-state-founded-eighth-batch',
-  'han-warring-founded-eighth-batch',
-  'zhao-warring-founded-eighth-batch',
-  'wei-warring-founded-eighth-batch',
   'chu-warring-founded-eighth-batch',
   'yan-warring-founded-eighth-batch',
   'qi-warring-founded-eighth-batch',
@@ -21,7 +18,6 @@ const expectedEventIds = [
   'cheng-han-founded',
   'tuyuhun-founded',
   'former-liang-founded',
-  'eastern-jin',
   'western-liang-state-founded',
   'tibetan-founded',
   'an-lushan-rebellion',
@@ -37,12 +33,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(26);
+    expect(report.totalReviewed).toBe(22);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 3, approximate: 23, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 2, approximate: 20, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

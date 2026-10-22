@@ -6,9 +6,9 @@ import { auditPolityCoverage } from './polity-coverage';
 import { sourceNotes } from './sources';
 
 const targets = [
-  { polityId: 'han_warring', label: '韩', precision: 'approximate' },
-  { polityId: 'zhao_warring', label: '赵', precision: 'approximate' },
-  { polityId: 'wei_warring', label: '魏', precision: 'approximate' },
+  { polityId: 'han_warring', label: '韩', precision: 'year' },
+  { polityId: 'zhao_warring', label: '赵', precision: 'year' },
+  { polityId: 'wei_warring', label: '魏', precision: 'year' },
   { polityId: 'chu_warring', label: '楚', precision: 'approximate' },
   { polityId: 'yan_warring', label: '燕', precision: 'approximate' },
   { polityId: 'qi_warring', label: '齐', precision: 'approximate' },
@@ -48,7 +48,7 @@ describe('eighth-batch polity foundation events', () => {
       expect(detail?.causes.length).toBeGreaterThan(0);
       expect(detail?.consequences.length).toBeGreaterThan(0);
       expect(detail?.phases?.length).toBeGreaterThan(0);
-      expect(detail?.uncertaintyNote).toMatch(/形成|传统|约年|约前|口径|争议/);
+      expect(detail?.uncertaintyNote).toMatch(/形成|传统|约年|约前|口径|争议|节点/);
       expect(event?.sourceIds.length).toBeGreaterThan(0);
       expect(detail?.sourceIds.length).toBeGreaterThan(0);
     }

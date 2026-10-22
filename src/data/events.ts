@@ -387,8 +387,8 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷八十一·晋纪三', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷081', detail: '太康元年（280），杜预、王濬等攻吴及孙皓投降条。' }],
   },
   {
-    id: 'eastern-jin', year: 317, endYear: 318, title: '东晋政权建立', summary: '司马睿在建康重建晋朝政权，317年称晋王，318年称帝。',
-    datePrecision: 'range', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian'], verification: 'checked', placeId: 'jiankang',
+    id: 'eastern-jin', year: 317, endYear: 318, title: '东晋政权建立', summary: '司马睿于317年在建康即晋王位，重建晋朝政权；318年称帝是随后完成皇统确认的阶段。',
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol90-eastern-jin'], verification: 'checked', placeId: 'jiankang',
     background: '长安失守后，晋朝中央在北方的统治崩溃，江东的司马睿成为重建政权的核心。',
     process: '317年司马睿即晋王位，设置百官和宗庙；318年得知愍帝死讯后即皇帝位。',
     impact: '晋政权在江南延续，形成以建康为中心的政治格局；北方则继续由多个政权竞争。',
@@ -843,8 +843,8 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于匈奴与汉初北方政治关系的编年背景；前209年前后采用约年，部众范围和单于庭位置保留不确定性。' }],
   },
   {
-    id: 'han-warring-founded-eighth-batch', year: -403, title: '韩政权建立（传统分期）', summary: '周王室正式承认韩为诸侯，韩作为战国诸侯国进入传统分期。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
+    id: 'han-warring-founded-eighth-batch', year: -403, title: '韩政权建立（周王室册命节点）', summary: '前403年周威烈王册命韩虔为诸侯，韩以明确的制度节点进入战国诸侯秩序；后续国家整合另按阶段记录。', placeId: 'xinzheng', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '晋国卿族长期分掌军政与土地，韩氏已在晋国权力结构中形成独立的政治基础；前403年是周王室册命韩、赵、魏为诸侯的传统编年节点。',
     process: '前403年周威烈王册命韩虔为诸侯，韩由晋国卿族转为战国诸侯国；韩国早期政治中心和实际控制范围经过继续整合，不能把册命日当作突然出现的完整国家。',
     impact: '三家分晋后的诸侯格局正式获得周王室名义确认，韩国参与战国时期的军事、外交与制度竞争；其终结于前230年是另一阶段。',
@@ -852,8 +852,8 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一·周纪一', url: 'https://ctext.org/wiki.pl?chapter=648120&if=gb', detail: '记载前403年周王室命韩、赵、魏为诸侯；本条采用传统分期，不声称此前没有韩氏政治实体。' }],
   },
   {
-    id: 'zhao-warring-founded-eighth-batch', year: -403, title: '赵政权建立（传统分期）', summary: '周王室正式承认赵为诸侯，赵作为战国诸侯国进入传统分期。', placeId: 'handan', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
+    id: 'zhao-warring-founded-eighth-batch', year: -403, title: '赵政权建立（周王室册命节点）', summary: '前403年周威烈王册命赵籍为诸侯，赵以明确的制度节点进入战国诸侯秩序；邯郸迁都与北方整合另按阶段记录。', placeId: 'handan', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '赵氏在晋国卿族竞争中长期积累军政资源，并控制晋北、太原及其周边的重要空间；前403年册命是后世编年常用的制度节点。',
     process: '前403年周威烈王册命赵籍为诸侯，赵由晋国卿族转为战国诸侯国；邯郸成为后续重要政治中心，赵国形成是制度承认与地方整合的连续过程。',
     impact: '赵国成为战国北方重要力量，长期参与北方边疆、诸侯战争和合纵连横；前228年灭亡不能反推其建政初期的控制范围。',
@@ -861,8 +861,8 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一·周纪一', url: 'https://ctext.org/wiki.pl?chapter=648120&if=gb', detail: '记载前403年周王室命赵籍为诸侯；赵氏早期形成和都城迁徙采用阶段性表达。' }],
   },
   {
-    id: 'wei-warring-founded-eighth-batch', year: -403, title: '魏政权建立（传统分期）', summary: '周王室正式承认魏为诸侯，魏作为战国诸侯国进入传统分期。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
+    id: 'wei-warring-founded-eighth-batch', year: -403, title: '魏政权建立（周王室册命节点）', summary: '前403年周威烈王册命魏斯为诸侯，魏以明确的制度节点进入战国诸侯秩序；改革、迁都与地方整合另按阶段记录。', placeId: 'anyi', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '魏氏控制晋国核心资源并形成独立军政体系，三家分晋后周王室的册命为其诸侯身份提供名义确认。',
     process: '前403年周威烈王册命魏斯为诸侯，魏由晋国卿族转为战国诸侯国；魏先以安邑为中心、后迁大梁，政治空间随阶段改变。',
     impact: '魏成为战国中原的重要政权，推动变法、战争与诸侯外交格局发展；前225年灭亡不应被倒推为前403年已有后期范围。',

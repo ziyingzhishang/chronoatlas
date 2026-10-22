@@ -824,8 +824,8 @@ const details: HistoricalEventDetail[] = [
     ],
     locationIds: ['luoyang', 'jiankang'],
     relatedEventIds: ['western-jin-founded', 'jin-unification', 'sui-unification'],
-    sourceIds: ['zizhi-tongjian'],
-    uncertaintyNote: '建康是江南政治中心；此条不推断北方人口一次性南迁，也不把南北政治格局直接转成固定疆界。',
+    sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol90-eastern-jin'],
+    uncertaintyNote: '317年即晋王位是东晋建政主节点，318年称帝是后续皇统确认；建康是江南政治中心，不推断北方人口一次性南迁，也不把南北政治格局直接转成固定疆界。',
   },
   {
     eventId: 'sui-unification',
@@ -1945,8 +1945,8 @@ const details: HistoricalEventDetail[] = [
       { label: '册命名义与韩国整合并行', startYear: -403, endYear: -375, summary: '前403年册命确认韩的诸侯名义，韩氏仍在承接晋国卿族资源并推进地方整合；新郑政治中心属于后续承接，不是册命当日的完整国家边界。' },
       { label: '新郑政治中心承接', startYear: -375, endYear: -350, summary: '韩迁都新郑后，政治中心与中原交通网络进一步承接；迁都节点晚于前403年册命，不将新郑前推为册命现场。' },
     ],
-    locationIds: ['xinzheng'], relatedEventIds: ['partition-jin', 'zhao-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
-    uncertaintyNote: '前403年是周王室册命和传统分期约年，不是韩氏政治实体首次出现的精确建国日；新郑是韩国后续稳定政治中心的现今地名参照，不将其后期中心提前等同于册命现场。',
+    locationIds: ['xinzheng'], relatedEventIds: ['partition-jin', 'zhao-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '前403年册命是韩获得周王室诸侯名义确认的明确制度节点，不能写成韩氏政治实体首次出现或完整国家边界；新郑是后续稳定政治中心的现今地名参照，不等同于册命现场。',
   },
   {
     eventId: 'zhao-warring-founded-eighth-batch', participants: [
@@ -1965,8 +1965,8 @@ const details: HistoricalEventDetail[] = [
       { label: '册命名义与赵国北方承接并行', startYear: -403, endYear: -386, summary: '前403年册命确认赵的诸侯名义，赵氏仍在承接晋北军政资源并调整政治中心；邯郸迁都与边疆整合属于后续阶段。' },
       { label: '邯郸政治中心承接', startYear: -386, endYear: -350, summary: '赵迁都邯郸后，邯郸成为更稳定的政治中心；迁都与前403年周王室册命是不同阶段，不能将后期中心前推为建政现场。' },
     ],
-    locationIds: ['handan'], relatedEventIds: ['partition-jin', 'han-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
-    uncertaintyNote: '前403年是传统分期和册命节点，不是赵国完整国家形态的精确起点；邯郸是后续重要政治中心的现今地名参照，不能前推为册命现场或当年完整疆域。',
+    locationIds: ['handan'], relatedEventIds: ['partition-jin', 'han-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '前403年册命是赵获得周王室诸侯名义确认的明确制度节点，不能写成赵氏政治实体首次出现或完整国家边界；邯郸是后续重要政治中心的现今地名参照，不能前推为册命现场。',
   },
   {
     eventId: 'wei-warring-founded-eighth-batch', participants: [
@@ -1984,8 +1984,8 @@ const details: HistoricalEventDetail[] = [
       { label: '册命名义与魏国经营并行', startYear: -403, endYear: -396, summary: '前403年册命确认魏的诸侯名义，魏氏仍以安邑等节点承接中原与河东资源；改革和大梁迁都属于后续阶段。' },
       { label: '安邑至大梁', startYear: -403, endYear: -340, summary: '魏在安邑及后来的大梁之间调整政治中心并扩展影响。' },
     ],
-    locationIds: ['anyi'], relatedEventIds: ['partition-jin', 'han-warring-founded-eighth-batch', 'zhao-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
-    uncertaintyNote: '前403年是传统册命约年，不是魏氏政治实体首次出现；安邑是魏早期政治中心的现今地名参照，大梁迁都及后续范围不能合并为单一建国边界。',
+    locationIds: ['anyi'], relatedEventIds: ['partition-jin', 'han-warring-founded-eighth-batch', 'zhao-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '前403年册命是魏获得周王室诸侯名义确认的明确制度节点，不能写成魏氏政治实体首次出现或完整国家边界；安邑是魏早期政治中心的现今地名参照，大梁迁都及后续范围仍需分阶段记录。',
   },
   {
     eventId: 'chu-warring-founded-eighth-batch', participants: [

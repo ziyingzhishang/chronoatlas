@@ -37,10 +37,14 @@ test('catalog supports stable selection and chronological navigation without inv
   for (const event of events) {
     expect(Number.isInteger(event.year)).toBe(true);
     expect(event.year).not.toBe(0);
-    if (event.endYear !== undefined) {
+    if (event.endYear !== undefined && event.datePrecision === 'range') {
       expect(event.endYear).toBeGreaterThanOrEqual(event.year);
       expect(event.endYear).not.toBe(0);
       expect(event.datePrecision).toBe('range');
+    }
+    if (event.endYear !== undefined && event.datePrecision !== 'range') {
+      expect(event.datePrecision).toBe('year');
+      expect(event.endYear).toBeGreaterThanOrEqual(event.year);
     }
     if (event.coordinates) {
       expect(event.locationPrecision).toMatch(/^(approximate|confirmed)$/);

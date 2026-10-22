@@ -10,11 +10,9 @@ const reviewBoundaryIds = [
   'chu-han-contention',
   'chu-warring-founded-eighth-batch',
   'dali-founded',
-  'eastern-jin',
   'eastern-zhou-founded-eighth-batch',
   'former-liang-founded',
   'goguryeo-founded',
-  'han-warring-founded-eighth-batch',
   'qi-warring-founded-eighth-batch',
   'qin-state-founded-eighth-batch',
   'shang-founded-eighth-batch',
@@ -22,14 +20,12 @@ const reviewBoundaryIds = [
   'southern-ming-founded',
   'tibetan-founded',
   'tuyuhun-founded',
-  'wei-warring-founded-eighth-batch',
   'western-liang-state-founded',
   'western-liao-founded',
   'western-zhou-founded-eighth-batch',
   'xia-early-founded-eighth-batch',
   'xiongnu-founded',
   'yan-warring-founded-eighth-batch',
-  'zhao-warring-founded-eighth-batch',
   'zhou-conquest',
 ] as const;
 
@@ -38,7 +34,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 85, 'needs-review': 26, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 89, 'needs-review': 22, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
     reviewItems.forEach((item) => {
@@ -59,7 +55,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       item.status === 'needs-review' && item.needsReviewChecks.includes('timePrecision')
     ));
 
-    expect(precisionGaps).toHaveLength(26);
+    expect(precisionGaps).toHaveLength(22);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
     expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });

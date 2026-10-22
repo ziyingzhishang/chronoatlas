@@ -20,6 +20,22 @@ export const sourceNotes: SourceNote[] = [
     note: '前403—959年的阅读专题；可在完整历史时间轴上一键聚焦。此书不是疆域坐标的来源。',
   },
   {
+    id: 'zizhi-tongjian-vol1-three-jin',
+    title: '《资治通鉴》卷一·周威烈王二十三年三晋册命',
+    authorOrInstitution: '司马光等',
+    urlOrCitation: 'https://ctext.org/wiki.pl?chapter=648120&if=gb',
+    scope: '前403年周王室册命韩、赵、魏为诸侯的编年节点',
+    note: '支持三晋获得周王室诸侯名义确认的明确年份；册命是制度节点，不等于三国在同日完成全部地方整合或固定疆域。',
+  },
+  {
+    id: 'zizhi-tongjian-vol90-eastern-jin',
+    title: '《资治通鉴》卷九十·晋纪十二东晋建政',
+    authorOrInstitution: '司马光等',
+    urlOrCitation: 'https://zh.wikisource.org/wiki/資治通鑑/卷090',
+    scope: '317年司马睿即晋王位、318年即皇帝位及建康重建晋朝的连续节点',
+    note: '将317年政权重建与318年称帝分层记录；支持把317年作为东晋建政主节点，同时保留跨年过程。',
+  },
+  {
     id: 'historical-basemaps',
     title: 'Historical Basemaps · 原始历史矢量断面',
     authorOrInstitution: 'André Ourednik 与贡献者',

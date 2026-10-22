@@ -6,7 +6,6 @@ import { sourceById } from './sources';
 
 const targetPhases = {
   'chu-han-contention': { label: '项羽败亡后的诸侯承接', startYear: -202, endYear: -202 },
-  'eastern-jin': { label: '两次即位与南方承接分层', startYear: 317, endYear: 318 },
   'an-lushan-rebellion': { label: '叛军首领更替', startYear: 757, endYear: 763 },
   'goguryeo-founded': { label: '传统建国与王统承接分层', startYear: -37, endYear: 18 },
   'silla-founded': { label: '传统建国与早期王统承接分层', startYear: -57, endYear: 24 },
