@@ -54,8 +54,8 @@ describe('sixty-fourth batch high-confidence governance relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(41);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(106);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(108);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     for (const personId of ['songtsen-gampo', 'piluo-ge', 'juqu-mengxun', 'tuoba-si', 'yelu-yilie']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');

@@ -52,8 +52,8 @@ describe('fifty-eighth batch high-confidence governance relationships', () => {
   it('reduces only the five directly evidenced governance gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.requiredMissingByCategory.governance).toHaveLength(41);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(106);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(108);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     for (const personId of ['gao-yang', 'tuoba-gui', 'wanyan-aguda', 'modu-chanyu', 'temujin']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');
