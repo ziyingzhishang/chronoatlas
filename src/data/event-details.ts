@@ -112,6 +112,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前37年采用传统建国约年；纥升骨城（五女山城）是高句丽早期中心的考古参照，不等同于已确定的建国仪式地点。早期纪年、城址对应和直接控制范围仍需与考古材料交叉理解。',
   },
   {
+    eventId: 'goguryeo-moves-pyongyang',
+    participants: [
+      { personId: 'gwanggaeto', role: '迁都前高句丽国家扩展阶段的代表君主', note: '广开土王属于迁都前的扩展阶段；此处用于连接国内城阶段与平壤阶段，不将其写成427年迁都现场人物。' },
+      { personId: 'jangsu-goguryeo', role: '迁都平壤并开启后期都城阶段的君主', note: '长寿王与427年迁都平壤相联系；迁都标志政治中心转换，不表示平壤城市或后期疆域在同年全部完成。' },
+    ],
+    polityIds: ['goguryeo'],
+    causes: ['国内城阶段的王权与东北亚竞争格局继续发展，高句丽需要新的南部政治与交通中心。', '平壤及大同江流域能够承接高句丽后期对朝鲜半岛北部的政治活动。'],
+    consequences: ['平壤成为高句丽427—668年后期都城阶段的政治中心。', '国内城、平壤及现代城市范围应作为不同年代和空间层次分别理解。'],
+    phases: [
+      { label: '国内城阶段承接', startYear: 300, endYear: 426, summary: '高句丽以国内城及丸都山城体系作为重要都城与王权中心。' },
+      { label: '迁都平壤', startYear: 427, endYear: 427, summary: '高句丽政治中心转向平壤，后期都城阶段开始。' },
+      { label: '平壤都城阶段', startYear: 427, endYear: 668, summary: '平壤承接高句丽后期国家政治、军事与交通功能。' },
+    ],
+    locationIds: ['guonei', 'pyongyang'],
+    relatedEventIds: ['goguryeo-founded'],
+    sourceIds: ['china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '427年作为高句丽迁都平壤的编年节点；本事件不为平壤古城具体边界、全部建筑营建年代或后期政权疆域提供超出来源的推断。',
+  },
+  {
     eventId: 'silla-founded',
     participants: [
       { personId: 'park-hyeokgeose', role: '新罗传统建国叙事中的即位君主', note: '朴赫居世对应前57年传统起始节点；早期辰韩诸部整合是持续过程。限前57年传统起始节点，不代表后续王统、辰韩整合或统一新罗。' },

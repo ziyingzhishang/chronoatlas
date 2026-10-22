@@ -52,7 +52,7 @@ describe('seventy-fifth batch high-confidence alliance relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(102);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(61);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(63);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     expect(report.byPersonId['qin-shi-huang'].categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['meng-tian'].categories.allianceConflict.status).toBe('covered');

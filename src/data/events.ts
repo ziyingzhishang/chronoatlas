@@ -40,6 +40,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '中国历史分期与东北亚政权年表', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于项目时间轴的高句丽传统起始年代参照；早期建国叙事与考古年代仍需专题核对。' }],
   },
   {
+    id: 'goguryeo-moves-pyongyang', year: 427, title: '高句丽迁都平壤', summary: '高句丽政治中心由国内城阶段转向平壤，进入后期都城阶段。', placeId: 'pyongyang', sourceIds: ['china-chronology', 'capital-history-reference'],
+    datePrecision: 'year', region: 'world', category: '都城营建／迁都', verification: 'checked',
+    background: '高句丽在国内城及丸都山城体系基础上继续向朝鲜半岛北部发展，需要新的政治、交通与军事中心承接国家活动。',
+    process: '427年高句丽将政治中心迁至平壤；本节点只表达都城阶段转换，不把迁都年份等同于后期疆域或城市建筑全部完成。',
+    impact: '平壤成为高句丽后期都城，城市、王权与朝鲜半岛北部交通网络进入新的阶段；668年政权终结是后续历史节点。',
+    mapNote: '平壤标注为427年后的高句丽都城城市节点，现代城市范围、古城范围与政权控制范围应分层显示。',
+    references: [{ title: '高句丽都城迁移与历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于427年高句丽迁都平壤及后期都城阶段的编年参照；城市遗址范围另按遗产资料分层。' }],
+  },
+  {
     id: 'silla-founded', year: -57, title: '新罗政权建立（传统纪年）', summary: '朴赫居世即位，新罗进入早期政权形成阶段。', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'],
     datePrecision: 'approximate', region: 'world', category: '政权建立／更替', verification: 'partial',
     background: '朝鲜半岛东南部辰韩诸部的聚落与首领网络逐渐整合，早期王权需要在多部族关系中取得承认。',

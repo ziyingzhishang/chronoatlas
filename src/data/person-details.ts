@@ -699,6 +699,16 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['goguryeo-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '高句丽建国传统节点为前37年，琉璃明王属于朱蒙之后的继承与迁都阶段；早期年代与城址对应需结合文献和考古材料阅读。',
   },
   {
+    personId: 'gwanggaeto', biography: '广开土王是高句丽国内城阶段的重要君主，推动东北亚方向的政治与军事扩展，属于427年迁都平壤前的王权承接阶段。',
+    aliases: ['好太王', '安王'], offices: [{ title: '高句丽国王', polityId: 'goguryeo', placeId: 'guonei', validFrom: 391, validTo: 413, datePrecision: 'range', sourceIds: ['china-chronology', 'capital-history-reference'] }],
+    keyEvents: ['goguryeo-moves-pyongyang'], sourceIds: ['china-chronology', 'capital-history-reference'], uncertaintyNote: '广开土王于427年迁都之前去世，本详情将其作为迁都前国内城阶段人物与城市视角关联，不写成427年迁都现场参与者。',
+  },
+  {
+    personId: 'jangsu-goguryeo', biography: '长寿王承接高句丽王权，427年将政治中心迁至平壤，开启高句丽后期都城与国家空间的新阶段。',
+    aliases: ['高琏'], offices: [{ title: '高句丽国王', polityId: 'goguryeo', placeId: 'pyongyang', validFrom: 413, validTo: 491, datePrecision: 'range', sourceIds: ['china-chronology', 'capital-history-reference'] }],
+    keyEvents: ['goguryeo-moves-pyongyang'], sourceIds: ['china-chronology', 'capital-history-reference'], uncertaintyNote: '427年作为迁都平壤的编年节点；平壤古城边界、城市营建过程和后期疆域不能由迁都年份直接推定。',
+  },
+  {
     personId: 'naemul-isageum', biography: '内物王是新罗早期王权整合的重要君主，三国时期新罗在其统治阶段面对高句丽影响、倭寇压力与王统延续问题。',
     aliases: ['奈勿尼师今', '奈勿王'], offices: [{ title: '新罗国王', polityId: 'silla', validFrom: 356, validTo: 402, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'silla-periodization'] }],
     keyEvents: ['silla-founded'], sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'silla-periodization'], uncertaintyNote: '新罗前57年为传统建国纪年，内物王属于数百年后的王权整合阶段；王统年代与早期国家化过程需区分传统编年与考古证据。',
