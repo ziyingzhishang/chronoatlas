@@ -83,6 +83,18 @@ describe('RelationshipGraph', () => {
     expect(screen.getByRole('button', { name: /福临 · 治理／君臣 · 统治 · 方向：福临 → 清 · 1643—1661年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
   });
 
+  it('renders the fifty-seventh batch conflict edge in the alliance and conflict category', () => {
+    const view = buildPolityStudyView('liang_southern', 555, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
+    const graphView = {
+      ...view!,
+      people: [...view!.people, people.find((person) => person.id === 'chen-baxian')!],
+      claims: [...view!.claims, claims.find((claim) => claim.id === 'claim-wang-sengbian-enemy-chen-baxian-fiftyseventh')!],
+    };
+    render(<RelationshipGraph view={graphView} />);
+
+    expect(screen.getByRole('button', { name: /王僧辩 · 联盟与对立 · 对立 · 方向：王僧辩 → 陈霸先 · 555年 · 时间精度：年 · 来源：可用/ })).toBeInTheDocument();
+  });
+
   it('opens a person entity from a focusable SVG node', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
