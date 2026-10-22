@@ -272,8 +272,8 @@ describe('event detail coverage audit', () => {
     const eventsById = new Map(events.map((event) => [event.id, event]));
     const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
     const expectedLinks: Record<string, string[]> = {
-      'xia-early-founded-eighth-batch': ['shang-founded-eighth-batch'],
-      'shang-founded-eighth-batch': ['zhou-conquest'],
+      'xia-early-founded-eighth-batch': ['shang-founded-eighth-batch', 'zhou-conquest'],
+      'shang-founded-eighth-batch': ['zhou-conquest', 'western-zhou-founded-eighth-batch'],
       'goguryeo-founded': ['silla-founded'],
       'silla-founded': ['goguryeo-founded'],
       'tibetan-founded': ['tang-founded'],
@@ -508,5 +508,49 @@ describe('event detail coverage audit', () => {
     expect(detailsById.get('qi-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
       expect.objectContaining({ label: '诸侯格局重组', startYear: -403 }),
     ]));
+  });
+
+  it('enriches the fifty-ninth batch of early-dynasty anchor nodes without upgrading date precision', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const selectedIds = [
+      'xia-early-founded-eighth-batch',
+      'shang-founded-eighth-batch',
+      'zhou-conquest',
+      'western-zhou-founded-eighth-batch',
+      'eastern-zhou-founded-eighth-batch',
+      'qin-state-founded-eighth-batch',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of selectedIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBe('approximate');
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(4);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(1);
+      expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('xia-early-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'shang-founded-eighth-batch', 'zhou-conquest',
+    ]);
+    expect(detailsById.get('shang-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'zhou-conquest', 'western-zhou-founded-eighth-batch',
+    ]);
+    expect(detailsById.get('western-zhou-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'zhou-conquest', 'eastern-zhou-founded-eighth-batch',
+    ]);
+    expect(detailsById.get('eastern-zhou-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'zhou-eastward', 'partition-jin', 'qin-unification',
+    ]);
+    expect(detailsById.get('qin-state-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'zhou-eastward', 'partition-jin', 'qin-unification',
+    ]);
   });
 });
