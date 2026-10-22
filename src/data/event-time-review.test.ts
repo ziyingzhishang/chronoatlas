@@ -22,12 +22,6 @@ const expectedEventIds = [
   'tuyuhun-founded',
   'former-liang-founded',
   'eastern-jin',
-  'former-yan-founded',
-  'later-yan-founded',
-  'later-qin-founded',
-  'western-qin-founded',
-  'northern-liang-founded',
-  'southern-yan-founded',
   'western-liang-state-founded',
   'northern-yan-founded',
   'xia-sixteen-states-founded-eighth-batch',
@@ -42,18 +36,18 @@ const expectedEventIds = [
 ] as const;
 
 describe('event time evidence review', () => {
-  it('covers the 37 currently non-precise events without inventing a date', () => {
+  it('covers the 31 currently non-precise events without inventing a date', () => {
     expect(eventTimeReview.map((entry) => entry.eventId)).toEqual([...expectedEventIds]);
 
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(37);
+    expect(report.totalReviewed).toBe(31);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 3, approximate: 34, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 3, approximate: 28, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

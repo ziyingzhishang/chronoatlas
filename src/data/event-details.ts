@@ -411,7 +411,7 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'later-yan-founded',
     participants: [
-      { personId: 'murong-chui', role: '前秦崩解后重建燕政权的核心领袖', note: '慕容垂主导384年前后后燕形成，386年称帝是后续制度节点；早期活动区域与后期最大范围分开记录。' },
+      { personId: 'murong-chui', role: '前秦崩解后重建燕政权的核心领袖', note: '慕容垂主导384年后燕形成，386年称帝是后续制度节点；早期活动区域与后期最大范围分开记录。' },
     ],
     polityIds: ['later_yan'],
     causes: ['前秦在淝水之战后失去对北方诸部的整合能力。', '慕容垂在河北重建慕容氏的军政基础。'],
@@ -424,7 +424,7 @@ const details: HistoricalEventDetail[] = [
     locationIds: ['ye'],
     relatedEventIds: ['former-yan-founded', 'former-qin-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    uncertaintyNote: '384年采用政权形成约年，386年称帝是后续节点；后燕早期活动区域不能用后期最大范围替代。',
+    uncertaintyNote: '384年慕容垂重建燕政权，386年称帝是后续节点；后燕早期活动区域不能用后期最大范围替代。',
   },
   {
     eventId: 'later-qin-founded',
@@ -442,7 +442,7 @@ const details: HistoricalEventDetail[] = [
     locationIds: ['changan'],
     relatedEventIds: ['former-qin-founded', 'later-yan-founded', 'northern-wei-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    uncertaintyNote: '384年是政权形成约年，386年称帝及其后控制长安须分层记录；不以后秦后期范围倒推建政初期。',
+    uncertaintyNote: '384年姚苌建立后秦，386年称帝及其后控制长安须分层记录；不以后秦后期范围倒推建政初期。',
   },
   {
     eventId: 'southern-yan-founded',
@@ -461,7 +461,7 @@ const details: HistoricalEventDetail[] = [
     locationIds: ['guanggu'],
     relatedEventIds: ['later-yan-founded', 'northern-yan-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
-    uncertaintyNote: '398年采用形成阶段约年，400年广固称帝为后续节点；广固以青州市一带作现今区域参照，不能把后期都城位置等同于398年建政仪式的精确地点。',
+    uncertaintyNote: '398年慕容德重建燕政权，400年广固称帝为后续节点；广固以青州市一带作现今区域参照，不能把后期都城位置等同于398年建政仪式的精确地点。',
   },
   {
     eventId: 'western-qin-founded',
@@ -480,7 +480,7 @@ const details: HistoricalEventDetail[] = [
     locationIds: ['jincheng'],
     relatedEventIds: ['former-qin-founded', 'later-qin-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
-    uncertaintyNote: '385年采用政权形成约年；金城仅作为陇右河湟方向的区域政治中心参照，不能把后期枹罕或兰州一带的候选位置倒推成建政仪式地点。西秦多次降附、复立，早期形成不能替代各阶段实际控制范围。',
+    uncertaintyNote: '385年乞伏国仁建立西秦；金城仅作为陇右河湟方向的区域政治中心参照，不能把后期枹罕或兰州一带的候选位置倒推成建政仪式地点。西秦多次降附、复立，早期形成不能替代各阶段实际控制范围。',
   },
   {
     eventId: 'later-liang-founded',
@@ -1480,7 +1480,7 @@ const details: HistoricalEventDetail[] = [
     locationIds: ['zhangye', 'guzang'],
     relatedEventIds: ['later-liang-founded', 'former-liang-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    uncertaintyNote: '397年采用政权形成约年，段业受拥立与沮渠氏掌权不是同一事件；张掖、姑臧代表不同阶段，不能用后期范围倒推早期控制。',
+    uncertaintyNote: '397年段业受拥立是北凉形成节点，段业受拥立与沮渠氏掌权不是同一事件；张掖、姑臧代表不同阶段，不能用后期范围倒推早期控制。',
   },
   {
     eventId: 'yang-wu-founded',

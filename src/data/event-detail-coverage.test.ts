@@ -131,11 +131,11 @@ describe('event detail coverage audit', () => {
       .toContain('城市');
   });
 
-  it('closes the forty-eighth batch of exact-year, source-backed event details', () => {
+  it('closes the forty-ninth batch of exact-year, source-backed event details', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 55, 'needs-review': 44, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 61, 'needs-review': 38, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -155,6 +155,38 @@ describe('event detail coverage audit', () => {
       'song-southward',
       'yang-wu-founded',
     ]));
+  });
+
+  it('closes the fiftieth batch while preserving later title and capital phases', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const exactYearIds = [
+      'former-yan-founded',
+      'later-yan-founded',
+      'later-qin-founded',
+      'southern-yan-founded',
+      'western-qin-founded',
+      'northern-liang-founded',
+    ];
+
+    for (const eventId of exactYearIds) {
+      expect(eventsById.get(eventId)?.datePrecision).toBe('year');
+      expect(eventsById.get(eventId)?.verification).toBe('checked');
+      expect(detailsById.get(eventId)?.sourceIds).toContain('zizhi-tongjian');
+      expect(report.coveredEventIds).toContain(eventId);
+    }
+
+    expect(detailsById.get('later-yan-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '称帝与扩张', startYear: 386 }),
+    ]));
+    expect(detailsById.get('later-qin-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '长安控制', startYear: 386 }),
+    ]));
+    expect(detailsById.get('northern-liang-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '姑臧阶段', startYear: 401 }),
+    ]));
+    expect(report.orphanDetailEventIds).toHaveLength(20);
   });
 
   it('closes the forty-seventh batch key links without changing orphan classification', () => {
