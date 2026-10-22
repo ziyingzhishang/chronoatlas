@@ -56,7 +56,7 @@ describe('seventy-eighth batch high-confidence alliance relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(41);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(106);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(78);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(70);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     for (const personId of ['li-zhi', 'wu-zhao', 'liu-zhiyuan', 'shi-jingtang', 'meng-zhixiang', 'li-cunxu', 'wang-shenzhi', 'liu-yin', 'ma-yin']) {
       expect(report.byPersonId[personId].categories.allianceConflict.status, personId).toBe('covered');
