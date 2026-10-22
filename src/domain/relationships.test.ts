@@ -5,7 +5,10 @@ import { findPersonRelationships, groupPersonRelationships } from './relationshi
 describe('person relationships', () => {
   it('returns time-scoped relations for a person', () => {
     const result = findPersonRelationships('li-shimin', 640, claims);
-    expect(result.map((relation) => relation.claim.id)).toEqual(['claim-li-shimin-ruled-tang']);
+    expect(result.map((relation) => relation.claim.id)).toEqual([
+      'claim-li-shimin-ruled-tang',
+      'claim-li-shimin-parent-li-zhi-fiftyfourth',
+    ]);
     expect(result[0]?.kind).toBe('person-polity');
   });
 
