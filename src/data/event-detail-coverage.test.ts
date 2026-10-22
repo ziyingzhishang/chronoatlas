@@ -862,4 +862,61 @@ describe('event detail coverage audit', () => {
       expect.objectContaining({ label: '二里头—早商文化参照', startYear: -1600, endYear: -1500 }),
     ]));
   });
+
+  it('enriches the sixty-sixth batch with source-backed succession, institutional, and continuity anchors', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'silla-founded',
+      'zhou-conquest',
+      'western-zhou-founded-eighth-batch',
+      'qin-state-founded-eighth-batch',
+      'former-liang-founded',
+      'cheng-han-founded',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of batchIds) {
+      expect(eventsById.get(eventId)?.datePrecision, eventId).toBe('approximate');
+      expect(eventsById.get(eventId)?.verification, eventId).toBe('partial');
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      expect(report.items.find((item) => item.eventId === eventId)?.sourceComplete, eventId).toBe(true);
+      expect(report.items.find((item) => item.eventId === eventId)?.unresolvedReferenceIds, eventId).toEqual({
+        people: [], places: [], polities: [], relatedEvents: [], sources: [],
+      });
+    }
+
+    expect(detailsById.get('silla-founded')?.sourceIds).toContain('silla-periodization');
+    expect(detailsById.get('silla-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '内物王时期王权与对外关系', startYear: 356, endYear: 377 }),
+    ]));
+    expect(detailsById.get('zhou-conquest')?.participants).toEqual(expect.arrayContaining([
+      expect.objectContaining({ personId: 'zhou-gong-dan' }),
+    ]));
+    expect(detailsById.get('zhou-conquest')?.sourceIds).toEqual(expect.arrayContaining([
+      'western-zhou-national-museum', 'western-zhou-epic',
+    ]));
+    expect(detailsById.get('western-zhou-founded-eighth-batch')?.sourceIds).toEqual(expect.arrayContaining([
+      'western-zhou-national-museum', 'western-zhou-epic',
+    ]));
+    expect(detailsById.get('western-zhou-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '早期封邦建国的器物证据', startYear: -1046, endYear: -1000 }),
+    ]));
+    expect(detailsById.get('qin-state-founded-eighth-batch')?.participants).toEqual(expect.arrayContaining([
+      expect.objectContaining({ personId: 'qin-xiaogong' }),
+    ]));
+    expect(detailsById.get('qin-state-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '商鞅变法与军政重整', startYear: -361, endYear: -338 }),
+    ]));
+    expect(detailsById.get('former-liang-founded')?.participants).toEqual(expect.arrayContaining([
+      expect.objectContaining({ personId: 'zhang-mao' }),
+    ]));
+    expect(detailsById.get('former-liang-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '张茂承接阶段', startYear: 320, endYear: 324 }),
+    ]));
+    expect(detailsById.get('cheng-han-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '李雄统治延续', startYear: 310, endYear: 334 }),
+    ]));
+  });
 });

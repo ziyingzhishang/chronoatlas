@@ -7,7 +7,7 @@ import { polities } from './polities';
 import { sourceById } from './sources';
 
 const targetParticipants = {
-  'former-liang-founded': ['zhang-gui', 'zhang-shi'],
+  'former-liang-founded': ['zhang-gui', 'zhang-shi', 'zhang-mao'],
   'western-qin-founded': ['qifu-guoren', 'qifu-gangui'],
   'southern-yan-founded': ['murong-de', 'murong-chao'],
   'northern-yan-founded': ['gao-yun', 'feng-ba', 'feng-hong'],
