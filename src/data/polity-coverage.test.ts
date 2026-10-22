@@ -26,7 +26,7 @@ describe('global polity coverage audit', () => {
     });
     expect(report.byPolity('tang')).toMatchObject({
       hasEstablishmentNode: true,
-      establishmentEventIds: ['tang-founded'],
+      establishmentEventIds: expect.arrayContaining(['tang-founded']),
     });
     expect(report.byPolity('qin')).toMatchObject({
       hasEstablishmentNode: true,

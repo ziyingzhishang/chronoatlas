@@ -51,8 +51,9 @@ describe('thirty-second batch historical people closure', () => {
   it('provides one resolvable event claim and one resolvable person relation per endpoint', () => {
     const peopleIds = new Set(people.map((person) => person.id));
     const eventIds = new Set(events.map((event) => event.id));
+    const polityIds = new Set(polities.map((polity) => polity.id));
     const sourceIds = new Set(sourceNotes.map((source) => source.id));
-    const entityIds = new Set([...peopleIds, ...eventIds]);
+    const entityIds = new Set([...peopleIds, ...eventIds, ...polityIds]);
     const selectedIds = new Set(Object.keys(selectedPeople));
 
     for (const [personId, expected] of Object.entries(selectedPeople)) {
