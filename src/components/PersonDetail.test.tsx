@@ -130,6 +130,23 @@ describe('PersonDetail', () => {
     expect(screen.getByText(/统治\s+·\s+清/)).toBeInTheDocument();
   });
 
+  it('shows a fifty-ninth batch ruler relation in the person detail governance section', () => {
+    const sunQuan = catalogPeople.find((item) => item.id === 'sun-quan')!;
+    render(
+      <PersonDetail
+        person={sunQuan}
+        detail={getPersonDetail('sun-quan')!}
+        year={240}
+        claims={catalogClaims}
+        people={catalogPeople}
+        polities={catalogPolities}
+      />,
+    );
+
+    expect(screen.getByRole('heading', { name: '君臣关系' })).toBeInTheDocument();
+    expect(screen.getByText(/统治\s+·\s+吴/)).toBeInTheDocument();
+  });
+
   it('shows the fifty-seventh batch conflict relation in the person detail', () => {
     const wangSengbian = catalogPeople.find((item) => item.id === 'wang-sengbian')!;
     render(

@@ -83,6 +83,13 @@ describe('RelationshipGraph', () => {
     expect(screen.getByRole('button', { name: /福临 · 治理／君臣 · 统治 · 方向：福临 → 清 · 1643—1661年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
   });
 
+  it('renders fifty-ninth batch ruler edges in the governance category', () => {
+    const view = buildPolityStudyView('wu_three', 240, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
+    render(<RelationshipGraph view={view!} />);
+
+    expect(screen.getByRole('button', { name: /孙权 · 治理／君臣 · 统治 · 方向：孙权 → 吴 · 229—252年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
+  });
+
   it('renders the fifty-seventh batch conflict edge in the alliance and conflict category', () => {
     const view = buildPolityStudyView('liang_southern', 555, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
     const graphView = {
