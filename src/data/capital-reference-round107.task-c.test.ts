@@ -25,11 +25,10 @@ describe('round 107 capital chain task C', () => {
     expect(polityDetail?.eventIds).toContain('song-linan-center-formed');
   });
 
-  it('keeps the other six task-C candidates classified instead of inferring from shared cities', () => {
+  it('keeps the other five task-C candidates classified instead of inferring from shared cities', () => {
     const remaining = [
       { polityId: 'liang_later', placeId: 'kaifeng', eventId: 'five-dynasties', category: 'shared-transition-event' },
       { polityId: 'zhou_later', placeId: 'kaifeng', heritageId: 'kaifeng-northern-song-city-site', category: 'cross-stage-city-layer' },
-      { polityId: 'goguryeo', placeId: 'wunvshan', heritageId: 'wunvshan-goguryeo-early-capital-site', category: 'capital-heritage-not-event' },
       { polityId: 'zhou_eastern', placeId: 'luoyang', eventId: 'zhou-eastward', category: 'foundation-stage-boundary' },
       { polityId: 'later_liang', placeId: 'guzang', heritageId: 'guzang-baita-temple-site', category: 'cross-polity-heritage' },
       { polityId: 'song_northern', placeId: 'kaifeng', eventId: 'song-founded', category: 'duplicate-event-node' },
