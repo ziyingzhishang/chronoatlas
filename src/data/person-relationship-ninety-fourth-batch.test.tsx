@@ -47,7 +47,7 @@ describe('ninety-fourth batch high-confidence alliance and conflict relationship
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(61);
-    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(33);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(102);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     for (const personId of ['songtsen-gampo', 'murong-huang', 'chen-qian']) {

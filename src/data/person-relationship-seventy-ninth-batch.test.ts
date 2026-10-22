@@ -53,7 +53,7 @@ describe('seventy-ninth batch high-confidence alliance/conflict relationships', 
   it('closes only the evidenced alliance/conflict gaps and leaves kinship and event gaps unchanged', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(33);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(102);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(61);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);

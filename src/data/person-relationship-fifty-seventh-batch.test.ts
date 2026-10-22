@@ -51,7 +51,7 @@ describe('fifty-seventh batch high-confidence person relationships', () => {
 
   it('reduces only the directly evidenced coverage gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(33);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(61);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(102);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
