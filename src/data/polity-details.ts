@@ -173,7 +173,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['后凉衰落使张掖及河西走廊出现新的军政联盟。', '397年段业政权在张掖形成北凉。', '沮渠蒙逊掌权后迁都姑臧，北凉成为河西重要政权。'],
     turningPoints: [turn(397, '北凉形成', '张掖一带的段业政权进入北凉阶段。', 'northern-liang-founded'), turn(401, '迁都姑臧', '姑臧成为北凉后期正式都城。'), turn(439, '北魏灭北凉', '北魏攻取姑臧，北凉在河西的政权结束。')],
     principalFigureIds: ['duan-ye', 'juqu-mengxun'], capitalPhases: [capital('zhangye', 397, 400), capital('guzang', 401, 439)],
-    heritageIds: ['guzang-ancient-city-site', 'guzang-baita-temple-site'], eventIds: ['northern-liang-founded', 'northern-liang-moved-guzang'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['zhangye-northern-liang-city-layer', 'guzang-ancient-city-site', 'guzang-baita-temple-site'], eventIds: ['northern-liang-founded', 'northern-liang-moved-guzang'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '张掖与姑臧是北凉前后期不同都城阶段；姑臧古城和白塔寺均为多时期河西城市与宗教遗产，不能把全部遗存归为北凉单一时期。',
   }),
   detail({
