@@ -53,7 +53,7 @@ describe('round 107 task B Sui-Tang capital reference audit', () => {
     expect(detail?.eventIds).toContain('daxing-capital');
   });
 
-  it('keeps every other Sui-Tang candidate visible for boundary review', () => {
+  it('keeps every other still-open Sui-Tang candidate visible for boundary review', () => {
     const rows = collectCandidates();
     const keys = rows.map((row) => `${row.polityId}:${row.placeId}:${row.eventId ?? row.heritageId}`);
 
@@ -62,7 +62,6 @@ describe('round 107 task B Sui-Tang capital reference audit', () => {
       'sui:changan:hanguang-gate-site',
       'sui:changan:mingde-gate-site',
       'sui:luoyang:dingding-gate-site',
-      'tang:changan:xiao-yan-ta',
       'tang:changan:big-wild-goose-pagoda',
       'tang:changan:qianling',
       'tang:changan:ximing-temple-site',
