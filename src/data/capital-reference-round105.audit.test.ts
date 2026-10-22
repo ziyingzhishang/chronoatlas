@@ -11,8 +11,8 @@ import { claims } from './claims';
 import { people } from './people';
 import { places } from './places';
 
-const overlap = (from: number | undefined, to: number | undefined, year: number) => (
-  from === undefined || from <= year
+const overlap = (from: number | undefined, to: number | undefined, year: number | undefined) => (
+  year !== undefined && (from === undefined || from <= year)
 ) && (to === undefined || year <= to);
 
 describe('round 105 capital reference audit', () => {

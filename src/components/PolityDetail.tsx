@@ -56,7 +56,7 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
         <h3>{t('首都阶段')}</h3>
         <ul className="study-list">{detail.capitalPhases.map((phase) => {
           const place = placeById.get(phase.placeId);
-          return <li key={`${phase.placeId}-${phase.validFrom}-${phase.validTo}`}><strong>{t(place?.historicalName ?? phase.placeId)}</strong><span> · {t(range(phase.validFrom, phase.validTo))}</span>{place?.modernName && <span> · {t('今·')}{t(place.modernName)}</span>}{phase.note && <small>{t(phase.note)}</small>}</li>;
+          return <li key={`${phase.placeId}-${phase.validFrom}-${phase.validTo}`}><EntityLink label={t(place?.historicalName ?? phase.placeId)} entity={{ type: 'place', id: phase.placeId }} onOpenEntity={onOpenEntity} /><span> · {t(range(phase.validFrom, phase.validTo))}</span>{place?.modernName && <span> · {t('今·')}{t(place.modernName)}</span>}{phase.note && <small>{t(phase.note)}</small>}</li>;
         })}</ul>
       </section>
 
