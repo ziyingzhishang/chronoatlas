@@ -300,6 +300,23 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1127年是赵构即位和南宋阶段开始的节点；应天、建康、临安代表不同阶段，不能把后来的临安定都提前。',
   },
   {
+    eventId: 'song-linan-center-formed',
+    participants: [
+      { personId: 'zhao-gou', role: '南宋长期政治中心形成阶段的君主', note: '赵构对应南宋政权在南渡后稳定政治中心的阶段；本条不把1138年解释为南宋建政日。' },
+    ],
+    polityIds: ['song_south'],
+    causes: ['南宋建立后经历应天、扬州、建康等阶段性迁驻。', '江南财政、交通与防御条件使临安逐步成为长期政治中心。'],
+    consequences: ['杭州进入南宋长期都城与国家治理阶段。', '临安城的宫城、御街、官署和水陆交通成为持续发展的城市历史层。'],
+    phases: [
+      { label: '南渡与阶段性迁驻', startYear: 1127, endYear: 1138, summary: '宋廷经历应天、扬州、建康等政治中心转换，不能压缩为单一迁都日。' },
+      { label: '临安中心形成', startYear: 1138, endYear: 1138, summary: '临安作为南宋长期政治中心的地位形成。' },
+    ],
+    locationIds: ['linan', 'yingtian', 'jiankang'],
+    relatedEventIds: ['southern-song-founded', 'song-southward'],
+    sourceIds: ['china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '1138年用于标记临安长期政治中心形成的阶段节点；不把南宋1127年建政、南渡过程和正式迁都叙述压缩为同一事实，也不否定此前应天、扬州、建康的阶段性中心作用。',
+  },
+  {
     eventId: 'jurchen-jin-founded',
     participants: [
       { personId: 'wanyan-aguda', role: '整合女真诸部并在会宁称帝建金的君主', note: '完颜阿骨打主导女真建国；会宁建国与后续灭辽、南下宋境是不同阶段。' },

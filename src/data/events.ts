@@ -130,6 +130,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百二十七·宋纪九', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷227', detail: '记载靖康后赵构即位与宋室南渡背景；临安正式政治中心的形成另有后续时段。' }],
   },
   {
+    id: 'song-linan-center-formed', year: 1138, title: '南宋临安中心形成', summary: '南宋经过应天、扬州、建康等阶段性迁驻后，临安成为长期政治中心。', placeId: 'linan', sourceIds: ['china-chronology', 'capital-history-reference'],
+    datePrecision: 'year', region: 'china', category: '迁都／城市', verification: 'checked',
+    background: '1127年南宋建立后，宋廷经历多次迁驻，江南政治、财政与军事条件逐步稳定。',
+    process: '1138年前后，临安作为南宋长期政治中心的地位形成；该节点用于标记城市中心的稳定化，不把南宋建政、南渡过程和一次性正式迁都混为同一事件。',
+    impact: '杭州进入南宋长期都城与江南国家治理阶段，临安城的宫城、御街、官署和水陆交通网络成为南宋城市史的重要层次。',
+    mapNote: '临安今杭州；1138年表示长期政治中心形成的阶段节点，不能回填为1127年南宋建立时已完成临安定都，也不替代南渡过程中的应天、扬州和建康地点。',
+    references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于南宋1127—1279及其政治中心阶段的编年参照；本条采用项目首都阶段资料对1138年前后临安长期中心形成作分层表达。' }],
+  },
+  {
     id: 'jurchen-jin-founded', year: 1115, title: '金建立', summary: '完颜阿骨打称帝建国，女真金政权形成。', placeId: 'huining', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '女真部落在完颜阿骨打领导下逐渐整合，并与辽的边疆秩序发生持续冲突。',
