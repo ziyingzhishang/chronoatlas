@@ -607,4 +607,54 @@ describe('event detail coverage audit', () => {
       'yalong', 'luosie',
     ]);
   });
+
+  it('enriches the sixty-first batch with source-backed narrative anchors without upgrading approximate dates', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'western-liao-founded',
+      'dali-founded',
+      'southern-ming-founded',
+      'xiongnu-founded',
+      'han-warring-founded-eighth-batch',
+      'zhao-warring-founded-eighth-batch',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of batchIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBe('approximate');
+      expect(event?.verification, eventId).toBe('partial');
+      expect(detail?.causes.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.consequences.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(4);
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('western-liao-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '七河流域政治中心制度化' }),
+    ]));
+    expect(detailsById.get('dali-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '段氏王权承接' }),
+    ]));
+    expect(detailsById.get('southern-ming-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '弘光南京阶段' }),
+    ]));
+    expect(detailsById.get('xiongnu-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '白登之后边疆秩序' }),
+    ]));
+    expect(detailsById.get('han-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '新郑政治中心承接' }),
+    ]));
+    expect(detailsById.get('zhao-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '邯郸政治中心承接' }),
+    ]));
+  });
 });
