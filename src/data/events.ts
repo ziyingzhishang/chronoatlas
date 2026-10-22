@@ -67,7 +67,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《旧唐书》《新唐书》突厥传 · 韩国古代史料数据库', url: 'https://db.history.go.kr/id/ko_034_1510_0070', detail: '用于突厥建国、汗国继承与唐朝关系的编年参照。' }, { title: 'The National Museum of Mongolian History: The early Türk Empire and the Uighurs', url: 'https://depts.washington.edu/silkroad/museums/ubhist/turk.html', detail: '用于突厥早期政治与鄂尔浑文化背景交叉参照。' }],
   },
   {
-    id: 'tibetan-founded', year: 618, title: '吐蕃政权建立（形成阶段）', summary: '松赞干布时期的高原政治整合使吐蕃进入政权形成阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    id: 'tibetan-founded', year: 618, title: '吐蕃政权建立（形成阶段）', summary: '松赞干布时期的高原政治整合使吐蕃进入政权形成阶段。', placeId: 'luosie', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     datePrecision: 'approximate', region: 'world', category: '政权建立／更替', verification: 'partial',
     background: '青藏高原诸部竞争与悉补野部崛起，为松赞干布整合高原政治力量提供了条件。',
     process: '618年前后松赞干布继承并扩展高原核心权力，吐蕃进入形成阶段；约629年后的军事与行政整合才逐步扩大其区域影响。',
@@ -780,7 +780,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于辽亡后契丹政权转入西域阶段的年代框架；西辽形成时间和早期政治中心采用约年并保留争议。' }],
   },
   {
-    id: 'dali-founded', year: 937, title: '大理政权建立', summary: '段思平在洱海区域建立大理政权，南诏之后的地方政治秩序重新组织。', sourceIds: ['china-chronology'],
+    id: 'dali-founded', year: 937, title: '大理政权建立', summary: '段思平在洱海区域建立大理政权，南诏之后的地方政治秩序重新组织。', placeId: 'dali_city', sourceIds: ['china-chronology', 'capital-history-reference'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '南诏后期政权瓦解，洱海地区多个地方势力竞争，段思平凭借军政联盟取得新的统治基础。',
     process: '937年前后段思平在洱海区域建立大理政权，延续并改造南诏以来的地方政治网络；早期都城和各部关系不能简化为现代行政边界。',
