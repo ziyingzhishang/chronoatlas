@@ -919,4 +919,48 @@ describe('event detail coverage audit', () => {
       expect.objectContaining({ label: '李雄统治延续', startYear: 310, endYear: 334 }),
     ]));
   });
+
+  it('enriches the sixty-seventh batch with source-backed transition and continuity anchors', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'an-lushan-rebellion',
+      'chu-han-contention',
+      'eastern-jin',
+      'goguryeo-founded',
+      'silla-founded',
+      'western-zhou-founded-eighth-batch',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of batchIds) {
+      expect(eventsById.get(eventId)?.datePrecision, eventId).toMatch(/^(approximate|range)$/);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      expect(report.items.find((item) => item.eventId === eventId)?.sourceComplete, eventId).toBe(true);
+      expect(report.items.find((item) => item.eventId === eventId)?.unresolvedReferenceIds, eventId).toEqual({
+        people: [], places: [], polities: [], relatedEvents: [], sources: [],
+      });
+      expect(detailsById.get(eventId)?.participants.length, eventId).toBeGreaterThan(0);
+    }
+
+    expect(detailsById.get('an-lushan-rebellion')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '两京收复与战局转折', startYear: 757, endYear: 758 }),
+    ]));
+    expect(detailsById.get('chu-han-contention')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '关中后方与汉军重整', startYear: -205, endYear: -204 }),
+    ]));
+    expect(detailsById.get('eastern-jin')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '江东军政承接', startYear: 317, endYear: 323 }),
+    ]));
+    expect(detailsById.get('goguryeo-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '国内城体系后的区域竞争', startYear: 100, endYear: 200 }),
+    ]));
+    expect(detailsById.get('silla-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '四世纪后期对外关系转折', startYear: 377, endYear: 382 }),
+    ]));
+    expect(detailsById.get('western-zhou-founded-eighth-batch')?.consequences).toContain(
+      '铭文所见的册封与赏赐显示的是王室与封国关系，不等于周王室直接行政边界。',
+    );
+  });
 });
