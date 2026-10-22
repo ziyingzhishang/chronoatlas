@@ -25,13 +25,13 @@ test('renders a clear empty state when no detail record exists', () => {
 });
 
 test('renders the audited approximate time evidence and timeline permission', () => {
-  const event = events.find((item) => item.id === 'nanzhao-founded')!;
+  const event = events.find((item) => item.id === 'dali-founded')!;
   render(<LocaleProvider><EventDetail event={event} onNavigate={vi.fn()} /></LocaleProvider>);
 
   expect(screen.getByText('约年')).toBeInTheDocument();
   expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
-  expect(screen.getByText('738年前后表示南诏形成，部族联盟、唐廷册封与区域整合是连续过程。')).toBeInTheDocument();
-  expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
+  expect(screen.getByText('937年前后表示大理政权形成，杨干贞改国号与段氏承接等节点不能混为精确建国日。')).toBeInTheDocument();
+  expect(screen.getAllByText(/中国历史分期与朝代年表/)).toHaveLength(2);
 });
 
 test('renders confirmed and unknown event time review states separately', () => {

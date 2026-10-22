@@ -12,7 +12,7 @@ const targets = [
   { polityId: 'chu_warring', label: '楚', precision: 'approximate' },
   { polityId: 'yan_warring', label: '燕', precision: 'approximate' },
   { polityId: 'qi_warring', label: '齐', precision: 'approximate' },
-  { polityId: 'xia', label: '夏（十六国）', precision: 'approximate' },
+  { polityId: 'xia', label: '夏（十六国）', precision: 'year' },
   { polityId: 'xia_early', label: '夏（约年）', precision: 'approximate' },
   { polityId: 'shang', label: '商', precision: 'approximate' },
   { polityId: 'zhou_western', label: '西周', precision: 'approximate' },

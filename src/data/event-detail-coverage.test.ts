@@ -135,7 +135,7 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 61, 'needs-review': 38, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 67, 'needs-review': 32, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -187,6 +187,34 @@ describe('event detail coverage audit', () => {
       expect.objectContaining({ label: '姑臧阶段', startYear: 401 }),
     ]));
     expect(report.orphanDetailEventIds).toHaveLength(20);
+  });
+
+  it('closes the fifty-first batch of source-backed turning points without erasing phase uncertainty', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'northern-yan-founded',
+      'xia-sixteen-states-founded-eighth-batch',
+      'nanzhao-founded',
+      'jingnan-founded',
+      'mongol-founded',
+      'northern-yuan-founded',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 67, 'needs-review': 32, unresolved: 0 });
+    for (const eventId of batchIds) {
+      expect(eventsById.get(eventId)?.datePrecision).toBe('year');
+      expect(eventsById.get(eventId)?.verification).toBe('checked');
+      expect(detailsById.get(eventId)?.sourceIds.length).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.polityIds.length).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.relatedEventIds.length).toBeGreaterThan(0);
+      expect(report.coveredEventIds).toContain(eventId);
+    }
+
+    expect(detailsById.get('northern-yan-founded')?.uncertaintyNote).toContain('407年与409年');
+    expect(detailsById.get('mongol-founded')?.uncertaintyNote).toContain('不代表');
+    expect(detailsById.get('northern-yuan-founded')?.uncertaintyNote).toContain('史学分期差异');
   });
 
   it('closes the forty-seventh batch key links without changing orphan classification', () => {

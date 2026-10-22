@@ -23,37 +23,32 @@ const expectedEventIds = [
   'former-liang-founded',
   'eastern-jin',
   'western-liang-state-founded',
-  'northern-yan-founded',
-  'xia-sixteen-states-founded-eighth-batch',
   'tibetan-founded',
-  'nanzhao-founded',
   'an-lushan-rebellion',
-  'jingnan-founded',
   'dali-founded',
   'western-liao-founded',
-  'northern-yuan-founded',
   'southern-ming-founded',
 ] as const;
 
 describe('event time evidence review', () => {
-  it('covers the 31 currently non-precise events without inventing a date', () => {
+  it('covers the 26 currently non-precise events without inventing a date', () => {
     expect(eventTimeReview.map((entry) => entry.eventId)).toEqual([...expectedEventIds]);
 
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(31);
+    expect(report.totalReviewed).toBe(26);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 3, approximate: 28, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 3, approximate: 23, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {
     const report = reviewEventTimeCoverage();
     const range = report.records.find((record) => record.eventId === 'an-lushan-rebellion');
-    const approximate = report.records.find((record) => record.eventId === 'nanzhao-founded');
+    const approximate = report.records.find((record) => record.eventId === 'dali-founded');
 
     expect(range).toMatchObject({
       datePrecision: 'range',
@@ -63,7 +58,7 @@ describe('event time evidence review', () => {
     });
     expect(approximate).toMatchObject({
       datePrecision: 'approximate',
-      sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+      sourceIds: ['china-chronology'],
       status: 'approximate',
       timelineStrategy: 'approximate-marker',
     });

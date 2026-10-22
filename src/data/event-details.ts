@@ -74,7 +74,7 @@ const details: HistoricalEventDetail[] = [
     locationIds: ['taihe'],
     relatedEventIds: ['tang-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
-    uncertaintyNote: '738年前后采用形成约年；太和城是南诏早期政治中心的现今遗址参照，不能把后期影响范围倒推为建政当年疆域。册封、部族联盟和直接控制范围不是同一概念。',
+    uncertaintyNote: '738年作为南诏形成节点；太和城是南诏早期政治中心的现今遗址参照，不能把后期影响范围倒推为建政当年疆域。册封、部族联盟和直接控制范围不是同一概念。',
   },
   {
     eventId: 'goguryeo-founded',
@@ -1837,7 +1837,7 @@ const details: HistoricalEventDetail[] = [
       { label: '统万与长安阶段', startYear: 407, endYear: 418, summary: '夏营建统万城并在418年取得长安，控制中心随战争变化。' },
     ],
     locationIds: ['zhitong'], relatedEventIds: ['later-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    uncertaintyNote: '407年前后是夏政权形成约年，不把418年取得长安或后期控制范围回填到建政年；赫连勃勃政权与传统夏代必须分开。',
+    uncertaintyNote: '407年作为夏政权形成节点，不把418年取得长安或后期控制范围回填到建政年；赫连勃勃政权与传统夏代必须分开。',
   },
   {
     eventId: 'xia-early-founded-eighth-batch',

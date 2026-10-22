@@ -78,15 +78,10 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'former-liang-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '314年前后表示河西张氏地方统治的独立形成，前凉建政起点存在口径差异。', timelineStrategy: 'approximate-marker' },
   { eventId: 'eastern-jin', status: 'confirmed', expectedPrecision: 'range', explanation: '东晋建立跨越317—318年的政权承接过程，区间边界可用但不应压缩为单日。', timelineStrategy: 'range-band' },
   { eventId: 'western-liang-state-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '400年前后表示西凉政权形成，李暠的地方承接与正式建制存在阶段性。', timelineStrategy: 'approximate-marker' },
-  { eventId: 'northern-yan-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '407年前后表示北燕形成，政权承接与冯跋后续称制不能简化为单日。', timelineStrategy: 'approximate-marker' },
-  { eventId: 'xia-sixteen-states-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '夏政权建立采用形成阶段约年，赫连勃勃的部众整合和称帝分属不同节点。', timelineStrategy: 'approximate-marker' },
   { eventId: 'tibetan-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '618年前后表示吐蕃形成阶段，松赞干布后的高原整合不能回填为建政当年。', timelineStrategy: 'approximate-marker' },
-  { eventId: 'nanzhao-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '738年前后表示南诏形成，部族联盟、唐廷册封与区域整合是连续过程。', timelineStrategy: 'approximate-marker' },
   { eventId: 'an-lushan-rebellion', status: 'confirmed', expectedPrecision: 'range', explanation: '安史之乱的755—763年区间有明确编年边界，但战局和控制范围随阶段变化。', timelineStrategy: 'range-band' },
-  { eventId: 'jingnan-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '924年前后表示荆南政权形成，地方军镇承接与后续正式建制存在时间层次。', timelineStrategy: 'approximate-marker' },
   { eventId: 'dali-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '937年前后表示大理政权形成，杨干贞改国号与段氏承接等节点不能混为精确建国日。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liao-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1124年前后表示西辽形成阶段，耶律大石西迁、建制与称号变化具有过程性。', timelineStrategy: 'approximate-marker' },
-  { eventId: 'northern-yuan-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1368年前后表示元廷北迁后的政权重组，“北元”是后世概称，不能视为单一建国日。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
 ];
 
