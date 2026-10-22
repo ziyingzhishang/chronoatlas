@@ -116,7 +116,7 @@ describe('event detail coverage audit', () => {
 
     expect(report.totalEvents).toBe(events.length);
     expect(report.items.map((item) => item.eventId)).toEqual(events.map((event) => event.id).sort());
-    expect(report.orphanDetailEventIds).toContain('court-moves-luoyang');
+    expect(report.orphanDetailEventIds).toContain('dong-zhuo-changan');
     expect(report.orphanDetailEventIds.length).toBeGreaterThan(0);
     expect(report.items.every((item) => item.eventId.length > 0)).toBe(true);
   });
@@ -125,9 +125,9 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.orphanDetails).toHaveLength(report.orphanDetailEventIds.length);
-    expect(report.orphanDetails).toHaveLength(20);
+    expect(report.orphanDetails).toHaveLength(14);
     expect(report.orphanDetails.every((item) => item.kind === 'city-history-auxiliary')).toBe(true);
-    expect(report.orphanDetails.find((item) => item.eventId === 'daxing-capital')?.rationale)
+    expect(report.orphanDetails.find((item) => item.eventId === 'han-changan-new-city')?.rationale)
       .toContain('城市');
   });
 
@@ -135,7 +135,7 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 67, 'needs-review': 32, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 73, 'needs-review': 32, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -186,7 +186,7 @@ describe('event detail coverage audit', () => {
     expect(detailsById.get('northern-liang-founded')?.phases).toEqual(expect.arrayContaining([
       expect.objectContaining({ label: '姑臧阶段', startYear: 401 }),
     ]));
-    expect(report.orphanDetailEventIds).toHaveLength(20);
+    expect(report.orphanDetailEventIds).toHaveLength(14);
   });
 
   it('closes the fifty-first batch of source-backed turning points without erasing phase uncertainty', () => {
@@ -202,7 +202,7 @@ describe('event detail coverage audit', () => {
       'northern-yuan-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 67, 'needs-review': 32, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 73, 'needs-review': 32, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision).toBe('year');
       expect(eventsById.get(eventId)?.verification).toBe('checked');
@@ -215,6 +215,33 @@ describe('event detail coverage audit', () => {
     expect(detailsById.get('northern-yan-founded')?.uncertaintyNote).toContain('407年与409年');
     expect(detailsById.get('mongol-founded')?.uncertaintyNote).toContain('不代表');
     expect(detailsById.get('northern-yuan-founded')?.uncertaintyNote).toContain('史学分期差异');
+  });
+
+  it('promotes the fifty-second batch of source-backed capital and city-history nodes', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'qin-xianyang-capital',
+      'qin-xianyang-unification',
+      'eastern-han-moves-luoyang',
+      'daxing-capital',
+      'court-moves-luoyang',
+      'xuanwu-gate',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 73, 'needs-review': 32, unresolved: 0 });
+    for (const eventId of batchIds) {
+      expect(eventsById.get(eventId)?.datePrecision).toBe('year');
+      expect(eventsById.get(eventId)?.verification).toBe('checked');
+      expect(detailsById.get(eventId)?.sourceIds.length).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.locationIds.length).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.polityIds.length).toBeGreaterThan(0);
+      expect(report.coveredEventIds).toContain(eventId);
+    }
+
+    expect(report.orphanDetailEventIds).toHaveLength(14);
+    expect(report.orphanDetailEventIds).not.toEqual(expect.arrayContaining(batchIds));
   });
 
   it('closes the forty-seventh batch key links without changing orphan classification', () => {
@@ -236,7 +263,7 @@ describe('event detail coverage audit', () => {
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'song-founded',
     ]));
-    expect(report.orphanDetailEventIds).toHaveLength(20);
+    expect(report.orphanDetailEventIds).toHaveLength(14);
     expect(report.orphanDetails.every((item) => item.kind === 'city-history-auxiliary')).toBe(true);
   });
 });

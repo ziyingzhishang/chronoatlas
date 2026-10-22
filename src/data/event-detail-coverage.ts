@@ -116,10 +116,7 @@ function emptyStatusCounts(): Record<EventDetailCoverageStatus, number> {
 }
 
 const cityHistoryAuxiliaryOrphanIds = new Set([
-  'court-moves-luoyang',
-  'daxing-capital',
   'dong-zhuo-changan',
-  'eastern-han-moves-luoyang',
   'eastern-han-restores-changan',
   'former-zhao-capital-changan',
   'gengshi-enters-changan',
@@ -129,12 +126,9 @@ const cityHistoryAuxiliaryOrphanIds = new Set([
   'later-qin-falls-changan',
   'liu-yu-captures-changan',
   'northern-zhou-changan',
-  'qin-xianyang-capital',
-  'qin-xianyang-unification',
   'tang-changan-occupation',
   'western-jin-loses-changan',
   'western-wei-changan',
-  'xuanwu-gate',
   'zhou-fenghao-capital',
 ]);
 
