@@ -50,6 +50,22 @@ const sampleDetail: HeritageDetail = {
   uncertaintyNote: '示例不确定性说明。',
 };
 
+const roundSeventyFirstHeritageIds = [
+  'big-wild-goose-pagoda',
+  'qinglong-temple-site',
+  'xian-beilin',
+  'xiao-yan-ta',
+  'ximing-temple-site',
+] as const;
+
+const roundSeventyFirstDisplayMarkers: Record<typeof roundSeventyFirstHeritageIds[number], string> = {
+  'big-wild-goose-pagoda': '玄奘译经传统与大慈恩寺空间',
+  'qinglong-temple-site': '唐代密教传播',
+  'xian-beilin': '后世碑刻保存与展示',
+  'xiao-yan-ta': '唐代荐福寺佛教建筑',
+  'ximing-temple-site': '唐代译经与寺院网络',
+};
+
 describe('heritage detail coverage audit', () => {
   it('audits every heritage asset and exposes complete, review, and missing IDs', () => {
     const report = buildHeritageDetailCoverageReport({ catalog: baseCatalog });
@@ -170,5 +186,32 @@ describe('heritage detail coverage audit', () => {
     expect(report.items[0].status).toBe('needs-review');
     expect(report.needsReviewHeritageIds).toEqual([sampleAsset.id]);
     expect(report.items[0].unknownSourceIds).toEqual(['missing-phase-source']);
+  });
+
+  it('audits the five review-boundary details while keeping the missing event boundary explicit', () => {
+    const report = buildHeritageDetailCoverageReport({ catalog: baseCatalog });
+    const sourceIds = new Set(sourceNotes.map((source) => source.id));
+    const eventIds = new Set(events.map((event) => event.id));
+
+    expect(eventIds.has('xuanzang-translations')).toBe(false);
+
+    for (const heritageId of roundSeventyFirstHeritageIds) {
+      const detail = heritageDetails.find((item) => item.heritageId === heritageId);
+      const item = report.items.find((coverageItem) => coverageItem.heritageId === heritageId);
+
+      expect(detail, heritageId).toBeDefined();
+      expect(item, heritageId).toBeDefined();
+      expect(detail?.historicalAssociations, heritageId).toEqual(
+        expect.arrayContaining([roundSeventyFirstDisplayMarkers[heritageId]]),
+      );
+      expect(detail?.constructionHistory.length, heritageId).toBeGreaterThanOrEqual(3);
+      expect(detail?.survivingFeatures.length, heritageId).toBeGreaterThanOrEqual(3);
+      expect(detail?.presentDayValue.length, heritageId).toBeGreaterThan(8);
+      expect(detail?.sourceIds.every((sourceId) => sourceIds.has(sourceId)), heritageId).toBe(true);
+      expect(detail?.constructionHistory.every((phase) => phase.sourceIds.every((sourceId) => sourceIds.has(sourceId))), heritageId).toBe(true);
+      expect(detail?.associatedEvents, heritageId).toContain('xuanzang-translations');
+      expect(item?.status, heritageId).toBe('needs-review');
+      expect(item?.unresolvedReferenceIds.events, heritageId).toEqual(['xuanzang-translations']);
+    }
   });
 });
