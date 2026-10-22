@@ -13,7 +13,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['秦王政完成统一六国，前221年建立帝国。', '咸阳承接秦国晚期都城，成为帝国的正式政治中心。', '统一后的制度、交通与军事整合并未在建国节点瞬间完成。'],
     turningPoints: [turn(-221, '统一六国', '统一完成，秦帝国进入新的中央集权阶段。', 'qin-unification'), turn(-214, '北方经营', '北方军事防务与交通建设加强，但具体控制范围须按来源时段理解。'), turn(-209, '末年危机', '徭役、战争与地方反抗叠加，中央政权迅速失去稳定。')],
     principalFigureIds: ['qin-shi-huang', 'meng-tian'], capitalPhases: [capital('xianyang', -221, -206)],
-    heritageIds: ['qin-xianyang-imperial-palace-site'], eventIds: ['qin-unification'], claimIds: ['claim-qin-imperial-heritage'], sourceIds: modernSources,
+    heritageIds: ['qin-xianyang-imperial-palace-site'], eventIds: ['qin-unification', 'qin-xianyang-unification'], claimIds: ['claim-qin-imperial-heritage'], sourceIds: modernSources,
     uncertaintyNote: '秦帝国边界和地方控制具有阶段差异；遗址层只关联咸阳宫城与都城空间，不据此还原完整帝国疆域。',
   }),
   detail({
