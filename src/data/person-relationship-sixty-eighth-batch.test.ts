@@ -49,7 +49,7 @@ describe('sixty-eighth batch high-confidence kinship relationships', () => {
   it('closes only the directly evidenced kinship gap and leaves alliance/conflict gaps unchanged', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(41);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(39);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(106);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(64);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);

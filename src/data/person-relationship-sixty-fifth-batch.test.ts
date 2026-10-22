@@ -52,7 +52,7 @@ describe('sixty-fifth batch high-confidence event participation relationships', 
   it('reduces only the two directly evidenced event participation gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(41);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(39);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(106);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(64);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
