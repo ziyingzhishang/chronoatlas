@@ -634,13 +634,13 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'chu-han-contention',
     participants: [
-      { personId: 'liu-bang', role: '汉方核心领袖与后续汉帝国建立者', note: '刘邦代表汉方政治与军事主线；项羽等其他关键人物尚未纳入当前人物目录，不以其他人物占位。' },
+      { personId: 'liu-bang', role: '汉方核心领袖与后续汉帝国建立者', note: '刘邦代表汉方政治与军事主线；项羽等其他关键人物尚未纳入当前人物目录，不以其他人物占位；刘邦代表汉方核心主线，不覆盖项羽一方、诸侯分封或楚汉战争全部参与者。' },
       { personId: 'han-xin', role: '汉方重要军事统帅', note: '韩信参与楚汉战争中后期的关键军事行动，不能代表所有汉方将领或全部战场。' },
       { personId: 'xiao-he', role: '汉方行政与后勤组织者', note: '萧何负责关中与汉方后勤、行政支持，体现战争中的政务角色而非前线统帅。' },
     ],
     polityIds: ['qin', 'han_western'],
     causes: ['秦统治瓦解后，各路反秦力量争夺关中和诸侯分封秩序。', '秦亡后的政治真空使项羽、刘邦等势力展开长期竞争。'],
-    consequences: ['多方分封与战争逐渐转为汉主导的政治秩序。', '汉初仍保留诸侯王，胜利不等于地方权力立即完全统一。', '关中后方的粮饷、兵员与行政组织成为汉方持续作战的重要支撑，但后勤优势不等于汉在战争初期已经稳定控制全部旧秦地区。'],
+    consequences: ['多方分封与战争逐渐转为汉主导的政治秩序。', '汉初仍保留诸侯王，胜利不等于地方权力立即完全统一。', '关中后方的粮饷、兵员与行政组织成为汉方持续作战的重要支撑，但后勤优势不等于汉在战争初期已经稳定控制全部旧秦地区。', '前202年项羽败亡后，汉方取得主导地位，但诸侯分封、关中后方与地方军政承接仍是后续过程。'],
     phases: [
       { label: '秦亡与分封', startYear: -206, endYear: -206, summary: '项羽分封诸王，刘邦受封汉王。' },
       { label: '鸿门宴与分封秩序', startYear: -206, endYear: -206, summary: '关中归属与诸侯分封在鸿门会见及其后的安排中被重新确认，秦亡后的政治竞争由军事胜负转向名分与封地秩序。' },
@@ -648,6 +648,7 @@ const details: HistoricalEventDetail[] = [
       { label: '关中后方与汉军重整', startYear: -205, endYear: -204, summary: '汉方依托关中行政与后勤资源持续组织军队，楚汉竞争由分封后的初次对抗转入长期战争；后方承接不等于汉方已经稳定控制全部旧秦地区。' },
       { label: '楚汉战争', startYear: -205, endYear: -203, summary: '楚、汉围绕关中、河南和淮北等地持续交战。' },
       { label: '楚败汉兴', startYear: -202, endYear: -202, summary: '项羽败亡，刘邦取得建立汉帝国的政治条件。' },
+      { label: '汉主导秩序的初步承接', startYear: -202, endYear: -202, summary: '项羽败亡后刘邦取得政治主导，但诸侯分封、关中后方与地方军政承接仍未在同一节点完成。' },
     ],
     locationIds: ['xianyang', 'luoyang', 'sishui-northbank'],
     relatedEventIds: ['qin-unification', 'han-imperial-accession'],
@@ -731,11 +732,11 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'eastern-jin',
     participants: [
-      { personId: 'sima-rui', role: '江东重建晋室的核心宗室与即位者', note: '司马睿先在建康即晋王位，次年即皇帝位，两个节点共同构成东晋形成过程。' },
+      { personId: 'sima-rui', role: '江东重建晋室的核心宗室与即位者', note: '司马睿先在建康即晋王位，次年即皇帝位，两个节点共同构成东晋形成过程；司马睿代表317年即晋王位与318年即皇帝位的晋室重建节点，不代表江东全部军政力量或北方旧晋地区。' },
     ],
     polityIds: ['jin_eastern'],
     causes: ['长安失守后，西晋中央在北方的统治崩溃。', '江东的司马睿成为重建晋朝政权的核心。', '江东地方军政资源与北方渡江士族需要在晋室名义下重新组织，建康因此成为重建秩序的承接点。'],
-    consequences: ['晋政权在江南延续，形成以建康为中心的政治格局。', '北方继续由多个政权竞争，南北分裂加深。', '东晋的形成把晋室名义、江南军政资源与北方竞争连接起来，后续北伐和地方整合仍是持续过程，不能压缩为317—318年的一次性统一。'],
+    consequences: ['晋政权在江南延续，形成以建康为中心的政治格局。', '北方继续由多个政权竞争，南北分裂加深。', '东晋的形成把晋室名义、江南军政资源与北方竞争连接起来，后续北伐和地方整合仍是持续过程，不能压缩为317—318年的一次性统一。', '317—318年的晋室重建保留的是江南政治承接；北方旧晋空间的控制与人口、军镇关系不能由建康即位节点一次性推出。'],
     phases: [
       { label: '北方旧都失守', startYear: 316, endYear: 316, summary: '长安失守与西晋中央崩溃，使江东重建晋室成为新的政治路径。' },
       { label: '即晋王位', startYear: 317, endYear: 317, summary: '司马睿在建康即晋王位并设置百官。' },
@@ -743,6 +744,7 @@ const details: HistoricalEventDetail[] = [
       { label: '江东军政承接', startYear: 317, endYear: 323, summary: '晋室名义在建康与江东军政资源结合，形成南方政权的承接基础；这一过程不代表北方旧晋地区同时恢复统一控制。' },
       { label: '建康制度化', startYear: 317, endYear: 329, summary: '建康承接晋室名义、百官体系与江南军政资源，成为东晋长期政治中心；北方旧晋空间则由多个政权分割重组。' },
       { label: '南北政权竞争', startYear: 319, endYear: 329, summary: '东晋在建康延续晋室名义，北方则由多个十六国政权争夺旧西晋政治空间。' },
+      { label: '江南晋室与北方分裂并行', startYear: 317, endYear: 323, summary: '建康承接晋室名义与江南军政资源的同时，北方旧晋空间继续由多个政权分割重组；南方承接不等于北方恢复统一。' },
     ],
     locationIds: ['luoyang', 'jiankang'],
     relatedEventIds: ['western-jin-founded', 'jin-unification', 'sui-unification'],
@@ -787,12 +789,12 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'an-lushan-rebellion',
     participants: [
-      { personId: 'an-lushan', role: '范阳起兵的叛军首领', note: '755年发动叛乱并攻取洛阳；其死后叛军仍由史思明、史朝义等继续。' },
+      { personId: 'an-lushan', role: '范阳起兵的叛军首领', note: '755年发动叛乱并攻取洛阳；其死后叛军仍由史思明、史朝义等继续；安禄山对应755年起兵节点，不代表763年主要叛乱结束后的史思明、史朝义等后续叛军阶段；叛乱首领与战后藩镇承接需分开。' },
       { personId: 'li-longji', role: '安史之乱爆发时的唐朝皇帝', note: '唐廷的军事与政治应对跨越玄宗、肃宗等多个阶段，本条只列玄宗作为事件起点的核心人物。' },
     ],
     polityIds: ['tang'],
     causes: ['安禄山掌握强大的边镇兵力，和朝廷的矛盾加深。', '中央对军事力量的约束受到挑战，边镇与中央之间形成结构性张力。'],
-    consequences: ['战争严重破坏北方社会与唐的统治结构。', '部分降将继续掌握河北军镇，藩镇问题成为唐后期政治的重要背景。', '两京收复后，唐廷恢复主要都城的名义秩序，但河北等地战事与军镇控制并未同步结束，中央恢复与地方实控仍需分开观察。'],
+    consequences: ['战争严重破坏北方社会与唐的统治结构。', '部分降将继续掌握河北军镇，藩镇问题成为唐后期政治的重要背景。', '两京收复后，唐廷恢复主要都城的名义秩序，但河北等地战事与军镇控制并未同步结束，中央恢复与地方实控仍需分开观察。', '主要叛乱结束后，唐廷恢复的是名义秩序与部分交通节点；河北军镇承接使中央复归和地方直接控制不能视作同一结果。'],
     phases: [
       { label: '范阳起兵', startYear: 755, endYear: 755, summary: '安禄山从范阳起兵并攻取洛阳。' },
       { label: '长安危机', startYear: 756, endYear: 756, summary: '叛军推进关中，唐玄宗离开长安；唐廷在肃宗时期转移政治重心并组织反攻。' },
@@ -801,6 +803,7 @@ const details: HistoricalEventDetail[] = [
       { label: '长期战争', startYear: 756, endYear: 762, summary: '战争在北方、洛阳与关中等地反复，唐廷经历重大危机。' },
       { label: '主要叛乱结束', startYear: 763, endYear: 763, summary: '史朝义败亡，主要叛乱结束，但藩镇影响仍在。' },
       { label: '战后藩镇延续', startYear: 763, endYear: 780, summary: '河北部分降将继续保有地方军政资源，唐廷的名义恢复与实际控制之间形成长期张力。' },
+      { label: '中央恢复与河北军镇并行', startYear: 763, endYear: 780, summary: '主要叛乱结束后，唐廷继续恢复名义秩序，河北部分军镇则承接地方军政资源；中央复归与地方直接控制不是同一过程。' },
     ],
     locationIds: ['youzhou', 'luoyang', 'changan'],
     relatedEventIds: ['tang-founded', 'five-dynasties'],
@@ -1931,17 +1934,18 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'xia-early-founded-eighth-batch',
     participants: [
-      { personId: 'yu-the-great', role: '传统夏代建政叙事中的核心君主', note: '禹的历史年代与夏代国家形成存在文献、传说和考古层次差异，本条不把传说人物等同于已精确核验的建国事实。' },
+      { personId: 'yu-the-great', role: '传统夏代建政叙事中的核心君主', note: '禹的历史年代与夏代国家形成存在文献、传说和考古层次差异，本条不把传说人物等同于已精确核验的建国事实；禹属于传统夏代建政叙事的核心人物，不以传说人物证明约前2070年存在可精确核验的单日建国。' },
     ],
     polityIds: ['xia_early'],
     causes: ['夏代年代依赖传世文献、传统纪年和考古研究的交叉解释。', '约前2070年是项目采用的传统年表起点，而非可精确核验的单日建国。'],
-    consequences: ['夏代成为早期王权、国家形成与考古文化关系研究的重要对象。', '其政治记忆影响后世王朝叙事，但不能由传统年代推导确定疆域。', '二里头遗址是夏商周断代工程与中华文明探源工程的关键遗址，可用于观察早期都邑与王权形成；考古遗址仍不等于夏代唯一都城或确定国界。'],
+    consequences: ['夏代成为早期王权、国家形成与考古文化关系研究的重要对象。', '其政治记忆影响后世王朝叙事，但不能由传统年代推导确定疆域。', '二里头遗址是夏商周断代工程与中华文明探源工程的关键遗址，可用于观察早期都邑与王权形成；考古遗址仍不等于夏代唯一都城或确定国界。', '二里头等考古材料能够提供早期都邑与王权形成的参照，但不能把考古文化、夏代国号和约前2070年的国家边界互相替代。'],
     phases: [
       { label: '早期区域联盟', startYear: -2200, endYear: -2071, summary: '黄河中下游多个区域社会和政治网络持续重组。' },
       { label: '传统夏代起点', startYear: -2070, endYear: -2070, summary: '传统年表以约前2070年作为夏代政权形成的导航节点。' },
       { label: '王权与都邑发展', startYear: -2070, endYear: -1800, summary: '早期王权、都邑和区域网络逐步发展，考古对应仍需专题研究。' },
       { label: '夏商过渡参照', startYear: -1800, endYear: -1600, summary: '夏代传统叙事与商代早期分期之间存在过渡研究空间，不能据此划定确定的王朝边界。' },
       { label: '二里头考古参照', startYear: -2070, endYear: -1600, summary: '二里头遗址及其考古文化作为夏商之际的空间与年代参照；考古核心不能直接等同夏代国号、唯一都邑或国家边界。' },
+      { label: '传统起点与考古参照并行', startYear: -2070, endYear: -1600, summary: '传统年表起点与二里头等考古参照可并列观察早期都邑和王权形成，但两者不能互相替代，也不能据此绘制确定边界。' },
     ],
     locationIds: ['erlitou'], relatedEventIds: ['shang-founded-eighth-batch', 'zhou-conquest'], sourceIds: ['china-chronology', 'erlitou-official'],
     uncertaintyNote: '约前2070年是传统纪年约年；夏代绝对年代、国家形态、考古对应和都邑均存在争议，不能伪造精确建国年或国界。',
@@ -1949,17 +1953,18 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'shang-founded-eighth-batch',
     participants: [
-      { personId: 'wu-ding', role: '商代王权与甲骨文时代的代表君主', note: '武丁不是约前1600年的建政者；本条用其作为可由甲骨文较充分观察的商代人物，并保留早期建政的不确定性。' },
+      { personId: 'wu-ding', role: '商代王权与甲骨文时代的代表君主', note: '武丁不是约前1600年的建政者；本条用其作为可由甲骨文较充分观察的商代人物，并保留早期建政的不确定性；武丁属于晚商甲骨文材料较丰富的代表君主，不把其统治前推为约前1600年的商代建政者。' },
     ],
     polityIds: ['shang'],
     causes: ['商代历史由传世文献、甲骨文和考古遗址共同构成。', '约前1600年是常用分期节点，不替代精确可证的建国日期。'],
-    consequences: ['商代王权、青铜礼制与文字传统进入传统分期。', '都邑迁徙和区域控制持续变化，不能把约前1600年视作统一疆域的起点。', '迁都殷后商代王权与都邑体系进入繁荣阶段；这一晚商窗口不能回填为约前1600年的建政现场。'],
+    consequences: ['商代王权、青铜礼制与文字传统进入传统分期。', '都邑迁徙和区域控制持续变化，不能把约前1600年视作统一疆域的起点。', '迁都殷后商代王权与都邑体系进入繁荣阶段；这一晚商窗口不能回填为约前1600年的建政现场。', '晚商甲骨文和都邑材料提供较丰富的可观察窗口，但不能把盘庚迁殷或武丁时期的证据前推为约前1600年的建政现场。'],
     phases: [
       { label: '早期商人网络', startYear: -1700, endYear: -1601, summary: '商人及其相关区域网络在黄河中下游持续发展。' },
       { label: '传统商代起点', startYear: -1600, endYear: -1600, summary: '传统年表以约前1600年作为商代开始。' },
       { label: '都邑与王权发展', startYear: -1600, endYear: -1300, summary: '商王权、青铜礼制和都邑体系继续发展，盘庚迁殷属于后续节点。' },
       { label: '晚商甲骨文时代', startYear: -1300, endYear: -1047, summary: '晚商王权、都邑与甲骨文材料提供了更丰富的历史观察窗口，仍不等同于整个商代早期。' },
       { label: '二里头—早商文化参照', startYear: -1600, endYear: -1500, summary: '二里头及邻近区域作为观察夏商之际都邑、青铜礼制与王权形成的早期考古参照；不把该遗址视为商代唯一都城，也不与武丁时期的晚商甲骨文窗口混同。' },
+      { label: '晚商材料窗口与早期分期区分', startYear: -1300, endYear: -1047, summary: '晚商甲骨文与都邑材料提供较丰富的观察窗口，但其证据层次不能回填为约前1600年的建政现场或连续疆域。' },
     ],
     locationIds: ['erlitou'], relatedEventIds: ['zhou-conquest', 'western-zhou-founded-eighth-batch'], sourceIds: ['china-chronology', 'erlitou-official'],
     uncertaintyNote: '约前1600年是常用传统分期，绝对年代、早期都邑和直接控制范围仍需结合甲骨文与考古材料，不能伪造精确建国年。',
@@ -2009,12 +2014,12 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'qin-state-founded-eighth-batch',
     participants: [
-      { personId: 'qin-mugong', role: '秦国早期扩张与国家整合的代表君主', note: '秦穆公晚于约前770年的列侯节点；本条用其代表秦国早期发展，不能视为秦国建政当年的当事人。' },
+      { personId: 'qin-mugong', role: '秦国早期扩张与国家整合的代表君主', note: '秦穆公晚于约前770年的列侯节点；本条用其代表秦国早期发展，不能视为秦国建政当年的当事人；秦穆公晚于约前770年的列侯节点，本条只用其代表秦国后续扩张与国家整合，不作为秦国传统分期起点的当事人。' },
       { personId: 'qin-xiaogong', role: '战国变法与秦国军政重整阶段的君主', note: '秦孝公远晚于约前770年的列侯节点，本条用其代表秦国后续变法和强国阶段，不把其活动前推为秦国传统分期起点。' },
     ],
     polityIds: ['qin_state'],
     causes: ['秦嬴氏长期经营关中西部边地并积累军事资源。', '周平王东迁后秦襄公列为诸侯，秦获得更明确的诸侯身份。'],
-    consequences: ['秦进入统一前的秦国分期。', '秦随后经营关中、变法扩张并为前221年秦帝国建立提供基础。'],
+    consequences: ['秦进入统一前的秦国分期。', '秦随后经营关中、变法扩张并为前221年秦帝国建立提供基础。', '秦列为诸侯确认的是传统分期与名义身份；秦氏早期经营、都邑迁移和战国强国化属于后续过程，不能回填为前770年已形成帝国式控制。'],
     phases: [
       { label: '秦氏经营西部', startYear: -900, endYear: -771, summary: '秦氏在周王朝西部边地经营并形成区域政治资源。' },
       { label: '列为诸侯', startYear: -770, endYear: -770, summary: '约前770年秦襄公因护送周平王东迁而列为诸侯，秦国分期形成。' },
@@ -2022,6 +2027,7 @@ const details: HistoricalEventDetail[] = [
       { label: '商鞅变法与军政重整', startYear: -361, endYear: -338, summary: '秦孝公时期的变法与军政重整属于秦国形成后的强国阶段，为后续统一战争提供制度基础；不能回填为约前770年的列侯节点。' },
       { label: '战国强国阶段', startYear: -403, endYear: -221, summary: '秦在战国诸侯竞争中继续推进制度、军政和关中资源整合，最终连接到统一战争。' },
       { label: '雍城阶段承接', startYear: -677, endYear: -383, summary: '秦在关中西部经营雍城等政治中心，秦国都邑迁移与国家扩展是连续过程，不能回填为单一建国时点。' },
+      { label: '列侯名义与秦国形成分离', startYear: -770, endYear: -350, summary: '秦列为诸侯是传统分期与名义身份节点，秦氏经营、都邑迁移和国家整合仍跨越后续阶段；不能据此推出前770年已有帝国式直接控制。' },
     ],
     locationIds: ['xianyang'], relatedEventIds: ['zhou-eastward', 'partition-jin', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '约前770年是列为诸侯和传统分期约年，不是秦氏政治实体首次出现；秦国与前221年秦帝国必须保持节点分离。',
