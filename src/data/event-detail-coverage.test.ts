@@ -135,7 +135,7 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -202,7 +202,7 @@ describe('event detail coverage audit', () => {
       'northern-yuan-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision).toBe('year');
       expect(eventsById.get(eventId)?.verification).toBe('checked');
@@ -230,7 +230,7 @@ describe('event detail coverage audit', () => {
       'xuanwu-gate',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision).toBe('year');
       expect(eventsById.get(eventId)?.verification).toBe('checked');
@@ -293,6 +293,34 @@ describe('event detail coverage audit', () => {
       }
     }
 
-    expect(report.statusCounts).toEqual({ covered: 74, 'needs-review': 31, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+  });
+
+  it('closes the fifty-fourth batch of source-backed standalone world events without inventing links', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const batchIds = [
+      'augustus-principate',
+      'constantinople-1453',
+      'columbus-caribbean',
+      'peace-westphalia',
+      'un-founded',
+    ];
+
+    for (const eventId of batchIds) {
+      const item = report.items.find((candidate) => candidate.eventId === eventId);
+      expect(item, eventId).toMatchObject({
+        status: 'covered',
+        sourceComplete: true,
+        timePrecisionStatus: 'confirmed',
+        polityIds: [],
+        relatedEventIds: [],
+      });
+      expect(item?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(item?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(item?.participantIds.length, eventId).toBeGreaterThan(0);
+    }
+
+    expect(report.coveredEventIds).toEqual(expect.arrayContaining(batchIds));
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
   });
 });

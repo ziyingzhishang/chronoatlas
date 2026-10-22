@@ -168,8 +168,15 @@ function buildItem(
 
     if (participantIds.length === 0) needsReviewChecks.push('participants');
     if (locationIds.length === 0) needsReviewChecks.push('locations');
-    if (polityIds.length === 0) needsReviewChecks.push('polities');
-    if (relatedEventIds.length === 0) needsReviewChecks.push('relatedEvents');
+    // Precisely dated world-history records may intentionally stand alone:
+    // they can describe a city transfer, treaty, institutional change, or
+    // international organization without requiring an invented polity or
+    // arbitrary neighboring event.
+    const standaloneWorldEvent = event.region === 'world'
+      && polityIds.length === 0
+      && relatedEventIds.length === 0;
+    if (polityIds.length === 0 && !standaloneWorldEvent) needsReviewChecks.push('polities');
+    if (relatedEventIds.length === 0 && !standaloneWorldEvent) needsReviewChecks.push('relatedEvents');
 
     unresolvedReferenceIds.people = unique(participantIds.filter((id) => !knownPeople.has(id)));
     unresolvedReferenceIds.places = unique(locationIds.filter((id) => !knownPlaces.has(id)));
