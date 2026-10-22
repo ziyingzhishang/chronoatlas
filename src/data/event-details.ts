@@ -1763,9 +1763,10 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '晋国卿族分权', startYear: -500, endYear: -404, summary: '韩氏在晋国权力结构中积累军政和土地资源。' },
       { label: '周王室册命', startYear: -403, endYear: -403, summary: '周威烈王册命韩虔为诸侯，韩进入传统战国分期。' },
+      { label: '三晋并列', startYear: -403, endYear: -403, summary: '韩与赵、魏同时获得周王室诸侯名义确认，三家分晋的制度结果在编年中被固定下来。' },
       { label: '韩国整合', startYear: -403, endYear: -350, summary: '韩继续整合中原西部政治资源，国家边界和政治中心逐步稳定。' },
     ],
-    locationIds: ['xinzheng'], relatedEventIds: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    locationIds: ['xinzheng'], relatedEventIds: ['partition-jin', 'zhao-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '前403年是周王室册命和传统分期约年，不是韩氏政治实体首次出现的精确建国日；新郑是韩国后续稳定政治中心的现今地名参照，不将其后期中心提前等同于册命现场。',
   },
   {
@@ -1778,9 +1779,10 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '赵氏经营晋北', startYear: -500, endYear: -404, summary: '赵氏在晋国北部积累军政和地方资源。' },
       { label: '周王室册命', startYear: -403, endYear: -403, summary: '周威烈王册命赵籍为诸侯。' },
+      { label: '三晋并列', startYear: -403, endYear: -403, summary: '赵与韩、魏同时获得周王室诸侯名义确认，晋国旧有权力结构转为战国诸侯格局。' },
       { label: '赵国整合', startYear: -403, endYear: -350, summary: '赵继续整合北方城邑、交通线和部众关系。' },
     ],
-    locationIds: ['handan'], relatedEventIds: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    locationIds: ['handan'], relatedEventIds: ['partition-jin', 'han-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '前403年是传统分期和册命节点，不是赵国完整国家形态的精确起点；邯郸是后续重要政治中心的现今地名参照，不能前推为册命现场或当年完整疆域。',
   },
   {
@@ -1793,9 +1795,10 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '魏氏分掌晋国', startYear: -500, endYear: -404, summary: '魏氏在晋国卿族竞争中积累中原军政资源。' },
       { label: '周王室册命', startYear: -403, endYear: -403, summary: '周威烈王册命魏斯为诸侯。' },
+      { label: '三晋并列', startYear: -403, endYear: -403, summary: '魏与韩、赵同时获得周王室诸侯名义确认，晋国分权转化为并列诸侯秩序。' },
       { label: '安邑至大梁', startYear: -403, endYear: -340, summary: '魏在安邑及后来的大梁之间调整政治中心并扩展影响。' },
     ],
-    locationIds: ['anyi'], relatedEventIds: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    locationIds: ['anyi'], relatedEventIds: ['partition-jin', 'han-warring-founded-eighth-batch', 'zhao-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '前403年是传统册命约年，不是魏氏政治实体首次出现；安邑是魏早期政治中心的现今地名参照，大梁迁都及后续范围不能合并为单一建国边界。',
   },
   {
@@ -1807,9 +1810,10 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '早期楚国延续', startYear: -700, endYear: -404, summary: '楚在战国前已有长期王统和区域政治网络。' },
       { label: '战国分期入口', startYear: -403, endYear: -403, summary: '三家分晋使战国诸侯格局成为常用编年分界，楚进入本批分期。' },
+      { label: '诸侯格局重组', startYear: -403, endYear: -350, summary: '三晋获得诸侯名义确认后，楚继续在江汉、江淮网络中参与新的诸侯竞争。' },
       { label: '江汉江淮竞争', startYear: -403, endYear: -300, summary: '楚继续扩展和重组南方政治、交通与军事网络。' },
     ],
-    locationIds: ['ying'], relatedEventIds: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    locationIds: ['ying'], relatedEventIds: ['partition-jin', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '前403年只是楚的战国分期约年，不是楚国绝对建国日；郢是战国阶段重要政治中心的遗址参照，楚早期王统、迁都和疆域存在更长时段，不能压缩为册命地点。',
   },
   {
@@ -1821,9 +1825,10 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '早期燕国延续', startYear: -700, endYear: -404, summary: '燕在北方维持王统、城邑和边疆网络。' },
       { label: '战国分期入口', startYear: -403, endYear: -403, summary: '前403年作为战国格局形成的传统编年入口。' },
+      { label: '诸侯格局重组', startYear: -403, endYear: -350, summary: '三晋分立后，燕围绕蓟、燕山和辽西交通网络参与北方诸侯竞争。' },
       { label: '北方网络整合', startYear: -403, endYear: -300, summary: '燕围绕蓟、燕山和辽西交通线调整军政关系。' },
     ],
-    locationIds: ['ji'], relatedEventIds: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    locationIds: ['ji'], relatedEventIds: ['partition-jin', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '前403年是传统战国分期约年，不是燕国首次建国的精确日期；蓟是燕后续政治中心的区域性现今地名参照，古城位置存在考证口径，不能用后期辽西范围前推。',
   },
   {
@@ -1835,9 +1840,10 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '齐国早期延续', startYear: -700, endYear: -404, summary: '姜齐、田齐的政治演变早于本批分期节点。' },
       { label: '战国分期入口', startYear: -403, endYear: -403, summary: '前403年作为战国诸侯格局的传统入口。' },
+      { label: '诸侯格局重组', startYear: -403, endYear: -350, summary: '三晋分立后，齐继续依托临淄与沿海网络参与东方诸侯竞争。' },
       { label: '东方大国发展', startYear: -403, endYear: -300, summary: '齐围绕临淄和沿海网络持续整合地方资源。' },
     ],
-    locationIds: ['linzi'], relatedEventIds: ['partition-jin'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    locationIds: ['linzi'], relatedEventIds: ['partition-jin', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '前403年只是齐的战国分期约年，不是齐国绝对建国日；临淄是战国齐都的现今地名参照，姜齐、田齐和后期疆域必须分层展示。',
   },
   {

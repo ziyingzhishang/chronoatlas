@@ -459,4 +459,54 @@ describe('event detail coverage audit', () => {
       'chu-han-contention',
     ]));
   });
+
+  it('enriches the fifty-eighth batch of Warring States nodes without rewriting the traditional date', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const selectedIds = [
+      'han-warring-founded-eighth-batch',
+      'zhao-warring-founded-eighth-batch',
+      'wei-warring-founded-eighth-batch',
+      'chu-warring-founded-eighth-batch',
+      'yan-warring-founded-eighth-batch',
+      'qi-warring-founded-eighth-batch',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of selectedIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBe('approximate');
+      expect(event?.verification, eventId).toBe('partial');
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.causes.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.consequences.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(4);
+      expect(detail?.sourceIds, eventId).toEqual(expect.arrayContaining(['zizhi-tongjian', 'china-chronology']));
+      expect(detail?.relatedEventIds, eventId).toContain('partition-jin');
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('han-warring-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'partition-jin', 'zhao-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch',
+    ]);
+    expect(detailsById.get('zhao-warring-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'partition-jin', 'han-warring-founded-eighth-batch', 'wei-warring-founded-eighth-batch',
+    ]);
+    expect(detailsById.get('wei-warring-founded-eighth-batch')?.relatedEventIds).toEqual([
+      'partition-jin', 'han-warring-founded-eighth-batch', 'zhao-warring-founded-eighth-batch',
+    ]);
+    expect(detailsById.get('chu-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '诸侯格局重组', startYear: -403 }),
+    ]));
+    expect(detailsById.get('yan-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '诸侯格局重组', startYear: -403 }),
+    ]));
+    expect(detailsById.get('qi-warring-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '诸侯格局重组', startYear: -403 }),
+    ]));
+  });
 });
