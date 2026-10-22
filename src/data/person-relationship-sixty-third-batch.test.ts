@@ -53,7 +53,7 @@ describe('sixty-third batch high-confidence governance relationships', () => {
   it('reduces only the five governance gaps and leaves other categories unchanged', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(39);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(106);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(64);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
