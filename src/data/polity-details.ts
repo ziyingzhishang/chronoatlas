@@ -29,7 +29,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘秀在新末群雄竞争中取得河北及更广泛政治军事基础。', '25年即皇帝位，汉政权重新进入中央建制。', '洛阳成为正式都城，但各地整合持续多年。'],
     turningPoints: [turn(25, '东汉建立', '刘秀即位，东汉政权进入形成阶段。', 'han-eastern-founded'), turn(36, '统一完成', '光武帝时期的战争与招抚逐步恢复汉帝国秩序。'), turn(184, '黄巾起义', '地方军事化与中央权威危机加深，东汉末局势改变。')],
     principalFigureIds: ['liu-xiu', 'ban-gu', 'cao-cao'], capitalPhases: [capital('luoyang', 25, 220)],
-    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['han-eastern-founded', 'three-kingdoms'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['han-eastern-founded', 'eastern-han-moves-luoyang', 'three-kingdoms'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '25年建政不等于当年已控制汉旧地全部区域；东汉末期的政治中心、军镇与实际控制须和正式都城分层展示。',
   }),
   detail({
@@ -629,7 +629,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['1127年汴梁失守后，赵构在应天即位并重建宋室。', '宋廷经过多次迁驻，临安逐步成为主要政治中心。', '南宋在宋金对峙、海贸和江南治理中延续至1279年。'],
     turningPoints: [turn(1127, '南宋开始', '宋廷南渡，赵构重建宋室政权。', 'song-southward'), turn(1138, '临安中心形成', '临安成为南宋长期政治中心。'), turn(1279, '南宋覆亡', '元军取宋，南宋政权结束。')],
     principalFigureIds: ['zhao-gou', 'yue-fei', 'qin-hui', 'han-shizhong'], capitalPhases: [capital('linan', 1127, 1279)],
-    heritageIds: ['linan-southern-song-imperial-city-site'], eventIds: ['song-southward'], claimIds: ['claim-zhao-gou-founded-southern-song', 'claim-zhao-gou-participated-southern-song'], sourceIds: modernSources,
+    heritageIds: ['linan-southern-song-imperial-city-site'], eventIds: ['song-southward', 'song-linan-center-formed'], claimIds: ['claim-zhao-gou-founded-southern-song', 'claim-zhao-gou-participated-southern-song'], sourceIds: modernSources,
     uncertaintyNote: '1127年同时包含汴梁失守、应天即位和南渡开端；临安是随后形成的长期中心，不能把全部南渡过程压缩成一次性迁都。',
   }),
   detail({
