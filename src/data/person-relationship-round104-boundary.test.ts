@@ -9,15 +9,15 @@ import { people } from './people';
 import { sourceNotes } from './sources';
 
 const eventParticipationGaps = [
-  { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reason: '城市辅助事件没有霍去病参与字段。' },
-  { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reason: '城市辅助事件没有张骞参与字段。' },
-  { personId: 'ban-gu', eventIds: ['changan-han-capital'], reason: '城市辅助事件没有班固参与字段，且班固属于东汉后期人物。' },
-  { personId: 'li-zhi', eventIds: ['daming-palace-built'], reason: '城市营建事件没有李治参与字段，且现有来源仅支持城市建设层。' },
-  { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reason: '元宏出生于北魏建政之后，不能回填为建政参与者。' },
-  { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], reason: '拓跋焘出生于北魏建政之后，不能以继承统治关系替代参与字段。' },
-  { personId: 'yuwen-yong', eventIds: [], reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
-  { personId: 'zhao-wuling', eventIds: [], reason: '当前事件目录没有同时具备赵武灵王参与字段和来源的事件节点。' },
-  { personId: 'mongke', eventIds: ['mongol-founded'], reason: '蒙哥出生于蒙古汗国形成之后，不能把后续汗位继承阶段回填为形成事件参与。' },
+  { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reasonCode: 'missing-event-detail', reason: '城市辅助事件没有霍去病参与字段。' },
+  { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reasonCode: 'missing-event-detail', reason: '城市辅助事件没有张骞参与字段。' },
+  { personId: 'ban-gu', eventIds: ['changan-han-capital'], reasonCode: 'missing-event-detail', reason: '城市辅助事件没有班固参与字段，且班固属于东汉后期人物。' },
+  { personId: 'li-zhi', eventIds: ['daming-palace-built'], reasonCode: 'missing-event-detail', reason: '城市营建事件没有李治参与字段，且现有来源仅支持城市建设层。' },
+  { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '元宏出生于北魏建政之后，不能回填为建政参与者。' },
+  { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '拓跋焘出生于北魏建政之后，不能以继承统治关系替代参与字段。' },
+  { personId: 'yuwen-yong', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
+  { personId: 'zhao-wuling', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备赵武灵王参与字段和来源的事件节点。' },
+  { personId: 'mongke', eventIds: ['mongol-founded'], reasonCode: 'born-after-event', reason: '蒙哥出生于蒙古汗国形成之后，不能把后续汗位继承阶段回填为形成事件参与。' },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];
@@ -40,9 +40,11 @@ describe('round one hundred four person relationship boundary audit', () => {
       eventParticipationGaps.map(({ personId }) => personId),
     );
 
-    for (const { personId, eventIds, reason } of eventParticipationGaps) {
+    for (const { personId, eventIds, reasonCode, reason } of eventParticipationGaps) {
       const person = peopleById.get(personId);
       expect(person, `${personId}: person endpoint`).toBeDefined();
+      expect(person?.sourceIds.length, `${personId}: person source list`).toBeGreaterThan(0);
+      expect(person?.sourceIds.every((sourceId) => sourceIds.has(sourceId)), `${personId}: person source refs`).toBe(true);
       expect(reason.length, `${personId}: audit rationale`).toBeGreaterThan(0);
       expect(claims.some((claim) => claim.subjectId === personId && claim.predicate === 'participated-in'), `${personId}: no participation claim`).toBe(false);
 
@@ -56,12 +58,49 @@ describe('round one hundred four person relationship boundary audit', () => {
         expect(endpointSourceIds.length, `${personId}:${eventId} source list`).toBeGreaterThan(0);
         expect(endpointSourceIds.every((sourceId) => sourceIds.has(sourceId)), `${personId}:${eventId} source refs`).toBe(true);
         expect(detail?.participants.some((participant) => participant.personId === personId) ?? false, `${personId}:${eventId} participant field`).toBe(false);
+
+        if (reasonCode === 'missing-event-detail') {
+          expect(detail, `${personId}:${eventId} detail boundary`).toBeUndefined();
+        }
+        if (reasonCode === 'born-after-event') {
+          expect(person?.birthYear, `${personId}:${eventId} birth year`).toBeGreaterThan(event!.year);
+          expect(detail, `${personId}:${eventId} detail endpoint`).toBeDefined();
+          expect(detail!.sourceIds.some((sourceId) => event!.sourceIds.includes(sourceId)), `${personId}:${eventId} source intersection`).toBe(true);
+        }
       }
 
       const coverage = report.byPersonId[personId].categories.eventParticipation;
       expect(coverage.status, `${personId}: coverage status`).toBe('missing');
       expect(coverage.evidenceIds, `${personId}: evidence`).toEqual([]);
       expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
+    }
+  });
+
+  it('classifies every unresolved gap by a concrete evidence boundary', () => {
+    expect(eventParticipationGaps.map(({ personId, reasonCode }) => [personId, reasonCode])).toEqual([
+      ['huo-qubing', 'missing-event-detail'],
+      ['zhang-qian', 'missing-event-detail'],
+      ['ban-gu', 'missing-event-detail'],
+      ['li-zhi', 'missing-event-detail'],
+      ['yuan-hong', 'born-after-event'],
+      ['tuoba-tao', 'born-after-event'],
+      ['yuwen-yong', 'no-event-candidate'],
+      ['zhao-wuling', 'no-event-candidate'],
+      ['mongke', 'born-after-event'],
+    ]);
+
+    for (const { personId, eventIds, reasonCode } of eventParticipationGaps) {
+      if (reasonCode === 'no-event-candidate') {
+        expect(eventIds, `${personId}: candidate events`).toEqual([]);
+      }
+      if (reasonCode === 'missing-event-detail') {
+        expect(eventIds.length, `${personId}: candidate event count`).toBeGreaterThan(0);
+        expect(eventIds.every((eventId) => !eventDetails.some((detail) => detail.eventId === eventId)), `${personId}: missing detail classification`).toBe(true);
+      }
+      if (reasonCode === 'born-after-event') {
+        expect(eventIds.length, `${personId}: candidate event count`).toBeGreaterThan(0);
+        expect(eventIds.every((eventId) => eventDetails.some((detail) => detail.eventId === eventId)), `${personId}: temporal detail classification`).toBe(true);
+      }
     }
   });
 
