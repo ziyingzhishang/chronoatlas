@@ -85,7 +85,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['杨坚在北周末年取得中央权力。', '581年受禅建立隋朝。', '589年灭陈完成南北统一，605年后东都洛阳的地位增强。'],
     turningPoints: [turn(581, '隋建立', '杨坚受禅建立隋朝。', 'sui-founded'), turn(589, '统一南北', '隋灭陈，长期分裂结束。', 'sui-unification'), turn(605, '营建东都', '洛阳成为隋唐多中心首都体系的重要一环。')],
     principalFigureIds: ['yang-jian'], capitalPhases: [capital('changan', 581, 604), capital('luoyang', 605, 618)],
-    heritageIds: ['tang-changan-city-site', 'luoyang-sui-tang-city-site'], eventIds: ['sui-founded', 'sui-unification'], claimIds: ['claim-sui-changan-capital', 'claim-yang-jian-founded-sui'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'luoyang-sui-tang-city-site'], eventIds: ['sui-founded', 'sui-unification', 'daxing-capital'], claimIds: ['claim-sui-changan-capital', 'claim-yang-jian-founded-sui'], sourceIds: modernSources,
     uncertaintyNote: '581年建国与589年统一是不同历史节点；隋代首都体系包含长安、洛阳及工程阶段，不能只用单一都城概括。',
   }),
   detail({
