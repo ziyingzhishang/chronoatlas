@@ -38,7 +38,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 83, 'needs-review': 26, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
     reviewItems.forEach((item) => {

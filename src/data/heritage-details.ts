@@ -218,7 +218,7 @@ const details: HeritageDetail[] = [
     phase('original', '都城形成', '229年后', '孙吴以建业为都，南渡后的东晋和南朝继续在此经营建康政治空间。', 229, 589),
     phase('site', '遗址与城市层', '六朝时期', '城墙、宫城、道路和水系信息主要通过考古发现、城市地层和历史地理复原辨识。', 229, 589),
     phase('restoration', '现代展示', '当代城市考古', '现代博物馆、遗址标识和城市公共空间解释六朝都城，不重建完整台城或宫城。', 2000, undefined, '现代城市道路和纪念性设施不能直接视为六朝原建筑。'),
-  ], ['xiao-daocheng', 'chen-baxian'], ['wu_three', 'jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['eastern-jin', 'sui-unification', 'southern-qi-founded', 'southern-chen-founded'], ['城墙、台城和石头城相关遗迹', '秦淮河水系与城市空间', '考古地层和历史地理标识'], '理解六朝政治中心南移、都城制度和南京城市层累的重要节点。', '六朝建康的宫城、外郭城和各时期边界仍需按考古与文献分期，不能用现代南京边界替代。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['xiao-daocheng', 'chen-baxian', 'sun-quan'], ['wu_three', 'jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['wu-three-founded', 'eastern-jin', 'sui-unification', 'southern-qi-founded', 'southern-chen-founded'], ['城墙、台城和石头城相关遗迹', '秦淮河水系与城市空间', '考古地层和历史地理标识'], '理解六朝政治中心南移、都城制度和南京城市层累的重要节点。', '六朝建康的宫城、外郭城和各时期边界仍需按考古与文献分期，不能用现代南京边界替代。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('southern-dynasties-stone-carvings', '今南京及其周边南朝陵墓石刻分布区，单点坐标只作建康城市圈导航。', ['南朝帝陵制度与神道石刻', '建康政治中心周边的陵墓、礼仪与交通景观'], [
     phase('original', '陵墓石刻营造', '420—589年', '刘宋、南齐、梁、陈时期的陵墓神道配置石兽、碑刻等礼仪性设施。', 420, 589),
     phase('site', '分散遗存', '南朝以后', '石刻多以原地、迁移后或残存构件形式保存，分布并非一处完整陵园。', 420, 589, '不同石刻的墓主、原位置和年代需要逐件考证。'),
@@ -228,7 +228,7 @@ const details: HeritageDetail[] = [
     phase('original', '城市营建', '3世纪前后', '邺城在曹魏时期形成重要城市规划传统，后续十六国和北朝政权继续利用其政治位置。', 204, 350),
     phase('reconstruction', '多政权改造', '335—577年', '后赵、前燕、东魏和北齐时期，宫城、城垣和政治空间持续变化。', 335, 577, '不同政权的城址层、宫城范围和制度用途不能合并为一座静态古城。'),
     phase('site', '考古遗址', '20世纪以来', '城墙、宫殿区、道路和铜雀台等相关遗迹以考古调查、发掘和遗址保护形式保存。', 1900),
-  ], ['gao-huan', 'gao-yang'], ['wei_eastern', 'qi_northern', 'later_zhao', 'former_yan'], ['eastern-wei-founded', 'northern-qi-founded', 'later-zhao-founded'], ['城垣与宫城遗址', '道路和台址', '多政权叠压的考古层'], '研究北朝都城、宫城制度和河北历史地理的关键遗址。', '邺城不同阶段城址和建筑的对应关系仍需考古分期；现存台址、地面标识不等同于历史宫殿完整留存。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['gao-huan', 'gao-yang'], ['wei_eastern', 'qi_northern', 'later_zhao', 'former_yan'], ['eastern-wei-founded', 'northern-qi-founded', 'later-zhao-founded', 'later-zhao-moves-ye'], ['城垣与宫城遗址', '道路和台址', '多政权叠压的考古层'], '研究北朝都城、宫城制度和河北历史地理的关键遗址。', '邺城不同阶段城址和建筑的对应关系仍需考古分期；现存台址、地面标识不等同于历史宫殿完整留存。', ['zizhi-tongjian', 'modern-geography-reference', 'ye-city-official']),
   detail('former-shu-yongling', '今四川省成都市金牛区永陵路一带，墓室和石刻遗存位于现代城市博物馆保护范围内。', ['前蜀王建陵墓', '成都作为十国都城的宫廷、墓葬与城市记忆'], [
     phase('original', '陵墓营建', '918年前后', '王建去世后葬于永陵，墓室、石刻和随葬体系反映前蜀皇帝陵墓制度。', 918),
     phase('site', '墓室遗存', '20世纪发掘与保护', '墓室、石床、石刻和部分遗物以考古遗址与博物馆形式保存。', 900, 2000),
@@ -243,7 +243,7 @@ const details: HeritageDetail[] = [
     phase('original', '都城营建', '960年后', '北宋以开封为都，继承五代城市基础并不断扩建宫城、外城和漕运设施。', 960, 1127),
     phase('site', '城摞城遗址', '北宋城址考古层', '城墙、宫城、水系和道路遗存与后世城市层叠压，主要通过考古发掘和地下探测认识。', 960, 1127),
     phase('restoration', '现代考古展示', '当代城市保护', '现代博物馆、遗址公园和地面标识解释北宋东京，不重建完整北宋都城。', 2000, undefined, '开封现存建筑和复原景观不能直接视作北宋原建筑连续留存。'),
-  ], ['zhu-wen', 'shi-jingtang', 'liu-zhiyuan', 'guo-wei'], ['liang_later', 'jin_later', 'han_later', 'zhou_later', 'song_northern'], ['five-dynasties', 'northern-song-founded', 'song-southward'], ['城摞城地层', '宫城与外城遗迹', '河道、城门和城市考古展示'], '观察五代至北宋都城延续、城市水运和中原政治中心变迁的关键地点。', '北宋东京城的复原范围应以考古资料为依据，现代开封城不能直接替代北宋城界。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['zhu-wen', 'shi-jingtang', 'liu-zhiyuan', 'guo-wei'], ['liang_later', 'jin_later', 'han_later', 'zhou_later', 'song_northern'], ['later-liang-five-dynasties-founded', 'five-dynasties', 'northern-song-founded', 'song-southward'], ['城摞城地层', '宫城与外城遗迹', '河道、城门和城市考古展示'], '观察五代至北宋都城延续、城市水运和中原政治中心变迁的关键地点。', '北宋东京城的复原范围应以考古资料为依据，现代开封城不能直接替代北宋城界；五代后梁关联的是城市考古历史层，不代表现存可见建筑即为后梁原构。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('linan-southern-song-imperial-city-site', '今杭州市上城区凤凰山、南宋皇城遗址及临安城历史空间一带，现代城区已覆盖大量古城层。', ['南宋临安宫城、御街和城市水陆交通', '宋室南渡后的政治中心与江南城市社会'], [
     phase('original', '都城形成', '1127年后', '宋室南渡后，临安逐步形成宫城、御街、官署和市场相互连接的都城空间。', 1127, 1279),
     phase('site', '城市考古层', '南宋城址遗存', '宫城基址、道路、河道和相关遗迹以考古发现和城市历史地理研究形式保存。', 1127, 1279),
@@ -535,7 +535,7 @@ const details: HeritageDetail[] = [
     phase('original', '都城使用', '221—263年', '蜀汉以成都为都，宫城、城防和成都平原水陆交通共同支撑政权。', 221, 263),
     phase('site', '城市考古层', '三国成都历史层', '城址、道路和水系信息主要通过城市考古、文献与历史地理复原辨识。', 221, 263, '蜀汉建筑与后续成汉、前后蜀城市层不能合并。'),
     phase('restoration', '现代城市展示', '当代', '博物馆、遗址标识和历史地图解释蜀汉成都，不复建未经确认的宫城。', 2000, undefined, '现代城市建筑和展示设施不等同于蜀汉原构。'),
-  ], ['li-xiong'], ['shu_three'], ['former-shu-founded'], ['城市考古与道路水系线索', '成都平原交通空间', '三国至十国城市叠压展示'], '从今天的成都观察蜀汉都城，并与后续成汉、前蜀、后蜀城市层比较。', '李雄属于后续成汉而非蜀汉，本条人物关联仅用于成都城市连续性导航；蜀汉君臣节点应由人物批次继续补齐。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['liu-bei'], ['shu_three'], ['shu-han-founded'], ['城市考古与道路水系线索', '成都平原交通空间', '三国至十国城市叠压展示'], '从今天的成都观察蜀汉都城，并与后续成汉、前蜀、后蜀城市层比较。', '蜀汉成都宫城边界与现代城区不重合；现存城市层不能还原完整蜀汉宫城。', ['zizhi-tongjian', 'modern-geography-reference', 'shuhan-chengdu-official']),
   detail('ming-yingtian-imperial-city-site', '今南京市玄武区明故宫遗址公园及其周边，明初应天府宫城范围与现代南京城区不重合。', ['明初应天府宫城与南京政治中心', '明初宫殿、城防和明代城市制度'], [
     phase('original', '宫城营建', '1368—1421年', '朱元璋以应天府为明初都城，宫城、皇城和城市道路逐步形成。', 1368, 1421),
     phase('site', '宫城遗址', '明故宫考古层', '宫墙、宫殿基址、道路和水系遗迹以遗址公园与考古资料保存。', 1368, 1421, '明故宫后续拆改和现代城市覆盖使现存遗址不能代表完整明初宫城。'),

@@ -45,15 +45,15 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘备以汉室宗亲和军政联盟为政治资源。', '221年在成都称帝，蜀汉政权形成。', '成都兼具宫城、行政与连接蜀地交通网络的中心功能。'],
     turningPoints: [turn(221, '蜀汉建立', '刘备称帝，蜀汉进入正式建政阶段。'), turn(223, '夷陵之后', '刘备去世后，诸葛亮主持政权重建与对外战略。'), turn(263, '蜀汉灭亡', '魏军进入成都，蜀汉政权结束。')],
     principalFigureIds: ['liu-bei'], capitalPhases: [capital('chengdu', 221, 263)],
-    heritageIds: ['shu-han-chengdu-city-site'], eventIds: ['three-kingdoms', 'jin-unification'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['shu-han-chengdu-city-site'], eventIds: ['shu-han-founded', 'three-kingdoms', 'jin-unification'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '蜀汉对汉统的政治主张与实际控制范围是不同层次；成都遗产节点表达城市历史层，不等于完整蜀汉疆域。',
   }),
   detail({
     polityId: 'wu_three', perspectiveSummary: '孙吴以江东军政网络和长江防线为基础，在三国竞争中形成长期政权，建业／建康是其政治中心。',
     foundationProcess: ['孙氏承接江东地方军政资源并经营长江中下游。', '222年孙吴进入独立政权阶段，229年孙权称帝。', '建业后改名建邺，统一映射至建康地点。'],
-    turningPoints: [turn(208, '赤壁之战', '孙权与刘备联盟阻止曹操迅速南下。', 'red-cliffs'), turn(222, '孙吴形成', '江东政权进入长期独立阶段。'), turn(280, '西晋灭吴', '孙吴向晋军投降，三国鼎立结束。', 'jin-unification')],
+    turningPoints: [turn(208, '赤壁之战', '孙权与刘备联盟阻止曹操迅速南下。', 'red-cliffs'), turn(222, '孙吴形成', '江东政权进入长期独立阶段。'), turn(229, '孙吴建国完成', '孙权在建业称帝，孙吴完成正式称帝建国阶段。', 'wu-three-founded'), turn(280, '西晋灭吴', '孙吴向晋军投降，三国鼎立结束。', 'jin-unification')],
     principalFigureIds: ['sun-quan'], capitalPhases: [capital('jiankang', 222, 280)],
-    heritageIds: ['jiankang-six-dynasties-city-site'], eventIds: ['red-cliffs', 'jin-unification'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['jiankang-six-dynasties-city-site'], eventIds: ['red-cliffs', 'wu-three-founded', 'jin-unification'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '赤壁战场具体位置仍需与传统地域参照区分；建康城市遗产覆盖六朝叠压层，不能单独还原孙吴城市全貌。',
   }),
   detail({
@@ -133,7 +133,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['石勒在前赵与北方军政竞争中积累独立力量。', '319年在襄国称赵王并建立后赵政权。', '石虎时期后赵扩大对中原和河北的控制，邺成为后期主要中心。'],
     turningPoints: [turn(319, '后赵建立', '石勒在襄国称帝，后赵政权形成。', 'later-zhao-founded'), turn(335, '迁都邺', '政治中心由襄国转向邺，河北城市空间的重要性上升。'), turn(349, '石虎死后危机', '继承与军政冲突削弱后赵，政权迅速分裂。')],
     principalFigureIds: ['shi-le', 'shi-hu'], capitalPhases: [capital('xiangguo', 319, 334), capital('ye', 335, 351)],
-    heritageIds: ['ye-city-site'], eventIds: ['later-zhao-founded'], claimIds: ['claim-shi-hu-ruled-later-zhao'], sourceIds: modernSources,
+    heritageIds: ['ye-city-site'], eventIds: ['later-zhao-founded', 'later-zhao-moves-ye'], claimIds: ['claim-shi-hu-ruled-later-zhao'], sourceIds: modernSources,
     uncertaintyNote: '襄国与邺分别对应不同阶段的政治中心；邺城遗址叠压曹魏、十六国与北朝层次，不能将今日可见遗址全部归为后赵。',
   }),
   detail({
@@ -363,10 +363,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'liang_later', perspectiveSummary: '后梁由朱温在唐末藩镇竞争和禅代中建立，以开封为正式都城；其与地方政权的册封和自治关系构成五代初期政治网络。',
     foundationProcess: ['朱温在宣武军及中原战事中积累军政资源。', '907年受唐禅建立后梁，五代中原王朝由此开始。', '开封成为正式都城，但后梁对各地的控制须与地方政权实际自治分层理解。'],
-    turningPoints: [turn(907, '后梁建立', '朱温受唐禅建立后梁，五代分期进入新阶段。', 'later-liang-founded'), turn(909, '中原秩序重组', '后梁通过册封、战争和节度使体系维持中原政治。'), turn(923, '后梁覆亡', '后唐军队攻入开封，后梁政权结束。')],
+    turningPoints: [turn(907, '后梁建立', '朱温受唐禅建立后梁，五代分期进入新阶段。', 'later-liang-five-dynasties-founded'), turn(909, '中原秩序重组', '后梁通过册封、战争和节度使体系维持中原政治。'), turn(923, '后梁覆亡', '后唐军队攻入开封，后梁政权结束。')],
     principalFigureIds: ['zhu-wen'], capitalPhases: [capital('kaifeng', 907, 923, 'primary', 'formal', '后梁正式都城，今河南省开封市。')],
-    heritageIds: [], eventIds: ['later-liang-founded'], claimIds: [], sourceIds: modernSources,
-    uncertaintyNote: '现有遗产目录没有可安全归属后梁专属的遗存节点；开封城市考古层与后梁具体建筑对应仍需单独核验，不以北宋遗址替代。',
+    heritageIds: [], eventIds: ['later-liang-five-dynasties-founded'], claimIds: [], sourceIds: modernSources,
+    uncertaintyNote: '现有遗产目录没有可安全归属后梁专属的遗存节点；开封城市考古层可从城市视角进入，但不把北宋东京城遗址直接归为后梁原构；后梁建政事件与十六国后凉事件严格分开。',
   }),
   detail({
     polityId: 'tang_later', perspectiveSummary: '后唐由李存勖承接河东军政力量并灭后梁建立，洛阳为正式都城；沙陀军事集团、中原王朝制度与地方藩镇共同塑造其政权结构。',

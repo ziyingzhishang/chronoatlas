@@ -382,6 +382,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '304年节点是称王与政权形成，不等同于后续称帝、改赵或控制长安；左国城的现代精确地点本批未独立核验。',
   },
   {
+    eventId: 'later-zhao-moves-ye',
+    participants: [
+      { personId: 'shi-hu', role: '迁都邺城并经营后赵后期政治中心的统治者', note: '石虎对应335年迁都邺的关键决策阶段；后赵宫城营建、对外扩张和政权危机属于后续阶段。' },
+    ],
+    polityIds: ['later_zhao'],
+    causes: ['后赵由襄国早期中心向河北、中原更大政治空间扩展。', '邺城具有既有城址、交通与宫城资源，适合承接后赵后期政治中心。'],
+    consequences: ['后赵首都阶段由襄国转为邺，邺城成为后赵后期的主要政治中心。', '邺城随后被前燕、东魏和北齐沿用，形成跨政权城市与遗址叠压。'],
+    phases: [
+      { label: '襄国早期中心', startYear: 319, endYear: 334, summary: '后赵建立后以襄国为早期政治中心。' },
+      { label: '迁都邺城', startYear: 335, endYear: 335, summary: '石虎迁都邺，后赵政治中心完成阶段性转移。' },
+      { label: '邺城经营', startYear: 335, endYear: 351, summary: '邺承担后赵后期宫城、官署和河北—中原政治网络的中心功能。' },
+    ],
+    locationIds: ['xiangguo', 'ye'],
+    relatedEventIds: ['later-zhao-founded', 'former-yan-founded', 'eastern-wei-founded', 'northern-qi-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'ye-city-official'],
+    uncertaintyNote: '335年作为石虎迁都邺的编年节点；邺城遗址包含曹魏、后赵、前燕、东魏、北齐等不同层次，不能将今日遗址全部归入后赵。',
+  },
+  {
     eventId: 'later-zhao-founded',
     participants: [
       { personId: 'shi-le', role: '整合北方军政力量并在襄国建立后赵的君主', note: '石勒是319年襄国建赵的核心人物；其早期依附、独立建政与后来灭前赵应按阶段区分。' },
@@ -712,6 +730,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '赤壁古战场的现代具体位置仍有讨论；“三方”是后见之明的历史分期表达，不表示208年魏、蜀、吴已经分别完成正式建国。',
   },
   {
+    eventId: 'shu-han-founded',
+    participants: [
+      { personId: 'liu-bei', role: '在成都称帝并建立蜀汉的君主', note: '刘备对应221年成都称帝和国号汉节点；入蜀、汉中争夺及后续夷陵战争分属前后阶段。' },
+    ],
+    polityIds: ['shu_three'],
+    causes: ['刘备在益州形成相对稳定的军政基础。', '曹魏代汉后，刘备以汉室延续的政治主张在成都完成正式建政。'],
+    consequences: ['蜀汉政权正式形成，成都成为其都城。', '三国鼎立格局进一步明确，但蜀汉后续控制和内部治理仍经历持续变化。'],
+    phases: [
+      { label: '益州政治基础', startYear: 214, endYear: 220, summary: '刘备取得成都并经营益州，为后续建政提供城市与军政基础。' },
+      { label: '成都称帝建汉', startYear: 221, endYear: 221, summary: '刘备在成都称帝，国号汉，后世称蜀汉。' },
+      { label: '蜀汉都城阶段', startYear: 221, endYear: 263, summary: '成都承担蜀汉宫城、行政与西南交通中心功能。' },
+    ],
+    locationIds: ['chengdu'],
+    relatedEventIds: ['three-kingdoms', 'jin-unification'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'shuhan-chengdu-official'],
+    uncertaintyNote: '221年是成都称帝与蜀汉建政节点，不把后期控制范围倒推为建政当年疆域；成都古城边界与现代成都市区也需分层。',
+  },
+  {
     eventId: 'three-kingdoms',
     participants: [
       { personId: 'cao-cao', role: '曹魏政权形成前的北方军政基础奠定者', note: '曹操于220年前去世，未作为220年受禅即位者；此处记录其在曹魏形成链条中的前置作用。' },
@@ -730,6 +766,24 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['red-cliffs', 'jin-unification'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '曹魏代汉、蜀汉称帝与孙吴独立建国的具体制度节点不同；地点关联表示政权中心，不等同于220—222年各方完整直接控制范围。',
+  },
+  {
+    eventId: 'wu-three-founded',
+    participants: [
+      { personId: 'sun-quan', role: '在建业称帝、完成孙吴正式建国阶段的君主', note: '孙权于229年在建业即皇帝位；222年独立阶段与229年称帝是连续但不同的节点。' },
+    ],
+    polityIds: ['wu_three'],
+    causes: ['孙氏已在江东形成长期军政基础。', '222年孙吴进入相对独立阶段，至229年需要以称帝和国号完成制度化表达。'],
+    consequences: ['孙吴完成正式称帝建国阶段。', '建业成为江东政权的帝国政治中心，今南京城市历史层由此获得明确的三国时代建政入口。'],
+    phases: [
+      { label: '江东独立阶段', startYear: 222, endYear: 228, summary: '孙权在江东维持相对独立的政权结构，建业继续承担政治中心功能。' },
+      { label: '建业称帝', startYear: 229, endYear: 229, summary: '孙权在建业即皇帝位，国号吴，孙吴正式建国阶段完成。' },
+      { label: '建业城市承接', startYear: 229, endYear: 280, summary: '建业作为孙吴都城持续运作，后世改名建邺，项目统一映射至建康／今南京。' },
+    ],
+    locationIds: ['jiankang'],
+    relatedEventIds: ['three-kingdoms', 'jin-unification'],
+    sourceIds: ['zizhi-tongjian', 'capital-history-reference'],
+    uncertaintyNote: '222年独立、229年称帝和280年亡国是不同节点；建业与建康是历史地名的连续映射，不以今南京市行政边界替代孙吴都城范围。',
   },
   {
     eventId: 'jin-unification',
@@ -1152,6 +1206,24 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['tang-founded'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '武周是国号与统治结构变化，不据此推导疆域突然变化，也不把705年复唐并入690年事件。',
+  },
+  {
+    eventId: 'later-liang-five-dynasties-founded',
+    participants: [
+      { personId: 'zhu-wen', role: '在开封受唐禅建立五代后梁的君主', note: '朱温对应907年受禅建梁与开封政治中心承接；后梁对各地的实际控制仍需按政权和藩镇阶段分层。' },
+    ],
+    polityIds: ['liang_later'],
+    causes: ['朱温在宣武军及中原军政竞争中取得优势。', '唐廷权力衰落与禅代安排为后梁建立提供制度节点。'],
+    consequences: ['后梁成为五代第一个中原王朝。', '开封承接五代后梁至北宋的连续城市政治中心，但城市遗址仍需按朝代和考古层位区分。'],
+    phases: [
+      { label: '宣武军与中原整合', startYear: 902, endYear: 906, summary: '朱温在汴州及中原军政网络中扩大影响，形成受禅前的政治基础。' },
+      { label: '开封受禅建梁', startYear: 907, endYear: 907, summary: '朱温受唐哀帝禅位建立后梁，开封成为后梁正式都城。' },
+      { label: '五代城市承接', startYear: 907, endYear: 923, summary: '后梁以开封为中心维持中原政权，与地方政权并立；后唐攻入开封后后梁结束。' },
+    ],
+    locationIds: ['kaifeng'],
+    relatedEventIds: ['five-dynasties', 'tang-later-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '五代后梁（907—923）与十六国后凉（386—403）使用不同事件 ID；开封遗产条目表达多朝叠压城市考古入口，不把现存北宋遗址直接归为后梁原构。',
   },
   {
     eventId: 'tang-later-founded',
