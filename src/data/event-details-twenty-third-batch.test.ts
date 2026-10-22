@@ -7,7 +7,7 @@ import { polities } from './polities';
 import { sourceNotes } from './sources';
 
 const targetLocations = {
-  'western-liang-state-founded': ['dunhuang', 'jiuquan'],
+  'western-liang-state-founded': ['dunhuang', 'jiuquan', 'liangzhou'],
   'western-liao-founded': ['balasagun'],
   'dali-founded': ['dali_city'],
   'song-southward': ['kaifeng', 'yingtian', 'linan'],

@@ -249,7 +249,9 @@ describe('event detail coverage audit', () => {
     const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
 
     expect(detailsById.get('zhou-conquest')?.polityIds).toEqual(['shang', 'zhou_western']);
-    expect(detailsById.get('cheng-han-founded')?.relatedEventIds).toEqual(['eastern-jin']);
+    expect(detailsById.get('cheng-han-founded')?.relatedEventIds).toEqual([
+      'eastern-jin', 'former-zhao-founded',
+    ]);
     expect(detailsById.get('former-yan-founded')?.relatedEventIds).toEqual([
       'later-yan-founded',
       'northern-yan-founded',
@@ -551,6 +553,58 @@ describe('event detail coverage audit', () => {
     ]);
     expect(detailsById.get('qin-state-founded-eighth-batch')?.relatedEventIds).toEqual([
       'zhou-eastward', 'partition-jin', 'qin-unification',
+    ]);
+  });
+
+  it('enriches the sixtieth batch of high-evidence regional formation nodes without upgrading date precision', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const selectedIds = [
+      'western-liang-state-founded',
+      'former-liang-founded',
+      'cheng-han-founded',
+      'goguryeo-founded',
+      'silla-founded',
+      'tibetan-founded',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of selectedIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBe('approximate');
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.causes.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.consequences.length, eventId).toBeGreaterThanOrEqual(2);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(4);
+      expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('western-liang-state-founded')?.locationIds).toEqual([
+      'dunhuang', 'jiuquan', 'liangzhou',
+    ]);
+    expect(detailsById.get('western-liang-state-founded')?.relatedEventIds).toEqual([
+      'former-liang-founded', 'later-liang-founded', 'northern-liang-founded',
+    ]);
+    expect(detailsById.get('former-liang-founded')?.relatedEventIds).toEqual(expect.arrayContaining([
+      'western-liang-state-founded',
+    ]));
+    expect(detailsById.get('cheng-han-founded')?.relatedEventIds).toEqual(expect.arrayContaining([
+      'former-zhao-founded',
+    ]));
+    expect(detailsById.get('goguryeo-founded')?.locationIds).toEqual([
+      'wunvshan', 'guonei',
+    ]);
+    expect(detailsById.get('silla-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '金城王统承接', startYear: 4 }),
+    ]));
+    expect(detailsById.get('tibetan-founded')?.locationIds).toEqual([
+      'yalong', 'luosie',
     ]);
   });
 });

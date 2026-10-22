@@ -9,11 +9,11 @@ import { sourceNotes } from './sources';
 
 const targetLocations = {
   'nanzhao-founded': ['taihe'],
-  'goguryeo-founded': ['wunvshan'],
+  'goguryeo-founded': ['wunvshan', 'guonei'],
   'silla-founded': ['jincheng_silla'],
   'tuyuhun-founded': ['tuyuhun_core'],
   'turkic-founded': ['uhtuken'],
-  'tibetan-founded': ['yalong'],
+  'tibetan-founded': ['yalong', 'luosie'],
   'western-qin-founded': ['jincheng'],
   'northern-yan-founded': ['longcheng'],
   'southern-yan-founded': ['guanggu'],
