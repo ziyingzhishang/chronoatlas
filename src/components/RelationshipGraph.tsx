@@ -6,7 +6,7 @@ import { sourceNotes } from '../data/sources';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
 
-export type RelationshipGraphCategory = 'governance' | 'kinship' | 'allianceConflict' | 'eventParticipation' | 'heritage';
+export type RelationshipGraphCategory = 'governance' | 'kinship' | 'allianceConflict' | 'eventParticipation' | 'heritage' | 'context';
 
 interface GraphNode {
   id: string;
@@ -27,17 +27,18 @@ const categoryForPredicate: Record<string, RelationshipGraphCategory> = {
   'parent-of': 'kinship', 'child-of': 'kinship', 'grandparent-of': 'kinship', 'grandchild-of': 'kinship', 'sibling-of': 'kinship', 'spouse-of': 'kinship',
   'ally-of': 'allianceConflict', 'enemy-of': 'allianceConflict',
   'participated-in': 'eventParticipation',
+  'related-to': 'context',
   'left-heritage': 'heritage', commissioned: 'heritage',
 };
 
 const predicateLabels: Record<string, string> = {
   founded: '建立', ruled: '统治', served: '任职／效力', appointed: '任用', succeeded: '承接',
   'parent-of': '亲属：父母', 'child-of': '亲属：子女', 'grandparent-of': '亲属：祖父母', 'grandchild-of': '亲属：孙辈', 'sibling-of': '亲属：兄弟姐妹', 'spouse-of': '亲属：配偶',
-  'ally-of': '联盟', 'enemy-of': '对立', 'participated-in': '参与事件', commissioned: '营建', 'left-heritage': '遗留',
+  'ally-of': '联盟', 'enemy-of': '对立', 'participated-in': '参与事件', 'related-to': '历史关联', commissioned: '营建', 'left-heritage': '遗留',
 };
 
 const categoryLabels: Record<RelationshipGraphCategory, string> = {
-  governance: '治理／君臣', kinship: '亲属', allianceConflict: '联盟与对立', eventParticipation: '事件参与', heritage: '遗产关联',
+  governance: '治理／君臣', kinship: '亲属', allianceConflict: '联盟与对立', eventParticipation: '事件参与', heritage: '遗产关联', context: '历史关联',
 };
 
 const datePrecisionLabels: Record<HistoricalClaim['datePrecision'], string> = {

@@ -42,6 +42,23 @@ describe('RelationshipGraph', () => {
     expect(screen.getByRole('button', { name: /李世民 · 联盟与对立 · 联盟 · 方向：李世民 → 李渊 · 618—626年 · 时间精度：约年 · 来源：待解析/ })).toBeInTheDocument();
   });
 
+  it('shows generic historical associations in a separate graph category', () => {
+    const bundle = getChanganStudyBundle();
+    const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
+    const graphView = {
+      ...view!,
+      claims: [...view!.claims, {
+        id: 'fixture-historical-association', subjectId: 'li-shimin', predicate: 'related-to', objectId: 'li-yuan',
+        validFrom: 618, validTo: 626, datePrecision: 'range' as const, perspective: 'person' as const,
+        evidenceType: 'cross-checked' as const, confidence: 'medium' as const, sourceIds: ['zizhi-tongjian'],
+      }],
+    };
+    render(<RelationshipGraph view={graphView} />);
+
+    expect(screen.getByRole('heading', { name: '历史关联' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 历史关联 · 历史关联 · 方向：李世民 → 李渊 · 618—626年/ })).toBeInTheDocument();
+  });
+
   it('opens a person entity from a focusable SVG node', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
