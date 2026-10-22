@@ -93,6 +93,13 @@ describe('heritage detail coverage audit', () => {
       ['xuanzang-translations'],
       ['xuanzang-translations'],
     ]);
+    expect(reviewItems.map((item) => item.reviewNotes)).toEqual([
+      ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
+      ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
+      ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
+      ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
+      ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
+    ]);
   });
 
   it('marks a fully sourced and resolvable detail as complete', () => {

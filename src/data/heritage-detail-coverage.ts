@@ -42,6 +42,7 @@ export interface HeritageDetailCoverageItem {
   sourceIds: string[];
   unknownSourceIds: string[];
   sourceComplete: boolean;
+  reviewNotes: string[];
 }
 
 export interface HeritageDetailCoverageReport {
@@ -84,6 +85,7 @@ function buildItem(
 ): HeritageDetailCoverageItem {
   const missingFields: string[] = [];
   const unresolved = unresolvedReferences();
+  const reviewNotes: string[] = [];
   const detailPresent = Boolean(detail);
   const sourceIds = unique([
     ...asset.sourceIds,
@@ -137,6 +139,22 @@ function buildItem(
     unresolved.sources = unique(unknownSourceIds);
   }
 
+  if (unresolved.events.length > 0) {
+    reviewNotes.push(`关联事件端点未收录：${unresolved.events.join('、')}；暂不新增或推断事件端点。`);
+  }
+  if (unresolved.people.length > 0) {
+    reviewNotes.push(`关联人物端点未收录：${unresolved.people.join('、')}；暂不新增或推断人物端点。`);
+  }
+  if (unresolved.polities.length > 0) {
+    reviewNotes.push(`关联政权端点未收录：${unresolved.polities.join('、')}；暂不新增或推断政权端点。`);
+  }
+  if (unresolved.place.length > 0) {
+    reviewNotes.push(`遗产所在地点未收录：${unresolved.place.join('、')}；暂不新增或推断地点端点。`);
+  }
+  if (unresolved.sources.length > 0) {
+    reviewNotes.push(`来源端点未收录：${unresolved.sources.join('、')}；暂不新增或推断来源。`);
+  }
+
   const hasUnresolvedReferences = Object.values(unresolved).some((ids) => ids.length > 0);
   const hasReviewSignals = hasUnresolvedReferences || unknownSourceIds.length > 0;
   const status: HeritageDetailStatus = !detail || missingFields.length > 0
@@ -155,6 +173,7 @@ function buildItem(
     sourceIds,
     unknownSourceIds,
     sourceComplete: sourceIds.length > 0 && unknownSourceIds.length === 0,
+    reviewNotes,
   };
 }
 
