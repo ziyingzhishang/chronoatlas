@@ -111,10 +111,10 @@ describe('thirty-seventh-batch polity detail integrity', () => {
     });
   });
 
-  it('does not invent heritage coverage for four polities without a defensible dedicated asset', () => {
+  it('keeps only the source-backed shared Kaifeng layer for the two audited polities', () => {
     expect(getPolityDetail('liang_later')!.heritageIds).toEqual([]);
-    expect(getPolityDetail('jin_later')!.heritageIds).toEqual([]);
-    expect(getPolityDetail('han_later')!.heritageIds).toEqual([]);
+    expect(getPolityDetail('jin_later')!.heritageIds).toEqual(['kaifeng-later-jin-han-city-layer']);
+    expect(getPolityDetail('han_later')!.heritageIds).toEqual(['kaifeng-later-jin-han-city-layer']);
     expect(getPolityDetail('zhou_later')!.heritageIds).toEqual([]);
   });
 });
