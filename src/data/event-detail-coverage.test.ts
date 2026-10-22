@@ -657,4 +657,50 @@ describe('event detail coverage audit', () => {
       expect.objectContaining({ label: '邯郸政治中心承接' }),
     ]));
   });
+
+  it('enriches the sixty-second batch with source-backed phase and network anchors without upgrading approximate dates', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'zhou-conquest',
+      'western-zhou-founded-eighth-batch',
+      'eastern-zhou-founded-eighth-batch',
+      'qin-state-founded-eighth-batch',
+      'former-liang-founded',
+      'tuyuhun-founded',
+    ];
+
+    for (const eventId of batchIds) {
+      const event = eventsById.get(eventId);
+      const detail = detailsById.get(eventId);
+      expect(event?.datePrecision, eventId).toBe('approximate');
+      expect(detail?.participants.length, eventId).toBeGreaterThan(0);
+      expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(0);
+      expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(5);
+      expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('zhou-conquest')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '丰镐王畿承接' }),
+    ]));
+    expect(detailsById.get('western-zhou-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '丰镐—洛邑秩序展开' }),
+    ]));
+    expect(detailsById.get('eastern-zhou-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '洛邑王畿承接' }),
+    ]));
+    expect(detailsById.get('qin-state-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '雍城阶段承接' }),
+    ]));
+    expect(detailsById.get('former-liang-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '姑臧—酒泉走廊治理' }),
+    ]));
+    expect(detailsById.get('tuyuhun-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '伏俟城后期参照' }),
+    ]));
+  });
 });
