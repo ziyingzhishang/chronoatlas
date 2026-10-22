@@ -320,6 +320,7 @@ const details: HistoricalEventDetail[] = [
       { label: '凉州割据条件形成', startYear: 311, endYear: 313, summary: '中原动乱使凉州与晋中央的联系减弱。' },
       { label: '张氏政权延续', startYear: 314, endYear: 314, summary: '张氏在河西以晋臣名义维持相对独立的军政秩序。' },
       { label: '河西交通与军镇整合', startYear: 314, endYear: 320, summary: '姑臧、酒泉等河西节点承担军镇、粮运和丝路交通功能，张氏政权的实际控制随地方关系变化。' },
+      { label: '河西交通承接', startYear: 320, endYear: 323, summary: '前凉延续姑臧—酒泉走廊的军镇与交通网络，并在西晋旧秩序衰退后承接河西对关中、西域的中介功能；不将交通影响等同于固定疆界。' },
       { label: '河西整合', startYear: 314, endYear: 320, summary: '姑臧等地成为河西政权的治理中心。' },
       { label: '西凉分化前的河西秩序', startYear: 320, endYear: 323, summary: '张氏河西政权与周边凉州力量的关系继续变化，为后续西凉等政权的分化提供历史背景。' },
       { label: '姑臧—酒泉走廊治理', startYear: 314, endYear: 323, summary: '姑臧、酒泉等节点共同维系河西军镇、粮运与交通，前凉政治中心不能简化为单一城市孤立运作。' },
@@ -376,6 +377,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '巴蜀军政形成', startYear: 303, endYear: 304, summary: '李氏势力在巴蜀战争中取得独立组织条件。' },
       { label: '成汉形成', startYear: 304, endYear: 304, summary: '李雄在成都一带建立相对独立的政权。' },
+      { label: '成都称帝阶段', startYear: 306, endYear: 306, summary: '李雄在成都称帝，政权从区域性军政集团转入更明确的王朝制度阶段；称帝不意味着当年已完成巴蜀全域整合。' },
       { label: '称帝与整合', startYear: 306, endYear: 310, summary: '李雄称帝后继续整合巴蜀州郡。' },
       { label: '成都与巴蜀通道整合', startYear: 306, endYear: 310, summary: '成都作为区域政治中心，连接蜀地州郡、关中方向和长江上游交通；政权控制仍随战事和地方势力变化。' },
       { label: '十六国格局中的巴蜀', startYear: 310, endYear: 320, summary: '成汉与北方十六国政权并立，巴蜀通过关中和汉水方向交通参与区域政治竞争。' },
@@ -621,6 +623,7 @@ const details: HistoricalEventDetail[] = [
     consequences: ['多方分封与战争逐渐转为汉主导的政治秩序。', '汉初仍保留诸侯王，胜利不等于地方权力立即完全统一。'],
     phases: [
       { label: '秦亡与分封', startYear: -206, endYear: -206, summary: '项羽分封诸王，刘邦受封汉王。' },
+      { label: '鸿门宴与分封秩序', startYear: -206, endYear: -206, summary: '关中归属与诸侯分封在鸿门会见及其后的安排中被重新确认，秦亡后的政治竞争由军事胜负转向名分与封地秩序。' },
       { label: '汉王入关', startYear: -206, endYear: -206, summary: '刘邦进入关中并接受分封安排，秦亡后的关中秩序成为楚汉竞争的起点。' },
       { label: '楚汉战争', startYear: -205, endYear: -203, summary: '楚、汉围绕关中、河南和淮北等地持续交战。' },
       { label: '楚败汉兴', startYear: -202, endYear: -202, summary: '项羽败亡，刘邦取得建立汉帝国的政治条件。' },
@@ -716,6 +719,7 @@ const details: HistoricalEventDetail[] = [
       { label: '北方旧都失守', startYear: 316, endYear: 316, summary: '长安失守与西晋中央崩溃，使江东重建晋室成为新的政治路径。' },
       { label: '即晋王位', startYear: 317, endYear: 317, summary: '司马睿在建康即晋王位并设置百官。' },
       { label: '即皇帝位', startYear: 318, endYear: 318, summary: '司马睿得知愍帝死讯后即皇帝位。' },
+      { label: '建康制度化', startYear: 317, endYear: 329, summary: '建康承接晋室名义、百官体系与江南军政资源，成为东晋长期政治中心；北方旧晋空间则由多个政权分割重组。' },
       { label: '南北政权竞争', startYear: 319, endYear: 329, summary: '东晋在建康延续晋室名义，北方则由多个十六国政权争夺旧西晋政治空间。' },
     ],
     locationIds: ['luoyang', 'jiankang'],
@@ -770,6 +774,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '范阳起兵', startYear: 755, endYear: 755, summary: '安禄山从范阳起兵并攻取洛阳。' },
       { label: '长安危机', startYear: 756, endYear: 756, summary: '叛军推进关中，唐玄宗离开长安；唐廷在肃宗时期转移政治重心并组织反攻。' },
+      { label: '灵武即位与反攻组织', startYear: 756, endYear: 757, summary: '肃宗在灵武即位并承接唐廷政治与军事资源，组织对叛军的反攻；灵武是阶段性政治与军事中心，不等于唐廷永久迁都。' },
       { label: '长期战争', startYear: 756, endYear: 762, summary: '战争在北方、洛阳与关中等地反复，唐廷经历重大危机。' },
       { label: '主要叛乱结束', startYear: 763, endYear: 763, summary: '史朝义败亡，主要叛乱结束，但藩镇影响仍在。' },
       { label: '战后藩镇延续', startYear: 763, endYear: 780, summary: '河北部分降将继续保有地方军政资源，唐廷的名义恢复与实际控制之间形成长期张力。' },
@@ -1757,6 +1762,7 @@ const details: HistoricalEventDetail[] = [
     phases: [
       { label: '草原权力竞争', startYear: -221, endYear: -210, summary: '秦汉之际草原部众和单于继承秩序发生变化。' },
       { label: '匈奴联盟政权建立', startYear: -209, endYear: -209, summary: '冒顿单于整合主要部众，匈奴进入强盛形成阶段。' },
+      { label: '单于庭移动政治中心', startYear: -209, endYear: -198, summary: '冒顿时期的权力中心依托草原部众、牧地和交通网络流动组织；单于庭是区域性政治中心参照，不应被当作已确定的固定首都。' },
       { label: '楚汉之际的草原重组', startYear: -206, endYear: -202, summary: '楚汉战争期间，中原秩序重组与北方草原联盟并行发展；匈奴的部众整合不能简化为单一城市建国。' },
       { label: '北方扩展', startYear: -209, endYear: -200, summary: '匈奴扩大对草原交通网络和相关部众的影响，范围随时期变化。' },
       { label: '汉匈边疆秩序重组', startYear: -200, endYear: -198, summary: '白登之围及其后和亲、边疆交涉，使匈奴与汉之间形成新的阶段性关系。' },

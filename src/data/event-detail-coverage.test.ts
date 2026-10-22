@@ -54,6 +54,57 @@ const fixtureCatalog: KnowledgeCoverageCatalog = {
 };
 
 describe('event detail coverage audit', () => {
+  it('enriches the sixty-third batch without upgrading uncertain time precision', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const batchIds = [
+      'an-lushan-rebellion',
+      'chu-han-contention',
+      'eastern-jin',
+      'cheng-han-founded',
+      'former-liang-founded',
+      'xiongnu-founded',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    for (const eventId of batchIds) {
+      const event = eventsById.get(eventId)!;
+      const detail = detailsById.get(eventId)!;
+      expect(report.needsReviewEventIds).toContain(eventId);
+      expect(detail.phases?.length ?? 0).toBeGreaterThanOrEqual(4);
+      expect(detail.participants.length).toBeGreaterThan(0);
+      expect(detail.locationIds.length).toBeGreaterThan(0);
+      expect(detail.polityIds.length).toBeGreaterThan(0);
+      expect(detail.relatedEventIds.length).toBeGreaterThan(0);
+      expect(detail.sourceIds.length).toBeGreaterThan(0);
+      expect(report.items.find((item) => item.eventId === eventId)?.sourceComplete).toBe(true);
+      expect(report.items.find((item) => item.eventId === eventId)?.unresolvedReferenceIds).toEqual({
+        people: [], places: [], polities: [], relatedEvents: [], sources: [],
+      });
+      expect(event.datePrecision).toBe(['an-lushan-rebellion', 'chu-han-contention', 'eastern-jin'].includes(eventId) ? 'range' : 'approximate');
+    }
+
+    expect(detailsById.get('an-lushan-rebellion')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '灵武即位与反攻组织', startYear: 756 }),
+    ]));
+    expect(detailsById.get('chu-han-contention')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '鸿门宴与分封秩序', startYear: -206 }),
+    ]));
+    expect(detailsById.get('eastern-jin')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '建康制度化', startYear: 317 }),
+    ]));
+    expect(detailsById.get('cheng-han-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '成都称帝阶段', startYear: 306 }),
+    ]));
+    expect(detailsById.get('former-liang-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '河西交通承接', startYear: 320 }),
+    ]));
+    expect(detailsById.get('xiongnu-founded')?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '单于庭移动政治中心', startYear: -209 }),
+    ]));
+  });
+
   it('audits every event independently of knowledge coverage task counts', () => {
     const report = buildEventDetailCoverageReport({ catalog: {
       ...baseCatalog,
