@@ -53,7 +53,7 @@ describe('fifty-third batch high-confidence person relationships', () => {
     expect(report.byPersonId['sima-yan'].requiredMissingCategoryKeys).not.toContain('governance');
     expect(report.requiredMissingByCategory.governance).toHaveLength(41);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(108);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(100);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
   });
 });
