@@ -93,7 +93,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['李渊控制长安并承接隋末政治资源。', '618年受禅建立唐朝。', '唐初仍经历地方战争与制度整合，后形成长安—洛阳双中心。'],
     turningPoints: [turn(618, '唐建立', '李渊在长安即位建唐。', 'tang-founded'), turn(626, '玄武门之变', '皇位继承与中央权力重新排列。'), turn(755, '安史之乱', '长安、洛阳与中央—地方关系受到重大冲击。', 'an-lushan-rebellion')],
     principalFigureIds: ['li-yuan', 'li-shimin', 'li-longji', 'wu-zhao', 'xuan-zang'], capitalPhases: [capital('changan', 618, 907), capital('luoyang', 618, 907, 'secondary', 'formal', '东都与阶段性政治中心')],
-    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'luoyang-sui-tang-city-site'], eventIds: ['tang-founded', 'an-lushan-rebellion'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'luoyang-sui-tang-city-site'], eventIds: ['tang-founded', 'xuanwu-gate', 'an-lushan-rebellion'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
     uncertaintyNote: '双都制度、行幸与战乱中的临时中心不能混写为正式迁都；遗产节点展示城市和建筑层，不直接证明帝国疆域。',
   }),
   detail({
@@ -116,7 +116,7 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'qing', perspectiveSummary: '清先在关外以盛京为中心完成国号与制度转换，1644年入关后转移到北京，形成新的全国性统治阶段。',
     foundationProcess: ['后金时期的军政体系和关外都城为清建立提供基础。', '1636年皇太极改国号为清。', '1644年入关并迁入北京，关内统治与关外阶段应分层叙述。'],
     turningPoints: [turn(1636, '清建立', '皇太极改国号为清。', 'qing-founded'), turn(1644, '清入关', '清廷政治中心由盛京转向北京。', 'qing-enters-pass'), turn(1683, '台湾纳入清统治', '清的全国性统治进一步扩展，但具体边疆控制仍须按阶段核验。')],
-    principalFigureIds: ['nurhaci', 'dorgon'], capitalPhases: [capital('shengjing', 1636, 1644), capital('beijing', 1644, 1912)],
+    principalFigureIds: ['nurhaci', 'hongtaiji', 'dorgon'], capitalPhases: [capital('shengjing', 1636, 1644), capital('beijing', 1644, 1912)],
     heritageIds: ['qing-shengjing-palace-city-site'], eventIds: ['qing-founded', 'qing-enters-pass'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '1636年改国号不等于已控制明朝全境；入关、迁京与后续各地归属是不同阶段，盛京遗产也需与后金赫图阿拉分开。',
   }),
