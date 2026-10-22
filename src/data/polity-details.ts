@@ -77,7 +77,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['前秦崩解后拓跋部重新聚合。', '386年拓跋珪复代并改国号为魏。', '平城与洛阳分别代表早期和后期首都阶段。'],
     turningPoints: [turn(386, '北魏建立', '北魏政权进入形成阶段。', 'northern-wei-founded'), turn(439, '统一北方', '北魏成为北方主要统一政权。'), turn(494, '迁都洛阳', '孝文帝迁都与改革改变国家制度与文化空间。')],
     principalFigureIds: ['tuoba-gui', 'tuoba-tao', 'yuan-hong'], capitalPhases: [capital('pingcheng', 386, 494), capital('luoyang', 495, 534)],
-    heritageIds: ['luoyang-han-wei-city-site', 'yungang-grottoes'], eventIds: ['northern-wei-founded'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei'], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site', 'yungang-grottoes', 'yongning-temple-pagoda-site'], eventIds: ['northern-wei-founded'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei'], sourceIds: modernSources,
     uncertaintyNote: '北魏疆域变化很大，首都迁移不等于控制范围同步变化；平城、洛阳的遗存与政治阶段需要分开说明。',
   }),
   detail({
