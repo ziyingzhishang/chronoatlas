@@ -870,7 +870,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一·周纪一', url: 'https://ctext.org/wiki.pl?chapter=648120&if=gb', detail: '用于战国分期入口和诸侯格局；楚的早期历史远早于前403年，故采用传统分期约年。' }],
   },
   {
-    id: 'yan-warring-founded-eighth-batch', year: -403, title: '燕政权建立（传统分期）', summary: '燕作为先秦长期王国，在战国编年中进入与诸侯并列的阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    id: 'yan-warring-founded-eighth-batch', year: -403, title: '燕政权建立（传统分期）', summary: '燕作为先秦长期王国，在战国编年中进入与诸侯并列的阶段。', placeId: 'ji', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '燕国王统和北方政治网络早于战国七雄分期存在，前403年是三家分晋后战国格局成形的常用编年入口。',
     process: '以前403年周王室确认诸侯秩序作为燕进入本目录战国阶段的约年节点；燕以蓟等北方城市和边疆网络为基础，国家整合并非一日完成。',

@@ -77,7 +77,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['前秦崩解后拓跋部重新聚合。', '386年拓跋珪复代并改国号为魏。', '平城与洛阳分别代表早期和后期首都阶段。'],
     turningPoints: [turn(386, '北魏建立', '北魏政权进入形成阶段。', 'northern-wei-founded'), turn(439, '统一北方', '北魏成为北方主要统一政权。'), turn(494, '迁都洛阳', '孝文帝迁都与改革改变国家制度与文化空间。')],
     principalFigureIds: ['tuoba-gui', 'tuoba-tao', 'yuan-hong'], capitalPhases: [capital('pingcheng', 386, 494), capital('luoyang', 495, 534)],
-    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['northern-wei-founded'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei'], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site', 'yungang-grottoes'], eventIds: ['northern-wei-founded'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei'], sourceIds: modernSources,
     uncertaintyNote: '北魏疆域变化很大，首都迁移不等于控制范围同步变化；平城、洛阳的遗存与政治阶段需要分开说明。',
   }),
   detail({
@@ -565,7 +565,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['齐国拥有早于战国的王统与沿海政治网络。', '前403年作为战国诸侯格局成形的传统分期节点。', '临淄及其大城、小城和手工业网络支撑齐国政治与经济。'],
     turningPoints: [turn(-403, '齐进入战国分期', '齐作为先秦长期王国进入战国诸侯并列阶段。', 'qi-warring-founded-eighth-batch'), turn(-386, '田氏代齐', '田氏取代姜氏，齐国政治谱系发生转折。'), turn(-284, '齐国受挫', '燕军攻齐等战争改变齐的区域格局。')],
     principalFigureIds: ['qi-we-wang'], capitalPhases: [capital('linzi', -403, -221)],
-    heritageIds: ['qi-linzi-city-site'], eventIds: ['qi-warring-founded-eighth-batch'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['qi-linzi-city-site'], eventIds: ['qi-warring-founded-eighth-batch', 'qin-unification'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '前403年是战国分期入口而非齐国绝对建国年；临淄遗址包含姜齐、田齐及后续层次，不能把所有遗存或后期强齐范围回填到该节点。',
   }),
   detail({
@@ -573,7 +573,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['秦嬴氏长期经营关中西部和陇西边地。', '约前770年秦列为诸侯，进入本项目采用的秦国传统分期。', '晚期以咸阳为核心的改革、扩张为秦帝国统一奠定基础。'],
     turningPoints: [turn(-770, '秦进入诸侯分期', '秦襄公列为诸侯，秦国获得更明确的诸侯身份。', 'qin-state-founded-eighth-batch'), turn(-659, '迁都雍', '秦的政治中心在关中西部进一步稳定。'), turn(-350, '咸阳阶段', '秦国晚期经营咸阳并推进变法与扩张。')],
     principalFigureIds: ['qin-mugong', 'qin-xiaogong'], capitalPhases: [capital('changan', -770, -351, 'secondary', 'formal', '秦早期以雍为中心，今长安区域作关中近似参照。'), capital('xianyang', -350, -222, 'primary', 'formal', '秦国晚期咸阳，今陕西省咸阳市。')],
-    heritageIds: ['xianyang-qin-state-palace-site'], eventIds: ['qin-state-founded-eighth-batch'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['xianyang-qin-state-palace-site'], eventIds: ['qin-state-founded-eighth-batch', 'qin-xianyang-capital'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '前770年是传统分期节点，秦国早期都邑和雍的现代对应存在概略性；咸阳晚期遗址与秦帝国层叠压，不能用帝国疆域或宫城反推秦国早期状态。',
   }),
   detail({
