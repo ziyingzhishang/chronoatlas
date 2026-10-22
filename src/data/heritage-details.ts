@@ -26,6 +26,7 @@ export interface HeritageDetail {
 }
 
 const sourceIds = ['modern-geography-reference'];
+const historicalSourceIds = ['zizhi-tongjian', 'modern-geography-reference'];
 
 function phase(
   type: HeritagePhaseType,
@@ -37,6 +38,21 @@ function phase(
   uncertaintyNote?: string,
 ): HeritagePhase {
   return { type, label, period, from, to, description, sourceIds, uncertaintyNote };
+}
+
+function historicalPhase(
+  type: HeritagePhaseType,
+  label: string,
+  period: string,
+  description: string,
+  from?: number,
+  to?: number,
+  uncertaintyNote?: string,
+): HeritagePhase {
+  return {
+    ...phase(type, label, period, description, from, to, uncertaintyNote),
+    sourceIds: historicalSourceIds,
+  };
 }
 
 function detail(
@@ -90,10 +106,11 @@ const details: HeritageDetail[] = [
     phase('restoration', '现代复原', '当代遗址公园', '遗址公园对局部尺度、台基和门址进行展示性复原，用于帮助理解空间关系。', 2000, undefined, '展示性复原仅用于解释空间关系，不代表唐代原建筑完整留存。'),
   ], ['li-shimin', 'li-yuan'], ['tang'], ['tang-founded', 'an-lushan-rebellion'], ['含元殿夯土台基', '宫墙与门址', '遗址公园展示轴线'], '国家考古遗址公园与城市公共文化空间。', '现存展示建筑、复原构件与唐代原建筑应分层标注。'),
   detail('big-wild-goose-pagoda', '今西安市雁塔区大慈恩寺内。', ['唐代佛教传播', '玄奘译经传统与大慈恩寺空间'], [
-    phase('original', '原建筑', '652年始建', '大雁塔始建于唐高宗时期，与玄奘主持的大慈恩寺译经活动相关。', 652),
-    phase('reconstruction', '后世重建', '唐至明清多次修缮', '塔体在后世经历修缮和结构变化，今日形制不能简单视作652年原状。', 700, 1700, '历次修缮的具体范围和年代需结合建筑史与维修档案。'),
-    phase('restoration', '现代复原', '近现代保护维修', '现代保护工程保持塔体和寺院空间的可识别性，未将整座建筑重建为唐代新作。', 1900),
-  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['砖塔主体', '塔院空间', '历代题刻与维修痕迹'], '现存历史建筑和西安城市标志性文化景观。', '塔体历代修缮和重建使“唐代原状”与今日所见不能直接画等号。'),
+    historicalPhase('original', '原建筑', '652年始建', '大雁塔始建于唐高宗时期，与玄奘主持的大慈恩寺译经活动相关。', 652),
+    historicalPhase('site', '现存塔体与塔院', '现存历史建筑', '塔体、塔院空间和历代题刻构成今日可辨识的遗产本体；现存形制包含后世修缮。'),
+    historicalPhase('reconstruction', '后世重建', '唐至明清多次修缮', '塔体在后世经历修缮和结构变化，今日形制不能简单视作652年原状。', 700, 1700, '历次修缮的具体范围和年代需结合建筑史与维修档案。'),
+    historicalPhase('restoration', '现代复原', '近现代保护维修', '现代保护工程保持塔体和寺院空间的可识别性，未将整座建筑重建为唐代新作。', 1900),
+  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['砖塔主体', '塔院空间', '历代题刻与维修痕迹'], '现存历史建筑和西安城市标志性文化景观。', '塔体历代修缮和重建使“唐代原状”与今日所见不能直接画等号。', historicalSourceIds),
   detail('xingqing-palace-site', '今西安市碑林区兴庆宫公园一带。', ['唐长安城东部宫苑', '玄宗时期的宫廷生活与政治空间'], [
     phase('original', '原建筑', '8世纪前期', '兴庆宫由旧宅扩建为宫苑，是唐玄宗时期长安东部的重要宫廷空间。', 714, 755),
     phase('site', '遗址', '宫苑遗址与城市公园', '原有宫苑建筑多已不存，历史空间通过遗址信息和文献研究辨识。', 755),
@@ -101,10 +118,11 @@ const details: HeritageDetail[] = [
     phase('restoration', '现代复原', '当代展示景观', '园内景观以纪念和展示为主，需与唐代原宫殿区分。', 2000),
   ], ['li-shimin'], ['tang'], ['tang-founded', 'an-lushan-rebellion'], ['宫苑范围的历史记忆', '现代园林水系', '展示性建筑与题刻'], '城市公园与唐代宫苑记忆的叠合地点。', '现存公园景观与唐代宫苑的对应关系需要逐项考古和文献核验。'),
   detail('xiao-yan-ta', '今西安市碑林区荐福寺旧址一带。', ['唐代荐福寺佛教建筑', '长安城南部寺院与佛教传播'], [
-    phase('original', '原建筑', '707年始建', '小雁塔始建于唐代荐福寺，作为长安佛教建筑群的一部分。', 707),
-    phase('reconstruction', '后世重建', '唐以后历次修缮', '塔体和寺院在地震、风雨与历代维修中持续变化。', 800, 1900),
-    phase('restoration', '现代复原', '近现代保护维修', '现代保护以加固和保留塔体为主，不将维修表面视作唐代原构。', 1900),
-  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['砖塔主体', '塔身开裂与维修痕迹', '寺院遗址环境'], '现存唐代佛教建筑与西安博物馆相关展示空间。', '小雁塔始建年代、维修阶段和现存构件的对应关系应以建筑考古资料为准。'),
+    historicalPhase('original', '原建筑', '707年始建', '小雁塔始建于唐代荐福寺，作为长安佛教建筑群的一部分。', 707),
+    historicalPhase('site', '现存塔体与寺院环境', '现存历史建筑', '塔体、塔身维修痕迹和荐福寺环境构成今日可识别对象；现存结构不能全部回填为707年原构。'),
+    historicalPhase('reconstruction', '后世重建', '唐以后历次修缮', '塔体和寺院在地震、风雨与历代维修中持续变化。', 800, 1900),
+    historicalPhase('restoration', '现代复原', '近现代保护维修', '现代保护以加固和保留塔体为主，不将维修表面视作唐代原构。', 1900),
+  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['砖塔主体', '塔身开裂与维修痕迹', '寺院遗址环境'], '现存唐代佛教建筑与西安博物馆相关展示空间。', '小雁塔始建年代、维修阶段和现存构件的对应关系应以建筑考古资料为准。', historicalSourceIds),
   detail('hanyangling', '今西安市北部渭城区与咸阳原一带，现代行政区与陵园范围不完全重合。', ['西汉帝陵与陵邑体系', '长安北部的帝陵礼制与陪葬空间'], [
     phase('original', '原建筑', '前157年后营建', '阳陵为汉景帝刘启与王皇后合葬陵园，包含陵墓、陵邑和陪葬坑体系。', -157),
     phase('site', '遗址', '西汉帝陵遗址', '封土、陵园遗迹、陪葬坑和陵邑遗存构成考古遗址。', -157, 70),
@@ -116,10 +134,11 @@ const details: HeritageDetail[] = [
     phase('restoration', '现代复原', '当代文物保护', '现状以保护山体、石刻和遗址环境为主，未打开墓室进行整体复原。', 1900),
   ], ['li-shimin'], ['tang', 'wu_zhou'], ['tang-founded', 'an-lushan-rebellion'], ['梁山陵体', '无字碑等石刻', '神道与陵园环境'], '唐代帝陵遗址与关中陵区历史景观。', '墓室未全面发掘，关于内部保存状况和部分建筑布局不能作确定性展示。'),
   detail('xian-beilin', '今西安市碑林区三学街一带。', ['后世碑刻保存与展示', '长安—西安的书写、经学与城市记忆'], [
-    phase('original', '原建筑', '唐宋以来碑刻陆续形成', '碑刻来自不同年代和地点，不能视为同一时期建造的单体建筑。', 700, 1087, '碑刻原始位置和刻立年代需逐件核对。'),
-    phase('reconstruction', '后世重建', '1087年后迁置与扩建', '碑林以保存、迁置和编次碑刻为核心，空间布局经历后世调整。', 1087, 1900),
-    phase('restoration', '现代复原', '现代博物馆保护', '现代馆舍和保护设施服务于碑刻保存与展示，不等同于唐代长安原有建筑。', 1900),
-  ], ['li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['碑刻与墓志', '碑廊与石刻陈列', '后世编次和保护设施'], '保存、研究和展示碑刻的城市文化遗产。', '碑林的收藏迁移、碑刻原址和后世编次不能简单还原为单一历史时刻。'),
+    historicalPhase('original', '原建筑', '唐宋以来碑刻陆续形成', '碑刻来自不同年代和地点，不能视为同一时期建造的单体建筑。', 700, 1087, '碑刻原始位置和刻立年代需逐件核对。'),
+    historicalPhase('site', '碑刻本体与陈列空间', '现存文物与展示空间', '碑刻本体、碑廊和保护设施是今日可展示对象；它们表达收藏与编次史，而非还原每块碑刻的原址。'),
+    historicalPhase('reconstruction', '后世重建', '1087年后迁置与扩建', '碑林以保存、迁置和编次碑刻为核心，空间布局经历后世调整。', 1087, 1900),
+    historicalPhase('restoration', '现代复原', '现代博物馆保护', '现代馆舍和保护设施服务于碑刻保存与展示，不等同于唐代长安原有建筑。', 1900),
+  ], ['li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['碑刻与墓志', '碑廊与石刻陈列', '后世编次和保护设施'], '保存、研究和展示碑刻的城市文化遗产。', '碑林的收藏迁移、碑刻原址和后世编次不能简单还原为单一历史时刻。', historicalSourceIds),
   detail('changle-palace-site', '今西安市未央区汉长安城遗址东南部。', ['西汉东部宫城', '长安城宫殿区与皇帝日常政治空间'], [
     phase('original', '原建筑', '前200年前后', '长乐宫是汉长安城早期重要宫殿区之一，与汉初宫城建设相关。', -200),
     phase('site', '遗址', '汉长安城宫殿遗址', '宫殿台基和夯土遗迹以考古遗址形式保存。', -200, 9),
@@ -142,16 +161,16 @@ const details: HeritageDetail[] = [
     phase('restoration', '现代复原', '当代展示', '遗址展示对门址尺度和轴线作可视化解释。', 2000),
   ], ['li-yuan', 'li-shimin'], ['sui', 'tang'], ['tang-founded', 'an-lushan-rebellion'], ['门址与城墙基础', '南北向道路轴线', '展示性标识与模型'], '唐长安城南部城市考古和公共历史教育节点。', '城门上层建筑的形制与复原尺度存在研究边界，现代模型不等于实测原貌。'),
   detail('ximing-temple-site', '今西安市南郊唐长安城遗址相关区域，具体位置为约址。', ['唐代译经与寺院网络', '长安佛教和中外文化交流'], [
-    phase('original', '原建筑', '唐代', '西明寺是唐长安城重要寺院之一，与译经、僧侣往来和国家佛教活动相关。', 618, 907),
-    phase('site', '遗址', '寺院遗址与文献地点', '寺院整体建筑已不存，位置和空间主要结合文献、考古与城市格局研究。', 907),
-    phase('restoration', '现代复原', '研究图示与纪念展示', '现代以标识和研究性复原图解释寺院网络，不宣称完整复建原寺。', 2000, undefined, '具体院落、塔院和殿址的对应关系仍有不确定性。'),
-  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['文献记载的寺院位置', '相关译经传统', '现代研究图示'], '唐长安佛教、译经和国际交流的研究节点。', '寺院具体位置和建筑布局不能仅凭后世传说确定，现代标注为约址。'),
+    historicalPhase('original', '原建筑', '唐代', '西明寺是唐长安城重要寺院之一，与译经、僧侣往来和国家佛教活动相关。', 618, 907),
+    historicalPhase('site', '遗址', '寺院遗址与文献地点', '寺院整体建筑已不存，位置和空间主要结合文献、考古与城市格局研究。', 907),
+    historicalPhase('restoration', '现代复原', '研究图示与纪念展示', '现代以标识和研究性复原图解释寺院网络，不宣称完整复建原寺。', 2000, undefined, '具体院落、塔院和殿址的对应关系仍有不确定性。'),
+  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['文献记载的寺院位置', '相关译经传统', '现代研究图示'], '唐长安佛教、译经和国际交流的研究节点。', '寺院具体位置和建筑布局不能仅凭后世传说确定，现代标注为约址。', historicalSourceIds),
   detail('qinglong-temple-site', '今西安市雁塔区青龙寺遗址及其周边。', ['唐代密教传播', '长安东南部寺院与东亚佛教交流'], [
-    phase('original', '原建筑', '隋唐时期', '青龙寺是长安东部重要寺院，与密教僧侣和跨区域佛教交流相关。', 582, 907),
-    phase('site', '遗址', '寺院遗址', '原寺院建筑多不存，遗址范围和相关出土信息构成现代理解基础。', 907),
-    phase('reconstruction', '后世重建', '20世纪纪念性建设', '后世纪念空间沿用青龙寺名称并重建局部建筑，不等同于唐代寺院原貌。', 1900, 1999),
-    phase('restoration', '现代复原', '当代文化展示', '现代建筑和园林用于纪念、展示与交流，历史原构和现代复建分层呈现。', 2000),
-  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['寺院遗址信息', '纪念性建筑', '佛教交流展示'], '东亚佛教交流和西安城市文化记忆节点。', '唐代寺院原址、后世纪念建筑和现代园林不能视为同一组连续建筑。'),
+    historicalPhase('original', '原建筑', '隋唐时期', '青龙寺是长安东部重要寺院，与密教僧侣和跨区域佛教交流相关。', 582, 907),
+    historicalPhase('site', '遗址', '寺院遗址', '原寺院建筑多不存，遗址范围、相关出土信息与现代展示共同构成现代理解基础。', 907),
+    historicalPhase('reconstruction', '后世重建', '20世纪纪念性建设', '后世纪念空间沿用青龙寺名称并重建局部建筑，不等同于唐代寺院原貌。', 1900, 1999),
+    historicalPhase('restoration', '现代复原', '当代文化展示', '现代建筑和园林用于纪念、展示与交流，历史原构和现代复建分层呈现。', 2000),
+  ], ['xuan-zang', 'li-shimin'], ['tang'], ['tang-founded', 'xuanzang-translations'], ['寺院遗址信息', '纪念性建筑', '佛教交流展示'], '东亚佛教交流和西安城市文化记忆节点。', '唐代寺院原址、后世纪念建筑和现代园林不能视为同一组连续建筑。', historicalSourceIds),
   detail('huaqing-palace', '今西安市临潼区骊山北麓，位于古长安城以东。', ['唐代温泉宫苑', '帝王巡幸、宫廷生活与关中交通'], [
     phase('original', '原建筑', '唐代扩建', '华清宫沿骊山温泉发展为宫苑，与唐代帝王巡幸和长安东行交通相关。', 618, 907),
     phase('site', '遗址', '宫苑遗址与温泉遗存', '部分遗址、温泉和山麓环境保留了宫苑地点的历史线索。', 907),

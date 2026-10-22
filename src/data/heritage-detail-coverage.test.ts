@@ -50,7 +50,7 @@ const sampleDetail: HeritageDetail = {
   uncertaintyNote: '示例不确定性说明。',
 };
 
-const roundSeventyFirstHeritageIds = [
+const roundSeventySecondHeritageIds = [
   'big-wild-goose-pagoda',
   'qinglong-temple-site',
   'xian-beilin',
@@ -58,7 +58,7 @@ const roundSeventyFirstHeritageIds = [
   'ximing-temple-site',
 ] as const;
 
-const roundSeventyFirstDisplayMarkers: Record<typeof roundSeventyFirstHeritageIds[number], string> = {
+const roundSeventySecondDisplayMarkers: Record<typeof roundSeventySecondHeritageIds[number], string> = {
   'big-wild-goose-pagoda': '玄奘译经传统与大慈恩寺空间',
   'qinglong-temple-site': '唐代密教传播',
   'xian-beilin': '后世碑刻保存与展示',
@@ -195,14 +195,14 @@ describe('heritage detail coverage audit', () => {
 
     expect(eventIds.has('xuanzang-translations')).toBe(false);
 
-    for (const heritageId of roundSeventyFirstHeritageIds) {
+    for (const heritageId of roundSeventySecondHeritageIds) {
       const detail = heritageDetails.find((item) => item.heritageId === heritageId);
       const item = report.items.find((coverageItem) => coverageItem.heritageId === heritageId);
 
       expect(detail, heritageId).toBeDefined();
       expect(item, heritageId).toBeDefined();
       expect(detail?.historicalAssociations, heritageId).toEqual(
-        expect.arrayContaining([roundSeventyFirstDisplayMarkers[heritageId]]),
+        expect.arrayContaining([roundSeventySecondDisplayMarkers[heritageId]]),
       );
       expect(detail?.constructionHistory.length, heritageId).toBeGreaterThanOrEqual(3);
       expect(detail?.survivingFeatures.length, heritageId).toBeGreaterThanOrEqual(3);
@@ -211,6 +211,32 @@ describe('heritage detail coverage audit', () => {
       expect(detail?.constructionHistory.every((phase) => phase.sourceIds.every((sourceId) => sourceIds.has(sourceId))), heritageId).toBe(true);
       expect(detail?.associatedEvents, heritageId).toContain('xuanzang-translations');
       expect(item?.status, heritageId).toBe('needs-review');
+      expect(item?.unresolvedReferenceIds.events, heritageId).toEqual(['xuanzang-translations']);
+    }
+  });
+
+  it('keeps the round seventy-second review details source-backed and time-bounded', () => {
+    const report = buildHeritageDetailCoverageReport({ catalog: baseCatalog });
+    const sourceIds = new Set(sourceNotes.map((source) => source.id));
+
+    for (const heritageId of roundSeventySecondHeritageIds) {
+      const detail = heritageDetails.find((item) => item.heritageId === heritageId);
+      const item = report.items.find((coverageItem) => coverageItem.heritageId === heritageId);
+
+      expect(detail?.sourceIds, heritageId).toEqual(expect.arrayContaining([
+        'zizhi-tongjian',
+        'modern-geography-reference',
+      ]));
+      expect(detail?.sourceIds.every((sourceId) => sourceIds.has(sourceId)), heritageId).toBe(true);
+      expect(detail?.constructionHistory.every((phase) => (
+        phase.sourceIds.includes('zizhi-tongjian')
+        && phase.sourceIds.includes('modern-geography-reference')
+        && phase.sourceIds.every((sourceId) => sourceIds.has(sourceId))
+      )), heritageId).toBe(true);
+      expect(detail?.constructionHistory.every((phase) => (
+        phase.from === undefined || phase.to === undefined || phase.from <= phase.to
+      )), heritageId).toBe(true);
+      expect(item?.unknownSourceIds, heritageId).toEqual([]);
       expect(item?.unresolvedReferenceIds.events, heritageId).toEqual(['xuanzang-translations']);
     }
   });
