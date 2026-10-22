@@ -922,7 +922,7 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'qin-xianyang-capital',
     participants: [{ personId: 'qin-xiaogong', role: '秦国迁都咸阳阶段的君主', note: '秦孝公对应前350年迁都及商鞅变法时期；本条只关联都城迁移，不把其写成秦帝国建立者。' }],
-    polityIds: ['qin'],
+    polityIds: ['qin_state'],
     causes: ['秦国需要把政治中心置于关中交通与农业资源更集中的区域。'],
     consequences: ['咸阳成为秦国向关东扩张的重要基地。', '秦都制度与城市格局为帝国时期继承。'],
     phases: [{ label: '迁都咸阳', startYear: -350, endYear: -350, summary: '秦将政治中心迁至咸阳。' }],
