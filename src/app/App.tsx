@@ -29,8 +29,11 @@ import { heritageById } from '../data/heritage';
 import { getPersonDetail } from '../data/person-details';
 import { getHeritageDetail } from '../data/heritage-details';
 import { claims } from '../data/claims';
+import { changanEvents } from '../data/changan-study';
 import { polities } from '../data/polities';
 import { places } from '../data/places';
+
+const detailEvents = [...events, ...changanEvents.filter((event) => !events.some((catalogEvent) => catalogEvent.id === event.id))];
 
 export function App() {
   return <LocaleProvider><HistoryWorkspace/></LocaleProvider>;
@@ -185,7 +188,7 @@ function HistoryWorkspace() {
     </div>
       {detailEntity && <EntityDrawer title={detailTitle(detailEntity)} entityType={detailEntity.type} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0}>
         {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={getPersonDetail(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
-        {detailEntity.type === 'event' && (() => { const event = events.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
+        {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
         {detailEntity.type === 'heritage' && (() => { const asset = heritageById[detailEntity.id]; const detail = getHeritageDetail(detailEntity.id); return asset && detail ? <HeritageDetail detail={detail} heritageName={asset.name} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录遗产详情')}</p>; })()}
         {(detailEntity.type === 'polity' || detailEntity.type === 'place') && (
           <InfoPanel state={historicalState} selectedEntity={detailEntity} onYearChange={changeYear} onOpenEntity={openDetail} polityDetailMode={detailEntity.type === 'polity' ? 'drawer' : 'summary'}/>
@@ -197,7 +200,7 @@ function HistoryWorkspace() {
 
 function detailTitle(entity: DetailEntity): string {
   if (entity.type === 'person') return people.find((item) => item.id === entity.id)?.name ?? '人物详情';
-  if (entity.type === 'event') return events.find((item) => item.id === entity.id)?.title ?? '事件详情';
+  if (entity.type === 'event') return detailEvents.find((item) => item.id === entity.id)?.title ?? '事件详情';
   if (entity.type === 'heritage') return heritageById[entity.id]?.name ?? '遗产详情';
   if (entity.type === 'polity') return polities.find((item) => item.id === entity.id)?.name ?? '政权详情';
   return places.find((item) => item.id === entity.id)?.historicalName ?? '地点详情';

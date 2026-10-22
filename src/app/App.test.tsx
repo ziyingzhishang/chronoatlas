@@ -60,3 +60,31 @@ test('opens polity detail from the compact card in the existing entity drawer', 
   expect(screen.getAllByRole('dialog', { name: '唐' })).toHaveLength(1);
   expect(within(drawer).queryByRole('button', { name: '展开政权详情' })).not.toBeInTheDocument();
 });
+
+test('opens relationship targets and keeps the summary-to-detail drawer hierarchy', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('link', { name: '李世民' }));
+
+  const personDrawer = screen.getByRole('dialog', { name: '李世民' });
+  expect(within(personDrawer).getByRole('article', { name: '人物详情' })).toBeInTheDocument();
+  expect(within(personDrawer).getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
+});
+
+test('opens event and heritage details from the polity study summary', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+
+  await userEvent.click(screen.getByRole('button', { name: '唐在长安建立' }));
+  const eventDrawer = screen.getByRole('dialog', { name: '唐在长安建立' });
+  expect(eventDrawer).toHaveClass('entity-drawer');
+  expect(within(eventDrawer).getByRole('article', { name: '事件详情' })).toContainElement(within(eventDrawer).getByRole('heading', { name: '唐在长安建立', level: 3 }));
+
+  await userEvent.click(within(eventDrawer).getByRole('button', { name: '关闭详情' }));
+  await userEvent.click(screen.getByRole('button', { name: '大明宫遗址' }));
+  const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
+  expect(heritageDrawer).toHaveClass('entity-drawer');
+  expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
+});
