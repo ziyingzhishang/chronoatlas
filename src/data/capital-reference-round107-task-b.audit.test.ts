@@ -64,7 +64,6 @@ describe('round 107 task B Sui-Tang capital reference audit', () => {
       'sui:luoyang:dingding-gate-site',
       'tang:changan:qianling',
       'tang:changan:ximing-temple-site',
-      'tang:changan:huaqing-palace',
       'tang:luoyang:court-moves-luoyang',
       'tang:luoyang:shangyang-palace-site',
     ]);

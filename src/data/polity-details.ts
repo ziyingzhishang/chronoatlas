@@ -93,7 +93,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['李渊控制长安并承接隋末政治资源。', '618年受禅建立唐朝。', '唐初仍经历地方战争与制度整合，后形成长安—洛阳双中心。'],
     turningPoints: [turn(618, '唐建立', '李渊在长安即位建唐。', 'tang-founded'), turn(626, '玄武门之变', '皇位继承与中央权力重新排列。'), turn(755, '安史之乱', '长安、洛阳与中央—地方关系受到重大冲击。', 'an-lushan-rebellion')],
     principalFigureIds: ['li-yuan', 'li-shimin', 'li-longji', 'wu-zhao', 'xuan-zang'], capitalPhases: [capital('changan', 618, 907), capital('luoyang', 618, 907, 'secondary', 'formal', '东都与阶段性政治中心')],
-    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'luoyang-sui-tang-city-site'], eventIds: ['tang-founded', 'xuanwu-gate', 'an-lushan-rebellion'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site'], eventIds: ['tang-founded', 'xuanwu-gate', 'an-lushan-rebellion'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
     uncertaintyNote: '双都制度、行幸与战乱中的临时中心不能混写为正式迁都；遗产节点展示城市和建筑层，不直接证明帝国疆域。',
   }),
   detail({

@@ -14,7 +14,6 @@ const remainingCandidates = [
   'big-wild-goose-pagoda',
   'qianling',
   'ximing-temple-site',
-  'huaqing-palace',
   'shangyang-palace-site',
 ] as const;
 
@@ -63,7 +62,6 @@ describe('round 109 task B Sui-Tang heritage reference', () => {
       'dingding-gate-site',
       'qianling',
       'ximing-temple-site',
-      'huaqing-palace',
       'shangyang-palace-site',
     ]);
     expect(unresolved.every((heritageId) => {
@@ -73,7 +71,6 @@ describe('round 109 task B Sui-Tang heritage reference', () => {
         || detail.uncertaintyNote.includes('约址')
         || detail.uncertaintyNote.includes('叠合')
         || detail.uncertaintyNote.includes('译经事件端点')
-        || heritageId === 'huaqing-palace'
       );
     })).toBe(true);
   });
