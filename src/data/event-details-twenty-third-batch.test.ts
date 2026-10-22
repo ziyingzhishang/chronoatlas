@@ -12,7 +12,7 @@ const targetLocations = {
   'dali-founded': ['dali_city'],
   'song-southward': ['kaifeng', 'yingtian', 'linan'],
   'northern-yuan-founded': ['beiyuan_core'],
-  'southern-ming-founded': ['yingtian'],
+  'southern-ming-founded': ['yingtian', 'yangzhou'],
   'qing-enters-pass': ['shengjing', 'beijing'],
   'republic-founded': ['jiankang'],
   'prc-founded': ['beijing'],

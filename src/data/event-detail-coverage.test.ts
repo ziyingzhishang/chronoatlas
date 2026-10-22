@@ -323,4 +323,39 @@ describe('event detail coverage audit', () => {
     expect(report.coveredEventIds).toEqual(expect.arrayContaining(batchIds));
     expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
   });
+
+  it('enriches the fifty-fifth batch without upgrading approximate or range precision', () => {
+    const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
+    const eventsById = new Map(events.map((event) => [event.id, event]));
+    const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const selectedIds = [
+      'an-lushan-rebellion',
+      'eastern-jin',
+      'southern-ming-founded',
+      'western-liao-founded',
+      'xiongnu-founded',
+      'tuyuhun-founded',
+    ];
+
+    expect(report.statusCounts).toEqual({ covered: 79, 'needs-review': 26, unresolved: 0 });
+    expect(eventsById.get('an-lushan-rebellion')?.datePrecision).toBe('range');
+    expect(eventsById.get('eastern-jin')?.datePrecision).toBe('range');
+    for (const eventId of selectedIds) {
+      expect(eventsById.get(eventId)?.datePrecision, eventId).toBeOneOf(['range', 'approximate']);
+      expect(detailsById.get(eventId)?.sourceIds.length, eventId).toBeGreaterThan(0);
+      expect(detailsById.get(eventId)?.locationIds.length, eventId).toBeGreaterThan(0);
+      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+    }
+
+    expect(detailsById.get('an-lushan-rebellion')?.locationIds).toEqual([
+      'youzhou', 'luoyang', 'changan',
+    ]);
+    expect(detailsById.get('eastern-jin')?.locationIds).toEqual(['luoyang', 'jiankang']);
+    expect(detailsById.get('southern-ming-founded')?.locationIds).toEqual(['yingtian', 'yangzhou']);
+    expect(detailsById.get('western-liao-founded')?.relatedEventIds).toEqual([
+      'liao-founded', 'jurchen-jin-founded',
+    ]);
+    expect(detailsById.get('xiongnu-founded')?.relatedEventIds).toEqual(['han-imperial-accession']);
+    expect(detailsById.get('tuyuhun-founded')?.relatedEventIds).toEqual(['western-jin-founded']);
+  });
 });
