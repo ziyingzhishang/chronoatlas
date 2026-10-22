@@ -390,12 +390,12 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'zhu-yousong', biography: '朱由崧即弘光帝，是南明诸政权中的重要君主之一；其政权以南京为主要政治中心，存续时间较短。',
     aliases: ['弘光帝'], offices: [{ title: '南明弘光帝', polityId: 'ming_southern', placeId: 'jiankang', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南明是明室南迁后多个政权阶段的合称，朱由崧政权不能代表南明全部政权，也不能由南京名义控制推导完整疆域。',
+    keyEvents: ['southern-ming-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南明是明室南迁后多个政权阶段的合称，朱由崧政权不能代表南明全部政权，也不能由南京名义控制推导完整疆域；该事件仅对应弘光阶段的形成背景。',
   },
   {
     personId: 'shi-kefa', biography: '史可法是南明弘光时期的重要军政人物，负责扬州防务，与朱由崧朝廷存在阶段性君臣关系。',
     aliases: ['道邻'], offices: [{ title: '南明督师', polityId: 'ming_southern', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '史可法与弘光朝廷的关系以任职和军事防务为核心，不把后世忠烈评价直接替代当时政治关系的史料核验。',
+    keyEvents: ['southern-ming-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '史可法与弘光朝廷的关系以任职和军事防务为核心，不把后世忠烈评价直接替代当时政治关系的史料核验；该事件仅作为弘光阶段的政权背景入口。',
   },
   {
     personId: 'temujin', biography: '铁木真在草原部众竞争中逐步整合力量，1206年被推举为成吉思汗，蒙古汗国进入共同汗权阶段。',
