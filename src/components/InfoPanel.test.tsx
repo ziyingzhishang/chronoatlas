@@ -20,6 +20,12 @@ test('shows historical and modern names for a selected place', () => {
   expect(screen.getAllByText('咸阳市').length).toBeGreaterThanOrEqual(1);
 });
 
+test('uses the full event catalog in a non-Changan city study view', () => {
+  render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'place', id: 'xianyang' }} />);
+  expect(screen.getAllByRole('button', { name: '秦迁都咸阳' }).length).toBeGreaterThanOrEqual(2);
+  expect(screen.getAllByRole('button', { name: '秦统一后咸阳成为帝国中心' }).length).toBeGreaterThanOrEqual(2);
+});
+
 test('preserves a raw source zero endpoint without treating it as a selectable civil year', () => {
   const state = getHistoricalState(-1);
   const boundary = state.boundaries[0];

@@ -42,6 +42,7 @@ const range = (from:number,to:number) => from===to ? formatHistoricalYear(from) 
 const sourceYear = (year:number) => year===0 ? '0（来源边界值，非公元0年）' : formatHistoricalYear(year);
 const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `${sourceYear(from)}—${sourceYear(to)}`;
 const polityStudyEvents = [...historicalEvents, ...changanEvents].filter((event, index, all) => all.findIndex((candidate) => candidate.id === event.id) === index);
+const cityStudyEvents = polityStudyEvents;
 
 export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
@@ -55,7 +56,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
   const studyView = selectedEntity?.type === 'polity'
     ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: polityStudyEvents, claims, capitalTerms: capitalHistory })
     : selectedEntity?.type === 'place'
-      ? buildCityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: changanEvents, claims, capitalTerms: capitalHistory })
+      ? buildCityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: cityStudyEvents, claims, capitalTerms: capitalHistory })
       : undefined;
   const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
 
