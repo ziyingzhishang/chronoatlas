@@ -49,6 +49,7 @@ describe('thirty-first batch historical people and relationships', () => {
 
   it('records resolvable event and person relations with time and evidence boundaries', () => {
     const peopleIds = new Set(people.map((person) => person.id));
+    const polityIds = new Set(polities.map((polity) => polity.id));
     const eventIds = new Set(events.map((event) => event.id));
     const sourceIds = new Set(sourceNotes.map((source) => source.id));
     const targetIds = new Set(Object.keys(targetPeople));
@@ -72,6 +73,8 @@ describe('thirty-first batch historical people and relationships', () => {
       claim.sourceIds.forEach((sourceId) => expect(sourceIds.has(sourceId), `${claim.id} -> ${sourceId}`).toBe(true));
       if (claim.predicate === 'participated-in') {
         expect(eventIds.has(claim.objectId ?? ''), `${claim.id} -> ${claim.objectId}`).toBe(true);
+      } else if (claim.predicate === 'founded' || claim.predicate === 'ruled') {
+        expect(polityIds.has(claim.objectId ?? ''), `${claim.id} -> ${claim.objectId}`).toBe(true);
       } else {
         expect(peopleIds.has(claim.objectId ?? ''), `${claim.id} -> ${claim.objectId}`).toBe(true);
       }
