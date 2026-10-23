@@ -1,5 +1,8 @@
 import { describe, expect, it } from 'vitest';
 import { eventTimeReview, reviewEventTimeCoverage } from './event-time-review';
+import { eventDetails } from './event-details';
+import { events } from './events';
+import { sourceById } from './sources';
 
 const expectedEventIds = [
   'xia-early-founded-eighth-batch',
@@ -29,7 +32,7 @@ const expectedEventIds = [
 ] as const;
 
 describe('event time evidence review', () => {
-  it('covers the 26 currently non-precise events without inventing a date', () => {
+  it('covers the reviewed event-time set without inventing a date', () => {
     expect(eventTimeReview.map((entry) => entry.eventId)).toEqual([...expectedEventIds]);
 
     const report = reviewEventTimeCoverage();
@@ -40,7 +43,7 @@ describe('event time evidence review', () => {
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 4, approximate: 20, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 5, approximate: 19, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {
@@ -61,6 +64,26 @@ describe('event time evidence review', () => {
       timelineStrategy: 'approximate-marker',
     });
     expect(approximate?.explanation).toContain('形成');
+  });
+
+  it('models 304 as the exact Cheng Han formation node without moving the 306 imperial phase', () => {
+    const record = reviewEventTimeCoverage().records.find((item) => item.eventId === 'cheng-han-founded');
+    const event = events.find((item) => item.id === 'cheng-han-founded');
+    const detail = eventDetails.find((item) => item.eventId === 'cheng-han-founded');
+
+    expect(record).toMatchObject({
+      year: 304,
+      datePrecision: 'year',
+      expectedPrecision: 'year',
+      status: 'confirmed',
+      timelineStrategy: 'year-marker',
+    });
+    expect(record?.explanation).toContain('即成都王位');
+    expect(record?.explanation).toContain('306年称帝');
+    expect(record?.explanation).toContain('整个巴蜀');
+    expect(event?.sourceIds).toContain('zizhi-tongjian-vol85-cheng-han');
+    expect(detail?.sourceIds).toContain('zizhi-tongjian-vol85-cheng-han');
+    expect(sourceById['zizhi-tongjian-vol85-cheng-han']).toBeDefined();
   });
 
   it('reports missing entries, missing detail, and evidence drift for an injected catalog', () => {

@@ -202,13 +202,13 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '和合共生——临漳邺城佛造像展', url: 'https://www.mct.gov.cn/ggfw/zyjzzt/zhanlan/zhanlanwqhg/201908/t20190822_845846.html', detail: '文化和旅游部资料确认邺城遗址的位置及后赵、前燕、东魏、北齐等政权沿用邺城的城市史背景。' }, { title: '《资治通鉴》卷九十五·晋纪十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷095', detail: '用于核对后赵石虎时期迁都邺的编年节点；迁都与后续城市建设分层表达。' }],
   },
   {
-    id: 'cheng-han-founded', year: 304, title: '成汉政权形成', summary: '李雄在巴蜀建立独立政权，成汉进入形成阶段。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
+    id: 'cheng-han-founded', year: 304, title: '成汉政权形成', summary: '李雄于304年即成都王位，成汉政权形成；306年称帝为后续阶段。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol85-cheng-han', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '西晋八王之乱与永嘉前后的动荡削弱巴蜀中央控制，李特、李雄父子在蜀地组织军政力量。',
-    process: '304年前后李雄在成都一带建立相对独立的政权，后于306年称帝；本条采用政权形成阶段，不把304年写成无争议的正式称帝年。',
+    process: '304年十月李雄即成都王位，标志成汉政权形成；306年称帝是后续制度阶段，不与304年节点合并。',
     impact: '十六国早期巴蜀出现持续性的地方政权，成都成为区域政治中心；其与关中、河西及东晋的关系仍随阶段变化。',
-    mapNote: '成都标记为成汉早期政治中心，304年采用形成阶段约年；地图不能把成汉后期控制范围倒推到政权初成时。',
-    references: [{ title: '《资治通鉴》卷八十五·晋纪七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷085', detail: '记载李雄等在巴蜀的起兵与政权形成；304年形成、306年称帝的阶段差异保留。' }],
+    mapNote: '成都标记为304年李雄即成都王位的政治中心；该单年节点不表示304年已控制整个巴蜀，306年称帝及其后整合另按阶段展示。',
+    references: [{ title: '《资治通鉴》卷八十五·晋纪七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷085', detail: '卷八十五记载304年十月李雄即成都王位；306年称帝为后续节点，不能据304年单年节点推断其已控制整个巴蜀。' }],
   },
   {
     id: 'former-yan-founded', year: 337, title: '前燕政权形成', summary: '慕容皝在辽东、河北建立燕政权，前燕进入形成阶段。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology'],

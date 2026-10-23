@@ -70,7 +70,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'chu-han-contention', status: 'confirmed', expectedPrecision: 'range', explanation: '楚汉竞争的起止区间有明确编年边界，但事件本身跨越多个军事与政治阶段。', timelineStrategy: 'range-band' },
   { eventId: 'silla-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '前57年是新罗传统纪年节点，早期辰韩诸部整合仍需按形成过程理解。', timelineStrategy: 'approximate-marker' },
   { eventId: 'goguryeo-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '前37年是高句丽传统建国纪年，早期国家化与城址对应不能被视为精确日期。', timelineStrategy: 'approximate-marker' },
-  { eventId: 'cheng-han-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '304年前后表示成汉政权形成阶段，306年称帝等后续节点不能前推到同一年。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'cheng-han-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '《资治通鉴》卷八十五明确记载304年十月李雄即成都王位，形成政权单年节点；306年称帝是后续阶段，不能据此推断304年已控制整个巴蜀。', timelineStrategy: 'year-marker' },
   { eventId: 'tuyuhun-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '313年前后表示吐谷浑部众形成稳定政治共同体，迁徙与建制不是单日完成。', timelineStrategy: 'approximate-marker' },
   { eventId: 'former-liang-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '314年前后表示河西张氏地方统治的独立形成，前凉建政起点存在口径差异。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liang-state-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '400年前后表示西凉政权形成，李暠的地方承接与正式建制存在阶段性。', timelineStrategy: 'approximate-marker' },

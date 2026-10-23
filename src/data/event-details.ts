@@ -456,14 +456,14 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'cheng-han-founded',
     participants: [
-      { personId: 'li-xiong', role: '巴蜀军政集团领袖与成汉建立者（限304—334年前后形成与早期统治；本轮聚焦304—305年草创期，不以306年后的控制断面回推形成当年范围）', note: '李雄在成都一带建立成汉；304年政权形成与306年称帝是连续但可区分的节点，成都中心不等于当年已整合巴蜀全域。' },
+      { personId: 'li-xiong', role: '304年即成都王位的成汉建立者及后续统治者（限304年形成节点、306年称帝与334年前后的早期统治）', note: '卷八十五记载李雄于304年十月即成都王位；306年称帝是后续阶段，成都政治中心不等于304年已整合巴蜀全域。' },
     ],
     polityIds: ['cheng_han'],
     causes: ['西晋内乱削弱巴蜀中央控制。', '李特、李雄父子在蜀地形成可持续的军政动员能力。'],
     consequences: ['巴蜀出现十六国早期的独立政权。', '成都成为区域政治中心，巴蜀与关中、江南的关系重新组织。', '成汉形成后，巴蜀成为西晋瓦解后相对独立的区域政治中心；成都中心的稳定与对巴蜀各地的直接控制不能视为同一层次。', '李雄去世后的成汉继承阶段与304—334年的形成、早期统治需要分开，成都核心延续不等于巴蜀各地直接控制始终不变。', '304—305年成汉处于草创期，306年后的控制断面不能直接回填为政权形成当年的范围。', '304年形成、306年称帝与后续成都核心维持是连续但分层的节点；成汉的政权名义、成都中心和巴蜀各地承接不能合并为一次性完成。'],
     phases: [
       { label: '巴蜀军政形成', startYear: 303, endYear: 304, summary: '李氏势力在巴蜀战争中取得独立组织条件。' },
-      { label: '成汉形成', startYear: 304, endYear: 304, summary: '李雄在成都一带建立相对独立的政权。' },
+      { label: '李雄称成都王与成汉形成', startYear: 304, endYear: 304, summary: '304年十月李雄即成都王位，成汉政权形成；该节点不表示已控制整个巴蜀。' },
       { label: '成都称帝阶段', startYear: 306, endYear: 306, summary: '李雄在成都称帝，政权从区域性军政集团转入更明确的王朝制度阶段；称帝不意味着当年已完成巴蜀全域整合。' },
       { label: '称帝与整合', startYear: 306, endYear: 310, summary: '李雄称帝后继续整合巴蜀州郡。' },
       { label: '成都与巴蜀通道整合', startYear: 306, endYear: 310, summary: '成都作为区域政治中心，连接蜀地州郡、关中方向和长江上游交通；政权控制仍随战事和地方势力变化。' },
@@ -476,8 +476,8 @@ const details: HistoricalEventDetail[] = [
     ],
     locationIds: ['chengdu'],
     relatedEventIds: ['eastern-jin', 'former-zhao-founded'],
-    sourceIds: ['zizhi-tongjian', 'china-chronology'],
-    uncertaintyNote: '304年采用政权形成约年，306年称帝是后续节点；不能把两者混为同一天的正式建国事件。',
+    sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol85-cheng-han', 'china-chronology'],
+    uncertaintyNote: '304年十月李雄即成都王位，是明确的政权形成单年节点；306年称帝是后续阶段，且304年不能据此推断已控制整个巴蜀。',
   },
   {
     eventId: 'former-yan-founded',

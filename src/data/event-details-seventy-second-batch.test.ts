@@ -23,7 +23,7 @@ const targetConsequences = {
 } as const;
 
 const targetParticipantNotes = {
-  'cheng-han-founded': { personId: 'li-xiong', note: '李雄在成都一带建立成汉；304年政权形成与306年称帝是连续但可区分的节点，成都中心不等于当年已整合巴蜀全域。' },
+  'cheng-han-founded': { personId: 'li-xiong', note: '卷八十五记载李雄于304年十月即成都王位；306年称帝是后续阶段，成都政治中心不等于304年已整合巴蜀全域。' },
   'goguryeo-founded': { personId: 'yuri-goguryeo', note: '琉璃明王属于建国后的王统承接和迁都阶段，不把其活动前推为前37年建国；迁都线索不等于前37年已完成后期疆域整合。' },
   'tibetan-founded': { personId: 'songtsen-gampo', note: '松赞干布对应618—629年形成阶段；吐蕃国家化是多阶段过程，雅砻核心整合与后续逻些政治中心承接不能合并为单一建政时点。' },
   'silla-founded': { personId: 'naemul-isageum', note: '内物王活动距前57年已有数百年，本条用于连接王权整合，不把其统治追溯为建国节点；其356—382年前后活动用于观察三国竞争中的后续整合，不追溯为前57年建国事实。' },
@@ -32,7 +32,7 @@ const targetParticipantNotes = {
 } as const;
 
 describe('event details seventy-second batch', () => {
-  it('adds source-backed continuity phases without upgrading approximate dating', () => {
+  it('adds source-backed continuity phases while keeping the Cheng Han node distinct', () => {
     const report = buildEventDetailCoverageReport();
     const eventsById = new Map(events.map((event) => [event.id, event]));
 
@@ -42,9 +42,15 @@ describe('event details seventy-second batch', () => {
       const item = report.items.find((candidate) => candidate.eventId === eventId);
 
       expect(event, eventId).toBeDefined();
-      expect(event?.datePrecision, eventId).toBe('approximate');
-      expect(event?.verification, eventId).toBe('partial');
-      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      if (eventId === 'cheng-han-founded') {
+        expect(event?.datePrecision, eventId).toBe('year');
+        expect(event?.verification, eventId).toBe('checked');
+        expect(report.coveredEventIds, eventId).toContain(eventId);
+      } else {
+        expect(event?.datePrecision, eventId).toBe('approximate');
+        expect(event?.verification, eventId).toBe('partial');
+        expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      }
       expect(item?.sourceComplete, eventId).toBe(true);
       expect(item?.unresolvedReferenceIds, eventId).toEqual({
         people: [], places: [], polities: [], relatedEvents: [], sources: [],

@@ -23,7 +23,7 @@ const targetConsequences = {
 } as const;
 
 const targetParticipantScopes = {
-  'cheng-han-founded': { personId: 'li-xiong', role: '限304—334年前后形成与早期统治' },
+  'cheng-han-founded': { personId: 'li-xiong', role: '304年形成节点、306年称帝与334年前后的早期统治' },
   'dali-founded': { personId: 'duan-siping', role: '限937年前后的建政与早期洱海整合' },
   'former-liang-founded': { personId: 'zhang-mao', role: '限320—324年前后的继承与延续' },
   'western-liang-state-founded': { personId: 'li-hao', role: '限400年前后形成及早期节点治理' },
@@ -32,7 +32,7 @@ const targetParticipantScopes = {
 } as const;
 
 describe('event details seventy-seventh batch', () => {
-  it('adds source-backed boundary phases without upgrading uncertain dating', () => {
+  it('adds source-backed boundary phases while preserving the exact Cheng Han node', () => {
     const report = buildEventDetailCoverageReport();
     const eventsById = new Map(events.map((event) => [event.id, event]));
 
@@ -42,9 +42,15 @@ describe('event details seventy-seventh batch', () => {
       const item = report.items.find((candidate) => candidate.eventId === eventId);
 
       expect(event, eventId).toBeDefined();
-      expect(event?.datePrecision, eventId).toBe('approximate');
-      expect(event?.verification, eventId).toBe('partial');
-      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      if (eventId === 'cheng-han-founded') {
+        expect(event?.datePrecision, eventId).toBe('year');
+        expect(event?.verification, eventId).toBe('checked');
+        expect(report.coveredEventIds, eventId).toContain(eventId);
+      } else {
+        expect(event?.datePrecision, eventId).toBe('approximate');
+        expect(event?.verification, eventId).toBe('partial');
+        expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      }
       expect(item?.sourceComplete, eventId).toBe(true);
       expect(item?.unresolvedReferenceIds, eventId).toEqual({
         people: [], places: [], polities: [], relatedEvents: [], sources: [],

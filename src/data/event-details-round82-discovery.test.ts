@@ -19,8 +19,13 @@ describe('event details eighty-second batch', () => {
       const item = report.items.find((candidate) => candidate.eventId === eventId);
       const detail = byId.get(eventId);
 
-      expect(item?.status, eventId).toBe('needs-review');
-      expect(['approximate', 'range'], eventId).toContain(item?.timePrecision);
+      if (eventId === 'cheng-han-founded') {
+        expect(item?.status, eventId).toBe('covered');
+        expect(item?.timePrecision, eventId).toBe('year');
+      } else {
+        expect(item?.status, eventId).toBe('needs-review');
+        expect(['approximate', 'range'], eventId).toContain(item?.timePrecision);
+      }
       expect(item?.sourceComplete, eventId).toBe(true);
       expect(item?.unresolvedReferenceIds, eventId).toEqual({
         people: [], places: [], polities: [], relatedEvents: [], sources: [],

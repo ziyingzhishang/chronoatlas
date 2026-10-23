@@ -3,7 +3,6 @@ import { buildEventDetailCoverageReport } from './event-detail-coverage';
 
 const reviewBoundaryReasons = {
   'an-lushan-rebellion': 'multi-year-process',
-  'cheng-han-founded': 'formation-approximation',
   'chu-han-contention': 'multi-year-process',
   'chu-warring-founded-eighth-batch': 'traditional-periodization',
   'dali-founded': 'formation-approximation',
@@ -35,7 +34,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 96, 'needs-review': 25, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {

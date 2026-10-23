@@ -47,7 +47,7 @@ const targetConsequences = {
 } as const;
 
 const targetParticipantScopes = {
-  'cheng-han-founded': { personId: 'li-xiong', role: '本轮聚焦304—305年草创期，不以306年后的控制断面回推形成当年范围' },
+  'cheng-han-founded': { personId: 'li-xiong', role: '304年形成节点、306年称帝' },
   'xiongnu-founded': { personId: 'modu-chanyu', role: '本轮限前209年前后权力重组，不以前208年后的断面回推联盟形成当年范围' },
   'goguryeo-founded': { personId: 'jumong', role: '本轮限前37年传统建国节点，不以次年断面回推建国当年疆域' },
   'tibetan-founded': { personId: 'songtsen-gampo', role: '本轮限618—622年吐蕃早期整合，不把同期唐建国或后续盛期范围当作建政当年参与边界' },
@@ -56,7 +56,7 @@ const targetParticipantScopes = {
 } as const;
 
 describe('event details eightieth batch', () => {
-  it('adds audited boundary stages without upgrading approximate dating', () => {
+  it('adds audited boundary stages while preserving the exact Cheng Han formation year', () => {
     const report = buildEventDetailCoverageReport();
     const eventsById = new Map(events.map((event) => [event.id, event]));
 
@@ -66,8 +66,14 @@ describe('event details eightieth batch', () => {
       const item = report.items.find((candidate) => candidate.eventId === eventId);
 
       expect(event, eventId).toBeDefined();
-      expect(event?.datePrecision, eventId).toBe('approximate');
-      expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      if (eventId === 'cheng-han-founded') {
+        expect(event?.datePrecision, eventId).toBe('year');
+        expect(event?.verification, eventId).toBe('checked');
+        expect(report.coveredEventIds, eventId).toContain(eventId);
+      } else {
+        expect(event?.datePrecision, eventId).toBe('approximate');
+        expect(report.needsReviewEventIds, eventId).toContain(eventId);
+      }
       expect(item?.sourceComplete, eventId).toBe(true);
       expect(item?.unresolvedReferenceIds, eventId).toEqual({
         people: [], places: [], polities: [], relatedEvents: [], sources: [],

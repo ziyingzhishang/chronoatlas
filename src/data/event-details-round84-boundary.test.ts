@@ -6,7 +6,6 @@ import { buildEventDetailCoverageReport } from './event-detail-coverage';
 // 详情叙事的增加不能替代年代证据，因此保留在复核区。
 const reviewBoundaryIds = [
   'an-lushan-rebellion',
-  'cheng-han-founded',
   'chu-han-contention',
   'chu-warring-founded-eighth-batch',
   'dali-founded',
@@ -36,7 +35,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 96, 'needs-review': 25, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.eventId !== 'white-horse-temple-founded');
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
@@ -63,7 +62,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       item.status === 'needs-review' && item.needsReviewChecks.includes('timePrecision')
     ));
 
-    expect(precisionGaps).toHaveLength(24);
+    expect(precisionGaps).toHaveLength(23);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
     expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });

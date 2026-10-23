@@ -45,6 +45,14 @@ export const sourceNotes: SourceNote[] = [
     note: '将317年政权重建与318年称帝分层记录；支持把317年作为东晋建政主节点，同时保留跨年过程。',
   },
   {
+    id: 'zizhi-tongjian-vol85-cheng-han',
+    title: '《资治通鉴》卷八十五·李雄称成都王',
+    authorOrInstitution: '司马光等',
+    urlOrCitation: 'https://zh.wikisource.org/wiki/資治通鑑/卷085',
+    scope: '304年李雄即成都王位、成汉政权形成及306年称帝前的阶段分界',
+    note: '卷八十五记载304年十月李雄即成都王位，306年称帝是后续阶段；本条支持304年单年节点，但不提供304年已控制整个巴蜀的依据。',
+  },
+  {
     id: 'historical-basemaps',
     title: 'Historical Basemaps · 原始历史矢量断面',
     authorOrInstitution: 'André Ourednik 与贡献者',
