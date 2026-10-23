@@ -28,6 +28,7 @@ export interface HeritageDetail {
 const sourceIds = ['modern-geography-reference'];
 const historicalSourceIds = ['zizhi-tongjian', 'modern-geography-reference'];
 const dulingSourceIds = ['modern-geography-reference', 'xian-local-chronicle-duling'];
+const maolingSourceIds = ['modern-geography-reference', 'xian-local-chronicle-western-han-mausoleums'];
 
 function phase(
   type: HeritagePhaseType,
@@ -180,10 +181,10 @@ const details: HeritageDetail[] = [
     phase('restoration', '现代复原', '现代景区展示', '现代景区复原部分宫苑意象，服务于公众展示和旅游使用。', 1900),
   ], ['li-shimin', 'li-yuan'], ['tang'], ['tang-founded', 'an-lushan-rebellion'], ['温泉环境', '骊山宫苑格局', '现代展示建筑'], '唐代关中宫苑、温泉文化和现代历史景区的叠合地点。', '现存景区建筑与唐代华清宫的对应关系不能仅由名称或传统叙事确定。'),
   detail('maoling', '今陕西省兴平市东北部，位于西汉长安城西北陵区。', ['汉武帝帝陵', '西汉帝陵制度、陵邑与关中礼制空间'], [
-    phase('original', '原建筑', '前139年后营建', '茂陵作为汉武帝帝陵，配有陵园、陪葬和陵邑相关空间。', -139),
-    phase('site', '遗址', '西汉帝陵遗址', '封土、陵园和相关遗迹保留了帝陵区的历史地貌信息。', -139, 9),
+    historicalPhase('original', '原建筑', '前139年后营建', '茂陵作为汉武帝帝陵，建元二年（前139年）开始营建，配有陵园、陪葬和陵邑相关空间。', -139, undefined, undefined, maolingSourceIds),
+    historicalPhase('site', '遗址', '西汉帝陵遗址', '封土、陵园和相关遗迹保留了帝陵区的历史地貌信息。', -139, 9, undefined, maolingSourceIds),
     phase('restoration', '现代复原', '遗址保护与博物馆展示', '现代保护以封土、石刻和遗址环境为主，展示性建筑单独标注。', 1900),
-  ], ['liu-bang', 'wang-mang'], ['han_western'], ['han-imperial-accession'], ['陵墓封土', '陵园范围', '陪葬与陵邑相关遗迹'], '西汉帝陵考古和关中历史地理研究节点。', '陵园范围、陪葬关系和陵邑行政含义不能仅凭封土规模推断。'),
+  ], ['liu-bang', 'wang-mang'], ['han_western'], ['han-imperial-accession'], ['陵墓封土', '陵园范围', '陪葬与陵邑相关遗迹'], '西汉帝陵考古和关中历史地理研究节点。', '陵园范围、陪葬关系和陵邑行政含义不能仅凭封土规模推断；前139年是作寿陵和开始营建的年代，不等于全部陵区建筑同年完成。', maolingSourceIds),
   detail('du-ling', '今西安市雁塔区曲江一带，古今城市边界已经发生变化。', ['汉宣帝帝陵', '西汉晚期帝陵与长安南部空间'], [
     historicalPhase('original', '原建筑', '前65年后营建', '杜陵是汉宣帝刘询的帝陵，元康元年（前65年）在杜东原择址营建，陵园与长安南部城市、陵区相连。', -65, undefined, undefined, dulingSourceIds),
     historicalPhase('site', '遗址', '西汉帝陵遗址', '封土和陵园遗迹以考古和地面遗存形式保存。', -65, 9, undefined, dulingSourceIds),
