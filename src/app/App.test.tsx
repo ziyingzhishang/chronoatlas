@@ -117,3 +117,27 @@ test('opens an ended historical polity from the city study view in the 50vw enti
   expect(getComputedStyle(polityDrawer).width).toBe('50vw');
   expect(within(polityDrawer).getByRole('heading', { name: '建立过程' })).toBeInTheDocument();
 });
+
+test('keeps the city perspective continuous from the city timeline to event and heritage drawers', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: '长安' }));
+
+  const cityDrawer = screen.getByRole('dialog', { name: '长安' });
+  const timeline = within(cityDrawer).getByRole('region', { name: '城市历史时间轴' });
+  await userEvent.click(within(timeline).getByRole('button', { name: '唐在长安建立' }));
+
+  const eventDrawer = screen.getByRole('dialog', { name: '唐在长安建立' });
+  expect(eventDrawer).toHaveClass('entity-drawer-event');
+  expect(within(eventDrawer).getByRole('article', { name: '事件详情' })).toBeInTheDocument();
+  await userEvent.click(within(eventDrawer).getByRole('button', { name: '返回上一个实体' }));
+
+  const returnedCityDrawer = screen.getByRole('dialog', { name: '长安' });
+  const returnedTimeline = within(returnedCityDrawer).getByRole('region', { name: '城市历史时间轴' });
+  await userEvent.click(within(returnedTimeline).getByRole('button', { name: '大明宫遗址' }));
+
+  const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
+  expect(heritageDrawer).toHaveClass('entity-drawer-heritage');
+  expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
+});
