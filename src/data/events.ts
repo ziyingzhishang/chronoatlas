@@ -886,6 +886,15 @@ const catalog: HistoricalEvent[] = [
     ],
   },
   {
+    id: 'western-liao-emperor-1132', year: 1132, title: '耶律大石在起儿漫称帝', summary: '耶律大石在起儿漫被拥立为帝，西辽由迁徙性政治集团进入制度化阶段。', sourceIds: ['liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'],
+    datePrecision: 'approximate', region: 'world', category: '称帝／政权制度化', verification: 'partial',
+    background: '耶律大石率部西行后，契丹政治力量在中亚草原与绿洲网络中重新组织，逐步从流动性集团转为具有帝号的政权。',
+    process: '项目采用1132年表达耶律大石在起儿漫称帝、号葛儿罕并改元延庆；《辽史》纪年换算与现代研究存在异说，故保留约年精度。',
+    impact: '西辽获得帝国称号和制度化表达；1134年建都虎思斡耳朵（八剌沙衮）是后续政治中心稳定化节点，不能与1132年称帝合并。',
+    mapNote: '本条只标记称帝阶段；地图以八剌沙衮作为1134年以后稳定政治中心的区域参照，但不把它回填为1132年起儿漫称帝地点，也不把称帝年视为固定首都形成。',
+    references: [{ title: '《辽史》卷三十·耶律大石', url: 'https://zh.wikisource.org/wiki/遼史/卷30', detail: '记载耶律大石在起儿漫称帝及后续建都虎思斡耳朵；纪年换算保留异说。' }, { title: 'Qarā Ḵeṭāy（西辽／哈剌契丹）', url: 'https://www.iranicaonline.org/articles/qara-ketay/', detail: '用于交叉核验西辽称帝与中亚制度化阶段，不替代一手纪传材料。' }],
+  },
+  {
     id: 'dali-founded', year: 937, title: '大理政权建立', summary: '段思平在洱海区域建立大理政权，南诏之后的地方政治秩序重新组织。', placeId: 'dali_city', sourceIds: ['china-chronology', 'capital-history-reference', 'dali-diancai-record', 'dali-history-research-nopss', 'dali-duan-siping-official', 'dali-yangjumei-mct', 'dali-cambridge-governance'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '南诏后期政权瓦解，洱海地区多个地方势力竞争，段思平凭借军政联盟取得新的统治基础。',
@@ -978,6 +987,15 @@ const catalog: HistoricalEvent[] = [
     impact: '匈奴成为东亚草原与汉地关系中的重要政治主体，影响贸易、战争、和亲及边疆秩序；联盟成员、臣属和直接控制范围随时期变化。',
     mapNote: '地图应以蒙古高原及草原交通网络表达匈奴联盟的形成，使用区域和移动政治中心，不绘制现代国家式连续边界或固定首都。',
     references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于匈奴与汉初北方政治关系的编年背景；前209年前后采用约年，部众范围和单于庭位置保留不确定性。' }],
+  },
+  {
+    id: 'xiongnu-modu-assumes-chanyu', year: -209, title: '冒顿即单于', summary: '冒顿射杀头曼并自立为单于，成为匈奴联盟后续整合与扩张的权力节点。', sourceIds: ['zizhi-tongjian', 'shiji-xiongnu-modu'],
+    datePrecision: 'year', region: 'world', category: '权力继承／政权形成', verification: 'checked', placeId: 'xiongnu_core',
+    background: '秦末汉初草原继承秩序发生剧烈变化，冒顿在头曼单于统治末期积累军事与部众基础。',
+    process: '前209年左右冒顿射杀头曼并自立为单于，随后继续整合匈奴部众；本节点只表达权力继承与重组，不把它写成匈奴首次建立或完成全部统一。',
+    impact: '冒顿单于权力重组为匈奴后续扩张、汉匈战争与边疆交涉提供核心政治节点；单于庭和部众网络仍具有移动性。',
+    mapNote: '地图以蒙古高原中部移动性政治中心候选区域表达，不新增固定首都，也不以本节点推导连续疆界。',
+    references: [{ title: '《史记·匈奴列传》', url: 'https://ctext.org/shiji/xiong-nu-lie-zhuan', detail: '记载冒顿射杀头曼、自立为单于及其后整合匈奴部众。' }, { title: '《资治通鉴》', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于前209年前后秦汉之际匈奴政治重组的编年背景。' }],
   },
   {
     id: 'han-warring-founded-eighth-batch', year: -403, title: '韩政权建立（周王室册命节点）', summary: '前403年周威烈王册命韩虔为诸侯，韩以明确的制度节点进入战国诸侯秩序；后续国家整合另按阶段记录。', placeId: 'xinzheng', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology'],

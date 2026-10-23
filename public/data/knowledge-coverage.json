@@ -6532,6 +6532,64 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-liao-emperor-1132",
+      "entityKey": "event:western-liao-emperor-1132",
+      "label": "耶律大石在起儿漫称帝",
+      "polityIds": [
+        "western_liao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-liao-emperor-1132"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yelu-dashi-participated-western-liao-emperor-1132",
+            "event-detail:western-liao-emperor-1132"
+          ],
+          "relatedIds": [
+            "western-liao-founded",
+            "western_liao",
+            "yelu-dashi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "western-liao-founded",
       "entityKey": "event:western-liao-founded",
       "label": "西辽政权形成",
@@ -7416,6 +7474,65 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "xiongnu-modu-assumes-chanyu",
+      "entityKey": "event:xiongnu-modu-assumes-chanyu",
+      "label": "冒顿即单于",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-modu-assumes-chanyu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "shiji-xiongnu-modu",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-modu-participated-xiongnu-modu-assumes-chanyu",
+            "event-detail:xiongnu-modu-assumes-chanyu"
+          ],
+          "relatedIds": [
+            "modu-chanyu",
+            "xiongnu",
+            "xiongnu-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -20280,8 +20397,10 @@
             "claim:claim-modu-enemy-liu-bang",
             "claim:claim-modu-founded-xiongnu",
             "claim:claim-modu-participated-xiongnu-founded",
+            "claim:claim-modu-participated-xiongnu-modu-assumes-chanyu",
             "claim:claim-modu-ruled-xiongnu-fiftyeighth",
             "event-detail:xiongnu-founded",
+            "event-detail:xiongnu-modu-assumes-chanyu",
             "person-polity:modu-chanyu:xiongnu"
           ],
           "relatedIds": [
@@ -20289,7 +20408,8 @@
             "huhanye",
             "liu-bang",
             "xiongnu",
-            "xiongnu-founded"
+            "xiongnu-founded",
+            "xiongnu-modu-assumes-chanyu"
           ]
         },
         {
@@ -24783,15 +24903,18 @@
           "evidenceIds": [
             "claim:claim-yelu-dashi-parent-yelu-yilie-fortieth",
             "claim:claim-yelu-dashi-participated-western-liao",
+            "claim:claim-yelu-dashi-participated-western-liao-emperor-1132",
             "claim:claim-yelu-dashi-related-kublai",
             "claim:claim-yelu-dashi-ruled-western-liao-sixtyfirst",
             "claim:claim-yelu-yilie-child-yelu-dashi",
             "claim:claim-yelu-yilie-succeeded-yelu-dashi-fortyfirst",
+            "event-detail:western-liao-emperor-1132",
             "event-detail:western-liao-founded",
             "person-polity:yelu-dashi:western_liao"
           ],
           "relatedIds": [
             "kublai",
+            "western-liao-emperor-1132",
             "western-liao-founded",
             "western_liao",
             "yelu-yilie"
@@ -31520,6 +31643,7 @@
           "evidenceIds": [
             "claim:claim-yelu-dashi-ruled-western-liao-sixtyfirst",
             "claim:claim-yelu-yilie-ruled-western-liao-sixtyfourth",
+            "event-detail:western-liao-emperor-1132",
             "event-detail:western-liao-founded",
             "heritage-detail:western-liao-balasagun-site",
             "person:yelu-dashi",
@@ -31527,6 +31651,7 @@
           ],
           "relatedIds": [
             "western-liao-balasagun-site",
+            "western-liao-emperor-1132",
             "western-liao-founded",
             "yelu-dashi",
             "yelu-yilie"
@@ -32176,6 +32301,7 @@
             "claim:claim-modu-founded-xiongnu",
             "claim:claim-modu-ruled-xiongnu-fiftyeighth",
             "event-detail:xiongnu-founded",
+            "event-detail:xiongnu-modu-assumes-chanyu",
             "heritage-detail:xiongnu-longcheng-candidate",
             "person:huhanye",
             "person:modu-chanyu"
@@ -32184,7 +32310,8 @@
             "huhanye",
             "modu-chanyu",
             "xiongnu-founded",
-            "xiongnu-longcheng-candidate"
+            "xiongnu-longcheng-candidate",
+            "xiongnu-modu-assumes-chanyu"
           ]
         },
         {
@@ -32895,6 +33022,20 @@
       "kind": "uncertain",
       "polityIds": [
         "tuyuhun"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "western-liao-emperor-1132",
+      "entityKey": "event:western-liao-emperor-1132",
+      "label": "耶律大石在起儿漫称帝",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "western_liao"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -40284,6 +40425,64 @@
         }
       ]
     },
+    "event:western-liao-emperor-1132": {
+      "entityType": "event",
+      "entityId": "western-liao-emperor-1132",
+      "entityKey": "event:western-liao-emperor-1132",
+      "label": "耶律大石在起儿漫称帝",
+      "polityIds": [
+        "western_liao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-liao-emperor-1132"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yelu-dashi-participated-western-liao-emperor-1132",
+            "event-detail:western-liao-emperor-1132"
+          ],
+          "relatedIds": [
+            "western-liao-founded",
+            "western_liao",
+            "yelu-dashi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:western-liao-founded": {
       "entityType": "event",
       "entityId": "western-liao-founded",
@@ -41170,6 +41369,65 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:xiongnu-modu-assumes-chanyu": {
+      "entityType": "event",
+      "entityId": "xiongnu-modu-assumes-chanyu",
+      "entityKey": "event:xiongnu-modu-assumes-chanyu",
+      "label": "冒顿即单于",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-modu-assumes-chanyu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "shiji-xiongnu-modu",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-modu-participated-xiongnu-modu-assumes-chanyu",
+            "event-detail:xiongnu-modu-assumes-chanyu"
+          ],
+          "relatedIds": [
+            "modu-chanyu",
+            "xiongnu",
+            "xiongnu-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -54034,8 +54292,10 @@
             "claim:claim-modu-enemy-liu-bang",
             "claim:claim-modu-founded-xiongnu",
             "claim:claim-modu-participated-xiongnu-founded",
+            "claim:claim-modu-participated-xiongnu-modu-assumes-chanyu",
             "claim:claim-modu-ruled-xiongnu-fiftyeighth",
             "event-detail:xiongnu-founded",
+            "event-detail:xiongnu-modu-assumes-chanyu",
             "person-polity:modu-chanyu:xiongnu"
           ],
           "relatedIds": [
@@ -54043,7 +54303,8 @@
             "huhanye",
             "liu-bang",
             "xiongnu",
-            "xiongnu-founded"
+            "xiongnu-founded",
+            "xiongnu-modu-assumes-chanyu"
           ]
         },
         {
@@ -58537,15 +58798,18 @@
           "evidenceIds": [
             "claim:claim-yelu-dashi-parent-yelu-yilie-fortieth",
             "claim:claim-yelu-dashi-participated-western-liao",
+            "claim:claim-yelu-dashi-participated-western-liao-emperor-1132",
             "claim:claim-yelu-dashi-related-kublai",
             "claim:claim-yelu-dashi-ruled-western-liao-sixtyfirst",
             "claim:claim-yelu-yilie-child-yelu-dashi",
             "claim:claim-yelu-yilie-succeeded-yelu-dashi-fortyfirst",
+            "event-detail:western-liao-emperor-1132",
             "event-detail:western-liao-founded",
             "person-polity:yelu-dashi:western_liao"
           ],
           "relatedIds": [
             "kublai",
+            "western-liao-emperor-1132",
             "western-liao-founded",
             "western_liao",
             "yelu-yilie"
@@ -65274,6 +65538,7 @@
           "evidenceIds": [
             "claim:claim-yelu-dashi-ruled-western-liao-sixtyfirst",
             "claim:claim-yelu-yilie-ruled-western-liao-sixtyfourth",
+            "event-detail:western-liao-emperor-1132",
             "event-detail:western-liao-founded",
             "heritage-detail:western-liao-balasagun-site",
             "person:yelu-dashi",
@@ -65281,6 +65546,7 @@
           ],
           "relatedIds": [
             "western-liao-balasagun-site",
+            "western-liao-emperor-1132",
             "western-liao-founded",
             "yelu-dashi",
             "yelu-yilie"
@@ -65930,6 +66196,7 @@
             "claim:claim-modu-founded-xiongnu",
             "claim:claim-modu-ruled-xiongnu-fiftyeighth",
             "event-detail:xiongnu-founded",
+            "event-detail:xiongnu-modu-assumes-chanyu",
             "heritage-detail:xiongnu-longcheng-candidate",
             "person:huhanye",
             "person:modu-chanyu"
@@ -65938,7 +66205,8 @@
             "huhanye",
             "modu-chanyu",
             "xiongnu-founded",
-            "xiongnu-longcheng-candidate"
+            "xiongnu-longcheng-candidate",
+            "xiongnu-modu-assumes-chanyu"
           ]
         },
         {
@@ -66416,20 +66684,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 133,
+      "totalEntities": 135,
       "statusCounts": {
-        "covered": 641,
+        "covered": 650,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 24,
+        "uncertain": 25,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 24
+        "uncertain": 25
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -66449,6 +66717,7 @@
         "event:southern-ming-founded",
         "event:tibetan-founded",
         "event:tuyuhun-founded",
+        "event:western-liao-emperor-1132",
         "event:western-liao-founded",
         "event:western-zhou-founded-eighth-batch",
         "event:xia-early-founded-eighth-batch",
@@ -68915,6 +69184,7 @@
       "polityId": "western_liao",
       "polityName": "西辽",
       "entityKeys": [
+        "event:western-liao-emperor-1132",
         "event:western-liao-founded",
         "heritage:western-liao-balasagun-site",
         "person:yelu-dashi",
@@ -68971,6 +69241,20 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "western-liao-emperor-1132",
+          "entityKey": "event:western-liao-emperor-1132",
+          "label": "耶律大石在起儿漫称帝",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_liao"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -68980,7 +69264,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西辽：有 3 项待核验缺口。"
+      "summary": "西辽：有 4 项待核验缺口。"
     },
     "western_qin": {
       "polityId": "western_qin",
@@ -69242,6 +69526,7 @@
       "polityName": "匈奴",
       "entityKeys": [
         "event:xiongnu-founded",
+        "event:xiongnu-modu-assumes-chanyu",
         "heritage:orkhon-turkic-inscriptions",
         "heritage:tuyuhun-fuqisi-city-candidate",
         "heritage:xiongnu-longcheng-candidate",
@@ -69682,6 +69967,7 @@
       "cityName": "布拉纳遗址附近",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:western-liao-emperor-1132",
         "event:western-liao-founded",
         "heritage:western-liao-balasagun-site"
       ],
@@ -69699,6 +69985,20 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "western-liao-emperor-1132",
+          "entityKey": "event:western-liao-emperor-1132",
+          "label": "耶律大石在起儿漫称帝",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_liao"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -69708,7 +70008,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "布拉纳遗址附近：有 1 项待核验缺口。"
+      "summary": "布拉纳遗址附近：有 2 项待核验缺口。"
     },
     "beijing": {
       "placeId": "beijing",
@@ -71669,9 +71969,27 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:xiongnu-founded",
-        "heritage:xiongnu-longcheng-candidate"
+        "event:xiongnu-modu-assumes-chanyu",
+        "heritage:xiongnu-longcheng-candidate",
+        "person:modu-chanyu"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "modu-chanyu",
+          "entityKey": "person:modu-chanyu",
+          "label": "冒顿",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xiongnu"
+          ],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "xiongnu-founded",
@@ -71694,7 +72012,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "蒙古高原中部候选区域：有 1 项待核验缺口。"
+      "summary": "蒙古高原中部候选区域：有 2 项待核验缺口。"
     },
     "xiping": {
       "placeId": "xiping",

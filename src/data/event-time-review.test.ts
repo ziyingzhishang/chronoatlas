@@ -30,6 +30,7 @@ const expectedEventIds = [
   'daming-palace-built',
   'dali-founded',
   'western-liao-founded',
+  'western-liao-emperor-1132',
   'southern-ming-founded',
   'hongguang-nanjing-founded',
   'longwu-fuzhou-founded',
@@ -44,12 +45,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(30);
+    expect(report.totalReviewed).toBe(31);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 10, approximate: 20, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 10, approximate: 21, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

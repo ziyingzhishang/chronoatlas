@@ -82,6 +82,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'daming-palace-built', status: 'approximate', expectedPrecision: 'approximate', explanation: '大明宫营建是持续工程，634年前后只作启动阶段约年，不能把全部宫城建成压缩为单一日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'dali-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '937年前后表示大理政权形成；《滇载记》按后晋天福二年记937年，而国家社科成果摘要采用938年，杨干贞改国号、段氏承接和高氏阶段不能混为精确建国日，因此保留约年。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liao-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1124年前后表示耶律大石自立为王并西行的形成阶段；《辽史》与现代研究对称帝纪年存在换算异说，故不升级为确定年。1132年称帝、1134年建都虎思斡耳朵（八剌沙衮）分别作为后续阶段记录。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'western-liao-emperor-1132', status: 'approximate', expectedPrecision: 'approximate', explanation: '1132年称帝作为西辽制度化阶段，纪年换算存在1131等口径；与1124年前后形成和1134年八剌沙衮建都分层，八剌沙衮只作后续区域参照。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'hongguang-nanjing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1644年朱由崧在南京先监国后即帝位，年份级节点可由弘光阶段史料支持；即位日和南京阶段覆亡属于同一阶段内的后续细节。', timelineStrategy: 'year-marker' },
   { eventId: 'longwu-fuzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1645年朱聿键在福州即位并改元隆武，福州阶段中心可明确到年份；隆武覆亡与郑芝龙军镇关系另作阶段说明。', timelineStrategy: 'year-marker' },

@@ -64,7 +64,9 @@ function isEstablishmentDetailForPolity(
   detail: HistoricalEventDetail,
   eventTitle?: string,
   eventSummary?: string,
+  eventCategory?: string,
 ): boolean {
+  if (eventCategory === '称帝／政权制度化' || eventCategory === '权力继承／政权形成') return false;
   const text = [eventTitle, eventSummary, eventText(detail)].filter(Boolean).join(' ');
   if (!establishmentText.test(text)) return false;
   if (/建立.*政治条件|建国.*条件/.test(text)) return false;
@@ -93,7 +95,7 @@ function relationshipForPolity(claim: HistoricalClaim, personIds: Set<string>): 
 function buildItem(
   polity: Polity,
   detailById: Map<string, HistoricalEventDetail>,
-  eventTitles: Map<string, { title: string; summary: string }>,
+  eventTitles: Map<string, { title: string; summary: string; category?: string }>,
   peopleById: Map<string, Person>,
   sourceIds: Set<string>,
 ): PolityCoverageItem {
@@ -102,7 +104,7 @@ function buildItem(
   const establishmentEventIds = linkedDetails
     .filter((detail) => {
       const event = eventTitles.get(detail.eventId);
-      return isEstablishmentDetailForPolity(polity, detail, event?.title, event?.summary);
+      return isEstablishmentDetailForPolity(polity, detail, event?.title, event?.summary, event?.category);
     })
     .map((detail) => detail.eventId);
 
@@ -171,7 +173,7 @@ export function auditPolityCoverage(
   },
 ): PolityCoverageReport {
   const detailById = new Map(catalog.eventDetails.map((detail) => [detail.eventId, detail]));
-  const eventTitles = new Map(catalog.events.map((event) => [event.id, { title: event.title, summary: event.summary }]));
+  const eventTitles = new Map(catalog.events.map((event) => [event.id, { title: event.title, summary: event.summary, category: event.category }]));
   const peopleById = new Map(catalog.people.map((person) => [person.id, person]));
   const sourceIds = new Set(catalog.sourceNotes.map((source) => source.id));
   const items = catalog.polities.map((polity) => buildItem(polity, detailById, eventTitles, peopleById, sourceIds));

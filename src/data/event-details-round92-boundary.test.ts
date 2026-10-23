@@ -24,6 +24,7 @@ const reviewBoundaryReasons = {
   'tibetan-founded': 'formation-approximation',
   'tuyuhun-founded': 'formation-approximation',
   'western-liao-founded': 'formation-approximation',
+  'western-liao-emperor-1132': 'formation-approximation',
   'western-zhou-founded-eighth-batch': 'traditional-periodization',
   'xia-early-founded-eighth-batch': 'traditional-periodization',
   'xiongnu-founded': 'formation-approximation',
@@ -39,7 +40,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 104, 'needs-review': 29, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 105, 'needs-review': 30, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -94,6 +95,6 @@ describe('event details ninety-second round boundary audit', () => {
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');
-    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(24);
+    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(25);
   });
 });

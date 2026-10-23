@@ -1905,6 +1905,18 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '400年建政是两部正史均有编年依据的确定年节点；397—399年受命是前置阶段，405年迁治酒泉是后续中心转移。两书不提供400年已完成整条河西走廊直接控制的依据，故疆域与节点控制仍按阶段展示。',
   },
   {
+    eventId: 'western-liao-emperor-1132',
+    participants: [{ personId: 'yelu-dashi', role: '在起儿漫被拥立为帝、号葛儿罕的西辽统治者', relationType: 'direct', note: '称帝是西辽制度化阶段，不等同于1124年前后西行建政，也不等同于1134年八剌沙衮建都。' }],
+    polityIds: ['western_liao'],
+    causes: ['耶律大石率部西行后，契丹政治力量在中亚获得新的立足网络。', '迁徙性政治集团需要以帝号和制度表达巩固统治合法性。'],
+    consequences: ['西辽进入帝号与制度化阶段。', '1134年建都虎思斡耳朵（八剌沙衮）仍是后续政治中心稳定化节点。'],
+    phases: [{ label: '称帝制度化', startYear: 1132, endYear: 1132, summary: '耶律大石在起儿漫称帝，项目采用1132年但保留纪年换算异说。' }, { label: '稳定中心的后续形成', startYear: 1134, endYear: 1134, summary: '八剌沙衮建都属于称帝后的后续阶段，不回填为称帝地点。' }],
+    locationIds: ['balasagun'],
+    relatedEventIds: ['western-liao-founded'],
+    sourceIds: ['liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'],
+    uncertaintyNote: '1132年是项目采用的称帝约年，存在1131等纪年换算口径；八剌沙衮仅作为1134年以后西辽稳定政治中心的区域参照，不是1132年起儿漫称帝地点，二者分开记录。',
+  },
+  {
     eventId: 'western-liao-founded',
     participants: [
       { personId: 'yelu-dashi', role: '辽亡后自立为王、率部西行并重建契丹政权的统治者（本轮聚焦1124—1125年早期迁移，不以1126年后的断面回推建政初期控制范围；1132年称帝与1134年建都八剌沙衮另分阶段）', note: '《辽史》支持自立为王、西行、起儿漫称帝和延庆三年建都三个层次；1124年为项目采用的约年锚点，不能把后续稳定中心或中亚扩张前推。' },
@@ -2112,6 +2124,18 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['southern-ming-founded', 'longwu-fuzhou-founded', 'shaowu-guangzhou-founded'],
     sourceIds: ['southern-ming-overview', 'southern-ming-yongli', 'ming-shi-vol120-southern-ming', 'zhaoqing-yongli-heritage'],
     uncertaintyNote: '1646年肇庆是永历初期政治中心；后续迁都、军镇联盟和西南控制范围不能前推到肇庆即位节点。',
+  },
+  {
+    eventId: 'xiongnu-modu-assumes-chanyu',
+    participants: [{ personId: 'modu-chanyu', role: '杀父头曼并自立为单于的继承者', relationType: 'direct', note: '头曼尚无独立人物实体，本节点只记录冒顿的即位与权力重组。' }],
+    polityIds: ['xiongnu'],
+    causes: ['秦末汉初草原部众竞争与单于继承危机加剧。', '冒顿通过军事训练和部众支持取得继承优势。'],
+    consequences: ['冒顿成为匈奴联盟后续整合与扩张的核心单于。', '匈奴的移动性政治中心和部众网络继续发展，不能由此推导固定首都。'],
+    phases: [{ label: '即位与权力重组', startYear: -209, endYear: -209, summary: '冒顿射杀头曼并自立为单于。' }, { label: '部众整合承接', startYear: -209, endYear: -200, summary: '即位后继续整合主要部众，形成汉初北方政治格局的重要基础。' }],
+    locationIds: ['xiongnu_core'],
+    relatedEventIds: ['xiongnu-founded'],
+    sourceIds: ['zizhi-tongjian', 'shiji-xiongnu-modu', 'capital-history-reference'],
+    uncertaintyNote: '本节点表达冒顿即单于的权力继承，不表示匈奴首次建立、完成全部统一或拥有固定首都；xiongnu_core 仅为移动性政治中心候选区域。',
   },
   {
     eventId: 'xiongnu-founded',

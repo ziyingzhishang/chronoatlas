@@ -349,7 +349,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['耶律大石在辽亡危机中自立为王并率部西行，1124年前后进入西辽形成阶段。', '1132年在起儿漫称帝、号葛儿罕并改元延庆；该年是项目采用的称帝阶段，纪年换算仍保留异说。', '《辽史》记延庆三年建都城、号虎思斡耳朵；项目以1134年作为八剌沙衮稳定政治中心起点，今对应吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址区域。'],
     turningPoints: [turn(1124, '西辽政权形成', '耶律大石自立为王并率部西行，西辽进入形成阶段。', 'western-liao-founded'), turn(1132, '称帝与制度化', '耶律大石在起儿漫称帝，西辽从迁徙政治集团进入帝国称号阶段。'), turn(1134, '八剌沙衮建都', '《辽史》所记延庆三年建都城、号虎思斡耳朵，八剌沙衮成为稳定政治中心参照。'), turn(1141, '卡特万之战', '西辽在中亚政治格局中的影响达到重要节点。'), turn(1218, '西辽覆亡', '乃蛮王屈出律政权被蒙古攻灭，西辽结束。')],
     principalFigureIds: ['yelu-dashi', 'yelu-yilie'], capitalPhases: [capital('balasagun', 1134, 1218, 'de_facto', 'actual', '八剌沙衮／虎思斡耳朵；今吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址区域；1132年称帝阶段与1134年稳定中心分开')],
-    heritageIds: ['western-liao-balasagun-site'], eventIds: ['western-liao-founded'], claimIds: ['claim-yelu-dashi-participated-western-liao', 'claim-yelu-yilie-participated-western-liao'], sourceIds: [...modernSources, 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'],
+    heritageIds: ['western-liao-balasagun-site'], eventIds: ['western-liao-founded', 'western-liao-emperor-1132'], claimIds: ['claim-yelu-dashi-participated-western-liao', 'claim-yelu-dashi-participated-western-liao-emperor-1132', 'claim-yelu-yilie-participated-western-liao'], sourceIds: [...modernSources, 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'],
     uncertaintyNote: '1124年前后是西辽西行建政约年，不能升级为无争议的精确建国日；1132年称帝与1134年八剌沙衮建都分层记录。八剌沙衮政治中心兼具宫帐、军营和城址性质，现代布拉纳遗址对应可靠但不能等同于完整西辽首都范围；耶律大石与耶律夷列代表不同统治阶段。',
   }),
   detail({
@@ -677,7 +677,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['秦汉之际草原部众与继承秩序发生重组。', '前209年前后冒顿整合主要部众，匈奴成为强势草原政治主体。', '单于庭、会聚空间和交通网络随时期与部众关系移动。'],
     turningPoints: [turn(-209, '匈奴联盟形成', '冒顿单于整合主要部众。', 'xiongnu-founded'), turn(-200, '汉匈关系重组', '匈奴与汉地的战争、和亲和边疆秩序进入新阶段。'), turn(48, '南北匈奴分裂', '匈奴政治结构分化，中心和部众关系进一步变化。')],
     principalFigureIds: ['modu-chanyu', 'huhanye'], capitalPhases: [capital('xiongnu_core', -209, 93, 'mobile_court', 'uncertain', '龙城／单于庭为区域候选参照，政治中心具有移动性，今蒙古高原中部区域不能指向唯一城址。')],
-    heritageIds: ['xiongnu-longcheng-candidate'], eventIds: ['xiongnu-founded'], claimIds: ['claim-modu-founded-xiongnu'], sourceIds: modernSources,
+    heritageIds: ['xiongnu-longcheng-candidate'], eventIds: ['xiongnu-founded', 'xiongnu-modu-assumes-chanyu'], claimIds: ['claim-modu-founded-xiongnu', 'claim-modu-participated-xiongnu-modu-assumes-chanyu'], sourceIds: modernSources,
     uncertaintyNote: '前209年前后是联盟形成约年，不是固定城市建国事件；单于庭具有移动政治中心性质，龙城／单于庭位置和性质仍有候选口径，不能写成已确认的固定首都或完整疆界。',
   }),
   detail({
