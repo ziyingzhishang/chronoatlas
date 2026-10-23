@@ -984,6 +984,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百八十·后晋纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷280', detail: '天福元年（936）石敬瑭受册立为大晋皇帝及后唐覆亡过程。' }],
   },
   {
+    id: 'later-jin-ended-947', year: 947, title: '后晋在开封终止', summary: '契丹军队南下攻取开封，后晋末帝石重贵出降，后晋政权终止，开封转入后汉承接阶段。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '后晋对契丹的依赖、北方边疆冲突与中原军政关系持续紧张，契丹在后晋末期发动南下行动。',
+    process: '947年契丹军队攻取开封，后晋末帝石重贵出降，后晋中央政权结束；契丹占领与后汉进入中原是相继展开的不同阶段。',
+    impact: '后晋转入契丹占领及后汉承接阶段，开封继续作为中原政治中心；城市遗产和地方社会并未随政权终止而消失。',
+    mapNote: '开封标记的是后晋中央政权终止与首都控制转换，不表示947年契丹或后汉已在同日完成全部中原地区的行政接收。',
+    references: [{ title: '《资治通鉴》卷二百八十六·后晋纪七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷286', detail: '用于核对947年契丹南下、开封陷落、石重贵出降及后晋终止；后汉建立另按阶段记录。' }],
+  },
+  {
     id: 'han-later-founded', year: 947, title: '后汉建立', summary: '刘知远在后晋覆亡后即帝位，后汉政权形成。',
     datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian'], verification: 'checked',
     background: '契丹南下导致后晋政权崩溃，中原军政集团需要重新确立皇帝与中央政权。',

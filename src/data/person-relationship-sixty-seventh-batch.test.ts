@@ -51,8 +51,8 @@ describe('sixty-seventh batch high-confidence alliance/conflict relationships', 
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(133);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(83);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(134);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(82);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
     expect(report.byPersonId.dorgon.categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['zhu-yousong'].categories.allianceConflict.status).toBe('covered');

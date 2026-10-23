@@ -47,8 +47,8 @@ describe('round 106 kinship boundary audit', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(claims.filter((claim) => claim.id.includes('round106') && directKinship.has(claim.predicate))).toEqual([]);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(133);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(83);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(134);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(82);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
   });
 });

@@ -379,17 +379,17 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'jin_later', perspectiveSummary: '后晋由石敬瑭在契丹军事援助下建立，以开封为正式都城；政治合法性、燕云割让和中原统治应作为不同层次叙述。',
     foundationProcess: ['石敬瑭在后唐内部争夺中寻求契丹支持。', '936年受契丹册立建立后晋，五代中原政权发生更替。', '开封成为正式都城，但后晋的军事依赖和北方边界变化持续影响其统治。'],
-    turningPoints: [turn(936, '后晋建立', '石敬瑭受册立为帝，后晋政权形成。', 'jin-later-founded'), turn(937, '中原行政承接', '后晋在开封承接后唐中原机构并处理地方归附。'), turn(947, '后晋覆亡', '契丹南下攻取开封，后晋政权结束。')],
-    principalFigureIds: ['shi-jingtang'], capitalPhases: [capital('kaifeng', 936, 947, 'primary', 'formal', '后晋正式都城，今河南省开封市。')],
-    heritageIds: ['kaifeng-later-jin-han-city-layer'], eventIds: ['jin-later-founded'], claimIds: ['claim-shi-jingtang-founded-later-jin'], sourceIds: modernSources,
-    uncertaintyNote: '开封遗产以五代后晋—后汉共享城市历史层表达，不指认现存建筑为后晋专属原构；契丹援助、燕云割让与开封统治不可由单一遗产或建国事件替代。',
+    turningPoints: [turn(936, '后晋建立', '石敬瑭受册立为帝，后晋政权形成。', 'jin-later-founded'), turn(937, '中原行政承接', '后晋在开封承接后唐中原机构并处理地方归附。'), turn(947, '后晋终止', '契丹南下攻取开封，石重贵出降，后晋中央政权结束。', 'later-jin-ended-947')],
+    principalFigureIds: ['shi-jingtang', 'shi-chonggui'], capitalPhases: [capital('kaifeng', 936, 947, 'primary', 'formal', '后晋正式都城，今河南省开封市。')],
+    heritageIds: ['kaifeng-later-jin-han-city-layer'], eventIds: ['jin-later-founded', 'later-jin-ended-947'], claimIds: ['claim-shi-jingtang-founded-later-jin', 'claim-shi-chonggui-ruled-later-jin', 'claim-shi-chonggui-participated-later-jin-ended-947', 'claim-shi-chonggui-enemy-yelu-deguang-termination-947'], sourceIds: modernSources,
+    uncertaintyNote: '开封遗产以五代后晋—后汉共享城市历史层表达，不指认现存建筑为后晋专属原构；947年开封失守、石重贵出降、契丹占领与后汉承接是连续但可分层的过程，不能由单一终结事件替代地方接收史。',
   }),
   detail({
     polityId: 'han_later', perspectiveSummary: '后汉由刘知远在后晋覆亡后建立，先以太原为政治起点、后进入开封；其存续短暂，政权形成与首都阶段必须分开呈现。',
     foundationProcess: ['刘知远在后晋军政体系中积累河东力量。', '947年后晋覆亡后，刘知远即帝位，后汉形成。', '政权由太原进入开封，后汉的中原控制只维持到951年。'],
     turningPoints: [turn(947, '后汉建立', '刘知远在后晋覆亡后即帝位，后汉政权形成。', 'han-later-founded'), turn(948, '进入开封', '后汉承接中原政治中心和行政体系。'), turn(951, '后汉覆亡', '郭威受禅建立后周，后汉结束。')],
     principalFigureIds: ['liu-zhiyuan'], capitalPhases: [capital('kaifeng', 947, 951, 'primary', 'formal', '后汉正式都城，今河南省开封市。')],
-    heritageIds: ['kaifeng-later-jin-han-city-layer'], eventIds: ['han-later-founded'], claimIds: ['claim-liu-zhiyuan-founded-later-han'], sourceIds: modernSources,
+    heritageIds: ['kaifeng-later-jin-han-city-layer'], eventIds: ['later-jin-ended-947', 'han-later-founded'], claimIds: ['claim-liu-zhiyuan-founded-later-han'], sourceIds: modernSources,
     uncertaintyNote: '刘知远先在太原即位、后进入开封；开封遗产以五代后晋—后汉共享城市历史层表达，不把后周或北汉遗产替代为后汉专属建筑。',
   }),
   detail({

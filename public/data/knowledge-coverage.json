@@ -2892,6 +2892,71 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-jin-ended-947",
+      "entityKey": "event:later-jin-ended-947",
+      "label": "后晋在开封终止",
+      "polityIds": [
+        "han_later",
+        "jin_later",
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-jin-ended-947"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-chonggui-participated-later-jin-ended-947",
+            "event-detail:later-jin-ended-947"
+          ],
+          "relatedIds": [
+            "han-later-founded",
+            "han_later",
+            "jin-later-founded",
+            "jin_later",
+            "khitan",
+            "shi-chonggui",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-jin-founded",
       "entityKey": "event:later-jin-founded",
       "label": "后金建立",
@@ -13058,7 +13123,8 @@
       "label": "五代后晋—后汉开封城市历史层",
       "polityIds": [
         "han_later",
-        "jin_later"
+        "jin_later",
+        "khitan"
       ],
       "checks": [
         {
@@ -13100,8 +13166,11 @@
             "han_later",
             "jin-later-founded",
             "jin_later",
+            "later-jin-ended-947",
             "liu-zhiyuan",
-            "shi-jingtang"
+            "shi-chonggui",
+            "shi-jingtang",
+            "yelu-deguang"
           ]
         },
         {
@@ -27321,6 +27390,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "shi-chonggui",
+      "entityKey": "person:shi-chonggui",
+      "label": "石重贵",
+      "polityIds": [
+        "jin_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shi-chonggui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-chonggui-enemy-yelu-deguang-termination-947",
+            "claim:claim-shi-chonggui-participated-later-jin-ended-947",
+            "claim:claim-shi-chonggui-ruled-later-jin",
+            "event-detail:later-jin-ended-947",
+            "person-polity:shi-chonggui:jin_later"
+          ],
+          "relatedIds": [
+            "jin_later",
+            "later-jin-ended-947",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "shi-hu",
       "entityKey": "person:shi-hu",
       "label": "石虎",
@@ -30795,8 +30928,10 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-shi-chonggui-enemy-yelu-deguang-termination-947",
             "claim:claim-yelu-abaoji-parent-yelu-deguang-liao",
             "claim:claim-yelu-deguang-child-yelu-abaoji-liao",
+            "event-detail:later-jin-ended-947",
             "event-detail:liao-dongdan-nanjing",
             "event-detail:liao-dongjing-established",
             "event-detail:liao-nanjing-established",
@@ -30804,9 +30939,11 @@
           ],
           "relatedIds": [
             "khitan",
+            "later-jin-ended-947",
             "liao-dongdan-nanjing",
             "liao-dongjing-established",
             "liao-nanjing-established",
+            "shi-chonggui",
             "yelu-abaoji"
           ]
         },
@@ -33859,6 +33996,7 @@
             "claim:claim-liu-zhiyuan-founded-later-han",
             "claim:claim-liu-zhiyuan-ruled-later-han-fortythird",
             "event-detail:han-later-founded",
+            "event-detail:later-jin-ended-947",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
@@ -33869,6 +34007,7 @@
             "jinyang-ancient-city-site",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-jin-ended-947",
             "liu-zhiyuan"
           ]
         },
@@ -34245,21 +34384,26 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-shi-chonggui-ruled-later-jin",
             "claim:claim-shi-jingtang-founded-later-jin",
             "claim:claim-shi-jingtang-ruled-later-jin-ninetyfifth",
             "event-detail:jin-later-founded",
+            "event-detail:later-jin-ended-947",
             "event-detail:later-tang-ended-936",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-tang-luoyang-city-site",
+            "person:shi-chonggui",
             "person:shi-jingtang"
           ],
           "relatedIds": [
             "jin-later-founded",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-jin-ended-947",
             "later-tang-ended-936",
             "later-tang-luoyang-city-site",
+            "shi-chonggui",
             "shi-jingtang"
           ]
         },
@@ -34442,6 +34586,7 @@
           "evidenceIds": [
             "claim:claim-yelu-abaoji-founded-khitan",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
+            "event-detail:later-jin-ended-947",
             "event-detail:liao-dongdan-nanjing",
             "event-detail:liao-dongjing-established",
             "event-detail:liao-dongping-established",
@@ -34460,6 +34605,7 @@
             "person:yelu-deguang"
           ],
           "relatedIds": [
+            "later-jin-ended-947",
             "liao-dongdan-nanjing",
             "liao-dongjing-city-site",
             "liao-dongjing-established",
@@ -43482,6 +43628,71 @@
             "jin_jurchen",
             "jurchen-jin-founded",
             "wanyan-liang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-jin-ended-947": {
+      "entityType": "event",
+      "entityId": "later-jin-ended-947",
+      "entityKey": "event:later-jin-ended-947",
+      "label": "后晋在开封终止",
+      "polityIds": [
+        "han_later",
+        "jin_later",
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-jin-ended-947"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-chonggui-participated-later-jin-ended-947",
+            "event-detail:later-jin-ended-947"
+          ],
+          "relatedIds": [
+            "han-later-founded",
+            "han_later",
+            "jin-later-founded",
+            "jin_later",
+            "khitan",
+            "shi-chonggui",
+            "yelu-deguang"
           ]
         },
         {
@@ -53661,7 +53872,8 @@
       "label": "五代后晋—后汉开封城市历史层",
       "polityIds": [
         "han_later",
-        "jin_later"
+        "jin_later",
+        "khitan"
       ],
       "checks": [
         {
@@ -53703,8 +53915,11 @@
             "han_later",
             "jin-later-founded",
             "jin_later",
+            "later-jin-ended-947",
             "liu-zhiyuan",
-            "shi-jingtang"
+            "shi-chonggui",
+            "shi-jingtang",
+            "yelu-deguang"
           ]
         },
         {
@@ -67922,6 +68137,70 @@
         }
       ]
     },
+    "person:shi-chonggui": {
+      "entityType": "person",
+      "entityId": "shi-chonggui",
+      "entityKey": "person:shi-chonggui",
+      "label": "石重贵",
+      "polityIds": [
+        "jin_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shi-chonggui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-chonggui-enemy-yelu-deguang-termination-947",
+            "claim:claim-shi-chonggui-participated-later-jin-ended-947",
+            "claim:claim-shi-chonggui-ruled-later-jin",
+            "event-detail:later-jin-ended-947",
+            "person-polity:shi-chonggui:jin_later"
+          ],
+          "relatedIds": [
+            "jin_later",
+            "later-jin-ended-947",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:shi-hu": {
       "entityType": "person",
       "entityId": "shi-hu",
@@ -71398,8 +71677,10 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-shi-chonggui-enemy-yelu-deguang-termination-947",
             "claim:claim-yelu-abaoji-parent-yelu-deguang-liao",
             "claim:claim-yelu-deguang-child-yelu-abaoji-liao",
+            "event-detail:later-jin-ended-947",
             "event-detail:liao-dongdan-nanjing",
             "event-detail:liao-dongjing-established",
             "event-detail:liao-nanjing-established",
@@ -71407,9 +71688,11 @@
           ],
           "relatedIds": [
             "khitan",
+            "later-jin-ended-947",
             "liao-dongdan-nanjing",
             "liao-dongjing-established",
             "liao-nanjing-established",
+            "shi-chonggui",
             "yelu-abaoji"
           ]
         },
@@ -74462,6 +74745,7 @@
             "claim:claim-liu-zhiyuan-founded-later-han",
             "claim:claim-liu-zhiyuan-ruled-later-han-fortythird",
             "event-detail:han-later-founded",
+            "event-detail:later-jin-ended-947",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
@@ -74472,6 +74756,7 @@
             "jinyang-ancient-city-site",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-jin-ended-947",
             "liu-zhiyuan"
           ]
         },
@@ -74848,21 +75133,26 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-shi-chonggui-ruled-later-jin",
             "claim:claim-shi-jingtang-founded-later-jin",
             "claim:claim-shi-jingtang-ruled-later-jin-ninetyfifth",
             "event-detail:jin-later-founded",
+            "event-detail:later-jin-ended-947",
             "event-detail:later-tang-ended-936",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-tang-luoyang-city-site",
+            "person:shi-chonggui",
             "person:shi-jingtang"
           ],
           "relatedIds": [
             "jin-later-founded",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-jin-ended-947",
             "later-tang-ended-936",
             "later-tang-luoyang-city-site",
+            "shi-chonggui",
             "shi-jingtang"
           ]
         },
@@ -75045,6 +75335,7 @@
           "evidenceIds": [
             "claim:claim-yelu-abaoji-founded-khitan",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
+            "event-detail:later-jin-ended-947",
             "event-detail:liao-dongdan-nanjing",
             "event-detail:liao-dongjing-established",
             "event-detail:liao-dongping-established",
@@ -75063,6 +75354,7 @@
             "person:yelu-deguang"
           ],
           "relatedIds": [
+            "later-jin-ended-947",
             "liao-dongdan-nanjing",
             "liao-dongjing-city-site",
             "liao-dongjing-established",
@@ -79708,9 +80000,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 182,
+      "totalEntities": 183,
       "statusCounts": {
-        "covered": 870,
+        "covered": 875,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -79785,9 +80077,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 221,
+      "totalEntities": 222,
       "statusCounts": {
-        "covered": 1050,
+        "covered": 1055,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -80403,6 +80695,7 @@
       "polityName": "后汉",
       "entityKeys": [
         "event:han-later-founded",
+        "event:later-jin-ended-947",
         "event:northern-han-founded",
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-jin-han-city-layer",
@@ -80617,10 +80910,12 @@
       "polityName": "后晋",
       "entityKeys": [
         "event:jin-later-founded",
+        "event:later-jin-ended-947",
         "event:later-tang-ended-936",
         "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "heritage:later-tang-luoyang-city-site",
+        "person:shi-chonggui",
         "person:shi-jingtang",
         "polity:jin_later"
       ],
@@ -80677,6 +80972,7 @@
       "polityId": "khitan",
       "polityName": "辽",
       "entityKeys": [
+        "event:later-jin-ended-947",
         "event:liao-dongdan-nanjing",
         "event:liao-dongjing-established",
         "event:liao-dongping-established",
@@ -80684,6 +80980,7 @@
         "event:liao-nanjing-established",
         "event:liao-xijing-established",
         "event:liao-zhongjing-built",
+        "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:liao-dongjing-city-site",
         "heritage:liao-nanjing-city-site",
         "heritage:liao-shangjing-city-site",
@@ -85058,6 +85355,7 @@
         "event:han-later-founded",
         "event:jin-ended-1234",
         "event:jin-later-founded",
+        "event:later-jin-ended-947",
         "event:later-liang-ended-923",
         "event:later-liang-five-dynasties-founded",
         "event:northern-song-founded",
@@ -85070,7 +85368,9 @@
         "heritage:later-liang-kaifeng-city-layer",
         "person:li-cunxu",
         "person:ogedei",
+        "person:shi-chonggui",
         "person:wanyan-shouxu",
+        "person:yelu-deguang",
         "person:zhao-kuangyin",
         "person:zhu-wen",
         "person:zhu-youzhen",

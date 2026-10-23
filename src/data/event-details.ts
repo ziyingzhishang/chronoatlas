@@ -1779,6 +1779,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '称帝、军事支持和后唐覆亡涉及不同阶段；不以受册地点或后晋名义范围替代逐年实际控制。',
   },
   {
+    eventId: 'later-jin-ended-947',
+    participants: [
+      { personId: 'shi-chonggui', role: '后晋末帝与开封失守、出降节点人物', note: '石重贵在后晋末期统治，947年契丹攻取开封后出降；末帝个人结局、开封城市遗产和后汉承接属于不同层次。' },
+      { personId: 'yelu-deguang', role: '率契丹军南下攻取开封并介入中原政权转换的君主', note: '耶律德光代表契丹南下与开封占领阶段；契丹占领、后汉建政和辽政权后续安排不能合并为单一事件。' },
+    ],
+    polityIds: ['jin_later', 'khitan', 'han_later'],
+    causes: ['后晋与契丹之间的军事依赖和政治关系恶化。', '契丹南下改变中原政权与开封的控制关系。'],
+    consequences: ['后晋中央政权终止，石重贵出降。', '开封进入契丹占领及后汉承接阶段，城市政治功能继续延续。'],
+    phases: [
+      { label: '契丹南下', startYear: 947, endYear: 947, summary: '耶律德光率契丹军队南下，中原防线与后晋军政体系迅速瓦解。' },
+      { label: '开封失守与后晋终止', startYear: 947, endYear: 947, summary: '契丹攻取开封，石重贵出降，后晋中央政权终止。' },
+      { label: '后汉承接', startYear: 947, endYear: 948, summary: '刘知远随后从太原进入中原，后汉逐步承接开封及中原政治空间。' },
+    ],
+    locationIds: ['kaifeng'],
+    relatedEventIds: ['jin-later-founded', 'han-later-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '947年开封陷落、石重贵出降、契丹占领和后汉进入中原是连续但可分层的过程；政权终止节点不等于契丹或后汉同日完成全部地方接收，也不等于开封城市遗产消失。',
+  },
+  {
     eventId: 'han-later-founded',
     participants: [
       { personId: 'liu-zhiyuan', role: '在太原起兵并建立后汉的君主', note: '刘知远先在太原取得军政支持，随后进入中原；起兵、称帝与开封阶段应分开理解。' },

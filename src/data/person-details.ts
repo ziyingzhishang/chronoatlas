@@ -273,6 +273,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['jin-later-founded'], sourceIds, uncertaintyNote: '后晋建立与契丹援助、燕云割让及中原控制分别属于不同层次的事实，不能合并为单一因果判断。',
   },
   {
+    personId: 'shi-chonggui', biography: '石重贵是后晋末帝。后晋末期契丹南下，947年开封失守，石重贵出降，后晋中央政权终止。',
+    aliases: ['出帝', '后晋末帝'], offices: [{ title: '后晋末帝', polityId: 'jin_later', placeId: 'kaifeng', validFrom: 942, validTo: 947, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-jin-ended-947'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '石重贵的在位、开封失守与出降是后晋中央政权终止的末帝端点；契丹占领、后汉承接和开封城市遗产分别记录。',
+  },
+  {
     personId: 'liu-zhiyuan', biography: '刘知远在后晋覆亡后于太原即位，随后进入开封建立后汉的中原统治。',
     aliases: ['汉高祖'], offices: [{ title: '后汉皇帝', polityId: 'han_later', placeId: 'kaifeng', validFrom: 947, validTo: 948, datePrecision: 'range', sourceIds }],
     keyEvents: ['han-later-founded'], sourceIds, uncertaintyNote: '后汉建立经历太原即位与进入开封两个阶段，不能将单一即位地点等同于全政权即时控制范围。',
