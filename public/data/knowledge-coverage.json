@@ -79708,9 +79708,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 181,
+      "totalEntities": 182,
       "statusCounts": {
-        "covered": 865,
+        "covered": 870,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -79785,9 +79785,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 220,
+      "totalEntities": 221,
       "statusCounts": {
-        "covered": 1045,
+        "covered": 1050,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
