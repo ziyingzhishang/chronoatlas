@@ -55,7 +55,7 @@ describe('sixty-first batch high-confidence governance relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(32);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(122);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     for (const personId of ['heliAN-bobo', 'duan-siping', 'qifu-guoren', 'yelu-dashi', 'park-hyeokgeose']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');

@@ -72,8 +72,8 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'tufa-rutan', biography: '秃发傉檀是秃发乌孤、秃发利鹿孤之弟，402年继承南凉，成为南凉后期君主。',
     aliases: ['南凉景王'], offices: [{ title: '南凉君主', polityId: 'southern_liang', validFrom: 402, validTo: 414, datePrecision: 'range', sourceIds: ['jinshu-vol126-tufa-wugu'] }],
-    keyEvents: [], sourceIds: ['jinshu-vol126-tufa-wugu'],
-    uncertaintyNote: '《晋书》明确记载其作为利鹿孤之弟承继南凉；不据继承关系推导其全期疆域或单一固定首都。',
+    keyEvents: ['southern-liang-ended-414'], sourceIds: ['jinshu-vol126-tufa-wugu', 'zizhi-tongjian'],
+    uncertaintyNote: '《晋书》明确记载其作为利鹿孤之弟承继南凉；414年乐都失守是政权终止节点，不据继承关系推导其全期疆域或单一固定首都。',
   },
   {
     personId: 'yao-chang', biography: '姚苌在十六国后期建立后秦，后秦以长安为都，长安再次成为关中政权更替的中心。',

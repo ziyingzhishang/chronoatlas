@@ -51,7 +51,7 @@ describe('seventy-fourth batch high-confidence alliance relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(32);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(122);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     expect(report.byPersonId['ji-chang'].categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['zhou-wu'].categories.allianceConflict.status).toBe('covered');

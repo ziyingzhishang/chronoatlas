@@ -386,6 +386,22 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '502年是禅代与建政节点，不以南梁后期疆域替代建国初期控制区；建康是政治中心而非疆域边界。',
   },
   {
+    eventId: 'southern-liang-ended-414',
+    participants: [
+      { personId: 'tufa-rutan', role: '南凉末王与乐都防御阶段代表', note: '秃发傉檀连接南凉后期统治、乐都阶段与414年政权终止。' },
+      { personId: 'qifu-chipan', role: '西秦君主与攻取乐都的政治军事代表', note: '乞伏炽磐代表西秦复立后对河湟的军事接收；具体将领、投降处置和地方重组不归因于单一人物个人。' },
+    ],
+    polityIds: ['southern_liang', 'western_qin'],
+    causes: ['南凉末期以乐都为中心的河湟政权与西秦持续竞争。', '西秦在乞伏炽磐时期继续整合陇右与河湟政治军事资源。'],
+    consequences: ['南凉作为河湟独立政权终止，西秦攻取乐都并扩大控制。', '乐都候选城址、河湟交通与地方社会继续进入西秦及后续历史层。'],
+    phases: [
+      { label: '南凉末期乐都中心', startYear: 402, endYear: 414, summary: '秃发傉檀承接南凉后期王权，乐都作为阶段性政治中心延续。' },
+      { label: '西秦攻取乐都', startYear: 414, endYear: 414, summary: '乞伏炽磐攻取乐都，南凉统一政治结构结束，地方接收进入新的阶段。' },
+    ],
+    locationIds: ['ledu'], relatedEventIds: ['southern-liang-founded-397', 'southern-liang-moves-ledu'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol126-tufa-wugu'],
+    uncertaintyNote: '414年为南凉政权终止的明确年份；攻取乐都、秃发傉檀处置与地方接收按连续过程记录，乐都具体古城位置仍保持候选状态。',
+  },
+  {
     eventId: 'southern-liang-founded-397',
     participants: [{ personId: 'tufa-wugu', role: '在河湟整合部众、建立南凉的直接统治者', relationType: 'direct', note: '397年前后是南凉形成阶段；秃发利鹿孤和秃发傉檀的继承统治另按人物与时期记录。' }],
     polityIds: ['southern_liang'],

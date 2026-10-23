@@ -175,6 +175,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百四十五·梁纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷145', detail: '记载萧衍受禅、梁朝建立及建康政治节点；具体地方归属另按时段核验。' }],
   },
   {
+    id: 'southern-liang-ended-414', year: 414, title: '南凉政权终止', summary: '西秦乞伏炽磐攻取乐都并迫使秃发傉檀政权结束；乐都候选城址与河湟交通遗产继续存在。', placeId: 'ledu', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol126-tufa-wugu', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '南凉末期以乐都为阶段性政治中心，秃发傉檀在河湟与西秦竞争；西秦在乞伏炽磐时期继续整合陇右与河湟力量。',
+    process: '414年西秦军队攻取乐都，秃发傉檀所代表的南凉政权结束并转入西秦接收阶段；军事进攻、投降处置和地方秩序重组属于连续过程，不能压缩为城市遗址消失。',
+    impact: '南凉作为河湟独立政权终止，西秦扩大对河湟核心的控制；乐都城市历史层、河湟交通和地方社会继续进入后续政权阶段。',
+    mapNote: '地图将414年标作南凉政权终止的明确年份节点，乐都标注为终局相关城市；候选城址、现代乐都城区与政权控制范围分层展示。',
+    references: [{ title: '《资治通鉴》与《晋书·秃发乌孤载记》', url: 'https://zh.wikisource.org/wiki/晉書/卷126', detail: '用于核对秃发傉檀末期、乞伏炽磐攻取乐都与南凉终止；乐都具体古城位置保持候选状态。' }],
+  },
+  {
     id: 'southern-liang-founded-397', year: 397, title: '南凉政权形成', summary: '秃发乌孤在河湟地区建立南凉，西平成为早期政治中心。', placeId: 'xiping', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol126-tufa-wugu'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '后凉势力衰弱与河湟部众重组为秃发乌孤建立区域政权提供了条件。',

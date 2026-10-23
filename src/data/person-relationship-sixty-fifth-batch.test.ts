@@ -54,7 +54,7 @@ describe('sixty-fifth batch high-confidence event participation relationships', 
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(32);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(122);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     for (const personId of ['wei-zheng', 'yao-xing']) {
       expect(report.byPersonId[personId].categories.eventParticipation.status, personId).toBe('covered');

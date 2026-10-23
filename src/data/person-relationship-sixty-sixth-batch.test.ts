@@ -53,7 +53,7 @@ describe('sixty-sixth batch high-confidence kinship and alliance/conflict relati
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(32);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(122);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     expect(report.byPersonId.temujin.categories.kinship.status).toBe('covered');
     expect(report.byPersonId['murong-chao'].categories.allianceConflict.status).toBe('covered');

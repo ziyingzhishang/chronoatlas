@@ -6334,6 +6334,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-liang-ended-414",
+      "entityKey": "event:southern-liang-ended-414",
+      "label": "南凉政权终止",
+      "polityIds": [
+        "southern_liang",
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-liang-ended-414"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol126-tufa-wugu",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-rutan-participated-southern-liang-ended-414",
+            "event-detail:southern-liang-ended-414"
+          ],
+          "relatedIds": [
+            "qifu-chipan",
+            "southern-liang-founded-397",
+            "southern-liang-moves-ledu",
+            "southern_liang",
+            "tufa-rutan",
+            "western_qin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-liang-founded",
       "entityKey": "event:southern-liang-founded",
       "label": "南梁建立",
@@ -14976,7 +15040,8 @@
       "entityKey": "heritage:southern-liang-ledu-city-site",
       "label": "南凉乐都城址候选历史层",
       "polityIds": [
-        "southern_liang"
+        "southern_liang",
+        "western_qin"
       ],
       "checks": [
         {
@@ -15014,11 +15079,14 @@
             "heritage-detail:southern-liang-ledu-city-site"
           ],
           "relatedIds": [
+            "qifu-chipan",
+            "southern-liang-ended-414",
             "southern-liang-founded-397",
             "southern-liang-moves-ledu",
             "southern_liang",
             "tufa-rutan",
-            "tufa-wugu"
+            "tufa-wugu",
+            "western_qin"
           ]
         },
         {
@@ -25133,10 +25201,14 @@
             "claim:claim-qifu-chipan-participated-western-qin",
             "claim:claim-qifu-chipan-ruled-western-qin-sixtythird",
             "claim:claim-qifu-chipan-succeeded-qifu-gangui-fortieth",
+            "claim:claim-tufa-rutan-enemy-qifu-chipan",
+            "event-detail:southern-liang-ended-414",
             "person-polity:qifu-chipan:western_qin"
           ],
           "relatedIds": [
             "qifu-gangui",
+            "southern-liang-ended-414",
+            "tufa-rutan",
             "western-qin-founded",
             "western_qin"
           ]
@@ -27028,7 +27100,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "jinshu-vol126-tufa-wugu"
+            "jinshu-vol126-tufa-wugu",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         },
@@ -27038,11 +27111,17 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-tufa-lilugu-sibling-tufa-rutan",
+            "claim:claim-tufa-rutan-enemy-qifu-chipan",
+            "claim:claim-tufa-rutan-participated-southern-liang-ended-414",
+            "claim:claim-tufa-rutan-ruled-southern-liang",
             "claim:claim-tufa-wugu-appointed-tufa-rutan",
             "claim:claim-tufa-wugu-sibling-tufa-rutan",
+            "event-detail:southern-liang-ended-414",
             "person-polity:tufa-rutan:southern_liang"
           ],
           "relatedIds": [
+            "qifu-chipan",
+            "southern-liang-ended-414",
             "southern_liang",
             "tufa-lilugu",
             "tufa-wugu"
@@ -34982,8 +35061,10 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-tufa-rutan-ruled-southern-liang",
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
+            "event-detail:southern-liang-ended-414",
             "event-detail:southern-liang-founded-397",
             "event-detail:southern-liang-moves-ledu",
             "heritage-detail:southern-liang-ledu-city-site",
@@ -34992,6 +35073,7 @@
             "person:tufa-wugu"
           ],
           "relatedIds": [
+            "southern-liang-ended-414",
             "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
             "southern-liang-moves-ledu",
@@ -36177,7 +36259,9 @@
             "claim:claim-qifu-chipan-ruled-western-qin-sixtythird",
             "claim:claim-qifu-gangui-ruled-western-qin-sixtysecond",
             "claim:claim-qifu-guoren-ruled-western-qin-sixtyfirst",
+            "event-detail:southern-liang-ended-414",
             "event-detail:western-qin-founded",
+            "heritage-detail:southern-liang-ledu-city-site",
             "heritage-detail:western-qin-yuanchuan-city-candidate",
             "person:qifu-chipan",
             "person:qifu-gangui",
@@ -36187,6 +36271,8 @@
             "qifu-chipan",
             "qifu-gangui",
             "qifu-guoren",
+            "southern-liang-ended-414",
+            "southern-liang-ledu-city-site",
             "western-qin-founded",
             "western-qin-yuanchuan-city-candidate"
           ]
@@ -45075,6 +45161,70 @@
         }
       ]
     },
+    "event:southern-liang-ended-414": {
+      "entityType": "event",
+      "entityId": "southern-liang-ended-414",
+      "entityKey": "event:southern-liang-ended-414",
+      "label": "南凉政权终止",
+      "polityIds": [
+        "southern_liang",
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-liang-ended-414"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol126-tufa-wugu",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-rutan-participated-southern-liang-ended-414",
+            "event-detail:southern-liang-ended-414"
+          ],
+          "relatedIds": [
+            "qifu-chipan",
+            "southern-liang-founded-397",
+            "southern-liang-moves-ledu",
+            "southern_liang",
+            "tufa-rutan",
+            "western_qin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:southern-liang-founded": {
       "entityType": "event",
       "entityId": "southern-liang-founded",
@@ -53719,7 +53869,8 @@
       "entityKey": "heritage:southern-liang-ledu-city-site",
       "label": "南凉乐都城址候选历史层",
       "polityIds": [
-        "southern_liang"
+        "southern_liang",
+        "western_qin"
       ],
       "checks": [
         {
@@ -53757,11 +53908,14 @@
             "heritage-detail:southern-liang-ledu-city-site"
           ],
           "relatedIds": [
+            "qifu-chipan",
+            "southern-liang-ended-414",
             "southern-liang-founded-397",
             "southern-liang-moves-ledu",
             "southern_liang",
             "tufa-rutan",
-            "tufa-wugu"
+            "tufa-wugu",
+            "western_qin"
           ]
         },
         {
@@ -63876,10 +64030,14 @@
             "claim:claim-qifu-chipan-participated-western-qin",
             "claim:claim-qifu-chipan-ruled-western-qin-sixtythird",
             "claim:claim-qifu-chipan-succeeded-qifu-gangui-fortieth",
+            "claim:claim-tufa-rutan-enemy-qifu-chipan",
+            "event-detail:southern-liang-ended-414",
             "person-polity:qifu-chipan:western_qin"
           ],
           "relatedIds": [
             "qifu-gangui",
+            "southern-liang-ended-414",
+            "tufa-rutan",
             "western-qin-founded",
             "western_qin"
           ]
@@ -65771,7 +65929,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "jinshu-vol126-tufa-wugu"
+            "jinshu-vol126-tufa-wugu",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         },
@@ -65781,11 +65940,17 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-tufa-lilugu-sibling-tufa-rutan",
+            "claim:claim-tufa-rutan-enemy-qifu-chipan",
+            "claim:claim-tufa-rutan-participated-southern-liang-ended-414",
+            "claim:claim-tufa-rutan-ruled-southern-liang",
             "claim:claim-tufa-wugu-appointed-tufa-rutan",
             "claim:claim-tufa-wugu-sibling-tufa-rutan",
+            "event-detail:southern-liang-ended-414",
             "person-polity:tufa-rutan:southern_liang"
           ],
           "relatedIds": [
+            "qifu-chipan",
+            "southern-liang-ended-414",
             "southern_liang",
             "tufa-lilugu",
             "tufa-wugu"
@@ -73725,8 +73890,10 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-tufa-rutan-ruled-southern-liang",
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
+            "event-detail:southern-liang-ended-414",
             "event-detail:southern-liang-founded-397",
             "event-detail:southern-liang-moves-ledu",
             "heritage-detail:southern-liang-ledu-city-site",
@@ -73735,6 +73902,7 @@
             "person:tufa-wugu"
           ],
           "relatedIds": [
+            "southern-liang-ended-414",
             "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
             "southern-liang-moves-ledu",
@@ -74920,7 +75088,9 @@
             "claim:claim-qifu-chipan-ruled-western-qin-sixtythird",
             "claim:claim-qifu-gangui-ruled-western-qin-sixtysecond",
             "claim:claim-qifu-guoren-ruled-western-qin-sixtyfirst",
+            "event-detail:southern-liang-ended-414",
             "event-detail:western-qin-founded",
+            "heritage-detail:southern-liang-ledu-city-site",
             "heritage-detail:western-qin-yuanchuan-city-candidate",
             "person:qifu-chipan",
             "person:qifu-gangui",
@@ -74930,6 +75100,8 @@
             "qifu-chipan",
             "qifu-gangui",
             "qifu-guoren",
+            "southern-liang-ended-414",
+            "southern-liang-ledu-city-site",
             "western-qin-founded",
             "western-qin-yuanchuan-city-candidate"
           ]
@@ -76022,9 +76194,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 170,
+      "totalEntities": 171,
       "statusCounts": {
-        "covered": 810,
+        "covered": 815,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -78326,6 +78498,7 @@
       "polityId": "southern_liang",
       "polityName": "南凉",
       "entityKeys": [
+        "event:southern-liang-ended-414",
         "event:southern-liang-founded-397",
         "event:southern-liang-moves-ledu",
         "heritage:southern-liang-ledu-city-site",
@@ -79148,7 +79321,9 @@
       "polityId": "western_qin",
       "polityName": "西秦",
       "entityKeys": [
+        "event:southern-liang-ended-414",
         "event:western-qin-founded",
+        "heritage:southern-liang-ledu-city-site",
         "heritage:western-qin-yuanchuan-city-candidate",
         "person:qifu-chipan",
         "person:qifu-gangui",
@@ -81302,8 +81477,11 @@
       "cityName": "乐都区",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:southern-liang-ended-414",
         "event:southern-liang-moves-ledu",
         "heritage:southern-liang-ledu-city-site",
+        "person:qifu-chipan",
+        "person:tufa-rutan",
         "person:tufa-wugu"
       ],
       "gaps": [
@@ -81316,6 +81494,39 @@
           "kind": "uncertain",
           "polityIds": [
             "southern_liang"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "tufa-rutan",
+          "entityKey": "person:tufa-rutan",
+          "label": "秃发傉檀",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "qifu-chipan",
+          "entityKey": "person:qifu-chipan",
+          "label": "乞伏炽磐",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_qin"
           ],
           "evidenceIds": [
             "china-chronology",
@@ -81346,7 +81557,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "乐都区：有 2 项待核验缺口。"
+      "summary": "乐都区：有 4 项待核验缺口。"
     },
     "liangzhou": {
       "placeId": "liangzhou",

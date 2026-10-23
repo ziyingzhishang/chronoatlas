@@ -692,7 +692,7 @@ const details: HeritageDetail[] = [
     historicalPhase('original', '迁都与政治中心', '399—414年', '《太平御览》所引南凉材料记载秃发乌孤时期徙于乐都；乐都此后承接南凉后期政治、军政与河湟交通功能。', 399, 414, '文献可支持乐都作为阶段性政治中心，但不能仅凭文献把今日某一处建筑认定为南凉原构。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu']),
     historicalPhase('site', '候选城址与城市历史层', '南凉时期', '今日乐都的南凉文化展示与地方历史空间提供城市记忆入口；具体古城遗址、城垣和宫城分区仍需考古报告逐项比定。', 399, 414, '候选历史层不等同于已经完成考古定名的遗址。', ['jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
     historicalPhase('restoration', '现代文化展示', '当代', '地方文化展示、旅游线路和历史地图帮助理解南凉乐都阶段，但现代设施不视为南凉建筑遗存。', 2000, undefined, '现代展示空间与南凉原城、原建筑严格分层。', ['mct-ledu-southern-liang']),
-  ], ['tufa-wugu', 'tufa-rutan'], ['southern_liang'], ['southern-liang-founded-397', 'southern-liang-moves-ledu'], ['乐都河湟城市空间', '南凉迁都文献记忆', '地方文化展示与候选遗址线索'], '从今日乐都观察南凉由西平转入乐都的政治中心变化，并理解河湟政权的流动性与城市遗产证据边界。', '现有证据足以关联南凉—乐都的历史层和今日文化展示，但不足以确认某一现存建筑为南凉原构；遗产状态保持候选，不把旅游展示等同于考古定名。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
+  ], ['tufa-wugu', 'tufa-rutan', 'qifu-chipan'], ['southern_liang', 'western_qin'], ['southern-liang-founded-397', 'southern-liang-moves-ledu', 'southern-liang-ended-414'], ['乐都河湟城市空间', '南凉迁都文献记忆', '地方文化展示与候选遗址线索'], '从今日乐都观察南凉由西平转入乐都的政治中心变化、414年政权转换，并理解河湟政权的流动性与城市遗产证据边界。', '现有证据足以关联南凉—乐都的历史层和今日文化展示，但不足以确认某一现存建筑为南凉原构；414年是政治转换节点，不意味着候选城址或现代乐都城市层消失。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
 ];
 
 const detailById = new Map(details.map((heritageDetail) => [heritageDetail.heritageId, heritageDetail]));

@@ -9,7 +9,7 @@ describe('ninety-sixth batch person relationship audit', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.totalPeople).toBe(210);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(122);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
   });
 
   it('does not upgrade ambiguous kinship candidates into direct family edges', () => {
