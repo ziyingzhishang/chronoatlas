@@ -2008,6 +2008,23 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1127年同时包含汴梁失守、赵构即位和南渡开端；应天、建康、临安是不同阶段的中心，不能把后来的临安定都提前为北宋覆亡当日事实。',
   },
   {
+    eventId: 'southern-song-ended-1279',
+    participants: [
+      { personId: 'zhao-bing', role: '南宋末帝', relationType: 'direct', note: '赵昺连接南宋末期皇统、崖门终局与1279年政权终止阶段。' },
+      { personId: 'lu-xiufu', role: '南宋末期宰辅', relationType: 'direct', note: '陆秀夫代表末期朝廷的军政与皇统维系，不把终局过程归因于单一人物。' },
+      { personId: 'kublai', role: '元世祖与战争决策方代表', relationType: 'direct', note: '忽必烈代表元廷推进灭宋与行政接收，具体海战指挥和地方接收不归因于单一皇帝个人。' },
+      { personId: 'bayan', role: '元军南下与灭宋战争代表', relationType: 'direct', note: '伯颜连接元军南下、宋元政权转换和1279年前后南宋终局的战争阶段。' },
+    ],
+    polityIds: ['song_south', 'yuan'],
+    causes: ['临安失守后南宋末期政权沿海南迁，继续维持皇统与军政抵抗。', '元廷在忽必烈时期推进对南宋的军事征服与地方接收。'],
+    consequences: ['南宋作为独立政权终止，元完成对宋主要政治体系的接收。', '临安皇城遗址、杭州城市层和崖门区域遗产继续作为不同历史节点存在。'],
+    phases: [{ label: '崖门终局', startYear: 1279, endYear: 1279, summary: '元军与南宋末期政权在崖门区域发生决定性战事，南宋统一政治结构结束。' }],
+    locationIds: ['yamen', 'linan'],
+    relatedEventIds: ['song-southward', 'song-linan-center-formed', 'yuan-founded'],
+    sourceIds: ['yuan-nationalities-history', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '1279作为项目采用的南宋政权终止约年；崖门具体战场、末帝结局、元军指挥链和地方接收属于连续过程，不能用单一坐标或单一人物替代。',
+  },
+  {
     eventId: 'qing-enters-pass',
     participants: [
       { personId: 'dorgon', role: '主持清军入关与顺治初年中央政务的摄政王', note: '多尔衮是1644年清军入关及中央权力转移的重要执行者；入关、北京中心转移与全国整合属于不同阶段。' },

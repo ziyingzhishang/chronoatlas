@@ -298,6 +298,16 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['southern-song-founded', 'song-southward'], sourceIds, uncertaintyNote: '应天即位、南渡迁移与临安主要政治中心形成是连续但不同节点，不能将后来的临安定都提前到1127年。',
   },
   {
+    personId: 'zhao-bing', biography: '赵昺是南宋末帝，1279年前后在崖门终局阶段承接南宋末期皇统；其政权终止与临安城市遗产的延续属于不同层次。',
+    aliases: ['宋末帝'], offices: [{ title: '南宋末帝', polityId: 'song_south', validFrom: 1278, validTo: 1279, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'china-chronology'] }],
+    keyEvents: ['southern-song-ended-1279'], sourceIds: ['yuan-nationalities-history', 'china-chronology'], uncertaintyNote: '赵昺的末帝阶段、崖门战事、人物结局和地方接收是连续过程，不能以单一地点或单一日期替代。',
+  },
+  {
+    personId: 'lu-xiufu', biography: '陆秀夫是南宋末期宰辅，参与末帝赵昺阶段的朝廷维系与崖门终局，代表南宋末期军政与皇统承接。',
+    aliases: ['陆君实'], offices: [{ title: '南宋末期宰辅', polityId: 'song_south', validFrom: 1278, validTo: 1279, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'china-chronology'] }],
+    keyEvents: ['southern-song-ended-1279'], sourceIds: ['yuan-nationalities-history', 'china-chronology'], uncertaintyNote: '陆秀夫的具体军政行动和人物结局需与崖门区域战事分层，不将其个人行为替代南宋末期整体政治过程。',
+  },
+  {
     personId: 'yue-fei', biography: '岳飞是南宋抗金战争中的重要将领，活动连接南宋政权重建、北方防御与宋金军事竞争。',
     aliases: ['岳鹏举'], offices: [{ title: '南宋将领', polityId: 'song_south', validFrom: 1127, validTo: 1142, datePrecision: 'range', sourceIds }],
     keyEvents: ['song-southward'], sourceIds, uncertaintyNote: '岳飞的军事行动需按具体战役与阶段核验；“抗金”不等于由单一人物代表南宋全部对外政策。',

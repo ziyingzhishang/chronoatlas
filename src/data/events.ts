@@ -229,6 +229,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于南宋1127—1279及其政治中心阶段的编年参照；本条采用项目首都阶段资料对1138年前后临安长期中心形成作分层表达。' }],
   },
   {
+    id: 'southern-song-ended-1279', year: 1279, title: '南宋政权终止', summary: '元军在崖门海域击败南宋末期政权，赵昺与陆秀夫相关的末局结束；临安城市遗产继续作为杭州历史层存在。', placeId: 'yamen', sourceIds: ['yuan-nationalities-history', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'china', category: '政权终结／战争', verification: 'partial',
+    background: '南宋末期政权在临安失守后沿海南迁，赵昺政权依托海上与岭南网络继续抵抗元军推进。',
+    process: '1279年前后元军与南宋末期军政力量在崖门海域发生决定性战事，赵昺与陆秀夫所代表的南宋末局结束；海战、军政接收、人物结局和地方社会变化属于连续过程，不能压缩为单一坐标的一日事件。',
+    impact: '南宋作为独立政权终止，元完成对宋主要政治体系的接收；临安城、南宋皇城遗址和崖门区域则作为不同城市与战争遗产继续存在。',
+    mapNote: '地图将1279年标作南宋政权终止的约年节点，崖门标注为终局相关区域，临安继续以杭州城市历史层展示；政权终止不等于临安遗址在1279年消失。',
+    references: [{ title: '元代历史沿革与疆域行政建置资料', url: 'https://www.neac.gov.cn/seac/c103391/201806/1066616.shtml', detail: '用于1279年灭南宋及元代政权接收阶段的编年参照；具体海战过程保留区域性与过程性。' }],
+  },
+  {
     id: 'jurchen-jin-founded', year: 1115, title: '金建立', summary: '完颜阿骨打称帝建国，女真金政权形成。', placeId: 'huining', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '女真部落在完颜阿骨打领导下逐渐整合，并与辽的边疆秩序发生持续冲突。',

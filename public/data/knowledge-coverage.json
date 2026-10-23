@@ -6507,6 +6507,74 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-song-ended-1279",
+      "entityKey": "event:southern-song-ended-1279",
+      "label": "南宋政权终止",
+      "polityIds": [
+        "mongol",
+        "song_south",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-song-ended-1279"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-lu-xiufu-participated-southern-song-ended-1279",
+            "claim:claim-zhao-bing-participated-southern-song-ended-1279",
+            "event-detail:southern-song-ended-1279"
+          ],
+          "relatedIds": [
+            "bayan",
+            "kublai",
+            "lu-xiufu",
+            "song-linan-center-formed",
+            "song-southward",
+            "song_south",
+            "yuan",
+            "yuan-founded",
+            "zhao-bing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-song-founded",
       "entityKey": "event:southern-song-founded",
       "label": "南宋建立",
@@ -16373,6 +16441,67 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "yamen-song-yuan-battle-site",
+      "entityKey": "heritage:yamen-song-yuan-battle-site",
+      "label": "崖门宋元海战历史空间",
+      "polityIds": [
+        "song_south",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "yamen-song-yuan-battle-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:yamen-song-yuan-battle-site"
+          ],
+          "relatedIds": [
+            "lu-xiufu",
+            "song_south",
+            "southern-song-ended-1279",
+            "yuan",
+            "zhao-bing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "yan-ji-city-site",
       "entityKey": "heritage:yan-ji-city-site",
       "label": "燕国蓟城遗址历史层",
@@ -17200,12 +17329,14 @@
             "claim:claim-bayan-ally-kublai-seventysixth",
             "claim:claim-bayan-participated-song-southward",
             "claim:claim-bayan-served-kublai",
+            "event-detail:southern-song-ended-1279",
             "event-detail:yuan-founded",
             "person-polity:bayan:yuan"
           ],
           "relatedIds": [
             "kublai",
             "song-southward",
+            "southern-song-ended-1279",
             "yuan",
             "yuan-founded"
           ]
@@ -20708,7 +20839,9 @@
             "claim:claim-liu-bingzhong-served-kublai",
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
+            "claim:claim-zhao-bing-enemy-kublai",
             "event-detail:mongol-karakorum-fixed-center",
+            "event-detail:southern-song-ended-1279",
             "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
@@ -20721,12 +20854,14 @@
             "mongke",
             "mongol",
             "mongol-karakorum-fixed-center",
+            "southern-song-ended-1279",
             "temujin",
             "yelu-dashi",
             "yuan",
             "yuan-dadu-built",
             "yuan-founded",
-            "yuan-shangdu-built"
+            "yuan-shangdu-built",
+            "zhao-bing"
           ]
         },
         {
@@ -22866,6 +23001,69 @@
           "evidenceIds": [
             "houhanshu-vol2-liuzhuang",
             "luoyang-baimasi-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "lu-xiufu",
+      "entityKey": "person:lu-xiufu",
+      "label": "陆秀夫",
+      "polityIds": [
+        "song_south"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "lu-xiufu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-lu-xiufu-participated-southern-song-ended-1279",
+            "claim:claim-lu-xiufu-served-zhao-bing",
+            "event-detail:southern-song-ended-1279",
+            "person-polity:lu-xiufu:song_south"
+          ],
+          "relatedIds": [
+            "song_south",
+            "southern-song-ended-1279",
+            "zhao-bing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
           ],
           "relatedIds": []
         }
@@ -29524,6 +29722,72 @@
     },
     {
       "entityType": "person",
+      "entityId": "zhao-bing",
+      "entityKey": "person:zhao-bing",
+      "label": "赵昺",
+      "polityIds": [
+        "song_south"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhao-bing"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-lu-xiufu-served-zhao-bing",
+            "claim:claim-zhao-bing-enemy-kublai",
+            "claim:claim-zhao-bing-participated-southern-song-ended-1279",
+            "claim:claim-zhao-bing-ruled-southern-song",
+            "event-detail:southern-song-ended-1279",
+            "person-polity:zhao-bing:song_south"
+          ],
+          "relatedIds": [
+            "kublai",
+            "lu-xiufu",
+            "song_south",
+            "southern-song-ended-1279"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "zhao-gou",
       "entityKey": "person:zhao-gou",
       "label": "赵构",
@@ -34130,6 +34394,7 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "yuan-nationalities-history",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -34139,17 +34404,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-zhao-bing-ruled-southern-song",
             "claim:claim-zhao-gou-founded-southern-song",
             "claim:claim-zhao-gou-ruled-southern-song-fiftysixth",
             "event-detail:song-linan-center-formed",
             "event-detail:song-southward",
+            "event-detail:southern-song-ended-1279",
             "event-detail:southern-song-founded",
             "heritage-detail:linan-southern-song-imperial-city-site",
+            "heritage-detail:yamen-song-yuan-battle-site",
             "person:han-shizhong",
             "person:li-gang",
+            "person:lu-xiufu",
             "person:qin-hui",
             "person:yue-fei",
             "person:zhang-jun",
+            "person:zhao-bing",
             "person:zhao-gou",
             "person:zong-ze"
           ],
@@ -34157,12 +34427,16 @@
             "han-shizhong",
             "li-gang",
             "linan-southern-song-imperial-city-site",
+            "lu-xiufu",
             "qin-hui",
             "song-linan-center-formed",
             "song-southward",
+            "southern-song-ended-1279",
             "southern-song-founded",
+            "yamen-song-yuan-battle-site",
             "yue-fei",
             "zhang-jun",
+            "zhao-bing",
             "zhao-gou",
             "zong-ze"
           ]
@@ -36273,9 +36547,11 @@
           "evidenceIds": [
             "claim:claim-kublai-ruled-yuan-closure",
             "claim:claim-toghon-temur-ruled-yuan",
+            "event-detail:southern-song-ended-1279",
             "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
+            "heritage-detail:yamen-song-yuan-battle-site",
             "heritage-detail:yuan-dadu-site",
             "heritage-detail:yuan-shangdu-site",
             "person:bayan",
@@ -36287,7 +36563,9 @@
             "bayan",
             "kublai",
             "liu-bingzhong",
+            "southern-song-ended-1279",
             "toghon-temur",
+            "yamen-song-yuan-battle-site",
             "yuan-dadu-built",
             "yuan-dadu-site",
             "yuan-founded",
@@ -36935,6 +37213,22 @@
       "kind": "uncertain",
       "polityIds": [
         "ming_southern"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-song-ended-1279",
+      "entityKey": "event:southern-song-ended-1279",
+      "label": "南宋政权终止",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "mongol",
+        "song_south",
+        "yuan"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -44525,6 +44819,74 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-song-ended-1279": {
+      "entityType": "event",
+      "entityId": "southern-song-ended-1279",
+      "entityKey": "event:southern-song-ended-1279",
+      "label": "南宋政权终止",
+      "polityIds": [
+        "mongol",
+        "song_south",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-song-ended-1279"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-lu-xiufu-participated-southern-song-ended-1279",
+            "claim:claim-zhao-bing-participated-southern-song-ended-1279",
+            "event-detail:southern-song-ended-1279"
+          ],
+          "relatedIds": [
+            "bayan",
+            "kublai",
+            "lu-xiufu",
+            "song-linan-center-formed",
+            "song-southward",
+            "song_south",
+            "yuan",
+            "yuan-founded",
+            "zhao-bing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -54396,6 +54758,67 @@
         }
       ]
     },
+    "heritage:yamen-song-yuan-battle-site": {
+      "entityType": "heritage",
+      "entityId": "yamen-song-yuan-battle-site",
+      "entityKey": "heritage:yamen-song-yuan-battle-site",
+      "label": "崖门宋元海战历史空间",
+      "polityIds": [
+        "song_south",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "yamen-song-yuan-battle-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:yamen-song-yuan-battle-site"
+          ],
+          "relatedIds": [
+            "lu-xiufu",
+            "song_south",
+            "southern-song-ended-1279",
+            "yuan",
+            "zhao-bing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:yan-ji-city-site": {
       "entityType": "heritage",
       "entityId": "yan-ji-city-site",
@@ -55225,12 +55648,14 @@
             "claim:claim-bayan-ally-kublai-seventysixth",
             "claim:claim-bayan-participated-song-southward",
             "claim:claim-bayan-served-kublai",
+            "event-detail:southern-song-ended-1279",
             "event-detail:yuan-founded",
             "person-polity:bayan:yuan"
           ],
           "relatedIds": [
             "kublai",
             "song-southward",
+            "southern-song-ended-1279",
             "yuan",
             "yuan-founded"
           ]
@@ -58733,7 +59158,9 @@
             "claim:claim-liu-bingzhong-served-kublai",
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
+            "claim:claim-zhao-bing-enemy-kublai",
             "event-detail:mongol-karakorum-fixed-center",
+            "event-detail:southern-song-ended-1279",
             "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
@@ -58746,12 +59173,14 @@
             "mongke",
             "mongol",
             "mongol-karakorum-fixed-center",
+            "southern-song-ended-1279",
             "temujin",
             "yelu-dashi",
             "yuan",
             "yuan-dadu-built",
             "yuan-founded",
-            "yuan-shangdu-built"
+            "yuan-shangdu-built",
+            "zhao-bing"
           ]
         },
         {
@@ -60891,6 +61320,69 @@
           "evidenceIds": [
             "houhanshu-vol2-liuzhuang",
             "luoyang-baimasi-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:lu-xiufu": {
+      "entityType": "person",
+      "entityId": "lu-xiufu",
+      "entityKey": "person:lu-xiufu",
+      "label": "陆秀夫",
+      "polityIds": [
+        "song_south"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "lu-xiufu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-lu-xiufu-participated-southern-song-ended-1279",
+            "claim:claim-lu-xiufu-served-zhao-bing",
+            "event-detail:southern-song-ended-1279",
+            "person-polity:lu-xiufu:song_south"
+          ],
+          "relatedIds": [
+            "song_south",
+            "southern-song-ended-1279",
+            "zhao-bing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
           ],
           "relatedIds": []
         }
@@ -67547,6 +68039,72 @@
         }
       ]
     },
+    "person:zhao-bing": {
+      "entityType": "person",
+      "entityId": "zhao-bing",
+      "entityKey": "person:zhao-bing",
+      "label": "赵昺",
+      "polityIds": [
+        "song_south"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhao-bing"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-lu-xiufu-served-zhao-bing",
+            "claim:claim-zhao-bing-enemy-kublai",
+            "claim:claim-zhao-bing-participated-southern-song-ended-1279",
+            "claim:claim-zhao-bing-ruled-southern-song",
+            "event-detail:southern-song-ended-1279",
+            "person-polity:zhao-bing:song_south"
+          ],
+          "relatedIds": [
+            "kublai",
+            "lu-xiufu",
+            "song_south",
+            "southern-song-ended-1279"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:zhao-gou": {
       "entityType": "person",
       "entityId": "zhao-gou",
@@ -72155,6 +72713,7 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "yuan-nationalities-history",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -72164,17 +72723,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-zhao-bing-ruled-southern-song",
             "claim:claim-zhao-gou-founded-southern-song",
             "claim:claim-zhao-gou-ruled-southern-song-fiftysixth",
             "event-detail:song-linan-center-formed",
             "event-detail:song-southward",
+            "event-detail:southern-song-ended-1279",
             "event-detail:southern-song-founded",
             "heritage-detail:linan-southern-song-imperial-city-site",
+            "heritage-detail:yamen-song-yuan-battle-site",
             "person:han-shizhong",
             "person:li-gang",
+            "person:lu-xiufu",
             "person:qin-hui",
             "person:yue-fei",
             "person:zhang-jun",
+            "person:zhao-bing",
             "person:zhao-gou",
             "person:zong-ze"
           ],
@@ -72182,12 +72746,16 @@
             "han-shizhong",
             "li-gang",
             "linan-southern-song-imperial-city-site",
+            "lu-xiufu",
             "qin-hui",
             "song-linan-center-formed",
             "song-southward",
+            "southern-song-ended-1279",
             "southern-song-founded",
+            "yamen-song-yuan-battle-site",
             "yue-fei",
             "zhang-jun",
+            "zhao-bing",
             "zhao-gou",
             "zong-ze"
           ]
@@ -74298,9 +74866,11 @@
           "evidenceIds": [
             "claim:claim-kublai-ruled-yuan-closure",
             "claim:claim-toghon-temur-ruled-yuan",
+            "event-detail:southern-song-ended-1279",
             "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
+            "heritage-detail:yamen-song-yuan-battle-site",
             "heritage-detail:yuan-dadu-site",
             "heritage-detail:yuan-shangdu-site",
             "person:bayan",
@@ -74312,7 +74882,9 @@
             "bayan",
             "kublai",
             "liu-bingzhong",
+            "southern-song-ended-1279",
             "toghon-temur",
+            "yamen-song-yuan-battle-site",
             "yuan-dadu-built",
             "yuan-dadu-site",
             "yuan-founded",
@@ -74667,20 +75239,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 166,
+      "totalEntities": 167,
       "statusCounts": {
-        "covered": 793,
+        "covered": 797,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 37,
+        "uncertain": 38,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 37
+        "uncertain": 38
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -74704,6 +75276,7 @@
         "event:southern-liang-founded-397",
         "event:southern-liang-moves-ledu",
         "event:southern-ming-founded",
+        "event:southern-song-ended-1279",
         "event:tibetan-ended-842",
         "event:tibetan-founded",
         "event:tibetan-yalong-center",
@@ -74723,9 +75296,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 117,
+      "totalEntities": 118,
       "statusCounts": {
-        "covered": 585,
+        "covered": 590,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -74741,9 +75314,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 206,
+      "totalEntities": 208,
       "statusCounts": {
-        "covered": 979,
+        "covered": 989,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -75871,6 +76444,7 @@
         "event:jin-ended-1234",
         "event:mongol-founded",
         "event:mongol-karakorum-fixed-center",
+        "event:southern-song-ended-1279",
         "event:western-liao-ended-1218",
         "event:western-xia-ended-1227",
         "event:yuan-dadu-built",
@@ -75977,6 +76551,22 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "southern-song-ended-1279",
+          "entityKey": "event:southern-song-ended-1279",
+          "label": "南宋政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "song_south",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -75986,7 +76576,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "蒙古汗国：有 6 项待核验缺口。"
+      "summary": "蒙古汗国：有 7 项待核验缺口。"
     },
     "nanzhao": {
       "polityId": "nanzhao",
@@ -76772,18 +77362,39 @@
       "entityKeys": [
         "event:song-linan-center-formed",
         "event:song-southward",
+        "event:southern-song-ended-1279",
         "event:southern-song-founded",
         "heritage:linan-southern-song-imperial-city-site",
+        "heritage:yamen-song-yuan-battle-site",
         "person:han-shizhong",
         "person:li-gang",
+        "person:lu-xiufu",
         "person:qin-hui",
         "person:yue-fei",
         "person:zhang-jun",
+        "person:zhao-bing",
         "person:zhao-gou",
         "person:zong-ze",
         "polity:song_south"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "southern-song-ended-1279",
+          "entityKey": "event:southern-song-ended-1279",
+          "label": "南宋政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "song_south",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -76791,7 +77402,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "南宋：学习闭环已覆盖。"
+      "summary": "南宋：有 1 项待核验缺口。"
     },
     "song_southern": {
       "polityId": "song_southern",
@@ -78065,9 +78676,11 @@
         "event:mongol-karakorum-fixed-center",
         "event:northern-yuan-founded",
         "event:song-southward",
+        "event:southern-song-ended-1279",
         "event:yuan-dadu-built",
         "event:yuan-founded",
         "event:yuan-shangdu-built",
+        "heritage:yamen-song-yuan-battle-site",
         "heritage:yuan-dadu-site",
         "heritage:yuan-shangdu-site",
         "person:bayan",
@@ -78123,6 +78736,22 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "southern-song-ended-1279",
+          "entityKey": "event:southern-song-ended-1279",
+          "label": "南宋政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "song_south",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -78132,7 +78761,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "元：有 3 项待核验缺口。"
+      "summary": "元：有 4 项待核验缺口。"
     },
     "zhao_warring": {
       "polityId": "zhao_warring",
@@ -79858,11 +80487,29 @@
       "entityKeys": [
         "event:song-linan-center-formed",
         "event:song-southward",
+        "event:southern-song-ended-1279",
         "event:southern-song-founded",
         "heritage:linan-southern-song-imperial-city-site",
         "person:zhao-gou"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "southern-song-ended-1279",
+          "entityKey": "event:southern-song-ended-1279",
+          "label": "南宋政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "song_south",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -79870,7 +80517,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "杭州市：学习闭环已覆盖。"
+      "summary": "杭州市：有 1 项待核验缺口。"
     },
     "linzi": {
       "placeId": "linzi",
@@ -80960,6 +81607,62 @@
         "relationship-missing": 0
       },
       "summary": "山南市一带：有 2 项待核验缺口。"
+    },
+    "yamen": {
+      "placeId": "yamen",
+      "cityName": "江门市",
+      "capitalRecordCount": 0,
+      "entityKeys": [
+        "event:southern-song-ended-1279",
+        "heritage:yamen-song-yuan-battle-site",
+        "person:bayan",
+        "person:kublai",
+        "person:lu-xiufu",
+        "person:zhao-bing"
+      ],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "bayan",
+          "entityKey": "person:bayan",
+          "label": "伯颜",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "yuan"
+          ],
+          "evidenceIds": [
+            "yuan-goryeo-records",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "southern-song-ended-1279",
+          "entityKey": "event:southern-song-ended-1279",
+          "label": "南宋政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "song_south",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "江门市：有 2 项待核验缺口。"
     },
     "yangjumei": {
       "placeId": "yangjumei",

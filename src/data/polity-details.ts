@@ -627,9 +627,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'song_south', perspectiveSummary: '南宋是北宋覆亡后在南方重建的宋室政权，以临安为长期中心，同时经历应天、扬州和建康等南渡阶段。',
     foundationProcess: ['1127年汴梁失守后，赵构在应天即位并重建宋室。', '宋廷经过多次迁驻，临安逐步成为主要政治中心。', '南宋在宋金对峙、海贸和江南治理中延续至1279年。'],
-    turningPoints: [turn(1127, '南宋开始', '宋廷南渡，赵构重建宋室政权。', 'song-southward'), turn(1138, '临安中心形成', '临安成为南宋长期政治中心。'), turn(1279, '南宋覆亡', '元军取宋，南宋政权结束。')],
-    principalFigureIds: ['zhao-gou', 'yue-fei', 'qin-hui', 'han-shizhong'], capitalPhases: [capital('linan', 1127, 1279)],
-    heritageIds: ['linan-southern-song-imperial-city-site'], eventIds: ['song-southward', 'song-linan-center-formed'], claimIds: ['claim-zhao-gou-founded-southern-song', 'claim-zhao-gou-participated-southern-song'], sourceIds: modernSources,
+    turningPoints: [turn(1127, '南宋开始', '宋廷南渡，赵构重建宋室政权。', 'song-southward'), turn(1138, '临安中心形成', '临安成为南宋长期政治中心。'), turn(1279, '南宋覆亡', '元军在崖门区域击败南宋末期政权，赵昺与陆秀夫相关的末局结束；临安城市遗产继续存在。', 'southern-song-ended-1279')],
+    principalFigureIds: ['zhao-gou', 'yue-fei', 'qin-hui', 'han-shizhong', 'zhao-bing', 'lu-xiufu'], capitalPhases: [capital('linan', 1127, 1279)],
+    heritageIds: ['linan-southern-song-imperial-city-site', 'yamen-song-yuan-battle-site'], eventIds: ['song-southward', 'song-linan-center-formed', 'southern-song-ended-1279'], claimIds: ['claim-zhao-gou-founded-southern-song', 'claim-zhao-gou-participated-southern-song', 'claim-zhao-bing-ruled-southern-song', 'claim-zhao-bing-participated-southern-song-ended-1279', 'claim-zhao-bing-enemy-kublai', 'claim-lu-xiufu-served-zhao-bing', 'claim-lu-xiufu-participated-southern-song-ended-1279'], sourceIds: [...modernSources, 'yuan-nationalities-history', 'china-chronology'],
     uncertaintyNote: '1127年同时包含汴梁失守、应天即位和南渡开端；临安是随后形成的长期中心，不能把全部南渡过程压缩成一次性迁都。',
   }),
   detail({

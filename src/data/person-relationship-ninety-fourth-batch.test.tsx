@@ -46,9 +46,9 @@ describe('ninety-fourth batch high-confidence alliance and conflict relationship
   it('reduces only the three audited alliance-conflict gaps and does not use participation claims', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(86);
     expect(report.requiredMissingByCategory.governance).toHaveLength(32);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(118);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(120);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(13);
     for (const personId of ['songtsen-gampo', 'murong-huang', 'chen-qian']) {
       expect(report.byPersonId[personId].categories.allianceConflict.status, personId).toBe('covered');
