@@ -1,5 +1,13 @@
 import { useLocale } from '../i18n/locale';
 import type { DetailEntity } from '../domain/detail-entity';
+import { claims } from '../data/claims';
+import { eventDetails } from '../data/event-details';
+import { events } from '../data/events';
+import { heritageAssets } from '../data/heritage';
+import { heritageDetails } from '../data/heritage-details';
+import { people } from '../data/people';
+import { polities } from '../data/polities';
+import { sourceNotes } from '../data/sources';
 import type {
   CoveragePerspective,
   CoverageTaskKind,
@@ -53,6 +61,26 @@ const gapStatusLabels: Record<KnowledgeCoverageGap['kind'], string> = {
   uncertain: '待复核',
 };
 
+const entityTypeById = new Map<string, DetailEntity['type']>([
+  ...polities.map((item) => [item.id, 'polity'] as const),
+  ...people.map((item) => [item.id, 'person'] as const),
+  ...events.map((item) => [item.id, 'event'] as const),
+  ...heritageAssets.map((item) => [item.id, 'heritage'] as const),
+]);
+const claimById = new Map(claims.map((claim) => [claim.id, claim]));
+const eventDetailIds = new Set(eventDetails.map((detail) => detail.eventId));
+const heritageDetailIds = new Set(heritageDetails.map((detail) => detail.heritageId));
+const sourceById = new Map(sourceNotes.map((source) => [source.id, source]));
+
+function firstHttpUrl(value: string | undefined): string | undefined {
+  return value?.match(/https?:\/\/[^\s；;]+/)?.[0];
+}
+
+function entityForId(id: string): DetailEntity | undefined {
+  const type = entityTypeById.get(id);
+  return type ? { type, id } : undefined;
+}
+
 export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, context }: KnowledgeCoveragePanelProps) {
   const { t } = useLocale();
   const contextualReport = context
@@ -71,6 +99,46 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
     ? 'polityName' in contextualReport ? contextualReport.polityName : contextualReport.cityName
     : undefined;
   const perspective = context?.type === 'polity' ? '政权视角' : context?.type === 'city' ? '城市视角' : undefined;
+
+  const renderTraceId = (id: string, group: 'evidence' | 'related') => {
+    const prefix = group === 'evidence' ? '证据' : '关联';
+    const claim = claimById.get(id);
+    const source = sourceById.get(id);
+    const detailEntity = eventDetailIds.has(id)
+      ? { type: 'event', id } as DetailEntity
+      : heritageDetailIds.has(id)
+        ? { type: 'heritage', id } as DetailEntity
+        : entityForId(id);
+    const claimEntity = claim ? entityForId(claim.subjectId) ?? (claim.objectId ? entityForId(claim.objectId) : undefined) : undefined;
+    const resolvedEntity = claimEntity ?? detailEntity;
+    const label = claim ? `${prefix} ID：${id}` : source ? `来源：${id}` : `${prefix} ID：${id}`;
+    const accessibleLabel = claim
+      ? `打开${prefix}实体：${id}`
+      : resolvedEntity
+        ? `打开${prefix}实体：${id}`
+        : `查看来源：${id}`;
+    const sourceUrl = source ? firstHttpUrl(source.urlOrCitation) : undefined;
+
+    return (
+      <li key={`${group}:${id}`}>
+        {source ? (
+          sourceUrl ? (
+            <a href={sourceUrl} target="_blank" rel="noreferrer" aria-label={accessibleLabel}>{label}</a>
+          ) : (
+            <span>{label}</span>
+          )
+        ) : resolvedEntity && onOpenEntity ? (
+          <button type="button" aria-label={accessibleLabel} onClick={() => onOpenEntity(resolvedEntity)}>{label}</button>
+        ) : (
+          <span>{`未解析：${id}`}</span>
+        )}
+        {claim && claim.sourceIds.length > 0 && (
+          <span className="detail-note"> · {t('来源 ID：')}{claim.sourceIds.join('、')}</span>
+        )}
+        {source && <span className="detail-note"> · {t(source.title)}</span>}
+      </li>
+    );
+  };
 
   return (
     <section className="knowledge-coverage-panel" data-testid="knowledge-coverage-panel" aria-labelledby="knowledge-coverage-title">
@@ -132,6 +200,22 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
                 )}
                 <span className="detail-note"> · {t(gapEntityTypeLabels[gap.entityType])} · {t(gapDimensionLabels[gap.dimension])} · {t(gapStatusLabels[gap.kind])}</span>
                 <p className="detail-note">{t('说明：')}{t(gap.note)}</p>
+                {(gap.evidenceIds.length > 0 || gap.relatedIds.length > 0) && (
+                  <div className="knowledge-coverage-trace" data-testid="knowledge-coverage-trace">
+                    {gap.evidenceIds.length > 0 && (
+                      <div>
+                        <strong>{t('证据追踪')}</strong>
+                        <ul className="source-links">{gap.evidenceIds.map((id) => renderTraceId(id, 'evidence'))}</ul>
+                      </div>
+                    )}
+                    {gap.relatedIds.length > 0 && (
+                      <div>
+                        <strong>{t('关联追踪')}</strong>
+                        <ul className="source-links">{gap.relatedIds.map((id) => renderTraceId(id, 'related'))}</ul>
+                      </div>
+                    )}
+                  </div>
+                )}
               </li>
             ))}
           </ul>

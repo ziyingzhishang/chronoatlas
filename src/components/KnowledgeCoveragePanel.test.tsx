@@ -169,3 +169,57 @@ test('filters gap details to the selected context while leaving actionable tasks
   expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent(polityReport.gaps[0].label);
   expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`可行动缺口 ${report.tasks.filter((task) => task.polityIds.includes(polityId)).length}`);
 });
+
+test('traces gap evidence and related IDs to source or entity entry points', async () => {
+  const user = userEvent.setup();
+  const baseReport = auditKnowledgeCoverage();
+  const traceGap = {
+    ...baseReport.gaps[0],
+    evidenceIds: ['claim-han-changan-capital', 'zizhi-tongjian', 'unknown-evidence-id'],
+    relatedIds: ['liu-bang', 'changan-han-capital', 'han-changan-city-site'],
+  };
+  const report = { ...baseReport, gaps: [traceGap] };
+  const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
+
+  render(<LocaleProvider><KnowledgeCoveragePanel report={report} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+  await user.click(screen.getByText('展开缺口明细'));
+  const gaps = screen.getByTestId('knowledge-coverage-gaps');
+  expect(gaps).toHaveTextContent('证据 ID：claim-han-changan-capital');
+  expect(gaps).toHaveTextContent('来源：zizhi-tongjian');
+  expect(gaps).toHaveTextContent('未解析：unknown-evidence-id');
+  expect(gaps).toHaveTextContent('关联 ID：liu-bang');
+  expect(gaps).toHaveTextContent('关联 ID：changan-han-capital');
+  expect(gaps).toHaveTextContent('关联 ID：han-changan-city-site');
+
+  await user.click(screen.getByRole('button', { name: '打开证据实体：claim-han-changan-capital' }));
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'han_western' });
+  await user.click(screen.getByRole('button', { name: '打开关联实体：liu-bang' }));
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'liu-bang' });
+  await user.click(screen.getByRole('button', { name: '打开关联实体：changan-han-capital' }));
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'changan-han-capital' });
+  await user.click(screen.getByRole('button', { name: '打开关联实体：han-changan-city-site' }));
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'heritage', id: 'han-changan-city-site' });
+});
+
+test('keeps unresolved trace IDs explicit and source citations accessible without a drawer callback', async () => {
+  const user = userEvent.setup();
+  const baseReport = auditKnowledgeCoverage();
+  const report = {
+    ...baseReport,
+    gaps: [{
+      ...baseReport.gaps[0],
+      evidenceIds: ['zizhi-tongjian-vol1-three-jin', 'unresolved-source'],
+      relatedIds: ['unresolved-related'],
+    }],
+  };
+
+  render(<LocaleProvider><KnowledgeCoveragePanel report={report} /></LocaleProvider>);
+
+  await user.click(screen.getByText('展开缺口明细'));
+  const gaps = screen.getByTestId('knowledge-coverage-gaps');
+  expect(gaps).toHaveTextContent('来源：zizhi-tongjian-vol1-three-jin');
+  expect(gaps).toHaveTextContent('未解析：unresolved-source');
+  expect(gaps).toHaveTextContent('未解析：unresolved-related');
+  expect(screen.getByRole('link', { name: '查看来源：zizhi-tongjian-vol1-three-jin' })).toHaveAttribute('href', 'https://ctext.org/wiki.pl?chapter=648120&if=gb');
+});

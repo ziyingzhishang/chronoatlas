@@ -110,3 +110,4 @@ export function translateText(text:string, locale:Locale):string {
   if (/^(?:前|公元)?\d+年?—(?:前|公元)?\d+年?$/.test(text)) return text.split('—').map(tr).join('—');
   return text;
 }
+  '证据追踪':'Evidence traceability', '关联追踪':'Related-ID traceability', '来源 ID：':'Source ID: ',
