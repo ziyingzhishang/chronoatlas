@@ -6581,6 +6581,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-chen-ended-589",
+      "entityKey": "event:southern-chen-ended-589",
+      "label": "南陈政权终止",
+      "polityIds": [
+        "chen_southern",
+        "sui"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-chen-ended-589"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chen-shubao-participated-southern-chen-ended-589",
+            "event-detail:southern-chen-ended-589"
+          ],
+          "relatedIds": [
+            "chen-shubao",
+            "chen_southern",
+            "southern-chen-founded",
+            "sui",
+            "sui-unification",
+            "yang-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-chen-founded",
       "entityKey": "event:southern-chen-founded",
       "label": "南陈建立",
@@ -12291,12 +12354,14 @@
           ],
           "relatedIds": [
             "chen-baxian",
+            "chen-shubao",
             "chen_southern",
             "eastern-jin",
             "jin_eastern",
             "liang_southern",
             "qi_southern",
             "song_southern",
+            "southern-chen-ended-589",
             "southern-chen-founded",
             "southern-qi-founded",
             "sui-unification",
@@ -18337,6 +18402,70 @@
             "chen_southern",
             "southern-chen-founded",
             "yuwen-yong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "chen-shubao",
+      "entityKey": "person:chen-shubao",
+      "label": "陈叔宝",
+      "polityIds": [
+        "chen_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chen-shubao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chen-shubao-enemy-yang-jian-589",
+            "claim:claim-chen-shubao-participated-southern-chen-ended-589",
+            "claim:claim-chen-shubao-ruled-southern-chen",
+            "event-detail:southern-chen-ended-589",
+            "person-polity:chen-shubao:chen_southern"
+          ],
+          "relatedIds": [
+            "chen_southern",
+            "southern-chen-ended-589",
+            "yang-jian"
           ]
         },
         {
@@ -29648,6 +29777,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chen-shubao-enemy-yang-jian-589",
             "claim:claim-yang-jian-built-daxing",
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-participated-sui-founded",
@@ -29655,13 +29785,16 @@
             "claim:claim-yang-jian-related-li-yuan",
             "claim:claim-yang-jian-ruled-sui-fortythird",
             "event-detail:daxing-capital",
+            "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
             "person-polity:yang-jian:sui"
           ],
           "relatedIds": [
+            "chen-shubao",
             "daxing-capital",
             "li-yuan",
+            "southern-chen-ended-589",
             "sui",
             "sui-founded",
             "sui-unification",
@@ -32205,7 +32338,9 @@
           "evidenceIds": [
             "claim:claim-chen-baxian-founded-southern-chen",
             "claim:claim-chen-qian-ruled-southern-chen-sixtythird",
+            "claim:claim-chen-shubao-ruled-southern-chen",
             "claim:claim-chen-xu-ruled-southern-chen-ninetyfifth",
+            "event-detail:southern-chen-ended-589",
             "event-detail:southern-chen-founded",
             "event-detail:sui-unification",
             "heritage-detail:jiankang-six-dynasties-city-site",
@@ -32213,16 +32348,19 @@
             "heritage-detail:southern-dynasties-stone-carvings",
             "person:chen-baxian",
             "person:chen-qian",
+            "person:chen-shubao",
             "person:chen-xu",
             "person:hou-andu"
           ],
           "relatedIds": [
             "chen-baxian",
             "chen-qian",
+            "chen-shubao",
             "chen-xu",
             "hou-andu",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
+            "southern-chen-ended-589",
             "southern-chen-founded",
             "southern-dynasties-stone-carvings",
             "sui-unification"
@@ -36255,6 +36393,7 @@
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-ruled-sui-fortythird",
             "event-detail:daxing-capital",
+            "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
             "event-detail:tang-founded",
@@ -36273,6 +36412,7 @@
             "hanguang-gate-site",
             "luoyang-sui-tang-city-site",
             "mingde-gate-site",
+            "southern-chen-ended-589",
             "sui-founded",
             "sui-unification",
             "taiji-palace-site",
@@ -46394,6 +46534,69 @@
         }
       ]
     },
+    "event:southern-chen-ended-589": {
+      "entityType": "event",
+      "entityId": "southern-chen-ended-589",
+      "entityKey": "event:southern-chen-ended-589",
+      "label": "南陈政权终止",
+      "polityIds": [
+        "chen_southern",
+        "sui"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-chen-ended-589"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chen-shubao-participated-southern-chen-ended-589",
+            "event-detail:southern-chen-ended-589"
+          ],
+          "relatedIds": [
+            "chen-shubao",
+            "chen_southern",
+            "southern-chen-founded",
+            "sui",
+            "sui-unification",
+            "yang-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:southern-chen-founded": {
       "entityType": "event",
       "entityId": "southern-chen-founded",
@@ -52106,12 +52309,14 @@
           ],
           "relatedIds": [
             "chen-baxian",
+            "chen-shubao",
             "chen_southern",
             "eastern-jin",
             "jin_eastern",
             "liang_southern",
             "qi_southern",
             "song_southern",
+            "southern-chen-ended-589",
             "southern-chen-founded",
             "southern-qi-founded",
             "sui-unification",
@@ -58152,6 +58357,70 @@
             "chen_southern",
             "southern-chen-founded",
             "yuwen-yong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:chen-shubao": {
+      "entityType": "person",
+      "entityId": "chen-shubao",
+      "entityKey": "person:chen-shubao",
+      "label": "陈叔宝",
+      "polityIds": [
+        "chen_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chen-shubao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chen-shubao-enemy-yang-jian-589",
+            "claim:claim-chen-shubao-participated-southern-chen-ended-589",
+            "claim:claim-chen-shubao-ruled-southern-chen",
+            "event-detail:southern-chen-ended-589",
+            "person-polity:chen-shubao:chen_southern"
+          ],
+          "relatedIds": [
+            "chen_southern",
+            "southern-chen-ended-589",
+            "yang-jian"
           ]
         },
         {
@@ -69463,6 +69732,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chen-shubao-enemy-yang-jian-589",
             "claim:claim-yang-jian-built-daxing",
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-participated-sui-founded",
@@ -69470,13 +69740,16 @@
             "claim:claim-yang-jian-related-li-yuan",
             "claim:claim-yang-jian-ruled-sui-fortythird",
             "event-detail:daxing-capital",
+            "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
             "person-polity:yang-jian:sui"
           ],
           "relatedIds": [
+            "chen-shubao",
             "daxing-capital",
             "li-yuan",
+            "southern-chen-ended-589",
             "sui",
             "sui-founded",
             "sui-unification",
@@ -72020,7 +72293,9 @@
           "evidenceIds": [
             "claim:claim-chen-baxian-founded-southern-chen",
             "claim:claim-chen-qian-ruled-southern-chen-sixtythird",
+            "claim:claim-chen-shubao-ruled-southern-chen",
             "claim:claim-chen-xu-ruled-southern-chen-ninetyfifth",
+            "event-detail:southern-chen-ended-589",
             "event-detail:southern-chen-founded",
             "event-detail:sui-unification",
             "heritage-detail:jiankang-six-dynasties-city-site",
@@ -72028,16 +72303,19 @@
             "heritage-detail:southern-dynasties-stone-carvings",
             "person:chen-baxian",
             "person:chen-qian",
+            "person:chen-shubao",
             "person:chen-xu",
             "person:hou-andu"
           ],
           "relatedIds": [
             "chen-baxian",
             "chen-qian",
+            "chen-shubao",
             "chen-xu",
             "hou-andu",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
+            "southern-chen-ended-589",
             "southern-chen-founded",
             "southern-dynasties-stone-carvings",
             "sui-unification"
@@ -76070,6 +76348,7 @@
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-ruled-sui-fortythird",
             "event-detail:daxing-capital",
+            "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
             "event-detail:tang-founded",
@@ -76088,6 +76367,7 @@
             "hanguang-gate-site",
             "luoyang-sui-tang-city-site",
             "mingde-gate-site",
+            "southern-chen-ended-589",
             "sui-founded",
             "sui-unification",
             "taiji-palace-site",
@@ -78149,9 +78429,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 177,
+      "totalEntities": 178,
       "statusCounts": {
-        "covered": 845,
+        "covered": 850,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -78226,9 +78506,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 216,
+      "totalEntities": 217,
       "statusCounts": {
-        "covered": 1026,
+        "covered": 1031,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -78322,6 +78602,7 @@
       "polityId": "chen_southern",
       "polityName": "南陈",
       "entityKeys": [
+        "event:southern-chen-ended-589",
         "event:southern-chen-founded",
         "event:sui-unification",
         "heritage:jiankang-six-dynasties-city-site",
@@ -78329,6 +78610,7 @@
         "heritage:southern-dynasties-stone-carvings",
         "person:chen-baxian",
         "person:chen-qian",
+        "person:chen-shubao",
         "person:chen-xu",
         "person:hou-andu",
         "polity:chen_southern"
@@ -80648,6 +80930,7 @@
       "polityName": "隋",
       "entityKeys": [
         "event:daxing-capital",
+        "event:southern-chen-ended-589",
         "event:sui-founded",
         "event:sui-unification",
         "event:tang-founded",
@@ -83275,6 +83558,7 @@
         "event:liu-song-founded",
         "event:republic-founded",
         "event:song-linan-center-formed",
+        "event:southern-chen-ended-589",
         "event:southern-chen-founded",
         "event:southern-liang-founded",
         "event:southern-qi-founded",
@@ -83291,6 +83575,7 @@
         "heritage:southern-dynasties-stone-carvings",
         "heritage:southern-tang-er-ling",
         "heritage:southern-tang-jiankang-city-site",
+        "person:chen-shubao",
         "person:chen-xu",
         "person:li-bian",
         "person:li-jing",

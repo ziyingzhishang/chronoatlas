@@ -43,6 +43,7 @@ export const people: Person[] = [
   { id: 'tuoba-tao', name: '拓跋焘', aliases: ['北魏太武帝'], birthYear: 408, deathYear: 452, roles: ['皇帝', '军事领袖'], polityIds: ['wei_northern'], description: '北魏太武帝，长期以平城为政治中心并推动北魏北方扩张。', sourceIds: ['zizhi-tongjian'] },
   { id: 'xiao-daocheng', name: '萧道成', aliases: ['齐高帝'], birthYear: 427, deathYear: 482, roles: ['皇帝', '军事领袖'], polityIds: ['qi_southern'], description: '萧道成受禅建立南齐，建康继续作为南朝都城。', sourceIds: ['zizhi-tongjian'] },
   { id: 'chen-baxian', name: '陈霸先', aliases: ['陈武帝'], birthYear: 503, deathYear: 559, roles: ['皇帝', '军事领袖'], polityIds: ['chen_southern'], description: '陈霸先在梁末军政竞争中取得主导地位，受禅建立南陈。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'chen-shubao', name: '陈叔宝', aliases: ['陈后主', '南陈末帝'], birthYear: 553, deathYear: 604, roles: ['皇帝', '末代统治者'], polityIds: ['chen_southern'], description: '陈叔宝是南陈末帝，589年隋军攻取建康后出降，南陈政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'shi-jingtang', name: '石敬瑭', aliases: ['晋高祖'], birthYear: 892, deathYear: 942, roles: ['皇帝', '军事领袖'], polityIds: ['jin_later'], description: '石敬瑭借助契丹力量建立后晋，开封成为后晋的中原政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'liu-zhiyuan', name: '刘知远', aliases: ['汉高祖'], birthYear: 895, deathYear: 948, roles: ['皇帝', '军事领袖'], polityIds: ['han_later'], description: '刘知远在后晋覆亡后建立后汉，先据太原，后进入开封。', sourceIds: ['zizhi-tongjian'] },
   { id: 'guo-wei', name: '郭威', aliases: ['周太祖'], birthYear: 904, deathYear: 954, roles: ['皇帝', '军事领袖'], polityIds: ['zhou_later'], description: '郭威受禅建立后周，成为五代后期中原政权整顿的关键人物。', sourceIds: ['zizhi-tongjian'] },

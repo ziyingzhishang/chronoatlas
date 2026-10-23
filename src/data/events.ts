@@ -813,6 +813,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》·陈纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '557年梁敬帝禅位、陈霸先即位和陈朝建立的编年节点；具体卷次与异文待专题校勘。' }],
   },
   {
+    id: 'southern-chen-ended-589', year: 589, title: '南陈政权终止', summary: '隋军攻取建康，陈叔宝出降，南陈政权由此终止；建康城市遗产继续承接隋唐及后续历史层。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '隋已完成北方整合，南陈仍以建康为都，南北长期对峙进入最后统一战争阶段。',
+    process: '589年隋军多路渡江攻取建康，南陈末帝陈叔宝出降，南陈统一政治结构结束；军事占领、人物结局与地方行政接收属于连续过程。',
+    impact: '南陈作为南朝最后主要政权终止，南北分裂的主要王朝格局结束；建康继续作为城市和交通空间进入隋唐历史。',
+    mapNote: '地图将589年标为南陈终止节点，建康对应今南京；政权终止不表示城市、人口和遗产同时消失。',
+    references: [{ title: '《资治通鉴》·陈纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对589年隋军攻取建康、陈叔宝出降与南陈终止的年份级节点。' }],
+  },
+  {
     id: 'northern-qi-founded', year: 550, title: '北齐建立', summary: '高洋受东魏禅位建立北齐，北朝东部政权完成更替。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '东魏末年，高欢及其家族掌握东部军政资源，东魏皇室的实际权力持续收缩。',

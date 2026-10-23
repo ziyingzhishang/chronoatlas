@@ -248,6 +248,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['southern-chen-founded'], sourceIds, uncertaintyNote: '南陈建立与其后统一江南部分地区有时间差，建康的都城身份不代表建国当年所有地区均已稳定归附。',
   },
   {
+    personId: 'chen-shubao', biography: '陈叔宝是南陈末帝，589年隋军攻取建康后出降，南陈中央政权由此终止。',
+    aliases: ['陈后主', '南陈末帝'], offices: [{ title: '南陈末帝', polityId: 'chen_southern', placeId: 'jiankang', validFrom: 582, validTo: 589, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-chen-ended-589'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '589年建康失守是南陈中央政权终止节点；陈叔宝的个人结局、隋的行政接收与建康城市遗产分别记录。',
+  },
+  {
     personId: 'shi-jingtang', biography: '石敬瑭在后唐末年借助契丹军事力量受册立为帝，建立后晋并进入中原政治竞争。',
     aliases: ['晋高祖'], offices: [{ title: '后晋皇帝', polityId: 'jin_later', placeId: 'kaifeng', validFrom: 936, validTo: 942, datePrecision: 'range', sourceIds }],
     keyEvents: ['jin-later-founded'], sourceIds, uncertaintyNote: '后晋建立与契丹援助、燕云割让及中原控制分别属于不同层次的事实，不能合并为单一因果判断。',

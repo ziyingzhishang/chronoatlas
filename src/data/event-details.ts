@@ -1937,6 +1937,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '557年记录的是禅代与建政，不把南陈后期控制范围提前到建国年；建康不是完整疆域替代。',
   },
   {
+    eventId: 'southern-chen-ended-589',
+    participants: [
+      { personId: 'chen-shubao', role: '南陈末帝与建康失守阶段的核心人物', note: '陈叔宝在隋军攻取建康后出降；末帝个人结局与建康城市、原陈境地方社会的延续分开记录。' },
+      { personId: 'yang-jian', role: '发动统一战争并接收建康的隋方最高统治者', note: '杨坚代表隋方统一战争与政权接收，不将多路隋军将领行动压缩为单一人物现场指挥。' },
+    ],
+    polityIds: ['chen_southern', 'sui'],
+    causes: ['隋完成北方整合并准备南下。', '南陈中央军政与建康防御体系无法抵挡隋军多路进攻。'],
+    consequences: ['南陈统一政治结构终止，陈叔宝出降。', '原陈境逐步纳入隋的行政安排，南北主要王朝分裂格局结束。', '建康城市、交通和六朝遗产继续承接隋唐及后续历史层。'],
+    phases: [
+      { label: '隋军渡江', startYear: 589, endYear: 589, summary: '隋军多路渡江，向建康推进。' },
+      { label: '建康失守与出降', startYear: 589, endYear: 589, summary: '隋军攻取建康，陈叔宝出降，南陈政权终止。' },
+      { label: '原陈境接收', startYear: 589, endYear: 590, summary: '隋在原陈境建立新的行政秩序，地方社会与城市遗产继续存在。' },
+    ],
+    locationIds: ['jiankang'],
+    relatedEventIds: ['southern-chen-founded', 'sui-unification'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '589年是建康失守与南陈中央政权终止的明确节点；隋对原陈境的地方接收、行政调整和社会影响不能压缩为同一时刻。',
+  },
+  {
     eventId: 'northern-qi-founded',
     participants: [
       { personId: 'gao-yang', role: '承接高氏东魏军政基础并受禅建立北齐的皇帝', note: '高洋是550年东魏禅代、北齐建立的核心人物；高氏集团此前的军政积累与高洋个人即位按阶段区分。' },

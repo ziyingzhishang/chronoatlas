@@ -203,9 +203,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'chen_southern', perspectiveSummary: '南陈由陈霸先在梁末军政竞争中受禅建立，以建康为都，作为南朝最后政权承接江南秩序并面对北方隋的统一压力。',
     foundationProcess: ['陈霸先在侯景之乱及梁末战争中积累军政资源。', '557年受禅建立南陈。', '建康继续作为都城，陈蒨、陈顼等继承者完成政权延续与内部整合。'],
-    turningPoints: [turn(557, '南陈建立', '陈霸先受梁禅位建立陈朝。', 'southern-chen-founded'), turn(559, '陈蒨继承', '陈蒨承接南陈皇位，政权进入继承与整合阶段。'), turn(589, '隋灭陈', '隋军攻取建康，南朝政权结束。', 'sui-unification')],
-    principalFigureIds: ['chen-baxian', 'chen-qian', 'chen-xu', 'hou-andu'], capitalPhases: [capital('jiankang', 557, 589)],
-    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['southern-chen-founded', 'sui-unification'], claimIds: ['claim-chen-baxian-founded-southern-chen'], sourceIds: modernSources,
+    turningPoints: [turn(557, '南陈建立', '陈霸先受梁禅位建立陈朝。', 'southern-chen-founded'), turn(559, '陈蒨继承', '陈蒨承接南陈皇位，政权进入继承与整合阶段。'), turn(589, '南陈终止', '隋军攻取建康，陈叔宝出降，南陈政权终止。', 'southern-chen-ended-589')],
+    principalFigureIds: ['chen-baxian', 'chen-qian', 'chen-xu', 'chen-shubao', 'hou-andu'], capitalPhases: [capital('jiankang', 557, 589)],
+    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['southern-chen-founded', 'southern-chen-ended-589', 'sui-unification'], claimIds: ['claim-chen-baxian-founded-southern-chen', 'claim-chen-shubao-ruled-southern-chen', 'claim-chen-shubao-participated-southern-chen-ended-589', 'claim-chen-shubao-enemy-yang-jian-589'], sourceIds: modernSources,
     uncertaintyNote: '陈蒨、陈顼与侯安都分别对应南陈继承和军政阶段，不把他们写成557年唯一开国者；建康遗产是南朝叠压城市层，不能还原南陈完整宫城。',
   }),
   detail({
