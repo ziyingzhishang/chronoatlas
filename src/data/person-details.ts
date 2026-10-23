@@ -879,6 +879,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['tibetan-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '吐蕃形成是多代王权整合过程，赤松德赞属于后续成熟阶段；本详情不把其活动前推为618年前后的建政节点。',
   },
   {
+    personId: 'langdarma', biography: '朗达玛是吐蕃末期赞普，活动连接842年前后的王权危机与帝国解体阶段；其个人统治、宫廷冲突和后续地方化过程需要分开阅读。',
+    aliases: ['达磨赞普'], offices: [{ title: '吐蕃赞普', polityId: 'tibetan_empire', placeId: 'luosie', validFrom: 838, validTo: 842, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['tibetan-ended-842'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '842年采用吐蕃解体阶段约年；朗达玛是末期王权节点，不将帝国解体归因于单一人物，也不把逻些城市历史视为同时终止。',
+  },
+  {
     personId: 'feng-hong', biography: '冯弘承接冯跋后的北燕王位，在辽西维持燕室统治，并在北魏压力下迁徙与寻求外援，最终见证北燕政权终结。',
     aliases: ['北燕昭成帝'], offices: [{ title: '北燕皇帝', polityId: 'northern_yan', validFrom: 430, validTo: 436, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北燕形成节点为407年，冯弘属于其后期统治者；北燕建立、冯氏继承和436年灭亡应按连续但不同阶段叙述。',

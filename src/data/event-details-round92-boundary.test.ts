@@ -27,6 +27,7 @@ const reviewBoundaryReasons = {
   'yuan-shangdu-built': 'construction-range',
   'southern-ming-founded': 'formation-approximation',
   'tang-changan-end': 'participant-endpoint-review',
+  'tibetan-ended-842': 'formation-approximation',
   'tibetan-founded': 'formation-approximation',
   'tibetan-yalong-center': 'stage-range',
   'tuyuhun-founded': 'formation-approximation',
@@ -49,7 +50,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 39, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 40, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -104,6 +105,6 @@ describe('event details ninety-second round boundary audit', () => {
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');
-    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(33);
+    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(34);
   });
 });

@@ -119,7 +119,7 @@ describe('person time review', () => {
     const report = buildPersonTimeCoverageReport();
     const uncertain = report.records.filter((record) => record.status !== 'confirmed');
 
-    expect(uncertain).toHaveLength(48);
+    expect(uncertain).toHaveLength(49);
     expect(report.totalPeople).toBeGreaterThan(41);
     expect(report.statusCounts.confirmed + report.statusCounts.approximate + report.statusCounts.unknown)
       .toBe(report.totalPeople);

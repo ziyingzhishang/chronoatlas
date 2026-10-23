@@ -320,6 +320,18 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '618—629年是阶段范围，不是新的单日建政节点；雅砻为区域政治中心参照，不能据此确认具体宫城或完整吐蕃疆域。',
   },
   {
+    eventId: 'tibetan-ended-842',
+    participants: [{ personId: 'langdarma', role: '吐蕃末期赞普与解体阶段的王权节点', note: '朗达玛连接842年前后的王权危机；本条不把其个人统治简化为吐蕃解体的唯一原因。' }],
+    polityIds: ['tibetan_empire'],
+    causes: ['吐蕃长期扩张后的多层地方治理和王权继承压力积累。', '末期宫廷、宗教与地方政治力量关系紧张。'],
+    consequences: ['吐蕃统一政治结构进入解体与地方化阶段。', '逻些及高原各地继续存在不同层次的城市、宗教和地方政治网络。'],
+    phases: [{ label: '王权危机与解体阶段', startYear: 842, endYear: 850, summary: '朗达玛遇害后，继承竞争和地方势力分化推动吐蕃帝国结构解体。' }],
+    locationIds: ['luosie'],
+    relatedEventIds: ['tibetan-founded', 'tibetan-yalong-center'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '842年是吐蕃帝国解体阶段的约年节点；王权终止、地方政权形成和宗教网络变化并非同日完成，逻些城市历史也不随政权终结而终止。',
+  },
+  {
     eventId: 'eastern-wei-founded',
     participants: [
       { personId: 'gao-huan', role: '控制邺城并主导东魏军政重组的权臣', note: '高欢是东魏实际军政基础的建立者；元善见即位的皇室端点未纳入当前人物目录，故不虚构人物记录。' },

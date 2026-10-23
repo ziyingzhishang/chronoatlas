@@ -7401,6 +7401,65 @@
     },
     {
       "entityType": "event",
+      "entityId": "tibetan-ended-842",
+      "entityKey": "event:tibetan-ended-842",
+      "label": "吐蕃帝国解体阶段开始",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "tibetan-ended-842"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-langdarma-participated-tibetan-ended-842",
+            "event-detail:tibetan-ended-842"
+          ],
+          "relatedIds": [
+            "langdarma",
+            "tibetan-founded",
+            "tibetan-yalong-center",
+            "tibetan_empire"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "tibetan-founded",
       "entityKey": "event:tibetan-founded",
       "label": "吐蕃政权建立（形成阶段）",
@@ -14811,7 +14870,9 @@
             "heritage-detail:tibetan-lhasa-city-site"
           ],
           "relatedIds": [
+            "langdarma",
             "li-shimin",
+            "tibetan-ended-842",
             "tibetan-founded",
             "tibetan_empire"
           ]
@@ -20428,6 +20489,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "langdarma",
+      "entityKey": "person:langdarma",
+      "label": "朗达玛",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "langdarma"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-langdarma-participated-tibetan-ended-842",
+            "claim:claim-langdarma-related-tridu-songtsen",
+            "claim:claim-langdarma-ruled-tibetan-empire",
+            "event-detail:tibetan-ended-842",
+            "person-polity:langdarma:tibetan_empire"
+          ],
+          "relatedIds": [
+            "tibetan-ended-842",
+            "tibetan_empire",
+            "tridu-songtsen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "li-bian",
       "entityKey": "person:li-bian",
       "label": "李昪",
@@ -25799,6 +25924,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-langdarma-related-tridu-songtsen",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
             "claim:claim-tridu-songtsen-participated-tibetan-founded",
             "claim:claim-tridu-songtsen-related-songtsen-gampo",
@@ -25806,6 +25932,7 @@
             "person-polity:tridu-songtsen:tibetan_empire"
           ],
           "relatedIds": [
+            "langdarma",
             "songtsen-gampo",
             "tibetan-founded",
             "tibetan_empire"
@@ -34208,19 +34335,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-langdarma-ruled-tibetan-empire",
             "claim:claim-namri-songtsen-ruled-tibetan-empire-ninetysecond",
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
+            "event-detail:tibetan-ended-842",
             "event-detail:tibetan-founded",
             "event-detail:tibetan-yalong-center",
             "heritage-detail:tibetan-lhasa-city-site",
+            "person:langdarma",
             "person:namri-songtsen",
             "person:songtsen-gampo",
             "person:tridu-songtsen"
           ],
           "relatedIds": [
+            "langdarma",
             "namri-songtsen",
             "songtsen-gampo",
+            "tibetan-ended-842",
             "tibetan-founded",
             "tibetan-lhasa-city-site",
             "tibetan-yalong-center",
@@ -36254,6 +36386,20 @@
     },
     {
       "entityType": "event",
+      "entityId": "tibetan-ended-842",
+      "entityKey": "event:tibetan-ended-842",
+      "label": "吐蕃帝国解体阶段开始",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "tibetan-founded",
       "entityKey": "event:tibetan-founded",
       "label": "吐蕃政权建立（形成阶段）",
@@ -36751,6 +36897,23 @@
       "evidenceIds": [
         "silla-encykorea",
         "silla-kim-chunchu-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "langdarma",
+      "entityKey": "person:langdarma",
+      "label": "朗达玛",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -44641,6 +44804,65 @@
         }
       ]
     },
+    "event:tibetan-ended-842": {
+      "entityType": "event",
+      "entityId": "tibetan-ended-842",
+      "entityKey": "event:tibetan-ended-842",
+      "label": "吐蕃帝国解体阶段开始",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "tibetan-ended-842"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-langdarma-participated-tibetan-ended-842",
+            "event-detail:tibetan-ended-842"
+          ],
+          "relatedIds": [
+            "langdarma",
+            "tibetan-founded",
+            "tibetan-yalong-center",
+            "tibetan_empire"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:tibetan-founded": {
       "entityType": "event",
       "entityId": "tibetan-founded",
@@ -52053,7 +52275,9 @@
             "heritage-detail:tibetan-lhasa-city-site"
           ],
           "relatedIds": [
+            "langdarma",
             "li-shimin",
+            "tibetan-ended-842",
             "tibetan-founded",
             "tibetan_empire"
           ]
@@ -57668,6 +57892,70 @@
         }
       ]
     },
+    "person:langdarma": {
+      "entityType": "person",
+      "entityId": "langdarma",
+      "entityKey": "person:langdarma",
+      "label": "朗达玛",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "langdarma"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-langdarma-participated-tibetan-ended-842",
+            "claim:claim-langdarma-related-tridu-songtsen",
+            "claim:claim-langdarma-ruled-tibetan-empire",
+            "event-detail:tibetan-ended-842",
+            "person-polity:langdarma:tibetan_empire"
+          ],
+          "relatedIds": [
+            "tibetan-ended-842",
+            "tibetan_empire",
+            "tridu-songtsen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:li-bian": {
       "entityType": "person",
       "entityId": "li-bian",
@@ -63041,6 +63329,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-langdarma-related-tridu-songtsen",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
             "claim:claim-tridu-songtsen-participated-tibetan-founded",
             "claim:claim-tridu-songtsen-related-songtsen-gampo",
@@ -63048,6 +63337,7 @@
             "person-polity:tridu-songtsen:tibetan_empire"
           ],
           "relatedIds": [
+            "langdarma",
             "songtsen-gampo",
             "tibetan-founded",
             "tibetan_empire"
@@ -71450,19 +71740,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-langdarma-ruled-tibetan-empire",
             "claim:claim-namri-songtsen-ruled-tibetan-empire-ninetysecond",
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
+            "event-detail:tibetan-ended-842",
             "event-detail:tibetan-founded",
             "event-detail:tibetan-yalong-center",
             "heritage-detail:tibetan-lhasa-city-site",
+            "person:langdarma",
             "person:namri-songtsen",
             "person:songtsen-gampo",
             "person:tridu-songtsen"
           ],
           "relatedIds": [
+            "langdarma",
             "namri-songtsen",
             "songtsen-gampo",
+            "tibetan-ended-842",
             "tibetan-founded",
             "tibetan-lhasa-city-site",
             "tibetan-yalong-center",
@@ -73211,20 +73506,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 162,
+      "totalEntities": 163,
       "statusCounts": {
-        "covered": 777,
+        "covered": 781,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 33,
+        "uncertain": 34,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 33
+        "uncertain": 34
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -73247,6 +73542,7 @@
         "event:southern-liang-founded-397",
         "event:southern-liang-moves-ledu",
         "event:southern-ming-founded",
+        "event:tibetan-ended-842",
         "event:tibetan-founded",
         "event:tibetan-yalong-center",
         "event:tuyuhun-founded",
@@ -73281,20 +73577,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 201,
+      "totalEntities": 202,
       "statusCounts": {
-        "covered": 957,
+        "covered": 961,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 48,
+        "uncertain": 49,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 48
+        "uncertain": 49
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -73316,6 +73612,7 @@
         "person:ji-chang",
         "person:ji-yijiu",
         "person:jindeok-silla",
+        "person:langdarma",
         "person:liu-xuan",
         "person:liu-yao",
         "person:meng-tian",
@@ -75662,9 +75959,11 @@
       "polityId": "tibetan_empire",
       "polityName": "吐蕃",
       "entityKeys": [
+        "event:tibetan-ended-842",
         "event:tibetan-founded",
         "event:tibetan-yalong-center",
         "heritage:tibetan-lhasa-city-site",
+        "person:langdarma",
         "person:namri-songtsen",
         "person:songtsen-gampo",
         "person:tridu-songtsen",
@@ -75683,6 +75982,23 @@
           ],
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "langdarma",
+          "entityKey": "person:langdarma",
+          "label": "朗达玛",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -75714,6 +76030,20 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "tibetan-ended-842",
+          "entityKey": "event:tibetan-ended-842",
+          "label": "吐蕃帝国解体阶段开始",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -75723,7 +76053,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "吐蕃：有 3 项待核验缺口。"
+      "summary": "吐蕃：有 5 项待核验缺口。"
     },
     "turkic": {
       "polityId": "turkic",
@@ -78241,8 +78571,10 @@
       "cityName": "拉萨市",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:tibetan-ended-842",
         "event:tibetan-founded",
         "heritage:tibetan-lhasa-city-site",
+        "person:langdarma",
         "person:namri-songtsen",
         "person:songtsen-gampo",
         "person:tridu-songtsen"
@@ -78265,10 +78597,41 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
         {
+          "entityType": "person",
+          "entityId": "langdarma",
+          "entityKey": "person:langdarma",
+          "label": "朗达玛",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
           "entityType": "event",
           "entityId": "tibetan-founded",
           "entityKey": "event:tibetan-founded",
           "label": "吐蕃政权建立（形成阶段）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "tibetan-ended-842",
+          "entityKey": "event:tibetan-ended-842",
+          "label": "吐蕃帝国解体阶段开始",
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
@@ -78286,7 +78649,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "拉萨市：有 2 项待核验缺口。"
+      "summary": "拉萨市：有 4 项待核验缺口。"
     },
     "luoyang": {
       "placeId": "luoyang",

@@ -139,6 +139,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》与吐蕃早期政治中心分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于雅砻早期高原政治整合与阶段性中心的编年参照；具体宫城和古城位置不由本事件单独推定。' }],
   },
   {
+    id: 'tibetan-ended-842', year: 842, title: '吐蕃帝国解体阶段开始', summary: '朗达玛遇害及其后的继承与地方势力分化，使吐蕃帝国进入解体阶段。', placeId: 'luosie', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'approximate', region: 'world', category: '政权终结／继承危机', verification: 'partial',
+    background: '吐蕃长期扩张和高原内部治理形成多层政治网络，末期王权继承与地方力量关系趋于紧张。',
+    process: '842年前后朗达玛遇害，随后王位继承、地方势力和区域政治网络发生分化；项目以此作为吐蕃帝国解体阶段的约年节点，而非宣称所有地方秩序在同日终止。',
+    impact: '逻些继续作为历史城市存在，但吐蕃帝国的统一政治结构进入解体与地方化阶段。',
+    mapNote: '逻些标记末期王权与城市承接节点；842年后的地方政权、宗教网络和城市历史不应被绘制为吐蕃帝国整体继续存在。',
+    references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于吐蕃末期王权危机与842年前后政权解体阶段的编年参照；终结采用约年并保留地方化过程。' }],
+  },
+  {
     id: 'eastern-wei-founded', year: 534, title: '东魏建立', summary: '北魏分裂后，元善见在邺即位，东魏政权形成。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '北魏末年尔朱氏、元氏与高欢等军事集团之间的冲突，使洛阳中央政权失去对东部地区的稳定控制。',
