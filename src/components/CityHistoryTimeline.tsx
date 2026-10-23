@@ -25,6 +25,10 @@ function formatYear(year?: number, periodLabel?: string): string {
   return year < 0 ? `前${Math.abs(year)}年` : `${year}年`;
 }
 
+const precisionLabels: Record<string, string> = {
+  day: '日', year: '年', approximate: '约年', range: '范围', century: '世纪', unknown: '未知',
+};
+
 export function CityHistoryTimeline({ nodes, missingData = [], onOpenEntity }: CityHistoryTimelineProps) {
   const [filter, setFilter] = useState<Filter>('all');
   const visibleNodes = useMemo(() => filter === 'all' ? nodes : nodes.filter((node) => node.type === filter), [filter, nodes]);
@@ -44,6 +48,20 @@ export function CityHistoryTimeline({ nodes, missingData = [], onOpenEntity }: C
       {visibleNodes.map((node) => <li key={node.id} data-entity-type={node.type}>
         <span className="city-history-timeline-year">{formatYear(node.year, node.periodLabel)}</span>
         <button type="button" onClick={() => onOpenEntity(node.entity)}>{node.label}</button>
+        <div className="city-history-timeline-evidence" aria-label={`${node.label}证据状态`}>
+          <span>{node.evidence.sourceStatus === 'available' ? '来源：可用' : '来源：待解析'}</span>
+          <span>时间精度：{node.evidence.datePrecisions.length > 0 ? node.evidence.datePrecisions.map((precision) => precisionLabels[precision] ?? precision).join('、') : '未记录'}</span>
+          <span>不确定性：{node.evidence.uncertaintyStatus === 'recorded' ? '有记录' : '未记录不确定性'}</span>
+          <details>
+            <summary>查看证据：{node.label}</summary>
+            <section role="region" aria-label={`${node.label}证据`}>
+              <p>关系数量：{node.evidence.relationCount} · 来源数量：{node.evidence.sourceCount}</p>
+              {node.evidence.uncertaintyNotes.length > 0 && <ul aria-label="不确定性说明">
+                {node.evidence.uncertaintyNotes.map((note) => <li key={note}>{note}</li>)}
+              </ul>}
+            </section>
+          </details>
+        </div>
       </li>)}
       {visibleNodes.length === 0 && <li className="detail-note">暂无符合筛选条件的节点</li>}
     </ol>

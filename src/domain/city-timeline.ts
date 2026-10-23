@@ -1,9 +1,19 @@
 import type { DetailEntity } from './detail-entity';
-import type { Place } from './types';
+import type { HistoricalClaim, Place } from './types';
 import { buildCityStudyView, type CityStudyRelation, type StudyData } from './study-view';
 
 export type CityHistoryData = Partial<StudyData>;
 export type CityHistoryTimelineNodeType = DetailEntity['type'];
+export type CityHistoryTimelineDatePrecision = HistoricalClaim['datePrecision'];
+
+export interface CityHistoryTimelineEvidence {
+  relationCount: number;
+  sourceStatus: 'available' | 'unresolved';
+  sourceCount: number;
+  datePrecisions: CityHistoryTimelineDatePrecision[];
+  uncertaintyStatus: 'recorded' | 'not-recorded';
+  uncertaintyNotes: string[];
+}
 
 export interface CityHistoryTimelineNode {
   id: string;
@@ -12,6 +22,7 @@ export interface CityHistoryTimelineNode {
   label: string;
   type: CityHistoryTimelineNodeType;
   entity: DetailEntity;
+  evidence: CityHistoryTimelineEvidence;
 }
 
 export interface CityHistoryTimeline {
@@ -38,6 +49,51 @@ const firstYear = (years: Array<number | undefined>): number | undefined => {
 const uniqueById = <T extends { id: string }>(items: T[] | undefined): T[] =>
   [...new Map((items ?? []).map((item) => [item.id, item])).values()];
 
+const uniqueStrings = <T extends string>(items: T[]): T[] => [...new Set(items)];
+
+function evidenceForNode(
+  node: Pick<CityHistoryTimelineNode, 'entity'>,
+  data: CityHistoryData,
+  relations: CityStudyRelation[],
+): CityHistoryTimelineEvidence {
+  const entityId = node.entity.id;
+  const nodeRelations = relations.filter((relation) => relation.from.id === entityId || relation.to.id === entityId);
+  const claimsById = new Map((data.claims ?? []).map((claim) => [claim.id, claim]));
+  const relationClaims = nodeRelations.map((relation) => claimsById.get(relation.claimId)).filter((claim): claim is HistoricalClaim => claim !== undefined);
+  const sourceIds = [...nodeRelations.flatMap((relation) => relation.sourceIds)];
+  const datePrecisions = relationClaims.map((claim) => claim.datePrecision);
+  const uncertaintyNotes = relationClaims.flatMap((claim) => claim.uncertaintyNote ? [claim.uncertaintyNote] : []);
+
+  if (node.entity.type === 'place') {
+    sourceIds.push(...(data.places?.find((place) => place.id === entityId)?.sourceIds ?? []));
+  } else if (node.entity.type === 'polity') {
+    const polity = data.polities?.find((item) => item.id === entityId);
+    sourceIds.push(...(polity?.sourceIds ?? []));
+    sourceIds.push(...(data.capitalTerms ?? []).filter((term) => term.polityId === entityId).flatMap((term) => term.sourceIds));
+  } else if (node.entity.type === 'person') {
+    sourceIds.push(...(data.people?.find((person) => person.id === entityId)?.sourceIds ?? []));
+  } else if (node.entity.type === 'event') {
+    const event = data.events?.find((item) => item.id === entityId);
+    sourceIds.push(...(event?.sourceIds ?? []));
+    if (event?.datePrecision) datePrecisions.push(event.datePrecision);
+    const detail = data.eventDetails?.find((item) => item.eventId === entityId);
+    sourceIds.push(...(detail?.sourceIds ?? []));
+    if (detail?.uncertaintyNote) uncertaintyNotes.push(detail.uncertaintyNote);
+  } else if (node.entity.type === 'heritage') {
+    sourceIds.push(...(data.heritage?.find((asset) => asset.id === entityId)?.sourceIds ?? []));
+  }
+
+  const distinctSourceIds = uniqueStrings(sourceIds);
+  return {
+    relationCount: nodeRelations.length,
+    sourceStatus: distinctSourceIds.length > 0 ? 'available' : 'unresolved',
+    sourceCount: distinctSourceIds.length,
+    datePrecisions: uniqueStrings(datePrecisions),
+    uncertaintyStatus: uncertaintyNotes.length > 0 ? 'recorded' : 'not-recorded',
+    uncertaintyNotes: uniqueStrings(uncertaintyNotes),
+  };
+}
+
 export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData): CityHistoryTimeline {
   const city = data.places?.find((place) => place.id === cityId);
   if (!city) return { cityId, nodes: [], missingData: [`城市不存在：${cityId}`] };
@@ -48,6 +104,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     periodLabel: '现代参照',
     type: 'place',
     entity: { type: 'place', id: city.id },
+    evidence: { relationCount: 0, sourceStatus: 'unresolved', sourceCount: 0, datePrecisions: [], uncertaintyStatus: 'not-recorded', uncertaintyNotes: [] },
   }];
   const missingData: string[] = [];
   const capitalTerms = [...new Map((data.capitalTerms ?? [])
@@ -64,6 +121,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
       label: polity.name,
       type: 'polity',
       entity: { type: 'polity', id: polity.id },
+      evidence: { relationCount: 0, sourceStatus: 'unresolved', sourceCount: 0, datePrecisions: [], uncertaintyStatus: 'not-recorded', uncertaintyNotes: [] },
     });
     polityIds.add(polity.id);
   });
@@ -76,6 +134,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
       label: person.name,
       type: 'person',
       entity: { type: 'person', id: person.id },
+      evidence: { relationCount: 0, sourceStatus: 'unresolved', sourceCount: 0, datePrecisions: [], uncertaintyStatus: 'not-recorded', uncertaintyNotes: [] },
     });
   });
 
@@ -85,6 +144,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     label: event.title,
     type: 'event',
     entity: { type: 'event', id: event.id },
+    evidence: { relationCount: 0, sourceStatus: 'unresolved', sourceCount: 0, datePrecisions: [], uncertaintyStatus: 'not-recorded', uncertaintyNotes: [] },
   }));
 
   uniqueById((data.heritage ?? []).filter((asset) => asset.placeId === cityId)).forEach((asset) => nodes.push({
@@ -93,6 +153,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     label: asset.name,
     type: 'heritage',
     entity: { type: 'heritage', id: asset.id },
+    evidence: { relationCount: 0, sourceStatus: 'unresolved', sourceCount: 0, datePrecisions: [], uncertaintyStatus: 'not-recorded', uncertaintyNotes: [] },
   }));
 
   if (cityPolities.length === 0) missingData.push('暂无已收录政权历史层');
@@ -115,5 +176,12 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     capitalTerms: data.capitalTerms ?? [],
   };
   const cityStudy = buildCityStudyView(cityId, Number.POSITIVE_INFINITY, studyData);
-  return { cityId, city, nodes, missingData, relations: cityStudy?.relations ?? [] };
+  const relations = cityStudy?.relations ?? [];
+  return {
+    cityId,
+    city,
+    nodes: nodes.map((node) => ({ ...node, evidence: evidenceForNode(node, data, relations) })),
+    missingData,
+    relations,
+  };
 }

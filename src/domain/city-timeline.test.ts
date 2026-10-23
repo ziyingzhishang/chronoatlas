@@ -30,6 +30,45 @@ describe('buildCityHistoryTimeline', () => {
     expect(sameYearNodes.length).toBeGreaterThanOrEqual(2);
   });
 
+  it('projects existing relation and entity evidence status onto timeline nodes without inventing facts', () => {
+    const timeline = buildCityHistoryTimeline('changan', data);
+    const tang = timeline.nodes.find((node) => node.entity.type === 'polity' && node.entity.id === 'tang');
+    const event = timeline.nodes.find((node) => node.entity.type === 'event' && node.entity.id === 'daming-palace-built');
+    const heritage = timeline.nodes.find((node) => node.entity.type === 'heritage' && node.entity.id === 'daming-palace-site');
+
+    expect(tang?.evidence).toMatchObject({
+      relationCount: expect.any(Number),
+      sourceStatus: 'available',
+      datePrecisions: expect.arrayContaining(['range']),
+      uncertaintyStatus: 'not-recorded',
+    });
+    expect(event?.evidence).toMatchObject({
+      sourceStatus: 'available',
+      datePrecisions: [],
+    });
+    expect(heritage?.evidence).toMatchObject({
+      sourceStatus: 'available',
+      relationCount: expect.any(Number),
+    });
+  });
+
+  it('keeps evidence status unresolved when the existing record has no sources or precision', () => {
+    const timeline = buildCityHistoryTimeline('test-city', {
+      places: [{ id: 'test-city', historicalName: '测试城', aliases: [], longitude: 0, latitude: 0, sourceIds: [] }],
+      polities: [], people: [], events: [], heritage: [], capitalTerms: [], claims: [],
+    });
+    const place = timeline.nodes.find((node) => node.entity.type === 'place');
+
+    expect(place?.evidence).toEqual({
+      relationCount: 0,
+      sourceStatus: 'unresolved',
+      sourceCount: 0,
+      datePrecisions: [],
+      uncertaintyStatus: 'not-recorded',
+      uncertaintyNotes: [],
+    });
+  });
+
   it('reports missing city and incomplete historical data instead of returning a blank timeline', () => {
     expect(buildCityHistoryTimeline('unknown-city', data).missingData).toContain('城市不存在：unknown-city');
 
