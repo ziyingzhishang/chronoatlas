@@ -21,3 +21,8 @@ test('uses traditional text with separate regional terminology', () => {
   expect(translateText('数据加载中', 'zh-HK')).toBe('數據載入中');
   expect(translateText('数据加载中', 'zh-TW')).toBe('資料載入中');
 });
+test('translates heritage detail structure labels', () => {
+  expect(translateText('遗产详情', 'en')).toBe('Heritage details');
+  expect(translateText('建造沿革', 'en')).toBe('Construction history');
+  expect(translateText('来源与依据', 'en')).toBe('Sources and evidence');
+});

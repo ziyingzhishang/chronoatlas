@@ -113,11 +113,30 @@ describe('study views', () => {
     expect(view?.claims.some((claim) => claim.id === transitionClaim.id)).toBe(false);
   });
 
-  it('exposes detail-linked heritage only within its own construction window', () => {
+  it('retains explicitly detail-linked heritage outside the selected year', () => {
     const tangView = buildPolityStudyView('tang', 650, { ...data, polityDetails });
     const lateTangView = buildPolityStudyView('tang', 950, { ...data, polityDetails });
 
     expect(tangView?.detailLinkedHeritage.some((asset) => asset.id === 'luoyang-sui-tang-city-site')).toBe(true);
-    expect(lateTangView?.detailLinkedHeritage.some((asset) => asset.id === 'luoyang-sui-tang-city-site')).toBe(false);
+    expect(lateTangView?.detailLinkedHeritage.some((asset) => asset.id === 'luoyang-sui-tang-city-site')).toBe(true);
+  });
+
+  it('keeps detail-linked claims and entities separate from current-year facts', () => {
+    const qingDetail = polityDetails.find((detail) => detail.polityId === 'qing')!;
+    const detailClaim = claims.find((claim) => claim.id === 'claim-nurhaci-parent-hongtaiji')!;
+    const view = buildPolityStudyView('qing', 1636, {
+      ...data,
+      events,
+      eventDetails,
+      polityDetails: [
+        ...polityDetails.filter((detail) => detail.polityId !== 'qing'),
+        { ...qingDetail, claimIds: [detailClaim.id] },
+      ],
+    });
+
+    expect(view?.claims.some((claim) => claim.id === detailClaim.id)).toBe(false);
+    expect(view?.detailLinkedClaims.map((claim) => claim.id)).toContain(detailClaim.id);
+    expect(view?.events.some((event) => event.id === 'qing-enters-pass')).toBe(false);
+    expect(view?.detailLinkedEvents.some((event) => event.id === 'qing-enters-pass')).toBe(true);
   });
 });

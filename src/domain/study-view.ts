@@ -25,6 +25,7 @@ export interface PolityStudyView {
   detailLinkedEvents: HistoricalEvent[];
   detailLinkedTransitionEvents: HistoricalEvent[];
   detailLinkedHeritage: HeritageAsset[];
+  detailLinkedClaims: HistoricalClaim[];
   claims: HistoricalClaim[];
 }
 
@@ -157,11 +158,13 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
     }));
   const transitionEventIds = new Set(detailLinkedTransitionEvents.map((event) => event.id));
   const polityClaims = data.claims.filter((claim) => claimTouches(claim, polityId) && active(claim.validFrom, claim.validTo, year));
+  const detailLinkedClaims = uniqueById((polityDetail?.claimIds ?? [])
+    .map((claimId) => data.claims.find((claim) => claim.id === claimId))
+    .filter((claim): claim is HistoricalClaim => claim !== undefined));
   const heritageIds = new Set(polityClaims.filter((claim) => claim.predicate === 'left-heritage').map((claim) => claim.objectId));
   const detailLinkedHeritage = uniqueById((polityDetail?.heritageIds ?? [])
     .map((heritageId) => data.heritage.find((asset) => asset.id === heritageId))
-    .filter((asset): asset is HeritageAsset => asset !== undefined)
-    .filter((asset) => active(asset.constructionFrom, asset.constructionTo, year)));
+    .filter((asset): asset is HeritageAsset => asset !== undefined));
   const entityIds = new Set([
     polityId,
     ...people.map((person) => person.id),
@@ -176,7 +179,7 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
     kind: 'polity', subject, year, capitalTerms, capitalPlaces,
     events,
     people, heritage: data.heritage.filter((asset) => heritageIds.has(asset.id)),
-    detailLinkedPeople, detailLinkedEvents, detailLinkedTransitionEvents, detailLinkedHeritage, claims,
+    detailLinkedPeople, detailLinkedEvents, detailLinkedTransitionEvents, detailLinkedHeritage, detailLinkedClaims, claims,
   };
 }
 

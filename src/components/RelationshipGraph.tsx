@@ -7,6 +7,7 @@ import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
 
 export type RelationshipGraphCategory = 'governance' | 'kinship' | 'allianceConflict' | 'eventParticipation' | 'heritage' | 'context';
+export type RelationshipGraphScope = 'current-fact' | 'detail-linked';
 
 interface GraphNode {
   id: string;
@@ -20,6 +21,7 @@ export interface RelationshipGraphEdge {
   from: GraphNode;
   to: GraphNode;
   sourceAvailable: boolean;
+  scope: RelationshipGraphScope;
 }
 
 const categoryForPredicate: Record<string, RelationshipGraphCategory> = {
@@ -66,25 +68,49 @@ export function relationshipSummary(edge: RelationshipGraphEdge, t: (text: strin
   const category = t(categoryLabels[edge.category]);
   const precision = t(datePrecisionLabels[edge.claim.datePrecision]);
   const source = t(edge.sourceAvailable ? '来源：可用' : '来源：待解析');
-  return `${edge.from.label} · ${category} · ${predicate} · ${t('方向：')}${edge.from.label} → ${edge.to.label} · ${relationshipDateLabel(edge.claim)} · ${t('时间精度：')}${precision} · ${source}`;
+  const scope = t(edge.scope === 'current-fact' ? '本年事实' : '详情关联／非本年事实');
+  return `${edge.from.label} · ${category} · ${predicate} · ${t('方向：')}${edge.from.label} → ${edge.to.label} · ${relationshipDateLabel(edge.claim)} · ${t('时间精度：')}${precision} · ${source} · ${scope}`;
 }
 
 export function RelationshipGraph({ view, onOpenEntity }: { view: PolityStudyView; onOpenEntity?: (entity: DetailEntity) => void }) {
   const { t } = useLocale();
-  const nodes: GraphNode[] = [
+  const detailLinkedEvents = [...view.detailLinkedEvents, ...view.detailLinkedTransitionEvents];
+  const rawNodes: GraphNode[] = [
     { id: view.subject.id, label: view.subject.name, kind: 'polity' },
     ...view.people.map((person) => ({ id: person.id, label: person.name, kind: 'person' as const })),
+    ...view.detailLinkedPeople.map((person) => ({ id: person.id, label: person.name, kind: 'person' as const })),
     ...view.events.map((event) => ({ id: event.id, label: t(event.title), kind: 'event' as const })),
+    ...detailLinkedEvents.map((event) => ({ id: event.id, label: t(event.title), kind: 'event' as const })),
     ...view.heritage.map((asset) => ({ id: asset.id, label: asset.name, kind: 'heritage' as const })),
+    ...view.detailLinkedHeritage.map((asset) => ({ id: asset.id, label: asset.name, kind: 'heritage' as const })),
   ];
+  const nodes = [...new Map(rawNodes.map((node) => [node.id, node])).values()];
   const nodeById = new Map(nodes.map((node) => [node.id, node]));
-  const edges = view.claims.flatMap((claim): RelationshipGraphEdge[] => {
+  const currentClaimIds = new Set(view.claims.map((claim) => claim.id));
+  const claims = [...new Map([...view.claims, ...view.detailLinkedClaims].map((claim) => [claim.id, claim])).values()];
+  const edges = claims.flatMap((claim): RelationshipGraphEdge[] => {
     const category = classifyRelationshipClaim(claim);
     const from = nodeById.get(claim.subjectId);
     const to = claim.objectId ? nodeById.get(claim.objectId) : undefined;
     if (!category || !from || !to) return [];
-    return [{ claim, category, from, to, sourceAvailable: claim.sourceIds.length > 0 && claim.sourceIds.every((id) => knownSourceIds.has(id)) }];
+    return [{
+      claim, category, from, to,
+      sourceAvailable: claim.sourceIds.length > 0 && claim.sourceIds.every((id) => knownSourceIds.has(id)),
+      scope: currentClaimIds.has(claim.id) ? 'current-fact' : 'detail-linked',
+    }];
   });
+  const currentEntityIds = new Set([
+    view.subject.id,
+    ...view.people.map((person) => person.id),
+    ...view.events.map((event) => event.id),
+    ...view.heritage.map((asset) => asset.id),
+  ]);
+  const detailEntityIds = new Set([
+    ...view.detailLinkedPeople.map((person) => person.id),
+    ...detailLinkedEvents.map((event) => event.id),
+    ...view.detailLinkedHeritage.map((asset) => asset.id),
+  ]);
+  const detailOnlyNodes = nodes.filter((node) => detailEntityIds.has(node.id) && !currentEntityIds.has(node.id));
   const positions = new Map(nodes.map((node, index) => [node.id, { x: 30 + (index % 3) * 130, y: 30 + Math.floor(index / 3) * 58 }]));
   const grouped = (Object.keys(categoryLabels) as RelationshipGraphCategory[]).map((category) => ({ category, edges: edges.filter((edge) => edge.category === category) }));
   const svgHeight = Math.max(190, Math.ceil(nodes.length / 3) * 58 + 30);
@@ -113,6 +139,14 @@ export function RelationshipGraph({ view, onOpenEntity }: { view: PolityStudyVie
             return <li key={`text-${edge.claim.id}`}><button type="button" aria-label={summary} onClick={() => openNode(edge.to)}>{summary}</button></li>;
           })}</ul> : <p className="relationship-category-empty">{t('暂无已收录关系')}</p>}
         </section>)}
+        {detailOnlyNodes.length > 0 && <section className="relationship-category relationship-category-detail" aria-labelledby="relationship-category-detail">
+          <h4 id="relationship-category-detail">{t('详情关联／非本年事实')}</h4>
+          <p className="relationship-category-note">{t('关系图谱中的详情关联／非本年事实；时间、有效期与政权归属仍以各自证据为准。')}</p>
+          <ul>{detailOnlyNodes.map((node) => {
+            const summary = `${node.label} · ${t('详情关联／非本年事实')}`;
+            return <li key={`detail-${node.id}`}><button type="button" aria-label={summary} onClick={() => openNode(node)}>{summary}</button></li>;
+          })}</ul>
+        </section>}
       </div>
     </div>
   );
@@ -122,5 +156,5 @@ function GraphEdge({ edge, positions, summary, t }: { edge: RelationshipGraphEdg
   const from = positions.get(edge.from.id)!;
   const to = positions.get(edge.to.id)!;
   const label = `${t(categoryLabels[edge.category])} · ${t(predicateLabels[edge.claim.predicate] ?? edge.claim.predicate)}`;
-  return <g className={`relationship-edge relationship-edge-${edge.category}`} aria-label={summary}><title>{summary}</title><line x1={from.x} y1={from.y} x2={to.x} y2={to.y} /><text x={(from.x + to.x) / 2} y={(from.y + to.y) / 2 - 4}>{label}</text></g>;
+  return <g className={`relationship-edge relationship-edge-${edge.category} relationship-edge-${edge.scope}`} aria-label={summary}><title>{summary}</title><line x1={from.x} y1={from.y} x2={to.x} y2={to.y} /><text x={(from.x + to.x) / 2} y={(from.y + to.y) / 2 - 4}>{label}</text></g>;
 }

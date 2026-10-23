@@ -12,6 +12,9 @@ test('renders event narrative and supports returning to the event list', async (
   render(<LocaleProvider><EventDetailCard event={event} year={-221} onYearChange={vi.fn()} onBack={onBack} /></LocaleProvider>);
   expect(screen.getByRole('heading', { name: '秦统一六国' })).toBeInTheDocument();
   expect(screen.getByText('秦经过连续战争，已击败韩、赵、魏、楚、燕等国，齐成为最后的主要对手。')).toBeInTheDocument();
+  expect(screen.queryByText('参与者')).not.toBeInTheDocument();
+  expect(screen.queryByText('关联地点')).not.toBeInTheDocument();
+  expect(screen.queryByText('不确定性')).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button', { name: /返回事件列表/ }));
   expect(onBack).toHaveBeenCalledOnce();
 });

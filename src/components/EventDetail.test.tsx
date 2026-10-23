@@ -13,10 +13,13 @@ test('renders the event narrative, relationships, evidence, and uncertainty', ()
 
   expect(screen.getByRole('article', { name: '事件详情' })).toBeInTheDocument();
   expect(screen.getByRole('heading', { name: '唐建立' })).toBeInTheDocument();
+  expect(screen.getAllByText(/618年/).length).toBeGreaterThan(0);
   expect(screen.getByText('李渊')).toBeInTheDocument();
   expect(screen.getByText('参与政权')).toBeInTheDocument();
   expect(screen.getByText('长安')).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: '隋统一南北' })).toBeInTheDocument();
   expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
+  expect(screen.getByText('现代地理位置参照')).toBeInTheDocument();
   expect(screen.getByText(/不确定性/)).toBeInTheDocument();
 });
 

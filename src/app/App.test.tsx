@@ -41,7 +41,7 @@ test('opens a deep entity drawer from the polity study view and supports back na
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
   await userEvent.click(screen.getByRole('button', { name: /唐/ }));
-  await userEvent.click(screen.getByRole('button', { name: /李世民/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^李世民$/ }));
   expect(screen.getByRole('dialog', { name: '李世民' })).toHaveClass('entity-drawer');
   expect(screen.getByText('人物关系')).toBeInTheDocument();
   await userEvent.click(within(screen.getByRole('dialog', { name: '李世民' })).getByRole('button', { name: '关闭详情' }));
@@ -80,12 +80,14 @@ test('opens event and heritage details from the polity study summary', async () 
   await userEvent.click(screen.getByRole('button', { name: '唐在长安建立' }));
   const eventDrawer = screen.getByRole('dialog', { name: '唐在长安建立' });
   expect(eventDrawer).toHaveClass('entity-drawer');
+  expect(getComputedStyle(eventDrawer).width).toBe('50vw');
   expect(within(eventDrawer).getByRole('article', { name: '事件详情' })).toContainElement(within(eventDrawer).getByRole('heading', { name: '唐在长安建立', level: 3 }));
 
   await userEvent.click(within(eventDrawer).getByRole('button', { name: '关闭详情' }));
   await userEvent.click(screen.getByRole('button', { name: '大明宫遗址' }));
   const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
   expect(heritageDrawer).toHaveClass('entity-drawer');
+  expect(getComputedStyle(heritageDrawer).width).toBe('50vw');
   expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
 });
 

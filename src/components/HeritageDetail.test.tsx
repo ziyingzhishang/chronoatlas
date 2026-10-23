@@ -1,6 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { getHeritageDetail } from '../data/heritage-details';
+import { LocaleProvider } from '../i18n/locale';
 import { HeritageDetail } from './HeritageDetail';
 
 describe('HeritageDetail', () => {
@@ -53,5 +54,33 @@ describe('HeritageDetail', () => {
 
     fireEvent.click(screen.getByRole('button', { name: '长安' }));
     expect(onNavigate).toHaveBeenCalledWith({ type: 'place', id: 'changan' });
+  });
+
+  it('makes verifiable heritage sources navigable from the detail drawer', () => {
+    const detail = getHeritageDetail('big-wild-goose-pagoda')!;
+
+    render(<HeritageDetail detail={detail} heritageName="大雁塔" />);
+
+    const sourceLink = screen.getByRole('link', { name: '大雁塔 · 西安市地方志办公室' });
+    expect(sourceLink).toHaveAttribute('href', 'https://xadfz.xa.gov.cn/xadq/rwxa/1802954373708996609.html');
+    expect(sourceLink).toHaveAttribute('target', '_blank');
+  });
+
+  it('localizes the heritage detail structure through the shared locale provider', () => {
+    const previousLocale = localStorage.getItem('history-locale');
+    localStorage.setItem('history-locale', 'en');
+
+    try {
+      const detail = getHeritageDetail('daming-palace-site')!;
+      render(<LocaleProvider><HeritageDetail detail={detail} heritageName="大明宫遗址" /></LocaleProvider>);
+
+      expect(screen.getByRole('article', { name: 'Heritage details' })).toBeInTheDocument();
+      expect(screen.getByRole('heading', { name: 'Construction history' })).toBeInTheDocument();
+      expect(screen.getByText('Modern location:')).toBeInTheDocument();
+      expect(screen.getByText('Sources and evidence')).toBeInTheDocument();
+    } finally {
+      if (previousLocale === null) localStorage.removeItem('history-locale');
+      else localStorage.setItem('history-locale', previousLocale);
+    }
   });
 });

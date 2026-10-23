@@ -4,10 +4,12 @@ import { getChanganStudyBundle } from '../data/changan-study';
 import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
 import { events } from '../data/events';
+import { eventDetails } from '../data/event-details';
 import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
 import { places } from '../data/places';
 import { polities } from '../data/polities';
+import { polityDetails } from '../data/polity-details';
 import { buildPolityStudyView } from '../domain/study-view';
 import type { DetailEntity } from '../domain/detail-entity';
 import { RelationshipGraph } from './RelationshipGraph';
@@ -19,7 +21,7 @@ describe('RelationshipGraph', () => {
     render(<RelationshipGraph view={view!} />);
 
     expect(screen.getByRole('img', { name: '人物关系网络' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐 · 626—649年/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐 · 626—649年.*本年事实/ })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /唐 · 遗产关联 · 遗留 · 方向：唐 → 大明宫遗址/ })).toBeInTheDocument();
   });
 
@@ -135,5 +137,26 @@ describe('RelationshipGraph', () => {
     fireEvent.click(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐/ }));
 
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'tang' });
+  });
+
+  it('renders detail-linked entities and claims with an explicit non-current scope', () => {
+    const qingDetail = polityDetails.find((detail) => detail.polityId === 'qing')!;
+    const detailClaim = claims.find((claim) => claim.id === 'claim-nurhaci-parent-hongtaiji')!;
+    const view = buildPolityStudyView('qing', 1636, {
+      polities, places, people, heritage: heritageAssets, events, eventDetails,
+      claims, capitalTerms: capitalHistory,
+      polityDetails: [
+        ...polityDetails.filter((detail) => detail.polityId !== 'qing'),
+        { ...qingDetail, claimIds: [detailClaim.id] },
+      ],
+    });
+    render(<RelationshipGraph view={view!} />);
+
+    expect(screen.getByRole('link', { name: '努尔哈赤' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: '清入关' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: '清盛京宫殿与城市历史层' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /努尔哈赤 · 亲属 · 亲属：父母 · 方向：努尔哈赤 → 皇太极 · 1592—1626年.*详情关联／非本年事实/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '清入关 · 详情关联／非本年事实' })).toBeInTheDocument();
+    expect(screen.getAllByText('详情关联／非本年事实').length).toBeGreaterThan(0);
   });
 });
