@@ -2507,7 +2507,7 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'changan-gengshi',
-    participants: [],
+    participants: [{ personId: 'liu-xiu', role: '刘秀势力重建、促成更始长安控制削弱的核心人物', note: '事件因果直接记载刘秀势力重建使更始政权在长安的控制基础迅速削弱；本条仅表达公元25年前后的阶段性政治作用，不把刘秀写成单独完成长安攻占或全国统一。' }],
     polityIds: ['gengshi', 'xin'],
     causes: ['新末战争和刘秀势力重建使更始政权在长安的控制基础迅速削弱。'],
     consequences: ['更始政权在长安的阶段性统治结束。', '长安继续作为汉代西京与关中节点，但进入新的政治争夺阶段。'],
@@ -2567,7 +2567,7 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'tang-changan-end',
-    participants: [],
+    participants: [{ personId: 'zhu-wen', role: '唐亡后建立后梁并承接政治秩序转折的军政领袖', note: '事件结果直接涉及唐亡与后梁建立，朱温人物详情明确其在907年建立后梁；本条只连接唐亡与长安政治中心转移的阶段，不把后梁都城或后续五代政治活动回填为长安事件参与。' }],
     polityIds: ['tang'],
     causes: ['唐末中央权力衰落，长安的持续性都城功能已在迁洛与军镇竞争中明显削弱。'],
     consequences: ['唐亡与后梁建立使长安不再承担中原王朝持续稳定的帝国首都角色。', '长安转入后续历史中的区域、文化与遗产城市阶段。'],
