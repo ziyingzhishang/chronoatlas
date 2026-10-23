@@ -6,6 +6,10 @@ type Seed =
   | [string, string, number, number]
   | [string, string, number, number, CapitalRole, CapitalStatus, ('high'|'medium'|'low')?, string?];
 const sourceIds = ['capital-history-reference'];
+const additionalSourceIds: Record<string, string[]> = {
+  western_liao: ['liaoshi-vol30-yelu-dashi', 'iranica-balasagun', 'unesco-chui-balasagun'],
+  ming_southern: ['southern-ming-overview', 'southern-ming-hongguang', 'southern-ming-longwu', 'southern-ming-shaowu', 'southern-ming-yongli', 'modern-geography-reference'],
+};
 const twelfthBatchAuditNotes: Record<string, string> = {
   xiongnu: '最终证据复核：保留移动汗廷；龙城／单于庭仅作今蒙古国南部至杭爱地区的候选区域参照，来源为 capital-history-reference。',
   tuyuhun: '最终证据复核：保留候选王都；伏俟城对应今青海省共和县一带，不能据此确认全期固定首都，来源为 capital-history-reference。',
@@ -13,7 +17,7 @@ const twelfthBatchAuditNotes: Record<string, string> = {
   shang: '最终证据复核：保留早期候选；二里头对应今河南省洛阳市偃师区，商代多次迁都且现有地点不能代替晚商殷墟（今河南省安阳市）独立地点实体，来源为 capital-history-reference。',
   western_qin: '最终证据复核：保留阶段性中心；金城及河湟／河西参照对应今兰州市、武威市一带，不能合并推定为全期固定首都，来源为 capital-history-reference。',
   northern_yuan: '最终证据复核：保留移动汗廷；蒙古汗廷仅对应今蒙古高原中部的阶段性区域，多个汗廷阶段不能压缩为单一固定首都，来源为 capital-history-reference 与 northern-yuan-early-ming。',
-  ming_southern: '最终证据复核：保留阶段性中心；南京、福州、广州分别对应今江苏省南京市、福建省福州市、广东省广州市，南明诸政权并立，不能宣称全期单一固定首都，来源为 capital-history-reference。',
+  ming_southern: '最终证据复核：保留阶段性中心；南京、福州、广州、肇庆分别对应今江苏省南京市、福建省福州市、广东省广州市、广东省肇庆市，南明诸政权并立，不能宣称全期单一固定首都，来源为阶段专门来源与 capital-history-reference。',
   turkic: '最终证据复核：保留移动汗廷；于都斤／鄂尔浑政治核心对应今蒙古国中部，两个汗国阶段均为移动性汗廷，不是固定城市首都，来源为 capital-history-reference、turkic-history-db 与 turkic-orkhon-heritage。',
 };
 const twelfthBatchSourceIds: Record<string, string[]> = {
@@ -28,7 +32,7 @@ const thirteenthBatchAuditNotes: Record<string, string> = {
   shang: '保留早期都城候选，不以二里头替代商代多次迁都传统或晚商殷墟地点；本轮不新增未经地点目录支持的阶段记录。',
   western_qin: '保留金城及河湟／河西阶段性中心，区分实际政治中心与固定正式都城；现有时段不足以支持全期单一都城。',
   northern_yuan: '保留蒙古汗廷区域参照，区分移动汗廷与固定城市；北元多阶段政治核心不能压缩为单一都城。',
-  ming_southern: '保留南京、福州、广州的阶段性实际中心，区分南明并立政权与单一国家首都；不做全期固定都城判断。',
+  ming_southern: '保留南京、福州、广州、肇庆的阶段性实际中心，区分南明并立政权与单一国家首都；不做全期固定都城判断。',
   turkic: '保留两个突厥汗国阶段的于都斤／鄂尔浑区域政治核心，区分汗廷网络与固定城市；不升级为正式固定首都。',
 };
 const fourteenthBatchAuditNotes: Record<string, string> = {
@@ -44,9 +48,9 @@ const seed = (polityId:string, [placeId, _name, validFrom, validTo, role='primar
   role,
   status,
   confidence,
-  sourceIds: [...new Set([...sourceIds, ...(twelfthBatchSourceIds[polityId] ?? [])])],
+  sourceIds: [...new Set([...sourceIds, ...(twelfthBatchSourceIds[polityId] ?? []), ...(additionalSourceIds[polityId] ?? [])])],
   notes: (() => {
-    const resolvedSourceIds = [...new Set([...sourceIds, ...(twelfthBatchSourceIds[polityId] ?? [])])];
+    const resolvedSourceIds = [...new Set([...sourceIds, ...(twelfthBatchSourceIds[polityId] ?? []), ...(additionalSourceIds[polityId] ?? [])])];
     const modernName = places.find((place) => place.id === placeId)?.modernName ?? '现代位置待核';
     const auditNote = thirteenthBatchAuditNotes[polityId]
       ? `第十三轮证据复核：现代对应：${modernName}；角色：${role}；来源ID：${resolvedSourceIds.join('、')}。${thirteenthBatchAuditNotes[polityId]}`
@@ -78,7 +82,7 @@ const explicit: Record<string, Seed[]> = {
   later_qin:[['changan','长安',384,417,'primary','formal','high','后秦以长安为正式都城，今西安市。']],
   xia:[['zhitong','统万城',413,431,'primary','formal','high','统万城建成后成为夏的正式都城；407—412年建政初期中心不据此向前推定。']],
   northern_liang:[['zhangye','张掖',397,400,'primary','formal','high','北凉早期以张掖为都，今张掖市。'],['guzang','姑臧',401,439,'primary','formal','high','北凉后期迁都姑臧，今武威市城区一带。']],
-  song_northern:[['kaifeng','开封',960,1127,'primary','formal','high','北宋定都开封，作为现有来源字段支持的正式都城时段。']], song_south:[['linan','临安',1127,1279,'de_facto','actual','high','南渡初期政治中心形成有过程，此记录表达实际中心而非立即完成形式迁都。']], western_xia:[['xingqing','兴庆府',1038,1227,'primary','formal','high','西夏都城兴庆府，时段与政权目录范围一致。']], jin_jurchen:[['huining','会宁府',1115,1153],['jin_zhongdu','中都大兴府',1153,1214],['kaifeng','南京／开封',1214,1234]], western_liao:[['balasagun','八剌沙衮／虎思斡耳朵',1124,1218,'de_facto','actual','medium','宫帐与城址性质需区分。']], dali:[['yangjumei','羊苴咩城',937,1253]], mongol:[['mongol_karakorum','和林',1206,1271,'de_facto','actual','medium','早期移动汗廷，后期固定中心。']], yuan:[['shangdu','上都',1271,1368,'seasonal','formal','high','元两都制中的夏都。'],['dadu','大都',1271,1368,'primary','formal','high','元两都制中的主要政治中心。']], northern_yuan:[['beiyuan_core','蒙古汗廷',1368,1635,'mobile_court','uncertain','low','北元由元室北迁后的多个汗廷阶段构成，政治核心随部众迁徙；现代参照为蒙古高原中部区域，现记录不指向单一城址，没有单一固定都城。']], ming:[['yingtian','应天府',1368,1420],['beijing','北京',1421,1644],['yingtian','南京留都',1421,1644,'secondary','formal','high']], ming_southern:[['yingtian','南京',1644,1645,'primary','actual','medium','南明是明室南迁后多个政权阶段构成的合称；弘光政权以南京为阶段性实际中心，现代对应为今江苏省南京市，不能据此宣称南明全期单一首都。'],['fuzhou','福州',1645,1646,'temporary','actual','medium','南明隆武政权以福州为阶段性实际中心，现代对应为今福建省福州市；属于南明多个并立阶段之一，不能据此宣称全期固定首都。'],['guangzhou','广州',1646,1647,'temporary','actual','low','南明绍武政权以广州为短期阶段性中心，现代对应为今广东省广州市；时间短且政权并立，只能作为可靠现代地点对应的阶段中心，保留低置信度。']], later_jin:[['heturnala','赫图阿拉',1616,1625],['shengjing','盛京',1626,1636]], qing:[['shengjing','盛京',1636,1644,'primary','formal','high'],['beijing','北京',1644,1912]],
+  song_northern:[['kaifeng','开封',960,1127,'primary','formal','high','北宋定都开封，作为现有来源字段支持的正式都城时段。']], song_south:[['linan','临安',1127,1279,'de_facto','actual','high','南渡初期政治中心形成有过程，此记录表达实际中心而非立即完成形式迁都。']], western_xia:[['xingqing','兴庆府',1038,1227,'primary','formal','high','西夏都城兴庆府，时段与政权目录范围一致。']], jin_jurchen:[['huining','会宁府',1115,1153],['jin_zhongdu','中都大兴府',1153,1214],['kaifeng','南京／开封',1214,1234]], western_liao:[['balasagun','八剌沙衮／虎思斡耳朵',1134,1218,'de_facto','actual','medium','《辽史》记延庆三年建都城、号虎思斡耳朵；今对应吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址。宫帐、军营与城址性质需区分，1132年称帝地点不等同于1134年稳定中心。']], dali:[['yangjumei','羊苴咩城',937,1253]], mongol:[['mongol_karakorum','和林',1206,1271,'de_facto','actual','medium','早期移动汗廷，后期固定中心。']], yuan:[['shangdu','上都',1271,1368,'seasonal','formal','high','元两都制中的夏都。'],['dadu','大都',1271,1368,'primary','formal','high','元两都制中的主要政治中心。']], northern_yuan:[['beiyuan_core','蒙古汗廷',1368,1635,'mobile_court','uncertain','low','北元由元室北迁后的多个汗廷阶段构成，政治核心随部众迁徙；现代参照为蒙古高原中部区域，现记录不指向单一城址，没有单一固定都城。']], ming:[['yingtian','应天府',1368,1420],['beijing','北京',1421,1644],['yingtian','南京留都',1421,1644,'secondary','formal','high']], ming_southern:[['yingtian','南京',1644,1645,'primary','actual','medium','南明是明室南迁后多个政权阶段构成的合称；弘光政权以南京为阶段性实际中心，现代对应为今江苏省南京市，不能据此宣称南明全期单一首都。'],['fuzhou','福州',1645,1646,'temporary','actual','medium','南明隆武政权以福州为阶段性实际中心，现代对应为今福建省福州市；属于南明多个并立阶段之一，不能据此宣称全期固定首都。'],['guangzhou','广州',1646,1647,'temporary','actual','low','南明绍武政权以广州为短期阶段性中心，现代对应为今广东省广州市；时间短且政权并立，只能作为可靠现代地点对应的阶段中心，保留低置信度。'],['zhaoqing','肇庆',1646,1647,'temporary','actual','medium','南明永历政权初期以肇庆为阶段性实际中心，现代对应为今广东省肇庆市；与绍武政权同期并立，不能据此宣称南明全期固定首都。']], later_jin:[['heturnala','赫图阿拉',1616,1625],['shengjing','盛京',1626,1636]], qing:[['shengjing','盛京',1636,1644,'primary','formal','high'],['beijing','北京',1644,1912]],
   republic:[['beijing','北京',1912,1927],['yingtian','南京',1928,1937],['chongqing','重庆',1938,1945,'temporary','actual','high','战时陪都/中央驻地，不等同于永久迁都。'],['yingtian','南京',1946,1949]], prc:[['beijing','北京',1949,2026,'primary','formal','high','中华人民共和国首都，北京。']],
   liang_later:[['kaifeng','开封',907,923,'primary','formal','high','后梁以开封为正式都城，今开封市。']],
   tang_later:[['luoyang','洛阳',923,936,'primary','formal','high','后唐以洛阳为正式都城，今洛阳市。']],

@@ -401,13 +401,48 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'zhu-yousong', biography: '朱由崧即弘光帝，是南明诸政权中的重要君主之一；其政权以南京为主要政治中心，存续时间较短。',
-    aliases: ['弘光帝'], offices: [{ title: '南明弘光帝', polityId: 'ming_southern', placeId: 'jiankang', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['southern-ming-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南明是明室南迁后多个政权阶段的合称，朱由崧政权不能代表南明全部政权，也不能由南京名义控制推导完整疆域；该事件仅对应弘光阶段的形成背景。',
+    aliases: ['弘光帝'], offices: [{ title: '南明弘光帝', polityId: 'ming_southern', placeId: 'yingtian', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'southern-ming-hongguang'] }],
+    keyEvents: ['southern-ming-founded', 'hongguang-nanjing-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'southern-ming-overview', 'southern-ming-hongguang'], uncertaintyNote: '南明是明室南迁后多个政权阶段的合称，朱由崧政权不能代表南明全部政权，也不能由南京名义控制推导完整疆域；本详情将弘光南京阶段与南明合称分开。',
+  },
+  {
+    personId: 'zhu-yujian', biography: '朱聿键即隆武帝，弘光南京阶段覆亡后在福州即位，成为南明东南阶段的君主。',
+    aliases: ['隆武帝'], offices: [{ title: '南明隆武帝', polityId: 'ming_southern', placeId: 'fuzhou', validFrom: 1645, validTo: 1646, datePrecision: 'range', sourceIds: ['southern-ming-longwu', 'fuzhou-longwu-site'] }],
+    keyEvents: ['southern-ming-founded', 'longwu-fuzhou-founded'], sourceIds: ['southern-ming-overview', 'southern-ming-longwu', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '朱聿键仅代表隆武阶段；福州朝廷名义、郑芝龙军镇实际控制和隆武覆亡后的南明承接不能合并为单一疆域。',
+  },
+  {
+    personId: 'zheng-zhi-long', biography: '郑芝龙是隆武福州阶段的重要东南军政人物，掌握海上与福建地方网络，在朝廷名义和军镇自主性之间发挥关键作用。',
+    aliases: ['一官'], offices: [{ title: '隆武朝廷军政人物', polityId: 'ming_southern', placeId: 'fuzhou', validFrom: 1645, validTo: 1646, datePrecision: 'range', sourceIds: ['southern-ming-longwu', 'fuzhou-longwu-site'] }],
+    keyEvents: ['longwu-fuzhou-founded'], sourceIds: ['southern-ming-longwu', 'fuzhou-longwu-site'], uncertaintyNote: '郑芝龙的军镇、海上网络与隆武朝廷的关系具有阶段性，不能只用现代国家官僚体系解释。',
+  },
+  {
+    personId: 'huang-daozhou', biography: '黄道周是隆武朝廷的重要文臣与抗清人物，参与福州阶段的政治组织和军事动员。',
+    aliases: ['幼玄'], offices: [{ title: '隆武朝廷大臣', polityId: 'ming_southern', placeId: 'fuzhou', validFrom: 1645, validTo: 1646, datePrecision: 'range', sourceIds: ['southern-ming-longwu', 'ming-shi-vol120-southern-ming'] }],
+    keyEvents: ['longwu-fuzhou-founded'], sourceIds: ['southern-ming-longwu', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '黄道周的任职、出征与殉难属于隆武阶段的具体政治过程，不据此推断南明各阶段存在连续中央。',
+  },
+  {
+    personId: 'zhu-yuyue', biography: '朱聿鐭即绍武帝，隆武覆亡后在广州即位，与肇庆永历政权形成同期并立的短期阶段。',
+    aliases: ['绍武帝'], offices: [{ title: '南明绍武帝', polityId: 'ming_southern', placeId: 'guangzhou', validFrom: 1646, validTo: 1646, datePrecision: 'range', sourceIds: ['southern-ming-shaowu', 'guangzhou-shaowu-tomb'] }],
+    keyEvents: ['shaowu-guangzhou-founded'], sourceIds: ['southern-ming-overview', 'southern-ming-shaowu', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '绍武阶段在1646年内迅速建立并覆亡，且与永历并立；广州不能被表述为南明全期唯一首都。',
+  },
+  {
+    personId: 'su-guansheng', biography: '苏观生是广州绍武朝廷的重要军政大臣，参与短期朝廷的组织与广州防务。',
+    aliases: [], offices: [{ title: '绍武朝廷大臣', polityId: 'ming_southern', placeId: 'guangzhou', validFrom: 1646, validTo: 1646, datePrecision: 'range', sourceIds: ['southern-ming-shaowu', 'guangzhou-shaowu-tomb'] }],
+    keyEvents: ['shaowu-guangzhou-founded'], sourceIds: ['southern-ming-shaowu', 'guangzhou-shaowu-tomb'], uncertaintyNote: '苏观生的政治关系限于绍武广州阶段，相关墓葬材料可支持人物群体与遗产关联，但不能替代完整传记史料。',
+  },
+  {
+    personId: 'zhu-youlang', biography: '朱由榔即永历帝，1646年在肇庆即位，随后率南明政治中心向桂林、昆明等西南空间迁移。',
+    aliases: ['永历帝', '桂王'], offices: [{ title: '南明永历帝', polityId: 'ming_southern', placeId: 'zhaoqing', validFrom: 1646, validTo: 1662, datePrecision: 'range', sourceIds: ['southern-ming-yongli', 'zhaoqing-yongli-heritage'] }],
+    keyEvents: ['southern-ming-founded', 'yongli-zhaoqing-founded'], sourceIds: ['southern-ming-overview', 'southern-ming-yongli', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '肇庆仅是永历初期中心；朱由榔后续迁移、与大西军合作及西南控制范围必须按阶段展示。',
+  },
+  {
+    personId: 'qu-shisi', biography: '瞿式耜是拥立并辅佐永历政权的重要大臣，连接肇庆初期、广西经营与后续抗清网络。',
+    aliases: ['起田'], offices: [{ title: '永历朝廷大臣', polityId: 'ming_southern', placeId: 'zhaoqing', validFrom: 1646, validTo: 1650, datePrecision: 'range', sourceIds: ['southern-ming-yongli', 'ming-shi-vol120-southern-ming'] }],
+    keyEvents: ['yongli-zhaoqing-founded'], sourceIds: ['southern-ming-yongli', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '瞿式耜的活动跨越肇庆与广西阶段，本详情用肇庆作为永历初期关联地点，不把其任职范围扩展为永历全期固定朝廷。',
   },
   {
     personId: 'shi-kefa', biography: '史可法是南明弘光时期的重要军政人物，负责扬州防务，与朱由崧朝廷存在阶段性君臣关系。',
     aliases: ['道邻'], offices: [{ title: '南明督师', polityId: 'ming_southern', validFrom: 1644, validTo: 1645, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['southern-ming-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '史可法与弘光朝廷的关系以任职和军事防务为核心，不把后世忠烈评价直接替代当时政治关系的史料核验；该事件仅作为弘光阶段的政权背景入口。',
+    keyEvents: ['southern-ming-founded', 'hongguang-nanjing-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'southern-ming-overview', 'southern-ming-hongguang'], uncertaintyNote: '史可法与弘光朝廷的关系以任职和军事防务为核心，不把后世忠烈评价直接替代当时政治关系的史料核验；本详情将弘光南京阶段与南明合称分开。',
   },
   {
     personId: 'temujin', biography: '铁木真在草原部众竞争中逐步整合力量，1206年被推举为成吉思汗，蒙古汗国进入共同汗权阶段。',
@@ -571,9 +606,9 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['southern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '917年国号为越、918年改称汉；“南汉”是后世通称，不能把刘龑称帝日与岭南全域整合混为一谈。',
   },
   {
-    personId: 'yelu-dashi', biography: '耶律大石在辽亡后率契丹部众西行，重组政治与军事网络，西辽在七河流域及中亚逐步形成。',
-    aliases: ['西辽德宗'], offices: [{ title: '西辽皇帝与西行部众领袖', polityId: 'western_liao', placeId: 'balasagun', validFrom: 1124, validTo: 1143, datePrecision: 'range', sourceIds: ['china-chronology'] }],
-    keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1124年前后是西辽形成约年；西行路线、称帝、建都和七河流域整合属于不同阶段，不能把辽旧疆域直接移植为西辽边界。',
+    personId: 'yelu-dashi', biography: '耶律大石在辽亡危机中自立为王并率契丹部众西行，1124年前后形成西辽政治集团，1132年称帝，1134年建都虎思斡耳朵（八剌沙衮）后进入稳定中心阶段。',
+    aliases: ['西辽德宗'], offices: [{ title: '西辽皇帝与西行部众领袖', polityId: 'western_liao', placeId: 'balasagun', validFrom: 1124, validTo: 1143, datePrecision: 'range', sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'] }],
+    keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'], uncertaintyNote: '1124年前后是西辽西行建政约年；1132年称帝与1134年建都虎思斡耳朵（八剌沙衮）属于不同阶段，人物任职地点用八剌沙衮作后续政治中心参照，不能把辽旧疆域直接移植为西辽边界。',
   },
   {
     personId: 'kublai', biography: '忽必烈在蒙古汗权和东亚战争体系基础上建立元朝，1271年定国号为大元，随后继续完成对南宋的军事与行政整合。',
@@ -746,9 +781,9 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['southern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南燕形成节点为398年，慕容超属于末期防御阶段；其统治不能替代慕容德建政，也不代表南燕全期控制范围。',
   },
   {
-    personId: 'yelu-yilie', biography: '耶律夷列承接耶律大石建立的西辽，在七河流域维持契丹政权的继承秩序与行政运作。',
-    aliases: ['西辽仁宗'], offices: [{ title: '西辽皇帝', polityId: 'western_liao', validFrom: 1150, validTo: 1163, datePrecision: 'range', sourceIds: ['china-chronology'] }],
-    keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '西辽形成节点为1124年前后，耶律夷列属于耶律大石之后的继承阶段；中亚政权的迁徙性与多族群治理不能简化为单一王朝疆域。',
+    personId: 'yelu-yilie', biography: '耶律夷列承接耶律大石建立的西辽，在八剌沙衮及七河流域维持契丹政权的继承秩序与行政运作；其属于后续继承阶段，不是1124年西行建政现场人物。',
+    aliases: ['西辽仁宗'], offices: [{ title: '西辽皇帝', polityId: 'western_liao', placeId: 'balasagun', validFrom: 1150, validTo: 1163, datePrecision: 'range', sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'] }],
+    keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'], uncertaintyNote: '西辽形成节点为1124年前后，1134年八剌沙衮稳定政治中心和耶律夷列的继承阶段分开记录；中亚政权的迁徙性与多族群治理不能简化为单一王朝疆域。',
   },
   {
     personId: 'liu-muzi', biography: '刘穆之是刘裕北伐、平定内乱和建宋前夕的重要谋臣与行政组织者，承担军政协调和后勤制度建设。',

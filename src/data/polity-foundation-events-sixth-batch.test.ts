@@ -49,8 +49,18 @@ describe('第六批政权建政事件', () => {
     for (const [polityId, eventId] of targets) {
       expect(report.byPolity(polityId), polityId).toMatchObject({
         hasEstablishmentNode: true,
-        establishmentEventIds: [eventId],
       });
+      if (polityId === 'ming_southern') {
+        expect(report.byPolity(polityId)?.establishmentEventIds).toEqual(expect.arrayContaining([
+          eventId,
+          'hongguang-nanjing-founded',
+          'longwu-fuzhou-founded',
+          'shaowu-guangzhou-founded',
+          'yongli-zhaoqing-founded',
+        ]));
+      } else {
+        expect(report.byPolity(polityId)?.establishmentEventIds).toEqual([eventId]);
+      }
     }
   });
 });

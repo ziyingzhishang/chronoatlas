@@ -79,8 +79,12 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'xuanzang-at-ximing-658', status: 'confirmed', expectedPrecision: 'range', explanation: '玄奘在西明寺的活动限定为658—659年阶段，次年赴玉华寺，不能扩展为其全部译经生涯。', timelineStrategy: 'range-band' },
   { eventId: 'shangyang-palace-built', status: 'confirmed', expectedPrecision: 'range', explanation: '上阳宫始建材料只明确为上元年间，674—676年是稳妥范围，675年为通行整理年；不能升级为绝对单年。', timelineStrategy: 'range-band' },
   { eventId: 'dali-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '937年前后表示大理政权形成；《滇载记》按后晋天福二年记937年，而国家社科成果摘要采用938年，杨干贞改国号、段氏承接和高氏阶段不能混为精确建国日，因此保留约年。', timelineStrategy: 'approximate-marker' },
-  { eventId: 'western-liao-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1124年前后表示西辽形成阶段，耶律大石西迁、建制与称号变化具有过程性。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'western-liao-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1124年前后表示耶律大石自立为王并西行的形成阶段；《辽史》与现代研究对称帝纪年存在换算异说，故不升级为确定年。1132年称帝、1134年建都虎思斡耳朵（八剌沙衮）分别作为后续阶段记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'hongguang-nanjing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1644年朱由崧在南京先监国后即帝位，年份级节点可由弘光阶段史料支持；即位日和南京阶段覆亡属于同一阶段内的后续细节。', timelineStrategy: 'year-marker' },
+  { eventId: 'longwu-fuzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1645年朱聿键在福州即位并改元隆武，福州阶段中心可明确到年份；隆武覆亡与郑芝龙军镇关系另作阶段说明。', timelineStrategy: 'year-marker' },
+  { eventId: 'shaowu-guangzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1646年朱聿鐭在广州即位并使用绍武年号，阶段短且与永历并立，年份级节点比虚构单日更合适。', timelineStrategy: 'year-marker' },
+  { eventId: 'yongli-zhaoqing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1646年朱由榔在肇庆先监国后即帝位，永历初期中心和即位年份明确；后续迁移不能回填到肇庆节点。', timelineStrategy: 'year-marker' },
 ];
 
 function unique(values: readonly string[]): string[] {

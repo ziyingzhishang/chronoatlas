@@ -6,7 +6,7 @@ import { sourceById } from './sources';
 
 const targetPhases = {
   'tuyuhun-founded': { label: '河湟政权与北方秩序承接', startYear: 316, endYear: 350 },
-  'western-liao-founded': { label: '西行后的中亚立足', startYear: 1124, endYear: 1132 },
+  'western-liao-founded': { label: '西行后的中亚立足', startYear: 1124, endYear: 1131 },
   'dali-founded': { label: '南诏之后地方秩序承接', startYear: 902, endYear: 937 },
   'southern-ming-founded': { label: '弘光覆亡与多中心转移', startYear: 1645, endYear: 1646 },
   'xiongnu-founded': { label: '汉匈首次边疆交涉', startYear: -200, endYear: -198 },

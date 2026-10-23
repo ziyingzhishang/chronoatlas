@@ -12,7 +12,7 @@ const expectedRelations = {
   'claim-piluo-ge-ruled-nanzhao-sixtyfourth': ['piluo-ge', 'ruled', 'nanzhao', 728, 748, ['zizhi-tongjian', 'china-chronology']],
   'claim-juqu-mengxun-ruled-northern-liang-sixtyfourth': ['juqu-mengxun', 'ruled', 'northern_liang', 401, 433, ['zizhi-tongjian', 'china-chronology']],
   'claim-tuoba-si-ruled-northern-wei-sixtyfourth': ['tuoba-si', 'ruled', 'wei_northern', 409, 423, ['zizhi-tongjian', 'china-chronology']],
-  'claim-yelu-yilie-ruled-western-liao-sixtyfourth': ['yelu-yilie', 'ruled', 'western_liao', 1150, 1163, ['china-chronology']],
+  'claim-yelu-yilie-ruled-western-liao-sixtyfourth': ['yelu-yilie', 'ruled', 'western_liao', 1150, 1163, ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay']],
 } as const;
 
 describe('sixty-fourth batch high-confidence governance relationships', () => {
@@ -54,8 +54,8 @@ describe('sixty-fourth batch high-confidence governance relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(102);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(65);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(72);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
     for (const personId of ['songtsen-gampo', 'piluo-ge', 'juqu-mengxun', 'tuoba-si', 'yelu-yilie']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');

@@ -30,6 +30,7 @@ const historicalSourceIds = ['zizhi-tongjian', 'modern-geography-reference'];
 const dulingSourceIds = ['modern-geography-reference', 'xian-local-chronicle-duling'];
 const maolingSourceIds = ['modern-geography-reference', 'xian-local-chronicle-western-han-mausoleums'];
 const whiteHorseSourceIds = ['zizhi-tongjian', 'modern-geography-reference', 'luoyang-baimasi-official'];
+const westernLiaoSourceIds = ['liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'];
 
 function phase(
   type: HeritagePhaseType,
@@ -330,7 +331,22 @@ const details: HeritageDetail[] = [
     phase('original', '明初宫城营建', '1368年后', '应天府明故宫作为明初中央宫城营建，形成宫门、宫殿和礼制空间。', 1368, 1421),
     phase('reconstruction', '后世沿用与损毁', '明清至近代', '宫城在迁都后功能变化并经历破坏、拆改和城市覆盖，南明使用的是既有南京政治空间。', 1421, 1911, '明初原构、南明使用层和后世城市层不能合并。'),
     phase('site', '遗址保护', '20世纪以来', '宫门、基址和城市考古信息以遗址公园和文物保护方式保存。', 1900, undefined, '现存遗址不等于明初或南明宫城完整留存。'),
-  ], ['zhu-yousong', 'shi-kefa'], ['ming_southern'], ['southern-ming-founded'], ['宫门与宫殿基址', '宫城轴线和城市遗址层', '遗址公园展示设施'], '把南明放回南京今日城市和明故宫遗址的连续空间中学习。', '明故宫主要建于明初，不能将全部现存遗址直接标为南明新建；南明使用关系需与建筑年代分层。', ['zizhi-tongjian', 'china-chronology']),
+  ], ['zhu-yousong', 'shi-kefa'], ['ming_southern'], ['southern-ming-founded', 'hongguang-nanjing-founded'], ['宫门与宫殿基址', '宫城轴线和城市遗址层', '遗址公园展示设施'], '把南明放回南京今日城市和明故宫遗址的连续空间中学习。', '明故宫主要建于明初，不能将全部现存遗址直接标为南明新建；南明使用关系需与建筑年代分层。', ['zizhi-tongjian', 'china-chronology', 'southern-ming-overview', 'southern-ming-hongguang']),
+  detail('nanming-fuzhou-xinggong-site', '今福建省福州市鼓屏路南段及原福建布政使司衙署相关城市空间，具体行宫范围需结合考古、地方志和城市沿革定位。', ['隆武福州朝廷的行宫、衙署与政治空间', '福州从地方行政城市转为南明东南阶段中心'], [
+    historicalPhase('original', '隆武福州使用阶段', '1645—1646年', '朱聿键在福州即位后，福州衙署、行宫和城市交通空间承担隆武朝廷的政治功能。', 1645, 1646, '现有资料支持阶段性城市空间关联，不足以确认完整隆武宫城的独立边界。', ['southern-ming-overview', 'southern-ming-longwu', 'fuzhou-longwu-site']),
+    historicalPhase('site', '城市空间与遗址线索', '明清至今', '鼓屏路、相关衙署沿革和地方城市记忆提供今日观察入口，不能把后世道路或建筑直接标作隆武原构。', 1645, 1900, '行宫具体位置、后世改建和现存建筑层位需继续按地方考古资料核对。', ['fuzhou-longwu-site', 'modern-geography-reference']),
+    historicalPhase('restoration', '现代城市展示', '当代', '福州以道路、地方史展示和城市遗迹说明隆武阶段，适合与郑芝龙、黄道周人物网络联动学习。', 2000, undefined, '展示设施和纪念性标识不等于隆武宫殿复原。', ['fuzhou-longwu-site', 'modern-geography-reference']),
+  ], ['zhu-yujian', 'zheng-zhi-long', 'huang-daozhou'], ['ming_southern'], ['longwu-fuzhou-founded'], ['衙署与行宫关联空间', '鼓屏路历史城市空间', '地方志与遗址说明'], '从今日福州观察隆武朝廷、东南军镇和城市政治空间的叠合。', '“福州行宫遗址”是阶段性城市空间节点，不应误读为已确认、完整留存的单一隆武皇宫遗址。', ['southern-ming-overview', 'southern-ming-longwu', 'fuzhou-longwu-site', 'modern-geography-reference']),
+  detail('shaowu-junchen-tomb', '今广东省广州市越秀公园相关区域；绍武君臣墓曾迁移，现址与1646年原葬地需分层标注。', ['绍武政权君臣墓葬与广州短期政治记忆', '墓葬迁移、碑刻保护与城市公园中的南明遗产展示'], [
+    historicalPhase('original', '绍武君臣墓葬', '1646年', '绍武政权覆亡后形成君臣墓葬与纪念记忆，关联朱聿鐭、苏观生等广州阶段人物。', 1646, 1646, '墓葬具体组合和原始葬地需以考古与地方文献逐项核定。', ['southern-ming-overview', 'southern-ming-shaowu', 'guangzhou-shaowu-tomb']),
+    historicalPhase('site', '墓葬迁移与保护', '1954—1981年', '墓葬经历迁移和保护地点调整，现址不能直接等同于1646年原葬地。', 1954, 1981, '迁移过程、墓主名单和碑刻位置以广州文物资料为准。', ['guangzhou-shaowu-tomb']),
+    historicalPhase('restoration', '越秀公园展示', '当代', '越秀公园相关墓葬、碑刻和说明空间保留绍武阶段的城市记忆。', 2000, undefined, '现代园林环境和保护设施不等于明代墓葬原貌。', ['guangzhou-shaowu-tomb', 'modern-geography-reference']),
+  ], ['zhu-yuyue', 'su-guansheng'], ['ming_southern'], ['shaowu-guangzhou-founded'], ['墓冢与碑刻', '迁移后的保护空间', '越秀公园历史说明'], '把绍武广州阶段从短期政权节点连接到今天仍可访问的墓葬遗产。', '墓葬迁移、墓主辨识和现存构件的年代必须与绍武政权的历史叙事分层，不能把现址当作原葬地的无变化保留。', ['southern-ming-overview', 'southern-ming-shaowu', 'guangzhou-shaowu-tomb', 'modern-geography-reference']),
+  detail('nanming-yongli-zhaoqing-palace', '今广东省肇庆市阅江楼及相关古城历史空间；万寿宫石狮等遗存提供永历初期城市记忆入口。', ['永历肇庆初期的行宫、万寿宫与两广政治空间', '阅江楼、石狮及肇庆城市遗产中的南明记忆'], [
+    historicalPhase('original', '永历肇庆政治空间', '1646—1647年', '朱由榔在肇庆即位，行宫、万寿宫及阅江楼周边城市空间承载永历初期的政治和礼仪功能。', 1646, 1647, '现存建筑与1646年行宫、万寿宫的具体对应关系需谨慎区分。', ['southern-ming-overview', 'southern-ming-yongli', 'zhaoqing-yongli-heritage']),
+    historicalPhase('site', '石狮与城市遗产记忆', '明代至今', '阅江楼相关石狮和地方遗产说明保留明代桂王万寿宫的历史记忆，但不能据此宣称现存楼阁整体为永历原构。', 1646, 1900, '石狮的原始位置、万寿宫建筑范围与后世叠加层需要以地方文物资料继续核验。', ['zhaoqing-yongli-heritage', 'modern-geography-reference']),
+    historicalPhase('restoration', '现代遗产展示', '当代', '肇庆通过阅江楼、七星岩及地方博物馆和说明系统解释永历初期历史空间。', 2000, undefined, '现代修缮、景区设施和复原性说明不能直接视为1646年原建筑。', ['zhaoqing-yongli-heritage', 'modern-geography-reference']),
+  ], ['zhu-youlang', 'qu-shisi'], ['ming_southern'], ['yongli-zhaoqing-founded'], ['阅江楼历史空间', '万寿宫关联石狮', '肇庆古城与地方文物说明'], '从今天的肇庆观察永历初期政治中心、人物关系和城市遗产记忆。', '现存阅江楼及相关建筑经历后世修缮，永历行宫与万寿宫的具体原构不能由现代建筑整体反推。', ['southern-ming-overview', 'southern-ming-yongli', 'zhaoqing-yongli-heritage', 'modern-geography-reference']),
   detail('jiankang-taicheng-site', '今南京市鼓楼、玄武及台城相关城市考古范围；现代道路和城墙公园不能替代六朝台城边界。', ['东晋及南朝宫城台城', '建康政治中心的宫城、朝会与城市防御空间'], [
     phase('original', '宫城营建与使用', '317—589年', '东晋南朝在建康经营宫城、台城和相关城防体系，台城是政治仪式与宫廷生活的重要空间。', 317, 589),
     phase('site', '考古与城墙遗存', '六朝至今', '台城城墙、门址和城市地层通过考古发现、城墙遗迹和历史地理复原辨识。', 317, 589, '不同朝代台城边界和建筑单元需分期核对。'),
@@ -506,11 +522,11 @@ const details: HeritageDetail[] = [
     phase('site', '城址遗存', '南诏太和城考古遗址', '城垣、道路、建筑基址和周边历史地貌构成太和城可识别的遗址证据。', 738, 779),
     phase('restoration', '遗址保护展示', '当代考古保护', '遗址保护、考古调查和地方博物馆解释南诏早期都城，不复原完整城内建筑。', 1900),
   ], ['li-longji'], ['nanzhao'], ['nanzhao-founded'], ['城垣与建筑基址', '苍山洱海地形关系', '遗址保护与考古展示'], '连接南诏建政、太和城遗址和今日大理城市文化景观。', '太和城与南诏后期羊苴咩城的阶段关系需要区分，现地遗址不等于完整南诏宫城；李隆基仅作唐—南诏互动索引。'),
-  detail('western-liao-balasagun-site', '今吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址及八剌沙衮历史区域。', ['西辽中亚政治中心与八剌沙衮城址', '契丹政权西迁、伊斯兰化城市网络与中亚交通'], [
-    phase('original', '城市与政治中心沿用', '1124—1218年', '耶律大石西行后，西辽在中亚建立统治并利用八剌沙衮及楚河流域城市网络。', 1124, 1218),
-    phase('site', '城址与建筑遗存', '中世纪楚河流域遗址', '城垣、塔楼、建筑基址和出土材料以布拉纳遗址及区域考古资料保存。', 1124, 1218, '八剌沙衮作为西辽政治中心的具体驻跸方式与固定宫城范围需结合中亚考古研究。'),
-    phase('restoration', '国际遗址保护', '现代考古与博物馆展示', '遗址保护区和博物馆解释楚河流域城市史，不将现代修复塔楼直接视作西辽原貌。', 1900),
-  ], ['yelu-abaoji'], ['western_liao'], ['western-liao-founded'], ['布拉纳塔与城址遗迹', '城垣和建筑基址', '楚河流域交通景观'], '将西辽纳入中国史、中亚史和跨区域城市遗产的学习路径。', '八剌沙衮城址与西辽宫廷活动的对应关系仍需分层，现代修复和历史原构必须区分；耶律阿保机仅作契丹政权谱系前史索引。'),
+  detail('western-liao-balasagun-site', '今吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址及八剌沙衮历史区域。', ['西辽1134年建都所称虎思斡耳朵与八剌沙衮政治中心', '契丹政权西迁、楚河谷城市网络与中亚交通'], [
+    historicalPhase('original', '八剌沙衮政治中心阶段', '1134—1218年', '《辽史》记延庆三年建都城、号虎思斡耳朵；项目将其作为八剌沙衮稳定政治中心的起点，和1132年称帝阶段分开。', 1134, 1218, '八剌沙衮城址、虎思斡耳朵宫帐与军营的对应关系不能简单视为同一固定宫城。', westernLiaoSourceIds),
+    historicalPhase('site', '城址与建筑遗存', '中世纪楚河流域遗址', '布拉纳遗址保留城垣、堡垒、建筑基址、宗教建筑与水利系统等楚河谷城市遗存；这些遗存跨越西辽前后多个时期。', 1134, 1218, '现存遗迹的具体年代和西辽层位需以考古报告分层，不能把现代修复塔楼直接视作西辽原貌。', westernLiaoSourceIds),
+    historicalPhase('restoration', '国际遗址保护', '现代考古与博物馆展示', '遗址保护区和布拉纳博物馆解释楚河谷丝绸之路城市史，不复原完整西辽宫城。', 1900, undefined, undefined, westernLiaoSourceIds),
+  ], ['yelu-dashi'], ['western_liao'], ['western-liao-founded'], ['布拉纳塔与城址遗迹', '城垣、堡垒与建筑基址', '楚河谷交通与水利景观'], '将西辽纳入中国史、中亚史和跨区域城市遗产的学习路径，从今日吉尔吉斯斯坦遗址观察迁徙政权、城市与草原—绿洲网络。', '八剌沙衮与虎思斡耳朵的名称和空间对应需分层；布拉纳遗址是历史城市遗产节点，不等同于完整西辽首都或全部西辽疆域。', westernLiaoSourceIds),
   detail('han-xinzheng-city-site', '今河南省郑州市新郑市郑韩故城遗址保护范围，城址与现代新郑城区边界不完全重合。', ['战国韩国新郑都城', '韩国宫城、城防与中原诸侯交通网络'], [
     phase('original', '都城使用', '前403—前230年', '韩国以新郑为都城阶段形成城垣、宫殿和手工业空间，后期政权中心变化需与新郑层分开。', -403, -230),
     phase('site', '城址考古遗存', '战国韩国历史层', '城墙、宫殿区、作坊和道路遗迹以考古遗址形式保存。', -403, -230, '秦灭韩后的利用、破坏和后世地层不能直接标作韩国原构。'),

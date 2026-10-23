@@ -27,7 +27,7 @@ const targetParticipantScopes = {
   'dali-founded': { personId: 'duan-siping', role: '限937年前后的建政与早期洱海整合' },
   'former-liang-founded': { personId: 'zhang-mao', role: '限320—324年前后的继承与延续' },
   'western-liang-state-founded': { personId: 'li-hao', role: '400年被推为凉公并建立西凉、405年迁治酒泉' },
-  'western-liao-founded': { personId: 'yelu-dashi', role: '限1124年前后西行建政' },
+  'western-liao-founded': { personId: 'yelu-dashi', role: '本轮聚焦1124—1125年早期迁移' },
   'eastern-zhou-founded-eighth-batch': { personId: 'ji-yijiu', role: '限约前770年东迁节点' },
 } as const;
 

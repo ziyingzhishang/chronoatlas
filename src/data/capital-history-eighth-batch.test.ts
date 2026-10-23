@@ -53,6 +53,6 @@ describe('eighth-batch unresolved capital audit', () => {
     expect(recordsFor('western_qin').every((record) => record.notes?.includes('固定首都'))).toBe(true);
     expect(recordsFor('northern_yuan')[0].notes).toContain('多个汗廷阶段');
     expect(recordsFor('ming_southern')[0].notes).toContain('多个政权阶段构成');
-    expect(recordsFor('ming_southern').map((record) => record.placeId)).toEqual(['yingtian', 'fuzhou', 'guangzhou']);
+    expect(recordsFor('ming_southern').map((record) => record.placeId)).toEqual(['yingtian', 'fuzhou', 'guangzhou', 'zhaoqing']);
   });
 });

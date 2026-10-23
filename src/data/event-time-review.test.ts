@@ -29,6 +29,10 @@ const expectedEventIds = [
   'dali-founded',
   'western-liao-founded',
   'southern-ming-founded',
+  'hongguang-nanjing-founded',
+  'longwu-fuzhou-founded',
+  'shaowu-guangzhou-founded',
+  'yongli-zhaoqing-founded',
 ] as const;
 
 describe('event time evidence review', () => {
@@ -38,12 +42,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(24);
+    expect(report.totalReviewed).toBe(28);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 6, approximate: 18, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 10, approximate: 18, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {
