@@ -55,7 +55,6 @@ const roundSeventySecondHeritageIds = [
   'qinglong-temple-site',
   'xian-beilin',
   'xiao-yan-ta',
-  'ximing-temple-site',
 ] as const;
 
 const roundSeventySecondDisplayMarkers: Record<typeof roundSeventySecondHeritageIds[number], string> = {
@@ -63,7 +62,6 @@ const roundSeventySecondDisplayMarkers: Record<typeof roundSeventySecondHeritage
   'qinglong-temple-site': '唐代密教传播',
   'xian-beilin': '后世碑刻保存与展示',
   'xiao-yan-ta': '唐代荐福寺佛教建筑',
-  'ximing-temple-site': '唐代译经与寺院网络',
 };
 
 describe('heritage detail coverage audit', () => {
@@ -83,13 +81,12 @@ describe('heritage detail coverage audit', () => {
     const report = buildHeritageDetailCoverageReport();
 
     expect(report.totalHeritageAssets).toBe(108);
-    expect(report.completeHeritageIds).toHaveLength(103);
+    expect(report.completeHeritageIds).toHaveLength(104);
     expect(report.needsReviewHeritageIds).toEqual([
       'big-wild-goose-pagoda',
       'qinglong-temple-site',
       'xian-beilin',
       'xiao-yan-ta',
-      'ximing-temple-site',
     ]);
     expect(report.uncoveredHeritageIds).toEqual([]);
     expect(report.sourceCompleteHeritageIds).toHaveLength(108);
@@ -99,7 +96,6 @@ describe('heritage detail coverage audit', () => {
       'qinglong-temple-site',
       'xian-beilin',
       'xiao-yan-ta',
-      'ximing-temple-site',
     ].includes(item.heritageId));
     expect(reviewItems.every((item) => item.unresolvedReferenceIds.people.length === 0)).toBe(true);
     expect(reviewItems.map((item) => item.unresolvedReferenceIds.events)).toEqual([
@@ -107,10 +103,8 @@ describe('heritage detail coverage audit', () => {
       ['xuanzang-translations'],
       ['xuanzang-translations'],
       ['xuanzang-translations'],
-      ['xuanzang-translations'],
     ]);
     expect(reviewItems.map((item) => item.reviewNotes)).toEqual([
-      ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
       ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
       ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
       ['关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。'],
@@ -188,7 +182,7 @@ describe('heritage detail coverage audit', () => {
     expect(report.items[0].unknownSourceIds).toEqual(['missing-phase-source']);
   });
 
-  it('audits the five review-boundary details while keeping the missing event boundary explicit', () => {
+  it('audits the four review-boundary details while keeping the missing event boundary explicit', () => {
     const report = buildHeritageDetailCoverageReport({ catalog: baseCatalog });
     const sourceIds = new Set(sourceNotes.map((source) => source.id));
     const eventIds = new Set(events.map((event) => event.id));
@@ -213,6 +207,14 @@ describe('heritage detail coverage audit', () => {
       expect(item?.status, heritageId).toBe('needs-review');
       expect(item?.unresolvedReferenceIds.events, heritageId).toEqual(['xuanzang-translations']);
     }
+  });
+
+  it('treats Ximing Temple as complete when its dedicated event endpoints are used', () => {
+    const report = buildHeritageDetailCoverageReport({ catalog: baseCatalog });
+    const item = report.items.find((coverageItem) => coverageItem.heritageId === 'ximing-temple-site');
+
+    expect(item?.status).toBe('complete');
+    expect(item?.unresolvedReferenceIds.events).toEqual([]);
   });
 
   it('keeps the round seventy-second review details source-backed and time-bounded', () => {

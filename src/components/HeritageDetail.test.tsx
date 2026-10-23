@@ -44,4 +44,14 @@ describe('HeritageDetail', () => {
     fireEvent.click(screen.getByRole('button', { name: '玄奘取经' }));
     expect(onNavigate).toHaveBeenCalledWith({ type: 'event', id: 'xuanzang-translations' });
   });
+
+  it('opens the structured modern place from the heritage detail header', () => {
+    const detail = getHeritageDetail('ximing-temple-site')!;
+    const onNavigate = vi.fn();
+
+    render(<HeritageDetail detail={detail} placeId="changan" onNavigate={onNavigate} />);
+
+    fireEvent.click(screen.getByRole('button', { name: '长安' }));
+    expect(onNavigate).toHaveBeenCalledWith({ type: 'place', id: 'changan' });
+  });
 });

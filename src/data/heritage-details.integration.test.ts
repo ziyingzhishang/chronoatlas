@@ -1,6 +1,8 @@
 import { describe, expect, it } from 'vitest';
+import { events } from './events';
 import { heritageAssets } from './heritage';
 import { getHeritageDetail, heritageDetails } from './heritage-details';
+import { places } from './places';
 import { sourceById } from './sources';
 
 describe('Chang’an heritage detail archive', () => {
@@ -37,5 +39,18 @@ describe('Chang’an heritage detail archive', () => {
       expect(detail.sourceIds.every((sourceId) => sourceById[sourceId])).toBe(true);
       expect(detail.uncertaintyNote).toBeTruthy();
     }
+  });
+
+  it('keeps Ximing Temple connected to its existing place and dedicated event endpoints', () => {
+    const detail = getHeritageDetail('ximing-temple-site')!;
+
+    expect(places.some((place) => place.id === 'changan')).toBe(true);
+    expect(detail.modernLocation).toContain('约址');
+    expect(detail.associatedEvents).toEqual(expect.arrayContaining([
+      'ximing-temple-built',
+      'xuanzang-at-ximing-658',
+    ]));
+    expect(detail.associatedEvents).not.toContain('xuanzang-translations');
+    expect(detail.associatedEvents.every((eventId) => events.some((event) => event.id === eventId))).toBe(true);
   });
 });

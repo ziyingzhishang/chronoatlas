@@ -169,7 +169,7 @@ const details: HeritageDetail[] = [
     historicalPhase('original', '原建筑', '656年营建起', '西明寺于唐显庆元年营建，成为唐长安城重要寺院之一，与译经、僧侣往来和国家佛教活动相关。', 656, 907),
     historicalPhase('site', '遗址', '寺院遗址与文献地点', '寺院整体建筑已不存，位置和空间主要结合文献、考古与城市格局研究。', 907),
     historicalPhase('restoration', '现代复原', '研究图示与纪念展示', '现代以标识和研究性复原图解释寺院网络，不宣称完整复建原寺。', 2000, undefined, '具体院落、塔院和殿址的对应关系仍有不确定性。'),
-  ], ['xuan-zang', 'li-shimin', 'li-zhi'], ['tang'], ['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded', 'xuanzang-translations'], ['文献记载的寺院位置', '相关译经传统', '现代研究图示'], '唐长安佛教、译经和国际交流的研究节点。', '寺院具体位置和建筑布局不能仅凭后世传说确定，现代标注为约址；656年营建和658—659年玄奘阶段已有西明寺专属事件，但跨五处遗产的统一译经事件端点（xuanzang-translations）仍待核，不能用单一寺院阶段替代，也不把建筑年代拼接为译经事件。', [...historicalSourceIds, 'xian-local-chronicle-ximing-temple', 'ximing-temple-primary-biography', 'xuanzang-national-museum']),
+  ], ['xuan-zang', 'li-shimin', 'li-zhi'], ['tang'], ['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded'], ['文献记载的寺院位置', '相关译经传统', '现代研究图示'], '唐长安佛教、译经和国际交流的研究节点。', '寺院具体位置和建筑布局不能仅凭后世传说确定，现代标注为约址；656年营建和658—659年玄奘阶段已有西明寺专属事件。跨五处遗产的统一译经事件端点（xuanzang-translations）仍未闭合，因此不挂接到本详情，也不把建筑年代拼接为译经事件。', [...historicalSourceIds, 'xian-local-chronicle-ximing-temple', 'ximing-temple-primary-biography', 'xuanzang-national-museum']),
   detail('qinglong-temple-site', '今西安市雁塔区青龙寺遗址及其周边。', ['唐代密教传播', '长安东南部寺院与东亚佛教交流'], [
     historicalPhase('original', '原建筑', '582—711年', '青龙寺前身始建于隋开皇二年（582年），唐代经历废置、复立，景云二年（711年）定名青龙寺，成为长安东部重要寺院。', 582, 711),
     historicalPhase('site', '遗址', '845—1086年及现代考古', '会昌禁佛后寺院功能发生变化，855年恢复青龙寺名；北宋元祐年间仍见文献记载。1963年调查、1973—1980年发掘确认北门、东院、塔院、墙址等遗存。', 845, 1980, '文献沿革、唐代文化层和现代考古遗迹不是同一保存层，不能据此复原完整唐代寺院。'),

@@ -1,18 +1,20 @@
 import { events } from '../data/events';
 import { heritageById } from '../data/heritage';
 import { people } from '../data/people';
+import { places } from '../data/places';
 import { polities } from '../data/polities';
 import { sourceById } from '../data/sources';
 import type { HeritageDetail as HeritageDetailData, HeritagePhaseType } from '../data/heritage-details';
 
 export interface HeritageNavigationTarget {
-  type: 'person' | 'polity' | 'event';
+  type: 'person' | 'polity' | 'event' | 'place';
   id: string;
 }
 
 export interface HeritageDetailProps {
   detail: HeritageDetailData;
   heritageName?: string;
+  placeId?: string;
   onNavigate?: (target: HeritageNavigationTarget) => void;
   onOpenEntity?: (target: HeritageNavigationTarget) => void;
 }
@@ -33,6 +35,7 @@ function entityLabel(type: HeritageNavigationTarget['type'], id: string): string
   if (fallbackLabels[id]) return fallbackLabels[id];
   if (type === 'person') return people.find((person) => person.id === id)?.name ?? id;
   if (type === 'polity') return polities.find((polity) => polity.id === id)?.name ?? id;
+  if (type === 'place') return places.find((place) => place.id === id)?.historicalName ?? id;
   return events.find((event) => event.id === id)?.title ?? id;
 }
 
@@ -53,7 +56,7 @@ function RelatedEntityList({
   </ul>;
 }
 
-export function HeritageDetail({ detail, heritageName, onNavigate, onOpenEntity }: HeritageDetailProps) {
+export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOpenEntity }: HeritageDetailProps) {
   const navigate = onNavigate ?? onOpenEntity;
   const name = heritageName ?? heritageById[detail.heritageId]?.name ?? detail.heritageId;
 
@@ -61,7 +64,10 @@ export function HeritageDetail({ detail, heritageName, onNavigate, onOpenEntity 
     <header className="heritage-detail-header">
       <p className="eyebrow">遗产详情</p>
       <h2>{name}</h2>
-      <p className="heritage-detail-location"><span>现代位置：</span><span>{detail.modernLocation}</span></p>
+      <p className="heritage-detail-location">
+        <span>现代位置：</span><span>{detail.modernLocation}</span>
+        {placeId && <><span>关联地点：</span>{navigate ? <button type="button" onClick={() => navigate({ type: 'place', id: placeId })}>{entityLabel('place', placeId)}</button> : <span>{entityLabel('place', placeId)}</span>}</>}
+      </p>
     </header>
 
     <section className="heritage-detail-section" aria-labelledby="heritage-history-heading">
