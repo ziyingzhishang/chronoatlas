@@ -1,4 +1,5 @@
 import type {
+  EventParticipant,
   HistoricalClaim,
   HistoricalEvent,
   HistoricalEventDetail,
@@ -149,6 +150,10 @@ function categoryForPredicate(predicate: string): PersonRelationshipCategory | u
   return undefined;
 }
 
+function isDirectEventParticipant(participant: EventParticipant): boolean {
+  return participant.relationType === 'direct' || participant.relationType === undefined;
+}
+
 function knownEndpoint(
   claim: HistoricalClaim,
   personId: string,
@@ -200,7 +205,9 @@ function categoryCoverage(
   });
 
   eventDetails
-    .filter((detail) => events.has(detail.eventId) && detail.participants.some((participant) => participant.personId === person.id && participant.relationType !== 'contextual'))
+    .filter((detail) => events.has(detail.eventId) && detail.participants.some((participant) => (
+      participant.personId === person.id && isDirectEventParticipant(participant)
+    )))
     .forEach((detail) => {
       categories.eventParticipation.evidenceIds.push(`event-detail:${detail.eventId}`);
       categories.eventParticipation.relatedIds.push(detail.eventId);

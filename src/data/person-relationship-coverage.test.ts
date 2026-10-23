@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 
+import { eventDetails } from './event-details';
 import { buildPersonRelationshipCoverageReport } from './person-relationship-coverage';
 
 describe('person relationship coverage audit', () => {
@@ -87,5 +88,27 @@ describe('person relationship coverage audit', () => {
     expect(governance.notApplicable).toBe(counts['not-applicable']);
     expect(governance.coverageRate).toBeGreaterThanOrEqual(0);
     expect(governance.coverageRate).toBeLessThanOrEqual(1);
+  });
+
+  it('keeps contextual Ximing Temple power association separate from Li Zhi event participation', () => {
+    const report = buildPersonRelationshipCoverageReport();
+    const liZhi = report.byPersonId['li-zhi'];
+    const ximingDetail = eventDetails.find((detail) => detail.eventId === 'ximing-temple-built');
+
+    expect(ximingDetail?.participants).toContainEqual(expect.objectContaining({
+      personId: 'li-zhi',
+      relationType: 'contextual',
+    }));
+    expect(liZhi.categories.eventParticipation).toMatchObject({
+      status: 'missing',
+      evidenceIds: [],
+      relatedIds: [],
+    });
+    expect(report.requiredMissingByCategory.eventParticipation).toContain('li-zhi');
+    expect(liZhi.categories.eventParticipation.relatedIds).not.toContain('ximing-temple-built');
+
+    const xuanZang = report.byPersonId['xuan-zang'];
+    expect(xuanZang.categories.eventParticipation.relatedIds).toContain('xuanzang-at-ximing-658');
+    expect(xuanZang.categories.eventParticipation.relatedIds).not.toContain('ximing-temple-built');
   });
 });

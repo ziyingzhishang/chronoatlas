@@ -126,11 +126,11 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
   const capitalPlaceIds = new Set(capitalTerms.map((term) => term.placeId));
   const capitalPlaces = uniqueById(data.places.filter((place) => capitalPlaceIds.has(place.id)));
   const people = data.people.filter((person) => person.polityIds?.includes(polityId));
-  const explicitEventIds = new Set((data.eventDetails ?? [])
-    .filter((detail) => detail.polityIds.includes(polityId))
-    .map((detail) => detail.eventId));
+  const explicitPolityIdsByEventId = new Map((data.eventDetails ?? [])
+    .map((detail) => [detail.eventId, new Set(detail.polityIds)] as const));
   const events = data.events.filter((event) => event.year <= year && (event.endYear === undefined || year <= event.endYear)
-    && (explicitEventIds.has(event.id) || event.sourceIds.some((sourceId) => subject.sourceIds.includes(sourceId))));
+    && (explicitPolityIdsByEventId.get(event.id)?.has(polityId)
+      ?? event.sourceIds.some((sourceId) => subject.sourceIds.includes(sourceId))));
   const polityClaims = data.claims.filter((claim) => claimTouches(claim, polityId) && active(claim.validFrom, claim.validTo, year));
   const heritageIds = new Set(polityClaims.filter((claim) => claim.predicate === 'left-heritage').map((claim) => claim.objectId));
   const entityIds = new Set([

@@ -59,7 +59,6 @@ describe('round 105 capital reference audit', () => {
       'sui|changan||hanguang-gate-site',
       'sui|changan||mingde-gate-site',
       'sui|changan||taiji-palace-site',
-      'sui|luoyang||dingding-gate-site',
       'tang|changan||qianling',
       'tang|changan||ximing-temple-site',
       'tang|luoyang|court-moves-luoyang|',

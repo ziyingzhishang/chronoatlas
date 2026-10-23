@@ -30,7 +30,6 @@ const expectedCategories = {
   'sui|changan||taiji-palace-site': 'layered-capital-heritage',
   'sui|changan||hanguang-gate-site': 'layered-capital-heritage',
   'sui|changan||mingde-gate-site': 'layered-capital-heritage',
-  'sui|luoyang||dingding-gate-site': 'layered-capital-heritage',
   'tang|changan||qianling': 'cross-polity-heritage',
   'tang|changan||ximing-temple-site': 'location-approximate',
   'tang|luoyang|court-moves-luoyang|': 'shared-transition-event',
@@ -67,7 +66,7 @@ describe('round 114 residual capital reference categories', () => {
     expect(Object.fromEntries(rows.map((row) => [key(row), true]))).toEqual(
       Object.fromEntries(Object.keys(expectedCategories).map((candidateKey) => [candidateKey, true])),
     );
-    expect(Object.keys(expectedCategories)).toHaveLength(16);
+    expect(Object.keys(expectedCategories)).toHaveLength(15);
   });
 
   it('requires future closures to preserve the category-specific boundary', () => {

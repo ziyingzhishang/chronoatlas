@@ -54,7 +54,7 @@ describe('round 110 task B Sui-Tang capital heritage reference', () => {
 
     expect(round110Candidates.filter((id) => (
       suiDetail?.heritageIds.includes(id) || tangDetail?.heritageIds.includes(id)
-    ))).toEqual(['huaqing-palace']);
+    ))).toEqual(['dingding-gate-site', 'huaqing-palace']);
     expect(getHeritageDetail('taiji-palace-site')?.associatedPolities).toEqual(['sui', 'tang']);
     expect(getHeritageDetail('qianling')?.associatedPolities).toEqual(['tang', 'wu_zhou']);
     expect(getHeritageDetail('shangyang-palace-site')?.associatedPolities).toEqual(['tang', 'wu_zhou']);

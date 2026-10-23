@@ -3,6 +3,7 @@ import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
 import { changanEvents } from '../data/changan-study';
 import { eventDetails } from '../data/event-details';
+import { events } from '../data/events';
 import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
 import { places } from '../data/places';
@@ -10,6 +11,12 @@ import { polities } from '../data/polities';
 import { buildCityStudyView, buildPolityStudyView } from './study-view';
 
 const data = { polities, places, people, heritage: heritageAssets, events: changanEvents, eventDetails, claims, capitalTerms: capitalHistory };
+const detailEvents = events.filter((event) => [
+  'ximing-temple-built',
+  'xuanzang-at-ximing-658',
+  'shangyang-palace-built',
+  'shangyang-palace-completed-679',
+].includes(event.id));
 
 describe('study views', () => {
   it('builds a polity-perspective view at a historical year', () => {
@@ -28,11 +35,42 @@ describe('study views', () => {
     expect(view?.events.some((event) => event.id === 'daming-palace-built')).toBe(true);
   });
 
-  it('includes explicitly linked polity events even when their source family differs', () => {
+  it('prioritizes explicit polity links for Tang event visibility', () => {
     const view = buildPolityStudyView('tang', 658, {
       ...data,
-      events: [...changanEvents, { id: 'ximing-temple-built', year: 656, title: '西明寺营建', summary: '测试事件', sourceIds: ['ximing-temple-primary-biography'] }],
+      events: [...changanEvents, ...detailEvents, {
+        id: 'sui-only-shared-source-event',
+        year: 650,
+        title: '测试隋事件',
+        summary: '测试事件',
+        sourceIds: ['zizhi-tongjian'],
+      }],
+      eventDetails: [...eventDetails, {
+        eventId: 'sui-only-shared-source-event',
+        participants: [],
+        polityIds: ['sui'],
+        causes: [],
+        consequences: [],
+        locationIds: [],
+        relatedEventIds: [],
+        sourceIds: ['zizhi-tongjian'],
+      }],
     });
     expect(view?.events.some((event) => event.id === 'ximing-temple-built')).toBe(true);
+    expect(view?.events.some((event) => event.id === 'sui-only-shared-source-event')).toBe(false);
+  });
+
+  it('includes Tang event details for Ximing Temple and Shangyang Palace', () => {
+    const eventsData = { ...data, events: [...changanEvents, ...detailEvents] };
+    const ximingView = buildPolityStudyView('tang', 658, eventsData);
+    const shangyangConstructionView = buildPolityStudyView('tang', 676, eventsData);
+    const shangyangView = buildPolityStudyView('tang', 679, eventsData);
+
+    expect(ximingView?.events.map((event) => event.id)).toEqual(expect.arrayContaining([
+      'ximing-temple-built',
+      'xuanzang-at-ximing-658',
+    ]));
+    expect(shangyangConstructionView?.events.some((event) => event.id === 'shangyang-palace-built')).toBe(true);
+    expect(shangyangView?.events.some((event) => event.id === 'shangyang-palace-completed-679')).toBe(true);
   });
 });
