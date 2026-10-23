@@ -24,6 +24,7 @@ const reviewBoundaryReasons = {
   'xiongnu-founded': 'formation-approximation',
   'yan-warring-founded-eighth-batch': 'traditional-periodization',
   'zhou-conquest': 'traditional-periodization',
+  'white-horse-temple-founded': 'participant-endpoint-review',
 } as const;
 
 describe('event details ninety-second round boundary audit', () => {
@@ -32,7 +33,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 91, 'needs-review': 22, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 91, 'needs-review': 23, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -41,13 +42,19 @@ describe('event details ninety-second round boundary audit', () => {
       expect(item.unresolvedReferenceIds, item.eventId).toEqual({
         people: [], places: [], polities: [], relatedEvents: [], sources: [],
       });
-      expect(item.needsReviewChecks, item.eventId).toContain('timePrecision');
-      expect(item.needsReviewChecks, item.eventId).toEqual(
-        expect.arrayContaining(['timePrecision']),
-      );
-      expect(item.needsReviewChecks.every((check) => check === 'timePrecision' || check === 'uncertaintyNote'), item.eventId)
-        .toBe(true);
-      expect(['approximate', 'range'], item.eventId).toContain(item.timePrecision);
+      if (item.eventId === 'white-horse-temple-founded') {
+        expect(item.needsReviewChecks, item.eventId).toEqual(['participants']);
+        expect(item.timePrecisionStatus, item.eventId).toBe('confirmed');
+        expect(item.timePrecision, item.eventId).toBe('year');
+      } else {
+        expect(item.needsReviewChecks, item.eventId).toContain('timePrecision');
+        expect(item.needsReviewChecks, item.eventId).toEqual(
+          expect.arrayContaining(['timePrecision']),
+        );
+        expect(item.needsReviewChecks.every((check) => check === 'timePrecision' || check === 'uncertaintyNote'), item.eventId)
+          .toBe(true);
+        expect(['approximate', 'range'], item.eventId).toContain(item.timePrecision);
+      }
       expect(reviewBoundaryReasons[item.eventId as keyof typeof reviewBoundaryReasons], item.eventId)
         .toBeDefined();
     });
@@ -57,7 +64,10 @@ describe('event details ninety-second round boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(reviewItems.every((item) => item.timePrecisionStatus === 'needs-review')).toBe(true);
+    expect(reviewItems.filter((item) => item.eventId !== 'white-horse-temple-founded')
+      .every((item) => item.timePrecisionStatus === 'needs-review')).toBe(true);
+    expect(reviewItems.find((item) => item.eventId === 'white-horse-temple-founded')?.timePrecisionStatus)
+      .toBe('confirmed');
     expect(reviewItems.every((item) => item.missingChecks.length === 0)).toBe(true);
     expect(reviewItems.every((item) => item.unresolvedReferenceIds.people.length === 0)).toBe(true);
     expect(reviewItems.every((item) => item.unresolvedReferenceIds.places.length === 0)).toBe(true);

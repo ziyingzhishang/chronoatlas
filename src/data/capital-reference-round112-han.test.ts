@@ -54,7 +54,7 @@ describe('round 112 Qin-Han capital boundary', () => {
   });
 
   it('keeps the four Han heritage candidates outside a single-polity closure', () => {
-    expect(heritageCandidates.filter(hasIndependentConstructionEndpoint)).toEqual([]);
+    expect(heritageCandidates.filter(hasIndependentConstructionEndpoint)).toEqual(['white-horse-temple']);
 
     expect(getHeritageDetail('changle-palace-site')?.associatedPolities).toEqual(['han_western', 'xin']);
     expect(getHeritageDetail('white-horse-temple')?.associatedPolities).toEqual(['han_eastern', 'tang']);
@@ -85,6 +85,7 @@ describe('round 112 Qin-Han capital boundary', () => {
       expect(getEventDetail('han-imperial-accession')?.locationIds).not.toContain('changan');
     }
 
+    expect(whiteHorse.associatedEvents).toContain('white-horse-temple-founded');
     expect(whiteHorse.associatedEvents).not.toContain('eastern-han-moves-luoyang');
   });
 });

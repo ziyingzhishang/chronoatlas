@@ -423,6 +423,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷四十·汉纪三十二', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷040', detail: '建武元年（25）刘秀即皇帝位、改元建武及汉政权重建背景。' }],
   },
   {
+    id: 'white-horse-temple-founded', year: 68, title: '洛阳白马寺创建', summary: '东汉永平十一年，洛阳白马寺进入官方营造与佛法传播传统。', placeId: 'luoyang', sourceIds: ['luoyang-baimasi-official'],
+    datePrecision: 'year', region: 'china', category: '宗教／遗产', verification: 'checked',
+    background: '东汉洛阳是帝国都城，佛教传入与官方接待、佛法传播和寺院空间形成相互关联。',
+    process: '官方资料将永平十一年（68年）作为白马寺始建年代；创建传统与后世寺院建筑、历代重修需要分层记录。',
+    impact: '白马寺成为洛阳城市宗教史和中国佛教传播史的重要节点，后续寺院沿革延续至唐及以后。',
+    mapNote: '事件定位于今洛阳市白马寺镇；68年只标记创建传统和官方营造节点，不把今日殿宇群直接视为东汉原构。',
+    references: [{ title: '洛阳白马寺官方历史资料', url: 'https://www.mct.gov.cn/preview/special/3578/3597/201203/t20120330_235404.html', detail: '说明白马寺与永平求法、东汉洛阳及历代兴废重修的关系。' }, { title: '洛阳市人民政府提案答复', url: 'https://m.ly.gov.cn/2025/12-02/941942.html', detail: '明确白马寺始建于东汉永平十一年（68年）及其今地。' }],
+  },
+  {
     id: 'sui-unification', year: 589, title: '隋统一南北', summary: '隋灭陈，结束南北长期分裂。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian'],
     datePrecision: 'year', region: 'china', category: '统一／分裂', verification: 'checked',
     background: '隋已掌握北方，南方陈朝仍据长江下游，两国隔江对峙。',

@@ -122,7 +122,7 @@ describe('round one hundred six Xuanzang heritage event boundary audit', () => {
       sources: false,
     });
 
-    const existingSemanticCandidates = events.filter((event) => /玄奘|译经/.test(
+    const existingSemanticCandidates = events.filter((event) => event.id !== 'white-horse-temple-founded' && /玄奘|译经/.test(
       `${event.title}${event.summary}${event.background ?? ''}${event.process ?? ''}${event.impact ?? ''}`,
     ));
     const existingParticipantCandidates = eventDetails.filter((detail) => detail.participants.some(

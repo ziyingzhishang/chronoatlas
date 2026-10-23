@@ -49,6 +49,7 @@ describe('round 105 capital reference audit', () => {
       .map((row) => `${row.polityId}|${row.placeId}|${row.eventId ?? ''}|${row.heritageId ?? ''}`)
       .sort();
     expect(candidateKeys).toEqual([
+      'han_eastern|luoyang|white-horse-temple-founded|',
       'han_eastern|luoyang||white-horse-temple',
       'han_western|changan||changle-palace-site',
       'han_western|changan||du-ling',

@@ -34,10 +34,11 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 91, 'needs-review': 22, unresolved: 0 });
-    expect(reviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
+    expect(report.statusCounts).toEqual({ covered: 91, 'needs-review': 23, unresolved: 0 });
+    const precisionReviewItems = reviewItems.filter((item) => item.eventId !== 'white-horse-temple-founded');
+    expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
-    reviewItems.forEach((item) => {
+    precisionReviewItems.forEach((item) => {
       expect(item.sourceComplete, item.eventId).toBe(true);
       expect(item.sourceIds.length, item.eventId).toBeGreaterThan(0);
       expect(item.unresolvedReferenceIds, item.eventId).toEqual({
@@ -46,6 +47,11 @@ describe('event details eighty-fourth batch boundary audit', () => {
       expect(['approximate', 'range'], item.eventId).toContain(item.timePrecision);
       expect(item.timePrecisionStatus, item.eventId).toBe('needs-review');
       expect(item.needsReviewChecks, item.eventId).toContain('timePrecision');
+    });
+    expect(reviewItems.find((item) => item.eventId === 'white-horse-temple-founded')).toMatchObject({
+      timePrecision: 'year',
+      timePrecisionStatus: 'confirmed',
+      needsReviewChecks: ['participants'],
     });
   });
 

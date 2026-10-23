@@ -1208,6 +1208,18 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '25年是刘秀称帝与政权重建节点，不表示东汉当年已经控制汉朝旧境，也不指定未经独立核验的即位地点。',
   },
   {
+    eventId: 'white-horse-temple-founded',
+    participants: [],
+    polityIds: ['han_eastern'],
+    causes: ['东汉洛阳作为帝国都城，为官方接待、译经和寺院营造提供政治与城市条件。', '永平求法传统将西域佛教传播与洛阳官方寺院空间联系起来。'],
+    consequences: ['白马寺成为洛阳城市宗教史和中国佛教传播史的重要节点。', '寺院后续经历历代兴废与重修，创建事件不等于今日建筑群全部保留。'],
+    phases: [{ label: '白马寺创建', startYear: 68, endYear: 68, summary: '东汉永平十一年，洛阳白马寺进入官方营造与佛法传播传统。' }],
+    locationIds: ['luoyang'],
+    relatedEventIds: ['han-eastern-founded', 'tang-founded'],
+    sourceIds: ['luoyang-baimasi-official'],
+    uncertaintyNote: '68年是官方资料采用的始建年代；创建传说、寺院早期形制和今日元明清建筑应分层展示，不把现存殿宇直接回填为东汉原构。',
+  },
+  {
     eventId: 'sui-founded',
     participants: [
       { personId: 'yang-jian', role: '受禅建隋的创建者与皇帝', note: '581年建立隋朝，589年灭陈统一南北是后续独立节点。' },

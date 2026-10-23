@@ -76,8 +76,8 @@ describe('round 111 Han capital heritage boundary', () => {
     }
   });
 
-  it('finds no attached independent construction endpoint for any candidate', () => {
-    expect(candidates.filter(hasIndependentAttachedEndpoint)).toEqual([]);
+  it('finds only the newly attached White Horse Temple endpoint', () => {
+    expect(candidates.filter(hasIndependentAttachedEndpoint)).toEqual(['white-horse-temple']);
   });
 
   it('keeps each endpoint gap explicit instead of treating a nearby event as construction proof', () => {

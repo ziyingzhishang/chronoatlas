@@ -29,6 +29,7 @@ const sourceIds = ['modern-geography-reference'];
 const historicalSourceIds = ['zizhi-tongjian', 'modern-geography-reference'];
 const dulingSourceIds = ['modern-geography-reference', 'xian-local-chronicle-duling'];
 const maolingSourceIds = ['modern-geography-reference', 'xian-local-chronicle-western-han-mausoleums'];
+const whiteHorseSourceIds = ['zizhi-tongjian', 'modern-geography-reference', 'luoyang-baimasi-official'];
 
 function phase(
   type: HeritagePhaseType,
@@ -213,10 +214,10 @@ const details: HeritageDetail[] = [
     phase('restoration', '现代展示', '当代遗址保护', '现代公园、考古展示和地面标识帮助理解都城结构，不将复原景观当作隋唐原建筑。', 2000, undefined, '展示性复原与原始建筑应明确区分。'),
   ], ['yang-jian', 'li-yuan', 'li-shimin', 'wu-zhao'], ['sui', 'tang', 'wu_zhou'], ['sui-founded', 'tang-founded', 'an-lushan-rebellion', 'wu-zhou-founded'], ['宫城与皇城遗迹', '里坊、道路和水系', '城门及考古展示区'], '观察隋唐多都制、城市规划和国家交通网络的重要地点。', '洛阳城址在不同阶段有扩展、改造和叠压；现代展示设施不能直接证明隋唐建筑原貌。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('white-horse-temple', '今河南省洛阳市洛龙区白马寺镇；寺院现址可定位，但历代寺域和建筑范围多有变化。', ['东汉洛阳佛教传播传统', '寺院作为都城宗教与跨地域交流空间的历史记忆'], [
-    phase('original', '创建传统', '东汉明帝时期，传统纪年为68年', '白马寺创建年代与传说、文献记载相互关联，通常被视为中国佛教寺院史的重要早期节点。', 68, undefined, '创建故事和具体早期建筑形制需区分传说、文献与考古证据。'),
-    phase('reconstruction', '历代重建', '东汉以后至明清', '寺院经历毁损、重修和格局调整，今日建筑群不是东汉原貌的连续留存。', 100, 1900, '各殿宇的始建、重修和现存构件年代不能用寺院创建年一概替代。'),
-    phase('restoration', '现代保护', '近现代以来', '现代维修和景观整治维持寺院使用与展示功能，部分建筑为后世重建或保护性修缮。', 1900),
-  ], ['liu-xiu', 'ban-gu', 'xuan-zang'], ['han_eastern', 'tang'], ['han-eastern-founded', 'tang-founded'], ['寺院中轴与殿宇群', '碑刻、塔院和历史陈设', '历代修缮叠合的建筑环境'], '东汉洛阳与佛教中国化研究的城市文化节点。', '白马寺“始建”与今日可见建筑并非同一保存层；具体殿宇年代和早期遗存应逐项核验。', ['zizhi-tongjian', 'modern-geography-reference']),
+    historicalPhase('original', '创建传统', '东汉明帝时期，传统纪年为68年', '官方资料将永平十一年（68年）作为白马寺始建年代，创建传统与具体早期建筑形制仍需区分。', 68, undefined, '创建故事、文献记载与考古证据不能互相替代。', whiteHorseSourceIds),
+    historicalPhase('reconstruction', '历代重建', '东汉以后至明清', '寺院经历毁损、重修和格局调整，今日建筑群不是东汉原貌的连续留存。', 100, 1900, '各殿宇的始建、重修和现存构件年代不能用寺院创建年一概替代。', whiteHorseSourceIds),
+    historicalPhase('restoration', '现代保护', '近现代以来', '现代维修和景观整治维持寺院使用与展示功能，部分建筑为后世重建或保护性修缮。', 1900, undefined, undefined, whiteHorseSourceIds),
+  ], ['liu-xiu', 'ban-gu', 'xuan-zang'], ['han_eastern', 'tang'], ['white-horse-temple-founded', 'han-eastern-founded', 'tang-founded'], ['寺院中轴与殿宇群', '碑刻、塔院和历史陈设', '历代修缮叠合的建筑环境'], '东汉洛阳与佛教中国化研究的城市文化节点。', '白马寺“始建”与今日可见建筑并非同一保存层；具体殿宇年代和早期遗存应逐项核验。', whiteHorseSourceIds),
   detail('jiankang-six-dynasties-city-site', '今南京市主城及秦淮河、石头城等历史空间；六朝城界与今日南京市区不重合。', ['孙吴建业、东晋建康及南朝都城空间', '宫城、台城、石头城与秦淮水运体系'], [
     phase('original', '都城形成', '229年后', '孙吴以建业为都，南渡后的东晋和南朝继续在此经营建康政治空间。', 229, 589),
     phase('site', '遗址与城市层', '六朝时期', '城墙、宫城、道路和水系信息主要通过考古发现、城市地层和历史地理复原辨识。', 229, 589),
