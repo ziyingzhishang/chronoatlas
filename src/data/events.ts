@@ -364,6 +364,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百五·晋纪二十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷105', detail: '记载姚苌起兵、建立后秦及其后称帝；形成阶段与长安控制分层处理。' }],
   },
   {
+    id: 'southern-yan-ended-410', year: 410, title: '南燕政权终止', summary: '刘裕北伐攻取广固，慕容超政权结束；广固城址与青州区域交通遗产继续进入后续历史。', placeId: 'guanggu', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '南燕末期以广固为政治与军事中心，东晋刘裕集团继续向山东推进，南燕承受持续军事压力。',
+    process: '410年刘裕北伐攻取广固，慕容超政权结束；围城、攻破、俘获与刘宋对山东地区的后续接收属于连续过程，不能压缩为城址和地方社会同时消失。',
+    impact: '南燕作为山东独立政权终止，东晋—刘裕集团完成对广固的军事接收；广固城址、青州城市层和山东区域交通继续延续。',
+    mapNote: '地图将410年标作南燕政权终止的明确年份节点，广固标注为终局城市；今日青州、古代广固城址与政权控制范围分层显示。',
+    references: [{ title: '《资治通鉴》卷一百十五·晋纪三十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷115', detail: '用于核对刘裕北伐、攻取广固与南燕终止；城市遗址和现代青州位置另按历史地理资料表达。' }],
+  },
+  {
     id: 'southern-yan-founded', year: 398, title: '南燕政权形成', summary: '慕容德在山东重建燕政权，南燕进入形成阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '后燕在北魏压力下失去河北核心，慕容德率部南下并在山东获得新的立足点。',

@@ -7176,6 +7176,67 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-yan-ended-410",
+      "entityKey": "event:southern-yan-ended-410",
+      "label": "南燕政权终止",
+      "polityIds": [
+        "song_southern",
+        "southern_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-yan-ended-410"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-chao-participated-southern-yan-ended-410",
+            "event-detail:southern-yan-ended-410"
+          ],
+          "relatedIds": [
+            "liu-yu",
+            "murong-chao",
+            "southern-yan-founded",
+            "southern_yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-yan-founded",
       "entityKey": "event:southern-yan-founded",
       "label": "南燕政权形成",
@@ -15137,7 +15198,9 @@
             "heritage-detail:southern-yan-guanggu-city-site"
           ],
           "relatedIds": [
+            "murong-chao",
             "murong-chui",
+            "southern-yan-ended-410",
             "southern-yan-founded",
             "southern_yan"
           ]
@@ -23110,8 +23173,10 @@
             "claim:claim-liu-yu-parent-liu-yilong-fortieth",
             "claim:claim-liu-yu-participated-eastern-jin",
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
+            "claim:claim-murong-chao-enemy-liu-yu-termination-410",
             "event-detail:liu-song-founded",
             "event-detail:liu-yu-captures-changan",
+            "event-detail:southern-yan-ended-410",
             "person-polity:liu-yu:song_southern"
           ],
           "relatedIds": [
@@ -23122,6 +23187,7 @@
             "liu-yu-captures-changan",
             "murong-chao",
             "song_southern",
+            "southern-yan-ended-410",
             "yao-xing"
           ]
         },
@@ -24015,15 +24081,19 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
+            "claim:claim-murong-chao-enemy-liu-yu-termination-410",
             "claim:claim-murong-chao-participated-southern-yan",
+            "claim:claim-murong-chao-participated-southern-yan-ended-410",
             "claim:claim-murong-chao-related-murong-de",
             "claim:claim-murong-chao-ruled-southern-yan-sixtythird",
+            "event-detail:southern-yan-ended-410",
             "event-detail:southern-yan-founded",
             "person-polity:murong-chao:southern_yan"
           ],
           "relatedIds": [
             "liu-yu",
             "murong-de",
+            "southern-yan-ended-410",
             "southern-yan-founded",
             "southern_yan"
           ]
@@ -35066,6 +35136,7 @@
           "evidenceIds": [
             "claim:claim-murong-chao-ruled-southern-yan-sixtythird",
             "claim:claim-murong-de-ruled-southern-yan-sixtieth",
+            "event-detail:southern-yan-ended-410",
             "event-detail:southern-yan-founded",
             "heritage-detail:southern-yan-guanggu-city-site",
             "person:murong-chao",
@@ -35074,6 +35145,7 @@
           "relatedIds": [
             "murong-chao",
             "murong-de",
+            "southern-yan-ended-410",
             "southern-yan-founded",
             "southern-yan-guanggu-city-site"
           ]
@@ -45845,6 +45917,67 @@
         }
       ]
     },
+    "event:southern-yan-ended-410": {
+      "entityType": "event",
+      "entityId": "southern-yan-ended-410",
+      "entityKey": "event:southern-yan-ended-410",
+      "label": "南燕政权终止",
+      "polityIds": [
+        "song_southern",
+        "southern_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-yan-ended-410"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-chao-participated-southern-yan-ended-410",
+            "event-detail:southern-yan-ended-410"
+          ],
+          "relatedIds": [
+            "liu-yu",
+            "murong-chao",
+            "southern-yan-founded",
+            "southern_yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:southern-yan-founded": {
       "entityType": "event",
       "entityId": "southern-yan-founded",
@@ -53808,7 +53941,9 @@
             "heritage-detail:southern-yan-guanggu-city-site"
           ],
           "relatedIds": [
+            "murong-chao",
             "murong-chui",
+            "southern-yan-ended-410",
             "southern-yan-founded",
             "southern_yan"
           ]
@@ -61781,8 +61916,10 @@
             "claim:claim-liu-yu-parent-liu-yilong-fortieth",
             "claim:claim-liu-yu-participated-eastern-jin",
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
+            "claim:claim-murong-chao-enemy-liu-yu-termination-410",
             "event-detail:liu-song-founded",
             "event-detail:liu-yu-captures-changan",
+            "event-detail:southern-yan-ended-410",
             "person-polity:liu-yu:song_southern"
           ],
           "relatedIds": [
@@ -61793,6 +61930,7 @@
             "liu-yu-captures-changan",
             "murong-chao",
             "song_southern",
+            "southern-yan-ended-410",
             "yao-xing"
           ]
         },
@@ -62686,15 +62824,19 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
+            "claim:claim-murong-chao-enemy-liu-yu-termination-410",
             "claim:claim-murong-chao-participated-southern-yan",
+            "claim:claim-murong-chao-participated-southern-yan-ended-410",
             "claim:claim-murong-chao-related-murong-de",
             "claim:claim-murong-chao-ruled-southern-yan-sixtythird",
+            "event-detail:southern-yan-ended-410",
             "event-detail:southern-yan-founded",
             "person-polity:murong-chao:southern_yan"
           ],
           "relatedIds": [
             "liu-yu",
             "murong-de",
+            "southern-yan-ended-410",
             "southern-yan-founded",
             "southern_yan"
           ]
@@ -73737,6 +73879,7 @@
           "evidenceIds": [
             "claim:claim-murong-chao-ruled-southern-yan-sixtythird",
             "claim:claim-murong-de-ruled-southern-yan-sixtieth",
+            "event-detail:southern-yan-ended-410",
             "event-detail:southern-yan-founded",
             "heritage-detail:southern-yan-guanggu-city-site",
             "person:murong-chao",
@@ -73745,6 +73888,7 @@
           "relatedIds": [
             "murong-chao",
             "murong-de",
+            "southern-yan-ended-410",
             "southern-yan-founded",
             "southern-yan-guanggu-city-site"
           ]
@@ -75878,9 +76022,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 169,
+      "totalEntities": 170,
       "statusCounts": {
-        "covered": 805,
+        "covered": 810,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -78139,6 +78283,7 @@
       "entityKeys": [
         "event:eastern-jin",
         "event:liu-song-founded",
+        "event:southern-yan-ended-410",
         "heritage:jiankang-six-dynasties-city-site",
         "heritage:jiankang-taicheng-site",
         "heritage:southern-dynasties-stone-carvings",
@@ -78309,6 +78454,7 @@
       "polityId": "southern_yan",
       "polityName": "南燕",
       "entityKeys": [
+        "event:southern-yan-ended-410",
         "event:southern-yan-founded",
         "heritage:southern-yan-guanggu-city-site",
         "person:murong-chao",
@@ -80515,8 +80661,11 @@
       "cityName": "青州市一带",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:southern-yan-ended-410",
         "event:southern-yan-founded",
-        "heritage:southern-yan-guanggu-city-site"
+        "heritage:southern-yan-guanggu-city-site",
+        "person:liu-yu",
+        "person:murong-chao"
       ],
       "gaps": [],
       "taskCounts": {

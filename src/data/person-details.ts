@@ -926,7 +926,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'murong-chao', biography: '慕容超是南燕末代君主，统治中心在广固，410年刘裕北伐攻灭南燕，南燕由此结束。',
     aliases: ['南燕末主'], offices: [{ title: '南燕皇帝', polityId: 'southern_yan', placeId: 'guanggu', validFrom: 405, validTo: 410, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['southern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南燕形成节点为398年，慕容超属于末期防御阶段；其统治不能替代慕容德建政，也不代表南燕全期控制范围。',
+    keyEvents: ['southern-yan-founded', 'southern-yan-ended-410'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南燕形成节点为398年，慕容超属于末期防御阶段；410年广固失守是政权终止节点，其统治不能替代慕容德建政，也不代表南燕全期控制范围。',
   },
   {
     personId: 'yelu-yilie', biography: '耶律夷列承接耶律大石建立的西辽，在八剌沙衮及七河流域维持契丹政权的继承秩序与行政运作；其属于后续继承阶段，不是1124年西行建政现场人物。',

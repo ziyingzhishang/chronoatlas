@@ -721,6 +721,22 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '384年姚苌建立后秦，386年称帝及其后控制长安须分层记录；不以后秦后期范围倒推建政初期。',
   },
   {
+    eventId: 'southern-yan-ended-410',
+    participants: [
+      { personId: 'murong-chao', role: '南燕末主与广固守卫阶段代表', note: '慕容超连接南燕末期统治、广固防御与410年政权终止。' },
+      { personId: 'liu-yu', role: '东晋北伐统帅与攻取广固的政治军事代表', note: '刘裕代表北伐集团攻取广固；具体围城、攻城和地方接收过程不归因于单一人物个人。' },
+    ],
+    polityIds: ['southern_yan'],
+    causes: ['南燕末期以广固为中心的政权面临刘裕集团持续北伐压力。', '东晋刘裕集团试图重建山东及黄河以北的政治与军事影响。'],
+    consequences: ['南燕作为山东独立政权终止，广固被刘裕集团攻取。', '广固城址、青州城市层和山东区域交通遗产继续存在。'],
+    phases: [
+      { label: '南燕末期广固防御', startYear: 405, endYear: 410, summary: '慕容超承接南燕王权并以广固为中心应对外部军事压力。' },
+      { label: '刘裕攻取广固', startYear: 410, endYear: 410, summary: '刘裕北伐攻破广固，南燕统一政治结构结束，后续接收进入新的历史阶段。' },
+    ],
+    locationIds: ['guanggu'], relatedEventIds: ['southern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '410年为广固失守与南燕政权终止的明确年份；围城过程、慕容超结局和地方接收仍按连续阶段表达。',
+  },
+  {
     eventId: 'southern-yan-founded',
     participants: [
       { personId: 'murong-de', role: '率后燕余部南下并在山东重建燕政权的核心君主', note: '慕容德对应398年南燕形成及400年广固称帝阶段；南下、建政与称帝按连续但不同节点理解。' },

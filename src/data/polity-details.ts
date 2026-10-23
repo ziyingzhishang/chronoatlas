@@ -637,7 +637,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['后燕在北魏压力下失去河北核心，慕容德率部南下。', '398年南燕政权在山东形成，400年在广固称帝。', '410年刘裕攻取广固，南燕结束。'],
     turningPoints: [turn(398, '南燕形成', '慕容德在山东重建燕政权。', 'southern-yan-founded'), turn(400, '广固称帝', '南燕制度和君主名号进一步定型。'), turn(410, '南燕覆亡', '刘裕北伐攻取广固，南燕结束。')],
     principalFigureIds: ['murong-de', 'murong-chao'], capitalPhases: [capital('guanggu', 398, 410)],
-    heritageIds: ['southern-yan-guanggu-city-site'], eventIds: ['southern-yan-founded'], claimIds: ['claim-murong-de-participated-southern-yan'], sourceIds: modernSources,
+    heritageIds: ['southern-yan-guanggu-city-site'], eventIds: ['southern-yan-founded', 'southern-yan-ended-410'], claimIds: ['claim-murong-de-participated-southern-yan', 'claim-murong-chao-participated-southern-yan-ended-410', 'claim-murong-chao-enemy-liu-yu-termination-410'], sourceIds: modernSources,
     uncertaintyNote: '398年是形成阶段约年，400年称帝是后续节点；广固遗址位于今山东青州一带，现存考古层不能无条件等同于南燕全期建筑。',
   }),
   detail({
