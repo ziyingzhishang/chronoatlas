@@ -37,6 +37,8 @@ export const sourceNotes: SourceNote[] = [
   {id:'tanghuiyao-vol30-daming-palace',title:'《唐会要》卷三十·大明宫',authorOrInstitution:'王溥等',urlOrCitation:'https://zh.wikisource.org/zh/唐會要/卷030',scope:'贞观八年营永安宫、贞观九年改名大明宫及龙朔年间高宗重修',note:'用于区分634年早期营建、635年改名和662—663年高宗重建完成；不把不同营建阶段压缩为同一完成节点。'},
   {id:'erlitou-official',title:'二里头遗址与二里头文化官方资料',authorOrInstitution:'国家发展改革委／洛阳市人民政府',urlOrCitation:'https://www.ndrc.gov.cn/xwdt/ztzl/dyhgjwhgy/202209/t20220920_1335799_ext.html',scope:'夏代相关考古文化核心定位',note:'用于D级文化核心参照，不据此推导夏代国家边界。'},
   {id:'gengshi-official',title:'更始政权都城与中心官方地方资料',authorOrInstitution:'湖北省文化和旅游厅／陕西省地方志办公室',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201405/P020240923622533021818.pdf',scope:'23—25年宛城、洛阳、长安中心与迁都时序',note:'只用于D级控制中心表达，不生成连续疆域。'},
+  {id:'beijing-jin-zhongdu-archaeology',title:'北京市文物局与西城区金中都遗址资料',authorOrInstitution:'北京市文物局／北京市西城区人民政府',urlOrCitation:'https://wwj.beijing.gov.cn/bjww/362760/362770/326091358/index.html',scope:'金中都营建、1153年迁都及今北京西南部遗址区域',note:'用于区分1151—1153年营建、1153年迁都和金中都遗址层；不将元大都、明清北京建筑直接归为金代原构。'},
+  {id:'republic-chongqing-wartime-center-official',title:'重庆市人民政府·重庆概况与战时首都',authorOrInstitution:'重庆市人民政府',urlOrCitation:'https://cq.gov.cn/zjcq/sqgk/cqsq/202412/t20241231_14378256.html',scope:'抗战时期国民政府迁驻重庆、战时首都称谓与城市政治中心',note:'用于支持重庆1937—1945年战时政治中心及蒋介石国民政府迁驻背景；本项目事件仍将战时中央驻地与永久首都分层表达。'},
   {
     id: 'cliopatria', title: 'Cliopatria v0.2.1 · 全球政权时段模型',
     authorOrInstitution: 'Bennett et al. / Seshat Global History Databank',

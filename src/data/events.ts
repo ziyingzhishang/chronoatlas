@@ -13,7 +13,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷三十七·汉纪二十九', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷037', detail: '记载王莽受禅、改国号为新及长安政治节点；新末各地控制另按阶段处理。' }],
   },
   {
-    id: 'gengshi-founded', year: 23, title: '更始政权建立（形成阶段）', summary: '刘玄被拥立为更始帝，更始政权进入形成阶段。', sourceIds: ['zizhi-tongjian', 'gengshi-official'],
+    id: 'gengshi-founded', year: 23, title: '更始政权建立（形成阶段）', summary: '刘玄被拥立为更始帝，更始政权进入形成阶段。', placeId: 'wan_nanyang', sourceIds: ['zizhi-tongjian', 'gengshi-official'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '新末反莽力量在各地扩张，绿林军及地方势力需要以刘氏宗室重建汉室名义。',
     process: '公元23年刘玄被拥立为更始帝，更始政权在宛城一带形成；随后迁驻洛阳、进入长安，政治中心和实际控制范围持续变化。',
@@ -164,6 +164,15 @@ const catalog: HistoricalEvent[] = [
     impact: '东北亚政治格局发生重大变化，辽的统治受到根本挑战；金建立与后来迁都中都、灭辽灭北宋是连续但不同事件。',
     mapNote: '会宁是金早期政治中心参照；不能把金灭辽、占领北宋后的范围提前到1115年，也不把女真部落影响区等同于直接统治。',
     references: [{ title: '《资治通鉴》卷二百九十一·宋纪七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷291', detail: '记载女真建国、完颜阿骨打称帝及其与辽关系；早期控制范围仍需按阶段区分。' }],
+  },
+  {
+    id: 'jurchen-jin-moves-zhongdu', year: 1153, title: '金迁都中都', summary: '金在中都大兴府营建并迁入新的北方政治中心。', placeId: 'jin_zhongdu', sourceIds: ['beijing-jin-zhongdu-archaeology', 'capital-history-reference'],
+    datePrecision: 'year', region: 'china', category: '都城营建／迁都', verification: 'checked',
+    background: '金在会宁建国后持续扩张，原有上京与华北政治、交通网络之间需要新的中心承接。',
+    process: '1151—1153年金中都持续营建，1153年正式迁都中都；营建阶段与迁都节点分开记录。',
+    impact: '中都成为金在华北的主要政治中心，并在北京城市史中形成独立的金代都城层；元大都和明清北京属于后续城市层。',
+    mapNote: '金中都指向今北京市西南部的历史遗址区域，不以现代北京市行政范围或后世建筑反推金代城址边界。',
+    references: [{ title: '金中都营建与北京城市历史官方资料', url: 'https://wwj.beijing.gov.cn/bjww/362760/362770/326091358/index.html', detail: '用于1151—1153年营建、1153年迁都及金中都与元大都城市层的区分。' }],
   },
   {
     id: 'western-xia-founded', year: 1038, title: '西夏建立', summary: '李元昊称帝建国，党项西夏政权正式形成。', placeId: 'xingqing', sourceIds: ['zizhi-tongjian', 'china-chronology'],
@@ -760,6 +769,15 @@ const catalog: HistoricalEvent[] = [
     impact: '共和政府的成立改变了中央政权的组织形式；之后的南北议和、政权转移与地区控制需另行考察。',
     mapNote: '此条仅定位于建政阶段，不表示全国在元旦同时完成政权交接；未添加总统府坐标。',
     references: [{ title: '南京中国近代史遗址博物馆：总统府历史', url: 'https://www.njztf.cn/about.html', detail: '馆方检索摘要记载1912年1月1日就职与临时政府成立；本次正文抓取失败，后续议和、退位及迁京全程未核。' }],
+  },
+  {
+    id: 'republic-chongqing-wartime-center', year: 1938, endYear: 1945, title: '重庆成为国民政府战时中央驻地', summary: '抗战时期重庆承担中华民国国民政府的战时中央驻地和实际政治中心功能。', placeId: 'chongqing', sourceIds: ['capital-history-reference', 'modern-geography-reference', 'republic-chongqing-wartime-center-official'],
+    datePrecision: 'range', region: 'china', category: '战时中央驻地／政治中心', verification: 'partial',
+    background: '全面抗战使中央机关和国家政治活动长期转移至西南，重庆成为战时国家运作的重要城市。',
+    process: '1938—1945年重庆承担战时中央驻地和政治中心功能；陪都称谓、具体机关迁驻与战时城市空间属于不同层次。',
+    impact: '重庆进入中国近现代城市史与抗战记忆的核心阶段，但该阶段不等同永久迁都或永久首都。',
+    mapNote: '事件指向重庆城市政治空间，不代表中央机关始终全部集中于单一地点，也不据此推导全国边界。',
+    references: [{ title: '中华民国首都与战时中央驻地阶段资料', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于项目既有首都阶段与战时中央驻地的分层表达。' }],
   },
   {
     id: 'un-founded', year: 1945, title: '联合国成立', summary: '《联合国宪章》生效，联合国正式成立。',

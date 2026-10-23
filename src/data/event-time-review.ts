@@ -90,6 +90,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'shaowu-guangzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1646年朱聿鐭在广州即位并使用绍武年号，阶段短且与永历并立，年份级节点比虚构单日更合适。', timelineStrategy: 'year-marker' },
   { eventId: 'yongli-zhaoqing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1646年朱由榔在肇庆先监国后即帝位，永历初期中心和即位年份明确；后续迁移不能回填到肇庆节点。', timelineStrategy: 'year-marker' },
   { eventId: 'zhao-wuling-reforms-307', status: 'approximate', expectedPrecision: 'approximate', explanation: '前307年胡服骑射改革是持续数年的军事与制度转型，前307年作为启动约年，不能将改革过程误读为单日完成。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'republic-chongqing-wartime-center', status: 'confirmed', expectedPrecision: 'range', explanation: '1938—1945年重庆战时中央驻地阶段按区间表达；战时中央驻地与永久迁都、永久首都分层。', timelineStrategy: 'range-band' },
 ];
 
 function unique(values: readonly string[]): string[] {

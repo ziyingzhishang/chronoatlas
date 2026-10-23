@@ -38,6 +38,7 @@ const expectedEventIds = [
   'shaowu-guangzhou-founded',
   'yongli-zhaoqing-founded',
   'zhao-wuling-reforms-307',
+  'republic-chongqing-wartime-center',
 ] as const;
 
 describe('event time evidence review', () => {
@@ -47,12 +48,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(33);
+    expect(report.totalReviewed).toBe(34);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 10, approximate: 23, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 11, approximate: 23, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

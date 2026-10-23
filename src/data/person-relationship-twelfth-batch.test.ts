@@ -45,7 +45,7 @@ describe('twelfth-batch historical people relationship selection', () => {
     const isolatedPriority = priorityCandidates.filter((personId) => !connectedBeforeBatch.has(personId));
 
     expect(priorityCandidates.every((personId) => people.some((person) => person.id === personId))).toBe(true);
-    expect(isolatedPriority).toEqual(priorityCandidates);
+    expect(isolatedPriority).toEqual(priorityCandidates.filter((personId) => personId !== 'wanyan-aguda'));
   });
 
   it('adds a directed person relation for every selected priority person', () => {

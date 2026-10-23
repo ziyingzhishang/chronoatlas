@@ -2390,6 +2390,64 @@
     },
     {
       "entityType": "event",
+      "entityId": "jurchen-jin-moves-zhongdu",
+      "entityKey": "event:jurchen-jin-moves-zhongdu",
+      "label": "金迁都中都",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "jurchen-jin-moves-zhongdu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-liang-participated-zhongdu",
+            "event-detail:jurchen-jin-moves-zhongdu"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-founded",
+            "wanyan-liang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-jin-founded",
       "entityKey": "event:later-jin-founded",
       "label": "后金建立",
@@ -4569,6 +4627,64 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "republic-chongqing-wartime-center",
+      "entityKey": "event:republic-chongqing-wartime-center",
+      "label": "重庆成为国民政府战时中央驻地",
+      "polityIds": [
+        "republic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "republic-chongqing-wartime-center"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "republic-chongqing-wartime-center-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:republic-chongqing-wartime-center"
+          ],
+          "relatedIds": [
+            "chiang-kai-shek",
+            "republic",
+            "republic-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -9990,6 +10106,64 @@
             "jin_jurchen",
             "jurchen-jin-founded",
             "wanyan-aguda"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "jin-zhongdu-city-site",
+      "entityKey": "heritage:jin-zhongdu-city-site",
+      "label": "金中都城址历史层",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "jin-zhongdu-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference",
+            "modern-geography-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:jin-zhongdu-city-site"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-moves-zhongdu",
+            "wanyan-liang"
           ]
         },
         {
@@ -15574,6 +15748,66 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "chiang-kai-shek",
+      "entityKey": "person:chiang-kai-shek",
+      "label": "蒋介石",
+      "polityIds": [
+        "republic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chiang-kai-shek"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "republic-chongqing-wartime-center-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chiang-kai-shek-related-sun-yat-sen",
+            "event-detail:republic-chongqing-wartime-center",
+            "person-polity:chiang-kai-shek:republic"
+          ],
+          "relatedIds": [
+            "republic",
+            "republic-chongqing-wartime-center",
+            "sun-yat-sen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "republic-chongqing-wartime-center-official"
           ],
           "relatedIds": []
         }
@@ -23247,6 +23481,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chiang-kai-shek-related-sun-yat-sen",
             "claim:claim-mao-zedong-related-sun-yat-sen",
             "claim:claim-sun-yat-sen-related-mao-zedong",
             "claim:claim-sun-yat-sen-ruled-republic-ninetythird",
@@ -23254,6 +23489,7 @@
             "person-polity:sun-yat-sen:republic"
           ],
           "relatedIds": [
+            "chiang-kai-shek",
             "mao-zedong",
             "republic",
             "republic-founded"
@@ -24339,12 +24575,14 @@
             "claim:claim-wanyan-aguda-founded-jin",
             "claim:claim-wanyan-aguda-participated-jin",
             "claim:claim-wanyan-aguda-ruled-jin-fiftyeighth",
+            "claim:claim-wanyan-liang-related-wanyan-aguda",
             "event-detail:jurchen-jin-founded",
             "person-polity:wanyan-aguda:jin_jurchen"
           ],
           "relatedIds": [
             "jin_jurchen",
             "jurchen-jin-founded",
+            "wanyan-liang",
             "zhao-gou"
           ]
         },
@@ -24354,6 +24592,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "wanyan-liang",
+      "entityKey": "person:wanyan-liang",
+      "label": "完颜亮",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wanyan-liang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-liang-participated-zhongdu",
+            "claim:claim-wanyan-liang-related-wanyan-aguda",
+            "claim:claim-wanyan-liang-ruled-jin",
+            "event-detail:jurchen-jin-moves-zhongdu",
+            "person-polity:wanyan-liang:jin_jurchen"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-moves-zhongdu",
+            "wanyan-aguda"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference"
           ],
           "relatedIds": []
         }
@@ -28646,14 +28948,21 @@
           "evidenceIds": [
             "claim:claim-wanyan-aguda-founded-jin",
             "claim:claim-wanyan-aguda-ruled-jin-fiftyeighth",
+            "claim:claim-wanyan-liang-ruled-jin",
             "event-detail:jurchen-jin-founded",
+            "event-detail:jurchen-jin-moves-zhongdu",
             "heritage-detail:jin-huining-city-site",
-            "person:wanyan-aguda"
+            "heritage-detail:jin-zhongdu-city-site",
+            "person:wanyan-aguda",
+            "person:wanyan-liang"
           ],
           "relatedIds": [
             "jin-huining-city-site",
+            "jin-zhongdu-city-site",
             "jurchen-jin-founded",
-            "wanyan-aguda"
+            "jurchen-jin-moves-zhongdu",
+            "wanyan-aguda",
+            "wanyan-liang"
           ]
         },
         {
@@ -30589,11 +30898,15 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-sun-yat-sen-ruled-republic-ninetythird",
+            "event-detail:republic-chongqing-wartime-center",
             "event-detail:republic-founded",
             "heritage-detail:republic-nanjing-presidential-palace-site",
+            "person:chiang-kai-shek",
             "person:sun-yat-sen"
           ],
           "relatedIds": [
+            "chiang-kai-shek",
+            "republic-chongqing-wartime-center",
             "republic-founded",
             "republic-nanjing-presidential-palace-site",
             "sun-yat-sen"
@@ -33507,6 +33820,20 @@
       "kind": "uncertain",
       "polityIds": [
         "qin_state"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "republic-chongqing-wartime-center",
+      "entityKey": "event:republic-chongqing-wartime-center",
+      "label": "重庆成为国民政府战时中央驻地",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "republic"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -36897,6 +37224,64 @@
         }
       ]
     },
+    "event:jurchen-jin-moves-zhongdu": {
+      "entityType": "event",
+      "entityId": "jurchen-jin-moves-zhongdu",
+      "entityKey": "event:jurchen-jin-moves-zhongdu",
+      "label": "金迁都中都",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "jurchen-jin-moves-zhongdu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-liang-participated-zhongdu",
+            "event-detail:jurchen-jin-moves-zhongdu"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-founded",
+            "wanyan-liang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:later-jin-founded": {
       "entityType": "event",
       "entityId": "later-jin-founded",
@@ -39078,6 +39463,64 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:republic-chongqing-wartime-center": {
+      "entityType": "event",
+      "entityId": "republic-chongqing-wartime-center",
+      "entityKey": "event:republic-chongqing-wartime-center",
+      "label": "重庆成为国民政府战时中央驻地",
+      "polityIds": [
+        "republic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "republic-chongqing-wartime-center"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "republic-chongqing-wartime-center-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:republic-chongqing-wartime-center"
+          ],
+          "relatedIds": [
+            "chiang-kai-shek",
+            "republic",
+            "republic-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -44499,6 +44942,64 @@
             "jin_jurchen",
             "jurchen-jin-founded",
             "wanyan-aguda"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:jin-zhongdu-city-site": {
+      "entityType": "heritage",
+      "entityId": "jin-zhongdu-city-site",
+      "entityKey": "heritage:jin-zhongdu-city-site",
+      "label": "金中都城址历史层",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "jin-zhongdu-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference",
+            "modern-geography-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:jin-zhongdu-city-site"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-moves-zhongdu",
+            "wanyan-liang"
           ]
         },
         {
@@ -50083,6 +50584,66 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:chiang-kai-shek": {
+      "entityType": "person",
+      "entityId": "chiang-kai-shek",
+      "entityKey": "person:chiang-kai-shek",
+      "label": "蒋介石",
+      "polityIds": [
+        "republic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chiang-kai-shek"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "republic-chongqing-wartime-center-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chiang-kai-shek-related-sun-yat-sen",
+            "event-detail:republic-chongqing-wartime-center",
+            "person-polity:chiang-kai-shek:republic"
+          ],
+          "relatedIds": [
+            "republic",
+            "republic-chongqing-wartime-center",
+            "sun-yat-sen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "republic-chongqing-wartime-center-official"
           ],
           "relatedIds": []
         }
@@ -57756,6 +58317,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chiang-kai-shek-related-sun-yat-sen",
             "claim:claim-mao-zedong-related-sun-yat-sen",
             "claim:claim-sun-yat-sen-related-mao-zedong",
             "claim:claim-sun-yat-sen-ruled-republic-ninetythird",
@@ -57763,6 +58325,7 @@
             "person-polity:sun-yat-sen:republic"
           ],
           "relatedIds": [
+            "chiang-kai-shek",
             "mao-zedong",
             "republic",
             "republic-founded"
@@ -58848,12 +59411,14 @@
             "claim:claim-wanyan-aguda-founded-jin",
             "claim:claim-wanyan-aguda-participated-jin",
             "claim:claim-wanyan-aguda-ruled-jin-fiftyeighth",
+            "claim:claim-wanyan-liang-related-wanyan-aguda",
             "event-detail:jurchen-jin-founded",
             "person-polity:wanyan-aguda:jin_jurchen"
           ],
           "relatedIds": [
             "jin_jurchen",
             "jurchen-jin-founded",
+            "wanyan-liang",
             "zhao-gou"
           ]
         },
@@ -58863,6 +59428,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:wanyan-liang": {
+      "entityType": "person",
+      "entityId": "wanyan-liang",
+      "entityKey": "person:wanyan-liang",
+      "label": "完颜亮",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wanyan-liang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-liang-participated-zhongdu",
+            "claim:claim-wanyan-liang-related-wanyan-aguda",
+            "claim:claim-wanyan-liang-ruled-jin",
+            "event-detail:jurchen-jin-moves-zhongdu",
+            "person-polity:wanyan-liang:jin_jurchen"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-moves-zhongdu",
+            "wanyan-aguda"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "beijing-jin-zhongdu-archaeology",
+            "capital-history-reference"
           ],
           "relatedIds": []
         }
@@ -63155,14 +63784,21 @@
           "evidenceIds": [
             "claim:claim-wanyan-aguda-founded-jin",
             "claim:claim-wanyan-aguda-ruled-jin-fiftyeighth",
+            "claim:claim-wanyan-liang-ruled-jin",
             "event-detail:jurchen-jin-founded",
+            "event-detail:jurchen-jin-moves-zhongdu",
             "heritage-detail:jin-huining-city-site",
-            "person:wanyan-aguda"
+            "heritage-detail:jin-zhongdu-city-site",
+            "person:wanyan-aguda",
+            "person:wanyan-liang"
           ],
           "relatedIds": [
             "jin-huining-city-site",
+            "jin-zhongdu-city-site",
             "jurchen-jin-founded",
-            "wanyan-aguda"
+            "jurchen-jin-moves-zhongdu",
+            "wanyan-aguda",
+            "wanyan-liang"
           ]
         },
         {
@@ -65098,11 +65734,15 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-sun-yat-sen-ruled-republic-ninetythird",
+            "event-detail:republic-chongqing-wartime-center",
             "event-detail:republic-founded",
             "heritage-detail:republic-nanjing-presidential-palace-site",
+            "person:chiang-kai-shek",
             "person:sun-yat-sen"
           ],
           "relatedIds": [
+            "chiang-kai-shek",
+            "republic-chongqing-wartime-center",
             "republic-founded",
             "republic-nanjing-presidential-palace-site",
             "sun-yat-sen"
@@ -67867,20 +68507,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 138,
+      "totalEntities": 140,
       "statusCounts": {
-        "covered": 663,
+        "covered": 672,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 27,
+        "uncertain": 28,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 27
+        "uncertain": 28
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -67894,6 +68534,7 @@
         "event:goguryeo-founded",
         "event:qi-warring-founded-eighth-batch",
         "event:qin-state-founded-eighth-batch",
+        "event:republic-chongqing-wartime-center",
         "event:shang-founded-eighth-batch",
         "event:shangyang-palace-built",
         "event:silla-founded",
@@ -67913,9 +68554,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 113,
+      "totalEntities": 114,
       "statusCounts": {
-        "covered": 565,
+        "covered": 570,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -67931,9 +68572,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 188,
+      "totalEntities": 190,
       "statusCounts": {
-        "covered": 894,
+        "covered": 904,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -68640,8 +69281,11 @@
       "polityName": "金",
       "entityKeys": [
         "event:jurchen-jin-founded",
+        "event:jurchen-jin-moves-zhongdu",
         "heritage:jin-huining-city-site",
+        "heritage:jin-zhongdu-city-site",
         "person:wanyan-aguda",
+        "person:wanyan-liang",
         "polity:jin_jurchen"
       ],
       "gaps": [],
@@ -69574,12 +70218,29 @@
       "polityId": "republic",
       "polityName": "中华民国（大陆时期）",
       "entityKeys": [
+        "event:republic-chongqing-wartime-center",
         "event:republic-founded",
         "heritage:republic-nanjing-presidential-palace-site",
+        "person:chiang-kai-shek",
         "person:sun-yat-sen",
         "polity:republic"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "republic-chongqing-wartime-center",
+          "entityKey": "event:republic-chongqing-wartime-center",
+          "label": "重庆成为国民政府战时中央驻地",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "republic"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -69587,7 +70248,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "中华民国（大陆时期）：学习闭环已覆盖。"
+      "summary": "中华民国（大陆时期）：有 1 项待核验缺口。"
     },
     "shang": {
       "polityId": "shang",
@@ -71593,8 +72254,26 @@
       "placeId": "chongqing",
       "cityName": "重庆市",
       "capitalRecordCount": 1,
-      "entityKeys": [],
-      "gaps": [],
+      "entityKeys": [
+        "event:republic-chongqing-wartime-center",
+        "person:chiang-kai-shek"
+      ],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "republic-chongqing-wartime-center",
+          "entityKey": "event:republic-chongqing-wartime-center",
+          "label": "重庆成为国民政府战时中央驻地",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "republic"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -71602,7 +72281,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "重庆市：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "重庆市：有 1 项待核验缺口。"
     },
     "constantinople": {
       "placeId": "constantinople",
@@ -72197,7 +72876,11 @@
       "placeId": "jin_zhongdu",
       "cityName": "北京市",
       "capitalRecordCount": 1,
-      "entityKeys": [],
+      "entityKeys": [
+        "event:jurchen-jin-moves-zhongdu",
+        "heritage:jin-zhongdu-city-site",
+        "person:wanyan-liang"
+      ],
       "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
@@ -72206,7 +72889,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "北京市：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "北京市：学习闭环已覆盖。"
     },
     "jincheng": {
       "placeId": "jincheng",
@@ -73031,7 +73714,44 @@
       "cityName": "南阳市城区",
       "capitalRecordCount": 0,
       "entityKeys": [
-        "heritage:gengshi-wanyang-city-layer"
+        "event:gengshi-founded",
+        "heritage:gengshi-wanyang-city-layer",
+        "person:liu-xiu",
+        "person:liu-xuan"
+      ],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "liu-xuan",
+          "entityKey": "person:liu-xuan",
+          "label": "刘玄",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "gengshi"
+          ],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "南阳市城区：有 1 项待核验缺口。"
+    },
+    "wanyang": {
+      "placeId": "wanyang",
+      "cityName": "南阳市城区",
+      "capitalRecordCount": 1,
+      "entityKeys": [
+        "event:gengshi-founded"
       ],
       "gaps": [],
       "taskCounts": {
@@ -73042,21 +73762,6 @@
         "relationship-missing": 0
       },
       "summary": "南阳市城区：学习闭环已覆盖。"
-    },
-    "wanyang": {
-      "placeId": "wanyang",
-      "cityName": "南阳市城区",
-      "capitalRecordCount": 1,
-      "entityKeys": [],
-      "gaps": [],
-      "taskCounts": {
-        "polity-heritage-missing": 0,
-        "person-person-relationship-missing": 0,
-        "event-participant-missing": 0,
-        "event-location-missing": 0,
-        "relationship-missing": 0
-      },
-      "summary": "南阳市城区：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
     },
     "wunvshan": {
       "placeId": "wunvshan",

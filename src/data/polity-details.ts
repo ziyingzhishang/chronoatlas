@@ -340,8 +340,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'jin_jurchen', perspectiveSummary: '金由女真完颜部整合而来，先以会宁府为上京，后迁中都和开封，在北方与华北建立多阶段统治秩序。',
     foundationProcess: ['完颜阿骨打整合女真部落并反抗辽的统治。', '1115年称帝建立金。', '金灭辽、迫使北宋南渡后形成跨区域政权，但首都随战争和战略重心迁移。'],
     turningPoints: [turn(1115, '金建立', '完颜阿骨打称帝建国。', 'jurchen-jin-founded'), turn(1125, '辽亡', '金成为北方主要政权。'), turn(1153, '迁都中都', '金的政治中心由上京会宁府转向中都。')],
-    principalFigureIds: ['wanyan-aguda'], capitalPhases: [capital('huining', 1115, 1153), capital('jin_zhongdu', 1153, 1214), capital('kaifeng', 1214, 1234, 'primary', 'actual', '末期实际中心')],
-    heritageIds: ['jin-huining-city-site'], eventIds: ['jurchen-jin-founded'], claimIds: ['claim-wanyan-aguda-founded-jin', 'claim-wanyan-aguda-participated-jin'], sourceIds: modernSources,
+    principalFigureIds: ['wanyan-aguda', 'wanyan-liang'], capitalPhases: [capital('huining', 1115, 1153), capital('jin_zhongdu', 1153, 1214), capital('kaifeng', 1214, 1234, 'primary', 'actual', '末期实际中心')],
+    heritageIds: ['jin-huining-city-site', 'jin-zhongdu-city-site'], eventIds: ['jurchen-jin-founded', 'jurchen-jin-moves-zhongdu'], claimIds: ['claim-wanyan-aguda-founded-jin', 'claim-wanyan-aguda-participated-jin', 'claim-wanyan-liang-participated-zhongdu', 'claim-wanyan-liang-ruled-jin'], sourceIds: modernSources,
     uncertaintyNote: '金的会宁府、中都、开封是不同首都阶段，不能以金上京遗址代表全期；1214年后的开封是战争背景下的后期实际中心。',
   }),
   detail({
@@ -549,7 +549,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['辛亥革命后各省和临时政府推动共和政体建立。', '1912年孙中山在南京就任临时大总统。', '此后中央政治中心在北京、南京之间变化，抗战时期重庆为战时中央驻地。'],
     turningPoints: [turn(1912, '中华民国建立', '南京临时政府成立，共和政权进入新阶段。', 'republic-founded'), turn(1928, '南京国民政府建立', '中央政治中心回到南京。'), turn(1937, '战时迁驻重庆', '重庆成为战时中央驻地，但不等同于永久迁都。')],
     principalFigureIds: ['sun-yat-sen'], capitalPhases: [capital('beijing', 1912, 1927), capital('yingtian', 1928, 1937), capital('chongqing', 1938, 1945, 'temporary', 'actual', '战时陪都／中央驻地，不等同永久迁都。'), capital('yingtian', 1946, 1949)],
-    heritageIds: ['republic-nanjing-presidential-palace-site'], eventIds: ['republic-founded'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['republic-nanjing-presidential-palace-site'], eventIds: ['republic-founded', 'republic-chongqing-wartime-center'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '中华民国大陆时期包含临时政府、北洋政府、南京政府与战时驻地等不同阶段；重庆为战时中央驻地，不能将所有时期压成单一首都。',
   }),
   detail({

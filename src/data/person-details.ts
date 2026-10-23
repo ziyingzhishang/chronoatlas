@@ -30,7 +30,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'liu-xiu', biography: '刘秀在新末动荡中起兵，重建汉室并成为东汉开国君主；其早期政治活动与长安权力更替相连。',
     aliases: ['汉光武帝'], offices: [{ title: '更始政权将领／东汉皇帝', polityId: 'han_eastern', validFrom: 25, validTo: 57, datePrecision: 'range', sourceIds }],
-    keyEvents: ['changan-gengshi'], sourceIds,
+    keyEvents: ['gengshi-founded', 'changan-gengshi'], sourceIds,
     uncertaintyNote: '更始、刘秀与长安之间的控制转换按阶段记录，不由单个事件点推导连续疆域。',
   },
   {
@@ -145,7 +145,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'liu-xuan', biography: '刘玄即更始帝，在新末动荡中建立更始政权，曾以长安为重要政治中心。',
     aliases: ['更始帝'], offices: [{ title: '更始皇帝', polityId: 'gengshi', placeId: 'changan', validFrom: 23, validTo: 25, datePrecision: 'range', sourceIds }],
-    keyEvents: ['changan-gengshi'], sourceIds, uncertaintyNote: '生年未知；更始政权的名义统治与各地实际控制需分阶段理解。',
+    keyEvents: ['gengshi-founded', 'changan-gengshi'], sourceIds, uncertaintyNote: '生年未知；更始政权的名义统治与各地实际控制需分阶段理解。',
   },
   {
     personId: 'ban-gu', biography: '班固是东汉史家与官员，编撰《汉书》，其活动反映了汉代长安历史记忆与史学传统。',
@@ -383,6 +383,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['jurchen-jin-founded'], sourceIds, uncertaintyNote: '1115年是会宁建国节点，不以金灭辽和占领北宋后的范围倒推早期女真政权控制区。',
   },
   {
+    personId: 'wanyan-liang', biography: '完颜亮即海陵王，是金代中期君主。1151—1153年推动中都营建，1153年将金的主要政治中心由上京会宁府迁至中都。',
+    aliases: ['海陵王'], offices: [{ title: '金皇帝', polityId: 'jin_jurchen', placeId: 'jin_zhongdu', validFrom: 1149, validTo: 1161, datePrecision: 'range', sourceIds: ['beijing-jin-zhongdu-archaeology', 'capital-history-reference'] }],
+    keyEvents: ['jurchen-jin-moves-zhongdu'], sourceIds: ['beijing-jin-zhongdu-archaeology', 'capital-history-reference'], uncertaintyNote: '1151—1153年为中都营建与迁都阶段；营建者、迁都决定和完整城市建设不是同一日完成。',
+  },
+  {
     personId: 'li-yuanhao', biography: '李元昊整合党项军政资源，于1038年称帝建立西夏，兴庆府成为其政权的政治中心。',
     aliases: ['西夏景宗'], offices: [{ title: '西夏皇帝', polityId: 'western_xia', placeId: 'xingqing', validFrom: 1038, validTo: 1048, datePrecision: 'range', sourceIds }],
     keyEvents: ['western-xia-founded'], sourceIds, uncertaintyNote: '1038年是称帝与国号形成节点，不把西夏后期的扩张范围提前回填到建国当年。',
@@ -516,6 +521,11 @@ export const personDetails: PersonDetail[] = [
     personId: 'sun-yat-sen', biography: '孙中山是近代中国革命家，1912年在南京就任临时大总统，中华民国临时政府由此成立。',
     aliases: ['孙文'], offices: [{ title: '中华民国临时大总统', polityId: 'republic', placeId: 'yingtian', validFrom: 1912, validTo: 1912, datePrecision: 'year', sourceIds: ['china-chronology'] }],
     keyEvents: ['republic-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1912年南京临时政府成立与其后政权迁都、政治权力转移属于不同节点，本详情不把临时政府等同于整个大陆时期民国的持续控制。',
+  },
+  {
+    personId: 'chiang-kai-shek', biography: '蒋介石是抗战时期国民政府军事与政治核心人物。1937年后国民政府迁驻重庆，重庆承担战时中央驻地和国家政治、军事运作中心功能。',
+    aliases: ['蒋中正'], offices: [{ title: '国民政府军事与政治核心人物', polityId: 'republic', placeId: 'chongqing', validFrom: 1938, validTo: 1945, datePrecision: 'range', sourceIds: ['republic-chongqing-wartime-center-official'] }],
+    keyEvents: ['republic-chongqing-wartime-center'], sourceIds: ['republic-chongqing-wartime-center-official'], uncertaintyNote: '本详情只连接蒋介石与重庆战时政治、军事中心阶段，不将其个人角色等同于全部国民政府机关或重庆全部抗战遗产。',
   },
   {
     personId: 'mao-zedong', biography: '毛泽东是中国共产党和中华人民共和国历史中的重要政治人物，1949年在北京成立典礼上宣告中央人民政府成立。',
