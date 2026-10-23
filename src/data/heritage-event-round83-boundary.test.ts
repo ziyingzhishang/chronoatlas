@@ -18,10 +18,10 @@ describe('round eighty-third heritage/event boundary audit', () => {
     const eventIds = new Set(events.map((event) => event.id));
     const sourceIds = new Set(sourceNotes.map((source) => source.id));
 
-    expect(heritageAssets).toHaveLength(114);
+    expect(heritageAssets).toHaveLength(115);
     expect(report.needsReviewHeritageIds).toEqual([...reviewBoundaryHeritageIds]);
     expect(report.uncoveredHeritageIds).toEqual([]);
-    expect(report.sourceCompleteHeritageIds).toHaveLength(114);
+    expect(report.sourceCompleteHeritageIds).toHaveLength(115);
     expect(eventIds.has('xuanzang-translations')).toBe(false);
 
     for (const heritageId of reviewBoundaryHeritageIds) {

@@ -203,6 +203,21 @@ export const sourceNotes: SourceNote[] = [
     note: '只用于局部行政沿革的交叉核验，不外推为全政权逐年国界。',
   },
   {
+    id: 'song-history-nantang', title: '《宋史》卷478南唐李氏世家', authorOrInstitution: '脱脱等', urlOrCitation: 'https://zh.wikisource.org/zh-hans/%E5%AE%8B%E5%8F%B2/%E5%8D%B7478',
+    scope: '李璟继位、灭闽灭楚、后周南征、割地称臣、迁豫章、李煜继位与南唐覆亡',
+    note: '作为南唐中后期事件与三代君主关系的一手史料入口；金陵—豫章—建康中心变化按阶段记录。',
+  },
+  {
+    id: 'palace-museum-li-jing', title: '李璟', authorOrInstitution: '故宫博物院', urlOrCitation: 'https://www.dpm.org.cn/lemmas/242031.html',
+    scope: '李璟生卒、与李昪父子关系、942年继位及灭闽灭楚、割地称臣',
+    note: '用于人物基本信息与政权阶段交叉核验，不替代《宋史》对事件时序的完整记载。',
+  },
+  {
+    id: 'southern-tang-er-ling-official', title: '南唐二陵', authorOrInstitution: '南京市江宁区文化和旅游局', urlOrCitation: 'https://www.jiangning.gov.cn/ztzl/why/cgjs/202311/t20231108_4093085.html',
+    scope: '李昪钦陵、李璟顺陵墓主、位置、发掘与保护信息',
+    note: '用于南唐专属墓葬遗产节点；墓葬遗址与南唐金陵城市历史层分开记录。',
+  },
+  {
     id: 'modern-geography-reference',
     title: '现代地理位置参照',
     authorOrInstitution: '项目整理',

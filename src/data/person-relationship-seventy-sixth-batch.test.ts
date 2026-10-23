@@ -55,7 +55,7 @@ describe('seventy-sixth batch high-confidence alliance relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(28);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(78);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(79);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
     for (const personId of ['wei-zheng', 'lv-guang', 'fu-jian', 'liu-muzi', 'liu-yu', 'zhang-jun', 'zhao-gou', 'bayan', 'kublai']) {
       expect(report.byPersonId[personId].categories.allianceConflict.status, personId).toBe('covered');

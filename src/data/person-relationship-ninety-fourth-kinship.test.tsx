@@ -53,7 +53,7 @@ describe('ninety-fourth batch high-confidence kinship relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.requiredMissingByCategory.governance).toHaveLength(28);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(78);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(79);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
     for (const personId of ['han-kangzi', 'han-qian', 'li-bian', 'li-yu']) {
       expect(report.byPersonId[personId].categories.kinship.status, personId).toBe('covered');

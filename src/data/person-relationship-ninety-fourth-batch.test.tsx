@@ -46,7 +46,7 @@ describe('ninety-fourth batch high-confidence alliance and conflict relationship
   it('reduces only the three audited alliance-conflict gaps and does not use participation claims', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(78);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(79);
     expect(report.requiredMissingByCategory.governance).toHaveLength(28);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);

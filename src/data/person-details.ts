@@ -669,6 +669,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['southern-tang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '937年受禅建齐与939年改国号为唐是两个制度节点；本详情保留徐知诰、李昪两个姓名阶段。',
   },
   {
+    personId: 'li-jing', biography: '李璟是李昪之子，942年继位为南唐中主，先后灭闽、楚，后周南征后割地称臣并迁居豫章，961年去世后由李煜继位。',
+    aliases: ['李景通', '南唐中主', '元宗'], offices: [{ title: '南唐皇帝', polityId: 'southern_tang', placeId: 'jiankang', validFrom: 943, validTo: 960, datePrecision: 'range', sourceIds: ['song-history-nantang', 'palace-museum-li-jing'] }, { title: '南唐后期君主／豫章政治中心', polityId: 'southern_tang', placeId: 'nanchang', validFrom: 961, validTo: 961, datePrecision: 'year', sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记为迁于豫章，属于李璟去世前的短时段中心，不代表南唐长期正式迁都。' }],
+    keyEvents: ['southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang'], sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记李璟942年袭位；项目事件以943年作为政权承接目录节点，保留史料纪年与事件分期差异。'
+  },
+  {
     personId: 'liu-yan', biography: '刘龑承接兄长刘隐在广州经营的岭南军政资源，917年称帝，918年改国号为汉，南汉进入正式建政阶段。',
     aliases: ['刘岩', '南汉高祖'], offices: [{ title: '南汉皇帝', polityId: 'southern_han', placeId: 'guangzhou', validFrom: 917, validTo: 942, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['southern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '917年国号为越、918年改称汉；“南汉”是后世通称，不能把刘龑称帝日与岭南全域整合混为一谈。',

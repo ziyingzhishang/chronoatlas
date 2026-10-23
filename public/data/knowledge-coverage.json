@@ -6193,6 +6193,242 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-tang-cedes-huainan",
+      "entityKey": "event:southern-tang-cedes-huainan",
+      "label": "南唐割江北地并称臣后周",
+      "polityIds": [
+        "southern_tang",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-cedes-huainan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-periods"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-cedes-huainan"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "southern-tang-conquers-chu",
+            "southern_tang",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-tang-conquers-chu",
+      "entityKey": "event:southern-tang-conquers-chu",
+      "label": "南唐灭楚",
+      "polityIds": [
+        "chu_ten",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-conquers-chu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-periods"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-conquers-chu"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "southern-tang-li-jing-succeeds",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-tang-conquers-min",
+      "entityKey": "event:southern-tang-conquers-min",
+      "label": "南唐灭闽",
+      "polityIds": [
+        "min",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-conquers-min"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-periods"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-conquers-min"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "min",
+            "southern-tang-li-jing-succeeds",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-tang-falls",
+      "entityKey": "event:southern-tang-falls",
+      "label": "南唐覆亡",
+      "polityIds": [
+        "song_northern",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-falls"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-falls"
+          ],
+          "relatedIds": [
+            "li-yu",
+            "song_northern",
+            "southern-tang-moves-nanchang",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-tang-founded",
       "entityKey": "event:southern-tang-founded",
       "label": "南唐政权建立",
@@ -6242,6 +6478,121 @@
             "li-yu",
             "southern_tang",
             "yang-wu-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-tang-li-jing-succeeds",
+      "entityKey": "event:southern-tang-li-jing-succeeds",
+      "label": "李璟继位（942—943年纪年口径）",
+      "polityIds": [
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-li-jing-succeeds"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-li-jing-succeeds"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "southern-tang-founded",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-tang-moves-nanchang",
+      "entityKey": "event:southern-tang-moves-nanchang",
+      "label": "李璟迁居豫章、李煜继位",
+      "polityIds": [
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-moves-nanchang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-moves-nanchang"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "li-yu",
+            "southern-tang-cedes-huainan",
+            "southern_tang"
           ]
         },
         {
@@ -13733,11 +14084,72 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "southern-tang-er-ling",
+      "entityKey": "heritage:southern-tang-er-ling",
+      "label": "南唐二陵",
+      "polityIds": [
+        "southern_tang",
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "southern-tang-er-ling"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-er-ling-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:southern-tang-er-ling"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "li-jing",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "southern-tang-jiankang-city-site",
       "entityKey": "heritage:southern-tang-jiankang-city-site",
       "label": "南唐金陵城历史层",
       "polityIds": [
-        "southern_tang"
+        "southern_tang",
+        "wu_ten"
       ],
       "checks": [
         {
@@ -13762,6 +14174,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
+            "song-history-nantang",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -13774,8 +14187,13 @@
             "heritage-detail:southern-tang-jiankang-city-site"
           ],
           "relatedIds": [
+            "li-bian",
+            "li-jing",
             "li-yu",
+            "southern-tang-falls",
             "southern-tang-founded",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang",
             "southern_tang"
           ]
         },
@@ -19345,15 +19763,18 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-grandparent-li-yu-ninetyfourth",
+            "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-bian-participated-southern-tang",
             "claim:claim-li-bian-related-yang-xingmi",
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
+            "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "event-detail:southern-tang-founded",
             "person-polity:li-bian:southern_tang",
             "person-polity:li-bian:wu_ten"
           ],
           "relatedIds": [
+            "li-jing",
             "li-yu",
             "southern-tang-founded",
             "southern_tang",
@@ -19568,6 +19989,81 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "li-jing",
+      "entityKey": "person:li-jing",
+      "label": "李璟",
+      "polityIds": [
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-jing"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-bian-parent-li-jing",
+            "claim:claim-li-jing-child-li-bian",
+            "claim:claim-li-jing-parent-li-yu",
+            "claim:claim-li-jing-ruled-southern_tang",
+            "claim:claim-li-yu-child-li-jing",
+            "event-detail:southern-tang-cedes-huainan",
+            "event-detail:southern-tang-conquers-chu",
+            "event-detail:southern-tang-conquers-min",
+            "event-detail:southern-tang-li-jing-succeeds",
+            "event-detail:southern-tang-moves-nanchang",
+            "person-polity:li-jing:southern_tang"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "li-yu",
+            "southern-tang-cedes-huainan",
+            "southern-tang-conquers-chu",
+            "southern-tang-conquers-min",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
           ],
           "relatedIds": []
         }
@@ -19833,16 +20329,23 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-grandparent-li-yu-ninetyfourth",
+            "claim:claim-li-jing-parent-li-yu",
+            "claim:claim-li-yu-child-li-jing",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "claim:claim-li-yu-participated-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
+            "event-detail:southern-tang-falls",
+            "event-detail:southern-tang-moves-nanchang",
             "person-polity:li-yu:southern_tang"
           ],
           "relatedIds": [
             "li-bian",
+            "li-jing",
+            "southern-tang-falls",
             "southern-tang-founded",
+            "southern-tang-moves-nanchang",
             "southern_tang",
             "zhao-kuangyin"
           ]
@@ -28684,13 +29187,15 @@
           "evidenceIds": [
             "claim:claim-ma-yin-ruled-chu",
             "event-detail:ma-chu-founded",
+            "event-detail:southern-tang-conquers-chu",
             "heritage-detail:ma-chu-tan-zhou-city-site",
             "person:ma-yin"
           ],
           "relatedIds": [
             "ma-chu-founded",
             "ma-chu-tan-zhou-city-site",
-            "ma-yin"
+            "ma-yin",
+            "southern-tang-conquers-chu"
           ]
         },
         {
@@ -30604,12 +31109,14 @@
           "evidenceIds": [
             "claim:claim-wang-shenzhi-ruled-min",
             "event-detail:min-founded",
+            "event-detail:southern-tang-conquers-min",
             "heritage-detail:min-wang-mausoleum",
             "person:wang-shenzhi"
           ],
           "relatedIds": [
             "min-founded",
             "min-wang-mausoleum",
+            "southern-tang-conquers-min",
             "wang-shenzhi"
           ]
         },
@@ -31968,6 +32475,7 @@
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
+            "event-detail:southern-tang-falls",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:li-gang",
             "person:zhao-kuangyin",
@@ -31979,6 +32487,7 @@
             "northern-song-founded",
             "song-founded",
             "song-southward",
+            "southern-tang-falls",
             "zhao-kuangyin",
             "zong-ze"
           ]
@@ -32306,6 +32815,9 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "palace-museum-li-jing",
+            "song-history-nantang",
+            "southern-tang-imperial-lineage",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -32316,17 +32828,34 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
+            "claim:claim-li-jing-ruled-southern_tang",
             "claim:claim-li-yu-ruled-southern-tang",
+            "event-detail:southern-tang-cedes-huainan",
+            "event-detail:southern-tang-conquers-chu",
+            "event-detail:southern-tang-conquers-min",
+            "event-detail:southern-tang-falls",
             "event-detail:southern-tang-founded",
+            "event-detail:southern-tang-li-jing-succeeds",
+            "event-detail:southern-tang-moves-nanchang",
+            "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
             "person:li-bian",
+            "person:li-jing",
             "person:li-yu"
           ],
           "relatedIds": [
             "li-bian",
+            "li-jing",
             "li-yu",
+            "southern-tang-cedes-huainan",
+            "southern-tang-conquers-chu",
+            "southern-tang-conquers-min",
+            "southern-tang-er-ling",
+            "southern-tang-falls",
             "southern-tang-founded",
-            "southern-tang-jiankang-city-site"
+            "southern-tang-jiankang-city-site",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang"
           ]
         },
         {
@@ -34325,6 +34854,7 @@
           "evidenceIds": [
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
+            "event-detail:southern-tang-cedes-huainan",
             "event-detail:zhou-later-founded",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:guo-wei"
@@ -34332,6 +34862,7 @@
           "relatedIds": [
             "guo-wei",
             "kaifeng-northern-song-city-site",
+            "southern-tang-cedes-huainan",
             "zhou-later-founded"
           ]
         },
@@ -41895,6 +42426,242 @@
         }
       ]
     },
+    "event:southern-tang-cedes-huainan": {
+      "entityType": "event",
+      "entityId": "southern-tang-cedes-huainan",
+      "entityKey": "event:southern-tang-cedes-huainan",
+      "label": "南唐割江北地并称臣后周",
+      "polityIds": [
+        "southern_tang",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-cedes-huainan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-periods"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-cedes-huainan"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "southern-tang-conquers-chu",
+            "southern_tang",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-tang-conquers-chu": {
+      "entityType": "event",
+      "entityId": "southern-tang-conquers-chu",
+      "entityKey": "event:southern-tang-conquers-chu",
+      "label": "南唐灭楚",
+      "polityIds": [
+        "chu_ten",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-conquers-chu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-periods"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-conquers-chu"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "southern-tang-li-jing-succeeds",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-tang-conquers-min": {
+      "entityType": "event",
+      "entityId": "southern-tang-conquers-min",
+      "entityKey": "event:southern-tang-conquers-min",
+      "label": "南唐灭闽",
+      "polityIds": [
+        "min",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-conquers-min"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-periods"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-conquers-min"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "min",
+            "southern-tang-li-jing-succeeds",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-tang-falls": {
+      "entityType": "event",
+      "entityId": "southern-tang-falls",
+      "entityKey": "event:southern-tang-falls",
+      "label": "南唐覆亡",
+      "polityIds": [
+        "song_northern",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-falls"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-falls"
+          ],
+          "relatedIds": [
+            "li-yu",
+            "song_northern",
+            "southern-tang-moves-nanchang",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:southern-tang-founded": {
       "entityType": "event",
       "entityId": "southern-tang-founded",
@@ -41946,6 +42713,121 @@
             "li-yu",
             "southern_tang",
             "yang-wu-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-tang-li-jing-succeeds": {
+      "entityType": "event",
+      "entityId": "southern-tang-li-jing-succeeds",
+      "entityKey": "event:southern-tang-li-jing-succeeds",
+      "label": "李璟继位（942—943年纪年口径）",
+      "polityIds": [
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-li-jing-succeeds"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-li-jing-succeeds"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "southern-tang-founded",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-tang-moves-nanchang": {
+      "entityType": "event",
+      "entityId": "southern-tang-moves-nanchang",
+      "entityKey": "event:southern-tang-moves-nanchang",
+      "label": "李璟迁居豫章、李煜继位",
+      "polityIds": [
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-moves-nanchang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-tang-moves-nanchang"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "li-yu",
+            "southern-tang-cedes-huainan",
+            "southern_tang"
           ]
         },
         {
@@ -49435,13 +50317,74 @@
         }
       ]
     },
+    "heritage:southern-tang-er-ling": {
+      "entityType": "heritage",
+      "entityId": "southern-tang-er-ling",
+      "entityKey": "heritage:southern-tang-er-ling",
+      "label": "南唐二陵",
+      "polityIds": [
+        "southern_tang",
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "southern-tang-er-ling"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "song-history-nantang",
+            "southern-tang-er-ling-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:southern-tang-er-ling"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "li-jing",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:southern-tang-jiankang-city-site": {
       "entityType": "heritage",
       "entityId": "southern-tang-jiankang-city-site",
       "entityKey": "heritage:southern-tang-jiankang-city-site",
       "label": "南唐金陵城历史层",
       "polityIds": [
-        "southern_tang"
+        "southern_tang",
+        "wu_ten"
       ],
       "checks": [
         {
@@ -49466,6 +50409,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
+            "song-history-nantang",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -49478,8 +50422,13 @@
             "heritage-detail:southern-tang-jiankang-city-site"
           ],
           "relatedIds": [
+            "li-bian",
+            "li-jing",
             "li-yu",
+            "southern-tang-falls",
             "southern-tang-founded",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang",
             "southern_tang"
           ]
         },
@@ -55049,15 +55998,18 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-grandparent-li-yu-ninetyfourth",
+            "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-bian-participated-southern-tang",
             "claim:claim-li-bian-related-yang-xingmi",
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
+            "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "event-detail:southern-tang-founded",
             "person-polity:li-bian:southern_tang",
             "person-polity:li-bian:wu_ten"
           ],
           "relatedIds": [
+            "li-jing",
             "li-yu",
             "southern-tang-founded",
             "southern_tang",
@@ -55272,6 +56224,81 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:li-jing": {
+      "entityType": "person",
+      "entityId": "li-jing",
+      "entityKey": "person:li-jing",
+      "label": "李璟",
+      "polityIds": [
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-jing"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-bian-parent-li-jing",
+            "claim:claim-li-jing-child-li-bian",
+            "claim:claim-li-jing-parent-li-yu",
+            "claim:claim-li-jing-ruled-southern_tang",
+            "claim:claim-li-yu-child-li-jing",
+            "event-detail:southern-tang-cedes-huainan",
+            "event-detail:southern-tang-conquers-chu",
+            "event-detail:southern-tang-conquers-min",
+            "event-detail:southern-tang-li-jing-succeeds",
+            "event-detail:southern-tang-moves-nanchang",
+            "person-polity:li-jing:southern_tang"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "li-yu",
+            "southern-tang-cedes-huainan",
+            "southern-tang-conquers-chu",
+            "southern-tang-conquers-min",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "palace-museum-li-jing",
+            "song-history-nantang"
           ],
           "relatedIds": []
         }
@@ -55537,16 +56564,23 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-grandparent-li-yu-ninetyfourth",
+            "claim:claim-li-jing-parent-li-yu",
+            "claim:claim-li-yu-child-li-jing",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "claim:claim-li-yu-participated-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
+            "event-detail:southern-tang-falls",
+            "event-detail:southern-tang-moves-nanchang",
             "person-polity:li-yu:southern_tang"
           ],
           "relatedIds": [
             "li-bian",
+            "li-jing",
+            "southern-tang-falls",
             "southern-tang-founded",
+            "southern-tang-moves-nanchang",
             "southern_tang",
             "zhao-kuangyin"
           ]
@@ -64388,13 +65422,15 @@
           "evidenceIds": [
             "claim:claim-ma-yin-ruled-chu",
             "event-detail:ma-chu-founded",
+            "event-detail:southern-tang-conquers-chu",
             "heritage-detail:ma-chu-tan-zhou-city-site",
             "person:ma-yin"
           ],
           "relatedIds": [
             "ma-chu-founded",
             "ma-chu-tan-zhou-city-site",
-            "ma-yin"
+            "ma-yin",
+            "southern-tang-conquers-chu"
           ]
         },
         {
@@ -66308,12 +67344,14 @@
           "evidenceIds": [
             "claim:claim-wang-shenzhi-ruled-min",
             "event-detail:min-founded",
+            "event-detail:southern-tang-conquers-min",
             "heritage-detail:min-wang-mausoleum",
             "person:wang-shenzhi"
           ],
           "relatedIds": [
             "min-founded",
             "min-wang-mausoleum",
+            "southern-tang-conquers-min",
             "wang-shenzhi"
           ]
         },
@@ -67672,6 +68710,7 @@
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
+            "event-detail:southern-tang-falls",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:li-gang",
             "person:zhao-kuangyin",
@@ -67683,6 +68722,7 @@
             "northern-song-founded",
             "song-founded",
             "song-southward",
+            "southern-tang-falls",
             "zhao-kuangyin",
             "zong-ze"
           ]
@@ -68010,6 +69050,9 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "palace-museum-li-jing",
+            "song-history-nantang",
+            "southern-tang-imperial-lineage",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -68020,17 +69063,34 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
+            "claim:claim-li-jing-ruled-southern_tang",
             "claim:claim-li-yu-ruled-southern-tang",
+            "event-detail:southern-tang-cedes-huainan",
+            "event-detail:southern-tang-conquers-chu",
+            "event-detail:southern-tang-conquers-min",
+            "event-detail:southern-tang-falls",
             "event-detail:southern-tang-founded",
+            "event-detail:southern-tang-li-jing-succeeds",
+            "event-detail:southern-tang-moves-nanchang",
+            "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
             "person:li-bian",
+            "person:li-jing",
             "person:li-yu"
           ],
           "relatedIds": [
             "li-bian",
+            "li-jing",
             "li-yu",
+            "southern-tang-cedes-huainan",
+            "southern-tang-conquers-chu",
+            "southern-tang-conquers-min",
+            "southern-tang-er-ling",
+            "southern-tang-falls",
             "southern-tang-founded",
-            "southern-tang-jiankang-city-site"
+            "southern-tang-jiankang-city-site",
+            "southern-tang-li-jing-succeeds",
+            "southern-tang-moves-nanchang"
           ]
         },
         {
@@ -70029,6 +71089,7 @@
           "evidenceIds": [
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
+            "event-detail:southern-tang-cedes-huainan",
             "event-detail:zhou-later-founded",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:guo-wei"
@@ -70036,6 +71097,7 @@
           "relatedIds": [
             "guo-wei",
             "kaifeng-northern-song-city-site",
+            "southern-tang-cedes-huainan",
             "zhou-later-founded"
           ]
         },
@@ -70185,9 +71247,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 150,
+      "totalEntities": 156,
       "statusCounts": {
-        "covered": 718,
+        "covered": 748,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -70236,9 +71298,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 114,
+      "totalEntities": 115,
       "statusCounts": {
-        "covered": 570,
+        "covered": 575,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -70254,9 +71316,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 193,
+      "totalEntities": 194,
       "statusCounts": {
-        "covered": 919,
+        "covered": 924,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -70387,6 +71449,7 @@
       "polityName": "马楚",
       "entityKeys": [
         "event:ma-chu-founded",
+        "event:southern-tang-conquers-chu",
         "heritage:ma-chu-tan-zhou-city-site",
         "person:ma-yin",
         "polity:chu_ten"
@@ -71247,6 +72310,7 @@
       "polityName": "闽",
       "entityKeys": [
         "event:min-founded",
+        "event:southern-tang-conquers-min",
         "heritage:min-wang-mausoleum",
         "person:wang-shenzhi",
         "polity:min"
@@ -72122,6 +73186,7 @@
         "event:northern-song-founded",
         "event:song-founded",
         "event:song-southward",
+        "event:southern-tang-falls",
         "heritage:kaifeng-northern-song-city-site",
         "person:li-gang",
         "person:zhao-kuangyin",
@@ -72313,9 +73378,17 @@
       "polityId": "southern_tang",
       "polityName": "南唐",
       "entityKeys": [
+        "event:southern-tang-cedes-huainan",
+        "event:southern-tang-conquers-chu",
+        "event:southern-tang-conquers-min",
+        "event:southern-tang-falls",
         "event:southern-tang-founded",
+        "event:southern-tang-li-jing-succeeds",
+        "event:southern-tang-moves-nanchang",
+        "heritage:southern-tang-er-ling",
         "heritage:southern-tang-jiankang-city-site",
         "person:li-bian",
+        "person:li-jing",
         "person:li-yu",
         "polity:southern_tang"
       ],
@@ -72987,6 +74060,8 @@
       "entityKeys": [
         "event:southern-tang-founded",
         "event:yang-wu-founded",
+        "heritage:southern-tang-er-ling",
+        "heritage:southern-tang-jiankang-city-site",
         "heritage:yang-wu-yangzhou-city-site",
         "person:li-bian",
         "person:yang-xingmi",
@@ -73487,6 +74562,7 @@
       "polityId": "zhou_later",
       "polityName": "后周",
       "entityKeys": [
+        "event:southern-tang-cedes-huainan",
         "event:zhou-later-founded",
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-northern-song-city-site",
@@ -73969,7 +75045,9 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:ma-chu-founded",
+        "event:southern-tang-conquers-chu",
         "heritage:ma-chu-tan-zhou-city-site",
+        "person:li-jing",
         "person:ma-yin"
       ],
       "gaps": [],
@@ -74213,9 +75291,11 @@
         "event:longwu-fuzhou-founded",
         "event:min-founded",
         "event:southern-ming-founded",
+        "event:southern-tang-conquers-min",
         "heritage:min-wang-mausoleum",
         "heritage:nanming-fuzhou-xinggong-site",
         "person:huang-daozhou",
+        "person:li-jing",
         "person:wang-shenzhi",
         "person:zheng-zhi-long",
         "person:zhu-yujian"
@@ -74614,7 +75694,7 @@
     "jiankang": {
       "placeId": "jiankang",
       "cityName": "南京市",
-      "capitalRecordCount": 7,
+      "capitalRecordCount": 9,
       "entityKeys": [
         "event:eastern-jin",
         "event:jin-unification",
@@ -74624,16 +75704,23 @@
         "event:southern-chen-founded",
         "event:southern-liang-founded",
         "event:southern-qi-founded",
+        "event:southern-tang-cedes-huainan",
+        "event:southern-tang-falls",
         "event:southern-tang-founded",
+        "event:southern-tang-li-jing-succeeds",
+        "event:southern-tang-moves-nanchang",
         "event:sui-unification",
         "event:three-kingdoms",
         "event:wu-three-founded",
         "heritage:jiankang-six-dynasties-city-site",
         "heritage:jiankang-taicheng-site",
         "heritage:southern-dynasties-stone-carvings",
+        "heritage:southern-tang-er-ling",
         "heritage:southern-tang-jiankang-city-site",
         "person:chen-xu",
         "person:li-bian",
+        "person:li-jing",
+        "person:li-yu",
         "person:liu-yu",
         "person:sima-rui",
         "person:sun-quan",
@@ -75288,6 +76375,25 @@
         "relationship-missing": 0
       },
       "summary": "明斯特市：学习闭环已覆盖。"
+    },
+    "nanchang": {
+      "placeId": "nanchang",
+      "cityName": "南昌市",
+      "capitalRecordCount": 1,
+      "entityKeys": [
+        "event:southern-tang-moves-nanchang",
+        "person:li-jing",
+        "person:li-yu"
+      ],
+      "gaps": [],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "南昌市：学习闭环已覆盖。"
     },
     "osnabruck": {
       "placeId": "osnabruck",
@@ -76122,7 +77228,7 @@
     "yingtian": {
       "placeId": "yingtian",
       "cityName": "南京市",
-      "capitalRecordCount": 6,
+      "capitalRecordCount": 5,
       "entityKeys": [
         "event:hongguang-nanjing-founded",
         "event:ming-founded",

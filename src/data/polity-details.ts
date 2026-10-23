@@ -412,9 +412,9 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'southern_tang', perspectiveSummary: '南唐承接杨吴的江淮—江南政权基础，由李昪受禅建立，以金陵为都；其早期扩展和后期与北宋的战争应分阶段观察。',
     foundationProcess: ['李昪在杨吴权力体系中取得实际掌权地位。', '937年受吴禅建立齐，939年改国号为唐，南唐形成过程由此完成。', '金陵承接六朝城市传统并成为南唐政治中心。'],
     turningPoints: [turn(937, '南唐政权建立', '李昪受吴禅建立齐，南唐进入形成阶段。', 'southern-tang-founded'), turn(939, '改国号为唐', '李昪将国号改为唐，后世称南唐。'), turn(975, '南唐覆亡', '北宋攻取金陵，南唐结束。')],
-    principalFigureIds: ['li-bian', 'li-yu'], capitalPhases: [capital('yingtian', 937, 975, 'primary', 'formal', '金陵／江宁，数据映射至今南京市。')],
-    heritageIds: ['southern-tang-jiankang-city-site'], eventIds: ['southern-tang-founded'], claimIds: ['claim-li-bian-participated-southern-tang'], sourceIds: modernSources,
-    uncertaintyNote: '937年受禅建齐与939年改国号为唐是两个节点；南唐金陵历史层叠压于六朝及后世城市，不能把后世建筑直接标作南唐原构。',
+    principalFigureIds: ['li-bian', 'li-jing', 'li-yu'], capitalPhases: [capital('jiankang', 937, 960, 'primary', 'formal', '金陵／建康；今南京市。'), capital('nanchang', 961, 961, 'primary', 'actual', '李璟末期迁居豫章，今南昌市；短时段政治中心。'), capital('jiankang', 961, 975, 'primary', 'actual', '李煜即位后居建康，今南京市。')],
+    heritageIds: ['southern-tang-jiankang-city-site', 'southern-tang-er-ling'], eventIds: ['southern-tang-founded', 'southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang', 'southern-tang-falls'], claimIds: ['claim-li-bian-participated-southern-tang', 'claim-li-bian-ruled-southern-tang-sixtieth', 'claim-li-jing-ruled-southern-tang', 'claim-li-yu-ruled-southern-tang', 'claim-li-bian-parent-li-jing', 'claim-li-jing-parent-li-yu', 'claim-li-bian-grandparent-li-yu-ninetyfourth'], sourceIds: [...modernSources, 'song-history-nantang', 'palace-museum-li-jing', 'southern-tang-imperial-lineage'],
+    uncertaintyNote: '937年受禅建齐与939年改国号为唐是两个节点；961年豫章迁居是短时段中心转换，不能把南唐全期压缩为单一南京或南昌首都；南唐城市与二陵遗产均需与后世叠压层分开。',
   }),
   detail({
     polityId: 'wuyue', perspectiveSummary: '吴越由钱镠在两浙军政竞争中建立，以杭州为政治中心；其名义受封与实际自治并存，区域治理是重要历史线索。',
@@ -429,7 +429,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['王审知兄弟控制福州及福建主要军政资源。', '909年王审知受封闽王，闽进入十国分期。', '福州连接福建山海交通和海上贸易，实际控制须按地区和阶段核验。'],
     turningPoints: [turn(909, '闽政权形成', '王审知受封闽王，福建地方政权进入闽国阶段。', 'min-founded'), turn(925, '王审知去世', '闽政权进入继承与权力重组阶段。'), turn(945, '闽亡', '南唐攻灭闽，福建政权格局改变。')],
     principalFigureIds: ['wang-shenzhi'], capitalPhases: [capital('fuzhou', 909, 945, 'primary', 'formal', '闽政治中心福州，今福建省福州市。')],
-    heritageIds: ['min-wang-mausoleum'], eventIds: ['min-founded'], claimIds: ['claim-wang-shenzhi-ruled-min'], sourceIds: modernSources,
+    heritageIds: ['min-wang-mausoleum'], eventIds: ['min-founded', 'southern-tang-conquers-min'], claimIds: ['claim-wang-shenzhi-ruled-min'], sourceIds: modernSources,
     uncertaintyNote: '王审知与兄长共同经营福建，不能把909年受封简化为单一人物独立建国；闽王陵是王审知相关遗存，不代表闽全期建筑保存。',
   }),
   detail({
@@ -445,7 +445,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['马殷在潭州及湖湘军政竞争中扩张势力。', '907年受封楚王，马楚进入十国分期。', '潭州连接湘江水运和湖湘治理，受封范围不等于后期直接控制边界。'],
     turningPoints: [turn(907, '马楚形成', '马殷受封楚王，湖湘地方政权进入马楚阶段。', 'ma-chu-founded'), turn(927, '正式称国王', '马殷完成称王阶段，制度地位发生变化。'), turn(951, '马楚覆亡', '南唐攻取潭州，马楚结束。')],
     principalFigureIds: ['ma-yin'], capitalPhases: [capital('changsha', 907, 951, 'primary', 'formal', '潭州／长沙，今湖南省长沙市。')],
-    heritageIds: ['ma-chu-tan-zhou-city-site'], eventIds: ['ma-chu-founded'], claimIds: ['claim-ma-yin-ruled-chu'], sourceIds: modernSources,
+    heritageIds: ['ma-chu-tan-zhou-city-site'], eventIds: ['ma-chu-founded', 'southern-tang-conquers-chu'], claimIds: ['claim-ma-yin-ruled-chu'], sourceIds: modernSources,
     uncertaintyNote: '907年受封与927年正式称王是不同节点；马楚潭州城址历史层依托现代城市考古理解，不能把后世建筑直接标作马楚原构。',
   }),
   detail({
