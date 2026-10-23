@@ -94,11 +94,11 @@ describe('event details ninety-second round boundary audit', () => {
 
     expect(participantGapIds).toEqual([
       'changan-former-qin',
-      'changan-han-capital',
       'daming-palace-built',
       'white-horse-temple-founded',
     ]);
-    expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds).toEqual([]);
+    expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
+      .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');
     expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(24);
   });

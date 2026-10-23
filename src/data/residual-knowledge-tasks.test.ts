@@ -55,16 +55,16 @@ describe('2026-10-23 residual knowledge task audit', () => {
     });
   });
 
-  it('closes only the two supported event tasks and records the five remaining boundaries', () => {
+  it('closes only the three supported event tasks and records the five remaining boundaries', () => {
     const report = auditKnowledgeCoverage();
     const taskKeys = new Set(report.tasks.map((task) => `${task.taskKind}:${task.entityId}`));
 
     expect(taskKeys.has('event-participant-missing:changan-gengshi')).toBe(false);
+    expect(taskKeys.has('event-participant-missing:changan-han-capital')).toBe(false);
     expect(taskKeys.has('event-participant-missing:tang-changan-end')).toBe(false);
 
     expect([...taskKeys].sort()).toEqual([
       'event-participant-missing:changan-former-qin',
-      'event-participant-missing:changan-han-capital',
       'event-participant-missing:daming-palace-built',
       'event-participant-missing:white-horse-temple-founded',
       'person-person-relationship-missing:tufa-wugu',

@@ -271,7 +271,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "capital-history-reference",
-            "zizhi-tongjian"
+            "zizhi-tongjian",
+            "zizhi-tongjian-vol11-han-capital"
           ],
           "relatedIds": []
         },
@@ -284,7 +285,9 @@
           ],
           "relatedIds": [
             "han-imperial-accession",
-            "han_western"
+            "han_western",
+            "liu-bang",
+            "xiao-he"
           ]
         },
         {
@@ -18462,12 +18465,14 @@
             "claim:claim-liu-bang-participated-han-imperial-accession",
             "claim:claim-modu-enemy-liu-bang",
             "claim:claim-xiao-he-served-liu-bang",
+            "event-detail:changan-han-capital",
             "event-detail:changle-palace-built",
             "event-detail:chu-han-contention",
             "event-detail:han-imperial-accession",
             "person-polity:liu-bang:han_western"
           ],
           "relatedIds": [
+            "changan-han-capital",
             "changle-palace-built",
             "chu-han-contention",
             "han-imperial-accession",
@@ -23488,10 +23493,12 @@
             "claim:claim-xiao-he-ally-han-xin",
             "claim:claim-xiao-he-participated-chu-han-contention-fortyfourth",
             "claim:claim-xiao-he-served-liu-bang",
+            "event-detail:changan-han-capital",
             "event-detail:chu-han-contention",
             "person-polity:xiao-he:han_western"
           ],
           "relatedIds": [
+            "changan-han-capital",
             "chu-han-contention",
             "han-xin",
             "han_western",
@@ -33048,7 +33055,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "capital-history-reference",
-            "zizhi-tongjian"
+            "zizhi-tongjian",
+            "zizhi-tongjian-vol11-han-capital"
           ],
           "relatedIds": []
         },
@@ -33061,7 +33069,9 @@
           ],
           "relatedIds": [
             "han-imperial-accession",
-            "han_western"
+            "han_western",
+            "liu-bang",
+            "xiao-he"
           ]
         },
         {
@@ -51239,12 +51249,14 @@
             "claim:claim-liu-bang-participated-han-imperial-accession",
             "claim:claim-modu-enemy-liu-bang",
             "claim:claim-xiao-he-served-liu-bang",
+            "event-detail:changan-han-capital",
             "event-detail:changle-palace-built",
             "event-detail:chu-han-contention",
             "event-detail:han-imperial-accession",
             "person-polity:liu-bang:han_western"
           ],
           "relatedIds": [
+            "changan-han-capital",
             "changle-palace-built",
             "chu-han-contention",
             "han-imperial-accession",
@@ -56265,10 +56277,12 @@
             "claim:claim-xiao-he-ally-han-xin",
             "claim:claim-xiao-he-participated-chu-han-contention-fortyfourth",
             "claim:claim-xiao-he-served-liu-bang",
+            "event-detail:changan-han-capital",
             "event-detail:chu-han-contention",
             "person-polity:xiao-he:han_western"
           ],
           "relatedIds": [
+            "changan-han-capital",
             "chu-han-contention",
             "han-xin",
             "han_western",
@@ -65314,11 +65328,11 @@
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
-        "event-participant-missing": 1,
+        "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西汉：有 1 项学习闭环任务，待补事件参与人物 1 项。"
+      "summary": "西汉：有 2 项待核验缺口。"
     },
     "jin_eastern": {
       "polityId": "jin_eastern",
@@ -67703,26 +67717,6 @@
     {
       "taskKind": "event-participant-missing",
       "perspective": "polity",
-      "subjectId": "changan-han-capital",
-      "subjectKey": "event:changan-han-capital",
-      "subjectLabel": "汉定都长安",
-      "entityType": "event",
-      "entityId": "changan-han-capital",
-      "polityIds": [
-        "han_western"
-      ],
-      "placeIds": [
-        "changan"
-      ],
-      "evidenceIds": [
-        "event-detail:changan-han-capital"
-      ],
-      "relatedIds": [],
-      "note": "事件详情没有参与人物，需补充事件中的人物及其角色。"
-    },
-    {
-      "taskKind": "event-participant-missing",
-      "perspective": "polity",
       "subjectId": "daming-palace-built",
       "subjectKey": "event:daming-palace-built",
       "subjectLabel": "大明宫营建",
@@ -67968,6 +67962,7 @@
         "person:liu-xiu",
         "person:liu-xun",
         "person:wang-mang",
+        "person:xiao-he",
         "person:xuan-zang",
         "person:yang-jian",
         "person:yao-chang",
@@ -68087,11 +68082,11 @@
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
-        "event-participant-missing": 3,
+        "event-participant-missing": 2,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 3 项学习闭环任务，待补事件参与人物 3 项。"
+      "summary": "西安市：有 2 项学习闭环任务，待补事件参与人物 2 项。"
     },
     "changsha": {
       "placeId": "changsha",

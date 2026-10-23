@@ -16,7 +16,7 @@ export const changanPolityIds = [
 ];
 
 export const changanEvents: HistoricalEvent[] = [
-  { id: 'changan-han-capital', year: -202, title: '汉定都长安', summary: '汉在楚汉战争后以长安为帝国政治中心。', placeId: changanCityId, sourceIds: ['zizhi-tongjian'], category: '政权建立／迁都', verification: 'partial' },
+  { id: 'changan-han-capital', year: -200, title: '汉定都长安', summary: '高帝七年刘邦见萧何治宫室于长安后迁都长安，长安首都阶段由此获得直接编年依据。', placeId: changanCityId, sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol11-han-capital'], category: '政权建立／迁都', verification: 'partial' },
   { id: 'changan-xin-founded', year: 9, title: '新朝建立', summary: '王莽代汉建立新朝，长安继续作为政治中心。', placeId: changanCityId, sourceIds: ['zizhi-tongjian'], category: '政权建立／更替', verification: 'partial' },
   { id: 'changan-gengshi', year: 25, title: '更始政权失去长安', summary: '更始政权在长安的统治结束，关中进入新的争夺。', placeId: changanCityId, sourceIds: ['zizhi-tongjian'], category: '战争／更替', verification: 'partial' },
   { id: 'changan-former-zhao', year: 304, title: '前赵经营长安', summary: '十六国时期前赵以关中和长安为重要政治中心。', placeId: changanCityId, sourceIds: ['zizhi-tongjian'], category: '政权建立／迁都', verification: 'partial' },

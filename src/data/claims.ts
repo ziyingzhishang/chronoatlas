@@ -1,7 +1,7 @@
 import type { HistoricalClaim } from '../domain/types';
 
 export const claims: HistoricalClaim[] = [
-  { id: 'claim-han-changan-capital', subjectId: 'han_western', predicate: 'capital-of', objectId: 'changan', validFrom: -201, validTo: 9, datePrecision: 'range', perspective: 'polity', evidenceType: 'cross-checked', confidence: 'high', sourceIds: ['zizhi-tongjian'] },
+  { id: 'claim-han-changan-capital', subjectId: 'han_western', predicate: 'capital-of', objectId: 'changan', validFrom: -200, validTo: 9, datePrecision: 'range', perspective: 'polity', evidenceType: 'cross-checked', confidence: 'high', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol11-han-capital'] },
   { id: 'claim-xin-changan-capital', subjectId: 'xin', predicate: 'capital-of', objectId: 'changan', validFrom: 9, validTo: 23, datePrecision: 'range', perspective: 'polity', evidenceType: 'cross-checked', confidence: 'high', sourceIds: ['zizhi-tongjian'] },
   { id: 'claim-former-zhao-changan-capital', subjectId: 'former_zhao', predicate: 'capital-of', objectId: 'changan', validFrom: 304, validTo: 329, datePrecision: 'range', perspective: 'polity', evidenceType: 'cross-checked', confidence: 'medium', sourceIds: ['zizhi-tongjian'] },
   { id: 'claim-former-qin-changan-capital', subjectId: 'former_qin', predicate: 'capital-of', objectId: 'changan', validFrom: 351, validTo: 394, datePrecision: 'range', perspective: 'polity', evidenceType: 'cross-checked', confidence: 'medium', sourceIds: ['zizhi-tongjian'] },

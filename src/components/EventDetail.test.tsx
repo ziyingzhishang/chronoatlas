@@ -51,13 +51,13 @@ test('renders confirmed and unknown event time review states separately', () => 
   expect(screen.getByText(/暂不允许时间轴定位/)).toBeInTheDocument();
 });
 
-test('distinguishes a missing participant record from a completed event detail', () => {
+test('renders the verified participant record for the Han capital event', () => {
   const event = events.find((item) => item.id === 'changan-han-capital')!;
   render(<LocaleProvider><EventDetail event={event} onNavigate={vi.fn()} /></LocaleProvider>);
 
-  expect(screen.getByText(/当前没有可核验参与人物/)).toBeInTheDocument();
-  expect(screen.getByText(/该缺口已记录在知识覆盖报告中/)).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: '打开知识覆盖报告' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
+  expect(screen.getByText('刘邦')).toBeInTheDocument();
+  expect(screen.getByText('萧何')).toBeInTheDocument();
+  expect(screen.queryByText(/当前没有可核验参与人物/)).not.toBeInTheDocument();
 });
 
 test('resolves and navigates a related city-history event by its catalog title', async () => {

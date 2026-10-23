@@ -1151,7 +1151,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》唐纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于玄武门冲突、唐初继承与长安宫城城市史关联。' }],
   },
   {
-    id: 'changan-han-capital', year: -202, title: '汉定都长安', summary: '汉在楚汉战争后以长安为帝国政治中心。', placeId: 'changan', sourceIds: ['zizhi-tongjian'],
+    id: 'changan-han-capital', year: -200, title: '汉定都长安', summary: '高帝七年刘邦见萧何治宫室于长安后迁都长安，长安首都阶段由此获得直接编年依据。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol11-han-capital'],
     datePrecision: 'year', region: 'china', category: '城市史／迁都', verification: 'partial',
     background: '楚汉战争结束后，汉需要在关中承接帝国行政与军事资源。',
     process: '前202年汉以长安为帝国政治中心，长安进入西汉首都阶段。',

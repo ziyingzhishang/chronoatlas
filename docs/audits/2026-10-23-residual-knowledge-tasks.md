@@ -5,7 +5,7 @@
 本轮针对当前 `KnowledgeCoverageReport` 的 7 项真实任务复核：
 
 - 人物关系：`tufa-wugu`。
-- 事件参与人物：`changan-han-capital`、`changan-gengshi`、`white-horse-temple-founded`、`changan-former-qin`、`daming-palace-built`、`tang-changan-end`。
+- 事件参与人物：`changan-gengshi`、`white-horse-temple-founded`、`changan-former-qin`、`daming-palace-built`、`tang-changan-end`；`changan-han-capital` 已在本轮闭合。
 
 审计只使用当前人物、事件详情、事件来源和年代字段。没有修改组件或 `knowledge-coverage.ts`。
 
@@ -23,7 +23,7 @@
 | 任务 | 边界结论 |
 | --- | --- |
 | `person-person-relationship-missing:tufa-wugu` | 现有目录只有秃发乌孤的人物、南凉政权关系和政权后续继承概述，没有第二个已建模人物端点及直接亲属、君臣、联盟或对立证据；不创建虚构端点，也不把 `founded` / `ruled` 改写成人物—人物关系。 |
-| `event-participant-missing:changan-han-capital` | 刘邦、萧何等人物与前202年在年代上相容，但当前事件详情没有直接参与字段或直接点名其参与该定都事件；西汉身份、长安关联和关键事件导航不足以回填参与者。 |
+| `event-participant-missing:changan-han-capital` | 已闭合：事件主年份校正为前200年，详情补入刘邦直接参与、萧何情境参与，并记录《资治通鉴》卷十一的角色级来源说明。 |
 | `event-participant-missing:white-horse-temple-founded` | 现有详情与官方来源支持68年创建传统、洛阳地点和历代重修边界，但没有已建模人物被来源和详情共同明确为该创建事件参与者；不从东汉皇帝或佛教传播背景推断。 |
 | `event-participant-missing:changan-former-qin` | 前秦据长安事件为351年；苻坚人物任职从357年开始，年代不闭合。不能把前秦政权身份或后续前秦扩张回填到351年。 |
 | `event-participant-missing:daming-palace-built` | 李治与武则天等人物的时间或政权背景可关联，但现有详情只支持营建城市节点，未直接证明其参与634年启动工程；唐代宫廷使用者不等于营建参与者。 |

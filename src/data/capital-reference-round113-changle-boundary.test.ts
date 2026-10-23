@@ -13,7 +13,7 @@ describe('round 113 Changle Palace boundary', () => {
 
     expect(heritage?.associatedPolities).toEqual(['han_western', 'xin']);
     expect(heritage?.associatedEvents).toContain('han-imperial-accession');
-    expect(capital).toMatchObject({ validFrom: -201, placeId: 'changan', polityId: 'han_western' });
+    expect(capital).toMatchObject({ validFrom: -200, placeId: 'changan', polityId: 'han_western' });
     expect(cityConstruction?.eventId).toBe('han-changan-new-city');
     expect(cityConstruction?.locationIds).toContain('changan');
     expect(cityConstruction?.polityIds).toEqual(['han_western']);

@@ -2483,15 +2483,21 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'changan-han-capital',
-    participants: [],
+    participants: [
+      { personId: 'liu-bang', role: '汉高祖，采纳关中建都方向并于前200年自栎阳徙都长安', relationType: 'direct', note: '《资治通鉴》卷十一明确记载刘邦见萧何治宫室于长安后“乃迁都长安”；本条对应正式迁都节点，不把前202年即位和后续宫城营建合并。' },
+      { personId: 'xiao-he', role: '丞相，负责长安宫室营建与新都行政设施承接', relationType: 'contextual', note: '《资治通鉴》卷十一记“萧何治宫室于长安”；该角色表达宫室与行政承接，不等同于迁都决策者。' },
+    ],
     polityIds: ['han_western'],
     causes: ['楚汉战争结束后，汉需要在关中承接帝国行政、粮运与军事资源。'],
     consequences: ['长安成为西汉长期首都。', '秦都与汉都相邻承接的关中城市连续性进一步明确。'],
-    phases: [{ label: '汉定都长安', startYear: -202, endYear: -202, summary: '汉在楚汉战争后以长安为帝国政治中心。' }],
+    phases: [
+      { label: '汉初帝国秩序形成', startYear: -202, endYear: -202, summary: '刘邦即皇帝位，汉开始重建帝国政治秩序；此时西都洛阳，不能直接等同于迁都长安。' },
+      { label: '迁都长安', startYear: -200, endYear: -200, summary: '高帝七年刘邦见萧何治宫室于长安后迁都长安，长安首都阶段由此获得直接编年依据。' },
+    ],
     locationIds: ['changan'],
     relatedEventIds: ['han-imperial-accession'],
-    sourceIds: ['zizhi-tongjian', 'capital-history-reference'],
-    uncertaintyNote: '前202年用于标记汉初长安首都阶段；首都地位不等于汉在同年已稳定控制全部地区，具体迁都过程与城市营建分层记录。',
+    sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol11-han-capital', 'capital-history-reference'],
+    uncertaintyNote: '前202年用于标记汉初帝国秩序形成与长安首都阶段的城市史节点；《资治通鉴》卷十一明确记载前200年刘邦见萧何治宫室于长安后“乃迁都长安”，因此不能把即位、迁都和长安新城营建压缩为同一年。',
   },
   {
     eventId: 'changan-xin-founded',

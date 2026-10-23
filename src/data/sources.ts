@@ -38,6 +38,14 @@ export const sourceNotes: SourceNote[] = [
     note: '前403—959年的阅读专题；可在完整历史时间轴上一键聚焦。此书不是疆域坐标的来源。',
   },
   {
+    id: 'zizhi-tongjian-vol11-han-capital',
+    title: '《资治通鉴》卷十一·高帝七年迁都长安',
+    authorOrInstitution: '司马光等',
+    urlOrCitation: 'https://zh.wikisource.org/wiki/資治通鑑/卷011',
+    scope: '高帝七年（前200）见萧何治宫室于长安、刘邦乃迁都长安的编年记录',
+    note: '用于区分前202年刘邦即位与前200年迁都长安；刘邦的迁都决定与萧何的宫室营建角色均按该段直接记载表达。',
+  },
+  {
     id: 'zizhi-tongjian-vol1-three-jin',
     title: '《资治通鉴》卷一·周威烈王二十三年三晋册命',
     authorOrInstitution: '司马光等',

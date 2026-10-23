@@ -72,6 +72,9 @@ describe('round 104 independent event-participation audit', () => {
     expect(eventDetails.find((detail) => detail.eventId === 'daming-palace-built')?.participants)
       .toEqual([]);
     expect(eventDetails.find((detail) => detail.eventId === 'changan-han-capital')?.participants)
-      .toEqual([]);
+      .toEqual(expect.arrayContaining([
+        expect.objectContaining({ personId: 'liu-bang', relationType: 'direct' }),
+        expect.objectContaining({ personId: 'xiao-he', relationType: 'contextual' }),
+      ]));
   });
 });

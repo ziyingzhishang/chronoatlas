@@ -98,7 +98,7 @@ const explicit: Record<string, Seed[]> = {
   wu_three:[['jiankang','建业／建康',222,280,'primary','formal','high','孙吴正式都城建业，后改名建邺；今南京市，数据统一映射至建康地点。']],
   song_southern:[['jiankang','建康',420,479,'primary','formal','high','刘宋正式都城建康，今江苏省南京市。']],
   zhou_northern:[['changan','长安',557,581,'primary','formal','high','北周正式都城长安，今陕西省西安市。']],
-  han_western:[['luoyang','洛阳',-206,-202,'primary','formal','medium','汉初都洛阳阶段。'],['changan','长安',-201,9]],
+  han_western:[['luoyang','洛阳',-206,-202,'primary','formal','medium','汉初都洛阳阶段。'],['changan','长安',-200,9,'primary','formal','high','高帝七年迁都长安；前202年为汉初帝国秩序形成节点，不与正式迁都混同。']],
   sui:[['changan','大兴／长安',581,604],['luoyang','东都洛阳',605,618,'primary','formal','high']],
   tang:[['changan','长安',618,907],['luoyang','东都洛阳',618,907,'secondary','formal','high']],
   former_zhao:[['changan','长安',304,329]], later_zhao:[['xiangguo','襄国',319,334],['ye','邺',335,351]], former_yan:[['longcheng','龙城',337,341],['ji','蓟',342,350,'de_facto','actual','medium'],['ye','邺',351,370]], later_yan:[['ye','邺',384,397],['longcheng','龙城',398,407]],
