@@ -16,6 +16,8 @@ const targetIds = [
   'western_liao', 'dali',
 ] as const;
 
+const intentionalHeritageBoundary = new Set(['southern_liang']);
+
 describe('thirty-sixth-batch polity details', () => {
   it('provides complete, resolvable and evidence-bearing detail records', () => {
     const polityIds = new Set(polities.map((item) => item.id));
@@ -36,7 +38,11 @@ describe('thirty-sixth-batch polity details', () => {
       expect(detail!.turningPoints.length, `${polityId} turning points`).toBeGreaterThanOrEqual(2);
       expect(detail!.principalFigureIds.length, `${polityId} figures`).toBeGreaterThanOrEqual(0);
       expect(detail!.capitalPhases.length, `${polityId} capitals`).toBeGreaterThan(0);
-      expect(detail!.heritageIds.length, `${polityId} heritage`).toBeGreaterThan(0);
+      if (intentionalHeritageBoundary.has(polityId)) {
+        expect(detail!.heritageIds, `${polityId} heritage boundary`).toEqual([]);
+      } else {
+        expect(detail!.heritageIds.length, `${polityId} heritage`).toBeGreaterThan(0);
+      }
       expect(detail!.eventIds.length, `${polityId} events`).toBeGreaterThan(0);
       expect(detail!.sourceIds.length, `${polityId} sources`).toBeGreaterThan(0);
       expect(detail!.uncertaintyNote.trim(), `${polityId} uncertainty`).toBeTruthy();
