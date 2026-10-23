@@ -22,6 +22,8 @@ import { StudyRelationsPanel } from './StudyRelationsPanel';
 import type { DetailEntity } from '../domain/detail-entity';
 import { getPolityDetail, polityDetails } from '../data/polity-details';
 import { PolityDetail } from './PolityDetail';
+import { auditKnowledgeCoverage } from '../data/knowledge-coverage';
+import { KnowledgeCoveragePanel } from './KnowledgeCoveragePanel';
 
 interface InfoPanelProps {
   state: HistoricalState;
@@ -45,6 +47,7 @@ const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `$
 const polityStudyEvents = [...historicalEvents, ...changanEvents].filter((event, index, all) => all.findIndex((candidate) => candidate.id === event.id) === index);
 const cityStudyEvents = polityStudyEvents;
 const uniquePolities = (items: typeof polities) => [...new Map(items.map((polity) => [polity.id, polity])).values()];
+const knowledgeCoverageReport = auditKnowledgeCoverage();
 
 export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
@@ -87,6 +90,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           )}
           {!state.activePolities.length && <p className="detail-note">{t("史前时期展示文化分期，不虚构统一政权或明确国界。")}</p>}
           <p className="uncertainty-note">{t("每年按来源区间查询。最大参考用虚线区分，不等于该年的实际控制范围。世界目录可在地图下方搜索并定位。")}</p>
+          <KnowledgeCoveragePanel report={knowledgeCoverageReport} />
           <a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t("逐政权覆盖、缺年与核验备注 ↗")}</a>
         </>
       )}
