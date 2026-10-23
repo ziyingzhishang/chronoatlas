@@ -182,6 +182,7 @@ export interface Place {
   id: string;
   historicalName: string;
   aliases: string[];
+  relatedPlaceIds?: string[];
   modernName?: string;
   modernAdministrativeUnit?: string;
   longitude: number;

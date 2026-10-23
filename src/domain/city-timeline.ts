@@ -112,6 +112,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     .map((term) => [`${term.polityId}:${term.placeId}:${term.validFrom}:${term.validTo}:${term.role}:${term.status}`, term])).values()];
   const polityIds = new Set(capitalTerms.map((term) => term.polityId));
   const cityPolities = uniqueById((data.polities ?? []).filter((polity) => polityIds.has(polity.id) || polity.capitalPlaceId === cityId));
+  const cityPlaceIds = new Set([cityId, ...(city.relatedPlaceIds ?? [])]);
 
   cityPolities.forEach((polity) => {
     const terms = capitalTerms.filter((term) => term.polityId === polity.id);
@@ -138,7 +139,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     });
   });
 
-  uniqueById((data.events ?? []).filter((event) => event.placeId === cityId)).forEach((event) => nodes.push({
+  uniqueById((data.events ?? []).filter((event) => event.placeId !== undefined && cityPlaceIds.has(event.placeId))).forEach((event) => nodes.push({
     id: `event:${event.id}`,
     year: event.year,
     label: event.title,
@@ -147,7 +148,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     evidence: { relationCount: 0, sourceStatus: 'unresolved', sourceCount: 0, datePrecisions: [], uncertaintyStatus: 'not-recorded', uncertaintyNotes: [] },
   }));
 
-  uniqueById((data.heritage ?? []).filter((asset) => asset.placeId === cityId)).forEach((asset) => nodes.push({
+  uniqueById((data.heritage ?? []).filter((asset) => cityPlaceIds.has(asset.placeId))).forEach((asset) => nodes.push({
     id: `heritage:${asset.id}`,
     year: asset.constructionFrom,
     label: asset.name,

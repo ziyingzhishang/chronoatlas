@@ -192,16 +192,17 @@ export function buildCityStudyView(
 ): CityStudyView | undefined {
   const subject = data.places.find((place) => place.id === cityId);
   if (!subject) return undefined;
+  const cityPlaceIds = new Set([cityId, ...(subject.relatedPlaceIds ?? [])]);
   // 城市视角需要保留截至该年已经发生过的全部政权连接；否则在650年
   // 只会看到唐，而看不到已经结束的隋等历史层。
   const capitalTerms = [...new Map(data.capitalTerms
-    .filter((term) => term.placeId === cityId && term.validFrom <= year)
+    .filter((term) => cityPlaceIds.has(term.placeId) && term.validFrom <= year)
     .map((term) => [`${term.polityId}:${term.placeId}:${term.validFrom}:${term.validTo}:${term.role}:${term.status}`, term])).values()];
   const polityIds = new Set(capitalTerms.map((term) => term.polityId));
-  data.polities.filter((polity) => polity.capitalPlaceId === cityId).forEach((polity) => polityIds.add(polity.id));
+  data.polities.filter((polity) => polity.capitalPlaceId !== undefined && cityPlaceIds.has(polity.capitalPlaceId)).forEach((polity) => polityIds.add(polity.id));
   const polities = uniqueById(data.polities.filter((polity) => polityIds.has(polity.id)));
-  const events = uniqueById(data.events.filter((event) => event.placeId === cityId && historicalUntil(event.year, year)));
-  const heritage = uniqueById(data.heritage.filter((asset) => asset.placeId === cityId && historicalUntil(asset.constructionFrom, year)));
+  const events = uniqueById(data.events.filter((event) => event.placeId !== undefined && cityPlaceIds.has(event.placeId) && historicalUntil(event.year, year)));
+  const heritage = uniqueById(data.heritage.filter((asset) => cityPlaceIds.has(asset.placeId) && historicalUntil(asset.constructionFrom, year)));
   const people = uniqueById(data.people.filter((person) => person.polityIds?.some((polityId) => polityIds.has(polityId))));
   const entities: CityStudyEntity[] = [
     { type: 'place', id: cityId },
