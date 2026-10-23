@@ -284,6 +284,7 @@ describe('knowledge coverage audit', () => {
 
     expect(report.byCity['capital-only-place']).toEqual(expect.objectContaining({
       cityName: '今首都候选城',
+      capitalRecordCount: 1,
       entityKeys: [],
       taskCounts: expect.objectContaining({
         'event-location-missing': 0,

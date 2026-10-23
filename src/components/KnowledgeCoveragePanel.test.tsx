@@ -112,6 +112,45 @@ test('shows the selected city coverage summary and reuses the entity drawer call
   expect(onOpenEntity).toHaveBeenCalledWith({ type: scopedTasks[0].entityType, id: scopedTasks[0].entityId });
 });
 
+test('shows capital-only city coverage instead of implying the city is complete', () => {
+  const report = auditKnowledgeCoverage({
+    polities: [],
+    people: [],
+    events: [],
+    eventDetails: [],
+    heritageAssets: [],
+    heritageDetails: [],
+    personDetails: [],
+    claims: [],
+    sourceNotes: [],
+    places: [{
+      id: 'capital-only-place',
+      historicalName: '首都候选城',
+      aliases: [],
+      modernName: '今首都候选城',
+      longitude: 0,
+      latitude: 0,
+      sourceIds: [],
+    }],
+    capitalTerms: [{
+      polityId: 'unknown-polity',
+      placeId: 'capital-only-place',
+      validFrom: 1,
+      validTo: 10,
+      role: 'primary',
+      status: 'formal',
+      confidence: 'high',
+      sourceIds: [],
+    }],
+  });
+
+  render(<LocaleProvider><KnowledgeCoveragePanel report={report} context={{ type: 'city', id: 'capital-only-place' }} /></LocaleProvider>);
+
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent('首都／政治中心时段');
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent('尚无关联知识节点');
+  expect(screen.getByTestId('knowledge-coverage-panel')).not.toHaveTextContent('学习闭环已覆盖');
+});
+
 test('falls back to the global report when a contextual index is unavailable', () => {
   const report = auditKnowledgeCoverage();
 

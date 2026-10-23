@@ -153,7 +153,9 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
       </div>
       <p className="detail-note">
         {t('实体')} {entityCount} · {t('缺口')} {gapCount} · {t('可行动缺口')} {contextualReport ? contextTasks.length : report.tasks.length}
+        {contextualReport && context?.type === 'city' && 'capitalRecordCount' in contextualReport && ` · ${t('首都记录')} ${contextualReport.capitalRecordCount}`}
       </p>
+      {contextualReport && <p className="detail-note">{t(contextualReport.summary)}</p>}
       {contextTasks.length === 0 ? (
         <p className="detail-note">{t('当前没有可行动缺口')}</p>
       ) : (
