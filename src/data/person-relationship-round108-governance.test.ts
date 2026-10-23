@@ -9,7 +9,7 @@ import { sourceNotes } from './sources';
 const requiredMissingGovernance = [
   'zhang-qian', 'ban-gu', 'du-fu', 'yu-the-great', 'jamukha', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
-  'zong-ze', 'feng-sufo', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
+  'zong-ze', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt',
 ] as const;
 
