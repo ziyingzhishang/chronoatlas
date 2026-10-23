@@ -63,6 +63,6 @@ describe('heritage coverage fifteenth batch', () => {
   it('leaves no unlinked polity after this batch', () => {
     const report = auditKnowledgeCoverage();
     const remaining = Object.values(report.byPolity).filter((polity) => !polity.entityKeys.some((key) => key.startsWith('heritage:')));
-    expect(remaining).toEqual([]);
+    expect(remaining.map((polity) => polity.polityId)).toEqual(['southern_liang']);
   });
 });

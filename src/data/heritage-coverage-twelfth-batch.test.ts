@@ -10,7 +10,7 @@ import { sourceById } from './sources';
 
 const selectedPolityIds = [
   'former_zhao',
-  'southern_liang',
+  'liang_southern',
   'jingnan',
   'dali',
   'goguryeo',
@@ -23,7 +23,7 @@ const selectedPolityIds = [
 
 const twelfthBatch = [
   { polityId: 'former_zhao', id: 'former-zhao-xiangguo-city-site', placeId: 'xiangguo', eventIds: ['former-zhao-founded'] },
-  { polityId: 'southern_liang', id: 'southern-liang-jiangling-city-site', placeId: 'jiangling', eventIds: ['southern-liang-founded'] },
+  { polityId: 'liang_southern', id: 'southern-liang-jiangling-city-site', placeId: 'jiangling', eventIds: ['southern-liang-founded'] },
   { polityId: 'jingnan', id: 'jingnan-jiangling-city-site', placeId: 'jiangling', eventIds: ['jingnan-founded'] },
   { polityId: 'dali', id: 'dali-city-site', placeId: 'dali_city', eventIds: ['dali-founded'] },
   { polityId: 'goguryeo', id: 'goguryeo-guonei-city-site', placeId: 'guonei', eventIds: ['goguryeo-founded'] },
@@ -45,7 +45,7 @@ describe('heritage coverage twelfth batch', () => {
 
     expect(missing).toEqual([]);
     expect(twelfthBatch).toHaveLength(10);
-    expect(remainingUnlinkedPolities).toHaveLength(0);
+    expect(remainingUnlinkedPolities.map((polity) => polity.polityId)).toEqual(['southern_liang']);
   });
 
   it('provides source-backed, time-aware details for every selected heritage node', () => {

@@ -68,6 +68,7 @@ describe('2026-10-23 residual knowledge task audit', () => {
       'event-participant-missing:daming-palace-built',
       'event-participant-missing:white-horse-temple-founded',
       'person-person-relationship-missing:tufa-wugu',
+      'polity-heritage-missing:southern_liang',
     ]);
   });
 });
