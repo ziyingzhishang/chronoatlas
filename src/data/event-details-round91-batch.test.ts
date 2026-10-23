@@ -24,7 +24,7 @@ describe('event details round ninety-first batch', () => {
     const eventsById = new Map(events.map((event) => [event.id, event]));
     const detailsById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
 
-    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 40, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 41, unresolved: 0 });
     for (const eventId of targetIds) {
       const event = eventsById.get(eventId)!;
       const detail = detailsById.get(eventId)!;

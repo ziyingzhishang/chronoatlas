@@ -899,6 +899,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'], uncertaintyNote: '西辽形成节点为1124年前后，1134年八剌沙衮稳定政治中心和耶律夷列的继承阶段分开记录；中亚政权的迁徙性与多族群治理不能简化为单一王朝疆域。',
   },
   {
+    personId: 'kuchlug', biography: '屈出律是西辽末期掌权者，活动连接乃蛮部众进入七河流域、西辽末期政治与1218年前后蒙古征服；其末期统治不能代表耶律大石时期的完整西辽制度。',
+    aliases: ['屈出律汗'], offices: [{ title: '西辽末期统治者', polityId: 'western_liao', placeId: 'balasagun', validFrom: 1211, validTo: 1218, datePrecision: 'range', sourceIds: ['china-chronology', 'iranica-qara-ketay'] }],
+    keyEvents: ['western-liao-ended-1218'], sourceIds: ['china-chronology', 'iranica-qara-ketay'], uncertaintyNote: '屈出律属于西辽末期权力承接阶段；1218年政权覆亡、蒙古军事推进和地方政治变化不是同一层面的单一事件。',
+  },
+  {
     personId: 'liu-muzi', biography: '刘穆之是刘裕北伐、平定内乱和建宋前夕的重要谋臣与行政组织者，承担军政协调和后勤制度建设。',
     aliases: ['刘道和'], offices: [{ title: '东晋中书监与军政谋臣', polityId: 'jin_eastern', validFrom: 400, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }, { title: '刘宋建政前的军政谋臣', polityId: 'song_southern', validFrom: 416, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['liu-song-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘宋正式建立于420年，刘穆之卒于417年，故本条表达建宋前的军政准备与权力网络，不把他写成420年受禅现场人物。',

@@ -2208,6 +2208,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1132年是项目采用的称帝约年，存在1131等纪年换算口径；八剌沙衮仅作为1134年以后西辽稳定政治中心的区域参照，不是1132年起儿漫称帝地点，二者分开记录。',
   },
   {
+    eventId: 'western-liao-ended-1218',
+    participants: [
+      { personId: 'kuchlug', role: '西辽末期掌权者', relationType: 'direct', note: '屈出律连接末期权力与覆亡阶段，不把西辽覆亡归因于个人。' },
+      { personId: 'temujin', role: '蒙古征服西辽末期的最高统治者', relationType: 'direct', note: '铁木真代表蒙古军事政治体系，不等同于所有地方征服行动的单一执行者。' },
+    ],
+    polityIds: ['western_liao', 'mongol'],
+    causes: ['西辽末期权力由耶律氏制度承接转入屈出律掌权阶段。', '蒙古势力向中亚推进，西辽与蒙古之间形成决定性军事政治冲突。'],
+    consequences: ['西辽作为统一政治结构结束，退出中亚政权谱系。', '八剌沙衮与楚河谷城市网络继续存在，城市遗产不与政权终止同步消失。'],
+    phases: [{ label: '西辽政权覆亡', startYear: 1218, endYear: 1218, summary: '屈出律政权被蒙古击败，西辽统一政治结构结束。' }],
+    locationIds: ['balasagun'],
+    relatedEventIds: ['western-liao-founded', 'western-liao-emperor-1132'],
+    sourceIds: ['china-chronology', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'],
+    uncertaintyNote: '1218作为项目采用的覆亡节点；屈出律被击败、地方权力重组和八剌沙衮城市历史延续需分层展示。',
+  },
+  {
     eventId: 'western-liao-founded',
     participants: [
       { personId: 'yelu-dashi', role: '辽亡后自立为王、率部西行并重建契丹政权的统治者（本轮聚焦1124—1125年早期迁移，不以1126年后的断面回推建政初期控制范围；1132年称帝与1134年建都八剌沙衮另分阶段）', note: '《辽史》支持自立为王、西行、起儿漫称帝和延庆三年建都三个层次；1124年为项目采用的约年锚点，不能把后续稳定中心或中亚扩张前推。' },

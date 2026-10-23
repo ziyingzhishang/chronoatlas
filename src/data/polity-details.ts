@@ -347,9 +347,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'western_liao', perspectiveSummary: '西辽由耶律大石在1124年前后率部西行、重建契丹政治力量而形成，经过1132年称帝和1134年建都虎思斡耳朵（八剌沙衮）进入制度化阶段，依托七河流域城市与草原—绿洲网络维持统治。',
     foundationProcess: ['耶律大石在辽亡危机中自立为王并率部西行，1124年前后进入西辽形成阶段。', '1132年在起儿漫称帝、号葛儿罕并改元延庆；该年是项目采用的称帝阶段，纪年换算仍保留异说。', '《辽史》记延庆三年建都城、号虎思斡耳朵；项目以1134年作为八剌沙衮稳定政治中心起点，今对应吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址区域。'],
-    turningPoints: [turn(1124, '西辽政权形成', '耶律大石自立为王并率部西行，西辽进入形成阶段。', 'western-liao-founded'), turn(1132, '称帝与制度化', '耶律大石在起儿漫称帝，西辽从迁徙政治集团进入帝国称号阶段。'), turn(1134, '八剌沙衮建都', '《辽史》所记延庆三年建都城、号虎思斡耳朵，八剌沙衮成为稳定政治中心参照。'), turn(1141, '卡特万之战', '西辽在中亚政治格局中的影响达到重要节点。'), turn(1218, '西辽覆亡', '乃蛮王屈出律政权被蒙古攻灭，西辽结束。')],
-    principalFigureIds: ['yelu-dashi', 'yelu-yilie'], capitalPhases: [capital('balasagun', 1134, 1218, 'de_facto', 'actual', '八剌沙衮／虎思斡耳朵；今吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址区域；1132年称帝阶段与1134年稳定中心分开')],
-    heritageIds: ['western-liao-balasagun-site'], eventIds: ['western-liao-founded', 'western-liao-emperor-1132'], claimIds: ['claim-yelu-dashi-participated-western-liao', 'claim-yelu-dashi-participated-western-liao-emperor-1132', 'claim-yelu-yilie-participated-western-liao'], sourceIds: [...modernSources, 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'],
+    turningPoints: [turn(1124, '西辽政权形成', '耶律大石自立为王并率部西行，西辽进入形成阶段。', 'western-liao-founded'), turn(1132, '称帝与制度化', '耶律大石在起儿漫称帝，西辽从迁徙政治集团进入帝国称号阶段。'), turn(1134, '八剌沙衮建都', '《辽史》所记延庆三年建都城、号虎思斡耳朵，八剌沙衮成为稳定政治中心参照。'), turn(1141, '卡特万之战', '西辽在中亚政治格局中的影响达到重要节点。'), turn(1218, '西辽政权覆亡', '蒙古军击败屈出律，西辽统一政治结构结束；八剌沙衮城市遗产继续进入后续历史。', 'western-liao-ended-1218')],
+    principalFigureIds: ['yelu-dashi', 'yelu-yilie', 'kuchlug'], capitalPhases: [capital('balasagun', 1134, 1218, 'de_facto', 'actual', '八剌沙衮／虎思斡耳朵；今吉尔吉斯斯坦楚河州托克马克附近布拉纳遗址区域；1132年称帝阶段与1134年稳定中心分开')],
+    heritageIds: ['western-liao-balasagun-site'], eventIds: ['western-liao-founded', 'western-liao-emperor-1132', 'western-liao-ended-1218'], claimIds: ['claim-yelu-dashi-participated-western-liao', 'claim-yelu-dashi-participated-western-liao-emperor-1132', 'claim-yelu-yilie-participated-western-liao', 'claim-kuchlug-participated-western-liao-ended-1218', 'claim-kuchlug-ruled-western-liao'], sourceIds: [...modernSources, 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'],
     uncertaintyNote: '1124年前后是西辽西行建政约年，不能升级为无争议的精确建国日；1132年称帝与1134年八剌沙衮建都分层记录。八剌沙衮政治中心兼具宫帐、军营和城址性质，现代布拉纳遗址对应可靠但不能等同于完整西辽首都范围；耶律大石与耶律夷列代表不同统治阶段。',
   }),
   detail({

@@ -8002,6 +8002,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-liao-ended-1218",
+      "entityKey": "event:western-liao-ended-1218",
+      "label": "西辽政权覆亡",
+      "polityIds": [
+        "mongol",
+        "western_liao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-liao-ended-1218"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-balasagun",
+            "iranica-qara-ketay",
+            "unesco-chui-balasagun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kuchlug-participated-western-liao-ended-1218",
+            "event-detail:western-liao-ended-1218"
+          ],
+          "relatedIds": [
+            "kuchlug",
+            "mongol",
+            "temujin",
+            "western-liao-emperor-1132",
+            "western-liao-founded",
+            "western_liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "western-liao-founded",
       "entityKey": "event:western-liao-founded",
       "label": "西辽政权形成",
@@ -15222,6 +15286,8 @@
             "heritage-detail:western-liao-balasagun-site"
           ],
           "relatedIds": [
+            "kuchlug",
+            "western-liao-ended-1218",
             "western-liao-founded",
             "western_liao",
             "yelu-dashi"
@@ -20489,6 +20555,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "kuchlug",
+      "entityKey": "person:kuchlug",
+      "label": "屈出律",
+      "polityIds": [
+        "western_liao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kuchlug"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kuchlug-enemy-temujin",
+            "claim:claim-kuchlug-participated-western-liao-ended-1218",
+            "claim:claim-kuchlug-ruled-western-liao",
+            "event-detail:western-liao-ended-1218",
+            "person-polity:kuchlug:western_liao"
+          ],
+          "relatedIds": [
+            "temujin",
+            "western-liao-ended-1218",
+            "western_liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "langdarma",
       "entityKey": "person:langdarma",
       "label": "朗达玛",
@@ -25730,18 +25860,22 @@
           "evidenceIds": [
             "claim:claim-kublai-grandchild-temujin-sixtysixth",
             "claim:claim-kublai-related-temujin",
+            "claim:claim-kuchlug-enemy-temujin",
             "claim:claim-mongke-related-temujin",
             "claim:claim-temujin-ally-jamukha",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
+            "event-detail:western-liao-ended-1218",
             "person-polity:temujin:mongol"
           ],
           "relatedIds": [
             "jamukha",
             "kublai",
+            "kuchlug",
             "mongke",
             "mongol",
-            "mongol-founded"
+            "mongol-founded",
+            "western-liao-ended-1218"
           ]
         },
         {
@@ -32376,6 +32510,7 @@
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
+            "event-detail:western-liao-ended-1218",
             "heritage-detail:mongol-karakorum-city-site",
             "person:jamukha",
             "person:kublai",
@@ -32389,7 +32524,8 @@
             "mongol-founded",
             "mongol-karakorum-city-site",
             "mongol-karakorum-fixed-center",
-            "temujin"
+            "temujin",
+            "western-liao-ended-1218"
           ]
         },
         {
@@ -34939,17 +35075,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-kuchlug-ruled-western-liao",
             "claim:claim-yelu-dashi-ruled-western-liao-sixtyfirst",
             "claim:claim-yelu-yilie-ruled-western-liao-sixtyfourth",
             "event-detail:western-liao-emperor-1132",
+            "event-detail:western-liao-ended-1218",
             "event-detail:western-liao-founded",
             "heritage-detail:western-liao-balasagun-site",
+            "person:kuchlug",
             "person:yelu-dashi",
             "person:yelu-yilie"
           ],
           "relatedIds": [
+            "kuchlug",
             "western-liao-balasagun-site",
             "western-liao-emperor-1132",
+            "western-liao-ended-1218",
             "western-liao-founded",
             "yelu-dashi",
             "yelu-yilie"
@@ -36456,6 +36597,21 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-liao-ended-1218",
+      "entityKey": "event:western-liao-ended-1218",
+      "label": "西辽政权覆亡",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "mongol",
+        "western_liao"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "western-liao-founded",
       "entityKey": "event:western-liao-founded",
       "label": "西辽政权形成",
@@ -36897,6 +37053,23 @@
       "evidenceIds": [
         "silla-encykorea",
         "silla-kim-chunchu-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "kuchlug",
+      "entityKey": "person:kuchlug",
+      "label": "屈出律",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "western_liao"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "iranica-qara-ketay"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -45405,6 +45578,70 @@
         }
       ]
     },
+    "event:western-liao-ended-1218": {
+      "entityType": "event",
+      "entityId": "western-liao-ended-1218",
+      "entityKey": "event:western-liao-ended-1218",
+      "label": "西辽政权覆亡",
+      "polityIds": [
+        "mongol",
+        "western_liao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-liao-ended-1218"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-balasagun",
+            "iranica-qara-ketay",
+            "unesco-chui-balasagun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kuchlug-participated-western-liao-ended-1218",
+            "event-detail:western-liao-ended-1218"
+          ],
+          "relatedIds": [
+            "kuchlug",
+            "mongol",
+            "temujin",
+            "western-liao-emperor-1132",
+            "western-liao-founded",
+            "western_liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:western-liao-founded": {
       "entityType": "event",
       "entityId": "western-liao-founded",
@@ -52627,6 +52864,8 @@
             "heritage-detail:western-liao-balasagun-site"
           ],
           "relatedIds": [
+            "kuchlug",
+            "western-liao-ended-1218",
             "western-liao-founded",
             "western_liao",
             "yelu-dashi"
@@ -57892,6 +58131,70 @@
         }
       ]
     },
+    "person:kuchlug": {
+      "entityType": "person",
+      "entityId": "kuchlug",
+      "entityKey": "person:kuchlug",
+      "label": "屈出律",
+      "polityIds": [
+        "western_liao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kuchlug"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kuchlug-enemy-temujin",
+            "claim:claim-kuchlug-participated-western-liao-ended-1218",
+            "claim:claim-kuchlug-ruled-western-liao",
+            "event-detail:western-liao-ended-1218",
+            "person-polity:kuchlug:western_liao"
+          ],
+          "relatedIds": [
+            "temujin",
+            "western-liao-ended-1218",
+            "western_liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:langdarma": {
       "entityType": "person",
       "entityId": "langdarma",
@@ -63135,18 +63438,22 @@
           "evidenceIds": [
             "claim:claim-kublai-grandchild-temujin-sixtysixth",
             "claim:claim-kublai-related-temujin",
+            "claim:claim-kuchlug-enemy-temujin",
             "claim:claim-mongke-related-temujin",
             "claim:claim-temujin-ally-jamukha",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
+            "event-detail:western-liao-ended-1218",
             "person-polity:temujin:mongol"
           ],
           "relatedIds": [
             "jamukha",
             "kublai",
+            "kuchlug",
             "mongke",
             "mongol",
-            "mongol-founded"
+            "mongol-founded",
+            "western-liao-ended-1218"
           ]
         },
         {
@@ -69781,6 +70088,7 @@
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
+            "event-detail:western-liao-ended-1218",
             "heritage-detail:mongol-karakorum-city-site",
             "person:jamukha",
             "person:kublai",
@@ -69794,7 +70102,8 @@
             "mongol-founded",
             "mongol-karakorum-city-site",
             "mongol-karakorum-fixed-center",
-            "temujin"
+            "temujin",
+            "western-liao-ended-1218"
           ]
         },
         {
@@ -72344,17 +72653,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-kuchlug-ruled-western-liao",
             "claim:claim-yelu-dashi-ruled-western-liao-sixtyfirst",
             "claim:claim-yelu-yilie-ruled-western-liao-sixtyfourth",
             "event-detail:western-liao-emperor-1132",
+            "event-detail:western-liao-ended-1218",
             "event-detail:western-liao-founded",
             "heritage-detail:western-liao-balasagun-site",
+            "person:kuchlug",
             "person:yelu-dashi",
             "person:yelu-yilie"
           ],
           "relatedIds": [
+            "kuchlug",
             "western-liao-balasagun-site",
             "western-liao-emperor-1132",
+            "western-liao-ended-1218",
             "western-liao-founded",
             "yelu-dashi",
             "yelu-yilie"
@@ -73506,20 +73820,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 163,
+      "totalEntities": 164,
       "statusCounts": {
-        "covered": 781,
+        "covered": 785,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 34,
+        "uncertain": 35,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 34
+        "uncertain": 35
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -73547,6 +73861,7 @@
         "event:tibetan-yalong-center",
         "event:tuyuhun-founded",
         "event:western-liao-emperor-1132",
+        "event:western-liao-ended-1218",
         "event:western-liao-founded",
         "event:western-zhou-founded-eighth-batch",
         "event:xia-early-founded-eighth-batch",
@@ -73577,20 +73892,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 202,
+      "totalEntities": 203,
       "statusCounts": {
-        "covered": 961,
+        "covered": 965,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 49,
+        "uncertain": 50,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 49
+        "uncertain": 50
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -73612,6 +73927,7 @@
         "person:ji-chang",
         "person:ji-yijiu",
         "person:jindeok-silla",
+        "person:kuchlug",
         "person:langdarma",
         "person:liu-xuan",
         "person:liu-yao",
@@ -74685,6 +75001,7 @@
       "entityKeys": [
         "event:mongol-founded",
         "event:mongol-karakorum-fixed-center",
+        "event:western-liao-ended-1218",
         "event:yuan-dadu-built",
         "event:yuan-founded",
         "event:yuan-shangdu-built",
@@ -74713,6 +75030,21 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "western-liao-ended-1218",
+          "entityKey": "event:western-liao-ended-1218",
+          "label": "西辽政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "western_liao"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         },
         {
           "entityType": "event",
@@ -74752,7 +75084,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "蒙古汗国：有 3 项待核验缺口。"
+      "summary": "蒙古汗国：有 4 项待核验缺口。"
     },
     "nanzhao": {
       "polityId": "nanzhao",
@@ -76293,8 +76625,10 @@
       "polityName": "西辽",
       "entityKeys": [
         "event:western-liao-emperor-1132",
+        "event:western-liao-ended-1218",
         "event:western-liao-founded",
         "heritage:western-liao-balasagun-site",
+        "person:kuchlug",
         "person:yelu-dashi",
         "person:yelu-yilie",
         "polity:western_liao"
@@ -76337,6 +76671,23 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
         {
+          "entityType": "person",
+          "entityId": "kuchlug",
+          "entityKey": "person:kuchlug",
+          "label": "屈出律",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_liao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
           "entityType": "event",
           "entityId": "western-liao-founded",
           "entityKey": "event:western-liao-founded",
@@ -76363,6 +76714,21 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "western-liao-ended-1218",
+          "entityKey": "event:western-liao-ended-1218",
+          "label": "西辽政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "western_liao"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -76372,7 +76738,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西辽：有 4 项待核验缺口。"
+      "summary": "西辽：有 6 项待核验缺口。"
     },
     "western_qin": {
       "polityId": "western_qin",
@@ -77145,10 +77511,30 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:western-liao-emperor-1132",
+        "event:western-liao-ended-1218",
         "event:western-liao-founded",
-        "heritage:western-liao-balasagun-site"
+        "heritage:western-liao-balasagun-site",
+        "person:kuchlug",
+        "person:temujin"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "kuchlug",
+          "entityKey": "person:kuchlug",
+          "label": "屈出律",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_liao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "western-liao-founded",
@@ -77176,6 +77562,21 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "western-liao-ended-1218",
+          "entityKey": "event:western-liao-ended-1218",
+          "label": "西辽政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "western_liao"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -77185,7 +77586,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "布拉纳遗址附近：有 2 项待核验缺口。"
+      "summary": "布拉纳遗址附近：有 4 项待核验缺口。"
     },
     "beijing": {
       "placeId": "beijing",

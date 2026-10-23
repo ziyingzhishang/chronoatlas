@@ -1120,6 +1120,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《辽史》卷三十·耶律大石', url: 'https://zh.wikisource.org/wiki/遼史/卷30', detail: '记载耶律大石在起儿漫称帝及后续建都虎思斡耳朵；纪年换算保留异说。' }, { title: 'Qarā Ḵeṭāy（西辽／哈剌契丹）', url: 'https://www.iranicaonline.org/articles/qara-ketay/', detail: '用于交叉核验西辽称帝与中亚制度化阶段，不替代一手纪传材料。' }],
   },
   {
+    id: 'western-liao-ended-1218', year: 1218, title: '西辽政权覆亡', summary: '蒙古军击败屈出律，西辽统一政治结构结束；八剌沙衮城市历史和楚河谷遗产继续存在。', placeId: 'balasagun', sourceIds: ['china-chronology', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'],
+    datePrecision: 'approximate', region: 'world', category: '政权终结／战争', verification: 'partial',
+    background: '西辽末期由屈出律掌权，乃蛮部众、耶律氏旧有政治结构与楚河谷城市网络处于重新组合之中。',
+    process: '1218年前后蒙古势力推进中亚，屈出律政权被击败，西辽作为统一政治结构结束；军事占领、屈出律被俘和地方秩序重组具有过程性，不能压缩为八剌沙衮城市在同日消失。',
+    impact: '西辽退出中亚区域政权谱系，八剌沙衮及楚河谷城市网络则继续进入后续中亚历史和遗产层。',
+    mapNote: '地图将1218年标作西辽政权终止节点，标注八剌沙衮为政权末期政治中心参照；该节点不表示布拉纳遗址、楚河谷城市或地方社会在1218年终止。',
+    references: [{ title: 'Qarā Ḵeṭāy（西辽／哈剌契丹）', url: 'https://www.iranicaonline.org/articles/qara-ketay/', detail: '交叉核验西辽末期与屈出律阶段，不把政权覆亡简化为城市遗址消失。' }, { title: 'BALĀSĀḠŪN（八剌沙衮）', url: 'https://www.iranicaonline.org/articles/balasagun/', detail: '支持八剌沙衮作为城市与区域遗产节点继续追踪。' }],
+  },
+  {
     id: 'dali-founded', year: 937, title: '大理政权建立', summary: '段思平在洱海区域建立大理政权，南诏之后的地方政治秩序重新组织。', placeId: 'dali_city', sourceIds: ['china-chronology', 'capital-history-reference', 'dali-diancai-record', 'dali-history-research-nopss', 'dali-duan-siping-official', 'dali-yangjumei-mct', 'dali-cambridge-governance'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '南诏后期政权瓦解，洱海地区多个地方势力竞争，段思平凭借军政联盟取得新的统治基础。',
