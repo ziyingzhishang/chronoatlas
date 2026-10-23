@@ -25,8 +25,6 @@ const key = (candidate: Candidate) => (
 const expectedCategories = {
   'qin|xianyang|chu-han-contention|': 'shared-transition-event',
   'han_western|changan||changle-palace-site': 'construction-endpoint-unresolved',
-  'han_western|changan||maoling': 'construction-endpoint-unresolved',
-  'han_western|changan||du-ling': 'construction-endpoint-unresolved',
   'han_eastern|luoyang||white-horse-temple': 'cross-polity-heritage',
   'han_eastern|luoyang|white-horse-temple-founded|': 'heritage-event-not-polity-chain',
   'sui|changan||taiji-palace-site': 'layered-capital-heritage',
@@ -70,7 +68,7 @@ describe('round 114 residual capital reference categories', () => {
     expect(Object.fromEntries(rows.map((row) => [key(row), true]))).toEqual(
       Object.fromEntries(Object.keys(expectedCategories).map((candidateKey) => [candidateKey, true])),
     );
-    expect(Object.keys(expectedCategories)).toHaveLength(19);
+    expect(Object.keys(expectedCategories)).toHaveLength(17);
   });
 
   it('requires future closures to preserve the category-specific boundary', () => {

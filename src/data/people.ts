@@ -2,6 +2,8 @@ import type { Person } from '../domain/types';
 
 export const people: Person[] = [
   { id: 'liu-bang', name: '刘邦', aliases: ['汉高祖'], birthYear: -256, deathYear: -195, roles: ['皇帝', '起兵领袖'], polityIds: ['han_western'], description: '楚汉战争后建立汉朝，定都长安。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'liu-che', name: '刘彻', aliases: ['汉武帝'], birthYear: -156, deathYear: -87, roles: ['皇帝', '帝陵营建者'], polityIds: ['han_western'], description: '汉武帝，西汉中期君主；其作寿陵开启茂陵长期营建。', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-western-han-mausoleums'] },
+  { id: 'liu-xun', name: '刘询', aliases: ['汉宣帝'], birthYear: -91, deathYear: -49, roles: ['皇帝', '帝陵营建者'], polityIds: ['han_western'], description: '汉宣帝，西汉晚期君主；元康元年在杜东原营建杜陵。', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-duling'] },
   { id: 'wang-mang', name: '王莽', roles: ['皇帝', '外戚'], polityIds: ['xin'], description: '建立新朝，长安是其政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'liu-xiu', name: '刘秀', aliases: ['汉光武帝'], birthYear: -5, deathYear: 57, roles: ['皇帝'], polityIds: ['gengshi', 'han_eastern'], description: '新末起兵并建立东汉，迁都洛阳。', sourceIds: ['zizhi-tongjian'] },
   { id: 'liu-yao', name: '刘曜', roles: ['皇帝'], polityIds: ['former_zhao'], description: '前赵君主，曾以长安为政治中心。', sourceIds: ['zizhi-tongjian'] },

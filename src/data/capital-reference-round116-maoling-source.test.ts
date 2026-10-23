@@ -4,7 +4,7 @@ import { getHeritageDetail } from './heritage-details';
 import { sourceById } from './sources';
 
 describe('round 116 Maoling source closure', () => {
-  it('anchors the 139 BCE construction start without inventing a Maoling event endpoint', () => {
+  it('anchors the 139 BCE construction start and its independent event endpoint', () => {
     const asset = heritageAssets.find((item) => item.id === 'maoling');
     const detail = getHeritageDetail('maoling');
 
@@ -19,6 +19,6 @@ describe('round 116 Maoling source closure', () => {
     });
     expect(detail?.uncertaintyNote).toContain('不等于全部陵区建筑同年完成');
     expect(sourceById['xian-local-chronicle-western-han-mausoleums']?.scope).toContain('帝陵');
-    expect(detail?.associatedEvents).toEqual(['han-imperial-accession']);
+    expect(detail?.associatedEvents).toEqual(['maoling-built', 'han-imperial-accession']);
   });
 });

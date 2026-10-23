@@ -19,9 +19,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'han_western', perspectiveSummary: '西汉在楚汉战争后重建统一帝国秩序，经历洛阳短期建都、长安定都、诸侯治理与对外扩展。',
     foundationProcess: ['刘邦在楚汉战争中取得胜利，前202年即皇帝位。', '汉初先都洛阳，前201年后迁都长安。', '中央与诸侯王并存，统一秩序是一个持续整合过程。'],
-    turningPoints: [turn(-202, '刘邦称帝', '汉帝国进入重建秩序阶段。', 'han-imperial-accession'), turn(-201, '迁都长安', '长安成为西汉长期政治中心。'), turn(-141, '武帝时期', '对外战争、郡国关系和帝国制度进入扩展阶段。')],
-    principalFigureIds: ['liu-bang', 'xiao-he', 'han-xin', 'huo-qubing', 'zhang-qian'], capitalPhases: [capital('luoyang', -206, -202, 'primary', 'formal', '汉初阶段性都城'), capital('changan', -201, 9)],
-    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling', 'hanyangling'], eventIds: ['han-imperial-accession', 'chu-han-contention'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
+    turningPoints: [turn(-202, '刘邦称帝', '汉帝国进入重建秩序阶段。', 'han-imperial-accession'), turn(-201, '迁都长安', '长安成为西汉长期政治中心。'), turn(-141, '武帝时期', '对外战争、郡国关系和帝国制度进入扩展阶段。'), turn(-139, '茂陵开始营建', '汉武帝作寿陵，茂陵进入长期营建阶段。', 'maoling-built'), turn(-65, '杜陵开始营建', '汉宣帝在杜东原择址营建杜陵。', 'du-ling-built')],
+    principalFigureIds: ['liu-bang', 'liu-che', 'liu-xun', 'xiao-he', 'han-xin', 'huo-qubing', 'zhang-qian'], capitalPhases: [capital('luoyang', -206, -202, 'primary', 'formal', '汉初阶段性都城'), capital('changan', -201, 9)],
+    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling', 'hanyangling', 'maoling', 'du-ling'], eventIds: ['han-imperial-accession', 'chu-han-contention', 'maoling-built', 'du-ling-built'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
     uncertaintyNote: '前206年受封汉王与前202年称帝是不同起算口径；本详情采用政权重建节点，不把西汉全期的实际控制范围压缩成单一时点。',
   }),
   detail({

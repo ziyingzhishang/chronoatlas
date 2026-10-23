@@ -54,13 +54,12 @@ describe('round 112 Qin-Han capital boundary', () => {
   });
 
   it('keeps the four Han heritage candidates outside a single-polity closure', () => {
-    expect(heritageCandidates.filter(hasIndependentConstructionEndpoint)).toEqual(['white-horse-temple']);
+    expect(heritageCandidates.filter(hasIndependentConstructionEndpoint)).toEqual(['maoling', 'du-ling', 'white-horse-temple']);
 
     expect(getHeritageDetail('changle-palace-site')?.associatedPolities).toEqual(['han_western', 'xin']);
     expect(getHeritageDetail('white-horse-temple')?.associatedPolities).toEqual(['han_eastern', 'tang']);
-    expect(getPolityDetail('han_western')?.heritageIds).not.toEqual(
-      expect.arrayContaining(['changle-palace-site', 'maoling', 'du-ling']),
-    );
+    expect(getPolityDetail('han_western')?.heritageIds).not.toContain('changle-palace-site');
+    expect(getPolityDetail('han_western')?.heritageIds).toEqual(expect.arrayContaining(['maoling', 'du-ling']));
     expect(getPolityDetail('han_eastern')?.heritageIds).not.toContain('white-horse-temple');
   });
 
@@ -80,10 +79,10 @@ describe('round 112 Qin-Han capital boundary', () => {
       expect.objectContaining({ startYear: -200, endYear: -200 }),
     ]);
 
-    for (const detail of [maoling, duLing]) {
-      expect(detail.associatedEvents).toEqual(['han-imperial-accession']);
-      expect(getEventDetail('han-imperial-accession')?.locationIds).not.toContain('changan');
-    }
+    expect(maoling.associatedEvents).toEqual(['maoling-built', 'han-imperial-accession']);
+    expect(duLing.associatedEvents).toEqual(['du-ling-built', 'han-imperial-accession']);
+    expect(getEventDetail('maoling-built')?.locationIds).toContain('changan');
+    expect(getEventDetail('du-ling-built')?.locationIds).toContain('changan');
 
     expect(whiteHorse.associatedEvents).toContain('white-horse-temple-founded');
     expect(whiteHorse.associatedEvents).not.toContain('eastern-han-moves-luoyang');

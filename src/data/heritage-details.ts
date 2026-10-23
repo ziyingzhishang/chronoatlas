@@ -185,12 +185,12 @@ const details: HeritageDetail[] = [
     historicalPhase('original', '原建筑', '前139年后营建', '茂陵作为汉武帝帝陵，建元二年（前139年）开始营建，配有陵园、陪葬和陵邑相关空间。', -139, undefined, undefined, maolingSourceIds),
     historicalPhase('site', '遗址', '西汉帝陵遗址', '封土、陵园和相关遗迹保留了帝陵区的历史地貌信息。', -139, 9, undefined, maolingSourceIds),
     phase('restoration', '现代复原', '遗址保护与博物馆展示', '现代保护以封土、石刻和遗址环境为主，展示性建筑单独标注。', 1900),
-  ], ['liu-bang', 'wang-mang'], ['han_western'], ['han-imperial-accession'], ['陵墓封土', '陵园范围', '陪葬与陵邑相关遗迹'], '西汉帝陵考古和关中历史地理研究节点。', '陵园范围、陪葬关系和陵邑行政含义不能仅凭封土规模推断；前139年是作寿陵和开始营建的年代，不等于全部陵区建筑同年完成。', maolingSourceIds),
+  ], ['liu-che'], ['han_western'], ['maoling-built', 'han-imperial-accession'], ['陵墓封土', '陵园范围', '陪葬与陵邑相关遗迹'], '西汉帝陵考古和关中历史地理研究节点。', '陵园范围、陪葬关系和陵邑行政含义不能仅凭封土规模推断；前139年是作寿陵和开始营建的年代，不等于全部陵区建筑同年完成。', maolingSourceIds),
   detail('du-ling', '今西安市雁塔区曲江一带，古今城市边界已经发生变化。', ['汉宣帝帝陵', '西汉晚期帝陵与长安南部空间'], [
     historicalPhase('original', '原建筑', '前65年后营建', '杜陵是汉宣帝刘询的帝陵，元康元年（前65年）在杜东原择址营建，陵园与长安南部城市、陵区相连。', -65, undefined, undefined, dulingSourceIds),
     historicalPhase('site', '遗址', '西汉帝陵遗址', '封土和陵园遗迹以考古和地面遗存形式保存。', -65, 9, undefined, dulingSourceIds),
     phase('restoration', '现代复原', '遗址保护展示', '现代以封土保护、环境整治和说明牌展示为主，不复原完整陵园建筑。', 2000),
-  ], ['liu-bang', 'wang-mang'], ['han_western'], ['han-imperial-accession'], ['封土', '陵园遗存', '现代保护环境'], '西汉晚期帝陵和西安南部历史地理参照点。', '杜陵与现代曲江城市景观的边界不能直接当作汉代陵园边界；前74年为汉宣帝即位年，不作为杜陵营建年。', ['modern-geography-reference', 'xian-local-chronicle-duling']),
+  ], ['liu-xun'], ['han_western'], ['du-ling-built', 'han-imperial-accession'], ['封土', '陵园遗存', '现代保护环境'], '西汉晚期帝陵和西安南部历史地理参照点。', '杜陵与现代曲江城市景观的边界不能直接当作汉代陵园边界；前74年为汉宣帝即位年，不作为杜陵营建年。', dulingSourceIds),
   detail('han-changling', '今咸阳市渭城区五陵原一带，属于长安北部帝陵区。', ['汉高祖刘邦帝陵', '汉初帝陵与长安北部陵区秩序'], [
     phase('original', '原建筑', '前195年后营建', '长陵是汉高祖刘邦帝陵，位于长安北部五陵原帝陵区。', -195),
     phase('site', '遗址', '西汉帝陵遗址', '陵墓封土及陵园环境构成现存主要遗迹。', -195, 9),

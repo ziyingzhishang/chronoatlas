@@ -746,6 +746,26 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '氾水之阳采用今定陶县官堌堆一带的地方志对应；古氾水水道与即位台的精确范围仍需区分，坐标不替代遗址测绘。',
   },
   {
+    eventId: 'maoling-built',
+    participants: [{ personId: 'liu-che', role: '作寿陵并开启茂陵营建阶段的西汉皇帝' }],
+    polityIds: ['han_western'],
+    causes: ['西汉帝陵制度与关中陵区持续发展，皇帝身后安排需要形成长期营建空间。'],
+    consequences: ['茂陵成为西汉中期帝陵制度和关中陵区的重要节点。', '陵园、陪葬和陵邑空间在后续阶段继续形成，不能压缩为前139年当天完成。'],
+    phases: [{ label: '作寿陵并开始营建', startYear: -139, endYear: -139, summary: '汉武帝建元二年作寿陵，茂陵进入营建阶段。' }, { label: '陵区持续形成', startYear: -139, endYear: -87, summary: '陵园、陪葬与陵邑等相关空间在汉武帝时期继续发展。' }],
+    locationIds: ['changan'], relatedEventIds: ['han-imperial-accession'], sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-western-han-mausoleums'],
+    uncertaintyNote: '事件使用长安作为历史城市参照，茂陵实际位于今陕西省兴平市东北部；前139年是作寿陵和开始营建的年代，不是全部遗产建成日。',
+  },
+  {
+    eventId: 'du-ling-built',
+    participants: [{ personId: 'liu-xun', role: '在杜东原择址营建杜陵的西汉皇帝' }],
+    polityIds: ['han_western'],
+    causes: ['西汉晚期长安南部帝陵区持续发展，皇帝需要为陵寝与陵园安排位置。'],
+    consequences: ['杜陵成为西汉晚期帝陵制度与长安南部历史地理的重要节点。', '陵园和相关遗存继续形成，前65年不等于全部陵区建筑同年完成。'],
+    phases: [{ label: '择址并开始营建', startYear: -65, endYear: -65, summary: '汉宣帝元康元年在杜东原择址营建杜陵。' }, { label: '陵园持续形成', startYear: -65, endYear: -49, summary: '杜陵陵园及相关遗存随西汉晚期帝陵制度继续发展。' }],
+    locationIds: ['changan'], relatedEventIds: ['han-imperial-accession'], sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-duling'],
+    uncertaintyNote: '事件使用长安作为历史城市参照，杜陵实际对应今西安市雁塔区曲江一带；前74年是刘询即位年，不作为杜陵营建年。',
+  },
+  {
     eventId: 'red-cliffs',
     participants: [
       { personId: 'cao-cao', role: '曹军南下与汉末北方军政集团的核心领袖', note: '曹操以汉丞相身份统率南下军队；本条不把曹丕列为参与者，因为当前人物目录未收录曹丕。' },

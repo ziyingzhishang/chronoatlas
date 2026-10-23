@@ -52,8 +52,6 @@ describe('round 105 capital reference audit', () => {
       'han_eastern|luoyang|white-horse-temple-founded|',
       'han_eastern|luoyang||white-horse-temple',
       'han_western|changan||changle-palace-site',
-      'han_western|changan||du-ling',
-      'han_western|changan||maoling',
       'later_liang|guzang||guzang-baita-temple-site',
       'liang_later|kaifeng|five-dynasties|',
       'qin|xianyang|chu-han-contention|',

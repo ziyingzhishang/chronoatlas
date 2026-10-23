@@ -38,7 +38,7 @@ describe('round 110 Han capital heritage boundary', () => {
     expect(getPolityDetail('han_eastern')?.heritageIds).not.toContain('white-horse-temple');
   });
 
-  it('keeps Maoling and Duling deferred when their event links are only background events', () => {
+  it('closes Maoling and Duling only after their independent construction events are attached', () => {
     for (const heritageId of ['maoling', 'du-ling'] as const) {
       const asset = heritageAssets.find((item) => item.id === heritageId)!;
       const detail = getHeritageDetail(heritageId)!;
@@ -52,13 +52,13 @@ describe('round 110 Han capital heritage boundary', () => {
       expect(asset.sourceIds.length).toBeGreaterThan(0);
       expect(detail.sourceIds.some((sourceId) => asset.sourceIds.includes(sourceId))).toBe(true);
       expect(westernHanCapital).toMatchObject({ polityId: 'han_western', placeId: 'changan' });
-      expect(hasIndependentConstructionEvent(heritageId)).toBe(false);
-      expect(getPolityDetail('han_western')?.heritageIds).not.toContain(heritageId);
+      expect(hasIndependentConstructionEvent(heritageId)).toBe(true);
+      expect(getPolityDetail('han_western')?.heritageIds).toContain(heritageId);
     }
   });
 
   it('does not treat any of the four candidates as closed by background events alone', () => {
-    expect(candidateIds.filter(hasIndependentConstructionEvent)).toEqual(['white-horse-temple']);
+    expect(candidateIds.filter(hasIndependentConstructionEvent)).toEqual(['maoling', 'du-ling', 'white-horse-temple']);
     expect(getEventDetail('han-imperial-accession')).toMatchObject({
       eventId: 'han-imperial-accession',
       polityIds: ['han_western'],

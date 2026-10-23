@@ -10,6 +10,18 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '汉的建立可按受封汉王与称帝两个节点叙述，本详情不把二者合并为单一日期。',
   },
   {
+    personId: 'liu-che', biography: '刘彻即汉武帝，是西汉中期君主。建元二年（前139年）作寿陵，茂陵由此进入长期营建与陵区发展的阶段。',
+    aliases: ['汉武帝'], offices: [{ title: '西汉皇帝', polityId: 'han_western', placeId: 'changan', validFrom: -141, validTo: -87, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-western-han-mausoleums'] }],
+    keyEvents: ['maoling-built'], sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-western-han-mausoleums'],
+    uncertaintyNote: '前139年是作寿陵和开始营建的节点，不代表茂陵全部陵园、陪葬和陵邑空间在同年完成。',
+  },
+  {
+    personId: 'liu-xun', biography: '刘询即汉宣帝，是西汉晚期君主。元康元年（前65年）在杜东原择址营建杜陵，形成长安南部帝陵空间的重要层次。',
+    aliases: ['汉宣帝'], offices: [{ title: '西汉皇帝', polityId: 'han_western', placeId: 'changan', validFrom: -74, validTo: -49, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-duling'] }],
+    keyEvents: ['du-ling-built'], sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-duling'],
+    uncertaintyNote: '前74年是刘询即位年；杜陵营建节点采用前65年，二者不合并。',
+  },
+  {
     personId: 'wang-mang', biography: '王莽以外戚与辅政身份进入权力核心，代汉建立新朝，长安继续作为政治中心。',
     aliases: [], offices: [{ title: '新朝皇帝', polityId: 'xin', placeId: 'changan', validFrom: 9, validTo: 23, datePrecision: 'range', sourceIds }],
     keyEvents: ['changan-xin-founded'], sourceIds,

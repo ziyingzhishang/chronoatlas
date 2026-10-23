@@ -76,8 +76,8 @@ describe('round 111 Han capital heritage boundary', () => {
     }
   });
 
-  it('finds only the newly attached White Horse Temple endpoint', () => {
-    expect(candidates.filter(hasIndependentAttachedEndpoint)).toEqual(['white-horse-temple']);
+  it('finds the independently attached tomb and temple endpoints', () => {
+    expect(candidates.filter(hasIndependentAttachedEndpoint)).toEqual(['maoling', 'du-ling', 'white-horse-temple']);
   });
 
   it('keeps each endpoint gap explicit instead of treating a nearby event as construction proof', () => {
@@ -96,16 +96,15 @@ describe('round 111 Han capital heritage boundary', () => {
       expect.objectContaining({ startYear: -200, endYear: -200 }),
     ]);
 
-    for (const detail of [maoling, duLing]) {
-      expect(detail.associatedEvents).toEqual(['han-imperial-accession']);
-      expect(getEventDetail('han-imperial-accession')?.locationIds).not.toContain('changan');
-    }
+    expect(maoling.associatedEvents).toEqual(['maoling-built', 'han-imperial-accession']);
+    expect(duLing.associatedEvents).toEqual(['du-ling-built', 'han-imperial-accession']);
+    expect(getEventDetail('maoling-built')?.locationIds).toContain('changan');
+    expect(getEventDetail('du-ling-built')?.locationIds).toContain('changan');
 
     expect(whiteHorse.associatedPolities).toEqual(['han_eastern', 'tang']);
     expect(whiteHorse.associatedEvents).not.toContain('eastern-han-moves-luoyang');
     expect(getPolityDetail('han_western')?.heritageIds).not.toContain('changle-palace-site');
-    expect(getPolityDetail('han_western')?.heritageIds).not.toContain('maoling');
-    expect(getPolityDetail('han_western')?.heritageIds).not.toContain('du-ling');
+    expect(getPolityDetail('han_western')?.heritageIds).toEqual(expect.arrayContaining(['maoling', 'du-ling']));
     expect(getPolityDetail('han_eastern')?.heritageIds).not.toContain('white-horse-temple');
   });
 });
