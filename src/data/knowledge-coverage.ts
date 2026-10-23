@@ -1,5 +1,6 @@
 import type {
   HistoricalClaim,
+  CapitalTerm,
   HistoricalEvent,
   HistoricalEventDetail,
   HeritageAsset,
@@ -11,6 +12,7 @@ import type {
   SourceNote,
 } from '../domain/types';
 import { claims as defaultClaims } from './claims';
+import { capitalHistory as defaultCapitalHistory } from './capital-history';
 import { eventDetails as defaultEventDetails } from './event-details';
 import { events as defaultEvents } from './events';
 import { heritageAssets as defaultHeritageAssets } from './heritage';
@@ -60,6 +62,7 @@ export interface KnowledgeCoverageCatalog {
   claims: HistoricalClaim[];
   sourceNotes: SourceNote[];
   places?: Place[];
+  capitalTerms?: CapitalTerm[];
   annotations?: KnowledgeCoverageAnnotation[];
 }
 
@@ -133,6 +136,7 @@ export interface KnowledgeCoverageTask {
 export interface KnowledgeCoverageCityReport {
   placeId: string;
   cityName: string;
+  capitalRecordCount: number;
   entityKeys: string[];
   gaps: KnowledgeCoverageGap[];
   taskCounts: CoverageTaskCounts;
@@ -545,7 +549,12 @@ function taskCounts(tasks: KnowledgeCoverageTask[]): CoverageTaskCounts {
   return counts;
 }
 
-function readableSummary(subjectName: string, gaps: KnowledgeCoverageGap[], tasks: KnowledgeCoverageTask[]): string {
+function readableSummary(
+  subjectName: string,
+  gaps: KnowledgeCoverageGap[],
+  tasks: KnowledgeCoverageTask[],
+  options: { hasEntities?: boolean; hasCapitalRecords?: boolean } = {},
+): string {
   const labels: Record<CoverageTaskKind, string> = {
     'polity-heritage-missing': '遗产关联',
     'person-person-relationship-missing': '人物关系',
@@ -557,6 +566,9 @@ function readableSummary(subjectName: string, gaps: KnowledgeCoverageGap[], task
   const parts = (Object.keys(counts) as CoverageTaskKind[])
     .filter((kind) => counts[kind] > 0)
     .map((kind) => `${labels[kind]} ${counts[kind]} 项`);
+  if (options.hasCapitalRecords && options.hasEntities === false && parts.length === 0 && gaps.length === 0) {
+    return `${subjectName}：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。`;
+  }
   if (parts.length === 0 && gaps.length === 0) return `${subjectName}：学习闭环已覆盖。`;
   if (parts.length === 0) return `${subjectName}：有 ${gaps.length} 项待核验缺口。`;
   return `${subjectName}：有 ${tasks.length} 项学习闭环任务，待补${parts.join('、')}。`;
@@ -619,6 +631,7 @@ export function auditKnowledgeCoverage(catalog: KnowledgeCoverageCatalog = {
   claims: defaultClaims,
   sourceNotes: defaultSourceNotes,
   places: defaultPlaces,
+  capitalTerms: defaultCapitalHistory,
 }): KnowledgeCoverageReport {
   const detailById = new Map(catalog.eventDetails.map((detail) => [detail.eventId, detail]));
   const personDetailById = new Map(catalog.personDetails.map((detail) => [detail.personId, detail]));
@@ -667,20 +680,32 @@ export function auditKnowledgeCoverage(catalog: KnowledgeCoverageCatalog = {
     tasksByPlace.set(placeId, [...(tasksByPlace.get(placeId) ?? []), item]);
   }));
   const knownPlaces = new Map((catalog.places ?? []).map((place) => [place.id, place]));
-  const allPlaceIds = unique([...entityKeysByPlace.keys(), ...tasksByPlace.keys()]);
+  const capitalTerms = catalog.capitalTerms ?? [];
+  const capitalRecordCounts = new Map<string, number>();
+  capitalTerms.forEach((term) => capitalRecordCounts.set(term.placeId, (capitalRecordCounts.get(term.placeId) ?? 0) + 1));
+  const allPlaceIds = unique([
+    ...entityKeysByPlace.keys(),
+    ...tasksByPlace.keys(),
+    ...capitalRecordCounts.keys(),
+  ]);
   const byCity = Object.fromEntries(allPlaceIds.map((placeId) => {
     const entityKeys = entityKeysByPlace.get(placeId) ?? [];
     const cityTasks = tasksByPlace.get(placeId) ?? [];
     const cityGaps = gaps.filter((gap) => entityKeys.includes(gap.entityKey));
     const place = knownPlaces.get(placeId);
     const cityName = place?.modernName || place?.historicalName || placeId;
+    const capitalRecordCount = capitalRecordCounts.get(placeId) ?? 0;
     return [placeId, {
       placeId,
       cityName,
+      capitalRecordCount,
       entityKeys: entityKeys.sort(),
       gaps: cityGaps,
       taskCounts: taskCounts(cityTasks),
-      summary: readableSummary(cityName, cityGaps, cityTasks),
+      summary: readableSummary(cityName, cityGaps, cityTasks, {
+        hasEntities: entityKeys.length > 0,
+        hasCapitalRecords: capitalRecordCount > 0,
+      }),
     }];
   })) as Record<string, KnowledgeCoverageCityReport>;
   return { entities, gaps, byKey, byType, byPolity, tasks, byCity };

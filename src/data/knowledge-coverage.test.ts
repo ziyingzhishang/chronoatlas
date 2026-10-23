@@ -1,5 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import type {
+  CapitalTerm,
   HistoricalClaim,
   HistoricalEvent,
   HistoricalEventDetail,
@@ -248,6 +249,47 @@ describe('knowledge coverage audit', () => {
     expect(report.byCity['fixture-place'].cityName).toBe('今测试城');
     expect(report.byCity['fixture-place'].summary).toContain('事件地点');
     expect(report.byCity['fixture-place'].taskCounts['event-location-missing']).toBe(1);
+  });
+
+  it('keeps capital-only cities visible in the city coverage report', () => {
+    const capitalOnlyPlace: Place = {
+      id: 'capital-only-place',
+      historicalName: '首都候选城',
+      aliases: [],
+      modernName: '今首都候选城',
+      longitude: 0,
+      latitude: 0,
+      sourceIds: ['fixture-source'],
+    };
+    const capitalTerm: CapitalTerm = {
+      polityId: 'fixture-polity',
+      placeId: 'capital-only-place',
+      validFrom: 1,
+      validTo: 10,
+      role: 'primary',
+      status: 'formal',
+      confidence: 'high',
+      sourceIds: ['fixture-source'],
+    };
+    const report = auditKnowledgeCoverage({
+      ...catalog,
+      places: [capitalOnlyPlace],
+      polities: [polity],
+      events: [],
+      eventDetails: [],
+      heritageAssets: [],
+      heritageDetails: [],
+      capitalTerms: [capitalTerm],
+    });
+
+    expect(report.byCity['capital-only-place']).toEqual(expect.objectContaining({
+      cityName: '今首都候选城',
+      entityKeys: [],
+      taskCounts: expect.objectContaining({
+        'event-location-missing': 0,
+      }),
+    }));
+    expect(report.byCity['capital-only-place'].summary).toContain('尚无关联知识节点');
   });
 
   it('does not create specific tasks when the corresponding graph edge is present', () => {
