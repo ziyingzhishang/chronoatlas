@@ -1682,6 +1682,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "former-zhao-ended-329",
+      "entityKey": "event:former-zhao-ended-329",
+      "label": "前赵政权覆亡",
+      "polityIds": [
+        "former_zhao",
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-zhao-ended-329"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-yao-participated-former-zhao-ended-329",
+            "event-detail:former-zhao-ended-329"
+          ],
+          "relatedIds": [
+            "former_zhao",
+            "later-zhao-founded",
+            "later_zhao",
+            "liu-yao",
+            "shi-le"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "former-zhao-founded",
       "entityKey": "event:former-zhao-founded",
       "label": "前赵（汉赵）政权建立",
@@ -11069,6 +11131,67 @@
             "former-shu-founded",
             "former_shu",
             "wang-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "former-zhao-changan-city-layer",
+      "entityKey": "heritage:former-zhao-changan-city-layer",
+      "label": "前赵长安城市历史层",
+      "polityIds": [
+        "former_zhao",
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "former-zhao-changan-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:former-zhao-changan-city-layer"
+          ],
+          "relatedIds": [
+            "former-zhao-ended-329",
+            "former-zhao-founded",
+            "former_zhao",
+            "liu-yao",
+            "shi-le"
           ]
         },
         {
@@ -23038,13 +23161,17 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yao-enemy-shi-le-termination-329",
+            "claim:claim-liu-yao-participated-former-zhao-ended-329",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
             "claim:claim-shi-hu-enemy-liu-yao",
             "claim:claim-shi-le-enemy-liu-yao",
+            "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
             "person-polity:liu-yao:former_zhao"
           ],
           "relatedIds": [
+            "former-zhao-ended-329",
             "former-zhao-founded",
             "former_zhao",
             "shi-hu",
@@ -26180,13 +26307,16 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yao-enemy-shi-le-termination-329",
             "claim:claim-shi-le-enemy-liu-yao",
             "claim:claim-shi-le-participated-later-zhao",
             "claim:claim-shi-le-ruled-later-zhao-sixtieth",
+            "event-detail:former-zhao-ended-329",
             "event-detail:later-zhao-founded",
             "person-polity:shi-le:later_zhao"
           ],
           "relatedIds": [
+            "former-zhao-ended-329",
             "later-zhao-founded",
             "later_zhao",
             "liu-yao"
@@ -31875,13 +32005,17 @@
             "claim:claim-former-zhao-changan-capital",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
             "event-detail:former-zhao-capital-changan",
+            "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
+            "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
             "person:liu-yao"
           ],
           "relatedIds": [
             "changan",
             "former-zhao-capital-changan",
+            "former-zhao-changan-city-layer",
+            "former-zhao-ended-329",
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
             "liu-yao"
@@ -33157,6 +33291,7 @@
           "evidenceIds": [
             "claim:claim-shi-hu-ruled-later-zhao",
             "claim:claim-shi-le-ruled-later-zhao-sixtieth",
+            "event-detail:former-zhao-ended-329",
             "event-detail:later-zhao-founded",
             "event-detail:later-zhao-moves-ye",
             "heritage-detail:ye-city-site",
@@ -33164,6 +33299,7 @@
             "person:shi-le"
           ],
           "relatedIds": [
+            "former-zhao-ended-329",
             "later-zhao-founded",
             "later-zhao-moves-ye",
             "shi-hu",
@@ -40498,6 +40634,68 @@
             "later-yan-founded",
             "murong-huang",
             "northern-yan-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:former-zhao-ended-329": {
+      "entityType": "event",
+      "entityId": "former-zhao-ended-329",
+      "entityKey": "event:former-zhao-ended-329",
+      "label": "前赵政权覆亡",
+      "polityIds": [
+        "former_zhao",
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-zhao-ended-329"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-yao-participated-former-zhao-ended-329",
+            "event-detail:former-zhao-ended-329"
+          ],
+          "relatedIds": [
+            "former_zhao",
+            "later-zhao-founded",
+            "later_zhao",
+            "liu-yao",
+            "shi-le"
           ]
         },
         {
@@ -49898,6 +50096,67 @@
             "former-shu-founded",
             "former_shu",
             "wang-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:former-zhao-changan-city-layer": {
+      "entityType": "heritage",
+      "entityId": "former-zhao-changan-city-layer",
+      "entityKey": "heritage:former-zhao-changan-city-layer",
+      "label": "前赵长安城市历史层",
+      "polityIds": [
+        "former_zhao",
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "former-zhao-changan-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:former-zhao-changan-city-layer"
+          ],
+          "relatedIds": [
+            "former-zhao-ended-329",
+            "former-zhao-founded",
+            "former_zhao",
+            "liu-yao",
+            "shi-le"
           ]
         },
         {
@@ -61867,13 +62126,17 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yao-enemy-shi-le-termination-329",
+            "claim:claim-liu-yao-participated-former-zhao-ended-329",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
             "claim:claim-shi-hu-enemy-liu-yao",
             "claim:claim-shi-le-enemy-liu-yao",
+            "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
             "person-polity:liu-yao:former_zhao"
           ],
           "relatedIds": [
+            "former-zhao-ended-329",
             "former-zhao-founded",
             "former_zhao",
             "shi-hu",
@@ -65009,13 +65272,16 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yao-enemy-shi-le-termination-329",
             "claim:claim-shi-le-enemy-liu-yao",
             "claim:claim-shi-le-participated-later-zhao",
             "claim:claim-shi-le-ruled-later-zhao-sixtieth",
+            "event-detail:former-zhao-ended-329",
             "event-detail:later-zhao-founded",
             "person-polity:shi-le:later_zhao"
           ],
           "relatedIds": [
+            "former-zhao-ended-329",
             "later-zhao-founded",
             "later_zhao",
             "liu-yao"
@@ -70704,13 +70970,17 @@
             "claim:claim-former-zhao-changan-capital",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
             "event-detail:former-zhao-capital-changan",
+            "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
+            "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
             "person:liu-yao"
           ],
           "relatedIds": [
             "changan",
             "former-zhao-capital-changan",
+            "former-zhao-changan-city-layer",
+            "former-zhao-ended-329",
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
             "liu-yao"
@@ -71986,6 +72256,7 @@
           "evidenceIds": [
             "claim:claim-shi-hu-ruled-later-zhao",
             "claim:claim-shi-le-ruled-later-zhao-sixtieth",
+            "event-detail:former-zhao-ended-329",
             "event-detail:later-zhao-founded",
             "event-detail:later-zhao-moves-ye",
             "heritage-detail:ye-city-site",
@@ -71993,6 +72264,7 @@
             "person:shi-le"
           ],
           "relatedIds": [
+            "former-zhao-ended-329",
             "later-zhao-founded",
             "later-zhao-moves-ye",
             "shi-hu",
@@ -76194,9 +76466,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 171,
+      "totalEntities": 172,
       "statusCounts": {
-        "covered": 815,
+        "covered": 820,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -76253,9 +76525,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 118,
+      "totalEntities": 119,
       "statusCounts": {
-        "covered": 590,
+        "covered": 595,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -76682,7 +76954,9 @@
       "polityId": "former_zhao",
       "polityName": "前赵",
       "entityKeys": [
+        "event:former-zhao-ended-329",
         "event:former-zhao-founded",
+        "heritage:former-zhao-changan-city-layer",
         "heritage:former-zhao-xiangguo-city-site",
         "person:liu-yao",
         "polity:former_zhao"
@@ -77259,8 +77533,10 @@
       "polityId": "later_zhao",
       "polityName": "后赵",
       "entityKeys": [
+        "event:former-zhao-ended-329",
         "event:later-zhao-founded",
         "event:later-zhao-moves-ye",
+        "heritage:former-zhao-changan-city-layer",
         "heritage:ye-city-site",
         "person:shi-hu",
         "person:shi-le",
@@ -80292,6 +80568,7 @@
         "event:du-ling-built",
         "event:eastern-han-moves-luoyang",
         "event:former-qin-founded",
+        "event:former-zhao-ended-329",
         "event:former-zhao-founded",
         "event:gengshi-founded",
         "event:later-qin-founded",
@@ -80314,6 +80591,7 @@
         "heritage:daming-palace-site",
         "heritage:du-ling",
         "heritage:former-qin-changan-city-layer",
+        "heritage:former-zhao-changan-city-layer",
         "heritage:han-changan-city-site",
         "heritage:han-changling",
         "heritage:hanguang-gate-site",
@@ -80343,6 +80621,8 @@
         "person:liu-che",
         "person:liu-xiu",
         "person:liu-xun",
+        "person:liu-yao",
+        "person:shi-le",
         "person:wang-mang",
         "person:xiao-he",
         "person:xuan-zang",
@@ -80361,6 +80641,23 @@
         "polity:zhou_northern"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "liu-yao",
+          "entityKey": "person:liu-yao",
+          "label": "刘曜",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "former_zhao"
+          ],
+          "evidenceIds": [
+            "jinshu-vol103-liu-yao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "person",
           "entityId": "fu-jian-founder",
@@ -80485,7 +80782,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 8 项待核验缺口。"
+      "summary": "西安市：有 9 项待核验缺口。"
     },
     "changsha": {
       "placeId": "changsha",

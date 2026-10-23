@@ -125,7 +125,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘渊在西晋末年依托匈奴部众与并州军政资源起兵。', '304年前后称汉王，政权由此进入前赵（汉赵）形成阶段。', '刘曜时期取得关中并以长安为政治中心，政权结构发生重要转折。'],
     turningPoints: [turn(304, '汉赵形成', '刘渊称汉王，匈奴刘氏政权进入形成阶段。', 'former-zhao-founded'), turn(318, '刘曜继承与改国号', '刘曜承接政权并将政治重心逐步转向关中。'), turn(329, '前赵覆亡', '后赵攻取长安，前赵政权结束。')],
     principalFigureIds: ['liu-yao'], capitalPhases: [capital('changan', 304, 329)],
-    heritageIds: ['former-zhao-xiangguo-city-site'], eventIds: ['former-zhao-founded'], claimIds: ['claim-former-zhao-changan-capital'], sourceIds: modernSources,
+    heritageIds: ['former-zhao-xiangguo-city-site', 'former-zhao-changan-city-layer'], eventIds: ['former-zhao-founded', 'former-zhao-ended-329'], claimIds: ['claim-former-zhao-changan-capital', 'claim-liu-yao-participated-former-zhao-ended-329', 'claim-liu-yao-enemy-shi-le-termination-329'], sourceIds: modernSources,
     uncertaintyNote: '304年是刘渊称汉王的形成节点，刘曜时期的长安中心不能反推为全期唯一首都；襄国遗址层是跨政权城市空间参照，不等于前赵专属建筑遗存。',
   }),
   detail({

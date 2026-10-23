@@ -2,6 +2,7 @@ import type { HeritageAsset } from '../domain/types';
 
 export const heritageAssets: HeritageAsset[] = [
   { id: 'han-changan-city-site', name: '汉长安城遗址', placeId: 'changan', type: 'city-site', constructionFrom: -202, constructionTo: 23, modernStatus: 'archaeological-site', description: '西汉长安城遗址，保留城址、宫殿区与道路等城市考古信息。', sourceIds: ['zizhi-tongjian', 'modern-geography-reference'] },
+  { id: 'former-zhao-changan-city-layer', name: '前赵长安城市历史层', placeId: 'changan', type: 'city-site', constructionFrom: 304, constructionTo: 329, modernStatus: 'archaeological-site', description: '前赵以长安为主要政治中心阶段的城市历史层，今日对应西安市及汉长安城遗址相关考古研究范围；不指认现存单一建筑为前赵原构。', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'] },
   { id: 'weiyang-palace-site', name: '未央宫遗址', placeId: 'changan', type: 'palace', constructionFrom: -200, modernStatus: 'archaeological-site', description: '汉长安城重要宫殿遗址，与汉代帝国宫城制度相关。', sourceIds: ['modern-geography-reference'] },
   { id: 'daming-palace-site', name: '大明宫遗址', placeId: 'changan', type: 'palace', constructionFrom: 634, modernStatus: 'archaeological-site', description: '唐长安城北部重要宫殿遗址，反映唐代宫城与都城格局。', sourceIds: ['modern-geography-reference'] },
   { id: 'xingqing-palace-site', name: '兴庆宫遗址', placeId: 'changan', type: 'palace', constructionFrom: 714, modernStatus: 'archaeological-site', description: '唐长安城东部宫苑遗址，与玄宗时期政治生活相关。', sourceIds: ['modern-geography-reference'] },

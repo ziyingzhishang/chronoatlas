@@ -310,6 +310,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷八十五·晋纪七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷085', detail: '记载刘渊称汉王及早期政权形成；刘聪改赵、迁都等后续节点不与304年混同。' }],
   },
   {
+    id: 'former-zhao-ended-329', year: 329, title: '前赵政权覆亡', summary: '后赵石勒攻取长安并擒杀刘曜，前赵统一政治结构结束；长安城市层继续承接后续政权。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '刘曜时期前赵以长安为主要政治中心，与石勒建立的后赵长期争夺关中、河东和中原秩序。',
+    process: '329年后赵军攻取长安，刘曜被俘并处死，前赵的中央政治结构随之终止；地方城市、官署和人口并未因政权覆亡而消失。',
+    impact: '后赵接替前赵成为北方重要政权，长安进入后赵及后续十六国政权反复承接的城市层；襄国、长安两地的政治中心转换应分别观察。',
+    mapNote: '地图将329年标为前赵终止节点，长安标注为末期都城与今日西安历史空间参照；该节点不表示长安城市遗址或地方社会终止。',
+    references: [{ title: '《资治通鉴》卷九十四·晋纪十六', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷094', detail: '用于329年前赵与后赵战争、长安失守及刘曜结局的年份级核验；城市遗产延续为项目分层表达。' }],
+  },
+  {
     id: 'later-zhao-founded', year: 319, title: '后赵建立', summary: '石勒改国号为赵并在襄国称帝，后赵政权形成。', placeId: 'xiangguo', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '石勒在北方战争中逐步扩大势力，前赵内部的权力变化为其摆脱名义从属提供了条件。',

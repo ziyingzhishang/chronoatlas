@@ -1424,6 +1424,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '前赵政权的都城与实际控制范围存在阶段变化；本条只标出长安作为核心节点。',
   },
   {
+    eventId: 'former-zhao-ended-329',
+    participants: [
+      { personId: 'liu-yao', role: '前赵末期君主与长安防御核心', note: '刘曜在长安失守和前赵终止阶段被后赵军俘获；本条不把其个人结局等同于城市或地方社会消失。' },
+      { personId: 'shi-le', role: '攻取长安并接替前赵北方政治空间的后赵君主', note: '石勒代表后赵对长安的军事接收与政权替代；后赵控制关中仍需按后续阶段核验。' },
+    ],
+    polityIds: ['former_zhao', 'later_zhao'],
+    causes: ['前赵与后赵长期争夺关中、河东和中原政治资源。', '刘曜在长安的军政体系难以抵御后赵持续进攻。'],
+    consequences: ['后赵攻取长安，前赵统一政治结构结束。', '刘曜被俘并处死，石勒及后赵成为北方竞争的主要一方。', '长安城市和交通网络继续承接后赵及后续十六国政权，政权终止与城市遗产延续分层记录。'],
+    phases: [{ label: '长安失守与前赵终止', startYear: 329, endYear: 329, summary: '后赵攻取长安，刘曜被俘，前赵政权结束。' }],
+    locationIds: ['changan'],
+    relatedEventIds: ['later-zhao-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '329年作为政权终止年份明确；围城、长安失守、刘曜被俘和地方接收属于连续过程，不能把所有后果压缩成同一时刻。',
+  },
+  {
     eventId: 'later-qin-falls-changan',
     participants: [],
     polityIds: ['later_qin'],

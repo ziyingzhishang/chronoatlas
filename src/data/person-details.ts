@@ -42,8 +42,8 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'liu-yao', biography: '刘曜是十六国时期前赵的重要君主，前赵经营关中时，长安成为北方政治竞争的关键节点。',
     aliases: [], offices: [{ title: '前赵皇帝', polityId: 'former_zhao', placeId: 'changan', validFrom: 318, validTo: 329, datePrecision: 'range', sourceIds }],
-    keyEvents: ['changan-former-zhao'], sourceIds,
-    uncertaintyNote: '十六国时期的政治中心和直接控制范围变化频繁，相关叙述保留阶段性而非连续边界判断。',
+    keyEvents: ['changan-former-zhao', 'former-zhao-ended-329'], sourceIds,
+    uncertaintyNote: '十六国时期的政治中心和直接控制范围变化频繁；刘曜与329年长安失守、前赵终止相关，但不能据此把前赵全期简化为单一都城或连续边界。',
   },
   {
     personId: 'fu-jian', biography: '苻坚在前秦政治中整合关中并推动北方扩张，长安是其政权运作和军事动员的重要中心。',
