@@ -87,6 +87,20 @@ describe('person time review', () => {
     expect(record.explanation).toContain('不将其扩展为完整生卒区间');
   });
 
+  it('never promotes activity anchors to confirmed life dates', () => {
+    const report = buildPersonTimeCoverageReport({
+      people: [{ ...fixturePerson, birthYear: undefined, deathYear: undefined }],
+      personDetails: [fixtureDetail],
+      claims: [{ ...fixtureClaim, datePrecision: 'year' }],
+    });
+    const record = report.byPersonId['fixture-person'];
+
+    expect(record.status).toBe('approximate');
+    expect(record.evidence.some((item) => item.kind === 'office' && item.datePrecision === 'range')).toBe(true);
+    expect(record.evidence.some((item) => item.kind === 'claim' && item.datePrecision === 'year')).toBe(true);
+    expect(record.explanation).toContain('不将其扩展为完整生卒区间');
+  });
+
   it('marks a person unknown when no source record carries a usable time value', () => {
     const report = buildPersonTimeCoverageReport({
       people: [{ ...fixturePerson, birthYear: undefined, deathYear: undefined }],
@@ -101,7 +115,7 @@ describe('person time review', () => {
     expect(record.explanation).toContain('暂不定位');
   });
 
-  it('audits all 42 currently uncertain people without inventing years', () => {
+  it('audits all 43 currently uncertain people without inventing years', () => {
     const report = buildPersonTimeCoverageReport();
     const uncertain = report.records.filter((record) => record.status !== 'confirmed');
 
@@ -113,6 +127,12 @@ describe('person time review', () => {
     expect(report.records.every((record) => record.evidence.every((evidence) => (
       evidence.from === undefined || evidence.to === undefined || evidence.from <= evidence.to
     )))).toBe(true);
+    expect(uncertain.every((record) => (
+      record.birthYear === undefined || record.deathYear === undefined
+    ))).toBe(true);
+    expect(uncertain
+      .filter((record) => record.status === 'approximate')
+      .every((record) => record.explanation.includes('不将其扩展为完整生卒区间'))).toBe(true);
     expect(report.byPersonId['yu-the-great'].explanation).toContain('传统文献');
   });
 });
