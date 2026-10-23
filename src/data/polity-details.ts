@@ -101,7 +101,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['忽必烈在蒙古汗权基础上推动制度与都城建设。', '1271年定国号为大元。', '1279年南宋覆亡后，元对中原和江南的统治整合进入新的阶段。'],
     turningPoints: [turn(1260, '汗位与制度重组', '忽必烈取得汗位后推进新的国家制度。'), turn(1271, '元建立', '国号改为大元。', 'yuan-founded'), turn(1279, '南宋覆亡', '元完成对南宋主要政权的征服。')],
     principalFigureIds: ['kublai', 'liu-bingzhong', 'bayan'], capitalPhases: [capital('shangdu', 1271, 1368, 'secondary', 'formal', '夏都'), capital('dadu', 1271, 1368, 'primary', 'formal', '主要政治中心')],
-    heritageIds: ['yuan-shangdu-site'], eventIds: ['yuan-founded'], claimIds: ['claim-kublai-ruled-yuan-closure'], sourceIds: [...modernSources, 'yuan-nationalities-history', 'yuan-li-bingzhong'],
+    heritageIds: ['yuan-shangdu-site'], eventIds: ['yuan-founded', 'yuan-shangdu-built'], claimIds: ['claim-kublai-ruled-yuan-closure'], sourceIds: [...modernSources, 'yuan-nationalities-history', 'yuan-li-bingzhong'],
     uncertaintyNote: '蒙古帝国各汗国不能整体等同元朝；1271年是国号节点，1279年是南宋覆亡节点，两者不应合并为一次性建国。',
   }),
   detail({
@@ -269,7 +269,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['秃发乌孤在后凉势力衰弱后整合河湟部众。', '397年前后南凉进入政权形成阶段。', '秃发氏以西平、乐都为不同阶段中心，最终在后秦压力下结束。'],
     turningPoints: [turn(397, '南凉政权形成', '秃发氏在河湟建立南凉。', 'southern-liang-founded-397'), turn(399, '迁都乐都', '政治中心由西平转向乐都，河湟网络进一步整合。'), turn(414, '南凉覆亡', '南凉为西秦所灭，秃发氏政权结束。')],
     principalFigureIds: ['tufa-wugu'], capitalPhases: [capital('xiping', 397, 401), capital('ledu', 402, 414)],
-    heritageIds: ['southern-liang-ledu-city-site'], eventIds: ['southern-liang-founded-397'], claimIds: ['claim-tufa-wugu-founded-southern-liang-closure'], sourceIds: [...modernSources, 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang'],
+    heritageIds: ['southern-liang-ledu-city-site'], eventIds: ['southern-liang-founded-397', 'southern-liang-moves-ledu'], claimIds: ['claim-tufa-wugu-founded-southern-liang-closure'], sourceIds: [...modernSources, 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang'],
     uncertaintyNote: '秃发乌孤是南凉形成阶段的本政权人物端点，397年建政与399年个人统治期分开记录；西平、乐都均按已有首都阶段连接，不将区域政治中心夸大为完整城址复原。',
   }),
   detail({
@@ -533,7 +533,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['铁木真在斡难河源大会中被推举为成吉思汗。', '1206年后蒙古高原主要部众进入共同汗权阶段。', '1235年前后哈拉和林成为较固定的政治中心，1260年后的元朝国家化另行叙述。'],
     turningPoints: [turn(1206, '蒙古汗国形成', '铁木真被推举为成吉思汗。', 'mongol-founded'), turn(1235, '哈拉和林成为固定中心', '汗廷由移动网络转向较固定的城市政治中心。'), turn(1260, '汗权分裂与国家转型', '蒙古帝国各汗国和忽必烈政权的政治路径分化。')],
     principalFigureIds: ['temujin', 'jamukha', 'mongke', 'kublai'], capitalPhases: [capital('mongol_karakorum', 1206, 1234, 'de_facto', 'actual', '早期仍以移动汗廷和阶段性中心为主。'), capital('mongol_karakorum', 1235, 1260, 'primary', 'formal', '哈拉和林，今蒙古国前杭爱省。')],
-    heritageIds: ['mongol-karakorum-city-site'], eventIds: ['mongol-founded'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['mongol-karakorum-city-site'], eventIds: ['mongol-founded', 'mongol-karakorum-fixed-center'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '1206年建立的是统一汗权阶段，早期政治中心仍具有移动性，不应把后建的哈拉和林城反推为当年已存在的固定首都；1260年后蒙古政治分化，不能与元朝详情合并。',
   }),
   detail({

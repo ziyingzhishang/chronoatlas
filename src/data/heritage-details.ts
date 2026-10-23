@@ -606,7 +606,7 @@ const details: HeritageDetail[] = [
     phase('original', '都城营建', '1256—1271年', '忽必烈时期营建开平、上都，后成为元两都制度中的夏都和重要政治、礼仪中心。', 1256, 1271),
     phase('site', '宫城皇城遗址', '元代都城遗址', '宫城、皇城、外城、道路和祭祀空间以考古遗址形式完整呈现城市规划信息。', 1271, 1368),
     phase('restoration', '遗址保护展示', '现代世界文化遗产保护', '遗址保护区、博物馆和考古展示解释元上都，不重建完整元代宫殿。', 1900),
-  ], ['li-shimin'], ['yuan'], ['yuan-founded'], ['宫城与皇城城垣', '外城道路和城市分区', '草原交通与祭祀空间'], '观察元代多都制、草原帝国治理与今日内蒙古遗产保护的核心地点。', '元上都与大都共同构成两都体系，不能把上都视为元代唯一首都；现存遗址不等于宫殿建筑完整保存；李世民仅作中国古代多中心都城比较索引，不是元代人物。', ['yuan-nationalities-history', 'yuan-li-bingzhong', 'modern-geography-reference']),
+  ], ['kublai'], ['yuan'], ['yuan-founded', 'yuan-shangdu-built'], ['宫城与皇城城垣', '外城道路和城市分区', '草原交通与祭祀空间'], '观察元代多都制、草原帝国治理与今日内蒙古遗产保护的核心地点。', '元上都与大都共同构成两都体系，不能把上都视为元代唯一首都；现存遗址不等于宫殿建筑完整保存。', ['yuan-nationalities-history', 'yuan-li-bingzhong', 'modern-geography-reference']),
   detail('western-wei-changan-city-layer', '今陕西省西安市长安城遗址及关中历史城区考古研究范围；西魏城市层与隋唐长安城并非同一完整建筑层。', ['西魏长安政治中心', '北魏分裂后关中军政、宫城与城市空间'], [
     phase('original', '政治中心使用', '535—557年', '元宝炬在长安即位后，西魏以长安为政治中心，宇文泰主持的关中军政体系依托既有城市空间运作。', 535, 557),
     phase('site', '城市历史层', '西魏长安遗址层', '宫城、官署、道路和关中城市地理主要通过文献、考古叠压与隋唐长安遗址分层辨识。', 535, 557, '现有长安遗址的可见主体多属隋唐及后世，不能直接视作西魏原建筑。'),
@@ -636,7 +636,7 @@ const details: HeritageDetail[] = [
     phase('original', '都城营建与使用', '约1220—1271年', '窝阔台时期将哈拉和林发展为蒙古汗国的重要固定政治中心，宫殿、城郭和跨区域使节网络在此汇聚。', 1220, 1271, '蒙古汗国早期汗廷具有移动性，哈拉和林成为固定城市中心的具体营建阶段需与营地政治区分。'),
     phase('site', '城市考古遗址', '13世纪蒙古都城遗址', '城址、宫殿基址、道路、宗教建筑和手工业遗迹以考古遗址形式保存。', 1220, 1271),
     phase('restoration', '现代遗址保护展示', '当代鄂尔浑河谷文化景观保护', '考古保护区、博物馆和遗址标识解释哈拉和林，不复建完整蒙古宫城。', 1900, undefined, '现代展示建筑与蒙古汗国原构必须分层标注。'),
-  ], ['temujin'], ['mongol'], ['mongol-founded'], ['城墙与城市分区遗迹', '宫殿和宗教建筑基址', '鄂尔浑河谷交通与碑刻文化景观'], '从今日哈拉和林观察蒙古汗国由移动汗廷走向固定城市中心的过程，并连接元代都城体系。', '1206年蒙古汗国形成时不等于已有成熟固定首都；哈拉和林是后期核心城市，不能将其直接回填为全期唯一首都，也不能用其遗址范围推导蒙古帝国疆域。', ['china-chronology', 'capital-history-reference', 'modern-geography-reference']),
+  ], ['temujin'], ['mongol'], ['mongol-founded', 'mongol-karakorum-fixed-center'], ['城墙与城市分区遗迹', '宫殿和宗教建筑基址', '鄂尔浑河谷交通与碑刻文化景观'], '从今日哈拉和林观察蒙古汗国由移动汗廷走向固定城市中心的过程，并连接元代都城体系。', '1206年蒙古汗国形成时不等于已有成熟固定首都；哈拉和林是后期核心城市，不能将其直接回填为全期唯一首都，也不能用其遗址范围推导蒙古帝国疆域。', ['china-chronology', 'capital-history-reference', 'modern-geography-reference']),
   detail('later-jin-hetu-ala-city-site', '今辽宁省抚顺市新宾满族自治县赫图阿拉城遗址保护区，古城范围与现代县域不重合。', ['后金1616年建政与赫图阿拉早期都城', '女真八旗组织、宫城、城防与东北亚政治网络'], [
     phase('original', '都城营建与使用', '1616—1625年', '努尔哈赤建立后金后，以赫图阿拉作为早期政治中心，宫殿、城防和八旗政务空间在此展开。', 1616, 1625),
     phase('site', '故城遗址', '后金早期城市历史层', '城墙、宫殿基址、衙署与相关遗迹以故城遗址和考古展示形式保存。', 1616, 1625, '赫图阿拉早期都城与后金迁都辽阳、盛京后的政治中心应分阶段记录。'),
@@ -672,7 +672,7 @@ const details: HeritageDetail[] = [
     historicalPhase('original', '迁都与政治中心', '399—414年', '《太平御览》所引南凉材料记载秃发乌孤时期徙于乐都；乐都此后承接南凉后期政治、军政与河湟交通功能。', 399, 414, '文献可支持乐都作为阶段性政治中心，但不能仅凭文献把今日某一处建筑认定为南凉原构。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu']),
     historicalPhase('site', '候选城址与城市历史层', '南凉时期', '今日乐都的南凉文化展示与地方历史空间提供城市记忆入口；具体古城遗址、城垣和宫城分区仍需考古报告逐项比定。', 399, 414, '候选历史层不等同于已经完成考古定名的遗址。', ['jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
     historicalPhase('restoration', '现代文化展示', '当代', '地方文化展示、旅游线路和历史地图帮助理解南凉乐都阶段，但现代设施不视为南凉建筑遗存。', 2000, undefined, '现代展示空间与南凉原城、原建筑严格分层。', ['mct-ledu-southern-liang']),
-  ], ['tufa-wugu', 'tufa-rutan'], ['southern_liang'], ['southern-liang-founded-397'], ['乐都河湟城市空间', '南凉迁都文献记忆', '地方文化展示与候选遗址线索'], '从今日乐都观察南凉由西平转入乐都的政治中心变化，并理解河湟政权的流动性与城市遗产证据边界。', '现有证据足以关联南凉—乐都的历史层和今日文化展示，但不足以确认某一现存建筑为南凉原构；遗产状态保持候选，不把旅游展示等同于考古定名。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
+  ], ['tufa-wugu', 'tufa-rutan'], ['southern_liang'], ['southern-liang-founded-397', 'southern-liang-moves-ledu'], ['乐都河湟城市空间', '南凉迁都文献记忆', '地方文化展示与候选遗址线索'], '从今日乐都观察南凉由西平转入乐都的政治中心变化，并理解河湟政权的流动性与城市遗产证据边界。', '现有证据足以关联南凉—乐都的历史层和今日文化展示，但不足以确认某一现存建筑为南凉原构；遗产状态保持候选，不把旅游展示等同于考古定名。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
 ];
 
 const detailById = new Map(details.map((heritageDetail) => [heritageDetail.heritageId, heritageDetail]));

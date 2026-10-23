@@ -121,6 +121,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《晋书》卷一二六·秃发乌孤载记', url: 'https://zh.wikisource.org/wiki/晉書/卷126', detail: '用于核验秃发乌孤与南凉早期建政、继承和河湟政治空间。' }, { title: '《资治通鉴》', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于前后凉—南凉竞争和397年前后政权形成的编年背景。' }],
   },
   {
+    id: 'southern-liang-moves-ledu', year: 399, title: '南凉政治中心转向乐都', summary: '南凉在河湟经营过程中将政治中心转向乐都，城市进入南凉中后期都城阶段。', placeId: 'ledu', sourceIds: ['jinshu-vol126-tufa-wugu', 'capital-history-reference'],
+    datePrecision: 'approximate', region: 'china', category: '都城营建／迁都', verification: 'partial',
+    background: '南凉在西平形成政权后继续经营河湟，秃发氏统治下的政治中心随军政与交通网络调整。',
+    process: '约399年南凉政治中心转向乐都；项目将其记录为迁移与都城阶段形成节点，不把“约年”写成无争议的单日迁都。',
+    impact: '乐都成为观察南凉中后期政治、河湟交通和秃发氏继承秩序的重要城市节点。',
+    mapNote: '乐都与西平分别表示南凉不同阶段的政治中心；现代乐都区范围不能替代南凉古城和政权控制范围。',
+    references: [{ title: '《晋书》卷一二六·秃发乌孤载记', url: 'https://zh.wikisource.org/wiki/晉書/卷126', detail: '用于南凉秃发氏继承与河湟政治中心阶段的核验；迁移年代保留约年。' }, { title: '首都历史分期参考', url: 'https://zh.wikipedia.org/wiki/%E5%8D%97%E5%87%89', detail: '用于乐都阶段性政治中心的交叉参照，不将现代城市边界前推为古城边界。' }],
+  },
+  {
     id: 'later-liang-five-dynasties-founded', year: 907, title: '五代后梁建立', summary: '朱温在开封受唐禅建立后梁，五代第一个中原王朝形成。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '朱温控制宣武军和唐末中原军政资源，唐廷权力转移为新的中原王朝提供了制度与军事条件。',
@@ -708,6 +717,15 @@ const catalog: HistoricalEvent[] = [
     ],
   },
   {
+    id: 'yuan-shangdu-built', year: 1256, title: '开平／上都营建启动', summary: '忽必烈时期营建开平城，后发展为元两都体系中的上都。', placeId: 'shangdu', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong', 'capital-history-reference'],
+    datePrecision: 'approximate', region: 'china', category: '都城营建／城市史', verification: 'checked',
+    background: '蒙古汗权在漠南与华北的统治需要新的城市、宫殿和行政空间，忽必烈时期开始营建开平城。',
+    process: '1256年前后启动开平营建，后在元朝国号确立后发展为上都；营建启动、国号建立与两都制度成熟分别记录。',
+    impact: '上都成为元代夏都和草原政治、礼仪中心，为观察元朝多中心首都结构提供城市节点。',
+    mapNote: '上都与大都共同构成元代多中心政治体系；1256年营建启动不等于上都当年已完成，也不替代大都的城市阶段。',
+    references: [{ title: '元代都城与刘秉忠研究资料', url: 'https://www.nopss.gov.cn/', detail: '用于开平、上都营建与元代多中心都城体系的阶段性核验；具体工程年代按约年表达。' }],
+  },
+  {
     id: 'ming-founded', year: 1368, title: '明建立', summary: '朱元璋在应天建立明朝，明军随后北取大都。',
     datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['china-chronology'], verification: 'checked',
     background: '元末战争中，朱元璋先后击败主要竞争者，形成以应天为中心的军事政治力量。',
@@ -942,6 +960,15 @@ const catalog: HistoricalEvent[] = [
     impact: '蒙古草原出现具有跨部落动员能力的新政治体系，并开启影响欧亚多地的扩张过程；统一大会不等于当年已控制后来的蒙古帝国范围。',
     mapNote: '地图应以蒙古高原核心和部众联盟网络表达1206年形成，不将后续征服区、宗王封地或蒙古诸汗国自动合并为同一直接控制区。',
     references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于蒙古统一与元代前史的年代框架；大会地点、部众边界和后续汗国关系需分阶段核验。' }],
+  },
+  {
+    id: 'mongol-karakorum-fixed-center', year: 1235, title: '哈拉和林成为较固定政治中心', summary: '窝阔台时期蒙古汗国在鄂尔浑河谷发展出较固定的城市政治中心。', placeId: 'mongol_karakorum', sourceIds: ['china-chronology', 'capital-history-reference', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'world', category: '都城营建／城市史', verification: 'partial',
+    background: '蒙古汗国早期以移动汗廷和部众网络为主，统一后需要更稳定的宫殿、行政和使节汇聚空间。',
+    process: '约1235年前后，哈拉和林在鄂尔浑河谷发展为较固定的政治中心；窝阔台时期的城市建设与早期移动汗廷分开记录。',
+    impact: '蒙古汗国由移动政治网络走向固定城市中心，哈拉和林成为连接草原、欧亚交通和后续元代都城体系的关键节点。',
+    mapNote: '1235年采用阶段性约年，不把哈拉和林前推为1206年已有的固定首都，也不以城市遗址范围替代蒙古帝国疆域。',
+    references: [{ title: '蒙古汗国都城与哈拉和林研究资料', url: 'https://whc.unesco.org/en/list/1389/', detail: '用于哈拉和林城市遗址、鄂尔浑河谷文化景观与蒙古汗国政治中心阶段的交叉核验。' }],
   },
   {
     id: 'northern-yuan-founded', year: 1368, title: '北元政权形成', summary: '元廷北撤后，蒙古大汗政权在漠北延续，后世史学常称北元阶段。', sourceIds: ['northern-yuan-early-ming', 'china-chronology'],

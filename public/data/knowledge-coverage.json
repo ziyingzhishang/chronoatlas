@@ -3398,6 +3398,66 @@
     },
     {
       "entityType": "event",
+      "entityId": "mongol-karakorum-fixed-center",
+      "entityKey": "event:mongol-karakorum-fixed-center",
+      "label": "哈拉和林成为较固定政治中心",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "mongol-karakorum-fixed-center"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "modern-geography-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:mongol-karakorum-fixed-center"
+          ],
+          "relatedIds": [
+            "kublai",
+            "mongol",
+            "mongol-founded",
+            "yuan-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "nanzhao-founded",
       "entityKey": "event:nanzhao-founded",
       "label": "南诏建立（形成阶段）",
@@ -5531,7 +5591,63 @@
           ],
           "relatedIds": [
             "later-liang-founded",
-            "southern-liang-founded",
+            "southern_liang",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-liang-moves-ledu",
+      "entityKey": "event:southern-liang-moves-ledu",
+      "label": "南凉政治中心转向乐都",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-liang-moves-ledu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "jinshu-vol126-tufa-wugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-liang-moves-ledu"
+          ],
+          "relatedIds": [
+            "southern-liang-founded-397",
             "southern_liang",
             "tufa-wugu"
           ]
@@ -8132,6 +8248,65 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "yuan-shangdu-built",
+      "entityKey": "event:yuan-shangdu-built",
+      "label": "开平／上都营建启动",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yuan-shangdu-built"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "yuan-li-bingzhong",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:yuan-shangdu-built"
+          ],
+          "relatedIds": [
+            "kublai",
+            "yuan",
+            "yuan-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -11713,6 +11888,7 @@
           "relatedIds": [
             "mongol",
             "mongol-founded",
+            "mongol-karakorum-fixed-center",
             "temujin"
           ]
         },
@@ -13134,6 +13310,7 @@
           ],
           "relatedIds": [
             "southern-liang-founded-397",
+            "southern-liang-moves-ledu",
             "southern_liang",
             "tufa-rutan",
             "tufa-wugu"
@@ -14985,7 +15162,7 @@
       "entityKey": "heritage:yuan-shangdu-site",
       "label": "元上都遗址",
       "polityIds": [
-        "tang",
+        "mongol",
         "yuan"
       ],
       "checks": [
@@ -15024,9 +15201,10 @@
             "heritage-detail:yuan-shangdu-site"
           ],
           "relatedIds": [
-            "li-shimin",
+            "kublai",
             "yuan",
-            "yuan-founded"
+            "yuan-founded",
+            "yuan-shangdu-built"
           ]
         },
         {
@@ -18688,7 +18866,9 @@
             "claim:claim-liu-bingzhong-served-kublai",
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
+            "event-detail:mongol-karakorum-fixed-center",
             "event-detail:yuan-founded",
+            "event-detail:yuan-shangdu-built",
             "person-polity:kublai:mongol",
             "person-polity:kublai:yuan"
           ],
@@ -18697,10 +18877,12 @@
             "liu-bingzhong",
             "mongke",
             "mongol",
+            "mongol-karakorum-fixed-center",
             "temujin",
             "yelu-dashi",
             "yuan",
-            "yuan-founded"
+            "yuan-founded",
+            "yuan-shangdu-built"
           ]
         },
         {
@@ -23933,10 +24115,12 @@
             "claim:claim-tufa-wugu-sibling-tufa-lilugu",
             "claim:claim-tufa-wugu-sibling-tufa-rutan",
             "event-detail:southern-liang-founded-397",
+            "event-detail:southern-liang-moves-ledu",
             "person-polity:tufa-wugu:southern_liang"
           ],
           "relatedIds": [
             "southern-liang-founded-397",
+            "southern-liang-moves-ledu",
             "southern_liang",
             "tufa-lilugu",
             "tufa-rutan"
@@ -30032,6 +30216,7 @@
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
+            "event-detail:mongol-karakorum-fixed-center",
             "heritage-detail:mongol-karakorum-city-site",
             "person:jamukha",
             "person:kublai",
@@ -30044,6 +30229,7 @@
             "mongke",
             "mongol-founded",
             "mongol-karakorum-city-site",
+            "mongol-karakorum-fixed-center",
             "temujin"
           ]
         },
@@ -31446,6 +31632,7 @@
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
             "event-detail:southern-liang-founded-397",
+            "event-detail:southern-liang-moves-ledu",
             "heritage-detail:southern-liang-ledu-city-site",
             "person:tufa-lilugu",
             "person:tufa-rutan",
@@ -31454,6 +31641,7 @@
           "relatedIds": [
             "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
+            "southern-liang-moves-ledu",
             "tufa-lilugu",
             "tufa-rutan",
             "tufa-wugu"
@@ -33311,6 +33499,7 @@
           "evidenceIds": [
             "claim:claim-kublai-ruled-yuan-closure",
             "event-detail:yuan-founded",
+            "event-detail:yuan-shangdu-built",
             "heritage-detail:yuan-shangdu-site",
             "person:bayan",
             "person:kublai",
@@ -33323,6 +33512,7 @@
             "liu-bingzhong",
             "toghon-temur",
             "yuan-founded",
+            "yuan-shangdu-built",
             "yuan-shangdu-site"
           ]
         },
@@ -33799,6 +33989,21 @@
     },
     {
       "entityType": "event",
+      "entityId": "mongol-karakorum-fixed-center",
+      "entityKey": "event:mongol-karakorum-fixed-center",
+      "label": "哈拉和林成为较固定政治中心",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "qi-warring-founded-eighth-batch",
       "entityKey": "event:qi-warring-founded-eighth-batch",
       "label": "齐政权建立（传统分期）",
@@ -33886,6 +34091,20 @@
       "entityId": "southern-liang-founded-397",
       "entityKey": "event:southern-liang-founded-397",
       "label": "南凉政权形成",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-liang-moves-ledu",
+      "entityKey": "event:southern-liang-moves-ledu",
+      "label": "南凉政治中心转向乐都",
       "dimension": "time",
       "kind": "uncertain",
       "polityIds": [
@@ -34030,6 +34249,21 @@
       "kind": "uncertain",
       "polityIds": [
         "yan_warring"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "yuan-shangdu-built",
+      "entityKey": "event:yuan-shangdu-built",
+      "label": "开平／上都营建启动",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "mongol",
+        "yuan"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -38232,6 +38466,66 @@
         }
       ]
     },
+    "event:mongol-karakorum-fixed-center": {
+      "entityType": "event",
+      "entityId": "mongol-karakorum-fixed-center",
+      "entityKey": "event:mongol-karakorum-fixed-center",
+      "label": "哈拉和林成为较固定政治中心",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "mongol-karakorum-fixed-center"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "modern-geography-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:mongol-karakorum-fixed-center"
+          ],
+          "relatedIds": [
+            "kublai",
+            "mongol",
+            "mongol-founded",
+            "yuan-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:nanzhao-founded": {
       "entityType": "event",
       "entityId": "nanzhao-founded",
@@ -40367,7 +40661,63 @@
           ],
           "relatedIds": [
             "later-liang-founded",
-            "southern-liang-founded",
+            "southern_liang",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-liang-moves-ledu": {
+      "entityType": "event",
+      "entityId": "southern-liang-moves-ledu",
+      "entityKey": "event:southern-liang-moves-ledu",
+      "label": "南凉政治中心转向乐都",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-liang-moves-ledu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "jinshu-vol126-tufa-wugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:southern-liang-moves-ledu"
+          ],
+          "relatedIds": [
+            "southern-liang-founded-397",
             "southern_liang",
             "tufa-wugu"
           ]
@@ -42968,6 +43318,65 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:yuan-shangdu-built": {
+      "entityType": "event",
+      "entityId": "yuan-shangdu-built",
+      "entityKey": "event:yuan-shangdu-built",
+      "label": "开平／上都营建启动",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yuan-shangdu-built"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "yuan-li-bingzhong",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:yuan-shangdu-built"
+          ],
+          "relatedIds": [
+            "kublai",
+            "yuan",
+            "yuan-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -46549,6 +46958,7 @@
           "relatedIds": [
             "mongol",
             "mongol-founded",
+            "mongol-karakorum-fixed-center",
             "temujin"
           ]
         },
@@ -47970,6 +48380,7 @@
           ],
           "relatedIds": [
             "southern-liang-founded-397",
+            "southern-liang-moves-ledu",
             "southern_liang",
             "tufa-rutan",
             "tufa-wugu"
@@ -49821,7 +50232,7 @@
       "entityKey": "heritage:yuan-shangdu-site",
       "label": "元上都遗址",
       "polityIds": [
-        "tang",
+        "mongol",
         "yuan"
       ],
       "checks": [
@@ -49860,9 +50271,10 @@
             "heritage-detail:yuan-shangdu-site"
           ],
           "relatedIds": [
-            "li-shimin",
+            "kublai",
             "yuan",
-            "yuan-founded"
+            "yuan-founded",
+            "yuan-shangdu-built"
           ]
         },
         {
@@ -53524,7 +53936,9 @@
             "claim:claim-liu-bingzhong-served-kublai",
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
+            "event-detail:mongol-karakorum-fixed-center",
             "event-detail:yuan-founded",
+            "event-detail:yuan-shangdu-built",
             "person-polity:kublai:mongol",
             "person-polity:kublai:yuan"
           ],
@@ -53533,10 +53947,12 @@
             "liu-bingzhong",
             "mongke",
             "mongol",
+            "mongol-karakorum-fixed-center",
             "temujin",
             "yelu-dashi",
             "yuan",
-            "yuan-founded"
+            "yuan-founded",
+            "yuan-shangdu-built"
           ]
         },
         {
@@ -58769,10 +59185,12 @@
             "claim:claim-tufa-wugu-sibling-tufa-lilugu",
             "claim:claim-tufa-wugu-sibling-tufa-rutan",
             "event-detail:southern-liang-founded-397",
+            "event-detail:southern-liang-moves-ledu",
             "person-polity:tufa-wugu:southern_liang"
           ],
           "relatedIds": [
             "southern-liang-founded-397",
+            "southern-liang-moves-ledu",
             "southern_liang",
             "tufa-lilugu",
             "tufa-rutan"
@@ -64868,6 +65286,7 @@
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
+            "event-detail:mongol-karakorum-fixed-center",
             "heritage-detail:mongol-karakorum-city-site",
             "person:jamukha",
             "person:kublai",
@@ -64880,6 +65299,7 @@
             "mongke",
             "mongol-founded",
             "mongol-karakorum-city-site",
+            "mongol-karakorum-fixed-center",
             "temujin"
           ]
         },
@@ -66282,6 +66702,7 @@
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
             "event-detail:southern-liang-founded-397",
+            "event-detail:southern-liang-moves-ledu",
             "heritage-detail:southern-liang-ledu-city-site",
             "person:tufa-lilugu",
             "person:tufa-rutan",
@@ -66290,6 +66711,7 @@
           "relatedIds": [
             "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
+            "southern-liang-moves-ledu",
             "tufa-lilugu",
             "tufa-rutan",
             "tufa-wugu"
@@ -68147,6 +68569,7 @@
           "evidenceIds": [
             "claim:claim-kublai-ruled-yuan-closure",
             "event-detail:yuan-founded",
+            "event-detail:yuan-shangdu-built",
             "heritage-detail:yuan-shangdu-site",
             "person:bayan",
             "person:kublai",
@@ -68159,6 +68582,7 @@
             "liu-bingzhong",
             "toghon-temur",
             "yuan-founded",
+            "yuan-shangdu-built",
             "yuan-shangdu-site"
           ]
         },
@@ -68507,20 +68931,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 140,
+      "totalEntities": 143,
       "statusCounts": {
-        "covered": 672,
+        "covered": 684,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 28,
+        "uncertain": 31,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 28
+        "uncertain": 31
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -68532,6 +68956,7 @@
         "event:eastern-zhou-founded-eighth-batch",
         "event:former-liang-founded",
         "event:goguryeo-founded",
+        "event:mongol-karakorum-fixed-center",
         "event:qi-warring-founded-eighth-batch",
         "event:qin-state-founded-eighth-batch",
         "event:republic-chongqing-wartime-center",
@@ -68539,6 +68964,7 @@
         "event:shangyang-palace-built",
         "event:silla-founded",
         "event:southern-liang-founded-397",
+        "event:southern-liang-moves-ledu",
         "event:southern-ming-founded",
         "event:tibetan-founded",
         "event:tuyuhun-founded",
@@ -68549,6 +68975,7 @@
         "event:xiongnu-founded",
         "event:xuanzang-at-ximing-658",
         "event:yan-warring-founded-eighth-batch",
+        "event:yuan-shangdu-built",
         "event:zhao-wuling-reforms-307",
         "event:zhou-conquest"
       ]
@@ -69664,8 +70091,11 @@
       "polityName": "蒙古汗国",
       "entityKeys": [
         "event:mongol-founded",
+        "event:mongol-karakorum-fixed-center",
         "event:yuan-founded",
+        "event:yuan-shangdu-built",
         "heritage:mongol-karakorum-city-site",
+        "heritage:yuan-shangdu-site",
         "person:jamukha",
         "person:kublai",
         "person:mongke",
@@ -69688,6 +70118,36 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "mongol-karakorum-fixed-center",
+          "entityKey": "event:mongol-karakorum-fixed-center",
+          "label": "哈拉和林成为较固定政治中心",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "yuan-shangdu-built",
+          "entityKey": "event:yuan-shangdu-built",
+          "label": "开平／上都营建启动",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -69697,7 +70157,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "蒙古汗国：有 1 项待核验缺口。"
+      "summary": "蒙古汗国：有 3 项待核验缺口。"
     },
     "nanzhao": {
       "polityId": "nanzhao",
@@ -70490,6 +70950,7 @@
       "polityName": "南凉",
       "entityKeys": [
         "event:southern-liang-founded-397",
+        "event:southern-liang-moves-ledu",
         "heritage:southern-liang-ledu-city-site",
         "person:tufa-lilugu",
         "person:tufa-rutan",
@@ -70559,6 +71020,20 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "southern-liang-moves-ledu",
+          "entityKey": "event:southern-liang-moves-ledu",
+          "label": "南凉政治中心转向乐都",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -70568,7 +71043,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "南凉：有 4 项待核验缺口。"
+      "summary": "南凉：有 5 项待核验缺口。"
     },
     "southern_tang": {
       "polityId": "southern_tang",
@@ -70680,7 +71155,6 @@
         "heritage:xiao-yan-ta",
         "heritage:ximing-temple-site",
         "heritage:xingqing-palace-site",
-        "heritage:yuan-shangdu-site",
         "person:an-lushan",
         "person:du-fu",
         "person:li-longji",
@@ -71535,9 +72009,11 @@
       "polityId": "yuan",
       "polityName": "元",
       "entityKeys": [
+        "event:mongol-karakorum-fixed-center",
         "event:northern-yuan-founded",
         "event:song-southward",
         "event:yuan-founded",
+        "event:yuan-shangdu-built",
         "heritage:yuan-shangdu-site",
         "person:bayan",
         "person:kublai",
@@ -71562,6 +72038,36 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "mongol-karakorum-fixed-center",
+          "entityKey": "event:mongol-karakorum-fixed-center",
+          "label": "哈拉和林成为较固定政治中心",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "yuan-shangdu-built",
+          "entityKey": "event:yuan-shangdu-built",
+          "label": "开平／上都营建启动",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -71571,7 +72077,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "元：有 1 项待核验缺口。"
+      "summary": "元：有 3 项待核验缺口。"
     },
     "zhao_warring": {
       "polityId": "zhao_warring",
@@ -73033,9 +73539,43 @@
       "cityName": "乐都区",
       "capitalRecordCount": 1,
       "entityKeys": [
-        "heritage:southern-liang-ledu-city-site"
+        "event:southern-liang-moves-ledu",
+        "heritage:southern-liang-ledu-city-site",
+        "person:tufa-wugu"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "tufa-wugu",
+          "entityKey": "person:tufa-wugu",
+          "label": "秃发乌孤",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "southern-liang-moves-ledu",
+          "entityKey": "event:southern-liang-moves-ledu",
+          "label": "南凉政治中心转向乐都",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -73043,7 +73583,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "乐都区：学习闭环已覆盖。"
+      "summary": "乐都区：有 2 项待核验缺口。"
     },
     "liangzhou": {
       "placeId": "liangzhou",
@@ -73412,9 +73952,27 @@
       "cityName": "哈拉和林遗址",
       "capitalRecordCount": 2,
       "entityKeys": [
-        "heritage:mongol-karakorum-city-site"
+        "event:mongol-karakorum-fixed-center",
+        "heritage:mongol-karakorum-city-site",
+        "person:kublai"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "mongol-karakorum-fixed-center",
+          "entityKey": "event:mongol-karakorum-fixed-center",
+          "label": "哈拉和林成为较固定政治中心",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -73422,7 +73980,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "哈拉和林遗址：学习闭环已覆盖。"
+      "summary": "哈拉和林遗址：有 1 项待核验缺口。"
     },
     "munster": {
       "placeId": "munster",
@@ -73536,9 +74094,27 @@
       "cityName": "元上都遗址",
       "capitalRecordCount": 1,
       "entityKeys": [
-        "heritage:yuan-shangdu-site"
+        "event:yuan-shangdu-built",
+        "heritage:yuan-shangdu-site",
+        "person:kublai"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "yuan-shangdu-built",
+          "entityKey": "event:yuan-shangdu-built",
+          "label": "开平／上都营建启动",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -73546,7 +74122,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "元上都遗址：学习闭环已覆盖。"
+      "summary": "元上都遗址：有 1 项待核验缺口。"
     },
     "shengjing": {
       "placeId": "shengjing",

@@ -60,7 +60,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'tufa-wugu', biography: '秃发乌孤在河湟地区建立南凉，南凉的后续统治由秃发利鹿孤与秃发傉檀承接。',
     aliases: ['南凉武王'], offices: [{ title: '南凉君主', polityId: 'southern_liang', validFrom: 397, validTo: 399, datePrecision: 'range', sourceIds }],
-    keyEvents: ['southern-liang-founded'], sourceIds,
+    keyEvents: ['southern-liang-founded-397', 'southern-liang-moves-ledu'], sourceIds,
     uncertaintyNote: '397年是南凉形成节点；秃发氏政权的后续继承与414年覆亡不能归并为秃发乌孤个人统治期。',
   },
   {
@@ -666,7 +666,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'kublai', biography: '忽必烈在蒙古汗权和东亚战争体系基础上建立元朝，1271年定国号为大元，随后继续完成对南宋的军事与行政整合。',
     aliases: ['元世祖'], offices: [{ title: '蒙古大汗／元皇帝', polityId: 'yuan', placeId: 'dadu', validFrom: 1260, validTo: 1294, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'] }],
-    keyEvents: ['yuan-founded'], sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'], uncertaintyNote: '1260年汗位、1271年改国号和1279年南宋覆亡是连续但不同的节点；元朝国号不等于当年已经完成南方控制。',
+    keyEvents: ['yuan-founded', 'mongol-karakorum-fixed-center'], sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'], uncertaintyNote: '1260年汗位、1271年改国号和1279年南宋覆亡是连续但不同的节点；元朝国号不等于当年已经完成南方控制；忽必烈与哈拉和林的关联属于后续承接而非1235年现场参与。',
   },
   {
     personId: 'liu-bingzhong', biography: '刘秉忠在忽必烈政权中参与国号、都城和制度设计，元初国家建构与大都政治空间均与其活动相连。',
