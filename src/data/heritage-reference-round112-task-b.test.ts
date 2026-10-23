@@ -20,7 +20,7 @@ const overlap = (from: number | undefined, to: number | undefined, year: number 
 );
 
 describe('round 112 task B Sui-Tang capital heritage boundary', () => {
-  it('audits all seven heritage candidates and the Tang Luoyang court-move event', () => {
+  it('audits all six remaining heritage candidates and the Tang Luoyang court-move event', () => {
     const sui = getPolityDetail('sui');
     const tang = getPolityDetail('tang');
 

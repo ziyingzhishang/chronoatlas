@@ -34,6 +34,7 @@ describe('Shangyang Palace event endpoints', () => {
       'tang-founded',
       'wu-zhou-founded',
     ]);
+    expect(heritage?.constructionHistory.find((phase) => phase.type === 'original')).toMatchObject({ from: 674, to: 676 });
     expect(tang?.eventIds).toEqual(expect.arrayContaining(['shangyang-palace-built', 'shangyang-palace-completed-679']));
     expect(wuzhou?.eventIds).not.toContain('shangyang-palace-built');
     expect(wuzhou?.eventIds).not.toContain('shangyang-palace-completed-679');

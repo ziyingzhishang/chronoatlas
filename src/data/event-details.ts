@@ -965,9 +965,8 @@ const details: HistoricalEventDetail[] = [
     consequences: ['上阳宫成为唐代洛阳宫城西部的重要遗产节点。', '679年宫成、移御是后续明确使用端点。'],
     phases: [
       { label: '上元年间营造', startYear: 674, endYear: 676, summary: '文献记为上元中营造，通常对应674—676年；675年为通行整理年。' },
-      { label: '完工端点待后续节点确认', startYear: 679, endYear: 679, summary: '679年编年材料明确记载宫成、移御，另列为独立事件。' },
     ],
-    locationIds: ['luoyang'], relatedEventIds: ['shangyang-palace-completed-679'], sourceIds: ['taiping-yulan-shangyang-palace', 'zizhi-tongjian-vol202-shangyang'],
+    locationIds: ['luoyang'], relatedEventIds: ['shangyang-palace-completed-679'], sourceIds: ['taiping-yulan-shangyang-palace'],
     uncertaintyNote: '上元中是范围性年代，675年不能视为绝对始建日；主宫、西上阳宫及各建筑单元的边界和考古对应仍需分项核验。',
   },
   {
