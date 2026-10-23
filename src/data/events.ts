@@ -247,6 +247,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '金中都营建与北京城市历史官方资料', url: 'https://wwj.beijing.gov.cn/bjww/362760/362770/326091358/index.html', detail: '用于1151—1153年营建、1153年迁都及金中都与元大都城市层的区分。' }],
   },
   {
+    id: 'jin-ended-1234', year: 1234, title: '金政权覆亡', summary: '蒙古与南宋联军攻灭金，完颜守绪政权结束；开封城市层和金代首都遗产继续存在。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'china', category: '政权终结／战争', verification: 'partial',
+    background: '金末政治中心在中都失守后转向开封，完颜守绪政权面对蒙古持续推进和南宋协同作战。',
+    process: '1234年前后蒙古与南宋联军攻灭金，完颜守绪及金的统一政治结构结束；蔡州战事、末帝结局、地方接收和开封城市层变化属于连续过程，不能压缩为单一地点的一日事件。',
+    impact: '金退出华北与东北亚政权谱系，蒙古和南宋的区域竞争进入新阶段；会宁府、中都、开封三段城市遗产继续作为不同历史层存在。',
+    mapNote: '地图将1234年标作金政权终止节点，开封标记为末期实际政治中心和今日城市参照；政权覆亡不表示开封城市及金代首都遗产在同日消失。',
+    references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于金末、蒙古与南宋协同攻金及1234年政权终止的编年参照，保留战争与城市层的分离。' }],
+  },
+  {
     id: 'western-xia-founded', year: 1038, title: '西夏建立', summary: '李元昊称帝建国，党项西夏政权正式形成。', placeId: 'xingqing', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '党项李氏在夏州、银州及河套西部经营多年，已形成相对独立的军事与行政资源。',

@@ -40,6 +40,7 @@ const expectedEventIds = [
   'western-liao-emperor-1132',
   'western-liao-ended-1218',
   'western-xia-ended-1227',
+  'jin-ended-1234',
   'southern-ming-founded',
   'hongguang-nanjing-founded',
   'longwu-fuzhou-founded',
@@ -56,12 +57,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(42);
+    expect(report.totalReviewed).toBe(43);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 13, approximate: 29, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 13, approximate: 30, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

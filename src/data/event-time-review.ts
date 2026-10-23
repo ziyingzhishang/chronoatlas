@@ -92,6 +92,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'western-liao-emperor-1132', status: 'approximate', expectedPrecision: 'approximate', explanation: '1132年称帝作为西辽制度化阶段，纪年换算存在1131等口径；与1124年前后形成和1134年八剌沙衮建都分层，八剌沙衮只作后续区域参照。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liao-ended-1218', status: 'approximate', expectedPrecision: 'approximate', explanation: '1218年前后表示屈出律政权被蒙古击败、西辽统一政治结构结束的过程；政权终止、地方秩序重组与八剌沙衮城市遗产延续分层记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-xia-ended-1227', status: 'approximate', expectedPrecision: 'approximate', explanation: '1227年前后表示李睍政权被蒙古击败、西夏统一政治结构结束的过程；军事征服、地方秩序重组与兴庆府及王陵遗产延续分层记录。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'jin-ended-1234', status: 'approximate', expectedPrecision: 'approximate', explanation: '1234年前后表示完颜守绪政权被蒙古与南宋联军击败、金统一政治结构结束的过程；末帝结局、地方接收与开封城市遗产延续分层记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'hongguang-nanjing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1644年朱由崧在南京先监国后即帝位，年份级节点可由弘光阶段史料支持；即位日和南京阶段覆亡属于同一阶段内的后续细节。', timelineStrategy: 'year-marker' },
   { eventId: 'longwu-fuzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1645年朱聿键在福州即位并改元隆武，福州阶段中心可明确到年份；隆武覆亡与郑芝龙军镇关系另作阶段说明。', timelineStrategy: 'year-marker' },

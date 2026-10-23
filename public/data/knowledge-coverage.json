@@ -2156,6 +2156,71 @@
     },
     {
       "entityType": "event",
+      "entityId": "jin-ended-1234",
+      "entityKey": "event:jin-ended-1234",
+      "label": "金政权覆亡",
+      "polityIds": [
+        "jin_jurchen",
+        "mongol"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "jin-ended-1234"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-shouxu-participated-jin-ended-1234",
+            "event-detail:jin-ended-1234"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-founded",
+            "jurchen-jin-moves-zhongdu",
+            "mongol",
+            "mongol-founded",
+            "ogedei",
+            "wanyan-shouxu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "jin-later-founded",
       "entityKey": "event:jin-later-founded",
       "label": "后晋建立",
@@ -11589,6 +11654,64 @@
             "jin_jurchen",
             "jurchen-jin-founded",
             "wanyan-aguda"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "jin-kaifeng-city-layer",
+      "entityKey": "heritage:jin-kaifeng-city-layer",
+      "label": "金末开封城市历史层",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "jin-kaifeng-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:jin-kaifeng-city-layer"
+          ],
+          "relatedIds": [
+            "jin-ended-1234",
+            "jin_jurchen",
+            "wanyan-shouxu"
           ]
         },
         {
@@ -24038,6 +24161,68 @@
     },
     {
       "entityType": "person",
+      "entityId": "ogedei",
+      "entityKey": "person:ogedei",
+      "label": "窝阔台",
+      "polityIds": [
+        "mongol"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ogedei"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-shouxu-enemy-ogedei",
+            "event-detail:jin-ended-1234",
+            "person-polity:ogedei:mongol"
+          ],
+          "relatedIds": [
+            "jin-ended-1234",
+            "mongol",
+            "wanyan-shouxu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "oxenstierna",
       "entityKey": "person:oxenstierna",
       "label": "约翰·奥克森谢纳",
@@ -27111,6 +27296,70 @@
           "evidenceIds": [
             "beijing-jin-zhongdu-archaeology",
             "capital-history-reference"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "wanyan-shouxu",
+      "entityKey": "person:wanyan-shouxu",
+      "label": "完颜守绪",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wanyan-shouxu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-shouxu-enemy-ogedei",
+            "claim:claim-wanyan-shouxu-participated-jin-ended-1234",
+            "claim:claim-wanyan-shouxu-ruled-jin",
+            "event-detail:jin-ended-1234",
+            "person-polity:wanyan-shouxu:jin_jurchen"
+          ],
+          "relatedIds": [
+            "jin-ended-1234",
+            "jin_jurchen",
+            "ogedei"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -31539,20 +31788,27 @@
             "claim:claim-wanyan-aguda-founded-jin",
             "claim:claim-wanyan-aguda-ruled-jin-fiftyeighth",
             "claim:claim-wanyan-liang-ruled-jin",
+            "claim:claim-wanyan-shouxu-ruled-jin",
+            "event-detail:jin-ended-1234",
             "event-detail:jurchen-jin-founded",
             "event-detail:jurchen-jin-moves-zhongdu",
             "heritage-detail:jin-huining-city-site",
+            "heritage-detail:jin-kaifeng-city-layer",
             "heritage-detail:jin-zhongdu-city-site",
             "person:wanyan-aguda",
-            "person:wanyan-liang"
+            "person:wanyan-liang",
+            "person:wanyan-shouxu"
           ],
           "relatedIds": [
+            "jin-ended-1234",
             "jin-huining-city-site",
+            "jin-kaifeng-city-layer",
             "jin-zhongdu-city-site",
             "jurchen-jin-founded",
             "jurchen-jin-moves-zhongdu",
             "wanyan-aguda",
-            "wanyan-liang"
+            "wanyan-liang",
+            "wanyan-shouxu"
           ]
         },
         {
@@ -32641,6 +32897,7 @@
           "evidenceIds": [
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
+            "event-detail:jin-ended-1234",
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
             "event-detail:western-liao-ended-1218",
@@ -32649,15 +32906,18 @@
             "person:jamukha",
             "person:kublai",
             "person:mongke",
+            "person:ogedei",
             "person:temujin"
           ],
           "relatedIds": [
             "jamukha",
+            "jin-ended-1234",
             "kublai",
             "mongke",
             "mongol-founded",
             "mongol-karakorum-city-site",
             "mongol-karakorum-fixed-center",
+            "ogedei",
             "temujin",
             "western-liao-ended-1218",
             "western-xia-ended-1227"
@@ -36510,6 +36770,21 @@
     },
     {
       "entityType": "event",
+      "entityId": "jin-ended-1234",
+      "entityKey": "event:jin-ended-1234",
+      "label": "金政权覆亡",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "jin_jurchen",
+        "mongol"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "mongol-karakorum-fixed-center",
       "entityKey": "event:mongol-karakorum-fixed-center",
       "label": "哈拉和林成为较固定政治中心",
@@ -39899,6 +40174,71 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:jin-ended-1234": {
+      "entityType": "event",
+      "entityId": "jin-ended-1234",
+      "entityKey": "event:jin-ended-1234",
+      "label": "金政权覆亡",
+      "polityIds": [
+        "jin_jurchen",
+        "mongol"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "jin-ended-1234"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-shouxu-participated-jin-ended-1234",
+            "event-detail:jin-ended-1234"
+          ],
+          "relatedIds": [
+            "jin_jurchen",
+            "jurchen-jin-founded",
+            "jurchen-jin-moves-zhongdu",
+            "mongol",
+            "mongol-founded",
+            "ogedei",
+            "wanyan-shouxu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -49339,6 +49679,64 @@
             "jin_jurchen",
             "jurchen-jin-founded",
             "wanyan-aguda"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:jin-kaifeng-city-layer": {
+      "entityType": "heritage",
+      "entityId": "jin-kaifeng-city-layer",
+      "entityKey": "heritage:jin-kaifeng-city-layer",
+      "label": "金末开封城市历史层",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "jin-kaifeng-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:jin-kaifeng-city-layer"
+          ],
+          "relatedIds": [
+            "jin-ended-1234",
+            "jin_jurchen",
+            "wanyan-shouxu"
           ]
         },
         {
@@ -61786,6 +62184,68 @@
         }
       ]
     },
+    "person:ogedei": {
+      "entityType": "person",
+      "entityId": "ogedei",
+      "entityKey": "person:ogedei",
+      "label": "窝阔台",
+      "polityIds": [
+        "mongol"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ogedei"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-shouxu-enemy-ogedei",
+            "event-detail:jin-ended-1234",
+            "person-polity:ogedei:mongol"
+          ],
+          "relatedIds": [
+            "jin-ended-1234",
+            "mongol",
+            "wanyan-shouxu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:oxenstierna": {
       "entityType": "person",
       "entityId": "oxenstierna",
@@ -64861,6 +65321,70 @@
           "evidenceIds": [
             "beijing-jin-zhongdu-archaeology",
             "capital-history-reference"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:wanyan-shouxu": {
+      "entityType": "person",
+      "entityId": "wanyan-shouxu",
+      "entityKey": "person:wanyan-shouxu",
+      "label": "完颜守绪",
+      "polityIds": [
+        "jin_jurchen"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wanyan-shouxu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wanyan-shouxu-enemy-ogedei",
+            "claim:claim-wanyan-shouxu-participated-jin-ended-1234",
+            "claim:claim-wanyan-shouxu-ruled-jin",
+            "event-detail:jin-ended-1234",
+            "person-polity:wanyan-shouxu:jin_jurchen"
+          ],
+          "relatedIds": [
+            "jin-ended-1234",
+            "jin_jurchen",
+            "ogedei"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -69289,20 +69813,27 @@
             "claim:claim-wanyan-aguda-founded-jin",
             "claim:claim-wanyan-aguda-ruled-jin-fiftyeighth",
             "claim:claim-wanyan-liang-ruled-jin",
+            "claim:claim-wanyan-shouxu-ruled-jin",
+            "event-detail:jin-ended-1234",
             "event-detail:jurchen-jin-founded",
             "event-detail:jurchen-jin-moves-zhongdu",
             "heritage-detail:jin-huining-city-site",
+            "heritage-detail:jin-kaifeng-city-layer",
             "heritage-detail:jin-zhongdu-city-site",
             "person:wanyan-aguda",
-            "person:wanyan-liang"
+            "person:wanyan-liang",
+            "person:wanyan-shouxu"
           ],
           "relatedIds": [
+            "jin-ended-1234",
             "jin-huining-city-site",
+            "jin-kaifeng-city-layer",
             "jin-zhongdu-city-site",
             "jurchen-jin-founded",
             "jurchen-jin-moves-zhongdu",
             "wanyan-aguda",
-            "wanyan-liang"
+            "wanyan-liang",
+            "wanyan-shouxu"
           ]
         },
         {
@@ -70391,6 +70922,7 @@
           "evidenceIds": [
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
+            "event-detail:jin-ended-1234",
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
             "event-detail:western-liao-ended-1218",
@@ -70399,15 +70931,18 @@
             "person:jamukha",
             "person:kublai",
             "person:mongke",
+            "person:ogedei",
             "person:temujin"
           ],
           "relatedIds": [
             "jamukha",
+            "jin-ended-1234",
             "kublai",
             "mongke",
             "mongol-founded",
             "mongol-karakorum-city-site",
             "mongol-karakorum-fixed-center",
+            "ogedei",
             "temujin",
             "western-liao-ended-1218",
             "western-xia-ended-1227"
@@ -74132,20 +74667,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 165,
+      "totalEntities": 166,
       "statusCounts": {
-        "covered": 789,
+        "covered": 793,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 36,
+        "uncertain": 37,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 36
+        "uncertain": 37
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -74157,6 +74692,7 @@
         "event:eastern-zhou-founded-eighth-batch",
         "event:former-liang-founded",
         "event:goguryeo-founded",
+        "event:jin-ended-1234",
         "event:mongol-karakorum-fixed-center",
         "event:qi-warring-founded-eighth-batch",
         "event:qin-state-founded-eighth-batch",
@@ -74187,9 +74723,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 116,
+      "totalEntities": 117,
       "statusCounts": {
-        "covered": 580,
+        "covered": 585,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -74205,9 +74741,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 204,
+      "totalEntities": 206,
       "statusCounts": {
-        "covered": 969,
+        "covered": 979,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -74920,15 +75456,34 @@
       "polityId": "jin_jurchen",
       "polityName": "金",
       "entityKeys": [
+        "event:jin-ended-1234",
         "event:jurchen-jin-founded",
         "event:jurchen-jin-moves-zhongdu",
         "heritage:jin-huining-city-site",
+        "heritage:jin-kaifeng-city-layer",
         "heritage:jin-zhongdu-city-site",
         "person:wanyan-aguda",
         "person:wanyan-liang",
+        "person:wanyan-shouxu",
         "polity:jin_jurchen"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "jin-ended-1234",
+          "entityKey": "event:jin-ended-1234",
+          "label": "金政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jin_jurchen",
+            "mongol"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -74936,7 +75491,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "金：学习闭环已覆盖。"
+      "summary": "金：有 1 项待核验缺口。"
     },
     "jin_later": {
       "polityId": "jin_later",
@@ -75313,6 +75868,7 @@
       "polityId": "mongol",
       "polityName": "蒙古汗国",
       "entityKeys": [
+        "event:jin-ended-1234",
         "event:mongol-founded",
         "event:mongol-karakorum-fixed-center",
         "event:western-liao-ended-1218",
@@ -75326,6 +75882,7 @@
         "person:jamukha",
         "person:kublai",
         "person:mongke",
+        "person:ogedei",
         "person:temujin",
         "polity:mongol"
       ],
@@ -75378,6 +75935,21 @@
         },
         {
           "entityType": "event",
+          "entityId": "jin-ended-1234",
+          "entityKey": "event:jin-ended-1234",
+          "label": "金政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jin_jurchen",
+            "mongol"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "mongol-karakorum-fixed-center",
           "entityKey": "event:mongol-karakorum-fixed-center",
           "label": "哈拉和林成为较固定政治中心",
@@ -75414,7 +75986,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "蒙古汗国：有 5 项待核验缺口。"
+      "summary": "蒙古汗国：有 6 项待核验缺口。"
     },
     "nanzhao": {
       "polityId": "nanzhao",
@@ -79047,15 +79619,19 @@
       "entityKeys": [
         "event:five-dynasties",
         "event:han-later-founded",
+        "event:jin-ended-1234",
         "event:jin-later-founded",
         "event:later-liang-five-dynasties-founded",
         "event:northern-song-founded",
         "event:song-founded",
         "event:song-southward",
         "event:zhou-later-founded",
+        "heritage:jin-kaifeng-city-layer",
         "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "person:li-cunxu",
+        "person:ogedei",
+        "person:wanyan-shouxu",
         "person:zhao-kuangyin",
         "person:zhu-wen",
         "polity:han_later",
@@ -79064,7 +79640,23 @@
         "polity:song_northern",
         "polity:zhou_later"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "jin-ended-1234",
+          "entityKey": "event:jin-ended-1234",
+          "label": "金政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jin_jurchen",
+            "mongol"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -79072,7 +79664,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "开封市：学习闭环已覆盖。"
+      "summary": "开封市：有 1 项待核验缺口。"
     },
     "kunming": {
       "placeId": "kunming",

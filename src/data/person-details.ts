@@ -403,6 +403,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['jurchen-jin-moves-zhongdu'], sourceIds: ['beijing-jin-zhongdu-archaeology', 'capital-history-reference'], uncertaintyNote: '1151—1153年为中都营建与迁都阶段；营建者、迁都决定和完整城市建设不是同一日完成。',
   },
   {
+    personId: 'wanyan-shouxu', biography: '完颜守绪即金哀宗，是金末帝。金末政治中心在战争压力下由中都转向开封，1234年前后金政权覆亡，开封城市历史和金代首都遗产则继续进入后续层次。',
+    aliases: ['金哀宗'], offices: [{ title: '金末皇帝', polityId: 'jin_jurchen', placeId: 'kaifeng', validFrom: 1224, validTo: 1234, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['jin-ended-1234'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '完颜守绪的末代统治、迁居开封、蒙古军事推进和1234年政权覆亡属于连续终末阶段的不同层次；政权终止不等于开封城市遗产终止。',
+  },
+  {
     personId: 'li-yuanhao', biography: '李元昊整合党项军政资源，于1038年称帝建立西夏，兴庆府成为其政权的政治中心。',
     aliases: ['西夏景宗'], offices: [{ title: '西夏皇帝', polityId: 'western_xia', placeId: 'xingqing', validFrom: 1038, validTo: 1048, datePrecision: 'range', sourceIds }],
     keyEvents: ['western-xia-founded'], sourceIds, uncertaintyNote: '1038年是称帝与国号形成节点，不把西夏后期的扩张范围提前回填到建国当年。',
@@ -516,6 +521,11 @@ export const personDetails: PersonDetail[] = [
     personId: 'temujin', biography: '铁木真在草原部众竞争中逐步整合力量，1206年被推举为成吉思汗，蒙古汗国进入共同汗权阶段。',
     aliases: ['成吉思汗'], offices: [{ title: '蒙古大汗', polityId: 'mongol', validFrom: 1206, validTo: 1227, datePrecision: 'range', sourceIds: ['china-chronology'] }],
     keyEvents: ['mongol-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '1206年大会标志共同汗权形成，但蒙古诸部的整合、扩张和后续帝国化是分阶段过程，不能把后期疆域回填到建政节点。',
+  },
+  {
+    personId: 'ogedei', biography: '窝阔台承接成吉思汗家族的蒙古汗权，推动蒙古对金、西夏及欧亚多地的战争与行政扩张；1234年金政权覆亡属于其统治时期的区域政权转折。',
+    aliases: ['元太宗', '窝阔台汗'], offices: [{ title: '蒙古大汗', polityId: 'mongol', validFrom: 1229, validTo: 1241, datePrecision: 'range', sourceIds: ['china-chronology', 'yuan-nationalities-history'] }],
+    keyEvents: ['jin-ended-1234'], sourceIds: ['china-chronology', 'yuan-nationalities-history'], uncertaintyNote: '窝阔台代表蒙古汗权体系，1234年灭金涉及多线军事行动、地方接收与金末帝结局，不能简化为单一统帅个人行为。',
   },
   {
     personId: 'jamukha', biography: '札木合曾与铁木真结为安答并共同活动，后因部众、联盟和汗权竞争与铁木真分裂，成为蒙古统一前的重要对手。',

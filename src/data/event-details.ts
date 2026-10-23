@@ -493,6 +493,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1115年是会宁建国节点，不以金灭辽和占领北宋后的范围倒推建国初期；早期女真影响区与直接控制区需区分。',
   },
   {
+    eventId: 'jin-ended-1234',
+    participants: [
+      { personId: 'wanyan-shouxu', role: '金末皇帝', relationType: 'direct', note: '完颜守绪连接金末王权、开封末期政治中心与1234年政权覆亡阶段。' },
+      { personId: 'ogedei', role: '蒙古末期征金汗权的代表', relationType: 'direct', note: '窝阔台代表蒙古汗权体系；具体攻城、将领和地方接收过程不归因于单一人物。' },
+    ],
+    polityIds: ['jin_jurchen', 'mongol'],
+    causes: ['金末政治中心由中都转向开封，政权承受持续军事压力。', '窝阔台时期蒙古推进与南宋协同攻金，金与蒙古、南宋之间形成终末阶段冲突。'],
+    consequences: ['金作为统一政治结构结束，退出华北与东北亚政权谱系。', '会宁府、中都、开封三段首都城市层继续存在，政权终止不等于城市遗产同步消失。'],
+    phases: [{ label: '金政权覆亡', startYear: 1234, endYear: 1234, summary: '完颜守绪政权被蒙古与南宋联军击败，金统一政治结构结束。' }],
+    locationIds: ['kaifeng'],
+    relatedEventIds: ['jurchen-jin-founded', 'jurchen-jin-moves-zhongdu', 'mongol-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference', 'modern-geography-reference'],
+    uncertaintyNote: '1234作为项目采用的金覆亡节点；蔡州战事、完颜守绪结局、地方接收和开封城市遗产延续需分层展示。',
+  },
+  {
     eventId: 'western-xia-founded',
     participants: [
       { personId: 'li-yuanhao', role: '在兴庆府称帝并建立西夏的君主', note: '李元昊的称帝与国号形成是1038年的制度节点，党项李氏此前的地方经营属于建政前阶段。' },

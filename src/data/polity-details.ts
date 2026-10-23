@@ -339,9 +339,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'jin_jurchen', perspectiveSummary: '金由女真完颜部整合而来，先以会宁府为上京，后迁中都和开封，在北方与华北建立多阶段统治秩序。',
     foundationProcess: ['完颜阿骨打整合女真部落并反抗辽的统治。', '1115年称帝建立金。', '金灭辽、迫使北宋南渡后形成跨区域政权，但首都随战争和战略重心迁移。'],
-    turningPoints: [turn(1115, '金建立', '完颜阿骨打称帝建国。', 'jurchen-jin-founded'), turn(1125, '辽亡', '金成为北方主要政权。'), turn(1153, '迁都中都', '金的政治中心由上京会宁府转向中都。')],
-    principalFigureIds: ['wanyan-aguda', 'wanyan-liang'], capitalPhases: [capital('huining', 1115, 1153), capital('jin_zhongdu', 1153, 1214), capital('kaifeng', 1214, 1234, 'primary', 'actual', '末期实际中心')],
-    heritageIds: ['jin-huining-city-site', 'jin-zhongdu-city-site'], eventIds: ['jurchen-jin-founded', 'jurchen-jin-moves-zhongdu'], claimIds: ['claim-wanyan-aguda-founded-jin', 'claim-wanyan-aguda-participated-jin', 'claim-wanyan-liang-participated-zhongdu', 'claim-wanyan-liang-ruled-jin'], sourceIds: modernSources,
+    turningPoints: [turn(1115, '金建立', '完颜阿骨打称帝建国。', 'jurchen-jin-founded'), turn(1125, '辽亡', '金成为北方主要政权。'), turn(1153, '迁都中都', '金的政治中心由上京会宁府转向中都。'), turn(1234, '金政权覆亡', '蒙古与南宋联军击败完颜守绪，金统一政治结构结束；会宁府、中都与开封城市遗产继续分层存在。', 'jin-ended-1234')],
+    principalFigureIds: ['wanyan-aguda', 'wanyan-liang', 'wanyan-shouxu'], capitalPhases: [capital('huining', 1115, 1153), capital('jin_zhongdu', 1153, 1214), capital('kaifeng', 1214, 1234, 'primary', 'actual', '末期实际中心')],
+    heritageIds: ['jin-huining-city-site', 'jin-zhongdu-city-site', 'jin-kaifeng-city-layer'], eventIds: ['jurchen-jin-founded', 'jurchen-jin-moves-zhongdu', 'jin-ended-1234'], claimIds: ['claim-wanyan-aguda-founded-jin', 'claim-wanyan-aguda-participated-jin', 'claim-wanyan-liang-participated-zhongdu', 'claim-wanyan-liang-ruled-jin', 'claim-wanyan-shouxu-participated-jin-ended-1234', 'claim-wanyan-shouxu-ruled-jin'], sourceIds: modernSources,
     uncertaintyNote: '金的会宁府、中都、开封是不同首都阶段，不能以金上京遗址代表全期；1214年后的开封是战争背景下的后期实际中心。',
   }),
   detail({
