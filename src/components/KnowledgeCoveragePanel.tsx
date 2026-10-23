@@ -1,4 +1,5 @@
 import { useLocale } from '../i18n/locale';
+import type { DetailEntity } from '../domain/detail-entity';
 import type {
   CoveragePerspective,
   CoverageTaskKind,
@@ -8,6 +9,7 @@ import type {
 interface KnowledgeCoveragePanelProps {
   report: KnowledgeCoverageReport;
   maxTasks?: number;
+  onOpenEntity?: (entity: DetailEntity) => void;
 }
 
 const taskLabels: Record<CoverageTaskKind, string> = {
@@ -23,7 +25,7 @@ const perspectiveLabels: Record<CoveragePerspective, string> = {
   city: '城市视角',
 };
 
-export function KnowledgeCoveragePanel({ report, maxTasks = 8 }: KnowledgeCoveragePanelProps) {
+export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity }: KnowledgeCoveragePanelProps) {
   const { t } = useLocale();
   const tasks = report.tasks.slice(0, maxTasks);
 
@@ -47,7 +49,17 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8 }: KnowledgeCovera
           <ul className="source-links">
             {tasks.map((task) => (
               <li key={`${task.perspective}:${task.taskKind}:${task.entityId}`}>
-                <a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t(task.subjectLabel)}</a>
+                {onOpenEntity ? (
+                  <button
+                    type="button"
+                    aria-label={`${t('打开实体详情：')}${t(task.subjectLabel)}`}
+                    onClick={() => onOpenEntity({ type: task.entityType, id: task.entityId })}
+                  >
+                    {t(task.subjectLabel)}
+                  </button>
+                ) : (
+                  <a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t(task.subjectLabel)}</a>
+                )}
                 <span className="detail-note"> · {t(perspectiveLabels[task.perspective])} · {t(taskLabels[task.taskKind])}</span>
                 <p className="detail-note">{t(task.note)}</p>
               </li>

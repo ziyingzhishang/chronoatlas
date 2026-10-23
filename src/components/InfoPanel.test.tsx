@@ -13,6 +13,29 @@ test('shows current polities when no entity is selected', () => {
   expect(screen.getAllByText('暂无国家边界资料').length).toBeGreaterThan(0);
 });
 
+test('passes the detail drawer callback to actionable coverage tasks', async () => {
+  const user = userEvent.setup();
+  const onOpenEntity = vi.fn();
+  render(<LocaleProvider><InfoPanel state={getHistoricalState(937)} selectedEntity={undefined} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+  await user.click(screen.getByText('展开可行动缺口'));
+  await user.click(screen.getAllByRole('button', { name: /打开实体详情：/ })[0]);
+
+  expect(onOpenEntity).toHaveBeenCalledTimes(1);
+  expect(onOpenEntity.mock.calls[0][0]).toEqual(expect.objectContaining({ type: expect.any(String), id: expect.any(String) }));
+});
+
+test('opens an event detail from the current-year event summary through the entity callback', async () => {
+  const user = userEvent.setup();
+  const onOpenEntity = vi.fn();
+
+  render(<InfoPanel state={getHistoricalState(618)} selectedEntity={undefined} onOpenEntity={onOpenEntity} />);
+
+  await user.click(screen.getByRole('button', { name: '唐建立' }));
+
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded' });
+});
+
 test('shows historical and modern names for a selected place', () => {
   render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'place', id: 'xianyang' }} />);
   expect(screen.getByRole('heading', { name: '咸阳' })).toBeInTheDocument();

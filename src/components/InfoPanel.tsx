@@ -85,12 +85,15 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           {state.events.length > 0 && (
             <div className="event-summary">
               <span className="eyebrow">{t("本年事件")}</span>
-              {state.events.map((event) => <p key={event.id}>{event.title}{locale==='en'?': ':'：'}{event.summary}</p>)}
+              {state.events.map((event) => <p key={event.id}>
+                {onOpenEntity ? <button type="button" onClick={() => onOpenEntity({ type: 'event', id: event.id })}>{t(event.title)}</button> : t(event.title)}
+                {locale==='en'?': ':'：'}{t(event.summary)}
+              </p>)}
             </div>
           )}
           {!state.activePolities.length && <p className="detail-note">{t("史前时期展示文化分期，不虚构统一政权或明确国界。")}</p>}
           <p className="uncertainty-note">{t("每年按来源区间查询。最大参考用虚线区分，不等于该年的实际控制范围。世界目录可在地图下方搜索并定位。")}</p>
-          <KnowledgeCoveragePanel report={knowledgeCoverageReport} />
+          <KnowledgeCoveragePanel report={knowledgeCoverageReport} onOpenEntity={onOpenEntity} />
           <a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t("逐政权覆盖、缺年与核验备注 ↗")}</a>
         </>
       )}
