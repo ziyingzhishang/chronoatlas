@@ -11,7 +11,8 @@ test('shows real coverage totals and an expandable actionable task entry', () =>
 
   expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`实体 ${report.entities.length}`);
   expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`可行动缺口 ${report.tasks.length}`);
-  expect(screen.getByRole('button', { name: '展开可行动缺口' })).toBeInTheDocument();
+  const disclosure = screen.getByText('展开可行动缺口');
+  expect(disclosure.tagName).toBe('SUMMARY');
   expect(screen.getByRole('link', { name: report.tasks[0].subjectLabel })).toHaveAttribute('href', '/data/coverage-audit.json');
 });
 
