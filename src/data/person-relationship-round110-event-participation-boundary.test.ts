@@ -15,7 +15,6 @@ const reviewGaps = [
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
-  { personId: 'mongke', eventIds: ['mongol-founded'] },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];

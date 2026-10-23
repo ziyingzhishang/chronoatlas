@@ -37,6 +37,7 @@ const reviewBoundaryReasons = {
   'western-xia-ended-1227': 'formation-approximation',
   'jin-ended-1234': 'formation-approximation',
   'southern-song-ended-1279': 'formation-approximation',
+  'dali-ended-1253': 'formation-approximation',
   'western-zhou-founded-eighth-batch': 'traditional-periodization',
   'xia-early-founded-eighth-batch': 'traditional-periodization',
   'xiongnu-founded': 'formation-approximation',
@@ -54,7 +55,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 44, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 45, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -109,6 +110,6 @@ describe('event details ninety-second round boundary audit', () => {
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');
-    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(38);
+    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(39);
   });
 });

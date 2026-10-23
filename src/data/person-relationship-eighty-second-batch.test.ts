@@ -13,7 +13,6 @@ const eventParticipationReviewBoundary = [
   'tuoba-tao',
   'yuwen-yong',
   'qin-mugong',
-  'mongke',
   'seondeok-silla',
   'jindeok-silla',
   'sinmun-silla',
@@ -24,8 +23,8 @@ describe('eighty-second batch relationship audit', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(32);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(120);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(86);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(121);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });
 

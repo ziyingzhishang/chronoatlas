@@ -17,7 +17,6 @@ const decisions = [
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], kind: 'born-after-event' },
   { personId: 'yuwen-yong', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'qin-mugong', eventIds: [], kind: 'no-direct-role' },
-  { personId: 'mongke', eventIds: ['mongol-founded'], kind: 'born-after-event' },
   { personId: 'seondeok-silla', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'jindeok-silla', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'sinmun-silla', eventIds: [], kind: 'no-event-candidate' },

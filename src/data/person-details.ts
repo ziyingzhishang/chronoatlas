@@ -639,6 +639,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['dali-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '大理建立年代和段思平事迹主要依赖后世编年与地方传统，937年作为政权形成节点使用，不据此恢复全域边界。',
   },
   {
+    personId: 'duan-xingzhi', biography: '段兴智是大理末期国王，连接1253年前后蒙古进入洱海核心、大理政权终止与羊苴咩城历史层的延续。',
+    aliases: ['大理末主'], offices: [{ title: '大理末期国王', polityId: 'dali', validFrom: 1244, validTo: 1253, datePrecision: 'range', sourceIds: ['china-chronology', 'dali-history-research-nopss'] }],
+    keyEvents: ['dali-ended-1253'], sourceIds: ['china-chronology', 'dali-history-research-nopss'], uncertaintyNote: '段兴智在1253年前后大理政权终止阶段的具体行动、归附过程与后续处置需与蒙古入滇和元代行政接收分层阅读。',
+  },
+  {
     personId: 'duan-ye', biography: '段业在后凉衰乱后的河西张掖被推立为君，北凉由此进入形成阶段；其统治随后被沮渠蒙逊等力量改造。',
     aliases: ['北凉君主'], offices: [{ title: '北凉君主', polityId: 'northern_liang', placeId: 'zhangye', validFrom: 397, validTo: 401, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['northern-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '397年是段业被推立与北凉分期的形成节点，北凉后续由沮渠氏掌政，不能把段业个人统治等同于北凉全期。',

@@ -1169,6 +1169,15 @@ const catalog: HistoricalEvent[] = [
     ],
   },
   {
+    id: 'dali-ended-1253', year: 1253, title: '大理政权终止', summary: '蒙古军在1253年前后进入大理核心区域，段兴智政权结束；羊苴咩城与大理古城历史层继续存在。', placeId: 'dali_city', sourceIds: ['china-chronology', 'dali-history-research-nopss', 'dali-yangjumei-mct', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'china', category: '政权终结／战争', verification: 'partial',
+    background: '大理末期段氏王权与高氏相国长期并存，蒙古汗国在西南方向推进，洱海核心处于区域政权转换的压力之下。',
+    process: '1253年前后蒙古军推进至大理核心区域，段兴智所代表的大理末期政权结束；军事进入、地方归附、元代行政接收与段氏后续任用属于连续过程，不能压缩为羊苴咩城在同日消失。',
+    impact: '大理作为独立区域政权终止，云南进入蒙古—元朝行政重组阶段；羊苴咩城、大理古城及洱海交通网络继续作为城市和遗产历史层存在。',
+    mapNote: '地图将1253年标作大理政权终止的约年节点，以大理古城—羊苴咩城区域作为终局参照；政权终止不等于城市遗址、地方社会或后续段氏传统消失。',
+    references: [{ title: '国家社科基金成果：《大理国史研究》', url: 'https://www.nopss.gov.cn/GB/219506/219508/219522/14640080.html', detail: '用于大理整体年代、段氏王权与1253年前后政权转换的阶段性参照；具体军事过程保留约年与过程性。' }],
+  },
+  {
     id: 'mongol-founded', year: 1206, title: '蒙古汗国形成', summary: '铁木真在斡难河源大会中被推举为成吉思汗，蒙古汗国进入统一阶段。', sourceIds: ['china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '蒙古高原各部长期竞争，铁木真通过战争、联盟和分封逐步整合草原政治力量。',

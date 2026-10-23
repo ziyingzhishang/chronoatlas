@@ -27,7 +27,6 @@ const eventParticipationGaps = [
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
-  { personId: 'mongke', eventIds: ['mongol-founded'] },
   { personId: 'seondeok-silla', eventIds: [] },
   { personId: 'jindeok-silla', eventIds: [] },
   { personId: 'sinmun-silla', eventIds: [] },

@@ -356,8 +356,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'dali', perspectiveSummary: '大理承接南诏之后的洱海区域政治传统，由段思平整合地方力量建立，以羊苴咩城为核心延续西南交通与文化网络。',
     foundationProcess: ['段思平整合洱海区域军政资源。', '937年建立大理政权。', '大理以羊苴咩城为政治中心，承接南诏城市与宗教文化遗产，1253年为蒙古所灭。'],
     turningPoints: [turn(937, '大理建立', '段思平建立大理政权。', 'dali-founded'), turn(1094, '高氏专政阶段', '大理出现段氏名义王权与高氏实际权力并存的结构。'), turn(1253, '大理覆亡', '蒙古军进入大理，地方政权结束。')],
-    principalFigureIds: ['duan-siping'], capitalPhases: [capital('yangjumei', 937, 1253)],
-    heritageIds: ['dali-city-site'], eventIds: ['dali-founded'], claimIds: ['claim-duan-siping-participated-dali-founded'], sourceIds: modernSources,
+    principalFigureIds: ['duan-siping', 'duan-xingzhi'], capitalPhases: [capital('yangjumei', 937, 1253)],
+    heritageIds: ['dali-city-site'], eventIds: ['dali-founded', 'dali-ended-1253'], claimIds: ['claim-duan-siping-participated-dali-founded', 'claim-duan-xingzhi-ruled-dali', 'claim-duan-xingzhi-participated-dali-ended-1253', 'claim-duan-xingzhi-enemy-mongke'], sourceIds: [...modernSources, 'dali-history-research-nopss'],
     uncertaintyNote: '段氏王权与高氏实际权力需分层呈现；大理古城和太和城历史层跨越南诏、大理及后续时期，不能归为单一王室建筑。',
   }),
   detail({

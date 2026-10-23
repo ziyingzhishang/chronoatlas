@@ -2322,6 +2322,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '937年前后是大理政权形成的常见约年，但《滇载记》的937年传统与国家社科成果摘要采用的938年口径并存，不能升级为确定年；羊苴咩城（今大理古城一带）是地点连续性参照，不等于937年已完成后期大理范围整合；1094—1096年高氏大中国及1096年后段氏复位、高氏相国另按阶段表达。',
   },
   {
+    eventId: 'dali-ended-1253',
+    participants: [
+      { personId: 'duan-xingzhi', role: '大理末期国王', relationType: 'direct', note: '段兴智连接大理末期段氏王权、1253年前后政权终止与大理城市遗产的延续。' },
+      { personId: 'mongke', role: '蒙古汗国西南征服阶段的决策方代表', relationType: 'direct', note: '蒙哥代表1253年前后蒙古汗国推进西南方向军事行动的汗权阶段，具体入滇将领和地方接收不归因于单一大汗个人。' },
+      { personId: 'kublai', role: '后续元廷与西南行政整合的承接人物', relationType: 'direct', note: '忽必烈晚于1253年，作为后续元廷承接人物连接大理政权终止与元代行政整合，不视为1253年现场指挥者。' },
+    ],
+    polityIds: ['dali', 'mongol'],
+    causes: ['大理末期段氏王权与高氏相国长期并存，地方政治结构持续分层。', '蒙古汗国在蒙哥时期推进西南方向军事与交通网络扩张。'],
+    consequences: ['大理作为独立区域政权终止，云南进入蒙古—元朝行政重组阶段。', '羊苴咩城、大理古城和洱海交通网络继续作为城市历史与遗产层存在。', '段氏人物和地方精英在后续秩序中的任用不能回填为大理政权继续独立存在。'],
+    phases: [
+      { label: '大理末期政治结构', startYear: 1096, endYear: 1253, summary: '段氏王权复位后，高氏继续掌握相国与政务，大理末期权力结构不能简化为单一王权。' },
+      { label: '蒙古进入大理核心', startYear: 1253, endYear: 1253, summary: '蒙古军推进至洱海—大理核心，段兴智政权结束；军事进入与地方接收属于连续过程。' },
+    ],
+    locationIds: ['dali_city', 'yangjumei'],
+    relatedEventIds: ['dali-founded', 'mongol-founded'],
+    sourceIds: ['china-chronology', 'dali-history-research-nopss', 'dali-yangjumei-mct', 'modern-geography-reference'],
+    uncertaintyNote: '1253年作为大理政权终止约年使用；蒙古军具体路线、地方归附、段兴智后续处置和元代行政接收是连续过程，不用单一地点或单一人物替代。',
+  },
+  {
     eventId: 'mongol-founded',
     participants: [
       { personId: 'temujin', role: '统一蒙古高原主要部众并被推举为成吉思汗的大汗', note: '铁木真在1206年大会上被推举为成吉思汗，代表共同汗权形成；蒙古汗国、蒙古帝国与后续元朝不能视为同一阶段或同一疆域。' },

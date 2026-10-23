@@ -832,6 +832,72 @@
     },
     {
       "entityType": "event",
+      "entityId": "dali-ended-1253",
+      "entityKey": "event:dali-ended-1253",
+      "label": "大理政权终止",
+      "polityIds": [
+        "dali",
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "dali-ended-1253"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss",
+            "dali-yangjumei-mct",
+            "modern-geography-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-duan-xingzhi-participated-dali-ended-1253",
+            "event-detail:dali-ended-1253"
+          ],
+          "relatedIds": [
+            "dali",
+            "dali-founded",
+            "duan-xingzhi",
+            "kublai",
+            "mongke",
+            "mongol",
+            "mongol-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "dali-founded",
       "entityKey": "event:dali-founded",
       "label": "大理政权建立",
@@ -10359,8 +10425,7 @@
       "entityKey": "heritage:dali-city-site",
       "label": "大理古城及太和城历史层",
       "polityIds": [
-        "dali",
-        "tang"
+        "dali"
       ],
       "checks": [
         {
@@ -10385,6 +10450,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "dali-duan-siping-official",
+            "dali-history-research-nopss",
             "dali-yangjumei-mct",
             "modern-geography-reference",
             "zizhi-tongjian"
@@ -10400,8 +10466,10 @@
           ],
           "relatedIds": [
             "dali",
+            "dali-ended-1253",
             "dali-founded",
-            "li-longji"
+            "duan-siping",
+            "duan-xingzhi"
           ]
         },
         {
@@ -18194,6 +18262,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "duan-xingzhi",
+      "entityKey": "person:duan-xingzhi",
+      "label": "段兴智",
+      "polityIds": [
+        "dali"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "duan-xingzhi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-duan-xingzhi-enemy-mongke",
+            "claim:claim-duan-xingzhi-participated-dali-ended-1253",
+            "claim:claim-duan-xingzhi-ruled-dali",
+            "event-detail:dali-ended-1253",
+            "person-polity:duan-xingzhi:dali"
+          ],
+          "relatedIds": [
+            "dali",
+            "dali-ended-1253",
+            "mongke"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "duan-ye",
       "entityKey": "person:duan-ye",
       "label": "段业",
@@ -20840,6 +20972,7 @@
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
             "claim:claim-zhao-bing-enemy-kublai",
+            "event-detail:dali-ended-1253",
             "event-detail:mongol-karakorum-fixed-center",
             "event-detail:southern-song-ended-1279",
             "event-detail:yuan-dadu-built",
@@ -20850,6 +20983,7 @@
           ],
           "relatedIds": [
             "bayan",
+            "dali-ended-1253",
             "liu-bingzhong",
             "mongke",
             "mongol",
@@ -23612,13 +23746,17 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-duan-xingzhi-enemy-mongke",
             "claim:claim-kublai-sibling-mongke-fortysecond",
             "claim:claim-mongke-related-temujin",
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-mongke-sibling-kublai",
+            "event-detail:dali-ended-1253",
             "person-polity:mongke:mongol"
           ],
           "relatedIds": [
+            "dali-ended-1253",
+            "duan-xingzhi",
             "kublai",
             "mongol",
             "temujin"
@@ -31115,6 +31253,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "dali-history-research-nopss",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -31126,14 +31265,19 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-duan-siping-ruled-dali-sixtyfirst",
+            "claim:claim-duan-xingzhi-ruled-dali",
+            "event-detail:dali-ended-1253",
             "event-detail:dali-founded",
             "heritage-detail:dali-city-site",
-            "person:duan-siping"
+            "person:duan-siping",
+            "person:duan-xingzhi"
           ],
           "relatedIds": [
             "dali-city-site",
+            "dali-ended-1253",
             "dali-founded",
-            "duan-siping"
+            "duan-siping",
+            "duan-xingzhi"
           ]
         },
         {
@@ -33161,6 +33305,7 @@
           "evidenceIds": [
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
+            "event-detail:dali-ended-1253",
             "event-detail:jin-ended-1234",
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
@@ -33174,6 +33319,7 @@
             "person:temujin"
           ],
           "relatedIds": [
+            "dali-ended-1253",
             "jamukha",
             "jin-ended-1234",
             "kublai",
@@ -36978,6 +37124,22 @@
     },
     {
       "entityType": "event",
+      "entityId": "dali-ended-1253",
+      "entityKey": "event:dali-ended-1253",
+      "label": "大理政权终止",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "dali",
+        "mongol",
+        "yuan"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "dali-founded",
       "entityKey": "event:dali-founded",
       "label": "大理政权建立",
@@ -37509,6 +37671,23 @@
       "evidenceIds": [
         "china-chronology",
         "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "duan-xingzhi",
+      "entityKey": "person:duan-xingzhi",
+      "label": "段兴智",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "dali"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "dali-history-research-nopss"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -39144,6 +39323,72 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:dali-ended-1253": {
+      "entityType": "event",
+      "entityId": "dali-ended-1253",
+      "entityKey": "event:dali-ended-1253",
+      "label": "大理政权终止",
+      "polityIds": [
+        "dali",
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "dali-ended-1253"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss",
+            "dali-yangjumei-mct",
+            "modern-geography-reference"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-duan-xingzhi-participated-dali-ended-1253",
+            "event-detail:dali-ended-1253"
+          ],
+          "relatedIds": [
+            "dali",
+            "dali-founded",
+            "duan-xingzhi",
+            "kublai",
+            "mongke",
+            "mongol",
+            "mongol-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -48678,8 +48923,7 @@
       "entityKey": "heritage:dali-city-site",
       "label": "大理古城及太和城历史层",
       "polityIds": [
-        "dali",
-        "tang"
+        "dali"
       ],
       "checks": [
         {
@@ -48704,6 +48948,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "dali-duan-siping-official",
+            "dali-history-research-nopss",
             "dali-yangjumei-mct",
             "modern-geography-reference",
             "zizhi-tongjian"
@@ -48719,8 +48964,10 @@
           ],
           "relatedIds": [
             "dali",
+            "dali-ended-1253",
             "dali-founded",
-            "li-longji"
+            "duan-siping",
+            "duan-xingzhi"
           ]
         },
         {
@@ -56511,6 +56758,70 @@
         }
       ]
     },
+    "person:duan-xingzhi": {
+      "entityType": "person",
+      "entityId": "duan-xingzhi",
+      "entityKey": "person:duan-xingzhi",
+      "label": "段兴智",
+      "polityIds": [
+        "dali"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "duan-xingzhi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-duan-xingzhi-enemy-mongke",
+            "claim:claim-duan-xingzhi-participated-dali-ended-1253",
+            "claim:claim-duan-xingzhi-ruled-dali",
+            "event-detail:dali-ended-1253",
+            "person-polity:duan-xingzhi:dali"
+          ],
+          "relatedIds": [
+            "dali",
+            "dali-ended-1253",
+            "mongke"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:duan-ye": {
       "entityType": "person",
       "entityId": "duan-ye",
@@ -59159,6 +59470,7 @@
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
             "claim:claim-zhao-bing-enemy-kublai",
+            "event-detail:dali-ended-1253",
             "event-detail:mongol-karakorum-fixed-center",
             "event-detail:southern-song-ended-1279",
             "event-detail:yuan-dadu-built",
@@ -59169,6 +59481,7 @@
           ],
           "relatedIds": [
             "bayan",
+            "dali-ended-1253",
             "liu-bingzhong",
             "mongke",
             "mongol",
@@ -61931,13 +62244,17 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-duan-xingzhi-enemy-mongke",
             "claim:claim-kublai-sibling-mongke-fortysecond",
             "claim:claim-mongke-related-temujin",
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-mongke-sibling-kublai",
+            "event-detail:dali-ended-1253",
             "person-polity:mongke:mongol"
           ],
           "relatedIds": [
+            "dali-ended-1253",
+            "duan-xingzhi",
             "kublai",
             "mongol",
             "temujin"
@@ -69434,6 +69751,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "dali-history-research-nopss",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -69445,14 +69763,19 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-duan-siping-ruled-dali-sixtyfirst",
+            "claim:claim-duan-xingzhi-ruled-dali",
+            "event-detail:dali-ended-1253",
             "event-detail:dali-founded",
             "heritage-detail:dali-city-site",
-            "person:duan-siping"
+            "person:duan-siping",
+            "person:duan-xingzhi"
           ],
           "relatedIds": [
             "dali-city-site",
+            "dali-ended-1253",
             "dali-founded",
-            "duan-siping"
+            "duan-siping",
+            "duan-xingzhi"
           ]
         },
         {
@@ -71480,6 +71803,7 @@
           "evidenceIds": [
             "claim:claim-mongke-ruled-mongol-fortyseventh",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
+            "event-detail:dali-ended-1253",
             "event-detail:jin-ended-1234",
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
@@ -71493,6 +71817,7 @@
             "person:temujin"
           ],
           "relatedIds": [
+            "dali-ended-1253",
             "jamukha",
             "jin-ended-1234",
             "kublai",
@@ -75239,26 +75564,27 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 167,
+      "totalEntities": 168,
       "statusCounts": {
-        "covered": 797,
+        "covered": 801,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 38,
+        "uncertain": 39,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 38
+        "uncertain": 39
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
         "event:changan-former-qin",
         "event:chu-han-contention",
         "event:chu-warring-founded-eighth-batch",
+        "event:dali-ended-1253",
         "event:dali-founded",
         "event:daming-palace-built",
         "event:eastern-zhou-founded-eighth-batch",
@@ -75314,25 +75640,26 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 208,
+      "totalEntities": 209,
       "statusCounts": {
-        "covered": 989,
+        "covered": 993,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 51,
+        "uncertain": 52,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 51
+        "uncertain": 52
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
         "person:bayan",
         "person:chu-we-wang",
+        "person:duan-xingzhi",
         "person:duan-ye",
         "person:feng-ba",
         "person:feng-hong",
@@ -75524,12 +75851,31 @@
       "polityId": "dali",
       "polityName": "大理",
       "entityKeys": [
+        "event:dali-ended-1253",
         "event:dali-founded",
         "heritage:dali-city-site",
         "person:duan-siping",
+        "person:duan-xingzhi",
         "polity:dali"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "duan-xingzhi",
+          "entityKey": "person:duan-xingzhi",
+          "label": "段兴智",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "dali"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "dali-founded",
@@ -75543,6 +75889,22 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "dali-ended-1253",
+          "entityKey": "event:dali-ended-1253",
+          "label": "大理政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "dali",
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -75552,7 +75914,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "大理：有 1 项待核验缺口。"
+      "summary": "大理：有 3 项待核验缺口。"
     },
     "former_liang": {
       "polityId": "former_liang",
@@ -76441,6 +76803,7 @@
       "polityId": "mongol",
       "polityName": "蒙古汗国",
       "entityKeys": [
+        "event:dali-ended-1253",
         "event:jin-ended-1234",
         "event:mongol-founded",
         "event:mongol-karakorum-fixed-center",
@@ -76539,6 +76902,22 @@
         },
         {
           "entityType": "event",
+          "entityId": "dali-ended-1253",
+          "entityKey": "event:dali-ended-1253",
+          "label": "大理政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "dali",
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "yuan-shangdu-built",
           "entityKey": "event:yuan-shangdu-built",
           "label": "开平／上都营建启动",
@@ -76576,7 +76955,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "蒙古汗国：有 7 项待核验缺口。"
+      "summary": "蒙古汗国：有 8 项待核验缺口。"
     },
     "nanzhao": {
       "polityId": "nanzhao",
@@ -77646,7 +78025,6 @@
         "event:xuanwu-gate",
         "event:xuanzang-at-ximing-658",
         "heritage:big-wild-goose-pagoda",
-        "heritage:dali-city-site",
         "heritage:daming-palace-site",
         "heritage:dingding-gate-site",
         "heritage:goguryeo-guonei-city-site",
@@ -78673,6 +79051,7 @@
       "polityId": "yuan",
       "polityName": "元",
       "entityKeys": [
+        "event:dali-ended-1253",
         "event:mongol-karakorum-fixed-center",
         "event:northern-yuan-founded",
         "event:song-southward",
@@ -78724,6 +79103,22 @@
         },
         {
           "entityType": "event",
+          "entityId": "dali-ended-1253",
+          "entityKey": "event:dali-ended-1253",
+          "label": "大理政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "dali",
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "yuan-shangdu-built",
           "entityKey": "event:yuan-shangdu-built",
           "label": "开平／上都营建启动",
@@ -78761,7 +79156,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "元：有 4 项待核验缺口。"
+      "summary": "元：有 5 项待核验缺口。"
     },
     "zhao_warring": {
       "polityId": "zhao_warring",
@@ -79555,11 +79950,32 @@
       "cityName": "大理古城",
       "capitalRecordCount": 0,
       "entityKeys": [
+        "event:dali-ended-1253",
         "event:dali-founded",
         "heritage:dali-city-site",
-        "person:duan-siping"
+        "person:duan-siping",
+        "person:duan-xingzhi",
+        "person:kublai",
+        "person:mongke"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "duan-xingzhi",
+          "entityKey": "person:duan-xingzhi",
+          "label": "段兴智",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "dali"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "dali-history-research-nopss"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "dali-founded",
@@ -79573,6 +79989,22 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "dali-ended-1253",
+          "entityKey": "event:dali-ended-1253",
+          "label": "大理政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "dali",
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -79582,7 +80014,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "大理古城：有 1 项待核验缺口。"
+      "summary": "大理古城：有 3 项待核验缺口。"
     },
     "dunhuang": {
       "placeId": "dunhuang",
@@ -81669,6 +82101,7 @@
       "cityName": "大理古城一带",
       "capitalRecordCount": 2,
       "entityKeys": [
+        "event:dali-ended-1253",
         "event:dali-founded"
       ],
       "gaps": [
@@ -81685,6 +82118,22 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "dali-ended-1253",
+          "entityKey": "event:dali-ended-1253",
+          "label": "大理政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "dali",
+            "mongol",
+            "yuan"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -81694,7 +82143,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "大理古城一带：有 1 项待核验缺口。"
+      "summary": "大理古城一带：有 2 项待核验缺口。"
     },
     "yangzhou": {
       "placeId": "yangzhou",
