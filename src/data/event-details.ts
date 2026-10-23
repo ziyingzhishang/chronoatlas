@@ -1742,6 +1742,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '后唐称帝、攻入开封、朱友贞自尽和地方接收在923年连续发生；本条采用政权终止的编年节点，不声称所有后梁旧地在同日完成稳定归附，也不把后梁城市遗产等同于现存后世建筑。',
   },
   {
+    eventId: 'later-tang-ended-936',
+    participants: [
+      { personId: 'li-congke', role: '后唐末帝与洛阳终局阶段的核心人物', note: '李从珂在后唐末年统治，936年洛阳终局中死亡；人物结局、都城失守和后晋地方接收属于连续过程。' },
+      { personId: 'shi-jingtang', role: '借助契丹军力建立后晋并攻入洛阳的政治军事领袖', note: '石敬瑭代表后晋完成对后唐中央政治空间的替代；其受册称帝、军事推进和地方接收不应合并为一个瞬间。' },
+    ],
+    polityIds: ['tang_later', 'jin_later'],
+    causes: ['后唐末年皇位继承与军政集团冲突激化。', '石敬瑭借助契丹军事力量反叛并向洛阳推进。'],
+    consequences: ['后唐统一政治结构终止。', '后晋承接洛阳及部分中原政治空间，地方接收和实际控制仍需按阶段观察。'],
+    phases: [
+      { label: '后晋起兵与契丹支持', startYear: 936, endYear: 936, summary: '石敬瑭在契丹支持下对后唐发动决定性军事行动。' },
+      { label: '洛阳终局', startYear: 936, endYear: 936, summary: '后唐末帝李从珂在洛阳终局中死亡，后唐中央政权终止。' },
+      { label: '后晋政治承接', startYear: 936, endYear: 937, summary: '后晋承接后唐部分中原政治空间，地方行政与军事接收继续展开。' },
+    ],
+    locationIds: ['luoyang'],
+    relatedEventIds: ['tang-later-founded', 'jin-later-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '936年作为后唐中央政权终止节点；洛阳失守、李从珂个人结局、后晋接收和各地归附并非同一时刻完成，不能把终止年直接解释为后晋已稳定控制全部后唐旧地。',
+  },
+  {
     eventId: 'jin-later-founded',
     participants: [
       { personId: 'shi-jingtang', role: '借助契丹支持受册称帝并建立后晋的君主', note: '石敬瑭的反唐、求援、受册称帝和后唐覆亡跨越多个阶段；本条不把后晋后期范围前置。' },

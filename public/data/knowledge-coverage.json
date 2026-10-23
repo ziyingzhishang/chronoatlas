@@ -3309,6 +3309,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-tang-ended-936",
+      "entityKey": "event:later-tang-ended-936",
+      "label": "后唐政权终止",
+      "polityIds": [
+        "jin_later",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-tang-ended-936"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-congke-participated-later-tang-ended-936",
+            "event-detail:later-tang-ended-936"
+          ],
+          "relatedIds": [
+            "jin-later-founded",
+            "jin_later",
+            "li-congke",
+            "shi-jingtang",
+            "tang-later-founded",
+            "tang_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-yan-ended-407",
       "entityKey": "event:later-yan-ended-407",
       "label": "后燕在龙城终结",
@@ -13370,6 +13433,7 @@
       "entityKey": "heritage:later-tang-luoyang-city-site",
       "label": "后唐洛阳宫城历史层",
       "polityIds": [
+        "jin_later",
         "tang_later"
       ],
       "checks": [
@@ -13394,6 +13458,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -13407,7 +13472,12 @@
             "heritage-detail:later-tang-luoyang-city-site"
           ],
           "relatedIds": [
+            "jin-later-founded",
+            "jin_later",
+            "later-tang-ended-936",
+            "li-congke",
             "li-cunxu",
+            "shi-jingtang",
             "tang-later-founded",
             "tang_later"
           ]
@@ -22509,6 +22579,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "li-congke",
+      "entityKey": "person:li-congke",
+      "label": "李从珂",
+      "polityIds": [
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-congke"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-congke-enemy-shi-jingtang-termination-936",
+            "claim:claim-li-congke-participated-later-tang-ended-936",
+            "claim:claim-li-congke-ruled-later-tang",
+            "event-detail:later-tang-ended-936",
+            "person-polity:li-congke:tang_later"
+          ],
+          "relatedIds": [
+            "later-tang-ended-936",
+            "shi-jingtang",
+            "tang_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "li-cunxu",
       "entityKey": "person:li-cunxu",
       "label": "李存勖",
@@ -27289,16 +27423,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-congke-enemy-shi-jingtang-termination-936",
             "claim:claim-liu-zhiyuan-ally-shi-jingtang-seventyeighth",
             "claim:claim-liu-zhiyuan-served-shi-jingtang",
             "claim:claim-shi-jingtang-founded-later-jin",
             "claim:claim-shi-jingtang-ruled-later-jin-ninetyfifth",
             "event-detail:jin-later-founded",
+            "event-detail:later-tang-ended-936",
             "person-polity:shi-jingtang:jin_later"
           ],
           "relatedIds": [
             "jin-later-founded",
             "jin_later",
+            "later-tang-ended-936",
+            "li-congke",
             "liu-zhiyuan"
           ]
         },
@@ -34110,14 +34248,18 @@
             "claim:claim-shi-jingtang-founded-later-jin",
             "claim:claim-shi-jingtang-ruled-later-jin-ninetyfifth",
             "event-detail:jin-later-founded",
+            "event-detail:later-tang-ended-936",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "heritage-detail:later-tang-luoyang-city-site",
             "person:shi-jingtang"
           ],
           "relatedIds": [
             "jin-later-founded",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-tang-ended-936",
+            "later-tang-luoyang-city-site",
             "shi-jingtang"
           ]
         },
@@ -37105,19 +37247,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-congke-ruled-later-tang",
             "claim:claim-li-cunxu-ruled-tang-later-closure",
             "event-detail:former-shu-ended-925",
             "event-detail:later-liang-ended-923",
+            "event-detail:later-tang-ended-936",
             "event-detail:tang-later-founded",
             "heritage-detail:later-liang-kaifeng-city-layer",
             "heritage-detail:later-tang-luoyang-city-site",
+            "person:li-congke",
             "person:li-cunxu"
           ],
           "relatedIds": [
             "former-shu-ended-925",
             "later-liang-ended-923",
             "later-liang-kaifeng-city-layer",
+            "later-tang-ended-936",
             "later-tang-luoyang-city-site",
+            "li-congke",
             "li-cunxu",
             "tang-later-founded"
           ]
@@ -43752,6 +43899,69 @@
             "later_shu",
             "meng-zhixiang",
             "tang-later-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-tang-ended-936": {
+      "entityType": "event",
+      "entityId": "later-tang-ended-936",
+      "entityKey": "event:later-tang-ended-936",
+      "label": "后唐政权终止",
+      "polityIds": [
+        "jin_later",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-tang-ended-936"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-congke-participated-later-tang-ended-936",
+            "event-detail:later-tang-ended-936"
+          ],
+          "relatedIds": [
+            "jin-later-founded",
+            "jin_later",
+            "li-congke",
+            "shi-jingtang",
+            "tang-later-founded",
+            "tang_later"
           ]
         },
         {
@@ -53826,6 +54036,7 @@
       "entityKey": "heritage:later-tang-luoyang-city-site",
       "label": "后唐洛阳宫城历史层",
       "polityIds": [
+        "jin_later",
         "tang_later"
       ],
       "checks": [
@@ -53850,6 +54061,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -53863,7 +54075,12 @@
             "heritage-detail:later-tang-luoyang-city-site"
           ],
           "relatedIds": [
+            "jin-later-founded",
+            "jin_later",
+            "later-tang-ended-936",
+            "li-congke",
             "li-cunxu",
+            "shi-jingtang",
             "tang-later-founded",
             "tang_later"
           ]
@@ -62963,6 +63180,70 @@
         }
       ]
     },
+    "person:li-congke": {
+      "entityType": "person",
+      "entityId": "li-congke",
+      "entityKey": "person:li-congke",
+      "label": "李从珂",
+      "polityIds": [
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-congke"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-congke-enemy-shi-jingtang-termination-936",
+            "claim:claim-li-congke-participated-later-tang-ended-936",
+            "claim:claim-li-congke-ruled-later-tang",
+            "event-detail:later-tang-ended-936",
+            "person-polity:li-congke:tang_later"
+          ],
+          "relatedIds": [
+            "later-tang-ended-936",
+            "shi-jingtang",
+            "tang_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:li-cunxu": {
       "entityType": "person",
       "entityId": "li-cunxu",
@@ -67745,16 +68026,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-congke-enemy-shi-jingtang-termination-936",
             "claim:claim-liu-zhiyuan-ally-shi-jingtang-seventyeighth",
             "claim:claim-liu-zhiyuan-served-shi-jingtang",
             "claim:claim-shi-jingtang-founded-later-jin",
             "claim:claim-shi-jingtang-ruled-later-jin-ninetyfifth",
             "event-detail:jin-later-founded",
+            "event-detail:later-tang-ended-936",
             "person-polity:shi-jingtang:jin_later"
           ],
           "relatedIds": [
             "jin-later-founded",
             "jin_later",
+            "later-tang-ended-936",
+            "li-congke",
             "liu-zhiyuan"
           ]
         },
@@ -74566,14 +74851,18 @@
             "claim:claim-shi-jingtang-founded-later-jin",
             "claim:claim-shi-jingtang-ruled-later-jin-ninetyfifth",
             "event-detail:jin-later-founded",
+            "event-detail:later-tang-ended-936",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "heritage-detail:later-tang-luoyang-city-site",
             "person:shi-jingtang"
           ],
           "relatedIds": [
             "jin-later-founded",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-tang-ended-936",
+            "later-tang-luoyang-city-site",
             "shi-jingtang"
           ]
         },
@@ -77561,19 +77850,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-congke-ruled-later-tang",
             "claim:claim-li-cunxu-ruled-tang-later-closure",
             "event-detail:former-shu-ended-925",
             "event-detail:later-liang-ended-923",
+            "event-detail:later-tang-ended-936",
             "event-detail:tang-later-founded",
             "heritage-detail:later-liang-kaifeng-city-layer",
             "heritage-detail:later-tang-luoyang-city-site",
+            "person:li-congke",
             "person:li-cunxu"
           ],
           "relatedIds": [
             "former-shu-ended-925",
             "later-liang-ended-923",
             "later-liang-kaifeng-city-layer",
+            "later-tang-ended-936",
             "later-tang-luoyang-city-site",
+            "li-congke",
             "li-cunxu",
             "tang-later-founded"
           ]
@@ -80323,8 +80617,10 @@
       "polityName": "后晋",
       "entityKeys": [
         "event:jin-later-founded",
+        "event:later-tang-ended-936",
         "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:kaifeng-northern-song-city-site",
+        "heritage:later-tang-luoyang-city-site",
         "person:shi-jingtang",
         "polity:jin_later"
       ],
@@ -82127,10 +82423,12 @@
         "event:five-dynasties",
         "event:former-shu-ended-925",
         "event:later-liang-ended-923",
+        "event:later-tang-ended-936",
         "event:tang-later-founded",
         "heritage:jingnan-jiangling-city-site",
         "heritage:later-liang-kaifeng-city-layer",
         "heritage:later-tang-luoyang-city-site",
+        "person:li-congke",
         "person:li-cunxu",
         "polity:tang_later"
       ],
@@ -85258,6 +85556,7 @@
         "event:five-dynasties",
         "event:gengshi-founded",
         "event:han-eastern-founded",
+        "event:later-tang-ended-936",
         "event:partition-jin",
         "event:shangyang-palace-built",
         "event:shangyang-palace-completed-679",
@@ -85279,10 +85578,12 @@
         "heritage:yongning-temple-pagoda-site",
         "person:an-lushan",
         "person:ji-yijiu",
+        "person:li-congke",
         "person:li-longji",
         "person:li-zhi",
         "person:liu-xiu",
         "person:liu-zhuang",
+        "person:shi-jingtang",
         "person:sima-yan",
         "person:zhu-wen",
         "polity:han_eastern",

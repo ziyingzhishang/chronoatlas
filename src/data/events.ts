@@ -220,6 +220,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百七十二·后唐纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷272', detail: '记载923年后唐攻梁、开封失守及朱友贞终局；即位建唐与后梁灭亡按连续过程分层。' }],
   },
   {
+    id: 'later-tang-ended-936', year: 936, title: '后唐政权终止', summary: '石敬瑭在契丹支持下攻入洛阳，后唐末帝李从珂终局，后唐中央政权结束；洛阳城市层继续承接后晋及后续政权。', placeId: 'luoyang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '后唐末年皇位继承、禁军与地方军镇矛盾加剧，石敬瑭借助契丹军事力量对后唐发动决定性进攻。',
+    process: '天福元年（936）后晋军队在契丹支持下推进至洛阳，后唐末帝李从珂在都城终局中死亡，后唐统一政治结构由此终止；后晋对各地的接管和实际控制仍是随后展开的过程。',
+    impact: '后唐作为五代第二个中原王朝结束，后晋承接洛阳及部分中原政治空间；洛阳城市、宫城和地方社会并未因政权更替消失。',
+    mapNote: '洛阳是后唐终局与后晋承接的城市节点，936年终止不等于后晋当年已稳定接收全部后唐旧地；末帝结局、军事占领和地方行政转换应分层表达。',
+    references: [{ title: '《资治通鉴》卷二百八十·后晋纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷280', detail: '用于核对936年石敬瑭受契丹支持、后唐覆亡及后晋承接过程；具体洛阳城内终局细节保留过程性表述。' }],
+  },
+  {
     id: 'northern-song-founded', year: 960, title: '北宋建立', summary: '赵匡胤在陈桥兵变后受禅即位，北宋政权形成。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '后周末年北方军政体系仍处于五代更替后的不稳定状态，赵匡胤掌握殿前军及京师附近的关键兵力。',

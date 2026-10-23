@@ -371,10 +371,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'tang_later', perspectiveSummary: '后唐由李存勖承接河东军政力量并灭后梁建立，洛阳为正式都城；沙陀军事集团、中原王朝制度与地方藩镇共同塑造其政权结构。',
     foundationProcess: ['李存勖以晋王身份经营河东并与契丹、后梁竞争。', '923年称帝并攻灭后梁，后唐建立。', '洛阳成为正式都城，后唐对蜀地、河北和河东的整合仍是持续过程。'],
-    turningPoints: [turn(923, '后唐建立', '李存勖即皇帝位并取代后梁，后唐形成。', 'tang-later-founded'), turn(925, '灭前蜀', '后唐向巴蜀扩展，前蜀政权结束。', 'former-shu-founded'), turn(926, '兴教门之变', '军事叛乱和统治危机导致李存勖去世，后唐内部权力重组。')],
-    principalFigureIds: ['li-cunxu'], capitalPhases: [capital('luoyang', 923, 936, 'primary', 'formal', '后唐正式都城，今河南省洛阳市。')],
-    heritageIds: ['later-tang-luoyang-city-site'], eventIds: ['tang-later-founded'], claimIds: [], sourceIds: modernSources,
-    uncertaintyNote: '后唐洛阳宫城历史层依托多朝洛阳城址分层识别，不能把隋唐遗址全部归为后唐；923年灭后梁与925年灭前蜀是不同阶段。',
+    turningPoints: [turn(923, '后唐建立', '李存勖即皇帝位并取代后梁，后唐形成。', 'tang-later-founded'), turn(925, '灭前蜀', '后唐向巴蜀扩展，前蜀政权结束。', 'former-shu-founded'), turn(926, '兴教门之变', '军事叛乱和统治危机导致李存勖去世，后唐内部权力重组。'), turn(936, '后唐终止', '后晋军队推进至洛阳，后唐末帝李从珂终局，后唐中央政权结束。', 'later-tang-ended-936')],
+    principalFigureIds: ['li-cunxu', 'li-congke'], capitalPhases: [capital('luoyang', 923, 936, 'primary', 'formal', '后唐正式都城，今河南省洛阳市。')],
+    heritageIds: ['later-tang-luoyang-city-site'], eventIds: ['tang-later-founded', 'later-tang-ended-936'], claimIds: ['claim-li-congke-ruled-later-tang', 'claim-li-congke-participated-later-tang-ended-936'], sourceIds: modernSources,
+    uncertaintyNote: '后唐洛阳宫城历史层依托多朝洛阳城址分层识别，不能把隋唐遗址全部归为后唐；923年建政、925年灭前蜀、936年洛阳终局和后晋地方接收是不同阶段。',
   }),
   detail({
     polityId: 'jin_later', perspectiveSummary: '后晋由石敬瑭在契丹军事援助下建立，以开封为正式都城；政治合法性、燕云割让和中原统治应作为不同层次叙述。',

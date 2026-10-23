@@ -233,6 +233,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['tang-changan-end', 'five-dynasties'], sourceIds, uncertaintyNote: '“唐庄宗”是后唐庙号称谓，与唐朝本身需区分；不据称谓虚构其与长安的直接任职关系。',
   },
   {
+    personId: 'li-congke', biography: '李从珂是后唐末帝。936年后晋军队在契丹支持下推进至洛阳，后唐中央政权在洛阳终局中结束；其个人结局与洛阳城市历史、后晋地方接收分开记录。',
+    aliases: ['唐末帝', '后唐末帝'], offices: [{ title: '后唐皇帝', polityId: 'tang_later', placeId: 'luoyang', validFrom: 934, validTo: 936, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-tang-ended-936'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '936年洛阳失守、李从珂个人结局和后晋对地方的接收属于连续终局过程；本详情不把末帝结局等同于洛阳城市或地方社会消失。',
+  },
+  {
     personId: 'yuan-hong', biography: '元宏即北魏孝文帝，迁都洛阳并推动官制、礼制与族群身份表达的改革。',
     aliases: ['拓跋宏', '北魏孝文帝'], offices: [{ title: '北魏皇帝', polityId: 'wei_northern', placeId: 'luoyang', validFrom: 471, validTo: 499, datePrecision: 'range', sourceIds }],
     keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '孝文帝改革涉及制度、语言和族群认同等多个层面，详情不把后世“汉化”标签当作单一政策结果。',
