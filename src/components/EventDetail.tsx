@@ -16,6 +16,7 @@ export interface EventDetailProps {
   event: HistoricalEvent;
   detail?: HistoricalEventDetail;
   onNavigate?: (entity: DetailEntity) => void;
+  onOpenEntity?: (entity: DetailEntity) => void;
 }
 
 function LinkedLabel({
@@ -31,8 +32,9 @@ function LinkedLabel({
   return <button type="button" onClick={() => onNavigate(entity)}>{label}</button>;
 }
 
-export function EventDetail({ event, detail = getEventDetail(event.id), onNavigate }: EventDetailProps) {
+export function EventDetail({ event, detail = getEventDetail(event.id), onNavigate, onOpenEntity }: EventDetailProps) {
   const { t } = useLocale();
+  const navigate = onNavigate ?? onOpenEntity;
 
   if (!detail) {
     return <article className="event-detail" aria-label={t('事件详情')}>
@@ -72,7 +74,7 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
       {detail.participants.length > 0 ? <ul>{detail.participants.map((participant) => {
         const person = participantById.get(participant.personId);
         return <li key={`${participant.personId}-${participant.role}`}>
-          <LinkedLabel label={t(person?.name ?? participant.personId)} entity={{ type: 'person', id: participant.personId }} onNavigate={onNavigate} />
+          <LinkedLabel label={t(person?.name ?? participant.personId)} entity={{ type: 'person', id: participant.personId }} onNavigate={navigate} />
           <span> · {t(participant.role)}</span>
           {participant.note && <small>（{t(participant.note)}）</small>}
         </li>;
@@ -81,7 +83,7 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
 
     <section className="event-detail-section">
       <h4>{t('参与政权')}</h4>
-      <ul>{detail.polityIds.map((polityId) => <li key={polityId}><LinkedLabel label={t(polityById.get(polityId)?.name ?? polityId)} entity={{ type: 'polity', id: polityId }} onNavigate={onNavigate} /></li>)}</ul>
+      <ul>{detail.polityIds.map((polityId) => <li key={polityId}><LinkedLabel label={t(polityById.get(polityId)?.name ?? polityId)} entity={{ type: 'polity', id: polityId }} onNavigate={navigate} /></li>)}</ul>
     </section>
 
     <section className="event-detail-section">
@@ -92,12 +94,12 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
 
     <section className="event-detail-section">
       <h4>{t('关联地点')}</h4>
-      {detail.locationIds.length > 0 ? <ul>{detail.locationIds.map((placeId) => <li key={placeId}><LinkedLabel label={t(placeById.get(placeId)?.historicalName ?? placeId)} entity={{ type: 'place', id: placeId }} onNavigate={onNavigate} /></li>)}</ul> : <p className="detail-note">{t('暂无已收录关联地点')}</p>}
+      {detail.locationIds.length > 0 ? <ul>{detail.locationIds.map((placeId) => <li key={placeId}><LinkedLabel label={t(placeById.get(placeId)?.historicalName ?? placeId)} entity={{ type: 'place', id: placeId }} onNavigate={navigate} /></li>)}</ul> : <p className="detail-note">{t('暂无已收录关联地点')}</p>}
     </section>
 
     <section className="event-detail-section">
       <h4>{t('关联事件')}</h4>
-      {detail.relatedEventIds.length > 0 ? <ul>{detail.relatedEventIds.map((eventId) => <li key={eventId}><LinkedLabel label={t(eventById.get(eventId)?.title ?? eventId)} entity={{ type: 'event', id: eventId }} onNavigate={onNavigate} /></li>)}</ul> : <p className="detail-note">{t('暂无已收录关联事件')}</p>}
+      {detail.relatedEventIds.length > 0 ? <ul>{detail.relatedEventIds.map((eventId) => <li key={eventId}><LinkedLabel label={t(eventById.get(eventId)?.title ?? eventId)} entity={{ type: 'event', id: eventId }} onNavigate={navigate} /></li>)}</ul> : <p className="detail-note">{t('暂无已收录关联事件')}</p>}
     </section>
 
     <section className="event-detail-section event-sources">

@@ -79,6 +79,15 @@ test('navigates every event detail relationship category', async () => {
   ]);
 });
 
+test('accepts the shared onOpenEntity callback for related entities', async () => {
+  const onOpenEntity = vi.fn();
+  render(<LocaleProvider><EventDetail event={event} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+  await userEvent.click(screen.getByRole('button', { name: '李渊' }));
+
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'li-yuan' });
+});
+
 test('keeps bibliographic citations as text instead of invalid links', () => {
   render(<LocaleProvider><EventDetail event={event} detail={{
     eventId: event.id,
