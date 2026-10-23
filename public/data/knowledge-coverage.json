@@ -1691,6 +1691,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "former-shu-ended-925",
+      "entityKey": "event:former-shu-ended-925",
+      "label": "前蜀在成都终止",
+      "polityIds": [
+        "former_shu",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-shu-ended-925"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yan-participated-former-shu-ended-925",
+            "event-detail:former-shu-ended-925"
+          ],
+          "relatedIds": [
+            "former-shu-founded",
+            "former_shu",
+            "later-shu-founded",
+            "li-cunxu",
+            "tang_later",
+            "wang-yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "former-shu-founded",
       "entityKey": "event:former-shu-founded",
       "label": "前蜀建立",
@@ -11639,9 +11701,11 @@
             "heritage-detail:former-shu-yongling"
           ],
           "relatedIds": [
+            "former-shu-ended-925",
             "former-shu-founded",
             "former_shu",
-            "wang-jian"
+            "wang-jian",
+            "wang-yan"
           ]
         },
         {
@@ -22486,19 +22550,23 @@
             "claim:claim-li-cunxu-ruled-tang-later-closure",
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
+            "claim:claim-wang-yan-enemy-li-cunxu-termination-925",
             "claim:claim-yelu-abaoji-enemy-li-cunxu",
             "claim:claim-zhu-youzhen-enemy-li-cunxu-termination-923",
             "event-detail:five-dynasties",
+            "event-detail:former-shu-ended-925",
             "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
             "person-polity:li-cunxu:tang_later"
           ],
           "relatedIds": [
             "five-dynasties",
+            "former-shu-ended-925",
             "later-liang-ended-923",
             "meng-zhixiang",
             "tang-later-founded",
             "tang_later",
+            "wang-yan",
             "yelu-abaoji",
             "zhu-youzhen"
           ]
@@ -28971,6 +29039,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "wang-yan",
+      "entityKey": "person:wang-yan",
+      "label": "王衍",
+      "polityIds": [
+        "former_shu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wang-yan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yan-enemy-li-cunxu-termination-925",
+            "claim:claim-wang-yan-participated-former-shu-ended-925",
+            "claim:claim-wang-yan-ruled-former-shu",
+            "event-detail:former-shu-ended-925",
+            "person-polity:wang-yan:former_shu"
+          ],
+          "relatedIds": [
+            "former-shu-ended-925",
+            "former_shu",
+            "li-cunxu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "wanyan-aguda",
       "entityKey": "person:wanyan-aguda",
       "label": "完颜阿骨打",
@@ -33152,14 +33284,19 @@
           "evidenceIds": [
             "claim:claim-wang-jian-founded-former-shu",
             "claim:claim-wang-jian-ruled-former-shu-fortyseventh",
+            "claim:claim-wang-yan-ruled-former-shu",
+            "event-detail:former-shu-ended-925",
             "event-detail:former-shu-founded",
             "heritage-detail:former-shu-yongling",
-            "person:wang-jian"
+            "person:wang-jian",
+            "person:wang-yan"
           ],
           "relatedIds": [
+            "former-shu-ended-925",
             "former-shu-founded",
             "former-shu-yongling",
-            "wang-jian"
+            "wang-jian",
+            "wang-yan"
           ]
         },
         {
@@ -36969,6 +37106,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-cunxu-ruled-tang-later-closure",
+            "event-detail:former-shu-ended-925",
             "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
             "heritage-detail:later-liang-kaifeng-city-layer",
@@ -36976,6 +37114,7 @@
             "person:li-cunxu"
           ],
           "relatedIds": [
+            "former-shu-ended-925",
             "later-liang-ended-923",
             "later-liang-kaifeng-city-layer",
             "later-tang-luoyang-city-site",
@@ -41995,6 +42134,68 @@
             "fu-jian-founder",
             "later-qin-founded",
             "northern-wei-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:former-shu-ended-925": {
+      "entityType": "event",
+      "entityId": "former-shu-ended-925",
+      "entityKey": "event:former-shu-ended-925",
+      "label": "前蜀在成都终止",
+      "polityIds": [
+        "former_shu",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-shu-ended-925"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yan-participated-former-shu-ended-925",
+            "event-detail:former-shu-ended-925"
+          ],
+          "relatedIds": [
+            "former-shu-founded",
+            "former_shu",
+            "later-shu-founded",
+            "li-cunxu",
+            "tang_later",
+            "wang-yan"
           ]
         },
         {
@@ -51956,9 +52157,11 @@
             "heritage-detail:former-shu-yongling"
           ],
           "relatedIds": [
+            "former-shu-ended-925",
             "former-shu-founded",
             "former_shu",
-            "wang-jian"
+            "wang-jian",
+            "wang-yan"
           ]
         },
         {
@@ -62803,19 +63006,23 @@
             "claim:claim-li-cunxu-ruled-tang-later-closure",
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
+            "claim:claim-wang-yan-enemy-li-cunxu-termination-925",
             "claim:claim-yelu-abaoji-enemy-li-cunxu",
             "claim:claim-zhu-youzhen-enemy-li-cunxu-termination-923",
             "event-detail:five-dynasties",
+            "event-detail:former-shu-ended-925",
             "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
             "person-polity:li-cunxu:tang_later"
           ],
           "relatedIds": [
             "five-dynasties",
+            "former-shu-ended-925",
             "later-liang-ended-923",
             "meng-zhixiang",
             "tang-later-founded",
             "tang_later",
+            "wang-yan",
             "yelu-abaoji",
             "zhu-youzhen"
           ]
@@ -69286,6 +69493,70 @@
         }
       ]
     },
+    "person:wang-yan": {
+      "entityType": "person",
+      "entityId": "wang-yan",
+      "entityKey": "person:wang-yan",
+      "label": "王衍",
+      "polityIds": [
+        "former_shu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wang-yan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yan-enemy-li-cunxu-termination-925",
+            "claim:claim-wang-yan-participated-former-shu-ended-925",
+            "claim:claim-wang-yan-ruled-former-shu",
+            "event-detail:former-shu-ended-925",
+            "person-polity:wang-yan:former_shu"
+          ],
+          "relatedIds": [
+            "former-shu-ended-925",
+            "former_shu",
+            "li-cunxu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:wanyan-aguda": {
       "entityType": "person",
       "entityId": "wanyan-aguda",
@@ -73469,14 +73740,19 @@
           "evidenceIds": [
             "claim:claim-wang-jian-founded-former-shu",
             "claim:claim-wang-jian-ruled-former-shu-fortyseventh",
+            "claim:claim-wang-yan-ruled-former-shu",
+            "event-detail:former-shu-ended-925",
             "event-detail:former-shu-founded",
             "heritage-detail:former-shu-yongling",
-            "person:wang-jian"
+            "person:wang-jian",
+            "person:wang-yan"
           ],
           "relatedIds": [
+            "former-shu-ended-925",
             "former-shu-founded",
             "former-shu-yongling",
-            "wang-jian"
+            "wang-jian",
+            "wang-yan"
           ]
         },
         {
@@ -77286,6 +77562,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-cunxu-ruled-tang-later-closure",
+            "event-detail:former-shu-ended-925",
             "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
             "heritage-detail:later-liang-kaifeng-city-layer",
@@ -77293,6 +77570,7 @@
             "person:li-cunxu"
           ],
           "relatedIds": [
+            "former-shu-ended-925",
             "later-liang-ended-923",
             "later-liang-kaifeng-city-layer",
             "later-tang-luoyang-city-site",
@@ -79136,9 +79414,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 180,
+      "totalEntities": 181,
       "statusCounts": {
-        "covered": 860,
+        "covered": 865,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -79213,9 +79491,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 219,
+      "totalEntities": 220,
       "statusCounts": {
-        "covered": 1040,
+        "covered": 1045,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -79614,9 +79892,11 @@
       "polityId": "former_shu",
       "polityName": "前蜀",
       "entityKeys": [
+        "event:former-shu-ended-925",
         "event:former-shu-founded",
         "heritage:former-shu-yongling",
         "person:wang-jian",
+        "person:wang-yan",
         "polity:former_shu"
       ],
       "gaps": [],
@@ -81845,6 +82125,7 @@
       "polityName": "后唐",
       "entityKeys": [
         "event:five-dynasties",
+        "event:former-shu-ended-925",
         "event:later-liang-ended-923",
         "event:tang-later-founded",
         "heritage:jingnan-jiangling-city-site",
@@ -83558,6 +83839,7 @@
       "entityKeys": [
         "event:cheng-han-ended-347",
         "event:cheng-han-founded",
+        "event:former-shu-ended-925",
         "event:former-shu-founded",
         "event:later-shu-founded",
         "event:shu-han-founded",
@@ -83567,11 +83849,13 @@
         "heritage:later-shu-chengdu-city-site",
         "heritage:shu-han-chengdu-city-site",
         "person:huan-wen",
+        "person:li-cunxu",
         "person:li-shi",
         "person:li-xiong",
         "person:liu-bei",
         "person:meng-zhixiang",
         "person:wang-jian",
+        "person:wang-yan",
         "polity:cheng_han",
         "polity:former_shu",
         "polity:later_shu",

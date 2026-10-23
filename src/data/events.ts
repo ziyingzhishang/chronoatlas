@@ -912,6 +912,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '大同市人民政府：历史溯源', url: 'https://www.dt.gov.cn/dtszf/sqgllssy/202510/2f0c0525819a4af3ae0ba42eb47ad053.shtml', detail: '记辽重熙十三年（1044）辽兴宗把云州升为西京府。' }],
   },
   {
+    id: 'former-shu-ended-925', year: 925, title: '前蜀在成都终止', summary: '后唐军队攻取成都，前蜀末帝王衍出降，前蜀政权终止，成都转入后续蜀地政权承接阶段。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '前蜀后期宫廷与地方军政关系趋于脆弱，后唐在李存勖时期向蜀地发动攻势。',
+    process: '925年后唐军队攻取成都，前蜀末帝王衍出降，前蜀政权结束；成都城市与巴蜀地方社会继续承接后续政权。',
+    impact: '前蜀转入后唐在蜀地的接收阶段，成都政治中心功能延续；后蜀直到934年才以孟知祥称帝形成，不能把925年与后蜀建立合并。',
+    mapNote: '成都采用项目已有今四川省成都市区域节点；925年表示成都失守和政权终止，不表示巴蜀全境同日完成行政接收。',
+    references: [{ title: '《资治通鉴》卷二百七十二·后唐纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷272', detail: '用于核对925年后唐攻取成都、王衍出降及前蜀终止；后唐接收和后蜀形成另按阶段区分。' }],
+  },
+  {
     id: 'former-shu-founded', year: 907, title: '前蜀建立', summary: '王建在成都称帝，前蜀成为十国之一。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末中央权力衰落，王建在蜀地经营军政资源并逐步取得巴蜀地区的主导地位。',

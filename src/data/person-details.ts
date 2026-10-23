@@ -303,6 +303,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['former-shu-founded'], sourceIds, uncertaintyNote: '907年称帝标志前蜀政权形成，但巴蜀各地的实际控制仍需结合阶段性军事与行政资料。',
   },
   {
+    personId: 'wang-yan', biography: '王衍是前蜀末帝。前蜀后期宫廷与军政关系趋于脆弱，925年后唐攻取成都，王衍出降，前蜀政权终止。',
+    aliases: ['前蜀后主', '前蜀末帝'], offices: [{ title: '前蜀末帝', polityId: 'former_shu', placeId: 'chengdu', validFrom: 918, validTo: 925, datePrecision: 'range', sourceIds }],
+    keyEvents: ['former-shu-ended-925'], sourceIds, uncertaintyNote: '王衍对应前蜀末期统治与925年成都失守节点；出降与后唐接收、后蜀934年建政属于不同阶段，不能合并。',
+  },
+  {
     personId: 'meng-zhixiang', biography: '孟知祥在后唐蜀地军政基础上取得独立地位，934年在成都称帝建立后蜀。',
     aliases: ['后蜀高祖'], offices: [{ title: '后蜀皇帝', polityId: 'later_shu', placeId: 'chengdu', validFrom: 934, validTo: 934, datePrecision: 'year', sourceIds }],
     keyEvents: ['later-shu-founded'], sourceIds, uncertaintyNote: '孟知祥称帝后不久去世，后蜀的长期统治由后继者延续；本详情不把个人在位期等同于政权存续期。',

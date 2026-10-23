@@ -2102,6 +2102,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1044年为重熙十三年升西京府节点；现代大同古城、云冈及相关遗存经历多时代叠压，不能直接代表辽代西京原貌。',
   },
   {
+    eventId: 'former-shu-ended-925',
+    participants: [
+      { personId: 'wang-yan', role: '前蜀末帝与成都失守节点人物', note: '王衍在前蜀末期统治，925年后唐攻取成都后出降；末代君主身份不等同于成都城市遗产消失。' },
+      { personId: 'li-cunxu', role: '攻取成都并承接前蜀政治空间的后唐君主', note: '李存勖代表后唐925年攻蜀与成都接收阶段；后唐在蜀地的行政承接及后蜀934年建政另行记录。' },
+    ],
+    polityIds: ['former_shu', 'tang_later'],
+    causes: ['前蜀末期宫廷与地方军政关系紧张。', '后唐在李存勖时期取得对蜀地的军事主动权。'],
+    consequences: ['前蜀政权终止，王衍出降。', '成都继续作为巴蜀政治与交通中心，后唐接收阶段与934年后蜀建立分层表达。'],
+    phases: [
+      { label: '后唐攻蜀', startYear: 925, endYear: 925, summary: '后唐军队进入蜀地并向成都推进。' },
+      { label: '成都失守与前蜀终止', startYear: 925, endYear: 925, summary: '成都失守，王衍出降，前蜀阶段终止。' },
+    ],
+    locationIds: ['chengdu'],
+    relatedEventIds: ['former-shu-founded', 'later-shu-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '925年通常作为前蜀终止节点；成都失守、王衍出降、后唐接收及934年后蜀形成存在时间差，不能将前蜀终止与后蜀建立合并。',
+  },
+  {
     eventId: 'former-shu-founded',
     participants: [
       { personId: 'wang-jian', role: '经营巴蜀并在成都称帝建立前蜀的君主', note: '王建在唐末逐步控制巴蜀，907年称帝与前蜀形成是连续但可分层的过程。' },

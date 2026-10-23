@@ -449,12 +449,12 @@ export const polityDetails: PolityDetail[] = [
     uncertaintyNote: '907年受封与927年正式称王是不同节点；马楚潭州城址历史层依托现代城市考古理解，不能把后世建筑直接标作马楚原构。',
   }),
   detail({
-    polityId: 'former_shu', perspectiveSummary: '前蜀由王建在唐末巴蜀军政基础上建立，以成都为都；成都宫城、永陵和巴蜀地方治理共同构成其可见历史线索。',
+    polityId: 'former_shu', perspectiveSummary: '前蜀由王建在唐末巴蜀军政基础上建立，以成都为都，925年成都失守后终止；成都宫城、永陵和巴蜀地方治理共同构成其可见历史线索。',
     foundationProcess: ['王建控制成都及巴蜀主要军政资源。', '907年在成都称帝，前蜀政权形成。', '成都成为正式都城，但巴蜀各地归附和实际控制具有阶段差异。'],
-    turningPoints: [turn(907, '前蜀建立', '王建在成都称帝，前蜀成为十国之一。', 'former-shu-founded'), turn(918, '王建去世', '前蜀进入继承与宫廷权力重组阶段。'), turn(925, '前蜀覆亡', '后唐军队攻取成都，前蜀结束。')],
-    principalFigureIds: ['wang-jian'], capitalPhases: [capital('chengdu', 907, 925, 'primary', 'formal', '前蜀正式都城成都，今四川省成都市。')],
-    heritageIds: ['former-shu-yongling'], eventIds: ['former-shu-founded'], claimIds: ['claim-wang-jian-founded-former-shu'], sourceIds: modernSources,
-    uncertaintyNote: '907年称帝标志政权形成，不代表巴蜀各地同日稳定归附；前蜀永陵保存王建墓葬和石刻，不能代替完整成都宫城。',
+    turningPoints: [turn(907, '前蜀建立', '王建在成都称帝，前蜀成为十国之一。', 'former-shu-founded'), turn(918, '王建去世', '前蜀进入继承与宫廷权力重组阶段。'), turn(925, '前蜀终止', '后唐军队攻取成都，王衍出降，前蜀政权终止。', 'former-shu-ended-925')],
+    principalFigureIds: ['wang-jian', 'wang-yan'], capitalPhases: [capital('chengdu', 907, 925, 'primary', 'formal', '前蜀正式都城成都，今四川省成都市。')],
+    heritageIds: ['former-shu-yongling'], eventIds: ['former-shu-founded', 'former-shu-ended-925'], claimIds: ['claim-wang-jian-founded-former-shu', 'claim-wang-yan-ruled-former-shu', 'claim-wang-yan-participated-former-shu-ended-925', 'claim-wang-yan-enemy-li-cunxu-termination-925'], sourceIds: modernSources,
+    uncertaintyNote: '907年称帝标志政权形成，不代表巴蜀各地同日稳定归附；925年成都失守、王衍出降与后唐接收是终止节点，后蜀934年建政另行分期；前蜀永陵保存王建墓葬和石刻，不能代替完整成都宫城。',
   }),
   detail({
     polityId: 'later_shu', perspectiveSummary: '后蜀由孟知祥承接后唐在巴蜀的军政基础建立，以成都为政治中心；其建政、继承和成都城市历史层应与前蜀分开。',
