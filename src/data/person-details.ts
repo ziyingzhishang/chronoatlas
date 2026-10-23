@@ -685,13 +685,13 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'kublai', biography: '忽必烈在蒙古汗权和东亚战争体系基础上建立元朝，1271年定国号为大元，随后继续完成对南宋的军事与行政整合。',
-    aliases: ['元世祖'], offices: [{ title: '蒙古大汗／元皇帝', polityId: 'yuan', placeId: 'dadu', validFrom: 1260, validTo: 1294, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'] }],
-    keyEvents: ['yuan-founded', 'mongol-karakorum-fixed-center'], sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'], uncertaintyNote: '1260年汗位、1271年改国号和1279年南宋覆亡是连续但不同的节点；元朝国号不等于当年已经完成南方控制；忽必烈与哈拉和林的关联属于后续承接而非1235年现场参与。',
+    aliases: ['元世祖'], offices: [{ title: '蒙古大汗与元初政治中心', polityId: 'yuan', placeId: 'shangdu', validFrom: 1260, validTo: 1266, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong'] }, { title: '元皇帝与大都营建时期君主', polityId: 'yuan', placeId: 'dadu', validFrom: 1267, validTo: 1294, datePrecision: 'range', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong', 'yuan-dadu-beijing-heritage'] }],
+    keyEvents: ['yuan-founded', 'yuan-dadu-built', 'mongol-karakorum-fixed-center'], sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong', 'yuan-dadu-beijing-heritage'], uncertaintyNote: '1260年汗位、1267年大都营建、1271年改国号和1279年南宋覆亡是连续但不同的节点；元朝国号不等于当年已经完成南方控制；忽必烈与哈拉和林的关联属于后续承接而非1235年现场参与。',
   },
   {
     personId: 'liu-bingzhong', biography: '刘秉忠在忽必烈政权中参与国号、都城和制度设计，元初国家建构与大都政治空间均与其活动相连。',
-    aliases: ['子聪'], offices: [{ title: '元初政治家与制度设计者', polityId: 'yuan', placeId: 'dadu', validFrom: 1260, validTo: 1274, datePrecision: 'range', sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history'] }],
-    keyEvents: ['yuan-founded'], sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history'], uncertaintyNote: '刘秉忠参与元初制度建构，但国号、都城与行政整合是集体政治过程，不能归结为个人单独决定。',
+    aliases: ['子聪'], offices: [{ title: '元初政治家与制度设计者', polityId: 'yuan', placeId: 'shangdu', validFrom: 1260, validTo: 1266, datePrecision: 'range', sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history'] }, { title: '大都营建与制度设计者', polityId: 'yuan', placeId: 'dadu', validFrom: 1267, validTo: 1274, datePrecision: 'range', sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history', 'yuan-dadu-beijing-heritage'] }],
+    keyEvents: ['yuan-founded', 'yuan-dadu-built'], sourceIds: ['yuan-li-bingzhong', 'yuan-nationalities-history', 'yuan-dadu-beijing-heritage'], uncertaintyNote: '刘秉忠参与元初制度建构和大都规划，但国号、都城与行政整合是集体政治过程，不能归结为个人单独决定。',
   },
   {
     personId: 'zhu-yuanzhang', biography: '朱元璋在元末群雄竞争中以应天为基地建立明朝，1368年称帝并北伐攻取大都，明初政权转换由此展开。',
@@ -700,7 +700,7 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'toghon-temur', biography: '妥懽帖睦尔即元顺帝，元末在大都维持元廷统治；1368年明军攻取大都后北走，元廷北迁与北元阶段相连。',
-    aliases: ['元顺帝', '惠宗'], offices: [{ title: '元皇帝／北元汗廷前期君主', polityId: 'northern_yuan', placeId: 'beiyuan_core', validFrom: 1333, validTo: 1370, datePrecision: 'range', sourceIds: ['northern-yuan-early-ming', 'china-chronology'] }],
+    aliases: ['元顺帝', '惠宗'], offices: [{ title: '元皇帝', polityId: 'yuan', placeId: 'dadu', validFrom: 1333, validTo: 1368, datePrecision: 'range', sourceIds: ['northern-yuan-early-ming', 'china-chronology'] }, { title: '北元汗廷前期君主', polityId: 'northern_yuan', placeId: 'beiyuan_core', validFrom: 1368, validTo: 1370, datePrecision: 'range', sourceIds: ['northern-yuan-early-ming', 'china-chronology'] }],
     keyEvents: ['northern-yuan-founded'], sourceIds: ['northern-yuan-early-ming', 'china-chronology'], uncertaintyNote: '1368年表示元廷失去大都并向北迁移的阶段转折，不是另立新朝的单日；北元称谓和政治中心存在分期差异。',
   },
   {
@@ -832,6 +832,41 @@ export const personDetails: PersonDetail[] = [
     personId: 'naemul-isageum', biography: '内物王是新罗早期王权整合的重要君主，三国时期新罗在其统治阶段面对高句丽影响、倭寇压力与王统延续问题。',
     aliases: ['奈勿尼师今', '奈勿王'], offices: [{ title: '新罗国王', polityId: 'silla', validFrom: 356, validTo: 402, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'silla-periodization'] }],
     keyEvents: ['silla-founded'], sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'silla-periodization'], uncertaintyNote: '新罗前57年为传统建国纪年，内物王属于数百年后的王权整合阶段；王统年代与早期国家化过程需区分传统编年与考古证据。',
+  },
+  {
+    personId: 'seondeok-silla', biography: '善德女王是新罗中期君主，处于百济、高句丽压力和新罗—唐外交关系逐步加强的阶段。',
+    aliases: ['新罗善德女王'], offices: [{ title: '新罗女王', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 632, validTo: 647, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-kim-chunchu-official'] }],
+    keyEvents: [], sourceIds: ['silla-encykorea', 'silla-kim-chunchu-official'], uncertaintyNote: '善德女王于648年联盟形成前去世；其人物详情通过王权与外交网络阅读，不将其写成648年出使现场人物。',
+  },
+  {
+    personId: 'jindeok-silla', biography: '真德女王承接善德女王后的新罗王位，延续对唐外交并为金春秋继位前的政治承接提供背景。',
+    aliases: ['新罗真德女王'], offices: [{ title: '新罗女王', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 647, validTo: 654, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-kim-chunchu-official'] }],
+    keyEvents: ['silla-tang-alliance-648'], sourceIds: ['silla-encykorea', 'silla-kim-chunchu-official'], uncertaintyNote: '真德女王与648年外交合作处于同一政治承接阶段；事件参与者只登记金春秋，不把所有王权背景人物写成出使者。',
+  },
+  {
+    personId: 'kim-chunchu', biography: '金春秋出使唐并推动新罗—唐军事合作，后即位为武烈王，连接外交、王位承接和三国统一战争。',
+    aliases: ['新罗武烈王', '太宗武烈王'], offices: [{ title: '新罗外交使者与王族', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 642, validTo: 654, datePrecision: 'range', sourceIds: ['silla-kim-chunchu-official'] }, { title: '新罗国王', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 654, validTo: 661, datePrecision: 'range', sourceIds: ['silla-unification-wars-official'] }],
+    keyEvents: ['silla-tang-alliance-648', 'silla-tang-baekje-660'], sourceIds: ['silla-kim-chunchu-official', 'silla-unification-wars-official'], uncertaintyNote: '648年外交合作与660年百济灭亡是不同节点；金春秋的王权、外交和军事决策角色分别展示。',
+  },
+  {
+    personId: 'kim-yushin', biography: '金庾信是新罗统一战争时期的核心将领，与金春秋家族和新罗王权形成政治、军事合作网络。',
+    aliases: ['金庾信将军'], offices: [{ title: '新罗将领', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 642, validTo: 673, datePrecision: 'range', sourceIds: ['silla-kim-chunchu-official', 'silla-unification-wars-official'] }],
+    keyEvents: ['silla-tang-baekje-660', 'silla-tang-goguryeo-668', 'silla-tang-war-670-676'], sourceIds: ['silla-kim-chunchu-official', 'silla-unification-wars-official'], uncertaintyNote: '金庾信的具体战役指挥、政治合作和家族关系需按事件分别核验，不将其概括为唯一“统一者”。',
+  },
+  {
+    personId: 'munmu-silla', biography: '文武王承接武烈王，在百济、高句丽灭亡后处理新罗与唐的战争，统一新罗阶段由此展开。',
+    aliases: ['新罗文武王'], offices: [{ title: '新罗国王', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 661, validTo: 681, datePrecision: 'range', sourceIds: ['silla-unification-wars-official', 'silla-encykorea'] }],
+    keyEvents: ['silla-tang-goguryeo-668', 'silla-tang-war-670-676'], sourceIds: ['silla-unification-wars-official', 'silla-encykorea'], uncertaintyNote: '668年高句丽灭亡与670—676年对唐战争必须分层；统一新罗不是668年单日完成的国家形态。',
+  },
+  {
+    personId: 'sinmun-silla', biography: '神文王在统一新罗早期整顿中央和地方秩序，承接文武王后的国家制度建设。',
+    aliases: ['新罗神文王'], offices: [{ title: '新罗国王', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 681, validTo: 692, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-periodization'] }],
+    keyEvents: [], sourceIds: ['silla-encykorea', 'silla-periodization'], uncertaintyNote: '神文王属于对唐战争结束后的制度整合阶段，不作为670—676年战场参与者直接列入事件。',
+  },
+  {
+    personId: 'gyeongsun-silla', biography: '敬顺王是新罗末代君主，935年向高丽归降，新罗王统结束而庆州王京转入高丽承接阶段。',
+    aliases: ['新罗敬顺王'], offices: [{ title: '新罗末代国王', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 927, validTo: 935, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'] }],
+    keyEvents: ['silla-ended-935'], sourceIds: ['silla-encykorea', 'silla-samguksagi-db'], uncertaintyNote: '935年是政权归降节点，不是庆州城市历史和新罗文化遗产的终止。',
   },
   {
     personId: 'istemi', biography: '室点密在突厥早期汗权形成后经营西部部众，参与突厥向中亚扩展并与萨珊、拜占庭等势力建立外交和军事联系。',

@@ -17,6 +17,7 @@ const expectedEventIds = [
   'xiongnu-founded',
   'chu-han-contention',
   'silla-founded',
+  'silla-tang-war-670-676',
   'goguryeo-founded',
   'cheng-han-founded',
   'tuyuhun-founded',
@@ -52,12 +53,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(38);
+    expect(report.totalReviewed).toBe(39);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 12, approximate: 26, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 13, approximate: 26, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

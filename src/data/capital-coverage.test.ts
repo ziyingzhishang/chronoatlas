@@ -43,7 +43,7 @@ describe('capital coverage report', () => {
       hasMultiCapitalCoverage: false,
     });
     expect(byId.get('yuan')).toMatchObject({
-      hasMigrationCoverage: false,
+      hasMigrationCoverage: true,
       hasMultiCapitalCoverage: true,
     });
     expect(byId.get('turkic')).toMatchObject({

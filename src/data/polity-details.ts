@@ -100,8 +100,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'yuan', perspectiveSummary: '元从蒙古汗权与征服秩序转入以“大元”为国号的王朝国家，形成上都—大都两都体系，1271年建号与1279年灭宋需分开理解。',
     foundationProcess: ['忽必烈在蒙古汗权基础上推动制度与都城建设。', '1271年定国号为大元。', '1279年南宋覆亡后，元对中原和江南的统治整合进入新的阶段。'],
     turningPoints: [turn(1260, '汗位与制度重组', '忽必烈取得汗位后推进新的国家制度。'), turn(1271, '元建立', '国号改为大元。', 'yuan-founded'), turn(1279, '南宋覆亡', '元完成对南宋主要政权的征服。')],
-    principalFigureIds: ['kublai', 'liu-bingzhong', 'bayan'], capitalPhases: [capital('shangdu', 1271, 1368, 'secondary', 'formal', '夏都'), capital('dadu', 1271, 1368, 'primary', 'formal', '主要政治中心')],
-    heritageIds: ['yuan-shangdu-site'], eventIds: ['yuan-founded', 'yuan-shangdu-built'], claimIds: ['claim-kublai-ruled-yuan-closure'], sourceIds: [...modernSources, 'yuan-nationalities-history', 'yuan-li-bingzhong'],
+    principalFigureIds: ['kublai', 'liu-bingzhong', 'bayan'], capitalPhases: [capital('shangdu', 1271, 1273, 'primary', 'formal', '元初主要政治中心；上都1263年前后形成的前置阶段见事件与遗产'), capital('shangdu', 1274, 1364, 'secondary', 'seasonal', '夏都'), capital('dadu', 1271, 1271, 'primary', 'actual', '大都营建后的元初政治中心'), capital('dadu', 1272, 1368, 'primary', 'formal', '主要政治中心')],
+    heritageIds: ['yuan-shangdu-site', 'yuan-dadu-site'], eventIds: ['yuan-founded', 'yuan-shangdu-built', 'yuan-dadu-built'], claimIds: ['claim-kublai-ruled-yuan-closure', 'claim-toghon-temur-ruled-yuan'], sourceIds: [...modernSources, 'yuan-nationalities-history', 'yuan-li-bingzhong', 'yuan-dadu-beijing-heritage', 'yuan-dadu-axis-unesco', 'yuan-dadu-liu-bingzhong-official'],
     uncertaintyNote: '蒙古帝国各汗国不能整体等同元朝；1271年是国号节点，1279年是南宋覆亡节点，两者不应合并为一次性建国。',
   }),
   detail({
@@ -612,9 +612,9 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'silla', perspectiveSummary: '新罗从辰韩诸部和朴赫居世王权传统中形成，以金城（今庆州）为长期政治中心；早期建国纪年与后来的国家整合必须分层。',
     foundationProcess: ['辰韩诸部、聚落和首领网络在半岛东南部持续整合。', '传统纪年以公元前57年朴赫居世即位作为新罗起点。', '金城、徐罗伐及庆州王京遗址群承载不同年代的王权、宗教和城市层。'],
     turningPoints: [turn(-57, '新罗传统建国', '朴赫居世即位，新罗进入传统建国分期。', 'silla-founded'), turn(356, '王权整合加强', '新罗王权在半岛三国竞争中逐步巩固。'), turn(668, '统一新罗阶段开始', '高句丽灭亡后，新罗进入新的半岛政治阶段。')],
-    principalFigureIds: ['park-hyeokgeose', 'namhae-chachaung', 'naemul-isageum'], capitalPhases: [capital('jincheng_silla', -57, 935)],
-    heritageIds: ['silla-gyeongju-capital-site'], eventIds: ['silla-founded'], claimIds: ['claim-park-hyeokgeose-participated-silla-founded'], sourceIds: [...modernSources, 'silla-encykorea', 'silla-samguksagi-db'],
-    uncertaintyNote: '前57年是传统纪年节点，早期国家化和具体城址范围不能视为精确可测的单日事实；庆州王京遗址群为长期叠压遗存，不等于每一时期的完整宫城。',
+    principalFigureIds: ['park-hyeokgeose', 'namhae-chachaung', 'naemul-isageum', 'seondeok-silla', 'jindeok-silla', 'kim-chunchu', 'kim-yushin', 'munmu-silla', 'sinmun-silla', 'gyeongsun-silla'], capitalPhases: [capital('jincheng_silla', -57, 100, 'primary', 'formal', '文献名称对应庆州王京区域；早期具体城址仍有争议。'), capital('wolseong_silla', 101, 935, 'primary', 'formal', '庆州月城是重要宫城遗址层，与金城、徐罗伐等名称按时期分层。')],
+    heritageIds: ['silla-gyeongju-capital-site'], eventIds: ['silla-founded', 'silla-tang-alliance-648', 'silla-tang-baekje-660', 'silla-tang-goguryeo-668', 'silla-tang-war-670-676', 'silla-ended-935'], claimIds: ['claim-park-hyeokgeose-participated-silla-founded', 'claim-kim-chunchu-participated-silla-tang-alliance', 'claim-kim-chunchu-participated-silla-tang-baekje', 'claim-kim-yushin-participated-silla-tang-baekje', 'claim-kim-yushin-participated-silla-tang-goguryeo', 'claim-munmu-participated-silla-tang-war', 'claim-kim-yushin-participated-silla-tang-war', 'claim-gyeongsun-participated-silla-ended', 'claim-kim-chunchu-ruled-silla', 'claim-munmu-ruled-silla', 'claim-sinmun-ruled-silla', 'claim-gyeongsun-ruled-silla', 'claim-kim-chunchu-parent-munmu', 'claim-munmu-child-kim-chunchu', 'claim-kim-yushin-ally-kim-chunchu', 'claim-jindeok-related-seondeok', 'claim-seondeok-related-kim-chunchu', 'claim-munmu-parent-sinmun', 'claim-sinmun-child-munmu', 'claim-gyeongsun-related-sinmun'], sourceIds: [...modernSources, 'silla-encykorea', 'silla-samguksagi-db', 'silla-periodization', 'silla-kim-chunchu-official', 'silla-unification-wars-official', 'silla-gyeongju-unesco'],
+    uncertaintyNote: '前57年是传统纪年节点，早期国家化和具体城址范围不能视为精确可测的单日事实；金城、徐罗伐与月城对应的名称和遗址层需按时期核验，庆州王京遗址群不等于每一时期的完整宫城。',
   }),
   detail({
     polityId: 'song_northern', perspectiveSummary: '北宋由赵匡胤在五代军政竞争中建立，以开封为东京；统一南方诸国、澶渊和靖康分别构成不同历史阶段。',

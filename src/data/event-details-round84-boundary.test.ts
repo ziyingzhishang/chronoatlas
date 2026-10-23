@@ -19,6 +19,7 @@ const reviewBoundaryIds = [
   'republic-chongqing-wartime-center',
   'shang-founded-eighth-batch',
   'silla-founded',
+  'silla-tang-war-670-676',
   'southern-liang-founded-397',
   'southern-liang-moves-ledu',
   'southern-ming-founded',
@@ -44,7 +45,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 118, 'needs-review': 38, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 39, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.needsReviewChecks.includes('timePrecision'));
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
@@ -67,7 +68,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       item.status === 'needs-review' && item.needsReviewChecks.includes('timePrecision')
     ));
 
-    expect(precisionGaps).toHaveLength(32);
+    expect(precisionGaps).toHaveLength(33);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
     expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });

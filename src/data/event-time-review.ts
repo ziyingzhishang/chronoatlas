@@ -69,6 +69,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'xiongnu-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '匈奴联盟形成是部众整合过程，前209年用于表示传统形成阶段，不代表单一建国仪式。', timelineStrategy: 'approximate-marker' },
   { eventId: 'chu-han-contention', status: 'confirmed', expectedPrecision: 'range', explanation: '楚汉竞争的起止区间有明确编年边界，但事件本身跨越多个军事与政治阶段。', timelineStrategy: 'range-band' },
   { eventId: 'silla-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '前57年是新罗传统纪年节点，早期辰韩诸部整合仍需按形成过程理解。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'silla-tang-war-670-676', status: 'confirmed', expectedPrecision: 'range', explanation: '670—676年新罗与唐的战争是有明确起止范围的连续过程，不能压缩为676年单日。', timelineStrategy: 'range-band' },
   { eventId: 'goguryeo-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '前37年是高句丽传统建国纪年，早期国家化与城址对应不能被视为精确日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'cheng-han-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '《资治通鉴》卷八十五明确记载304年十月李雄即成都王位，形成政权单年节点；306年称帝是后续阶段，不能据此推断304年已控制整个巴蜀。', timelineStrategy: 'year-marker' },
   { eventId: 'tuyuhun-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '313年前后表示吐谷浑部众形成稳定政治共同体，迁徙与建制不是单日完成。', timelineStrategy: 'approximate-marker' },

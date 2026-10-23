@@ -47,8 +47,10 @@ describe('high-confidence capital history coverage', () => {
       { placeId: 'kaifeng', validFrom: 1214, validTo: 1234 },
     ]);
     expect(recordsFor('yuan')).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'shangdu', role: 'seasonal', validFrom: 1271, validTo: 1368 }),
-      expect.objectContaining({ placeId: 'dadu', role: 'primary', validFrom: 1271, validTo: 1368 }),
+      expect.objectContaining({ placeId: 'shangdu', role: 'primary', validFrom: 1271, validTo: 1273 }),
+      expect.objectContaining({ placeId: 'shangdu', role: 'secondary', validFrom: 1274, validTo: 1364 }),
+      expect.objectContaining({ placeId: 'dadu', role: 'primary', validFrom: 1271, validTo: 1271 }),
+      expect.objectContaining({ placeId: 'dadu', role: 'primary', validFrom: 1272, validTo: 1368 }),
     ]));
     expect(recordsFor('ming').map(({ placeId, validFrom, validTo, role }) => ({ placeId, validFrom, validTo, role }))).toEqual([
       { placeId: 'yingtian', validFrom: 1368, validTo: 1420, role: 'primary' },

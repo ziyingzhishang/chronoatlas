@@ -44,7 +44,7 @@ describe('fifty-first batch high-confidence person relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.byPersonId['liu-min'].requiredMissingCategoryKeys).not.toContain('kinship');
     expect(report.byPersonId['liu-zhiyuan'].requiredMissingCategoryKeys).not.toContain('kinship');
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(79);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(113);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
   });
 });

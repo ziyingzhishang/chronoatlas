@@ -5447,11 +5447,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "silla-ended-935",
+      "entityKey": "event:silla-ended-935",
+      "label": "新罗向高丽归降",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-ended-935"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gyeongsun-participated-silla-ended",
+            "event-detail:silla-ended-935"
+          ],
+          "relatedIds": [
+            "gyeongsun-silla",
+            "silla",
+            "silla-tang-war-670-676"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "silla-founded",
       "entityKey": "event:silla-founded",
       "label": "新罗政权建立（传统纪年）",
       "polityIds": [
-        "silla"
+        "silla",
+        "tang"
       ],
       "checks": [
         {
@@ -5497,7 +5556,256 @@
             "naemul-isageum",
             "namhae-chachaung",
             "park-hyeokgeose",
-            "silla"
+            "silla",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "silla-tang-alliance-648",
+      "entityKey": "event:silla-tang-alliance-648",
+      "label": "新罗—唐军事合作形成",
+      "polityIds": [
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-alliance-648"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-participated-silla-tang-alliance",
+            "event-detail:silla-tang-alliance-648"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "silla",
+            "silla-founded",
+            "silla-tang-baekje-660",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "silla-tang-baekje-660",
+      "entityKey": "event:silla-tang-baekje-660",
+      "label": "新罗—唐联军灭百济",
+      "polityIds": [
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-baekje-660"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-participated-silla-tang-baekje",
+            "claim:claim-kim-yushin-participated-silla-tang-baekje",
+            "event-detail:silla-tang-baekje-660"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "kim-yushin",
+            "silla",
+            "silla-tang-alliance-648",
+            "silla-tang-goguryeo-668",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "silla-tang-goguryeo-668",
+      "entityKey": "event:silla-tang-goguryeo-668",
+      "label": "新罗—唐联军灭高句丽",
+      "polityIds": [
+        "goguryeo",
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-goguryeo-668"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-yushin-participated-silla-tang-goguryeo",
+            "event-detail:silla-tang-goguryeo-668"
+          ],
+          "relatedIds": [
+            "goguryeo",
+            "kim-yushin",
+            "munmu-silla",
+            "silla",
+            "silla-tang-baekje-660",
+            "silla-tang-war-670-676",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "silla-tang-war-670-676",
+      "entityKey": "event:silla-tang-war-670-676",
+      "label": "新罗—唐战争结束",
+      "polityIds": [
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-war-670-676"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-yushin-participated-silla-tang-war",
+            "claim:claim-munmu-participated-silla-tang-war",
+            "event-detail:silla-tang-war-670-676"
+          ],
+          "relatedIds": [
+            "kim-yushin",
+            "munmu-silla",
+            "silla",
+            "silla-ended-935",
+            "silla-tang-goguryeo-668",
+            "tang"
           ]
         },
         {
@@ -8932,6 +9240,67 @@
             "shaowu-guangzhou-founded",
             "southern-ming-founded",
             "zhu-youlang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "yuan-dadu-built",
+      "entityKey": "event:yuan-dadu-built",
+      "label": "元大都营建启动",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yuan-dadu-built"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "yuan-dadu-axis-unesco",
+            "yuan-dadu-beijing-heritage",
+            "yuan-dadu-liu-bingzhong-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:yuan-dadu-built"
+          ],
+          "relatedIds": [
+            "kublai",
+            "liu-bingzhong",
+            "yuan",
+            "yuan-founded",
+            "yuan-shangdu-built"
           ]
         },
         {
@@ -13789,8 +14158,7 @@
       "entityKey": "heritage:silla-gyeongju-capital-site",
       "label": "新罗庆州王京遗址群",
       "polityIds": [
-        "silla",
-        "tang"
+        "silla"
       ],
       "checks": [
         {
@@ -13814,9 +14182,10 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
             "silla-encykorea",
-            "silla-samguksagi-db"
+            "silla-gyeongju-unesco",
+            "silla-samguksagi-db",
+            "silla-unification-wars-official"
           ],
           "relatedIds": []
         },
@@ -13828,9 +14197,16 @@
             "heritage-detail:silla-gyeongju-capital-site"
           ],
           "relatedIds": [
-            "li-shimin",
+            "gyeongsun-silla",
+            "kim-chunchu",
+            "kim-yushin",
+            "munmu-silla",
+            "park-hyeokgeose",
             "silla",
-            "silla-founded"
+            "silla-ended-935",
+            "silla-founded",
+            "silla-tang-alliance-648",
+            "silla-tang-war-670-676"
           ]
         },
         {
@@ -15969,6 +16345,67 @@
             "northern-wei-founded",
             "wei_northern",
             "yuan-hong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "yuan-dadu-site",
+      "entityKey": "heritage:yuan-dadu-site",
+      "label": "元大都城址与城墙遗址",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "yuan-dadu-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "yuan-dadu-axis-unesco",
+            "yuan-dadu-beijing-heritage",
+            "yuan-dadu-liu-bingzhong-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:yuan-dadu-site"
+          ],
+          "relatedIds": [
+            "kublai",
+            "liu-bingzhong",
+            "yuan",
+            "yuan-dadu-built",
+            "yuan-founded"
           ]
         },
         {
@@ -18474,6 +18911,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "gyeongsun-silla",
+      "entityKey": "person:gyeongsun-silla",
+      "label": "敬顺王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gyeongsun-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gyeongsun-participated-silla-ended",
+            "claim:claim-gyeongsun-related-sinmun",
+            "claim:claim-gyeongsun-ruled-silla",
+            "event-detail:silla-ended-935",
+            "person-polity:gyeongsun-silla:silla"
+          ],
+          "relatedIds": [
+            "silla",
+            "silla-ended-935",
+            "sinmun-silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "han-kangzi",
       "entityKey": "person:han-kangzi",
       "label": "韩康子",
@@ -19503,6 +20004,66 @@
     },
     {
       "entityType": "person",
+      "entityId": "jindeok-silla",
+      "entityKey": "person:jindeok-silla",
+      "label": "真德女王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "jindeok-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-jindeok-related-seondeok",
+            "person-polity:jindeok-silla:silla"
+          ],
+          "relatedIds": [
+            "seondeok-silla",
+            "silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "jumong",
       "entityKey": "person:jumong",
       "label": "朱蒙",
@@ -19640,6 +20201,147 @@
     },
     {
       "entityType": "person",
+      "entityId": "kim-chunchu",
+      "entityKey": "person:kim-chunchu",
+      "label": "金春秋",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kim-chunchu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-parent-munmu",
+            "claim:claim-kim-chunchu-participated-silla-tang-alliance",
+            "claim:claim-kim-chunchu-participated-silla-tang-baekje",
+            "claim:claim-kim-chunchu-ruled-silla",
+            "claim:claim-kim-yushin-ally-kim-chunchu",
+            "claim:claim-munmu-child-kim-chunchu",
+            "claim:claim-seondeok-related-kim-chunchu",
+            "event-detail:silla-tang-alliance-648",
+            "event-detail:silla-tang-baekje-660",
+            "person-polity:kim-chunchu:silla"
+          ],
+          "relatedIds": [
+            "kim-yushin",
+            "munmu-silla",
+            "seondeok-silla",
+            "silla",
+            "silla-tang-alliance-648",
+            "silla-tang-baekje-660"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "kim-yushin",
+      "entityKey": "person:kim-yushin",
+      "label": "金庾信",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kim-yushin"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-yushin-ally-kim-chunchu",
+            "claim:claim-kim-yushin-participated-silla-tang-baekje",
+            "claim:claim-kim-yushin-participated-silla-tang-goguryeo",
+            "claim:claim-kim-yushin-participated-silla-tang-war",
+            "event-detail:silla-tang-baekje-660",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
+            "person-polity:kim-yushin:silla"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "silla",
+            "silla-tang-baekje-660",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "kublai",
       "entityKey": "person:kublai",
       "label": "忽必烈",
@@ -19669,6 +20371,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "yuan-dadu-beijing-heritage",
             "yuan-li-bingzhong",
             "yuan-nationalities-history"
           ],
@@ -19691,6 +20394,7 @@
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
             "event-detail:mongol-karakorum-fixed-center",
+            "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
             "person-polity:kublai:mongol",
@@ -19705,6 +20409,7 @@
             "temujin",
             "yelu-dashi",
             "yuan",
+            "yuan-dadu-built",
             "yuan-founded",
             "yuan-shangdu-built"
           ]
@@ -20037,7 +20742,7 @@
             "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-jing-parent-li-yu",
-            "claim:claim-li-jing-ruled-southern_tang",
+            "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-child-li-jing",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -20749,6 +21454,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "yuan-dadu-beijing-heritage",
             "yuan-li-bingzhong",
             "yuan-nationalities-history"
           ],
@@ -20762,12 +21468,14 @@
             "claim:claim-liu-bingzhong-ally-kublai-seventyfifth",
             "claim:claim-liu-bingzhong-participated-yuan-founded",
             "claim:claim-liu-bingzhong-served-kublai",
+            "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "person-polity:liu-bingzhong:yuan"
           ],
           "relatedIds": [
             "kublai",
             "yuan",
+            "yuan-dadu-built",
             "yuan-founded"
           ]
         },
@@ -22218,6 +22926,76 @@
           "evidenceIds": [
             "china-chronology",
             "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "munmu-silla",
+      "entityKey": "person:munmu-silla",
+      "label": "文武王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "munmu-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-parent-munmu",
+            "claim:claim-munmu-child-kim-chunchu",
+            "claim:claim-munmu-parent-sinmun",
+            "claim:claim-munmu-participated-silla-tang-war",
+            "claim:claim-munmu-ruled-silla",
+            "claim:claim-sinmun-child-munmu",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
+            "person-polity:munmu-silla:silla"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "silla",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676",
+            "sinmun-silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-unification-wars-official"
           ],
           "relatedIds": []
         }
@@ -23866,6 +24644,68 @@
     },
     {
       "entityType": "person",
+      "entityId": "seondeok-silla",
+      "entityKey": "person:seondeok-silla",
+      "label": "善德女王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "seondeok-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-jindeok-related-seondeok",
+            "claim:claim-seondeok-related-kim-chunchu",
+            "person-polity:seondeok-silla:silla"
+          ],
+          "relatedIds": [
+            "jindeok-silla",
+            "kim-chunchu",
+            "silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "shengzong-liao",
       "entityKey": "person:shengzong-liao",
       "label": "耶律隆绪",
@@ -24388,6 +25228,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "sinmun-silla",
+      "entityKey": "person:sinmun-silla",
+      "label": "神文王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sinmun-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gyeongsun-related-sinmun",
+            "claim:claim-munmu-parent-sinmun",
+            "claim:claim-sinmun-child-munmu",
+            "claim:claim-sinmun-ruled-silla",
+            "person-polity:sinmun-silla:silla"
+          ],
+          "relatedIds": [
+            "gyeongsun-silla",
+            "munmu-silla",
+            "silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "songtsen-gampo",
       "entityKey": "person:songtsen-gampo",
       "label": "松赞干布",
@@ -24770,6 +25674,7 @@
             "claim:claim-toghon-temur-enemy-zhu-yuanzhang",
             "claim:claim-toghon-temur-participated-northern-yuan",
             "claim:claim-toghon-temur-ruled-northern-yuan-ninetythird",
+            "claim:claim-toghon-temur-ruled-yuan",
             "claim:claim-zhu-yuanzhang-enemy-toghon-temur",
             "event-detail:northern-yuan-founded",
             "person-polity:toghon-temur:northern_yuan",
@@ -29773,6 +30678,7 @@
             "claim:claim-yuri-goguryeo-ruled-goguryeo-round105",
             "event-detail:goguryeo-founded",
             "event-detail:goguryeo-moves-pyongyang",
+            "event-detail:silla-tang-goguryeo-668",
             "heritage-detail:goguryeo-guonei-city-site",
             "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:wunvshan-goguryeo-early-capital-site",
@@ -29791,6 +30697,7 @@
             "gwanggaeto",
             "jangsu-goguryeo",
             "jumong",
+            "silla-tang-goguryeo-668",
             "wunvshan-goguryeo-early-capital-site",
             "yuri-goguryeo"
           ]
@@ -32393,7 +33300,11 @@
             "china-chronology",
             "modern-geography-reference",
             "silla-encykorea",
+            "silla-gyeongju-unesco",
+            "silla-kim-chunchu-official",
+            "silla-periodization",
             "silla-samguksagi-db",
+            "silla-unification-wars-official",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -32403,21 +33314,49 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gyeongsun-ruled-silla",
+            "claim:claim-kim-chunchu-ruled-silla",
+            "claim:claim-munmu-ruled-silla",
             "claim:claim-naemul-ruled-silla-fiftyseventh",
             "claim:claim-namhae-ruled-silla-fiftyseventh",
             "claim:claim-park-hyeokgeose-ruled-silla-sixtyfirst",
+            "claim:claim-sinmun-ruled-silla",
+            "event-detail:silla-ended-935",
             "event-detail:silla-founded",
+            "event-detail:silla-tang-alliance-648",
+            "event-detail:silla-tang-baekje-660",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
             "heritage-detail:silla-gyeongju-capital-site",
+            "person:gyeongsun-silla",
+            "person:jindeok-silla",
+            "person:kim-chunchu",
+            "person:kim-yushin",
+            "person:munmu-silla",
             "person:naemul-isageum",
             "person:namhae-chachaung",
-            "person:park-hyeokgeose"
+            "person:park-hyeokgeose",
+            "person:seondeok-silla",
+            "person:sinmun-silla"
           ],
           "relatedIds": [
+            "gyeongsun-silla",
+            "jindeok-silla",
+            "kim-chunchu",
+            "kim-yushin",
+            "munmu-silla",
             "naemul-isageum",
             "namhae-chachaung",
             "park-hyeokgeose",
+            "seondeok-silla",
+            "silla-ended-935",
             "silla-founded",
-            "silla-gyeongju-capital-site"
+            "silla-gyeongju-capital-site",
+            "silla-tang-alliance-648",
+            "silla-tang-baekje-660",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676",
+            "sinmun-silla"
           ]
         },
         {
@@ -32828,7 +33767,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
-            "claim:claim-li-jing-ruled-southern_tang",
+            "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -33064,6 +34003,11 @@
             "event-detail:huang-chao-changan",
             "event-detail:shangyang-palace-built",
             "event-detail:shangyang-palace-completed-679",
+            "event-detail:silla-founded",
+            "event-detail:silla-tang-alliance-648",
+            "event-detail:silla-tang-baekje-660",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
             "event-detail:tang-changan-end",
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
@@ -33128,6 +34072,11 @@
             "shangyang-palace-built",
             "shangyang-palace-completed-679",
             "shangyang-palace-site",
+            "silla-founded",
+            "silla-tang-alliance-648",
+            "silla-tang-baekje-660",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676",
             "taiji-palace-site",
             "tang-changan-city-site",
             "tang-changan-end",
@@ -34635,6 +35584,9 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "yuan-dadu-axis-unesco",
+            "yuan-dadu-beijing-heritage",
+            "yuan-dadu-liu-bingzhong-official",
             "yuan-li-bingzhong",
             "yuan-nationalities-history",
             "zizhi-tongjian"
@@ -34647,8 +35599,11 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-kublai-ruled-yuan-closure",
+            "claim:claim-toghon-temur-ruled-yuan",
+            "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
+            "heritage-detail:yuan-dadu-site",
             "heritage-detail:yuan-shangdu-site",
             "person:bayan",
             "person:kublai",
@@ -34660,6 +35615,8 @@
             "kublai",
             "liu-bingzhong",
             "toghon-temur",
+            "yuan-dadu-built",
+            "yuan-dadu-site",
             "yuan-founded",
             "yuan-shangdu-built",
             "yuan-shangdu-site"
@@ -35231,7 +36188,23 @@
       "dimension": "time",
       "kind": "uncertain",
       "polityIds": [
-        "silla"
+        "silla",
+        "tang"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "silla-tang-war-670-676",
+      "entityKey": "event:silla-tang-war-670-676",
+      "label": "新罗—唐战争结束",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "silla",
+        "tang"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -35767,6 +36740,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "jindeok-silla",
+      "entityKey": "person:jindeok-silla",
+      "label": "真德女王",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "silla"
+      ],
+      "evidenceIds": [
+        "silla-encykorea",
+        "silla-kim-chunchu-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "liu-xuan",
       "entityKey": "person:liu-xuan",
       "label": "刘玄",
@@ -35963,6 +36953,23 @@
       "evidenceIds": [
         "china-chronology",
         "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "sinmun-silla",
+      "entityKey": "person:sinmun-silla",
+      "label": "神文王",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "silla"
+      ],
+      "evidenceIds": [
+        "silla-encykorea",
+        "silla-periodization"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -41680,13 +42687,72 @@
         }
       ]
     },
+    "event:silla-ended-935": {
+      "entityType": "event",
+      "entityId": "silla-ended-935",
+      "entityKey": "event:silla-ended-935",
+      "label": "新罗向高丽归降",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-ended-935"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gyeongsun-participated-silla-ended",
+            "event-detail:silla-ended-935"
+          ],
+          "relatedIds": [
+            "gyeongsun-silla",
+            "silla",
+            "silla-tang-war-670-676"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:silla-founded": {
       "entityType": "event",
       "entityId": "silla-founded",
       "entityKey": "event:silla-founded",
       "label": "新罗政权建立（传统纪年）",
       "polityIds": [
-        "silla"
+        "silla",
+        "tang"
       ],
       "checks": [
         {
@@ -41732,7 +42798,256 @@
             "naemul-isageum",
             "namhae-chachaung",
             "park-hyeokgeose",
-            "silla"
+            "silla",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:silla-tang-alliance-648": {
+      "entityType": "event",
+      "entityId": "silla-tang-alliance-648",
+      "entityKey": "event:silla-tang-alliance-648",
+      "label": "新罗—唐军事合作形成",
+      "polityIds": [
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-alliance-648"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-participated-silla-tang-alliance",
+            "event-detail:silla-tang-alliance-648"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "silla",
+            "silla-founded",
+            "silla-tang-baekje-660",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:silla-tang-baekje-660": {
+      "entityType": "event",
+      "entityId": "silla-tang-baekje-660",
+      "entityKey": "event:silla-tang-baekje-660",
+      "label": "新罗—唐联军灭百济",
+      "polityIds": [
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-baekje-660"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-participated-silla-tang-baekje",
+            "claim:claim-kim-yushin-participated-silla-tang-baekje",
+            "event-detail:silla-tang-baekje-660"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "kim-yushin",
+            "silla",
+            "silla-tang-alliance-648",
+            "silla-tang-goguryeo-668",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:silla-tang-goguryeo-668": {
+      "entityType": "event",
+      "entityId": "silla-tang-goguryeo-668",
+      "entityKey": "event:silla-tang-goguryeo-668",
+      "label": "新罗—唐联军灭高句丽",
+      "polityIds": [
+        "goguryeo",
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-goguryeo-668"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-yushin-participated-silla-tang-goguryeo",
+            "event-detail:silla-tang-goguryeo-668"
+          ],
+          "relatedIds": [
+            "goguryeo",
+            "kim-yushin",
+            "munmu-silla",
+            "silla",
+            "silla-tang-baekje-660",
+            "silla-tang-war-670-676",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:silla-tang-war-670-676": {
+      "entityType": "event",
+      "entityId": "silla-tang-war-670-676",
+      "entityKey": "event:silla-tang-war-670-676",
+      "label": "新罗—唐战争结束",
+      "polityIds": [
+        "silla",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "silla-tang-war-670-676"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-yushin-participated-silla-tang-war",
+            "claim:claim-munmu-participated-silla-tang-war",
+            "event-detail:silla-tang-war-670-676"
+          ],
+          "relatedIds": [
+            "kim-yushin",
+            "munmu-silla",
+            "silla",
+            "silla-ended-935",
+            "silla-tang-goguryeo-668",
+            "tang"
           ]
         },
         {
@@ -45167,6 +46482,67 @@
             "shaowu-guangzhou-founded",
             "southern-ming-founded",
             "zhu-youlang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:yuan-dadu-built": {
+      "entityType": "event",
+      "entityId": "yuan-dadu-built",
+      "entityKey": "event:yuan-dadu-built",
+      "label": "元大都营建启动",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yuan-dadu-built"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "yuan-dadu-axis-unesco",
+            "yuan-dadu-beijing-heritage",
+            "yuan-dadu-liu-bingzhong-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:yuan-dadu-built"
+          ],
+          "relatedIds": [
+            "kublai",
+            "liu-bingzhong",
+            "yuan",
+            "yuan-founded",
+            "yuan-shangdu-built"
           ]
         },
         {
@@ -50024,8 +51400,7 @@
       "entityKey": "heritage:silla-gyeongju-capital-site",
       "label": "新罗庆州王京遗址群",
       "polityIds": [
-        "silla",
-        "tang"
+        "silla"
       ],
       "checks": [
         {
@@ -50049,9 +51424,10 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
             "silla-encykorea",
-            "silla-samguksagi-db"
+            "silla-gyeongju-unesco",
+            "silla-samguksagi-db",
+            "silla-unification-wars-official"
           ],
           "relatedIds": []
         },
@@ -50063,9 +51439,16 @@
             "heritage-detail:silla-gyeongju-capital-site"
           ],
           "relatedIds": [
-            "li-shimin",
+            "gyeongsun-silla",
+            "kim-chunchu",
+            "kim-yushin",
+            "munmu-silla",
+            "park-hyeokgeose",
             "silla",
-            "silla-founded"
+            "silla-ended-935",
+            "silla-founded",
+            "silla-tang-alliance-648",
+            "silla-tang-war-670-676"
           ]
         },
         {
@@ -52204,6 +53587,67 @@
             "northern-wei-founded",
             "wei_northern",
             "yuan-hong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:yuan-dadu-site": {
+      "entityType": "heritage",
+      "entityId": "yuan-dadu-site",
+      "entityKey": "heritage:yuan-dadu-site",
+      "label": "元大都城址与城墙遗址",
+      "polityIds": [
+        "mongol",
+        "yuan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "yuan-dadu-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "yuan-dadu-axis-unesco",
+            "yuan-dadu-beijing-heritage",
+            "yuan-dadu-liu-bingzhong-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:yuan-dadu-site"
+          ],
+          "relatedIds": [
+            "kublai",
+            "liu-bingzhong",
+            "yuan",
+            "yuan-dadu-built",
+            "yuan-founded"
           ]
         },
         {
@@ -54707,6 +56151,70 @@
         }
       ]
     },
+    "person:gyeongsun-silla": {
+      "entityType": "person",
+      "entityId": "gyeongsun-silla",
+      "entityKey": "person:gyeongsun-silla",
+      "label": "敬顺王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gyeongsun-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gyeongsun-participated-silla-ended",
+            "claim:claim-gyeongsun-related-sinmun",
+            "claim:claim-gyeongsun-ruled-silla",
+            "event-detail:silla-ended-935",
+            "person-polity:gyeongsun-silla:silla"
+          ],
+          "relatedIds": [
+            "silla",
+            "silla-ended-935",
+            "sinmun-silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:han-kangzi": {
       "entityType": "person",
       "entityId": "han-kangzi",
@@ -55736,6 +57244,66 @@
         }
       ]
     },
+    "person:jindeok-silla": {
+      "entityType": "person",
+      "entityId": "jindeok-silla",
+      "entityKey": "person:jindeok-silla",
+      "label": "真德女王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "jindeok-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-jindeok-related-seondeok",
+            "person-polity:jindeok-silla:silla"
+          ],
+          "relatedIds": [
+            "seondeok-silla",
+            "silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:jumong": {
       "entityType": "person",
       "entityId": "jumong",
@@ -55873,6 +57441,147 @@
         }
       ]
     },
+    "person:kim-chunchu": {
+      "entityType": "person",
+      "entityId": "kim-chunchu",
+      "entityKey": "person:kim-chunchu",
+      "label": "金春秋",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kim-chunchu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-parent-munmu",
+            "claim:claim-kim-chunchu-participated-silla-tang-alliance",
+            "claim:claim-kim-chunchu-participated-silla-tang-baekje",
+            "claim:claim-kim-chunchu-ruled-silla",
+            "claim:claim-kim-yushin-ally-kim-chunchu",
+            "claim:claim-munmu-child-kim-chunchu",
+            "claim:claim-seondeok-related-kim-chunchu",
+            "event-detail:silla-tang-alliance-648",
+            "event-detail:silla-tang-baekje-660",
+            "person-polity:kim-chunchu:silla"
+          ],
+          "relatedIds": [
+            "kim-yushin",
+            "munmu-silla",
+            "seondeok-silla",
+            "silla",
+            "silla-tang-alliance-648",
+            "silla-tang-baekje-660"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:kim-yushin": {
+      "entityType": "person",
+      "entityId": "kim-yushin",
+      "entityKey": "person:kim-yushin",
+      "label": "金庾信",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kim-yushin"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-yushin-ally-kim-chunchu",
+            "claim:claim-kim-yushin-participated-silla-tang-baekje",
+            "claim:claim-kim-yushin-participated-silla-tang-goguryeo",
+            "claim:claim-kim-yushin-participated-silla-tang-war",
+            "event-detail:silla-tang-baekje-660",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
+            "person-polity:kim-yushin:silla"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "silla",
+            "silla-tang-baekje-660",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-kim-chunchu-official",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:kublai": {
       "entityType": "person",
       "entityId": "kublai",
@@ -55904,6 +57613,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "yuan-dadu-beijing-heritage",
             "yuan-li-bingzhong",
             "yuan-nationalities-history"
           ],
@@ -55926,6 +57636,7 @@
             "claim:claim-mongke-sibling-kublai",
             "claim:claim-yelu-dashi-related-kublai",
             "event-detail:mongol-karakorum-fixed-center",
+            "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
             "person-polity:kublai:mongol",
@@ -55940,6 +57651,7 @@
             "temujin",
             "yelu-dashi",
             "yuan",
+            "yuan-dadu-built",
             "yuan-founded",
             "yuan-shangdu-built"
           ]
@@ -56272,7 +57984,7 @@
             "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-jing-parent-li-yu",
-            "claim:claim-li-jing-ruled-southern_tang",
+            "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-child-li-jing",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -56984,6 +58696,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "yuan-dadu-beijing-heritage",
             "yuan-li-bingzhong",
             "yuan-nationalities-history"
           ],
@@ -56997,12 +58710,14 @@
             "claim:claim-liu-bingzhong-ally-kublai-seventyfifth",
             "claim:claim-liu-bingzhong-participated-yuan-founded",
             "claim:claim-liu-bingzhong-served-kublai",
+            "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "person-polity:liu-bingzhong:yuan"
           ],
           "relatedIds": [
             "kublai",
             "yuan",
+            "yuan-dadu-built",
             "yuan-founded"
           ]
         },
@@ -58453,6 +60168,76 @@
           "evidenceIds": [
             "china-chronology",
             "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:munmu-silla": {
+      "entityType": "person",
+      "entityId": "munmu-silla",
+      "entityKey": "person:munmu-silla",
+      "label": "文武王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "munmu-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-unification-wars-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kim-chunchu-parent-munmu",
+            "claim:claim-munmu-child-kim-chunchu",
+            "claim:claim-munmu-parent-sinmun",
+            "claim:claim-munmu-participated-silla-tang-war",
+            "claim:claim-munmu-ruled-silla",
+            "claim:claim-sinmun-child-munmu",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
+            "person-polity:munmu-silla:silla"
+          ],
+          "relatedIds": [
+            "kim-chunchu",
+            "silla",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676",
+            "sinmun-silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-unification-wars-official"
           ],
           "relatedIds": []
         }
@@ -60099,6 +61884,68 @@
         }
       ]
     },
+    "person:seondeok-silla": {
+      "entityType": "person",
+      "entityId": "seondeok-silla",
+      "entityKey": "person:seondeok-silla",
+      "label": "善德女王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "seondeok-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-jindeok-related-seondeok",
+            "claim:claim-seondeok-related-kim-chunchu",
+            "person-polity:seondeok-silla:silla"
+          ],
+          "relatedIds": [
+            "jindeok-silla",
+            "kim-chunchu",
+            "silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:shengzong-liao": {
       "entityType": "person",
       "entityId": "shengzong-liao",
@@ -60621,6 +62468,70 @@
         }
       ]
     },
+    "person:sinmun-silla": {
+      "entityType": "person",
+      "entityId": "sinmun-silla",
+      "entityKey": "person:sinmun-silla",
+      "label": "神文王",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sinmun-silla"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gyeongsun-related-sinmun",
+            "claim:claim-munmu-parent-sinmun",
+            "claim:claim-sinmun-child-munmu",
+            "claim:claim-sinmun-ruled-silla",
+            "person-polity:sinmun-silla:silla"
+          ],
+          "relatedIds": [
+            "gyeongsun-silla",
+            "munmu-silla",
+            "silla"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:songtsen-gampo": {
       "entityType": "person",
       "entityId": "songtsen-gampo",
@@ -61005,6 +62916,7 @@
             "claim:claim-toghon-temur-enemy-zhu-yuanzhang",
             "claim:claim-toghon-temur-participated-northern-yuan",
             "claim:claim-toghon-temur-ruled-northern-yuan-ninetythird",
+            "claim:claim-toghon-temur-ruled-yuan",
             "claim:claim-zhu-yuanzhang-enemy-toghon-temur",
             "event-detail:northern-yuan-founded",
             "person-polity:toghon-temur:northern_yuan",
@@ -66008,6 +67920,7 @@
             "claim:claim-yuri-goguryeo-ruled-goguryeo-round105",
             "event-detail:goguryeo-founded",
             "event-detail:goguryeo-moves-pyongyang",
+            "event-detail:silla-tang-goguryeo-668",
             "heritage-detail:goguryeo-guonei-city-site",
             "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:wunvshan-goguryeo-early-capital-site",
@@ -66026,6 +67939,7 @@
             "gwanggaeto",
             "jangsu-goguryeo",
             "jumong",
+            "silla-tang-goguryeo-668",
             "wunvshan-goguryeo-early-capital-site",
             "yuri-goguryeo"
           ]
@@ -68628,7 +70542,11 @@
             "china-chronology",
             "modern-geography-reference",
             "silla-encykorea",
+            "silla-gyeongju-unesco",
+            "silla-kim-chunchu-official",
+            "silla-periodization",
             "silla-samguksagi-db",
+            "silla-unification-wars-official",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -68638,21 +70556,49 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gyeongsun-ruled-silla",
+            "claim:claim-kim-chunchu-ruled-silla",
+            "claim:claim-munmu-ruled-silla",
             "claim:claim-naemul-ruled-silla-fiftyseventh",
             "claim:claim-namhae-ruled-silla-fiftyseventh",
             "claim:claim-park-hyeokgeose-ruled-silla-sixtyfirst",
+            "claim:claim-sinmun-ruled-silla",
+            "event-detail:silla-ended-935",
             "event-detail:silla-founded",
+            "event-detail:silla-tang-alliance-648",
+            "event-detail:silla-tang-baekje-660",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
             "heritage-detail:silla-gyeongju-capital-site",
+            "person:gyeongsun-silla",
+            "person:jindeok-silla",
+            "person:kim-chunchu",
+            "person:kim-yushin",
+            "person:munmu-silla",
             "person:naemul-isageum",
             "person:namhae-chachaung",
-            "person:park-hyeokgeose"
+            "person:park-hyeokgeose",
+            "person:seondeok-silla",
+            "person:sinmun-silla"
           ],
           "relatedIds": [
+            "gyeongsun-silla",
+            "jindeok-silla",
+            "kim-chunchu",
+            "kim-yushin",
+            "munmu-silla",
             "naemul-isageum",
             "namhae-chachaung",
             "park-hyeokgeose",
+            "seondeok-silla",
+            "silla-ended-935",
             "silla-founded",
-            "silla-gyeongju-capital-site"
+            "silla-gyeongju-capital-site",
+            "silla-tang-alliance-648",
+            "silla-tang-baekje-660",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676",
+            "sinmun-silla"
           ]
         },
         {
@@ -69063,7 +71009,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
-            "claim:claim-li-jing-ruled-southern_tang",
+            "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -69299,6 +71245,11 @@
             "event-detail:huang-chao-changan",
             "event-detail:shangyang-palace-built",
             "event-detail:shangyang-palace-completed-679",
+            "event-detail:silla-founded",
+            "event-detail:silla-tang-alliance-648",
+            "event-detail:silla-tang-baekje-660",
+            "event-detail:silla-tang-goguryeo-668",
+            "event-detail:silla-tang-war-670-676",
             "event-detail:tang-changan-end",
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
@@ -69363,6 +71314,11 @@
             "shangyang-palace-built",
             "shangyang-palace-completed-679",
             "shangyang-palace-site",
+            "silla-founded",
+            "silla-tang-alliance-648",
+            "silla-tang-baekje-660",
+            "silla-tang-goguryeo-668",
+            "silla-tang-war-670-676",
             "taiji-palace-site",
             "tang-changan-city-site",
             "tang-changan-end",
@@ -70870,6 +72826,9 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "yuan-dadu-axis-unesco",
+            "yuan-dadu-beijing-heritage",
+            "yuan-dadu-liu-bingzhong-official",
             "yuan-li-bingzhong",
             "yuan-nationalities-history",
             "zizhi-tongjian"
@@ -70882,8 +72841,11 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-kublai-ruled-yuan-closure",
+            "claim:claim-toghon-temur-ruled-yuan",
+            "event-detail:yuan-dadu-built",
             "event-detail:yuan-founded",
             "event-detail:yuan-shangdu-built",
+            "heritage-detail:yuan-dadu-site",
             "heritage-detail:yuan-shangdu-site",
             "person:bayan",
             "person:kublai",
@@ -70895,6 +72857,8 @@
             "kublai",
             "liu-bingzhong",
             "toghon-temur",
+            "yuan-dadu-built",
+            "yuan-dadu-site",
             "yuan-founded",
             "yuan-shangdu-built",
             "yuan-shangdu-site"
@@ -71247,20 +73211,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 156,
+      "totalEntities": 162,
       "statusCounts": {
-        "covered": 748,
+        "covered": 777,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 32,
+        "uncertain": 33,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 32
+        "uncertain": 33
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -71279,6 +73243,7 @@
         "event:shang-founded-eighth-batch",
         "event:shangyang-palace-built",
         "event:silla-founded",
+        "event:silla-tang-war-670-676",
         "event:southern-liang-founded-397",
         "event:southern-liang-moves-ledu",
         "event:southern-ming-founded",
@@ -71298,9 +73263,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 115,
+      "totalEntities": 116,
       "statusCounts": {
-        "covered": 575,
+        "covered": 580,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -71316,20 +73281,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 194,
+      "totalEntities": 201,
       "statusCounts": {
-        "covered": 924,
+        "covered": 957,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 46,
+        "uncertain": 48,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 46
+        "uncertain": 48
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -71350,6 +73315,7 @@
         "person:jamukha",
         "person:ji-chang",
         "person:ji-yijiu",
+        "person:jindeok-silla",
         "person:liu-xuan",
         "person:liu-yao",
         "person:meng-tian",
@@ -71362,6 +73328,7 @@
         "person:qin-mugong",
         "person:qin-xiangong",
         "person:quanfengyou",
+        "person:sinmun-silla",
         "person:su-guansheng",
         "person:tufa-lilugu",
         "person:tufa-rutan",
@@ -71766,6 +73733,7 @@
       "entityKeys": [
         "event:goguryeo-founded",
         "event:goguryeo-moves-pyongyang",
+        "event:silla-tang-goguryeo-668",
         "heritage:goguryeo-guonei-city-site",
         "heritage:goguryeo-pyongyang-city-layer",
         "heritage:wunvshan-goguryeo-early-capital-site",
@@ -72420,9 +74388,11 @@
       "entityKeys": [
         "event:mongol-founded",
         "event:mongol-karakorum-fixed-center",
+        "event:yuan-dadu-built",
         "event:yuan-founded",
         "event:yuan-shangdu-built",
         "heritage:mongol-karakorum-city-site",
+        "heritage:yuan-dadu-site",
         "heritage:yuan-shangdu-site",
         "person:jamukha",
         "person:kublai",
@@ -73129,11 +75099,23 @@
       "polityId": "silla",
       "polityName": "新罗",
       "entityKeys": [
+        "event:silla-ended-935",
         "event:silla-founded",
+        "event:silla-tang-alliance-648",
+        "event:silla-tang-baekje-660",
+        "event:silla-tang-goguryeo-668",
+        "event:silla-tang-war-670-676",
         "heritage:silla-gyeongju-capital-site",
+        "person:gyeongsun-silla",
+        "person:jindeok-silla",
+        "person:kim-chunchu",
+        "person:kim-yushin",
+        "person:munmu-silla",
         "person:naemul-isageum",
         "person:namhae-chachaung",
         "person:park-hyeokgeose",
+        "person:seondeok-silla",
+        "person:sinmun-silla",
         "polity:silla"
       ],
       "gaps": [
@@ -73156,6 +75138,40 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
         {
+          "entityType": "person",
+          "entityId": "jindeok-silla",
+          "entityKey": "person:jindeok-silla",
+          "label": "真德女王",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "silla"
+          ],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-kim-chunchu-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "sinmun-silla",
+          "entityKey": "person:sinmun-silla",
+          "label": "神文王",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "silla"
+          ],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
           "entityType": "event",
           "entityId": "silla-founded",
           "entityKey": "event:silla-founded",
@@ -73163,7 +75179,23 @@
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
-            "silla"
+            "silla",
+            "tang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "silla-tang-war-670-676",
+          "entityKey": "event:silla-tang-war-670-676",
+          "label": "新罗—唐战争结束",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "silla",
+            "tang"
           ],
           "evidenceIds": [],
           "relatedIds": [],
@@ -73177,7 +75209,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "新罗：有 2 项待核验缺口。"
+      "summary": "新罗：有 5 项待核验缺口。"
     },
     "song_northern": {
       "polityId": "song_northern",
@@ -73459,6 +75491,11 @@
         "event:five-dynasties",
         "event:shangyang-palace-built",
         "event:shangyang-palace-completed-679",
+        "event:silla-founded",
+        "event:silla-tang-alliance-648",
+        "event:silla-tang-baekje-660",
+        "event:silla-tang-goguryeo-668",
+        "event:silla-tang-war-670-676",
         "event:tang-changan-end",
         "event:tang-founded",
         "event:tang-founded-changan",
@@ -73483,7 +75520,6 @@
         "heritage:qianling",
         "heritage:qinglong-temple-site",
         "heritage:shangyang-palace-site",
-        "heritage:silla-gyeongju-capital-site",
         "heritage:taiji-palace-site",
         "heritage:tang-changan-city-site",
         "heritage:tibetan-lhasa-city-site",
@@ -73505,6 +75541,21 @@
         "polity:tang"
       ],
       "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "silla-founded",
+          "entityKey": "event:silla-founded",
+          "label": "新罗政权建立（传统纪年）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "silla",
+            "tang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
         {
           "entityType": "event",
           "entityId": "daming-palace-built",
@@ -73549,6 +75600,21 @@
         },
         {
           "entityType": "event",
+          "entityId": "silla-tang-war-670-676",
+          "entityKey": "event:silla-tang-war-670-676",
+          "label": "新罗—唐战争结束",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "silla",
+            "tang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "an-lushan-rebellion",
           "entityKey": "event:an-lushan-rebellion",
           "label": "安史之乱",
@@ -73569,7 +75635,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "唐：有 4 项待核验缺口。"
+      "summary": "唐：有 6 项待核验缺口。"
     },
     "tang_later": {
       "polityId": "tang_later",
@@ -74366,8 +76432,10 @@
         "event:mongol-karakorum-fixed-center",
         "event:northern-yuan-founded",
         "event:song-southward",
+        "event:yuan-dadu-built",
         "event:yuan-founded",
         "event:yuan-shangdu-built",
+        "heritage:yuan-dadu-site",
         "heritage:yuan-shangdu-site",
         "person:bayan",
         "person:kublai",
@@ -75166,10 +77234,14 @@
     "dadu": {
       "placeId": "dadu",
       "cityName": "北京市",
-      "capitalRecordCount": 1,
+      "capitalRecordCount": 2,
       "entityKeys": [
         "event:ming-founded",
-        "event:yuan-founded"
+        "event:yuan-dadu-built",
+        "event:yuan-founded",
+        "heritage:yuan-dadu-site",
+        "person:kublai",
+        "person:liu-bingzhong"
       ],
       "gaps": [],
       "taskCounts": {
@@ -75786,8 +77858,17 @@
       "cityName": "庆州市",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:silla-ended-935",
         "event:silla-founded",
-        "heritage:silla-gyeongju-capital-site"
+        "event:silla-tang-alliance-648",
+        "event:silla-tang-baekje-660",
+        "event:silla-tang-goguryeo-668",
+        "event:silla-tang-war-670-676",
+        "heritage:silla-gyeongju-capital-site",
+        "person:gyeongsun-silla",
+        "person:kim-chunchu",
+        "person:kim-yushin",
+        "person:munmu-silla"
       ],
       "gaps": [
         {
@@ -75798,7 +77879,23 @@
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
-            "silla"
+            "silla",
+            "tang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "silla-tang-war-670-676",
+          "entityKey": "event:silla-tang-war-670-676",
+          "label": "新罗—唐战争结束",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "silla",
+            "tang"
           ],
           "evidenceIds": [],
           "relatedIds": [],
@@ -75812,7 +77909,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "庆州市：有 1 项待核验缺口。"
+      "summary": "庆州市：有 2 项待核验缺口。"
     },
     "jiuquan": {
       "placeId": "jiuquan",
@@ -76437,9 +78534,12 @@
       "capitalRecordCount": 2,
       "entityKeys": [
         "event:goguryeo-moves-pyongyang",
+        "event:silla-tang-goguryeo-668",
         "heritage:goguryeo-pyongyang-city-layer",
         "person:gwanggaeto",
-        "person:jangsu-goguryeo"
+        "person:jangsu-goguryeo",
+        "person:kim-yushin",
+        "person:munmu-silla"
       ],
       "gaps": [],
       "taskCounts": {
@@ -76488,7 +78588,7 @@
     "shangdu": {
       "placeId": "shangdu",
       "cityName": "元上都遗址",
-      "capitalRecordCount": 1,
+      "capitalRecordCount": 2,
       "entityKeys": [
         "event:yuan-shangdu-built",
         "heritage:yuan-shangdu-site",
@@ -76734,6 +78834,21 @@
         "relationship-missing": 0
       },
       "summary": "南阳市城区：学习闭环已覆盖。"
+    },
+    "wolseong_silla": {
+      "placeId": "wolseong_silla",
+      "cityName": "庆州市月城遗址",
+      "capitalRecordCount": 1,
+      "entityKeys": [],
+      "gaps": [],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "庆州市月城遗址：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
     },
     "wunvshan": {
       "placeId": "wunvshan",

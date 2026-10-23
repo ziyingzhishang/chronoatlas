@@ -12,7 +12,7 @@ import { sourceNotes } from './sources';
 
 const requiredGovernanceGaps = [
   'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'yu-the-great', 'jamukha', 'chiang-kai-shek', 'han-kangzi',
-  'zhao-xiangzi', 'wei-huanzi', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
+  'zhao-xiangzi', 'wei-huanzi', 'seondeok-silla', 'jindeok-silla', 'kim-yushin', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt',
 ] as const;
@@ -28,6 +28,9 @@ const eventParticipationGaps = [
   { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
   { personId: 'mongke', eventIds: ['mongol-founded'] },
+  { personId: 'seondeok-silla', eventIds: [] },
+  { personId: 'jindeok-silla', eventIds: [] },
+  { personId: 'sinmun-silla', eventIds: [] },
 ] as const;
 
 const explicitRulerTitle = /皇帝|君主|国王|可汗|大汗|单于|汗|赞普|南诏王|苏丹|诸侯/;

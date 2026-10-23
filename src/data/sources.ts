@@ -133,6 +133,21 @@ export const sourceNotes: SourceNote[] = [
     note: '用于交叉核验356—377年阶段变化；不提供可重发布的逐年边界坐标。',
   },
   {
+    id: 'silla-kim-chunchu-official', title: '金春秋 · 韩国史数据库', authorOrInstitution: '韩国国史编纂委员会／우리역사넷', urlOrCitation: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_n101810',
+    scope: '金春秋出使唐、648年新罗—唐军事合作及武烈王时期政治',
+    note: '用于核验新罗—唐联盟与金春秋人物链；外交合作不直接等同于新罗已控制整个半岛。',
+  },
+  {
+    id: 'silla-unification-wars-official', title: '新罗与唐的战争 · 韩国史数据库', authorOrInstitution: '韩国国史编纂委员会／우리역사넷', urlOrCitation: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i101220',
+    scope: '660年百济灭亡、668年高句丽灭亡及670—676年新罗—唐战争',
+    note: '用于分层展示联军灭国与随后新罗—唐冲突，不把668年直接写成当日完成统一新罗。',
+  },
+  {
+    id: 'silla-gyeongju-unesco', title: 'Gyeongju Historic Areas · UNESCO World Heritage', authorOrInstitution: 'UNESCO', urlOrCitation: 'https://whc.unesco.org/en/list/976',
+    scope: '庆州历史区、新罗王京遗址群、月城、古坟与寺院遗存',
+    note: '支持庆州作为多遗址共同构成的新罗首都历史区；不将单一遗址或现代行政边界等同于全期王都。',
+  },
+  {
     id: 'turkic-history-db', title: '《旧唐书》《新唐书》突厥传 · 韩国古代史料数据库', authorOrInstitution: '韩国国史编纂委员会', urlOrCitation: 'https://db.history.go.kr/id/ko_034_1510_0070',
     scope: '突厥与唐朝关系、部落归属和后突厥时期的东亚史料参照',
     note: '用于逐年转折和政权身份核验；史料中的臣属、征伐和影响范围不直接等于现代意义国界。',
@@ -171,6 +186,21 @@ export const sourceNotes: SourceNote[] = [
     id: 'yuan-li-bingzhong', title: '刘秉忠与元初建国制度资料', authorOrInstitution: '国家民委 / 道中华', urlOrCitation: 'https://www.neac.gov.cn/seac/c103391/202302/1161231.shtml',
     scope: '1271年国号、大都与元初制度建设',
     note: '用于改国号、都城和制度转折核验；不提供可重发布的逐年疆域几何。',
+  },
+  {
+    id: 'yuan-dadu-beijing-heritage', title: '元大都城墙遗址 · 北京市文物局', authorOrInstitution: '北京市文物局', urlOrCitation: 'https://wwj.beijing.gov.cn/bjww/wwjzzcslm/1737418/1738088/1742737/523487/index.html',
+    scope: '元大都城址、城墙遗址与今北京城市历史空间',
+    note: '用于元大都城市遗产和城址范围参照；现存北京城市边界不等同于元代大都城边界。',
+  },
+  {
+    id: 'yuan-dadu-liu-bingzhong-official', title: '刘秉忠与元大都营建 · 北京市文物局', authorOrInstitution: '北京市文物局', urlOrCitation: 'https://wwj.beijing.gov.cn/bjww/362760/362770/623150/index.html',
+    scope: '刘秉忠参与元初制度与大都营建、1267年开工阶段',
+    note: '用于区分1260年后政治活动与1267年大都营建启动，不把大都城址前推到1260年。',
+  },
+  {
+    id: 'yuan-dadu-axis-unesco', title: '北京中轴线 · UNESCO World Heritage', authorOrInstitution: 'UNESCO', urlOrCitation: 'https://whc.unesco.org/en/list/1714',
+    scope: '北京城市中轴线及元明清城市空间叠压关系',
+    note: '用于今日北京城市视角的遗产承接，不将现存中轴线建筑全部归为元代原构。',
   },
   {
     id: 'yuan-goryeo-records', title: '《元史》《高丽史》相关编年资料', authorOrInstitution: '韩国国史编纂委员会', urlOrCitation: 'https://db.history.go.kr/ancient/level.do?levelId=jo_016r',
