@@ -27,11 +27,12 @@ const relationSections: Array<{ title: string; types: PersonRelationType[] }> = 
   { title: '君臣关系', types: ['served', 'appointed', 'succeeded', 'ruled'] },
   { title: '联盟关系', types: ['ally-of'] },
   { title: '对立关系', types: ['enemy-of'] },
+  { title: '事件参与', types: ['participated-in'] },
 ];
 
 const relationLabels: Partial<Record<PersonRelationType, string>> = {
   'parent-of': '父母／子女', 'child-of': '子女／父母', 'grandparent-of': '祖父母／外祖父母', 'grandchild-of': '孙辈／外孙辈', 'spouse-of': '配偶', 'sibling-of': '兄弟姊妹',
-  'teacher-of': '师承', 'student-of': '弟子', served: '侍奉／效力', appointed: '任用', succeeded: '承接', ruled: '统治', 'ally-of': '盟友', 'enemy-of': '对立',
+  'teacher-of': '师承', 'student-of': '弟子', served: '侍奉／效力', appointed: '任用', succeeded: '承接', ruled: '统治', 'ally-of': '盟友', 'enemy-of': '对立', 'participated-in': '参与事件',
 };
 
 const relationshipCoverageLabels: Record<PersonRelationshipCategory, string> = {
@@ -39,6 +40,10 @@ const relationshipCoverageLabels: Record<PersonRelationshipCategory, string> = {
   kinship: '亲属',
   allianceConflict: '联盟／对立',
   eventParticipation: '事件参与',
+};
+
+const relationDatePrecisionLabels: Record<HistoricalClaim['datePrecision'], string> = {
+  day: '日', year: '年', approximate: '约年', range: '范围', century: '世纪', unknown: '未知',
 };
 
 export function PersonDetail({ person, detail, year, claims, people = [], polities = [], events = [], onOpenEntity }: PersonDetailProps) {
@@ -73,8 +78,8 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
     <section className="person-detail-section" aria-label={t('人物关系')}>
       <h4>{t('人物关系')}</h4>
       {relationshipCoverage && <RelationshipCoverageSummary record={relationshipCoverage} t={t} />}
-      {relationSections.map((section) => <RelationSection key={section.title} title={section.title} types={section.types} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />)}
-      {grouped['person-heritage'].length > 0 && <RelationSection title="其他关系" types={['commissioned']} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />}
+      {relationSections.map((section) => <RelationSection key={section.title} title={section.title} personName={person.name} types={section.types} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />)}
+      {grouped['person-heritage'].length > 0 && <RelationSection title="其他关系" personName={person.name} types={['commissioned']} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />}
     </section>
 
     <details className="event-sources" open><summary>{t('来源与考据')}</summary>
@@ -140,18 +145,23 @@ function unknownPersonTimeReview(person: Person): PersonTimeReview {
   };
 }
 
-function RelationSection({ title, types, grouped, people, polities, events, onOpenEntity, t }: { title: string; types: PersonRelationType[]; grouped: ReturnType<typeof groupPersonRelationships>; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {
+function RelationSection({ title, personName, types, grouped, people, polities, events, onOpenEntity, t }: { title: string; personName: string; types: PersonRelationType[]; grouped: ReturnType<typeof groupPersonRelationships>; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {
   const relations = types.flatMap((type) => grouped[type]);
-  return <section className="person-relation-section"><h5>{t(title)}</h5>{relations.length > 0 ? <ul className="study-list">{relations.map((relation) => <RelationItem key={relation.claim.id} relation={relation} people={people} polities={polities} events={events} onOpenEntity={onOpenEntity} t={t} />)}</ul> : <p className="detail-note">{t('暂无已收录关系')}</p>}</section>;
+  return <section className="person-relation-section"><h5>{t(title)}</h5>{relations.length > 0 ? <ul className="study-list">{relations.map((relation) => <RelationItem key={relation.claim.id} relation={relation} personName={personName} people={people} polities={polities} events={events} onOpenEntity={onOpenEntity} t={t} />)}</ul> : <p className="detail-note">{t('暂无已收录关系')}</p>}</section>;
 }
 
-function RelationItem({ relation, people, polities, events, onOpenEntity, t }: { relation: PersonRelationship; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {
+function RelationItem({ relation, personName, people, polities, events, onOpenEntity, t }: { relation: PersonRelationship; personName: string; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {
   const objectId = relation.claim.objectId ?? '';
   const target = relation.kind === 'person-person' ? people.get(objectId) : relation.kind === 'person-polity' ? polities.get(objectId) : events.get(objectId);
-  const label = target ? ('title' in target ? target.title : target.name) : objectId;
+  const label = target ? ('title' in target ? t(target.title) : t(target.name)) : objectId;
   const targetType = relation.kind === 'person-person' ? 'person' : relation.kind === 'person-polity' ? 'polity' : relation.kind === 'person-event' ? 'event' : 'heritage';
-  const content = <>{t(relationLabels[relation.relationType] ?? relation.claim.predicate)} · {t(label)}{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
+  const relationLabel = t(relationLabels[relation.relationType] ?? relation.claim.predicate);
+  const content = <>{relationLabel} · {label}{relation.relationType === 'participated-in' && <small className="person-relation-meta">{t('方向：')}{t(personName)} → {label} · {formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)} · {t('时间精度：')}{t(relationDatePrecisionLabels[relation.claim.datePrecision])} · {t('来源：')}{t(hasResolvableSources(relation.claim) ? '可用' : '待解析')}</small>}{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
   return <li>{onOpenEntity ? <button type="button" onClick={() => onOpenEntity({ type: targetType, id: objectId })}>{content}</button> : <span>{content}</span>}</li>;
+}
+
+function hasResolvableSources(claim: HistoricalClaim) {
+  return claim.sourceIds.length > 0 && claim.sourceIds.every((sourceId) => sourceById[sourceId] !== undefined);
 }
 
 function formatLife(birthYear?: number, deathYear?: number) {

@@ -55,7 +55,7 @@ describe('ninety-fifth batch Qin Han Northern and Southern Dynasties governance 
   it('closes exactly the three audited governance gaps without changing other categories', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(26);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(23);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(110);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(69);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);

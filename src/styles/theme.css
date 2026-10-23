@@ -281,6 +281,7 @@ main { min-height: 100vh; }
 .relationship-coverage-item strong { font-size:10px; font-weight:500; }
 .relationship-coverage-category { color:var(--paper); font-size:11px; }
 .relationship-coverage-note { grid-column:1 / -1; color:var(--paper-muted); font-size:10px; line-height:1.4; }
+.person-relation-meta { display:block; margin-top:2px; color:var(--paper-muted); font-size:10px; line-height:1.4; }
 .relationship-coverage-covered { border-left-color:#8fa68b; }
 .relationship-coverage-covered strong { color:#c4d4bb; }
 .relationship-coverage-required { border-left-color:var(--vermilion); }

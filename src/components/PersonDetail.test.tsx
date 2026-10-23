@@ -1,5 +1,5 @@
-import { render, screen } from '@testing-library/react';
-import { describe, expect, it } from 'vitest';
+import { render, screen, within } from '@testing-library/react';
+import { describe, expect, it, vi } from 'vitest';
 import type { HistoricalClaim, HistoricalEvent, Person } from '../domain/types';
 import { getPersonDetail } from '../data/person-details';
 import { claims as catalogClaims } from '../data/claims';
@@ -31,6 +31,7 @@ const relationshipClaims: HistoricalClaim[] = [
   { id: 'served', subjectId: 'li-shimin', predicate: 'served', objectId: 'li-yuan', validFrom: 618, validTo: 626, datePrecision: 'range', perspective: 'person', evidenceType: 'explicit-record', confidence: 'medium', sourceIds: ['zizhi-tongjian'] },
   { id: 'ally', subjectId: 'li-shimin', predicate: 'ally-of', objectId: 'li-yuan', validFrom: 618, validTo: 626, datePrecision: 'range', perspective: 'person', evidenceType: 'cross-checked', confidence: 'medium', sourceIds: ['zizhi-tongjian'] },
   { id: 'enemy', subjectId: 'li-shimin', predicate: 'enemy-of', objectId: 'wang-mang', validFrom: 618, validTo: 649, datePrecision: 'range', perspective: 'person', evidenceType: 'inference', confidence: 'low', sourceIds: ['zizhi-tongjian'], uncertaintyNote: '示范关系，仅用于保留对立关系的方向和证据状态。' },
+  { id: 'participated', subjectId: 'li-shimin', predicate: 'participated-in', objectId: 'tang-founded-changan', validFrom: 618, validTo: 620, datePrecision: 'year', perspective: 'person', evidenceType: 'explicit-record', confidence: 'medium', sourceIds: ['zizhi-tongjian'] },
 ];
 
 const events: HistoricalEvent[] = [
@@ -104,13 +105,32 @@ describe('PersonDetail', () => {
 
     const audit = screen.getByRole('region', { name: '人物关系覆盖审计' });
     expect(audit).toBeInTheDocument();
-    expect(screen.getByText('君臣／治理')).toBeInTheDocument();
-    expect(screen.getByText('亲属')).toBeInTheDocument();
-    expect(screen.getByText('联盟／对立')).toBeInTheDocument();
-    expect(screen.getByText('事件参与')).toBeInTheDocument();
+    expect(within(audit).getByText('君臣／治理')).toBeInTheDocument();
+    expect(within(audit).getByText('亲属')).toBeInTheDocument();
+    expect(within(audit).getByText('联盟／对立')).toBeInTheDocument();
+    expect(within(audit).getByText('事件参与')).toBeInTheDocument();
     expect(audit.querySelectorAll('[data-relationship-coverage-status]')).toHaveLength(4);
     expect(audit.querySelectorAll('.relationship-coverage-note')).toHaveLength(4);
     expect(screen.getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
+  });
+
+  it('shows directional, dated, sourced event participation and opens the event', () => {
+    const onOpenEntity = vi.fn();
+    render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} onOpenEntity={onOpenEntity} />);
+
+    expect(screen.getByRole('heading', { name: '事件参与' })).toBeInTheDocument();
+    const eventRelation = screen.getByRole('button', { name: /参与事件.*方向：李世民.*618年—620年.*时间精度：年.*来源：可用/ });
+    expect(eventRelation).toBeInTheDocument();
+    eventRelation.click();
+
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded-changan' });
+  });
+
+  it('marks event participation with an unresolved source state', () => {
+    const unresolvedClaims = relationshipClaims.map((claim) => claim.id === 'participated' ? { ...claim, sourceIds: ['missing-event-source'] } : claim);
+    render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={unresolvedClaims} people={relationPeople} events={events} />);
+
+    expect(screen.getByText(/方向：李世民.*来源：待解析/)).toBeInTheDocument();
   });
 
   it('shows a fifty-sixth batch ruler relation in the person detail governance section', () => {
