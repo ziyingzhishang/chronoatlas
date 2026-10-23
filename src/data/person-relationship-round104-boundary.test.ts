@@ -9,14 +9,15 @@ import { people } from './people';
 import { sourceNotes } from './sources';
 
 const eventParticipationGaps = [
-  { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reasonCode: 'missing-event-detail', reason: '城市辅助事件没有霍去病参与字段。' },
-  { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reasonCode: 'missing-event-detail', reason: '城市辅助事件没有张骞参与字段。' },
-  { personId: 'ban-gu', eventIds: ['changan-han-capital'], reasonCode: 'missing-event-detail', reason: '城市辅助事件没有班固参与字段，且班固属于东汉后期人物。' },
-  { personId: 'li-zhi', eventIds: ['daming-palace-built'], reasonCode: 'missing-event-detail', reason: '城市营建事件没有李治参与字段，且现有来源仅支持城市建设层。' },
+  { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reasonCode: 'missing-participant', reason: '城市辅助事件已存在，但没有霍去病参与字段。' },
+  { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reasonCode: 'missing-participant', reason: '城市辅助事件已存在，但没有张骞参与字段。' },
+  { personId: 'ban-gu', eventIds: ['changan-han-capital'], reasonCode: 'missing-participant', reason: '城市辅助事件已存在，但没有班固参与字段，且班固属于东汉后期人物。' },
+  { personId: 'li-zhi', eventIds: ['daming-palace-built'], reasonCode: 'missing-participant', reason: '城市营建事件已存在，但没有李治参与字段，且现有来源仅支持城市建设层。' },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '元宏出生于北魏建政之后，不能回填为建政参与者。' },
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '拓跋焘出生于北魏建政之后，不能以继承统治关系替代参与字段。' },
   { personId: 'yuwen-yong', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
   { personId: 'zhao-wuling', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备赵武灵王参与字段和来源的事件节点。' },
+  { personId: 'tufa-wugu', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备秃发乌孤参与字段和来源的事件节点。' },
   { personId: 'mongke', eventIds: ['mongol-founded'], reasonCode: 'born-after-event', reason: '蒙哥出生于蒙古汗国形成之后，不能把后续汗位继承阶段回填为形成事件参与。' },
 ] as const;
 
@@ -59,9 +60,6 @@ describe('round one hundred four person relationship boundary audit', () => {
         expect(endpointSourceIds.every((sourceId) => sourceIds.has(sourceId)), `${personId}:${eventId} source refs`).toBe(true);
         expect(detail?.participants.some((participant) => participant.personId === personId) ?? false, `${personId}:${eventId} participant field`).toBe(false);
 
-        if (reasonCode === 'missing-event-detail') {
-          expect(detail, `${personId}:${eventId} detail boundary`).toBeUndefined();
-        }
         if (reasonCode === 'born-after-event') {
           expect(person?.birthYear, `${personId}:${eventId} birth year`).toBeGreaterThan(event!.year);
           expect(detail, `${personId}:${eventId} detail endpoint`).toBeDefined();
@@ -78,14 +76,15 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('classifies every unresolved gap by a concrete evidence boundary', () => {
     expect(eventParticipationGaps.map(({ personId, reasonCode }) => [personId, reasonCode])).toEqual([
-      ['huo-qubing', 'missing-event-detail'],
-      ['zhang-qian', 'missing-event-detail'],
-      ['ban-gu', 'missing-event-detail'],
-      ['li-zhi', 'missing-event-detail'],
+      ['huo-qubing', 'missing-participant'],
+      ['zhang-qian', 'missing-participant'],
+      ['ban-gu', 'missing-participant'],
+      ['li-zhi', 'missing-participant'],
       ['yuan-hong', 'born-after-event'],
       ['tuoba-tao', 'born-after-event'],
       ['yuwen-yong', 'no-event-candidate'],
       ['zhao-wuling', 'no-event-candidate'],
+      ['tufa-wugu', 'no-event-candidate'],
       ['mongke', 'born-after-event'],
     ]);
 
@@ -93,9 +92,9 @@ describe('round one hundred four person relationship boundary audit', () => {
       if (reasonCode === 'no-event-candidate') {
         expect(eventIds, `${personId}: candidate events`).toEqual([]);
       }
-      if (reasonCode === 'missing-event-detail') {
+      if (reasonCode === 'missing-participant') {
         expect(eventIds.length, `${personId}: candidate event count`).toBeGreaterThan(0);
-        expect(eventIds.every((eventId) => !eventDetails.some((detail) => detail.eventId === eventId)), `${personId}: missing detail classification`).toBe(true);
+        expect(eventIds.every((eventId) => eventDetails.some((detail) => detail.eventId === eventId)), `${personId}: detail exists`).toBe(true);
       }
       if (reasonCode === 'born-after-event') {
         expect(eventIds.length, `${personId}: candidate event count`).toBeGreaterThan(0);
@@ -138,8 +137,8 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(72);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(110);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(73);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
   });
 });

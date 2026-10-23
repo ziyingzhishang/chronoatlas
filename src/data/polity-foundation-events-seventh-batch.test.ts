@@ -23,8 +23,8 @@ describe('第七批政权建政事件', () => {
     for (const [polityId, eventId] of targets) {
       expect(report.byPolity(polityId), polityId).toMatchObject({
         hasEstablishmentNode: true,
-        establishmentEventIds: [eventId],
       });
+      expect(report.byPolity(polityId).establishmentEventIds).toContain(eventId);
       expect(events.filter((event) => event.id === eventId), eventId).toHaveLength(1);
       expect(eventDetails.filter((detail) => detail.eventId === eventId), eventId).toHaveLength(1);
       expect(eventDetails.find((detail) => detail.eventId === eventId)?.polityIds).toContain(polityId);

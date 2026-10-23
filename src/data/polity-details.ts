@@ -21,7 +21,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘邦在楚汉战争中取得胜利，前202年即皇帝位。', '汉初先都洛阳，前201年后迁都长安。', '中央与诸侯王并存，统一秩序是一个持续整合过程。'],
     turningPoints: [turn(-202, '刘邦称帝', '汉帝国进入重建秩序阶段。', 'han-imperial-accession'), turn(-201, '迁都长安', '长安成为西汉长期政治中心。'), turn(-200, '长乐宫建成', '汉初长安宫城的重要宫殿空间完成。', 'changle-palace-built'), turn(-141, '武帝时期', '对外战争、郡国关系和帝国制度进入扩展阶段。'), turn(-139, '茂陵开始营建', '汉武帝作寿陵，茂陵进入长期营建阶段。', 'maoling-built'), turn(-65, '杜陵开始营建', '汉宣帝在杜东原择址营建杜陵。', 'du-ling-built')],
     principalFigureIds: ['liu-bang', 'liu-che', 'liu-xun', 'xiao-he', 'han-xin', 'huo-qubing', 'zhang-qian'], capitalPhases: [capital('luoyang', -206, -202, 'primary', 'formal', '汉初阶段性都城'), capital('changan', -201, 9)],
-    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling', 'hanyangling', 'maoling', 'du-ling'], eventIds: ['han-imperial-accession', 'chu-han-contention', 'changle-palace-built', 'maoling-built', 'du-ling-built'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
+    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling', 'hanyangling', 'maoling', 'du-ling'], eventIds: ['han-imperial-accession', 'chu-han-contention', 'changan-han-capital', 'changle-palace-built', 'maoling-built', 'du-ling-built'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
     uncertaintyNote: '前206年受封汉王与前202年称帝是不同起算口径；本详情采用政权重建节点，不把西汉全期的实际控制范围压缩成单一时点。',
   }),
   detail({
@@ -93,7 +93,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['李渊控制长安并承接隋末政治资源。', '618年受禅建立唐朝。', '唐初仍经历地方战争与制度整合，后形成长安—洛阳双中心。'],
     turningPoints: [turn(618, '唐建立', '李渊在长安即位建唐。', 'tang-founded'), turn(626, '玄武门之变', '皇位继承与中央权力重新排列。'), turn(755, '安史之乱', '长安、洛阳与中央—地方关系受到重大冲击。', 'an-lushan-rebellion')],
     principalFigureIds: ['li-yuan', 'li-shimin', 'li-longji', 'wu-zhao', 'xuan-zang'], capitalPhases: [capital('changan', 618, 907), capital('luoyang', 618, 907, 'secondary', 'formal', '东都与阶段性政治中心')],
-    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'tang-founded-changan', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'daming-palace-built', 'tang-changan-end', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
     uncertaintyNote: '双都制度、行幸与战乱中的临时中心不能混写为正式迁都；遗产节点展示城市和建筑层，不直接证明帝国疆域。',
   }),
   detail({
@@ -157,7 +157,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['前秦崩解制造关中军政重组空间。', '姚苌在384年前后建立后秦，政权进入形成阶段。', '后秦控制长安后，姚兴时期的行政与宗教活动使关中中心进一步稳固。'],
     turningPoints: [turn(384, '后秦形成', '姚苌在关中建立后秦。', 'later-qin-founded'), turn(386, '取得长安', '后秦控制长安，关中政治中心确立。'), turn(417, '长安失守', '东晋刘裕攻取长安，后秦政权结束。', 'later-qin-falls-changan')],
     principalFigureIds: ['yao-chang', 'yao-xing'], capitalPhases: [capital('changan', 384, 417)],
-    heritageIds: ['later-qin-changan-city-layer'], eventIds: ['later-qin-founded'], claimIds: ['claim-later-qin-changan-capital', 'claim-later-qin-changan-heritage'], sourceIds: modernSources,
+    heritageIds: ['later-qin-changan-city-layer'], eventIds: ['later-qin-founded', 'changan-later-qin'], claimIds: ['claim-later-qin-changan-capital', 'claim-later-qin-changan-heritage'], sourceIds: modernSources,
     uncertaintyNote: '384年是政权形成约年，取得长安是后续阶段；后秦长安层叠压于汉、隋唐城市遗址，不能把今日遗址直接等同为完整后秦建筑。',
   }),
   detail({
@@ -268,9 +268,9 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'southern_liang', perspectiveSummary: '南凉由秃发氏在河湟地区建立，经历西平、乐都等阶段性政治中心转换，体现十六国河湟政权的区域性与流动性。',
     foundationProcess: ['秃发乌孤在后凉势力衰弱后整合河湟部众。', '397年前后南凉进入政权形成阶段。', '秃发氏以西平、乐都为不同阶段中心，最终在后秦压力下结束。'],
     turningPoints: [turn(397, '南凉政权形成', '秃发氏在河湟建立南凉。', 'southern-liang-founded'), turn(399, '迁都乐都', '政治中心由西平转向乐都，河湟网络进一步整合。'), turn(414, '南凉覆亡', '南凉为西秦所灭，秃发氏政权结束。')],
-    principalFigureIds: ['xiao-yan'], capitalPhases: [capital('xiping', 397, 401), capital('ledu', 402, 414)],
-    heritageIds: ['southern-liang-jiangling-city-site'], eventIds: ['southern-liang-founded'], claimIds: ['claim-xiao-yan-participated-southern-liang'], sourceIds: modernSources,
-    uncertaintyNote: '现有人物目录没有南凉本政权君主端点；本条仅使用已有的南梁萧衍人物作为跨政权事件目录端点，明确不把他写成南凉人物。西平、乐都均按已有首都阶段记录连接，不将区域政治中心夸大为完整城址复原。',
+    principalFigureIds: ['tufa-wugu'], capitalPhases: [capital('xiping', 397, 401), capital('ledu', 402, 414)],
+    heritageIds: ['southern-liang-jiangling-city-site'], eventIds: ['southern-liang-founded'], claimIds: ['claim-tufa-wugu-founded-southern-liang-closure'], sourceIds: modernSources,
+    uncertaintyNote: '秃发乌孤是南凉形成阶段的本政权人物端点，397年建政与399年个人统治期分开记录；西平、乐都均按已有首都阶段连接，不将区域政治中心夸大为完整城址复原。',
   }),
   detail({
     polityId: 'western_liang', perspectiveSummary: '西凉由李暠在河西西部建立，以敦煌、酒泉为阶段性中心，维系绿洲城市与丝路交通网络。',
@@ -493,7 +493,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['苻氏在前秦崩解后的关中军政竞争中取得独立基础。', '351年苻健在长安一带建立秦政权。', '苻坚时期扩张至北方多地，但全盛范围不能回填到建政当年。'],
     turningPoints: [turn(351, '前秦建立', '苻健在关中建立秦政权。', 'former-qin-founded'), turn(357, '苻坚掌政', '苻坚整合关中并推动前秦扩张。'), turn(383, '淝水之战', '北方统一尝试受挫，前秦整合结构迅速瓦解。')],
     principalFigureIds: ['fu-jian'], capitalPhases: [capital('changan', 351, 394, 'primary', 'formal', '长安，今陕西省西安市。')],
-    heritageIds: ['former-qin-changan-city-layer'], eventIds: ['former-qin-founded'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['former-qin-changan-city-layer'], eventIds: ['former-qin-founded', 'changan-former-qin'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '前秦经历苻健建政、苻坚扩张和淝水后瓦解等阶段；长安遗址层与汉、后秦、隋唐层叠压，不能用后期全盛疆域或后世建筑复原351年状态。',
   }),
   detail({
@@ -501,7 +501,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['绿林等反新力量拥立刘玄，汉室政治合法性重新出现。', '23年更始政权在宛城一带进入形成阶段。', '政权随后控制洛阳并进入长安，但各阶段的军政控制并不相同。'],
     turningPoints: [turn(23, '更始政权建立', '刘玄被拥立为更始帝。', 'gengshi-founded'), turn(24, '进入洛阳', '更始政权中心向洛阳转移。'), turn(25, '长安失守', '更始在长安的统治结束，关中进入新的争夺。')],
     principalFigureIds: ['liu-xuan', 'liu-xiu'], capitalPhases: [capital('wanyang', 23, 23, 'primary', 'actual', '宛城形成中心，今河南省南阳市一带。'), capital('luoyang', 24, 24, 'primary', 'actual', '洛阳阶段性中心。'), capital('changan', 25, 25, 'primary', 'actual', '长安阶段性中心，今陕西省西安市。')],
-    heritageIds: ['gengshi-wanyang-city-layer'], eventIds: ['gengshi-founded'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['gengshi-wanyang-city-layer'], eventIds: ['gengshi-founded', 'changan-gengshi'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '宛城、洛阳、长安分别对应更始政权不同阶段的政治中心，不代表全期稳定固定首都；刘秀是更始时期的重要参与者，但不能写成更始开国者。',
   }),
   detail({
@@ -669,7 +669,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['王莽在西汉末年通过外戚、摄政和辅政逐步集中权力。', '9年接受孺子婴禅让，建立新朝。', '新朝改革与地方反抗持续发展，23年更始政权进入长安后新朝结束。'],
     turningPoints: [turn(9, '新朝建立', '王莽受禅改国号为新。', 'xin-founded'), turn(14, '制度改革与危机', '新朝制度调整和地方社会压力加剧。'), turn(23, '长安失守', '新末战争导致新朝中央政权崩解。')],
     principalFigureIds: ['wang-mang'], capitalPhases: [capital('changan', 9, 23)],
-    heritageIds: ['han-changan-city-site'], eventIds: ['xin-founded'], claimIds: ['claim-wang-mang-founded-xin'], sourceIds: modernSources,
+    heritageIds: ['han-changan-city-site'], eventIds: ['xin-founded', 'changan-xin-founded'], claimIds: ['claim-wang-mang-founded-xin'], sourceIds: modernSources,
     uncertaintyNote: '9年是受禅和改国号节点，不代表新朝当年已稳定控制西汉旧境；汉长安城遗址是跨汉代政治层，不能把其中所有遗存归为新朝新建。',
   }),
   detail({

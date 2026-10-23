@@ -50,8 +50,8 @@ describe('ninety-seventh batch person detail audit', () => {
     }
   });
 
-  it('keeps the audited person-detail population at 172 records', () => {
-    expect(personDetails).toHaveLength(181);
-    expect(new Set(personDetails.map((detail) => detail.personId)).size).toBe(181);
+  it('keeps the audited person-detail population aligned with the people catalog', () => {
+    expect(personDetails).toHaveLength(182);
+    expect(new Set(personDetails.map((detail) => detail.personId)).size).toBe(182);
   });
 });

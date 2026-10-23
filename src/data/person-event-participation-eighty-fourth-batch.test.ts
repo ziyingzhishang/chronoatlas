@@ -17,6 +17,7 @@ const reviewBoundary = [
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'zhao-wuling', eventIds: [] },
+  { personId: 'tufa-wugu', eventIds: [] },
   { personId: 'mongke', eventIds: ['mongol-founded'] },
 ] as const;
 
@@ -25,7 +26,7 @@ const peopleIds = new Set(people.map((person) => person.id));
 const sourceIds = new Set(sourceNotes.map((source) => source.id));
 
 describe('eighty-fourth batch event-participation boundary audit', () => {
-  it('audits all nine current gaps against an event node, participant field and source', () => {
+  it('audits all ten current gaps against an event node, participant field and source', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(

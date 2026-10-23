@@ -46,6 +46,12 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '“统一北方”的概括与各地实际控制并不等价，详情保留前秦扩张叙事的范围限制。',
   },
   {
+    personId: 'tufa-wugu', biography: '秃发乌孤在河湟地区建立南凉，南凉的后续统治由秃发利鹿孤与秃发傉檀承接。',
+    aliases: ['南凉武王'], offices: [{ title: '南凉君主', polityId: 'southern_liang', validFrom: 397, validTo: 399, datePrecision: 'range', sourceIds }],
+    keyEvents: ['southern-liang-founded'], sourceIds,
+    uncertaintyNote: '397年是南凉形成节点；秃发氏政权的后续继承与414年覆亡不能归并为秃发乌孤个人统治期。',
+  },
+  {
     personId: 'yao-chang', biography: '姚苌在十六国后期建立后秦，后秦以长安为都，长安再次成为关中政权更替的中心。',
     aliases: [], offices: [{ title: '后秦皇帝', polityId: 'later_qin', placeId: 'changan', validFrom: 384, validTo: 393, datePrecision: 'range', sourceIds }],
     keyEvents: ['changan-later-qin'], sourceIds,

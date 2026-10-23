@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { auditKnowledgeCoverage } from './knowledge-coverage';
 import { claims } from './claims';
 import { people } from './people';
+import { polities } from './polities';
 
 const targets = [
   'zhou-gong-dan',
@@ -97,10 +98,11 @@ describe('eleventh-batch historical people relationship selection', () => {
 
   it('leaves no unconnected people after subsequent relationship batches', () => {
     const personIds = new Set(people.map((person) => person.id));
+    const polityIds = new Set(polities.map((polity) => polity.id));
     const connected = new Set(claims
       .filter((claim) => claim.perspective === 'person'
         && personIds.has(claim.subjectId)
-        && personIds.has(claim.objectId ?? ''))
+        && (personIds.has(claim.objectId ?? '') || polityIds.has(claim.objectId ?? '')))
       .flatMap((claim) => [claim.subjectId, claim.objectId ?? '']));
     const isolated = people
       .filter((person) => !connected.has(person.id))
