@@ -124,6 +124,48 @@ describe('event time evidence review', () => {
     expect(sourceById['zizhi-tongjian-vol111-western-liang']).toBeDefined();
   });
 
+  it('keeps traditional dates, continuous works, and formation processes approximate', () => {
+    const report = reviewEventTimeCoverage();
+    const cases = [
+      {
+        eventId: 'xia-early-founded-eighth-batch',
+        detailText: '传统纪年',
+        expectedPhase: undefined,
+      },
+      {
+        eventId: 'zhou-conquest',
+        detailText: '连续过程',
+        expectedPhase: { startYear: -1046, endYear: -1043 },
+      },
+      {
+        eventId: 'dali-founded',
+        detailText: '形成',
+        expectedPhase: undefined,
+      },
+    ] as const;
+
+    for (const item of cases) {
+      const record = report.records.find((candidate) => candidate.eventId === item.eventId);
+      const detail = eventDetails.find((candidate) => candidate.eventId === item.eventId);
+      const event = events.find((candidate) => candidate.id === item.eventId);
+
+      expect(record, item.eventId).toMatchObject({
+        status: 'approximate',
+        expectedPrecision: 'approximate',
+        datePrecision: 'approximate',
+        timelineStrategy: 'approximate-marker',
+      });
+      expect(record?.explanation, item.eventId).toContain(item.detailText);
+      expect(event?.verification, item.eventId).toBe('partial');
+      expect(detail?.uncertaintyNote, item.eventId).toBeTruthy();
+      if (item.expectedPhase) {
+        expect(detail?.phases, item.eventId).toEqual(expect.arrayContaining([
+          expect.objectContaining(item.expectedPhase),
+        ]));
+      }
+    }
+  });
+
   it('reports missing entries, missing detail, and evidence drift for an injected catalog', () => {
     const report = reviewEventTimeCoverage({ reviewEntries: eventTimeReview, events: [], eventDetails: [] });
 
