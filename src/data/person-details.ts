@@ -413,6 +413,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology', 'qin-mugong-chronology'], uncertaintyNote: '卒年有传统编年依据，但生年并非《秦本纪》直接记载；秦国早期年代与疆域仍需按诸侯国阶段核验，不能把秦穆公时期的影响范围提前等同于秦帝国版图。',
   },
   {
+    personId: 'qin-xiangong', biography: '秦襄公护送周平王东迁并获列为诸侯，是秦国进入东周诸侯分期的关键人物。',
+    aliases: ['秦襄公'], offices: [{ title: '秦国国君', polityId: 'qin_state', validFrom: -777, validTo: -766, datePrecision: 'range', sourceIds: ['shiji-qin-benji', 'zizhi-tongjian'] }],
+    keyEvents: ['qin-state-founded-eighth-batch'], sourceIds: ['shiji-qin-benji', 'zizhi-tongjian'], uncertaintyNote: '前770年表达护送东迁与列侯名义节点，不等于秦国此时已完成关中整合，也不将咸阳前推为秦襄公活动地点。',
+  },
+  {
     personId: 'zhao-wuling', biography: '赵武灵王推行胡服骑射，推动赵国军事组织和边疆防务转型，是战国政治改革的重要案例。',
     aliases: ['赵武灵王'], offices: [{ title: '赵国国君', polityId: 'zhao_warring', datePrecision: 'range', sourceIds: ['zizhi-tongjian'] }],
     keyEvents: ['zhao-wuling-reforms-307'], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '胡服骑射的具体实施过程和年代按战国编年概括，改革成效不应直接推导为赵国全境同时改变；前403年赵国分期与前307年改革是不同节点。',
@@ -465,7 +470,12 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'zhu-youlang', biography: '朱由榔即永历帝，1646年在肇庆即位，随后率南明政治中心向桂林、昆明等西南空间迁移。',
     aliases: ['永历帝', '桂王'], offices: [{ title: '南明永历帝', polityId: 'ming_southern', placeId: 'zhaoqing', validFrom: 1646, validTo: 1662, datePrecision: 'range', sourceIds: ['southern-ming-yongli', 'zhaoqing-yongli-heritage'] }],
-    keyEvents: ['southern-ming-founded', 'yongli-zhaoqing-founded'], sourceIds: ['southern-ming-overview', 'southern-ming-yongli', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '肇庆仅是永历初期中心；朱由榔后续迁移、与大西军合作及西南控制范围必须按阶段展示。',
+    keyEvents: ['southern-ming-founded', 'yongli-zhaoqing-founded', 'yongli-regime-ended-1662'], sourceIds: ['southern-ming-overview', 'southern-ming-yongli', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '肇庆仅是永历初期中心；朱由榔后续迁移、与大西军合作及西南控制范围必须按阶段展示。',
+  },
+  {
+    personId: 'wu-sangui', biography: '吴三桂在清初经营云南并参与清军进缅、接收和押解永历帝的过程；其具体责任应按追捕、交付、押解和昆明处置等层次区分。',
+    aliases: ['平西王'], offices: [{ title: '清平西王', polityId: 'qing', placeId: 'kunming', validFrom: 1659, validTo: 1678, datePrecision: 'range', sourceIds: ['southern-ming-yongli', 'ming-shi-vol120-southern-ming'] }],
+    keyEvents: ['yongli-regime-ended-1662'], sourceIds: ['southern-ming-yongli', 'ming-shi-vol120-southern-ming'], uncertaintyNote: '吴三桂在永历终结过程中的角色可确认到清方云南军政与进缅接收押解链条，但不将所有具体处置细节视为同等确定。',
   },
   {
     personId: 'qu-shisi', biography: '瞿式耜是拥立并辅佐永历政权的重要大臣，连接肇庆初期、广西经营与后续抗清网络。',

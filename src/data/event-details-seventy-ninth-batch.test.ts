@@ -42,8 +42,8 @@ const targetConsequences = {
 
 const targetParticipantNotes = {
   'qin-state-founded-eighth-batch': {
-    personId: 'qin-mugong',
-    note: '限秦穆公时期的后续扩张与国家整合，不代表约前770年护送东迁的秦襄公或列侯节点。',
+    personId: 'qin-xiangong',
+    note: '秦襄公是约前770年列侯节点的直接人物；该节点不等于秦国已完成关中整合。',
   },
   'shang-founded-eighth-batch': {
     personId: 'wu-ding',

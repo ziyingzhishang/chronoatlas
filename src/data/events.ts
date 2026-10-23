@@ -989,6 +989,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '永历政权', url: 'https://www.dpm.org.cn/court/event/160186.html', detail: '故宫博物院记载朱由榔在肇庆建立永历政权及其后续迁移。' }, { title: '康熙元年三月十二日俘获永历帝宣捷诏谕', url: 'https://www.chnmuseum.cn/zp/zpml/gjwxbt/202008/t20200824_247135.shtml', detail: '国家博物馆资料记载朱由榔在肇庆即位并以次年为永历元年。' }],
   },
   {
+    id: 'yongli-regime-ended-1662', year: 1662, title: '永历政权在昆明终结', summary: '永历帝朱由榔在缅甸阶段后被清军接收并押解回云南，1662年于昆明遇害，永历政权的主要政治延续终结。', placeId: 'kunming', sourceIds: ['southern-ming-yongli', 'ming-shi-vol120-southern-ming'],
+    datePrecision: 'year', region: 'china', category: '政权终结／君主遇害', verification: 'partial', coordinates: [102.71, 25.04], locationPrecision: 'approximate',
+    background: '永历政权在西南抗清网络瓦解后退入缅甸，缅甸阶段、清军进缅、交付和押解需要拆分理解。',
+    process: '1661—1662年，永历帝在阿瓦区域及其周边被缅方交付清军，随后押解回云南；1662年在昆明终结。',
+    impact: '永历政权作为南明主要政治延续结束；南明其他地方性抗清力量仍应按各自时间和地点单独记录。',
+    mapNote: '地图同时显示阿瓦区域与昆明城市点：前者表达避难、交付及押解链条，后者表达1662年终结的城市范围，不将两者合并为单一地点。',
+    references: [{ title: '永历政权与肇庆阶段', url: 'https://www.dpm.org.cn/court/event/160186.html', detail: '故宫博物院资料用于永历政权阶段与后续迁移背景。' }],
+  },
+  {
     id: 'xiongnu-founded', year: -209, title: '匈奴联盟政权形成', summary: '冒顿单于整合草原诸部，匈奴成为汉代以前后北方重要的草原政治力量。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '秦末汉初草原力量重新组合，冒顿在部落竞争中取得领导地位，并通过军事与联盟扩大号令范围。',

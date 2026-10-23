@@ -4170,6 +4170,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "shiji-qin-benji",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -4179,13 +4180,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-qin-xiaogong-participated-qin-state-founded",
+            "claim:claim-qin-xiangong-participated-qin-state-founded-eighth-batch",
             "event-detail:qin-state-founded-eighth-batch"
           ],
           "relatedIds": [
             "partition-jin",
             "qin-mugong",
             "qin-unification",
+            "qin-xiangong",
             "qin-xiaogong",
             "qin_state",
             "zhou-eastward"
@@ -7831,6 +7833,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "yongli-regime-ended-1662",
+      "entityKey": "event:yongli-regime-ended-1662",
+      "label": "永历政权在昆明终结",
+      "polityIds": [
+        "ming_southern",
+        "qing"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yongli-regime-ended-1662"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli",
+            "yongli-demise-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wu-sangui-participated-yongli-regime-ended-1662",
+            "claim:claim-zhu-youlang-participated-yongli-regime-ended-1662",
+            "event-detail:yongli-regime-ended-1662"
+          ],
+          "relatedIds": [
+            "ming_southern",
+            "qing",
+            "wu-sangui",
+            "yongli-zhaoqing-founded",
+            "zhu-youlang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "yongli-zhaoqing-founded",
       "entityKey": "event:yongli-zhaoqing-founded",
       "label": "永历政权在肇庆建立",
@@ -10537,6 +10602,120 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "liao-dongjing-city-site",
+      "entityKey": "heritage:liao-dongjing-city-site",
+      "label": "辽东京辽阳城址历史层",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-dongjing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-dongjing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "liao-nanjing-city-site",
+      "entityKey": "heritage:liao-nanjing-city-site",
+      "label": "辽南京析津府城址历史层",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-nanjing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-nanjing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "liao-shangjing-city-site",
       "entityKey": "heritage:liao-shangjing-city-site",
       "label": "辽上京遗址",
@@ -10576,6 +10755,120 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "heritage-detail:liao-shangjing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "liao-xijing-city-site",
+      "entityKey": "heritage:liao-xijing-city-site",
+      "label": "辽西京大同府城市历史层",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-xijing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-xijing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "liao-zhongjing-city-site",
+      "entityKey": "heritage:liao-zhongjing-city-site",
+      "label": "辽中京大定府遗址",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-zhongjing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-zhongjing-city-site"
           ],
           "relatedIds": [
             "khitan",
@@ -21990,6 +22283,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "qin-xiangong",
+      "entityKey": "person:qin-xiangong",
+      "label": "秦襄公",
+      "polityIds": [
+        "qin_state"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qin-xiangong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "shiji-qin-benji",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qin-xiangong-participated-qin-state-founded-eighth-batch",
+            "claim:claim-qin-xiangong-ruled-qin-state",
+            "claim:claim-qin-xiaogong-child-qin-xiangong",
+            "event-detail:qin-state-founded-eighth-batch",
+            "person-polity:qin-xiangong:qin_state"
+          ],
+          "relatedIds": [
+            "qin-state-founded-eighth-batch",
+            "qin-xiaogong",
+            "qin_state"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "shiji-qin-benji",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "qin-xiaogong",
       "entityKey": "person:qin-xiaogong",
       "label": "秦孝公",
@@ -22028,7 +22385,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-qin-xiaogong-participated-qin-state-founded",
+            "claim:claim-qin-xiaogong-child-qin-xiangong",
             "claim:claim-qin-xiaogong-related-qi-we-wang",
             "claim:claim-qin-xiaogong-ruled-qin-state-ninetyfifth",
             "event-detail:qin-state-founded-eighth-batch",
@@ -22038,6 +22395,7 @@
           "relatedIds": [
             "qi-we-wang",
             "qin-state-founded-eighth-batch",
+            "qin-xiangong",
             "qin-xianyang-capital",
             "qin_state"
           ]
@@ -22490,13 +22848,15 @@
             "claim:claim-shunzhi-participated-qing-enters-pass-fortyseventh",
             "claim:claim-shunzhi-ruled-qing-fiftysixth",
             "claim:claim-shunzhi-succeeded-hongtaiji",
+            "claim:claim-wu-sangui-served-shunzhi",
             "person-polity:shunzhi:qing"
           ],
           "relatedIds": [
             "dorgon",
             "hongtaiji",
             "qing",
-            "qing-enters-pass"
+            "qing-enters-pass",
+            "wu-sangui"
           ]
         },
         {
@@ -24252,6 +24612,69 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "wu-sangui",
+      "entityKey": "person:wu-sangui",
+      "label": "吴三桂",
+      "polityIds": [
+        "qing"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wu-sangui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wu-sangui-participated-yongli-regime-ended-1662",
+            "claim:claim-wu-sangui-served-shunzhi",
+            "event-detail:yongli-regime-ended-1662",
+            "person-polity:wu-sangui:qing"
+          ],
+          "relatedIds": [
+            "qing",
+            "shunzhi",
+            "yongli-regime-ended-1662"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli"
           ],
           "relatedIds": []
         }
@@ -26631,14 +27054,17 @@
           "evidenceIds": [
             "claim:claim-qu-shisi-served-zhu-youlang",
             "claim:claim-zhu-youlang-ally-qu-shisi-round106",
+            "claim:claim-zhu-youlang-participated-yongli-regime-ended-1662",
             "claim:claim-zhu-youlang-participated-yongli-zhaoqing",
             "claim:claim-zhu-youlang-ruled-southern-ming",
+            "event-detail:yongli-regime-ended-1662",
             "event-detail:yongli-zhaoqing-founded",
             "person-polity:zhu-youlang:ming_southern"
           ],
           "relatedIds": [
             "ming_southern",
             "qu-shisi",
+            "yongli-regime-ended-1662",
             "yongli-zhaoqing-founded"
           ]
         },
@@ -28474,12 +28900,20 @@
             "claim:claim-yelu-abaoji-founded-khitan",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
             "event-detail:liao-founded",
+            "heritage-detail:liao-dongjing-city-site",
+            "heritage-detail:liao-nanjing-city-site",
             "heritage-detail:liao-shangjing-city-site",
+            "heritage-detail:liao-xijing-city-site",
+            "heritage-detail:liao-zhongjing-city-site",
             "person:yelu-abaoji"
           ],
           "relatedIds": [
+            "liao-dongjing-city-site",
             "liao-founded",
+            "liao-nanjing-city-site",
             "liao-shangjing-city-site",
+            "liao-xijing-city-site",
+            "liao-zhongjing-city-site",
             "yelu-abaoji"
           ]
         },
@@ -29196,6 +29630,7 @@
             "event-detail:longwu-fuzhou-founded",
             "event-detail:shaowu-guangzhou-founded",
             "event-detail:southern-ming-founded",
+            "event-detail:yongli-regime-ended-1662",
             "event-detail:yongli-zhaoqing-founded",
             "heritage-detail:nanming-fuzhou-xinggong-site",
             "heritage-detail:nanming-yingtian-imperial-city",
@@ -29226,6 +29661,7 @@
             "shi-kefa",
             "southern-ming-founded",
             "su-guansheng",
+            "yongli-regime-ended-1662",
             "yongli-zhaoqing-founded",
             "zheng-zhi-long",
             "zhu-youlang",
@@ -30012,16 +30448,19 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-qin-mugong-ruled-qin-state",
+            "claim:claim-qin-xiangong-ruled-qin-state",
             "claim:claim-qin-xiaogong-ruled-qin-state-ninetyfifth",
             "event-detail:qin-state-founded-eighth-batch",
             "event-detail:qin-xianyang-capital",
             "heritage-detail:xianyang-qin-state-palace-site",
             "person:qin-mugong",
+            "person:qin-xiangong",
             "person:qin-xiaogong"
           ],
           "relatedIds": [
             "qin-mugong",
             "qin-state-founded-eighth-batch",
+            "qin-xiangong",
             "qin-xianyang-capital",
             "qin-xiaogong",
             "xianyang-qin-state-palace-site"
@@ -30081,10 +30520,12 @@
             "claim:claim-shunzhi-ruled-qing-fiftysixth",
             "event-detail:qing-enters-pass",
             "event-detail:qing-founded",
+            "event-detail:yongli-regime-ended-1662",
             "heritage-detail:qing-shengjing-palace-city-site",
             "person:dorgon",
             "person:hongtaiji",
-            "person:shunzhi"
+            "person:shunzhi",
+            "person:wu-sangui"
           ],
           "relatedIds": [
             "dorgon",
@@ -30092,7 +30533,9 @@
             "qing-enters-pass",
             "qing-founded",
             "qing-shengjing-palace-city-site",
-            "shunzhi"
+            "shunzhi",
+            "wu-sangui",
+            "yongli-regime-ended-1662"
           ]
         },
         {
@@ -33759,6 +34202,23 @@
       "evidenceIds": [
         "china-chronology",
         "qin-mugong-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "qin-xiangong",
+      "entityKey": "person:qin-xiangong",
+      "label": "秦襄公",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "qin_state"
+      ],
+      "evidenceIds": [
+        "shiji-qin-benji",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -38219,6 +38679,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "shiji-qin-benji",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -38228,13 +38689,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-qin-xiaogong-participated-qin-state-founded",
+            "claim:claim-qin-xiangong-participated-qin-state-founded-eighth-batch",
             "event-detail:qin-state-founded-eighth-batch"
           ],
           "relatedIds": [
             "partition-jin",
             "qin-mugong",
             "qin-unification",
+            "qin-xiangong",
             "qin-xiaogong",
             "qin_state",
             "zhou-eastward"
@@ -41878,6 +42340,69 @@
         }
       ]
     },
+    "event:yongli-regime-ended-1662": {
+      "entityType": "event",
+      "entityId": "yongli-regime-ended-1662",
+      "entityKey": "event:yongli-regime-ended-1662",
+      "label": "永历政权在昆明终结",
+      "polityIds": [
+        "ming_southern",
+        "qing"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yongli-regime-ended-1662"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli",
+            "yongli-demise-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wu-sangui-participated-yongli-regime-ended-1662",
+            "claim:claim-zhu-youlang-participated-yongli-regime-ended-1662",
+            "event-detail:yongli-regime-ended-1662"
+          ],
+          "relatedIds": [
+            "ming_southern",
+            "qing",
+            "wu-sangui",
+            "yongli-zhaoqing-founded",
+            "zhu-youlang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:yongli-zhaoqing-founded": {
       "entityType": "event",
       "entityId": "yongli-zhaoqing-founded",
@@ -44584,6 +45109,120 @@
         }
       ]
     },
+    "heritage:liao-dongjing-city-site": {
+      "entityType": "heritage",
+      "entityId": "liao-dongjing-city-site",
+      "entityKey": "heritage:liao-dongjing-city-site",
+      "label": "辽东京辽阳城址历史层",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-dongjing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-dongjing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:liao-nanjing-city-site": {
+      "entityType": "heritage",
+      "entityId": "liao-nanjing-city-site",
+      "entityKey": "heritage:liao-nanjing-city-site",
+      "label": "辽南京析津府城址历史层",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-nanjing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-nanjing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:liao-shangjing-city-site": {
       "entityType": "heritage",
       "entityId": "liao-shangjing-city-site",
@@ -44625,6 +45264,120 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "heritage-detail:liao-shangjing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:liao-xijing-city-site": {
+      "entityType": "heritage",
+      "entityId": "liao-xijing-city-site",
+      "entityKey": "heritage:liao-xijing-city-site",
+      "label": "辽西京大同府城市历史层",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-xijing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-xijing-city-site"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:liao-zhongjing-city-site": {
+      "entityType": "heritage",
+      "entityId": "liao-zhongjing-city-site",
+      "entityKey": "heritage:liao-zhongjing-city-site",
+      "label": "辽中京大定府遗址",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "liao-zhongjing-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:liao-zhongjing-city-site"
           ],
           "relatedIds": [
             "khitan",
@@ -56037,6 +56790,70 @@
         }
       ]
     },
+    "person:qin-xiangong": {
+      "entityType": "person",
+      "entityId": "qin-xiangong",
+      "entityKey": "person:qin-xiangong",
+      "label": "秦襄公",
+      "polityIds": [
+        "qin_state"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qin-xiangong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "shiji-qin-benji",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qin-xiangong-participated-qin-state-founded-eighth-batch",
+            "claim:claim-qin-xiangong-ruled-qin-state",
+            "claim:claim-qin-xiaogong-child-qin-xiangong",
+            "event-detail:qin-state-founded-eighth-batch",
+            "person-polity:qin-xiangong:qin_state"
+          ],
+          "relatedIds": [
+            "qin-state-founded-eighth-batch",
+            "qin-xiaogong",
+            "qin_state"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "shiji-qin-benji",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:qin-xiaogong": {
       "entityType": "person",
       "entityId": "qin-xiaogong",
@@ -56077,7 +56894,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-qin-xiaogong-participated-qin-state-founded",
+            "claim:claim-qin-xiaogong-child-qin-xiangong",
             "claim:claim-qin-xiaogong-related-qi-we-wang",
             "claim:claim-qin-xiaogong-ruled-qin-state-ninetyfifth",
             "event-detail:qin-state-founded-eighth-batch",
@@ -56087,6 +56904,7 @@
           "relatedIds": [
             "qi-we-wang",
             "qin-state-founded-eighth-batch",
+            "qin-xiangong",
             "qin-xianyang-capital",
             "qin_state"
           ]
@@ -56539,13 +57357,15 @@
             "claim:claim-shunzhi-participated-qing-enters-pass-fortyseventh",
             "claim:claim-shunzhi-ruled-qing-fiftysixth",
             "claim:claim-shunzhi-succeeded-hongtaiji",
+            "claim:claim-wu-sangui-served-shunzhi",
             "person-polity:shunzhi:qing"
           ],
           "relatedIds": [
             "dorgon",
             "hongtaiji",
             "qing",
-            "qing-enters-pass"
+            "qing-enters-pass",
+            "wu-sangui"
           ]
         },
         {
@@ -58301,6 +59121,69 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:wu-sangui": {
+      "entityType": "person",
+      "entityId": "wu-sangui",
+      "entityKey": "person:wu-sangui",
+      "label": "吴三桂",
+      "polityIds": [
+        "qing"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wu-sangui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wu-sangui-participated-yongli-regime-ended-1662",
+            "claim:claim-wu-sangui-served-shunzhi",
+            "event-detail:yongli-regime-ended-1662",
+            "person-polity:wu-sangui:qing"
+          ],
+          "relatedIds": [
+            "qing",
+            "shunzhi",
+            "yongli-regime-ended-1662"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli"
           ],
           "relatedIds": []
         }
@@ -60680,14 +61563,17 @@
           "evidenceIds": [
             "claim:claim-qu-shisi-served-zhu-youlang",
             "claim:claim-zhu-youlang-ally-qu-shisi-round106",
+            "claim:claim-zhu-youlang-participated-yongli-regime-ended-1662",
             "claim:claim-zhu-youlang-participated-yongli-zhaoqing",
             "claim:claim-zhu-youlang-ruled-southern-ming",
+            "event-detail:yongli-regime-ended-1662",
             "event-detail:yongli-zhaoqing-founded",
             "person-polity:zhu-youlang:ming_southern"
           ],
           "relatedIds": [
             "ming_southern",
             "qu-shisi",
+            "yongli-regime-ended-1662",
             "yongli-zhaoqing-founded"
           ]
         },
@@ -62523,12 +63409,20 @@
             "claim:claim-yelu-abaoji-founded-khitan",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
             "event-detail:liao-founded",
+            "heritage-detail:liao-dongjing-city-site",
+            "heritage-detail:liao-nanjing-city-site",
             "heritage-detail:liao-shangjing-city-site",
+            "heritage-detail:liao-xijing-city-site",
+            "heritage-detail:liao-zhongjing-city-site",
             "person:yelu-abaoji"
           ],
           "relatedIds": [
+            "liao-dongjing-city-site",
             "liao-founded",
+            "liao-nanjing-city-site",
             "liao-shangjing-city-site",
+            "liao-xijing-city-site",
+            "liao-zhongjing-city-site",
             "yelu-abaoji"
           ]
         },
@@ -63245,6 +64139,7 @@
             "event-detail:longwu-fuzhou-founded",
             "event-detail:shaowu-guangzhou-founded",
             "event-detail:southern-ming-founded",
+            "event-detail:yongli-regime-ended-1662",
             "event-detail:yongli-zhaoqing-founded",
             "heritage-detail:nanming-fuzhou-xinggong-site",
             "heritage-detail:nanming-yingtian-imperial-city",
@@ -63275,6 +64170,7 @@
             "shi-kefa",
             "southern-ming-founded",
             "su-guansheng",
+            "yongli-regime-ended-1662",
             "yongli-zhaoqing-founded",
             "zheng-zhi-long",
             "zhu-youlang",
@@ -64061,16 +64957,19 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-qin-mugong-ruled-qin-state",
+            "claim:claim-qin-xiangong-ruled-qin-state",
             "claim:claim-qin-xiaogong-ruled-qin-state-ninetyfifth",
             "event-detail:qin-state-founded-eighth-batch",
             "event-detail:qin-xianyang-capital",
             "heritage-detail:xianyang-qin-state-palace-site",
             "person:qin-mugong",
+            "person:qin-xiangong",
             "person:qin-xiaogong"
           ],
           "relatedIds": [
             "qin-mugong",
             "qin-state-founded-eighth-batch",
+            "qin-xiangong",
             "qin-xianyang-capital",
             "qin-xiaogong",
             "xianyang-qin-state-palace-site"
@@ -64130,10 +65029,12 @@
             "claim:claim-shunzhi-ruled-qing-fiftysixth",
             "event-detail:qing-enters-pass",
             "event-detail:qing-founded",
+            "event-detail:yongli-regime-ended-1662",
             "heritage-detail:qing-shengjing-palace-city-site",
             "person:dorgon",
             "person:hongtaiji",
-            "person:shunzhi"
+            "person:shunzhi",
+            "person:wu-sangui"
           ],
           "relatedIds": [
             "dorgon",
@@ -64141,7 +65042,9 @@
             "qing-enters-pass",
             "qing-founded",
             "qing-shengjing-palace-city-site",
-            "shunzhi"
+            "shunzhi",
+            "wu-sangui",
+            "yongli-regime-ended-1662"
           ]
         },
         {
@@ -66964,9 +67867,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 137,
+      "totalEntities": 138,
       "statusCounts": {
-        "covered": 658,
+        "covered": 663,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -67010,9 +67913,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 109,
+      "totalEntities": 113,
       "statusCounts": {
-        "covered": 545,
+        "covered": 565,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -67028,20 +67931,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 186,
+      "totalEntities": 188,
       "statusCounts": {
-        "covered": 885,
+        "covered": 894,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 45,
+        "uncertain": 46,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 45
+        "uncertain": 46
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -67072,6 +67975,7 @@
         "person:qifu-chipan",
         "person:qifu-guoren",
         "person:qin-mugong",
+        "person:qin-xiangong",
         "person:quanfengyou",
         "person:su-guansheng",
         "person:tufa-lilugu",
@@ -67814,7 +68718,11 @@
       "polityName": "辽",
       "entityKeys": [
         "event:liao-founded",
+        "heritage:liao-dongjing-city-site",
+        "heritage:liao-nanjing-city-site",
         "heritage:liao-shangjing-city-site",
+        "heritage:liao-xijing-city-site",
+        "heritage:liao-zhongjing-city-site",
         "person:yelu-abaoji",
         "polity:khitan"
       ],
@@ -68046,6 +68954,7 @@
         "event:longwu-fuzhou-founded",
         "event:shaowu-guangzhou-founded",
         "event:southern-ming-founded",
+        "event:yongli-regime-ended-1662",
         "event:yongli-zhaoqing-founded",
         "heritage:ming-yingtian-imperial-city-site",
         "heritage:nanming-fuzhou-xinggong-site",
@@ -68573,6 +69482,7 @@
         "event:qin-xianyang-capital",
         "heritage:xianyang-qin-state-palace-site",
         "person:qin-mugong",
+        "person:qin-xiangong",
         "person:qin-xiaogong",
         "polity:qin_state"
       ],
@@ -68590,6 +69500,23 @@
           "evidenceIds": [
             "china-chronology",
             "qin-mugong-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "qin-xiangong",
+          "entityKey": "person:qin-xiangong",
+          "label": "秦襄公",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "qin_state"
+          ],
+          "evidenceIds": [
+            "shiji-qin-benji",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -68617,7 +69544,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "秦国：有 2 项待核验缺口。"
+      "summary": "秦国：有 3 项待核验缺口。"
     },
     "qing": {
       "polityId": "qing",
@@ -68625,10 +69552,12 @@
       "entityKeys": [
         "event:qing-enters-pass",
         "event:qing-founded",
+        "event:yongli-regime-ended-1662",
         "heritage:qing-shengjing-palace-city-site",
         "person:dorgon",
         "person:hongtaiji",
         "person:shunzhi",
+        "person:wu-sangui",
         "polity:qing"
       ],
       "gaps": [],
@@ -70273,6 +71202,23 @@
       },
       "summary": "夏县一带：有 1 项待核验缺口。"
     },
+    "ava": {
+      "placeId": "ava",
+      "cityName": "因瓦附近",
+      "capitalRecordCount": 0,
+      "entityKeys": [
+        "event:yongli-regime-ended-1662"
+      ],
+      "gaps": [],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "因瓦附近：学习闭环已覆盖。"
+    },
     "balasagun": {
       "placeId": "balasagun",
       "cityName": "布拉纳遗址附近",
@@ -70380,6 +71326,7 @@
         "event:gengshi-founded",
         "event:later-qin-founded",
         "event:maoling-built",
+        "event:qin-state-founded-eighth-batch",
         "event:sui-founded",
         "event:tang-changan-end",
         "event:tang-founded",
@@ -70492,6 +71439,20 @@
         },
         {
           "entityType": "event",
+          "entityId": "qin-state-founded-eighth-batch",
+          "entityKey": "event:qin-state-founded-eighth-batch",
+          "label": "秦国政权建立（传统分期）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "qin_state"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "changan-former-qin",
           "entityKey": "event:changan-former-qin",
           "label": "前秦据长安",
@@ -70554,7 +71515,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 7 项待核验缺口。"
+      "summary": "西安市：有 8 项待核验缺口。"
     },
     "changsha": {
       "placeId": "changsha",
@@ -71365,6 +72326,25 @@
       },
       "summary": "开封市：学习闭环已覆盖。"
     },
+    "kunming": {
+      "placeId": "kunming",
+      "cityName": "昆明市",
+      "capitalRecordCount": 0,
+      "entityKeys": [
+        "event:yongli-regime-ended-1662",
+        "person:wu-sangui",
+        "person:zhu-youlang"
+      ],
+      "gaps": [],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "昆明市：学习闭环已覆盖。"
+    },
     "ledu": {
       "placeId": "ledu",
       "cityName": "乐都区",
@@ -71403,7 +72383,9 @@
       "placeId": "liao_dongjing",
       "cityName": "辽阳市",
       "capitalRecordCount": 1,
-      "entityKeys": [],
+      "entityKeys": [
+        "heritage:liao-dongjing-city-site"
+      ],
       "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
@@ -71412,13 +72394,15 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "辽阳市：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "辽阳市：学习闭环已覆盖。"
     },
     "liao_nanjing": {
       "placeId": "liao_nanjing",
       "cityName": "北京市",
       "capitalRecordCount": 1,
-      "entityKeys": [],
+      "entityKeys": [
+        "heritage:liao-nanjing-city-site"
+      ],
       "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
@@ -71427,7 +72411,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "北京市：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "北京市：学习闭环已覆盖。"
     },
     "liao_shangjing": {
       "placeId": "liao_shangjing",
@@ -71452,7 +72436,9 @@
       "placeId": "liao_xijing",
       "cityName": "大同市",
       "capitalRecordCount": 1,
-      "entityKeys": [],
+      "entityKeys": [
+        "heritage:liao-xijing-city-site"
+      ],
       "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
@@ -71461,13 +72447,15 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "大同市：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "大同市：学习闭环已覆盖。"
     },
     "liao_zhongjing": {
       "placeId": "liao_zhongjing",
       "cityName": "宁城县大明镇一带",
       "capitalRecordCount": 1,
-      "entityKeys": [],
+      "entityKeys": [
+        "heritage:liao-zhongjing-city-site"
+      ],
       "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
@@ -71476,7 +72464,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "宁城县大明镇一带：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "宁城县大明镇一带：学习闭环已覆盖。"
     },
     "linan": {
       "placeId": "linan",
@@ -72146,7 +73134,6 @@
       "capitalRecordCount": 2,
       "entityKeys": [
         "event:chu-han-contention",
-        "event:qin-state-founded-eighth-batch",
         "event:qin-unification",
         "event:qin-xianyang-capital",
         "event:qin-xianyang-unification",
@@ -72179,20 +73166,6 @@
         },
         {
           "entityType": "event",
-          "entityId": "qin-state-founded-eighth-batch",
-          "entityKey": "event:qin-state-founded-eighth-batch",
-          "label": "秦国政权建立（传统分期）",
-          "dimension": "time",
-          "kind": "uncertain",
-          "polityIds": [
-            "qin_state"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
-        },
-        {
-          "entityType": "event",
           "entityId": "chu-han-contention",
           "entityKey": "event:chu-han-contention",
           "label": "楚汉之际",
@@ -72214,7 +73187,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "咸阳市：有 3 项待核验缺口。"
+      "summary": "咸阳市：有 2 项待核验缺口。"
     },
     "xingqing": {
       "placeId": "xingqing",

@@ -27,7 +27,7 @@ const reviewBoundary = new Set([
 
 describe('capital-associated heritage boundary audit', () => {
   it('locks the 106 capital-associated heritage details to complete field and endpoint coverage', () => {
-    expect(capitalHeritageAssets).toHaveLength(107);
+    expect(capitalHeritageAssets).toHaveLength(111);
 
     for (const asset of capitalHeritageAssets) {
       const detail = detailById.get(asset.id);

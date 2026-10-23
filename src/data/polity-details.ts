@@ -116,8 +116,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'qing', perspectiveSummary: '清先在关外以盛京为中心完成国号与制度转换，1644年入关后转移到北京，形成新的全国性统治阶段。',
     foundationProcess: ['后金时期的军政体系和关外都城为清建立提供基础。', '1636年皇太极改国号为清。', '1644年入关并迁入北京，关内统治与关外阶段应分层叙述。'],
     turningPoints: [turn(1636, '清建立', '皇太极改国号为清。', 'qing-founded'), turn(1644, '清入关', '清廷政治中心由盛京转向北京。', 'qing-enters-pass'), turn(1683, '台湾纳入清统治', '清的全国性统治进一步扩展，但具体边疆控制仍须按阶段核验。')],
-    principalFigureIds: ['nurhaci', 'hongtaiji', 'dorgon'], capitalPhases: [capital('shengjing', 1636, 1644), capital('beijing', 1644, 1912)],
-    heritageIds: ['qing-shengjing-palace-city-site'], eventIds: ['qing-founded', 'qing-enters-pass'], claimIds: ['claim-hongtaiji-ruled-qing-fiftysixth', 'claim-shunzhi-ruled-qing-fiftysixth'], sourceIds: modernSources,
+    principalFigureIds: ['nurhaci', 'hongtaiji', 'dorgon', 'wu-sangui'], capitalPhases: [capital('shengjing', 1636, 1644), capital('beijing', 1644, 1912)],
+    heritageIds: ['qing-shengjing-palace-city-site'], eventIds: ['qing-founded', 'qing-enters-pass', 'yongli-regime-ended-1662'], claimIds: ['claim-hongtaiji-ruled-qing-fiftysixth', 'claim-shunzhi-ruled-qing-fiftysixth', 'claim-wu-sangui-participated-yongli-regime-ended-1662', 'claim-wu-sangui-served-shunzhi'], sourceIds: modernSources,
     uncertaintyNote: '1636年改国号不等于已控制明朝全境；入关、迁京与后续各地归属是不同阶段，盛京遗产也需与后金赫图阿拉分开。',
   }),
   detail({
@@ -324,8 +324,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'khitan', perspectiveSummary: '辽由契丹部落联盟与耶律阿保机的汗权整合发展而来，实行五京制度，上京临潢府是核心首都而非唯一政治空间。',
     foundationProcess: ['耶律阿保机整合契丹部落并建立稳定的君主权力。', '916年称帝，辽政权进入王朝阶段。', '辽以五京制度管理多区域，政治中心随皇帝巡幸和区域治理而分布。'],
     turningPoints: [turn(916, '辽建立', '耶律阿保机称帝，契丹政权进入辽朝阶段。', 'liao-founded'), turn(947, '国号与区域秩序调整', '辽在中原政治竞争中的角色扩大。'), turn(1007, '中京建设', '五京体系进一步制度化，区域首都功能分化。')],
-    principalFigureIds: ['yelu-abaoji'], capitalPhases: [capital('liao_shangjing', 916, 1125, 'primary', 'formal', '上京临潢府；今内蒙古巴林左旗一带'), capital('liao_dongjing', 916, 1125, 'secondary', 'formal', '东京辽阳府；今辽宁辽阳一带'), capital('liao_nanjing', 916, 1125, 'secondary', 'formal', '南京析津府；今北京一带')],
-    heritageIds: ['liao-shangjing-city-site'], eventIds: ['liao-founded'], claimIds: [], sourceIds: modernSources,
+    principalFigureIds: ['yelu-abaoji'], capitalPhases: [capital('liao_shangjing', 916, 1125, 'primary', 'formal', '上京临潢府；今内蒙古巴林左旗一带'), capital('liao_dongjing', 916, 1125, 'secondary', 'formal', '东京辽阳府；今辽宁辽阳一带'), capital('liao_nanjing', 916, 1125, 'secondary', 'formal', '南京析津府；今北京一带'), capital('liao_zhongjing', 1007, 1125, 'secondary', 'formal', '中京大定府；今内蒙古宁城县大明镇一带'), capital('liao_xijing', 916, 1125, 'secondary', 'formal', '西京大同府；今山西大同一带')],
+    heritageIds: ['liao-shangjing-city-site', 'liao-dongjing-city-site', 'liao-nanjing-city-site', 'liao-zhongjing-city-site', 'liao-xijing-city-site'], eventIds: ['liao-founded'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '辽国号、契丹国号及五京制度存在阶段差异；上京为核心首都但不排斥多中心治理，辽上京遗址不等于辽全境或全部五京遗存。',
   }),
   detail({
@@ -523,9 +523,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'ming_southern', perspectiveSummary: '南明是明廷北方崩解后在南方形成的多个延续明统政权体系，南京、福州、广州、肇庆对应不同阶段，不能指定一个覆盖全期的单一首都。',
     foundationProcess: ['1644年前后明宗室、官僚和地方军政力量在南方重建明统。', '弘光南京、隆武福州、绍武广州、永历肇庆等阶段先后或并立形成，南明是后世合称。', '各阶段的合法性、人物关系、联盟和实际控制范围均有差异。'],
-    turningPoints: [turn(1644, '南明政权体系形成', '明朝北京失守后，南方多个政权延续明统。', 'southern-ming-founded'), turn(1644, '弘光南京阶段', '朱由崧在南京建立弘光阶段朝廷。', 'hongguang-nanjing-founded'), turn(1645, '隆武福州阶段', '朱聿键在福州即位，政治中心转入福建。', 'longwu-fuzhou-founded'), turn(1646, '绍武广州阶段', '朱聿鐭在广州即位，与肇庆永历同期并立。', 'shaowu-guangzhou-founded'), turn(1646, '永历肇庆阶段', '朱由榔在肇庆即位，永历成为持续时间最长的主要阶段。', 'yongli-zhaoqing-founded'), turn(1662, '南明主要阶段终结', '永历政权覆亡，南明体系的主要政治延续结束。')],
+    turningPoints: [turn(1644, '南明政权体系形成', '明朝北京失守后，南方多个政权延续明统。', 'southern-ming-founded'), turn(1644, '弘光南京阶段', '朱由崧在南京建立弘光阶段朝廷。', 'hongguang-nanjing-founded'), turn(1645, '隆武福州阶段', '朱聿键在福州即位，政治中心转入福建。', 'longwu-fuzhou-founded'), turn(1646, '绍武广州阶段', '朱聿鐭在广州即位，与肇庆永历同期并立。', 'shaowu-guangzhou-founded'), turn(1646, '永历肇庆阶段', '朱由榔在肇庆即位，永历成为持续时间最长的主要阶段。', 'yongli-zhaoqing-founded'), turn(1662, '南明主要阶段终结', '永历政权覆亡，南明体系的主要政治延续结束。', 'yongli-regime-ended-1662')],
     principalFigureIds: ['zhu-yousong', 'shi-kefa', 'gao-hongtu', 'zhu-yujian', 'zheng-zhi-long', 'huang-daozhou', 'zhu-yuyue', 'su-guansheng', 'zhu-youlang', 'qu-shisi'], capitalPhases: [capital('yingtian', 1644, 1645, 'primary', 'actual', '南京弘光阶段性中心，今江苏省南京市。'), capital('fuzhou', 1645, 1646, 'temporary', 'actual', '福州隆武阶段性中心，今福建省福州市。'), capital('guangzhou', 1646, 1647, 'temporary', 'actual', '广州绍武短期阶段性中心，今广东省广州市。'), capital('zhaoqing', 1646, 1647, 'temporary', 'actual', '肇庆永历初期阶段性中心，今广东省肇庆市。')],
-    heritageIds: ['nanming-yingtian-imperial-city', 'nanming-fuzhou-xinggong-site', 'shaowu-junchen-tomb', 'nanming-yongli-zhaoqing-palace'], eventIds: ['southern-ming-founded', 'hongguang-nanjing-founded', 'longwu-fuzhou-founded', 'shaowu-guangzhou-founded', 'yongli-zhaoqing-founded'], claimIds: [], sourceIds: [...modernSources, 'southern-ming-overview', 'southern-ming-hongguang', 'southern-ming-longwu', 'southern-ming-shaowu', 'southern-ming-yongli', 'ming-shi-vol120-southern-ming'],
+    heritageIds: ['nanming-yingtian-imperial-city', 'nanming-fuzhou-xinggong-site', 'shaowu-junchen-tomb', 'nanming-yongli-zhaoqing-palace'], eventIds: ['southern-ming-founded', 'hongguang-nanjing-founded', 'longwu-fuzhou-founded', 'shaowu-guangzhou-founded', 'yongli-zhaoqing-founded', 'yongli-regime-ended-1662'], claimIds: ['claim-zhu-youlang-participated-yongli-regime-ended-1662'], sourceIds: [...modernSources, 'southern-ming-overview', 'southern-ming-hongguang', 'southern-ming-longwu', 'southern-ming-shaowu', 'southern-ming-yongli', 'ming-shi-vol120-southern-ming'],
     uncertaintyNote: '南明是多个并立阶段的后世合称，南京、福州、广州、肇庆只能作为已登记的阶段性中心；明故宫、福州城市空间、绍武君臣墓和肇庆万寿宫关联遗产均需区分原始年代、后世叠加与现代保护状态。',
   }),
   detail({
@@ -572,8 +572,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'qin_state', perspectiveSummary: '秦国是统一前的诸侯政权，经历雍、咸阳等关中政治中心阶段；其制度积累与前221年秦帝国建立必须分开叙述。',
     foundationProcess: ['秦嬴氏长期经营关中西部和陇西边地。', '约前770年秦列为诸侯，进入本项目采用的秦国传统分期。', '晚期以咸阳为核心的改革、扩张为秦帝国统一奠定基础。'],
     turningPoints: [turn(-770, '秦进入诸侯分期', '秦襄公列为诸侯，秦国获得更明确的诸侯身份。', 'qin-state-founded-eighth-batch'), turn(-659, '迁都雍', '秦的政治中心在关中西部进一步稳定。'), turn(-350, '咸阳阶段', '秦国晚期经营咸阳并推进变法与扩张。')],
-    principalFigureIds: ['qin-mugong', 'qin-xiaogong'], capitalPhases: [capital('changan', -770, -351, 'secondary', 'formal', '秦早期以雍为中心，今长安区域作关中近似参照。'), capital('xianyang', -350, -222, 'primary', 'formal', '秦国晚期咸阳，今陕西省咸阳市。')],
-    heritageIds: ['xianyang-qin-state-palace-site'], eventIds: ['qin-state-founded-eighth-batch', 'qin-xianyang-capital'], claimIds: [], sourceIds: modernSources,
+    principalFigureIds: ['qin-xiangong', 'qin-mugong', 'qin-xiaogong'], capitalPhases: [capital('changan', -770, -351, 'secondary', 'formal', '秦早期以雍为中心，今长安区域作关中近似参照。'), capital('xianyang', -350, -222, 'primary', 'formal', '秦国晚期咸阳，今陕西省咸阳市。')],
+    heritageIds: ['xianyang-qin-state-palace-site'], eventIds: ['qin-state-founded-eighth-batch', 'qin-xianyang-capital'], claimIds: ['claim-qin-xiangong-participated-qin-state-founded-eighth-batch', 'claim-qin-xiangong-ruled-qin-state', 'claim-qin-xiaogong-child-qin-xiangong'], sourceIds: modernSources,
     uncertaintyNote: '前770年是传统分期节点，秦国早期都邑和雍的现代对应存在概略性；咸阳晚期遗址与秦帝国层叠压，不能用帝国疆域或宫城反推秦国早期状态。',
   }),
   detail({

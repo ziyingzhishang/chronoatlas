@@ -32,6 +32,7 @@ export const sourceNotes: SourceNote[] = [
   {id:'taiping-yulan-southern-liang-ledu',title:'《太平御览》卷一二六·南凉乐都材料',authorOrInstitution:'李昉等编',urlOrCitation:'https://wk.100ke.info/zh/太平御覽_%28四庫全書本%29/卷0126',scope:'南凉迁徙至乐都的后出文献引文',note:'用于支持乐都作为南凉阶段性政治中心的文献记忆；属于后出类书引文，不单独证明今日具体城址或现存建筑。'},
   {id:'wang-mang-life-chronology',title:'王莽生卒年编年资料',authorOrInstitution:'中国百科网',urlOrCitation:'https://www.zgbk.com/ecph/words?ID=554080&SiteID=1',scope:'王莽前45年至23年生卒与新朝统治阶段',note:'用于补充王莽完整生卒年；政权评价仍与人物年代字段分开处理。'},
   {id:'qin-mugong-chronology',title:'《史记·秦本纪》及秦国君主年表',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/qin-ben-ji',scope:'秦穆公前683年至前621年传统生卒年与在位阶段',note:'秦穆公生年采用传统年表口径，标注为传统纪年，不把诸侯国时期等同于秦帝国时期。'},
+  {id:'shiji-qin-benji',title:'《史记·秦本纪》秦襄公条目',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/qin-ben-ji',scope:'秦襄公护送周平王东迁、列为诸侯及秦国早期政治谱系',note:'用于秦襄公身份、约前770年列侯节点和早期秦国君统；不据此推导咸阳或秦帝国时期疆域。'},
   {id:'nanzhao-lineage-chronology',title:'南诏王世系与生卒年整理',authorOrInstitution:'山西大学学位论文数据库',urlOrCitation:'https://ygx.sxu.edu.cn/db/%E5%AD%A6%E4%BD%8D/Y1820630.pdf',scope:'异牟寻约754年至808年生卒及南诏王位承接',note:'用于补充异牟寻的综合年代；出生年采用后出年表口径，需与在位区间分层展示。'},
   {id:'tanghuiyao-vol30-daming-palace',title:'《唐会要》卷三十·大明宫',authorOrInstitution:'王溥等',urlOrCitation:'https://zh.wikisource.org/zh/唐會要/卷030',scope:'贞观八年营永安宫、贞观九年改名大明宫及龙朔年间高宗重修',note:'用于区分634年早期营建、635年改名和662—663年高宗重建完成；不把不同营建阶段压缩为同一完成节点。'},
   {id:'erlitou-official',title:'二里头遗址与二里头文化官方资料',authorOrInstitution:'国家发展改革委／洛阳市人民政府',urlOrCitation:'https://www.ndrc.gov.cn/xwdt/ztzl/dyhgjwhgy/202209/t20220920_1335799_ext.html',scope:'夏代相关考古文化核心定位',note:'用于D级文化核心参照，不据此推导夏代国家边界。'},
@@ -253,6 +254,14 @@ export const sourceNotes: SourceNote[] = [
     urlOrCitation: 'https://zh.wikisource.org/zh-hans/%E6%98%8E%E5%8F%B2_%28%E5%9B%9B%E5%BA%AB%E5%85%A8%E6%9B%B8%E6%9C%AC%29/%E5%8D%B7120',
     scope: '唐王、桂王及南明宗室谱系、即位与政权阶段的传统文献参照',
     note: '作为人物与宗室谱系的文献来源；传记叙述与现代政权边界、首都范围分开使用。',
+  },
+  {
+    id: 'yongli-demise-study',
+    title: '永历帝缅甸阶段与昆明终结研究',
+    authorOrInstitution: '历史研究资料',
+    urlOrCitation: '永历帝缅甸阶段、清军接收押解与昆明终结的专题研究参照',
+    scope: '1661—1662年阿瓦区域、清军接收押解与昆明终结的地点和责任分层',
+    note: '用于区分区域避难、缅方交付、清军押解与昆明处置，不将多阶段过程压缩为单一精确地点或无争议个人责任。',
   },
   {
     id: 'fuzhou-longwu-site',

@@ -89,7 +89,7 @@ describe('round 106 alliance/conflict boundary audit', () => {
   it('closes exactly the two directly evidenced alliance gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(71);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(73);
     for (const candidate of integrated) {
       expect(report.requiredMissingByCategory.allianceConflict).not.toContain(candidate.subjectId);
       expect(report.requiredMissingByCategory.allianceConflict).not.toContain(candidate.objectId);

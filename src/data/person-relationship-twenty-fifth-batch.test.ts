@@ -14,7 +14,7 @@ const selectedPeople = [
   'qi-we-wang',
   'chu-we-wang',
   'yan-zhaowang',
-  'qin-xiaogong',
+  'qin-xiangong',
 ] as const;
 
 const expectedEventRelations = [
@@ -24,7 +24,7 @@ const expectedEventRelations = [
   ['qi-we-wang', 'participated-in', 'qi-warring-founded-eighth-batch'],
   ['chu-we-wang', 'participated-in', 'chu-warring-founded-eighth-batch'],
   ['yan-zhaowang', 'participated-in', 'yan-warring-founded-eighth-batch'],
-  ['qin-xiaogong', 'participated-in', 'qin-state-founded-eighth-batch'],
+  ['qin-xiangong', 'participated-in', 'qin-state-founded-eighth-batch'],
 ] as const;
 
 const expectedPersonRelations = [

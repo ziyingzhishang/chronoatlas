@@ -23,7 +23,7 @@ const targetConsequences = {
 const targetParticipantNotes = {
   'an-lushan-rebellion': { personId: 'an-lushan', note: '安禄山对应755年起兵节点，不代表763年主要叛乱结束后的史思明、史朝义等后续叛军阶段；叛乱首领与战后藩镇承接需分开。' },
   'chu-han-contention': { personId: 'liu-bang', note: '刘邦代表汉方核心主线，不覆盖项羽一方、诸侯分封或楚汉战争全部参与者。' },
-  'qin-state-founded-eighth-batch': { personId: 'qin-mugong', note: '秦穆公晚于约前770年的列侯节点，本条只用其代表秦国后续扩张与国家整合，不作为秦国传统分期起点的当事人。' },
+  'qin-state-founded-eighth-batch': { personId: 'qin-xiangong', note: '秦襄公是约前770年列侯节点的直接人物；该节点不等于秦国已完成关中整合。' },
   'xia-early-founded-eighth-batch': { personId: 'yu-the-great', note: '禹属于传统夏代建政叙事的核心人物，不以传说人物证明约前2070年存在可精确核验的单日建国。' },
   'shang-founded-eighth-batch': { personId: 'wu-ding', note: '武丁属于晚商甲骨文材料较丰富的代表君主，不把其统治前推为约前1600年的商代建政者。' },
 } as const;

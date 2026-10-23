@@ -2150,6 +2150,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1646年肇庆是永历初期政治中心；后续迁都、军镇联盟和西南控制范围不能前推到肇庆即位节点。',
   },
   {
+    eventId: 'yongli-regime-ended-1662',
+    participants: [
+      { personId: 'zhu-youlang', role: '永历帝及永历政权名义君主', relationType: 'direct', note: '朱由榔在昆明终结，标志永历政权主要政治延续结束。' },
+      { personId: 'wu-sangui', role: '清方进缅、接收并押解永历帝的主要将领', relationType: 'direct', note: '不将军事追捕、缅方交付、押解和昆明处置的全部细节视为同等确定。' },
+    ],
+    polityIds: ['ming_southern', 'qing'],
+    causes: ['永历政权在西南的军事与政治网络瓦解后退入缅甸。', '清军进缅以及缅方交付改变了永历帝的避难状态。'],
+    consequences: ['1662年昆明终结标志南明主要政治延续结束。', '清廷在云南的控制进一步制度化，但永历终结不能代替其他南明地方力量的独立结局。'],
+    phases: [
+      { label: '缅甸避难与清军进缅', startYear: 1659, endYear: 1661, summary: '永历帝及其随行力量退入缅甸，清军推进至缅甸方向。' },
+      { label: '缅甸交付与押解', startYear: 1661, endYear: 1662, summary: '永历帝在阿瓦区域及其周边被缅方交付清军并押解回云南。' },
+      { label: '昆明终结', startYear: 1662, endYear: 1662, summary: '朱由榔在昆明遇害，永历政权主要政治延续终结。' },
+    ],
+    locationIds: ['ava', 'kunming'],
+    relatedEventIds: ['yongli-zhaoqing-founded'],
+    sourceIds: ['southern-ming-yongli', 'ming-shi-vol120-southern-ming', 'yongli-demise-study'],
+    uncertaintyNote: '“具体俘获地点、缅方交付方式、押解路线及昆明处置责任”应分别核实；本节点只在年份级和城市／区域级表达确定内容。',
+  },
+  {
     eventId: 'xiongnu-modu-assumes-chanyu',
     participants: [{ personId: 'modu-chanyu', role: '杀父头曼并自立为单于的继承者', relationType: 'direct', note: '头曼尚无独立人物实体，本节点只记录冒顿的即位与权力重组。' }],
     polityIds: ['xiongnu'],
@@ -2422,8 +2441,9 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'qin-state-founded-eighth-batch',
     participants: [
-      { personId: 'qin-mugong', role: '秦国早期扩张与国家整合的代表君主', note: '秦穆公晚于约前770年的列侯节点；本条用其代表秦国早期发展，不能视为秦国建政当年的当事人；秦穆公晚于约前770年的列侯节点，本条只用其代表秦国后续扩张与国家整合，不作为秦国传统分期起点的当事人。限秦穆公时期的后续扩张与国家整合，不代表约前770年护送东迁的秦襄公或列侯节点。' },
-      { personId: 'qin-xiaogong', role: '战国变法与秦国军政重整阶段的君主', note: '秦孝公远晚于约前770年的列侯节点，本条用其代表秦国后续变法和强国阶段，不把其活动前推为秦国传统分期起点。' },
+      { personId: 'qin-xiangong', role: '护送周平王东迁并获列为诸侯的秦国君主', relationType: 'direct', note: '秦襄公是约前770年列侯节点的直接人物；该节点不等于秦国已完成关中整合。' },
+      { personId: 'qin-mugong', role: '秦国后续扩张与国家整合的代表君主', relationType: 'contextual', note: '秦穆公晚于约前770年的列侯节点，本条仅作为后续秦国发展阶段的观察人物。' },
+      { personId: 'qin-xiaogong', role: '秦国后续变法与军政重整的代表君主', relationType: 'contextual', note: '秦孝公远晚于约前770年的列侯节点，本条仅作为后续强国阶段的观察人物。' },
     ],
     polityIds: ['qin_state'],
     causes: ['秦嬴氏长期经营关中西部边地并积累军事资源。', '周平王东迁后秦襄公列为诸侯，秦获得更明确的诸侯身份。'],
@@ -2438,7 +2458,7 @@ const details: HistoricalEventDetail[] = [
       { label: '雍城阶段承接', startYear: -677, endYear: -383, summary: '秦在关中西部经营雍城等政治中心，秦国都邑迁移与国家扩展是连续过程，不能回填为单一建国时点。' },
       { label: '列侯名义与秦国形成分离', startYear: -770, endYear: -350, summary: '秦列为诸侯是传统分期与名义身份节点，秦氏经营、都邑迁移和国家整合仍跨越后续阶段；不能据此推出前770年已有帝国式直接控制。' },
     ],
-    locationIds: ['xianyang'], relatedEventIds: ['zhou-eastward', 'partition-jin', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    locationIds: ['changan'], relatedEventIds: ['zhou-eastward', 'partition-jin', 'qin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'shiji-qin-benji'],
     uncertaintyNote: '约前770年是列为诸侯和传统分期约年，不是秦氏政治实体首次出现；秦国与前221年秦帝国必须保持节点分离。',
   },
   {

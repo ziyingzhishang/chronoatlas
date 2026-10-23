@@ -12,6 +12,7 @@ const eventParticipationReviewBoundary = [
   'yuan-hong',
   'tuoba-tao',
   'yuwen-yong',
+  'qin-mugong',
   'mongke',
 ] as const;
 
@@ -20,8 +21,8 @@ describe('eighty-second batch relationship audit', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(24);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(71);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(108);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(73);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });
 

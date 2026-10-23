@@ -17,6 +17,7 @@ const reviewBoundary = [
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
+  { personId: 'qin-mugong', eventIds: [] },
   { personId: 'mongke', eventIds: ['mongol-founded'] },
 ] as const;
 

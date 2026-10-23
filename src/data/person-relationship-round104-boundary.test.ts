@@ -17,6 +17,7 @@ const eventParticipationGaps = [
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '元宏出生于北魏建政之后，不能回填为建政参与者。' },
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '拓跋焘出生于北魏建政之后，不能以继承统治关系替代参与字段。' },
   { personId: 'yuwen-yong', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
+  { personId: 'qin-mugong', eventIds: [], reasonCode: 'no-direct-role', reason: '秦穆公晚于秦襄公列侯节点，当前仅作为秦国后续发展阶段的上下文人物。' },
   { personId: 'mongke', eventIds: ['mongol-founded'], reasonCode: 'born-after-event', reason: '蒙哥出生于蒙古汗国形成之后，不能把后续汗位继承阶段回填为形成事件参与。' },
 ] as const;
 
@@ -83,6 +84,7 @@ describe('round one hundred four person relationship boundary audit', () => {
       ['yuan-hong', 'born-after-event'],
       ['tuoba-tao', 'born-after-event'],
       ['yuwen-yong', 'no-event-candidate'],
+      ['qin-mugong', 'no-direct-role'],
       ['mongke', 'born-after-event'],
     ]);
 
@@ -135,8 +137,8 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(71);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(9);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(108);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(73);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
   });
 });
