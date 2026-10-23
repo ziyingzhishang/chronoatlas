@@ -204,4 +204,18 @@ describe('PersonDetail', () => {
     expect(screen.getByText('Alliance / conflict')).toBeInTheDocument();
     localStorage.removeItem('history-locale');
   });
+
+  it('makes URL-backed person evidence keyboard-navigable', () => {
+    const detail = getPersonDetail('li-shimin')!;
+    render(<LocaleProvider><PersonDetail
+      person={person}
+      detail={{ ...detail, sourceIds: ['xian-local-chronicle-western-han-mausoleums'] }}
+      year={620}
+      claims={[]}
+    /></LocaleProvider>);
+
+    const sourceLink = screen.getByRole('link', { name: '西安市志·西汉帝陵条目' });
+    expect(sourceLink).toHaveAttribute('href', 'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas/201803/P020250630548327427771.pdf');
+    expect(sourceLink).toHaveAttribute('target', '_blank');
+  });
 });

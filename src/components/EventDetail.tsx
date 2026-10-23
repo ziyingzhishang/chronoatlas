@@ -104,7 +104,9 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
       <h4>{t('来源')}</h4>
       <ul>{detail.sourceIds.map((sourceId) => {
         const source = sourceById[sourceId];
-        return <li key={sourceId}>{source?.urlOrCitation ? <a href={source.urlOrCitation} target="_blank" rel="noreferrer">{t(source.title)}</a> : t(source?.title ?? sourceId)}</li>;
+        const citation = source?.urlOrCitation;
+        const isHttpUrl = citation?.startsWith('http://') || citation?.startsWith('https://');
+        return <li key={sourceId}>{source && isHttpUrl ? <a href={citation} target="_blank" rel="noreferrer">{t(source.title)}</a> : t(source?.title ?? sourceId)}</li>;
       })}</ul>
       {detail.uncertaintyNote && <p className="detail-note"><strong>{t('不确定性')}</strong>：{t(detail.uncertaintyNote)}</p>}
     </section>

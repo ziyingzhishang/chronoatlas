@@ -78,3 +78,19 @@ test('navigates every event detail relationship category', async () => {
     [{ type: 'event', id: 'sui-unification' }],
   ]);
 });
+
+test('keeps bibliographic citations as text instead of invalid links', () => {
+  render(<LocaleProvider><EventDetail event={event} detail={{
+    eventId: event.id,
+    causes: [],
+    consequences: [],
+    participants: [],
+    polityIds: [],
+    locationIds: [],
+    relatedEventIds: [],
+    sourceIds: ['zizhi-tongjian'],
+  }} /></LocaleProvider>);
+
+  expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
+  expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
+});

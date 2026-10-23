@@ -84,7 +84,10 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
     </section>
 
     <details className="event-sources" open><summary>{t('来源与考据')}</summary>
-      {sources.length > 0 ? sources.map((source) => <p key={source.id}><strong>{t(source.title)}</strong>{source.authorOrInstitution && <small>{t(source.authorOrInstitution)}</small>}{source.urlOrCitation && <small>{t(source.urlOrCitation)}</small>}</p>) : <p>{t('具体出处待补，本条不作为已核验史料。')}</p>}
+      {sources.length > 0 ? sources.map((source) => {
+        const isHttpUrl = source.urlOrCitation?.startsWith('http://') || source.urlOrCitation?.startsWith('https://');
+        return <p key={source.id}><strong>{isHttpUrl ? <a href={source.urlOrCitation} target="_blank" rel="noreferrer">{t(source.title)}</a> : t(source.title)}</strong>{source.authorOrInstitution && <small>{t(source.authorOrInstitution)}</small>}{source.urlOrCitation && !isHttpUrl && <small>{t(source.urlOrCitation)}</small>}</p>;
+      }) : <p>{t('具体出处待补，本条不作为已核验史料。')}</p>}
     </details>
     {detail.uncertaintyNote && <p className="uncertainty-note">{t('不确定性：')}{t(detail.uncertaintyNote)}</p>}
   </article>;
