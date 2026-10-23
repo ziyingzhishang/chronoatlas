@@ -78,7 +78,7 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
           <span> · {t(participant.role)}</span>
           {participant.note && <small>（{t(participant.note)}）</small>}
         </li>;
-      })}</ul> : <p className="detail-note">{t('暂无已收录参与者')}</p>}
+      })}</ul> : <p className="detail-note">{t('当前没有可核验参与人物')}；<a href="/data/knowledge-coverage.json" target="_blank" rel="noreferrer" aria-label={t('打开知识覆盖报告')}>{t('该缺口已记录在知识覆盖报告中')}</a>。</p>}
     </section>
 
     <section className="event-detail-section">
