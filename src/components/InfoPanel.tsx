@@ -44,20 +44,22 @@ const sourceYear = (year:number) => year===0 ? '0（来源边界值，非公元0
 const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `${sourceYear(from)}—${sourceYear(to)}`;
 const polityStudyEvents = [...historicalEvents, ...changanEvents].filter((event, index, all) => all.findIndex((candidate) => candidate.id === event.id) === index);
 const cityStudyEvents = polityStudyEvents;
+const uniquePolities = (items: typeof polities) => [...new Map(items.map((polity) => [polity.id, polity])).values()];
 
 export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
   const prose = (value:string) => locale==='en' && /[\u3400-\u9fff]/.test(value) && t(value)===value
     ? 'Verification note retained in the Chinese data record; consult the linked source for details.' : t(value);
   const listSeparator=locale==='en' ? ', ' : '、';
-  const selected = selectedEntity ? selectedEntity.type==='polity' ? state.activePolities.find(p=>p.id===selectedEntity.id) : selectedEntity.type==='place' ? state.places.find(p=>p.id===selectedEntity.id) : state.events.find(e=>e.id===selectedEntity.id) : undefined;
+  const allPolities = uniquePolities([...polities, ...state.activePolities]);
+  const selected = selectedEntity ? selectedEntity.type==='polity' ? allPolities.find(p=>p.id===selectedEntity.id) : selectedEntity.type==='place' ? state.places.find(p=>p.id===selectedEntity.id) : state.events.find(e=>e.id===selectedEntity.id) : undefined;
   const capital = selected && 'capitalPlaceId' in selected && selected.capitalPlaceId ? state.places.find(place=>place.id===selected.capitalPlaceId) : undefined;
   const currentCapitalTerms = selected && 'name' in selected ? activeCapitalRecords(state.year, selected.id) : [];
   const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalRecords(state.year).filter(record=>record.placeId===selected.id) : [];
   const studyView = selectedEntity?.type === 'polity'
-    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: polityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory, polityDetails })
+    ? buildPolityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: polityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory, polityDetails })
     : selectedEntity?.type === 'place'
-      ? buildCityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: cityStudyEvents, claims, capitalTerms: capitalHistory })
+      ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: cityStudyEvents, claims, capitalTerms: capitalHistory })
       : undefined;
   const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
 

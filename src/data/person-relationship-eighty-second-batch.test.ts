@@ -32,7 +32,7 @@ describe('eighty-second batch relationship audit', () => {
     for (const personId of eventParticipationReviewBoundary) {
       const coverage = report.byPersonId[personId].categories.eventParticipation;
       expect(coverage.status, personId).toBe('missing');
-      expect(coverage.evidenceIds, personId).toEqual([]);
+      expect(coverage.evidence.every((item) => item.kind === 'role'), personId).toBe(true);
       expect(coverage.relatedIds, personId).toEqual([]);
     }
   });

@@ -111,7 +111,17 @@ describe('PersonDetail', () => {
     expect(within(audit).getByText('事件参与')).toBeInTheDocument();
     expect(audit.querySelectorAll('[data-relationship-coverage-status]')).toHaveLength(4);
     expect(audit.querySelectorAll('.relationship-coverage-note')).toHaveLength(4);
+    expect(within(audit).getByText('直接关系证据 · claim:claim-li-shimin-ruled-tang')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
+  });
+
+  it('localizes relationship evidence labels in English', () => {
+    localStorage.setItem('history-locale', 'en');
+    render(<LocaleProvider><PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} /></LocaleProvider>);
+
+    expect(screen.getAllByRole('list', { name: 'Coverage evidence' }).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/Direct relationship evidence/).length).toBeGreaterThan(0);
+    localStorage.removeItem('history-locale');
   });
 
   it('shows directional, dated, sourced event participation and opens the event', () => {

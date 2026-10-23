@@ -99,3 +99,19 @@ test('opens the capital place detail from the polity study summary', async () =>
   expect(placeDrawer).toHaveClass('entity-drawer');
   expect(within(placeDrawer).getByRole('button', { name: '西安市' })).toBeInTheDocument();
 });
+
+test('opens an ended historical polity from the city study view in the 50vw entity drawer', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: '长安' }));
+
+  const cityDrawer = screen.getByRole('dialog', { name: '长安' });
+  const regimeBlock = within(cityDrawer).getByRole('heading', { name: '曾以此地为政治中心的政权' }).parentElement!;
+  await userEvent.click(within(regimeBlock).getByRole('button', { name: '隋' }));
+
+  const polityDrawer = screen.getByRole('dialog', { name: '隋' });
+  expect(polityDrawer).toHaveClass('entity-drawer', 'entity-drawer-polity');
+  expect(getComputedStyle(polityDrawer).width).toBe('50vw');
+  expect(within(polityDrawer).getByRole('heading', { name: '建立过程' })).toBeInTheDocument();
+});

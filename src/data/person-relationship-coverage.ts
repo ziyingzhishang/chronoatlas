@@ -28,6 +28,11 @@ import {
   type PersonRelationshipApplicabilityCatalog,
   type PersonRelationshipApplicabilityStatus,
 } from './person-relationship-applicability';
+import {
+  createPersonRelationshipEvidence,
+  uniquePersonRelationshipEvidence,
+  type PersonRelationshipEvidence,
+} from './person-relationship-evidence';
 
 export const personRelationshipCategoryKeys = personRelationshipApplicabilityCategoryKeys;
 export type PersonRelationshipCategory = typeof personRelationshipCategoryKeys[number];
@@ -37,6 +42,7 @@ export interface PersonRelationshipCategoryCoverage {
   status: PersonRelationshipCategoryStatus;
   applicabilityStatus: PersonRelationshipApplicabilityStatus;
   evidenceIds: string[];
+  evidence: PersonRelationshipEvidence[];
   relatedIds: string[];
   note: string;
 }
@@ -135,10 +141,10 @@ function emptyCategories(
   applicability: Record<PersonRelationshipCategory, PersonRelationshipApplicabilityStatus>,
 ): Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage> {
   return {
-    governance: { applicabilityStatus: applicability.governance, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 served、appointed、succeeded 或 ruled 关系。' },
-    kinship: { applicabilityStatus: applicability.kinship, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 parent、child、grandparent、grandchild、sibling 或 spouse 关系。' },
-    allianceConflict: { applicabilityStatus: applicability.allianceConflict, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到 ally 或 enemy 关系。' },
-    eventParticipation: { applicabilityStatus: applicability.eventParticipation, status: 'missing', evidenceIds: [], relatedIds: [], note: '未找到参与事件 claim 或事件详情参与记录。' },
+    governance: { applicabilityStatus: applicability.governance, status: 'missing', evidenceIds: [], evidence: [], relatedIds: [], note: '未找到 served、appointed、succeeded 或 ruled 关系。' },
+    kinship: { applicabilityStatus: applicability.kinship, status: 'missing', evidenceIds: [], evidence: [], relatedIds: [], note: '未找到 parent、child、grandparent、grandchild、sibling 或 spouse 关系。' },
+    allianceConflict: { applicabilityStatus: applicability.allianceConflict, status: 'missing', evidenceIds: [], evidence: [], relatedIds: [], note: '未找到 ally 或 enemy 关系。' },
+    eventParticipation: { applicabilityStatus: applicability.eventParticipation, status: 'missing', evidenceIds: [], evidence: [], relatedIds: [], note: '未找到参与事件 claim 或事件详情参与记录。' },
   };
 }
 
@@ -199,7 +205,7 @@ function categoryCoverage(
     const category = categoryForPredicate(claim.predicate);
     if (!category) return;
     const entry = categories[category];
-    entry.evidenceIds.push(`claim:${claim.id}`);
+    entry.evidence.push(createPersonRelationshipEvidence('claim', claim.id));
     if (claim.subjectId === person.id && claim.objectId) entry.relatedIds.push(claim.objectId);
     if (claim.objectId === person.id) entry.relatedIds.push(claim.subjectId);
   });
@@ -209,13 +215,14 @@ function categoryCoverage(
       participant.personId === person.id && isDirectEventParticipant(participant)
     )))
     .forEach((detail) => {
-      categories.eventParticipation.evidenceIds.push(`event-detail:${detail.eventId}`);
+      categories.eventParticipation.evidence.push(createPersonRelationshipEvidence('event-detail', detail.eventId));
       categories.eventParticipation.relatedIds.push(detail.eventId);
     });
 
   personRelationshipCategoryKeys.forEach((category) => {
     const entry = categories[category];
-    entry.evidenceIds = unique(entry.evidenceIds);
+    entry.evidence = uniquePersonRelationshipEvidence(entry.evidence);
+    entry.evidenceIds = entry.evidence.map((item) => item.evidenceId);
     entry.relatedIds = unique(entry.relatedIds);
     if (notApplicable.has(category) || applicability[category].status === 'not-applicable') {
       entry.status = 'not-applicable';
@@ -258,10 +265,16 @@ function buildRecord(
       status: 'review' as const,
       rationale: '人物不在适用性目录中，必须人工复核。',
       evidenceIds: [],
+      evidence: [],
     },
   ])) as unknown as Record<PersonRelationshipCategory, { status: PersonRelationshipApplicabilityStatus; rationale: string }>;
   const coverage = categoryCoverage(person, catalog.claims, catalog.eventDetails, people, polities, events, notApplicable, applicabilityByCategory);
   const categories = coverage.categories;
+  personRelationshipCategoryKeys.forEach((category) => {
+    const roleEvidence = applicabilityRecord?.categories[category].evidence.filter((item) => item.kind === 'role') ?? [];
+    categories[category].evidence = uniquePersonRelationshipEvidence([...categories[category].evidence, ...roleEvidence]);
+    categories[category].evidenceIds = categories[category].evidence.map((item) => item.evidenceId);
+  });
   const missingCategoryKeys = personRelationshipCategoryKeys.filter((key) => categories[key].status === 'missing');
   const requiredMissingCategoryKeys = personRelationshipCategoryKeys.filter((key) => categories[key].status === 'missing' && categories[key].applicabilityStatus === 'required');
   const reviewCategoryKeys = personRelationshipCategoryKeys.filter((key) => categories[key].status === 'missing' && categories[key].applicabilityStatus === 'review');

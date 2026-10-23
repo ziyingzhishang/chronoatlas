@@ -35,8 +35,8 @@ describe('round 104 independent event-participation audit', () => {
       expect(decision.kind.length, `${decision.personId}: decision boundary`).toBeGreaterThan(0);
       expect(report.byPersonId[decision.personId].categories.eventParticipation.status, decision.personId)
         .toBe('missing');
-      expect(report.byPersonId[decision.personId].categories.eventParticipation.evidenceIds, decision.personId)
-        .toEqual([]);
+      expect(report.byPersonId[decision.personId].categories.eventParticipation.evidence.every((item) => item.kind === 'role'), decision.personId)
+        .toBe(true);
       expect(claims.some((claim) => (
         claim.subjectId === decision.personId && claim.predicate === 'participated-in'
       )), `${decision.personId}: participation claim`).toBe(false);

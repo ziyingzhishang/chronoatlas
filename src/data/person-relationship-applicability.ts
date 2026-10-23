@@ -2,6 +2,11 @@ import type { HistoricalClaim, HistoricalEventDetail, Person } from '../domain/t
 import { claims as defaultClaims } from './claims';
 import { eventDetails as defaultEventDetails } from './event-details';
 import { people as defaultPeople } from './people';
+import {
+  createPersonRelationshipEvidence,
+  uniquePersonRelationshipEvidence,
+  type PersonRelationshipEvidence,
+} from './person-relationship-evidence';
 
 export const personRelationshipApplicabilityCategoryKeys = [
   'governance',
@@ -17,6 +22,7 @@ export interface PersonRelationshipApplicabilityEntry {
   status: PersonRelationshipApplicabilityStatus;
   rationale: string;
   evidenceIds: string[];
+  evidence: PersonRelationshipEvidence[];
 }
 
 export interface PersonRelationshipApplicabilityRecord {
@@ -52,15 +58,11 @@ const governanceRolePattern = /皇帝|君主|国王|可汗|大汗|单于|汗|赞
 const politicalRolePattern = /皇帝|君主|国王|可汗|大汗|单于|汗|赞普|南诏王|苏丹|统治者|领袖|宰相|丞相|官员|大臣|刺史|政治家|权臣|元首|总统|国务卿|使节|代表|酋长|诸侯|摄政|宗室|继承者|改革者|建国者|军事|将领|军政|抗金|外交|谈判|叛乱|守城|留守|教廷/;
 const culturalRolePattern = /诗人|画家|词人|僧侣|译经家|史家|史学家|文学家|学者|思想家|书法家|艺术家|航海者/;
 
-function unique(values: readonly string[]): string[] {
-  return [...new Set(values)].sort();
-}
-
-function roleEvidence(person: Person): string[] {
+function roleEvidence(person: Person): PersonRelationshipEvidence[] {
   const roles = person.roles ?? [];
   return roles.length > 0
-    ? roles.map((role) => `role:${person.id}:${role}`)
-    : [`person:${person.id}:role-review`];
+    ? roles.map((role) => createPersonRelationshipEvidence('role', `${person.id}:${role}`))
+    : [createPersonRelationshipEvidence('role', `${person.id}:role-review`)];
 }
 
 function hasPersonClaim(claim: HistoricalClaim, personId: string, predicates: Set<string>): boolean {
@@ -72,24 +74,32 @@ function claimEvidence(
   personId: string,
   claims: HistoricalClaim[],
   predicates: Set<string>,
-): string[] {
+): PersonRelationshipEvidence[] {
   return claims
     .filter((claim) => hasPersonClaim(claim, personId, predicates))
-    .map((claim) => `claim:${claim.id}`);
+    .map((claim) => createPersonRelationshipEvidence('claim', claim.id));
 }
 
-function eventEvidence(personId: string, eventDetails: HistoricalEventDetail[]): string[] {
+function eventEvidence(personId: string, eventDetails: HistoricalEventDetail[]): PersonRelationshipEvidence[] {
   return eventDetails
-    .filter((detail) => detail.participants.some((participant) => participant.personId === personId))
-    .map((detail) => `event-detail:${detail.eventId}`);
+    .filter((detail) => detail.participants.some((participant) => (
+      participant.personId === personId && (participant.relationType === undefined || participant.relationType === 'direct')
+    )))
+    .map((detail) => createPersonRelationshipEvidence('event-detail', detail.eventId));
 }
 
 function entry(
   status: PersonRelationshipApplicabilityStatus,
   rationale: string,
-  evidenceIds: string[],
+  evidence: PersonRelationshipEvidence[],
 ): PersonRelationshipApplicabilityEntry {
-  return { status, rationale, evidenceIds: unique(evidenceIds) };
+  const uniqueEvidence = uniquePersonRelationshipEvidence(evidence);
+  return {
+    status,
+    rationale,
+    evidenceIds: uniqueEvidence.map((item) => item.evidenceId),
+    evidence: uniqueEvidence,
+  };
 }
 
 function buildRecord(
@@ -103,10 +113,10 @@ function buildRecord(
   const governanceEvidence = claimEvidence(person.id, claims, governancePredicates);
   const kinshipEvidence = claimEvidence(person.id, claims, kinshipPredicates);
   const allianceConflictEvidence = claimEvidence(person.id, claims, allianceConflictPredicates);
-  const participationEvidence = unique([
+  const participationEvidence = [
     ...claimEvidence(person.id, claims, new Set(['participated-in'])),
     ...eventEvidence(person.id, eventDetails),
-  ]);
+  ];
   const hasGovernanceRole = roles.some((role) => governanceRolePattern.test(role));
   const hasPoliticalRole = roles.some((role) => politicalRolePattern.test(role));
 

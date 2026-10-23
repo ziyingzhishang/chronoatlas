@@ -9,6 +9,7 @@ import {
   type PersonRelationshipCategory,
   type PersonRelationshipCategoryCoverage,
 } from '../data/person-relationship-coverage';
+import type { PersonRelationshipEvidenceKind } from '../data/person-relationship-evidence';
 import { useLocale } from '../i18n/locale';
 
 export interface PersonDetailProps {
@@ -101,10 +102,19 @@ function RelationshipCoverageSummary({ record, t }: { record: { categories: Reco
           <span className="relationship-coverage-category">{t(relationshipCoverageLabels[category])}</span>
           <strong data-relationship-coverage-status={status}>{t(relationshipCoverageStatusLabel(status))}</strong>
           <span className="relationship-coverage-note">{t(coverage.note)}</span>
+          {coverage.evidence.length > 0 && <ul className="relationship-coverage-evidence" aria-label={t('覆盖证据')}>
+            {coverage.evidence.map((evidence) => <li key={evidence.evidenceId} data-relationship-evidence-kind={evidence.kind}>
+              {t(relationshipEvidenceKindLabel(evidence.kind))} · {evidence.evidenceId}
+            </li>)}
+          </ul>}
         </li>;
       })}
     </ul>
   </section>;
+}
+
+function relationshipEvidenceKindLabel(kind: PersonRelationshipEvidenceKind) {
+  return kind === 'claim' ? '直接关系证据' : kind === 'event-detail' ? '事件详情参与证据' : '适用性角色依据';
 }
 
 type RelationshipCoverageStatus = 'covered' | 'required' | 'review' | 'not-applicable';

@@ -40,6 +40,7 @@ describe('StudyRelationsPanel integration', () => {
     expect(screen.getByText('City perspective')).toBeInTheDocument();
     expect(screen.getByText('Related events')).toBeInTheDocument();
     expect(screen.getByText('Heritage and city memory')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: 'Sui' })).toBeInTheDocument();
     expect(screen.getAllByText(/Daming Palace Site|大明宫遗址/).length).toBeGreaterThanOrEqual(1);
     localStorage.removeItem('history-locale');
   });

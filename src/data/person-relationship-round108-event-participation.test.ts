@@ -101,7 +101,7 @@ describe('round one hundred eight event-participation evidence audit', () => {
       }
 
       expect(report.byPersonId[personId].categories.eventParticipation.status, `${personId}: coverage status`).toBe('missing');
-      expect(report.byPersonId[personId].categories.eventParticipation.evidenceIds, `${personId}: evidence`).toEqual([]);
+      expect(report.byPersonId[personId].categories.eventParticipation.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
       expect(report.byPersonId[personId].categories.eventParticipation.relatedIds, `${personId}: related events`).toEqual([]);
     }
   });

@@ -15,6 +15,23 @@ describe('person relationship coverage audit', () => {
     expect(report.byPersonId['li-shimin'].categories.eventParticipation.status).toBe('covered');
   });
 
+  it('exposes the evidence type and stable evidence id for each covered category', () => {
+    const report = buildPersonRelationshipCoverageReport();
+    const liShimin = report.byPersonId['li-shimin'];
+    const xuanZang = report.byPersonId['xuan-zang'];
+
+    expect(liShimin.categories.governance.evidence).toContainEqual({
+      kind: 'claim',
+      id: 'claim-li-shimin-ruled-tang',
+      evidenceId: 'claim:claim-li-shimin-ruled-tang',
+    });
+    expect(xuanZang.categories.eventParticipation.evidence).toContainEqual({
+      kind: 'event-detail',
+      id: 'xuanzang-at-ximing-658',
+      evidenceId: 'event-detail:xuanzang-at-ximing-658',
+    });
+  });
+
   it('does not call a person complete when only a generic relation is present', () => {
     const report = buildPersonRelationshipCoverageReport();
     const banGu = report.byPersonId['ban-gu'];
@@ -101,9 +118,9 @@ describe('person relationship coverage audit', () => {
     }));
     expect(liZhi.categories.eventParticipation).toMatchObject({
       status: 'missing',
-      evidenceIds: [],
       relatedIds: [],
     });
+    expect(liZhi.categories.eventParticipation.evidence.filter((item) => item.kind === 'event-detail')).toEqual([]);
     expect(report.requiredMissingByCategory.eventParticipation).toContain('li-zhi');
     expect(liZhi.categories.eventParticipation.relatedIds).not.toContain('ximing-temple-built');
 

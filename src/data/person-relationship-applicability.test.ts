@@ -28,6 +28,21 @@ describe('person relationship applicability catalog', () => {
     expect(record.categories.kinship.status).toBe('review');
     expect(record.categories.kinship.rationale).toMatch(/无法|复核/);
     expect(record.categories.kinship.evidenceIds).toContain('role:xuan-zang:僧侣');
+    expect(record.categories.kinship.evidence).toContainEqual({
+      kind: 'role',
+      id: 'xuan-zang:僧侣',
+      evidenceId: 'role:xuan-zang:僧侣',
+    });
+  });
+
+  it('labels event-detail evidence separately from role evidence', () => {
+    const record = personRelationshipApplicability.byPersonId['xuan-zang'];
+
+    expect(record.categories.eventParticipation.evidence).toContainEqual({
+      kind: 'event-detail',
+      id: 'xuanzang-at-ximing-658',
+      evidenceId: 'event-detail:xuanzang-at-ximing-658',
+    });
   });
 
   it('records a defensible not-applicable governance category for a purely cultural role', () => {

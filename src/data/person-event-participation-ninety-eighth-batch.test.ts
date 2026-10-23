@@ -60,7 +60,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
 
       const coverage = report.byPersonId[personId].categories.eventParticipation;
       expect(coverage.status, `${personId}: coverage status`).toBe('missing');
-      expect(coverage.evidenceIds, `${personId}: evidence`).toEqual([]);
+      expect(coverage.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
       expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
       expect(reason.length, `${personId}: audit reason`).toBeGreaterThan(0);
     }
