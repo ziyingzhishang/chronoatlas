@@ -115,11 +115,11 @@ describe('person time review', () => {
     expect(record.explanation).toContain('暂不定位');
   });
 
-  it('audits all 43 currently uncertain people without inventing years', () => {
+  it('audits all 46 currently uncertain people without inventing years', () => {
     const report = buildPersonTimeCoverageReport();
     const uncertain = report.records.filter((record) => record.status !== 'confirmed');
 
-    expect(uncertain).toHaveLength(43);
+    expect(uncertain).toHaveLength(46);
     expect(report.totalPeople).toBeGreaterThan(41);
     expect(report.statusCounts.confirmed + report.statusCounts.approximate + report.statusCounts.unknown)
       .toBe(report.totalPeople);

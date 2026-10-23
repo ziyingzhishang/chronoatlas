@@ -34,6 +34,6 @@ describe('round 103 Goguryeo governance relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.byPersonId.gwanggaeto.categories.governance.status).toBe('covered');
     expect(report.byPersonId['jangsu-goguryeo'].categories.governance.status).toBe('covered');
-    expect(report.requiredMissingByCategory.governance).toHaveLength(22);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(24);
   });
 });

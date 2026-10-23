@@ -10,7 +10,7 @@ import { sourceById } from './sources';
 
 const targets = [
   { polityId: 'qin', heritageId: 'qin-xianyang-imperial-palace-site', placeId: 'xianyang', eventIds: ['qin-unification'], personIds: ['qin-shi-huang'] },
-  { polityId: 'former_qin', heritageId: 'former-qin-changan-city-layer', placeId: 'changan', eventIds: ['former-qin-founded'], personIds: ['fu-jian'] },
+  { polityId: 'former_qin', heritageId: 'former-qin-changan-city-layer', placeId: 'changan', eventIds: ['former-qin-founded'], personIds: ['fu-jian-founder'] },
   { polityId: 'later_qin', heritageId: 'later-qin-changan-city-layer', placeId: 'changan', eventIds: ['later-qin-founded'], personIds: ['yao-chang'] },
   { polityId: 'gengshi', heritageId: 'gengshi-wanyang-city-layer', placeId: 'wan_nanyang', eventIds: ['gengshi-founded'], personIds: ['liu-xuan'] },
 ] as const;

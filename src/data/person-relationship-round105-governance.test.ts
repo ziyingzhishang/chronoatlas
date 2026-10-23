@@ -57,7 +57,7 @@ describe('round 105 governance relationship closure', () => {
     for (const [, personId] of expected) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');
     }
-    expect(report.requiredMissingByCategory.governance).toHaveLength(22);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(24);
     expect(report.requiredMissingByCategory.governance).toEqual(expect.arrayContaining([
       'zhang-qian',
       'ban-gu',

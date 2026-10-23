@@ -8,6 +8,7 @@ import { people } from './people';
 import { buildPersonRelationshipCoverageReport } from './person-relationship-coverage';
 
 const decisions = [
+  { personId: 'fu-jian', eventIds: ['former-qin-founded'], kind: 'temporal-or-context-boundary' },
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'], kind: 'temporal-or-context-boundary' },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'], kind: 'no-direct-role' },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], kind: 'temporal-or-context-boundary' },
@@ -70,7 +71,10 @@ describe('round 104 independent event-participation audit', () => {
     }
 
     expect(eventDetails.find((detail) => detail.eventId === 'daming-palace-built')?.participants)
-      .toEqual([]);
+      .toEqual(expect.arrayContaining([
+        expect.objectContaining({ personId: 'li-shimin', relationType: 'direct' }),
+        expect.objectContaining({ personId: 'li-yuan', relationType: 'contextual' }),
+      ]));
     expect(eventDetails.find((detail) => detail.eventId === 'changan-han-capital')?.participants)
       .toEqual(expect.arrayContaining([
         expect.objectContaining({ personId: 'liu-bang', relationType: 'direct' }),

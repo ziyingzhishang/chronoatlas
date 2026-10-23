@@ -6,18 +6,12 @@ import { events } from './events';
 import { people } from './people';
 import { sourceNotes } from './sources';
 
-const residualEventIds = [
-  'changan-han-capital',
-  'changan-gengshi',
-  'white-horse-temple-founded',
-  'changan-former-qin',
-  'daming-palace-built',
-  'tang-changan-end',
-] as const;
-
 const participantAdditions = {
   'changan-gengshi': 'liu-xiu',
+  'changan-former-qin': 'fu-jian-founder',
+  'daming-palace-built': 'li-shimin',
   'tang-changan-end': 'zhu-wen',
+  'changan-han-capital': 'liu-bang',
 } as const;
 
 const eventById = new Map(events.map((event) => [event.id, event]));
@@ -55,7 +49,7 @@ describe('2026-10-23 residual knowledge task audit', () => {
     });
   });
 
-  it('closes only the three supported event tasks and records the five remaining boundaries', () => {
+  it('closes the supported tasks and keeps the audited task set empty', () => {
     const report = auditKnowledgeCoverage();
     const taskKeys = new Set(report.tasks.map((task) => `${task.taskKind}:${task.entityId}`));
 
@@ -63,12 +57,6 @@ describe('2026-10-23 residual knowledge task audit', () => {
     expect(taskKeys.has('event-participant-missing:changan-han-capital')).toBe(false);
     expect(taskKeys.has('event-participant-missing:tang-changan-end')).toBe(false);
 
-    expect([...taskKeys].sort()).toEqual([
-      'event-participant-missing:changan-former-qin',
-      'event-participant-missing:daming-palace-built',
-      'event-participant-missing:white-horse-temple-founded',
-      'person-person-relationship-missing:tufa-wugu',
-      'polity-heritage-missing:southern_liang',
-    ]);
+    expect([...taskKeys].sort()).toEqual([]);
   });
 });

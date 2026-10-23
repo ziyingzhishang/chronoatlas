@@ -269,7 +269,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['秃发乌孤在后凉势力衰弱后整合河湟部众。', '397年前后南凉进入政权形成阶段。', '秃发氏以西平、乐都为不同阶段中心，最终在后秦压力下结束。'],
     turningPoints: [turn(397, '南凉政权形成', '秃发氏在河湟建立南凉。', 'southern-liang-founded'), turn(399, '迁都乐都', '政治中心由西平转向乐都，河湟网络进一步整合。'), turn(414, '南凉覆亡', '南凉为西秦所灭，秃发氏政权结束。')],
     principalFigureIds: ['tufa-wugu'], capitalPhases: [capital('xiping', 397, 401), capital('ledu', 402, 414)],
-    heritageIds: [], eventIds: ['southern-liang-founded'], claimIds: ['claim-tufa-wugu-founded-southern-liang-closure'], sourceIds: modernSources,
+    heritageIds: ['southern-liang-ledu-city-site'], eventIds: ['southern-liang-founded'], claimIds: ['claim-tufa-wugu-founded-southern-liang-closure'], sourceIds: [...modernSources, 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang'],
     uncertaintyNote: '秃发乌孤是南凉形成阶段的本政权人物端点，397年建政与399年个人统治期分开记录；西平、乐都均按已有首都阶段连接，不将区域政治中心夸大为完整城址复原。',
   }),
   detail({

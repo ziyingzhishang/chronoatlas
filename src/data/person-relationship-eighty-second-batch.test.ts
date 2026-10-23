@@ -4,6 +4,7 @@ import { claims } from './claims';
 import { buildPersonRelationshipCoverageReport } from './person-relationship-coverage';
 
 const eventParticipationReviewBoundary = [
+  'fu-jian',
   'huo-qubing',
   'zhang-qian',
   'ban-gu',
@@ -20,9 +21,9 @@ describe('eighty-second batch relationship audit', () => {
   it('freezes the current four-category gap boundary', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(22);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(110);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(69);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(24);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(71);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });
 

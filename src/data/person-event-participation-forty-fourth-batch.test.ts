@@ -13,7 +13,7 @@ const expectedClaims = {
   'claim-liu-xuan-participated-gengshi-founded-fortyfourth': ['liu-xuan', 'gengshi-founded', 23, 25],
   'claim-liu-xiu-participated-gengshi-founded-fortyfourth': ['liu-xiu', 'gengshi-founded', 23, 25],
   'claim-yu-wen-tai-participated-western-wei-founded-fortyfourth': ['yu-wen-tai', 'western-wei-founded', 534, 540],
-  'claim-fu-jian-participated-former-qin-founded-fortyfourth': ['fu-jian', 'former-qin-founded', 351, 357],
+  'claim-fu-jian-founder-participated-former-qin-founded-fortyfourth': ['fu-jian-founder', 'former-qin-founded', 351, 351],
   'claim-yao-chang-participated-later-qin-founded-fortyfourth': ['yao-chang', 'later-qin-founded', 383, 394],
   'claim-liu-bang-participated-chu-han-contention-fortyfourth': ['liu-bang', 'chu-han-contention', -206, -202],
   'claim-han-xin-participated-chu-han-contention-fortyfourth': ['han-xin', 'chu-han-contention', -205, -202],

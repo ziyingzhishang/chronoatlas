@@ -7,7 +7,7 @@ import { polities } from './polities';
 import { sourceNotes } from './sources';
 
 const requiredMissingGovernance = [
-  'zhang-qian', 'ban-gu', 'du-fu', 'yu-the-great', 'jamukha', 'han-kangzi',
+  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yu-the-great', 'jamukha', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt',
@@ -39,6 +39,6 @@ describe('round 108 governance boundary audit', () => {
         .map((office) => ({ personId, office })) ?? []
     ));
 
-    expect(eligibleOffices).toEqual([]);
+    expect(eligibleOffices.map(({ personId }) => personId)).toEqual(['liu-zhuang', 'fu-jian-founder']);
   });
 });

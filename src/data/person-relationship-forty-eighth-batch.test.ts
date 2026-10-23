@@ -51,10 +51,10 @@ describe('forty-eighth batch high-confidence person relationships', () => {
       allianceConflict: expect.any(Array),
       eventParticipation: expect.any(Array),
     });
-    expect(report.requiredMissingByCategory.governance).toHaveLength(22);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(110);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(69);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
-    expect(report.needsSupplementPersonIds).toHaveLength(146);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(24);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(71);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
+    expect(report.needsSupplementPersonIds).toHaveLength(147);
   });
 });

@@ -141,6 +141,6 @@ describe('Round 109 政权详情学习入口审计', () => {
     expect(gapsByKind.person).toEqual([
       { polityId: 'qing', kind: 'person', id: 'nurhaci', year: 1636 },
     ]);
-    expect(gapsByKind.heritage).toHaveLength(109);
+    expect(gapsByKind.heritage).toHaveLength(110);
   });
 });

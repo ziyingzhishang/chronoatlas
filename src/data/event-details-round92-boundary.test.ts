@@ -31,7 +31,6 @@ const reviewBoundaryReasons = {
   'shangyang-palace-built': 'construction-range',
   'yan-warring-founded-eighth-batch': 'traditional-periodization',
   'zhou-conquest': 'traditional-periodization',
-  'white-horse-temple-founded': 'participant-endpoint-review',
 } as const;
 
 describe('event details ninety-second round boundary audit', () => {
@@ -40,7 +39,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 103, 'needs-review': 30, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 104, 'needs-review': 29, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -76,8 +75,7 @@ describe('event details ninety-second round boundary audit', () => {
 
     expect(reviewItems.filter((item) => item.needsReviewChecks.includes('timePrecision'))
       .every((item) => item.timePrecisionStatus === 'needs-review')).toBe(true);
-    expect(reviewItems.find((item) => item.eventId === 'white-horse-temple-founded')?.timePrecisionStatus)
-      .toBe('confirmed');
+    expect(reviewItems.find((item) => item.eventId === 'white-horse-temple-founded')).toBeUndefined();
     expect(reviewItems.every((item) => item.missingChecks.length === 0)).toBe(true);
     expect(reviewItems.every((item) => item.unresolvedReferenceIds.people.length === 0)).toBe(true);
     expect(reviewItems.every((item) => item.unresolvedReferenceIds.places.length === 0)).toBe(true);
@@ -92,11 +90,7 @@ describe('event details ninety-second round boundary audit', () => {
       .map((item) => item.eventId)
       .sort();
 
-    expect(participantGapIds).toEqual([
-      'changan-former-qin',
-      'daming-palace-built',
-      'white-horse-temple-founded',
-    ]);
+    expect(participantGapIds).toEqual([]);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');

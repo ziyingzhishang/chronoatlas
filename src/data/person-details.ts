@@ -34,6 +34,12 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '更始、刘秀与长安之间的控制转换按阶段记录，不由单个事件点推导连续疆域。',
   },
   {
+    personId: 'liu-zhuang', biography: '刘庄即汉明帝。白马寺创建传统将其与永平十一年洛阳官方佛教传播和寺院营造联系起来。',
+    aliases: ['汉明帝'], offices: [{ title: '东汉皇帝', polityId: 'han_eastern', placeId: 'luoyang', validFrom: 57, validTo: 75, datePrecision: 'range', sourceIds: ['luoyang-baimasi-official', 'houhanshu-vol2-liuzhuang'] }],
+    keyEvents: ['white-horse-temple-founded'], sourceIds: ['luoyang-baimasi-official', 'houhanshu-vol2-liuzhuang'],
+    uncertaintyNote: '白马寺创建传统中的求法、译经和营寺叙事存在不同文献层次；本条只确认刘庄作为官方营建与传播传统中的直接人物，不将传说细节全部视为同等强度的史实。',
+  },
+  {
     personId: 'liu-yao', biography: '刘曜是十六国时期前赵的重要君主，前赵经营关中时，长安成为北方政治竞争的关键节点。',
     aliases: [], offices: [{ title: '前赵皇帝', polityId: 'former_zhao', placeId: 'changan', validFrom: 318, validTo: 329, datePrecision: 'range', sourceIds }],
     keyEvents: ['changan-former-zhao'], sourceIds,
@@ -46,10 +52,28 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '“统一北方”的概括与各地实际控制并不等价，详情保留前秦扩张叙事的范围限制。',
   },
   {
+    personId: 'fu-jian-founder', biography: '苻健是前秦早期建立者。351年，他在关中建立秦政权并以长安为早期政治中心；其后苻坚的统治与北方扩张属于另一阶段。',
+    aliases: ['前秦景明帝'], offices: [{ title: '前秦皇帝', polityId: 'former_qin', placeId: 'changan', validFrom: 351, validTo: 355, datePrecision: 'range', sourceIds: ['jinshu-vol112-fu-jian'] }],
+    keyEvents: ['former-qin-founded', 'changan-former-qin'], sourceIds: ['jinshu-vol112-fu-jian', 'zizhi-tongjian'],
+    uncertaintyNote: '苻健与苻坚为不同人物；本详情只连接苻健的建政和早期长安节点，不把苻坚时期的前秦全盛疆域回填到351年。',
+  },
+  {
     personId: 'tufa-wugu', biography: '秃发乌孤在河湟地区建立南凉，南凉的后续统治由秃发利鹿孤与秃发傉檀承接。',
     aliases: ['南凉武王'], offices: [{ title: '南凉君主', polityId: 'southern_liang', validFrom: 397, validTo: 399, datePrecision: 'range', sourceIds }],
     keyEvents: ['southern-liang-founded'], sourceIds,
     uncertaintyNote: '397年是南凉形成节点；秃发氏政权的后续继承与414年覆亡不能归并为秃发乌孤个人统治期。',
+  },
+  {
+    personId: 'tufa-lilugu', biography: '秃发利鹿孤是秃发乌孤之弟，399年继承南凉，在河湟政权延续中承接乌孤的统治。',
+    aliases: ['南凉康王'], offices: [{ title: '南凉君主', polityId: 'southern_liang', validFrom: 399, validTo: 402, datePrecision: 'range', sourceIds: ['jinshu-vol126-tufa-wugu'] }],
+    keyEvents: [], sourceIds: ['jinshu-vol126-tufa-wugu'],
+    uncertaintyNote: '《晋书》明确记载其继立与兄弟关系；具体任用地点和河湟各城控制范围不由人物关系 claim 单独推导。',
+  },
+  {
+    personId: 'tufa-rutan', biography: '秃发傉檀是秃发乌孤、秃发利鹿孤之弟，402年继承南凉，成为南凉后期君主。',
+    aliases: ['南凉景王'], offices: [{ title: '南凉君主', polityId: 'southern_liang', validFrom: 402, validTo: 414, datePrecision: 'range', sourceIds: ['jinshu-vol126-tufa-wugu'] }],
+    keyEvents: [], sourceIds: ['jinshu-vol126-tufa-wugu'],
+    uncertaintyNote: '《晋书》明确记载其作为利鹿孤之弟承继南凉；不据继承关系推导其全期疆域或单一固定首都。',
   },
   {
     personId: 'yao-chang', biography: '姚苌在十六国后期建立后秦，后秦以长安为都，长安再次成为关中政权更替的中心。',

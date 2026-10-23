@@ -51,10 +51,10 @@ describe('ninety-fourth batch high-confidence kinship relationships', () => {
 
   it('reduces only the four directly evidenced kinship gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.governance).toHaveLength(22);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(110);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(69);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(24);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(109);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(71);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     for (const personId of ['han-kangzi', 'han-qian', 'li-bian', 'li-yu']) {
       expect(report.byPersonId[personId].categories.kinship.status, personId).toBe('covered');
       expect(report.byPersonId[personId].requiredMissingCategoryKeys, personId).not.toContain('kinship');

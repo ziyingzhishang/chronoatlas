@@ -154,6 +154,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "capital-history-reference",
+            "jinshu-vol112-fu-jian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -167,7 +168,8 @@
           ],
           "relatedIds": [
             "former-qin-founded",
-            "former_qin"
+            "former_qin",
+            "fu-jian-founder"
           ]
         },
         {
@@ -922,6 +924,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
+            "tanghuiyao-vol30-daming-palace",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -934,6 +937,8 @@
             "event-detail:daming-palace-built"
           ],
           "relatedIds": [
+            "li-shimin",
+            "li-yuan",
             "tang",
             "tang-founded",
             "tang-founded-changan"
@@ -1462,6 +1467,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "jinshu-vol112-fu-jian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -1471,13 +1477,13 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-fu-jian-participated-former-qin-founded-fortyfourth",
+            "claim:claim-fu-jian-founder-participated-former-qin-founded-fortyfourth",
             "event-detail:former-qin-founded"
           ],
           "relatedIds": [
             "former-zhao-founded",
             "former_qin",
-            "fu-jian",
+            "fu-jian-founder",
             "later-qin-founded",
             "northern-wei-founded"
           ]
@@ -6875,6 +6881,7 @@
           "relatedIds": [
             "han-eastern-founded",
             "han_eastern",
+            "liu-zhuang",
             "tang-founded"
           ]
         },
@@ -8717,7 +8724,8 @@
           "relatedIds": [
             "former-qin-founded",
             "former_qin",
-            "fu-jian"
+            "fu-jian",
+            "fu-jian-founder"
           ]
         },
         {
@@ -12383,6 +12391,65 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "southern-liang-ledu-city-site",
+      "entityKey": "heritage:southern-liang-ledu-city-site",
+      "label": "南凉乐都城址候选历史层",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "southern-liang-ledu-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu",
+            "mct-ledu-southern-liang",
+            "taiping-yulan-southern-liang-ledu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:southern-liang-ledu-city-site"
+          ],
+          "relatedIds": [
+            "southern-liang-founded",
+            "southern_liang",
+            "tufa-rutan",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "southern-tang-jiankang-city-site",
       "entityKey": "heritage:southern-tang-jiankang-city-site",
       "label": "南唐金陵城历史层",
@@ -15908,7 +15975,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-fu-jian-participated-former-qin-founded-fortyfourth",
+            "claim:claim-fu-jian-founder-related-fu-jian",
             "claim:claim-fu-jian-ruled-former-qin-closure",
             "claim:claim-lv-guang-ally-fu-jian-seventysixth",
             "claim:claim-lv-guang-served-fu-jian",
@@ -15916,12 +15983,11 @@
             "claim:claim-murong-chui-served-fu-jian",
             "claim:claim-qifu-guoren-enemy-fu-jian",
             "claim:claim-yao-chang-enemy-fu-jian-fortyeighth",
-            "event-detail:former-qin-founded",
             "person-polity:fu-jian:former_qin"
           ],
           "relatedIds": [
-            "former-qin-founded",
             "former_qin",
+            "fu-jian-founder",
             "lv-guang",
             "murong-chui",
             "qifu-guoren",
@@ -15932,6 +15998,68 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "fu-jian-founder",
+      "entityKey": "person:fu-jian-founder",
+      "label": "苻健",
+      "polityIds": [
+        "former_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "fu-jian-founder"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol112-fu-jian",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-fu-jian-founder-participated-former-qin-founded-fortyfourth",
+            "claim:claim-fu-jian-founder-related-fu-jian",
+            "event-detail:changan-former-qin",
+            "event-detail:former-qin-founded",
+            "person-polity:fu-jian-founder:former_qin"
+          ],
+          "relatedIds": [
+            "changan-former-qin",
+            "former-qin-founded",
+            "former_qin",
+            "fu-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -18073,11 +18201,13 @@
             "claim:claim-wei-zheng-ally-li-shimin-seventysixth",
             "claim:claim-wei-zheng-served-li-shimin",
             "claim:claim-xuan-zang-related-li-shimin",
+            "event-detail:daming-palace-built",
             "event-detail:tang-founded",
             "event-detail:xuanwu-gate",
             "person-polity:li-shimin:tang"
           ],
           "relatedIds": [
+            "daming-palace-built",
             "li-yuan",
             "li-zhi",
             "songtsen-gampo",
@@ -18267,11 +18397,13 @@
             "claim:claim-li-yuan-parent-li-shimin",
             "claim:claim-li-yuan-participated-tang-founded-fortyfourth",
             "claim:claim-yang-jian-related-li-yuan",
+            "event-detail:daming-palace-built",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
             "person-polity:li-yuan:tang"
           ],
           "relatedIds": [
+            "daming-palace-built",
             "li-shimin",
             "tang",
             "tang-founded",
@@ -18856,11 +18988,14 @@
           "evidenceIds": [
             "claim:claim-ban-gu-related-liu-xiu",
             "claim:claim-liu-xiu-enemy-wang-mang-fortyfirst",
+            "claim:claim-liu-xiu-parent-liu-zhuang",
             "claim:claim-liu-xiu-participated-eastern-han-fortythird",
             "claim:claim-liu-xiu-participated-gengshi-founded-fortyfourth",
             "claim:claim-liu-xiu-ruled-han-eastern-closure",
             "claim:claim-liu-xiu-served-liu-xuan",
             "claim:claim-liu-xiu-succeeded-gengshi",
+            "claim:claim-liu-zhuang-child-liu-xiu",
+            "claim:claim-liu-zhuang-succeeded-liu-xiu",
             "claim:claim-wang-mang-enemy-liu-xiu",
             "event-detail:changan-gengshi",
             "event-detail:eastern-han-moves-luoyang",
@@ -18878,6 +19013,7 @@
             "han-eastern-founded",
             "han_eastern",
             "liu-xuan",
+            "liu-zhuang",
             "wang-mang"
           ]
         },
@@ -19389,6 +19525,67 @@
             "liu-min",
             "northern-han-founded",
             "shi-jingtang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "liu-zhuang",
+      "entityKey": "person:liu-zhuang",
+      "label": "刘庄",
+      "polityIds": [
+        "han_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-zhuang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-vol2-liuzhuang",
+            "luoyang-baimasi-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-xiu-parent-liu-zhuang",
+            "claim:claim-liu-zhuang-child-liu-xiu",
+            "claim:claim-liu-zhuang-succeeded-liu-xiu",
+            "event-detail:white-horse-temple-founded",
+            "person-polity:liu-zhuang:han_eastern"
+          ],
+          "relatedIds": [
+            "han_eastern",
+            "liu-xiu",
+            "white-horse-temple-founded"
           ]
         },
         {
@@ -22401,6 +22598,124 @@
     },
     {
       "entityType": "person",
+      "entityId": "tufa-lilugu",
+      "entityKey": "person:tufa-lilugu",
+      "label": "秃发利鹿孤",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "tufa-lilugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-lilugu-sibling-tufa-rutan",
+            "claim:claim-tufa-wugu-appointed-tufa-lilugu",
+            "claim:claim-tufa-wugu-sibling-tufa-lilugu",
+            "person-polity:tufa-lilugu:southern_liang"
+          ],
+          "relatedIds": [
+            "southern_liang",
+            "tufa-rutan",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "tufa-rutan",
+      "entityKey": "person:tufa-rutan",
+      "label": "秃发傉檀",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "tufa-rutan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-lilugu-sibling-tufa-rutan",
+            "claim:claim-tufa-wugu-appointed-tufa-rutan",
+            "claim:claim-tufa-wugu-sibling-tufa-rutan",
+            "person-polity:tufa-rutan:southern_liang"
+          ],
+          "relatedIds": [
+            "southern_liang",
+            "tufa-lilugu",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "tufa-wugu",
       "entityKey": "person:tufa-wugu",
       "label": "秃发乌孤",
@@ -22439,12 +22754,18 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-tufa-wugu-appointed-tufa-lilugu",
+            "claim:claim-tufa-wugu-appointed-tufa-rutan",
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
+            "claim:claim-tufa-wugu-sibling-tufa-lilugu",
+            "claim:claim-tufa-wugu-sibling-tufa-rutan",
             "person-polity:tufa-wugu:southern_liang"
           ],
           "relatedIds": [
-            "southern_liang"
+            "southern_liang",
+            "tufa-lilugu",
+            "tufa-rutan"
           ]
         },
         {
@@ -26381,14 +26702,16 @@
             "event-detail:changan-former-qin",
             "event-detail:former-qin-founded",
             "heritage-detail:former-qin-changan-city-layer",
-            "person:fu-jian"
+            "person:fu-jian",
+            "person:fu-jian-founder"
           ],
           "relatedIds": [
             "changan",
             "changan-former-qin",
             "former-qin-changan-city-layer",
             "former-qin-founded",
-            "fu-jian"
+            "fu-jian",
+            "fu-jian-founder"
           ]
         },
         {
@@ -26790,6 +27113,7 @@
             "person:cao-cao",
             "person:liu-bei",
             "person:liu-xiu",
+            "person:liu-zhuang",
             "person:sun-quan"
           ],
           "relatedIds": [
@@ -26801,6 +27125,7 @@
             "han-eastern-founded",
             "liu-bei",
             "liu-xiu",
+            "liu-zhuang",
             "luoyang-han-wei-city-site",
             "red-cliffs",
             "sun-quan",
@@ -29621,6 +29946,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "jinshu-vol126-tufa-wugu",
+            "mct-ledu-southern-liang",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -29634,10 +29961,16 @@
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
             "event-detail:southern-liang-founded",
+            "heritage-detail:southern-liang-ledu-city-site",
+            "person:tufa-lilugu",
+            "person:tufa-rutan",
             "person:tufa-wugu"
           ],
           "relatedIds": [
             "southern-liang-founded",
+            "southern-liang-ledu-city-site",
+            "tufa-lilugu",
+            "tufa-rutan",
             "tufa-wugu"
           ]
         },
@@ -32284,6 +32617,20 @@
     },
     {
       "entityType": "person",
+      "entityId": "fu-jian-founder",
+      "entityKey": "person:fu-jian-founder",
+      "label": "苻健",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "former_qin"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "gao-yun",
       "entityKey": "person:gao-yun",
       "label": "高云",
@@ -32583,6 +32930,34 @@
       "kind": "uncertain",
       "polityIds": [
         "ming_southern"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "tufa-lilugu",
+      "entityKey": "person:tufa-lilugu",
+      "label": "秃发利鹿孤",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "tufa-rutan",
+      "entityKey": "person:tufa-rutan",
+      "label": "秃发傉檀",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "southern_liang"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -32938,6 +33313,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "capital-history-reference",
+            "jinshu-vol112-fu-jian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -32951,7 +33327,8 @@
           ],
           "relatedIds": [
             "former-qin-founded",
-            "former_qin"
+            "former_qin",
+            "fu-jian-founder"
           ]
         },
         {
@@ -33706,6 +34083,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
+            "tanghuiyao-vol30-daming-palace",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -33718,6 +34096,8 @@
             "event-detail:daming-palace-built"
           ],
           "relatedIds": [
+            "li-shimin",
+            "li-yuan",
             "tang",
             "tang-founded",
             "tang-founded-changan"
@@ -34246,6 +34626,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "jinshu-vol112-fu-jian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -34255,13 +34636,13 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-fu-jian-participated-former-qin-founded-fortyfourth",
+            "claim:claim-fu-jian-founder-participated-former-qin-founded-fortyfourth",
             "event-detail:former-qin-founded"
           ],
           "relatedIds": [
             "former-zhao-founded",
             "former_qin",
-            "fu-jian",
+            "fu-jian-founder",
             "later-qin-founded",
             "northern-wei-founded"
           ]
@@ -39659,6 +40040,7 @@
           "relatedIds": [
             "han-eastern-founded",
             "han_eastern",
+            "liu-zhuang",
             "tang-founded"
           ]
         },
@@ -41501,7 +41883,8 @@
           "relatedIds": [
             "former-qin-founded",
             "former_qin",
-            "fu-jian"
+            "fu-jian",
+            "fu-jian-founder"
           ]
         },
         {
@@ -45165,6 +45548,65 @@
         }
       ]
     },
+    "heritage:southern-liang-ledu-city-site": {
+      "entityType": "heritage",
+      "entityId": "southern-liang-ledu-city-site",
+      "entityKey": "heritage:southern-liang-ledu-city-site",
+      "label": "南凉乐都城址候选历史层",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "southern-liang-ledu-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu",
+            "mct-ledu-southern-liang",
+            "taiping-yulan-southern-liang-ledu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:southern-liang-ledu-city-site"
+          ],
+          "relatedIds": [
+            "southern-liang-founded",
+            "southern_liang",
+            "tufa-rutan",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:southern-tang-jiankang-city-site": {
       "entityType": "heritage",
       "entityId": "southern-tang-jiankang-city-site",
@@ -48692,7 +49134,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
-            "claim:claim-fu-jian-participated-former-qin-founded-fortyfourth",
+            "claim:claim-fu-jian-founder-related-fu-jian",
             "claim:claim-fu-jian-ruled-former-qin-closure",
             "claim:claim-lv-guang-ally-fu-jian-seventysixth",
             "claim:claim-lv-guang-served-fu-jian",
@@ -48700,12 +49142,11 @@
             "claim:claim-murong-chui-served-fu-jian",
             "claim:claim-qifu-guoren-enemy-fu-jian",
             "claim:claim-yao-chang-enemy-fu-jian-fortyeighth",
-            "event-detail:former-qin-founded",
             "person-polity:fu-jian:former_qin"
           ],
           "relatedIds": [
-            "former-qin-founded",
             "former_qin",
+            "fu-jian-founder",
             "lv-guang",
             "murong-chui",
             "qifu-guoren",
@@ -48716,6 +49157,68 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:fu-jian-founder": {
+      "entityType": "person",
+      "entityId": "fu-jian-founder",
+      "entityKey": "person:fu-jian-founder",
+      "label": "苻健",
+      "polityIds": [
+        "former_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "fu-jian-founder"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol112-fu-jian",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-fu-jian-founder-participated-former-qin-founded-fortyfourth",
+            "claim:claim-fu-jian-founder-related-fu-jian",
+            "event-detail:changan-former-qin",
+            "event-detail:former-qin-founded",
+            "person-polity:fu-jian-founder:former_qin"
+          ],
+          "relatedIds": [
+            "changan-former-qin",
+            "former-qin-founded",
+            "former_qin",
+            "fu-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -50857,11 +51360,13 @@
             "claim:claim-wei-zheng-ally-li-shimin-seventysixth",
             "claim:claim-wei-zheng-served-li-shimin",
             "claim:claim-xuan-zang-related-li-shimin",
+            "event-detail:daming-palace-built",
             "event-detail:tang-founded",
             "event-detail:xuanwu-gate",
             "person-polity:li-shimin:tang"
           ],
           "relatedIds": [
+            "daming-palace-built",
             "li-yuan",
             "li-zhi",
             "songtsen-gampo",
@@ -51051,11 +51556,13 @@
             "claim:claim-li-yuan-parent-li-shimin",
             "claim:claim-li-yuan-participated-tang-founded-fortyfourth",
             "claim:claim-yang-jian-related-li-yuan",
+            "event-detail:daming-palace-built",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
             "person-polity:li-yuan:tang"
           ],
           "relatedIds": [
+            "daming-palace-built",
             "li-shimin",
             "tang",
             "tang-founded",
@@ -51640,11 +52147,14 @@
           "evidenceIds": [
             "claim:claim-ban-gu-related-liu-xiu",
             "claim:claim-liu-xiu-enemy-wang-mang-fortyfirst",
+            "claim:claim-liu-xiu-parent-liu-zhuang",
             "claim:claim-liu-xiu-participated-eastern-han-fortythird",
             "claim:claim-liu-xiu-participated-gengshi-founded-fortyfourth",
             "claim:claim-liu-xiu-ruled-han-eastern-closure",
             "claim:claim-liu-xiu-served-liu-xuan",
             "claim:claim-liu-xiu-succeeded-gengshi",
+            "claim:claim-liu-zhuang-child-liu-xiu",
+            "claim:claim-liu-zhuang-succeeded-liu-xiu",
             "claim:claim-wang-mang-enemy-liu-xiu",
             "event-detail:changan-gengshi",
             "event-detail:eastern-han-moves-luoyang",
@@ -51662,6 +52172,7 @@
             "han-eastern-founded",
             "han_eastern",
             "liu-xuan",
+            "liu-zhuang",
             "wang-mang"
           ]
         },
@@ -52173,6 +52684,67 @@
             "liu-min",
             "northern-han-founded",
             "shi-jingtang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:liu-zhuang": {
+      "entityType": "person",
+      "entityId": "liu-zhuang",
+      "entityKey": "person:liu-zhuang",
+      "label": "刘庄",
+      "polityIds": [
+        "han_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-zhuang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-vol2-liuzhuang",
+            "luoyang-baimasi-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-xiu-parent-liu-zhuang",
+            "claim:claim-liu-zhuang-child-liu-xiu",
+            "claim:claim-liu-zhuang-succeeded-liu-xiu",
+            "event-detail:white-horse-temple-founded",
+            "person-polity:liu-zhuang:han_eastern"
+          ],
+          "relatedIds": [
+            "han_eastern",
+            "liu-xiu",
+            "white-horse-temple-founded"
           ]
         },
         {
@@ -55183,6 +55755,124 @@
         }
       ]
     },
+    "person:tufa-lilugu": {
+      "entityType": "person",
+      "entityId": "tufa-lilugu",
+      "entityKey": "person:tufa-lilugu",
+      "label": "秃发利鹿孤",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "tufa-lilugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-lilugu-sibling-tufa-rutan",
+            "claim:claim-tufa-wugu-appointed-tufa-lilugu",
+            "claim:claim-tufa-wugu-sibling-tufa-lilugu",
+            "person-polity:tufa-lilugu:southern_liang"
+          ],
+          "relatedIds": [
+            "southern_liang",
+            "tufa-rutan",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:tufa-rutan": {
+      "entityType": "person",
+      "entityId": "tufa-rutan",
+      "entityKey": "person:tufa-rutan",
+      "label": "秃发傉檀",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "tufa-rutan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-lilugu-sibling-tufa-rutan",
+            "claim:claim-tufa-wugu-appointed-tufa-rutan",
+            "claim:claim-tufa-wugu-sibling-tufa-rutan",
+            "person-polity:tufa-rutan:southern_liang"
+          ],
+          "relatedIds": [
+            "southern_liang",
+            "tufa-lilugu",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:tufa-wugu": {
       "entityType": "person",
       "entityId": "tufa-wugu",
@@ -55223,12 +55913,18 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-tufa-wugu-appointed-tufa-lilugu",
+            "claim:claim-tufa-wugu-appointed-tufa-rutan",
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
+            "claim:claim-tufa-wugu-sibling-tufa-lilugu",
+            "claim:claim-tufa-wugu-sibling-tufa-rutan",
             "person-polity:tufa-wugu:southern_liang"
           ],
           "relatedIds": [
-            "southern_liang"
+            "southern_liang",
+            "tufa-lilugu",
+            "tufa-rutan"
           ]
         },
         {
@@ -59165,14 +59861,16 @@
             "event-detail:changan-former-qin",
             "event-detail:former-qin-founded",
             "heritage-detail:former-qin-changan-city-layer",
-            "person:fu-jian"
+            "person:fu-jian",
+            "person:fu-jian-founder"
           ],
           "relatedIds": [
             "changan",
             "changan-former-qin",
             "former-qin-changan-city-layer",
             "former-qin-founded",
-            "fu-jian"
+            "fu-jian",
+            "fu-jian-founder"
           ]
         },
         {
@@ -59574,6 +60272,7 @@
             "person:cao-cao",
             "person:liu-bei",
             "person:liu-xiu",
+            "person:liu-zhuang",
             "person:sun-quan"
           ],
           "relatedIds": [
@@ -59585,6 +60284,7 @@
             "han-eastern-founded",
             "liu-bei",
             "liu-xiu",
+            "liu-zhuang",
             "luoyang-han-wei-city-site",
             "red-cliffs",
             "sun-quan",
@@ -62405,6 +63105,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "jinshu-vol126-tufa-wugu",
+            "mct-ledu-southern-liang",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -62418,10 +63120,16 @@
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
             "event-detail:southern-liang-founded",
+            "heritage-detail:southern-liang-ledu-city-site",
+            "person:tufa-lilugu",
+            "person:tufa-rutan",
             "person:tufa-wugu"
           ],
           "relatedIds": [
             "southern-liang-founded",
+            "southern-liang-ledu-city-site",
+            "tufa-lilugu",
+            "tufa-rutan",
             "tufa-wugu"
           ]
         },
@@ -64674,9 +65382,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 108,
+      "totalEntities": 109,
       "statusCounts": {
-        "covered": 540,
+        "covered": 545,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -64692,20 +65400,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 182,
+      "totalEntities": 186,
       "statusCounts": {
-        "covered": 867,
+        "covered": 884,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 43,
+        "uncertain": 46,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 43
+        "uncertain": 46
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -64715,6 +65423,7 @@
         "person:feng-ba",
         "person:feng-hong",
         "person:feng-sufo",
+        "person:fu-jian-founder",
         "person:gao-yun",
         "person:geluofeng",
         "person:guacanagari",
@@ -64737,6 +65446,8 @@
         "person:qin-mugong",
         "person:quanfengyou",
         "person:su-guansheng",
+        "person:tufa-lilugu",
+        "person:tufa-rutan",
         "person:tufa-wugu",
         "person:wang-mang",
         "person:wei-huanzi",
@@ -64967,9 +65678,24 @@
         "heritage:guzang-ancient-city-site",
         "heritage:guzang-baita-temple-site",
         "person:fu-jian",
+        "person:fu-jian-founder",
         "polity:former_qin"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "fu-jian-founder",
+          "entityKey": "person:fu-jian-founder",
+          "label": "苻健",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "former_qin"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "changan-former-qin",
@@ -64988,11 +65714,11 @@
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
-        "event-participant-missing": 1,
+        "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "前秦：有 1 项学习闭环任务，待补事件参与人物 1 项。"
+      "summary": "前秦：有 2 项待核验缺口。"
     },
     "former_shu": {
       "polityId": "former_shu",
@@ -65182,6 +65908,7 @@
         "person:cao-cao",
         "person:liu-bei",
         "person:liu-xiu",
+        "person:liu-zhuang",
         "person:sun-quan",
         "polity:han_eastern"
       ],
@@ -65189,11 +65916,11 @@
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
-        "event-participant-missing": 1,
+        "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "东汉：有 1 项学习闭环任务，待补事件参与人物 1 项。"
+      "summary": "东汉：学习闭环已覆盖。"
     },
     "han_later": {
       "polityId": "han_later",
@@ -66480,6 +67207,9 @@
       "polityName": "南凉",
       "entityKeys": [
         "event:southern-liang-founded",
+        "heritage:southern-liang-ledu-city-site",
+        "person:tufa-lilugu",
+        "person:tufa-rutan",
         "person:tufa-wugu",
         "polity:southern_liang"
       ],
@@ -66497,16 +67227,44 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "tufa-lilugu",
+          "entityKey": "person:tufa-lilugu",
+          "label": "秃发利鹿孤",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "tufa-rutan",
+          "entityKey": "person:tufa-rutan",
+          "label": "秃发傉檀",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
       ],
       "taskCounts": {
-        "polity-heritage-missing": 1,
-        "person-person-relationship-missing": 1,
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
         "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "南凉：有 2 项学习闭环任务，待补遗产关联 1 项、人物关系 1 项。"
+      "summary": "南凉：有 3 项待核验缺口。"
     },
     "southern_tang": {
       "polityId": "southern_tang",
@@ -66692,11 +67450,11 @@
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
-        "event-participant-missing": 1,
+        "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "唐：有 1 项学习闭环任务，待补事件参与人物 1 项。"
+      "summary": "唐：有 4 项待核验缺口。"
     },
     "tang_later": {
       "polityId": "tang_later",
@@ -67693,100 +68451,7 @@
       "summary": "西周：有 4 项待核验缺口。"
     }
   },
-  "tasks": [
-    {
-      "taskKind": "event-participant-missing",
-      "perspective": "polity",
-      "subjectId": "changan-former-qin",
-      "subjectKey": "event:changan-former-qin",
-      "subjectLabel": "前秦据长安",
-      "entityType": "event",
-      "entityId": "changan-former-qin",
-      "polityIds": [
-        "former_qin"
-      ],
-      "placeIds": [
-        "changan"
-      ],
-      "evidenceIds": [
-        "event-detail:changan-former-qin"
-      ],
-      "relatedIds": [],
-      "note": "事件详情没有参与人物，需补充事件中的人物及其角色。"
-    },
-    {
-      "taskKind": "event-participant-missing",
-      "perspective": "polity",
-      "subjectId": "daming-palace-built",
-      "subjectKey": "event:daming-palace-built",
-      "subjectLabel": "大明宫营建",
-      "entityType": "event",
-      "entityId": "daming-palace-built",
-      "polityIds": [
-        "tang"
-      ],
-      "placeIds": [
-        "changan"
-      ],
-      "evidenceIds": [
-        "event-detail:daming-palace-built"
-      ],
-      "relatedIds": [],
-      "note": "事件详情没有参与人物，需补充事件中的人物及其角色。"
-    },
-    {
-      "taskKind": "event-participant-missing",
-      "perspective": "polity",
-      "subjectId": "white-horse-temple-founded",
-      "subjectKey": "event:white-horse-temple-founded",
-      "subjectLabel": "洛阳白马寺创建",
-      "entityType": "event",
-      "entityId": "white-horse-temple-founded",
-      "polityIds": [
-        "han_eastern"
-      ],
-      "placeIds": [
-        "luoyang"
-      ],
-      "evidenceIds": [
-        "event-detail:white-horse-temple-founded"
-      ],
-      "relatedIds": [],
-      "note": "事件详情没有参与人物，需补充事件中的人物及其角色。"
-    },
-    {
-      "taskKind": "person-person-relationship-missing",
-      "perspective": "polity",
-      "subjectId": "tufa-wugu",
-      "subjectKey": "person:tufa-wugu",
-      "subjectLabel": "秃发乌孤",
-      "entityType": "person",
-      "entityId": "tufa-wugu",
-      "polityIds": [
-        "southern_liang"
-      ],
-      "placeIds": [],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物尚未建立可核验的人物—人物关系，需补充君臣、亲属、同僚、联盟或对立关系。"
-    },
-    {
-      "taskKind": "polity-heritage-missing",
-      "perspective": "polity",
-      "subjectId": "southern_liang",
-      "subjectKey": "polity:southern_liang",
-      "subjectLabel": "南凉",
-      "entityType": "polity",
-      "entityId": "southern_liang",
-      "polityIds": [
-        "southern_liang"
-      ],
-      "placeIds": [],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "政权尚未关联可核验的遗产实体，需从政权视角补充重要地点或遗存。"
-    }
-  ],
+  "tasks": [],
   "byCity": {
     "anyi": {
       "placeId": "anyi",
@@ -67953,7 +68618,7 @@
         "heritage:xiao-yan-ta",
         "heritage:ximing-temple-site",
         "heritage:xingqing-palace-site",
-        "person:fu-jian",
+        "person:fu-jian-founder",
         "person:li-shimin",
         "person:li-yuan",
         "person:li-zhi",
@@ -67988,6 +68653,20 @@
           "kind": "uncertain",
           "polityIds": [
             "xin"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "fu-jian-founder",
+          "entityKey": "person:fu-jian-founder",
+          "label": "苻健",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "former_qin"
           ],
           "evidenceIds": [],
           "relatedIds": [],
@@ -68082,11 +68761,11 @@
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
-        "event-participant-missing": 2,
+        "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 2 项学习闭环任务，待补事件参与人物 2 项。"
+      "summary": "西安市：有 8 项待核验缺口。"
     },
     "changsha": {
       "placeId": "changsha",
@@ -68873,7 +69552,9 @@
       "placeId": "ledu",
       "cityName": "乐都区",
       "capitalRecordCount": 1,
-      "entityKeys": [],
+      "entityKeys": [
+        "heritage:southern-liang-ledu-city-site"
+      ],
       "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
@@ -68882,7 +69563,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "乐都区：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "乐都区：学习闭环已覆盖。"
     },
     "liangzhou": {
       "placeId": "liangzhou",
@@ -69141,6 +69822,7 @@
         "person:li-longji",
         "person:li-zhi",
         "person:liu-xiu",
+        "person:liu-zhuang",
         "person:sima-yan",
         "person:zhu-wen",
         "polity:han_eastern",
@@ -69227,11 +69909,11 @@
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
-        "event-participant-missing": 1,
+        "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "洛阳市：有 1 项学习闭环任务，待补事件参与人物 1 项。"
+      "summary": "洛阳市：有 5 项待核验缺口。"
     },
     "mongol_karakorum": {
       "placeId": "mongol_karakorum",

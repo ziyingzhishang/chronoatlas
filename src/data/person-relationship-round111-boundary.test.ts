@@ -11,13 +11,14 @@ import { polities } from './polities';
 import { sourceNotes } from './sources';
 
 const requiredGovernanceGaps = [
-  'zhang-qian', 'ban-gu', 'du-fu', 'yu-the-great', 'jamukha', 'han-kangzi',
+  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yu-the-great', 'jamukha', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt',
 ] as const;
 
 const eventParticipationGaps = [
+  { personId: 'fu-jian', eventIds: ['former-qin-founded'] },
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
@@ -93,7 +94,7 @@ describe('round one hundred eleven person relationship boundary audit', () => {
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(
       eventParticipationGaps.map(({ personId }) => personId),
     );
-    expect(governanceCandidates()).toEqual([]);
+    expect(governanceCandidates().map(({ personId }) => personId)).toEqual(['liu-zhuang', 'fu-jian-founder']);
     expect(eventParticipationCandidates()).toEqual([]);
   });
 

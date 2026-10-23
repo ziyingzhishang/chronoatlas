@@ -1178,7 +1178,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '更始政权都城与中心官方地方资料', url: 'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201405/P020240923622533021818.pdf', detail: '用于23—25年宛城、洛阳、长安中心迁移及长安阶段结束的时序参照。' }],
   },
   {
-    id: 'changan-former-qin', year: 351, title: '前秦据长安', summary: '前秦以长安为核心扩张并经营关中。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'capital-history-reference'],
+    id: 'changan-former-qin', year: 351, title: '前秦据长安', summary: '前秦以长安为核心扩张并经营关中。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'capital-history-reference', 'jinshu-vol112-fu-jian'],
     datePrecision: 'approximate', region: 'china', category: '城市史／十六国', verification: 'partial',
     background: '十六国时期关中政权反复更替，前秦需要依托长安的都城资源组织军政秩序。',
     process: '351年前后前秦取得并经营长安，城市成为其关中政治与军事核心。',
@@ -1205,13 +1205,13 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》唐纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于李渊控制长安、受禅即位与唐朝建立的编年参照。' }],
   },
   {
-    id: 'daming-palace-built', year: 634, title: '大明宫营建', summary: '唐代长安宫城体系继续扩展，大明宫成为重要政治空间。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'modern-geography-reference'],
+    id: 'daming-palace-built', year: 634, title: '大明宫营建', summary: '唐太宗先营永安宫、次年改名大明宫；高宗时期又重建并完成新的宫城阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'tanghuiyao-vol30-daming-palace', 'modern-geography-reference'],
     datePrecision: 'approximate', region: 'china', category: '城市史／宫城营建', verification: 'partial',
     background: '唐代长安的宫城与礼制空间不断扩展，帝国宫廷需要新的大型政治与居住空间。',
-    process: '634年前后唐在长安北部启动大明宫相关营建，宫城体系继续发展。',
+    process: '634年营建永安宫，635年改名大明宫；662—663年唐高宗重建并完成新的宫城阶段。',
     impact: '大明宫成为唐长安重要的政治空间，补充了城市由都城到宫城网络的历史层次。',
     mapNote: '634年采用营建阶段约年，不代表大明宫全部建筑在同年完成，也不替代遗址分期考古。',
-    references: [{ title: '《资治通鉴》唐纪与现代地理参照', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于大明宫营建年代与唐长安宫城空间的阶段性参照。' }],
+    references: [{ title: '《唐会要》卷三十·大明宫', url: 'https://zh.wikisource.org/zh/唐會要/卷030', detail: '用于区分634年营永安宫、635年改名及龙朔年间重建阶段。' }],
   },
   {
     id: 'tang-changan-end', year: 907, title: '唐亡与长安政治中心转移', summary: '唐朝结束后，长安不再是中原王朝持续稳定的首都。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'capital-history-reference'],

@@ -16,7 +16,7 @@ const targetIds = [
   'western_liao', 'dali',
 ] as const;
 
-const intentionalHeritageBoundary = new Set(['southern_liang']);
+const intentionalHeritageBoundary = new Set<string>();
 
 describe('thirty-sixth-batch polity details', () => {
   it('provides complete, resolvable and evidence-bearing detail records', () => {

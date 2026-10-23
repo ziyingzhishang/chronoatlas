@@ -36,7 +36,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 103, 'needs-review': 30, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 104, 'needs-review': 29, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.needsReviewChecks.includes('timePrecision'));
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
@@ -50,11 +50,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       expect(item.timePrecisionStatus, item.eventId).toBe('needs-review');
       expect(item.needsReviewChecks, item.eventId).toContain('timePrecision');
     });
-    expect(reviewItems.find((item) => item.eventId === 'white-horse-temple-founded')).toMatchObject({
-      timePrecision: 'year',
-      timePrecisionStatus: 'confirmed',
-      needsReviewChecks: ['participants'],
-    });
+    expect(reviewItems.find((item) => item.eventId === 'white-horse-temple-founded')).toBeUndefined();
   });
 
   it('documents why narrative enrichment alone cannot close this round', () => {

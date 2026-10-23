@@ -500,7 +500,7 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'former-qin-founded',
     participants: [
-      { personId: 'fu-jian', role: '前秦宗室与建政后关中整合的关键君主', note: '苻坚不是351年建立前秦的苻健；本条将其限定在357年后前秦整合阶段，避免把同姓不同人的历史角色混同。' },
+      { personId: 'fu-jian-founder', role: '前秦建立者', note: '苻健于351年在关中建立秦政权；苻坚是357年后承接并扩张前秦的另一位君主，单独建模以避免同姓人物混同。' },
     ],
     polityIds: ['former_qin'],
     causes: ['后赵瓦解后，关中军政力量重新分化。', '苻氏在关中拥有建立独立政权的军事与行政基础。'],
@@ -512,7 +512,7 @@ const details: HistoricalEventDetail[] = [
     ],
     locationIds: ['changan'],
     relatedEventIds: ['former-zhao-founded', 'later-qin-founded', 'northern-wei-founded'],
-    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol112-fu-jian'],
     uncertaintyNote: '351年是前秦建政节点，不把苻坚后期统一北方的范围回填到建国当年；长安只表示早期政治中心。',
   },
   {
@@ -1290,7 +1290,9 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'white-horse-temple-founded',
-    participants: [],
+    participants: [
+      { personId: 'liu-zhuang', role: '东汉明帝，主持官方佛教传播并下令在洛阳营建白马寺', relationType: 'direct', note: '文化和旅游部与洛阳市官方资料将永平十一年创建传统与汉明帝联系起来；蔡愔、秦景及摄摩腾、竺法兰等求法链人物暂不在现有人物端点中展开。' },
+    ],
     polityIds: ['han_eastern'],
     causes: ['东汉洛阳作为帝国都城，为官方接待、译经和寺院营造提供政治与城市条件。', '永平求法传统将西域佛教传播与洛阳官方寺院空间联系起来。'],
     consequences: ['白马寺成为洛阳城市宗教史和中国佛教传播史的重要节点。', '寺院后续经历历代兴废与重修，创建事件不等于今日建筑群全部保留。'],
@@ -2525,14 +2527,16 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'changan-former-qin',
-    participants: [],
+    participants: [
+      { personId: 'fu-jian-founder', role: '苻健，351年在关中建立秦政权并据长安形成前秦早期政治中心', relationType: 'direct', note: '《晋书》卷一一二用于区分苻健与苻坚；本事件只标记苻健的早期据长安阶段。' },
+    ],
     polityIds: ['former_qin'],
     causes: ['十六国时期关中政权反复更替，前秦需要依托长安的都城资源组织军政秩序。'],
     consequences: ['长安成为前秦经营关中的核心城市。', '前秦围绕长安展开的北方扩张与政权竞争进入新阶段。'],
     phases: [{ label: '前秦据长安', startYear: 351, endYear: 351, summary: '前秦取得并经营长安，城市成为其关中政治与军事核心。' }],
     locationIds: ['changan'],
     relatedEventIds: ['former-qin-founded'],
-    sourceIds: ['zizhi-tongjian', 'capital-history-reference'],
+    sourceIds: ['zizhi-tongjian', 'capital-history-reference', 'jinshu-vol112-fu-jian'],
     uncertaintyNote: '351年采用前秦据长安的阶段约年；长安核心地位不等于前秦在同年已稳定控制后期最大范围。',
   },
   {
@@ -2561,15 +2565,22 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'daming-palace-built',
-    participants: [],
+    participants: [
+      { personId: 'li-shimin', role: '唐太宗，主持为太上皇清暑营建永安宫、开启大明宫早期营建阶段', relationType: 'direct', note: '《唐会要》卷三十记贞观八年营永安宫、次年改名大明宫；本条只表达早期启动，不把634年写成全部宫城完成。' },
+      { personId: 'li-yuan', role: '太上皇，早期永安宫／大明宫营建的预定使用者', relationType: 'contextual', note: '《唐会要》卷三十明确记载营宫“以备太上皇清暑”；李渊是营建动因与预定使用对象，不等同于工程主持者。' },
+    ],
     polityIds: ['tang'],
     causes: ['唐代长安宫城与礼制空间不断扩展，帝国宫廷需要新的大型政治与居住空间。'],
     consequences: ['大明宫成为唐长安重要政治空间。', '长安城市史从都城阶段进一步展开为宫城、礼制与帝国治理空间的组合。'],
-    phases: [{ label: '大明宫营建', startYear: 634, endYear: 634, summary: '唐在长安北部启动大明宫相关营建。' }],
+    phases: [
+      { label: '永安宫启动营建', startYear: 634, endYear: 634, summary: '贞观八年营建永安宫，为太上皇清暑；这是大明宫早期营建阶段的启动，不等同于全部宫城完成。' },
+      { label: '改名大明宫', startYear: 635, endYear: 635, summary: '贞观九年永安宫改名大明宫，名称变化与早期营建阶段分开记录。' },
+      { label: '高宗时期重建', startYear: 662, endYear: 663, summary: '龙朔年间高宗因宫内湫湿重修旧大明宫，至新宫完成后成为唐代重要政治空间。' },
+    ],
     locationIds: ['changan'],
     relatedEventIds: ['tang-founded-changan', 'tang-founded'],
-    sourceIds: ['zizhi-tongjian', 'modern-geography-reference'],
-    uncertaintyNote: '634年采用营建阶段约年，不代表大明宫全部建筑在同年完成；城市节点不替代宫殿遗址分期考古。',
+    sourceIds: ['zizhi-tongjian', 'tanghuiyao-vol30-daming-palace', 'modern-geography-reference'],
+    uncertaintyNote: '634年是早期永安宫营建启动，635年改名，662—663年是高宗重建与新宫完成阶段；不同阶段不应压缩为同一完成年份，城市节点也不替代宫殿遗址分期考古。',
   },
   {
     eventId: 'tang-changan-end',
