@@ -66,6 +66,7 @@ function isEstablishmentDetailForPolity(
   eventSummary?: string,
   eventCategory?: string,
 ): boolean {
+  if (eventCategory?.includes('政权终结')) return false;
   if (eventCategory === '称帝／政权制度化' || eventCategory === '权力继承／政权形成') return false;
   const text = [eventTitle, eventSummary, eventText(detail)].filter(Boolean).join(' ');
   if (!establishmentText.test(text)) return false;

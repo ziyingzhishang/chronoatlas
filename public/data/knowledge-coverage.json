@@ -2886,6 +2886,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-liang-ended-923",
+      "entityKey": "event:later-liang-ended-923",
+      "label": "后梁政权终止",
+      "polityIds": [
+        "liang_later",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-liang-ended-923"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhu-youzhen-participated-later-liang-ended-923",
+            "event-detail:later-liang-ended-923"
+          ],
+          "relatedIds": [
+            "later-liang-five-dynasties-founded",
+            "li-cunxu",
+            "liang_later",
+            "tang-later-founded",
+            "tang_later",
+            "zhu-youzhen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-liang-five-dynasties-founded",
       "entityKey": "event:later-liang-five-dynasties-founded",
       "label": "五代后梁建立",
@@ -13054,6 +13117,70 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "later-liang-kaifeng-city-layer",
+      "entityKey": "heritage:later-liang-kaifeng-city-layer",
+      "label": "五代后梁开封城市历史层",
+      "polityIds": [
+        "liang_later",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "later-liang-kaifeng-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:later-liang-kaifeng-city-layer"
+          ],
+          "relatedIds": [
+            "later-liang-ended-923",
+            "later-liang-five-dynasties-founded",
+            "li-cunxu",
+            "liang_later",
+            "tang-later-founded",
+            "tang_later",
+            "zhu-wen",
+            "zhu-youzhen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "later-qin-changan-city-layer",
       "entityKey": "heritage:later-qin-changan-city-layer",
       "label": "后秦长安城政治空间遗址层",
@@ -22360,16 +22487,20 @@
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
             "claim:claim-yelu-abaoji-enemy-li-cunxu",
+            "claim:claim-zhu-youzhen-enemy-li-cunxu-termination-923",
             "event-detail:five-dynasties",
+            "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
             "person-polity:li-cunxu:tang_later"
           ],
           "relatedIds": [
             "five-dynasties",
+            "later-liang-ended-923",
             "meng-zhixiang",
             "tang-later-founded",
             "tang_later",
-            "yelu-abaoji"
+            "yelu-abaoji",
+            "zhu-youzhen"
           ]
         },
         {
@@ -32165,6 +32296,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "zhu-youzhen",
+      "entityKey": "person:zhu-youzhen",
+      "label": "朱友贞",
+      "polityIds": [
+        "liang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhu-youzhen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhu-youzhen-enemy-li-cunxu-termination-923",
+            "claim:claim-zhu-youzhen-participated-later-liang-ended-923",
+            "claim:claim-zhu-youzhen-ruled-later-liang",
+            "event-detail:later-liang-ended-923",
+            "person-polity:zhu-youzhen:liang_later"
+          ],
+          "relatedIds": [
+            "later-liang-ended-923",
+            "li-cunxu",
+            "liang_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "zhu-yuanzhang",
       "entityKey": "person:zhu-yuanzhang",
       "label": "朱元璋",
@@ -34459,18 +34654,25 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-zhu-wen-ruled-later-liang-fortythird",
+            "claim:claim-zhu-youzhen-ruled-later-liang",
             "event-detail:court-moves-luoyang",
             "event-detail:five-dynasties",
+            "event-detail:later-liang-ended-923",
             "event-detail:later-liang-five-dynasties-founded",
             "heritage-detail:kaifeng-northern-song-city-site",
-            "person:zhu-wen"
+            "heritage-detail:later-liang-kaifeng-city-layer",
+            "person:zhu-wen",
+            "person:zhu-youzhen"
           ],
           "relatedIds": [
             "court-moves-luoyang",
             "five-dynasties",
             "kaifeng-northern-song-city-site",
+            "later-liang-ended-923",
             "later-liang-five-dynasties-founded",
-            "zhu-wen"
+            "later-liang-kaifeng-city-layer",
+            "zhu-wen",
+            "zhu-youzhen"
           ]
         },
         {
@@ -36767,11 +36969,15 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-cunxu-ruled-tang-later-closure",
+            "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
+            "heritage-detail:later-liang-kaifeng-city-layer",
             "heritage-detail:later-tang-luoyang-city-site",
             "person:li-cunxu"
           ],
           "relatedIds": [
+            "later-liang-ended-923",
+            "later-liang-kaifeng-city-layer",
             "later-tang-luoyang-city-site",
             "li-cunxu",
             "tang-later-founded"
@@ -40093,6 +40299,23 @@
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "zhu-youzhen",
+      "entityKey": "person:zhu-youzhen",
+      "label": "朱友贞",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "liang_later"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     }
   ],
   "byKey": {
@@ -42967,6 +43190,69 @@
             "later_jin",
             "nurhaci",
             "qing-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-liang-ended-923": {
+      "entityType": "event",
+      "entityId": "later-liang-ended-923",
+      "entityKey": "event:later-liang-ended-923",
+      "label": "后梁政权终止",
+      "polityIds": [
+        "liang_later",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-liang-ended-923"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhu-youzhen-participated-later-liang-ended-923",
+            "event-detail:later-liang-ended-923"
+          ],
+          "relatedIds": [
+            "later-liang-five-dynasties-founded",
+            "li-cunxu",
+            "liang_later",
+            "tang-later-founded",
+            "tang_later",
+            "zhu-youzhen"
           ]
         },
         {
@@ -53146,6 +53432,70 @@
         }
       ]
     },
+    "heritage:later-liang-kaifeng-city-layer": {
+      "entityType": "heritage",
+      "entityId": "later-liang-kaifeng-city-layer",
+      "entityKey": "heritage:later-liang-kaifeng-city-layer",
+      "label": "五代后梁开封城市历史层",
+      "polityIds": [
+        "liang_later",
+        "tang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "later-liang-kaifeng-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:later-liang-kaifeng-city-layer"
+          ],
+          "relatedIds": [
+            "later-liang-ended-923",
+            "later-liang-five-dynasties-founded",
+            "li-cunxu",
+            "liang_later",
+            "tang-later-founded",
+            "tang_later",
+            "zhu-wen",
+            "zhu-youzhen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:later-qin-changan-city-layer": {
       "entityType": "heritage",
       "entityId": "later-qin-changan-city-layer",
@@ -62454,16 +62804,20 @@
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
             "claim:claim-yelu-abaoji-enemy-li-cunxu",
+            "claim:claim-zhu-youzhen-enemy-li-cunxu-termination-923",
             "event-detail:five-dynasties",
+            "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
             "person-polity:li-cunxu:tang_later"
           ],
           "relatedIds": [
             "five-dynasties",
+            "later-liang-ended-923",
             "meng-zhixiang",
             "tang-later-founded",
             "tang_later",
-            "yelu-abaoji"
+            "yelu-abaoji",
+            "zhu-youzhen"
           ]
         },
         {
@@ -72257,6 +72611,70 @@
         }
       ]
     },
+    "person:zhu-youzhen": {
+      "entityType": "person",
+      "entityId": "zhu-youzhen",
+      "entityKey": "person:zhu-youzhen",
+      "label": "朱友贞",
+      "polityIds": [
+        "liang_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhu-youzhen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhu-youzhen-enemy-li-cunxu-termination-923",
+            "claim:claim-zhu-youzhen-participated-later-liang-ended-923",
+            "claim:claim-zhu-youzhen-ruled-later-liang",
+            "event-detail:later-liang-ended-923",
+            "person-polity:zhu-youzhen:liang_later"
+          ],
+          "relatedIds": [
+            "later-liang-ended-923",
+            "li-cunxu",
+            "liang_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:zhu-yuanzhang": {
       "entityType": "person",
       "entityId": "zhu-yuanzhang",
@@ -74553,18 +74971,25 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-zhu-wen-ruled-later-liang-fortythird",
+            "claim:claim-zhu-youzhen-ruled-later-liang",
             "event-detail:court-moves-luoyang",
             "event-detail:five-dynasties",
+            "event-detail:later-liang-ended-923",
             "event-detail:later-liang-five-dynasties-founded",
             "heritage-detail:kaifeng-northern-song-city-site",
-            "person:zhu-wen"
+            "heritage-detail:later-liang-kaifeng-city-layer",
+            "person:zhu-wen",
+            "person:zhu-youzhen"
           ],
           "relatedIds": [
             "court-moves-luoyang",
             "five-dynasties",
             "kaifeng-northern-song-city-site",
+            "later-liang-ended-923",
             "later-liang-five-dynasties-founded",
-            "zhu-wen"
+            "later-liang-kaifeng-city-layer",
+            "zhu-wen",
+            "zhu-youzhen"
           ]
         },
         {
@@ -76861,11 +77286,15 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-cunxu-ruled-tang-later-closure",
+            "event-detail:later-liang-ended-923",
             "event-detail:tang-later-founded",
+            "heritage-detail:later-liang-kaifeng-city-layer",
             "heritage-detail:later-tang-luoyang-city-site",
             "person:li-cunxu"
           ],
           "relatedIds": [
+            "later-liang-ended-923",
+            "later-liang-kaifeng-city-layer",
             "later-tang-luoyang-city-site",
             "li-cunxu",
             "tang-later-founded"
@@ -78707,9 +79136,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 178,
+      "totalEntities": 180,
       "statusCounts": {
-        "covered": 850,
+        "covered": 860,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -78766,9 +79195,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 120,
+      "totalEntities": 121,
       "statusCounts": {
-        "covered": 600,
+        "covered": 605,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -78784,20 +79213,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 217,
+      "totalEntities": 219,
       "statusCounts": {
-        "covered": 1031,
+        "covered": 1040,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 54,
+        "uncertain": 55,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 54
+        "uncertain": 55
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -78853,7 +79282,8 @@
         "person:zhang-qian",
         "person:zhao-liehou",
         "person:zhao-xiangzi",
-        "person:zhou-gong-dan"
+        "person:zhou-gong-dan",
+        "person:zhu-youzhen"
       ]
     },
     "polity": {
@@ -79839,13 +80269,34 @@
       "entityKeys": [
         "event:court-moves-luoyang",
         "event:five-dynasties",
+        "event:later-liang-ended-923",
         "event:later-liang-five-dynasties-founded",
         "event:tang-changan-end",
         "heritage:kaifeng-northern-song-city-site",
+        "heritage:later-liang-kaifeng-city-layer",
         "person:zhu-wen",
+        "person:zhu-youzhen",
         "polity:liang_later"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "zhu-youzhen",
+          "entityKey": "person:zhu-youzhen",
+          "label": "朱友贞",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "liang_later"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -79853,7 +80304,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "后梁：学习闭环已覆盖。"
+      "summary": "后梁：有 1 项待核验缺口。"
     },
     "liang_southern": {
       "polityId": "liang_southern",
@@ -81394,8 +81845,10 @@
       "polityName": "后唐",
       "entityKeys": [
         "event:five-dynasties",
+        "event:later-liang-ended-923",
         "event:tang-later-founded",
         "heritage:jingnan-jiangling-city-site",
+        "heritage:later-liang-kaifeng-city-layer",
         "heritage:later-tang-luoyang-city-site",
         "person:li-cunxu",
         "polity:tang_later"
@@ -84023,6 +84476,7 @@
         "event:han-later-founded",
         "event:jin-ended-1234",
         "event:jin-later-founded",
+        "event:later-liang-ended-923",
         "event:later-liang-five-dynasties-founded",
         "event:northern-song-founded",
         "event:song-founded",
@@ -84031,11 +84485,13 @@
         "heritage:jin-kaifeng-city-layer",
         "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:kaifeng-northern-song-city-site",
+        "heritage:later-liang-kaifeng-city-layer",
         "person:li-cunxu",
         "person:ogedei",
         "person:wanyan-shouxu",
         "person:zhao-kuangyin",
         "person:zhu-wen",
+        "person:zhu-youzhen",
         "polity:han_later",
         "polity:jin_later",
         "polity:liang_later",
@@ -84043,6 +84499,23 @@
         "polity:zhou_later"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "zhu-youzhen",
+          "entityKey": "person:zhu-youzhen",
+          "label": "朱友贞",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "liang_later"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "jin-ended-1234",
@@ -84066,7 +84539,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "开封市：有 1 项待核验缺口。"
+      "summary": "开封市：有 2 项待核验缺口。"
     },
     "kunming": {
       "placeId": "kunming",
