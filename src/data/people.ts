@@ -61,6 +61,8 @@ export const people: Person[] = [
   { id: 'murong-chui', name: '慕容垂', aliases: ['后燕成武帝'], birthYear: 326, deathYear: 396, roles: ['皇帝', '军事领袖'], polityIds: ['later_yan'], description: '慕容垂在前秦解体后重建燕政权，后燕由此进入形成阶段。', sourceIds: ['zizhi-tongjian'] },
   { id: 'shi-hu', name: '石虎', aliases: ['后赵武帝'], birthYear: 295, deathYear: 349, roles: ['皇帝', '军事领袖'], polityIds: ['later_zhao'], description: '石虎是后赵的重要军事与政治人物，后期控制后赵朝政并参与其扩张。', sourceIds: ['zizhi-tongjian'] },
   { id: 'li-xiong', name: '李雄', aliases: ['成汉武帝'], birthYear: 274, deathYear: 334, roles: ['皇帝', '军事领袖'], polityIds: ['cheng_han'], description: '李雄在巴蜀建立成汉政权，成都成为其早期政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'li-shi', name: '李势', aliases: ['成汉末帝'], deathYear: 361, roles: ['皇帝', '末代统治者'], polityIds: ['cheng_han'], description: '李势是成汉末代君主，347年东晋桓温攻取成都后出降，成汉政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'huan-wen', name: '桓温', birthYear: 312, deathYear: 373, roles: ['将领', '军事领袖', '政治家'], polityIds: ['jin_eastern'], description: '桓温是东晋重要将领，347年西征攻取成都，结束成汉独立政权。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'xiao-yan', name: '萧衍', aliases: ['梁武帝'], birthYear: 464, deathYear: 549, roles: ['皇帝', '军事领袖'], polityIds: ['liang_southern'], description: '萧衍受禅建立南梁，建康继续作为南朝政治与文化中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'tuoba-gui', name: '拓跋珪', aliases: ['魏道武帝'], birthYear: 371, deathYear: 409, roles: ['皇帝', '军事领袖'], polityIds: ['wei_northern'], description: '拓跋珪复代改魏，北魏政权由此形成，平城成为早期政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'han-shizhong', name: '韩世忠', aliases: ['韩良臣'], birthYear: 1089, deathYear: 1151, roles: ['将领', '抗金将领'], polityIds: ['song_south'], description: '韩世忠是南宋重要将领，参与宋金战争并与岳飞等将领共同构成南宋军事网络。', sourceIds: ['zizhi-tongjian'] },

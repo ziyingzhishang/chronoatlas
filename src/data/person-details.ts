@@ -338,6 +338,16 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['cheng-han-founded'], sourceIds, uncertaintyNote: '304年前后是成汉形成阶段，306年称帝是后续节点；不能将形成阶段和正式称帝压缩为同一年。',
   },
   {
+    personId: 'li-shi', biography: '李势是成汉末代君主，347年东晋桓温攻取成都后出降，成汉政权终止。',
+    aliases: ['成汉末帝'], offices: [{ title: '成汉皇帝', polityId: 'cheng_han', placeId: 'chengdu', validFrom: 343, validTo: 347, datePrecision: 'range', sourceIds }],
+    keyEvents: ['cheng-han-ended-347'], sourceIds, uncertaintyNote: '李势代表成汉末期统治阶段；347年出降与成都城市继续承接是不同历史层次。',
+  },
+  {
+    personId: 'huan-wen', biography: '桓温是东晋重要将领与政治人物，347年西征攻取成都，结束成汉的独立政权阶段。',
+    aliases: ['桓宣武'], offices: [{ title: '东晋将领', polityId: 'jin_eastern', placeId: 'jiankang', validFrom: 346, validTo: 347, datePrecision: 'range', sourceIds }],
+    keyEvents: ['cheng-han-ended-347'], sourceIds, uncertaintyNote: '桓温在347年成都战事中的军事角色与其后东晋朝廷政治活动分开记录。',
+  },
+  {
     personId: 'xiao-yan', biography: '萧衍在南齐末年掌握建康朝廷与江南军政资源，502年受禅建立南梁。',
     aliases: ['梁武帝'], offices: [{ title: '南梁皇帝', polityId: 'liang_southern', placeId: 'jiankang', validFrom: 502, validTo: 549, datePrecision: 'range', sourceIds }],
     keyEvents: ['southern-liang-founded'], sourceIds, uncertaintyNote: '502年受禅与南梁对各地的实际整合是不同过程，建康政治中心身份不代表建国当年已完成全域控制。',

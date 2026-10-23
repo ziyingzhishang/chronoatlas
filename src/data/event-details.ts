@@ -665,6 +665,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '304年十月李雄即成都王位，是明确的政权形成单年节点；306年称帝是后续阶段，且304年不能据此推断已控制整个巴蜀。',
   },
   {
+    eventId: 'cheng-han-ended-347',
+    participants: [
+      { personId: 'li-shi', role: '成汉末代君主与成都防御阶段的核心人物', note: '李势在桓温军队攻取成都后出降；本条不把末帝结局等同于成都城市和巴蜀地方社会消失。' },
+      { personId: 'huan-wen', role: '东晋西征攻取成都的将领', note: '桓温代表东晋对巴蜀的军事接收；其后政治活动不由本条一并概括。' },
+    ],
+    polityIds: ['cheng_han', 'jin_eastern'],
+    causes: ['成汉后期继承与地方军政整合能力下降。', '东晋在江南稳定后重新组织西征，试图恢复对巴蜀的影响。'],
+    consequences: ['东晋攻取成都，成汉统一政治结构结束。', '李势出降，桓温成为东晋接收巴蜀的代表人物。', '成都城市、道路和地方社会继续承接东晋及后续政权，政权终止与城市遗产延续分层记录。'],
+    phases: [{ label: '成都失守与成汉终止', startYear: 347, endYear: 347, summary: '桓温攻取成都，李势出降，成汉结束。' }],
+    locationIds: ['chengdu'],
+    relatedEventIds: ['cheng-han-founded', 'eastern-jin'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '347年作为成汉终止年份明确；西征、成都失守、李势出降和地方接收属于连续过程，不能把全部行政承接压缩为同一时刻。',
+  },
+  {
     eventId: 'former-yan-founded',
     participants: [
       { personId: 'murong-huang', role: '经营辽东并于337年称燕王的前燕君主', note: '慕容皝是前燕337年政权形成阶段的核心人物；其后慕容儁称帝及南进扩张属于制度升级和后续阶段。' },

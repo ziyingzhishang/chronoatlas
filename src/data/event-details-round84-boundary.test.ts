@@ -52,7 +52,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 126, 'needs-review': 46, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 127, 'needs-review': 46, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.needsReviewChecks.includes('timePrecision'));
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 

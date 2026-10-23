@@ -68,8 +68,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'jin_eastern', perspectiveSummary: '东晋是晋室南渡后在江南重建的延续政权，以建康为都，依靠士族、侨民与江南军政网络维持南方秩序。',
     foundationProcess: ['西晋北方秩序崩解后，司马睿在江东成为晋室重建核心。', '317年称晋王，318年称帝，两个节点共同构成东晋建立过程。', '建康成为东晋正式都城和南朝政治中心的前身。'],
     turningPoints: [turn(317, '晋室南渡建政', '司马睿在建康重建晋朝。', 'eastern-jin'), turn(383, '淝水前后', '北方统一尝试失败，东晋南方格局得到延续。'), turn(420, '刘裕受禅', '东晋结束，南朝刘宋开始。')],
-    principalFigureIds: ['sima-rui'], capitalPhases: [capital('jiankang', 317, 420)],
-    heritageIds: ['jiankang-taicheng-site', 'jiankang-six-dynasties-city-site'], eventIds: ['eastern-jin', 'jin-unification'], claimIds: ['claim-sima-rui-ruled-eastern-jin'], sourceIds: modernSources,
+    principalFigureIds: ['sima-rui', 'huan-wen'], capitalPhases: [capital('jiankang', 317, 420)],
+    heritageIds: ['jiankang-taicheng-site', 'jiankang-six-dynasties-city-site'], eventIds: ['eastern-jin', 'jin-unification', 'cheng-han-ended-347'], claimIds: ['claim-sima-rui-ruled-eastern-jin'], sourceIds: modernSources,
     uncertaintyNote: '“南渡”是政治与人口过程，不应简化为一次性迁移；建康遗产存在六朝叠压，具体宫城层次需分别标注。',
   }),
   detail({
@@ -244,8 +244,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'cheng_han', perspectiveSummary: '成汉从巴蜀地方军政网络中形成，以成都为核心承接西晋末年区域秩序，是十六国早期南方政权的重要节点。',
     foundationProcess: ['李雄承接李特、李流在巴蜀形成的军政基础。', '304年成汉进入政权形成阶段，成都成为主要政治中心。', '政权长期依托巴蜀山川与地方行政网络维持，347年为东晋桓温军队所灭。'],
     turningPoints: [turn(304, '成汉政权形成', '李雄在巴蜀建立独立政权。', 'cheng-han-founded'), turn(306, '李雄称帝', '成汉的君主制与政权名号进一步定型。'), turn(347, '成汉覆亡', '东晋军队攻取成都，成汉结束。')],
-    principalFigureIds: ['li-xiong'], capitalPhases: [capital('chengdu', 304, 347)],
-    heritageIds: ['cheng-han-chengdu-site'], eventIds: ['cheng-han-founded'], claimIds: ['claim-li-xiong-founded-cheng-han', 'claim-li-xiong-participated-cheng-han'], sourceIds: modernSources,
+    principalFigureIds: ['li-xiong', 'li-shi'], capitalPhases: [capital('chengdu', 304, 347)],
+    heritageIds: ['cheng-han-chengdu-site'], eventIds: ['cheng-han-founded', 'cheng-han-ended-347'], claimIds: ['claim-li-xiong-founded-cheng-han', 'claim-li-xiong-participated-cheng-han', 'claim-li-shi-ruled-cheng-han', 'claim-li-shi-participated-cheng-han-ended-347', 'claim-li-shi-enemy-huan-wen-termination-347'], sourceIds: modernSources,
     uncertaintyNote: '成汉早期由李特、李流等家族军政活动逐步形成，304年是目录采用的形成节点；成都遗址层属于多时期城市空间，不能据此复原成汉完整宫城。',
   }),
   detail({

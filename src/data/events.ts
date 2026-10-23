@@ -346,6 +346,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷八十五·晋纪七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷085', detail: '卷八十五记载304年十月李雄即成都王位；306年称帝为后续节点，不能据304年单年节点推断其已控制整个巴蜀。' }],
   },
   {
+    id: 'cheng-han-ended-347', year: 347, title: '成汉政权覆亡', summary: '东晋桓温攻取成都，李势出降，成汉统一政治结构结束；成都城市层继续承接后续政权。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '成汉长期以成都为巴蜀政治中心，东晋在江南稳定后逐步恢复对上游和巴蜀方向的军事压力。',
+    process: '347年东晋桓温西征攻取成都，成汉末帝李势出降，成汉政权结束；成都的城市、道路和地方社会继续进入东晋及后续历史层。',
+    impact: '东晋重新取得巴蜀，成汉作为独立政权终止；成都从成汉都城转入多政权承接的城市阶段。',
+    mapNote: '地图将347年标为成汉终止节点，成都标注为末期都城和今日成都历史空间参照；该节点不表示城市遗址或地方社会消失。',
+    references: [{ title: '《资治通鉴》卷九十七·晋纪十九', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷097', detail: '用于347年桓温攻取成都、李势出降和成汉终止的年份级核验。' }],
+  },
+  {
     id: 'former-yan-founded', year: 337, title: '前燕政权形成', summary: '慕容皝在辽东、河北建立燕政权，前燕进入形成阶段。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '慕容氏在辽东经营多年，并在后赵与北方诸部竞争中积累了独立的军政资源。',

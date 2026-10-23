@@ -476,6 +476,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "cheng-han-ended-347",
+      "entityKey": "event:cheng-han-ended-347",
+      "label": "成汉政权覆亡",
+      "polityIds": [
+        "cheng_han",
+        "jin_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "cheng-han-ended-347"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-shi-participated-cheng-han-ended-347",
+            "event-detail:cheng-han-ended-347"
+          ],
+          "relatedIds": [
+            "cheng-han-founded",
+            "cheng_han",
+            "eastern-jin",
+            "huan-wen",
+            "jin_eastern",
+            "li-shi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "cheng-han-founded",
       "entityKey": "event:cheng-han-founded",
       "label": "成汉政权形成",
@@ -10502,7 +10565,8 @@
       "entityKey": "heritage:cheng-han-chengdu-site",
       "label": "成汉成都政治中心遗址层",
       "polityIds": [
-        "cheng_han"
+        "cheng_han",
+        "jin_eastern"
       ],
       "checks": [
         {
@@ -10526,6 +10590,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -10539,8 +10604,12 @@
             "heritage-detail:cheng-han-chengdu-site"
           ],
           "relatedIds": [
+            "cheng-han-ended-347",
             "cheng-han-founded",
             "cheng_han",
+            "huan-wen",
+            "jin_eastern",
+            "li-shi",
             "li-xiong"
           ]
         },
@@ -20395,6 +20464,68 @@
     },
     {
       "entityType": "person",
+      "entityId": "huan-wen",
+      "entityKey": "person:huan-wen",
+      "label": "桓温",
+      "polityIds": [
+        "jin_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "huan-wen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-shi-enemy-huan-wen-termination-347",
+            "event-detail:cheng-han-ended-347",
+            "person-polity:huan-wen:jin_eastern"
+          ],
+          "relatedIds": [
+            "cheng-han-ended-347",
+            "jin_eastern",
+            "li-shi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "huang-daozhou",
       "entityKey": "person:huang-daozhou",
       "label": "黄道周",
@@ -21941,6 +22072,70 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "li-shi",
+      "entityKey": "person:li-shi",
+      "label": "李势",
+      "polityIds": [
+        "cheng_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-shi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-shi-enemy-huan-wen-termination-347",
+            "claim:claim-li-shi-participated-cheng-han-ended-347",
+            "claim:claim-li-shi-ruled-cheng-han",
+            "event-detail:cheng-han-ended-347",
+            "person-polity:li-shi:cheng_han"
+          ],
+          "relatedIds": [
+            "cheng-han-ended-347",
+            "cheng_han",
+            "huan-wen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -31486,15 +31681,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-shi-ruled-cheng-han",
             "claim:claim-li-xiong-founded-cheng-han",
             "claim:claim-li-xiong-ruled-cheng-han-fiftythird",
+            "event-detail:cheng-han-ended-347",
             "event-detail:cheng-han-founded",
             "heritage-detail:cheng-han-chengdu-site",
+            "person:li-shi",
             "person:li-xiong"
           ],
           "relatedIds": [
             "cheng-han-chengdu-site",
+            "cheng-han-ended-347",
             "cheng-han-founded",
+            "li-shi",
             "li-xiong"
           ]
         },
@@ -32544,15 +32744,21 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-sima-rui-ruled-eastern-jin",
+            "event-detail:cheng-han-ended-347",
             "event-detail:eastern-jin",
             "event-detail:liu-yu-captures-changan",
+            "heritage-detail:cheng-han-chengdu-site",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
+            "person:huan-wen",
             "person:liu-muzi",
             "person:sima-rui"
           ],
           "relatedIds": [
+            "cheng-han-chengdu-site",
+            "cheng-han-ended-347",
             "eastern-jin",
+            "huan-wen",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
             "liu-muzi",
@@ -38463,6 +38669,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "li-shi",
+      "entityKey": "person:li-shi",
+      "label": "李势",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "cheng_han"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "li-xian-western-xia",
       "entityKey": "person:li-xian-western-xia",
       "label": "李睍",
@@ -39428,6 +39651,69 @@
             "han-imperial-accession",
             "han_western",
             "liu-bang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:cheng-han-ended-347": {
+      "entityType": "event",
+      "entityId": "cheng-han-ended-347",
+      "entityKey": "event:cheng-han-ended-347",
+      "label": "成汉政权覆亡",
+      "polityIds": [
+        "cheng_han",
+        "jin_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "cheng-han-ended-347"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-shi-participated-cheng-han-ended-347",
+            "event-detail:cheng-han-ended-347"
+          ],
+          "relatedIds": [
+            "cheng-han-founded",
+            "cheng_han",
+            "eastern-jin",
+            "huan-wen",
+            "jin_eastern",
+            "li-shi"
           ]
         },
         {
@@ -49467,7 +49753,8 @@
       "entityKey": "heritage:cheng-han-chengdu-site",
       "label": "成汉成都政治中心遗址层",
       "polityIds": [
-        "cheng_han"
+        "cheng_han",
+        "jin_eastern"
       ],
       "checks": [
         {
@@ -49491,6 +49778,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -49504,8 +49792,12 @@
             "heritage-detail:cheng-han-chengdu-site"
           ],
           "relatedIds": [
+            "cheng-han-ended-347",
             "cheng-han-founded",
             "cheng_han",
+            "huan-wen",
+            "jin_eastern",
+            "li-shi",
             "li-xiong"
           ]
         },
@@ -59358,6 +59650,68 @@
         }
       ]
     },
+    "person:huan-wen": {
+      "entityType": "person",
+      "entityId": "huan-wen",
+      "entityKey": "person:huan-wen",
+      "label": "桓温",
+      "polityIds": [
+        "jin_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "huan-wen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-shi-enemy-huan-wen-termination-347",
+            "event-detail:cheng-han-ended-347",
+            "person-polity:huan-wen:jin_eastern"
+          ],
+          "relatedIds": [
+            "cheng-han-ended-347",
+            "jin_eastern",
+            "li-shi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:huang-daozhou": {
       "entityType": "person",
       "entityId": "huang-daozhou",
@@ -60906,6 +61260,70 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:li-shi": {
+      "entityType": "person",
+      "entityId": "li-shi",
+      "entityKey": "person:li-shi",
+      "label": "李势",
+      "polityIds": [
+        "cheng_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-shi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-shi-enemy-huan-wen-termination-347",
+            "claim:claim-li-shi-participated-cheng-han-ended-347",
+            "claim:claim-li-shi-ruled-cheng-han",
+            "event-detail:cheng-han-ended-347",
+            "person-polity:li-shi:cheng_han"
+          ],
+          "relatedIds": [
+            "cheng-han-ended-347",
+            "cheng_han",
+            "huan-wen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -70451,15 +70869,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-shi-ruled-cheng-han",
             "claim:claim-li-xiong-founded-cheng-han",
             "claim:claim-li-xiong-ruled-cheng-han-fiftythird",
+            "event-detail:cheng-han-ended-347",
             "event-detail:cheng-han-founded",
             "heritage-detail:cheng-han-chengdu-site",
+            "person:li-shi",
             "person:li-xiong"
           ],
           "relatedIds": [
             "cheng-han-chengdu-site",
+            "cheng-han-ended-347",
             "cheng-han-founded",
+            "li-shi",
             "li-xiong"
           ]
         },
@@ -71509,15 +71932,21 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-sima-rui-ruled-eastern-jin",
+            "event-detail:cheng-han-ended-347",
             "event-detail:eastern-jin",
             "event-detail:liu-yu-captures-changan",
+            "heritage-detail:cheng-han-chengdu-site",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
+            "person:huan-wen",
             "person:liu-muzi",
             "person:sima-rui"
           ],
           "relatedIds": [
+            "cheng-han-chengdu-site",
+            "cheng-han-ended-347",
             "eastern-jin",
+            "huan-wen",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
             "liu-muzi",
@@ -76466,9 +76895,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 172,
+      "totalEntities": 173,
       "statusCounts": {
-        "covered": 820,
+        "covered": 825,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -76543,20 +76972,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 210,
+      "totalEntities": 212,
       "statusCounts": {
-        "covered": 997,
+        "covered": 1006,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 53,
+        "uncertain": 54,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 53
+        "uncertain": 54
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -76582,6 +77011,7 @@
         "person:juqu-mujian",
         "person:kuchlug",
         "person:langdarma",
+        "person:li-shi",
         "person:li-xian-western-xia",
         "person:liu-xuan",
         "person:liu-yao",
@@ -76663,12 +77093,32 @@
       "polityId": "cheng_han",
       "polityName": "成汉",
       "entityKeys": [
+        "event:cheng-han-ended-347",
         "event:cheng-han-founded",
         "heritage:cheng-han-chengdu-site",
+        "person:li-shi",
         "person:li-xiong",
         "polity:cheng_han"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "li-shi",
+          "entityKey": "person:li-shi",
+          "label": "李势",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "cheng_han"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -76676,7 +77126,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "成汉：学习闭环已覆盖。"
+      "summary": "成汉：有 1 项待核验缺口。"
     },
     "chu_ten": {
       "polityId": "chu_ten",
@@ -77275,10 +77725,13 @@
       "polityId": "jin_eastern",
       "polityName": "东晋",
       "entityKeys": [
+        "event:cheng-han-ended-347",
         "event:eastern-jin",
         "event:liu-song-founded",
+        "heritage:cheng-han-chengdu-site",
         "heritage:jiankang-six-dynasties-city-site",
         "heritage:jiankang-taicheng-site",
+        "person:huan-wen",
         "person:liu-muzi",
         "person:sima-rui",
         "polity:jin_eastern"
@@ -80810,6 +81263,7 @@
       "cityName": "成都市",
       "capitalRecordCount": 4,
       "entityKeys": [
+        "event:cheng-han-ended-347",
         "event:cheng-han-founded",
         "event:former-shu-founded",
         "event:later-shu-founded",
@@ -80819,6 +81273,8 @@
         "heritage:former-shu-yongling",
         "heritage:later-shu-chengdu-city-site",
         "heritage:shu-han-chengdu-city-site",
+        "person:huan-wen",
+        "person:li-shi",
         "person:li-xiong",
         "person:liu-bei",
         "person:meng-zhixiang",
@@ -80828,7 +81284,25 @@
         "polity:later_shu",
         "polity:shu_three"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "li-shi",
+          "entityKey": "person:li-shi",
+          "label": "李势",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "cheng_han"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -80836,7 +81310,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "成都市：学习闭环已覆盖。"
+      "summary": "成都市：有 1 项待核验缺口。"
     },
     "chibi": {
       "placeId": "chibi",
