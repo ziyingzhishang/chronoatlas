@@ -24,7 +24,6 @@ const eventParticipationGaps = [
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
   { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
-  { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
   { personId: 'seondeok-silla', eventIds: [] },
@@ -112,7 +111,6 @@ describe('round one hundred eleven person relationship boundary audit', () => {
 
     for (const [personId, eventId] of [
       ['yuan-hong', 'northern-wei-founded'],
-      ['tuoba-tao', 'northern-wei-founded'],
       ['mongke', 'mongol-founded'],
     ] as const) {
       expect(peopleById.get(personId)?.birthYear, `${personId}: birth year`)

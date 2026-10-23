@@ -305,7 +305,7 @@ const details: HeritageDetail[] = [
     phase('original', '城市发展', '4世纪前后', '姑臧在河西地方政权竞争中持续发展，成为前凉及后续凉州政权的重要中心。', 301, 439),
     phase('reconstruction', '多政权沿用', '前凉至北凉、后凉时期', '不同政权在姑臧延续行政、军事和交通功能，城市形态与政治归属随阶段变化。', 314, 439, '不同凉州政权的宫城、外郭城和城市范围不能合并为同一静态城址。'),
     phase('site', '城市遗存', '现代考古与城市层', '城址、墓葬、道路和相关遗物以考古层、博物馆和城市历史空间形式保存。', 1900),
-  ], ['fu-jian'], ['former_liang', 'northern_liang', 'later_liang'], ['former-liang-founded', 'later-liang-founded', 'northern-liang-moved-guzang'], ['古城与城墙遗迹', '河西交通和城市考古材料', '博物馆与遗址展示'], '从今天的武威观察十六国河西政权更替、姑臧都城传统和丝绸之路城市史。', '姑臧古城的具体范围和各政权建筑层位仍需分期；401年迁都事件明确连接北凉首都阶段，但不意味着现存全部城市遗存都可归入北凉。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['fu-jian', 'juqu-mengxun', 'juqu-mujian'], ['former_liang', 'northern_liang', 'later_liang'], ['former-liang-founded', 'later-liang-founded', 'northern-liang-moved-guzang', 'northern-liang-ended-439'], ['古城与城墙遗迹', '河西交通和城市考古材料', '博物馆与遗址展示'], '从今天的武威观察十六国河西政权更替、姑臧都城传统和丝绸之路城市史。', '姑臧古城的具体范围和各政权建筑层位需分期；439年北凉政权终止是政治转换节点，不意味着姑臧城市或河西交通遗产消失。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('shangyang-palace-site', '今河南省洛阳市西工区隋唐洛阳城宫城西部及洛河沿线相关考古区域。', ['唐代洛阳宫城西部的上阳宫', '武周时期洛阳宫廷、园林和政治生活'], [
     phase('original', '原建筑', '674—676年上元中营造；675年为通行整理年', '上阳宫作为唐代洛阳宫城西部宫苑，679年已有宫成、移御记载；武周时期继续承担宫廷生活与政治空间功能。', 674, 676, '始建单年不能从“上元中”直接确定，679年宫成是另一个明确端点。'),
     phase('reconstruction', '武周沿用与调整', '690—705年', '武则天以洛阳为神都时，上阳宫与宫城其他空间共同构成武周政治中心。', 690, 705, '文献所见宫苑功能与具体建筑遗存的对应关系需分项核验。'),

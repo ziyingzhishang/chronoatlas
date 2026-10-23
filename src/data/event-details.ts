@@ -2113,6 +2113,22 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '401年表达北凉由张掖转入姑臧阶段；具体迁都仪式、城市边界和北凉对河西各节点的直接控制仍需按史料分层，不把后期范围前推。',
   },
   {
+    eventId: 'northern-liang-ended-439',
+    participants: [
+      { personId: 'juqu-mujian', role: '北凉末主', note: '沮渠牧犍连接北凉末期统治、姑臧终局与439年政权终止。' },
+      { personId: 'tuoba-tao', role: '北魏皇帝与河西征服阶段代表', note: '拓跋焘代表北魏推进河西战争与行政接收，具体攻城将领和地方接收不归因于单一皇帝个人。' },
+    ],
+    polityIds: ['northern_liang', 'wei_northern'],
+    causes: ['北凉末期以姑臧为中心的河西政权面临北魏持续军事推进。', '北魏在拓跋焘时期向河西扩张并重组地方行政。'],
+    consequences: ['北凉作为河西独立政权终止，北魏接收姑臧及河西核心。', '姑臧古城、河西交通与后续凉州城市层继续存在。'],
+    phases: [
+      { label: '北凉末期姑臧中心', startYear: 433, endYear: 439, summary: '沮渠牧犍承接北凉末期王权，姑臧作为河西政治中心延续。' },
+      { label: '北魏攻取姑臧', startYear: 439, endYear: 439, summary: '北魏进入姑臧并结束北凉统一政治结构，军事和地方接收为连续过程。' },
+    ],
+    locationIds: ['guzang'], relatedEventIds: ['northern-liang-founded', 'northern-liang-moved-guzang'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '439年作为北凉政权终止约年；攻城过程、沮渠牧犍结局、地方归附和北魏行政接收应分层记录。',
+  },
+  {
     eventId: 'yang-wu-founded',
     participants: [
       { personId: 'yang-xingmi', role: '经营淮南并推动杨吴政权形成的地方军事领袖', note: '杨行密在扬州及淮南建立持续军政基础；902年受封吴王是分期节点，不能等同于完全脱离唐廷的正式称帝。' },

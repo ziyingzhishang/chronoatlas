@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { buildEventDetailCoverageReport } from './event-detail-coverage';
 
 const reviewBoundaryReasons = {
+  'northern-liang-ended-439': 'termination-approximation',
   'an-lushan-rebellion': 'multi-year-process',
   'changan-former-qin': 'formation-approximation',
   'changan-gengshi': 'participant-endpoint-review',
@@ -55,7 +56,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 45, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 123, 'needs-review': 46, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -110,6 +111,6 @@ describe('event details ninety-second round boundary audit', () => {
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');
-    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(39);
+    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(40);
   });
 });

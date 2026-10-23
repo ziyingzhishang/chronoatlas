@@ -13,7 +13,6 @@ const reviewGaps = [
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
   { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
-  { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
 ] as const;
 
@@ -91,7 +90,6 @@ describe('round one hundred ten event-participation boundary audit', () => {
 
     for (const [personId, eventId] of [
       ['yuan-hong', 'northern-wei-founded'],
-      ['tuoba-tao', 'northern-wei-founded'],
       ['mongke', 'mongol-founded'],
     ] as const) {
       expect(peopleById.get(personId)?.birthYear, `${personId}: birth year`)

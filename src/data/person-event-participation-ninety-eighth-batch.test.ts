@@ -15,7 +15,6 @@ const currentGaps = [
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录班固参与者。' },
   { personId: 'li-zhi', eventIds: ['daming-palace-built'], reason: '事件节点是大明宫营建，未记录李治参与者。' },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reason: '北魏建政详情只记录拓跋珪参与者，不能以同一政权继承关系替代。' },
-  { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], reason: '北魏建政详情只记录拓跋珪参与者，不能把后续统治者回填为建政参与者。' },
   { personId: 'yuwen-yong', eventIds: [], reason: '当前目录没有可直接挂接且包含宇文邕参与者字段的事件节点。' },
   { personId: 'qin-mugong', eventIds: [], reason: '秦穆公晚于秦襄公列侯节点，当前仅作为秦国后续发展阶段的上下文人物。' },
   { personId: 'seondeok-silla', eventIds: [], reason: '善德女王属于新罗统一战争前的统治阶段，当前建国事件不记录其参与。' },
@@ -71,7 +70,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(12);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (

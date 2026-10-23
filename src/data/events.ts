@@ -1059,6 +1059,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百八·晋纪三十', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷108', detail: '用于核对沮渠蒙逊掌权及北凉由张掖转向姑臧的阶段；具体城市空间仍按遗址资料分层理解。' }],
   },
   {
+    id: 'northern-liang-ended-439', year: 439, title: '北凉政权终止', summary: '北魏军队攻取姑臧，沮渠牧犍所代表的北凉末期政权结束；姑臧城市与河西交通遗产继续进入后续历史。', placeId: 'guzang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'china', category: '政权终结／战争', verification: 'partial',
+    background: '北凉末期以姑臧为中心维持河西政权，北魏在拓跋焘时期持续向河西推进。',
+    process: '439年前后北魏军队攻取姑臧，沮渠牧犍所代表的北凉末期政权结束；军事围攻、城市接收、地方归附和北魏行政重组属于连续过程，不能压缩为城市遗址同日消失。',
+    impact: '北凉作为河西独立政权终止，北魏完成对河西核心的政权接收；姑臧古城、河西交通和后续凉州城市层继续存在。',
+    mapNote: '地图将439年标作北凉政权终止的约年节点，姑臧标注为终局相关城市；政权终止不等于姑臧城市遗产或地方社会终止。',
+    references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于北魏灭北凉和十六国年代框架；具体攻城过程保持过程性。' }],
+  },
+  {
     id: 'yang-wu-founded', year: 902, title: '杨吴政权建立', summary: '杨行密受封吴王，江淮地方政权进入杨吴阶段。', placeId: 'yangzhou', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末藩镇竞争中，杨行密在淮南逐步控制扬州及江淮军政资源，唐中央对当地的实际约束持续减弱。',

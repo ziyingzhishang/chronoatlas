@@ -52,8 +52,8 @@ describe('fifty-third batch high-confidence person relationships', () => {
     expect(report.byPersonId['qian-liu'].requiredMissingCategoryKeys).not.toContain('governance');
     expect(report.byPersonId['sima-yan'].requiredMissingCategoryKeys).not.toContain('governance');
     expect(report.requiredMissingByCategory.governance).toHaveLength(32);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(121);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(122);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(12);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
   });
 });

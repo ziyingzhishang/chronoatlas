@@ -14,7 +14,6 @@ const decisions = [
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], kind: 'temporal-or-context-boundary' },
   { personId: 'li-zhi', eventIds: ['daming-palace-built'], kind: 'no-direct-role' },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], kind: 'born-after-event' },
-  { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'], kind: 'born-after-event' },
   { personId: 'yuwen-yong', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'qin-mugong', eventIds: [], kind: 'no-direct-role' },
   { personId: 'seondeok-silla', eventIds: [], kind: 'no-event-candidate' },
@@ -55,7 +54,6 @@ describe('round 104 independent event-participation audit', () => {
   it('rejects later-generation and same-context inference as direct participation evidence', () => {
     const temporalCases = [
       ['yuan-hong', 'northern-wei-founded'],
-      ['tuoba-tao', 'northern-wei-founded'],
       ['mongke', 'mongol-founded'],
     ] as const;
 

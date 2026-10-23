@@ -679,6 +679,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['northern-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北凉建政事件覆盖397年段业被推立至后续政权重组，本详情将沮渠蒙逊的401年掌权单独标出。',
   },
   {
+    personId: 'juqu-mujian', biography: '沮渠牧犍是北凉末主，连接439年前后北魏攻取姑臧、北凉政权终止与姑臧城市遗产的延续。',
+    aliases: ['北凉末主'], offices: [{ title: '北凉末主', polityId: 'northern_liang', placeId: 'guzang', validFrom: 433, validTo: 439, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-liang-ended-439'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '沮渠牧犍末期统治、北魏进入姑臧和后续处置属于连续过程，不用单一日期或地点替代。',
+  },
+  {
     personId: 'li-hao', biography: '李暠在397—399年经营敦煌并取得军政基础，400年建立西凉，405年迁治酒泉，维系河西西部政权与丝路交通。',
     aliases: ['西凉武昭王'], offices: [{ title: '西凉君主', polityId: 'western_liang', placeId: 'dunhuang', validFrom: 400, validTo: 404, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'] }, { title: '西凉君主', polityId: 'western_liang', placeId: 'jiuquan', validFrom: 405, validTo: 417, datePrecision: 'range', sourceIds: ['jinshu-vol87-li-hao'] }],
     keyEvents: ['western-liang-state-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'], uncertaintyNote: '400年为西凉建政确定年；397—399年受命敦煌与405年迁治酒泉分别是前置和后续阶段，不能压成固定单一都城。',

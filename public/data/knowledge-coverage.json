@@ -4058,6 +4058,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "northern-liang-ended-439",
+      "entityKey": "event:northern-liang-ended-439",
+      "label": "北凉政权终止",
+      "polityIds": [
+        "northern_liang",
+        "wei_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-liang-ended-439"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-juqu-mujian-participated-northern-liang-ended-439",
+            "event-detail:northern-liang-ended-439"
+          ],
+          "relatedIds": [
+            "juqu-mujian",
+            "northern-liang-founded",
+            "northern-liang-moved-guzang",
+            "northern_liang",
+            "tuoba-tao",
+            "wei_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "northern-liang-founded",
       "entityKey": "event:northern-liang-founded",
       "label": "北凉政权建立（形成阶段）",
@@ -11175,8 +11238,11 @@
             "former-liang-founded",
             "former_liang",
             "fu-jian",
+            "juqu-mengxun",
+            "juqu-mujian",
             "later-liang-founded",
             "later_liang",
+            "northern-liang-ended-439",
             "northern-liang-moved-guzang",
             "northern_liang"
           ]
@@ -20779,6 +20845,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "juqu-mujian",
+      "entityKey": "person:juqu-mujian",
+      "label": "沮渠牧犍",
+      "polityIds": [
+        "northern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "juqu-mujian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-juqu-mujian-enemy-tuoba-tao",
+            "claim:claim-juqu-mujian-participated-northern-liang-ended-439",
+            "claim:claim-juqu-mujian-ruled-northern-liang",
+            "event-detail:northern-liang-ended-439",
+            "person-polity:juqu-mujian:northern_liang"
+          ],
+          "relatedIds": [
+            "northern-liang-ended-439",
+            "northern_liang",
+            "tuoba-tao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "kim-chunchu",
       "entityKey": "person:kim-chunchu",
       "label": "金春秋",
@@ -27101,14 +27231,18 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-juqu-mujian-enemy-tuoba-tao",
             "claim:claim-tuoba-si-parent-tuoba-tao",
             "claim:claim-tuoba-tao-enemy-feng-hong-sixtysixth",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-related-tuoba-tao",
+            "event-detail:northern-liang-ended-439",
             "person-polity:tuoba-tao:wei_northern"
           ],
           "relatedIds": [
             "feng-hong",
+            "juqu-mujian",
+            "northern-liang-ended-439",
             "tuoba-si",
             "wei_northern",
             "yuan-hong"
@@ -33516,19 +33650,24 @@
           "evidenceIds": [
             "claim:claim-duan-ye-ruled-northern-liang-ninetysecond",
             "claim:claim-juqu-mengxun-ruled-northern-liang-sixtyfourth",
+            "claim:claim-juqu-mujian-ruled-northern-liang",
+            "event-detail:northern-liang-ended-439",
             "event-detail:northern-liang-founded",
             "event-detail:northern-liang-moved-guzang",
             "heritage-detail:guzang-ancient-city-site",
             "heritage-detail:guzang-baita-temple-site",
             "heritage-detail:zhangye-northern-liang-city-layer",
             "person:duan-ye",
-            "person:juqu-mengxun"
+            "person:juqu-mengxun",
+            "person:juqu-mujian"
           ],
           "relatedIds": [
             "duan-ye",
             "guzang-ancient-city-site",
             "guzang-baita-temple-site",
             "juqu-mengxun",
+            "juqu-mujian",
+            "northern-liang-ended-439",
             "northern-liang-founded",
             "northern-liang-moved-guzang",
             "zhangye-northern-liang-city-layer"
@@ -35556,6 +35695,7 @@
             "claim:claim-tuoba-si-ruled-northern-wei-sixtyfourth",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-ruled-northern-wei",
+            "event-detail:northern-liang-ended-439",
             "event-detail:northern-wei-founded",
             "heritage-detail:longmen-grottoes",
             "heritage-detail:luoyang-han-wei-city-site",
@@ -35569,6 +35709,7 @@
           "relatedIds": [
             "longmen-grottoes",
             "luoyang-han-wei-city-site",
+            "northern-liang-ended-439",
             "northern-wei-founded",
             "tuoba-gui",
             "tuoba-si",
@@ -37240,6 +37381,21 @@
     },
     {
       "entityType": "event",
+      "entityId": "northern-liang-ended-439",
+      "entityKey": "event:northern-liang-ended-439",
+      "label": "北凉政权终止",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "northern_liang",
+        "wei_northern"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "qi-warring-founded-eighth-batch",
       "entityKey": "event:qi-warring-founded-eighth-batch",
       "label": "齐政权建立（传统分期）",
@@ -37956,6 +38112,23 @@
       "evidenceIds": [
         "silla-encykorea",
         "silla-kim-chunchu-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "juqu-mujian",
+      "entityKey": "person:juqu-mujian",
+      "label": "沮渠牧犍",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "northern_liang"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -42549,6 +42722,69 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:northern-liang-ended-439": {
+      "entityType": "event",
+      "entityId": "northern-liang-ended-439",
+      "entityKey": "event:northern-liang-ended-439",
+      "label": "北凉政权终止",
+      "polityIds": [
+        "northern_liang",
+        "wei_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-liang-ended-439"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-juqu-mujian-participated-northern-liang-ended-439",
+            "event-detail:northern-liang-ended-439"
+          ],
+          "relatedIds": [
+            "juqu-mujian",
+            "northern-liang-founded",
+            "northern-liang-moved-guzang",
+            "northern_liang",
+            "tuoba-tao",
+            "wei_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -49673,8 +49909,11 @@
             "former-liang-founded",
             "former_liang",
             "fu-jian",
+            "juqu-mengxun",
+            "juqu-mujian",
             "later-liang-founded",
             "later_liang",
+            "northern-liang-ended-439",
             "northern-liang-moved-guzang",
             "northern_liang"
           ]
@@ -59275,6 +59514,70 @@
         }
       ]
     },
+    "person:juqu-mujian": {
+      "entityType": "person",
+      "entityId": "juqu-mujian",
+      "entityKey": "person:juqu-mujian",
+      "label": "沮渠牧犍",
+      "polityIds": [
+        "northern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "juqu-mujian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-juqu-mujian-enemy-tuoba-tao",
+            "claim:claim-juqu-mujian-participated-northern-liang-ended-439",
+            "claim:claim-juqu-mujian-ruled-northern-liang",
+            "event-detail:northern-liang-ended-439",
+            "person-polity:juqu-mujian:northern_liang"
+          ],
+          "relatedIds": [
+            "northern-liang-ended-439",
+            "northern_liang",
+            "tuoba-tao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:kim-chunchu": {
       "entityType": "person",
       "entityId": "kim-chunchu",
@@ -65599,14 +65902,18 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-juqu-mujian-enemy-tuoba-tao",
             "claim:claim-tuoba-si-parent-tuoba-tao",
             "claim:claim-tuoba-tao-enemy-feng-hong-sixtysixth",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-related-tuoba-tao",
+            "event-detail:northern-liang-ended-439",
             "person-polity:tuoba-tao:wei_northern"
           ],
           "relatedIds": [
             "feng-hong",
+            "juqu-mujian",
+            "northern-liang-ended-439",
             "tuoba-si",
             "wei_northern",
             "yuan-hong"
@@ -72014,19 +72321,24 @@
           "evidenceIds": [
             "claim:claim-duan-ye-ruled-northern-liang-ninetysecond",
             "claim:claim-juqu-mengxun-ruled-northern-liang-sixtyfourth",
+            "claim:claim-juqu-mujian-ruled-northern-liang",
+            "event-detail:northern-liang-ended-439",
             "event-detail:northern-liang-founded",
             "event-detail:northern-liang-moved-guzang",
             "heritage-detail:guzang-ancient-city-site",
             "heritage-detail:guzang-baita-temple-site",
             "heritage-detail:zhangye-northern-liang-city-layer",
             "person:duan-ye",
-            "person:juqu-mengxun"
+            "person:juqu-mengxun",
+            "person:juqu-mujian"
           ],
           "relatedIds": [
             "duan-ye",
             "guzang-ancient-city-site",
             "guzang-baita-temple-site",
             "juqu-mengxun",
+            "juqu-mujian",
+            "northern-liang-ended-439",
             "northern-liang-founded",
             "northern-liang-moved-guzang",
             "zhangye-northern-liang-city-layer"
@@ -74054,6 +74366,7 @@
             "claim:claim-tuoba-si-ruled-northern-wei-sixtyfourth",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-ruled-northern-wei",
+            "event-detail:northern-liang-ended-439",
             "event-detail:northern-wei-founded",
             "heritage-detail:longmen-grottoes",
             "heritage-detail:luoyang-han-wei-city-site",
@@ -74067,6 +74380,7 @@
           "relatedIds": [
             "longmen-grottoes",
             "luoyang-han-wei-city-site",
+            "northern-liang-ended-439",
             "northern-wei-founded",
             "tuoba-gui",
             "tuoba-si",
@@ -75564,20 +75878,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 168,
+      "totalEntities": 169,
       "statusCounts": {
-        "covered": 801,
+        "covered": 805,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 39,
+        "uncertain": 40,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 39
+        "uncertain": 40
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -75592,6 +75906,7 @@
         "event:goguryeo-founded",
         "event:jin-ended-1234",
         "event:mongol-karakorum-fixed-center",
+        "event:northern-liang-ended-439",
         "event:qi-warring-founded-eighth-batch",
         "event:qin-state-founded-eighth-batch",
         "event:republic-chongqing-wartime-center",
@@ -75640,20 +75955,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 209,
+      "totalEntities": 210,
       "statusCounts": {
-        "covered": 993,
+        "covered": 997,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 52,
+        "uncertain": 53,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 52
+        "uncertain": 53
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -75676,6 +75991,7 @@
         "person:ji-chang",
         "person:ji-yijiu",
         "person:jindeok-silla",
+        "person:juqu-mujian",
         "person:kuchlug",
         "person:langdarma",
         "person:li-xian-western-xia",
@@ -77072,6 +77388,7 @@
       "polityId": "northern_liang",
       "polityName": "北凉",
       "entityKeys": [
+        "event:northern-liang-ended-439",
         "event:northern-liang-founded",
         "event:northern-liang-moved-guzang",
         "heritage:guzang-ancient-city-site",
@@ -77079,6 +77396,7 @@
         "heritage:zhangye-northern-liang-city-layer",
         "person:duan-ye",
         "person:juqu-mengxun",
+        "person:juqu-mujian",
         "polity:northern_liang"
       ],
       "gaps": [
@@ -77098,6 +77416,38 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "juqu-mujian",
+          "entityKey": "person:juqu-mujian",
+          "label": "沮渠牧犍",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_liang"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "northern-liang-ended-439",
+          "entityKey": "event:northern-liang-ended-439",
+          "label": "北凉政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_liang",
+            "wei_northern"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -77107,7 +77457,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "北凉：有 1 项待核验缺口。"
+      "summary": "北凉：有 3 项待核验缺口。"
     },
     "northern_yan": {
       "polityId": "northern_yan",
@@ -78392,6 +78742,7 @@
       "polityId": "wei_northern",
       "polityName": "北魏",
       "entityKeys": [
+        "event:northern-liang-ended-439",
         "event:northern-wei-founded",
         "heritage:longmen-grottoes",
         "heritage:luoyang-han-wei-city-site",
@@ -78403,7 +78754,23 @@
         "person:yuan-hong",
         "polity:wei_northern"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "northern-liang-ended-439",
+          "entityKey": "event:northern-liang-ended-439",
+          "label": "北凉政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_liang",
+            "wei_northern"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -78411,7 +78778,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "北魏：学习闭环已覆盖。"
+      "summary": "北魏：有 1 项待核验缺口。"
     },
     "wei_three": {
       "polityId": "wei_three",
@@ -80258,18 +80625,38 @@
       "entityKeys": [
         "event:former-liang-founded",
         "event:later-liang-founded",
+        "event:northern-liang-ended-439",
         "event:northern-liang-founded",
         "event:northern-liang-moved-guzang",
         "heritage:guzang-ancient-city-site",
         "heritage:guzang-baita-temple-site",
         "person:juqu-mengxun",
+        "person:juqu-mujian",
         "person:lv-guang",
+        "person:tuoba-tao",
         "person:zhang-gui",
         "person:zhang-mao",
         "person:zhang-shi",
         "polity:northern_liang"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "juqu-mujian",
+          "entityKey": "person:juqu-mujian",
+          "label": "沮渠牧犍",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_liang"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "former-liang-founded",
@@ -80283,6 +80670,21 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "northern-liang-ended-439",
+          "entityKey": "event:northern-liang-ended-439",
+          "label": "北凉政权终止",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_liang",
+            "wei_northern"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -80292,7 +80694,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "武威市城区一带：有 1 项待核验缺口。"
+      "summary": "武威市城区一带：有 3 项待核验缺口。"
     },
     "handan": {
       "placeId": "handan",

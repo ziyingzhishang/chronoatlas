@@ -95,6 +95,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'jin-ended-1234', status: 'approximate', expectedPrecision: 'approximate', explanation: '1234年前后表示完颜守绪政权被蒙古与南宋联军击败、金统一政治结构结束的过程；末帝结局、地方接收与开封城市遗产延续分层记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-song-ended-1279', status: 'approximate', expectedPrecision: 'approximate', explanation: '1279年前后表示赵昺政权在崖门终局阶段结束的过程；海战、人物结局、元军接收与临安城市遗产延续分层记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'dali-ended-1253', status: 'approximate', expectedPrecision: 'approximate', explanation: '1253年前后表示蒙古进入大理核心、段兴智政权结束与地方行政接收的连续过程；羊苴咩城和大理古城遗产继续存在。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'northern-liang-ended-439', status: 'approximate', expectedPrecision: 'approximate', explanation: '439年前后表示北魏攻取姑臧、沮渠牧犍政权结束与地方行政接收的连续过程；姑臧城市遗产继续存在。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'hongguang-nanjing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1644年朱由崧在南京先监国后即帝位，年份级节点可由弘光阶段史料支持；即位日和南京阶段覆亡属于同一阶段内的后续细节。', timelineStrategy: 'year-marker' },
   { eventId: 'longwu-fuzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1645年朱聿键在福州即位并改元隆武，福州阶段中心可明确到年份；隆武覆亡与郑芝龙军镇关系另作阶段说明。', timelineStrategy: 'year-marker' },
