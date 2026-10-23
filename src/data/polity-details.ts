@@ -508,7 +508,7 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'goguryeo', perspectiveSummary: '高句丽从朱蒙建国叙事和东北亚早期国家化过程中形成，经历纥升骨城、国内城和后期平壤的政治中心迁移。',
     foundationProcess: ['传统纪年以公元前37年作为朱蒙建立高句丽的节点。', '早期王权在山城、河谷与部众网络中逐步整合。', '国内城及丸都山城、后期平壤分别代表不同都城阶段。'],
     turningPoints: [turn(-37, '高句丽建立', '朱蒙建立高句丽，早期国家形态随后逐步整合。', 'goguryeo-founded'), turn(3, '迁至国内城', '琉璃明王时期政治中心转向国内城。'), turn(427, '迁都平壤', '高句丽政治中心转向平壤，国家空间发生变化。')],
-    principalFigureIds: ['jumong', 'yuri-goguryeo', 'daemusin', 'gwanggaeto', 'jangsu-goguryeo'], capitalPhases: [capital('wunvshan', -37, 2), capital('guonei', 3, 426), capital('pyongyang', 427, 668)],
+    principalFigureIds: ['jumong', 'yuri-goguryeo', 'daemusin', 'gwanggaeto', 'jangsu-goguryeo'], capitalPhases: [capital('wunvshan', -37, 2), capital('guonei', 3, 426), capital('pyongyang', 427, 585), capital('pyongyang', 586, 668, 'primary', 'formal', '586年后政治中心转入长安城，现代地点仍以平壤历史区域作参照。')],
     heritageIds: ['wunvshan-goguryeo-early-capital-site', 'goguryeo-guonei-city-site', 'goguryeo-pyongyang-city-layer'], eventIds: ['goguryeo-founded', 'goguryeo-moves-pyongyang'], claimIds: ['claim-jumong-ruled-goguryeo-fiftyninth', 'claim-daemusin-ruled-goguryeo-fiftyseventh'], sourceIds: modernSources,
     uncertaintyNote: '前37年属于传统建国纪年，早期国家化与城址对应不能视为精确日期；国内城、丸都山城和平壤是不同年代与功能层，遗产节点不等于单一完整宫城。',
   }),

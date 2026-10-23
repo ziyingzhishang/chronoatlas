@@ -1,6 +1,11 @@
 import type { SourceNote } from '../domain/types';
 
 export const sourceNotes: SourceNote[] = [
+  {id:'shiji-xiongnu-modu',title:'《史记·匈奴列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/xiong-nu-lie-zhuan',scope:'冒顿单于即位、匈奴部众整合与汉初北方关系',note:'用于冒顿前209年至前174年间的单于与部众整合活动区间；不将草原联盟活动等同于固定都城或完整生卒年。'},
+  {id:'shiji-zhang-qian-dawan',title:'《史记·大宛列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/da-yuan-lie-zhuan',scope:'张骞两次出使西域及其外交活动阶段',note:'用于张骞前138年前后出使、前119年前后再出使的活动区间；不据活动起止推定生卒年。'},
+  {id:'shiji-meng-tian',title:'《史记·蒙恬列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/meng-tian-lie-zhuan',scope:'蒙恬任将、北方防务与秦末身死',note:'用于蒙恬约前215年至前210年的北方防务活动窗口；不将任职区间当作生卒年。'},
+  {id:'jinshu-vol103-liu-yao',title:'《晋书》卷一〇三·刘曜载记',authorOrInstitution:'房玄龄等',urlOrCitation:'https://zh.wikisource.org/zh-hant/晉書/卷103',scope:'刘曜被擒及前赵末年政治阶段',note:'支持刘曜329年被擒后遇害的卒年端点；生年仍无可靠直接记录。'},
+  {id:'hanshu-vol94-huhanye',title:'《汉书》卷九十四下·匈奴传',authorOrInstitution:'班固等',urlOrCitation:'https://zh.wikisource.org/zh-hant/漢書/卷94下',scope:'呼韩邪单于晚年、继承与前31年卒年',note:'支持呼韩邪前31年卒年；不据在位年限倒推出生年。'},
   {id:'ximing-temple-primary-biography',title:'《大唐大慈恩寺三藏法师传》卷十',authorOrInstitution:'慧立、彦悰／佛学数字图书馆藏本',urlOrCitation:'https://buddhism.lib.ntu.edu.tw/FULLTEXT/sutra/chi_pdf/sutra20/T50n2053.pdf',scope:'西明寺656年营建、营造功毕及658年玄奘迁入',note:'作为西明寺专属营建与玄奘迁入阶段的主要传记来源；不据此覆盖玄奘全部译经地点。'},
   {id:'xian-local-chronicle-ximing-temple',title:'《西安市志》第七卷·西明寺条',authorOrInstitution:'西安市地方志编纂委员会',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201711/P020240923626792713048.pdf',scope:'西明寺历史位置、遗址考古与唐代译经活动',note:'支持延康坊西南部、今白庙村附近的约址表达及西明寺寺院、译经网络历史；现代约址不等于精确建筑坐标。'},
   {id:'xuanzang-national-museum',title:'中国国家博物馆：玄奘译经',authorOrInstitution:'中国国家博物馆',urlOrCitation:'https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_331851.shtml',scope:'玄奘返唐、长安译经与659年赴玉华寺阶段',note:'用于限定玄奘在西明寺的阶段性活动，不把西明寺事件扩展为玄奘全部译经生涯。'},

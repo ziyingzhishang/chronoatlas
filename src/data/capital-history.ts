@@ -65,7 +65,7 @@ const explicit: Record<string, Seed[]> = {
   chu_warring:[['ying','郢',-403,-279],['shouchun','寿春',-278,-223]], yan_warring:[['ji','蓟',-403,-222]], qi_warring:[['linzi','临淄',-403,-221]],
   qin:[['xianyang','咸阳',-221,-206,'primary','formal','high','秦统一后以咸阳为正式都城，今陕西省咸阳市。']],
   xin:[['changan','长安',9,23,'primary','formal','high','新朝以长安为正式都城，今陕西省西安市；不将洛阳等临时驻地误写为正式迁都。']], xiongnu:[['xiongnu_core','龙城／单于庭',-209,93,'mobile_court','uncertain','low','匈奴采用单于庭、龙城等会聚中心，政治核心随部众和季节移动；现代参照为蒙古高原中部候选区域，龙城具体位置存在争议，不将其视作固定城市首都。']],
-  goguryeo:[['wunvshan','纥升骨城',-37,2],['guonei','国内城',3,426],['pyongyang','平壤',427,668]],
+  goguryeo:[['wunvshan','纥升骨城',-37,2],['guonei','国内城',3,426],['pyongyang','平壤',427,585],['pyongyang','长安城（平壤历史区域）',586,668,'primary','formal','medium','586年后高句丽政治中心转入长安城；地点实体仍以平壤历史区域作现代城市参照，不能把别称当作现代独立城市。']],
   silla:[['jincheng_silla','金城／徐罗伐',-57,935,'primary','formal','high']], tuyuhun:[['tuyuhun_core','伏俟城',313,663,'disputed','uncertain','low','伏俟城是吐谷浑后期王都候选，现代参照为今青海共和县一带；遗址与各阶段政治中心的对应仍有争议，不能确认全期固定首都。']],
   turkic:[
     ['uhtuken','于都斤／鄂尔浑政治核心',552,630,'mobile_court','actual','low','第一突厥汗国阶段以于都斤／鄂尔浑作为汗廷与草原政治核心的区域参照，现代对应为今蒙古国中部；汗廷随季节和军事活动移动，不是可唯一定位的固定城市首都。'],

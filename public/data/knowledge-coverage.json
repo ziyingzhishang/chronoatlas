@@ -17324,6 +17324,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "hanshu-vol94-huhanye",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -17351,6 +17352,7 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
+            "hanshu-vol94-huhanye",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -19428,6 +19430,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "jinshu-vol103-liu-yao",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -19455,6 +19458,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "jinshu-vol103-liu-yao",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -20135,6 +20139,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "shiji-meng-tian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -20260,6 +20265,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "shiji-xiongnu-modu",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -25617,6 +25623,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "shiji-zhang-qian-dawan",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -33222,6 +33229,7 @@
       ],
       "evidenceIds": [
         "china-chronology",
+        "hanshu-vol94-huhanye",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -33320,6 +33328,7 @@
         "former_zhao"
       ],
       "evidenceIds": [
+        "jinshu-vol103-liu-yao",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -51069,6 +51078,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "hanshu-vol94-huhanye",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -51096,6 +51106,7 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
+            "hanshu-vol94-huhanye",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -53173,6 +53184,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "jinshu-vol103-liu-yao",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -53200,6 +53212,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "jinshu-vol103-liu-yao",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -53880,6 +53893,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "shiji-meng-tian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -54005,6 +54019,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "shiji-xiongnu-modu",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -59362,6 +59377,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "shiji-zhang-qian-dawan",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -66845,6 +66861,7 @@
             "former_zhao"
           ],
           "evidenceIds": [
+            "jinshu-vol103-liu-yao",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -69261,6 +69278,7 @@
           ],
           "evidenceIds": [
             "china-chronology",
+            "hanshu-vol94-huhanye",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -71164,7 +71182,7 @@
     "pyongyang": {
       "placeId": "pyongyang",
       "cityName": "平壤市",
-      "capitalRecordCount": 1,
+      "capitalRecordCount": 2,
       "entityKeys": [
         "event:goguryeo-moves-pyongyang",
         "heritage:goguryeo-pyongyang-city-layer",

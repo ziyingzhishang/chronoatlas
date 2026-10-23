@@ -37,7 +37,8 @@ describe('round 103 city perspective audit', () => {
 
     expect(city?.subject.modernName).toBe('平壤市');
     expect(city?.capitalTerms).toEqual(expect.arrayContaining([
-      expect.objectContaining({ polityId: 'goguryeo', placeId: 'pyongyang', validFrom: 427, validTo: 668 }),
+      expect.objectContaining({ polityId: 'goguryeo', placeId: 'pyongyang', validFrom: 427, validTo: 585 }),
+      expect.objectContaining({ polityId: 'goguryeo', placeId: 'pyongyang', validFrom: 586, validTo: 668 }),
     ]));
     expect(city?.polities.map((item) => item.id)).toContain('goguryeo');
     expect(city?.events.map((item) => item.id)).toContain('goguryeo-moves-pyongyang');
@@ -51,7 +52,7 @@ describe('round 103 city perspective audit', () => {
         expect.objectContaining({ personId: 'jangsu-goguryeo' }),
       ]),
     }));
-    expect(heritage).toEqual(expect.objectContaining({ placeId: 'pyongyang', constructionFrom: 427, constructionTo: 668 }));
+    expect(heritage).toEqual(expect.objectContaining({ placeId: 'pyongyang', constructionFrom: 427, constructionTo: 585 }));
     expect(heritageDetail).toEqual(expect.objectContaining({
       associatedPeople: expect.arrayContaining(['jangsu-goguryeo']),
       associatedPolities: expect.arrayContaining(['goguryeo']),

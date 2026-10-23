@@ -116,8 +116,8 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'meng-tian', biography: '蒙恬是秦代将领，参与北方防务和秦帝国军事体系建设，生年史料不详。',
-    aliases: [], offices: [{ title: '秦将', polityId: 'qin', datePrecision: 'unknown', sourceIds }],
-    keyEvents: ['qin-unification'], sourceIds, uncertaintyNote: '生年未知；“秦将”是职能概括，不据此推导其具体驻地或与其他人物的关系。',
+    aliases: [], offices: [{ title: '秦将与北方防务统帅', polityId: 'qin', validFrom: -215, validTo: -210, datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'shiji-meng-tian'] }],
+    keyEvents: ['qin-unification'], sourceIds: ['zizhi-tongjian', 'shiji-meng-tian'], uncertaintyNote: '生年未知；“秦将”是职能概括，不据此推导其具体驻地或与其他人物的关系。',
   },
   {
     personId: 'han-xin', biography: '韩信是楚汉战争中的重要将领，参与汉初军事格局形成并在关中政权建立后继续发挥作用。',
@@ -136,8 +136,11 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'zhang-qian', biography: '张骞出使西域并带回关于中亚与西域的政治、地理信息，生年史料不详。',
-    aliases: [], offices: [{ title: '汉使者', polityId: 'han_western', datePrecision: 'unknown', sourceIds }],
-    keyEvents: ['changan-han-capital'], sourceIds, uncertaintyNote: '生年未知；出使经历按传统编年叙述，不把交通路线等同于持续政治控制。',
+    aliases: [], offices: [
+      { title: '汉使者／第一次出使西域', polityId: 'han_western', validFrom: -138, validTo: -126, datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'shiji-zhang-qian-dawan'] },
+      { title: '汉使者／第二次出使西域', polityId: 'han_western', validFrom: -119, validTo: -115, datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'shiji-zhang-qian-dawan'] },
+    ],
+    keyEvents: ['changan-han-capital'], sourceIds: ['zizhi-tongjian', 'shiji-zhang-qian-dawan'], uncertaintyNote: '生年未知；出使经历按传统编年叙述，不把交通路线等同于持续政治控制。',
   },
   {
     personId: 'liu-xuan', biography: '刘玄即更始帝，在新末动荡中建立更始政权，曾以长安为重要政治中心。',
@@ -391,7 +394,7 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'wu-ding', biography: '武丁是商代重要君主，甲骨文记录了其祭祀、战争和王室活动，反映出晚商国家组织的一部分面貌。',
-    aliases: ['殷高宗'], offices: [{ title: '商王', polityId: 'shang', datePrecision: 'approximate', sourceIds: ['china-chronology'] }],
+    aliases: ['殷高宗'], offices: [{ title: '商王', polityId: 'shang', validFrom: -1250, validTo: -1192, datePrecision: 'approximate', sourceIds: ['china-chronology'] }],
     keyEvents: [], sourceIds: ['china-chronology'], uncertaintyNote: '武丁在位年代采用商代分期的约年范围；甲骨卜辞的纪事性质与后世王年换算不能简单等同。',
   },
   {
@@ -406,7 +409,7 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'qin-mugong', biography: '秦穆公时期秦国在西部诸侯格局中扩展影响，秦国的崛起为后来的统一提供了长期政治与军事积累。',
-    aliases: ['秦穆公'], offices: [{ title: '秦国国君', polityId: 'qin_state', datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'china-chronology', 'qin-mugong-chronology'] }],
+    aliases: ['秦穆公'], offices: [{ title: '秦国国君', polityId: 'qin_state', validFrom: -659, validTo: -621, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'qin-mugong-chronology'] }],
     keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology', 'qin-mugong-chronology'], uncertaintyNote: '卒年有传统编年依据，但生年并非《秦本纪》直接记载；秦国早期年代与疆域仍需按诸侯国阶段核验，不能把秦穆公时期的影响范围提前等同于秦帝国版图。',
   },
   {
@@ -416,8 +419,8 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'modu-chanyu', biography: '冒顿单于整合匈奴部众并建立强势草原政治秩序，汉初北方格局因此发生重要变化。',
-    aliases: ['冒顿单于'], offices: [{ title: '匈奴单于', polityId: 'xiongnu', datePrecision: 'range', sourceIds: ['zizhi-tongjian'] }],
-    keyEvents: ['xiongnu-founded'], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '匈奴政治中心具有移动性，冒顿“建立”更多指部众整合和权力重组，不应套用固定都城或行政疆界概念。',
+    aliases: ['冒顿单于'], offices: [{ title: '匈奴单于', polityId: 'xiongnu', validFrom: -209, validTo: -174, datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'shiji-xiongnu-modu'] }],
+    keyEvents: ['xiongnu-founded'], sourceIds: ['zizhi-tongjian', 'shiji-xiongnu-modu'], uncertaintyNote: '匈奴政治中心具有移动性，冒顿“建立”更多指部众整合和权力重组，不应套用固定都城或行政疆界概念。',
   },
   {
     personId: 'esen-taishi', biography: '也先是北元中期蒙古政治中的重要军事与权力人物，曾拥立脱脱不花并在其后争夺汗权。',
