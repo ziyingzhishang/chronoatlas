@@ -40,7 +40,7 @@ describe('round 111 Han capital heritage boundary', () => {
     const expected = [
       { id: 'changle-palace-site', polities: ['han_western', 'xin'], placeId: 'changan', constructionFrom: -200 },
       { id: 'maoling', polities: ['han_western'], placeId: 'changan', constructionFrom: -139 },
-      { id: 'du-ling', polities: ['han_western'], placeId: 'changan', constructionFrom: -74 },
+      { id: 'du-ling', polities: ['han_western'], placeId: 'changan', constructionFrom: -65 },
       { id: 'white-horse-temple', polities: ['han_eastern', 'tang'], placeId: 'luoyang', constructionFrom: 68 },
     ] as const;
 
