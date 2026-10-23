@@ -61,6 +61,7 @@ export const people: Person[] = [
   { id: 'qin-hui', name: '秦桧', aliases: ['秦会之'], birthYear: 1090, deathYear: 1155, roles: ['宰相', '官员'], polityIds: ['song_south'], description: '秦桧在南宋朝廷任宰相，其政治路线与岳飞所代表的军事主张形成重要冲突。', sourceIds: ['zizhi-tongjian'] },
   { id: 'liu-yu', name: '刘裕', aliases: ['宋武帝'], birthYear: 363, deathYear: 422, roles: ['皇帝', '军事领袖'], polityIds: ['song_southern'], description: '刘裕在东晋末年掌握军政资源并受禅建立刘宋，建康成为南朝政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'murong-chui', name: '慕容垂', aliases: ['后燕成武帝'], birthYear: 326, deathYear: 396, roles: ['皇帝', '军事领袖'], polityIds: ['later_yan'], description: '慕容垂在前秦解体后重建燕政权，后燕由此进入形成阶段。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'murong-xi', name: '慕容熙', aliases: ['后燕昭文帝', '后燕末帝'], birthYear: 385, deathYear: 407, roles: ['皇帝', '末代君主'], polityIds: ['later_yan'], description: '慕容熙是后燕末帝，后燕退守龙城后在407年被高云取代，后燕政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'shi-hu', name: '石虎', aliases: ['后赵武帝'], birthYear: 295, deathYear: 349, roles: ['皇帝', '军事领袖'], polityIds: ['later_zhao'], description: '石虎是后赵的重要军事与政治人物，后期控制后赵朝政并参与其扩张。', sourceIds: ['zizhi-tongjian'] },
   { id: 'li-xiong', name: '李雄', aliases: ['成汉武帝'], birthYear: 274, deathYear: 334, roles: ['皇帝', '军事领袖'], polityIds: ['cheng_han'], description: '李雄在巴蜀建立成汉政权，成都成为其早期政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'li-shi', name: '李势', aliases: ['成汉末帝'], deathYear: 361, roles: ['皇帝', '末代统治者'], polityIds: ['cheng_han'], description: '李势是成汉末代君主，347年东晋桓温攻取成都后出降，成汉政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },

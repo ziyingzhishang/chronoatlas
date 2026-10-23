@@ -938,6 +938,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '975年是南唐政权终结节点；宋廷对江南各地的行政接收和制度调整仍有后续过程。',
   },
   {
+    eventId: 'later-yan-ended-407',
+    participants: [
+      { personId: 'murong-xi', role: '后燕末帝与龙城终局人物', note: '慕容熙在后燕退守龙城阶段统治，407年政权转换中被高云取代；其终局不等同于北燕后续冯氏统治。' },
+      { personId: 'gao-yun', role: '在龙城取代慕容熙并承接燕政权的君主', note: '高云对应407年政权承接节点；409年冯跋掌权是后续北燕统治结构变化。' },
+    ],
+    polityIds: ['later_yan', 'northern_yan'],
+    causes: ['后燕退守龙城后，宫廷与军政集团冲突加剧。', '高云及其支持者在辽西取得新的政治主导权。'],
+    consequences: ['后燕政权终止。', '龙城继续作为新的燕政权政治中心，北燕形成节点与409年冯跋掌权需分层表达。'],
+    phases: [
+      { label: '后燕末期龙城阶段', startYear: 398, endYear: 407, summary: '后燕失去河北后退守龙城，辽西成为末期政治中心。' },
+      { label: '慕容熙政权终局', startYear: 407, endYear: 407, summary: '高云在龙城取代慕容熙，后燕阶段终止。' },
+    ],
+    locationIds: ['longcheng'],
+    relatedEventIds: ['later-yan-founded', 'northern-yan-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '407年通常作为后燕终止与北燕形成的承接节点；北燕起点、龙城具体位置及407年高云政权的称谓存在分期差异，409年冯跋掌权不能前推为同一事件。',
+  },
+  {
     eventId: 'northern-yan-founded',
     participants: [
       { personId: 'gao-yun', role: '后燕末年在龙城被拥立并开启北燕形成阶段的君主', note: '高云对应407年北燕建政节点；其个人统治与409年冯跋掌权应按不同阶段区分。' },

@@ -145,11 +145,11 @@ export const polityDetails: PolityDetail[] = [
     uncertaintyNote: '337年称燕王与后续迁都、扩张是连续但不同的节点；龙城、蓟、邺对应不同阶段，邺城遗址也包含其他政权历史层。',
   }),
   detail({
-    polityId: 'later_yan', perspectiveSummary: '后燕是慕容垂在前秦瓦解后重建的燕政权，先以邺为核心，后在北魏压力下退守龙城，最终转入北燕阶段。',
+    polityId: 'later_yan', perspectiveSummary: '后燕是慕容垂在前秦瓦解后重建的燕政权，先以邺为核心，后在北魏压力下退守龙城，并于407年在龙城终结，随后转入北燕阶段。',
     foundationProcess: ['淝水之战后前秦失去对北方诸部的整合能力。', '慕容垂在384年前后重新组织燕政权。', '后燕在河北与辽东之间调整政治中心，政权后期受到北魏持续挤压。'],
-    turningPoints: [turn(384, '后燕形成', '慕容垂重建燕政权。', 'later-yan-founded'), turn(386, '称帝与扩张', '后燕进入制度化统治并经营河北。'), turn(397, '邺失守', '北魏压力迫使后燕政治中心转向龙城。')],
-    principalFigureIds: ['murong-chui'], capitalPhases: [capital('ye', 384, 397), capital('longcheng', 398, 407, 'primary', 'actual', '后期退守辽西的实际中心')],
-    heritageIds: ['later-yan-ye-city-site'], eventIds: ['later-yan-founded'], claimIds: ['claim-murong-chui-founded-later-yan'], sourceIds: modernSources,
+    turningPoints: [turn(384, '后燕形成', '慕容垂重建燕政权。', 'later-yan-founded'), turn(386, '称帝与扩张', '后燕进入制度化统治并经营河北。'), turn(397, '邺失守', '北魏压力迫使后燕政治中心转向龙城。'), turn(407, '后燕终结', '高云在龙城取代慕容熙，后燕政权终止，新的燕政权承接龙城政治中心。', 'later-yan-ended-407')],
+    principalFigureIds: ['murong-chui', 'murong-xi'], capitalPhases: [capital('ye', 384, 397), capital('longcheng', 398, 407, 'primary', 'actual', '后期退守辽西的实际中心')],
+    heritageIds: ['later-yan-ye-city-site', 'later-yan-longcheng-terminal-site'], eventIds: ['later-yan-founded', 'later-yan-ended-407'], claimIds: ['claim-murong-chui-founded-later-yan', 'claim-murong-xi-ruled-later-yan', 'claim-murong-xi-participated-later-yan-ended-407', 'claim-murong-xi-enemy-gao-yun-termination-407'], sourceIds: modernSources,
     uncertaintyNote: '384年采用政权形成约年，386年称帝是后续制度节点；邺城与龙城分别对应后燕不同阶段，不能以后期范围倒推建政初期。',
   }),
   detail({

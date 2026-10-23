@@ -517,6 +517,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《宋史》卷478·南唐李氏', url: 'https://zh.wikisource.org/zh-hans/%E5%AE%8B%E5%8F%B2/%E5%8D%B7478', detail: '记载宋军渡江、围攻金陵及李煜出降。' }],
   },
   {
+    id: 'later-yan-ended-407', year: 407, title: '后燕在龙城终结', summary: '高云在龙城取代后燕末帝慕容熙，后燕政权终止，新的燕政权承接其辽西政治中心。', placeId: 'longcheng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '后燕退守龙城后，慕容熙统治下的宫廷与军政集团矛盾加剧，高云及其支持者在辽西取得政治主导权。',
+    process: '407年高云在龙城取代慕容熙，后燕作为慕容氏政权阶段结束；高云建立的新燕政权通常被称为北燕，409年冯跋掌权是后续阶段。',
+    impact: '后燕政权终止，龙城继续作为燕政权政治中心；北燕与后燕之间是政权承接关系，不应把两者合并为同一统治阶段。',
+    mapNote: '龙城采用项目已有区域性节点，现代参照为朝阳及和龙一带；具体城址和“407年北燕起点”存在分期口径，不能据单一点位推导连续疆域。',
+    references: [{ title: '《资治通鉴》卷一百一十五·晋纪三十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷115', detail: '用于核对407年高云取代慕容熙、后燕政权终结及龙城政治中心承接；409年冯跋掌权另作后续节点。' }],
+  },
+  {
     id: 'northern-yan-founded', year: 407, title: '北燕政权形成', summary: '高云取代后燕后，北燕政权进入形成阶段；冯氏掌权是后续节点。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '后燕末年皇位与军政集团冲突加剧，汉化高氏集团与冯氏力量在辽西、龙城一带取得主导地位。',

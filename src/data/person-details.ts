@@ -338,6 +338,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['later-yan-founded'], sourceIds, uncertaintyNote: '384年前后是后燕形成阶段，386年称帝是后续节点；其与前秦既有阶段性效力也有后续对立，不能简化为单一关系。',
   },
   {
+    personId: 'murong-xi', biography: '慕容熙是后燕末帝。后燕失去河北后退守龙城，407年高云取代慕容熙，后燕政权终止，龙城政治中心转入新的燕政权阶段。',
+    aliases: ['后燕昭文帝', '后燕末帝'], offices: [{ title: '后燕末帝', polityId: 'later_yan', placeId: 'longcheng', validFrom: 401, validTo: 407, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-yan-ended-407'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '慕容熙对应后燕末期统治与407年龙城政权转换；高云取代后燕并不等于409年冯跋掌权已在同日完成，北燕起点和称谓需分期理解。',
+  },
+  {
     personId: 'shi-hu', biography: '石虎是后赵重要军事人物，石勒时期已参与核心军事事务，后期进一步掌握后赵朝政。',
     aliases: ['后赵武帝'], offices: [{ title: '后赵皇帝', polityId: 'later_zhao', placeId: 'ye', validFrom: 334, validTo: 349, datePrecision: 'range', sourceIds }],
     keyEvents: ['later-zhao-founded'], sourceIds, uncertaintyNote: '后赵建立早于石虎即位，本详情以建政节点作为政权导航，不把石虎个人统治期回填为后赵建国期。',

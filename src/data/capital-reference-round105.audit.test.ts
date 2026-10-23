@@ -54,6 +54,7 @@ describe('round 105 capital reference audit', () => {
       'han_western|changan||changle-palace-site',
       'later_liang|guzang||guzang-baita-temple-site',
       'liang_later|kaifeng|five-dynasties|',
+      'northern_yan|longcheng|later-yan-ended-407|',
       'qin|xianyang|chu-han-contention|',
       'song_northern|kaifeng|song-founded|',
       'sui|changan||hanguang-gate-site',
