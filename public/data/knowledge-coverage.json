@@ -3184,6 +3184,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-yan-ended-407",
+      "entityKey": "event:later-yan-ended-407",
+      "label": "后燕在龙城终结",
+      "polityIds": [
+        "later_yan",
+        "northern_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-yan-ended-407"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-xi-participated-later-yan-ended-407",
+            "event-detail:later-yan-ended-407"
+          ],
+          "relatedIds": [
+            "gao-yun",
+            "later-yan-founded",
+            "later_yan",
+            "murong-xi",
+            "northern-yan-founded",
+            "northern_yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-yan-founded",
       "entityKey": "event:later-yan-founded",
       "label": "后燕政权形成",
@@ -13041,6 +13103,64 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "later-yan-longcheng-terminal-site",
+      "entityKey": "heritage:later-yan-longcheng-terminal-site",
+      "label": "后燕末期龙城政治空间历史层",
+      "polityIds": [
+        "later_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "later-yan-longcheng-terminal-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:later-yan-longcheng-terminal-site"
+          ],
+          "relatedIds": [
+            "later-yan-ended-407",
+            "later_yan",
+            "murong-xi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "later-yan-ye-city-site",
       "entityKey": "heritage:later-yan-ye-city-site",
       "label": "后燕邺城政治空间遗址层",
@@ -19874,11 +19994,15 @@
             "claim:claim-gao-yun-participated-northern-yan",
             "claim:claim-gao-yun-related-feng-ba",
             "claim:claim-gao-yun-ruled-northern-yan-sixtysecond",
+            "claim:claim-murong-xi-enemy-gao-yun-termination-407",
+            "event-detail:later-yan-ended-407",
             "event-detail:northern-yan-founded",
             "person-polity:gao-yun:northern_yan"
           ],
           "relatedIds": [
             "feng-ba",
+            "later-yan-ended-407",
+            "murong-xi",
             "northern-yan-founded",
             "northern_yan"
           ]
@@ -25096,6 +25220,70 @@
             "former-yan-ended-370",
             "former_yan",
             "fu-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "murong-xi",
+      "entityKey": "person:murong-xi",
+      "label": "慕容熙",
+      "polityIds": [
+        "later_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "murong-xi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-xi-enemy-gao-yun-termination-407",
+            "claim:claim-murong-xi-participated-later-yan-ended-407",
+            "claim:claim-murong-xi-ruled-later-yan",
+            "event-detail:later-yan-ended-407",
+            "person-polity:murong-xi:later_yan"
+          ],
+          "relatedIds": [
+            "gao-yun",
+            "later-yan-ended-407",
+            "later_yan"
           ]
         },
         {
@@ -33865,14 +34053,21 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-murong-chui-founded-later-yan",
+            "claim:claim-murong-xi-ruled-later-yan",
+            "event-detail:later-yan-ended-407",
             "event-detail:later-yan-founded",
+            "heritage-detail:later-yan-longcheng-terminal-site",
             "heritage-detail:later-yan-ye-city-site",
-            "person:murong-chui"
+            "person:murong-chui",
+            "person:murong-xi"
           ],
           "relatedIds": [
+            "later-yan-ended-407",
             "later-yan-founded",
+            "later-yan-longcheng-terminal-site",
             "later-yan-ye-city-site",
-            "murong-chui"
+            "murong-chui",
+            "murong-xi"
           ]
         },
         {
@@ -34647,6 +34842,7 @@
             "claim:claim-feng-ba-ruled-northern-yan-sixtieth",
             "claim:claim-feng-hong-ruled-northern-yan-sixtysecond",
             "claim:claim-gao-yun-ruled-northern-yan-sixtysecond",
+            "event-detail:later-yan-ended-407",
             "event-detail:northern-yan-founded",
             "heritage-detail:northern-yan-longcheng-tomb",
             "person:feng-ba",
@@ -34659,6 +34855,7 @@
             "feng-hong",
             "feng-sufo",
             "gao-yun",
+            "later-yan-ended-407",
             "northern-yan-founded",
             "northern-yan-longcheng-tomb"
           ]
@@ -42789,6 +42986,68 @@
             "later_shu",
             "meng-zhixiang",
             "tang-later-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-yan-ended-407": {
+      "entityType": "event",
+      "entityId": "later-yan-ended-407",
+      "entityKey": "event:later-yan-ended-407",
+      "label": "后燕在龙城终结",
+      "polityIds": [
+        "later_yan",
+        "northern_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-yan-ended-407"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-xi-participated-later-yan-ended-407",
+            "event-detail:later-yan-ended-407"
+          ],
+          "relatedIds": [
+            "gao-yun",
+            "later-yan-founded",
+            "later_yan",
+            "murong-xi",
+            "northern-yan-founded",
+            "northern_yan"
           ]
         },
         {
@@ -52657,6 +52916,64 @@
         }
       ]
     },
+    "heritage:later-yan-longcheng-terminal-site": {
+      "entityType": "heritage",
+      "entityId": "later-yan-longcheng-terminal-site",
+      "entityKey": "heritage:later-yan-longcheng-terminal-site",
+      "label": "后燕末期龙城政治空间历史层",
+      "polityIds": [
+        "later_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "later-yan-longcheng-terminal-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:later-yan-longcheng-terminal-site"
+          ],
+          "relatedIds": [
+            "later-yan-ended-407",
+            "later_yan",
+            "murong-xi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:later-yan-ye-city-site": {
       "entityType": "heritage",
       "entityId": "later-yan-ye-city-site",
@@ -59492,11 +59809,15 @@
             "claim:claim-gao-yun-participated-northern-yan",
             "claim:claim-gao-yun-related-feng-ba",
             "claim:claim-gao-yun-ruled-northern-yan-sixtysecond",
+            "claim:claim-murong-xi-enemy-gao-yun-termination-407",
+            "event-detail:later-yan-ended-407",
             "event-detail:northern-yan-founded",
             "person-polity:gao-yun:northern_yan"
           ],
           "relatedIds": [
             "feng-ba",
+            "later-yan-ended-407",
+            "murong-xi",
             "northern-yan-founded",
             "northern_yan"
           ]
@@ -64714,6 +65035,70 @@
             "former-yan-ended-370",
             "former_yan",
             "fu-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:murong-xi": {
+      "entityType": "person",
+      "entityId": "murong-xi",
+      "entityKey": "person:murong-xi",
+      "label": "慕容熙",
+      "polityIds": [
+        "later_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "murong-xi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-xi-enemy-gao-yun-termination-407",
+            "claim:claim-murong-xi-participated-later-yan-ended-407",
+            "claim:claim-murong-xi-ruled-later-yan",
+            "event-detail:later-yan-ended-407",
+            "person-polity:murong-xi:later_yan"
+          ],
+          "relatedIds": [
+            "gao-yun",
+            "later-yan-ended-407",
+            "later_yan"
           ]
         },
         {
@@ -73483,14 +73868,21 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-murong-chui-founded-later-yan",
+            "claim:claim-murong-xi-ruled-later-yan",
+            "event-detail:later-yan-ended-407",
             "event-detail:later-yan-founded",
+            "heritage-detail:later-yan-longcheng-terminal-site",
             "heritage-detail:later-yan-ye-city-site",
-            "person:murong-chui"
+            "person:murong-chui",
+            "person:murong-xi"
           ],
           "relatedIds": [
+            "later-yan-ended-407",
             "later-yan-founded",
+            "later-yan-longcheng-terminal-site",
             "later-yan-ye-city-site",
-            "murong-chui"
+            "murong-chui",
+            "murong-xi"
           ]
         },
         {
@@ -74265,6 +74657,7 @@
             "claim:claim-feng-ba-ruled-northern-yan-sixtieth",
             "claim:claim-feng-hong-ruled-northern-yan-sixtysecond",
             "claim:claim-gao-yun-ruled-northern-yan-sixtysecond",
+            "event-detail:later-yan-ended-407",
             "event-detail:northern-yan-founded",
             "heritage-detail:northern-yan-longcheng-tomb",
             "person:feng-ba",
@@ -74277,6 +74670,7 @@
             "feng-hong",
             "feng-sufo",
             "gao-yun",
+            "later-yan-ended-407",
             "northern-yan-founded",
             "northern-yan-longcheng-tomb"
           ]
@@ -77755,9 +78149,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 176,
+      "totalEntities": 177,
       "statusCounts": {
-        "covered": 840,
+        "covered": 845,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -77814,9 +78208,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 119,
+      "totalEntities": 120,
       "statusCounts": {
-        "covered": 595,
+        "covered": 600,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -77832,9 +78226,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 215,
+      "totalEntities": 216,
       "statusCounts": {
-        "covered": 1021,
+        "covered": 1026,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -78836,11 +79230,14 @@
       "polityId": "later_yan",
       "polityName": "后燕",
       "entityKeys": [
+        "event:later-yan-ended-407",
         "event:later-yan-founded",
+        "heritage:later-yan-longcheng-terminal-site",
         "heritage:later-yan-ye-city-site",
         "heritage:northern-yan-longcheng-tomb",
         "heritage:southern-yan-guanggu-city-site",
         "person:murong-chui",
+        "person:murong-xi",
         "polity:later_yan"
       ],
       "gaps": [],
@@ -79379,6 +79776,7 @@
       "polityId": "northern_yan",
       "polityName": "北燕",
       "entityKeys": [
+        "event:later-yan-ended-407",
         "event:northern-yan-founded",
         "heritage:northern-yan-longcheng-tomb",
         "person:feng-ba",
@@ -83401,10 +83799,32 @@
       "cityName": "朝阳及和龙一带",
       "capitalRecordCount": 3,
       "entityKeys": [
+        "event:later-yan-ended-407",
         "event:northern-yan-founded",
-        "heritage:northern-yan-longcheng-tomb"
+        "heritage:later-yan-longcheng-terminal-site",
+        "heritage:northern-yan-longcheng-tomb",
+        "person:gao-yun",
+        "person:murong-xi"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "gao-yun",
+          "entityKey": "person:gao-yun",
+          "label": "高云",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_yan"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -83412,7 +83832,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "朝阳及和龙一带：学习闭环已覆盖。"
+      "summary": "朝阳及和龙一带：有 1 项待核验缺口。"
     },
     "luosie": {
       "placeId": "luosie",
