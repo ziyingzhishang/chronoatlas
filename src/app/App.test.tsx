@@ -1,7 +1,8 @@
-import { render, screen, within } from '@testing-library/react';
+import { act, render, screen, within } from '@testing-library/react';
 import { expect, test } from 'vitest';
 import { App } from './App';
 import userEvent from '@testing-library/user-event';
+import { mapInstances } from '../test/maplibre-mock';
 
 test('keeps secondary controls closed until requested', async () => {
   render(<App />);
@@ -139,5 +140,42 @@ test('keeps the city perspective continuous from the city timeline to event and 
 
   const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
   expect(heritageDrawer).toHaveClass('entity-drawer-heritage');
+  expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
+});
+
+test('opens the complete heritage drawer from the city relation panel', async () => {
+  render(<App />);
+  await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
+  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: '长安' }));
+
+  const cityDrawer = screen.getByRole('dialog', { name: '长安' });
+  const heritageSection = within(cityDrawer).getByRole('heading', { name: '遗产与城市记忆' }).parentElement!;
+  await userEvent.click(within(heritageSection).getByRole('button', { name: '大明宫遗址' }));
+
+  const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
+  expect(heritageDrawer).toHaveClass('entity-drawer-heritage');
+  expect(getComputedStyle(heritageDrawer).width).toBe('50vw');
+  expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
+  expect(within(heritageDrawer).getAllByText('不确定性：').length).toBeGreaterThan(0);
+  expect(within(heritageDrawer).getByRole('button', { name: '返回上一个实体' })).toBeInTheDocument();
+});
+
+test('opens the complete heritage drawer from a map-selected place detail', async () => {
+  render(<App />);
+  const map = mapInstances.at(-1)!;
+  map.queryRenderedFeatures.mockReturnValue([{ layer: { id: 'place-dots' }, properties: { entityId: 'changan' } }] as never[]);
+
+  act(() => map.emit('style.load'));
+  act(() => map.emit('click', { point: { x: 10, y: 10 } }));
+
+  const cityDrawer = screen.getByRole('complementary', { name: '政权目录' });
+  expect(within(cityDrawer).getByRole('heading', { name: '长安' })).toBeInTheDocument();
+  const heritageSection = within(cityDrawer).getByRole('heading', { name: '遗产与城市记忆' }).parentElement!;
+  await userEvent.click(within(heritageSection).getByRole('button', { name: '大明宫遗址' }));
+
+  const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
+  expect(heritageDrawer).toHaveClass('entity-drawer-heritage');
+  expect(getComputedStyle(heritageDrawer).width).toBe('50vw');
   expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
 });
