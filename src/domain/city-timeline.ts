@@ -175,7 +175,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     claims: uniqueById(data.claims),
     capitalTerms: data.capitalTerms ?? [],
   };
-  const cityStudy = buildCityStudyView(cityId, Number.POSITIVE_INFINITY, studyData);
+  const cityStudy = buildCityStudyView(cityId, Number.POSITIVE_INFINITY, studyData, { includeHistoricalClaims: true });
   const relations = cityStudy?.relations ?? [];
   return {
     cityId,

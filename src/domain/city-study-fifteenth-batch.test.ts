@@ -38,11 +38,11 @@ const claims: HistoricalClaim[] = [
   },
   {
     id: 'test-polity-event-claim', subjectId: polity.id, predicate: 'formed-in', objectId: earlyEvent.id,
-    validFrom: 10, validTo: 10, datePrecision: 'year', perspective: 'city', evidenceType: 'explicit-record', confidence: 'high', sourceIds: ['test-source'],
+    validFrom: 10, validTo: 100, datePrecision: 'range', perspective: 'city', evidenceType: 'explicit-record', confidence: 'high', sourceIds: ['test-source'],
   },
   {
     id: 'test-person-event-claim', subjectId: person.id, predicate: 'participated-in', objectId: earlyEvent.id,
-    validFrom: 10, validTo: 10, datePrecision: 'year', perspective: 'city', evidenceType: 'explicit-record', confidence: 'high', sourceIds: ['test-source'],
+    validFrom: 10, validTo: 100, datePrecision: 'range', perspective: 'city', evidenceType: 'explicit-record', confidence: 'high', sourceIds: ['test-source'],
   },
   {
     id: 'test-polity-heritage-claim', subjectId: polity.id, predicate: 'left-heritage', objectId: heritage.id,
@@ -84,5 +84,16 @@ describe('fifteenth batch city-perspective coverage', () => {
     expect(timeline.nodes.filter((node) => node.entity.type === 'event' && node.entity.id === earlyEvent.id)).toHaveLength(1);
     expect(timeline.nodes.filter((node) => node.entity.type === 'heritage' && node.entity.id === heritage.id)).toHaveLength(1);
     expect(timeline.relations?.some((relation) => relation.to.id === earlyEvent.id)).toBe(true);
+  });
+
+  it('excludes city claims and relations after their validTo year', () => {
+    const expiredClaim: HistoricalClaim = {
+      id: 'expired-city-relationship', subjectId: person.id, predicate: 'participated-in', objectId: earlyEvent.id,
+      validFrom: 10, validTo: 12, datePrecision: 'range', perspective: 'city', evidenceType: 'explicit-record', confidence: 'high', sourceIds: ['test-source'],
+    };
+    const view = buildCityStudyView(city.id, 20, { ...data, claims: [...claims, expiredClaim] });
+
+    expect(view?.claims.map((claim) => claim.id)).not.toContain(expiredClaim.id);
+    expect(view?.relations?.map((relation) => relation.claimId)).not.toContain(expiredClaim.id);
   });
 });

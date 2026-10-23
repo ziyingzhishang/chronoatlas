@@ -91,6 +91,7 @@ const buildCityRelations = (
   year: number,
   data: StudyData,
   entities: CityStudyEntity[],
+  includeHistoricalClaims = false,
 ): CityStudyRelation[] => {
   const entityIds = new Set(entities.map((entity) => entity.id));
   entityIds.add(cityId);
@@ -102,7 +103,7 @@ const buildCityRelations = (
     heritage: uniqueById(data.heritage),
   };
   const relations = data.claims
-    .filter((claim) => historicalUntil(claim.validFrom, year))
+    .filter((claim) => includeHistoricalClaims || active(claim.validFrom, claim.validTo, year))
     .filter((claim) => claim.objectId !== undefined && entityIds.has(claim.subjectId) && entityIds.has(claim.objectId))
     .map((claim): CityStudyRelation | undefined => {
       const from = cityEntity(claim.subjectId, resolvedData);
@@ -183,7 +184,12 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
   };
 }
 
-export function buildCityStudyView(cityId: string, year: number, data: StudyData): CityStudyView | undefined {
+export function buildCityStudyView(
+  cityId: string,
+  year: number,
+  data: StudyData,
+  options: { includeHistoricalClaims?: boolean } = {},
+): CityStudyView | undefined {
   const subject = data.places.find((place) => place.id === cityId);
   if (!subject) return undefined;
   // 城市视角需要保留截至该年已经发生过的全部政权连接；否则在650年
@@ -206,11 +212,11 @@ export function buildCityStudyView(cityId: string, year: number, data: StudyData
   ];
   const entityIds = new Set(entities.map((entity) => entity.id));
   const claims = [...new Map(data.claims
-    .filter((claim) => historicalUntil(claim.validFrom, year))
+    .filter((claim) => options.includeHistoricalClaims || active(claim.validFrom, claim.validTo, year))
     .filter((claim) => claimTouches(claim, cityId) || (entityIds.has(claim.subjectId) && claim.objectId !== undefined && entityIds.has(claim.objectId)))
     .map((claim) => [claim.id, claim])).values()];
   return {
     kind: 'city', subject, year, polities, capitalTerms,
-    events, people, heritage, claims, relations: buildCityRelations(cityId, year, data, entities),
+    events, people, heritage, claims, relations: buildCityRelations(cityId, year, data, entities, options.includeHistoricalClaims),
   };
 }
