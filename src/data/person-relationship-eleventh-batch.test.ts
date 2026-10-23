@@ -36,6 +36,10 @@ const batchClaimIds = new Set([
   'claim-ji-yijiu-related-zhou-wu',
   'claim-yu-the-great-related-zhou-wu',
   'claim-zhao-wuling-related-qin-shi-huang',
+  'claim-yelu-abaoji-parent-yelu-deguang-liao',
+  'claim-yelu-deguang-child-yelu-abaoji-liao',
+  'claim-shengzong-parent-xingzong-liao',
+  'claim-xingzong-child-shengzong-liao',
   'claim-zhou-gong-dan-ally-zhou-wu-seventythird',
 ]);
 

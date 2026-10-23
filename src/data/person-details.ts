@@ -258,6 +258,21 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['liao-founded'], sourceIds, uncertaintyNote: '契丹、辽的国号和政权分期存在不同叙述口径，本详情沿用项目目录并保留建国节点与后续国号变化的区别。',
   },
   {
+    personId: 'yelu-deguang', biography: '耶律德光即辽太宗，承接辽太祖政权并推动辽阳南京、幽州南京及五京制度重排等城市政治阶段。',
+    aliases: ['辽太宗'], offices: [{ title: '辽皇帝', polityId: 'khitan', validFrom: 926, validTo: 947, datePrecision: 'range', sourceIds: ['liao-history-geography'] }],
+    keyEvents: ['liao-dongdan-nanjing', 'liao-dongjing-established', 'liao-nanjing-established'], sourceIds: ['liao-history-geography'], uncertaintyNote: '928年辽阳升南京、938年辽阳改东京与幽州升南京是城市制度阶段，不等同于辽唯一首都迁移。',
+  },
+  {
+    personId: 'shengzong-liao', biography: '耶律隆绪即辽圣宗，长期统治辽朝。统和二十五年营建中京、置大定府，辽五京体系进一步制度化。',
+    aliases: ['辽圣宗'], offices: [{ title: '辽皇帝', polityId: 'khitan', validFrom: 982, validTo: 1031, datePrecision: 'range', sourceIds: ['liao-zhongjing-palace-museum'] }],
+    keyEvents: ['liao-zhongjing-built'], sourceIds: ['liao-zhongjing-palace-museum'], uncertaintyNote: '中京作为五京和区域中心的事实较稳妥，但辽后期是否正式迁都中京仍存在研究分歧。',
+  },
+  {
+    personId: 'xingzong-liao', biography: '耶律宗真即辽兴宗。重熙十三年将云州升为西京府，辽西京大同由此进入制度化的京府阶段。',
+    aliases: ['辽兴宗'], offices: [{ title: '辽皇帝', polityId: 'khitan', validFrom: 1031, validTo: 1055, datePrecision: 'range', sourceIds: ['datong-liao-xijing-official'] }],
+    keyEvents: ['liao-xijing-established'], sourceIds: ['datong-liao-xijing-official'], uncertaintyNote: '1044年是云州升西京府的城市制度节点，西京城市层与北魏平城及后世大同分层理解。',
+  },
+  {
     personId: 'wang-jian', biography: '王建在唐末经营巴蜀军政资源，907年在成都称帝，前蜀由此形成。',
     aliases: ['前蜀高祖'], offices: [{ title: '前蜀皇帝', polityId: 'former_shu', placeId: 'chengdu', validFrom: 907, validTo: 918, datePrecision: 'range', sourceIds }],
     keyEvents: ['former-shu-founded'], sourceIds, uncertaintyNote: '907年称帝标志前蜀政权形成，但巴蜀各地的实际控制仍需结合阶段性军事与行政资料。',

@@ -324,8 +324,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'khitan', perspectiveSummary: '辽由契丹部落联盟与耶律阿保机的汗权整合发展而来，实行五京制度，上京临潢府是核心首都而非唯一政治空间。',
     foundationProcess: ['耶律阿保机整合契丹部落并建立稳定的君主权力。', '916年称帝，辽政权进入王朝阶段。', '辽以五京制度管理多区域，政治中心随皇帝巡幸和区域治理而分布。'],
     turningPoints: [turn(916, '辽建立', '耶律阿保机称帝，契丹政权进入辽朝阶段。', 'liao-founded'), turn(947, '国号与区域秩序调整', '辽在中原政治竞争中的角色扩大。'), turn(1007, '中京建设', '五京体系进一步制度化，区域首都功能分化。')],
-    principalFigureIds: ['yelu-abaoji'], capitalPhases: [capital('liao_shangjing', 916, 1125, 'primary', 'formal', '上京临潢府；今内蒙古巴林左旗一带'), capital('liao_dongjing', 916, 1125, 'secondary', 'formal', '东京辽阳府；今辽宁辽阳一带'), capital('liao_nanjing', 916, 1125, 'secondary', 'formal', '南京析津府；今北京一带'), capital('liao_zhongjing', 1007, 1125, 'secondary', 'formal', '中京大定府；今内蒙古宁城县大明镇一带'), capital('liao_xijing', 916, 1125, 'secondary', 'formal', '西京大同府；今山西大同一带')],
-    heritageIds: ['liao-shangjing-city-site', 'liao-dongjing-city-site', 'liao-nanjing-city-site', 'liao-zhongjing-city-site', 'liao-xijing-city-site'], eventIds: ['liao-founded'], claimIds: [], sourceIds: modernSources,
+    principalFigureIds: ['yelu-abaoji'], capitalPhases: [capital('liao_shangjing', 916, 1125, 'primary', 'formal', '上京临潢府；今内蒙古巴林左旗一带'), capital('liao_dongjing', 938, 1125, 'secondary', 'formal', '928年升南京，938年改东京；今辽宁辽阳一带'), capital('liao_nanjing', 938, 1122, 'secondary', 'formal', '南京析津府；938年设置，今北京西南部一带，1122年辽控制阶段结束'), capital('liao_zhongjing', 1007, 1125, 'secondary', 'formal', '中京大定府；今内蒙古宁城县大明镇一带'), capital('liao_xijing', 1044, 1125, 'secondary', 'formal', '西京大同府；今山西大同一带')],
+    heritageIds: ['liao-shangjing-city-site', 'liao-dongjing-city-site', 'liao-nanjing-city-site', 'liao-zhongjing-city-site', 'liao-xijing-city-site'], eventIds: ['liao-founded', 'liao-dongping-established', 'liao-dongdan-nanjing', 'liao-dongjing-established', 'liao-nanjing-established', 'liao-zhongjing-built', 'liao-xijing-established'], claimIds: [], sourceIds: modernSources,
     uncertaintyNote: '辽国号、契丹国号及五京制度存在阶段差异；上京为核心首都但不排斥多中心治理，辽上京遗址不等于辽全境或全部五京遗存。',
   }),
   detail({

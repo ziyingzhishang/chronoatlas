@@ -7,7 +7,7 @@ import { polities } from './polities';
 import { sourceNotes } from './sources';
 
 const requiredMissingGovernance = [
-  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yu-the-great', 'jamukha', 'chiang-kai-shek', 'han-kangzi',
+  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'yu-the-great', 'jamukha', 'chiang-kai-shek', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt',
@@ -16,7 +16,7 @@ const requiredMissingGovernance = [
 const explicitRulerTitle = /皇帝|君主|国王|可汗|大汗|单于|汗|赞普|南诏王|苏丹|诸侯/;
 
 describe('round 108 governance boundary audit', () => {
-  it('keeps the 23 remaining required governance gaps stable', () => {
+  it('keeps the 28 remaining required governance gaps stable', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.requiredMissingByCategory.governance).toEqual(requiredMissingGovernance);
     expect(claims.filter((claim) => claim.id.endsWith('-round108'))).toEqual([]);
@@ -39,6 +39,6 @@ describe('round 108 governance boundary audit', () => {
         .map((office) => ({ personId, office })) ?? []
     ));
 
-    expect(eligibleOffices.map(({ personId }) => personId)).toEqual(['liu-zhuang', 'fu-jian-founder']);
+    expect(eligibleOffices.map(({ personId }) => personId)).toEqual(['liu-zhuang', 'fu-jian-founder', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao']);
   });
 });

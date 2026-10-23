@@ -2921,6 +2921,180 @@
     },
     {
       "entityType": "event",
+      "entityId": "liao-dongdan-nanjing",
+      "entityKey": "event:liao-dongdan-nanjing",
+      "label": "东丹国民迁入东平，辽阳升为南京",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-dongdan-nanjing"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-dongdan-nanjing"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongjing-established",
+            "liao-dongping-established",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "liao-dongjing-established",
+      "entityKey": "event:liao-dongjing-established",
+      "label": "辽南京改称东京，府名辽阳",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-dongjing-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-dongjing-established"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongdan-nanjing",
+            "liao-nanjing-established",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "liao-dongping-established",
+      "entityKey": "event:liao-dongping-established",
+      "label": "辽修葺辽阳故城，置东平郡",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-dongping-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-dongping-established"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongdan-nanjing",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "liao-founded",
       "entityKey": "event:liao-founded",
       "label": "辽建立",
@@ -2965,6 +3139,176 @@
             "five-dynasties",
             "khitan",
             "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "liao-nanjing-established",
+      "entityKey": "event:liao-nanjing-established",
+      "label": "辽升幽州为南京，建号燕京",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-nanjing-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-liao-nanjing-official",
+            "liao-history-geography"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-nanjing-established"
+          ],
+          "relatedIds": [
+            "jurchen-jin-moves-zhongdu",
+            "khitan",
+            "liao-founded",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "liao-xijing-established",
+      "entityKey": "event:liao-xijing-established",
+      "label": "辽升云州为西京府",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-xijing-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-xijing-established"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "xingzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "liao-zhongjing-built",
+      "entityKey": "event:liao-zhongjing-built",
+      "label": "辽营建中京，置大定府",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-zhongjing-built"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-zhongjing-palace-museum"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-zhongjing-built"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "shengzong-liao"
           ]
         },
         {
@@ -11037,8 +11381,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
-            "zizhi-tongjian"
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital",
+            "modern-geography-reference"
           ],
           "relatedIds": []
         },
@@ -11051,7 +11396,9 @@
           ],
           "relatedIds": [
             "khitan",
-            "liao-founded",
+            "liao-dongdan-nanjing",
+            "liao-dongjing-established",
+            "liao-dongping-established",
             "yelu-abaoji"
           ]
         },
@@ -11094,8 +11441,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
-            "zizhi-tongjian"
+            "beijing-liao-nanjing-official",
+            "liao-history-geography",
+            "modern-geography-reference"
           ],
           "relatedIds": []
         },
@@ -11108,7 +11456,7 @@
           ],
           "relatedIds": [
             "khitan",
-            "liao-founded",
+            "liao-nanjing-established",
             "yelu-abaoji"
           ]
         },
@@ -11208,8 +11556,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
-            "zizhi-tongjian"
+            "datong-liao-xijing-official",
+            "modern-geography-reference"
           ],
           "relatedIds": []
         },
@@ -11222,7 +11570,7 @@
           ],
           "relatedIds": [
             "khitan",
-            "liao-founded",
+            "liao-xijing-established",
             "yelu-abaoji"
           ]
         },
@@ -23015,6 +23363,67 @@
     },
     {
       "entityType": "person",
+      "entityId": "shengzong-liao",
+      "entityKey": "person:shengzong-liao",
+      "label": "耶律隆绪",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shengzong-liao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-zhongjing-palace-museum"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shengzong-parent-xingzong-liao",
+            "claim:claim-xingzong-child-shengzong-liao",
+            "event-detail:liao-zhongjing-built",
+            "person-polity:shengzong-liao:khitan"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-zhongjing-built",
+            "xingzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "liao-zhongjing-palace-museum"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "shi-hu",
       "entityKey": "person:shi-hu",
       "label": "石虎",
@@ -25493,6 +25902,67 @@
     },
     {
       "entityType": "person",
+      "entityId": "xingzong-liao",
+      "entityKey": "person:xingzong-liao",
+      "label": "耶律宗真",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xingzong-liao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shengzong-parent-xingzong-liao",
+            "claim:claim-xingzong-child-shengzong-liao",
+            "event-detail:liao-xijing-established",
+            "person-polity:xingzong-liao:khitan"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-xijing-established",
+            "shengzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "xuan-zang",
       "entityKey": "person:xuan-zang",
       "label": "玄奘",
@@ -25929,14 +26399,19 @@
           "evidenceIds": [
             "claim:claim-yelu-abaoji-enemy-li-cunxu",
             "claim:claim-yelu-abaoji-founded-khitan",
+            "claim:claim-yelu-abaoji-parent-yelu-deguang-liao",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
+            "claim:claim-yelu-deguang-child-yelu-abaoji-liao",
+            "event-detail:liao-dongping-established",
             "event-detail:liao-founded",
             "person-polity:yelu-abaoji:khitan"
           ],
           "relatedIds": [
             "khitan",
             "li-cunxu",
-            "liao-founded"
+            "liao-dongping-established",
+            "liao-founded",
+            "yelu-deguang"
           ]
         },
         {
@@ -26018,6 +26493,71 @@
             "china-chronology",
             "iranica-qara-ketay",
             "liaoshi-vol30-yelu-dashi"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "yelu-deguang",
+      "entityKey": "person:yelu-deguang",
+      "label": "耶律德光",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yelu-deguang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yelu-abaoji-parent-yelu-deguang-liao",
+            "claim:claim-yelu-deguang-child-yelu-abaoji-liao",
+            "event-detail:liao-dongdan-nanjing",
+            "event-detail:liao-dongjing-established",
+            "event-detail:liao-nanjing-established",
+            "person-polity:yelu-deguang:khitan"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongdan-nanjing",
+            "liao-dongjing-established",
+            "liao-nanjing-established",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "liao-history-geography"
           ],
           "relatedIds": []
         }
@@ -29452,22 +29992,40 @@
           "evidenceIds": [
             "claim:claim-yelu-abaoji-founded-khitan",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
+            "event-detail:liao-dongdan-nanjing",
+            "event-detail:liao-dongjing-established",
+            "event-detail:liao-dongping-established",
             "event-detail:liao-founded",
+            "event-detail:liao-nanjing-established",
+            "event-detail:liao-xijing-established",
+            "event-detail:liao-zhongjing-built",
             "heritage-detail:liao-dongjing-city-site",
             "heritage-detail:liao-nanjing-city-site",
             "heritage-detail:liao-shangjing-city-site",
             "heritage-detail:liao-xijing-city-site",
             "heritage-detail:liao-zhongjing-city-site",
-            "person:yelu-abaoji"
+            "person:shengzong-liao",
+            "person:xingzong-liao",
+            "person:yelu-abaoji",
+            "person:yelu-deguang"
           ],
           "relatedIds": [
+            "liao-dongdan-nanjing",
             "liao-dongjing-city-site",
+            "liao-dongjing-established",
+            "liao-dongping-established",
             "liao-founded",
             "liao-nanjing-city-site",
+            "liao-nanjing-established",
             "liao-shangjing-city-site",
             "liao-xijing-city-site",
+            "liao-xijing-established",
+            "liao-zhongjing-built",
             "liao-zhongjing-city-site",
-            "yelu-abaoji"
+            "shengzong-liao",
+            "xingzong-liao",
+            "yelu-abaoji",
+            "yelu-deguang"
           ]
         },
         {
@@ -38065,6 +38623,180 @@
         }
       ]
     },
+    "event:liao-dongdan-nanjing": {
+      "entityType": "event",
+      "entityId": "liao-dongdan-nanjing",
+      "entityKey": "event:liao-dongdan-nanjing",
+      "label": "东丹国民迁入东平，辽阳升为南京",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-dongdan-nanjing"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-dongdan-nanjing"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongjing-established",
+            "liao-dongping-established",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:liao-dongjing-established": {
+      "entityType": "event",
+      "entityId": "liao-dongjing-established",
+      "entityKey": "event:liao-dongjing-established",
+      "label": "辽南京改称东京，府名辽阳",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-dongjing-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-dongjing-established"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongdan-nanjing",
+            "liao-nanjing-established",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:liao-dongping-established": {
+      "entityType": "event",
+      "entityId": "liao-dongping-established",
+      "entityKey": "event:liao-dongping-established",
+      "label": "辽修葺辽阳故城，置东平郡",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-dongping-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-dongping-established"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongdan-nanjing",
+            "liao-founded",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:liao-founded": {
       "entityType": "event",
       "entityId": "liao-founded",
@@ -38111,6 +38843,176 @@
             "five-dynasties",
             "khitan",
             "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:liao-nanjing-established": {
+      "entityType": "event",
+      "entityId": "liao-nanjing-established",
+      "entityKey": "event:liao-nanjing-established",
+      "label": "辽升幽州为南京，建号燕京",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-nanjing-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "beijing-liao-nanjing-official",
+            "liao-history-geography"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-nanjing-established"
+          ],
+          "relatedIds": [
+            "jurchen-jin-moves-zhongdu",
+            "khitan",
+            "liao-founded",
+            "yelu-deguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:liao-xijing-established": {
+      "entityType": "event",
+      "entityId": "liao-xijing-established",
+      "entityKey": "event:liao-xijing-established",
+      "label": "辽升云州为西京府",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-xijing-established"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-xijing-established"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "xingzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:liao-zhongjing-built": {
+      "entityType": "event",
+      "entityId": "liao-zhongjing-built",
+      "entityKey": "event:liao-zhongjing-built",
+      "label": "辽营建中京，置大定府",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liao-zhongjing-built"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-zhongjing-palace-museum"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:liao-zhongjing-built"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-founded",
+            "shengzong-liao"
           ]
         },
         {
@@ -46183,8 +47085,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
-            "zizhi-tongjian"
+            "liao-history-geography",
+            "liaoyang-museum-liao-capital",
+            "modern-geography-reference"
           ],
           "relatedIds": []
         },
@@ -46197,7 +47100,9 @@
           ],
           "relatedIds": [
             "khitan",
-            "liao-founded",
+            "liao-dongdan-nanjing",
+            "liao-dongjing-established",
+            "liao-dongping-established",
             "yelu-abaoji"
           ]
         },
@@ -46240,8 +47145,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
-            "zizhi-tongjian"
+            "beijing-liao-nanjing-official",
+            "liao-history-geography",
+            "modern-geography-reference"
           ],
           "relatedIds": []
         },
@@ -46254,7 +47160,7 @@
           ],
           "relatedIds": [
             "khitan",
-            "liao-founded",
+            "liao-nanjing-established",
             "yelu-abaoji"
           ]
         },
@@ -46354,8 +47260,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "modern-geography-reference",
-            "zizhi-tongjian"
+            "datong-liao-xijing-official",
+            "modern-geography-reference"
           ],
           "relatedIds": []
         },
@@ -46368,7 +47274,7 @@
           ],
           "relatedIds": [
             "khitan",
-            "liao-founded",
+            "liao-xijing-established",
             "yelu-abaoji"
           ]
         },
@@ -58159,6 +59065,67 @@
         }
       ]
     },
+    "person:shengzong-liao": {
+      "entityType": "person",
+      "entityId": "shengzong-liao",
+      "entityKey": "person:shengzong-liao",
+      "label": "耶律隆绪",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shengzong-liao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-zhongjing-palace-museum"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shengzong-parent-xingzong-liao",
+            "claim:claim-xingzong-child-shengzong-liao",
+            "event-detail:liao-zhongjing-built",
+            "person-polity:shengzong-liao:khitan"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-zhongjing-built",
+            "xingzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "liao-zhongjing-palace-museum"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:shi-hu": {
       "entityType": "person",
       "entityId": "shi-hu",
@@ -60637,6 +61604,67 @@
         }
       ]
     },
+    "person:xingzong-liao": {
+      "entityType": "person",
+      "entityId": "xingzong-liao",
+      "entityKey": "person:xingzong-liao",
+      "label": "耶律宗真",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xingzong-liao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shengzong-parent-xingzong-liao",
+            "claim:claim-xingzong-child-shengzong-liao",
+            "event-detail:liao-xijing-established",
+            "person-polity:xingzong-liao:khitan"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-xijing-established",
+            "shengzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:xuan-zang": {
       "entityType": "person",
       "entityId": "xuan-zang",
@@ -61075,14 +62103,19 @@
           "evidenceIds": [
             "claim:claim-yelu-abaoji-enemy-li-cunxu",
             "claim:claim-yelu-abaoji-founded-khitan",
+            "claim:claim-yelu-abaoji-parent-yelu-deguang-liao",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
+            "claim:claim-yelu-deguang-child-yelu-abaoji-liao",
+            "event-detail:liao-dongping-established",
             "event-detail:liao-founded",
             "person-polity:yelu-abaoji:khitan"
           ],
           "relatedIds": [
             "khitan",
             "li-cunxu",
-            "liao-founded"
+            "liao-dongping-established",
+            "liao-founded",
+            "yelu-deguang"
           ]
         },
         {
@@ -61164,6 +62197,71 @@
             "china-chronology",
             "iranica-qara-ketay",
             "liaoshi-vol30-yelu-dashi"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:yelu-deguang": {
+      "entityType": "person",
+      "entityId": "yelu-deguang",
+      "entityKey": "person:yelu-deguang",
+      "label": "耶律德光",
+      "polityIds": [
+        "khitan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yelu-deguang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "liao-history-geography"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yelu-abaoji-parent-yelu-deguang-liao",
+            "claim:claim-yelu-deguang-child-yelu-abaoji-liao",
+            "event-detail:liao-dongdan-nanjing",
+            "event-detail:liao-dongjing-established",
+            "event-detail:liao-nanjing-established",
+            "person-polity:yelu-deguang:khitan"
+          ],
+          "relatedIds": [
+            "khitan",
+            "liao-dongdan-nanjing",
+            "liao-dongjing-established",
+            "liao-nanjing-established",
+            "yelu-abaoji"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "liao-history-geography"
           ],
           "relatedIds": []
         }
@@ -64598,22 +65696,40 @@
           "evidenceIds": [
             "claim:claim-yelu-abaoji-founded-khitan",
             "claim:claim-yelu-abaoji-ruled-khitan-fortythird",
+            "event-detail:liao-dongdan-nanjing",
+            "event-detail:liao-dongjing-established",
+            "event-detail:liao-dongping-established",
             "event-detail:liao-founded",
+            "event-detail:liao-nanjing-established",
+            "event-detail:liao-xijing-established",
+            "event-detail:liao-zhongjing-built",
             "heritage-detail:liao-dongjing-city-site",
             "heritage-detail:liao-nanjing-city-site",
             "heritage-detail:liao-shangjing-city-site",
             "heritage-detail:liao-xijing-city-site",
             "heritage-detail:liao-zhongjing-city-site",
-            "person:yelu-abaoji"
+            "person:shengzong-liao",
+            "person:xingzong-liao",
+            "person:yelu-abaoji",
+            "person:yelu-deguang"
           ],
           "relatedIds": [
+            "liao-dongdan-nanjing",
             "liao-dongjing-city-site",
+            "liao-dongjing-established",
+            "liao-dongping-established",
             "liao-founded",
             "liao-nanjing-city-site",
+            "liao-nanjing-established",
             "liao-shangjing-city-site",
             "liao-xijing-city-site",
+            "liao-xijing-established",
+            "liao-zhongjing-built",
             "liao-zhongjing-city-site",
-            "yelu-abaoji"
+            "shengzong-liao",
+            "xingzong-liao",
+            "yelu-abaoji",
+            "yelu-deguang"
           ]
         },
         {
@@ -69069,9 +70185,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 144,
+      "totalEntities": 150,
       "statusCounts": {
-        "covered": 688,
+        "covered": 718,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -69138,9 +70254,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 190,
+      "totalEntities": 193,
       "statusCounts": {
-        "covered": 904,
+        "covered": 919,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -69927,13 +71043,22 @@
       "polityId": "khitan",
       "polityName": "辽",
       "entityKeys": [
+        "event:liao-dongdan-nanjing",
+        "event:liao-dongjing-established",
+        "event:liao-dongping-established",
         "event:liao-founded",
+        "event:liao-nanjing-established",
+        "event:liao-xijing-established",
+        "event:liao-zhongjing-built",
         "heritage:liao-dongjing-city-site",
         "heritage:liao-nanjing-city-site",
         "heritage:liao-shangjing-city-site",
         "heritage:liao-xijing-city-site",
         "heritage:liao-zhongjing-city-site",
+        "person:shengzong-liao",
+        "person:xingzong-liao",
         "person:yelu-abaoji",
+        "person:yelu-deguang",
         "polity:khitan"
       ],
       "gaps": [],
@@ -73761,7 +74886,12 @@
       "cityName": "辽阳市",
       "capitalRecordCount": 1,
       "entityKeys": [
-        "heritage:liao-dongjing-city-site"
+        "event:liao-dongdan-nanjing",
+        "event:liao-dongjing-established",
+        "event:liao-dongping-established",
+        "heritage:liao-dongjing-city-site",
+        "person:yelu-abaoji",
+        "person:yelu-deguang"
       ],
       "gaps": [],
       "taskCounts": {
@@ -73778,7 +74908,9 @@
       "cityName": "北京市",
       "capitalRecordCount": 1,
       "entityKeys": [
-        "heritage:liao-nanjing-city-site"
+        "event:liao-nanjing-established",
+        "heritage:liao-nanjing-city-site",
+        "person:yelu-deguang"
       ],
       "gaps": [],
       "taskCounts": {
@@ -73814,7 +74946,9 @@
       "cityName": "大同市",
       "capitalRecordCount": 1,
       "entityKeys": [
-        "heritage:liao-xijing-city-site"
+        "event:liao-xijing-established",
+        "heritage:liao-xijing-city-site",
+        "person:xingzong-liao"
       ],
       "gaps": [],
       "taskCounts": {
@@ -73831,7 +74965,9 @@
       "cityName": "宁城县大明镇一带",
       "capitalRecordCount": 1,
       "entityKeys": [
-        "heritage:liao-zhongjing-city-site"
+        "event:liao-zhongjing-built",
+        "heritage:liao-zhongjing-city-site",
+        "person:shengzong-liao"
       ],
       "gaps": [],
       "taskCounts": {

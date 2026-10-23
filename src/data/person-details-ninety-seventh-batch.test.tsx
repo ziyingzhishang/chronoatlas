@@ -51,7 +51,7 @@ describe('ninety-seventh batch person detail audit', () => {
   });
 
   it('keeps the audited person-detail population aligned with the people catalog', () => {
-    expect(personDetails).toHaveLength(190);
-    expect(new Set(personDetails.map((detail) => detail.personId)).size).toBe(190);
+    expect(personDetails).toHaveLength(193);
+    expect(new Set(personDetails.map((detail) => detail.personId)).size).toBe(193);
   });
 });

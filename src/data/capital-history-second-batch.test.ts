@@ -69,10 +69,10 @@ describe('second-batch capital history coverage', () => {
     ]);
     expect(recordsFor('khitan').map(({ placeId, validFrom, validTo }) => ({ placeId, validFrom, validTo }))).toEqual([
       { placeId: 'liao_shangjing', validFrom: 916, validTo: 1125 },
-      { placeId: 'liao_dongjing', validFrom: 916, validTo: 1125 },
-      { placeId: 'liao_nanjing', validFrom: 916, validTo: 1125 },
+      { placeId: 'liao_dongjing', validFrom: 938, validTo: 1125 },
+      { placeId: 'liao_nanjing', validFrom: 938, validTo: 1122 },
       { placeId: 'liao_zhongjing', validFrom: 1007, validTo: 1125 },
-      { placeId: 'liao_xijing', validFrom: 916, validTo: 1125 },
+      { placeId: 'liao_xijing', validFrom: 1044, validTo: 1125 },
     ]);
   });
 });

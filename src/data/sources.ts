@@ -363,6 +363,36 @@ export const sourceNotes: SourceNote[] = [
     scope: '南唐三代君主李昪、李璟、李煜的皇室世系与李煜生平',
     note: '用于确认李昪经李璟至李煜的祖孙链；李昪自称唐室远祖的谱系争议不延伸到南唐三代皇室内部的直系关系。',
   },
+  {
+    id: 'liao-history-geography', title: '《辽史》地理志与太宗本纪', authorOrInstitution: '脱脱等', urlOrCitation: 'https://zh.wikisource.org/zh-hans/遼史/卷38；https://zh.wikisource.org/zh-hans/遼史/卷3；https://zh.wikisource.org/zh-hans/遼史/卷4',
+    scope: '辽阳东平郡、南京、东京及幽州南京的设置与沿革',
+    note: '支持919年修葺辽阳故城置东平郡、928年升东平为南京、938年辽阳南京改东京及幽州升南京；不同纪年记法保留在事件详情中。',
+  },
+  {
+    id: 'liao-imperial-genealogy', title: '《辽史》本纪与皇室世系资料', authorOrInstitution: '脱脱等', urlOrCitation: 'https://zh.wikisource.org/zh-hans/遼史/卷1；https://zh.wikisource.org/zh-hans/遼史/卷11',
+    scope: '耶律阿保机、耶律德光、耶律隆绪、耶律宗真的辽代皇室继承与亲属关系',
+    note: '支持辽太祖—太宗及辽圣宗—兴宗的皇室关系；人物关系与城市事件分别建模，不由亲属关系推断都城设置。',
+  },
+  {
+    id: 'liaoyang-museum-liao-capital', title: '辽阳博物馆：东北第一城—辽阳古代历史文物陈列', authorOrInstitution: '辽阳博物馆', urlOrCitation: 'https://www.lnlymuseum.com/case/detail/id/24.html',
+    scope: '919年东平郡、928年升南京、938年改东京及今辽阳市映射',
+    note: '作为地方博物馆的现代城市史交叉资料；具体城界、宫城和辽代遗存仍需与《辽史》及考古资料分层。',
+  },
+  {
+    id: 'beijing-liao-nanjing-official', title: '北京历史文化：北京何以称“北京”', authorOrInstitution: '北京市人民政府门户网站', urlOrCitation: 'https://www.beijing.gov.cn/renwen/sy/whkb/201907/t20190715_1866582.html',
+    scope: '938年幽州升辽南京、燕京及今日北京历史地名',
+    note: '支持辽南京作为北京城市史阶段的现代解释；辽南京具体城址范围仍按区域精度表达，不把后世北京建筑直接归入辽代。',
+  },
+  {
+    id: 'liao-zhongjing-palace-museum', title: '辽中京道城址的考古学观察', authorOrInstitution: '故宫博物院', urlOrCitation: 'https://www.dpm.org.cn/journal/246863.html',
+    scope: '1007年建中京城、置大定府及中京道建置',
+    note: '支持中京营建、府治与区域行政中心的高置信表达；不单独证明辽后期正式迁都中京，也不把遗址点当作精确宫城中心。',
+  },
+  {
+    id: 'datong-liao-xijing-official', title: '大同市历史溯源：辽西京', authorOrInstitution: '大同市人民政府', urlOrCitation: 'https://www.dt.gov.cn/dtszf/sqgllssy/202510/2f0c0525819a4af3ae0ba42eb47ad053.shtml',
+    scope: '1044年辽兴宗升云州为西京府及今大同城市史',
+    note: '支持1044年西京设置与今大同映射；大同古城及云冈等遗存经历多时代叠压，不能直接视为辽代原构。',
+  },
 ];
 
 export const sourceById = Object.fromEntries(sourceNotes.map((source) => [source.id, source]));
