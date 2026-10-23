@@ -169,11 +169,18 @@ function RelationItem({ relation, personName, people, polities, events, onOpenEn
   const label = target ? ('title' in target ? t(target.title) : t(target.name)) : objectId;
   const targetType = relation.kind === 'person-person' ? 'person' : relation.kind === 'person-polity' ? 'polity' : relation.kind === 'person-event' ? 'event' : 'heritage';
   const relationLabel = t(relationLabels[relation.relationType] ?? relation.claim.predicate);
-  const sourceLabel = relation.claim.sourceIds.length > 0
-    ? relation.claim.sourceIds.map((sourceId) => sourceById[sourceId]?.title ?? sourceId).join('、')
-    : t('待补');
-  const content = <>{relationLabel} · {label}<small className="person-relation-meta">{t('方向：')}{t(personName)} → {label} · {t('有效期：')}{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)} · {t('时间精度：')}{t(relationDatePrecisionLabels[relation.claim.datePrecision])} · {t('证据：')}{t(claimEvidenceTypeLabel(relation.claim.evidenceType))} · {t('可信度：')}{t(confidenceLabel(relation.claim.confidence))} · {t('来源：')}{t(hasResolvableSources(relation.claim) ? '可用' : '待解析')}（{t(sourceLabel)}）</small>{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
-  return <li>{onOpenEntity ? <button type="button" onClick={() => onOpenEntity({ type: targetType, id: objectId })}>{content}</button> : <span>{content}</span>}</li>;
+  const content = <>{relationLabel} · {label}<small className="person-relation-meta">{t('方向：')}{t(personName)} → {label} · {t('有效期：')}{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)} · {t('时间精度：')}{t(relationDatePrecisionLabels[relation.claim.datePrecision])} · {t('证据：')}{t(claimEvidenceTypeLabel(relation.claim.evidenceType))} · {t('可信度：')}{t(confidenceLabel(relation.claim.confidence))} · {t('来源：')}{t(hasResolvableSources(relation.claim) ? '可用' : '待解析')}</small>{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
+  return <li>{onOpenEntity ? <button type="button" onClick={() => onOpenEntity({ type: targetType, id: objectId })}>{content}</button> : <span>{content}</span>}<RelationshipSourceLinks sourceIds={relation.claim.sourceIds} t={t} /></li>;
+}
+
+function RelationshipSourceLinks({ sourceIds, t }: { sourceIds: string[]; t: (text: string) => string }) {
+  return <small className="person-relation-sources" aria-label={t('关系来源：')}>
+    {t('关系来源：')}{sourceIds.length > 0 ? sourceIds.map((sourceId, index) => {
+      const source = sourceById[sourceId];
+      const isHttpUrl = source?.urlOrCitation?.startsWith('http://') || source?.urlOrCitation?.startsWith('https://');
+      return <span key={sourceId}>{index > 0 && '、'}{source ? (isHttpUrl ? <a href={source.urlOrCitation} target="_blank" rel="noreferrer">{t(source.title)}</a> : <span>{t(source.title)}{source.urlOrCitation && ` · ${t(source.urlOrCitation)}`}</span>) : sourceId}</span>;
+    }) : t('待补')}
+  </small>;
 }
 
 function claimEvidenceTypeLabel(type: ClaimEvidenceType) {

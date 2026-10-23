@@ -136,6 +136,45 @@ describe('PersonDetail', () => {
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded-changan' });
   });
 
+  it('renders an HTTP source note for a relationship as a keyboard-accessible external link', () => {
+    const onOpenEntity = vi.fn();
+    const urlClaim: HistoricalClaim = {
+      id: 'url-backed-relationship', subjectId: 'li-shimin', predicate: 'served', objectId: 'li-yuan',
+      validFrom: 618, validTo: 626, datePrecision: 'range', perspective: 'person',
+      evidenceType: 'cross-checked', confidence: 'medium', sourceIds: ['xian-local-chronicle-western-han-mausoleums'],
+    };
+    render(<PersonDetail
+      person={person}
+      detail={getPersonDetail('li-shimin')!}
+      year={620}
+      claims={[urlClaim]}
+      people={relationPeople}
+      onOpenEntity={onOpenEntity}
+    />);
+
+    const sourceLink = screen.getByRole('link', { name: '西安市志·西汉帝陵条目' });
+    expect(sourceLink).toHaveAttribute('href', 'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas/201803/P020250630548327427771.pdf');
+    expect(sourceLink).toHaveAttribute('target', '_blank');
+    expect(sourceLink).toHaveAttribute('rel', 'noreferrer');
+    expect(screen.getByRole('button', { name: /侍奉／效力.*有效期：618年—626年.*来源：可用/ })).toBeInTheDocument();
+  });
+
+  it('keeps a non-URL relationship bibliography as text rather than a link', () => {
+    const onOpenEntity = vi.fn();
+    render(<PersonDetail
+      person={person}
+      detail={getPersonDetail('li-shimin')!}
+      year={620}
+      claims={[relationshipClaims[1]]}
+      people={relationPeople}
+      onOpenEntity={onOpenEntity}
+    />);
+
+    expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
+    expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /侍奉／效力.*有效期：618年—626年.*来源：可用/ })).toBeInTheDocument();
+  });
+
   it('shows traceability metadata on non-event relations and opens person and polity targets', () => {
     const onOpenEntity = vi.fn();
     const foundedClaim: HistoricalClaim = {
