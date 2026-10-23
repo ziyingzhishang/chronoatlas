@@ -331,9 +331,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'western_xia', perspectiveSummary: '西夏由党项李氏在河西、河套政治竞争中建立，以兴庆府为首都，形成兼具党项传统、汉地制度和多语文化的区域国家。',
     foundationProcess: ['李元昊承接党项拓跋氏在西北的政治军事资源。', '1038年称帝建国，西夏正式形成。', '兴庆府成为政治中心，西夏在宋、辽及后来的金之间维持独立外交与军事秩序。'],
-    turningPoints: [turn(1038, '西夏建立', '李元昊称帝建国。', 'western-xia-founded'), turn(1044, '宋夏和议', '西夏与北宋关系进入制度化阶段。'), turn(1227, '西夏覆亡', '蒙古军攻灭西夏，政权结束。')],
-    principalFigureIds: ['li-yuanhao'], capitalPhases: [capital('xingqing', 1038, 1227)],
-    heritageIds: ['western-xia-imperial-tombs'], eventIds: ['western-xia-founded'], claimIds: ['claim-li-yuanhao-founded-western-xia', 'claim-li-yuanhao-participated-western-xia'], sourceIds: modernSources,
+    turningPoints: [turn(1038, '西夏建立', '李元昊称帝建国。', 'western-xia-founded'), turn(1044, '宋夏和议', '西夏与北宋关系进入制度化阶段。'), turn(1227, '西夏政权覆亡', '蒙古军击败李睍，西夏统一政治结构结束；兴庆府与王陵遗产继续进入后续历史。', 'western-xia-ended-1227')],
+    principalFigureIds: ['li-yuanhao', 'li-xian-western-xia'], capitalPhases: [capital('xingqing', 1038, 1227)],
+    heritageIds: ['western-xia-imperial-tombs'], eventIds: ['western-xia-founded', 'western-xia-ended-1227'], claimIds: ['claim-li-yuanhao-founded-western-xia', 'claim-li-yuanhao-participated-western-xia', 'claim-li-xian-western-xia-ended-1227', 'claim-li-xian-ruled-western-xia'], sourceIds: modernSources,
     uncertaintyNote: '1038年建国与此前党项地方政权发展不可合并；兴庆府与王陵遗产呈现西夏核心空间，但不能由单一遗址还原其全部疆域和社会。',
   }),
   detail({

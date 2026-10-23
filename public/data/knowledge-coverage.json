@@ -8253,6 +8253,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-xia-ended-1227",
+      "entityKey": "event:western-xia-ended-1227",
+      "label": "西夏政权覆亡",
+      "polityIds": [
+        "mongol",
+        "western_xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-xia-ended-1227"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-xian-western-xia-ended-1227",
+            "event-detail:western-xia-ended-1227"
+          ],
+          "relatedIds": [
+            "li-xian-western-xia",
+            "mongol",
+            "mongol-founded",
+            "temujin",
+            "western-xia-founded",
+            "western_xia"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "western-xia-founded",
       "entityKey": "event:western-xia-founded",
       "label": "西夏建立",
@@ -15460,7 +15523,9 @@
             "heritage-detail:western-xia-imperial-tombs"
           ],
           "relatedIds": [
+            "li-xian-western-xia",
             "li-yuanhao",
+            "western-xia-ended-1227",
             "western-xia-founded",
             "western_xia"
           ]
@@ -21188,6 +21253,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "li-xian-western-xia",
+      "entityKey": "person:li-xian-western-xia",
+      "label": "李睍",
+      "polityIds": [
+        "western_xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-xian-western-xia"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-xian-enemy-temujin",
+            "claim:claim-li-xian-ruled-western-xia",
+            "claim:claim-li-xian-western-xia-ended-1227",
+            "event-detail:western-xia-ended-1227",
+            "person-polity:li-xian-western-xia:western_xia"
+          ],
+          "relatedIds": [
+            "temujin",
+            "western-xia-ended-1227",
+            "western_xia"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "li-xiong",
       "entityKey": "person:li-xiong",
       "label": "李雄",
@@ -25861,21 +25990,25 @@
             "claim:claim-kublai-grandchild-temujin-sixtysixth",
             "claim:claim-kublai-related-temujin",
             "claim:claim-kuchlug-enemy-temujin",
+            "claim:claim-li-xian-enemy-temujin",
             "claim:claim-mongke-related-temujin",
             "claim:claim-temujin-ally-jamukha",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
             "event-detail:western-liao-ended-1218",
+            "event-detail:western-xia-ended-1227",
             "person-polity:temujin:mongol"
           ],
           "relatedIds": [
             "jamukha",
             "kublai",
             "kuchlug",
+            "li-xian-western-xia",
             "mongke",
             "mongol",
             "mongol-founded",
-            "western-liao-ended-1218"
+            "western-liao-ended-1218",
+            "western-xia-ended-1227"
           ]
         },
         {
@@ -32511,6 +32644,7 @@
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
             "event-detail:western-liao-ended-1218",
+            "event-detail:western-xia-ended-1227",
             "heritage-detail:mongol-karakorum-city-site",
             "person:jamukha",
             "person:kublai",
@@ -32525,7 +32659,8 @@
             "mongol-karakorum-city-site",
             "mongol-karakorum-fixed-center",
             "temujin",
-            "western-liao-ended-1218"
+            "western-liao-ended-1218",
+            "western-xia-ended-1227"
           ]
         },
         {
@@ -35213,14 +35348,19 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-xian-ruled-western-xia",
             "claim:claim-li-yuanhao-founded-western-xia",
             "claim:claim-li-yuanhao-ruled-western-xia-fortyseventh",
+            "event-detail:western-xia-ended-1227",
             "event-detail:western-xia-founded",
             "heritage-detail:western-xia-imperial-tombs",
+            "person:li-xian-western-xia",
             "person:li-yuanhao"
           ],
           "relatedIds": [
+            "li-xian-western-xia",
             "li-yuanhao",
+            "western-xia-ended-1227",
             "western-xia-founded",
             "western-xia-imperial-tombs"
           ]
@@ -36626,6 +36766,21 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-xia-ended-1227",
+      "entityKey": "event:western-xia-ended-1227",
+      "label": "西夏政权覆亡",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "mongol",
+        "western_xia"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "western-zhou-founded-eighth-batch",
       "entityKey": "event:western-zhou-founded-eighth-batch",
       "label": "西周政权建立（约年）",
@@ -37083,6 +37238,23 @@
       "kind": "uncertain",
       "polityIds": [
         "tibetan_empire"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "li-xian-western-xia",
+      "entityKey": "person:li-xian-western-xia",
+      "label": "李睍",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "western_xia"
       ],
       "evidenceIds": [
         "china-chronology",
@@ -45829,6 +46001,69 @@
         }
       ]
     },
+    "event:western-xia-ended-1227": {
+      "entityType": "event",
+      "entityId": "western-xia-ended-1227",
+      "entityKey": "event:western-xia-ended-1227",
+      "label": "西夏政权覆亡",
+      "polityIds": [
+        "mongol",
+        "western_xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-xia-ended-1227"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-xian-western-xia-ended-1227",
+            "event-detail:western-xia-ended-1227"
+          ],
+          "relatedIds": [
+            "li-xian-western-xia",
+            "mongol",
+            "mongol-founded",
+            "temujin",
+            "western-xia-founded",
+            "western_xia"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:western-xia-founded": {
       "entityType": "event",
       "entityId": "western-xia-founded",
@@ -53038,7 +53273,9 @@
             "heritage-detail:western-xia-imperial-tombs"
           ],
           "relatedIds": [
+            "li-xian-western-xia",
             "li-yuanhao",
+            "western-xia-ended-1227",
             "western-xia-founded",
             "western_xia"
           ]
@@ -58764,6 +59001,70 @@
         }
       ]
     },
+    "person:li-xian-western-xia": {
+      "entityType": "person",
+      "entityId": "li-xian-western-xia",
+      "entityKey": "person:li-xian-western-xia",
+      "label": "李睍",
+      "polityIds": [
+        "western_xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-xian-western-xia"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-xian-enemy-temujin",
+            "claim:claim-li-xian-ruled-western-xia",
+            "claim:claim-li-xian-western-xia-ended-1227",
+            "event-detail:western-xia-ended-1227",
+            "person-polity:li-xian-western-xia:western_xia"
+          ],
+          "relatedIds": [
+            "temujin",
+            "western-xia-ended-1227",
+            "western_xia"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:li-xiong": {
       "entityType": "person",
       "entityId": "li-xiong",
@@ -63439,21 +63740,25 @@
             "claim:claim-kublai-grandchild-temujin-sixtysixth",
             "claim:claim-kublai-related-temujin",
             "claim:claim-kuchlug-enemy-temujin",
+            "claim:claim-li-xian-enemy-temujin",
             "claim:claim-mongke-related-temujin",
             "claim:claim-temujin-ally-jamukha",
             "claim:claim-temujin-ruled-mongol-fiftyeighth",
             "event-detail:mongol-founded",
             "event-detail:western-liao-ended-1218",
+            "event-detail:western-xia-ended-1227",
             "person-polity:temujin:mongol"
           ],
           "relatedIds": [
             "jamukha",
             "kublai",
             "kuchlug",
+            "li-xian-western-xia",
             "mongke",
             "mongol",
             "mongol-founded",
-            "western-liao-ended-1218"
+            "western-liao-ended-1218",
+            "western-xia-ended-1227"
           ]
         },
         {
@@ -70089,6 +70394,7 @@
             "event-detail:mongol-founded",
             "event-detail:mongol-karakorum-fixed-center",
             "event-detail:western-liao-ended-1218",
+            "event-detail:western-xia-ended-1227",
             "heritage-detail:mongol-karakorum-city-site",
             "person:jamukha",
             "person:kublai",
@@ -70103,7 +70409,8 @@
             "mongol-karakorum-city-site",
             "mongol-karakorum-fixed-center",
             "temujin",
-            "western-liao-ended-1218"
+            "western-liao-ended-1218",
+            "western-xia-ended-1227"
           ]
         },
         {
@@ -72791,14 +73098,19 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-xian-ruled-western-xia",
             "claim:claim-li-yuanhao-founded-western-xia",
             "claim:claim-li-yuanhao-ruled-western-xia-fortyseventh",
+            "event-detail:western-xia-ended-1227",
             "event-detail:western-xia-founded",
             "heritage-detail:western-xia-imperial-tombs",
+            "person:li-xian-western-xia",
             "person:li-yuanhao"
           ],
           "relatedIds": [
+            "li-xian-western-xia",
             "li-yuanhao",
+            "western-xia-ended-1227",
             "western-xia-founded",
             "western-xia-imperial-tombs"
           ]
@@ -73820,20 +74132,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 164,
+      "totalEntities": 165,
       "statusCounts": {
-        "covered": 785,
+        "covered": 789,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 35,
+        "uncertain": 36,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 35
+        "uncertain": 36
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -73863,6 +74175,7 @@
         "event:western-liao-emperor-1132",
         "event:western-liao-ended-1218",
         "event:western-liao-founded",
+        "event:western-xia-ended-1227",
         "event:western-zhou-founded-eighth-batch",
         "event:xia-early-founded-eighth-batch",
         "event:xiongnu-founded",
@@ -73892,20 +74205,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 203,
+      "totalEntities": 204,
       "statusCounts": {
-        "covered": 965,
+        "covered": 969,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 50,
+        "uncertain": 51,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 50
+        "uncertain": 51
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -73929,6 +74242,7 @@
         "person:jindeok-silla",
         "person:kuchlug",
         "person:langdarma",
+        "person:li-xian-western-xia",
         "person:liu-xuan",
         "person:liu-yao",
         "person:meng-tian",
@@ -75002,6 +75316,7 @@
         "event:mongol-founded",
         "event:mongol-karakorum-fixed-center",
         "event:western-liao-ended-1218",
+        "event:western-xia-ended-1227",
         "event:yuan-dadu-built",
         "event:yuan-founded",
         "event:yuan-shangdu-built",
@@ -75048,6 +75363,21 @@
         },
         {
           "entityType": "event",
+          "entityId": "western-xia-ended-1227",
+          "entityKey": "event:western-xia-ended-1227",
+          "label": "西夏政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "western_xia"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "mongol-karakorum-fixed-center",
           "entityKey": "event:mongol-karakorum-fixed-center",
           "label": "哈拉和林成为较固定政治中心",
@@ -75084,7 +75414,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "蒙古汗国：有 4 项待核验缺口。"
+      "summary": "蒙古汗国：有 5 项待核验缺口。"
     },
     "nanzhao": {
       "polityId": "nanzhao",
@@ -76800,13 +77130,48 @@
       "polityId": "western_xia",
       "polityName": "西夏",
       "entityKeys": [
+        "event:western-xia-ended-1227",
         "event:western-xia-founded",
         "heritage:dunhuang-western-liang-city-site",
         "heritage:western-xia-imperial-tombs",
+        "person:li-xian-western-xia",
         "person:li-yuanhao",
         "polity:western_xia"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "li-xian-western-xia",
+          "entityKey": "person:li-xian-western-xia",
+          "label": "李睍",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_xia"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "western-xia-ended-1227",
+          "entityKey": "event:western-xia-ended-1227",
+          "label": "西夏政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "western_xia"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -76814,7 +77179,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西夏：学习闭环已覆盖。"
+      "summary": "西夏：有 2 项待核验缺口。"
     },
     "wu_ten": {
       "polityId": "wu_ten",
@@ -79750,11 +80115,47 @@
       "cityName": "银川市城区一带",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:western-xia-ended-1227",
         "event:western-xia-founded",
         "heritage:western-xia-imperial-tombs",
-        "person:li-yuanhao"
+        "person:li-xian-western-xia",
+        "person:li-yuanhao",
+        "person:temujin"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "li-xian-western-xia",
+          "entityKey": "person:li-xian-western-xia",
+          "label": "李睍",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_xia"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "western-xia-ended-1227",
+          "entityKey": "event:western-xia-ended-1227",
+          "label": "西夏政权覆亡",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "mongol",
+            "western_xia"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -79762,7 +80163,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "银川市城区一带：学习闭环已覆盖。"
+      "summary": "银川市城区一带：有 2 项待核验缺口。"
     },
     "xinzheng": {
       "placeId": "xinzheng",

@@ -408,6 +408,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['western-xia-founded'], sourceIds, uncertaintyNote: '1038年是称帝与国号形成节点，不把西夏后期的扩张范围提前回填到建国当年。',
   },
   {
+    personId: 'li-xian-western-xia', biography: '李睍是西夏末代君主，活动于西夏面对蒙古持续进攻的末期。1227年前后西夏政治结构覆亡、兴庆府城市层转入后续历史，不能写成城市与遗产在同日消失。',
+    aliases: ['西夏末帝'], offices: [{ title: '西夏末代皇帝', polityId: 'western_xia', placeId: 'xingqing', validFrom: 1226, validTo: 1227, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-xia-ended-1227'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '李睍的末代统治、蒙古军事推进与西夏地方秩序重组属于同一终末阶段的不同层次；1227作为项目采用的政权覆亡节点，不等于兴庆府城市遗产终止。',
+  },
+  {
     personId: 'yu-the-great', biography: '禹是传统夏代建政叙事中的核心人物，治水、受禅与夏王朝形成在后世文献中相互连接。',
     aliases: ['大禹', '夏禹'], offices: [{ title: '传统夏代先王', polityId: 'xia_early', datePrecision: 'unknown', sourceIds: ['china-chronology'] }],
     keyEvents: [], sourceIds: ['china-chronology'], uncertaintyNote: '夏代年代、禹的个人事迹及“建立夏”的具体历史过程存在文献与考古层面的争议，本详情不把传统叙事当作已证实的逐年编年。',

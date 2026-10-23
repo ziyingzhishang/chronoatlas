@@ -256,6 +256,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百三十四·宋纪十', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷134', detail: '记载李元昊称帝及宋夏关系背景；国号、称谓与实际控制范围分开处理。' }],
   },
   {
+    id: 'western-xia-ended-1227', year: 1227, title: '西夏政权覆亡', summary: '蒙古军击败李睍，西夏统一政治结构结束；兴庆府城市层与西夏王陵遗产继续进入后续历史。', placeId: 'xingqing', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'china', category: '政权终结／战争', verification: 'partial',
+    background: '西夏末期面对蒙古持续军事推进，李睍及其政权处于兴庆府政治中心和西北区域秩序的终末阶段。',
+    process: '1227年前后蒙古军攻灭西夏，李睍及西夏政治结构退出历史舞台；军事征服、末帝结局、地方行政重组与兴庆府城市层变化具有过程性，不能压缩为单日或单一地点事件。',
+    impact: '西夏作为独立政权终止，河套—河西政治格局重新组织；兴庆府及西夏王陵则作为城市与考古遗产进入后续历史和现代保护展示。',
+    mapNote: '地图将1227年标作西夏政权终止节点，兴庆府标注为末期政治中心和今日银川历史区域参照；该节点不表示银川城市或西夏王陵在1227年消失。',
+    references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于西夏末期与蒙古征服的编年参照；终止节点保留过程性与政权—城市分层。' }],
+  },
+  {
     id: 'former-liang-founded', year: 314, title: '前凉政权建立（形成阶段）', summary: '西晋衰乱中张氏在河西延续地方统治，前凉政权进入独立形成阶段。', placeId: 'guzang', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '西晋在中原的统治因永嘉之乱迅速削弱，凉州军政集团需要在河西维持地方秩序。',

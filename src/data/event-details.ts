@@ -511,6 +511,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1038年是称帝与国号形成节点；兴庆是都城关联，不把西夏后期活动范围或名义影响区全部回填到建国年。',
   },
   {
+    eventId: 'western-xia-ended-1227',
+    participants: [
+      { personId: 'li-xian-western-xia', role: '西夏末代君主', relationType: 'direct', note: '李睍连接西夏末期王权与1227年政权覆亡阶段，不把政权终止归因于个人。' },
+      { personId: 'temujin', role: '蒙古征服西夏末期所代表的最高统治者', relationType: 'direct', note: '铁木真代表蒙古军事政治体系；具体攻城、将领和地方接收过程需与最高统治者层分开。' },
+    ],
+    polityIds: ['western_xia', 'mongol'],
+    causes: ['西夏末期王权与地方军政结构承受蒙古持续军事推进。', '蒙古势力向河套、河西推进，西夏与蒙古之间形成决定性军事政治冲突。'],
+    consequences: ['西夏作为统一政治结构结束，退出宋、金、蒙古并立的西北政权谱系。', '兴庆府城市层和西夏王陵遗产继续存在，政权终止不等于城市与考古遗产同步消失。'],
+    phases: [{ label: '西夏政权覆亡', startYear: 1227, endYear: 1227, summary: '李睍政权被蒙古击败，西夏统一政治结构结束。' }],
+    locationIds: ['xingqing'],
+    relatedEventIds: ['western-xia-founded', 'mongol-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '1227作为项目采用的西夏覆亡节点；蒙古军事行动、李睍结局、地方秩序重组和兴庆府城市遗产延续需分层展示。',
+  },
+  {
     eventId: 'former-liang-founded',
     participants: [
       { personId: 'zhang-gui', role: '以西晋凉州刺史身份奠定张氏河西军政基础的前置人物', note: '张轨以晋臣名义经营凉州，属于前凉形成的前置积累阶段；本条不把其活动写成一次正式受禅建国；本条仅把他列为前置军政基础人物，不作为314年前凉独立建政者。' },
