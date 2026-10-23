@@ -958,6 +958,29 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '该事件只表达西明寺阶段性驻锡与译经关联；具体经名、译场分工和每部经典的地点仍需逐项核验，不能替代覆盖五处遗产的统一译经事件。',
   },
   {
+    eventId: 'shangyang-palace-built',
+    participants: [{ personId: 'li-zhi', role: '唐高宗时期洛阳宫苑营造的皇室与国家权力背景人物', relationType: 'contextual', note: '本条表达高宗时期的宫苑营造背景，不把李治写成亲自主持全部工程的建筑负责人。' }],
+    polityIds: ['tang'],
+    causes: ['唐代洛阳作为东都持续承担政治活动。', '宫城西部需要扩展宫苑与政治生活空间。'],
+    consequences: ['上阳宫成为唐代洛阳宫城西部的重要遗产节点。', '679年宫成、移御是后续明确使用端点。'],
+    phases: [
+      { label: '上元年间营造', startYear: 674, endYear: 676, summary: '文献记为上元中营造，通常对应674—676年；675年为通行整理年。' },
+      { label: '完工端点待后续节点确认', startYear: 679, endYear: 679, summary: '679年编年材料明确记载宫成、移御，另列为独立事件。' },
+    ],
+    locationIds: ['luoyang'], relatedEventIds: ['shangyang-palace-completed-679'], sourceIds: ['taiping-yulan-shangyang-palace', 'zizhi-tongjian-vol202-shangyang'],
+    uncertaintyNote: '上元中是范围性年代，675年不能视为绝对始建日；主宫、西上阳宫及各建筑单元的边界和考古对应仍需分项核验。',
+  },
+  {
+    eventId: 'shangyang-palace-completed-679',
+    participants: [{ personId: 'li-zhi', role: '唐高宗移御上阳宫的政治使用者', relationType: 'contextual', note: '“移御”证明政治使用端点，不等同于李治亲自主持全部营建。' }],
+    polityIds: ['tang'],
+    causes: ['上阳宫在上元年间已经营造。', '唐高宗时期洛阳宫城继续承担政治活动。'],
+    consequences: ['上阳宫出现明确的宫成与政治使用记录。', '武周时期继续沿用洛阳宫城与上阳宫空间，但不据此新增武周营建事件。'],
+    phases: [{ label: '宫成与移御', startYear: 679, endYear: 679, summary: '调露元年上阳宫等宫宫成，唐高宗移御。' }],
+    locationIds: ['luoyang'], relatedEventIds: ['shangyang-palace-built'], sourceIds: ['zizhi-tongjian-vol202-shangyang'],
+    uncertaintyNote: '679年是宫成、移御的明确编年端点，不表示所有建筑单元同时完成，也不等于永久迁都。',
+  },
+  {
     eventId: 'an-lushan-rebellion',
     participants: [
       { personId: 'an-lushan', role: '范阳起兵的叛军首领', note: '755年发动叛乱并攻取洛阳；其死后叛军仍由史思明、史朝义等继续；安禄山对应755年起兵节点，不代表763年主要叛乱结束后的史思明、史朝义等后续叛军阶段；叛乱首领与战后藩镇承接需分开。限755年范阳起兵及前期叛军主线，不代表其死后史思明、史朝义等后续阶段。' },

@@ -26,6 +26,7 @@ const reviewBoundaryIds = [
   'xia-early-founded-eighth-batch',
   'xiongnu-founded',
   'xuanzang-at-ximing-658',
+  'shangyang-palace-built',
   'yan-warring-founded-eighth-batch',
   'zhou-conquest',
 ] as const;
@@ -35,7 +36,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 95, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 96, 'needs-review': 25, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.eventId !== 'white-horse-temple-founded');
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
@@ -62,7 +63,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       item.status === 'needs-review' && item.needsReviewChecks.includes('timePrecision')
     ));
 
-    expect(precisionGaps).toHaveLength(23);
+    expect(precisionGaps).toHaveLength(24);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
     expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });

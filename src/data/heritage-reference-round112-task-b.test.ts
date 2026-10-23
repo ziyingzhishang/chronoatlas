@@ -13,7 +13,6 @@ const heritageCandidates = [
   'dingding-gate-site',
   'qianling',
   'ximing-temple-site',
-  'shangyang-palace-site',
 ] as const;
 
 const overlap = (from: number | undefined, to: number | undefined, year: number | undefined) => (
@@ -25,7 +24,7 @@ describe('round 112 task B Sui-Tang capital heritage boundary', () => {
     const sui = getPolityDetail('sui');
     const tang = getPolityDetail('tang');
 
-    expect(heritageCandidates).toHaveLength(7);
+    expect(heritageCandidates).toHaveLength(6);
     for (const heritageId of heritageCandidates) {
       const asset = heritageAssets.find((item) => item.id === heritageId);
       const detail = getHeritageDetail(heritageId);

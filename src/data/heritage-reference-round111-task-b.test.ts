@@ -12,7 +12,6 @@ const candidates = [
   'dingding-gate-site',
   'qianling',
   'ximing-temple-site',
-  'shangyang-palace-site',
 ] as const;
 
 const expectedReasons: Record<(typeof candidates)[number], string> = {
@@ -22,7 +21,6 @@ const expectedReasons: Record<(typeof candidates)[number], string> = {
   'dingding-gate-site': '隋唐叠压层',
   qianling: '唐武周共享',
   'ximing-temple-site': '约址；西明寺专属事件已建立，统一译经事件仍待核',
-  'shangyang-palace-site': '唐武周共享',
 };
 
 describe('round 111 task B Sui-Tang capital heritage boundary', () => {
@@ -30,7 +28,7 @@ describe('round 111 task B Sui-Tang capital heritage boundary', () => {
     const sui = getPolityDetail('sui');
     const tang = getPolityDetail('tang');
 
-    expect(candidates).toHaveLength(7);
+    expect(candidates).toHaveLength(6);
     for (const heritageId of candidates) {
       const asset = heritageAssets.find((item) => item.id === heritageId);
       const detail = getHeritageDetail(heritageId);

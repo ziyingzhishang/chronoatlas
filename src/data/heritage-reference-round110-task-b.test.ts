@@ -14,7 +14,6 @@ const round110Candidates = [
   'qianling',
   'ximing-temple-site',
   'huaqing-palace',
-  'shangyang-palace-site',
 ] as const;
 
 describe('round 110 task B Sui-Tang capital heritage reference', () => {
@@ -49,7 +48,7 @@ describe('round 110 task B Sui-Tang capital heritage reference', () => {
     expect(618).toBeLessThanOrEqual(capital?.validTo ?? Number.NEGATIVE_INFINITY);
   });
 
-  it('keeps the other seven candidates outside a forced single-polity closure', () => {
+  it('keeps the other six candidates outside a forced single-polity closure', () => {
     const tangDetail = getPolityDetail('tang');
     const suiDetail = getPolityDetail('sui');
 

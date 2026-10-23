@@ -23,6 +23,7 @@ const reviewBoundaryReasons = {
   'xia-early-founded-eighth-batch': 'traditional-periodization',
   'xiongnu-founded': 'formation-approximation',
   'xuanzang-at-ximing-658': 'multi-year-process',
+  'shangyang-palace-built': 'construction-range',
   'yan-warring-founded-eighth-batch': 'traditional-periodization',
   'zhou-conquest': 'traditional-periodization',
   'white-horse-temple-founded': 'participant-endpoint-review',
@@ -34,7 +35,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 95, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 96, 'needs-review': 25, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {

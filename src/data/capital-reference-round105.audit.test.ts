@@ -63,7 +63,6 @@ describe('round 105 capital reference audit', () => {
       'tang|changan||qianling',
       'tang|changan||ximing-temple-site',
       'tang|luoyang|court-moves-luoyang|',
-      'tang|luoyang||shangyang-palace-site',
       'zhou_eastern|luoyang|zhou-eastward|',
       'zhou_later|kaifeng||kaifeng-northern-song-city-site',
     ]);

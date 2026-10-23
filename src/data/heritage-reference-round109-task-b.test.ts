@@ -14,7 +14,6 @@ const remainingCandidates = [
   'big-wild-goose-pagoda',
   'qianling',
   'ximing-temple-site',
-  'shangyang-palace-site',
 ] as const;
 
 describe('round 109 task B Sui-Tang heritage reference', () => {
@@ -62,7 +61,6 @@ describe('round 109 task B Sui-Tang heritage reference', () => {
       'dingding-gate-site',
       'qianling',
       'ximing-temple-site',
-      'shangyang-palace-site',
     ]);
     expect(unresolved.every((heritageId) => {
       const detail = getHeritageDetail(heritageId);

@@ -77,6 +77,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'tibetan-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '618年前后表示吐蕃形成阶段，松赞干布后的高原整合不能回填为建政当年。', timelineStrategy: 'approximate-marker' },
   { eventId: 'an-lushan-rebellion', status: 'confirmed', expectedPrecision: 'range', explanation: '安史之乱的755—763年区间有明确编年边界，但战局和控制范围随阶段变化。', timelineStrategy: 'range-band' },
   { eventId: 'xuanzang-at-ximing-658', status: 'confirmed', expectedPrecision: 'range', explanation: '玄奘在西明寺的活动限定为658—659年阶段，次年赴玉华寺，不能扩展为其全部译经生涯。', timelineStrategy: 'range-band' },
+  { eventId: 'shangyang-palace-built', status: 'confirmed', expectedPrecision: 'range', explanation: '上阳宫始建材料只明确为上元年间，674—676年是稳妥范围，675年为通行整理年；不能升级为绝对单年。', timelineStrategy: 'range-band' },
   { eventId: 'dali-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '937年前后表示大理政权形成，杨干贞改国号与段氏承接等节点不能混为精确建国日。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liao-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1124年前后表示西辽形成阶段，耶律大石西迁、建制与称号变化具有过程性。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
