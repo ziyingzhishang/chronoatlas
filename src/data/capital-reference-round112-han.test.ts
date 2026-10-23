@@ -54,7 +54,7 @@ describe('round 112 Qin-Han capital boundary', () => {
   });
 
   it('keeps the four Han heritage candidates outside a single-polity closure', () => {
-    expect(heritageCandidates.filter(hasIndependentConstructionEndpoint)).toEqual(['maoling', 'du-ling', 'white-horse-temple']);
+    expect(heritageCandidates.filter(hasIndependentConstructionEndpoint)).toEqual(['changle-palace-site', 'maoling', 'du-ling', 'white-horse-temple']);
 
     expect(getHeritageDetail('changle-palace-site')?.associatedPolities).toEqual(['han_western', 'xin']);
     expect(getHeritageDetail('white-horse-temple')?.associatedPolities).toEqual(['han_eastern', 'tang']);
@@ -69,6 +69,7 @@ describe('round 112 Qin-Han capital boundary', () => {
     const duLing = getHeritageDetail('du-ling')!;
     const whiteHorse = getHeritageDetail('white-horse-temple')!;
 
+    expect(changle.associatedEvents).toContain('changle-palace-built');
     expect(changle.associatedEvents).not.toContain('han-changan-new-city');
     expect(getEventDetail('han-changan-new-city')).toMatchObject({
       eventId: 'han-changan-new-city',
@@ -76,6 +77,10 @@ describe('round 112 Qin-Han capital boundary', () => {
       locationIds: expect.arrayContaining(['changan']),
     });
     expect(getEventDetail('han-changan-new-city')?.phases).toEqual([
+      expect.objectContaining({ startYear: -200, endYear: -200 }),
+    ]);
+    expect(getEventDetail('changle-palace-built')?.phases).toEqual([
+      expect.objectContaining({ startYear: -202, endYear: -202 }),
       expect.objectContaining({ startYear: -200, endYear: -200 }),
     ]);
 

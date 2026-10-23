@@ -360,6 +360,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '西安市志·西汉帝陵条目', url: 'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas/201803/P020250630548327427771.pdf', detail: '记载汉武帝建元二年（前139年）作寿陵；用于茂陵营建起点。' }],
   },
   {
+    id: 'changle-palace-built', year: -200, title: '长乐宫建成', summary: '汉高祖时期长乐宫完成，汉初长安宫城的核心空间进一步定型。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'shiji-gaozu-changle', 'capital-history-reference'],
+    datePrecision: 'year', region: 'china', category: '遗产营建／宫殿', verification: 'checked',
+    background: '汉初政权在关中重建政治中心，长安及其宫城建设与迁都、中央秩序恢复同步推进。',
+    process: '高祖五年开始治理长乐宫，高祖七年长乐宫建成；本事件以高祖七年（前200年）作为建成端点，并保留前202年的启动阶段。',
+    impact: '长乐宫成为汉初长安宫城与皇帝政治活动的重要空间；宫殿建成、未央宫后续营建和长安城市整体形成属于不同阶段。',
+    mapNote: '事件定位使用长安作为汉初历史城市参照，遗址对应今西安市未央区汉长安城遗址东南部；不将长乐宫遗址范围等同于现代行政区或汉朝疆域。',
+    references: [{ title: '《史记·高祖本纪》', url: 'https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/shiji/sj008.html', detail: '记载高祖七年二月长乐宫成；同篇另载高祖八年萧丞相营作未央宫，二者分开建模。' }],
+  },
+  {
     id: 'du-ling-built', year: -65, title: '汉宣帝营建杜陵', summary: '汉宣帝元康元年在杜东原择址营建杜陵。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-duling'],
     datePrecision: 'year', region: 'china', category: '遗产营建／帝陵', verification: 'checked',
     background: '西汉晚期长安南部形成帝陵、陵园与城市交通相互联系的空间，杜陵是这一阶段的具体遗产端点。',

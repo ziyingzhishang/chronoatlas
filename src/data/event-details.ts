@@ -756,6 +756,19 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '事件使用长安作为历史城市参照，茂陵实际位于今陕西省兴平市东北部；前139年是作寿陵和开始营建的年代，不是全部遗产建成日。',
   },
   {
+    eventId: 'changle-palace-built',
+    participants: [{ personId: 'liu-bang', role: '汉初长安宫城建设的主持君主', note: '刘邦对应长乐宫营建启动与建成所处的汉初政治阶段；本条不把萧何对未央宫的营建记载转写为长乐宫负责人。' }],
+    polityIds: ['han_western'],
+    causes: ['汉初政权需要在关中重建中央政治中心。', '长安迁都与宫城、宫殿空间建设在同一重建秩序过程中推进。'],
+    consequences: ['长乐宫成为汉初长安宫城与皇帝政治活动的重要空间。', '未央宫营建、长安城市整体形成和新朝沿用属于后续或并行层次，不能压缩为同一建成事件。'],
+    phases: [
+      { label: '长乐宫营建启动', startYear: -202, endYear: -202, summary: '高祖五年开始治理长乐宫。' },
+      { label: '长乐宫建成', startYear: -200, endYear: -200, summary: '高祖七年二月长乐宫建成，汉初宫城空间进一步定型。' },
+    ],
+    locationIds: ['changan'], relatedEventIds: ['han-imperial-accession'], sourceIds: ['zizhi-tongjian', 'shiji-gaozu-changle', 'capital-history-reference'],
+    uncertaintyNote: '前202年是营建启动阶段，前200年是史料所载“长乐宫成”的建成端点；事件使用长安作为历史城市参照，不替代长乐宫遗址的考古测绘。',
+  },
+  {
     eventId: 'du-ling-built',
     participants: [{ personId: 'liu-xun', role: '在杜东原择址营建杜陵的西汉皇帝' }],
     polityIds: ['han_western'],

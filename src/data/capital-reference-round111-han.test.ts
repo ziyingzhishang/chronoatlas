@@ -77,7 +77,7 @@ describe('round 111 Han capital heritage boundary', () => {
   });
 
   it('finds the independently attached tomb and temple endpoints', () => {
-    expect(candidates.filter(hasIndependentAttachedEndpoint)).toEqual(['maoling', 'du-ling', 'white-horse-temple']);
+    expect(candidates.filter(hasIndependentAttachedEndpoint)).toEqual(['changle-palace-site', 'maoling', 'du-ling', 'white-horse-temple']);
   });
 
   it('keeps each endpoint gap explicit instead of treating a nearby event as construction proof', () => {

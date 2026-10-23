@@ -58,7 +58,7 @@ describe('round 110 Han capital heritage boundary', () => {
   });
 
   it('does not treat any of the four candidates as closed by background events alone', () => {
-    expect(candidateIds.filter(hasIndependentConstructionEvent)).toEqual(['maoling', 'du-ling', 'white-horse-temple']);
+    expect(candidateIds.filter(hasIndependentConstructionEvent)).toEqual(['changle-palace-site', 'maoling', 'du-ling', 'white-horse-temple']);
     expect(getEventDetail('han-imperial-accession')).toMatchObject({
       eventId: 'han-imperial-accession',
       polityIds: ['han_western'],

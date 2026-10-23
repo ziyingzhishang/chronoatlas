@@ -1,6 +1,7 @@
 import type { SourceNote } from '../domain/types';
 
 export const sourceNotes: SourceNote[] = [
+  {id:'shiji-gaozu-changle',title:'《史记·高祖本纪》长乐宫成条',authorOrInstitution:'司马迁／南京博物院古籍整理页面',urlOrCitation:'https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/shiji/sj008.html',scope:'高祖七年长乐宫建成、高祖八年未央宫营作的分层核验',note:'记载高祖七年二月“长乐宫成”，并将高祖八年萧丞相营作未央宫另列；本项目据此区分长乐宫建成端点与未央宫营建。'},
   {id:'capital-history-reference',title:'政权首都与政治中心综合核验资料',authorOrInstitution:'项目组件专家团整理',urlOrCitation:'《资治通鉴》、中国历史地理与相关遗址/地方志资料交叉核验',scope:'首都、迁都、多都制、政治中心及现代地名映射',note:'用于地图定位和展示；移动汗廷、候选遗址和区域参照均保留置信度与不确定性，不由首都点推导疆域。'},
   {id:'xian-local-chronicle-duling',title:'《陕西省志·建设志》杜陵条目',authorOrInstitution:'陕西省地方志编纂委员会',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923623109161543.pdf',scope:'汉宣帝杜陵地点、营建与陵园遗存',note:'记载汉宣帝元康元年（前65年）在杜东原营建杜陵；与前74年即位年分开建模，不把即位年误作陵墓营建年。'},
   {id:'xian-local-chronicle-western-han-mausoleums',title:'西安市志·西汉帝陵条目',authorOrInstitution:'西安市地方志编纂委员会',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas/201803/P020250630548327427771.pdf',scope:'西汉帝陵营建年代、陵区与考古遗存',note:'记载汉武帝建元二年（前139年）作寿陵；用于茂陵营建年代与汉武帝即位、长安首都阶段的分层核验。'},
