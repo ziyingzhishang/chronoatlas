@@ -159,4 +159,55 @@ describe('RelationshipGraph', () => {
     expect(screen.getByRole('button', { name: '清入关 · 详情关联／非本年事实' })).toBeInTheDocument();
     expect(screen.getAllByText('详情关联／非本年事实').length).toBeGreaterThan(0);
   });
+
+  it('expands relationship edge evidence from a keyboard-accessible control', () => {
+    const bundle = getChanganStudyBundle();
+    const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
+    const graphView = {
+      ...view!,
+      claims: [...view!.claims, {
+        id: 'fixture-edge-evidence-url', subjectId: 'li-shimin', predicate: 'ally-of', objectId: 'li-yuan',
+        validFrom: 618, validTo: 626, datePrecision: 'range' as const, perspective: 'person' as const,
+        evidenceType: 'inference' as const, confidence: 'low' as const, sourceIds: ['silla-encykorea'],
+        uncertaintyNote: '关系方向是阶段性概括。',
+      }],
+    };
+    render(<RelationshipGraph view={graphView} />);
+
+    const evidenceToggle = screen.getByRole('button', { name: /查看边证据.*李世民.*联盟/ });
+    expect(evidenceToggle).toHaveAttribute('aria-expanded', 'false');
+    fireEvent.keyDown(evidenceToggle, { key: 'Enter' });
+
+    expect(evidenceToggle).toHaveAttribute('aria-expanded', 'true');
+    expect(screen.getByRole('region', { name: '关系边证据：李世民 → 李渊' })).toBeInTheDocument();
+    expect(screen.getByText(/有效期：618—626年/)).toBeInTheDocument();
+    expect(screen.getByText(/证据类型：推断/)).toBeInTheDocument();
+    expect(screen.getByText(/可信度：低/)).toBeInTheDocument();
+    expect(screen.getByText(/不确定性：关系方向是阶段性概括。/)).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: '新罗 · 韩国民族文化大百科' })).toHaveAttribute('href', 'https://encykorea.aks.ac.kr/Article/E0032800');
+  });
+
+  it('renders non-URL and unresolved relationship sources as text evidence states', () => {
+    const bundle = getChanganStudyBundle();
+    const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
+    const graphView = {
+      ...view!,
+      claims: [...view!.claims, {
+        id: 'fixture-edge-evidence-bibliography', subjectId: 'li-shimin', predicate: 'enemy-of', objectId: 'li-yuan',
+        validFrom: 626, validTo: 626, datePrecision: 'year' as const, perspective: 'person' as const,
+        evidenceType: 'explicit-record' as const, confidence: 'medium' as const, sourceIds: ['zizhi-tongjian', 'missing-edge-source'],
+      }],
+    };
+    render(<RelationshipGraph view={graphView} />);
+
+    const evidenceToggle = screen.getByRole('button', { name: /查看边证据.*李世民.*对立/ });
+    fireEvent.click(evidenceToggle);
+
+    const evidenceRegion = screen.getByRole('region', { name: '关系边证据：李世民 → 李渊' });
+    expect(evidenceRegion).toHaveTextContent('《资治通鉴》');
+    expect(evidenceRegion).toHaveTextContent('书目引文');
+    expect(evidenceRegion).toHaveTextContent('missing-edge-source');
+    expect(evidenceRegion).toHaveTextContent('来源未解析');
+    expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
+  });
 });
