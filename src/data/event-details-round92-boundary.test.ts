@@ -21,7 +21,6 @@ const reviewBoundaryReasons = {
   'silla-founded': 'formation-approximation',
   'southern-ming-founded': 'formation-approximation',
   'tang-changan-end': 'participant-endpoint-review',
-  'tang-founded-changan': 'participant-endpoint-review',
   'tibetan-founded': 'formation-approximation',
   'tuyuhun-founded': 'formation-approximation',
   'western-liao-founded': 'formation-approximation',
@@ -41,7 +40,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 102, 'needs-review': 31, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 103, 'needs-review': 30, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {

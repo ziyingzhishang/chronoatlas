@@ -2495,7 +2495,7 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'changan-xin-founded',
-    participants: [],
+    participants: [{ personId: 'wang-mang', role: '公元9年受禅建新的核心统治者', note: '仅对应受禅建新节点；不把新末战争或新朝对西汉旧境的全部控制前推到公元9年。' }],
     polityIds: ['xin'],
     causes: ['王莽长期控制西汉朝廷，受禅改国号后继续利用长安的都城制度与政治资源。'],
     consequences: ['长安的中央政治中心功能由西汉转入新朝。', '新朝建政与新末战争、地方控制变化保持时间层次区分。'],
@@ -2531,7 +2531,7 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'changan-later-qin',
-    participants: [],
+    participants: [{ personId: 'yao-chang', role: '384年形成与386年前后据长安阶段的核心建立者', note: '对应384年形成与386年前后据长安的连续阶段；不把两年合并为同日，也不把长安节点扩展为后秦全域控制。' }],
     polityIds: ['later_qin'],
     causes: ['前秦崩解后关中出现权力真空，姚苌及羌族军政集团取得独立资源。'],
     consequences: ['后秦进入关中政治竞争，并以长安作为重要城市中心。', '后秦取得长安与后续制度发展成为连续而分层的阶段。'],
@@ -2543,7 +2543,7 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'tang-founded-changan',
-    participants: [],
+    participants: [{ personId: 'li-yuan', role: '618年唐建国政治节点中在长安受禅即位的君主', note: '仅对应618年唐建国政治节点；不把建国节点扩展为唐已控制隋旧境全部地区。' }],
     polityIds: ['tang'],
     causes: ['隋末战争使李渊集团先控制长安，并取得隋都的政治与行政资源。'],
     consequences: ['唐朝在长安建立，城市进入新的帝国首都阶段。', '隋大兴城的城市空间被唐代长安继续承接和扩展。'],
