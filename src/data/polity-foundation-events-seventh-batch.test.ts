@@ -6,7 +6,7 @@ import { auditPolityCoverage } from './polity-coverage';
 const targets = [
   ['xin', 'xin-founded'],
   ['gengshi', 'gengshi-founded'],
-  ['southern_liang', 'southern-liang-founded'],
+  ['southern_liang', 'southern-liang-founded-397'],
   ['nanzhao', 'nanzhao-founded'],
   ['goguryeo', 'goguryeo-founded'],
   ['silla', 'silla-founded'],

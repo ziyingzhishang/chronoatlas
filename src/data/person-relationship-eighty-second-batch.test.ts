@@ -12,8 +12,6 @@ const eventParticipationReviewBoundary = [
   'yuan-hong',
   'tuoba-tao',
   'yuwen-yong',
-  'zhao-wuling',
-  'tufa-wugu',
   'mongke',
 ] as const;
 

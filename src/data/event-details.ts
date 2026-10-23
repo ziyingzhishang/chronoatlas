@@ -270,7 +270,7 @@ const details: HistoricalEventDetail[] = [
     participants: [
       { personId: 'xiao-yan', role: '受禅建立南梁并在建康即位的君主', note: '萧衍在南齐末年掌握江南军政资源，502年受禅建梁；其前期掌权与正式即位分开记录。' },
     ],
-    polityIds: ['liang_southern', 'southern_liang'],
+    polityIds: ['liang_southern'],
     causes: ['南齐末年皇室权力衰落，萧衍控制朝廷与江南核心军政资源。'],
     consequences: ['南朝政权从南齐转入梁朝。', '建康继续作为江南政治、文化中心，南北对峙延续。'],
     phases: [
@@ -282,6 +282,18 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['southern-qi-founded', 'sui-unification'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '502年是禅代与建政节点，不以南梁后期疆域替代建国初期控制区；建康是政治中心而非疆域边界。',
+  },
+  {
+    eventId: 'southern-liang-founded-397',
+    participants: [{ personId: 'tufa-wugu', role: '在河湟整合部众、建立南凉的直接统治者', relationType: 'direct', note: '397年前后是南凉形成阶段；秃发利鹿孤和秃发傉檀的继承统治另按人物与时期记录。' }],
+    polityIds: ['southern_liang'],
+    causes: ['后凉势力衰弱，河湟部众与秃发氏军政网络获得重新组织的空间。', '秃发乌孤在河湟地区积累部众和军事资源。'],
+    consequences: ['南凉进入区域政权形成阶段。', '西平作为早期政治中心，399年转向乐都属于后续阶段。'],
+    phases: [{ label: '南凉形成', startYear: 397, endYear: 397, summary: '秃发乌孤在河湟整合部众并建立南凉。' }, { label: '政治中心转移准备', startYear: 397, endYear: 399, summary: '南凉继续经营河湟交通与军政网络，后续迁都乐都不回填为397年建政地点。' }],
+    locationIds: ['xiping'],
+    relatedEventIds: ['later-liang-founded', 'southern-liang-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol126-tufa-wugu'],
+    uncertaintyNote: '397年前后为南凉形成约年，南朝梁502年受禅建梁是另一政权节点；西平与399年乐都分别表达不同阶段政治中心，不把河湟区域参照当作固定首都边界。',
   },
   {
     eventId: 'northern-song-founded',
@@ -300,6 +312,18 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['zhou-later-founded', 'northern-han-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology'],
     uncertaintyNote: '960年是建政与受禅节点；开封是即位后的政治中心，不能把979年后的统一范围回填到建国当年。',
+  },
+  {
+    eventId: 'zhao-wuling-reforms-307',
+    participants: [{ personId: 'zhao-wuling', role: '推动胡服骑射与军政改革的赵国君主', relationType: 'direct', note: '改革属于赵国建政后的制度转型，不替代前403年周王室册命节点。' }],
+    polityIds: ['zhao_warring'],
+    causes: ['赵国需要应对北方部族、燕国和中山等方向的军事竞争。', '传统车战、服制和贵族军事组织难以完全满足北方机动作战需求。'],
+    consequences: ['赵国骑兵与边疆动员能力得到强化。', '改革成为战国军事制度转型的代表性案例，但具体施行范围与社会反应按阶段理解。'],
+    phases: [{ label: '改革倡议', startYear: -307, endYear: -307, summary: '赵武灵王倡导胡服骑射，要求军政集团适应北方机动作战。' }, { label: '军政转型', startYear: -307, endYear: -295, summary: '赵国继续训练骑射、经营北方并推进军政组织调整，改革成效逐步显现。' }],
+    locationIds: ['handan'],
+    relatedEventIds: ['zhao-warring-founded-eighth-batch', 'qin-unification'],
+    sourceIds: ['zizhi-tongjian'],
+    uncertaintyNote: '前307年作为改革约年节点；胡服骑射的具体施行范围、反对者和各地完成时间不能由单一时间点完全确定，邯郸仅作赵国政治中心参照。',
   },
   {
     eventId: 'southern-song-founded',

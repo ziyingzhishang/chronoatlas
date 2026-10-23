@@ -290,7 +290,7 @@ const details: HeritageDetail[] = [
     phase('original', '宫城营建', '前4世纪至前3世纪', '赵国在邯郸营建宫城和台基，形成战国诸侯都城的礼制与行政空间。', -386, -228),
     phase('site', '考古遗址', '战国赵都城址', '宫殿台基、城垣和道路等遗迹以考古遗址和遗址公园形式保存。', -386, -228),
     phase('restoration', '现代保护展示', '当代遗址公园', '现代保护以遗址标识、考古展示和环境整治为主，不复原完整战国宫城。', 2000, undefined, '展示性龙台或景观构筑物不能直接视作战国原建筑。'),
-  ], ['qin-shi-huang'], ['zhao_warring'], ['zhao-warring-founded-eighth-batch', 'qin-unification'], ['宫殿台基与龙台', '城垣和道路遗迹', '遗址公园展示系统'], '从今天的邯郸观察战国赵国首都、赵政权进入战国分期、秦灭赵战争和诸侯都城制度的核心遗址。', '赵王城各台基、宫殿和年代对应关系仍需按考古分区理解；建政事件表达赵进入传统战国分期，不等于赵国政治实体此前不存在；秦灭赵的历史联系也不等于秦代继续使用的全部城址均已确认。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['qin-shi-huang', 'zhao-wuling'], ['zhao_warring'], ['zhao-warring-founded-eighth-batch', 'zhao-wuling-reforms-307', 'qin-unification'], ['宫殿台基与龙台', '城垣和道路遗迹', '遗址公园展示系统'], '从今天的邯郸观察战国赵国首都、赵政权进入战国分期、胡服骑射改革、秦灭赵战争和诸侯都城制度的核心遗址。', '赵王城各台基、宫殿和年代对应关系仍需按考古分区理解；建政事件表达赵进入传统战国分期，不等于赵国政治实体此前不存在；胡服骑射是改革节点，不等于赵王城全部建筑在前307年完成；秦灭赵的历史联系也不等于秦代继续使用的全部城址均已确认。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('tongwan-city-site', '今陕西省榆林市靖边县红墩界镇白城子村附近统万城国家考古遗址公园。', ['夏政权统万城营建', '赫连勃勃时代河套南缘的都城、军事和族群政治'], [
     phase('original', '都城营建', '413年起', '赫连勃勃主持在河套地区营建统万城，城垣和宫城体现夏政权的都城规划与防御需求。', 413, 418),
     phase('site', '城址遗址', '夏都城址', '夯土城垣、宫城和城市分区以大型考古遗址形式保存。', 413, 431),
@@ -647,7 +647,7 @@ const details: HeritageDetail[] = [
     historicalPhase('original', '迁都与政治中心', '399—414年', '《太平御览》所引南凉材料记载秃发乌孤时期徙于乐都；乐都此后承接南凉后期政治、军政与河湟交通功能。', 399, 414, '文献可支持乐都作为阶段性政治中心，但不能仅凭文献把今日某一处建筑认定为南凉原构。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu']),
     historicalPhase('site', '候选城址与城市历史层', '南凉时期', '今日乐都的南凉文化展示与地方历史空间提供城市记忆入口；具体古城遗址、城垣和宫城分区仍需考古报告逐项比定。', 399, 414, '候选历史层不等同于已经完成考古定名的遗址。', ['jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
     historicalPhase('restoration', '现代文化展示', '当代', '地方文化展示、旅游线路和历史地图帮助理解南凉乐都阶段，但现代设施不视为南凉建筑遗存。', 2000, undefined, '现代展示空间与南凉原城、原建筑严格分层。', ['mct-ledu-southern-liang']),
-  ], ['tufa-wugu', 'tufa-rutan'], ['southern_liang'], ['southern-liang-founded'], ['乐都河湟城市空间', '南凉迁都文献记忆', '地方文化展示与候选遗址线索'], '从今日乐都观察南凉由西平转入乐都的政治中心变化，并理解河湟政权的流动性与城市遗产证据边界。', '现有证据足以关联南凉—乐都的历史层和今日文化展示，但不足以确认某一现存建筑为南凉原构；遗产状态保持候选，不把旅游展示等同于考古定名。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
+  ], ['tufa-wugu', 'tufa-rutan'], ['southern_liang'], ['southern-liang-founded-397'], ['乐都河湟城市空间', '南凉迁都文献记忆', '地方文化展示与候选遗址线索'], '从今日乐都观察南凉由西平转入乐都的政治中心变化，并理解河湟政权的流动性与城市遗产证据边界。', '现有证据足以关联南凉—乐都的历史层和今日文化展示，但不足以确认某一现存建筑为南凉原构；遗产状态保持候选，不把旅游展示等同于考古定名。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
 ];
 
 const detailById = new Map(details.map((heritageDetail) => [heritageDetail.heritageId, heritageDetail]));

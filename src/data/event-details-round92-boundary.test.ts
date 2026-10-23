@@ -19,6 +19,7 @@ const reviewBoundaryReasons = {
   'qin-state-founded-eighth-batch': 'traditional-periodization',
   'shang-founded-eighth-batch': 'traditional-periodization',
   'silla-founded': 'formation-approximation',
+  'southern-liang-founded-397': 'formation-approximation',
   'southern-ming-founded': 'formation-approximation',
   'tang-changan-end': 'participant-endpoint-review',
   'tibetan-founded': 'formation-approximation',
@@ -32,6 +33,7 @@ const reviewBoundaryReasons = {
   'shangyang-palace-built': 'construction-range',
   'yan-warring-founded-eighth-batch': 'traditional-periodization',
   'zhou-conquest': 'traditional-periodization',
+  'zhao-wuling-reforms-307': 'reform-process-approximation',
 } as const;
 
 describe('event details ninety-second round boundary audit', () => {
@@ -40,7 +42,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 105, 'needs-review': 30, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 105, 'needs-review': 32, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -95,6 +97,6 @@ describe('event details ninety-second round boundary audit', () => {
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');
-    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(25);
+    expect(report.items.filter((item) => item.needsReviewChecks.includes('timePrecision'))).toHaveLength(27);
   });
 });

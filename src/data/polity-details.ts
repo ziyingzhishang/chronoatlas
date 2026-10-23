@@ -267,9 +267,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'southern_liang', perspectiveSummary: '南凉由秃发氏在河湟地区建立，经历西平、乐都等阶段性政治中心转换，体现十六国河湟政权的区域性与流动性。',
     foundationProcess: ['秃发乌孤在后凉势力衰弱后整合河湟部众。', '397年前后南凉进入政权形成阶段。', '秃发氏以西平、乐都为不同阶段中心，最终在后秦压力下结束。'],
-    turningPoints: [turn(397, '南凉政权形成', '秃发氏在河湟建立南凉。', 'southern-liang-founded'), turn(399, '迁都乐都', '政治中心由西平转向乐都，河湟网络进一步整合。'), turn(414, '南凉覆亡', '南凉为西秦所灭，秃发氏政权结束。')],
+    turningPoints: [turn(397, '南凉政权形成', '秃发氏在河湟建立南凉。', 'southern-liang-founded-397'), turn(399, '迁都乐都', '政治中心由西平转向乐都，河湟网络进一步整合。'), turn(414, '南凉覆亡', '南凉为西秦所灭，秃发氏政权结束。')],
     principalFigureIds: ['tufa-wugu'], capitalPhases: [capital('xiping', 397, 401), capital('ledu', 402, 414)],
-    heritageIds: ['southern-liang-ledu-city-site'], eventIds: ['southern-liang-founded'], claimIds: ['claim-tufa-wugu-founded-southern-liang-closure'], sourceIds: [...modernSources, 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang'],
+    heritageIds: ['southern-liang-ledu-city-site'], eventIds: ['southern-liang-founded-397'], claimIds: ['claim-tufa-wugu-founded-southern-liang-closure'], sourceIds: [...modernSources, 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang'],
     uncertaintyNote: '秃发乌孤是南凉形成阶段的本政权人物端点，397年建政与399年个人统治期分开记录；西平、乐都均按已有首都阶段连接，不将区域政治中心夸大为完整城址复原。',
   }),
   detail({
@@ -691,9 +691,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'zhao_warring', perspectiveSummary: '战国赵由晋国赵氏转为周王室承认的诸侯国，邯郸是后续长期政治中心；赵氏经营北方与赵国建制需分层。',
     foundationProcess: ['赵氏在晋国北方长期经营军政资源。', '前403年周王室册命赵为诸侯，赵进入战国分期。', '邯郸成为后续主要政治中心，胡服骑射和北方扩张属于建政后的制度发展。'],
-    turningPoints: [turn(-403, '赵进入战国分期', '周王室确认赵的诸侯身份。', 'zhao-warring-founded-eighth-batch'), turn(-307, '胡服骑射', '赵武灵王推动军事改革，国家动员方式发生变化。'), turn(-228, '赵亡于秦', '秦军攻取邯郸，赵政权结束。')],
+    turningPoints: [turn(-403, '赵进入战国分期', '周王室确认赵的诸侯身份。', 'zhao-warring-founded-eighth-batch'), turn(-307, '胡服骑射', '赵武灵王推动军事改革，国家动员方式发生变化。', 'zhao-wuling-reforms-307'), turn(-228, '赵亡于秦', '秦军攻取邯郸，赵政权结束。')],
     principalFigureIds: ['zhao-liehou', 'zhao-wuling', 'zhao-xiangzi'], capitalPhases: [capital('handan', -403, -228)],
-    heritageIds: ['zhao-wang-city-site'], eventIds: ['zhao-warring-founded-eighth-batch'], claimIds: ['claim-zhao-liehou-participated-zhao-warring-founded'], sourceIds: modernSources,
+    heritageIds: ['zhao-wang-city-site'], eventIds: ['zhao-warring-founded-eighth-batch', 'zhao-wuling-reforms-307'], claimIds: ['claim-zhao-liehou-participated-zhao-warring-founded', 'claim-zhao-wuling-participated-zhao-wuling-reforms-307'], sourceIds: modernSources,
     uncertaintyNote: '前403年是册命和传统分期节点，不是赵国政治实体的绝对起点；赵王城遗址以战国阶段为主，不能据此还原赵全期疆域或所有早期宫城。',
   }),
   detail({

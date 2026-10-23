@@ -5314,8 +5314,7 @@
       "entityKey": "event:southern-liang-founded",
       "label": "南梁建立",
       "polityIds": [
-        "liang_southern",
-        "southern_liang"
+        "liang_southern"
       ],
       "checks": [
         {
@@ -5355,7 +5354,6 @@
           "relatedIds": [
             "liang_southern",
             "southern-qi-founded",
-            "southern_liang",
             "sui-unification",
             "xiao-yan"
           ]
@@ -5364,6 +5362,66 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "southern-liang-founded-397",
+      "entityKey": "event:southern-liang-founded-397",
+      "label": "南凉政权形成",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-liang-founded-397"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol126-tufa-wugu",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-wugu-participated-southern-liang-founded-397",
+            "event-detail:southern-liang-founded-397"
+          ],
+          "relatedIds": [
+            "later-liang-founded",
+            "southern-liang-founded",
+            "southern_liang",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -7956,6 +8014,64 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "zhao-wuling-reforms-307",
+      "entityKey": "event:zhao-wuling-reforms-307",
+      "label": "赵武灵王推行胡服骑射",
+      "polityIds": [
+        "zhao_warring"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "zhao-wuling-reforms-307"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhao-wuling-participated-zhao-wuling-reforms-307",
+            "event-detail:zhao-wuling-reforms-307"
+          ],
+          "relatedIds": [
+            "qin-unification",
+            "zhao-warring-founded-eighth-batch",
+            "zhao-wuling",
+            "zhao_warring"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -12550,7 +12666,7 @@
             "heritage-detail:southern-liang-ledu-city-site"
           ],
           "relatedIds": [
-            "southern-liang-founded",
+            "southern-liang-founded-397",
             "southern_liang",
             "tufa-rutan",
             "tufa-wugu"
@@ -14618,6 +14734,8 @@
             "qin-shi-huang",
             "qin-unification",
             "zhao-warring-founded-eighth-batch",
+            "zhao-wuling",
+            "zhao-wuling-reforms-307",
             "zhao_warring"
           ]
         },
@@ -23214,12 +23332,15 @@
             "claim:claim-tufa-wugu-appointed-tufa-lilugu",
             "claim:claim-tufa-wugu-appointed-tufa-rutan",
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
+            "claim:claim-tufa-wugu-participated-southern-liang-founded-397",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
             "claim:claim-tufa-wugu-sibling-tufa-lilugu",
             "claim:claim-tufa-wugu-sibling-tufa-rutan",
+            "event-detail:southern-liang-founded-397",
             "person-polity:tufa-wugu:southern_liang"
           ],
           "relatedIds": [
+            "southern-liang-founded-397",
             "southern_liang",
             "tufa-lilugu",
             "tufa-rutan"
@@ -26092,12 +26213,15 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-zhao-wuling-participated-zhao-wuling-reforms-307",
             "claim:claim-zhao-wuling-related-qin-shi-huang",
             "claim:claim-zhao-wuling-ruled-zhao",
+            "event-detail:zhao-wuling-reforms-307",
             "person-polity:zhao-wuling:zhao_warring"
           ],
           "relatedIds": [
             "qin-shi-huang",
+            "zhao-wuling-reforms-307",
             "zhao_warring"
           ]
         },
@@ -30565,14 +30689,14 @@
           "evidenceIds": [
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
-            "event-detail:southern-liang-founded",
+            "event-detail:southern-liang-founded-397",
             "heritage-detail:southern-liang-ledu-city-site",
             "person:tufa-lilugu",
             "person:tufa-rutan",
             "person:tufa-wugu"
           ],
           "relatedIds": [
-            "southern-liang-founded",
+            "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
             "tufa-lilugu",
             "tufa-rutan",
@@ -32501,6 +32625,7 @@
             "event-detail:partition-jin",
             "event-detail:qin-unification",
             "event-detail:zhao-warring-founded-eighth-batch",
+            "event-detail:zhao-wuling-reforms-307",
             "heritage-detail:zhao-wang-city-site",
             "person:zhao-liehou",
             "person:zhao-wuling",
@@ -32513,6 +32638,7 @@
             "zhao-wang-city-site",
             "zhao-warring-founded-eighth-batch",
             "zhao-wuling",
+            "zhao-wuling-reforms-307",
             "zhao-xiangzi"
           ]
         },
@@ -32987,6 +33113,20 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-liang-founded-397",
+      "entityKey": "event:southern-liang-founded-397",
+      "label": "南凉政权形成",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-ming-founded",
       "entityKey": "event:southern-ming-founded",
       "label": "南明政权体系形成",
@@ -33120,6 +33260,20 @@
       "kind": "uncertain",
       "polityIds": [
         "yan_warring"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "zhao-wuling-reforms-307",
+      "entityKey": "event:zhao-wuling-reforms-307",
+      "label": "赵武灵王推行胡服骑射",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "zhao_warring"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -39209,8 +39363,7 @@
       "entityKey": "event:southern-liang-founded",
       "label": "南梁建立",
       "polityIds": [
-        "liang_southern",
-        "southern_liang"
+        "liang_southern"
       ],
       "checks": [
         {
@@ -39250,7 +39403,6 @@
           "relatedIds": [
             "liang_southern",
             "southern-qi-founded",
-            "southern_liang",
             "sui-unification",
             "xiao-yan"
           ]
@@ -39259,6 +39411,66 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:southern-liang-founded-397": {
+      "entityType": "event",
+      "entityId": "southern-liang-founded-397",
+      "entityKey": "event:southern-liang-founded-397",
+      "label": "南凉政权形成",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-liang-founded-397"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol126-tufa-wugu",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tufa-wugu-participated-southern-liang-founded-397",
+            "event-detail:southern-liang-founded-397"
+          ],
+          "relatedIds": [
+            "later-liang-founded",
+            "southern-liang-founded",
+            "southern_liang",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -41851,6 +42063,64 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:zhao-wuling-reforms-307": {
+      "entityType": "event",
+      "entityId": "zhao-wuling-reforms-307",
+      "entityKey": "event:zhao-wuling-reforms-307",
+      "label": "赵武灵王推行胡服骑射",
+      "polityIds": [
+        "zhao_warring"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "zhao-wuling-reforms-307"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhao-wuling-participated-zhao-wuling-reforms-307",
+            "event-detail:zhao-wuling-reforms-307"
+          ],
+          "relatedIds": [
+            "qin-unification",
+            "zhao-warring-founded-eighth-batch",
+            "zhao-wuling",
+            "zhao_warring"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -46445,7 +46715,7 @@
             "heritage-detail:southern-liang-ledu-city-site"
           ],
           "relatedIds": [
-            "southern-liang-founded",
+            "southern-liang-founded-397",
             "southern_liang",
             "tufa-rutan",
             "tufa-wugu"
@@ -48513,6 +48783,8 @@
             "qin-shi-huang",
             "qin-unification",
             "zhao-warring-founded-eighth-batch",
+            "zhao-wuling",
+            "zhao-wuling-reforms-307",
             "zhao_warring"
           ]
         },
@@ -57109,12 +57381,15 @@
             "claim:claim-tufa-wugu-appointed-tufa-lilugu",
             "claim:claim-tufa-wugu-appointed-tufa-rutan",
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
+            "claim:claim-tufa-wugu-participated-southern-liang-founded-397",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
             "claim:claim-tufa-wugu-sibling-tufa-lilugu",
             "claim:claim-tufa-wugu-sibling-tufa-rutan",
+            "event-detail:southern-liang-founded-397",
             "person-polity:tufa-wugu:southern_liang"
           ],
           "relatedIds": [
+            "southern-liang-founded-397",
             "southern_liang",
             "tufa-lilugu",
             "tufa-rutan"
@@ -59987,12 +60262,15 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-zhao-wuling-participated-zhao-wuling-reforms-307",
             "claim:claim-zhao-wuling-related-qin-shi-huang",
             "claim:claim-zhao-wuling-ruled-zhao",
+            "event-detail:zhao-wuling-reforms-307",
             "person-polity:zhao-wuling:zhao_warring"
           ],
           "relatedIds": [
             "qin-shi-huang",
+            "zhao-wuling-reforms-307",
             "zhao_warring"
           ]
         },
@@ -64460,14 +64738,14 @@
           "evidenceIds": [
             "claim:claim-tufa-wugu-founded-southern-liang-closure",
             "claim:claim-tufa-wugu-ruled-southern-liang-round105",
-            "event-detail:southern-liang-founded",
+            "event-detail:southern-liang-founded-397",
             "heritage-detail:southern-liang-ledu-city-site",
             "person:tufa-lilugu",
             "person:tufa-rutan",
             "person:tufa-wugu"
           ],
           "relatedIds": [
-            "southern-liang-founded",
+            "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
             "tufa-lilugu",
             "tufa-rutan",
@@ -66396,6 +66674,7 @@
             "event-detail:partition-jin",
             "event-detail:qin-unification",
             "event-detail:zhao-warring-founded-eighth-batch",
+            "event-detail:zhao-wuling-reforms-307",
             "heritage-detail:zhao-wang-city-site",
             "person:zhao-liehou",
             "person:zhao-wuling",
@@ -66408,6 +66687,7 @@
             "zhao-wang-city-site",
             "zhao-warring-founded-eighth-batch",
             "zhao-wuling",
+            "zhao-wuling-reforms-307",
             "zhao-xiangzi"
           ]
         },
@@ -66684,20 +66964,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 135,
+      "totalEntities": 137,
       "statusCounts": {
-        "covered": 650,
+        "covered": 658,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 25,
+        "uncertain": 27,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 25
+        "uncertain": 27
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -66714,6 +66994,7 @@
         "event:shang-founded-eighth-batch",
         "event:shangyang-palace-built",
         "event:silla-founded",
+        "event:southern-liang-founded-397",
         "event:southern-ming-founded",
         "event:tibetan-founded",
         "event:tuyuhun-founded",
@@ -66724,6 +67005,7 @@
         "event:xiongnu-founded",
         "event:xuanzang-at-ximing-658",
         "event:yan-warring-founded-eighth-batch",
+        "event:zhao-wuling-reforms-307",
         "event:zhou-conquest"
       ]
     },
@@ -68617,7 +68899,7 @@
       "polityId": "southern_liang",
       "polityName": "南凉",
       "entityKeys": [
-        "event:southern-liang-founded",
+        "event:southern-liang-founded-397",
         "heritage:southern-liang-ledu-city-site",
         "person:tufa-lilugu",
         "person:tufa-rutan",
@@ -68673,6 +68955,20 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "southern-liang-founded-397",
+          "entityKey": "event:southern-liang-founded-397",
+          "label": "南凉政权形成",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -68682,7 +68978,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "南凉：有 3 项待核验缺口。"
+      "summary": "南凉：有 4 项待核验缺口。"
     },
     "southern_tang": {
       "polityId": "southern_tang",
@@ -69694,6 +69990,7 @@
         "event:partition-jin",
         "event:qin-unification",
         "event:zhao-warring-founded-eighth-batch",
+        "event:zhao-wuling-reforms-307",
         "heritage:zhao-wang-city-site",
         "person:zhao-liehou",
         "person:zhao-wuling",
@@ -69734,6 +70031,20 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "zhao-wuling-reforms-307",
+          "entityKey": "event:zhao-wuling-reforms-307",
+          "label": "赵武灵王推行胡服骑射",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "zhao_warring"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -69743,7 +70054,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "赵：有 2 项待核验缺口。"
+      "summary": "赵：有 3 项待核验缺口。"
     },
     "zhou_eastern": {
       "polityId": "zhou_eastern",
@@ -70683,8 +70994,10 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:zhao-warring-founded-eighth-batch",
+        "event:zhao-wuling-reforms-307",
         "heritage:zhao-wang-city-site",
         "person:zhao-liehou",
+        "person:zhao-wuling",
         "person:zhao-xiangzi"
       ],
       "gaps": [
@@ -70721,6 +71034,20 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "zhao-wuling-reforms-307",
+          "entityKey": "event:zhao-wuling-reforms-307",
+          "label": "赵武灵王推行胡服骑射",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "zhao_warring"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -70730,7 +71057,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "邯郸市：有 2 项待核验缺口。"
+      "summary": "邯郸市：有 3 项待核验缺口。"
     },
     "hangzhou": {
       "placeId": "hangzhou",
@@ -72018,8 +72345,43 @@
       "placeId": "xiping",
       "cityName": "西宁市一带",
       "capitalRecordCount": 1,
-      "entityKeys": [],
-      "gaps": [],
+      "entityKeys": [
+        "event:southern-liang-founded-397",
+        "person:tufa-wugu"
+      ],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "tufa-wugu",
+          "entityKey": "person:tufa-wugu",
+          "label": "秃发乌孤",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "southern-liang-founded-397",
+          "entityKey": "event:southern-liang-founded-397",
+          "label": "南凉政权形成",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "southern_liang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -72027,7 +72389,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西宁市一带：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "西宁市一带：有 2 项待核验缺口。"
     },
     "yalong": {
       "placeId": "yalong",

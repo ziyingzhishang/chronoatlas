@@ -112,6 +112,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百四十五·梁纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷145', detail: '记载萧衍受禅、梁朝建立及建康政治节点；具体地方归属另按时段核验。' }],
   },
   {
+    id: 'southern-liang-founded-397', year: 397, title: '南凉政权形成', summary: '秃发乌孤在河湟地区建立南凉，西平成为早期政治中心。', placeId: 'xiping', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol126-tufa-wugu'],
+    datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
+    background: '后凉势力衰弱与河湟部众重组为秃发乌孤建立区域政权提供了条件。',
+    process: '397年前后秃发乌孤在河湟整合部众并建立南凉，西平作为早期政治中心；399年政治中心转向乐都属于后续阶段。',
+    impact: '南凉成为十六国河湟地区的重要政权，秃发利鹿孤与秃发傉檀时期继续承接其政治网络。',
+    mapNote: '地图使用西平作为早期中心的区域参照，不能据397年形成节点推导南凉全期疆域；399年乐都阶段另行表达。',
+    references: [{ title: '《晋书》卷一二六·秃发乌孤载记', url: 'https://zh.wikisource.org/wiki/晉書/卷126', detail: '用于核验秃发乌孤与南凉早期建政、继承和河湟政治空间。' }, { title: '《资治通鉴》', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于前后凉—南凉竞争和397年前后政权形成的编年背景。' }],
+  },
+  {
     id: 'later-liang-five-dynasties-founded', year: 907, title: '五代后梁建立', summary: '朱温在开封受唐禅建立后梁，五代第一个中原王朝形成。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '朱温控制宣武军和唐末中原军政资源，唐廷权力转移为新的中原王朝提供了制度与军事条件。',
@@ -1014,6 +1023,15 @@ const catalog: HistoricalEvent[] = [
     impact: '赵国成为战国北方重要力量，长期参与北方边疆、诸侯战争和合纵连横；前228年灭亡不能反推其建政初期的控制范围。',
     mapNote: '地图应区分前403年册命、赵迁都邯郸及后期扩张，不能以赵国后期北方范围画成建政年的固定边界。',
     references: [{ title: '《资治通鉴》卷一·周纪一', url: 'https://ctext.org/wiki.pl?chapter=648120&if=gb', detail: '记载前403年周王室命赵籍为诸侯；赵氏早期形成和都城迁徙采用阶段性表达。' }],
+  },
+  {
+    id: 'zhao-wuling-reforms-307', year: -307, title: '赵武灵王推行胡服骑射', summary: '赵武灵王推动服制与骑射军事改革，赵国的军政动员和北方防务进入转型阶段。', placeId: 'handan', sourceIds: ['zizhi-tongjian'],
+    datePrecision: 'approximate', region: 'china', category: '制度改革／军事变革', verification: 'partial',
+    background: '赵国面对北方部族、燕中山等竞争，需要重新组织军队、服制和边疆动员方式。',
+    process: '前307年前后赵武灵王倡导胡服骑射，改革服制、训练和骑兵运用；改革的推行是持续过程，不等于赵国全境同日完成制度变化。',
+    impact: '赵国军事实力和北方经营能力得到增强，胡服骑射成为战国军事制度变革的典型节点；赵国建政和邯郸都城形成早于该改革。',
+    mapNote: '地图以邯郸及赵国北方军政网络表达改革背景，不把胡服骑射事件误绘成赵国建政或固定疆界扩张。',
+    references: [{ title: '《资治通鉴》战国赵武灵王纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核验赵武灵王胡服骑射改革的编年叙事；改革具体施行范围按阶段保留不确定性。' }],
   },
   {
     id: 'wei-warring-founded-eighth-batch', year: -403, title: '魏政权建立（周王室册命节点）', summary: '前403年周威烈王册命魏斯为诸侯，魏以明确的制度节点进入战国诸侯秩序；改革、迁都与地方整合另按阶段记录。', placeId: 'anyi', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol1-three-jin', 'china-chronology'],

@@ -14,7 +14,7 @@ describe('南凉遗产闭环边界', () => {
     expect(asset?.modernStatus).toBe('uncertain');
     expect(asset?.sourceIds).toEqual(expect.arrayContaining(['jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']));
     expect(detail?.associatedPolities).toContain('southern_liang');
-    expect(detail?.associatedEvents).toContain('southern-liang-founded');
+    expect(detail?.associatedEvents).toContain('southern-liang-founded-397');
     expect(detail?.uncertaintyNote).toMatch(/候选|待考古|不等同/);
     expect(polity?.heritageIds).toContain('southern-liang-ledu-city-site');
   });

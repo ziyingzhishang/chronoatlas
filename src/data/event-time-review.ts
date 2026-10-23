@@ -81,6 +81,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'shangyang-palace-built', status: 'confirmed', expectedPrecision: 'range', explanation: '上阳宫始建材料只明确为上元年间，674—676年是稳妥范围，675年为通行整理年；不能升级为绝对单年。', timelineStrategy: 'range-band' },
   { eventId: 'daming-palace-built', status: 'approximate', expectedPrecision: 'approximate', explanation: '大明宫营建是持续工程，634年前后只作启动阶段约年，不能把全部宫城建成压缩为单一日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'dali-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '937年前后表示大理政权形成；《滇载记》按后晋天福二年记937年，而国家社科成果摘要采用938年，杨干贞改国号、段氏承接和高氏阶段不能混为精确建国日，因此保留约年。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'southern-liang-founded-397', status: 'approximate', expectedPrecision: 'approximate', explanation: '397年前后表示秃发乌孤在河湟地区建立南凉政权的形成阶段；部落联盟整合、受封与迁都西平之间存在连续过程，不能压缩为单一建国日。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liao-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1124年前后表示耶律大石自立为王并西行的形成阶段；《辽史》与现代研究对称帝纪年存在换算异说，故不升级为确定年。1132年称帝、1134年建都虎思斡耳朵（八剌沙衮）分别作为后续阶段记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liao-emperor-1132', status: 'approximate', expectedPrecision: 'approximate', explanation: '1132年称帝作为西辽制度化阶段，纪年换算存在1131等口径；与1124年前后形成和1134年八剌沙衮建都分层，八剌沙衮只作后续区域参照。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
@@ -88,6 +89,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'longwu-fuzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1645年朱聿键在福州即位并改元隆武，福州阶段中心可明确到年份；隆武覆亡与郑芝龙军镇关系另作阶段说明。', timelineStrategy: 'year-marker' },
   { eventId: 'shaowu-guangzhou-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1646年朱聿鐭在广州即位并使用绍武年号，阶段短且与永历并立，年份级节点比虚构单日更合适。', timelineStrategy: 'year-marker' },
   { eventId: 'yongli-zhaoqing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1646年朱由榔在肇庆先监国后即帝位，永历初期中心和即位年份明确；后续迁移不能回填到肇庆节点。', timelineStrategy: 'year-marker' },
+  { eventId: 'zhao-wuling-reforms-307', status: 'approximate', expectedPrecision: 'approximate', explanation: '前307年胡服骑射改革是持续数年的军事与制度转型，前307年作为启动约年，不能将改革过程误读为单日完成。', timelineStrategy: 'approximate-marker' },
 ];
 
 function unique(values: readonly string[]): string[] {

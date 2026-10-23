@@ -415,7 +415,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'zhao-wuling', biography: '赵武灵王推行胡服骑射，推动赵国军事组织和边疆防务转型，是战国政治改革的重要案例。',
     aliases: ['赵武灵王'], offices: [{ title: '赵国国君', polityId: 'zhao_warring', datePrecision: 'range', sourceIds: ['zizhi-tongjian'] }],
-    keyEvents: [], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '胡服骑射的具体实施过程和年代按战国编年概括，改革成效不应直接推导为赵国全境同时改变。',
+    keyEvents: ['zhao-wuling-reforms-307'], sourceIds: ['zizhi-tongjian'], uncertaintyNote: '胡服骑射的具体实施过程和年代按战国编年概括，改革成效不应直接推导为赵国全境同时改变；前403年赵国分期与前307年改革是不同节点。',
   },
   {
     personId: 'modu-chanyu', biography: '冒顿单于整合匈奴部众并建立强势草原政治秩序，汉初北方格局因此发生重要变化。',

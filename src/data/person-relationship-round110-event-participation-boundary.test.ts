@@ -15,8 +15,6 @@ const reviewGaps = [
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
   { personId: 'tuoba-tao', eventIds: ['northern-wei-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
-  { personId: 'zhao-wuling', eventIds: [] },
-  { personId: 'tufa-wugu', eventIds: [] },
   { personId: 'mongke', eventIds: ['mongol-founded'] },
 ] as const;
 
@@ -101,7 +99,7 @@ describe('round one hundred ten event-participation boundary audit', () => {
         .toBeGreaterThan(eventById.get(eventId)!.year);
     }
 
-    for (const personId of ['yuwen-yong', 'zhao-wuling', 'tufa-wugu']) {
+    for (const personId of ['yuwen-yong']) {
       expect(eventDetails.some((detail) => detail.participants.some((participant) => (
         participant.personId === personId
       ))), `${personId}: direct event-detail candidate`).toBe(false);
