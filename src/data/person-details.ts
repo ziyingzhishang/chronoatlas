@@ -546,9 +546,9 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['northern-liang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北凉建政事件覆盖397年段业被推立至后续政权重组，本详情将沮渠蒙逊的401年掌权单独标出。',
   },
   {
-    personId: 'li-hao', biography: '李暠在河西西部经营敦煌、酒泉等地，400年前后建立西凉并维系地方政权与丝路交通。',
-    aliases: ['西凉武昭王'], offices: [{ title: '西凉君主', polityId: 'western_liang', placeId: 'dunhuang', validFrom: 400, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['western-liang-state-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '400年前后为西凉形成约年，敦煌和酒泉之间的政治中心变化不能简化为固定单一都城。',
+    personId: 'li-hao', biography: '李暠在397—399年经营敦煌并取得军政基础，400年建立西凉，405年迁治酒泉，维系河西西部政权与丝路交通。',
+    aliases: ['西凉武昭王'], offices: [{ title: '西凉君主', polityId: 'western_liang', placeId: 'dunhuang', validFrom: 400, validTo: 404, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'] }, { title: '西凉君主', polityId: 'western_liang', placeId: 'jiuquan', validFrom: 405, validTo: 417, datePrecision: 'range', sourceIds: ['jinshu-vol87-li-hao'] }],
+    keyEvents: ['western-liang-state-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'], uncertaintyNote: '400年为西凉建政确定年；397—399年受命敦煌与405年迁治酒泉分别是前置和后续阶段，不能压成固定单一都城。',
   },
   {
     personId: 'gao-jixing', biography: '高季兴在五代中原政权更替中经营江陵，924年前后形成荆南地方政权并维持其相对独立。',

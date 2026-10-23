@@ -861,13 +861,16 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百七十二·后唐纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷272', detail: '记载五代初年高季兴据江陵及荆南政权形成背景；具体受封时间和后续称号仍按阶段区分。' }],
   },
   {
-    id: 'western-liang-state-founded', year: 400, title: '西凉政权形成', summary: '李暠在河西西部建立西凉，敦煌与酒泉地区进入新的地方政权阶段。', sourceIds: ['china-chronology'],
-    datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
+    id: 'western-liang-state-founded', year: 400, title: '西凉政权建立', summary: '李暠在400年被推为凉公、改元庚子，北凉分出西凉；敦煌为前期政治中心，405年迁治酒泉。', placeId: 'dunhuang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'],
+    datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '后凉分裂后，河西西部的地方军政力量重新组合，李暠获得敦煌、酒泉一带的独立统治基础。',
-    process: '400年前后李暠在河西西部建立西凉，政权以地方军政整合和丝路节点治理为主要特征；后续迁治与凉州竞争须按阶段记录。',
+    process: '397—399年李暠先后受任效谷令、敦煌太守并取得敦煌西部军政基础；400年被推为凉公、改元庚子，北凉分出西凉；405年再迁治酒泉。受命、建政和政治中心转移按阶段记录。',
     impact: '西凉成为十六国河西诸政权之一，维系河西西部的区域秩序和交通联系；其名义范围不等于对整条河西走廊的连续直接控制。',
-    mapNote: '地图应显示敦煌、酒泉及河西西部的阶段性核心，不以西凉后期或其他凉州政权的控制范围回填400年前后的形成阶段。',
-    references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于十六国及河西政权的年代框架；西凉具体建政节点和城邑控制仍保留阶段性不确定性。' }],
+    mapNote: '地图应在400年标记敦煌（今甘肃省酒泉市敦煌市）为前期政治中心，并在405年切换至酒泉（今甘肃省酒泉市）；不以西凉后期或其他凉州政权的控制范围回填400年建政节点。',
+    references: [
+      { title: '《晋书》卷八十七·凉武昭王李暠传', url: 'https://zh.wikisource.org/zh-hans/%E6%99%89%E6%9B%B8/%E5%8D%B7087', detail: '记载400年李暠被推为凉公、改元庚子，并记405年“迁居于酒泉”；397—399年受任敦煌太守的基础与建政节点分层。' },
+      { title: '《资治通鉴》卷一百十一·西凉形成', url: 'https://zh.wikisource.org/zh-hans/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%92_%28%E8%83%A1%E4%B8%89%E7%9C%81%E9%9F%B3%E6%B3%A8%29/%E5%8D%B7111', detail: '记载400年唐瑶移檄六郡推李暠为凉公、改元庚子，并明确北凉由此分出西凉。' },
+    ],
   },
   {
     id: 'western-liao-founded', year: 1124, title: '西辽政权形成', summary: '耶律大石西行后在中亚重建契丹政权，西辽进入形成阶段。', sourceIds: ['china-chronology'],
@@ -879,13 +882,17 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于辽亡后契丹政权转入西域阶段的年代框架；西辽形成时间和早期政治中心采用约年并保留争议。' }],
   },
   {
-    id: 'dali-founded', year: 937, title: '大理政权建立', summary: '段思平在洱海区域建立大理政权，南诏之后的地方政治秩序重新组织。', placeId: 'dali_city', sourceIds: ['china-chronology', 'capital-history-reference'],
+    id: 'dali-founded', year: 937, title: '大理政权建立', summary: '段思平在洱海区域建立大理政权，南诏之后的地方政治秩序重新组织。', placeId: 'dali_city', sourceIds: ['china-chronology', 'capital-history-reference', 'dali-diancai-record', 'dali-history-research-nopss', 'dali-duan-siping-official', 'dali-yangjumei-mct', 'dali-cambridge-governance'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '南诏后期政权瓦解，洱海地区多个地方势力竞争，段思平凭借军政联盟取得新的统治基础。',
-    process: '937年前后段思平在洱海区域建立大理政权，延续并改造南诏以来的地方政治网络；早期都城和各部关系不能简化为现代行政边界。',
+    process: '937年前后段思平在洱海区域建立大理政权，延续并改造南诏以来的地方政治网络；地方史传统常以937年记载，近现代研究亦有938年口径，因此本条保留约年。早期都城和各部关系不能简化为现代行政边界。',
     impact: '云南及其周边形成延续数百年的大理政权，连接西南山地、东南亚和中原交往；政权影响、羁縻关系与直接控制需分层表达。',
-    mapNote: '地图应以洱海—大理核心和交通网络显示政权形成，不把后期大理影响范围或南诏旧域直接当作937年前后的连续疆域。',
-    references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于大理政权年代框架；段思平建政及早期区域控制采用常见约年口径，具体城址另行核验。' }],
+    mapNote: '地图应以洱海—羊苴咩城（今大理古城一带）核心和交通网络显示政权形成，不把后期大理影响范围或南诏旧域直接当作937年前后的连续疆域。',
+    references: [
+      { title: '《滇载记》·段思平建国条', url: 'https://zh.wikisource.org/zh-hans/%E6%BB%87%E8%BC%89%E8%A8%98', detail: '记后晋天福二年逐杨氏后改国号为大理、改元文德；属后出地方史料，保留其937年传统口径而不单独升级为确定年。' },
+      { title: '国家社科基金成果：《大理国史研究》', url: 'https://www.nopss.gov.cn/GB/219506/219508/219522/14640080.html', detail: '成果摘要采用938年作为建国起点，并说明大理史料条件有限；与937年传统并列后，本项目保留约年。' },
+      { title: '文化和旅游部：中国文化报·阳苴咩城城墙遗址', url: 'https://www.mct.gov.cn/whzx/qgwhxxlb/yn/201307/t20130711_791318.htm', detail: '考古报道支持阳苴咩城作为南诏—大理政治中心的地点连续性和今大理古城一带的历史空间，不用于判定建政精确日期。' },
+    ],
   },
   {
     id: 'mongol-founded', year: 1206, title: '蒙古汗国形成', summary: '铁木真在斡难河源大会中被推举为成吉思汗，蒙古汗国进入统一阶段。', sourceIds: ['china-chronology'],

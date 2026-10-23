@@ -275,10 +275,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'western_liang', perspectiveSummary: '西凉由李暠在河西西部建立，以敦煌、酒泉为阶段性中心，维系绿洲城市与丝路交通网络。',
     foundationProcess: ['李暠在河西地方军政竞争中取得敦煌、酒泉一带的控制。', '400年西凉政权形成，敦煌是前期政治中心。', '西凉在北凉压力下维持河西西部秩序，421年灭亡。'],
-    turningPoints: [turn(400, '西凉政权形成', '李暠在河西西部建立西凉。', 'western-liang-state-founded'), turn(406, '政治中心转向酒泉', '西凉的行政与军政活动更多依托酒泉阶段。'), turn(421, '西凉覆亡', '沮渠蒙逊攻取酒泉，西凉结束。')],
-    principalFigureIds: ['li-hao'], capitalPhases: [capital('dunhuang', 400, 405), capital('jiuquan', 406, 421)],
-    heritageIds: ['dunhuang-western-liang-city-site'], eventIds: ['western-liang-state-founded'], claimIds: ['claim-li-hao-participated-western-liang'], sourceIds: modernSources,
-    uncertaintyNote: '敦煌与酒泉分别对应西凉不同阶段；遗址为多时期绿洲城市历史层，不能将全部现存遗存直接归为西凉。',
+    turningPoints: [turn(400, '西凉政权建立', '李暠被推为凉公、改元庚子，北凉分出西凉。', 'western-liang-state-founded'), turn(405, '迁治酒泉', '李暠由敦煌迁居酒泉，敦煌仍由太守与护军镇守。'), turn(421, '西凉覆亡', '沮渠蒙逊攻取酒泉，西凉结束。')],
+    principalFigureIds: ['li-hao'], capitalPhases: [capital('dunhuang', 400, 404, 'primary', 'actual', '400年建政后的前期政治中心；不把受命阶段回填为正式建政。'), capital('jiuquan', 405, 421, 'primary', 'actual', '《晋书》卷87明确记载405年迁居酒泉；敦煌仍保留西部军政节点。')],
+    heritageIds: ['dunhuang-western-liang-city-site'], eventIds: ['western-liang-state-founded'], claimIds: ['claim-li-hao-participated-western-liang'], sourceIds: [...modernSources, 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'],
+    uncertaintyNote: '400年是西凉建政确定年；397—399年李暠受命敦煌属于前置阶段，405年迁居酒泉是明确的政治中心转移。敦煌与酒泉遗址均为多时期绿洲城市历史层，不能将全部现存遗存直接归为西凉。',
   }),
   detail({
     polityId: 'northern_yan', perspectiveSummary: '北燕在后燕末年辽西政治转折中形成，先由高云承接政权，再由冯氏维持龙城中心的燕室统治。',

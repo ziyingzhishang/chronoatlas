@@ -9,7 +9,7 @@ import { sourceNotes } from './sources';
 
 const expectedRelations = {
   'claim-he-lian-bo-bo-ruled-xia-sixtyfirst': ['heliAN-bobo', 'ruled', 'xia', 407, 425, ['zizhi-tongjian']],
-  'claim-duan-siping-ruled-dali-sixtyfirst': ['duan-siping', 'ruled', 'dali', 937, 944, ['china-chronology']],
+  'claim-duan-siping-ruled-dali-sixtyfirst': ['duan-siping', 'ruled', 'dali', 937, 944, ['china-chronology', 'dali-history-research-nopss', 'dali-cambridge-governance']],
   'claim-qifu-guoren-ruled-western-qin-sixtyfirst': ['qifu-guoren', 'ruled', 'western_qin', 385, 388, ['zizhi-tongjian', 'china-chronology']],
   'claim-yelu-dashi-ruled-western-liao-sixtyfirst': ['yelu-dashi', 'ruled', 'western_liao', 1124, 1143, ['china-chronology']],
   'claim-park-hyeokgeose-ruled-silla-sixtyfirst': ['park-hyeokgeose', 'ruled', 'silla', -57, 4, ['silla-encykorea', 'silla-samguksagi-db']],

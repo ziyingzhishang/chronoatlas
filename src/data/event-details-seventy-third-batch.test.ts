@@ -9,7 +9,6 @@ const targetPhases = {
   'tuyuhun-founded': { label: '部众、牧地与交通网络承接', startYear: 313, endYear: 350 },
   'xiongnu-founded': { label: '联盟与单于庭的移动承接', startYear: -209, endYear: -198 },
   'dali-founded': { label: '段氏王权与洱海联盟承接', startYear: 937, endYear: 950 },
-  'western-liang-state-founded': { label: '敦煌、酒泉节点的分段治理', startYear: 400, endYear: 405 },
   'southern-ming-founded': { label: '弘光至隆武的政治承接', startYear: 1645, endYear: 1646 },
 } as const;
 
@@ -18,7 +17,6 @@ const targetConsequences = {
   'tuyuhun-founded': '吐谷浑的区域统治依托部众、牧地与交通网络；河湟核心承接不等于对青海全部地区有固定直接控制。',
   'xiongnu-founded': '匈奴联盟的形成依赖部众和单于庭的流动性；“联盟”“臣属”“直接控制”不是同一关系，不能用后期影响范围反推前209年。',
   'dali-founded': '大理早期以洱海核心和地方联盟承接南诏遗产；羊苴咩城政治中心与后期大理范围不是同一层次。',
-  'western-liang-state-founded': '西凉对敦煌、酒泉等节点的治理体现河西西部的阶段性控制；节点控制、丝路交通影响与整条河西走廊的连续直接统治不能混同。',
   'southern-ming-founded': '南明的合法性与军事资源由不同政权、军镇和地方中心分段承接；共同延续明统不等于存在单一南明中央或连续疆域。',
 } as const;
 
@@ -27,7 +25,6 @@ const targetParticipantNotes = {
   'tuyuhun-founded': { personId: 'murong-tuyuhun', note: '本条只用于连接西迁与形成传统，不代表313年后每一阶段的全部统治者或固定都城。' },
   'xiongnu-founded': { personId: 'modu-chanyu', note: '冒顿对应前209年前后形成节点；“形成”表示部众与权力中心重组，不表示固定首都；不把前209年形成简化为其个人完成全部部众统一。' },
   'dali-founded': { personId: 'duan-siping', note: '段思平代表南诏秩序瓦解后重组地方政治的核心人物；937年前后是形成约年，早期联盟与直接控制范围仍需分阶段理解；不代表南诏后各地势力或后续大理历代君主。' },
-  'western-liang-state-founded': { personId: 'li-hao', note: '李暠代表后凉分裂后河西西部的地方建政过程；敦煌与酒泉等节点的控制范围随阶段变化；不代表后续北凉、后凉等其他凉州政权。' },
   'southern-ming-founded': { personId: 'zhu-yousong', note: '朱由崧代表1644—1645年弘光政权，是南明多阶段体系中的首个重要君主之一，不等同于全部南明政权；仅对应弘光阶段，不代表隆武、绍武、永历等后续政权。' },
 } as const;
 

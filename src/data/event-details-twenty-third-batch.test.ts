@@ -9,7 +9,7 @@ import { sourceNotes } from './sources';
 const targetLocations = {
   'western-liang-state-founded': ['dunhuang', 'jiuquan', 'liangzhou'],
   'western-liao-founded': ['balasagun'],
-  'dali-founded': ['dali_city'],
+  'dali-founded': ['dali_city', 'yangjumei'],
   'song-southward': ['kaifeng', 'yingtian', 'linan'],
   'northern-yuan-founded': ['beiyuan_core'],
   'southern-ming-founded': ['yingtian', 'yangzhou'],

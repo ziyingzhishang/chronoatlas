@@ -43,7 +43,7 @@ describe('event time evidence review', () => {
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 5, approximate: 19, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 6, approximate: 18, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {
@@ -59,7 +59,14 @@ describe('event time evidence review', () => {
     });
     expect(approximate).toMatchObject({
       datePrecision: 'approximate',
-      sourceIds: ['china-chronology'],
+      sourceIds: [
+        'china-chronology',
+        'dali-diancai-record',
+        'dali-history-research-nopss',
+        'dali-duan-siping-official',
+        'dali-yangjumei-mct',
+        'dali-cambridge-governance',
+      ],
       status: 'approximate',
       timelineStrategy: 'approximate-marker',
     });
@@ -84,6 +91,31 @@ describe('event time evidence review', () => {
     expect(event?.sourceIds).toContain('zizhi-tongjian-vol85-cheng-han');
     expect(detail?.sourceIds).toContain('zizhi-tongjian-vol85-cheng-han');
     expect(sourceById['zizhi-tongjian-vol85-cheng-han']).toBeDefined();
+  });
+
+  it('models 400 as the exact Western Liang foundation node and keeps 405 relocation separate', () => {
+    const record = reviewEventTimeCoverage().records.find((item) => item.eventId === 'western-liang-state-founded');
+    const event = events.find((item) => item.id === 'western-liang-state-founded');
+    const detail = eventDetails.find((item) => item.eventId === 'western-liang-state-founded');
+
+    expect(record).toMatchObject({
+      year: 400,
+      datePrecision: 'year',
+      expectedPrecision: 'year',
+      status: 'confirmed',
+      timelineStrategy: 'year-marker',
+    });
+    expect(record?.explanation).toContain('400年');
+    expect(record?.explanation).toContain('405年迁居酒泉');
+    expect(event?.placeId).toBe('dunhuang');
+    expect(event?.sourceIds).toEqual(expect.arrayContaining([
+      'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang',
+    ]));
+    expect(detail?.sourceIds).toEqual(expect.arrayContaining([
+      'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang',
+    ]));
+    expect(sourceById['jinshu-vol87-li-hao']).toBeDefined();
+    expect(sourceById['zizhi-tongjian-vol111-western-liang']).toBeDefined();
   });
 
   it('reports missing entries, missing detail, and evidence drift for an injected catalog', () => {

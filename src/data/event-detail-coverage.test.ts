@@ -66,7 +66,7 @@ describe('event detail coverage audit', () => {
       'xiongnu-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       const event = eventsById.get(eventId)!;
       const detail = detailsById.get(eventId)!;
@@ -191,7 +191,7 @@ describe('event detail coverage audit', () => {
     const report = buildEventDetailCoverageReport({ catalog: baseCatalog });
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     expect(report.coveredEventIds).toEqual(expect.arrayContaining([
       'northern-wei-founded',
       'former-qin-founded',
@@ -258,7 +258,7 @@ describe('event detail coverage audit', () => {
       'northern-yuan-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision).toBe('year');
       expect(eventsById.get(eventId)?.verification).toBe('checked');
@@ -286,7 +286,7 @@ describe('event detail coverage audit', () => {
       'xuanwu-gate',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision).toBe('year');
       expect(eventsById.get(eventId)?.verification).toBe('checked');
@@ -351,7 +351,7 @@ describe('event detail coverage audit', () => {
       }
     }
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
   });
 
   it('closes the fifty-fourth batch of source-backed standalone world events without inventing links', () => {
@@ -379,7 +379,7 @@ describe('event detail coverage audit', () => {
     }
 
     expect(report.coveredEventIds).toEqual(expect.arrayContaining(batchIds));
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
   });
 
   it('enriches the fifty-fifth batch without upgrading approximate or range precision', () => {
@@ -394,7 +394,7 @@ describe('event detail coverage audit', () => {
       'tuyuhun-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     expect(eventsById.get('an-lushan-rebellion')?.datePrecision).toBe('range');
     for (const eventId of selectedIds) {
       expect(eventsById.get(eventId)?.datePrecision, eventId).toBeOneOf(['range', 'approximate']);
@@ -427,7 +427,7 @@ describe('event detail coverage audit', () => {
       'dali-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     expect(eventsById.get('an-lushan-rebellion')?.datePrecision).toBe('range');
     expect(eventsById.get('chu-han-contention')?.datePrecision).toBe('range');
     expect(eventsById.get('tibetan-founded')?.datePrecision).toBe('approximate');
@@ -478,7 +478,7 @@ describe('event detail coverage audit', () => {
       'xiongnu-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of selectedIds) {
       const event = eventsById.get(eventId);
       const detail = detailsById.get(eventId);
@@ -532,7 +532,7 @@ describe('event detail coverage audit', () => {
       'qi-warring-founded-eighth-batch',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of selectedIds) {
       const event = eventsById.get(eventId);
       const detail = detailsById.get(eventId);
@@ -582,7 +582,7 @@ describe('event detail coverage audit', () => {
       'qin-state-founded-eighth-batch',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of selectedIds) {
       const event = eventsById.get(eventId);
       const detail = detailsById.get(eventId);
@@ -626,11 +626,13 @@ describe('event detail coverage audit', () => {
       'tibetan-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of selectedIds) {
       const event = eventsById.get(eventId);
       const detail = detailsById.get(eventId);
-      expect(event?.datePrecision, eventId).toBe(eventId === 'cheng-han-founded' ? 'year' : 'approximate');
+      expect(event?.datePrecision, eventId).toBe(
+        eventId === 'cheng-han-founded' || eventId === 'western-liang-state-founded' ? 'year' : 'approximate',
+      );
       expect(detail?.participants.length, eventId).toBeGreaterThan(0);
       expect(detail?.polityIds.length, eventId).toBeGreaterThan(0);
       expect(detail?.locationIds.length, eventId).toBeGreaterThan(0);
@@ -639,7 +641,7 @@ describe('event detail coverage audit', () => {
       expect(detail?.phases?.length ?? 0, eventId).toBeGreaterThanOrEqual(4);
       expect(detail?.relatedEventIds.length, eventId).toBeGreaterThan(0);
       expect(detail?.sourceIds.length, eventId).toBeGreaterThan(0);
-      if (eventId === 'cheng-han-founded') {
+      if (eventId === 'cheng-han-founded' || eventId === 'western-liang-state-founded') {
         expect(report.coveredEventIds, eventId).toContain(eventId);
       } else {
         expect(report.needsReviewEventIds, eventId).toContain(eventId);
@@ -680,7 +682,7 @@ describe('event detail coverage audit', () => {
       'xiongnu-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       const event = eventsById.get(eventId);
       const detail = detailsById.get(eventId);
@@ -773,7 +775,7 @@ describe('event detail coverage audit', () => {
       'tibetan-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       const event = eventsById.get(eventId);
       const detail = detailsById.get(eventId);
@@ -822,12 +824,11 @@ describe('event detail coverage audit', () => {
       'chu-warring-founded-eighth-batch',
       'qi-warring-founded-eighth-batch',
       'yan-warring-founded-eighth-batch',
-      'western-liang-state-founded',
       'xia-early-founded-eighth-batch',
       'shang-founded-eighth-batch',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       const event = eventsById.get(eventId);
       const detail = detailsById.get(eventId);
@@ -858,7 +859,7 @@ describe('event detail coverage audit', () => {
       expect.objectContaining({ label: '燕昭王重建阶段', startYear: -350, endYear: -300 }),
     ]));
     expect(detailsById.get('western-liang-state-founded')?.phases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ label: '敦煌—酒泉交通承接', startYear: 400, endYear: 420 }),
+      expect.objectContaining({ label: '敦煌—酒泉交通承接', startYear: 400, endYear: 421 }),
     ]));
     expect(detailsById.get('xia-early-founded-eighth-batch')?.phases).toEqual(expect.arrayContaining([
       expect.objectContaining({ label: '二里头考古参照', startYear: -2070, endYear: -1600 }),
@@ -881,7 +882,7 @@ describe('event detail coverage audit', () => {
       'cheng-han-founded',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision, eventId).toBe(eventId === 'cheng-han-founded' ? 'year' : 'approximate');
       expect(eventsById.get(eventId)?.verification, eventId).toBe(eventId === 'cheng-han-founded' ? 'checked' : 'partial');
@@ -941,7 +942,7 @@ describe('event detail coverage audit', () => {
       'western-zhou-founded-eighth-batch',
     ];
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     for (const eventId of batchIds) {
       expect(eventsById.get(eventId)?.datePrecision, eventId).toMatch(/^(approximate|range)$/);
       expect(report.needsReviewEventIds, eventId).toContain(eventId);

@@ -32,7 +32,7 @@ test('renders the audited approximate time evidence and timeline permission', ()
 
   expect(screen.getByText('约年')).toBeInTheDocument();
   expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
-  expect(screen.getByText('937年前后表示大理政权形成，杨干贞改国号与段氏承接等节点不能混为精确建国日。')).toBeInTheDocument();
+  expect(screen.getByText('937年前后表示大理政权形成；《滇载记》按后晋天福二年记937年，而国家社科成果摘要采用938年，杨干贞改国号、段氏承接和高氏阶段不能混为精确建国日，因此保留约年。')).toBeInTheDocument();
   expect(screen.getAllByText(/中国历史分期与朝代年表/)).toHaveLength(2);
 });
 

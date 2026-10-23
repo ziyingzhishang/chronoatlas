@@ -16,7 +16,6 @@ const reviewBoundaryReasons = {
   'southern-ming-founded': 'formation-approximation',
   'tibetan-founded': 'formation-approximation',
   'tuyuhun-founded': 'formation-approximation',
-  'western-liang-state-founded': 'formation-approximation',
   'western-liao-founded': 'formation-approximation',
   'western-zhou-founded-eighth-batch': 'traditional-periodization',
   'xia-early-founded-eighth-batch': 'traditional-periodization',
@@ -34,7 +33,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 97, 'needs-review': 24, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 98, 'needs-review': 23, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
