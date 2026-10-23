@@ -94,9 +94,11 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
 }
 
 function RelationshipCoverageSummary({ record, t }: { record: { categories: Record<PersonRelationshipCategory, PersonRelationshipCategoryCoverage> }; t: (text: string) => string }) {
+  const requiresFollowUp = personRelationshipCategoryKeys.some((category) => relationshipCoverageStatus(record.categories[category]) === 'required');
   return <section className="relationship-coverage-summary" aria-label={t('人物关系覆盖审计')}>
     <h5>{t('覆盖状态')}</h5>
     <p className="relationship-coverage-audit-note">{t('以下状态来自人物关系覆盖审计；待补与待复核均不等同于已覆盖。')}</p>
+    {requiresFollowUp && <p className="relationship-coverage-audit-note"><a href="/data/knowledge-coverage.json" target="_blank" rel="noreferrer" aria-label={t('打开知识覆盖报告')}>{t('打开知识覆盖报告')}</a></p>}
     <ul className="relationship-coverage-grid">
       {personRelationshipCategoryKeys.map((category) => {
         const coverage = record.categories[category];

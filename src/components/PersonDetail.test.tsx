@@ -115,6 +115,22 @@ describe('PersonDetail', () => {
     expect(screen.getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
   });
 
+  it('links required relationship coverage to the knowledge coverage report', () => {
+    const tufaWugu = catalogPeople.find((item) => item.id === 'tufa-wugu')!;
+    render(
+      <PersonDetail
+        person={tufaWugu}
+        detail={getPersonDetail('tufa-wugu')!}
+        year={397}
+        claims={catalogClaims}
+        people={catalogPeople}
+        polities={catalogPolities}
+      />,
+    );
+
+    expect(screen.getByRole('link', { name: '打开知识覆盖报告' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
+  });
+
   it('localizes relationship evidence labels in English', () => {
     localStorage.setItem('history-locale', 'en');
     render(<LocaleProvider><PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} /></LocaleProvider>);
