@@ -18,7 +18,6 @@ const requiredGovernanceGaps = [
 ] as const;
 
 const eventParticipationGaps = [
-  { personId: 'fu-jian', eventIds: ['former-qin-founded'] },
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },

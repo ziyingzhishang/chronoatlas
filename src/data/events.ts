@@ -355,6 +355,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷九十七·晋纪十九', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷097', detail: '用于347年桓温攻取成都、李势出降和成汉终止的年份级核验。' }],
   },
   {
+    id: 'former-yan-ended-370', year: 370, title: '前燕政权覆亡', summary: '前秦苻坚攻取邺并俘获慕容暐，前燕统一政治结构结束；邺城继续承接后续政权城市层。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '前燕在河北扩张并以邺为后期中心，与前秦争夺中原和河北政治空间。',
+    process: '370年前秦军攻取邺，前燕末帝慕容暐被俘，前燕统一政治结构结束；邺城及其道路、宫城和地方社会继续进入后续政权层。',
+    impact: '前秦接替前燕成为河北和中原竞争的重要力量，邺城成为多政权反复沿用的历史城市遗产。',
+    mapNote: '地图将370年标为前燕终止节点，邺标注为末期政治中心和今河北临漳历史空间参照；该节点不表示邺城遗址消失。',
+    references: [{ title: '《资治通鉴》卷一〇二·晋纪二十四', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷102', detail: '用于核对370年前秦攻取邺、慕容暐结局和前燕终止的年份级节点。' }],
+  },
+  {
     id: 'former-yan-founded', year: 337, title: '前燕政权形成', summary: '慕容皝在辽东、河北建立燕政权，前燕进入形成阶段。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '慕容氏在辽东经营多年，并在后赵与北方诸部竞争中积累了独立的军政资源。',

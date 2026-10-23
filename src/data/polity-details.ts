@@ -140,8 +140,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'former_yan', perspectiveSummary: '前燕承接慕容氏在辽东的军政基础，向河北扩展并在邺建立后期中心，体现十六国政权由区域联盟走向王朝化的过程。',
     foundationProcess: ['慕容氏在辽东经营部众与地方城镇网络。', '337年慕容皝称燕王，前燕进入正式形成阶段。', '前燕向河北扩张并迁重心至邺，后在前秦压力下覆亡。'],
     turningPoints: [turn(337, '前燕形成', '慕容皝建立燕政权。', 'former-yan-founded'), turn(350, '进入中原竞争', '前燕利用后赵崩解扩大在河北的影响。'), turn(370, '前燕覆亡', '前秦攻取邺等核心区域，前燕结束。')],
-    principalFigureIds: ['murong-huang'], capitalPhases: [capital('longcheng', 337, 341), capital('ji', 342, 350, 'de_facto', 'actual', '河北扩展阶段的实际中心'), capital('ye', 351, 370)],
-    heritageIds: ['ye-city-site'], eventIds: ['former-yan-founded'], claimIds: [], sourceIds: modernSources,
+    principalFigureIds: ['murong-huang', 'murong-wei'], capitalPhases: [capital('longcheng', 337, 341), capital('ji', 342, 350, 'de_facto', 'actual', '河北扩展阶段的实际中心'), capital('ye', 351, 370)],
+    heritageIds: ['ye-city-site'], eventIds: ['former-yan-founded', 'former-yan-ended-370'], claimIds: ['claim-murong-wei-ruled-former-yan', 'claim-murong-wei-participated-former-yan-ended-370', 'claim-murong-wei-enemy-fu-jian-termination-370'], sourceIds: modernSources,
     uncertaintyNote: '337年称燕王与后续迁都、扩张是连续但不同的节点；龙城、蓟、邺对应不同阶段，邺城遗址也包含其他政权历史层。',
   }),
   detail({

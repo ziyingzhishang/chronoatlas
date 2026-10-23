@@ -9,7 +9,6 @@ import { people } from './people';
 import { sourceNotes } from './sources';
 
 const currentGaps = [
-  { personId: 'fu-jian', eventIds: ['former-qin-founded'], reason: '苻坚属于前秦后期君主，不能与苻健的351年建国参与混同。' },
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录霍去病参与者。' },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录张骞参与者。' },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录班固参与者。' },
@@ -70,7 +69,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (

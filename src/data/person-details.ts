@@ -669,6 +669,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['former-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '337年称燕王是前燕形成的重要节点，前燕在辽东、河北的控制范围随战争变化，不能回填为固定疆域。',
   },
   {
+    personId: 'murong-wei', biography: '慕容暐是前燕末帝，前燕后期以邺为主要中心，370年前秦攻取邺后被俘，政权由此终止。',
+    aliases: ['前燕幽帝', '前燕末帝'], offices: [{ title: '前燕皇帝', polityId: 'former_yan', placeId: 'ye', validFrom: 360, validTo: 370, datePrecision: 'range', sourceIds }],
+    keyEvents: ['former-yan-ended-370'], sourceIds, uncertaintyNote: '慕容暐代表前燕末期统治阶段；370年被俘与邺城及地方社会继续承接是不同历史层次。',
+  },
+  {
     personId: 'shi-le', biography: '石勒在西晋末年北方战争中积累军政资源，脱离前赵控制后于319年建立后赵，并以襄国为重要政治中心。',
     aliases: ['后赵高祖'], offices: [{ title: '后赵皇帝', polityId: 'later_zhao', placeId: 'xiangguo', validFrom: 319, validTo: 333, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['later-zhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '319年称赵王是后赵形成节点，石勒此前的依附、战争和政权整合不能压缩为单一建国日。',

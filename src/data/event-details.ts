@@ -680,6 +680,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '347年作为成汉终止年份明确；西征、成都失守、李势出降和地方接收属于连续过程，不能把全部行政承接压缩为同一时刻。',
   },
   {
+    eventId: 'former-yan-ended-370',
+    participants: [
+      { personId: 'murong-wei', role: '前燕末帝与邺城防御阶段的核心人物', note: '慕容暐在前秦攻取邺后被俘；本条不把末帝结局等同于邺城城市和地方社会消失。' },
+      { personId: 'fu-jian', role: '攻取邺并接替前燕河北政治空间的前秦君主', note: '苻坚代表前秦对邺及前燕核心区域的军事接收；前秦后续控制范围仍需按阶段核验。' },
+    ],
+    polityIds: ['former_yan', 'former_qin'],
+    causes: ['前燕后期继承和军政整合能力下降。', '前秦苻坚持续扩张并将河北、关中和中原竞争纳入统一军事行动。'],
+    consequences: ['前秦攻取邺，前燕统一政治结构结束。', '慕容暐被俘，前秦成为河北和中原竞争的主要力量。', '邺城继续被后续政权沿用，城市遗产与政权终止分层记录。'],
+    phases: [{ label: '邺失守与前燕终止', startYear: 370, endYear: 370, summary: '前秦攻取邺，慕容暐被俘，前燕结束。' }],
+    locationIds: ['ye'],
+    relatedEventIds: ['former-yan-founded', 'former-qin-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '370年作为前燕终止年份明确；攻邺、被俘和地方行政接收属于连续过程，不能把全部后果压缩为同一时刻。',
+  },
+  {
     eventId: 'former-yan-founded',
     participants: [
       { personId: 'murong-huang', role: '经营辽东并于337年称燕王的前燕君主', note: '慕容皝是前燕337年政权形成阶段的核心人物；其后慕容儁称帝及南进扩张属于制度升级和后续阶段。' },

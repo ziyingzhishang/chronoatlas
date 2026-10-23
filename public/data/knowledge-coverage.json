@@ -1686,6 +1686,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "former-yan-ended-370",
+      "entityKey": "event:former-yan-ended-370",
+      "label": "前燕政权覆亡",
+      "polityIds": [
+        "former_qin",
+        "former_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-yan-ended-370"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-wei-participated-former-yan-ended-370",
+            "event-detail:former-yan-ended-370"
+          ],
+          "relatedIds": [
+            "former-qin-founded",
+            "former-yan-founded",
+            "former_qin",
+            "former_yan",
+            "fu-jian",
+            "murong-wei"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "former-yan-founded",
       "entityKey": "event:former-yan-founded",
       "label": "前燕政权形成",
@@ -17078,6 +17141,7 @@
       "entityKey": "heritage:ye-city-site",
       "label": "邺城遗址",
       "polityIds": [
+        "former_qin",
         "former_yan",
         "later_zhao",
         "qi_northern",
@@ -17105,6 +17169,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "ye-city-official",
             "zizhi-tongjian"
@@ -17120,12 +17185,18 @@
           ],
           "relatedIds": [
             "eastern-wei-founded",
+            "former-yan-ended-370",
+            "former-yan-founded",
+            "former_qin",
             "former_yan",
+            "fu-jian",
             "gao-huan",
             "gao-yang",
             "later-zhao-founded",
             "later-zhao-moves-ye",
             "later_zhao",
+            "murong-huang",
+            "murong-wei",
             "northern-qi-founded",
             "qi_northern",
             "wei_eastern"
@@ -19208,15 +19279,19 @@
             "claim:claim-lv-guang-served-fu-jian",
             "claim:claim-murong-chui-enemy-fu-jian",
             "claim:claim-murong-chui-served-fu-jian",
+            "claim:claim-murong-wei-enemy-fu-jian-termination-370",
             "claim:claim-qifu-guoren-enemy-fu-jian",
             "claim:claim-yao-chang-enemy-fu-jian-fortyeighth",
+            "event-detail:former-yan-ended-370",
             "person-polity:fu-jian:former_qin"
           ],
           "relatedIds": [
+            "former-yan-ended-370",
             "former_qin",
             "fu-jian-founder",
             "lv-guang",
             "murong-chui",
+            "murong-wei",
             "qifu-guoren",
             "yao-chang"
           ]
@@ -24755,6 +24830,70 @@
             "murong-chui",
             "tuyuhun",
             "tuyuhun-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "murong-wei",
+      "entityKey": "person:murong-wei",
+      "label": "慕容暐",
+      "polityIds": [
+        "former_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "murong-wei"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-wei-enemy-fu-jian-termination-370",
+            "claim:claim-murong-wei-participated-former-yan-ended-370",
+            "claim:claim-murong-wei-ruled-former-yan",
+            "event-detail:former-yan-ended-370",
+            "person-polity:murong-wei:former_yan"
+          ],
+          "relatedIds": [
+            "former-yan-ended-370",
+            "former_yan",
+            "fu-jian"
           ]
         },
         {
@@ -32016,7 +32155,9 @@
             "claim:claim-fu-jian-ruled-former-qin-closure",
             "event-detail:changan-former-qin",
             "event-detail:former-qin-founded",
+            "event-detail:former-yan-ended-370",
             "heritage-detail:former-qin-changan-city-layer",
+            "heritage-detail:ye-city-site",
             "person:fu-jian",
             "person:fu-jian-founder"
           ],
@@ -32025,8 +32166,10 @@
             "changan-former-qin",
             "former-qin-changan-city-layer",
             "former-qin-founded",
+            "former-yan-ended-370",
             "fu-jian",
-            "fu-jian-founder"
+            "fu-jian-founder",
+            "ye-city-site"
           ]
         },
         {
@@ -32142,13 +32285,18 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-murong-huang-ruled-former-yan-sixtieth",
+            "claim:claim-murong-wei-ruled-former-yan",
+            "event-detail:former-yan-ended-370",
             "event-detail:former-yan-founded",
             "heritage-detail:ye-city-site",
-            "person:murong-huang"
+            "person:murong-huang",
+            "person:murong-wei"
           ],
           "relatedIds": [
+            "former-yan-ended-370",
             "former-yan-founded",
             "murong-huang",
+            "murong-wei",
             "ye-city-site"
           ]
         },
@@ -40861,6 +41009,69 @@
             "former_shu",
             "later-shu-founded",
             "wang-jian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:former-yan-ended-370": {
+      "entityType": "event",
+      "entityId": "former-yan-ended-370",
+      "entityKey": "event:former-yan-ended-370",
+      "label": "前燕政权覆亡",
+      "polityIds": [
+        "former_qin",
+        "former_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-yan-ended-370"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-wei-participated-former-yan-ended-370",
+            "event-detail:former-yan-ended-370"
+          ],
+          "relatedIds": [
+            "former-qin-founded",
+            "former-yan-founded",
+            "former_qin",
+            "former_yan",
+            "fu-jian",
+            "murong-wei"
           ]
         },
         {
@@ -56266,6 +56477,7 @@
       "entityKey": "heritage:ye-city-site",
       "label": "邺城遗址",
       "polityIds": [
+        "former_qin",
         "former_yan",
         "later_zhao",
         "qi_northern",
@@ -56293,6 +56505,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "ye-city-official",
             "zizhi-tongjian"
@@ -56308,12 +56521,18 @@
           ],
           "relatedIds": [
             "eastern-wei-founded",
+            "former-yan-ended-370",
+            "former-yan-founded",
+            "former_qin",
             "former_yan",
+            "fu-jian",
             "gao-huan",
             "gao-yang",
             "later-zhao-founded",
             "later-zhao-moves-ye",
             "later_zhao",
+            "murong-huang",
+            "murong-wei",
             "northern-qi-founded",
             "qi_northern",
             "wei_eastern"
@@ -58396,15 +58615,19 @@
             "claim:claim-lv-guang-served-fu-jian",
             "claim:claim-murong-chui-enemy-fu-jian",
             "claim:claim-murong-chui-served-fu-jian",
+            "claim:claim-murong-wei-enemy-fu-jian-termination-370",
             "claim:claim-qifu-guoren-enemy-fu-jian",
             "claim:claim-yao-chang-enemy-fu-jian-fortyeighth",
+            "event-detail:former-yan-ended-370",
             "person-polity:fu-jian:former_qin"
           ],
           "relatedIds": [
+            "former-yan-ended-370",
             "former_qin",
             "fu-jian-founder",
             "lv-guang",
             "murong-chui",
+            "murong-wei",
             "qifu-guoren",
             "yao-chang"
           ]
@@ -63943,6 +64166,70 @@
             "murong-chui",
             "tuyuhun",
             "tuyuhun-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:murong-wei": {
+      "entityType": "person",
+      "entityId": "murong-wei",
+      "entityKey": "person:murong-wei",
+      "label": "慕容暐",
+      "polityIds": [
+        "former_yan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "murong-wei"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-wei-enemy-fu-jian-termination-370",
+            "claim:claim-murong-wei-participated-former-yan-ended-370",
+            "claim:claim-murong-wei-ruled-former-yan",
+            "event-detail:former-yan-ended-370",
+            "person-polity:murong-wei:former_yan"
+          ],
+          "relatedIds": [
+            "former-yan-ended-370",
+            "former_yan",
+            "fu-jian"
           ]
         },
         {
@@ -71204,7 +71491,9 @@
             "claim:claim-fu-jian-ruled-former-qin-closure",
             "event-detail:changan-former-qin",
             "event-detail:former-qin-founded",
+            "event-detail:former-yan-ended-370",
             "heritage-detail:former-qin-changan-city-layer",
+            "heritage-detail:ye-city-site",
             "person:fu-jian",
             "person:fu-jian-founder"
           ],
@@ -71213,8 +71502,10 @@
             "changan-former-qin",
             "former-qin-changan-city-layer",
             "former-qin-founded",
+            "former-yan-ended-370",
             "fu-jian",
-            "fu-jian-founder"
+            "fu-jian-founder",
+            "ye-city-site"
           ]
         },
         {
@@ -71330,13 +71621,18 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-murong-huang-ruled-former-yan-sixtieth",
+            "claim:claim-murong-wei-ruled-former-yan",
+            "event-detail:former-yan-ended-370",
             "event-detail:former-yan-founded",
             "heritage-detail:ye-city-site",
-            "person:murong-huang"
+            "person:murong-huang",
+            "person:murong-wei"
           ],
           "relatedIds": [
+            "former-yan-ended-370",
             "former-yan-founded",
             "murong-huang",
+            "murong-wei",
             "ye-city-site"
           ]
         },
@@ -76895,9 +77191,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 173,
+      "totalEntities": 174,
       "statusCounts": {
-        "covered": 825,
+        "covered": 830,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -76972,9 +77268,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 212,
+      "totalEntities": 213,
       "statusCounts": {
-        "covered": 1006,
+        "covered": 1011,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -77313,9 +77609,11 @@
       "entityKeys": [
         "event:changan-former-qin",
         "event:former-qin-founded",
+        "event:former-yan-ended-370",
         "heritage:former-qin-changan-city-layer",
         "heritage:guzang-ancient-city-site",
         "heritage:guzang-baita-temple-site",
+        "heritage:ye-city-site",
         "person:fu-jian",
         "person:fu-jian-founder",
         "polity:former_qin"
@@ -77385,9 +77683,11 @@
       "polityId": "former_yan",
       "polityName": "前燕",
       "entityKeys": [
+        "event:former-yan-ended-370",
         "event:former-yan-founded",
         "heritage:ye-city-site",
         "person:murong-huang",
+        "person:murong-wei",
         "polity:former_yan"
       ],
       "gaps": [],
@@ -83720,6 +84020,7 @@
       "capitalRecordCount": 5,
       "entityKeys": [
         "event:eastern-wei-founded",
+        "event:former-yan-ended-370",
         "event:former-yan-founded",
         "event:han-eastern-founded",
         "event:later-yan-founded",
@@ -83729,9 +84030,11 @@
         "heritage:later-yan-ye-city-site",
         "heritage:ye-city-site",
         "heritage:ye-tongque-platform-site",
+        "person:fu-jian",
         "person:gao-huan",
         "person:gao-yang",
         "person:murong-huang",
+        "person:murong-wei",
         "person:shi-hu",
         "polity:former_yan",
         "polity:later_yan",

@@ -9,7 +9,6 @@ import { people } from './people';
 import { sourceNotes } from './sources';
 
 const eventParticipationGaps = [
-  { personId: 'fu-jian', eventIds: ['former-qin-founded'], reasonCode: 'missing-participant', reason: '苻坚是357年后前秦君主，不能沿用苻健的建国参与边；需保留为阶段性待核实缺口。' },
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reasonCode: 'missing-participant', reason: '城市辅助事件已存在，但没有霍去病参与字段。' },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reasonCode: 'missing-participant', reason: '城市辅助事件已存在，但没有张骞参与字段。' },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], reasonCode: 'missing-participant', reason: '城市辅助事件已存在，但没有班固参与字段，且班固属于东汉后期人物。' },
@@ -77,7 +76,6 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('classifies every unresolved gap by a concrete evidence boundary', () => {
     expect(eventParticipationGaps.map(({ personId, reasonCode }) => [personId, reasonCode])).toEqual([
-      ['fu-jian', 'missing-participant'],
       ['huo-qubing', 'missing-participant'],
       ['zhang-qian', 'missing-participant'],
       ['ban-gu', 'missing-participant'],
@@ -138,8 +136,8 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(124);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(125);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
   });
 });

@@ -9,7 +9,6 @@ import { buildPersonRelationshipCoverageReport } from './person-relationship-cov
 import { sourceNotes } from './sources';
 
 const reviewBoundary = [
-  { personId: 'fu-jian', eventIds: ['former-qin-founded'] },
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },

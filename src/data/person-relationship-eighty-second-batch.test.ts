@@ -4,7 +4,6 @@ import { claims } from './claims';
 import { buildPersonRelationshipCoverageReport } from './person-relationship-coverage';
 
 const eventParticipationReviewBoundary = [
-  'fu-jian',
   'huo-qubing',
   'zhang-qian',
   'ban-gu',
@@ -22,7 +21,7 @@ describe('eighty-second batch relationship audit', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(124);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(125);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });

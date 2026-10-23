@@ -8,7 +8,6 @@ import { people } from './people';
 import { buildPersonRelationshipCoverageReport } from './person-relationship-coverage';
 
 const decisions = [
-  { personId: 'fu-jian', eventIds: ['former-qin-founded'], kind: 'temporal-or-context-boundary' },
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'], kind: 'temporal-or-context-boundary' },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'], kind: 'no-direct-role' },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], kind: 'temporal-or-context-boundary' },
