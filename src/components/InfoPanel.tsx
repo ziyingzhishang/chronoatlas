@@ -20,7 +20,7 @@ import { polities } from '../data/polities';
 import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
 import type { DetailEntity } from '../domain/detail-entity';
-import { getPolityDetail } from '../data/polity-details';
+import { getPolityDetail, polityDetails } from '../data/polity-details';
 import { PolityDetail } from './PolityDetail';
 
 interface InfoPanelProps {
@@ -55,7 +55,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
   const currentCapitalTerms = selected && 'name' in selected ? activeCapitalRecords(state.year, selected.id) : [];
   const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalRecords(state.year).filter(record=>record.placeId===selected.id) : [];
   const studyView = selectedEntity?.type === 'polity'
-    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: polityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory })
+    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: polityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory, polityDetails })
     : selectedEntity?.type === 'place'
       ? buildCityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: cityStudyEvents, claims, capitalTerms: capitalHistory })
       : undefined;

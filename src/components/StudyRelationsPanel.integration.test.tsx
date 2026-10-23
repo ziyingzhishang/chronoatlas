@@ -9,6 +9,7 @@ import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
 import { places } from '../data/places';
 import { polities } from '../data/polities';
+import { polityDetails } from '../data/polity-details';
 import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { groupPersonRelationships } from '../domain/relationships';
 import { LocaleProvider } from '../i18n/locale';
@@ -75,5 +76,18 @@ describe('StudyRelationsPanel integration', () => {
       [{ type: 'heritage', id: 'qin-xianyang-imperial-palace-site' }],
     ]));
     expect(panel).toBeInTheDocument();
+  });
+
+  it('shows detail-linked entries with an explicit non-current-fact boundary', async () => {
+    const view = buildPolityStudyView('qing', 1636, { ...completeData, polityDetails });
+    const onOpenEntity = vi.fn();
+    render(<LocaleProvider><StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+    expect(screen.getByText('详情关联入口')).toBeInTheDocument();
+    expect(screen.getByText(/仅表示详情关联，不等同于本年事实/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '努尔哈赤' })).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: '努尔哈赤' }));
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'nurhaci' });
   });
 });

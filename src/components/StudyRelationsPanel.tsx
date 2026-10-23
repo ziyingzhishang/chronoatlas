@@ -23,6 +23,18 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
   const featuredEvents = polityView
     ? view.events.filter((event) => event.year >= polityView.subject.startYear - 10 && event.year <= polityView.subject.startYear + 10).slice(0, 5)
     : view.events.slice(-5);
+  const detailLinkedPeople = polityView
+    ? polityView.detailLinkedPeople.filter((person) => !polityView.people.some((current) => current.id === person.id))
+    : [];
+  const detailLinkedEvents = polityView
+    ? polityView.detailLinkedEvents.filter((event) => !polityView.events.some((current) => current.id === event.id))
+    : [];
+  const detailLinkedHeritage = polityView
+    ? polityView.detailLinkedHeritage.filter((asset) => !polityView.heritage.some((current) => current.id === asset.id))
+    : [];
+  const datePrecisionLabel: Record<NonNullable<PolityStudyView['detailLinkedEvents'][number]['datePrecision']>, string> = {
+    year: '年', approximate: '约年', range: '范围',
+  };
 
   return (
     <section className="study-relations" aria-label={t('历史关系研究视图')}>
@@ -51,6 +63,22 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
           const relationList = Object.values(relations).flat();
           return <li key={person.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'person', id: person.id })}>{person.name}</button>{relationList.length > 0 && <span className="study-relation-label"> · {relationList.map((relation) => t(relationshipLabel[relation.claim.predicate] ?? relation.claim.predicate)).join('、')}</span>}</li>;
         })}</ul>
+      </div>}
+      {polityView && (detailLinkedPeople.length > 0 || detailLinkedEvents.length > 0 || detailLinkedHeritage.length > 0) && <div className="study-block study-contextual-links" data-testid="detail-linked-entries">
+        <h3>{t('详情关联入口')}</h3>
+        <p className="detail-note">{t('仅表示详情关联，不等同于本年事实；时间、有效期与政权归属仍以各自证据为准。')}</p>
+        {detailLinkedPeople.length > 0 && <>
+          <h4>{t('详情关联人物')}</h4>
+          <ul className="study-chip-list">{detailLinkedPeople.map((person) => <li key={person.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'person', id: person.id })}>{person.name}</button></li>)}</ul>
+        </>}
+        {detailLinkedEvents.length > 0 && <>
+          <h4>{t('详情关联事件')}</h4>
+          <ul className="study-list">{detailLinkedEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{formatHistoricalYear(event.year)}{event.datePrecision && ` · ${t('时间精度：')}${t(datePrecisionLabel[event.datePrecision])}`}</span></li>)}</ul>
+        </>}
+        {detailLinkedHeritage.length > 0 && <>
+          <h4>{t('详情关联遗产')}</h4>
+          <ul className="study-list study-heritage-list">{detailLinkedHeritage.map((asset) => <li key={asset.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'heritage', id: asset.id })}><strong>{t(asset.name)}</strong></button><span>{t('详情关联；不等同于本年归属')}</span></li>)}</ul>
+        </>}
       </div>}
       {polityView && <div className="study-block">
         <h3>{t('关系网络')}</h3>

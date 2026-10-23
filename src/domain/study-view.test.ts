@@ -8,6 +8,7 @@ import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
 import { places } from '../data/places';
 import { polities } from '../data/polities';
+import { polityDetails } from '../data/polity-details';
 import { buildCityStudyView, buildPolityStudyView } from './study-view';
 
 const data = { polities, places, people, heritage: heritageAssets, events: changanEvents, eventDetails, claims, capitalTerms: capitalHistory };
@@ -72,5 +73,23 @@ describe('study views', () => {
     ]));
     expect(shangyangConstructionView?.events.some((event) => event.id === 'shangyang-palace-built')).toBe(true);
     expect(shangyangView?.events.some((event) => event.id === 'shangyang-palace-completed-679')).toBe(true);
+  });
+
+  it('keeps detail-linked entries separate from current-year facts', () => {
+    const qingView = buildPolityStudyView('qing', 1636, { ...data, polityDetails });
+    expect(qingView?.people.some((person) => person.id === 'nurhaci')).toBe(false);
+    expect(qingView?.detailLinkedPeople.some((person) => person.id === 'nurhaci')).toBe(true);
+
+    const weiView = buildPolityStudyView('wei_three', 280, { ...data, polityDetails });
+    expect(weiView?.events.some((event) => event.id === 'jin-unification')).toBe(false);
+    expect(weiView?.detailLinkedEvents.some((event) => event.id === 'jin-unification')).toBe(false);
+  });
+
+  it('exposes detail-linked heritage only within its own construction window', () => {
+    const tangView = buildPolityStudyView('tang', 650, { ...data, polityDetails });
+    const lateTangView = buildPolityStudyView('tang', 950, { ...data, polityDetails });
+
+    expect(tangView?.detailLinkedHeritage.some((asset) => asset.id === 'luoyang-sui-tang-city-site')).toBe(true);
+    expect(lateTangView?.detailLinkedHeritage.some((asset) => asset.id === 'luoyang-sui-tang-city-site')).toBe(false);
   });
 });
