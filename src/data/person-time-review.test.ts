@@ -115,11 +115,11 @@ describe('person time review', () => {
     expect(record.explanation).toContain('暂不定位');
   });
 
-  it('audits all 46 currently uncertain people without inventing years', () => {
+  it('audits all 45 currently uncertain people without inventing years', () => {
     const report = buildPersonTimeCoverageReport();
     const uncertain = report.records.filter((record) => record.status !== 'confirmed');
 
-    expect(uncertain).toHaveLength(46);
+    expect(uncertain).toHaveLength(45);
     expect(report.totalPeople).toBeGreaterThan(41);
     expect(report.statusCounts.confirmed + report.statusCounts.approximate + report.statusCounts.unknown)
       .toBe(report.totalPeople);
@@ -134,5 +134,8 @@ describe('person time review', () => {
       .filter((record) => record.status === 'approximate')
       .every((record) => record.explanation.includes('不将其扩展为完整生卒区间'))).toBe(true);
     expect(report.byPersonId['yu-the-great'].explanation).toContain('传统文献');
+    expect(report.byPersonId['wang-mang'].status).toBe('confirmed');
+    expect(report.byPersonId['qin-mugong'].status).toBe('approximate');
+    expect(report.byPersonId['yimouxun'].status).toBe('approximate');
   });
 });

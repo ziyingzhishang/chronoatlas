@@ -23,9 +23,9 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'wang-mang', biography: '王莽以外戚与辅政身份进入权力核心，代汉建立新朝，长安继续作为政治中心。',
-    aliases: [], offices: [{ title: '新朝皇帝', polityId: 'xin', placeId: 'changan', validFrom: 9, validTo: 23, datePrecision: 'range', sourceIds }],
-    keyEvents: ['changan-xin-founded'], sourceIds,
-    uncertaintyNote: '王莽改制的制度评价与成败原因存在不同解释，页面只呈现可追溯的编年节点。',
+    aliases: [], offices: [{ title: '新朝皇帝', polityId: 'xin', placeId: 'changan', validFrom: 9, validTo: 23, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'wang-mang-life-chronology'] }],
+    keyEvents: ['changan-xin-founded'], sourceIds: ['zizhi-tongjian', 'wang-mang-life-chronology'],
+    uncertaintyNote: '王莽生卒年采用专门编年资料；改制的制度评价与成败原因仍存在不同解释，页面只呈现可追溯的编年节点。',
   },
   {
     personId: 'liu-xiu', biography: '刘秀在新末动荡中起兵，重建汉室并成为东汉开国君主；其早期政治活动与长安权力更替相连。',
@@ -406,8 +406,8 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'qin-mugong', biography: '秦穆公时期秦国在西部诸侯格局中扩展影响，秦国的崛起为后来的统一提供了长期政治与军事积累。',
-    aliases: ['秦穆公'], offices: [{ title: '秦国国君', polityId: 'qin_state', datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '秦国早期年代与疆域需按诸侯国阶段核验，不能把秦穆公时期的影响范围提前等同于秦帝国版图。',
+    aliases: ['秦穆公'], offices: [{ title: '秦国国君', polityId: 'qin_state', datePrecision: 'approximate', sourceIds: ['zizhi-tongjian', 'china-chronology', 'qin-mugong-chronology'] }],
+    keyEvents: [], sourceIds: ['zizhi-tongjian', 'china-chronology', 'qin-mugong-chronology'], uncertaintyNote: '卒年有传统编年依据，但生年并非《秦本纪》直接记载；秦国早期年代与疆域仍需按诸侯国阶段核验，不能把秦穆公时期的影响范围提前等同于秦帝国版图。',
   },
   {
     personId: 'zhao-wuling', biography: '赵武灵王推行胡服骑射，推动赵国军事组织和边疆防务转型，是战国政治改革的重要案例。',
@@ -887,8 +887,8 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'yimouxun', biography: '异牟寻承接阁罗凤之后的南诏政权，通过与唐重新建立册封与外交关系，调整洱海及滇西的政治秩序。',
-    aliases: ['南诏孝惠王'], offices: [{ title: '南诏王', polityId: 'nanzhao', placeId: 'tahe-city', validFrom: 779, validTo: 808, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '南诏形成节点为738年，异牟寻属于阁罗凤之后的外交调整与王权继承阶段，不是南诏最初形成的现场人物。',
+    aliases: ['南诏孝惠王'], offices: [{ title: '南诏王', polityId: 'nanzhao', placeId: 'tahe-city', validFrom: 779, validTo: 808, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'nanzhao-lineage-chronology'] }],
+    keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'nanzhao-lineage-chronology'], uncertaintyNote: '后出综合年表提供约754年的出生说法，但项目不将其写入确定生年；展示时应与779—808年在位区间分层，南诏形成节点为738年。',
   },
   {
     personId: 'quanfengyou', biography: '劝丰祐延续异牟寻之后的南诏王权，在唐末前维持洱海区域的地方政权与对外关系。',

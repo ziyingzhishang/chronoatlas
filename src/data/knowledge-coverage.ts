@@ -294,9 +294,9 @@ function timeCheck(entityType: KnowledgeEntityType, entity: Polity | Person | Hi
   if (entityType === 'person') {
     const person = entity as Person;
     if (Number.isFinite(person.birthYear) && Number.isFinite(person.deathYear)) {
-      return check('time', 'covered', '人物生卒年均有记录。');
+      return check('time', 'covered', '人物生卒年均有记录。', person.sourceIds);
     }
-    return check('time', 'uncertain', '人物生卒年不完整，目录将其视为史料不确定而非自动补值。');
+    return check('time', 'uncertain', '人物生卒年不完整，目录将其视为史料不确定而非自动补值。', person.sourceIds);
   }
   if (entityType === 'event') {
     const event = entity as HistoricalEvent;

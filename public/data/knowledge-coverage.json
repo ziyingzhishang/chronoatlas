@@ -14569,7 +14569,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -14633,7 +14635,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "turkic-history-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -14689,7 +14694,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -14751,7 +14758,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "yuan-goryeo-records",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -14824,7 +14834,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -14894,7 +14907,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -14959,7 +14974,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15025,7 +15043,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15081,7 +15102,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "westphalia-lwl",
+            "westphalia-osnabruck"
+          ],
           "relatedIds": []
         }
       ]
@@ -15136,7 +15160,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "columbus-library-congress"
+          ],
           "relatedIds": []
         }
       ]
@@ -15198,7 +15224,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15253,7 +15282,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "constantinople-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -15316,7 +15347,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -15382,7 +15415,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15440,7 +15476,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15500,7 +15538,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -15563,7 +15603,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15620,7 +15663,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "un-charter-treaty",
+            "un-history-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -15680,7 +15726,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "northern-yuan-yesen"
+          ],
           "relatedIds": []
         }
       ]
@@ -15751,7 +15799,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15815,7 +15866,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15876,7 +15930,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -15931,7 +15988,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "un-history-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -15998,7 +16057,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16060,7 +16121,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol112-fu-jian",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16119,7 +16183,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -16185,7 +16251,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16247,7 +16315,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16311,7 +16382,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16373,7 +16446,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16437,7 +16513,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16492,7 +16571,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "columbus-library-congress"
+          ],
           "relatedIds": []
         }
       ]
@@ -16556,7 +16637,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16617,7 +16700,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -16684,7 +16770,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16750,7 +16839,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16810,7 +16902,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16871,7 +16965,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -16930,7 +17026,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "un-charter-treaty",
+            "un-history-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -16991,7 +17090,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -17059,7 +17160,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -17119,7 +17222,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -17179,7 +17285,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-longwu"
+          ],
           "relatedIds": []
         }
       ]
@@ -17240,7 +17349,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -17297,7 +17409,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -17358,7 +17472,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection"
+          ],
           "relatedIds": []
         }
       ]
@@ -17416,7 +17533,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -17477,7 +17596,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -17542,7 +17664,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "western-zhou-national-museum"
+          ],
           "relatedIds": []
         }
       ]
@@ -17603,7 +17728,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -17671,7 +17798,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -17734,7 +17864,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -17810,7 +17943,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "yuan-li-bingzhong",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -17877,7 +18013,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -17942,7 +18081,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18005,7 +18146,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18069,7 +18213,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18144,7 +18291,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18222,7 +18371,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18283,7 +18434,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18346,7 +18499,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18415,7 +18570,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18476,7 +18633,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18547,7 +18706,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18618,7 +18779,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18693,7 +18856,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18754,7 +18920,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "yuan-li-bingzhong",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -18815,7 +18984,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "xian-local-chronicle-western-han-mausoleums",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18878,7 +19050,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -18941,7 +19116,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19021,7 +19199,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19082,7 +19262,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19143,7 +19325,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "xian-local-chronicle-duling",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19205,7 +19390,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19266,7 +19454,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19328,7 +19518,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19391,7 +19584,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19463,7 +19658,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19531,7 +19728,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19592,7 +19791,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "houhanshu-vol2-liuzhuang",
+            "luoyang-baimasi-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -19657,7 +19859,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19718,7 +19923,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -19778,7 +19985,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -19832,7 +20041,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "augustus-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -19887,7 +20098,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "constantinople-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -19947,7 +20160,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20008,7 +20223,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20073,7 +20290,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20134,7 +20353,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -20197,7 +20419,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20265,7 +20490,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20331,7 +20558,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20394,7 +20624,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20455,7 +20688,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -20517,7 +20753,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization",
+            "silla-samguksagi-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -20582,7 +20822,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -20642,7 +20885,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -20703,7 +20948,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -20758,7 +21005,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "augustus-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -20814,7 +21063,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "westphalia-lwl",
+            "westphalia-osnabruck"
+          ],
           "relatedIds": []
         }
       ]
@@ -20880,7 +21132,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -20946,7 +21201,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21012,7 +21270,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21076,7 +21337,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21137,7 +21400,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21202,7 +21468,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21268,7 +21537,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21330,7 +21602,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21366,6 +21640,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "qin-mugong-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -21390,7 +21665,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "qin-mugong-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21458,7 +21737,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21521,7 +21802,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21582,7 +21866,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli"
+          ],
           "relatedIds": []
         }
       ]
@@ -21642,7 +21929,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21705,7 +21995,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21766,7 +22058,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21833,7 +22127,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21894,7 +22191,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -21959,7 +22259,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -22020,7 +22322,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -22085,7 +22389,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -22151,7 +22457,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -22211,7 +22520,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "guangzhou-shaowu-tomb",
+            "southern-ming-shaowu"
+          ],
           "relatedIds": []
         }
       ]
@@ -22284,7 +22596,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -22344,7 +22659,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -22408,7 +22725,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -22473,7 +22792,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "northern-yuan-early-ming"
+          ],
           "relatedIds": []
         }
       ]
@@ -22531,7 +22853,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "westphalia-lwl",
+            "westphalia-osnabruck"
+          ],
           "relatedIds": []
         }
       ]
@@ -22591,7 +22916,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -22650,7 +22977,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
           "relatedIds": []
         }
       ]
@@ -22709,7 +23038,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
           "relatedIds": []
         }
       ]
@@ -22772,7 +23103,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -22836,7 +23170,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -22899,7 +23235,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -22960,7 +23299,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23021,7 +23362,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "northern-yuan-early-ming",
+            "northern-yuan-yesen"
+          ],
           "relatedIds": []
         }
       ]
@@ -23081,7 +23425,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23116,6 +23462,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "wang-mang-life-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -23145,9 +23492,12 @@
         },
         {
           "dimension": "time",
-          "status": "uncertain",
-          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "wang-mang-life-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23207,7 +23557,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23268,7 +23621,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23327,7 +23682,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23388,7 +23745,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23452,7 +23811,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23518,7 +23880,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23577,7 +23942,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23636,7 +24003,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -23707,7 +24076,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23767,7 +24138,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23830,7 +24203,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23893,7 +24268,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -23951,7 +24328,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24012,7 +24391,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24080,7 +24462,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24144,7 +24528,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24210,7 +24596,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24277,7 +24665,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24337,7 +24727,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24403,7 +24795,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
           "relatedIds": []
         }
       ]
@@ -24466,7 +24862,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
           "relatedIds": []
         }
       ]
@@ -24502,6 +24902,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "nanzhao-lineage-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -24528,7 +24929,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "nanzhao-lineage-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24587,7 +24992,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -24655,7 +25062,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24714,7 +25123,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24776,7 +25187,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24842,7 +25256,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -24907,7 +25323,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -24969,7 +25387,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25032,7 +25452,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25092,7 +25515,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25153,7 +25579,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25210,7 +25639,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25272,7 +25703,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25345,7 +25779,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25413,7 +25849,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25477,7 +25915,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25534,7 +25975,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25598,7 +26041,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25659,7 +26105,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "fuzhou-longwu-site",
+            "southern-ming-longwu"
+          ],
           "relatedIds": []
         }
       ]
@@ -25721,7 +26170,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25794,7 +26245,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25874,7 +26327,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -25937,7 +26392,11 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-overview",
+            "southern-ming-yongli"
+          ],
           "relatedIds": []
         }
       ]
@@ -26007,7 +26466,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -26068,7 +26530,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -26133,7 +26597,11 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-longwu",
+            "southern-ming-overview"
+          ],
           "relatedIds": []
         }
       ]
@@ -26195,7 +26663,11 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-overview",
+            "southern-ming-shaowu"
+          ],
           "relatedIds": []
         }
       ]
@@ -26258,7 +26730,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -32527,7 +33002,10 @@
       "polityIds": [
         "turkic"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "turkic-history-db"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32541,7 +33019,10 @@
       "polityIds": [
         "yuan"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "yuan-goryeo-records",
+        "yuan-nationalities-history"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32555,7 +33036,10 @@
       "polityIds": [
         "chu_warring"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32569,7 +33053,10 @@
       "polityIds": [
         "northern_liang"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32583,7 +33070,10 @@
       "polityIds": [
         "northern_yan"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32597,7 +33087,10 @@
       "polityIds": [
         "northern_yan"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32611,7 +33104,10 @@
       "polityIds": [
         "northern_yan"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32625,7 +33121,10 @@
       "polityIds": [
         "former_qin"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "jinshu-vol112-fu-jian",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32639,7 +33138,10 @@
       "polityIds": [
         "northern_yan"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32653,7 +33155,10 @@
       "polityIds": [
         "nanzhao"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32665,7 +33170,9 @@
       "dimension": "time",
       "kind": "uncertain",
       "polityIds": [],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "columbus-library-congress"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32679,7 +33186,10 @@
       "polityIds": [
         "han_warring"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32693,7 +33203,10 @@
       "polityIds": [
         "han_warring"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32707,7 +33220,10 @@
       "polityIds": [
         "xiongnu"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32721,7 +33237,10 @@
       "polityIds": [
         "turkic"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "turkic-history-db",
+        "turkic-orkhon-collection"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32735,7 +33254,9 @@
       "polityIds": [
         "mongol"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32749,7 +33270,10 @@
       "polityIds": [
         "zhou_western"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "western-zhou-national-museum"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32763,7 +33287,9 @@
       "polityIds": [
         "zhou_eastern"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32777,7 +33303,9 @@
       "polityIds": [
         "gengshi"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32791,7 +33319,9 @@
       "polityIds": [
         "former_zhao"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32805,7 +33335,9 @@
       "polityIds": [
         "qin"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32819,7 +33351,9 @@
       "polityIds": [
         "xiongnu"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32833,7 +33367,11 @@
       "polityIds": [
         "silla"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "silla-encykorea",
+        "silla-periodization",
+        "silla-samguksagi-db"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32847,7 +33385,9 @@
       "polityIds": [
         "tibetan_empire"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32861,7 +33401,10 @@
       "polityIds": [
         "nanzhao"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32875,7 +33418,10 @@
       "polityIds": [
         "western_qin"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32889,7 +33435,10 @@
       "polityIds": [
         "western_qin"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32903,7 +33452,11 @@
       "polityIds": [
         "qin_state"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "qin-mugong-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32917,7 +33470,10 @@
       "polityIds": [
         "nanzhao"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32931,7 +33487,10 @@
       "polityIds": [
         "ming_southern"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "guangzhou-shaowu-tomb",
+        "southern-ming-shaowu"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32945,7 +33504,9 @@
       "polityIds": [
         "southern_liang"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "jinshu-vol126-tufa-wugu"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32959,7 +33520,9 @@
       "polityIds": [
         "southern_liang"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "jinshu-vol126-tufa-wugu"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -32973,21 +33536,10 @@
       "polityIds": [
         "southern_liang"
       ],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
-    },
-    {
-      "entityType": "person",
-      "entityId": "wang-mang",
-      "entityKey": "person:wang-mang",
-      "label": "王莽",
-      "dimension": "time",
-      "kind": "uncertain",
-      "polityIds": [
-        "xin"
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
       ],
-      "evidenceIds": [],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33001,7 +33553,10 @@
       "polityIds": [
         "wei_warring"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33015,7 +33570,9 @@
       "polityIds": [
         "shang"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33029,7 +33586,10 @@
       "polityIds": [
         "yan_warring"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33043,7 +33603,11 @@
       "polityIds": [
         "western_liao"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "iranica-qara-ketay",
+        "liaoshi-vol30-yelu-dashi"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33057,7 +33621,11 @@
       "polityIds": [
         "western_liao"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "iranica-qara-ketay",
+        "liaoshi-vol30-yelu-dashi"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33071,7 +33639,11 @@
       "polityIds": [
         "nanzhao"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "nanzhao-lineage-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33085,7 +33657,9 @@
       "polityIds": [
         "xia_early"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33099,7 +33673,9 @@
       "polityIds": [
         "goguryeo"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33113,7 +33689,9 @@
       "polityIds": [
         "han_western"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33127,7 +33705,10 @@
       "polityIds": [
         "zhao_warring"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33141,7 +33722,10 @@
       "polityIds": [
         "zhao_warring"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     },
@@ -33155,7 +33739,9 @@
       "polityIds": [
         "zhou_western"
       ],
-      "evidenceIds": [],
+      "evidenceIds": [
+        "zizhi-tongjian"
+      ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
     }
@@ -47728,7 +48314,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -47792,7 +48380,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "turkic-history-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -47848,7 +48439,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -47910,7 +48503,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "yuan-goryeo-records",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -47983,7 +48579,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48053,7 +48652,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48118,7 +48719,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48184,7 +48788,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48240,7 +48847,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "westphalia-lwl",
+            "westphalia-osnabruck"
+          ],
           "relatedIds": []
         }
       ]
@@ -48295,7 +48905,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "columbus-library-congress"
+          ],
           "relatedIds": []
         }
       ]
@@ -48357,7 +48969,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48412,7 +49027,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "constantinople-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -48475,7 +49092,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -48541,7 +49160,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48599,7 +49221,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48659,7 +49283,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -48722,7 +49348,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48779,7 +49408,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "un-charter-treaty",
+            "un-history-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -48839,7 +49471,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "northern-yuan-yesen"
+          ],
           "relatedIds": []
         }
       ]
@@ -48910,7 +49544,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -48974,7 +49611,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49035,7 +49675,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49090,7 +49733,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "un-history-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -49157,7 +49802,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49219,7 +49866,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol112-fu-jian",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49278,7 +49928,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -49344,7 +49996,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49406,7 +50060,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49470,7 +50127,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49532,7 +50191,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49596,7 +50258,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49651,7 +50316,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "columbus-library-congress"
+          ],
           "relatedIds": []
         }
       ]
@@ -49715,7 +50382,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49776,7 +50445,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -49843,7 +50515,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49909,7 +50584,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -49969,7 +50647,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50030,7 +50710,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50089,7 +50771,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "un-charter-treaty",
+            "un-history-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -50150,7 +50835,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50218,7 +50905,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -50278,7 +50967,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50338,7 +51030,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-longwu"
+          ],
           "relatedIds": []
         }
       ]
@@ -50399,7 +51094,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50456,7 +51154,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50517,7 +51217,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection"
+          ],
           "relatedIds": []
         }
       ]
@@ -50575,7 +51278,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -50636,7 +51341,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -50701,7 +51409,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "western-zhou-national-museum"
+          ],
           "relatedIds": []
         }
       ]
@@ -50762,7 +51473,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -50830,7 +51543,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50893,7 +51609,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -50969,7 +51688,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "yuan-li-bingzhong",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -51036,7 +51758,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51101,7 +51826,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51164,7 +51891,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51228,7 +51958,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51303,7 +52036,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51381,7 +52116,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51442,7 +52179,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51505,7 +52244,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51574,7 +52315,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51635,7 +52378,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51706,7 +52451,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51777,7 +52524,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51852,7 +52601,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -51913,7 +52665,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "yuan-li-bingzhong",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -51974,7 +52729,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "xian-local-chronicle-western-han-mausoleums",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52037,7 +52795,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52100,7 +52861,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52180,7 +52944,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52241,7 +53007,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52302,7 +53070,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "xian-local-chronicle-duling",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52364,7 +53135,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52425,7 +53199,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52487,7 +53263,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52550,7 +53329,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52622,7 +53403,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52690,7 +53473,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52751,7 +53536,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "houhanshu-vol2-liuzhuang",
+            "luoyang-baimasi-official"
+          ],
           "relatedIds": []
         }
       ]
@@ -52816,7 +53604,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52877,7 +53668,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -52937,7 +53730,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -52991,7 +53786,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "augustus-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -53046,7 +53843,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "constantinople-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -53106,7 +53905,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53167,7 +53968,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53232,7 +54035,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53293,7 +54098,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": []
         }
       ]
@@ -53356,7 +54164,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53424,7 +54235,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53490,7 +54303,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53553,7 +54369,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53614,7 +54433,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -53676,7 +54498,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization",
+            "silla-samguksagi-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -53741,7 +54567,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -53801,7 +54630,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -53862,7 +54693,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -53917,7 +54750,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "augustus-metmuseum"
+          ],
           "relatedIds": []
         }
       ]
@@ -53973,7 +54808,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "westphalia-lwl",
+            "westphalia-osnabruck"
+          ],
           "relatedIds": []
         }
       ]
@@ -54039,7 +54877,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-samguksagi-db"
+          ],
           "relatedIds": []
         }
       ]
@@ -54105,7 +54946,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54171,7 +55015,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54235,7 +55082,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54296,7 +55145,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54361,7 +55213,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54427,7 +55282,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54489,7 +55347,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54525,6 +55385,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "qin-mugong-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -54549,7 +55410,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "qin-mugong-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54617,7 +55482,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54680,7 +55547,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54741,7 +55611,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-yongli"
+          ],
           "relatedIds": []
         }
       ]
@@ -54801,7 +55674,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54864,7 +55740,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54925,7 +55803,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -54992,7 +55872,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -55053,7 +55936,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -55118,7 +56004,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -55179,7 +56067,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -55244,7 +56134,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -55310,7 +56202,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -55370,7 +56265,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "guangzhou-shaowu-tomb",
+            "southern-ming-shaowu"
+          ],
           "relatedIds": []
         }
       ]
@@ -55443,7 +56341,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -55503,7 +56404,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -55567,7 +56470,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -55632,7 +56537,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "northern-yuan-early-ming"
+          ],
           "relatedIds": []
         }
       ]
@@ -55690,7 +56598,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "westphalia-lwl",
+            "westphalia-osnabruck"
+          ],
           "relatedIds": []
         }
       ]
@@ -55750,7 +56661,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -55809,7 +56722,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
           "relatedIds": []
         }
       ]
@@ -55868,7 +56783,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
           "relatedIds": []
         }
       ]
@@ -55931,7 +56848,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -55995,7 +56915,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56058,7 +56980,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56119,7 +57044,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56180,7 +57107,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "northern-yuan-early-ming",
+            "northern-yuan-yesen"
+          ],
           "relatedIds": []
         }
       ]
@@ -56240,7 +57170,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56275,6 +57207,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "wang-mang-life-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -56304,9 +57237,12 @@
         },
         {
           "dimension": "time",
-          "status": "uncertain",
-          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "wang-mang-life-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56366,7 +57302,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56427,7 +57366,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56486,7 +57427,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56547,7 +57490,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56611,7 +57556,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56677,7 +57625,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56736,7 +57687,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56795,7 +57748,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -56866,7 +57821,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56926,7 +57883,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -56989,7 +57948,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57052,7 +58013,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57110,7 +58073,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57171,7 +58136,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57239,7 +58207,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57303,7 +58273,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57369,7 +58341,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57436,7 +58410,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57496,7 +58472,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57562,7 +58540,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
           "relatedIds": []
         }
       ]
@@ -57625,7 +58607,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
           "relatedIds": []
         }
       ]
@@ -57661,6 +58647,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "nanzhao-lineage-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -57687,7 +58674,11 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "nanzhao-lineage-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57746,7 +58737,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -57814,7 +58807,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57873,7 +58868,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -57935,7 +58932,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58001,7 +59001,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58066,7 +59068,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -58128,7 +59132,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58191,7 +59197,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58251,7 +59260,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58312,7 +59324,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58369,7 +59384,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58431,7 +59448,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58504,7 +59524,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58572,7 +59594,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58636,7 +59660,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58693,7 +59720,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58757,7 +59786,10 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58818,7 +59850,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "fuzhou-longwu-site",
+            "southern-ming-longwu"
+          ],
           "relatedIds": []
         }
       ]
@@ -58880,7 +59915,9 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -58953,7 +59990,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -59033,7 +60072,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -59096,7 +60137,11 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-overview",
+            "southern-ming-yongli"
+          ],
           "relatedIds": []
         }
       ]
@@ -59166,7 +60211,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -59227,7 +60275,9 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": []
         }
       ]
@@ -59292,7 +60342,11 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-longwu",
+            "southern-ming-overview"
+          ],
           "relatedIds": []
         }
       ]
@@ -59354,7 +60408,11 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "ming-shi-vol120-southern-ming",
+            "southern-ming-overview",
+            "southern-ming-shaowu"
+          ],
           "relatedIds": []
         }
       ]
@@ -59417,7 +60475,10 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": []
         }
       ]
@@ -65402,18 +66463,18 @@
     "person": {
       "totalEntities": 186,
       "statusCounts": {
-        "covered": 884,
+        "covered": 885,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 46,
+        "uncertain": 45,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 46
+        "uncertain": 45
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -65449,7 +66510,6 @@
         "person:tufa-lilugu",
         "person:tufa-rutan",
         "person:tufa-wugu",
-        "person:wang-mang",
         "person:wei-huanzi",
         "person:wu-ding",
         "person:yan-zhaowang",
@@ -65569,7 +66629,10 @@
           "polityIds": [
             "chu_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -65692,7 +66755,10 @@
           "polityIds": [
             "former_qin"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol112-fu-jian",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -65778,7 +66844,9 @@
           "polityIds": [
             "former_zhao"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -65818,7 +66886,9 @@
           "polityIds": [
             "gengshi"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -65859,7 +66929,9 @@
           "polityIds": [
             "goguryeo"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -65967,7 +67039,10 @@
           "polityIds": [
             "han_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -65981,7 +67056,10 @@
           "polityIds": [
             "han_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -66032,7 +67110,9 @@
           "polityIds": [
             "han_western"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66427,7 +67507,10 @@
           "polityIds": [
             "ming_southern"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "guangzhou-shaowu-tomb",
+            "southern-ming-shaowu"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66479,7 +67562,9 @@
           "polityIds": [
             "mongol"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -66516,7 +67601,10 @@
           "polityIds": [
             "nanzhao"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66530,7 +67618,10 @@
           "polityIds": [
             "nanzhao"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66544,7 +67635,11 @@
           "polityIds": [
             "nanzhao"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "nanzhao-lineage-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66558,7 +67653,10 @@
           "polityIds": [
             "nanzhao"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -66615,7 +67713,10 @@
           "polityIds": [
             "northern_liang"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -66652,7 +67753,10 @@
           "polityIds": [
             "northern_yan"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66666,7 +67770,10 @@
           "polityIds": [
             "northern_yan"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66680,7 +67787,10 @@
           "polityIds": [
             "northern_yan"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66694,7 +67804,10 @@
           "polityIds": [
             "northern_yan"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -66853,7 +67966,9 @@
           "polityIds": [
             "qin"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66904,7 +68019,11 @@
           "polityIds": [
             "qin_state"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "qin-mugong-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -66994,7 +68113,9 @@
           "polityIds": [
             "shang"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67080,7 +68201,11 @@
           "polityIds": [
             "silla"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "silla-encykorea",
+            "silla-periodization",
+            "silla-samguksagi-db"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67224,7 +68349,10 @@
           "polityIds": [
             "southern_liang"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67238,7 +68366,9 @@
           "polityIds": [
             "southern_liang"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67252,7 +68382,9 @@
           "polityIds": [
             "southern_liang"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol126-tufa-wugu"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -67499,7 +68631,9 @@
           "polityIds": [
             "tibetan_empire"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67548,7 +68682,10 @@
           "polityIds": [
             "turkic"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "turkic-history-db"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67562,7 +68699,10 @@
           "polityIds": [
             "turkic"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -67699,7 +68839,10 @@
           "polityIds": [
             "wei_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -67772,7 +68915,11 @@
           "polityIds": [
             "western_liao"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67786,7 +68933,11 @@
           "polityIds": [
             "western_liao"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "iranica-qara-ketay",
+            "liaoshi-vol30-yelu-dashi"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67836,7 +68987,10 @@
           "polityIds": [
             "western_qin"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -67850,7 +69004,10 @@
           "polityIds": [
             "western_qin"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -68010,7 +69167,9 @@
           "polityIds": [
             "xia_early"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68051,22 +69210,7 @@
         "person:wang-mang",
         "polity:xin"
       ],
-      "gaps": [
-        {
-          "entityType": "person",
-          "entityId": "wang-mang",
-          "entityKey": "person:wang-mang",
-          "label": "王莽",
-          "dimension": "time",
-          "kind": "uncertain",
-          "polityIds": [
-            "xin"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
-        }
-      ],
+      "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -68074,7 +69218,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "新：有 1 项待核验缺口。"
+      "summary": "新：学习闭环已覆盖。"
     },
     "xiongnu": {
       "polityId": "xiongnu",
@@ -68099,7 +69243,9 @@
           "polityIds": [
             "xiongnu"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68113,7 +69259,10 @@
           "polityIds": [
             "xiongnu"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68162,7 +69311,10 @@
           "polityIds": [
             "yan_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68215,7 +69367,10 @@
           "polityIds": [
             "yuan"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "yuan-goryeo-records",
+            "yuan-nationalities-history"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -68253,7 +69408,10 @@
           "polityIds": [
             "zhao_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68267,7 +69425,10 @@
           "polityIds": [
             "zhao_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -68303,7 +69464,9 @@
           "polityIds": [
             "zhou_eastern"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68393,7 +69556,9 @@
           "polityIds": [
             "zhou_western"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68407,7 +69572,10 @@
           "polityIds": [
             "zhou_western"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "western-zhou-national-museum"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68474,7 +69642,10 @@
           "polityIds": [
             "wei_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -68646,20 +69817,6 @@
       "gaps": [
         {
           "entityType": "person",
-          "entityId": "wang-mang",
-          "entityKey": "person:wang-mang",
-          "label": "王莽",
-          "dimension": "time",
-          "kind": "uncertain",
-          "polityIds": [
-            "xin"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
-        },
-        {
-          "entityType": "person",
           "entityId": "fu-jian-founder",
           "entityKey": "person:fu-jian-founder",
           "label": "苻健",
@@ -68668,7 +69825,10 @@
           "polityIds": [
             "former_qin"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "jinshu-vol112-fu-jian",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -68765,7 +69925,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 8 项待核验缺口。"
+      "summary": "西安市：有 7 项待核验缺口。"
     },
     "changsha": {
       "placeId": "changsha",
@@ -69091,7 +70251,10 @@
           "polityIds": [
             "ming_southern"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "guangzhou-shaowu-tomb",
+            "southern-ming-shaowu"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -69217,7 +70380,10 @@
           "polityIds": [
             "zhao_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -69231,7 +70397,10 @@
           "polityIds": [
             "zhao_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -69321,7 +70490,10 @@
           "polityIds": [
             "yan_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -69756,7 +70928,9 @@
           "polityIds": [
             "tibetan_empire"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -69844,7 +71018,9 @@
           "polityIds": [
             "zhou_eastern"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -70350,7 +71526,9 @@
           "polityIds": [
             "qin"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -70433,7 +71611,10 @@
           "polityIds": [
             "han_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
@@ -70447,7 +71628,10 @@
           "polityIds": [
             "han_warring"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
@@ -70773,7 +71957,10 @@
           "polityIds": [
             "northern_liang"
           ],
-          "evidenceIds": [],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
