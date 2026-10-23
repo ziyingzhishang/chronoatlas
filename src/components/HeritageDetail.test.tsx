@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { getHeritageDetail } from '../data/heritage-details';
 import { LocaleProvider } from '../i18n/locale';
@@ -30,20 +30,42 @@ describe('HeritageDetail', () => {
     expect(screen.getAllByText('阶段依据：')).toHaveLength(detail.constructionHistory.length);
   });
 
+  it('makes URL-backed phase evidence directly navigable without turning citations into links', () => {
+    const detail = getHeritageDetail('white-horse-temple')!;
+
+    render(<HeritageDetail detail={detail} heritageName="白马寺" />);
+
+    const phaseEvidenceLinks = screen.getAllByRole('link', { name: '阶段依据：洛阳白马寺官方历史与保护资料' });
+    expect(phaseEvidenceLinks).toHaveLength(detail.constructionHistory.length * 2);
+    expect(phaseEvidenceLinks[0]).toHaveAttribute('href', 'https://www.mct.gov.cn/preview/special/3578/3597/201203/t20120330_235404.html');
+    expect(phaseEvidenceLinks[0]).toHaveAttribute('target', '_blank');
+    expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
+  });
+
   it('exposes related people, polities, and events as navigation actions', () => {
-    const detail = getHeritageDetail('big-wild-goose-pagoda')!;
+    const detail = getHeritageDetail('daming-palace-site')!;
     const onNavigate = vi.fn();
 
     render(<HeritageDetail detail={detail} onNavigate={onNavigate} />);
 
-    fireEvent.click(screen.getByRole('button', { name: '玄奘' }));
-    expect(onNavigate).toHaveBeenCalledWith({ type: 'person', id: 'xuan-zang' });
+    fireEvent.click(screen.getByRole('button', { name: '李世民' }));
+    expect(onNavigate).toHaveBeenCalledWith({ type: 'person', id: 'li-shimin' });
 
     fireEvent.click(screen.getByRole('button', { name: '唐' }));
     expect(onNavigate).toHaveBeenCalledWith({ type: 'polity', id: 'tang' });
 
-    fireEvent.click(screen.getByRole('button', { name: '玄奘取经' }));
-    expect(onNavigate).toHaveBeenCalledWith({ type: 'event', id: 'xuanzang-translations' });
+    fireEvent.click(screen.getByRole('button', { name: '唐建立' }));
+    expect(onNavigate).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded' });
+  });
+
+  it('does not make an unresolved related endpoint look navigable', () => {
+    const detail = getHeritageDetail('big-wild-goose-pagoda')!;
+
+    render(<HeritageDetail detail={detail} onNavigate={vi.fn()} />);
+
+    const relatedEvents = screen.getByRole('region', { name: '关联事件' });
+    expect(within(relatedEvents).queryByRole('button', { name: '玄奘取经' })).not.toBeInTheDocument();
+    expect(within(relatedEvents).getByText(/暂无已关联资料/)).toBeInTheDocument();
   });
 
   it('opens the structured modern place from the heritage detail header', () => {

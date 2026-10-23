@@ -115,6 +115,18 @@ describe('PersonDetail', () => {
     expect(screen.getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
   });
 
+  it('renders an interactive person-centered relationship graph summary', () => {
+    const onOpenEntity = vi.fn();
+    render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} onOpenEntity={onOpenEntity} />);
+
+    const graph = screen.getByRole('region', { name: '人物关系图谱' });
+    expect(graph).toBeInTheDocument();
+    const kinshipNode = within(graph).getByRole('button', { name: /父母／子女：李世民 → 李渊/ });
+    expect(kinshipNode).toBeInTheDocument();
+    kinshipNode.click();
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'li-yuan' });
+  });
+
   it('links required relationship coverage to the knowledge coverage report', () => {
     const tufaWugu = catalogPeople.find((item) => item.id === 'tufa-wugu')!;
     render(

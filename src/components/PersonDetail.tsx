@@ -79,6 +79,7 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
     <section className="person-detail-section" aria-label={t('人物关系')}>
       <h4>{t('人物关系')}</h4>
       {relationshipCoverage && <RelationshipCoverageSummary record={relationshipCoverage} t={t} />}
+      <PersonRelationshipGraph personName={person.name} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />
       {relationSections.map((section) => <RelationSection key={section.title} title={section.title} personName={person.name} types={section.types} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />)}
       {grouped['person-heritage'].length > 0 && <RelationSection title="其他关系" personName={person.name} types={['commissioned']} grouped={grouped} people={personById} polities={polityById} events={eventById} onOpenEntity={onOpenEntity} t={t} />}
     </section>
@@ -132,6 +133,30 @@ function relationshipCoverageStatus(coverage: PersonRelationshipCategoryCoverage
 
 function relationshipCoverageStatusLabel(status: RelationshipCoverageStatus) {
   return status === 'covered' ? '已覆盖' : status === 'required' ? '待补' : status === 'review' ? '待复核' : '不适用';
+}
+
+function PersonRelationshipGraph({ personName, grouped, people, polities, events, onOpenEntity, t }: { personName: string; grouped: ReturnType<typeof groupPersonRelationships>; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {
+  const relations = relationSections.flatMap((section) => section.types.flatMap((type) => grouped[type].map((relation) => ({ relation, category: section.title }))));
+  if (relations.length === 0) return null;
+
+  return <section className="person-relationship-graph" aria-label={t('人物关系图谱')}>
+    <h5>{t('人物关系图谱')}</h5>
+    <div className="person-relationship-graph-center" aria-label={t('图谱中心人物')}>{t(personName)}</div>
+    <ul className="person-relationship-graph-edges">
+      {relations.map(({ relation, category }) => {
+        const objectId = relation.claim.objectId ?? '';
+        const target = relation.kind === 'person-person' ? people.get(objectId) : relation.kind === 'person-polity' ? polities.get(objectId) : events.get(objectId);
+        const targetLabel = target ? ('title' in target ? t(target.title) : t(target.name)) : objectId;
+        const targetType = relation.kind === 'person-person' ? 'person' : relation.kind === 'person-polity' ? 'polity' : relation.kind === 'person-event' ? 'event' : 'heritage';
+        const relationLabel = t(relationLabels[relation.relationType] ?? relation.claim.predicate);
+        const direction = relation.direction === 'incoming' ? `${targetLabel} → ${t(personName)}` : `${t(personName)} → ${targetLabel}`;
+        const accessibleLabel = `${relationLabel}：${direction}`;
+        return <li key={`graph-${relation.claim.id}`} className="person-relationship-graph-edge">
+          {onOpenEntity ? <button type="button" aria-label={accessibleLabel} onClick={() => onOpenEntity({ type: targetType, id: objectId })}><span>{t(category)} → {targetLabel}</span><small>{relationLabel} · {t('方向：')}{t(direction)} · {t('有效期：')}{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)}</small></button> : <span><span>{t(category)} → {targetLabel}</span><small>{relationLabel} · {t('方向：')}{t(direction)} · {t('有效期：')}{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)}</small></span>}
+        </li>;
+      })}
+    </ul>
+  </section>;
 }
 
 function TimeEvidenceReview({ review, t }: { review: PersonTimeReview; t: (text: string) => string }) {

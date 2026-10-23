@@ -276,6 +276,13 @@ main { min-height: 100vh; }
 .relationship-coverage-summary { margin:8px 0 12px; padding:8px; border:1px solid rgba(198,161,91,.2); background:rgba(8,12,16,.18); }
 .relationship-coverage-summary h5 { margin:0; color:var(--gold); font-size:11px; }
 .relationship-coverage-audit-note { margin:4px 0 7px; color:var(--paper-muted); font-size:10px; line-height:1.5; }
+.person-relationship-graph { margin:8px 0 12px; padding:8px; border:1px solid rgba(119,160,178,.3); background:rgba(8,12,16,.2); }
+.person-relationship-graph h5 { margin:0 0 7px; color:var(--gold); font-size:11px; }
+.person-relationship-graph-center { width:max-content; margin:0 auto 8px; padding:4px 10px; border:1px solid var(--gold); border-radius:999px; color:var(--paper); background:rgba(198,161,91,.12); font-size:11px; }
+.person-relationship-graph-edges { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; list-style:none; margin:0; padding:0; }
+.person-relationship-graph-edge button,.person-relationship-graph-edge > span { display:block; width:100%; border:1px solid rgba(119,160,178,.22); padding:5px 6px; color:var(--paper-muted); background:rgba(255,255,255,.025); text-align:left; font-size:10px; }
+.person-relationship-graph-edge button:hover { color:var(--gold); border-color:rgba(198,161,91,.55); }
+.person-relationship-graph-edge small { display:block; margin-top:2px; color:var(--paper-muted); font-size:9px; line-height:1.35; }
 .relationship-coverage-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; list-style:none; margin:0; padding:0; }
 .relationship-coverage-item { display:grid; grid-template-columns:1fr auto; gap:2px 7px; padding:5px 6px; border-left:2px solid var(--gold-soft); background:rgba(255,255,255,.025); }
 .relationship-coverage-item strong { font-size:10px; font-weight:500; }
@@ -316,4 +323,5 @@ main { min-height: 100vh; }
   .map-caption { top:10px; left:10px; }
   .map-caption span { display:none; }
   .relationship-coverage-grid { grid-template-columns:1fr; }
+  .person-relationship-graph-edges { grid-template-columns:1fr; }
 }

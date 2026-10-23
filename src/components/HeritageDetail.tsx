@@ -40,6 +40,13 @@ function entityLabel(type: HeritageNavigationTarget['type'], id: string): string
   return events.find((event) => event.id === id)?.title ?? id;
 }
 
+function hasEntity(type: HeritageNavigationTarget['type'], id: string): boolean {
+  if (type === 'person') return people.some((person) => person.id === id);
+  if (type === 'polity') return polities.some((polity) => polity.id === id);
+  if (type === 'place') return places.some((place) => place.id === id);
+  return events.some((event) => event.id === id);
+}
+
 function RelatedEntityList({
   type,
   ids,
@@ -52,9 +59,13 @@ function RelatedEntityList({
   const { t } = useLocale();
   if (ids.length === 0) return <p className="detail-note">{t('暂无已关联资料')}</p>;
   return <ul className="heritage-related-list">
-    {ids.map((id) => <li key={id}>
-      {onNavigate ? <button type="button" onClick={() => onNavigate({ type, id })}>{t(entityLabel(type, id))}</button> : <span>{t(entityLabel(type, id))}</span>}
-    </li>)}
+    {ids.map((id) => {
+      const resolved = hasEntity(type, id);
+      return <li key={id}>
+        {onNavigate && resolved ? <button type="button" onClick={() => onNavigate({ type, id })}>{t(entityLabel(type, id))}</button> : <span>{t(entityLabel(type, id))}</span>}
+        {!resolved && <span className="detail-note">（{t('暂无已关联资料')}）</span>}
+      </li>;
+    })}
   </ul>;
 }
 
@@ -134,7 +145,11 @@ function SourceEvidenceSummary({ sourceIds }: { sourceIds: string[] }) {
     const source = sourceById[sourceId];
     const urls = sourceUrls(source?.urlOrCitation);
     const status = !source ? '来源未解析' : urls.length > 0 ? '来源链接' : '书目引文';
-    return <span key={sourceId}>{t(source?.title ?? sourceId)}（{t(status)}）</span>;
+    const label = t(source?.title ?? sourceId);
+    const evidence = source && urls.length > 0
+      ? urls.map((url, index) => <span key={url}>{index > 0 && '、'}<a href={url} target="_blank" rel="noreferrer" aria-label={`${t('阶段依据：')}${label}`}>{label}</a></span>)
+      : label;
+    return <span key={sourceId}>{evidence}（{t(status)}）</span>;
   }).reduce<React.ReactNode[]>((items, item, index) => index === 0 ? [item] : [...items, '、', item], [])}</span>;
 }
 
