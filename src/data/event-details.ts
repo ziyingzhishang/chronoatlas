@@ -932,6 +932,32 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '长安是建国政治中心关联，不提供即位殿址的精确定位，也不把618年建国理解为唐代最大范围。',
   },
   {
+    eventId: 'ximing-temple-built',
+    participants: [{ personId: 'li-zhi', role: '唐高宗时期西明寺营建的皇室与国家权力背景人物', relationType: 'contextual', note: '西明寺营建属于唐高宗时期国家寺院建设；本条不把李治写成亲自主持全部工程的建筑负责人。' }],
+    polityIds: ['tang'],
+    causes: ['唐高宗时期国家寺院与佛教传播网络继续扩展。', '长安需要承载僧侣驻锡、讲经和译经活动的大型寺院空间。'],
+    consequences: ['西明寺成为唐长安寺院网络和中外佛教交流的重要节点。', '玄奘迁入、道宣任上座和具体译经活动属于后续阶段，分别建模。'],
+    phases: [
+      { label: '西明寺开始营建', startYear: 656, endYear: 656, summary: '显庆元年在延康坊濮王故宅一带营建西明寺。' },
+      { label: '营造功毕', startYear: 656, endYear: 656, summary: '传记材料记载寺院当年营造功毕。' },
+    ],
+    locationIds: ['changan'], relatedEventIds: ['tang-founded'], sourceIds: ['xian-local-chronicle-ximing-temple', 'ximing-temple-primary-biography'],
+    uncertaintyNote: '西明寺现代位置为约址，历史位置记为延康坊西南部、濮王故宅一带；656年用于寺院营建端点，不等于现存遗址全部构件年代。',
+  },
+  {
+    eventId: 'xuanzang-at-ximing-658',
+    participants: [{ personId: 'xuan-zang', role: '奉敕迁入西明寺并参与阶段性译经的译经家', note: '玄奘在西明寺的活动是658—659年前后的阶段性驻锡与译经网络节点，不覆盖其全部译经地点和年代。' }],
+    polityIds: ['tang'],
+    causes: ['西明寺建成后成为唐廷组织僧侣和译经活动的寺院节点。', '唐廷继续在长安及关中安排译场，玄奘的活动地点随阶段变化。'],
+    consequences: ['西明寺与玄奘、道宣及唐代国家译经网络建立可追踪关联。', '玄奘次年赴玉华寺，不能把西明寺阶段扩大为其659—664年全部译经活动。'],
+    phases: [
+      { label: '玄奘迁入西明寺', startYear: 658, endYear: 658, summary: '显庆三年玄奘奉敕迁入西明寺并迎僧入寺。' },
+      { label: '西明寺阶段结束', startYear: 659, endYear: 659, summary: '玄奘赴玉华寺专事译经，西明寺作为其阶段性译经节点的作用告一段落。' },
+    ],
+    locationIds: ['changan'], relatedEventIds: ['ximing-temple-built'], sourceIds: ['ximing-temple-primary-biography', 'xian-local-chronicle-ximing-temple', 'xuanzang-national-museum'],
+    uncertaintyNote: '该事件只表达西明寺阶段性驻锡与译经关联；具体经名、译场分工和每部经典的地点仍需逐项核验，不能替代覆盖五处遗产的统一译经事件。',
+  },
+  {
     eventId: 'an-lushan-rebellion',
     participants: [
       { personId: 'an-lushan', role: '范阳起兵的叛军首领', note: '755年发动叛乱并攻取洛阳；其死后叛军仍由史思明、史朝义等继续；安禄山对应755年起兵节点，不代表763年主要叛乱结束后的史思明、史朝义等后续叛军阶段；叛乱首领与战后藩镇承接需分开。限755年范阳起兵及前期叛军主线，不代表其死后史思明、史朝义等后续阶段。' },

@@ -32,7 +32,7 @@ const expectedCategories = {
   'sui|changan||mingde-gate-site': 'layered-capital-heritage',
   'sui|luoyang||dingding-gate-site': 'layered-capital-heritage',
   'tang|changan||qianling': 'cross-polity-heritage',
-  'tang|changan||ximing-temple-site': 'location-and-event-endpoint-unresolved',
+  'tang|changan||ximing-temple-site': 'location-approximate',
   'tang|luoyang|court-moves-luoyang|': 'shared-transition-event',
   'tang|luoyang||shangyang-palace-site': 'cross-polity-heritage',
   'liang_later|kaifeng|five-dynasties|': 'shared-transition-event',

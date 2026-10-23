@@ -72,7 +72,8 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (
-      currentGaps.some(({ personId }) => participant.personId === personId)
+      participant.relationType !== 'contextual'
+      && currentGaps.some(({ personId }) => participant.personId === personId)
     )))).toBe(false);
   });
 });

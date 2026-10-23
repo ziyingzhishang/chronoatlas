@@ -1,6 +1,9 @@
 import type { SourceNote } from '../domain/types';
 
 export const sourceNotes: SourceNote[] = [
+  {id:'ximing-temple-primary-biography',title:'《大唐大慈恩寺三藏法师传》卷十',authorOrInstitution:'慧立、彦悰／佛学数字图书馆藏本',urlOrCitation:'https://buddhism.lib.ntu.edu.tw/FULLTEXT/sutra/chi_pdf/sutra20/T50n2053.pdf',scope:'西明寺656年营建、营造功毕及658年玄奘迁入',note:'作为西明寺专属营建与玄奘迁入阶段的主要传记来源；不据此覆盖玄奘全部译经地点。'},
+  {id:'xian-local-chronicle-ximing-temple',title:'《西安市志》第七卷·西明寺条',authorOrInstitution:'西安市地方志编纂委员会',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201711/P020240923626792713048.pdf',scope:'西明寺历史位置、遗址考古与唐代译经活动',note:'支持延康坊西南部、今白庙村附近的约址表达及西明寺寺院、译经网络历史；现代约址不等于精确建筑坐标。'},
+  {id:'xuanzang-national-museum',title:'中国国家博物馆：玄奘译经',authorOrInstitution:'中国国家博物馆',urlOrCitation:'https://www.chnmuseum.cn/yj/xscg/xslw/201812/t20181224_331851.shtml',scope:'玄奘返唐、长安译经与659年赴玉华寺阶段',note:'用于限定玄奘在西明寺的阶段性活动，不把西明寺事件扩展为玄奘全部译经生涯。'},
   {id:'shiji-gaozu-changle',title:'《史记·高祖本纪》长乐宫成条',authorOrInstitution:'司马迁／南京博物院古籍整理页面',urlOrCitation:'https://www.njmuseum.org.cn/files/wshl/rbbook/gb/25/shiji/sj008.html',scope:'高祖七年长乐宫建成、高祖八年未央宫营作的分层核验',note:'记载高祖七年二月“长乐宫成”，并将高祖八年萧丞相营作未央宫另列；本项目据此区分长乐宫建成端点与未央宫营建。'},
   {id:'capital-history-reference',title:'政权首都与政治中心综合核验资料',authorOrInstitution:'项目组件专家团整理',urlOrCitation:'《资治通鉴》、中国历史地理与相关遗址/地方志资料交叉核验',scope:'首都、迁都、多都制、政治中心及现代地名映射',note:'用于地图定位和展示；移动汗廷、候选遗址和区域参照均保留置信度与不确定性，不由首都点推导疆域。'},
   {id:'xian-local-chronicle-duling',title:'《陕西省志·建设志》杜陵条目',authorOrInstitution:'陕西省地方志编纂委员会',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsz/szdylpdf/201404/P020240923623109161543.pdf',scope:'汉宣帝杜陵地点、营建与陵园遗存',note:'记载汉宣帝元康元年（前65年）在杜东原营建杜陵；与前74年即位年分开建模，不把即位年误作陵墓营建年。'},

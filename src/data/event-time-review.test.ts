@@ -21,6 +21,7 @@ const expectedEventIds = [
   'western-liang-state-founded',
   'tibetan-founded',
   'an-lushan-rebellion',
+  'xuanzang-at-ximing-658',
   'dali-founded',
   'western-liao-founded',
   'southern-ming-founded',
@@ -33,12 +34,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(22);
+    expect(report.totalReviewed).toBe(23);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 2, approximate: 20, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 3, approximate: 20, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

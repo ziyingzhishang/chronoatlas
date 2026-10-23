@@ -200,7 +200,7 @@ function categoryCoverage(
   });
 
   eventDetails
-    .filter((detail) => events.has(detail.eventId) && detail.participants.some((participant) => participant.personId === person.id))
+    .filter((detail) => events.has(detail.eventId) && detail.participants.some((participant) => participant.personId === person.id && participant.relationType !== 'contextual'))
     .forEach((detail) => {
       categories.eventParticipation.evidenceIds.push(`event-detail:${detail.eventId}`);
       categories.eventParticipation.relatedIds.push(detail.eventId);

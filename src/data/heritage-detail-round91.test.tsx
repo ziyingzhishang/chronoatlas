@@ -67,7 +67,12 @@ describe('round ninety-first heritage place closure', () => {
 
   it('does not alter the five Xuanzang event-boundary details', () => {
     for (const heritageId of ['big-wild-goose-pagoda', 'qinglong-temple-site', 'xian-beilin', 'xiao-yan-ta', 'ximing-temple-site']) {
-      expect(getHeritageDetail(heritageId)?.associatedEvents).toEqual(['tang-founded', 'xuanzang-translations']);
+      const associatedEvents = getHeritageDetail(heritageId)?.associatedEvents;
+      if (heritageId === 'ximing-temple-site') {
+        expect(associatedEvents).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded', 'xuanzang-translations']);
+      } else {
+        expect(associatedEvents).toEqual(['tang-founded', 'xuanzang-translations']);
+      }
     }
   });
 });

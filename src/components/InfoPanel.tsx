@@ -11,6 +11,7 @@ import { activeCapitalRecords } from '../data/capital-history';
 import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
 import { events as historicalEvents } from '../data/events';
+import { eventDetails } from '../data/event-details';
 import { changanEvents } from '../data/changan-study';
 import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
@@ -54,7 +55,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
   const currentCapitalTerms = selected && 'name' in selected ? activeCapitalRecords(state.year, selected.id) : [];
   const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalRecords(state.year).filter(record=>record.placeId===selected.id) : [];
   const studyView = selectedEntity?.type === 'polity'
-    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: polityStudyEvents, claims, capitalTerms: capitalHistory })
+    ? buildPolityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: polityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory })
     : selectedEntity?.type === 'place'
       ? buildCityStudyView(selectedEntity.id, state.year, { polities, places, people, heritage: heritageAssets, events: cityStudyEvents, claims, capitalTerms: capitalHistory })
       : undefined;

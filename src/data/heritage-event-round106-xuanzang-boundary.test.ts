@@ -122,10 +122,10 @@ describe('round one hundred six Xuanzang heritage event boundary audit', () => {
       sources: false,
     });
 
-    const existingSemanticCandidates = events.filter((event) => event.id !== 'white-horse-temple-founded' && /玄奘|译经/.test(
+    const existingSemanticCandidates = events.filter((event) => !['white-horse-temple-founded', 'ximing-temple-built', 'xuanzang-at-ximing-658'].includes(event.id) && /玄奘|译经/.test(
       `${event.title}${event.summary}${event.background ?? ''}${event.process ?? ''}${event.impact ?? ''}`,
     ));
-    const existingParticipantCandidates = eventDetails.filter((detail) => detail.participants.some(
+    const existingParticipantCandidates = eventDetails.filter((detail) => !['ximing-temple-built', 'xuanzang-at-ximing-658'].includes(detail.eventId) && detail.participants.some(
       (participant) => participant.personId === 'xuan-zang',
     ));
 
@@ -161,7 +161,7 @@ describe('round one hundred six Xuanzang heritage event boundary audit', () => {
     });
 
     expect(relevantSources.length).toBeGreaterThan(0);
-    expect(translationMentioningSources.map((source) => source.id)).toEqual(['xian-local-chronicle-big-wild-goose']);
+    expect(translationMentioningSources.map((source) => source.id)).toEqual(['ximing-temple-primary-biography', 'xian-local-chronicle-ximing-temple', 'xuanzang-national-museum', 'xian-local-chronicle-big-wild-goose']);
     expect(comprehensiveSources).toEqual([]);
     expect(relevantSources.some((source) => /统一起止|阶段链|五处遗产|完整参与者/.test(sourceText(source.id)))).toBe(false);
   });
@@ -169,7 +169,11 @@ describe('round one hundred six Xuanzang heritage event boundary audit', () => {
   it('does not treat construction, naming, or archaeological years as a translation event', () => {
     for (const heritageId of reviewHeritageIds) {
       const detail = heritageDetails.find((item) => item.heritageId === heritageId)!;
-      expect(detail.associatedEvents).toEqual(['tang-founded', missingEndpointId]);
+      if (heritageId === 'ximing-temple-site') {
+        expect(detail.associatedEvents).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded', missingEndpointId]);
+      } else {
+        expect(detail.associatedEvents).toEqual(['tang-founded', missingEndpointId]);
+      }
       expect(detail.uncertaintyNote).toContain('不把建筑年代拼接为译经事件');
       expect(detail.uncertaintyNote).toContain('统一译经事件端点');
     }

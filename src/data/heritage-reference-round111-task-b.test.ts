@@ -21,7 +21,7 @@ const expectedReasons: Record<(typeof candidates)[number], string> = {
   'mingde-gate-site': '隋唐叠压层',
   'dingding-gate-site': '隋唐叠压层',
   qianling: '唐武周共享',
-  'ximing-temple-site': '约址与玄奘事件端点待核',
+  'ximing-temple-site': '约址；西明寺专属事件已建立，统一译经事件仍待核',
   'shangyang-palace-site': '唐武周共享',
 };
 
@@ -61,8 +61,8 @@ describe('round 111 task B Sui-Tang capital heritage boundary', () => {
     expect(ximing?.associatedPolities).toEqual(['tang']);
     expect(ximing?.uncertaintyNote).toContain('约址');
     expect(ximing?.uncertaintyNote).toContain('译经事件端点');
-    expect(ximing?.associatedEvents).toContain('xuanzang-translations');
-    expect(ximing?.constructionHistory.some((phase) => phase.from === 618 && phase.to === 907)).toBe(true);
+    expect(ximing?.associatedEvents).toEqual(expect.arrayContaining(['ximing-temple-built', 'xuanzang-at-ximing-658', 'xuanzang-translations']));
+    expect(ximing?.constructionHistory.some((phase) => phase.from === 656 && phase.to === 907)).toBe(true);
   });
 
   it('confirms the candidate years overlap their claimed capital stages without treating overlap as proof', () => {

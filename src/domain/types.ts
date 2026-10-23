@@ -245,6 +245,7 @@ export interface EventParticipant {
   personId: string;
   role: string;
   note?: string;
+  relationType?: 'direct' | 'contextual';
 }
 
 export interface EventPhase {

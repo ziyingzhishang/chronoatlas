@@ -30,7 +30,11 @@ describe('round eighty-third heritage/event boundary audit', () => {
       const item = report.items.find((coverageItem) => coverageItem.heritageId === heritageId);
 
       expect(detail, heritageId).toBeDefined();
-      expect(detail?.associatedEvents, heritageId).toEqual(['tang-founded', 'xuanzang-translations']);
+      if (heritageId === 'ximing-temple-site') {
+        expect(detail?.associatedEvents, heritageId).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded', 'xuanzang-translations']);
+      } else {
+        expect(detail?.associatedEvents, heritageId).toEqual(['tang-founded', 'xuanzang-translations']);
+      }
       expect(detail?.associatedPeople, heritageId).not.toContain('missing-person');
       expect(detail?.associatedPolities, heritageId).not.toContain('missing-polity');
       expect(detail?.sourceIds.every((sourceId) => sourceIds.has(sourceId)), heritageId).toBe(true);

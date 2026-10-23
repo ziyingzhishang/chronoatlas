@@ -26,7 +26,11 @@ describe('round one hundred four Xuanzang heritage event boundary audit', () => 
     for (const heritageId of reviewHeritageIds) {
       const detail = heritageDetails.find((item) => item.heritageId === heritageId);
       expect(detail, heritageId).toBeDefined();
-      expect(detail?.associatedEvents, heritageId).toEqual(['tang-founded', 'xuanzang-translations']);
+      if (heritageId === 'ximing-temple-site') {
+        expect(detail?.associatedEvents, heritageId).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded', 'xuanzang-translations']);
+      } else {
+        expect(detail?.associatedEvents, heritageId).toEqual(['tang-founded', 'xuanzang-translations']);
+      }
       expect(detail?.uncertaintyNote, heritageId).toContain('统一译经事件端点');
       expect(detail?.uncertaintyNote, heritageId).toContain('不把建筑年代拼接为译经事件');
     }
@@ -47,8 +51,8 @@ describe('round one hundred four Xuanzang heritage event boundary audit', () => 
         .filter((detail) => reviewHeritageIds.includes(detail.heritageId as (typeof reviewHeritageIds)[number]))
         .flatMap((detail) => detail.associatedEvents),
     );
-    expect([...existingAssociatedEventIds]).toEqual(['tang-founded', 'xuanzang-translations']);
-    expect(events.filter((event) => existingAssociatedEventIds.has(event.id))).toHaveLength(1);
+    expect([...existingAssociatedEventIds]).toEqual(['tang-founded', 'xuanzang-translations', 'ximing-temple-built', 'xuanzang-at-ximing-658']);
+    expect(events.filter((event) => existingAssociatedEventIds.has(event.id))).toHaveLength(3);
     expect(events.find((event) => event.id === 'tang-founded')?.id).toBe('tang-founded');
   });
 });

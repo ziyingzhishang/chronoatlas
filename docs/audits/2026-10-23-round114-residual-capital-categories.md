@@ -12,7 +12,7 @@
 | `construction-endpoint-unresolved` | 1 | 缺少遗产单体的独立营建事件端点，继续保留候选 |
 | `cross-polity-heritage` | 4 | 遗产跨越多个政权，不能因首都阶段重合归入一个政权 |
 | `layered-capital-heritage` | 4 | 隋唐叠压的都城遗产，需维持城市视角和分层年代 |
-| `location-and-event-endpoint-unresolved` | 1 | 西明寺具体约址与译经事件端点尚不能合并 |
+| `location-approximate` | 1 | 西明寺专属营建与玄奘阶段事件已补齐，但具体约址与统一译经事件仍不能合并 |
 | `cross-stage-city-layer` | 1 | 城市遗产主体年代晚于后周政权阶段，不能倒灌引用 |
 | `foundation-stage-boundary` | 1 | 东周东迁是分期与迁徙边界，不等于东周建政专属事件 |
 | `duplicate-event-node` | 1 | 与已有规范建政事件重复，保留规范节点 |
