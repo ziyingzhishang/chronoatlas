@@ -211,6 +211,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百六十六·后梁纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷266', detail: '开平元年（907）朱温受禅建梁；开封作为汴州及后梁政治中心的城市关联另由首都资料核验。' }],
   },
   {
+    id: 'later-liang-ended-923', year: 923, title: '后梁政权终止', summary: '后唐军队攻入开封，后梁末帝朱友贞自尽，后梁统一政治结构结束；开封城市层继续承接后唐及后续政权。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '后梁与晋王李存勖长期争夺中原，后梁末期在军事压力和内部政治困局下失去开封防线。',
+    process: '同光元年（923）后唐军队攻入开封，朱友贞自尽，后梁政权终止；李存勖此前即位建唐与攻入开封是相互关联但可分开的节点，具体接收和地方秩序转换属于连续过程。',
+    impact: '后梁作为五代第一个中原王朝结束，后唐承接开封及中原政治空间；开封城址和水运网络没有因政权更替而消失，而是进入新的五代城市层。',
+    mapNote: '开封标记后梁终局及后唐接收的城市节点，不把923年攻入开封等同于后唐当年已经稳定控制全部后梁旧地；与后唐建立事件严格区分。',
+    references: [{ title: '《资治通鉴》卷二百七十二·后唐纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷272', detail: '记载923年后唐攻梁、开封失守及朱友贞终局；即位建唐与后梁灭亡按连续过程分层。' }],
+  },
+  {
     id: 'northern-song-founded', year: 960, title: '北宋建立', summary: '赵匡胤在陈桥兵变后受禅即位，北宋政权形成。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '后周末年北方军政体系仍处于五代更替后的不稳定状态，赵匡胤掌握殿前军及京师附近的关键兵力。',

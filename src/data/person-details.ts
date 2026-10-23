@@ -223,6 +223,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['tang-changan-end', 'five-dynasties'], sourceIds, uncertaintyNote: '后梁都城并非长安，本详情将其作为长安政治中心转移后的对照人物。',
   },
   {
+    personId: 'zhu-youzhen', biography: '朱友贞是后梁末帝。923年后唐军攻入开封后，朱友贞自尽，后梁统一政治结构终止；开封城市遗产则继续进入后唐及后续五代城市层。',
+    aliases: ['后梁末帝', '朱瑱'], offices: [{ title: '后梁皇帝', polityId: 'liang_later', placeId: 'kaifeng', validFrom: 913, validTo: 923, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-liang-ended-923'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '923年开封失守、朱友贞自尽和后唐接收属于连续终局过程；本详情不把末帝结局等同于开封城市或地方社会消失。',
+  },
+  {
     personId: 'li-cunxu', biography: '李存勖建立后唐，五代时期长安的政治地位已不同于唐代帝国时期。',
     aliases: ['唐庄宗'], offices: [{ title: '后唐皇帝', polityId: 'tang_later', validFrom: 923, validTo: 926, datePrecision: 'range', sourceIds }],
     keyEvents: ['tang-changan-end', 'five-dynasties'], sourceIds, uncertaintyNote: '“唐庄宗”是后唐庙号称谓，与唐朝本身需区分；不据称谓虚构其与长安的直接任职关系。',

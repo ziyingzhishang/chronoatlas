@@ -1723,6 +1723,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '“后唐”用于区别618年的唐朝；923年称帝、后梁覆亡和实际控制范围扩展不是同一瞬间完成。',
   },
   {
+    eventId: 'later-liang-ended-923',
+    participants: [
+      { personId: 'zhu-youzhen', role: '后梁末帝与开封失守阶段的核心人物', note: '朱友贞在后唐军队攻入开封后自尽；末帝结局、都城失守和地方接收属于923年的连续终局过程。' },
+      { personId: 'li-cunxu', role: '后唐君主与攻入开封、接替后梁政治空间的军事领袖', note: '李存勖代表后唐完成对开封的军事接收；其即位建唐与后梁覆亡相互关联但不合并为一个地点或时刻。' },
+    ],
+    polityIds: ['liang_later', 'tang_later'],
+    causes: ['后梁与晋王李存勖长期争夺中原，末期军事压力集中到开封。', '后梁内部政治与军事承压，无法阻止后唐军队进入都城。'],
+    consequences: ['后梁统一政治结构终止。', '后唐承接开封及部分中原政治空间，地方接收和控制范围仍需按阶段观察。'],
+    phases: [
+      { label: '后唐攻梁', startYear: 923, endYear: 923, summary: '后唐军队推进并攻入开封。' },
+      { label: '末帝终局', startYear: 923, endYear: 923, summary: '朱友贞自尽，后梁政权终止。' },
+      { label: '城市政治空间承接', startYear: 923, endYear: 923, summary: '开封进入后唐及后续五代城市政治阶段。' },
+    ],
+    locationIds: ['kaifeng'],
+    relatedEventIds: ['later-liang-five-dynasties-founded', 'tang-later-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '后唐称帝、攻入开封、朱友贞自尽和地方接收在923年连续发生；本条采用政权终止的编年节点，不声称所有后梁旧地在同日完成稳定归附，也不把后梁城市遗产等同于现存后世建筑。',
+  },
+  {
     eventId: 'jin-later-founded',
     participants: [
       { personId: 'shi-jingtang', role: '借助契丹支持受册称帝并建立后晋的君主', note: '石敬瑭的反唐、求援、受册称帝和后唐覆亡跨越多个阶段；本条不把后晋后期范围前置。' },
