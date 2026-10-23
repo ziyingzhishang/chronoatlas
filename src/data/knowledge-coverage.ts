@@ -153,6 +153,18 @@ export interface KnowledgeCoverageReport {
   byCity: Record<string, KnowledgeCoverageCityReport>;
 }
 
+export interface KnowledgeCoverageExport {
+  schemaVersion: 1;
+  reportType: 'knowledge-coverage';
+  entities: KnowledgeCoverageEntity[];
+  gaps: KnowledgeCoverageGap[];
+  byKey: Record<string, KnowledgeCoverageEntity>;
+  byType: Record<KnowledgeEntityType, KnowledgeCoverageTypeReport>;
+  byPolity: Record<string, KnowledgeCoveragePolityReport>;
+  tasks: KnowledgeCoverageTask[];
+  byCity: Record<string, KnowledgeCoverageCityReport>;
+}
+
 const dimensions: CoverageDimension[] = ['summary', 'detail', 'source', 'relationship', 'time'];
 const entityTypes: KnowledgeEntityType[] = ['polity', 'person', 'event', 'heritage'];
 
@@ -709,6 +721,30 @@ export function auditKnowledgeCoverage(catalog: KnowledgeCoverageCatalog = {
     }];
   })) as Record<string, KnowledgeCoverageCityReport>;
   return { entities, gaps, byKey, byType, byPolity, tasks, byCity };
+}
+
+export function serializeKnowledgeCoverageReport(report: KnowledgeCoverageReport): KnowledgeCoverageExport {
+  const entities = [...report.entities].sort((left, right) => left.entityKey.localeCompare(right.entityKey));
+  const gaps = [...report.gaps].sort((left, right) => (
+    `${left.entityKey}:${left.dimension}:${left.kind}`.localeCompare(`${right.entityKey}:${right.dimension}:${right.kind}`)
+  ));
+  const tasks = [...report.tasks].sort((left, right) => (
+    `${left.perspective}:${left.taskKind}:${left.entityId}`.localeCompare(`${right.perspective}:${right.taskKind}:${right.entityId}`)
+  ));
+  const sortedRecord = <T>(record: Record<string, T>): Record<string, T> => Object.fromEntries(
+    Object.keys(record).sort().map((key) => [key, record[key]]),
+  );
+  return {
+    schemaVersion: 1,
+    reportType: 'knowledge-coverage',
+    entities,
+    gaps,
+    byKey: sortedRecord(report.byKey),
+    byType: sortedRecord(report.byType) as Record<KnowledgeEntityType, KnowledgeCoverageTypeReport>,
+    byPolity: sortedRecord(report.byPolity),
+    tasks,
+    byCity: sortedRecord(report.byCity),
+  };
 }
 
 export const knowledgeCoverageDimensions = dimensions;

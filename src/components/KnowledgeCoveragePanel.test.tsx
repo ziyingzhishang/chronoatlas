@@ -15,7 +15,7 @@ test('shows real coverage totals and an expandable actionable task entry', () =>
   expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`可行动缺口 ${report.tasks.length}`);
   const disclosure = screen.getByText('展开可行动缺口');
   expect(disclosure.tagName).toBe('SUMMARY');
-  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/data/coverage-audit.json');
+  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
 });
 
 test('opens the task subject in its existing detail drawer callback', async () => {
@@ -32,7 +32,7 @@ test('opens the task subject in its existing detail drawer callback', async () =
   await user.click(subject);
 
   expect(onOpenEntity).toHaveBeenCalledWith({ type: task.entityType, id: task.entityId });
-  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/data/coverage-audit.json');
+  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
 });
 
 test('uses the localized accessible name for an English reader', async () => {
@@ -44,7 +44,7 @@ test('uses the localized accessible name for an English reader', async () => {
 
   await user.click(screen.getByText('Expand actionable gaps'));
   expect(screen.getByRole('button', { name: `Open entity details: ${report.tasks[0].subjectLabel}` })).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'View full audit ↗' })).toHaveAttribute('href', '/data/coverage-audit.json');
+  expect(screen.getByRole('link', { name: 'View full audit ↗' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
   localStorage.removeItem('history-locale');
 });
 

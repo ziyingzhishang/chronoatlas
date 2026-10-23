@@ -9,6 +9,8 @@
     "preview": "vite preview",
     "test": "vitest",
     "audit:coverage": "node scripts/audit-coverage.mjs",
+    "build:knowledge-coverage": "vite-node scripts/build-knowledge-coverage.mjs",
+    "prebuild": "npm run build:knowledge-coverage",
     "freeze:short-gaps": "node scripts/freeze-short-gaps.mjs",
     "review:short-gaps": "node scripts/review-short-gaps.mjs",
     "report:short-gaps": "node scripts/build-short-gap-report.mjs",
@@ -45,6 +47,7 @@
     "jsdom": "^25.0.1",
     "typescript": "^5.7.3",
     "vite": "^6.0.11",
+    "vite-node": "^3.2.4",
     "vitest": "^3.0.5"
   }
 }

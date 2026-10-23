@@ -1,4 +1,5 @@
 import { describe, expect, it } from 'vitest';
+import exportedKnowledgeCoverage from '../../public/data/knowledge-coverage.json';
 import type {
   CapitalTerm,
   HistoricalClaim,
@@ -12,6 +13,7 @@ import type {
 } from '../domain/types';
 import {
   auditKnowledgeCoverage,
+  serializeKnowledgeCoverageReport,
   type KnowledgeCoverageCatalog,
 } from './knowledge-coverage';
 
@@ -105,6 +107,30 @@ const catalog: KnowledgeCoverageCatalog = {
 };
 
 describe('knowledge coverage audit', () => {
+  it('publishes the generated report with the v1 knowledge coverage contract', () => {
+    expect(exportedKnowledgeCoverage.schemaVersion).toBe(1);
+    expect(exportedKnowledgeCoverage.reportType).toBe('knowledge-coverage');
+    expect(exportedKnowledgeCoverage.byPolity).toHaveProperty('qin');
+    expect(exportedKnowledgeCoverage.byCity).toHaveProperty('liao_xijing');
+    expect(exportedKnowledgeCoverage.byCity.liao_xijing.capitalRecordCount).toBeGreaterThan(0);
+  });
+
+  it('serializes a stable standalone knowledge coverage report without changing the boundary audit contract', () => {
+    const report = serializeKnowledgeCoverageReport(auditKnowledgeCoverage(catalog));
+
+    expect(report.schemaVersion).toBe(1);
+    expect(report.reportType).toBe('knowledge-coverage');
+    expect(report.entities).toHaveLength(4);
+    expect(report.entities.map((entity) => entity.entityKey)).toEqual(
+      [...report.entities.map((entity) => entity.entityKey)].sort(),
+    );
+    expect(report.byPolity['fixture-polity']).toBeDefined();
+    expect(report.byCity['fixture-place']).toBeDefined();
+    expect(report).toHaveProperty('tasks');
+    expect(report).toHaveProperty('gaps');
+    expect(report).toHaveProperty('byKey');
+  });
+
   it('reports five dimensions and traces entity gaps back to a polity', () => {
     const report = auditKnowledgeCoverage(catalog);
     const personReport = report.entities.find((item) => item.entityId === 'fixture-person');
