@@ -62,7 +62,8 @@ describe('round 112 task B Sui-Tang capital heritage boundary', () => {
 
     const ximing = getHeritageDetail('ximing-temple-site');
     expect(ximing?.associatedPolities).toEqual(['tang']);
-    expect(ximing?.associatedEvents).toContain('xuanzang-translations');
+    expect(ximing?.associatedEvents).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded']);
+    expect(ximing?.associatedEvents).not.toContain('xuanzang-translations');
     expect(ximing?.uncertaintyNote).toContain('约址');
     expect(ximing?.uncertaintyNote).toContain('译经事件端点');
 

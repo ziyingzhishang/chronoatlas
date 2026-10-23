@@ -35,7 +35,7 @@
 | 隋—洛阳 | `dingding-gate-site` | 605—907年跨隋、唐，仍是叠压城址 |
 | 唐—长安 | `big-wild-goose-pagoda` | 译经事件端点仍待核，建筑与宗教关联不能替代事件详情 |
 | 唐—长安 | `qianling` | 同时关联唐与武周，不能归入唐单一政权 |
-| 唐—长安 | `ximing-temple-site` | 约址且译经事件端点未解析，现有证据不足以闭合完整链 |
+| 唐—长安 | `ximing-temple-site` | 遗产详情已由 `ximing-temple-built` 与 `xuanzang-at-ximing-658` 闭合为 `complete`；但具体位置仍为约址，统一译经事件端点仍未闭合，且本轮不据此修改政权遗产引用 |
 | 唐—长安 | `huaqing-palace` | 关中宫苑为多时期叠合空间，不能直接等同唐长安首都专属建筑 |
 | 唐—洛阳 | `court-moves-luoyang` | 事件是唐廷迁移与后梁转折的共享节点，不是单一唐首都遗产端点 |
 | 唐—洛阳 | `shangyang-palace-site` | 同时跨唐与武周，不能未经分期拆分后归入唐 |

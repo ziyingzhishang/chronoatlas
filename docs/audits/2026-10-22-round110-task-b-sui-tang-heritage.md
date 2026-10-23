@@ -34,7 +34,7 @@
 | `mingde-gate-site` | 城门遗址属于隋唐城市轴线延续层，不能据城门名称反推隋专属事实。 |
 | `dingding-gate-site` | 605—907年跨隋、唐，属于叠压城址，不能拆出未经证实的隋专属层。 |
 | `qianling` | 乾陵同时关联唐与武周，不能直接归入唐单一政权。 |
-| `ximing-temple-site` | 具体位置为约址，且 `xuanzang-translations` 事件端点仍未解析，不能用建筑年代替代译经事件证据。 |
+| `ximing-temple-site` | 遗产详情已由专属事件端点闭合为 `complete`；具体位置仍为约址，且 `xuanzang-translations` 统一事件端点仍未解析，不能用建筑年代替代译经事件证据。 |
 | `shangyang-palace-site` | 同时跨唐与武周，不能未经分期拆分后归入唐。 |
 
 回归测试：`src/data/heritage-reference-round110-task-b.test.ts`。测试同时验证华清宫的地点、年代、政权归属和来源可解析性，并防止其余7项被强行纳入隋或唐的单政权遗产列表。

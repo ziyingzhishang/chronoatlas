@@ -10,11 +10,10 @@ const reviewBoundaryHeritageIds = [
   'qinglong-temple-site',
   'xian-beilin',
   'xiao-yan-ta',
-  'ximing-temple-site',
 ] as const;
 
 describe('round eighty-third heritage/event boundary audit', () => {
-  it('keeps all five review-boundary details source-backed without inventing the missing event node', () => {
+  it('keeps four shared review-boundary details and closes Ximing on dedicated endpoints', () => {
     const report = buildHeritageDetailCoverageReport();
     const eventIds = new Set(events.map((event) => event.id));
     const sourceIds = new Set(sourceNotes.map((source) => source.id));
@@ -30,11 +29,7 @@ describe('round eighty-third heritage/event boundary audit', () => {
       const item = report.items.find((coverageItem) => coverageItem.heritageId === heritageId);
 
       expect(detail, heritageId).toBeDefined();
-      if (heritageId === 'ximing-temple-site') {
-        expect(detail?.associatedEvents, heritageId).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded', 'xuanzang-translations']);
-      } else {
-        expect(detail?.associatedEvents, heritageId).toEqual(['tang-founded', 'xuanzang-translations']);
-      }
+      expect(detail?.associatedEvents, heritageId).toEqual(['tang-founded', 'xuanzang-translations']);
       expect(detail?.associatedPeople, heritageId).not.toContain('missing-person');
       expect(detail?.associatedPolities, heritageId).not.toContain('missing-polity');
       expect(detail?.sourceIds.every((sourceId) => sourceIds.has(sourceId)), heritageId).toBe(true);
@@ -54,6 +49,12 @@ describe('round eighty-third heritage/event boundary audit', () => {
         '关联事件端点未收录：xuanzang-translations；暂不新增或推断事件端点。',
       ]);
     }
+
+    const ximing = heritageDetails.find((item) => item.heritageId === 'ximing-temple-site');
+    const ximingCoverage = report.items.find((item) => item.heritageId === 'ximing-temple-site');
+    expect(ximing?.associatedEvents).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded']);
+    expect(ximingCoverage?.status).toBe('complete');
+    expect(ximingCoverage?.unresolvedReferenceIds).toEqual({ people: [], polities: [], events: [], place: [], sources: [] });
   });
 
   it('does not treat a person, polity, or existing Tang event as a substitute event endpoint', () => {

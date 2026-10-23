@@ -23,7 +23,6 @@ const reviewBoundary = new Set([
   'qinglong-temple-site',
   'xian-beilin',
   'xiao-yan-ta',
-  'ximing-temple-site',
 ]);
 
 describe('capital-associated heritage boundary audit', () => {
@@ -70,7 +69,7 @@ describe('capital-associated heritage boundary audit', () => {
     }
   });
 
-  it('keeps exactly the five unresolved Xuanzang event endpoints explicit', () => {
+  it('keeps exactly the four unresolved Xuanzang event endpoints explicit', () => {
     expect(coverage.needsReviewHeritageIds).toEqual([...reviewBoundary].sort());
     expect(coverage.uncoveredHeritageIds).toEqual([]);
     expect(coverage.sourceCompleteHeritageIds).toHaveLength(heritageAssets.length);

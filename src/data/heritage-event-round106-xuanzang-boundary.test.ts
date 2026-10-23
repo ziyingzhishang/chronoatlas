@@ -11,7 +11,6 @@ const reviewHeritageIds = [
   'qinglong-temple-site',
   'xian-beilin',
   'xiao-yan-ta',
-  'ximing-temple-site',
 ] as const;
 
 const missingEndpointId = 'xuanzang-translations';
@@ -22,7 +21,7 @@ const endpointContract = {
   temporalRange: '有事件起止年代及日期精度',
   phases: '有可核验的分阶段过程',
   participant: '有玄奘及其他参与者的事件角色',
-  locations: '有与五处遗产关系相符的地点证据',
+  locations: '有与四处共享遗产关系相符的地点证据',
   sources: '有覆盖上述断言的已收录来源',
 } as const;
 
@@ -90,7 +89,7 @@ function endpointEvidence() {
 }
 
 describe('round one hundred six Xuanzang heritage event boundary audit', () => {
-  it('keeps all five unresolved references at the same explicit boundary', () => {
+  it('keeps the four shared unresolved references at the same explicit boundary', () => {
     const report = buildHeritageDetailCoverageReport();
     const items = report.items.filter((item) => reviewHeritageIds.includes(item.heritageId as (typeof reviewHeritageIds)[number]));
 
@@ -137,7 +136,7 @@ describe('round one hundred six Xuanzang heritage event boundary audit', () => {
       temporalRange: '有事件起止年代及日期精度',
       phases: '有可核验的分阶段过程',
       participant: '有玄奘及其他参与者的事件角色',
-      locations: '有与五处遗产关系相符的地点证据',
+      locations: '有与四处共享遗产关系相符的地点证据',
       sources: '有覆盖上述断言的已收录来源',
     });
   });
@@ -161,7 +160,7 @@ describe('round one hundred six Xuanzang heritage event boundary audit', () => {
     });
 
     expect(relevantSources.length).toBeGreaterThan(0);
-    expect(translationMentioningSources.map((source) => source.id)).toEqual(['ximing-temple-primary-biography', 'xian-local-chronicle-ximing-temple', 'xuanzang-national-museum', 'xian-local-chronicle-big-wild-goose']);
+    expect(translationMentioningSources.map((source) => source.id)).toEqual(['xian-local-chronicle-big-wild-goose']);
     expect(comprehensiveSources).toEqual([]);
     expect(relevantSources.some((source) => /统一起止|阶段链|五处遗产|完整参与者/.test(sourceText(source.id)))).toBe(false);
   });
@@ -169,13 +168,14 @@ describe('round one hundred six Xuanzang heritage event boundary audit', () => {
   it('does not treat construction, naming, or archaeological years as a translation event', () => {
     for (const heritageId of reviewHeritageIds) {
       const detail = heritageDetails.find((item) => item.heritageId === heritageId)!;
-      if (heritageId === 'ximing-temple-site') {
-        expect(detail.associatedEvents).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded', missingEndpointId]);
-      } else {
-        expect(detail.associatedEvents).toEqual(['tang-founded', missingEndpointId]);
-      }
+      expect(detail.associatedEvents).toEqual(['tang-founded', missingEndpointId]);
       expect(detail.uncertaintyNote).toContain('不把建筑年代拼接为译经事件');
       expect(detail.uncertaintyNote).toContain('统一译经事件端点');
     }
+
+    const ximing = heritageDetails.find((item) => item.heritageId === 'ximing-temple-site')!;
+    expect(ximing.associatedEvents).toEqual(['ximing-temple-built', 'xuanzang-at-ximing-658', 'tang-founded']);
+    expect(ximing.uncertaintyNote).toContain('约址');
+    expect(ximing.uncertaintyNote).toContain('统一译经事件端点');
   });
 });
