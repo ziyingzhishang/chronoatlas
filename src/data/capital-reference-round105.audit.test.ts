@@ -45,7 +45,29 @@ describe('round 105 capital reference audit', () => {
       }
     }
     console.table(rows);
-    expect(rows.length).toBeGreaterThan(0);
+    const candidateKeys = rows
+      .map((row) => `${row.polityId}|${row.placeId}|${row.eventId ?? ''}|${row.heritageId ?? ''}`)
+      .sort();
+    expect(candidateKeys).toEqual([
+      'han_eastern|luoyang||white-horse-temple',
+      'han_western|changan||changle-palace-site',
+      'han_western|changan||du-ling',
+      'han_western|changan||maoling',
+      'later_liang|guzang||guzang-baita-temple-site',
+      'liang_later|kaifeng|five-dynasties|',
+      'qin|xianyang|chu-han-contention|',
+      'song_northern|kaifeng|song-founded|',
+      'sui|changan||hanguang-gate-site',
+      'sui|changan||mingde-gate-site',
+      'sui|changan||taiji-palace-site',
+      'sui|luoyang||dingding-gate-site',
+      'tang|changan||qianling',
+      'tang|changan||ximing-temple-site',
+      'tang|luoyang|court-moves-luoyang|',
+      'tang|luoyang||shangyang-palace-site',
+      'zhou_eastern|luoyang|zhou-eastward|',
+      'zhou_later|kaifeng||kaifeng-northern-song-city-site',
+    ]);
     expect(rows).not.toContainEqual({
       polityId: 'northern_liang',
       placeId: 'zhangye',
