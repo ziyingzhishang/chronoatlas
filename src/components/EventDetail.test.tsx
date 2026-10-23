@@ -103,3 +103,20 @@ test('keeps bibliographic citations as text instead of invalid links', () => {
   expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
   expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
 });
+
+test('splits multi-link citations and exposes source resolution status', () => {
+  render(<LocaleProvider><EventDetail event={event} detail={{
+    eventId: event.id,
+    causes: [],
+    consequences: [],
+    participants: [],
+    polityIds: [],
+    locationIds: [],
+    relatedEventIds: [],
+    sourceIds: ['luoyang-baimasi-official', 'missing-source'],
+  }} /></LocaleProvider>);
+
+  expect(screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' })).toHaveLength(2);
+  expect(screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' })[0]).toHaveAttribute('href', 'https://www.mct.gov.cn/preview/special/3578/3597/201203/t20120330_235404.html');
+  expect(screen.getByText(/来源未解析/)).toBeInTheDocument();
+});

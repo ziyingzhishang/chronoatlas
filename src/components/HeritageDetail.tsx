@@ -80,8 +80,7 @@ export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOp
           <div className="heritage-phase-heading"><strong>{t(item.label || phaseLabels[item.type])}</strong><span>{t(item.period)}</span></div>
           <p>{t(item.description)}</p>
           {item.sourceIds.length > 0 && <p className="detail-note heritage-phase-sources">
-            <span>{t('阶段依据：')}</span>
-            <span>{item.sourceIds.map((sourceId) => t(sourceById[sourceId]?.title ?? sourceId)).join('、')}</span>
+            <span>{t('阶段依据：')}</span><SourceEvidenceSummary sourceIds={item.sourceIds} />
           </p>}
           {item.uncertaintyNote && <p className="detail-note"><span>{t('不确定性：')}</span><span>{t(item.uncertaintyNote)}</span></p>}
         </li>)}
@@ -118,13 +117,36 @@ export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOp
       <h3 id="heritage-evidence-heading">{t('来源与依据')}</h3>
       <details open>
         <summary>{t('查看来源')}</summary>
-        <ul className="heritage-source-list">{detail.sourceIds.map((sourceId) => {
-          const source = sourceById[sourceId];
-          const sourceTitle = t(source?.title ?? sourceId);
-          return <li key={sourceId}><strong>{source?.urlOrCitation?.startsWith('http') ? <a href={source.urlOrCitation} target="_blank" rel="noreferrer">{sourceTitle}</a> : sourceTitle}</strong>{source?.urlOrCitation && <small>{source.urlOrCitation}</small>}{source?.note && <p>{t(source.note)}</p>}</li>;
-        })}</ul>
+        <ul className="heritage-source-list">{detail.sourceIds.map((sourceId) => <HeritageSourceEvidence key={sourceId} sourceId={sourceId} />)}</ul>
       </details>
       <p className="detail-note"><span>{t('不确定性：')}</span><span>{t(detail.uncertaintyNote)}</span></p>
     </section>
   </article>;
+}
+
+function sourceUrls(citation?: string) {
+  return (citation ?? '').split(/[；;]/).map((part) => part.trim()).filter((part) => /^https?:\/\//.test(part));
+}
+
+function SourceEvidenceSummary({ sourceIds }: { sourceIds: string[] }) {
+  const { t } = useLocale();
+  return <span>{sourceIds.map((sourceId) => {
+    const source = sourceById[sourceId];
+    const urls = sourceUrls(source?.urlOrCitation);
+    const status = !source ? '来源未解析' : urls.length > 0 ? '来源链接' : '书目引文';
+    return <span key={sourceId}>{t(source?.title ?? sourceId)}（{t(status)}）</span>;
+  }).reduce<React.ReactNode[]>((items, item, index) => index === 0 ? [item] : [...items, '、', item], [])}</span>;
+}
+
+function HeritageSourceEvidence({ sourceId }: { sourceId: string }) {
+  const { t } = useLocale();
+  const source = sourceById[sourceId];
+  const urls = sourceUrls(source?.urlOrCitation);
+  if (!source) return <li><strong>{t(sourceId)}</strong><span className="detail-note"> · {t('来源未解析')}</span></li>;
+  return <li>
+    <strong>{urls.length > 0 ? urls.map((url) => <a key={url} href={url} target="_blank" rel="noreferrer">{t(source.title)}</a>) : t(source.title)}</strong>
+    <span className="detail-note"> · {t(urls.length > 0 ? '来源链接' : '书目引文')}</span>
+    {urls.length === 0 && source.urlOrCitation && <small>{source.urlOrCitation}</small>}
+    {source.note && <p>{t(source.note)}</p>}
+  </li>;
 }

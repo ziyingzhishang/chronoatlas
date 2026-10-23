@@ -83,4 +83,12 @@ describe('HeritageDetail', () => {
       else localStorage.setItem('history-locale', previousLocale);
     }
   });
+
+  it('splits multi-link citations and marks unresolved sources explicitly', () => {
+    const detail = getHeritageDetail('white-horse-temple')!;
+    render(<LocaleProvider><HeritageDetail detail={{ ...detail, sourceIds: [...detail.sourceIds, 'missing-source'] }} /></LocaleProvider>);
+
+    expect(screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' })).toHaveLength(2);
+    expect(screen.getByText(/来源未解析/)).toBeInTheDocument();
+  });
 });

@@ -104,15 +104,27 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
 
     <section className="event-detail-section event-sources">
       <h4>{t('来源')}</h4>
-      <ul>{detail.sourceIds.map((sourceId) => {
-        const source = sourceById[sourceId];
-        const citation = source?.urlOrCitation;
-        const isHttpUrl = citation?.startsWith('http://') || citation?.startsWith('https://');
-        return <li key={sourceId}>{source && isHttpUrl ? <a href={citation} target="_blank" rel="noreferrer">{t(source.title)}</a> : t(source?.title ?? sourceId)}</li>;
-      })}</ul>
+      <ul>{detail.sourceIds.map((sourceId) => <SourceEvidence key={sourceId} sourceId={sourceId} />)}</ul>
       {detail.uncertaintyNote && <p className="detail-note"><strong>{t('不确定性')}</strong>：{t(detail.uncertaintyNote)}</p>}
     </section>
   </article>;
+}
+
+function sourceUrls(citation?: string) {
+  return (citation ?? '').split(/[；;]/).map((part) => part.trim()).filter((part) => /^https?:\/\//.test(part));
+}
+
+function SourceEvidence({ sourceId }: { sourceId: string }) {
+  const { t } = useLocale();
+  const source = sourceById[sourceId];
+  const urls = sourceUrls(source?.urlOrCitation);
+  if (!source) {
+    return <li><span>{t(sourceId)}</span><span className="detail-note"> · {t('来源未解析')}</span></li>;
+  }
+  return <li>
+    {urls.length > 0 ? urls.map((url) => <a key={url} href={url} target="_blank" rel="noreferrer">{t(source.title)}</a>) : <span>{t(source.title)}</span>}
+    <span className="detail-note"> · {t(urls.length > 0 ? '来源链接' : '书目引文')}</span>
+  </li>;
 }
 
 function TimeEvidenceReview({ review, t }: { review: Pick<EventTimeReviewEntry, 'eventId' | 'status' | 'explanation' | 'timelineStrategy'> & { sourceIds: string[] }; t: (text: string) => string }) {
