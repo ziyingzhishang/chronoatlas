@@ -1,4 +1,4 @@
-import type { HistoricalClaim, HistoricalEvent, Person, PersonDetail as PersonDetailRecord, PersonRelationType, Polity } from '../domain/types';
+import type { ClaimEvidenceType, Confidence, HistoricalClaim, HistoricalEvent, Person, PersonDetail as PersonDetailRecord, PersonRelationType, Polity } from '../domain/types';
 import { groupPersonRelationships, type PersonRelationship } from '../domain/relationships';
 import { formatHistoricalYear } from '../domain/timeline';
 import { sourceById } from '../data/sources';
@@ -25,7 +25,7 @@ export interface PersonDetailProps {
 
 const relationSections: Array<{ title: string; types: PersonRelationType[] }> = [
   { title: '亲属关系', types: ['parent-of', 'child-of', 'grandparent-of', 'grandchild-of', 'spouse-of', 'sibling-of', 'teacher-of', 'student-of'] },
-  { title: '君臣关系', types: ['served', 'appointed', 'succeeded', 'ruled'] },
+  { title: '君臣关系', types: ['served', 'appointed', 'succeeded', 'founded', 'ruled'] },
   { title: '联盟关系', types: ['ally-of'] },
   { title: '对立关系', types: ['enemy-of'] },
   { title: '事件参与', types: ['participated-in'] },
@@ -33,7 +33,7 @@ const relationSections: Array<{ title: string; types: PersonRelationType[] }> = 
 
 const relationLabels: Partial<Record<PersonRelationType, string>> = {
   'parent-of': '父母／子女', 'child-of': '子女／父母', 'grandparent-of': '祖父母／外祖父母', 'grandchild-of': '孙辈／外孙辈', 'spouse-of': '配偶', 'sibling-of': '兄弟姊妹',
-  'teacher-of': '师承', 'student-of': '弟子', served: '侍奉／效力', appointed: '任用', succeeded: '承接', ruled: '统治', 'ally-of': '盟友', 'enemy-of': '对立', 'participated-in': '参与事件',
+  'teacher-of': '师承', 'student-of': '弟子', served: '侍奉／效力', appointed: '任用', succeeded: '承接', founded: '建立', ruled: '统治', 'ally-of': '盟友', 'enemy-of': '对立', 'participated-in': '参与事件',
 };
 
 const relationshipCoverageLabels: Record<PersonRelationshipCategory, string> = {
@@ -169,8 +169,19 @@ function RelationItem({ relation, personName, people, polities, events, onOpenEn
   const label = target ? ('title' in target ? t(target.title) : t(target.name)) : objectId;
   const targetType = relation.kind === 'person-person' ? 'person' : relation.kind === 'person-polity' ? 'polity' : relation.kind === 'person-event' ? 'event' : 'heritage';
   const relationLabel = t(relationLabels[relation.relationType] ?? relation.claim.predicate);
-  const content = <>{relationLabel} · {label}{relation.relationType === 'participated-in' && <small className="person-relation-meta">{t('方向：')}{t(personName)} → {label} · {formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)} · {t('时间精度：')}{t(relationDatePrecisionLabels[relation.claim.datePrecision])} · {t('来源：')}{t(hasResolvableSources(relation.claim) ? '可用' : '待解析')}</small>}{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
+  const sourceLabel = relation.claim.sourceIds.length > 0
+    ? relation.claim.sourceIds.map((sourceId) => sourceById[sourceId]?.title ?? sourceId).join('、')
+    : t('待补');
+  const content = <>{relationLabel} · {label}<small className="person-relation-meta">{t('方向：')}{t(personName)} → {label} · {t('有效期：')}{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)} · {t('时间精度：')}{t(relationDatePrecisionLabels[relation.claim.datePrecision])} · {t('证据：')}{t(claimEvidenceTypeLabel(relation.claim.evidenceType))} · {t('可信度：')}{t(confidenceLabel(relation.claim.confidence))} · {t('来源：')}{t(hasResolvableSources(relation.claim) ? '可用' : '待解析')}（{t(sourceLabel)}）</small>{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
   return <li>{onOpenEntity ? <button type="button" onClick={() => onOpenEntity({ type: targetType, id: objectId })}>{content}</button> : <span>{content}</span>}</li>;
+}
+
+function claimEvidenceTypeLabel(type: ClaimEvidenceType) {
+  return type === 'explicit-record' ? '明确记载' : type === 'archaeology' ? '考古证据' : type === 'cross-checked' ? '交叉核验' : type === 'inference' ? '推断' : '传统记载';
+}
+
+function confidenceLabel(confidence: Confidence) {
+  return confidence === 'high' ? '高' : confidence === 'medium' ? '中' : '低';
 }
 
 function hasResolvableSources(claim: HistoricalClaim) {

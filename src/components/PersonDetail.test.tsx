@@ -62,7 +62,7 @@ describe('PersonDetail', () => {
     expect(screen.getByRole('heading', { name: '联盟关系' })).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '对立关系' })).toBeInTheDocument();
     expect(screen.getAllByText(/李渊/).length).toBeGreaterThan(0);
-    expect(screen.getByText(/王莽/)).toBeInTheDocument();
+    expect(screen.getAllByText(/王莽/).length).toBeGreaterThan(0);
     expect(screen.getByText('来源与考据')).toBeInTheDocument();
     expect(screen.getAllByText(/不确定性/).length).toBeGreaterThan(0);
   });
@@ -134,6 +134,35 @@ describe('PersonDetail', () => {
     eventRelation.click();
 
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded-changan' });
+  });
+
+  it('shows traceability metadata on non-event relations and opens person and polity targets', () => {
+    const onOpenEntity = vi.fn();
+    const foundedClaim: HistoricalClaim = {
+      id: 'founded-tang', subjectId: 'li-shimin', predicate: 'founded', objectId: 'tang',
+      validFrom: 618, validTo: 618, datePrecision: 'year', perspective: 'person',
+      evidenceType: 'explicit-record', confidence: 'high', sourceIds: ['zizhi-tongjian'],
+    };
+    render(<PersonDetail
+      person={person}
+      detail={getPersonDetail('li-shimin')!}
+      year={618}
+      claims={[...relationshipClaims, foundedClaim]}
+      people={relationPeople}
+      polities={catalogPolities}
+      events={events}
+      onOpenEntity={onOpenEntity}
+    />);
+
+    const kinship = screen.getByRole('button', { name: /父母／子女 · 李渊.*有效期：618年—649年.*时间精度：范围.*证据：交叉核验.*可信度：中.*来源：可用/ });
+    expect(kinship).toBeInTheDocument();
+    kinship.click();
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'li-yuan' });
+
+    const founded = screen.getByRole('button', { name: /建立 · 唐.*有效期：618年.*证据：明确记载.*来源：可用/ });
+    expect(founded).toBeInTheDocument();
+    founded.click();
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'tang' });
   });
 
   it('marks event participation with an unresolved source state', () => {
