@@ -1567,6 +1567,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "former-qin-ended-394",
+      "entityKey": "event:former-qin-ended-394",
+      "label": "前秦政权终止",
+      "polityIds": [
+        "former_qin",
+        "later_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-qin-ended-394"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-fu-deng-participated-former-qin-ended-394",
+            "event-detail:former-qin-ended-394"
+          ],
+          "relatedIds": [
+            "changan-later-qin",
+            "former-qin-founded",
+            "former_qin",
+            "fu-deng",
+            "later-qin-founded",
+            "yao-xing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "former-qin-founded",
       "entityKey": "event:former-qin-founded",
       "label": "前秦建立",
@@ -2927,6 +2990,67 @@
             "former-qin-founded",
             "later_liang",
             "lv-guang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "later-qin-falls-changan",
+      "entityKey": "event:later-qin-falls-changan",
+      "label": "后秦政权终止",
+      "polityIds": [
+        "later_qin",
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-qin-falls-changan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yao-hong-participated-later-qin-falls-changan",
+            "event-detail:later-qin-falls-changan"
+          ],
+          "relatedIds": [
+            "changan-later-qin",
+            "later_qin",
+            "liu-yu",
+            "yao-hong"
           ]
         },
         {
@@ -11164,7 +11288,8 @@
       "entityKey": "heritage:former-qin-changan-city-layer",
       "label": "前秦长安城政治空间遗址层",
       "polityIds": [
-        "former_qin"
+        "former_qin",
+        "later_qin"
       ],
       "checks": [
         {
@@ -11188,6 +11313,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -11202,10 +11328,13 @@
             "heritage-detail:former-qin-changan-city-layer"
           ],
           "relatedIds": [
+            "former-qin-ended-394",
             "former-qin-founded",
             "former_qin",
+            "fu-deng",
             "fu-jian",
-            "fu-jian-founder"
+            "fu-jian-founder",
+            "later_qin"
           ]
         },
         {
@@ -12738,6 +12867,7 @@
       "entityKey": "heritage:later-qin-changan-city-layer",
       "label": "后秦长安城政治空间遗址层",
       "polityIds": [
+        "jin_eastern",
         "later_qin"
       ],
       "checks": [
@@ -12762,6 +12892,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -12776,9 +12907,12 @@
             "heritage-detail:later-qin-changan-city-layer"
           ],
           "relatedIds": [
+            "jin_eastern",
+            "later-qin-falls-changan",
             "later-qin-founded",
             "later_qin",
             "yao-chang",
+            "yao-hong",
             "yao-xing"
           ]
         },
@@ -19236,6 +19370,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "fu-deng",
+      "entityKey": "person:fu-deng",
+      "label": "苻登",
+      "polityIds": [
+        "former_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "fu-deng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-fu-deng-enemy-yao-xing-termination-394",
+            "claim:claim-fu-deng-participated-former-qin-ended-394",
+            "claim:claim-fu-deng-ruled-former-qin",
+            "event-detail:former-qin-ended-394",
+            "person-polity:fu-deng:former_qin"
+          ],
+          "relatedIds": [
+            "former-qin-ended-394",
+            "former_qin",
+            "yao-xing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "fu-jian",
       "entityKey": "person:fu-jian",
       "label": "苻坚",
@@ -23639,6 +23837,8 @@
             "claim:claim-liu-yu-participated-eastern-jin",
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
             "claim:claim-murong-chao-enemy-liu-yu-termination-410",
+            "claim:claim-yao-hong-enemy-liu-yu-termination-417",
+            "event-detail:later-qin-falls-changan",
             "event-detail:liu-song-founded",
             "event-detail:liu-yu-captures-changan",
             "event-detail:southern-yan-ended-410",
@@ -23646,6 +23846,7 @@
           ],
           "relatedIds": [
             "eastern-jin",
+            "later-qin-falls-changan",
             "liu-muzi",
             "liu-song-founded",
             "liu-yilong",
@@ -23653,6 +23854,7 @@
             "murong-chao",
             "song_southern",
             "southern-yan-ended-410",
+            "yao-hong",
             "yao-xing"
           ]
         },
@@ -29425,6 +29627,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "yao-hong",
+      "entityKey": "person:yao-hong",
+      "label": "姚泓",
+      "polityIds": [
+        "later_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yao-hong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yao-hong-enemy-liu-yu-termination-417",
+            "claim:claim-yao-hong-participated-later-qin-falls-changan",
+            "claim:claim-yao-hong-ruled-later-qin",
+            "event-detail:later-qin-falls-changan",
+            "person-polity:yao-hong:later_qin"
+          ],
+          "relatedIds": [
+            "later-qin-falls-changan",
+            "later_qin",
+            "liu-yu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "yao-xing",
       "entityKey": "person:yao-xing",
       "label": "姚兴",
@@ -29462,6 +29728,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-fu-deng-enemy-yao-xing-termination-394",
             "claim:claim-heliAN-bobo-enemy-yao-xing",
             "claim:claim-li-xiong-related-yao-xing",
             "claim:claim-liu-yu-enemy-yao-xing",
@@ -29470,9 +29737,12 @@
             "claim:claim-yao-xing-participated-later-qin-founded-sixtyfifth",
             "claim:claim-yao-xing-ruled-later-qin-fortyseventh",
             "claim:claim-yao-xing-succeeded-yao-chang-fortieth",
+            "event-detail:former-qin-ended-394",
             "person-polity:yao-xing:later_qin"
           ],
           "relatedIds": [
+            "former-qin-ended-394",
+            "fu-deng",
             "heliAN-bobo",
             "later-qin-founded",
             "later_qin",
@@ -32152,12 +32422,15 @@
           "evidenceIds": [
             "claim:claim-former-qin-changan-capital",
             "claim:claim-former-qin-changan-heritage",
+            "claim:claim-fu-deng-ruled-former-qin",
             "claim:claim-fu-jian-ruled-former-qin-closure",
             "event-detail:changan-former-qin",
+            "event-detail:former-qin-ended-394",
             "event-detail:former-qin-founded",
             "event-detail:former-yan-ended-370",
             "heritage-detail:former-qin-changan-city-layer",
             "heritage-detail:ye-city-site",
+            "person:fu-deng",
             "person:fu-jian",
             "person:fu-jian-founder"
           ],
@@ -32165,8 +32438,10 @@
             "changan",
             "changan-former-qin",
             "former-qin-changan-city-layer",
+            "former-qin-ended-394",
             "former-qin-founded",
             "former-yan-ended-370",
+            "fu-deng",
             "fu-jian",
             "fu-jian-founder",
             "ye-city-site"
@@ -32898,6 +33173,7 @@
             "heritage-detail:cheng-han-chengdu-site",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
+            "heritage-detail:later-qin-changan-city-layer",
             "person:huan-wen",
             "person:liu-muzi",
             "person:sima-rui"
@@ -32909,6 +33185,7 @@
             "huan-wen",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
+            "later-qin-changan-city-layer",
             "liu-muzi",
             "liu-yu-captures-changan",
             "sima-rui"
@@ -33450,23 +33727,28 @@
             "claim:claim-later-qin-changan-capital",
             "claim:claim-later-qin-changan-heritage",
             "claim:claim-yao-chang-ruled-later-qin-fortythird",
+            "claim:claim-yao-hong-ruled-later-qin",
             "claim:claim-yao-xing-ruled-later-qin-fortyseventh",
             "event-detail:changan-later-qin",
             "event-detail:later-qin-falls-changan",
             "event-detail:later-qin-founded",
             "event-detail:liu-yu-captures-changan",
+            "heritage-detail:former-qin-changan-city-layer",
             "heritage-detail:later-qin-changan-city-layer",
             "person:yao-chang",
+            "person:yao-hong",
             "person:yao-xing"
           ],
           "relatedIds": [
             "changan",
             "changan-later-qin",
+            "former-qin-changan-city-layer",
             "later-qin-changan-city-layer",
             "later-qin-falls-changan",
             "later-qin-founded",
             "liu-yu-captures-changan",
             "yao-chang",
+            "yao-hong",
             "yao-xing"
           ]
         },
@@ -40901,6 +41183,69 @@
         }
       ]
     },
+    "event:former-qin-ended-394": {
+      "entityType": "event",
+      "entityId": "former-qin-ended-394",
+      "entityKey": "event:former-qin-ended-394",
+      "label": "前秦政权终止",
+      "polityIds": [
+        "former_qin",
+        "later_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "former-qin-ended-394"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-fu-deng-participated-former-qin-ended-394",
+            "event-detail:former-qin-ended-394"
+          ],
+          "relatedIds": [
+            "changan-later-qin",
+            "former-qin-founded",
+            "former_qin",
+            "fu-deng",
+            "later-qin-founded",
+            "yao-xing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:former-qin-founded": {
       "entityType": "event",
       "entityId": "former-qin-founded",
@@ -42263,6 +42608,67 @@
             "former-qin-founded",
             "later_liang",
             "lv-guang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-qin-falls-changan": {
+      "entityType": "event",
+      "entityId": "later-qin-falls-changan",
+      "entityKey": "event:later-qin-falls-changan",
+      "label": "后秦政权终止",
+      "polityIds": [
+        "later_qin",
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-qin-falls-changan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yao-hong-participated-later-qin-falls-changan",
+            "event-detail:later-qin-falls-changan"
+          ],
+          "relatedIds": [
+            "changan-later-qin",
+            "later_qin",
+            "liu-yu",
+            "yao-hong"
           ]
         },
         {
@@ -50500,7 +50906,8 @@
       "entityKey": "heritage:former-qin-changan-city-layer",
       "label": "前秦长安城政治空间遗址层",
       "polityIds": [
-        "former_qin"
+        "former_qin",
+        "later_qin"
       ],
       "checks": [
         {
@@ -50524,6 +50931,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -50538,10 +50946,13 @@
             "heritage-detail:former-qin-changan-city-layer"
           ],
           "relatedIds": [
+            "former-qin-ended-394",
             "former-qin-founded",
             "former_qin",
+            "fu-deng",
             "fu-jian",
-            "fu-jian-founder"
+            "fu-jian-founder",
+            "later_qin"
           ]
         },
         {
@@ -52074,6 +52485,7 @@
       "entityKey": "heritage:later-qin-changan-city-layer",
       "label": "后秦长安城政治空间遗址层",
       "polityIds": [
+        "jin_eastern",
         "later_qin"
       ],
       "checks": [
@@ -52098,6 +52510,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -52112,9 +52525,12 @@
             "heritage-detail:later-qin-changan-city-layer"
           ],
           "relatedIds": [
+            "jin_eastern",
+            "later-qin-falls-changan",
             "later-qin-founded",
             "later_qin",
             "yao-chang",
+            "yao-hong",
             "yao-xing"
           ]
         },
@@ -58570,6 +58986,70 @@
         }
       ]
     },
+    "person:fu-deng": {
+      "entityType": "person",
+      "entityId": "fu-deng",
+      "entityKey": "person:fu-deng",
+      "label": "苻登",
+      "polityIds": [
+        "former_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "fu-deng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-fu-deng-enemy-yao-xing-termination-394",
+            "claim:claim-fu-deng-participated-former-qin-ended-394",
+            "claim:claim-fu-deng-ruled-former-qin",
+            "event-detail:former-qin-ended-394",
+            "person-polity:fu-deng:former_qin"
+          ],
+          "relatedIds": [
+            "former-qin-ended-394",
+            "former_qin",
+            "yao-xing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:fu-jian": {
       "entityType": "person",
       "entityId": "fu-jian",
@@ -62975,6 +63455,8 @@
             "claim:claim-liu-yu-participated-eastern-jin",
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
             "claim:claim-murong-chao-enemy-liu-yu-termination-410",
+            "claim:claim-yao-hong-enemy-liu-yu-termination-417",
+            "event-detail:later-qin-falls-changan",
             "event-detail:liu-song-founded",
             "event-detail:liu-yu-captures-changan",
             "event-detail:southern-yan-ended-410",
@@ -62982,6 +63464,7 @@
           ],
           "relatedIds": [
             "eastern-jin",
+            "later-qin-falls-changan",
             "liu-muzi",
             "liu-song-founded",
             "liu-yilong",
@@ -62989,6 +63472,7 @@
             "murong-chao",
             "song_southern",
             "southern-yan-ended-410",
+            "yao-hong",
             "yao-xing"
           ]
         },
@@ -68759,6 +69243,70 @@
         }
       ]
     },
+    "person:yao-hong": {
+      "entityType": "person",
+      "entityId": "yao-hong",
+      "entityKey": "person:yao-hong",
+      "label": "姚泓",
+      "polityIds": [
+        "later_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yao-hong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yao-hong-enemy-liu-yu-termination-417",
+            "claim:claim-yao-hong-participated-later-qin-falls-changan",
+            "claim:claim-yao-hong-ruled-later-qin",
+            "event-detail:later-qin-falls-changan",
+            "person-polity:yao-hong:later_qin"
+          ],
+          "relatedIds": [
+            "later-qin-falls-changan",
+            "later_qin",
+            "liu-yu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:yao-xing": {
       "entityType": "person",
       "entityId": "yao-xing",
@@ -68798,6 +69346,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-fu-deng-enemy-yao-xing-termination-394",
             "claim:claim-heliAN-bobo-enemy-yao-xing",
             "claim:claim-li-xiong-related-yao-xing",
             "claim:claim-liu-yu-enemy-yao-xing",
@@ -68806,9 +69355,12 @@
             "claim:claim-yao-xing-participated-later-qin-founded-sixtyfifth",
             "claim:claim-yao-xing-ruled-later-qin-fortyseventh",
             "claim:claim-yao-xing-succeeded-yao-chang-fortieth",
+            "event-detail:former-qin-ended-394",
             "person-polity:yao-xing:later_qin"
           ],
           "relatedIds": [
+            "former-qin-ended-394",
+            "fu-deng",
             "heliAN-bobo",
             "later-qin-founded",
             "later_qin",
@@ -71488,12 +72040,15 @@
           "evidenceIds": [
             "claim:claim-former-qin-changan-capital",
             "claim:claim-former-qin-changan-heritage",
+            "claim:claim-fu-deng-ruled-former-qin",
             "claim:claim-fu-jian-ruled-former-qin-closure",
             "event-detail:changan-former-qin",
+            "event-detail:former-qin-ended-394",
             "event-detail:former-qin-founded",
             "event-detail:former-yan-ended-370",
             "heritage-detail:former-qin-changan-city-layer",
             "heritage-detail:ye-city-site",
+            "person:fu-deng",
             "person:fu-jian",
             "person:fu-jian-founder"
           ],
@@ -71501,8 +72056,10 @@
             "changan",
             "changan-former-qin",
             "former-qin-changan-city-layer",
+            "former-qin-ended-394",
             "former-qin-founded",
             "former-yan-ended-370",
+            "fu-deng",
             "fu-jian",
             "fu-jian-founder",
             "ye-city-site"
@@ -72234,6 +72791,7 @@
             "heritage-detail:cheng-han-chengdu-site",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
+            "heritage-detail:later-qin-changan-city-layer",
             "person:huan-wen",
             "person:liu-muzi",
             "person:sima-rui"
@@ -72245,6 +72803,7 @@
             "huan-wen",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
+            "later-qin-changan-city-layer",
             "liu-muzi",
             "liu-yu-captures-changan",
             "sima-rui"
@@ -72786,23 +73345,28 @@
             "claim:claim-later-qin-changan-capital",
             "claim:claim-later-qin-changan-heritage",
             "claim:claim-yao-chang-ruled-later-qin-fortythird",
+            "claim:claim-yao-hong-ruled-later-qin",
             "claim:claim-yao-xing-ruled-later-qin-fortyseventh",
             "event-detail:changan-later-qin",
             "event-detail:later-qin-falls-changan",
             "event-detail:later-qin-founded",
             "event-detail:liu-yu-captures-changan",
+            "heritage-detail:former-qin-changan-city-layer",
             "heritage-detail:later-qin-changan-city-layer",
             "person:yao-chang",
+            "person:yao-hong",
             "person:yao-xing"
           ],
           "relatedIds": [
             "changan",
             "changan-later-qin",
+            "former-qin-changan-city-layer",
             "later-qin-changan-city-layer",
             "later-qin-falls-changan",
             "later-qin-founded",
             "liu-yu-captures-changan",
             "yao-chang",
+            "yao-hong",
             "yao-xing"
           ]
         },
@@ -77191,9 +77755,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 174,
+      "totalEntities": 176,
       "statusCounts": {
-        "covered": 830,
+        "covered": 840,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -77268,9 +77832,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 213,
+      "totalEntities": 215,
       "statusCounts": {
-        "covered": 1011,
+        "covered": 1021,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -77608,12 +78172,14 @@
       "polityName": "前秦",
       "entityKeys": [
         "event:changan-former-qin",
+        "event:former-qin-ended-394",
         "event:former-qin-founded",
         "event:former-yan-ended-370",
         "heritage:former-qin-changan-city-layer",
         "heritage:guzang-ancient-city-site",
         "heritage:guzang-baita-temple-site",
         "heritage:ye-city-site",
+        "person:fu-deng",
         "person:fu-jian",
         "person:fu-jian-founder",
         "polity:former_qin"
@@ -78031,6 +78597,7 @@
         "heritage:cheng-han-chengdu-site",
         "heritage:jiankang-six-dynasties-city-site",
         "heritage:jiankang-taicheng-site",
+        "heritage:later-qin-changan-city-layer",
         "person:huan-wen",
         "person:liu-muzi",
         "person:sima-rui",
@@ -78225,10 +78792,14 @@
       "polityName": "后秦",
       "entityKeys": [
         "event:changan-later-qin",
+        "event:former-qin-ended-394",
+        "event:later-qin-falls-changan",
         "event:later-qin-founded",
+        "heritage:former-qin-changan-city-layer",
         "heritage:later-qin-changan-city-layer",
         "heritage:western-qin-yuanchuan-city-candidate",
         "person:yao-chang",
+        "person:yao-hong",
         "person:yao-xing",
         "polity:later_qin"
       ],
@@ -79483,6 +80054,7 @@
       "polityName": "刘宋",
       "entityKeys": [
         "event:eastern-jin",
+        "event:later-qin-falls-changan",
         "event:liu-song-founded",
         "event:southern-yan-ended-410",
         "heritage:jiankang-six-dynasties-city-site",
@@ -81320,10 +81892,12 @@
         "event:daxing-capital",
         "event:du-ling-built",
         "event:eastern-han-moves-luoyang",
+        "event:former-qin-ended-394",
         "event:former-qin-founded",
         "event:former-zhao-ended-329",
         "event:former-zhao-founded",
         "event:gengshi-founded",
+        "event:later-qin-falls-changan",
         "event:later-qin-founded",
         "event:maoling-built",
         "event:qin-state-founded-eighth-batch",
@@ -81366,6 +81940,7 @@
         "heritage:xiao-yan-ta",
         "heritage:ximing-temple-site",
         "heritage:xingqing-palace-site",
+        "person:fu-deng",
         "person:fu-jian-founder",
         "person:li-shimin",
         "person:li-yuan",
@@ -81375,12 +81950,15 @@
         "person:liu-xiu",
         "person:liu-xun",
         "person:liu-yao",
+        "person:liu-yu",
         "person:shi-le",
         "person:wang-mang",
         "person:xiao-he",
         "person:xuan-zang",
         "person:yang-jian",
         "person:yao-chang",
+        "person:yao-hong",
+        "person:yao-xing",
         "person:yu-wen-tai",
         "person:zhu-wen",
         "polity:former_qin",

@@ -731,6 +731,21 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '351年是前秦建政节点，不把苻坚后期统一北方的范围回填到建国当年；长安只表示早期政治中心。',
   },
   {
+    eventId: 'former-qin-ended-394',
+    participants: [
+      { personId: 'fu-deng', role: '前秦后期君主与马嵬终局的核心人物', note: '苻登在394年马嵬败亡，前秦统一政治结构由此终止；人物结局不等于长安城市遗产消失。' },
+      { personId: 'yao-xing', role: '后秦君主与攻取前秦后期核心的统帅', note: '姚兴代表后秦在394年对前秦的军事接收；后秦对关中的行政承接属于后续阶段。' },
+    ],
+    polityIds: ['former_qin'],
+    causes: ['淝水之战后前秦失去对北方诸部的整合能力。', '后秦姚兴在关中持续扩张并压缩苻登的军事与政治空间。'],
+    consequences: ['苻登在马嵬败亡，前秦后期统一政治结构结束。', '后秦成为关中主要政权，长安进入后秦城市政治阶段。', '长安城市、道路和地方社会继续承接后秦及后世历史层。'],
+    phases: [{ label: '马嵬战败与前秦终止', startYear: 394, endYear: 394, summary: '后秦军击败苻登，前秦后期政权结构终止。' }],
+    locationIds: ['changan'],
+    relatedEventIds: ['former-qin-founded', 'later-qin-founded', 'changan-later-qin'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '394年终止年份明确；马嵬战场、苻登结局与后秦接收关中属于连续过程，长安城市遗产不随政权终止消失。',
+  },
+  {
     eventId: 'later-yan-founded',
     participants: [
       { personId: 'murong-chui', role: '前秦崩解后重建燕政权的核心领袖', note: '慕容垂主导384年后燕形成，386年称帝是后续制度节点；早期活动区域与后期最大范围分开记录。' },
@@ -1470,14 +1485,17 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'later-qin-falls-changan',
-    participants: [],
+    participants: [
+      { personId: 'yao-hong', role: '后秦末帝与长安失守阶段的核心人物', note: '姚泓在刘裕攻取长安后出降；末帝结局不等于长安城市和地方社会消失。' },
+      { personId: 'liu-yu', role: '攻取长安并接替后秦关中政治空间的东晋军事领袖', note: '刘裕代表东晋北伐军完成对长安的军事接收；短暂占领不等于稳定重建北方行政。' },
+    ],
     polityIds: ['later_qin'],
     causes: ['后秦内部与周边竞争加剧，长安防御能力下降。', '刘裕北伐军队进入关中并迫使后秦失去都城。'],
     consequences: ['后秦在长安的统治结束。', '南方东晋短暂取得关中，但很快面临后续争夺。'],
     phases: [{ label: '后秦失都', startYear: 417, endYear: 417, summary: '后秦失去长安，十六国关中格局再次改写。' }],
     locationIds: ['changan'],
-    relatedEventIds: ['changan-later-qin', 'liu-yu-captures-changan'],
-    sourceIds: ['zizhi-tongjian'],
+    relatedEventIds: ['changan-later-qin'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
     uncertaintyNote: '失都与政权立即消亡并非同一概念；后秦残余力量及关中后续变动需另行记录。',
   },
   {

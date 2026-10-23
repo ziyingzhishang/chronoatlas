@@ -52,6 +52,11 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '“统一北方”的概括与各地实际控制并不等价，详情保留前秦扩张叙事的范围限制。',
   },
   {
+    personId: 'fu-deng', biography: '苻登是前秦后期君主。淝水之战后，他在关中与后秦长期争夺，394年在马嵬败亡，前秦统一政治结构随之终止。',
+    aliases: ['前秦高帝', '前秦末帝'], offices: [{ title: '前秦皇帝', polityId: 'former_qin', placeId: 'changan', validFrom: 386, validTo: 394, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['former-qin-ended-394'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '苻登的称号、活动范围与马嵬终局属于前秦后期连续过程；本详情不把其个人败亡等同于长安城市遗产消失。',
+  },
+  {
     personId: 'fu-jian-founder', biography: '苻健是前秦早期建立者。351年，他在关中建立秦政权并以长安为早期政治中心；其后苻坚的统治与北方扩张属于另一阶段。',
     aliases: ['前秦景明帝'], offices: [{ title: '前秦皇帝', polityId: 'former_qin', placeId: 'changan', validFrom: 351, validTo: 355, datePrecision: 'range', sourceIds: ['jinshu-vol112-fu-jian'] }],
     keyEvents: ['former-qin-founded', 'changan-former-qin'], sourceIds: ['jinshu-vol112-fu-jian', 'zizhi-tongjian'],
@@ -156,6 +161,11 @@ export const personDetails: PersonDetail[] = [
     personId: 'yao-xing', biography: '姚兴是后秦君主，统治时期长安是后秦的重要政治与宗教中心。',
     aliases: [], offices: [{ title: '后秦皇帝', polityId: 'later_qin', placeId: 'changan', validFrom: 394, validTo: 416, datePrecision: 'range', sourceIds }],
     keyEvents: ['changan-later-qin'], sourceIds, uncertaintyNote: '后秦控制范围随战争变化，长安政治中心地位不代表全域稳定控制。',
+  },
+  {
+    personId: 'yao-hong', biography: '姚泓是后秦末帝。417年东晋刘裕攻取长安，姚泓出降，后秦统一政治结构终止；长安城市遗产继续承接后续政权。',
+    aliases: ['后秦末帝'], offices: [{ title: '后秦皇帝', polityId: 'later_qin', placeId: 'changan', validFrom: 416, validTo: 417, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-qin-falls-changan'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '姚泓出降、长安失守和东晋接收属于417年连续过程，不将末帝结局等同于长安城市或地方社会消失。',
   },
   {
     personId: 'heliAN-bobo', biography: '赫连勃勃建立夏政权，曾在十六国后期与后秦争夺关中和长安。',

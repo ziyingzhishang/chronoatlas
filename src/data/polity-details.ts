@@ -156,8 +156,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'later_qin', perspectiveSummary: '后秦由姚苌在前秦崩解后建立，以长安为核心经营关中与陇右，姚兴时期又成为佛教与区域交流的重要中心。',
     foundationProcess: ['前秦崩解制造关中军政重组空间。', '姚苌在384年前后建立后秦，政权进入形成阶段。', '后秦控制长安后，姚兴时期的行政与宗教活动使关中中心进一步稳固。'],
     turningPoints: [turn(384, '后秦形成', '姚苌在关中建立后秦。', 'later-qin-founded'), turn(386, '取得长安', '后秦控制长安，关中政治中心确立。'), turn(417, '长安失守', '东晋刘裕攻取长安，后秦政权结束。', 'later-qin-falls-changan')],
-    principalFigureIds: ['yao-chang', 'yao-xing'], capitalPhases: [capital('changan', 384, 417)],
-    heritageIds: ['later-qin-changan-city-layer'], eventIds: ['later-qin-founded', 'changan-later-qin'], claimIds: ['claim-later-qin-changan-capital', 'claim-later-qin-changan-heritage'], sourceIds: modernSources,
+    principalFigureIds: ['yao-chang', 'yao-xing', 'yao-hong'], capitalPhases: [capital('changan', 384, 417)],
+    heritageIds: ['later-qin-changan-city-layer'], eventIds: ['later-qin-founded', 'changan-later-qin', 'later-qin-falls-changan'], claimIds: ['claim-later-qin-changan-capital', 'claim-later-qin-changan-heritage', 'claim-yao-hong-ruled-later-qin', 'claim-yao-hong-participated-later-qin-falls-changan', 'claim-yao-hong-enemy-liu-yu-termination-417'], sourceIds: modernSources,
     uncertaintyNote: '384年是政权形成约年，取得长安是后续阶段；后秦长安层叠压于汉、隋唐城市遗址，不能把今日遗址直接等同为完整后秦建筑。',
   }),
   detail({
@@ -491,9 +491,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'former_qin', perspectiveSummary: '前秦由苻健在关中建立，后经苻坚整合北方；长安既是正式都城，也是观察十六国城市叠压与北方统一尝试的核心入口。',
     foundationProcess: ['苻氏在前秦崩解后的关中军政竞争中取得独立基础。', '351年苻健在长安一带建立秦政权。', '苻坚时期扩张至北方多地，但全盛范围不能回填到建政当年。'],
-    turningPoints: [turn(351, '前秦建立', '苻健在关中建立秦政权。', 'former-qin-founded'), turn(357, '苻坚掌政', '苻坚整合关中并推动前秦扩张。'), turn(383, '淝水之战', '北方统一尝试受挫，前秦整合结构迅速瓦解。')],
-    principalFigureIds: ['fu-jian'], capitalPhases: [capital('changan', 351, 394, 'primary', 'formal', '长安，今陕西省西安市。')],
-    heritageIds: ['former-qin-changan-city-layer'], eventIds: ['former-qin-founded', 'changan-former-qin'], claimIds: [], sourceIds: modernSources,
+    turningPoints: [turn(351, '前秦建立', '苻健在关中建立秦政权。', 'former-qin-founded'), turn(357, '苻坚掌政', '苻坚整合关中并推动前秦扩张。'), turn(383, '淝水之战', '北方统一尝试受挫，前秦整合结构迅速瓦解。'), turn(394, '前秦终止', '苻登在马嵬败亡，前秦后期政权结构结束。', 'former-qin-ended-394')],
+    principalFigureIds: ['fu-jian', 'fu-deng'], capitalPhases: [capital('changan', 351, 394, 'primary', 'formal', '长安，今陕西省西安市。')],
+    heritageIds: ['former-qin-changan-city-layer'], eventIds: ['former-qin-founded', 'changan-former-qin', 'former-qin-ended-394'], claimIds: ['claim-fu-deng-ruled-former-qin', 'claim-fu-deng-participated-former-qin-ended-394', 'claim-fu-deng-enemy-yao-xing-termination-394'], sourceIds: modernSources,
     uncertaintyNote: '前秦经历苻健建政、苻坚扩张和淝水后瓦解等阶段；长安遗址层与汉、后秦、隋唐层叠压，不能用后期全盛疆域或后世建筑复原351年状态。',
   }),
   detail({

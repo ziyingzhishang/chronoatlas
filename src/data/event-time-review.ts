@@ -100,6 +100,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'former-zhao-ended-329', status: 'confirmed', expectedPrecision: 'year', explanation: '329年表示后赵攻取长安、刘曜被俘与前赵统一政治结构终止的明确年份；长安城市遗产和地方承接另行分层。', timelineStrategy: 'year-marker' },
   { eventId: 'cheng-han-ended-347', status: 'confirmed', expectedPrecision: 'year', explanation: '347年表示东晋桓温攻取成都、李势出降与成汉统一政治结构终止的明确年份；成都城市遗产和地方承接另行分层。', timelineStrategy: 'year-marker' },
   { eventId: 'former-yan-ended-370', status: 'confirmed', expectedPrecision: 'year', explanation: '370年表示前秦攻取邺、慕容暐被俘与前燕统一政治结构终止的明确年份；邺城遗产和地方承接另行分层。', timelineStrategy: 'year-marker' },
+  { eventId: 'former-qin-ended-394', status: 'confirmed', expectedPrecision: 'year', explanation: '394年表示后秦击败苻登、前秦后期统一政治结构终止的明确年份；马嵬战场、长安城市遗产与后秦接收分层记录。', timelineStrategy: 'year-marker' },
   { eventId: 'northern-liang-ended-439', status: 'approximate', expectedPrecision: 'approximate', explanation: '439年前后表示北魏攻取姑臧、沮渠牧犍政权结束与地方行政接收的连续过程；姑臧城市遗产继续存在。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-ming-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '1644年前后表示南明多阶段政权体系形成，不能把不同弘光、隆武、永历阶段压成一个日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'hongguang-nanjing-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '1644年朱由崧在南京先监国后即帝位，年份级节点可由弘光阶段史料支持；即位日和南京阶段覆亡属于同一阶段内的后续细节。', timelineStrategy: 'year-marker' },

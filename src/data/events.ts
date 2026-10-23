@@ -382,6 +382,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷九十八·晋纪二十', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷098', detail: '记载苻健在关中称秦及前秦政权形成；苻坚后期扩张另属后续阶段。' }],
   },
   {
+    id: 'former-qin-ended-394', year: 394, title: '前秦政权终止', summary: '后秦姚兴攻破前秦后期核心力量，苻登在马嵬败亡，前秦统一政治结构结束；长安城市层继续承接后秦及后世。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '淝水之战后前秦失去北方整合能力，苻登在关中维持前秦名义与军事抵抗，后秦姚兴逐步取得优势。',
+    process: '394年后秦军在马嵬击败苻登，苻登被杀，前秦后期政权结构随之终止；战事、人物结局和后秦对关中的接收属于连续过程。',
+    impact: '前秦作为独立政权终止，后秦成为关中主要政权；长安及其宫城、道路和地方社会继续进入后秦与后续城市历史层。',
+    mapNote: '地图将394年标作前秦终止节点，以长安作为前秦末期首都与后秦承接的城市参照；马嵬战场与长安城市层不能混为同一遗址点。',
+    references: [{ title: '《资治通鉴》卷一百八·晋纪三十', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷108', detail: '用于核对394年后秦攻前秦、苻登马嵬败亡及前秦政权终止的年份级节点。' }],
+  },
+  {
     id: 'later-yan-founded', year: 384, title: '后燕政权形成', summary: '慕容垂在384年重建燕政权，后燕进入形成阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '前秦在淝水之战后迅速失去对北方诸部的整合能力，慕容垂借机在河北重建慕容氏力量。',
@@ -398,6 +407,15 @@ const catalog: HistoricalEvent[] = [
     impact: '后秦成为关中与陇右的重要政权，参与前秦残余、后燕和东晋之间的长期竞争。',
     mapNote: '长安是后秦后来确立的核心政治中心；384年形成阶段的实际控制区域应与姚兴时期的扩张分开绘制。',
     references: [{ title: '《资治通鉴》卷一百五·晋纪二十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷105', detail: '记载姚苌起兵、建立后秦及其后称帝；形成阶段与长安控制分层处理。' }],
+  },
+  {
+    id: 'later-qin-falls-changan', year: 417, title: '后秦政权终止', summary: '刘裕攻取长安，姚泓出降，后秦统一政治结构结束；长安城市层继续承接后续政权。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '后秦以长安为关中政治中心，姚兴死后继承与内外军事压力叠加，东晋刘裕北伐进入关中。',
+    process: '417年刘裕攻取长安，后秦末帝姚泓出降，后秦统一政治结构结束；军事占领、人物结局和地方接收属于连续过程。',
+    impact: '后秦作为关中独立政权终止，东晋短暂取得长安；长安城市、道路和地方社会继续进入刘宋及后续历史层。',
+    mapNote: '地图将417年标作后秦终止节点，长安标注为末期都城与今陕西西安市历史空间参照；政权终止不表示城市遗产消失。',
+    references: [{ title: '《资治通鉴》卷一一八·晋纪四十', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷118', detail: '用于核对417年刘裕攻取长安、姚泓出降与后秦终止的年份级节点。' }],
   },
   {
     id: 'southern-yan-ended-410', year: 410, title: '南燕政权终止', summary: '刘裕北伐攻取广固，慕容超政权结束；广固城址与青州区域交通遗产继续进入后续历史。', placeId: 'guanggu', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
