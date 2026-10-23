@@ -3,6 +3,7 @@ import type { DetailEntity } from '../domain/detail-entity';
 import type {
   CoveragePerspective,
   CoverageTaskKind,
+  KnowledgeCoverageGap,
   KnowledgeCoverageReport,
 } from '../data/knowledge-coverage';
 
@@ -30,6 +31,28 @@ const perspectiveLabels: Record<CoveragePerspective, string> = {
   city: '城市视角',
 };
 
+const gapEntityTypeLabels: Record<KnowledgeCoverageGap['entityType'], string> = {
+  polity: '覆盖实体：政权',
+  person: '覆盖实体：人物',
+  event: '覆盖实体：事件',
+  heritage: '覆盖实体：遗产',
+};
+
+const gapDimensionLabels: Record<KnowledgeCoverageGap['dimension'], string> = {
+  summary: '覆盖维度：摘要',
+  detail: '覆盖维度：详情',
+  source: '覆盖维度：来源',
+  relationship: '覆盖维度：关系',
+  time: '覆盖维度：时间',
+};
+
+const gapStatusLabels: Record<KnowledgeCoverageGap['kind'], string> = {
+  'data-missing': '待补',
+  'relationship-missing': '关系待补',
+  'source-missing': '来源待补',
+  uncertain: '待复核',
+};
+
 export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, context }: KnowledgeCoveragePanelProps) {
   const { t } = useLocale();
   const contextualReport = context
@@ -40,6 +63,7 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
       ? task.polityIds.includes(context.id)
       : task.placeIds.includes(context.id))
     : report.tasks;
+  const gaps = contextualReport?.gaps ?? report.gaps;
   const tasks = contextTasks.slice(0, maxTasks);
   const entityCount = contextualReport?.entityKeys.length ?? report.entities.length;
   const gapCount = contextualReport?.gaps.length ?? report.gaps.length;
@@ -87,6 +111,30 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
             ))}
           </ul>
           {contextTasks.length > tasks.length && <p className="detail-note">{t('其余缺口请查看完整审计报告。')}</p>}
+        </details>
+      )}
+      {gaps.length > 0 && (
+        <details className="knowledge-coverage-gaps">
+          <summary role="button">{t('展开缺口明细')}</summary>
+          <ul className="source-links" data-testid="knowledge-coverage-gaps">
+            {gaps.map((gap) => (
+              <li key={`${gap.entityKey}:${gap.dimension}:${gap.kind}`}>
+                {onOpenEntity ? (
+                  <button
+                    type="button"
+                    aria-label={`${t('打开缺口实体：')}${t(gap.label)}`}
+                    onClick={() => onOpenEntity({ type: gap.entityType, id: gap.entityId })}
+                  >
+                    {t(gap.label)}
+                  </button>
+                ) : (
+                  <a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t(gap.label)}</a>
+                )}
+                <span className="detail-note"> · {t(gapEntityTypeLabels[gap.entityType])} · {t(gapDimensionLabels[gap.dimension])} · {t(gapStatusLabels[gap.kind])}</span>
+                <p className="detail-note">{t('说明：')}{t(gap.note)}</p>
+              </li>
+            ))}
+          </ul>
         </details>
       )}
     </section>

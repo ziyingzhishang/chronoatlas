@@ -120,3 +120,52 @@ test('falls back to the global report when a contextual index is unavailable', (
   expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`实体 ${report.entities.length}`);
   expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`可行动缺口 ${report.tasks.length}`);
 });
+
+test('shows expandable gap details with entity, dimension, status, and note', async () => {
+  const user = userEvent.setup();
+  const report = auditKnowledgeCoverage();
+  const gap = report.gaps[0];
+
+  render(<LocaleProvider><KnowledgeCoveragePanel report={report} /></LocaleProvider>);
+
+  await user.click(screen.getByText('展开缺口明细'));
+
+  expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent(gap.label);
+  expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent(gap.entityType === 'polity' ? '覆盖实体：政权' : gap.entityType === 'person' ? '覆盖实体：人物' : gap.entityType === 'event' ? '覆盖实体：事件' : '覆盖实体：遗产');
+  expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent(gap.dimension === 'summary' ? '覆盖维度：摘要' : gap.dimension === 'detail' ? '覆盖维度：详情' : gap.dimension === 'source' ? '覆盖维度：来源' : gap.dimension === 'relationship' ? '覆盖维度：关系' : '覆盖维度：时间');
+  expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent(gap.kind === 'uncertain' ? '待复核' : gap.kind === 'data-missing' ? '待补' : gap.kind === 'relationship-missing' ? '关系待补' : '来源待补');
+  expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent(gap.note);
+});
+
+test('opens a gap entity from the details and keeps uncertainty distinct from actionable tasks', async () => {
+  const user = userEvent.setup();
+  const report = auditKnowledgeCoverage();
+  const gap = report.gaps[0];
+  const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
+
+  render(<LocaleProvider><KnowledgeCoveragePanel report={report} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+  await user.click(screen.getByText('展开缺口明细'));
+  await user.click(screen.getByRole('button', { name: `打开缺口实体：${gap.label}` }));
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: gap.entityType, id: gap.entityId });
+
+  const uncertainGap = report.gaps.find((candidate) => candidate.kind === 'uncertain');
+  if (uncertainGap) {
+    expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent('待复核');
+    expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`可行动缺口 ${report.tasks.length}`);
+  }
+  expect(screen.queryByText('不适用')).not.toBeInTheDocument();
+});
+
+test('filters gap details to the selected context while leaving actionable tasks unchanged', async () => {
+  const user = userEvent.setup();
+  const report = auditKnowledgeCoverage();
+  const [polityId, polityReport] = Object.entries(report.byPolity).find(([, item]) => item.gaps.length > 0)!;
+  const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
+
+  render(<LocaleProvider><KnowledgeCoveragePanel report={report} context={{ type: 'polity', id: polityId }} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+  await user.click(screen.getByText('展开缺口明细'));
+  expect(screen.getByTestId('knowledge-coverage-gaps')).toHaveTextContent(polityReport.gaps[0].label);
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`可行动缺口 ${report.tasks.filter((task) => task.polityIds.includes(polityId)).length}`);
+});
