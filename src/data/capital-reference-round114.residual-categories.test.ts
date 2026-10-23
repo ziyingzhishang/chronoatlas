@@ -24,7 +24,7 @@ const key = (candidate: Candidate) => (
 
 const expectedCategories = {
   'qin|xianyang|chu-han-contention|': 'shared-transition-event',
-  'han_western|changan||changle-palace-site': 'construction-endpoint-unresolved',
+  'han_western|changan||changle-palace-site': 'cross-polity-heritage',
   'han_eastern|luoyang||white-horse-temple': 'cross-polity-heritage',
   'han_eastern|luoyang|white-horse-temple-founded|': 'heritage-event-not-polity-chain',
   'sui|changan||taiji-palace-site': 'layered-capital-heritage',
@@ -74,6 +74,5 @@ describe('round 114 residual capital reference categories', () => {
     expect(expectedCategories['tang|luoyang|court-moves-luoyang|']).toBe('shared-transition-event');
     expect(expectedCategories['song_northern|kaifeng|song-founded|']).toBe('duplicate-event-node');
     expect(expectedCategories['zhou_later|kaifeng||kaifeng-northern-song-city-site']).toBe('cross-stage-city-layer');
-    expect(expectedCategories['han_western|changan||changle-palace-site']).toBe('construction-endpoint-unresolved');
   });
 });
