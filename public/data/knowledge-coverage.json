@@ -6461,6 +6461,64 @@
     },
     {
       "entityType": "event",
+      "entityId": "tibetan-yalong-center",
+      "entityKey": "event:tibetan-yalong-center",
+      "label": "吐蕃雅砻早期政治中心",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "tibetan-yalong-center"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:tibetan-yalong-center"
+          ],
+          "relatedIds": [
+            "songtsen-gampo",
+            "tibetan-founded",
+            "tibetan_empire"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "turkic-founded",
       "entityKey": "event:turkic-founded",
       "label": "突厥汗国建立",
@@ -23463,12 +23521,14 @@
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
             "claim:claim-tridu-songtsen-related-songtsen-gampo",
             "event-detail:tibetan-founded",
+            "event-detail:tibetan-yalong-center",
             "person-polity:songtsen-gampo:tibetan_empire"
           ],
           "relatedIds": [
             "li-shimin",
             "namri-songtsen",
             "tibetan-founded",
+            "tibetan-yalong-center",
             "tibetan_empire",
             "tridu-songtsen"
           ]
@@ -32116,6 +32176,7 @@
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
             "event-detail:tibetan-founded",
+            "event-detail:tibetan-yalong-center",
             "heritage-detail:tibetan-lhasa-city-site",
             "person:namri-songtsen",
             "person:songtsen-gampo",
@@ -32126,6 +32187,7 @@
             "songtsen-gampo",
             "tibetan-founded",
             "tibetan-lhasa-city-site",
+            "tibetan-yalong-center",
             "tridu-songtsen"
           ]
         },
@@ -34133,6 +34195,20 @@
       "entityId": "tibetan-founded",
       "entityKey": "event:tibetan-founded",
       "label": "吐蕃政权建立（形成阶段）",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "tibetan-yalong-center",
+      "entityKey": "event:tibetan-yalong-center",
+      "label": "吐蕃雅砻早期政治中心",
       "dimension": "time",
       "kind": "uncertain",
       "polityIds": [
@@ -41518,6 +41594,64 @@
             "tang-founded",
             "tibetan_empire",
             "tridu-songtsen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:tibetan-yalong-center": {
+      "entityType": "event",
+      "entityId": "tibetan-yalong-center",
+      "entityKey": "event:tibetan-yalong-center",
+      "label": "吐蕃雅砻早期政治中心",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "tibetan-yalong-center"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:tibetan-yalong-center"
+          ],
+          "relatedIds": [
+            "songtsen-gampo",
+            "tibetan-founded",
+            "tibetan_empire"
           ]
         },
         {
@@ -58533,12 +58667,14 @@
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
             "claim:claim-tridu-songtsen-related-songtsen-gampo",
             "event-detail:tibetan-founded",
+            "event-detail:tibetan-yalong-center",
             "person-polity:songtsen-gampo:tibetan_empire"
           ],
           "relatedIds": [
             "li-shimin",
             "namri-songtsen",
             "tibetan-founded",
+            "tibetan-yalong-center",
             "tibetan_empire",
             "tridu-songtsen"
           ]
@@ -67186,6 +67322,7 @@
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
             "event-detail:tibetan-founded",
+            "event-detail:tibetan-yalong-center",
             "heritage-detail:tibetan-lhasa-city-site",
             "person:namri-songtsen",
             "person:songtsen-gampo",
@@ -67196,6 +67333,7 @@
             "songtsen-gampo",
             "tibetan-founded",
             "tibetan-lhasa-city-site",
+            "tibetan-yalong-center",
             "tridu-songtsen"
           ]
         },
@@ -68931,20 +69069,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 143,
+      "totalEntities": 144,
       "statusCounts": {
-        "covered": 684,
+        "covered": 688,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 31,
+        "uncertain": 32,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 31
+        "uncertain": 32
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -68967,6 +69105,7 @@
         "event:southern-liang-moves-ledu",
         "event:southern-ming-founded",
         "event:tibetan-founded",
+        "event:tibetan-yalong-center",
         "event:tuyuhun-founded",
         "event:western-liao-emperor-1132",
         "event:western-liao-founded",
@@ -71260,6 +71399,7 @@
       "polityName": "吐蕃",
       "entityKeys": [
         "event:tibetan-founded",
+        "event:tibetan-yalong-center",
         "heritage:tibetan-lhasa-city-site",
         "person:namri-songtsen",
         "person:songtsen-gampo",
@@ -71296,6 +71436,20 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "tibetan-yalong-center",
+          "entityKey": "event:tibetan-yalong-center",
+          "label": "吐蕃雅砻早期政治中心",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -71305,7 +71459,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "吐蕃：有 2 项待核验缺口。"
+      "summary": "吐蕃：有 3 项待核验缺口。"
     },
     "turkic": {
       "polityId": "turkic",
@@ -74650,7 +74804,9 @@
       "cityName": "山南市一带",
       "capitalRecordCount": 1,
       "entityKeys": [
-        "event:tibetan-founded"
+        "event:tibetan-founded",
+        "event:tibetan-yalong-center",
+        "person:songtsen-gampo"
       ],
       "gaps": [
         {
@@ -74658,6 +74814,20 @@
           "entityId": "tibetan-founded",
           "entityKey": "event:tibetan-founded",
           "label": "吐蕃政权建立（形成阶段）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "tibetan-yalong-center",
+          "entityKey": "event:tibetan-yalong-center",
+          "label": "吐蕃雅砻早期政治中心",
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
@@ -74675,7 +74845,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "山南市一带：有 1 项待核验缺口。"
+      "summary": "山南市一带：有 2 项待核验缺口。"
     },
     "yangjumei": {
       "placeId": "yangjumei",

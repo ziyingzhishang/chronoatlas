@@ -309,7 +309,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['朗日松赞和松赞干布在雅砻及高原东部整合政治资源。', '618年作为形成阶段节点纳入目录。', '630年后逻些成为主要政治中心，吐蕃逐步扩展为跨高原帝国。'],
     turningPoints: [turn(618, '吐蕃政权形成', '松赞干布时期的高原整合使吐蕃进入形成阶段。', 'tibetan-founded'), turn(641, '文成公主入藏', '唐蕃外交关系进入新的阶段。'), turn(763, '长安短暂易手', '吐蕃对唐边疆和关中秩序的影响达到高峰。')],
     principalFigureIds: ['namri-songtsen', 'songtsen-gampo', 'tridu-songtsen'], capitalPhases: [capital('yalong', 618, 629, 'de_facto', 'actual', '早期政治中心'), capital('luosie', 630, 842, 'primary', 'formal', '逻些；今拉萨历史城区')],
-    heritageIds: ['tibetan-lhasa-city-site'], eventIds: ['tibetan-founded'], claimIds: ['claim-namri-participated-tibetan-founded', 'claim-songtsen-gampo-participated-tibetan-founded', 'claim-tridu-songtsen-participated-tibetan-founded'], sourceIds: modernSources,
+    heritageIds: ['tibetan-lhasa-city-site'], eventIds: ['tibetan-founded', 'tibetan-yalong-center'], claimIds: ['claim-namri-participated-tibetan-founded', 'claim-songtsen-gampo-participated-tibetan-founded', 'claim-tridu-songtsen-participated-tibetan-founded'], sourceIds: modernSources,
     uncertaintyNote: '618年是形成阶段而非单一瞬时建国；雅砻与逻些对应不同阶段，拉萨遗产包含宫城、宗教建筑和后世叠压层，不能直接等同吐蕃全貌。',
   }),
   detail({

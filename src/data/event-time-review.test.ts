@@ -24,6 +24,7 @@ const expectedEventIds = [
   'changan-former-qin',
   'western-liang-state-founded',
   'tibetan-founded',
+  'tibetan-yalong-center',
   'an-lushan-rebellion',
   'xuanzang-at-ximing-658',
   'shangyang-palace-built',
@@ -51,12 +52,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(37);
+    expect(report.totalReviewed).toBe(38);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 11, approximate: 26, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 12, approximate: 26, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

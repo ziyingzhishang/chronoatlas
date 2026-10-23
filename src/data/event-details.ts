@@ -248,6 +248,18 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '618年前后是吐蕃形成约年；雅砻是松赞干布时期以前后高原核心为线索的区域参照，不能替代吐蕃早期具体仪式地点，也不能用逻些及吐蕃盛期范围回填建政初期。629年后的整合与扩张属于后续阶段。',
   },
   {
+    eventId: 'tibetan-yalong-center',
+    participants: [{ personId: 'songtsen-gampo', role: '吐蕃早期雅砻政治中心阶段的核心统治者', note: '松赞干布与雅砻早期整合相关；本条只表达618—629年的阶段性中心，不把后续逻些都城或吐蕃盛期范围前推。' }],
+    polityIds: ['tibetan_empire'],
+    causes: ['悉补野部在雅砻地区积累政治资源。', '吐蕃形成期需要以早期高原核心组织联盟、军政和对外交涉。'],
+    consequences: ['雅砻成为吐蕃早期阶段性政治中心。', '630年后逻些政治中心阶段与雅砻早期阶段分层展示。'],
+    phases: [{ label: '雅砻早期中心', startYear: 618, endYear: 629, summary: '吐蕃以雅砻为核心推进高原政治整合。' }],
+    locationIds: ['yalong'],
+    relatedEventIds: ['tibetan-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '618—629年是阶段范围，不是新的单日建政节点；雅砻为区域政治中心参照，不能据此确认具体宫城或完整吐蕃疆域。',
+  },
+  {
     eventId: 'eastern-wei-founded',
     participants: [
       { personId: 'gao-huan', role: '控制邺城并主导东魏军政重组的权臣', note: '高欢是东魏实际军政基础的建立者；元善见即位的皇室端点未纳入当前人物目录，故不虚构人物记录。' },

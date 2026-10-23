@@ -586,7 +586,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'songtsen-gampo', biography: '松赞干布继承并扩大吐蕃高原政治基础，推动诸部整合、对外关系和王权中心建设，吐蕃由此进入帝国形成阶段。',
     aliases: ['弃宗弄赞'], offices: [{ title: '吐蕃赞普', polityId: 'tibetan_empire', validFrom: 629, validTo: 650, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['tibetan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '吐蕃形成不是单一年份完成的国家化过程，松赞干布时期的高原整合、拉萨中心和唐蕃关系需按不同阶段阅读。',
+    keyEvents: ['tibetan-founded', 'tibetan-yalong-center'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '吐蕃形成不是单一年份完成的国家化过程，松赞干布时期的雅砻早期中心、拉萨中心和唐蕃关系需按不同阶段阅读。',
   },
   {
     personId: 'piluo-ge', biography: '皮罗阁在洱海区域经营蒙舍诏并整合六诏力量，南诏在唐廷册封和地方扩张的交错过程中形成。',

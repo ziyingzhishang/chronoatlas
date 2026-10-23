@@ -30,6 +30,18 @@ describe('round eighty-eighth navigable closure: Luosie and Dali', () => {
     expect(city?.modernName).toBe('拉萨市');
   });
 
+  it('exposes the early Yalong political-center phase as its own city event', () => {
+    const polity = getPolityDetail('tibetan_empire');
+    const event = byId(events, 'tibetan-yalong-center');
+    const detail = eventDetails.find((item) => item.eventId === event?.id);
+    const city = byId(places, 'yalong');
+
+    expect(polity?.eventIds).toContain('tibetan-yalong-center');
+    expect(event).toEqual(expect.objectContaining({ placeId: 'yalong', datePrecision: 'range' }));
+    expect(detail?.locationIds).toContain('yalong');
+    expect(city?.modernName).toBe('山南市一带');
+  });
+
   it('connects Dali formation, the Dali capital phase, heritage and modern Dali', () => {
     const polity = getPolityDetail('dali');
     const event = byId(events, 'dali-founded');

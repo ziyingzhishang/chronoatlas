@@ -23,6 +23,7 @@ const reviewBoundaryIds = [
   'southern-liang-moves-ledu',
   'southern-ming-founded',
   'tibetan-founded',
+  'tibetan-yalong-center',
   'tuyuhun-founded',
   'mongol-karakorum-fixed-center',
   'western-liao-founded',
@@ -43,7 +44,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 106, 'needs-review': 37, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 106, 'needs-review': 38, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.needsReviewChecks.includes('timePrecision'));
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
@@ -66,7 +67,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       item.status === 'needs-review' && item.needsReviewChecks.includes('timePrecision')
     ));
 
-    expect(precisionGaps).toHaveLength(31);
+    expect(precisionGaps).toHaveLength(32);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
     expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });

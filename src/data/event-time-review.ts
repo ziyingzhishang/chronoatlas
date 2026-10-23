@@ -76,6 +76,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'changan-former-qin', status: 'approximate', expectedPrecision: 'approximate', explanation: '351年前后表示前秦据长安并经营关中的阶段，建政与取得城市控制不能压缩为同一无争议日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liang-state-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '《晋书》卷87与《资治通鉴》卷111均记400年李暠被推为凉公、改元庚子；《资治通鉴》明确说北凉由此分出西凉。397—399年受命敦煌是前置基础，405年迁居酒泉是后续政治中心转移。', timelineStrategy: 'year-marker' },
   { eventId: 'tibetan-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '618年前后表示吐蕃形成阶段，松赞干布后的高原整合不能回填为建政当年。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'tibetan-yalong-center', status: 'confirmed', expectedPrecision: 'range', explanation: '618—629年表示吐蕃雅砻早期政治中心阶段；这是阶段范围，不是新的单日建政节点。', timelineStrategy: 'range-band' },
   { eventId: 'an-lushan-rebellion', status: 'confirmed', expectedPrecision: 'range', explanation: '安史之乱的755—763年区间有明确编年边界，但战局和控制范围随阶段变化。', timelineStrategy: 'range-band' },
   { eventId: 'xuanzang-at-ximing-658', status: 'confirmed', expectedPrecision: 'range', explanation: '玄奘在西明寺的活动限定为658—659年阶段，次年赴玉华寺，不能扩展为其全部译经生涯。', timelineStrategy: 'range-band' },
   { eventId: 'shangyang-palace-built', status: 'confirmed', expectedPrecision: 'range', explanation: '上阳宫始建材料只明确为上元年间，674—676年是稳妥范围，675年为通行整理年；不能升级为绝对单年。', timelineStrategy: 'range-band' },

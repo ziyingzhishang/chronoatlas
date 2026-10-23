@@ -1,6 +1,6 @@
 import type { DetailEntity } from './detail-entity';
 import type { HistoricalClaim, Place } from './types';
-import { buildCityStudyView, type CityStudyRelation, type StudyData } from './study-view';
+import { buildCityStudyView, eventTouchesCity, type CityStudyRelation, type StudyData } from './study-view';
 
 export type CityHistoryData = Partial<StudyData>;
 export type CityHistoryTimelineNodeType = DetailEntity['type'];
@@ -139,7 +139,8 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     });
   });
 
-  uniqueById((data.events ?? []).filter((event) => event.placeId !== undefined && cityPlaceIds.has(event.placeId))).forEach((event) => nodes.push({
+  const eventDetailsById = new Map((data.eventDetails ?? []).map((detail) => [detail.eventId, detail]));
+  uniqueById((data.events ?? []).filter((event) => eventTouchesCity(event, eventDetailsById.get(event.id), cityPlaceIds))).forEach((event) => nodes.push({
     id: `event:${event.id}`,
     year: event.year,
     label: event.title,
@@ -173,6 +174,7 @@ export function buildCityHistoryTimeline(cityId: string, data: CityHistoryData):
     people: uniqueById(data.people),
     heritage: uniqueById(data.heritage),
     events: uniqueById(data.events),
+    eventDetails: data.eventDetails ?? [],
     claims: uniqueById(data.claims),
     capitalTerms: data.capitalTerms ?? [],
   };

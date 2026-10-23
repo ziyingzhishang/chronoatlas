@@ -62,7 +62,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
   const studyView = selectedEntity?.type === 'polity'
     ? buildPolityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: polityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory, polityDetails })
     : selectedEntity?.type === 'place'
-      ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: cityStudyEvents, claims, capitalTerms: capitalHistory })
+      ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: cityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory })
       : undefined;
   const coverageContext = selectedEntity?.type === 'polity' && selected
     ? { type: 'polity' as const, id: selected.id }

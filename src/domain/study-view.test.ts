@@ -36,6 +36,15 @@ describe('study views', () => {
     expect(view?.events.some((event) => event.id === 'daming-palace-built')).toBe(true);
   });
 
+  it('shows events whose detail locations touch the city even without a primary place', () => {
+    const studyData = { ...data, events, eventDetails };
+    const linziView = buildCityStudyView('linzi', -221, studyData);
+    const luoyangView = buildCityStudyView('luoyang', 220, studyData);
+
+    expect(linziView?.events.some((event) => event.id === 'qin-unification')).toBe(true);
+    expect(luoyangView?.events.some((event) => event.id === 'three-kingdoms')).toBe(true);
+  });
+
   it('prioritizes explicit polity links for Tang event visibility', () => {
     const view = buildPolityStudyView('tang', 658, {
       ...data,

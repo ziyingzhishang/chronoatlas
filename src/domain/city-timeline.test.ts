@@ -7,6 +7,8 @@ import { people } from '../data/people';
 import { places } from '../data/places';
 import { polities } from '../data/polities';
 import { buildCityHistoryTimeline, type CityHistoryData } from './city-timeline';
+import { eventDetails } from '../data/event-details';
+import { events } from '../data/events';
 
 const data: CityHistoryData = { polities, places, people, heritage: heritageAssets, events: changanEvents, claims, capitalTerms: capitalHistory };
 
@@ -28,6 +30,14 @@ describe('buildCityHistoryTimeline', () => {
 
     expect(sameYearNodes.map((node) => node.entity.type)).toEqual(expect.arrayContaining(['event', 'heritage']));
     expect(sameYearNodes.length).toBeGreaterThanOrEqual(2);
+  });
+
+  it('projects detail-only event locations into the city timeline', () => {
+    const timeline = buildCityHistoryTimeline('linzi', { ...data, events, eventDetails });
+
+    expect(timeline.nodes).toContainEqual(expect.objectContaining({
+      entity: { type: 'event', id: 'qin-unification' },
+    }));
   });
 
   it('projects existing relation and entity evidence status onto timeline nodes without inventing facts', () => {

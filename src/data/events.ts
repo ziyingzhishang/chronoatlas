@@ -85,6 +85,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于松赞干布时期吐蕃形成与唐蕃关系的编年参照；早期统一年代保留阶段性。' }],
   },
   {
+    id: 'tibetan-yalong-center', year: 618, endYear: 629, title: '吐蕃雅砻早期政治中心', summary: '吐蕃形成期以雅砻为核心推进高原政治整合，雅砻成为早期阶段性政治中心。', placeId: 'yalong', sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    datePrecision: 'range', region: 'world', category: '都城营建／城市史', verification: 'partial',
+    background: '悉补野部在雅砻地区积累政治资源，松赞干布时期的高原整合以雅砻为早期核心。',
+    process: '618—629年作为吐蕃早期政治中心阶段记录；这不是新的建政年，也不把雅砻阶段等同于后续逻些正式都城。',
+    impact: '山南／雅砻由区域地点进入吐蕃城市视角，帮助区分早期政治中心与630年后逻些阶段。',
+    mapNote: '雅砻表示618—629年阶段性中心，现代山南市一带、古代雅砻区域和吐蕃早期影响范围必须分层展示。',
+    references: [{ title: '《资治通鉴》与吐蕃早期政治中心分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于雅砻早期高原政治整合与阶段性中心的编年参照；具体宫城和古城位置不由本事件单独推定。' }],
+  },
+  {
     id: 'eastern-wei-founded', year: 534, title: '东魏建立', summary: '北魏分裂后，元善见在邺即位，东魏政权形成。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '北魏末年尔朱氏、元氏与高欢等军事集团之间的冲突，使洛阳中央政权失去对东部地区的稳定控制。',

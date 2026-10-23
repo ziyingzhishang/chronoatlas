@@ -7,6 +7,7 @@ import { RelationshipGraph } from './RelationshipGraph';
 import type { DetailEntity } from '../domain/detail-entity';
 import { buildCityHistoryTimeline } from '../domain/city-timeline';
 import { CityHistoryTimeline } from './CityHistoryTimeline';
+import { eventDetails } from '../data/event-details';
 
 type StudyView = CityStudyView | PolityStudyView;
 
@@ -17,7 +18,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
   const relationshipLabel: Record<string, string> = { founded: '建立', ruled: '统治', succeeded: '承接', commissioned: '营建' };
   const cityTimeline = cityView ? buildCityHistoryTimeline(cityView.subject.id, {
     places: [cityView.subject], polities: cityView.polities, people: cityView.people,
-    heritage: cityView.heritage, events: cityView.events, claims: cityView.claims,
+    heritage: cityView.heritage, events: cityView.events, eventDetails, claims: cityView.claims,
     capitalTerms: cityView.capitalTerms,
   }) : undefined;
   const featuredEvents = polityView

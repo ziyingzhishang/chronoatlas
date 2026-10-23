@@ -71,6 +71,12 @@ const uniqueById = <T extends { id: string }>(items: T[]) => [...new Map(items.m
 
 const historicalUntil = (from: number | undefined, year: number) => from === undefined || from <= year;
 
+export const eventTouchesCity = (
+  event: HistoricalEvent,
+  eventDetail: HistoricalEventDetail | undefined,
+  cityPlaceIds: ReadonlySet<string>,
+) => cityPlaceIds.has(event.placeId ?? '') || (eventDetail?.locationIds ?? []).some((placeId) => cityPlaceIds.has(placeId));
+
 const cityEntity = (id: string, data: {
   polities: Polity[];
   places: Place[];
@@ -201,7 +207,8 @@ export function buildCityStudyView(
   const polityIds = new Set(capitalTerms.map((term) => term.polityId));
   data.polities.filter((polity) => polity.capitalPlaceId !== undefined && cityPlaceIds.has(polity.capitalPlaceId)).forEach((polity) => polityIds.add(polity.id));
   const polities = uniqueById(data.polities.filter((polity) => polityIds.has(polity.id)));
-  const events = uniqueById(data.events.filter((event) => event.placeId !== undefined && cityPlaceIds.has(event.placeId) && historicalUntil(event.year, year)));
+  const eventDetailsById = new Map((data.eventDetails ?? []).map((detail) => [detail.eventId, detail]));
+  const events = uniqueById(data.events.filter((event) => eventTouchesCity(event, eventDetailsById.get(event.id), cityPlaceIds) && historicalUntil(event.year, year)));
   const heritage = uniqueById(data.heritage.filter((asset) => cityPlaceIds.has(asset.placeId) && historicalUntil(asset.constructionFrom, year)));
   const people = uniqueById(data.people.filter((person) => person.polityIds?.some((polityId) => polityIds.has(polityId))));
   const entities: CityStudyEntity[] = [
