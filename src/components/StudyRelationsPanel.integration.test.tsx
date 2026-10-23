@@ -5,6 +5,7 @@ import { getChanganStudyBundle } from '../data/changan-study';
 import { capitalHistory } from '../data/capital-history';
 import { claims } from '../data/claims';
 import { events as historicalEvents } from '../data/events';
+import { eventDetails } from '../data/event-details';
 import { heritageAssets } from '../data/heritage';
 import { people } from '../data/people';
 import { places } from '../data/places';
@@ -89,5 +90,55 @@ describe('StudyRelationsPanel integration', () => {
 
     await userEvent.click(screen.getByRole('button', { name: '努尔哈赤' }));
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'nurhaci' });
+  });
+
+  it('shows and opens transition references without promoting them to current facts', async () => {
+    const view = buildPolityStudyView('zhou_northern', 581, { ...completeData, eventDetails, polityDetails });
+    const onOpenEntity = vi.fn();
+    render(<StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} />);
+
+    expect(screen.getByText('详情关联过渡事件')).toBeInTheDocument();
+    expect(screen.getByText('关联但非本年事实；政权归属以事件证据为准。')).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '西魏建立' })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '隋建立' })).toBeInTheDocument();
+
+    await userEvent.click(screen.getByRole('button', { name: '西魏建立' }));
+    await userEvent.click(screen.getByRole('button', { name: '隋建立' }));
+    expect(onOpenEntity.mock.calls).toEqual(expect.arrayContaining([
+      [{ type: 'event', id: 'western-wei-founded' }],
+      [{ type: 'event', id: 'sui-founded' }],
+    ]));
+  });
+
+  it('keeps every transition reference navigable from its owning polity view', async () => {
+    const cases = [
+      ['wei_three', 280, '西晋灭吴'],
+      ['shu_three', 280, '西晋灭吴'],
+      ['jin_eastern', 317, '西晋灭吴'],
+      ['zhou_northern', 581, '西魏建立'],
+      ['zhou_northern', 581, '隋建立'],
+    ] as const;
+    const onOpenEntity = vi.fn();
+
+    for (const [polityId, year, eventTitle] of cases) {
+      const view = buildPolityStudyView(polityId, year, { ...completeData, eventDetails, polityDetails });
+      const rendered = render(<StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} />);
+      await userEvent.click(screen.getByRole('button', { name: eventTitle }));
+      expect(onOpenEntity).toHaveBeenCalledWith({
+        type: 'event',
+        id: eventTitle === '西晋灭吴' ? 'jin-unification' : eventTitle === '西魏建立' ? 'western-wei-founded' : 'sui-founded',
+      });
+      rendered.unmount();
+    }
+  });
+
+  it('labels transition references in English', () => {
+    localStorage.setItem('history-locale', 'en');
+    const view = buildPolityStudyView('zhou_northern', 581, { ...completeData, eventDetails, polityDetails });
+    render(<LocaleProvider><StudyRelationsPanel view={view!} /></LocaleProvider>);
+
+    expect(screen.getByText('Related transition events')).toBeInTheDocument();
+    expect(screen.getByText('Associated reference, not a fact of the selected year; polity attribution follows the event evidence.')).toBeInTheDocument();
+    localStorage.removeItem('history-locale');
   });
 });

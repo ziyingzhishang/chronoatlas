@@ -85,6 +85,34 @@ describe('study views', () => {
     expect(weiView?.detailLinkedEvents.some((event) => event.id === 'jin-unification')).toBe(false);
   });
 
+  it('keeps five transition references in a separate learning collection', () => {
+    const studyData = { ...data, events, eventDetails, polityDetails };
+    const weiView = buildPolityStudyView('wei_three', 280, studyData);
+    const shuView = buildPolityStudyView('shu_three', 280, studyData);
+    const easternJinView = buildPolityStudyView('jin_eastern', 317, studyData);
+    const northernZhouView = buildPolityStudyView('zhou_northern', 581, studyData);
+
+    expect(weiView?.events.some((event) => event.id === 'jin-unification')).toBe(false);
+    expect(weiView?.detailLinkedEvents.some((event) => event.id === 'jin-unification')).toBe(false);
+    expect(weiView?.detailLinkedTransitionEvents.map((event) => event.id)).toEqual(['jin-unification']);
+    expect(shuView?.detailLinkedTransitionEvents.map((event) => event.id)).toEqual(['jin-unification']);
+    expect(easternJinView?.detailLinkedTransitionEvents.map((event) => event.id)).toEqual(['jin-unification']);
+    expect(northernZhouView?.detailLinkedTransitionEvents.map((event) => event.id)).toEqual(['western-wei-founded', 'sui-founded']);
+  });
+
+  it('keeps transition references out of the claim collection even if a direct claim exists', () => {
+    const transitionClaim = {
+      id: 'test-transition-claim', subjectId: 'zhou_northern', predicate: 'related-to', objectId: 'sui-founded',
+      validFrom: 581, datePrecision: 'year' as const, perspective: 'polity' as const,
+      evidenceType: 'explicit-record' as const, confidence: 'high' as const, sourceIds: ['zizhi-tongjian'],
+    };
+    const view = buildPolityStudyView('zhou_northern', 581, {
+      ...data, events, eventDetails, polityDetails, claims: [...claims, transitionClaim],
+    });
+    expect(view?.detailLinkedTransitionEvents.map((event) => event.id)).toEqual(['western-wei-founded', 'sui-founded']);
+    expect(view?.claims.some((claim) => claim.id === transitionClaim.id)).toBe(false);
+  });
+
   it('exposes detail-linked heritage only within its own construction window', () => {
     const tangView = buildPolityStudyView('tang', 650, { ...data, polityDetails });
     const lateTangView = buildPolityStudyView('tang', 950, { ...data, polityDetails });

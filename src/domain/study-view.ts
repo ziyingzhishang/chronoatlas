@@ -23,6 +23,7 @@ export interface PolityStudyView {
   heritage: HeritageAsset[];
   detailLinkedPeople: Person[];
   detailLinkedEvents: HistoricalEvent[];
+  detailLinkedTransitionEvents: HistoricalEvent[];
   detailLinkedHeritage: HeritageAsset[];
   claims: HistoricalClaim[];
 }
@@ -146,6 +147,15 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
       const explicitPolityIds = explicitPolityIdsByEventId.get(event.id);
       return explicitPolityIds === undefined || explicitPolityIds.has(polityId);
     }));
+  const detailLinkedTransitionEvents = uniqueById((polityDetail?.eventIds ?? [])
+    .map((eventId) => data.events.find((event) => event.id === eventId))
+    .filter((event): event is HistoricalEvent => event !== undefined)
+    .filter((event) => !events.some((current) => current.id === event.id))
+    .filter((event) => {
+      const explicitPolityIds = explicitPolityIdsByEventId.get(event.id);
+      return explicitPolityIds !== undefined && !explicitPolityIds.has(polityId);
+    }));
+  const transitionEventIds = new Set(detailLinkedTransitionEvents.map((event) => event.id));
   const polityClaims = data.claims.filter((claim) => claimTouches(claim, polityId) && active(claim.validFrom, claim.validTo, year));
   const heritageIds = new Set(polityClaims.filter((claim) => claim.predicate === 'left-heritage').map((claim) => claim.objectId));
   const detailLinkedHeritage = uniqueById((polityDetail?.heritageIds ?? [])
@@ -159,12 +169,14 @@ export function buildPolityStudyView(polityId: string, year: number, data: Study
     ...heritageIds,
   ]);
   const claims = data.claims.filter((claim) => active(claim.validFrom, claim.validTo, year)
+    && !transitionEventIds.has(claim.subjectId)
+    && !transitionEventIds.has(claim.objectId ?? '')
     && (claimTouches(claim, polityId) || (claim.objectId !== undefined && entityIds.has(claim.subjectId) && entityIds.has(claim.objectId))));
   return {
     kind: 'polity', subject, year, capitalTerms, capitalPlaces,
     events,
     people, heritage: data.heritage.filter((asset) => heritageIds.has(asset.id)),
-    detailLinkedPeople, detailLinkedEvents, detailLinkedHeritage, claims,
+    detailLinkedPeople, detailLinkedEvents, detailLinkedTransitionEvents, detailLinkedHeritage, claims,
   };
 }
 

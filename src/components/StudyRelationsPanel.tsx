@@ -29,6 +29,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
   const detailLinkedEvents = polityView
     ? polityView.detailLinkedEvents.filter((event) => !polityView.events.some((current) => current.id === event.id))
     : [];
+  const detailLinkedTransitionEvents = polityView?.detailLinkedTransitionEvents ?? [];
   const detailLinkedHeritage = polityView
     ? polityView.detailLinkedHeritage.filter((asset) => !polityView.heritage.some((current) => current.id === asset.id))
     : [];
@@ -64,7 +65,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
           return <li key={person.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'person', id: person.id })}>{person.name}</button>{relationList.length > 0 && <span className="study-relation-label"> · {relationList.map((relation) => t(relationshipLabel[relation.claim.predicate] ?? relation.claim.predicate)).join('、')}</span>}</li>;
         })}</ul>
       </div>}
-      {polityView && (detailLinkedPeople.length > 0 || detailLinkedEvents.length > 0 || detailLinkedHeritage.length > 0) && <div className="study-block study-contextual-links" data-testid="detail-linked-entries">
+      {polityView && (detailLinkedPeople.length > 0 || detailLinkedEvents.length > 0 || detailLinkedTransitionEvents.length > 0 || detailLinkedHeritage.length > 0) && <div className="study-block study-contextual-links" data-testid="detail-linked-entries">
         <h3>{t('详情关联入口')}</h3>
         <p className="detail-note">{t('仅表示详情关联，不等同于本年事实；时间、有效期与政权归属仍以各自证据为准。')}</p>
         {detailLinkedPeople.length > 0 && <>
@@ -74,6 +75,11 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
         {detailLinkedEvents.length > 0 && <>
           <h4>{t('详情关联事件')}</h4>
           <ul className="study-list">{detailLinkedEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{formatHistoricalYear(event.year)}{event.datePrecision && ` · ${t('时间精度：')}${t(datePrecisionLabel[event.datePrecision])}`}</span></li>)}</ul>
+        </>}
+        {detailLinkedTransitionEvents.length > 0 && <>
+          <h4>{t('详情关联过渡事件')}</h4>
+          <p className="detail-note">{t('关联但非本年事实；政权归属以事件证据为准。')}</p>
+          <ul className="study-list">{detailLinkedTransitionEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{formatHistoricalYear(event.year)}{event.datePrecision && ` · ${t('时间精度：')}${t(datePrecisionLabel[event.datePrecision])}`}</span></li>)}</ul>
         </>}
         {detailLinkedHeritage.length > 0 && <>
           <h4>{t('详情关联遗产')}</h4>
