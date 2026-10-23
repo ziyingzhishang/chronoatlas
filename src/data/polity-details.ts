@@ -37,7 +37,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['曹操控制北方重要军政资源并奉汉献帝。', '220年曹丕受禅称帝，魏政权正式建立。', '洛阳成为曹魏正式都城，三国并立格局并未立即结束战争。'],
     turningPoints: [turn(220, '曹魏建立', '代汉建魏，三国分期进入新阶段。', 'three-kingdoms'), turn(227, '北伐与防线', '魏蜀军事竞争成为西部战略主线。'), turn(249, '高平陵之变', '司马氏在魏廷的权力上升，政权内部结构发生变化。')],
     principalFigureIds: ['cao-cao'], capitalPhases: [capital('luoyang', 220, 265)],
-    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['three-kingdoms', 'jin-unification'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['three-kingdoms', 'jin-unification'], claimIds: ['claim-cao-cao-ruled-wei-three-closure'], sourceIds: modernSources,
     uncertaintyNote: '曹魏继承汉廷名义秩序但不等于自动继承汉末所有实际控制区域；三国边界应按阶段事件和疆域资料分别阅读。',
   }),
   detail({
@@ -45,7 +45,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘备以汉室宗亲和军政联盟为政治资源。', '221年在成都称帝，蜀汉政权形成。', '成都兼具宫城、行政与连接蜀地交通网络的中心功能。'],
     turningPoints: [turn(221, '蜀汉建立', '刘备称帝，蜀汉进入正式建政阶段。'), turn(223, '夷陵之后', '刘备去世后，诸葛亮主持政权重建与对外战略。'), turn(263, '蜀汉灭亡', '魏军进入成都，蜀汉政权结束。')],
     principalFigureIds: ['liu-bei'], capitalPhases: [capital('chengdu', 221, 263)],
-    heritageIds: ['shu-han-chengdu-city-site'], eventIds: ['shu-han-founded', 'three-kingdoms', 'jin-unification'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['shu-han-chengdu-city-site'], eventIds: ['shu-han-founded', 'three-kingdoms', 'jin-unification'], claimIds: ['claim-liu-bei-ruled-shu-three-closure'], sourceIds: modernSources,
     uncertaintyNote: '蜀汉对汉统的政治主张与实际控制范围是不同层次；成都遗产节点表达城市历史层，不等于完整蜀汉疆域。',
   }),
   detail({
@@ -53,7 +53,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['孙氏承接江东地方军政资源并经营长江中下游。', '222年孙吴进入独立政权阶段，229年孙权称帝。', '建业后改名建邺，统一映射至建康地点。'],
     turningPoints: [turn(208, '赤壁之战', '孙权与刘备联盟阻止曹操迅速南下。', 'red-cliffs'), turn(222, '孙吴形成', '江东政权进入长期独立阶段。'), turn(229, '孙吴建国完成', '孙权在建业称帝，孙吴完成正式称帝建国阶段。', 'wu-three-founded'), turn(280, '西晋灭吴', '孙吴向晋军投降，三国鼎立结束。', 'jin-unification')],
     principalFigureIds: ['sun-quan'], capitalPhases: [capital('jiankang', 222, 280)],
-    heritageIds: ['jiankang-six-dynasties-city-site'], eventIds: ['red-cliffs', 'wu-three-founded', 'jin-unification'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['jiankang-six-dynasties-city-site'], eventIds: ['red-cliffs', 'wu-three-founded', 'jin-unification'], claimIds: ['claim-sun-quan-ruled-wu-fiftyninth'], sourceIds: modernSources,
     uncertaintyNote: '赤壁战场具体位置仍需与传统地域参照区分；建康城市遗产覆盖六朝叠压层，不能单独还原孙吴城市全貌。',
   }),
   detail({
@@ -101,7 +101,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['忽必烈在蒙古汗权基础上推动制度与都城建设。', '1271年定国号为大元。', '1279年南宋覆亡后，元对中原和江南的统治整合进入新的阶段。'],
     turningPoints: [turn(1260, '汗位与制度重组', '忽必烈取得汗位后推进新的国家制度。'), turn(1271, '元建立', '国号改为大元。', 'yuan-founded'), turn(1279, '南宋覆亡', '元完成对南宋主要政权的征服。')],
     principalFigureIds: ['kublai', 'liu-bingzhong', 'bayan'], capitalPhases: [capital('shangdu', 1271, 1368, 'secondary', 'formal', '夏都'), capital('dadu', 1271, 1368, 'primary', 'formal', '主要政治中心')],
-    heritageIds: ['yuan-shangdu-site'], eventIds: ['yuan-founded'], claimIds: [], sourceIds: [...modernSources, 'yuan-nationalities-history', 'yuan-li-bingzhong'],
+    heritageIds: ['yuan-shangdu-site'], eventIds: ['yuan-founded'], claimIds: ['claim-kublai-ruled-yuan-closure'], sourceIds: [...modernSources, 'yuan-nationalities-history', 'yuan-li-bingzhong'],
     uncertaintyNote: '蒙古帝国各汗国不能整体等同元朝；1271年是国号节点，1279年是南宋覆亡节点，两者不应合并为一次性建国。',
   }),
   detail({
@@ -109,7 +109,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['朱元璋以应天为军事与行政中心击败主要竞争者。', '1368年称帝建立明朝。', '明军北取大都后，明廷仍在应天经营国家制度，后迁北京。'],
     turningPoints: [turn(1368, '明建立', '朱元璋在应天称帝，明朝形成。', 'ming-founded'), turn(1368, '北取大都', '元廷北撤，元明政权转换进入新阶段。'), turn(1421, '迁都北京', '北京成为主要首都，应天保留留都地位。')],
     principalFigureIds: ['zhu-yuanzhang'], capitalPhases: [capital('yingtian', 1368, 1420), capital('beijing', 1421, 1644), capital('yingtian', 1421, 1644, 'secondary', 'formal', '南京留都')],
-    heritageIds: ['ming-yingtian-imperial-city-site'], eventIds: ['ming-founded'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['ming-yingtian-imperial-city-site'], eventIds: ['ming-founded'], claimIds: ['claim-zhu-yuanzhang-ruled-ming-sixtysecond'], sourceIds: modernSources,
     uncertaintyNote: '1368年建国、北取大都和1421年迁都为不同节点；明后期与南明的政权连续性不能用一条首都记录替代。',
   }),
   detail({
@@ -117,7 +117,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['后金时期的军政体系和关外都城为清建立提供基础。', '1636年皇太极改国号为清。', '1644年入关并迁入北京，关内统治与关外阶段应分层叙述。'],
     turningPoints: [turn(1636, '清建立', '皇太极改国号为清。', 'qing-founded'), turn(1644, '清入关', '清廷政治中心由盛京转向北京。', 'qing-enters-pass'), turn(1683, '台湾纳入清统治', '清的全国性统治进一步扩展，但具体边疆控制仍须按阶段核验。')],
     principalFigureIds: ['nurhaci', 'hongtaiji', 'dorgon'], capitalPhases: [capital('shengjing', 1636, 1644), capital('beijing', 1644, 1912)],
-    heritageIds: ['qing-shengjing-palace-city-site'], eventIds: ['qing-founded', 'qing-enters-pass'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['qing-shengjing-palace-city-site'], eventIds: ['qing-founded', 'qing-enters-pass'], claimIds: ['claim-hongtaiji-ruled-qing-fiftysixth', 'claim-shunzhi-ruled-qing-fiftysixth'], sourceIds: modernSources,
     uncertaintyNote: '1636年改国号不等于已控制明朝全境；入关、迁京与后续各地归属是不同阶段，盛京遗产也需与后金赫图阿拉分开。',
   }),
   detail({
@@ -509,7 +509,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['传统纪年以公元前37年作为朱蒙建立高句丽的节点。', '早期王权在山城、河谷与部众网络中逐步整合。', '国内城及丸都山城、后期平壤分别代表不同都城阶段。'],
     turningPoints: [turn(-37, '高句丽建立', '朱蒙建立高句丽，早期国家形态随后逐步整合。', 'goguryeo-founded'), turn(3, '迁至国内城', '琉璃明王时期政治中心转向国内城。'), turn(427, '迁都平壤', '高句丽政治中心转向平壤，国家空间发生变化。')],
     principalFigureIds: ['jumong', 'yuri-goguryeo', 'daemusin', 'gwanggaeto', 'jangsu-goguryeo'], capitalPhases: [capital('wunvshan', -37, 2), capital('guonei', 3, 426), capital('pyongyang', 427, 668)],
-    heritageIds: ['wunvshan-goguryeo-early-capital-site', 'goguryeo-guonei-city-site', 'goguryeo-pyongyang-city-layer'], eventIds: ['goguryeo-founded', 'goguryeo-moves-pyongyang'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['wunvshan-goguryeo-early-capital-site', 'goguryeo-guonei-city-site', 'goguryeo-pyongyang-city-layer'], eventIds: ['goguryeo-founded', 'goguryeo-moves-pyongyang'], claimIds: ['claim-jumong-ruled-goguryeo-fiftyninth', 'claim-daemusin-ruled-goguryeo-fiftyseventh'], sourceIds: modernSources,
     uncertaintyNote: '前37年属于传统建国纪年，早期国家化与城址对应不能视为精确日期；国内城、丸都山城和平壤是不同年代与功能层，遗产节点不等于单一完整宫城。',
   }),
   detail({
@@ -541,7 +541,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['1368年前后元廷退出大都并向漠北迁移。', '元室与蒙古部众在草原政治网络中延续大汗体系。', '北元内部汗权、军事权力和部众联盟在不同时期重组。'],
     turningPoints: [turn(1368, '北元政权形成', '元廷北撤后，蒙古大汗政权在漠北延续。', 'northern-yuan-founded'), turn(1402, '汗权称谓与权力重组', '草原政治中心和汗权关系持续变化。'), turn(1449, '也先时期权力竞争', '大汗与军事权力并存，政治结构不能用单一君臣关系概括。')],
     principalFigureIds: ['toghon-temur', 'tuotuobuhua', 'esen-taishi'], capitalPhases: [capital('beiyuan_core', 1368, 1635, 'mobile_court', 'uncertain', '北元多阶段汗廷，今蒙古高原中部区域参照，不指向单一固定城址。')],
-    heritageIds: ['northern-yuan-khan-court-landscape'], eventIds: ['northern-yuan-founded'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['northern-yuan-khan-court-landscape'], eventIds: ['northern-yuan-founded'], claimIds: ['claim-tuotuobuhua-ruled-northern-yuan', 'claim-toghon-temur-ruled-northern-yuan-ninetythird'], sourceIds: modernSources,
     uncertaintyNote: '“北元”是后世对元室北迁延续阶段的概称；蒙古汗廷具有移动性，不能把区域政治景观写成唯一首都，也不能把北元全期压缩为单一边界。',
   }),
   detail({

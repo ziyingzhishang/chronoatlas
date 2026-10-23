@@ -83,4 +83,9 @@ describe('capital-associated heritage boundary audit', () => {
       ]);
     }
   });
+
+  it('keeps the Jiangling heritage layer attached to Southern Liang rather than Southern Liang of the Sixteen Kingdoms', () => {
+    expect(detailById.get('southern-liang-jiangling-city-site')?.associatedPolities).toContain('liang_southern');
+    expect(detailById.get('southern-liang-jiangling-city-site')?.associatedPolities).not.toContain('southern_liang');
+  });
 });
