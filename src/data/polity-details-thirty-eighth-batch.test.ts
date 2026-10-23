@@ -47,4 +47,8 @@ describe('第三十八批政权详情', () => {
     expect(getPolityDetail('northern_yuan')?.uncertaintyNote).toContain('唯一');
     expect(getPolityDetail('shang')?.uncertaintyNote).toContain('迁都');
   });
+
+  it('exposes the 668 termination event from the Goguryeo polity perspective', () => {
+    expect(getPolityDetail('goguryeo')?.eventIds).toContain('silla-tang-goguryeo-668');
+  });
 });
