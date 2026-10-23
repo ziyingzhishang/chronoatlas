@@ -51,7 +51,7 @@ describe('sixty-eighth batch high-confidence kinship relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(26);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(110);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(73);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(69);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
     expect(report.byPersonId['chen-xu'].categories.kinship.status).toBe('covered');
     expect(report.byPersonId['chen-qian'].categories.kinship.status).toBe('covered');

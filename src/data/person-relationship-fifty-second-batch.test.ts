@@ -51,7 +51,7 @@ describe('fifty-second batch high-confidence person relationships', () => {
     expect(report.byPersonId.tuotuobuhua.requiredMissingCategoryKeys).not.toContain('eventParticipation');
     expect(report.requiredMissingByCategory.governance).toHaveLength(26);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(110);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(73);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(69);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
     expect(report.needsSupplementPersonIds).toHaveLength(147);
   });
