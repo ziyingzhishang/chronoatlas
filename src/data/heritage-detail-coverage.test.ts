@@ -242,4 +242,17 @@ describe('heritage detail coverage audit', () => {
       expect(item?.unresolvedReferenceIds.events, heritageId).toEqual(['xuanzang-translations']);
     }
   });
+
+  it('does not treat an unresolved event or explicit uncertainty as complete', () => {
+    const report = buildHeritageDetailCoverageReport({ catalog: baseCatalog });
+
+    for (const heritageId of roundSeventySecondHeritageIds) {
+      const detail = heritageDetails.find((item) => item.heritageId === heritageId);
+      const item = report.items.find((coverageItem) => coverageItem.heritageId === heritageId);
+
+      expect(detail?.uncertaintyNote, heritageId).toContain('待核关联');
+      expect(item?.unresolvedReferenceIds.events, heritageId).toEqual(['xuanzang-translations']);
+      expect(item?.status, heritageId).toBe('needs-review');
+    }
+  });
 });
