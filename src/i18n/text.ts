@@ -3,6 +3,7 @@ import { chineseText } from './chinese';
 // Source strings are display text, never entity IDs or filter values. Unknown
 // historical names deliberately remain unchanged rather than being guessed.
 const english: Record<string, string> = {
+  '打开完整事件详情':'Open full event details',
   '证据追踪':'Evidence traceability', '关联追踪':'Related-ID traceability', '来源 ID：':'Source ID: ',
   '山河变迁':'Lands Through Time', '中国历史地图':'China Historical Map', '中国历史 · 山河变迁':'China History · Lands Through Time',
   '工作台工具':'Workspace tools', '当前历史状态':'Current historical state', '快捷图层':'Quick layers', '图层':'Layers', '事件':'Events', '详情':'Details', '更多':'More',

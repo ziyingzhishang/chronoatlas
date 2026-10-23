@@ -183,6 +183,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           <span className="eyebrow">{t("编年事件")}</span>
           <h2>{t(selected.title)}</h2>
           <p className="panel-intro">{t(selected.summary)}</p>
+          {onOpenEntity && <button type="button" onClick={() => onOpenEntity({ type: 'event', id: selected.id })}>{t('打开完整事件详情')}</button>}
         </>
       )}
     </aside>

@@ -37,6 +37,19 @@ test('opens an event detail from the current-year event summary through the enti
   expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded' });
 });
 
+test('opens the complete event detail from a selected event summary', async () => {
+  const user = userEvent.setup();
+  const onOpenEntity = vi.fn();
+  const state = getHistoricalState(618);
+
+  render(<LocaleProvider><InfoPanel state={state} selectedEntity={{ type: 'event', id: 'tang-founded' }} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+  expect(screen.getByRole('heading', { name: '唐建立' })).toBeInTheDocument();
+  await user.click(screen.getByRole('button', { name: '打开完整事件详情' }));
+
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded' });
+});
+
 test('shows historical and modern names for a selected place', () => {
   render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'place', id: 'xianyang' }} />);
   expect(screen.getByRole('heading', { name: '咸阳' })).toBeInTheDocument();

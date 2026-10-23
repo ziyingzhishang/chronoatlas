@@ -166,7 +166,7 @@ function HistoryWorkspace() {
               {visibleSearchEvents.map((event:HistoricalEvent)=><button key={event.id} type="button" role="option" aria-selected={selectedEntity?.type==='event'&&selectedEntity.id===event.id} onClick={()=>selectEvent(event)}><strong>{t(event.title)}</strong><span>{t(event.category??'历史转折')} · {t(event.region==='world'?'同期世界':'中国历史')}</span></button>)}
               {!visibleSearchEvents.length&&<p className="detail-note">{t(eventSearchQuery.trim()?'没有符合筛选条件的事件':'本年暂无已收录事件')}</p>}
             </div>
-            {selectedSearchEvent&&<EventDetailCard event={selectedSearchEvent} year={currentYear} onYearChange={changeYear} onBack={()=>setSelectedEntity(undefined)} onLocate={event=>{
+            {selectedSearchEvent&&<EventDetailCard event={selectedSearchEvent} year={currentYear} onYearChange={changeYear} onBack={()=>setSelectedEntity(undefined)} onOpenEntity={openDetail} onLocate={event=>{
               setVisibleLayers(layers=>new Set([...layers,'events']));
               setFocusRequest(previous=>({id:event.id,nonce:(previous?.nonce??0)+1}));
             }}/>}
@@ -188,7 +188,7 @@ function HistoryWorkspace() {
     </div>
       {detailEntity && <EntityDrawer title={detailTitle(detailEntity)} entityType={detailEntity.type} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0}>
         {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={getPersonDetail(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
-        {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
+        {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
         {detailEntity.type === 'heritage' && (() => { const asset = heritageById[detailEntity.id]; const detail = getHeritageDetail(detailEntity.id); return asset && detail ? <HeritageDetail detail={detail} heritageName={asset.name} placeId={asset.placeId} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录遗产详情')}</p>; })()}
         {(detailEntity.type === 'polity' || detailEntity.type === 'place') && (
           <InfoPanel state={historicalState} selectedEntity={detailEntity} onYearChange={changeYear} onOpenEntity={openDetail} polityDetailMode={detailEntity.type === 'polity' ? 'drawer' : 'summary'}/>

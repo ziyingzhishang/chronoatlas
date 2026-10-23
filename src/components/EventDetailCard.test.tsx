@@ -25,3 +25,12 @@ test('moves to the event year when stepping before or after the event', async ()
   await userEvent.click(screen.getByRole('button', { name: '事件前一年' }));
   expect(onYearChange).toHaveBeenCalledWith(-222);
 });
+
+test('opens the complete event detail through the shared entity callback', async () => {
+  const onOpenEntity = vi.fn();
+  render(<LocaleProvider><EventDetailCard event={event} year={-221} onYearChange={vi.fn()} onOpenEntity={onOpenEntity} /></LocaleProvider>);
+
+  await userEvent.click(screen.getByRole('button', { name: '打开完整事件详情' }));
+
+  expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: event.id });
+});

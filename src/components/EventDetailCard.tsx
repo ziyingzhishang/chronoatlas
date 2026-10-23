@@ -1,5 +1,6 @@
 import { useLocale } from '../i18n/locale';
 import type { HistoricalEvent } from '../domain/types';
+import type { DetailEntity } from '../domain/detail-entity';
 import { formatHistoricalYear, indexToYear, yearToIndex, TIMELINE_MIN_YEAR, TIMELINE_MAX_YEAR } from '../domain/timeline';
 import { formatSourceField } from '../i18n/source-display';
 
@@ -9,13 +10,14 @@ export interface EventDetailCardProps {
   onYearChange: (year: number) => void;
   onBack?: () => void;
   onLocate?: (event: HistoricalEvent) => void;
+  onOpenEntity?: (entity: DetailEntity) => void;
 }
 
 export function eventDate(event: HistoricalEvent) {
   return `${event.datePrecision === 'approximate' ? '约 ' : ''}${formatHistoricalYear(event.year)}${event.endYear && event.endYear !== event.year ? `—${formatHistoricalYear(event.endYear)}` : ''}`;
 }
 
-export function EventDetailCard({ event, onYearChange, onBack, onLocate }: EventDetailCardProps) {
+export function EventDetailCard({ event, onYearChange, onBack, onLocate, onOpenEntity }: EventDetailCardProps) {
   const { locale, t } = useLocale();
   return <article className="event-detail" aria-label={t('事件详情')}>
     {onBack && <button className="event-back-to-list" type="button" onClick={onBack}>← {t('返回事件列表')}</button>}
@@ -28,6 +30,7 @@ export function EventDetailCard({ event, onYearChange, onBack, onLocate }: Event
       <button disabled={(event.endYear ?? event.year) === TIMELINE_MAX_YEAR} onClick={() => onYearChange(indexToYear(yearToIndex(event.endYear ?? event.year) + 1))}>{t('事件后一年')}</button>
       {event.coordinates && onLocate && <button onClick={() => onLocate(event)}>{t('定位')}{t(event.locationPrecision === 'approximate' ? '约址' : '地点')}</button>}
     </div>
+    {onOpenEntity && <button type="button" onClick={() => onOpenEntity({ type: 'event', id: event.id })}>{t('打开完整事件详情')}</button>}
     {([['背景', event.background], ['经过', event.process], ['影响', event.impact], ['地图解读', event.mapNote]] as const).map(([label, text]) => text && <section className="event-paragraph" key={label}><h4>{t(label)}</h4><p>{t(text)}</p></section>)}
     {!event.coordinates && <p className="detail-note">{t('尚无独立核验的位置，不在地图上推测标点。')}</p>}
     <p className="detail-note">{t('事件与疆域资料分别核验；地图缺图或显示最大参考，不代表本事件的实际控制范围。')}</p>

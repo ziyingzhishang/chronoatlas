@@ -49,6 +49,20 @@ test('opens a deep entity drawer from the polity study view and supports back na
   expect(screen.queryByRole('dialog', { name: '李世民' })).not.toBeInTheDocument();
 });
 
+test('opens the 50vw event drawer from the event search result card', async () => {
+  render(<App />);
+  const search = screen.getByRole('searchbox', { name: '搜索历史事件' });
+
+  await userEvent.type(search, '秦统一');
+  await userEvent.click(screen.getByRole('option', { name: /秦统一六国/ }));
+  await userEvent.click(screen.getByRole('button', { name: '打开完整事件详情' }));
+
+  const drawer = screen.getByRole('dialog', { name: '秦统一六国' });
+  expect(drawer).toHaveClass('entity-drawer', 'entity-drawer-event');
+  expect(getComputedStyle(drawer).width).toBe('50vw');
+  expect(within(drawer).getByRole('article', { name: '事件详情' })).toBeInTheDocument();
+});
+
 test('opens polity detail from the compact card in the existing entity drawer', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
@@ -84,7 +98,11 @@ test('opens event and heritage details from the polity study summary', async () 
   expect(getComputedStyle(eventDrawer).width).toBe('50vw');
   expect(within(eventDrawer).getByRole('article', { name: '事件详情' })).toContainElement(within(eventDrawer).getByRole('heading', { name: '唐在长安建立', level: 3 }));
 
-  await userEvent.click(within(eventDrawer).getByRole('button', { name: '关闭详情' }));
+  await userEvent.click(within(eventDrawer).getByRole('button', { name: '李渊' }));
+  expect(screen.getByRole('dialog', { name: '李渊' })).toHaveClass('entity-drawer-person');
+
+  await userEvent.click(within(screen.getByRole('dialog', { name: '李渊' })).getByRole('button', { name: '返回上一个实体' }));
+  await userEvent.click(within(screen.getByRole('dialog', { name: '唐在长安建立' })).getByRole('button', { name: '关闭详情' }));
   await userEvent.click(screen.getByRole('button', { name: '大明宫遗址' }));
   const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
   expect(heritageDrawer).toHaveClass('entity-drawer');
