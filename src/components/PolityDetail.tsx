@@ -3,7 +3,10 @@ import type { PolityDetail as PolityDetailRecord } from '../domain/types';
 import { events } from '../data/events';
 import { people } from '../data/people';
 import { heritageById } from '../data/heritage';
+import { heritageDetails } from '../data/heritage-details';
 import { places } from '../data/places';
+import { eventDetails } from '../data/event-details';
+import { personDetails } from '../data/person-details';
 import { sourceById } from '../data/sources';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
@@ -15,6 +18,30 @@ interface PolityDetailProps {
 }
 
 const range = (from: number, to: number) => from === to ? formatHistoricalYear(from) : `${formatHistoricalYear(from)}—${formatHistoricalYear(to)}`;
+const optionalRange = (from?: number, to?: number) => from === undefined ? undefined : range(from, to ?? from);
+const unique = (ids: string[]) => [...new Set(ids)];
+
+function EvidenceMeta({
+  sourceIds,
+  validFrom,
+  validTo,
+  uncertaintyNote,
+  t,
+}: {
+  sourceIds: string[];
+  validFrom?: number;
+  validTo?: number;
+  uncertaintyNote?: string;
+  t: (text: string) => string;
+}) {
+  const ids = unique(sourceIds);
+  const resolvedCount = ids.filter((sourceId) => sourceById[sourceId]).length;
+  return <small className="polity-detail-evidence">
+    {optionalRange(validFrom, validTo) && <span>{t('有效期：')}{t(optionalRange(validFrom, validTo)!)}</span>}
+    <span>{t('来源解析：')}{resolvedCount}/{ids.length} {t(resolvedCount === ids.length && ids.length > 0 ? '已解析' : '未解析')}</span>
+    {uncertaintyNote && <span>{t('不确定性提示：')}{t(uncertaintyNote)}</span>}
+  </small>;
+}
 
 function EntityLink({ label, entity, onOpenEntity }: { label: string; entity: DetailEntity; onOpenEntity?: (entity: DetailEntity) => void }) {
   if (!onOpenEntity) return <span>{label}</span>;
@@ -26,6 +53,9 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
   const personById = new Map(people.map((person) => [person.id, person]));
   const eventById = new Map(events.map((event) => [event.id, event]));
   const placeById = new Map(places.map((place) => [place.id, place]));
+  const personDetailById = new Map(personDetails.map((record) => [record.personId, record]));
+  const eventDetailById = new Map(eventDetails.map((record) => [record.eventId, record]));
+  const heritageDetailById = new Map(heritageDetails.map((record) => [record.heritageId, record]));
 
   const body = <article className="polity-detail-body">
       <p className="event-lead">{t(detail.perspectiveSummary)}</p>
@@ -40,7 +70,10 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
         <ol>{detail.turningPoints.map((point) => <li key={`${point.year}-${point.title}`}>
           <strong>{t(point.title)}</strong><span> · {t(formatHistoricalYear(point.year))}</span>
           <p>{t(point.summary)}</p>
-          {point.eventId && eventById.has(point.eventId) && <EntityLink label={t(eventById.get(point.eventId)!.title)} entity={{ type: 'event', id: point.eventId }} onOpenEntity={onOpenEntity} />}
+          {point.eventId && eventById.has(point.eventId) && <>
+            <EntityLink label={t(eventById.get(point.eventId)!.title)} entity={{ type: 'event', id: point.eventId }} onOpenEntity={onOpenEntity} />
+            <EvidenceMeta sourceIds={unique([...(eventById.get(point.eventId)?.sourceIds ?? []), ...(eventDetailById.get(point.eventId)?.sourceIds ?? [])])} validFrom={eventById.get(point.eventId)?.year} validTo={eventById.get(point.eventId)?.endYear} uncertaintyNote={eventDetailById.get(point.eventId)?.uncertaintyNote} t={t} />
+          </>}
         </li>)}</ol>
       </section>
 
@@ -48,7 +81,12 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
         <h3>{t('主要人物')}</h3>
         <ul className="study-list">{detail.principalFigureIds.map((personId) => {
           const person = personById.get(personId);
-          return <li key={personId}><EntityLink label={t(person?.name ?? personId)} entity={{ type: 'person', id: personId }} onOpenEntity={onOpenEntity} /></li>;
+          const personDetail = personDetailById.get(personId);
+          const office = personDetail?.offices.find((item) => item.polityId === detail.polityId) ?? personDetail?.offices[0];
+          return <li key={personId}>
+            <EntityLink label={t(person?.name ?? personId)} entity={{ type: 'person', id: personId }} onOpenEntity={onOpenEntity} />
+            <EvidenceMeta sourceIds={unique([...(person?.sourceIds ?? []), ...(personDetail?.sourceIds ?? []), ...(office?.sourceIds ?? [])])} validFrom={office?.validFrom} validTo={office?.validTo} uncertaintyNote={personDetail?.uncertaintyNote} t={t} />
+          </li>;
         })}</ul>
       </section>
 
@@ -56,15 +94,33 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
         <h3>{t('首都阶段')}</h3>
         <ul className="study-list">{detail.capitalPhases.map((phase) => {
           const place = placeById.get(phase.placeId);
-          return <li key={`${phase.placeId}-${phase.validFrom}-${phase.validTo}`}><EntityLink label={t(place?.historicalName ?? phase.placeId)} entity={{ type: 'place', id: phase.placeId }} onOpenEntity={onOpenEntity} /><span> · {t(range(phase.validFrom, phase.validTo))}</span>{place?.modernName && <span> · {t('今·')}{t(place.modernName)}</span>}{phase.note && <small>{t(phase.note)}</small>}</li>;
+          return <li key={`${phase.placeId}-${phase.validFrom}-${phase.validTo}`}>
+            <EntityLink label={t(place?.historicalName ?? phase.placeId)} entity={{ type: 'place', id: phase.placeId }} onOpenEntity={onOpenEntity} />
+            <span> · {t(range(phase.validFrom, phase.validTo))}</span>{place?.modernName && <span> · {t('今·')}{t(place.modernName)}</span>}{phase.note && <small>{t(phase.note)}</small>}
+            <EvidenceMeta sourceIds={place?.sourceIds ?? []} uncertaintyNote={place?.mappingStatus && place.mappingStatus !== 'exact' ? place.notes : undefined} t={t} />
+          </li>;
         })}</ul>
       </section>
 
       <section className="polity-detail-section">
         <h3>{t('遗产与事件关联')}</h3>
         <ul className="study-list">
-          {detail.heritageIds.map((heritageId) => <li key={heritageId}><EntityLink label={t(heritageById[heritageId]?.name ?? heritageId)} entity={{ type: 'heritage', id: heritageId }} onOpenEntity={onOpenEntity} /></li>)}
-          {detail.eventIds.map((eventId) => <li key={eventId}><EntityLink label={t(eventById.get(eventId)?.title ?? eventId)} entity={{ type: 'event', id: eventId }} onOpenEntity={onOpenEntity} /></li>)}
+          {detail.heritageIds.map((heritageId) => {
+            const heritage = heritageById[heritageId];
+            const heritageDetail = heritageDetailById.get(heritageId);
+            return <li key={heritageId}>
+              <EntityLink label={t(heritage?.name ?? heritageId)} entity={{ type: 'heritage', id: heritageId }} onOpenEntity={onOpenEntity} />
+              <EvidenceMeta sourceIds={unique([...(heritage?.sourceIds ?? []), ...(heritageDetail?.sourceIds ?? [])])} validFrom={heritage?.constructionFrom} validTo={heritage?.constructionTo} uncertaintyNote={heritageDetail?.uncertaintyNote} t={t} />
+            </li>;
+          })}
+          {detail.eventIds.map((eventId) => {
+            const event = eventById.get(eventId);
+            const eventDetail = eventDetailById.get(eventId);
+            return <li key={eventId}>
+              <EntityLink label={t(event?.title ?? eventId)} entity={{ type: 'event', id: eventId }} onOpenEntity={onOpenEntity} />
+              <EvidenceMeta sourceIds={unique([...(event?.sourceIds ?? []), ...(eventDetail?.sourceIds ?? [])])} validFrom={event?.year} validTo={event?.endYear} uncertaintyNote={eventDetail?.uncertaintyNote} t={t} />
+            </li>;
+          })}
         </ul>
       </section>
 
