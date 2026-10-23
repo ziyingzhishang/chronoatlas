@@ -62,11 +62,11 @@ describe('ninety-fourth batch high-confidence kinship relationships', () => {
   });
 
   it('navigates each relationship from the person detail drawer', () => {
-    for (const [personId, year, label, targetId] of [
-      ['han-kangzi', -403, '祖父母／外祖父母 · 韩虔', 'han-qian'],
-      ['han-qian', -403, '孙辈／外孙辈 · 韩康子', 'han-kangzi'],
-      ['li-bian', 940, '祖父母／外祖父母 · 李煜', 'li-yu'],
-      ['li-yu', 940, '孙辈／外孙辈 · 李昪', 'li-bian'],
+    for (const [personId, year, label, direction, targetId] of [
+      ['han-kangzi', -403, '祖父母／外祖父母 · 韩虔', '韩康子 → 韩虔', 'han-qian'],
+      ['han-qian', -403, '孙辈／外孙辈 · 韩康子', '韩虔 → 韩康子', 'han-kangzi'],
+      ['li-bian', 940, '祖父母／外祖父母 · 李煜', '李昪 → 李煜', 'li-yu'],
+      ['li-yu', 940, '孙辈／外孙辈 · 李昪', '李煜 → 李昪', 'li-bian'],
     ] as const) {
       const onOpenEntity = (entity: { type: 'person' | 'polity' | 'event' | 'heritage'; id: string }) => {
         expect(entity).toEqual({ type: 'person', id: targetId });
@@ -82,7 +82,7 @@ describe('ninety-fourth batch high-confidence kinship relationships', () => {
           onOpenEntity={onOpenEntity}
         />,
       );
-      fireEvent.click(screen.getByRole('button', { name: new RegExp(label) }));
+      fireEvent.click(screen.getByRole('button', { name: new RegExp(`${label}.*方向：${direction}`) }));
       cleanup();
     }
   });

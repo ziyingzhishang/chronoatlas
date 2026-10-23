@@ -87,7 +87,7 @@ describe('eighty-ninth batch person relationship audit', () => {
       />,
     );
 
-    fireEvent.click(screen.getByRole('button', { name: /子女.*李世民/ }));
+    fireEvent.click(screen.getByRole('button', { name: /子女.*李世民.*方向：李治 → 李世民/ }));
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'li-shimin' });
   });
 });
