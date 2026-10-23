@@ -6,10 +6,15 @@ import type {
   KnowledgeCoverageReport,
 } from '../data/knowledge-coverage';
 
+type KnowledgeCoverageContext =
+  | { type: 'polity'; id: string }
+  | { type: 'city'; id: string };
+
 interface KnowledgeCoveragePanelProps {
   report: KnowledgeCoverageReport;
   maxTasks?: number;
   onOpenEntity?: (entity: DetailEntity) => void;
+  context?: KnowledgeCoverageContext;
 }
 
 const taskLabels: Record<CoverageTaskKind, string> = {
@@ -25,23 +30,39 @@ const perspectiveLabels: Record<CoveragePerspective, string> = {
   city: '城市视角',
 };
 
-export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity }: KnowledgeCoveragePanelProps) {
+export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, context }: KnowledgeCoveragePanelProps) {
   const { t } = useLocale();
-  const tasks = report.tasks.slice(0, maxTasks);
+  const contextualReport = context
+    ? context.type === 'polity' ? report.byPolity[context.id] : report.byCity[context.id]
+    : undefined;
+  const contextTasks = contextualReport && context
+    ? report.tasks.filter((task) => context.type === 'polity'
+      ? task.polityIds.includes(context.id)
+      : task.placeIds.includes(context.id))
+    : report.tasks;
+  const tasks = contextTasks.slice(0, maxTasks);
+  const entityCount = contextualReport?.entityKeys.length ?? report.entities.length;
+  const gapCount = contextualReport?.gaps.length ?? report.gaps.length;
+  const reportName = contextualReport
+    ? 'polityName' in contextualReport ? contextualReport.polityName : contextualReport.cityName
+    : undefined;
+  const perspective = context?.type === 'polity' ? '政权视角' : context?.type === 'city' ? '城市视角' : undefined;
 
   return (
     <section className="knowledge-coverage-panel" data-testid="knowledge-coverage-panel" aria-labelledby="knowledge-coverage-title">
       <div className="panel-section-heading">
         <div>
           <span className="eyebrow">{t('学习覆盖')}</span>
-          <h3 id="knowledge-coverage-title">{t('覆盖报告摘要')}</h3>
+          <h3 id="knowledge-coverage-title">
+            {contextualReport ? <>{t(perspective!)} · {t(reportName!)}</> : t('覆盖报告摘要')}
+          </h3>
         </div>
         <a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t('查看完整审计 ↗')}</a>
       </div>
       <p className="detail-note">
-        {t('实体')} {report.entities.length} · {t('缺口')} {report.gaps.length} · {t('可行动缺口')} {report.tasks.length}
+        {t('实体')} {entityCount} · {t('缺口')} {gapCount} · {t('可行动缺口')} {contextualReport ? contextTasks.length : report.tasks.length}
       </p>
-      {report.tasks.length === 0 ? (
+      {contextTasks.length === 0 ? (
         <p className="detail-note">{t('当前没有可行动缺口')}</p>
       ) : (
         <details className="knowledge-coverage-tasks">
@@ -65,7 +86,7 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity }: K
               </li>
             ))}
           </ul>
-          {report.tasks.length > tasks.length && <p className="detail-note">{t('其余缺口请查看完整审计报告。')}</p>}
+          {contextTasks.length > tasks.length && <p className="detail-note">{t('其余缺口请查看完整审计报告。')}</p>}
         </details>
       )}
     </section>

@@ -5,6 +5,7 @@ import { getHistoricalState } from '../domain/history-state';
 import { InfoPanel } from './InfoPanel';
 import { LocaleProvider } from '../i18n/locale';
 import { localizeState } from '../i18n/content';
+import { auditKnowledgeCoverage } from '../data/knowledge-coverage';
 
 test('shows current polities when no entity is selected', () => {
   render(<InfoPanel state={getHistoricalState(937)} selectedEntity={undefined} />);
@@ -41,6 +42,28 @@ test('shows historical and modern names for a selected place', () => {
   expect(screen.getByRole('heading', { name: '咸阳' })).toBeInTheDocument();
   expect(screen.getByText('现代位置')).toBeInTheDocument();
   expect(screen.getAllByText('咸阳市').length).toBeGreaterThanOrEqual(1);
+});
+
+test('shows the selected polity coverage report instead of the global report', () => {
+  const report = auditKnowledgeCoverage();
+  const polityReport = report.byPolity.qin;
+  render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'polity', id: 'qin' }} />);
+
+  expect(polityReport).toBeDefined();
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`政权视角 · ${polityReport.polityName}`);
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`实体 ${polityReport.entityKeys.length}`);
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`缺口 ${polityReport.gaps.length}`);
+});
+
+test('shows the selected city coverage report instead of the global report', () => {
+  const report = auditKnowledgeCoverage();
+  const cityReport = report.byCity.xianyang;
+  render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'place', id: 'xianyang' }} />);
+
+  expect(cityReport).toBeDefined();
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`城市视角 · ${cityReport.cityName}`);
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`实体 ${cityReport.entityKeys.length}`);
+  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`缺口 ${cityReport.gaps.length}`);
 });
 
 test('uses the full event catalog in a non-Changan city study view', () => {

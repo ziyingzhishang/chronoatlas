@@ -64,6 +64,11 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
     : selectedEntity?.type === 'place'
       ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: cityStudyEvents, claims, capitalTerms: capitalHistory })
       : undefined;
+  const coverageContext = selectedEntity?.type === 'polity' && selected
+    ? { type: 'polity' as const, id: selected.id }
+    : selectedEntity?.type === 'place' && selected
+      ? { type: 'city' as const, id: selected.id }
+      : undefined;
   const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
 
   return (
@@ -117,6 +122,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           {selected.notes && <p className="detail-note">{t(selected.notes)}</p>}
           <p className="detail-note">{t("此处为精选古地名参照，尚未逐年校勘更名与归属；名称不保证适用于所选年的每个时点。")}</p>
           {studyView && <StudyRelationsPanel view={studyView} onOpenEntity={onOpenEntity} />}
+          <KnowledgeCoveragePanel report={knowledgeCoverageReport} context={coverageContext} onOpenEntity={onOpenEntity} />
         </>
       )}
       {selectedEntity?.type === 'polity' && selected && 'name' in selected && (
@@ -169,6 +175,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           </div></details>}
           {selected.sourceIds.map(id => sourceById[id]).filter(Boolean).map(s => {const field=sourceField('documentTitle',s.title);return <p className="detail-note" key={s.id}>{field.label}{field.value} · {prose(s.note)}</p>;})}
           {studyView && <StudyRelationsPanel view={studyView} onOpenEntity={onOpenEntity} />}
+          <KnowledgeCoveragePanel report={knowledgeCoverageReport} context={coverageContext} onOpenEntity={onOpenEntity} />
         </>
       )}
       {selectedEntity?.type === 'event' && selected && 'title' in selected && (
