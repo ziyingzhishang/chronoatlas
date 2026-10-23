@@ -1901,6 +1901,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '386年是复代、改国号和政权形成节点，不以北魏后来统一北方的范围倒推建国当年边界；平城关联为政治中心参照。',
   },
   {
+    eventId: 'southern-qi-ended-502',
+    participants: [
+      { personId: 'xiao-baorong', role: '南齐末代君主与建康禅代节点人物', note: '萧宝融即南齐和帝，502年在建康禅位于萧衍；末代君主身份与禅代过程相连，不表示其主动发动政权转换。' },
+      { personId: 'xiao-yan', role: '在建康受禅并承接南齐政治中心的君主', note: '萧衍控制南齐末年朝廷与江南军政资源，502年受禅建立南梁；南梁后续地方整合另按阶段记录。' },
+    ],
+    polityIds: ['qi_southern', 'liang_southern'],
+    causes: ['南齐末年皇室权力衰弱，朝廷难以维持独立军政主导。', '萧衍控制雍州军政集团并进入建康政治中心。'],
+    consequences: ['南齐政权终止，南梁建立。', '建康继续作为南朝政治中心，南齐城市层与南梁城市层在同一城市空间中承接但不合并。'],
+    phases: [
+      { label: '南齐末年权力转移', startYear: 501, endYear: 501, summary: '萧衍军政集团进入建康政治中心并控制朝廷。' },
+      { label: '和帝禅位与南齐终止', startYear: 502, endYear: 502, summary: '南齐和帝萧宝融禅位，梁政权承接建康，南齐阶段终止。' },
+    ],
+    locationIds: ['jiankang'],
+    relatedEventIds: ['southern-qi-founded', 'southern-liang-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '502年通常作为南齐终止与南梁建立的承接节点；禅代、萧衍受禅和地方州郡实际整合存在过程差，建康遗产不能替代完整疆域判断。',
+  },
+  {
     eventId: 'southern-qi-founded',
     participants: [
       { personId: 'xiao-daocheng', role: '控制刘宋末年军政资源并受禅建立南齐的皇帝', note: '萧道成是479年受禅建齐的核心人物；南齐建政节点与南朝既有建康政治中心相连，不表示当年已稳定控制后期全部范围。' },

@@ -49,6 +49,7 @@ const categories: Record<string, BoundaryCategory> = {
   'later_liang|guzang||guzang-baita-temple-site': 'cross-polity-heritage',
   'song_northern|kaifeng|song-founded|': 'duplicate-event-node',
   'northern_yan|longcheng|later-yan-ended-407|': 'shared-transition-event',
+  'liang_southern|jiankang|southern-qi-ended-502|': 'shared-transition-event',
 };
 
 function discoverResiduals(): Candidate[] {

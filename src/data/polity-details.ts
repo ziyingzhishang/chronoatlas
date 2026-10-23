@@ -185,12 +185,12 @@ export const polityDetails: PolityDetail[] = [
     uncertaintyNote: '刘穆之主要参与建宋前的军政整合，刘义隆属于后续继承治理阶段；建康六朝遗址与南朝陵墓石刻是叠压城市遗产，不是刘宋单一建筑的直接保存。',
   }),
   detail({
-    polityId: 'qi_southern', perspectiveSummary: '南齐由萧道成在刘宋末年受禅建立，建康的南朝都城传统延续不变，但政权更替重塑了皇权与宗室秩序。',
+    polityId: 'qi_southern', perspectiveSummary: '南齐由萧道成在刘宋末年受禅建立，建康的南朝都城传统延续不变，并于502年在建康禅代终止，转入南梁阶段。',
     foundationProcess: ['萧道成在刘宋末年控制关键军政资源。', '479年受禅建立南齐。', '南齐以建康为都，处理江南州郡、宗室与南北竞争。'],
-    turningPoints: [turn(479, '南齐建立', '萧道成受禅即位，南齐形成。', 'southern-qi-founded'), turn(482, '武帝继承', '南齐由萧赜承接，进入制度与行政延续阶段。'), turn(502, '南齐禅代', '萧衍受禅，南齐转入南梁。')],
-    principalFigureIds: ['xiao-daocheng'], capitalPhases: [capital('jiankang', 479, 502)],
-    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['southern-qi-founded'], claimIds: ['claim-xiao-daocheng-founded-southern-qi'], sourceIds: modernSources,
-    uncertaintyNote: '479年禅代是政权节点，南齐的地方控制与后期政治变化不能压缩到建国时点；建康遗产包含多个南朝政权层次。',
+    turningPoints: [turn(479, '南齐建立', '萧道成受禅即位，南齐形成。', 'southern-qi-founded'), turn(482, '武帝继承', '南齐由萧赜承接，进入制度与行政延续阶段。'), turn(502, '南齐终止', '南齐和帝萧宝融在建康禅位于萧衍，南齐转入南梁。', 'southern-qi-ended-502')],
+    principalFigureIds: ['xiao-daocheng', 'xiao-baorong'], capitalPhases: [capital('jiankang', 479, 502)],
+    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['southern-qi-founded', 'southern-qi-ended-502'], claimIds: ['claim-xiao-daocheng-founded-southern-qi', 'claim-xiao-baorong-ruled-southern-qi', 'claim-xiao-baorong-participated-southern-qi-ended-502', 'claim-xiao-baorong-enemy-xiao-yan-termination-502'], sourceIds: modernSources,
+    uncertaintyNote: '479年禅代与502年禅代分别标记南齐的形成和终止；南齐的地方控制、萧衍掌权与南梁整合不能压缩到单一节点，建康遗产也包含多个南朝政权层次。',
   }),
   detail({
     polityId: 'liang_southern', perspectiveSummary: '南梁由萧衍在南齐末年受禅建立，建康是前期都城，侯景之乱后江陵与建康先后成为阶段性中心，最终转入南陈。',

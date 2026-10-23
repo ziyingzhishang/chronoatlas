@@ -7080,6 +7080,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-qi-ended-502",
+      "entityKey": "event:southern-qi-ended-502",
+      "label": "南齐在建康终止",
+      "polityIds": [
+        "liang_southern",
+        "qi_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-qi-ended-502"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiao-baorong-participated-southern-qi-ended-502",
+            "event-detail:southern-qi-ended-502"
+          ],
+          "relatedIds": [
+            "liang_southern",
+            "qi_southern",
+            "southern-liang-founded",
+            "southern-qi-founded",
+            "xiao-baorong",
+            "xiao-yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-qi-founded",
       "entityKey": "event:southern-qi-founded",
       "label": "南齐建立",
@@ -12363,11 +12425,13 @@
             "song_southern",
             "southern-chen-ended-589",
             "southern-chen-founded",
+            "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
             "sun-quan",
             "wu-three-founded",
             "wu_three",
+            "xiao-baorong",
             "xiao-daocheng"
           ]
         },
@@ -29363,6 +29427,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "xiao-baorong",
+      "entityKey": "person:xiao-baorong",
+      "label": "萧宝融",
+      "polityIds": [
+        "qi_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiao-baorong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiao-baorong-enemy-xiao-yan-termination-502",
+            "claim:claim-xiao-baorong-participated-southern-qi-ended-502",
+            "claim:claim-xiao-baorong-ruled-southern-qi",
+            "event-detail:southern-qi-ended-502",
+            "person-polity:xiao-baorong:qi_southern"
+          ],
+          "relatedIds": [
+            "qi_southern",
+            "southern-qi-ended-502",
+            "xiao-yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "xiao-daocheng",
       "entityKey": "person:xiao-daocheng",
       "label": "萧道成",
@@ -29529,16 +29657,20 @@
           "evidenceIds": [
             "claim:claim-chen-baxian-ally-xiao-yan-seventyninth",
             "claim:claim-chen-baxian-served-xiao-yan",
+            "claim:claim-xiao-baorong-enemy-xiao-yan-termination-502",
             "claim:claim-xiao-daocheng-related-xiao-yan",
             "claim:claim-xiao-yan-founded-southern-liang",
             "claim:claim-xiao-yan-participated-southern-liang",
             "event-detail:southern-liang-founded",
+            "event-detail:southern-qi-ended-502",
             "person-polity:xiao-yan:liang_southern"
           ],
           "relatedIds": [
             "chen-baxian",
             "liang_southern",
             "southern-liang-founded",
+            "southern-qi-ended-502",
+            "xiao-baorong",
             "xiao-daocheng"
           ]
         },
@@ -34393,6 +34525,7 @@
           "evidenceIds": [
             "claim:claim-xiao-yan-founded-southern-liang",
             "event-detail:southern-liang-founded",
+            "event-detail:southern-qi-ended-502",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
             "heritage-detail:southern-dynasties-stone-carvings",
@@ -34406,6 +34539,7 @@
             "southern-dynasties-stone-carvings",
             "southern-liang-founded",
             "southern-liang-jiangling-city-site",
+            "southern-qi-ended-502",
             "wang-sengbian",
             "xiao-yan"
           ]
@@ -35240,19 +35374,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiao-baorong-ruled-southern-qi",
             "claim:claim-xiao-daocheng-founded-southern-qi",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
+            "event-detail:southern-qi-ended-502",
             "event-detail:southern-qi-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
             "heritage-detail:southern-dynasties-stone-carvings",
+            "person:xiao-baorong",
             "person:xiao-daocheng"
           ],
           "relatedIds": [
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
             "southern-dynasties-stone-carvings",
+            "southern-qi-ended-502",
             "southern-qi-founded",
+            "xiao-baorong",
             "xiao-daocheng"
           ]
         },
@@ -47033,6 +47172,68 @@
         }
       ]
     },
+    "event:southern-qi-ended-502": {
+      "entityType": "event",
+      "entityId": "southern-qi-ended-502",
+      "entityKey": "event:southern-qi-ended-502",
+      "label": "南齐在建康终止",
+      "polityIds": [
+        "liang_southern",
+        "qi_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-qi-ended-502"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiao-baorong-participated-southern-qi-ended-502",
+            "event-detail:southern-qi-ended-502"
+          ],
+          "relatedIds": [
+            "liang_southern",
+            "qi_southern",
+            "southern-liang-founded",
+            "southern-qi-founded",
+            "xiao-baorong",
+            "xiao-yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:southern-qi-founded": {
       "entityType": "event",
       "entityId": "southern-qi-founded",
@@ -52318,11 +52519,13 @@
             "song_southern",
             "southern-chen-ended-589",
             "southern-chen-founded",
+            "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
             "sun-quan",
             "wu-three-founded",
             "wu_three",
+            "xiao-baorong",
             "xiao-daocheng"
           ]
         },
@@ -69316,6 +69519,70 @@
         }
       ]
     },
+    "person:xiao-baorong": {
+      "entityType": "person",
+      "entityId": "xiao-baorong",
+      "entityKey": "person:xiao-baorong",
+      "label": "萧宝融",
+      "polityIds": [
+        "qi_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiao-baorong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiao-baorong-enemy-xiao-yan-termination-502",
+            "claim:claim-xiao-baorong-participated-southern-qi-ended-502",
+            "claim:claim-xiao-baorong-ruled-southern-qi",
+            "event-detail:southern-qi-ended-502",
+            "person-polity:xiao-baorong:qi_southern"
+          ],
+          "relatedIds": [
+            "qi_southern",
+            "southern-qi-ended-502",
+            "xiao-yan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:xiao-daocheng": {
       "entityType": "person",
       "entityId": "xiao-daocheng",
@@ -69484,16 +69751,20 @@
           "evidenceIds": [
             "claim:claim-chen-baxian-ally-xiao-yan-seventyninth",
             "claim:claim-chen-baxian-served-xiao-yan",
+            "claim:claim-xiao-baorong-enemy-xiao-yan-termination-502",
             "claim:claim-xiao-daocheng-related-xiao-yan",
             "claim:claim-xiao-yan-founded-southern-liang",
             "claim:claim-xiao-yan-participated-southern-liang",
             "event-detail:southern-liang-founded",
+            "event-detail:southern-qi-ended-502",
             "person-polity:xiao-yan:liang_southern"
           ],
           "relatedIds": [
             "chen-baxian",
             "liang_southern",
             "southern-liang-founded",
+            "southern-qi-ended-502",
+            "xiao-baorong",
             "xiao-daocheng"
           ]
         },
@@ -74348,6 +74619,7 @@
           "evidenceIds": [
             "claim:claim-xiao-yan-founded-southern-liang",
             "event-detail:southern-liang-founded",
+            "event-detail:southern-qi-ended-502",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
             "heritage-detail:southern-dynasties-stone-carvings",
@@ -74361,6 +74633,7 @@
             "southern-dynasties-stone-carvings",
             "southern-liang-founded",
             "southern-liang-jiangling-city-site",
+            "southern-qi-ended-502",
             "wang-sengbian",
             "xiao-yan"
           ]
@@ -75195,19 +75468,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiao-baorong-ruled-southern-qi",
             "claim:claim-xiao-daocheng-founded-southern-qi",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
+            "event-detail:southern-qi-ended-502",
             "event-detail:southern-qi-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
             "heritage-detail:southern-dynasties-stone-carvings",
+            "person:xiao-baorong",
             "person:xiao-daocheng"
           ],
           "relatedIds": [
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
             "southern-dynasties-stone-carvings",
+            "southern-qi-ended-502",
             "southern-qi-founded",
+            "xiao-baorong",
             "xiao-daocheng"
           ]
         },
@@ -79583,6 +79861,7 @@
       "entityKeys": [
         "event:southern-chen-founded",
         "event:southern-liang-founded",
+        "event:southern-qi-ended-502",
         "heritage:jiankang-six-dynasties-city-site",
         "heritage:jiankang-taicheng-site",
         "heritage:southern-dynasties-stone-carvings",
@@ -80210,10 +80489,12 @@
       "polityId": "qi_southern",
       "polityName": "南齐",
       "entityKeys": [
+        "event:southern-qi-ended-502",
         "event:southern-qi-founded",
         "heritage:jiankang-six-dynasties-city-site",
         "heritage:jiankang-taicheng-site",
         "heritage:southern-dynasties-stone-carvings",
+        "person:xiao-baorong",
         "person:xiao-daocheng",
         "polity:qi_southern"
       ],
@@ -83561,6 +83842,7 @@
         "event:southern-chen-ended-589",
         "event:southern-chen-founded",
         "event:southern-liang-founded",
+        "event:southern-qi-ended-502",
         "event:southern-qi-founded",
         "event:southern-tang-cedes-huainan",
         "event:southern-tang-falls",
@@ -83583,6 +83865,7 @@
         "person:liu-yu",
         "person:sima-rui",
         "person:sun-quan",
+        "person:xiao-baorong",
         "person:xiao-daocheng",
         "person:xiao-yan",
         "person:yang-jian",

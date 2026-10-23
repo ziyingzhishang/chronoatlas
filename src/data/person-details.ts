@@ -243,6 +243,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['southern-qi-founded'], sourceIds, uncertaintyNote: '479年受禅与南齐对各地的实际整合是不同过程，详情不从称帝节点推导完整疆域。',
   },
   {
+    personId: 'xiao-baorong', biography: '萧宝融是南齐和帝与末代君主。南齐末年萧衍控制建康朝廷，502年萧宝融在建康禅位，南齐政权终止并转入南梁阶段。',
+    aliases: ['齐和帝', '南齐末帝'], offices: [{ title: '南齐末帝', polityId: 'qi_southern', placeId: 'jiankang', validFrom: 501, validTo: 502, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-qi-ended-502'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '萧宝融对应南齐末年建康禅代节点；502年是政权转换年，萧衍受禅与南梁地方整合不应视为同日完成。',
+  },
+  {
     personId: 'chen-baxian', biography: '陈霸先在侯景之乱后的江南军政重组中取得主导地位，受梁禅位建立南陈。',
     aliases: ['陈武帝'], offices: [{ title: '南陈皇帝', polityId: 'chen_southern', placeId: 'jiankang', validFrom: 557, validTo: 559, datePrecision: 'range', sourceIds }],
     keyEvents: ['southern-chen-founded'], sourceIds, uncertaintyNote: '南陈建立与其后统一江南部分地区有时间差，建康的都城身份不代表建国当年所有地区均已稳定归附。',

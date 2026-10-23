@@ -795,6 +795,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》·晋纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '386年拓跋珪复代、改国号为魏的编年节点；卷次及异文需在专题校勘中继续核对。' }],
   },
   {
+    id: 'southern-qi-ended-502', year: 502, title: '南齐在建康终止', summary: '南齐和帝萧宝融在建康禅位于萧衍，南齐政权终止，南梁承接建康政治中心。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '南齐末年皇室权力衰弱，雍州军政集团的萧衍控制建康朝廷与江南核心资源，南齐和帝成为禅代节点上的末代君主。',
+    process: '502年南齐和帝萧宝融在建康禅位于萧衍，萧衍即皇帝位并建立南梁；南齐阶段终止，建康继续作为南朝政治中心。',
+    impact: '南齐转入南梁，建康城市政治功能延续；禅代、南梁建立与地方实际整合不应压缩为同一个疆域事实。',
+    mapNote: '建康采用项目已有今南京区域节点；502年表示政权转换与城市政治中心承接，不代表南齐旧境在同日完整转入南梁。',
+    references: [{ title: '《资治通鉴》卷一百四十五·齐纪十一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷145', detail: '用于核对502年南齐和帝禅位、萧衍即位及南梁承接建康的政权转换；地方州郡整合另按阶段理解。' }],
+  },
+  {
     id: 'southern-qi-founded', year: 479, title: '南齐建立', summary: '萧道成受禅建立南齐，刘宋政权转入南齐阶段。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '刘宋末年皇室与军政集团关系紧张，萧道成在中央军政体系中逐步取得主导地位。',
