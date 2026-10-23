@@ -6,6 +6,7 @@ export interface PersonRelationship {
   kind: PersonRelationshipKind;
   relationType: PersonRelationType;
   claim: HistoricalClaim;
+  direction: 'outgoing' | 'incoming';
 }
 
 export type GroupedPersonRelationships = Record<PersonRelationshipKind, PersonRelationship[]> & Record<PersonRelationType, PersonRelationship[]>;
@@ -31,14 +32,43 @@ const predicateRelationTypes: Record<string, PersonRelationType> = {
   'related-to': 'related-to', 'participated-in': 'participated-in', commissioned: 'commissioned',
 };
 
+const inversePredicates: Partial<Record<PersonRelationType, PersonRelationType>> = {
+  'parent-of': 'child-of',
+  'child-of': 'parent-of',
+  'grandparent-of': 'grandchild-of',
+  'grandchild-of': 'grandparent-of',
+  'teacher-of': 'student-of',
+  'student-of': 'teacher-of',
+};
+
 const activeAt = (claim: HistoricalClaim, year: number) =>
   (claim.validFrom === undefined || claim.validFrom <= year) &&
   (claim.validTo === undefined || year <= claim.validTo);
 
 export function findPersonRelationships(personId: string, year: number, sourceClaims: HistoricalClaim[]): PersonRelationship[] {
   return sourceClaims
-    .filter((claim) => claim.subjectId === personId && activeAt(claim, year))
-    .map((claim) => ({ claim, kind: predicateKinds[claim.predicate], relationType: predicateRelationTypes[claim.predicate] }))
+    .filter((claim) => (claim.subjectId === personId || claim.objectId === personId) && activeAt(claim, year))
+    .map((claim) => {
+      const outgoing = claim.subjectId === personId;
+      const relationType = predicateRelationTypes[claim.predicate];
+      const normalizedPredicate = outgoing || !relationType
+        ? claim.predicate
+        : inversePredicates[relationType] ?? claim.predicate;
+      const normalizedClaim = outgoing || claim.objectId === undefined
+        ? claim
+        : {
+          ...claim,
+          subjectId: personId,
+          objectId: claim.subjectId,
+          predicate: normalizedPredicate,
+        };
+      return {
+        claim: normalizedClaim,
+        kind: predicateKinds[normalizedPredicate],
+        relationType: predicateRelationTypes[normalizedPredicate],
+        direction: outgoing ? 'outgoing' : 'incoming',
+      };
+    })
     .filter((relation): relation is PersonRelationship => relation.kind !== undefined && relation.relationType !== undefined)
     .sort((left, right) => (left.claim.validFrom ?? Number.MAX_SAFE_INTEGER) - (right.claim.validFrom ?? Number.MAX_SAFE_INTEGER) || left.claim.id.localeCompare(right.claim.id));
 }

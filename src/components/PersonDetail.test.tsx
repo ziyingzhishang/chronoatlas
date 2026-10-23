@@ -136,6 +136,24 @@ describe('PersonDetail', () => {
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded-changan' });
   });
 
+  it('shows incoming governance relations with the source direction preserved', () => {
+    const onOpenEntity = vi.fn();
+    render(<PersonDetail
+      person={person}
+      detail={getPersonDetail('li-shimin')!}
+      year={620}
+      claims={[{
+        id: 'incoming-served', subjectId: 'li-yuan', predicate: 'served', objectId: 'li-shimin',
+        validFrom: 618, validTo: 626, datePrecision: 'range', perspective: 'person',
+        evidenceType: 'explicit-record', confidence: 'medium', sourceIds: ['zizhi-tongjian'],
+      }]}
+      people={relationPeople}
+      onOpenEntity={onOpenEntity}
+    />);
+
+    expect(screen.getByRole('button', { name: /侍奉／效力.*方向：李渊 → 李世民/ })).toBeInTheDocument();
+  });
+
   it('renders an HTTP source note for a relationship as a keyboard-accessible external link', () => {
     const onOpenEntity = vi.fn();
     const urlClaim: HistoricalClaim = {
