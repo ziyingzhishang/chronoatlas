@@ -18560,6 +18560,65 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "silla-wolseong-palace-site",
+      "entityKey": "heritage:silla-wolseong-palace-site",
+      "label": "新罗月城（半月城）宫城遗址",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "silla-wolseong-palace-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-gyeongju-unesco",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:silla-wolseong-palace-site"
+          ],
+          "relatedIds": [
+            "gyeongsun-silla",
+            "munmu-silla",
+            "silla",
+            "silla-ended-935",
+            "silla-tang-war-670-676"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "southern-dynasties-stone-carvings",
       "entityKey": "heritage:southern-dynasties-stone-carvings",
       "label": "南京南朝陵墓石刻",
@@ -43802,6 +43861,7 @@
             "event-detail:silla-tang-war-670-676",
             "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:silla-gyeongju-capital-site",
+            "heritage-detail:silla-wolseong-palace-site",
             "person:gyeongsun-silla",
             "person:jindeok-silla",
             "person:kim-chunchu",
@@ -43831,6 +43891,7 @@
             "silla-tang-baekje-660",
             "silla-tang-goguryeo-668",
             "silla-tang-war-670-676",
+            "silla-wolseong-palace-site",
             "sinmun-silla"
           ]
         },
@@ -67438,6 +67499,65 @@
             "silla-ended-935",
             "silla-founded",
             "silla-tang-alliance-648",
+            "silla-tang-war-670-676"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:silla-wolseong-palace-site": {
+      "entityType": "heritage",
+      "entityId": "silla-wolseong-palace-site",
+      "entityKey": "heritage:silla-wolseong-palace-site",
+      "label": "新罗月城（半月城）宫城遗址",
+      "polityIds": [
+        "silla"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "silla-wolseong-palace-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "silla-gyeongju-unesco",
+            "silla-samguksagi-db"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:silla-wolseong-palace-site"
+          ],
+          "relatedIds": [
+            "gyeongsun-silla",
+            "munmu-silla",
+            "silla",
+            "silla-ended-935",
             "silla-tang-war-670-676"
           ]
         },
@@ -92694,6 +92814,7 @@
             "event-detail:silla-tang-war-670-676",
             "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:silla-gyeongju-capital-site",
+            "heritage-detail:silla-wolseong-palace-site",
             "person:gyeongsun-silla",
             "person:jindeok-silla",
             "person:kim-chunchu",
@@ -92723,6 +92844,7 @@
             "silla-tang-baekje-660",
             "silla-tang-goguryeo-668",
             "silla-tang-war-670-676",
+            "silla-wolseong-palace-site",
             "sinmun-silla"
           ]
         },
@@ -95723,9 +95845,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 128,
+      "totalEntities": 129,
       "statusCounts": {
-        "covered": 640,
+        "covered": 645,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -98204,6 +98326,7 @@
         "event:silla-tang-war-670-676",
         "heritage:goguryeo-pyongyang-city-layer",
         "heritage:silla-gyeongju-capital-site",
+        "heritage:silla-wolseong-palace-site",
         "person:gyeongsun-silla",
         "person:jindeok-silla",
         "person:kim-chunchu",
@@ -103435,7 +103558,9 @@
       "placeId": "wolseong_silla",
       "cityName": "庆州市月城遗址",
       "capitalRecordCount": 1,
-      "entityKeys": [],
+      "entityKeys": [
+        "heritage:silla-wolseong-palace-site"
+      ],
       "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 0,
@@ -103444,7 +103569,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "庆州市月城遗址：已记录首都／政治中心时段，但尚无关联知识节点，需补充事件、人物或遗产。"
+      "summary": "庆州市月城遗址：学习闭环已覆盖。"
     },
     "wunvshan": {
       "placeId": "wunvshan",
