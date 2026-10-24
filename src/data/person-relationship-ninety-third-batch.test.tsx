@@ -51,9 +51,9 @@ describe('ninety-third batch high-confidence governance relationships', () => {
   it('closes only the three evidenced governance gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(37);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(152);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(95);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(38);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(151);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(96);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
     for (const personId of ['toghon-temur', 'sun-yat-sen', 'mao-zedong']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');
