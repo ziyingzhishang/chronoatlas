@@ -732,6 +732,11 @@ const details: HeritageDetail[] = [
     historicalPhase('site', '城址与城市考古层', '战国晚期', '古城城垣、道路、水系和相关遗存以考古调查、保护范围和历史地理研究形式保存。', -278, -223),
     historicalPhase('restoration', '现代保护展示', '当代古城保护', '寿县古城及相关遗址通过城墙保护、博物馆和地方历史展示解释楚国晚期城市空间，不重建完整楚王宫城。', 1900, undefined, '现存古城建筑、后世城墙和现代展示设施需要与战国楚城址分层标注。'),
   ], ['chu-we-wang'], ['chu_warring'], ['chu-warring-founded-eighth-batch'], ['古城城垣与城市格局线索', '淮河交通与区域地理', '古城保护和博物馆展示'], '从今日寿县观察楚国晚期迁都、江淮政治网络与秦楚竞争，补充郢都之外的楚国首都视角。', '前403年楚国战国分期事件是政权观察入口，不是寿春迁都事件；楚威王是后续战国人物，人物关联用于观察楚国大国阶段，不把其活动前推为寿春建都者。', ['zizhi-tongjian', 'china-chronology', 'capital-history-reference']),
+  detail('southern-liang-xiping-city-layer', '今青海省西宁市及河湟区域历史地理参照范围；西平具体城址与现代城市边界不能直接等同。', ['南凉早期西平政治中心', '河湟绿洲、部众迁徙、军政网络与区域交通'], [
+    historicalPhase('original', '早期政治中心使用', '397—401年', '南凉建立后以西平为早期政治中心，河湟区域承担政权组织、军政调度与交通连接功能。', 397, 401, '现有材料支持西平作为阶段性中心，但不足以确认全期唯一首都或某一处现存建筑为南凉原构。', ['zizhi-tongjian', 'capital-history-reference']),
+    historicalPhase('site', '区域城市历史层', '十六国河湟历史地理', '西宁及河湟城市、道路和水利线索可作为南凉西平阶段的区域观察入口，具体古城范围仍需考古资料分区核验。', 397, 401, '区域参照层不等同于已经完成考古定名的南凉都城遗址。', ['capital-history-reference']),
+    historicalPhase('restoration', '现代区域展示', '当代', '地方历史地图、博物馆和河湟区域文化展示帮助理解南凉早期中心，不复原未经确认的南凉宫城。', 2000, undefined, '现代展示设施与南凉原建筑严格分层。', ['capital-history-reference']),
+  ], ['tufa-wugu'], ['southern_liang'], ['southern-liang-founded-397'], ['河湟城市与交通线索', '南凉早期政治中心区域参照', '地方历史地图与文化展示'], '从今天西宁及河湟区域观察南凉建政与由西平转向乐都的政治中心变化。', '西平的现代对应为区域参照而非已确认单一古城；南凉迁都乐都后应与西平阶段分层表达，不能把现代城市设施视为南凉原构。', ['zizhi-tongjian', 'capital-history-reference']),
   detail('southern-liang-ledu-city-site', '今青海省海东市乐都区及其南凉文化展示关联空间；候选古城位置与现代城区边界不等同。', ['南凉399年迁都乐都的阶段性政治中心', '河湟绿洲、部众迁徙、军政网络与十六国区域政权'], [
     historicalPhase('original', '迁都与政治中心', '399—414年', '《太平御览》所引南凉材料记载秃发乌孤时期徙于乐都；乐都此后承接南凉后期政治、军政与河湟交通功能。', 399, 414, '文献可支持乐都作为阶段性政治中心，但不能仅凭文献把今日某一处建筑认定为南凉原构。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu']),
     historicalPhase('site', '候选城址与城市历史层', '南凉时期', '今日乐都的南凉文化展示与地方历史空间提供城市记忆入口；具体古城遗址、城垣和宫城分区仍需考古报告逐项比定。', 399, 414, '候选历史层不等同于已经完成考古定名的遗址。', ['jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
