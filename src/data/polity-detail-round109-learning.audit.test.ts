@@ -144,6 +144,6 @@ describe('Round 109 政权详情学习入口审计', () => {
       { polityId: 'turkic', kind: 'person', id: 'bayanchur', year: 552 },
       { polityId: 'qing', kind: 'person', id: 'nurhaci', year: 1636 },
     ]);
-    expect(gapsByKind.heritage).toHaveLength(127);
+    expect(gapsByKind.heritage).toHaveLength(130);
   });
 });
