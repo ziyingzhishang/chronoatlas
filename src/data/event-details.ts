@@ -716,6 +716,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '335年作为石虎迁都邺的编年节点；邺城遗址包含曹魏、后赵、前燕、东魏、北齐等不同层次，不能将今日遗址全部归入后赵。',
   },
   {
+    eventId: 'later-zhao-ended-351',
+    participants: [
+      { personId: 'shi-zhi', role: '后赵末期君主与351年襄国终局人物', note: '石祗对应后赵末期在襄国的政权终局；其个人结局与邺城及河北地方社会后续承接分层表达。' },
+    ],
+    polityIds: ['later_zhao'],
+    causes: ['石虎死后后赵继承秩序和军政集团迅速分裂。', '襄国、邺及河北各地的竞争使后赵中央政权难以维持统一结构。'],
+    consequences: ['后赵中央政权在351年前后终止，石祗退出后赵末期政治中心。', '前燕对后赵旧有邺城政治空间的承接在随后阶段展开，不把351年后赵终止等同于前燕同日完成全部接收。', '邺城城垣、宫城、道路和地方社会继续存在，并进入前燕及后续政权的多时期城市遗产层。'],
+    phases: [
+      { label: '后赵继承危机', startYear: 349, endYear: 350, summary: '石虎去世后，后赵皇位与军政资源发生连续争夺。' },
+      { label: '襄国终局', startYear: 351, endYear: 351, summary: '石祗在后赵末期内战中败亡，后赵中央政权终止。' },
+      { label: '邺城政治空间承接', startYear: 351, endYear: 352, summary: '前燕逐步进入后赵旧有河北政治空间，邺城承接与351年政权终止分层记录。' },
+    ],
+    locationIds: ['xiangguo', 'ye'],
+    relatedEventIds: ['later-zhao-founded', 'later-zhao-moves-ye', 'former-yan-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'ye-city-official'],
+    uncertaintyNote: '351年作为后赵中央政权终止的年份级节点；前燕对邺及后赵旧地的接收是随后阶段过程，不能由政权终止年份推导为同日完成。石祗个人结局、邺城城市遗产和地方行政承接分别记录。',
+  },
+  {
     eventId: 'later-zhao-founded',
     participants: [
       { personId: 'shi-le', role: '整合北方军政力量并在襄国建立后赵的君主', note: '石勒是319年襄国建赵的核心人物；其早期依附、独立建政与后来灭前赵应按阶段区分。' },
@@ -1312,6 +1330,25 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['three-kingdoms', 'jin-unification'],
     sourceIds: ['zizhi-tongjian', 'capital-history-reference'],
     uncertaintyNote: '222年独立、229年称帝和280年亡国是不同节点；建业与建康是历史地名的连续映射，不以今南京市行政边界替代孙吴都城范围。',
+  },
+  {
+    eventId: 'wei-three-ended-265',
+    participants: [
+      { personId: 'cao-huan', role: '曹魏末帝与禅位方', relationType: 'direct', note: '曹奂在洛阳向司马炎禅位，代表曹魏中央政权名义终止；个人退位与洛阳城市遗产延续分层表达。' },
+      { personId: 'sima-yan', role: '受魏禅建立西晋的司马氏君主', relationType: 'direct', note: '司马炎接受曹奂禅位并建立西晋；西晋后续灭吴统一另按280年事件记录。' },
+    ],
+    polityIds: ['wei_three', 'jin_western'],
+    causes: ['司马氏在曹魏中枢掌握军政权力，魏廷缺乏有效制衡。', '司马炎以受禅方式取得魏帝国名义与洛阳中央政治资源。'],
+    consequences: ['曹魏中央政权终止，西晋承接洛阳政治中心。', '曹魏洛阳城市遗产继续进入西晋及后续朝代的叠压历史层；280年西晋灭吴另行表达统一阶段。'],
+    phases: [
+      { label: '司马氏控制中枢', startYear: 249, endYear: 265, summary: '高平陵之变后司马氏逐步控制曹魏中央军政资源。' },
+      { label: '洛阳禅代', startYear: 265, endYear: 265, summary: '曹奂向司马炎禅位，曹魏中央政权名义终止。' },
+      { label: '西晋承接', startYear: 265, endYear: 265, summary: '司马炎受禅建立西晋，洛阳继续承担中央政治中心功能。' },
+    ],
+    locationIds: ['luoyang'],
+    relatedEventIds: ['three-kingdoms', 'western-jin-founded', 'jin-unification'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '265年禅代是中央政权名义转换节点，不等于地方行政、社会秩序和后续280年统一在同日完成；洛阳遗产按城市和建筑层分期阅读。',
   },
   {
     eventId: 'jin-unification',

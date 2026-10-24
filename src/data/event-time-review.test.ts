@@ -17,6 +17,7 @@ const expectedEventIds = [
   'western-wei-ended-557',
   'western-jin-loses-changan',
   'eastern-jin-ended-420',
+  'wei-three-ended-265',
   'qin-state-founded-eighth-batch',
   'chu-warring-founded-eighth-batch',
   'yan-warring-founded-eighth-batch',
@@ -55,6 +56,7 @@ const expectedEventIds = [
   'southern-yan-ended-410',
   'southern-liang-ended-414',
   'former-zhao-ended-329',
+  'later-zhao-ended-351',
   'cheng-han-ended-347',
   'former-yan-ended-370',
   'former-qin-ended-394',
@@ -83,12 +85,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(69);
+    expect(report.totalReviewed).toBe(71);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 34, approximate: 35, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 36, approximate: 35, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

@@ -3875,6 +3875,67 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-zhao-ended-351",
+      "entityKey": "event:later-zhao-ended-351",
+      "label": "后赵在襄国终止、邺城历史空间后续承接",
+      "polityIds": [
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-zhao-ended-351"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "ye-city-official",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-zhi-participated-later-zhao-ended-351",
+            "event-detail:later-zhao-ended-351"
+          ],
+          "relatedIds": [
+            "former-yan-founded",
+            "later-zhao-founded",
+            "later-zhao-moves-ye",
+            "later_zhao",
+            "shi-zhi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-zhao-founded",
       "entityKey": "event:later-zhao-founded",
       "label": "后赵建立",
@@ -10055,6 +10116,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "wei-three-ended-265",
+      "entityKey": "event:wei-three-ended-265",
+      "label": "曹魏在洛阳禅代终止、西晋承接",
+      "polityIds": [
+        "jin_western",
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "wei-three-ended-265"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-cao-huan-participated-wei-three-ended-265",
+            "claim:claim-sima-yan-participated-wei-three-ended-265",
+            "event-detail:wei-three-ended-265"
+          ],
+          "relatedIds": [
+            "cao-huan",
+            "jin-unification",
+            "jin_western",
+            "sima-yan",
+            "three-kingdoms",
+            "wei_three",
+            "western-jin-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "wei-warring-founded-eighth-batch",
       "entityKey": "event:wei-warring-founded-eighth-batch",
       "label": "魏政权建立（周王室册命节点）",
@@ -13367,6 +13492,7 @@
             "former-zhao-ended-329",
             "former-zhao-founded",
             "former_zhao",
+            "later_zhao",
             "liu-yao",
             "shi-le"
           ]
@@ -15713,6 +15839,7 @@
             "heritage-detail:luoyang-han-wei-city-site"
           ],
           "relatedIds": [
+            "cao-huan",
             "han-eastern-founded",
             "han_eastern",
             "jin-unification",
@@ -15720,7 +15847,9 @@
             "liu-xiu",
             "northern-wei-ended-534",
             "northern-wei-founded",
+            "sima-yan",
             "tuoba-tao",
+            "wei-three-ended-265",
             "wei_eastern",
             "wei_northern",
             "wei_three",
@@ -19644,6 +19773,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-later-zhao-ye-heritage",
             "heritage-detail:ye-city-site"
           ],
           "relatedIds": [
@@ -20412,6 +20542,70 @@
             "red-cliffs",
             "sun-quan",
             "three-kingdoms",
+            "wei_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "cao-huan",
+      "entityKey": "person:cao-huan",
+      "label": "曹奂",
+      "polityIds": [
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "cao-huan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-cao-huan-participated-wei-three-ended-265",
+            "claim:claim-cao-huan-ruled-wei-three",
+            "claim:claim-cao-huan-submitted-to-sima-yan-wei-three-termination-265",
+            "event-detail:wei-three-ended-265",
+            "person-polity:cao-huan:wei_three"
+          ],
+          "relatedIds": [
+            "sima-yan",
+            "wei-three-ended-265",
             "wei_three"
           ]
         },
@@ -30337,6 +30531,7 @@
           "evidenceIds": [
             "claim:claim-murong-huang-enemy-shi-hu-ninetyfourth",
             "claim:claim-shi-hu-enemy-liu-yao",
+            "claim:claim-shi-hu-parent-shi-zhi",
             "claim:claim-shi-hu-participated-later-zhao",
             "claim:claim-shi-hu-ruled-later-zhao",
             "event-detail:later-zhao-moves-ye",
@@ -30347,7 +30542,8 @@
             "later-zhao-moves-ye",
             "later_zhao",
             "liu-yao",
-            "murong-huang"
+            "murong-huang",
+            "shi-zhi"
           ]
         },
         {
@@ -30557,6 +30753,69 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "shi-zhi",
+      "entityKey": "person:shi-zhi",
+      "label": "石祗",
+      "polityIds": [
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shi-zhi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-hu-parent-shi-zhi",
+            "claim:claim-shi-zhi-participated-later-zhao-ended-351",
+            "event-detail:later-zhao-ended-351",
+            "person-polity:shi-zhi:later_zhao"
+          ],
+          "relatedIds": [
+            "later-zhao-ended-351",
+            "later_zhao",
+            "shi-hu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -30866,20 +31125,27 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-cao-huan-submitted-to-sima-yan-wei-three-termination-265",
             "claim:claim-sima-rui-related-sima-yan",
             "claim:claim-sima-yan-founded-western-jin",
             "claim:claim-sima-yan-participated-jin-unification-fortyfourth",
+            "claim:claim-sima-yan-participated-wei-three-ended-265",
             "claim:claim-sima-yan-participated-western-jin",
             "claim:claim-sima-yan-related-sima-rui",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
+            "claim:claim-sima-yan-succeeded-wei-three",
             "event-detail:jin-unification",
+            "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
             "person-polity:sima-yan:jin_western"
           ],
           "relatedIds": [
+            "cao-huan",
             "jin-unification",
             "jin_western",
             "sima-rui",
+            "wei-three-ended-265",
+            "wei_three",
             "western-jin-founded"
           ]
         },
@@ -37442,6 +37708,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-former-yan-inherited-later-zhao-ye",
             "claim:claim-murong-huang-ruled-former-yan-sixtieth",
             "claim:claim-murong-wei-ruled-former-yan",
             "event-detail:former-yan-ended-370",
@@ -37453,6 +37720,7 @@
           "relatedIds": [
             "former-yan-ended-370",
             "former-yan-founded",
+            "later_zhao",
             "murong-huang",
             "murong-wei",
             "ye-city-site"
@@ -38295,6 +38563,7 @@
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
             "claim:claim-sima-ye-ruled-western-jin",
             "event-detail:jin-unification",
+            "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
             "event-detail:western-jin-loses-changan",
             "heritage-detail:luoyang-han-wei-city-site",
@@ -38307,6 +38576,7 @@
             "luoyang-han-wei-city-site",
             "sima-yan",
             "sima-ye",
+            "wei-three-ended-265",
             "western-jin-changan-city-layer",
             "western-jin-founded",
             "western-jin-loses-changan"
@@ -38870,21 +39140,30 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-former-yan-inherited-later-zhao-ye",
+            "claim:claim-later-zhao-ye-heritage",
             "claim:claim-shi-hu-ruled-later-zhao",
             "claim:claim-shi-le-ruled-later-zhao-sixtieth",
             "event-detail:former-zhao-ended-329",
+            "event-detail:later-zhao-ended-351",
             "event-detail:later-zhao-founded",
             "event-detail:later-zhao-moves-ye",
+            "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:ye-city-site",
             "person:shi-hu",
-            "person:shi-le"
+            "person:shi-le",
+            "person:shi-zhi"
           ],
           "relatedIds": [
+            "former-zhao-changan-city-layer",
             "former-zhao-ended-329",
+            "former_yan",
+            "later-zhao-ended-351",
             "later-zhao-founded",
             "later-zhao-moves-ye",
             "shi-hu",
             "shi-le",
+            "shi-zhi",
             "ye-city-site"
           ]
         },
@@ -41784,16 +42063,23 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-cao-cao-ruled-wei-three-closure",
+            "claim:claim-cao-huan-ruled-wei-three",
+            "claim:claim-sima-yan-succeeded-wei-three",
             "event-detail:red-cliffs",
             "event-detail:three-kingdoms",
+            "event-detail:wei-three-ended-265",
             "heritage-detail:luoyang-han-wei-city-site",
-            "person:cao-cao"
+            "person:cao-cao",
+            "person:cao-huan"
           ],
           "relatedIds": [
             "cao-cao",
+            "cao-huan",
             "luoyang-han-wei-city-site",
             "red-cliffs",
-            "three-kingdoms"
+            "sima-yan",
+            "three-kingdoms",
+            "wei-three-ended-265"
           ]
         },
         {
@@ -44581,6 +44867,23 @@
       "kind": "uncertain",
       "polityIds": [
         "nanzhao"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "shi-zhi",
+      "entityKey": "person:shi-zhi",
+      "label": "石祗",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "later_zhao"
       ],
       "evidenceIds": [
         "china-chronology",
@@ -48873,6 +49176,67 @@
             "former-yan-founded",
             "later_yan",
             "murong-chui"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-zhao-ended-351": {
+      "entityType": "event",
+      "entityId": "later-zhao-ended-351",
+      "entityKey": "event:later-zhao-ended-351",
+      "label": "后赵在襄国终止、邺城历史空间后续承接",
+      "polityIds": [
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-zhao-ended-351"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "ye-city-official",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-zhi-participated-later-zhao-ended-351",
+            "event-detail:later-zhao-ended-351"
+          ],
+          "relatedIds": [
+            "former-yan-founded",
+            "later-zhao-founded",
+            "later-zhao-moves-ye",
+            "later_zhao",
+            "shi-zhi"
           ]
         },
         {
@@ -55064,6 +55428,70 @@
         }
       ]
     },
+    "event:wei-three-ended-265": {
+      "entityType": "event",
+      "entityId": "wei-three-ended-265",
+      "entityKey": "event:wei-three-ended-265",
+      "label": "曹魏在洛阳禅代终止、西晋承接",
+      "polityIds": [
+        "jin_western",
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "wei-three-ended-265"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-cao-huan-participated-wei-three-ended-265",
+            "claim:claim-sima-yan-participated-wei-three-ended-265",
+            "event-detail:wei-three-ended-265"
+          ],
+          "relatedIds": [
+            "cao-huan",
+            "jin-unification",
+            "jin_western",
+            "sima-yan",
+            "three-kingdoms",
+            "wei_three",
+            "western-jin-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:wei-warring-founded-eighth-batch": {
       "entityType": "event",
       "entityId": "wei-warring-founded-eighth-batch",
@@ -58378,6 +58806,7 @@
             "former-zhao-ended-329",
             "former-zhao-founded",
             "former_zhao",
+            "later_zhao",
             "liu-yao",
             "shi-le"
           ]
@@ -60724,6 +61153,7 @@
             "heritage-detail:luoyang-han-wei-city-site"
           ],
           "relatedIds": [
+            "cao-huan",
             "han-eastern-founded",
             "han_eastern",
             "jin-unification",
@@ -60731,7 +61161,9 @@
             "liu-xiu",
             "northern-wei-ended-534",
             "northern-wei-founded",
+            "sima-yan",
             "tuoba-tao",
+            "wei-three-ended-265",
             "wei_eastern",
             "wei_northern",
             "wei_three",
@@ -64655,6 +65087,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-later-zhao-ye-heritage",
             "heritage-detail:ye-city-site"
           ],
           "relatedIds": [
@@ -65423,6 +65856,70 @@
             "red-cliffs",
             "sun-quan",
             "three-kingdoms",
+            "wei_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:cao-huan": {
+      "entityType": "person",
+      "entityId": "cao-huan",
+      "entityKey": "person:cao-huan",
+      "label": "曹奂",
+      "polityIds": [
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "cao-huan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-cao-huan-participated-wei-three-ended-265",
+            "claim:claim-cao-huan-ruled-wei-three",
+            "claim:claim-cao-huan-submitted-to-sima-yan-wei-three-termination-265",
+            "event-detail:wei-three-ended-265",
+            "person-polity:cao-huan:wei_three"
+          ],
+          "relatedIds": [
+            "sima-yan",
+            "wei-three-ended-265",
             "wei_three"
           ]
         },
@@ -75348,6 +75845,7 @@
           "evidenceIds": [
             "claim:claim-murong-huang-enemy-shi-hu-ninetyfourth",
             "claim:claim-shi-hu-enemy-liu-yao",
+            "claim:claim-shi-hu-parent-shi-zhi",
             "claim:claim-shi-hu-participated-later-zhao",
             "claim:claim-shi-hu-ruled-later-zhao",
             "event-detail:later-zhao-moves-ye",
@@ -75358,7 +75856,8 @@
             "later-zhao-moves-ye",
             "later_zhao",
             "liu-yao",
-            "murong-huang"
+            "murong-huang",
+            "shi-zhi"
           ]
         },
         {
@@ -75568,6 +76067,69 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:shi-zhi": {
+      "entityType": "person",
+      "entityId": "shi-zhi",
+      "entityKey": "person:shi-zhi",
+      "label": "石祗",
+      "polityIds": [
+        "later_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shi-zhi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shi-hu-parent-shi-zhi",
+            "claim:claim-shi-zhi-participated-later-zhao-ended-351",
+            "event-detail:later-zhao-ended-351",
+            "person-polity:shi-zhi:later_zhao"
+          ],
+          "relatedIds": [
+            "later-zhao-ended-351",
+            "later_zhao",
+            "shi-hu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -75877,20 +76439,27 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-cao-huan-submitted-to-sima-yan-wei-three-termination-265",
             "claim:claim-sima-rui-related-sima-yan",
             "claim:claim-sima-yan-founded-western-jin",
             "claim:claim-sima-yan-participated-jin-unification-fortyfourth",
+            "claim:claim-sima-yan-participated-wei-three-ended-265",
             "claim:claim-sima-yan-participated-western-jin",
             "claim:claim-sima-yan-related-sima-rui",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
+            "claim:claim-sima-yan-succeeded-wei-three",
             "event-detail:jin-unification",
+            "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
             "person-polity:sima-yan:jin_western"
           ],
           "relatedIds": [
+            "cao-huan",
             "jin-unification",
             "jin_western",
             "sima-rui",
+            "wei-three-ended-265",
+            "wei_three",
             "western-jin-founded"
           ]
         },
@@ -82453,6 +83022,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-former-yan-inherited-later-zhao-ye",
             "claim:claim-murong-huang-ruled-former-yan-sixtieth",
             "claim:claim-murong-wei-ruled-former-yan",
             "event-detail:former-yan-ended-370",
@@ -82464,6 +83034,7 @@
           "relatedIds": [
             "former-yan-ended-370",
             "former-yan-founded",
+            "later_zhao",
             "murong-huang",
             "murong-wei",
             "ye-city-site"
@@ -83306,6 +83877,7 @@
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
             "claim:claim-sima-ye-ruled-western-jin",
             "event-detail:jin-unification",
+            "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
             "event-detail:western-jin-loses-changan",
             "heritage-detail:luoyang-han-wei-city-site",
@@ -83318,6 +83890,7 @@
             "luoyang-han-wei-city-site",
             "sima-yan",
             "sima-ye",
+            "wei-three-ended-265",
             "western-jin-changan-city-layer",
             "western-jin-founded",
             "western-jin-loses-changan"
@@ -83881,21 +84454,30 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-former-yan-inherited-later-zhao-ye",
+            "claim:claim-later-zhao-ye-heritage",
             "claim:claim-shi-hu-ruled-later-zhao",
             "claim:claim-shi-le-ruled-later-zhao-sixtieth",
             "event-detail:former-zhao-ended-329",
+            "event-detail:later-zhao-ended-351",
             "event-detail:later-zhao-founded",
             "event-detail:later-zhao-moves-ye",
+            "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:ye-city-site",
             "person:shi-hu",
-            "person:shi-le"
+            "person:shi-le",
+            "person:shi-zhi"
           ],
           "relatedIds": [
+            "former-zhao-changan-city-layer",
             "former-zhao-ended-329",
+            "former_yan",
+            "later-zhao-ended-351",
             "later-zhao-founded",
             "later-zhao-moves-ye",
             "shi-hu",
             "shi-le",
+            "shi-zhi",
             "ye-city-site"
           ]
         },
@@ -86795,16 +87377,23 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-cao-cao-ruled-wei-three-closure",
+            "claim:claim-cao-huan-ruled-wei-three",
+            "claim:claim-sima-yan-succeeded-wei-three",
             "event-detail:red-cliffs",
             "event-detail:three-kingdoms",
+            "event-detail:wei-three-ended-265",
             "heritage-detail:luoyang-han-wei-city-site",
-            "person:cao-cao"
+            "person:cao-cao",
+            "person:cao-huan"
           ],
           "relatedIds": [
             "cao-cao",
+            "cao-huan",
             "luoyang-han-wei-city-site",
             "red-cliffs",
-            "three-kingdoms"
+            "sima-yan",
+            "three-kingdoms",
+            "wei-three-ended-265"
           ]
         },
         {
@@ -88287,9 +88876,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 206,
+      "totalEntities": 208,
       "statusCounts": {
-        "covered": 988,
+        "covered": 998,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -88366,20 +88955,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 252,
+      "totalEntities": 254,
       "statusCounts": {
-        "covered": 1193,
+        "covered": 1202,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 67,
+        "uncertain": 68,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 67
+        "uncertain": 68
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -88424,6 +89013,7 @@
         "person:qin-mugong",
         "person:qin-xiangong",
         "person:quanfengyou",
+        "person:shi-zhi",
         "person:shun-huazhen",
         "person:sima-ye",
         "person:sinmun-silla",
@@ -89282,6 +89872,7 @@
       "polityName": "西晋",
       "entityKeys": [
         "event:jin-unification",
+        "event:wei-three-ended-265",
         "event:western-jin-founded",
         "event:western-jin-loses-changan",
         "heritage:luoyang-han-wei-city-site",
@@ -89530,15 +90121,35 @@
       "polityName": "后赵",
       "entityKeys": [
         "event:former-zhao-ended-329",
+        "event:later-zhao-ended-351",
         "event:later-zhao-founded",
         "event:later-zhao-moves-ye",
         "heritage:former-zhao-changan-city-layer",
         "heritage:ye-city-site",
         "person:shi-hu",
         "person:shi-le",
+        "person:shi-zhi",
         "polity:later_zhao"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "shi-zhi",
+          "entityKey": "person:shi-zhi",
+          "label": "石祗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "later_zhao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -89546,7 +90157,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "后赵：学习闭环已覆盖。"
+      "summary": "后赵：有 1 项待核验缺口。"
     },
     "liang_later": {
       "polityId": "liang_later",
@@ -91611,8 +92222,10 @@
       "entityKeys": [
         "event:red-cliffs",
         "event:three-kingdoms",
+        "event:wei-three-ended-265",
         "heritage:luoyang-han-wei-city-site",
         "person:cao-cao",
+        "person:cao-huan",
         "polity:wei_three"
       ],
       "gaps": [],
@@ -94759,6 +95372,7 @@
         "event:shangyang-palace-completed-679",
         "event:tang-later-founded",
         "event:three-kingdoms",
+        "event:wei-three-ended-265",
         "event:western-jin-founded",
         "event:white-horse-temple-founded",
         "event:wu-zhou-founded",
@@ -94774,6 +95388,7 @@
         "heritage:white-horse-temple",
         "heritage:yongning-temple-pagoda-site",
         "person:an-lushan",
+        "person:cao-huan",
         "person:gao-huan",
         "person:ji-yijiu",
         "person:li-congke",
@@ -95382,12 +95997,32 @@
       "cityName": "邢台市一带",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:later-zhao-ended-351",
         "event:later-zhao-founded",
         "event:later-zhao-moves-ye",
         "heritage:former-zhao-xiangguo-city-site",
-        "person:shi-le"
+        "person:shi-le",
+        "person:shi-zhi"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "shi-zhi",
+          "entityKey": "person:shi-zhi",
+          "label": "石祗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "later_zhao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -95395,7 +96030,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "邢台市一带：学习闭环已覆盖。"
+      "summary": "邢台市一带：有 1 项待核验缺口。"
     },
     "xiangyang": {
       "placeId": "xiangyang",
@@ -95927,6 +96562,7 @@
         "event:former-yan-founded",
         "event:han-eastern-founded",
         "event:later-yan-founded",
+        "event:later-zhao-ended-351",
         "event:later-zhao-moves-ye",
         "event:northern-qi-ended-577",
         "event:northern-qi-founded",

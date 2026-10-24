@@ -434,6 +434,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['later-zhao-founded'], sourceIds, uncertaintyNote: '后赵建立早于石虎即位，本详情以建政节点作为政权导航，不把石虎个人统治期回填为后赵建国期。',
   },
   {
+    personId: 'shi-zhi', biography: '石祗是后赵末期君主，351年前后在襄国终局中退出政治中心，后赵中央政权由此终止；邺城和河北地方社会的后续承接另行记录。',
+    aliases: ['后赵末期君主'], offices: [{ title: '后赵末期君主', polityId: 'later_zhao', placeId: 'xiangguo', validFrom: 350, validTo: 351, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-zhao-ended-351'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '石祗对应后赵末期襄国政治终局；后赵中央终止、前燕对邺的后续承接和地方秩序变化不是同一时刻完成。',
+  },
+  {
     personId: 'li-xiong', biography: '李雄在巴蜀军政动荡中建立成汉，成都成为其政权形成与持续运作的核心城市。',
     aliases: ['成汉武帝'], offices: [{ title: '成汉皇帝', polityId: 'cheng_han', placeId: 'chengdu', validFrom: 304, validTo: 334, datePrecision: 'range', sourceIds }],
     keyEvents: ['cheng-han-founded'], sourceIds, uncertaintyNote: '304年前后是成汉形成阶段，306年称帝是后续节点；不能将形成阶段和正式称帝压缩为同一年。',
@@ -546,7 +551,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'sima-yan', biography: '司马炎承接司马氏在曹魏中枢形成的权力，受禅建立西晋，并在280年灭吴实现短暂统一。',
     aliases: ['晋武帝'], offices: [{ title: '西晋皇帝', polityId: 'jin_western', placeId: 'luoyang', validFrom: 265, validTo: 290, datePrecision: 'range', sourceIds }],
-    keyEvents: ['western-jin-founded'], sourceIds, uncertaintyNote: '265年受禅建立西晋与280年灭吴分别是建政和统一节点，不能把后者的版图回填到建国当年。',
+    keyEvents: ['wei-three-ended-265', 'western-jin-founded'], sourceIds, uncertaintyNote: '265年受魏禅终止曹魏并建立西晋，与280年灭吴分别是政权承接和统一节点，不能把后者的版图回填到建国当年。',
   },
   {
     personId: 'zhao-kuangyin', biography: '赵匡胤在后周军政体系中崛起，经陈桥兵变受禅建立北宋，开封继续作为中原政治中心。',
@@ -734,6 +739,11 @@ export const personDetails: PersonDetail[] = [
       { title: '东汉丞相', polityId: 'han_eastern', validFrom: 208, validTo: 216, datePrecision: 'range', sourceIds: ['zizhi-tongjian'] },
       { title: '魏王与曹魏奠基者', polityId: 'wei_three', validFrom: 216, validTo: 220, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
     ], keyEvents: ['red-cliffs', 'three-kingdoms'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '曹操生前以东汉丞相、魏王身份掌权，曹魏作为正式帝国政权通常以曹丕220年代汉为节点；本详情不把追尊与生前称帝混为一谈。',
+  },
+  {
+    personId: 'cao-huan', biography: '曹奂是曹魏末帝。265年，他在洛阳向司马炎禅位，曹魏中央政权终止，洛阳政治中心转入西晋；此处只记录禅代事实，不把地方秩序变化压缩为同日完成。',
+    aliases: ['魏元帝', '曹魏末帝'], offices: [{ title: '曹魏末代皇帝', polityId: 'wei_three', placeId: 'luoyang', validFrom: 260, validTo: 265, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['wei-three-ended-265'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '曹奂禅位与司马炎受禅是265年中央政权转换节点；曹魏地方行政、洛阳城市遗产和西晋280年统一另按阶段观察。',
   },
   {
     personId: 'liu-bei', biography: '刘备以汉室宗亲身份参与群雄竞争，在荆州、益州经营政治与军事基础；赤壁后与孙权合作，最终于成都建立蜀汉。',

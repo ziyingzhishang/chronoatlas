@@ -35,9 +35,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'wei_three', perspectiveSummary: '曹魏从东汉末年权臣集团和北方军政整合中形成，以禅代取得帝国名号，并在三国竞争中维持北方核心。',
     foundationProcess: ['曹操控制北方重要军政资源并奉汉献帝。', '220年曹丕受禅称帝，魏政权正式建立。', '洛阳成为曹魏正式都城，三国并立格局并未立即结束战争。'],
-    turningPoints: [turn(220, '曹魏建立', '代汉建魏，三国分期进入新阶段。', 'three-kingdoms'), turn(227, '北伐与防线', '魏蜀军事竞争成为西部战略主线。'), turn(249, '高平陵之变', '司马氏在魏廷的权力上升，政权内部结构发生变化。')],
-    principalFigureIds: ['cao-cao'], capitalPhases: [capital('luoyang', 220, 265)],
-    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['three-kingdoms', 'jin-unification'], claimIds: ['claim-cao-cao-ruled-wei-three-closure'], sourceIds: modernSources,
+    turningPoints: [turn(220, '曹魏建立', '代汉建魏，三国分期进入新阶段。', 'three-kingdoms'), turn(227, '北伐与防线', '魏蜀军事竞争成为西部战略主线。'), turn(249, '高平陵之变', '司马氏在魏廷的权力上升，政权内部结构发生变化。'), turn(265, '魏晋禅代', '曹奂在洛阳禅位于司马炎，曹魏中央政权终止，西晋承接。', 'wei-three-ended-265')],
+    principalFigureIds: ['cao-cao', 'cao-huan'], capitalPhases: [capital('luoyang', 220, 265)],
+    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['three-kingdoms', 'wei-three-ended-265', 'jin-unification'], claimIds: ['claim-cao-cao-ruled-wei-three-closure', 'claim-cao-huan-ruled-wei-three', 'claim-cao-huan-participated-wei-three-ended-265', 'claim-cao-huan-submitted-to-sima-yan-wei-three-termination-265', 'claim-sima-yan-succeeded-wei-three', 'claim-sima-yan-participated-wei-three-ended-265'], sourceIds: modernSources,
     uncertaintyNote: '曹魏继承汉廷名义秩序但不等于自动继承汉末所有实际控制区域；三国边界应按阶段事件和疆域资料分别阅读。',
   }),
   detail({
@@ -61,7 +61,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['司马氏在魏廷掌握军政权力。', '265年司马炎受禅建立西晋。', '280年灭吴完成短暂统一，但八王之乱及北方战争随后改变政权结构。'],
     turningPoints: [turn(265, '西晋建立', '司马炎受魏禅建立晋朝。', 'western-jin-founded'), turn(280, '灭吴统一', '三国鼎立结束。', 'jin-unification'), turn(311, '洛阳失守', '正式都城失守，晋廷政治中心转向长安。')],
     principalFigureIds: ['sima-yan'], capitalPhases: [capital('luoyang', 265, 311), capital('changan', 312, 316, 'primary', 'actual', '末期实际政治中心')],
-    heritageIds: ['luoyang-han-wei-city-site', 'western-jin-changan-city-layer'], eventIds: ['western-jin-founded', 'jin-unification', 'western-jin-loses-changan'], claimIds: ['claim-sima-yan-founded-western-jin', 'claim-sima-ye-ruled-western-jin', 'claim-sima-ye-participated-western-jin-loses-changan'], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site', 'western-jin-changan-city-layer'], eventIds: ['western-jin-founded', 'wei-three-ended-265', 'jin-unification', 'western-jin-loses-changan'], claimIds: ['claim-sima-yan-founded-western-jin', 'claim-sima-yan-succeeded-wei-three', 'claim-sima-yan-participated-wei-three-ended-265', 'claim-sima-ye-ruled-western-jin', 'claim-sima-ye-participated-western-jin-loses-changan'], sourceIds: modernSources,
     uncertaintyNote: '280年统一与265年建政不可合并为一个疆域节点；311年后的长安是后期实际中心，不应反写成全期正式首都。',
   }),
   detail({
@@ -131,9 +131,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'later_zhao', perspectiveSummary: '后赵由石勒在北方战乱中重建并扩张，经历襄国到邺的政治中心转移，是十六国时期中原与河北的重要政权。',
     foundationProcess: ['石勒在前赵与北方军政竞争中积累独立力量。', '319年在襄国称赵王并建立后赵政权。', '石虎时期后赵扩大对中原和河北的控制，邺成为后期主要中心。'],
-    turningPoints: [turn(319, '后赵建立', '石勒在襄国称帝，后赵政权形成。', 'later-zhao-founded'), turn(335, '迁都邺', '政治中心由襄国转向邺，河北城市空间的重要性上升。'), turn(349, '石虎死后危机', '继承与军政冲突削弱后赵，政权迅速分裂。')],
-    principalFigureIds: ['shi-le', 'shi-hu'], capitalPhases: [capital('xiangguo', 319, 334), capital('ye', 335, 351)],
-    heritageIds: ['ye-city-site'], eventIds: ['later-zhao-founded', 'later-zhao-moves-ye'], claimIds: ['claim-shi-hu-ruled-later-zhao'], sourceIds: modernSources,
+    turningPoints: [turn(319, '后赵建立', '石勒在襄国称帝，后赵政权形成。', 'later-zhao-founded'), turn(335, '迁都邺', '政治中心由襄国转向邺，河北城市空间的重要性上升。'), turn(349, '石虎死后危机', '继承与军政冲突削弱后赵，政权迅速分裂。'), turn(351, '后赵终止', '石祗在襄国终局中败亡，后赵中央政权终止；前燕对邺城政治空间的承接随后展开。', 'later-zhao-ended-351')],
+    principalFigureIds: ['shi-le', 'shi-hu', 'shi-zhi'], capitalPhases: [capital('xiangguo', 319, 334), capital('ye', 335, 351)],
+    heritageIds: ['ye-city-site'], eventIds: ['later-zhao-founded', 'later-zhao-moves-ye', 'later-zhao-ended-351'], claimIds: ['claim-shi-hu-ruled-later-zhao', 'claim-shi-zhi-participated-later-zhao-ended-351', 'claim-former-yan-inherited-later-zhao-ye'], sourceIds: modernSources,
     uncertaintyNote: '襄国与邺分别对应不同阶段的政治中心；邺城遗址叠压曹魏、十六国与北朝层次，不能将今日可见遗址全部归为后赵。',
   }),
   detail({

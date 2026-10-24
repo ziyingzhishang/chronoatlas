@@ -391,6 +391,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '和合共生——临漳邺城佛造像展', url: 'https://www.mct.gov.cn/ggfw/zyjzzt/zhanlan/zhanlanwqhg/201908/t20190822_845846.html', detail: '文化和旅游部资料确认邺城遗址的位置及后赵、前燕、东魏、北齐等政权沿用邺城的城市史背景。' }, { title: '《资治通鉴》卷九十五·晋纪十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷095', detail: '用于核对后赵石虎时期迁都邺的编年节点；迁都与后续城市建设分层表达。' }],
   },
   {
+    id: 'later-zhao-ended-351', year: 351, title: '后赵在襄国终止、邺城历史空间后续承接', summary: '石祗在后赵末期内战中败亡，后赵中央政权终止；前燕随后承接后赵旧有邺城政治空间，城市遗产继续延续。', placeId: 'xiangguo', sourceIds: ['zizhi-tongjian', 'china-chronology', 'ye-city-official'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '石虎死后后赵继承秩序迅速分裂，邺、襄国及河北各地的军政力量重新竞争；后赵的中央政治结构在351年前后失去维持能力。',
+    process: '351年后赵末期石祗在襄国败亡，后赵中央政权由此终止；前燕对后赵旧地的接收是随后展开的区域过程，不能把前燕对邺的承接提前压缩为同一日。',
+    impact: '后赵退出十六国中原与河北政权谱系；邺城及其宫城、城垣、道路和地方社会继续进入前燕等后续政权的城市历史层。',
+    mapNote: '地图将351年标记为后赵中央政权终止的襄国节点，并以邺标注前燕对后赵旧政治空间的后续承接；不把政权终止或遗产承接解释为城市消失。',
+    references: [{ title: '《资治通鉴》晋纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对351年前后后赵末期内战、石祗终局与后续北方政权重组；本事件不把前燕对邺的后续承接提前为351年同日完成。' }, { title: '和合共生——临漳邺城佛造像展', url: 'https://www.mct.gov.cn/ggfw/zyjzzt/zhanlan/zhanlanwqhg/201908/t20190822_845846.html', detail: '用于邺城遗址现代位置及后赵、前燕等多政权沿用的城市历史层参照。' }],
+  },
+  {
     id: 'cheng-han-founded', year: 304, title: '成汉政权形成', summary: '李雄于304年即成都王位，成汉政权形成；306年称帝为后续阶段。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'zizhi-tongjian-vol85-cheng-han', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '西晋八王之乱与永嘉前后的动荡削弱巴蜀中央控制，李特、李雄父子在蜀地组织军政力量。',
@@ -1299,6 +1308,15 @@ const catalog: HistoricalEvent[] = [
     impact: '曹魏政权转入晋朝，北方政治秩序重新集中；西晋随后展开灭吴和制度整合，但建国当年并未立即恢复对全境的直接统治。',
     mapNote: '洛阳是西晋受禅后的政治中心，地图应把265年建政与280年统一分层表示，不能用统一后的范围回填建国初期。',
     references: [{ title: '《资治通鉴》卷七十九·晋纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷079', detail: '记载司马炎受魏禅、建立晋朝；西晋灭吴及统一阶段另行区分。' }],
+  },
+  {
+    id: 'wei-three-ended-265', year: 265, title: '曹魏在洛阳禅代终止、西晋承接', summary: '魏元帝曹奂在洛阳禅位于司马炎，曹魏中央政权终止，西晋承接魏廷政治中心。', placeId: 'luoyang', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '司马氏在高平陵之变及其后权力重组中控制曹魏中枢，魏廷已缺乏独立制衡司马氏的实际能力。',
+    process: '265年曹魏元帝曹奂在洛阳向司马炎禅位，司马炎受禅建立西晋；曹魏政权终止与西晋建政是同一禅代链上的两个观察角度。',
+    impact: '曹魏退出历史序列，洛阳继续作为西晋首都；280年西晋灭吴完成统一是后续独立节点，不由265年禅代事件替代。',
+    mapNote: '洛阳对应今河南洛阳汉魏故城遗址及其现代城市参照；265年标记中央政权名义转换，不表示地方行政和城市遗产在同日重建。',
+    references: [{ title: '《资治通鉴》卷七十九·晋纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷079', detail: '用于核对咸熙二年（265）曹奂禅位于司马炎、晋朝建立及洛阳政治中心承接。' }],
   },
   {
     id: 'liu-song-founded', year: 420, title: '刘宋建立', summary: '刘裕受东晋禅让建立宋朝，南朝刘宋政权形成。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian', 'china-chronology'],
