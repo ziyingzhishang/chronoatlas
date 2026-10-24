@@ -7,6 +7,8 @@ type Seed =
   | [string, string, number, number, CapitalRole, CapitalStatus, ('high'|'medium'|'low')?, string?];
 const sourceIds = ['capital-history-reference'];
 const additionalSourceIds: Record<string, string[]> = {
+  qin: ['zizhi-tongjian', 'modern-geography-reference'],
+  qin_state: ['zizhi-tongjian', 'modern-geography-reference'],
   western_liao: ['liaoshi-vol30-yelu-dashi', 'iranica-balasagun', 'unesco-chui-balasagun'],
   ming_southern: ['southern-ming-overview', 'southern-ming-hongguang', 'southern-ming-longwu', 'southern-ming-shaowu', 'southern-ming-yongli', 'modern-geography-reference'],
 };
@@ -73,7 +75,7 @@ const explicit: Record<string, Seed[]> = {
   ], tibetan_empire:[['yalong','雅砻',618,629,'de_facto','actual','medium'],['luosie','逻些',630,842]],
   nanzhao:[['taihe','太和城',738,778],['yangjumei','羊苴咩城',779,902]], khitan:[['liao_shangjing','上京临潢府',916,1125,'primary','formal','high'],['liao_dongjing','东京辽阳府',938,1125,'secondary','formal','high','928年升南京，938年改东京；919年东平郡为前置城市经营阶段'],['liao_nanjing','南京析津府',938,1122,'secondary','formal','high','938年幽州升南京；1122年辽控制阶段结束，后续金中都另行记录'],['liao_zhongjing','中京大定府',1007,1125,'secondary','formal','high'],['liao_xijing','西京大同府',1044,1125,'secondary','formal','high']],
   xia_early:[['erlitou','二里头',-2070,-1600,'disputed','uncertain','low','二里头可作夏代早期考古文化参照，现代对应为今河南偃师一带；考古文化与夏王朝及都城的对应仍未获一致证明，不据此确认固定首都。']], shang:[['erlitou','早期都城候选',-1600,-1300,'disputed','uncertain','low','商代有多次迁都传统，现代参照为今河南偃师二里头遗址一带；早期地点与考古文化的对应不能由单一遗址确认，现有地点仅作候选参照，不把二里头视为商代固定首都。']],
-  zhou_western:[['changan','镐京／宗周',-1046,-771],['luoyang','洛邑／成周',-1046,-771,'secondary','formal','medium','东周前的东都/成周体系。']], zhou_eastern:[['luoyang','洛邑／洛阳',-770,-256,'primary','formal','high','东周王室以洛邑（洛阳）为都，今河南省洛阳市；春秋战国诸侯并立，不将王都等同于周王室实际控制范围。']], qin_state:[['xianyang','咸阳',-350,-222],['changan','雍',-770,-351,'secondary','formal','medium','秦早期中心以雍为主，现用长安坐标作关中近似参照。']],
+  zhou_western:[['changan','镐京／宗周',-1046,-771],['luoyang','洛邑／成周',-1046,-771,'secondary','formal','medium','东周前的东都/成周体系。']], zhou_eastern:[['luoyang','洛邑／洛阳',-770,-256,'primary','formal','high','东周王室以洛邑（洛阳）为都，今河南省洛阳市；春秋战国诸侯并立，不将王都等同于周王室实际控制范围。']], qin_state:[['xianyang','咸阳',-350,-222,'primary','formal','high','秦迁都咸阳后，咸阳为秦国正式都城，今陕西省咸阳市；前221年秦帝国建立后另行记录，不把两个政权阶段合并。'],['changan','雍',-770,-351,'secondary','formal','medium','秦早期中心以雍为主，现用长安坐标作关中近似参照。']],
   gengshi:[['wanyang','宛',23,23,'primary','actual','high'],['luoyang','洛阳',24,24,'primary','actual','medium'],['changan','长安',25,25,'primary','actual','medium']],
   jin_western:[['luoyang','洛阳',265,311,'primary','formal','high','西晋正式都城；311年洛阳失守后，晋廷迁至长安。'],['changan','长安',312,316,'primary','actual','high','晋愍帝在长安继续维持西晋政权，属后期实际政治中心。']],
   cheng_han:[['chengdu','成都',304,347,'primary','formal','high','成汉以成都为正式都城，今成都市。']],
