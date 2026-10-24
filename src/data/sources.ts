@@ -3,11 +3,14 @@ import type { SourceNote } from '../domain/types';
 export const sourceNotes: SourceNote[] = [
   {id:'houhanshu-xiongnu-termination',title:'《后汉书》卷八十九·南匈奴列传',authorOrInstitution:'范晔等',urlOrCitation:'https://zh.wikisource.org/zh-hans/後漢書/卷89',scope:'48年南北匈奴分裂、91年北单于受击、93年前后北匈奴余部与南匈奴延续',note:'用于分层表达南北分裂、北匈奴中央单于体系受击和余部延续；不将93年解释为所有匈奴部众消失。'},
   {id:'houhanshu-southern-xiongnu',title:'《后汉书》南匈奴列传与相关本纪',authorOrInstitution:'范晔等',urlOrCitation:'https://zh.wikisource.org/zh-hans/後漢書/卷89',scope:'南单于比、南匈奴内附、汉边安置与单于体系承接',note:'用于南匈奴在汉边政治空间中的阶段性承接；不把内附、册立和汉朝护卫关系等同于完全行政同化。'},
+  {id:'houhanshu-vol89-bi-lineage',title:'《后汉书》卷八十九·南匈奴列传·比本纪',authorOrInstitution:'范晔等',urlOrCitation:'https://zh.wikisource.org/zh-hans/後漢書/卷89',scope:'比的家世、48年南部八部共立与南匈奴阶段性形成',note:'明确记载比为呼韩邪单于之孙、乌珠留若鞮单于之子；用于祖孙关系，不据家世材料推导具体出生年。'},
+  {id:'houhanshu-vol23-dou-xian',title:'《后汉书》卷二十三·窦融列传·窦宪相关纪事',authorOrInstitution:'范晔等',urlOrCitation:'https://zh.wikisource.org/zh-hans/後漢書/卷23',scope:'窦宪、耿夔等在89—91年对北匈奴的军事行动及金微山战事',note:'支持窦宪所统汉军与北单于体系的阶段性军事对立；不把职号北单于升级为可考实名，也不把南匈奴协同写成双方长期同盟。'},
   {id:'xiongnu-late-network-study',title:'匈奴晚期草原网络与汉匈分裂研究资料',authorOrInstitution:'项目交叉核验资料',urlOrCitation:'《后汉书》、汉匈关系研究与北方考古资料交叉核验',scope:'南北匈奴、北匈奴后期迁徙、部众延续与后续匈奴刘氏政治记忆',note:'用于把政权终止、部众网络延续、南匈奴承接和后续匈奴刘氏政治资源分层展示；不提供固定边界或单一国家连续性的证明。'},
   {id:'shiji-xiongnu-modu',title:'《史记·匈奴列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/xiong-nu-lie-zhuan',scope:'冒顿单于即位、匈奴部众整合与汉初北方关系',note:'用于冒顿前209年至前174年间的单于与部众整合活动区间；不将草原联盟活动等同于固定都城或完整生卒年。'},
   {id:'shiji-zhang-qian-dawan',title:'《史记·大宛列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/da-yuan-lie-zhuan',scope:'张骞两次出使西域及其外交活动阶段',note:'用于张骞前138年前后出使、前119年前后再出使的活动区间；不据活动起止推定生卒年。'},
   {id:'shiji-meng-tian',title:'《史记·蒙恬列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/meng-tian-lie-zhuan',scope:'蒙恬任将、北方防务与秦末身死',note:'用于蒙恬约前215年至前210年的北方防务活动窗口；不将任职区间当作生卒年。'},
   {id:'jinshu-vol103-liu-yao',title:'《晋书》卷一〇三·刘曜载记',authorOrInstitution:'房玄龄等',urlOrCitation:'https://zh.wikisource.org/zh-hant/晉書/卷103',scope:'刘曜被擒及前赵末年政治阶段',note:'支持刘曜329年被擒后遇害的卒年端点；生年仍无可靠直接记录。'},
+  {id:'jinshu-vol103-yuan-yao-kinship',title:'《晋书》卷一〇三·刘元海与刘曜载记',authorOrInstitution:'房玄龄等',urlOrCitation:'https://zh.wikisource.org/zh-hant/晉書/卷103',scope:'刘曜为刘元海族子、少孤见养于元海及前赵早期人物网络',note:'明确记载刘曜为刘渊族子并由刘渊抚养；本项目使用保守 related-to，避免把族属与收养关系误写成未经限定的直系亲属。'},
   {id:'hanshu-vol94-huhanye',title:'《汉书》卷九十四下·匈奴传',authorOrInstitution:'班固等',urlOrCitation:'https://zh.wikisource.org/zh-hant/漢書/卷94下',scope:'呼韩邪单于晚年、继承与前31年卒年',note:'支持呼韩邪前31年卒年；不据在位年限倒推出生年。'},
   {id:'ximing-temple-primary-biography',title:'《大唐大慈恩寺三藏法师传》卷十',authorOrInstitution:'慧立、彦悰／佛学数字图书馆藏本',urlOrCitation:'https://buddhism.lib.ntu.edu.tw/FULLTEXT/sutra/chi_pdf/sutra20/T50n2053.pdf',scope:'西明寺656年营建、营造功毕及658年玄奘迁入',note:'作为西明寺专属营建与玄奘迁入阶段的主要传记来源；不据此覆盖玄奘全部译经地点。'},
   {id:'xian-local-chronicle-ximing-temple',title:'《西安市志》第七卷·西明寺条',authorOrInstitution:'西安市地方志编纂委员会',urlOrCitation:'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas_16198/201711/P020240923626792713048.pdf',scope:'西明寺历史位置、遗址考古与唐代译经活动',note:'支持延康坊西南部、今白庙村附近的约址表达及西明寺寺院、译经网络历史；现代约址不等于精确建筑坐标。'},
@@ -162,6 +165,16 @@ export const sourceNotes: SourceNote[] = [
     id: 'turkic-history-db', title: '《旧唐书》《新唐书》突厥传 · 韩国古代史料数据库', authorOrInstitution: '韩国国史编纂委员会', urlOrCitation: 'https://db.history.go.kr/id/ko_034_1510_0070',
     scope: '突厥与唐朝关系、部落归属和后突厥时期的东亚史料参照',
     note: '用于逐年转折和政权身份核验；史料中的臣属、征伐和影响范围不直接等于现代意义国界。',
+  },
+  {
+    id: 'jiu-tangshu-vol194-tujue', title: '《旧唐书》卷一九四上·突厥传', authorOrInstitution: '刘昫等', urlOrCitation: 'https://db.history.go.kr/ancient/level.do?levelId=ko_034_1510_0060',
+    scope: '颉利可汗与唐太宗的战争、630年被俘及骨咄禄—默啜时期的突厥传记',
+    note: '用于人物关系和阶段性战争核验；将兄弟、任用和敌对关系限定在史料明确的阶段，不由同一突厥政权标签推导关系。',
+  },
+  {
+    id: 'xintangshu-vol215-tujue', title: '《新唐书》卷二一五下·突厥传', authorOrInstitution: '欧阳修、宋祁等', urlOrCitation: 'https://zh.wikisource.org/zh-hans/新唐書/卷215下',
+    scope: '骨咄禄后王族、毗伽可汗与阙特勤兄弟关系、暾欲谷任用及744年前后乌苏米施与回鹘承接',
+    note: '用于后突厥王族和军政辅佐关系的交叉核验；744年前后按军事对立和承接转换表达，不主张突厥汗国无缝延续。',
   },
   {
     id: 'turkic-orkhon-heritage', title: 'Orkhon Valley Cultural Landscape · UNESCO World Heritage nomination', authorOrInstitution: 'UNESCO', urlOrCitation: 'https://whc.unesco.org/uploads/nominations/1081rev.pdf',

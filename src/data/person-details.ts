@@ -1080,6 +1080,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['xiongnu-northern-central-defeat-91', 'xiongnu-termination-upper-bound-93'], sourceIds: ['houhanshu-xiongnu-termination', 'xiongnu-late-network-study'], uncertaintyNote: '姓名、具体继承顺序和93年后的去向存在史料差异，故使用职号实体；本条只连接中央单于体系受击与北迁，不宣称部众整体消失。',
   },
   {
+    personId: 'dou-xian', biography: '窦宪是东汉章和、永元年间的重要将领，统率北征军连接89—91年汉军与北匈奴中央单于体系的军事对立。',
+    aliases: ['窦宪大将军'], offices: [{ title: '东汉车骑将军／大将军', polityId: 'han_eastern', validFrom: 89, validTo: 91, datePrecision: 'range', sourceIds: ['houhanshu-vol23-dou-xian', 'houhanshu-xiongnu-termination'] }],
+    keyEvents: ['xiongnu-northern-central-defeat-91'], sourceIds: ['houhanshu-vol23-dou-xian', 'houhanshu-xiongnu-termination'], uncertaintyNote: '窦宪所统汉军与北匈奴中央单于体系形成阶段性军事对立；91年战事不等于所有北匈奴部众消失，也不把南匈奴协同写成长期同盟。',
+  },
+  {
     personId: 'liu-yuan', biography: '刘渊以匈奴刘氏身份和并州军政资源为基础，在西晋末年建立前赵（汉赵），承接匈奴政治记忆与部众网络。',
     aliases: ['汉王', '前赵高祖'], offices: [{ title: '前赵（汉赵）君主', polityId: 'former_zhao', validFrom: 304, validTo: 310, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'xiongnu-late-network-study'] }],
     keyEvents: ['former-zhao-founded', 'xiongnu-termination-upper-bound-93'], sourceIds: ['zizhi-tongjian', 'xiongnu-late-network-study'], uncertaintyNote: '刘渊的前赵是后世具体政权，不能被写成93年匈奴总目录的无缝延续；“匈奴刘氏”表达身份与政治资源承接，不等于部众、疆域和制度完全连续。',

@@ -10081,6 +10081,130 @@
     },
     {
       "entityType": "event",
+      "entityId": "turkic-ended-744",
+      "entityKey": "event:turkic-ended-744",
+      "label": "后突厥汗国终止与拔悉密—回鹘承接",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "turkic-ended-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ozmish-participated-turkic-ended-744",
+            "claim:claim-turkic-ended-744",
+            "event-detail:turkic-ended-744"
+          ],
+          "relatedIds": [
+            "bayanchur",
+            "ozmish-khagan",
+            "tang-founded",
+            "turkic",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "turkic-first-ended-630",
+      "entityKey": "event:turkic-first-ended-630",
+      "label": "第一突厥汗国东部汗权终止",
+      "polityIds": [
+        "tang",
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "turkic-first-ended-630"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:turkic-first-ended-630"
+          ],
+          "relatedIds": [
+            "ilai-khagan",
+            "tang",
+            "turkic",
+            "turkic-founded",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "turkic-founded",
       "entityKey": "event:turkic-founded",
       "label": "突厥汗国建立",
@@ -10129,6 +10253,67 @@
             "istemi",
             "tang-founded",
             "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "turkic-restored-682",
+      "entityKey": "event:turkic-restored-682",
+      "label": "后突厥汗国复兴",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "turkic-restored-682"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:turkic-restored-682"
+          ],
+          "relatedIds": [
+            "kutlug-ilterish",
+            "tonyukuk",
+            "turkic",
+            "turkic-ended-744",
+            "turkic-first-ended-630"
           ]
         },
         {
@@ -12143,6 +12328,196 @@
             "modu-chanyu",
             "xiongnu",
             "xiongnu-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "xiongnu-northern-central-defeat-91",
+      "entityKey": "event:xiongnu-northern-central-defeat-91",
+      "label": "北匈奴中央单于体系遭重击并北迁",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-northern-central-defeat-91"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-central-defeat-91",
+            "claim:claim-xiongnu-northern-chanyu-participated-91",
+            "event-detail:xiongnu-northern-central-defeat-91"
+          ],
+          "relatedIds": [
+            "xiongnu",
+            "xiongnu-northern-chanyu-91",
+            "xiongnu-southern-northern-split-48",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "xiongnu-southern-northern-split-48",
+      "entityKey": "event:xiongnu-southern-northern-split-48",
+      "label": "南北匈奴分裂",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-southern-northern-split-48"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-southern-chanyu-participated-split-48",
+            "claim:claim-xiongnu-southern-northern-split-48",
+            "claim:claim-zhizhi-related-split-48",
+            "event-detail:xiongnu-southern-northern-split-48"
+          ],
+          "relatedIds": [
+            "huhanye",
+            "xiongnu",
+            "xiongnu-founded",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-southern-chanyu-48",
+            "zhizhi-chanyu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "xiongnu-termination-upper-bound-93",
+      "entityKey": "event:xiongnu-termination-upper-bound-93",
+      "label": "匈奴总目录终止上限（部众网络延续）",
+      "polityIds": [
+        "former_zhao",
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-termination-upper-bound-93"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-yuan-participated-xiongnu-termination-upper-bound",
+            "claim:claim-xiongnu-northern-chanyu-participated-93",
+            "claim:claim-xiongnu-termination-upper-bound-93",
+            "event-detail:xiongnu-termination-upper-bound-93"
+          ],
+          "relatedIds": [
+            "former-zhao-founded",
+            "former_zhao",
+            "liu-yuan",
+            "xiongnu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-chanyu-91"
           ]
         },
         {
@@ -17387,8 +17762,7 @@
       "entityKey": "heritage:orkhon-turkic-inscriptions",
       "label": "鄂尔浑突厥碑刻遗址群",
       "polityIds": [
-        "turkic",
-        "xiongnu"
+        "turkic"
       ],
       "checks": [
         {
@@ -17413,7 +17787,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "turkic-history-db",
-            "turkic-orkhon-collection"
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage"
           ],
           "relatedIds": []
         },
@@ -17422,12 +17797,17 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-turkic-left-orkhon-heritage-744",
             "heritage-detail:orkhon-turkic-inscriptions"
           ],
           "relatedIds": [
-            "modu-chanyu",
+            "bilge-khagan",
+            "kul-tegin",
+            "tonyukuk",
             "turkic",
-            "turkic-founded"
+            "turkic-ended-744",
+            "turkic-founded",
+            "turkic-restored-682"
           ]
         },
         {
@@ -20114,6 +20494,130 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "xiongnu-northern-steppe-network",
+      "entityKey": "heritage:xiongnu-northern-steppe-network",
+      "label": "北匈奴金微山—草原迁徙网络遗产",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "xiongnu-northern-steppe-network"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-left-heritage-91",
+            "heritage-detail:xiongnu-northern-steppe-network"
+          ],
+          "relatedIds": [
+            "xiongnu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-chanyu-91",
+            "xiongnu-termination-upper-bound-93",
+            "zhizhi-chanyu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "xiongnu-southern-frontier-network",
+      "entityKey": "heritage:xiongnu-southern-frontier-network",
+      "label": "南匈奴河套—汉边政治网络遗产",
+      "polityIds": [
+        "former_zhao",
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "xiongnu-southern-frontier-network"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-left-southern-heritage-48",
+            "heritage-detail:xiongnu-southern-frontier-network"
+          ],
+          "relatedIds": [
+            "former-zhao-founded",
+            "former_zhao",
+            "huhanye",
+            "liu-yuan",
+            "xiongnu",
+            "xiongnu-southern-chanyu-48",
+            "xiongnu-southern-northern-split-48",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "yamen-song-yuan-battle-site",
       "entityKey": "heritage:yamen-song-yuan-battle-site",
       "label": "崖门宋元海战历史空间",
@@ -21044,6 +21548,133 @@
           "evidenceIds": [
             "yuan-goryeo-records",
             "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "bayanchur",
+      "entityKey": "person:bayanchur",
+      "label": "磨延啜",
+      "polityIds": [],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "bayanchur"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-basmyl-succeeded-turkic-744",
+            "claim:claim-bayanchur-enemy-ozmish-closure",
+            "claim:claim-ozmish-enemy-bayanchur-closure",
+            "event-detail:turkic-ended-744"
+          ],
+          "relatedIds": [
+            "ozmish-khagan",
+            "turkic",
+            "turkic-ended-744"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "bilge-khagan",
+      "entityKey": "person:bilge-khagan",
+      "label": "毗伽可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "bilge-khagan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bilge-ruled-turkic-second",
+            "claim:claim-bilge-sibling-kul-tegin-closure",
+            "claim:claim-kul-tegin-sibling-bilge-closure",
+            "claim:claim-tonyukuk-served-bilge-closure",
+            "person-polity:bilge-khagan:turkic"
+          ],
+          "relatedIds": [
+            "kul-tegin",
+            "tonyukuk",
+            "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
           ],
           "relatedIds": []
         }
@@ -22208,6 +22839,66 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "dou-xian",
+      "entityKey": "person:dou-xian",
+      "label": "窦宪",
+      "polityIds": [
+        "han_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "dou-xian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-vol23-dou-xian",
+            "houhanshu-xiongnu-termination"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-chanyu-91-enemy-dou-xian",
+            "person-polity:dou-xian:han_eastern"
+          ],
+          "relatedIds": [
+            "han_eastern",
+            "xiongnu-northern-chanyu-91"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "houhanshu-vol23-dou-xian",
+            "houhanshu-xiongnu-termination"
           ],
           "relatedIds": []
         }
@@ -24790,13 +25481,19 @@
             "claim:claim-huhanye-participated-xiongnu-founded",
             "claim:claim-huhanye-related-modu",
             "claim:claim-huhanye-ruled-xiongnu-sixtysecond",
+            "claim:claim-xiongnu-southern-chanyu-48-grandchild-huhanye",
+            "claim:claim-zhizhi-sibling-huhanye-closure",
             "event-detail:xiongnu-founded",
+            "event-detail:xiongnu-southern-northern-split-48",
             "person-polity:huhanye:xiongnu"
           ],
           "relatedIds": [
             "modu-chanyu",
             "xiongnu",
-            "xiongnu-founded"
+            "xiongnu-founded",
+            "xiongnu-southern-chanyu-48",
+            "xiongnu-southern-northern-split-48",
+            "zhizhi-chanyu"
           ]
         },
         {
@@ -24866,6 +25563,68 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "ilai-khagan",
+      "entityKey": "person:ilai-khagan",
+      "label": "颉利可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ilai-khagan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ilai-khagan-enemy-li-shimin-closure",
+            "event-detail:turkic-first-ended-630",
+            "person-polity:ilai-khagan:turkic"
+          ],
+          "relatedIds": [
+            "li-shimin",
+            "turkic",
+            "turkic-first-ended-630"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
           ],
           "relatedIds": []
         }
@@ -25755,6 +26514,134 @@
     },
     {
       "entityType": "person",
+      "entityId": "kul-tegin",
+      "entityKey": "person:kul-tegin",
+      "label": "阙特勤",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kul-tegin"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bilge-sibling-kul-tegin-closure",
+            "claim:claim-kul-tegin-sibling-bilge-closure",
+            "person-polity:kul-tegin:turkic"
+          ],
+          "relatedIds": [
+            "bilge-khagan",
+            "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "kutlug-ilterish",
+      "entityKey": "person:kutlug-ilterish",
+      "label": "骨咄禄（颉跌利施可汗）",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kutlug-ilterish"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kutlug-ruled-turkic-second",
+            "claim:claim-qapaghan-sibling-kutlug-closure",
+            "claim:claim-tonyukuk-served-kutlug-closure",
+            "event-detail:turkic-restored-682",
+            "person-polity:kutlug-ilterish:turkic"
+          ],
+          "relatedIds": [
+            "qapaghan",
+            "tonyukuk",
+            "turkic",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "langdarma",
       "entityKey": "person:langdarma",
       "label": "朗达玛",
@@ -26436,6 +27323,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-ilai-khagan-enemy-li-shimin-closure",
             "claim:claim-li-shimin-parent-li-zhi-fiftyfourth",
             "claim:claim-li-shimin-participated-tang-founded-fortyfourth",
             "claim:claim-li-shimin-ruled-tang",
@@ -26456,6 +27344,7 @@
           ],
           "relatedIds": [
             "daming-palace-built",
+            "ilai-khagan",
             "li-yuan",
             "li-zhi",
             "songtsen-gampo",
@@ -28021,6 +28910,7 @@
             "claim:claim-liu-yao-participated-former-zhao-ended-329",
             "claim:claim-liu-yao-participated-western-jin-loses-changan",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
+            "claim:claim-liu-yuan-related-liu-yao-closure",
             "claim:claim-shi-hu-enemy-liu-yao",
             "claim:claim-shi-le-enemy-liu-yao",
             "event-detail:former-zhao-ended-329",
@@ -28032,6 +28922,7 @@
             "former-zhao-ended-329",
             "former-zhao-founded",
             "former_zhao",
+            "liu-yuan",
             "shi-hu",
             "shi-le",
             "western-jin-loses-changan"
@@ -28259,6 +29150,71 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "liu-yuan",
+      "entityKey": "person:liu-yuan",
+      "label": "刘渊",
+      "polityIds": [
+        "former_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-yuan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-yuan-participated-xiongnu-termination-upper-bound",
+            "claim:claim-liu-yuan-related-liu-yao-closure",
+            "claim:claim-liu-yuan-related-xiongnu",
+            "event-detail:xiongnu-termination-upper-bound-93",
+            "person-polity:liu-yuan:former_zhao"
+          ],
+          "relatedIds": [
+            "former_zhao",
+            "liu-yao",
+            "xiongnu",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "xiongnu-late-network-study",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -30457,6 +31413,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "ozmish-khagan",
+      "entityKey": "person:ozmish-khagan",
+      "label": "乌苏米施可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ozmish-khagan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bayanchur-enemy-ozmish-closure",
+            "claim:claim-ozmish-enemy-bayanchur-closure",
+            "claim:claim-ozmish-participated-turkic-ended-744",
+            "event-detail:turkic-ended-744",
+            "person-polity:ozmish-khagan:turkic"
+          ],
+          "relatedIds": [
+            "bayanchur",
+            "turkic",
+            "turkic-ended-744"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "park-hyeokgeose",
       "entityKey": "person:park-hyeokgeose",
       "label": "朴赫居世",
@@ -30588,6 +31608,66 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "qapaghan",
+      "entityKey": "person:qapaghan",
+      "label": "默啜可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qapaghan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qapaghan-sibling-kutlug-closure",
+            "person-polity:qapaghan:turkic"
+          ],
+          "relatedIds": [
+            "kutlug-ilterish",
+            "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
           ],
           "relatedIds": []
         }
@@ -33067,6 +34147,72 @@
     },
     {
       "entityType": "person",
+      "entityId": "tonyukuk",
+      "entityKey": "person:tonyukuk",
+      "label": "暾欲谷",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "tonyukuk"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tonyukuk-served-bilge-closure",
+            "claim:claim-tonyukuk-served-kutlug-closure",
+            "event-detail:turkic-restored-682",
+            "person-polity:tonyukuk:turkic"
+          ],
+          "relatedIds": [
+            "bilge-khagan",
+            "kutlug-ilterish",
+            "turkic",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "trauttmansdorff",
       "entityKey": "person:trauttmansdorff",
       "label": "马克西米利安·冯·特劳特曼斯多夫",
@@ -35080,6 +36226,140 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "xiongnu-northern-chanyu-91",
+      "entityKey": "person:xiongnu-northern-chanyu-91",
+      "label": "北单于（91年后北迁）",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiongnu-northern-chanyu-91"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-chanyu-91-enemy-dou-xian",
+            "claim:claim-xiongnu-northern-chanyu-participated-91",
+            "claim:claim-xiongnu-northern-chanyu-participated-93",
+            "claim:claim-xiongnu-northern-left-heritage-91",
+            "event-detail:xiongnu-northern-central-defeat-91",
+            "event-detail:xiongnu-termination-upper-bound-93",
+            "person-polity:xiongnu-northern-chanyu-91:xiongnu"
+          ],
+          "relatedIds": [
+            "dou-xian",
+            "xiongnu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-steppe-network",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "xiongnu-southern-chanyu-48",
+      "entityKey": "person:xiongnu-southern-chanyu-48",
+      "label": "呼韩邪单于比",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiongnu-southern-chanyu-48"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-left-southern-heritage-48",
+            "claim:claim-xiongnu-southern-chanyu-48-grandchild-huhanye",
+            "claim:claim-xiongnu-southern-chanyu-participated-split-48",
+            "claim:claim-xiongnu-southern-chanyu-succeeded-48",
+            "event-detail:xiongnu-southern-northern-split-48",
+            "person-polity:xiongnu-southern-chanyu-48:xiongnu"
+          ],
+          "relatedIds": [
+            "huhanye",
+            "xiongnu",
+            "xiongnu-southern-frontier-network",
+            "xiongnu-southern-northern-split-48"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination"
           ],
           "relatedIds": []
         }
@@ -37953,6 +39233,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "zhizhi-chanyu",
+      "entityKey": "person:zhizhi-chanyu",
+      "label": "郅支单于",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhizhi-chanyu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "hanshu-vol94-huhanye",
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhizhi-related-split-48",
+            "claim:claim-zhizhi-sibling-huhanye-closure",
+            "person-polity:zhizhi-chanyu:xiongnu"
+          ],
+          "relatedIds": [
+            "huhanye",
+            "xiongnu",
+            "xiongnu-southern-northern-split-48"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "hanshu-vol94-huhanye",
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "zhong-hui",
       "entityKey": "person:zhong-hui",
       "label": "钟会",
@@ -39387,10 +40731,13 @@
             "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
             "event-detail:western-jin-loses-changan",
+            "event-detail:xiongnu-termination-upper-bound-93",
             "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
             "heritage-detail:western-jin-changan-city-layer",
-            "person:liu-yao"
+            "heritage-detail:xiongnu-southern-frontier-network",
+            "person:liu-yao",
+            "person:liu-yuan"
           ],
           "relatedIds": [
             "changan",
@@ -39400,8 +40747,11 @@
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
             "liu-yao",
+            "liu-yuan",
             "western-jin-changan-city-layer",
-            "western-jin-loses-changan"
+            "western-jin-loses-changan",
+            "xiongnu-southern-frontier-network",
+            "xiongnu-termination-upper-bound-93"
           ]
         },
         {
@@ -39629,6 +40979,7 @@
             "heritage-detail:white-horse-temple",
             "person:ban-gu",
             "person:cao-cao",
+            "person:dou-xian",
             "person:liu-bei",
             "person:liu-xiu",
             "person:liu-zhuang",
@@ -39638,6 +40989,7 @@
             "ban-gu",
             "cao-cao",
             "dong-zhuo-changan",
+            "dou-xian",
             "eastern-han-moves-luoyang",
             "eastern-han-restores-changan",
             "han-eastern-founded",
@@ -43147,6 +44499,7 @@
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
+            "event-detail:turkic-first-ended-630",
             "event-detail:tuyuhun-ended-663",
             "event-detail:ximing-temple-built",
             "event-detail:xuanwu-gate",
@@ -43223,6 +44576,7 @@
             "tang-changan-occupation",
             "tang-founded",
             "tang-founded-changan",
+            "turkic-first-ended-630",
             "tuyuhun",
             "tuyuhun-ended-663",
             "wang-wei",
@@ -43434,9 +44788,11 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "turkic-history-db",
             "turkic-orkhon-collection",
             "turkic-orkhon-heritage",
+            "turkic-termination-744",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -43447,16 +44803,42 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-asina-tumen-ruled-turkic-closure",
+            "claim:claim-basmyl-succeeded-turkic-744",
+            "claim:claim-bilge-ruled-turkic-second",
+            "claim:claim-kutlug-ruled-turkic-second",
+            "claim:claim-turkic-ended-744",
+            "claim:claim-turkic-left-orkhon-heritage-744",
+            "event-detail:turkic-ended-744",
+            "event-detail:turkic-first-ended-630",
             "event-detail:turkic-founded",
+            "event-detail:turkic-restored-682",
             "heritage-detail:orkhon-turkic-inscriptions",
             "person:asina-tumen",
-            "person:istemi"
+            "person:bilge-khagan",
+            "person:ilai-khagan",
+            "person:istemi",
+            "person:kul-tegin",
+            "person:kutlug-ilterish",
+            "person:ozmish-khagan",
+            "person:qapaghan",
+            "person:tonyukuk"
           ],
           "relatedIds": [
             "asina-tumen",
+            "bayanchur",
+            "bilge-khagan",
+            "ilai-khagan",
             "istemi",
+            "kul-tegin",
+            "kutlug-ilterish",
             "orkhon-turkic-inscriptions",
-            "turkic-founded"
+            "ozmish-khagan",
+            "qapaghan",
+            "tonyukuk",
+            "turkic-ended-744",
+            "turkic-first-ended-630",
+            "turkic-founded",
+            "turkic-restored-682"
           ]
         },
         {
@@ -44737,7 +46119,10 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination",
             "modern-geography-reference",
+            "xiongnu-late-network-study",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -44748,20 +46133,42 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-huhanye-ruled-xiongnu-sixtysecond",
+            "claim:claim-liu-yuan-related-xiongnu",
             "claim:claim-modu-founded-xiongnu",
             "claim:claim-modu-ruled-xiongnu-fiftyeighth",
+            "claim:claim-xiongnu-northern-central-defeat-91",
+            "claim:claim-xiongnu-southern-chanyu-succeeded-48",
+            "claim:claim-xiongnu-southern-northern-split-48",
+            "claim:claim-xiongnu-termination-upper-bound-93",
             "event-detail:xiongnu-founded",
             "event-detail:xiongnu-modu-assumes-chanyu",
+            "event-detail:xiongnu-northern-central-defeat-91",
+            "event-detail:xiongnu-southern-northern-split-48",
+            "event-detail:xiongnu-termination-upper-bound-93",
             "heritage-detail:xiongnu-longcheng-candidate",
+            "heritage-detail:xiongnu-northern-steppe-network",
+            "heritage-detail:xiongnu-southern-frontier-network",
             "person:huhanye",
-            "person:modu-chanyu"
+            "person:modu-chanyu",
+            "person:xiongnu-northern-chanyu-91",
+            "person:xiongnu-southern-chanyu-48",
+            "person:zhizhi-chanyu"
           ],
           "relatedIds": [
             "huhanye",
+            "liu-yuan",
             "modu-chanyu",
             "xiongnu-founded",
             "xiongnu-longcheng-candidate",
-            "xiongnu-modu-assumes-chanyu"
+            "xiongnu-modu-assumes-chanyu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-chanyu-91",
+            "xiongnu-northern-steppe-network",
+            "xiongnu-southern-chanyu-48",
+            "xiongnu-southern-frontier-network",
+            "xiongnu-southern-northern-split-48",
+            "xiongnu-termination-upper-bound-93",
+            "zhizhi-chanyu"
           ]
         },
         {
@@ -45925,6 +47332,39 @@
     },
     {
       "entityType": "person",
+      "entityId": "bayanchur",
+      "entityKey": "person:bayanchur",
+      "label": "磨延啜",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [],
+      "evidenceIds": [
+        "turkic-orkhon-collection",
+        "turkic-termination-744"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "bilge-khagan",
+      "entityKey": "person:bilge-khagan",
+      "label": "毗伽可汗",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "turkic"
+      ],
+      "evidenceIds": [
+        "turkic-orkhon-collection",
+        "turkic-orkhon-heritage",
+        "turkic-termination-744"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "bojang-goguryeo",
       "entityKey": "person:bojang-goguryeo",
       "label": "宝藏王",
@@ -45967,6 +47407,23 @@
       "polityIds": [],
       "evidenceIds": [
         "goguryeo-termination-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "dou-xian",
+      "entityKey": "person:dou-xian",
+      "label": "窦宪",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "han_eastern"
+      ],
+      "evidenceIds": [
+        "houhanshu-vol23-dou-xian",
+        "houhanshu-xiongnu-termination"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -46242,6 +47699,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "ilai-khagan",
+      "entityKey": "person:ilai-khagan",
+      "label": "颉利可汗",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "turkic"
+      ],
+      "evidenceIds": [
+        "turkic-history-db",
+        "turkic-termination-744"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "istemi",
       "entityKey": "person:istemi",
       "label": "室点密",
@@ -46353,6 +47827,41 @@
       "evidenceIds": [
         "china-chronology",
         "iranica-qara-ketay"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "kul-tegin",
+      "entityKey": "person:kul-tegin",
+      "label": "阙特勤",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "turkic"
+      ],
+      "evidenceIds": [
+        "turkic-orkhon-collection",
+        "turkic-orkhon-heritage"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "kutlug-ilterish",
+      "entityKey": "person:kutlug-ilterish",
+      "label": "骨咄禄（颉跌利施可汗）",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "turkic"
+      ],
+      "evidenceIds": [
+        "turkic-history-db",
+        "turkic-orkhon-collection",
+        "turkic-termination-744"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -46596,6 +48105,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "ozmish-khagan",
+      "entityKey": "person:ozmish-khagan",
+      "label": "乌苏米施可汗",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "turkic"
+      ],
+      "evidenceIds": [
+        "turkic-history-db",
+        "turkic-termination-744"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "piluo-ge",
       "entityKey": "person:piluo-ge",
       "label": "皮罗阁",
@@ -46607,6 +48133,23 @@
       "evidenceIds": [
         "china-chronology",
         "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "qapaghan",
+      "entityKey": "person:qapaghan",
+      "label": "默啜可汗",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "turkic"
+      ],
+      "evidenceIds": [
+        "turkic-history-db",
+        "turkic-termination-744"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -46801,6 +48344,24 @@
     },
     {
       "entityType": "person",
+      "entityId": "tonyukuk",
+      "entityKey": "person:tonyukuk",
+      "label": "暾欲谷",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "turkic"
+      ],
+      "evidenceIds": [
+        "turkic-orkhon-collection",
+        "turkic-orkhon-heritage",
+        "turkic-termination-744"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "tufa-lilugu",
       "entityKey": "person:tufa-lilugu",
       "label": "秃发利鹿孤",
@@ -46912,6 +48473,40 @@
       ],
       "evidenceIds": [
         "china-chronology"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "xiongnu-northern-chanyu-91",
+      "entityKey": "person:xiongnu-northern-chanyu-91",
+      "label": "北单于（91年后北迁）",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "evidenceIds": [
+        "houhanshu-xiongnu-termination",
+        "xiongnu-late-network-study"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "xiongnu-southern-chanyu-48",
+      "entityKey": "person:xiongnu-southern-chanyu-48",
+      "label": "呼韩邪单于比",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "evidenceIds": [
+        "houhanshu-southern-xiongnu",
+        "houhanshu-xiongnu-termination"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -47163,6 +48758,24 @@
       ],
       "evidenceIds": [
         "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "zhizhi-chanyu",
+      "entityKey": "person:zhizhi-chanyu",
+      "label": "郅支单于",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "evidenceIds": [
+        "hanshu-vol94-huhanye",
+        "xiongnu-late-network-study",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -57280,6 +58893,130 @@
         }
       ]
     },
+    "event:turkic-ended-744": {
+      "entityType": "event",
+      "entityId": "turkic-ended-744",
+      "entityKey": "event:turkic-ended-744",
+      "label": "后突厥汗国终止与拔悉密—回鹘承接",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "turkic-ended-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ozmish-participated-turkic-ended-744",
+            "claim:claim-turkic-ended-744",
+            "event-detail:turkic-ended-744"
+          ],
+          "relatedIds": [
+            "bayanchur",
+            "ozmish-khagan",
+            "tang-founded",
+            "turkic",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:turkic-first-ended-630": {
+      "entityType": "event",
+      "entityId": "turkic-first-ended-630",
+      "entityKey": "event:turkic-first-ended-630",
+      "label": "第一突厥汗国东部汗权终止",
+      "polityIds": [
+        "tang",
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "turkic-first-ended-630"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:turkic-first-ended-630"
+          ],
+          "relatedIds": [
+            "ilai-khagan",
+            "tang",
+            "turkic",
+            "turkic-founded",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:turkic-founded": {
       "entityType": "event",
       "entityId": "turkic-founded",
@@ -57330,6 +59067,67 @@
             "istemi",
             "tang-founded",
             "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:turkic-restored-682": {
+      "entityType": "event",
+      "entityId": "turkic-restored-682",
+      "entityKey": "event:turkic-restored-682",
+      "label": "后突厥汗国复兴",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "turkic-restored-682"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:turkic-restored-682"
+          ],
+          "relatedIds": [
+            "kutlug-ilterish",
+            "tonyukuk",
+            "turkic",
+            "turkic-ended-744",
+            "turkic-first-ended-630"
           ]
         },
         {
@@ -59344,6 +61142,196 @@
             "modu-chanyu",
             "xiongnu",
             "xiongnu-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:xiongnu-northern-central-defeat-91": {
+      "entityType": "event",
+      "entityId": "xiongnu-northern-central-defeat-91",
+      "entityKey": "event:xiongnu-northern-central-defeat-91",
+      "label": "北匈奴中央单于体系遭重击并北迁",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-northern-central-defeat-91"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-central-defeat-91",
+            "claim:claim-xiongnu-northern-chanyu-participated-91",
+            "event-detail:xiongnu-northern-central-defeat-91"
+          ],
+          "relatedIds": [
+            "xiongnu",
+            "xiongnu-northern-chanyu-91",
+            "xiongnu-southern-northern-split-48",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:xiongnu-southern-northern-split-48": {
+      "entityType": "event",
+      "entityId": "xiongnu-southern-northern-split-48",
+      "entityKey": "event:xiongnu-southern-northern-split-48",
+      "label": "南北匈奴分裂",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-southern-northern-split-48"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-southern-chanyu-participated-split-48",
+            "claim:claim-xiongnu-southern-northern-split-48",
+            "claim:claim-zhizhi-related-split-48",
+            "event-detail:xiongnu-southern-northern-split-48"
+          ],
+          "relatedIds": [
+            "huhanye",
+            "xiongnu",
+            "xiongnu-founded",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-southern-chanyu-48",
+            "zhizhi-chanyu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:xiongnu-termination-upper-bound-93": {
+      "entityType": "event",
+      "entityId": "xiongnu-termination-upper-bound-93",
+      "entityKey": "event:xiongnu-termination-upper-bound-93",
+      "label": "匈奴总目录终止上限（部众网络延续）",
+      "polityIds": [
+        "former_zhao",
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "xiongnu-termination-upper-bound-93"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-yuan-participated-xiongnu-termination-upper-bound",
+            "claim:claim-xiongnu-northern-chanyu-participated-93",
+            "claim:claim-xiongnu-termination-upper-bound-93",
+            "event-detail:xiongnu-termination-upper-bound-93"
+          ],
+          "relatedIds": [
+            "former-zhao-founded",
+            "former_zhao",
+            "liu-yuan",
+            "xiongnu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-chanyu-91"
           ]
         },
         {
@@ -64588,8 +66576,7 @@
       "entityKey": "heritage:orkhon-turkic-inscriptions",
       "label": "鄂尔浑突厥碑刻遗址群",
       "polityIds": [
-        "turkic",
-        "xiongnu"
+        "turkic"
       ],
       "checks": [
         {
@@ -64614,7 +66601,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "turkic-history-db",
-            "turkic-orkhon-collection"
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage"
           ],
           "relatedIds": []
         },
@@ -64623,12 +66611,17 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-turkic-left-orkhon-heritage-744",
             "heritage-detail:orkhon-turkic-inscriptions"
           ],
           "relatedIds": [
-            "modu-chanyu",
+            "bilge-khagan",
+            "kul-tegin",
+            "tonyukuk",
             "turkic",
-            "turkic-founded"
+            "turkic-ended-744",
+            "turkic-founded",
+            "turkic-restored-682"
           ]
         },
         {
@@ -67313,6 +69306,130 @@
         }
       ]
     },
+    "heritage:xiongnu-northern-steppe-network": {
+      "entityType": "heritage",
+      "entityId": "xiongnu-northern-steppe-network",
+      "entityKey": "heritage:xiongnu-northern-steppe-network",
+      "label": "北匈奴金微山—草原迁徙网络遗产",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "xiongnu-northern-steppe-network"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-left-heritage-91",
+            "heritage-detail:xiongnu-northern-steppe-network"
+          ],
+          "relatedIds": [
+            "xiongnu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-chanyu-91",
+            "xiongnu-termination-upper-bound-93",
+            "zhizhi-chanyu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:xiongnu-southern-frontier-network": {
+      "entityType": "heritage",
+      "entityId": "xiongnu-southern-frontier-network",
+      "entityKey": "heritage:xiongnu-southern-frontier-network",
+      "label": "南匈奴河套—汉边政治网络遗产",
+      "polityIds": [
+        "former_zhao",
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "xiongnu-southern-frontier-network"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-left-southern-heritage-48",
+            "heritage-detail:xiongnu-southern-frontier-network"
+          ],
+          "relatedIds": [
+            "former-zhao-founded",
+            "former_zhao",
+            "huhanye",
+            "liu-yuan",
+            "xiongnu",
+            "xiongnu-southern-chanyu-48",
+            "xiongnu-southern-northern-split-48",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:yamen-song-yuan-battle-site": {
       "entityType": "heritage",
       "entityId": "yamen-song-yuan-battle-site",
@@ -68245,6 +70362,133 @@
           "evidenceIds": [
             "yuan-goryeo-records",
             "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:bayanchur": {
+      "entityType": "person",
+      "entityId": "bayanchur",
+      "entityKey": "person:bayanchur",
+      "label": "磨延啜",
+      "polityIds": [],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "bayanchur"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-basmyl-succeeded-turkic-744",
+            "claim:claim-bayanchur-enemy-ozmish-closure",
+            "claim:claim-ozmish-enemy-bayanchur-closure",
+            "event-detail:turkic-ended-744"
+          ],
+          "relatedIds": [
+            "ozmish-khagan",
+            "turkic",
+            "turkic-ended-744"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:bilge-khagan": {
+      "entityType": "person",
+      "entityId": "bilge-khagan",
+      "entityKey": "person:bilge-khagan",
+      "label": "毗伽可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "bilge-khagan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bilge-ruled-turkic-second",
+            "claim:claim-bilge-sibling-kul-tegin-closure",
+            "claim:claim-kul-tegin-sibling-bilge-closure",
+            "claim:claim-tonyukuk-served-bilge-closure",
+            "person-polity:bilge-khagan:turkic"
+          ],
+          "relatedIds": [
+            "kul-tegin",
+            "tonyukuk",
+            "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
           ],
           "relatedIds": []
         }
@@ -69409,6 +71653,66 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:dou-xian": {
+      "entityType": "person",
+      "entityId": "dou-xian",
+      "entityKey": "person:dou-xian",
+      "label": "窦宪",
+      "polityIds": [
+        "han_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "dou-xian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-vol23-dou-xian",
+            "houhanshu-xiongnu-termination"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-chanyu-91-enemy-dou-xian",
+            "person-polity:dou-xian:han_eastern"
+          ],
+          "relatedIds": [
+            "han_eastern",
+            "xiongnu-northern-chanyu-91"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "houhanshu-vol23-dou-xian",
+            "houhanshu-xiongnu-termination"
           ],
           "relatedIds": []
         }
@@ -71991,13 +74295,19 @@
             "claim:claim-huhanye-participated-xiongnu-founded",
             "claim:claim-huhanye-related-modu",
             "claim:claim-huhanye-ruled-xiongnu-sixtysecond",
+            "claim:claim-xiongnu-southern-chanyu-48-grandchild-huhanye",
+            "claim:claim-zhizhi-sibling-huhanye-closure",
             "event-detail:xiongnu-founded",
+            "event-detail:xiongnu-southern-northern-split-48",
             "person-polity:huhanye:xiongnu"
           ],
           "relatedIds": [
             "modu-chanyu",
             "xiongnu",
-            "xiongnu-founded"
+            "xiongnu-founded",
+            "xiongnu-southern-chanyu-48",
+            "xiongnu-southern-northern-split-48",
+            "zhizhi-chanyu"
           ]
         },
         {
@@ -72067,6 +74377,68 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:ilai-khagan": {
+      "entityType": "person",
+      "entityId": "ilai-khagan",
+      "entityKey": "person:ilai-khagan",
+      "label": "颉利可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ilai-khagan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ilai-khagan-enemy-li-shimin-closure",
+            "event-detail:turkic-first-ended-630",
+            "person-polity:ilai-khagan:turkic"
+          ],
+          "relatedIds": [
+            "li-shimin",
+            "turkic",
+            "turkic-first-ended-630"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
           ],
           "relatedIds": []
         }
@@ -72954,6 +75326,134 @@
         }
       ]
     },
+    "person:kul-tegin": {
+      "entityType": "person",
+      "entityId": "kul-tegin",
+      "entityKey": "person:kul-tegin",
+      "label": "阙特勤",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kul-tegin"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bilge-sibling-kul-tegin-closure",
+            "claim:claim-kul-tegin-sibling-bilge-closure",
+            "person-polity:kul-tegin:turkic"
+          ],
+          "relatedIds": [
+            "bilge-khagan",
+            "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:kutlug-ilterish": {
+      "entityType": "person",
+      "entityId": "kutlug-ilterish",
+      "entityKey": "person:kutlug-ilterish",
+      "label": "骨咄禄（颉跌利施可汗）",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "kutlug-ilterish"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-kutlug-ruled-turkic-second",
+            "claim:claim-qapaghan-sibling-kutlug-closure",
+            "claim:claim-tonyukuk-served-kutlug-closure",
+            "event-detail:turkic-restored-682",
+            "person-polity:kutlug-ilterish:turkic"
+          ],
+          "relatedIds": [
+            "qapaghan",
+            "tonyukuk",
+            "turkic",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:langdarma": {
       "entityType": "person",
       "entityId": "langdarma",
@@ -73637,6 +76137,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-ilai-khagan-enemy-li-shimin-closure",
             "claim:claim-li-shimin-parent-li-zhi-fiftyfourth",
             "claim:claim-li-shimin-participated-tang-founded-fortyfourth",
             "claim:claim-li-shimin-ruled-tang",
@@ -73657,6 +76158,7 @@
           ],
           "relatedIds": [
             "daming-palace-built",
+            "ilai-khagan",
             "li-yuan",
             "li-zhi",
             "songtsen-gampo",
@@ -75222,6 +77724,7 @@
             "claim:claim-liu-yao-participated-former-zhao-ended-329",
             "claim:claim-liu-yao-participated-western-jin-loses-changan",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
+            "claim:claim-liu-yuan-related-liu-yao-closure",
             "claim:claim-shi-hu-enemy-liu-yao",
             "claim:claim-shi-le-enemy-liu-yao",
             "event-detail:former-zhao-ended-329",
@@ -75233,6 +77736,7 @@
             "former-zhao-ended-329",
             "former-zhao-founded",
             "former_zhao",
+            "liu-yuan",
             "shi-hu",
             "shi-le",
             "western-jin-loses-changan"
@@ -75460,6 +77964,71 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:liu-yuan": {
+      "entityType": "person",
+      "entityId": "liu-yuan",
+      "entityKey": "person:liu-yuan",
+      "label": "刘渊",
+      "polityIds": [
+        "former_zhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-yuan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-yuan-participated-xiongnu-termination-upper-bound",
+            "claim:claim-liu-yuan-related-liu-yao-closure",
+            "claim:claim-liu-yuan-related-xiongnu",
+            "event-detail:xiongnu-termination-upper-bound-93",
+            "person-polity:liu-yuan:former_zhao"
+          ],
+          "relatedIds": [
+            "former_zhao",
+            "liu-yao",
+            "xiongnu",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "xiongnu-late-network-study",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -77656,6 +80225,70 @@
         }
       ]
     },
+    "person:ozmish-khagan": {
+      "entityType": "person",
+      "entityId": "ozmish-khagan",
+      "entityKey": "person:ozmish-khagan",
+      "label": "乌苏米施可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ozmish-khagan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bayanchur-enemy-ozmish-closure",
+            "claim:claim-ozmish-enemy-bayanchur-closure",
+            "claim:claim-ozmish-participated-turkic-ended-744",
+            "event-detail:turkic-ended-744",
+            "person-polity:ozmish-khagan:turkic"
+          ],
+          "relatedIds": [
+            "bayanchur",
+            "turkic",
+            "turkic-ended-744"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:park-hyeokgeose": {
       "entityType": "person",
       "entityId": "park-hyeokgeose",
@@ -77789,6 +80422,66 @@
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:qapaghan": {
+      "entityType": "person",
+      "entityId": "qapaghan",
+      "entityKey": "person:qapaghan",
+      "label": "默啜可汗",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qapaghan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qapaghan-sibling-kutlug-closure",
+            "person-polity:qapaghan:turkic"
+          ],
+          "relatedIds": [
+            "kutlug-ilterish",
+            "turkic"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
           ],
           "relatedIds": []
         }
@@ -80266,6 +82959,72 @@
         }
       ]
     },
+    "person:tonyukuk": {
+      "entityType": "person",
+      "entityId": "tonyukuk",
+      "entityKey": "person:tonyukuk",
+      "label": "暾欲谷",
+      "polityIds": [
+        "turkic"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "tonyukuk"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-tonyukuk-served-bilge-closure",
+            "claim:claim-tonyukuk-served-kutlug-closure",
+            "event-detail:turkic-restored-682",
+            "person-polity:tonyukuk:turkic"
+          ],
+          "relatedIds": [
+            "bilge-khagan",
+            "kutlug-ilterish",
+            "turkic",
+            "turkic-restored-682"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:trauttmansdorff": {
       "entityType": "person",
       "entityId": "trauttmansdorff",
@@ -82281,6 +85040,140 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "datong-liao-xijing-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:xiongnu-northern-chanyu-91": {
+      "entityType": "person",
+      "entityId": "xiongnu-northern-chanyu-91",
+      "entityKey": "person:xiongnu-northern-chanyu-91",
+      "label": "北单于（91年后北迁）",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiongnu-northern-chanyu-91"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-northern-chanyu-91-enemy-dou-xian",
+            "claim:claim-xiongnu-northern-chanyu-participated-91",
+            "claim:claim-xiongnu-northern-chanyu-participated-93",
+            "claim:claim-xiongnu-northern-left-heritage-91",
+            "event-detail:xiongnu-northern-central-defeat-91",
+            "event-detail:xiongnu-termination-upper-bound-93",
+            "person-polity:xiongnu-northern-chanyu-91:xiongnu"
+          ],
+          "relatedIds": [
+            "dou-xian",
+            "xiongnu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-steppe-network",
+            "xiongnu-termination-upper-bound-93"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:xiongnu-southern-chanyu-48": {
+      "entityType": "person",
+      "entityId": "xiongnu-southern-chanyu-48",
+      "entityKey": "person:xiongnu-southern-chanyu-48",
+      "label": "呼韩邪单于比",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiongnu-southern-chanyu-48"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xiongnu-left-southern-heritage-48",
+            "claim:claim-xiongnu-southern-chanyu-48-grandchild-huhanye",
+            "claim:claim-xiongnu-southern-chanyu-participated-split-48",
+            "claim:claim-xiongnu-southern-chanyu-succeeded-48",
+            "event-detail:xiongnu-southern-northern-split-48",
+            "person-polity:xiongnu-southern-chanyu-48:xiongnu"
+          ],
+          "relatedIds": [
+            "huhanye",
+            "xiongnu",
+            "xiongnu-southern-frontier-network",
+            "xiongnu-southern-northern-split-48"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination"
           ],
           "relatedIds": []
         }
@@ -85152,6 +88045,70 @@
         }
       ]
     },
+    "person:zhizhi-chanyu": {
+      "entityType": "person",
+      "entityId": "zhizhi-chanyu",
+      "entityKey": "person:zhizhi-chanyu",
+      "label": "郅支单于",
+      "polityIds": [
+        "xiongnu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhizhi-chanyu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "hanshu-vol94-huhanye",
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhizhi-related-split-48",
+            "claim:claim-zhizhi-sibling-huhanye-closure",
+            "person-polity:zhizhi-chanyu:xiongnu"
+          ],
+          "relatedIds": [
+            "huhanye",
+            "xiongnu",
+            "xiongnu-southern-northern-split-48"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "hanshu-vol94-huhanye",
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:zhong-hui": {
       "entityType": "person",
       "entityId": "zhong-hui",
@@ -86588,10 +89545,13 @@
             "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
             "event-detail:western-jin-loses-changan",
+            "event-detail:xiongnu-termination-upper-bound-93",
             "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
             "heritage-detail:western-jin-changan-city-layer",
-            "person:liu-yao"
+            "heritage-detail:xiongnu-southern-frontier-network",
+            "person:liu-yao",
+            "person:liu-yuan"
           ],
           "relatedIds": [
             "changan",
@@ -86601,8 +89561,11 @@
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
             "liu-yao",
+            "liu-yuan",
             "western-jin-changan-city-layer",
-            "western-jin-loses-changan"
+            "western-jin-loses-changan",
+            "xiongnu-southern-frontier-network",
+            "xiongnu-termination-upper-bound-93"
           ]
         },
         {
@@ -86830,6 +89793,7 @@
             "heritage-detail:white-horse-temple",
             "person:ban-gu",
             "person:cao-cao",
+            "person:dou-xian",
             "person:liu-bei",
             "person:liu-xiu",
             "person:liu-zhuang",
@@ -86839,6 +89803,7 @@
             "ban-gu",
             "cao-cao",
             "dong-zhuo-changan",
+            "dou-xian",
             "eastern-han-moves-luoyang",
             "eastern-han-restores-changan",
             "han-eastern-founded",
@@ -90348,6 +93313,7 @@
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
+            "event-detail:turkic-first-ended-630",
             "event-detail:tuyuhun-ended-663",
             "event-detail:ximing-temple-built",
             "event-detail:xuanwu-gate",
@@ -90424,6 +93390,7 @@
             "tang-changan-occupation",
             "tang-founded",
             "tang-founded-changan",
+            "turkic-first-ended-630",
             "tuyuhun",
             "tuyuhun-ended-663",
             "wang-wei",
@@ -90635,9 +93602,11 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "turkic-history-db",
             "turkic-orkhon-collection",
             "turkic-orkhon-heritage",
+            "turkic-termination-744",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -90648,16 +93617,42 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-asina-tumen-ruled-turkic-closure",
+            "claim:claim-basmyl-succeeded-turkic-744",
+            "claim:claim-bilge-ruled-turkic-second",
+            "claim:claim-kutlug-ruled-turkic-second",
+            "claim:claim-turkic-ended-744",
+            "claim:claim-turkic-left-orkhon-heritage-744",
+            "event-detail:turkic-ended-744",
+            "event-detail:turkic-first-ended-630",
             "event-detail:turkic-founded",
+            "event-detail:turkic-restored-682",
             "heritage-detail:orkhon-turkic-inscriptions",
             "person:asina-tumen",
-            "person:istemi"
+            "person:bilge-khagan",
+            "person:ilai-khagan",
+            "person:istemi",
+            "person:kul-tegin",
+            "person:kutlug-ilterish",
+            "person:ozmish-khagan",
+            "person:qapaghan",
+            "person:tonyukuk"
           ],
           "relatedIds": [
             "asina-tumen",
+            "bayanchur",
+            "bilge-khagan",
+            "ilai-khagan",
             "istemi",
+            "kul-tegin",
+            "kutlug-ilterish",
             "orkhon-turkic-inscriptions",
-            "turkic-founded"
+            "ozmish-khagan",
+            "qapaghan",
+            "tonyukuk",
+            "turkic-ended-744",
+            "turkic-first-ended-630",
+            "turkic-founded",
+            "turkic-restored-682"
           ]
         },
         {
@@ -91938,7 +94933,10 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination",
             "modern-geography-reference",
+            "xiongnu-late-network-study",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -91949,20 +94947,42 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-huhanye-ruled-xiongnu-sixtysecond",
+            "claim:claim-liu-yuan-related-xiongnu",
             "claim:claim-modu-founded-xiongnu",
             "claim:claim-modu-ruled-xiongnu-fiftyeighth",
+            "claim:claim-xiongnu-northern-central-defeat-91",
+            "claim:claim-xiongnu-southern-chanyu-succeeded-48",
+            "claim:claim-xiongnu-southern-northern-split-48",
+            "claim:claim-xiongnu-termination-upper-bound-93",
             "event-detail:xiongnu-founded",
             "event-detail:xiongnu-modu-assumes-chanyu",
+            "event-detail:xiongnu-northern-central-defeat-91",
+            "event-detail:xiongnu-southern-northern-split-48",
+            "event-detail:xiongnu-termination-upper-bound-93",
             "heritage-detail:xiongnu-longcheng-candidate",
+            "heritage-detail:xiongnu-northern-steppe-network",
+            "heritage-detail:xiongnu-southern-frontier-network",
             "person:huhanye",
-            "person:modu-chanyu"
+            "person:modu-chanyu",
+            "person:xiongnu-northern-chanyu-91",
+            "person:xiongnu-southern-chanyu-48",
+            "person:zhizhi-chanyu"
           ],
           "relatedIds": [
             "huhanye",
+            "liu-yuan",
             "modu-chanyu",
             "xiongnu-founded",
             "xiongnu-longcheng-candidate",
-            "xiongnu-modu-assumes-chanyu"
+            "xiongnu-modu-assumes-chanyu",
+            "xiongnu-northern-central-defeat-91",
+            "xiongnu-northern-chanyu-91",
+            "xiongnu-northern-steppe-network",
+            "xiongnu-southern-chanyu-48",
+            "xiongnu-southern-frontier-network",
+            "xiongnu-southern-northern-split-48",
+            "xiongnu-termination-upper-bound-93",
+            "zhizhi-chanyu"
           ]
         },
         {
@@ -92486,9 +95506,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 215,
+      "totalEntities": 221,
       "statusCounts": {
-        "covered": 1033,
+        "covered": 1063,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -92547,9 +95567,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 125,
+      "totalEntities": 127,
       "statusCounts": {
-        "covered": 625,
+        "covered": 635,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -92565,27 +95585,30 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 270,
+      "totalEntities": 283,
       "statusCounts": {
-        "covered": 1272,
+        "covered": 1325,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 78,
+        "uncertain": 90,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 78
+        "uncertain": 90
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
         "person:bayan",
+        "person:bayanchur",
+        "person:bilge-khagan",
         "person:bojang-goguryeo",
         "person:chu-we-wang",
         "person:dae-joyeong",
+        "person:dou-xian",
         "person:duan-xingzhi",
         "person:duan-ye",
         "person:feng-ba",
@@ -92602,6 +95625,7 @@
         "person:han-qian",
         "person:helian-ding",
         "person:huhanye",
+        "person:ilai-khagan",
         "person:istemi",
         "person:jamukha",
         "person:ji-chang",
@@ -92609,6 +95633,8 @@
         "person:jindeok-silla",
         "person:juqu-mujian",
         "person:kuchlug",
+        "person:kul-tegin",
+        "person:kutlug-ilterish",
         "person:langdarma",
         "person:li-shi",
         "person:li-xian-western-xia",
@@ -92623,7 +95649,9 @@
         "person:murong-nuohebo",
         "person:naemul-isageum",
         "person:namri-songtsen",
+        "person:ozmish-khagan",
         "person:piluo-ge",
+        "person:qapaghan",
         "person:qifu-chipan",
         "person:qifu-guoren",
         "person:qifu-mumo",
@@ -92635,6 +95663,7 @@
         "person:sima-ye",
         "person:sinmun-silla",
         "person:su-guansheng",
+        "person:tonyukuk",
         "person:tufa-lilugu",
         "person:tufa-rutan",
         "person:tufa-wugu",
@@ -92642,6 +95671,8 @@
         "person:wang-yenxi",
         "person:wei-huanzi",
         "person:wu-ding",
+        "person:xiongnu-northern-chanyu-91",
+        "person:xiongnu-southern-chanyu-48",
         "person:xue-rengui",
         "person:yan-zhaowang",
         "person:yelu-dashi",
@@ -92657,6 +95688,7 @@
         "person:zhao-liehou",
         "person:zhao-xiangzi",
         "person:zheng-maisi",
+        "person:zhizhi-chanyu",
         "person:zhou-gong-dan",
         "person:zhu-youzhen"
       ]
@@ -93074,10 +96106,13 @@
         "event:former-zhao-ended-329",
         "event:former-zhao-founded",
         "event:western-jin-loses-changan",
+        "event:xiongnu-termination-upper-bound-93",
         "heritage:former-zhao-changan-city-layer",
         "heritage:former-zhao-xiangguo-city-site",
         "heritage:western-jin-changan-city-layer",
+        "heritage:xiongnu-southern-frontier-network",
         "person:liu-yao",
+        "person:liu-yuan",
         "polity:former_zhao"
       ],
       "gaps": [
@@ -93297,13 +96332,32 @@
         "heritage:white-horse-temple",
         "person:ban-gu",
         "person:cao-cao",
+        "person:dou-xian",
         "person:liu-bei",
         "person:liu-xiu",
         "person:liu-zhuang",
         "person:sun-quan",
         "polity:han_eastern"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "dou-xian",
+          "entityKey": "person:dou-xian",
+          "label": "窦宪",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "han_eastern"
+          ],
+          "evidenceIds": [
+            "houhanshu-vol23-dou-xian",
+            "houhanshu-xiongnu-termination"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -93311,7 +96365,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "东汉：学习闭环已覆盖。"
+      "summary": "东汉：有 1 项待核验缺口。"
     },
     "han_later": {
       "polityId": "han_later",
@@ -95462,6 +98516,7 @@
         "event:tang-changan-end",
         "event:tang-founded",
         "event:tang-founded-changan",
+        "event:turkic-first-ended-630",
         "event:tuyuhun-ended-663",
         "event:wu-zhou-founded",
         "event:ximing-temple-built",
@@ -95750,10 +98805,20 @@
       "polityId": "turkic",
       "polityName": "突厥",
       "entityKeys": [
+        "event:turkic-ended-744",
+        "event:turkic-first-ended-630",
         "event:turkic-founded",
+        "event:turkic-restored-682",
         "heritage:orkhon-turkic-inscriptions",
         "person:asina-tumen",
+        "person:bilge-khagan",
+        "person:ilai-khagan",
         "person:istemi",
+        "person:kul-tegin",
+        "person:kutlug-ilterish",
+        "person:ozmish-khagan",
+        "person:qapaghan",
+        "person:tonyukuk",
         "polity:turkic"
       ],
       "gaps": [
@@ -95770,6 +98835,128 @@
           "evidenceIds": [
             "china-chronology",
             "turkic-history-db"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "ilai-khagan",
+          "entityKey": "person:ilai-khagan",
+          "label": "颉利可汗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "kutlug-ilterish",
+          "entityKey": "person:kutlug-ilterish",
+          "label": "骨咄禄（颉跌利施可汗）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "qapaghan",
+          "entityKey": "person:qapaghan",
+          "label": "默啜可汗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "bilge-khagan",
+          "entityKey": "person:bilge-khagan",
+          "label": "毗伽可汗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "kul-tegin",
+          "entityKey": "person:kul-tegin",
+          "label": "阙特勤",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "tonyukuk",
+          "entityKey": "person:tonyukuk",
+          "label": "暾欲谷",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "ozmish-khagan",
+          "entityKey": "person:ozmish-khagan",
+          "label": "乌苏米施可汗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -95799,7 +98986,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "突厥：有 2 项待核验缺口。"
+      "summary": "突厥：有 9 项待核验缺口。"
     },
     "tuyuhun": {
       "polityId": "tuyuhun",
@@ -96589,10 +99776,17 @@
       "entityKeys": [
         "event:xiongnu-founded",
         "event:xiongnu-modu-assumes-chanyu",
-        "heritage:orkhon-turkic-inscriptions",
+        "event:xiongnu-northern-central-defeat-91",
+        "event:xiongnu-southern-northern-split-48",
+        "event:xiongnu-termination-upper-bound-93",
         "heritage:xiongnu-longcheng-candidate",
+        "heritage:xiongnu-northern-steppe-network",
+        "heritage:xiongnu-southern-frontier-network",
         "person:huhanye",
         "person:modu-chanyu",
+        "person:xiongnu-northern-chanyu-91",
+        "person:xiongnu-southern-chanyu-48",
+        "person:zhizhi-chanyu",
         "polity:xiongnu"
       ],
       "gaps": [
@@ -96631,6 +99825,58 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
         {
+          "entityType": "person",
+          "entityId": "xiongnu-southern-chanyu-48",
+          "entityKey": "person:xiongnu-southern-chanyu-48",
+          "label": "呼韩邪单于比",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xiongnu"
+          ],
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "zhizhi-chanyu",
+          "entityKey": "person:zhizhi-chanyu",
+          "label": "郅支单于",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xiongnu"
+          ],
+          "evidenceIds": [
+            "hanshu-vol94-huhanye",
+            "xiongnu-late-network-study",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "xiongnu-northern-chanyu-91",
+          "entityKey": "person:xiongnu-northern-chanyu-91",
+          "label": "北单于（91年后北迁）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xiongnu"
+          ],
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
           "entityType": "event",
           "entityId": "xiongnu-founded",
           "entityKey": "event:xiongnu-founded",
@@ -96652,7 +99898,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "匈奴：有 3 项待核验缺口。"
+      "summary": "匈奴：有 6 项待核验缺口。"
     },
     "yan_warring": {
       "polityId": "yan_warring",
@@ -99867,10 +103113,104 @@
       "capitalRecordCount": 2,
       "entityKeys": [
         "event:mongol-founded",
+        "event:turkic-ended-744",
+        "event:turkic-first-ended-630",
         "event:turkic-founded",
-        "heritage:orkhon-turkic-inscriptions"
+        "event:turkic-restored-682",
+        "heritage:orkhon-turkic-inscriptions",
+        "person:bayanchur",
+        "person:ilai-khagan",
+        "person:kutlug-ilterish",
+        "person:ozmish-khagan",
+        "person:tonyukuk"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "ilai-khagan",
+          "entityKey": "person:ilai-khagan",
+          "label": "颉利可汗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "kutlug-ilterish",
+          "entityKey": "person:kutlug-ilterish",
+          "label": "骨咄禄（颉跌利施可汗）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "tonyukuk",
+          "entityKey": "person:tonyukuk",
+          "label": "暾欲谷",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-orkhon-heritage",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "ozmish-khagan",
+          "entityKey": "person:ozmish-khagan",
+          "label": "乌苏米施可汗",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "turkic"
+          ],
+          "evidenceIds": [
+            "turkic-history-db",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "bayanchur",
+          "entityKey": "person:bayanchur",
+          "label": "磨延啜",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [],
+          "evidenceIds": [
+            "turkic-orkhon-collection",
+            "turkic-termination-744"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -99878,7 +103218,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "鄂尔浑—杭爱地区：学习闭环已覆盖。"
+      "summary": "鄂尔浑—杭爱地区：有 5 项待核验缺口。"
     },
     "wan_nanyang": {
       "placeId": "wan_nanyang",
@@ -100209,6 +103549,102 @@
         "relationship-missing": 0
       },
       "summary": "新郑市：有 2 项待核验缺口。"
+    },
+    "xiongnu-jinwei-mountains": {
+      "placeId": "xiongnu-jinwei-mountains",
+      "cityName": "阿尔泰山及其东南缘区域",
+      "capitalRecordCount": 0,
+      "entityKeys": [
+        "event:xiongnu-northern-central-defeat-91",
+        "event:xiongnu-termination-upper-bound-93",
+        "heritage:xiongnu-northern-steppe-network",
+        "person:liu-yuan",
+        "person:xiongnu-northern-chanyu-91"
+      ],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "xiongnu-northern-chanyu-91",
+          "entityKey": "person:xiongnu-northern-chanyu-91",
+          "label": "北单于（91年后北迁）",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xiongnu"
+          ],
+          "evidenceIds": [
+            "houhanshu-xiongnu-termination",
+            "xiongnu-late-network-study"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "阿尔泰山及其东南缘区域：有 1 项待核验缺口。"
+    },
+    "xiongnu-southern-frontier": {
+      "placeId": "xiongnu-southern-frontier",
+      "cityName": "河套及鄂尔多斯一带",
+      "capitalRecordCount": 0,
+      "entityKeys": [
+        "event:xiongnu-southern-northern-split-48",
+        "event:xiongnu-termination-upper-bound-93",
+        "heritage:xiongnu-southern-frontier-network",
+        "person:huhanye",
+        "person:xiongnu-southern-chanyu-48"
+      ],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "huhanye",
+          "entityKey": "person:huhanye",
+          "label": "呼韩邪单于",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xiongnu"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "hanshu-vol94-huhanye",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "xiongnu-southern-chanyu-48",
+          "entityKey": "person:xiongnu-southern-chanyu-48",
+          "label": "呼韩邪单于比",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xiongnu"
+          ],
+          "evidenceIds": [
+            "houhanshu-southern-xiongnu",
+            "houhanshu-xiongnu-termination"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "河套及鄂尔多斯一带：有 2 项待核验缺口。"
     },
     "xiongnu_core": {
       "placeId": "xiongnu_core",
