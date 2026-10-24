@@ -4,6 +4,7 @@ import { useLocale } from '../i18n/locale';
 import { groupPersonRelationships } from '../domain/relationships';
 import { getHeritageDetail } from '../data/heritage-details';
 import { RelationshipGraph } from './RelationshipGraph';
+import { toCityRelationshipGraphView, toPolityRelationshipGraphView } from './relationship-graph-model';
 import type { DetailEntity } from '../domain/detail-entity';
 import { buildCityHistoryTimeline } from '../domain/city-timeline';
 import { CityHistoryTimeline } from './CityHistoryTimeline';
@@ -12,9 +13,17 @@ import { eventDetails } from '../data/event-details';
 type StudyView = CityStudyView | PolityStudyView;
 
 export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; onOpenEntity?: (entity: DetailEntity) => void }) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
   const cityView = view.kind === 'city' ? view : undefined;
   const polityView = view.kind === 'polity' ? view : undefined;
+  const relationshipGraph = cityView
+    ? toCityRelationshipGraphView(cityView)
+    : polityView
+      ? toPolityRelationshipGraphView(polityView)
+      : undefined;
+  const relationshipTitle = cityView
+    ? locale === 'en' ? 'City relationship network' : '城市关系网络'
+    : t('关系网络');
   const relationshipLabel: Record<string, string> = { founded: '建立', ruled: '统治', succeeded: '承接', commissioned: '营建' };
   const cityTimeline = cityView ? buildCityHistoryTimeline(cityView.subject.id, {
     places: [cityView.subject], polities: cityView.polities, people: cityView.people,
@@ -87,9 +96,11 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
           <ul className="study-list study-heritage-list">{detailLinkedHeritage.map((asset) => <li key={asset.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'heritage', id: asset.id })}><strong>{t(asset.name)}</strong></button><span>{t('详情关联；不等同于本年归属')}</span></li>)}</ul>
         </>}
       </div>}
-      {polityView && <div className="study-block">
-        <h3>{t('关系网络')}</h3>
-        <RelationshipGraph view={polityView} onOpenEntity={onOpenEntity} />
+      {relationshipGraph && <div className="study-block">
+        <h3>{relationshipTitle}</h3>
+        {cityView ? <div role="img" aria-label={relationshipTitle}>
+          <RelationshipGraph graph={relationshipGraph} onOpenEntity={onOpenEntity} />
+        </div> : <RelationshipGraph graph={relationshipGraph} onOpenEntity={onOpenEntity} />}
       </div>}
       <div className="study-block">
         <h3>{t('相关事件')}</h3>

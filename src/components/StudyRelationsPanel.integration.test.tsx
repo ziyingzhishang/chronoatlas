@@ -45,6 +45,30 @@ describe('StudyRelationsPanel integration', () => {
     localStorage.removeItem('history-locale');
   });
 
+  it('renders and navigates the city relationship graph', async () => {
+    const view = buildCityStudyView('changan', 650, completeData);
+    const onOpenEntity = vi.fn();
+    render(<StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} />);
+
+    expect(screen.getByRole('heading', { name: '城市关系网络' })).toBeInTheDocument();
+    await userEvent.click(screen.getByRole('link', { name: '隋' }));
+
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'sui' });
+  });
+
+  it('keeps the city graph title and node labels available in English', () => {
+    localStorage.setItem('history-locale', 'en');
+    const rendered = render(<LocaleProvider><StudyRelationsPanel view={buildCityStudyView('changan', 650, completeData)!} /></LocaleProvider>);
+    try {
+      expect(screen.getByRole('heading', { name: 'City relationship network' })).toBeInTheDocument();
+      expect(screen.getByRole('img', { name: 'City relationship network' })).toBeInTheDocument();
+      expect(screen.getByRole('link', { name: 'Sui' })).toBeInTheDocument();
+    } finally {
+      rendered.unmount();
+      localStorage.setItem('history-locale', 'zh-CN');
+    }
+  });
+
   it('opens a capital place from the polity perspective summary', async () => {
     const view = buildPolityStudyView('tang', 640, data);
     const onOpenEntity = vi.fn();
