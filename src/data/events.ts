@@ -1339,6 +1339,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百七十二·后唐纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷272', detail: '记载五代初年高季兴据江陵及荆南政权形成背景；具体受封时间和后续称号仍按阶段区分。' }],
   },
   {
+    id: 'jingnan-ended-963', year: 963, title: '荆南在江陵归宋终止', summary: '荆南末主高继冲向北宋纳土，江陵政治中心转入北宋承接阶段，荆南政权结束。', placeId: 'jiangling', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '荆南长期以江陵为中心维持小范围地方自治，五代中原政权更替与北宋统一推进使其承接关系重新调整。',
+    process: '963年高继冲向北宋纳土，荆南中央政治身份终止；北宋对江陵及荆南各地的行政接收、军镇调整和地方秩序延续属于随后展开的过程。',
+    impact: '荆南纳入北宋统一进程，江陵继续作为长江—汉水交通与地方行政节点；纳土不等于城市遗产或地方社会在同日消失。',
+    mapNote: '江陵（今湖北省荆州市一带）标记荆南末主纳土与政权承接节点；不把963年纳土直接绘成北宋当日完成荆南全域行政接收。',
+    references: [{ title: '《资治通鉴》卷二·宋纪二', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷002', detail: '用于核对963年高继冲纳土归宋及荆南政权身份转换；江陵地方接收和后续行政调整按过程分层。' }],
+  },
+  {
     id: 'western-liang-state-founded', year: 400, title: '西凉政权建立', summary: '李暠在400年被推为凉公、改元庚子，北凉分出西凉；敦煌为前期政治中心，405年迁治酒泉。', placeId: 'dunhuang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '后凉分裂后，河西西部的地方军政力量重新组合，李暠获得敦煌、酒泉一带的独立统治基础。',

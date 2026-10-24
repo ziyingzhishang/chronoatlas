@@ -17,6 +17,8 @@ const reviewGaps = [
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
+  { personId: 'gao-baorong', eventIds: [] },
+  { personId: 'gao-baoxu', eventIds: [] },
   { personId: 'liu-sheng', eventIds: [] },
   { personId: 'seondeok-silla', eventIds: [] },
   { personId: 'jindeok-silla', eventIds: [] },
@@ -85,7 +87,7 @@ describe('round one hundred eight event-participation evidence audit', () => {
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(
       reviewGaps.map(({ personId }) => personId),
     );
-    expect(reviewGaps).toHaveLength(13);
+    expect(reviewGaps).toHaveLength(15);
 
     for (const { personId, eventIds } of reviewGaps) {
       expect(peopleById.has(personId), `${personId}: person endpoint`).toBe(true);

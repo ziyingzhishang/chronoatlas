@@ -2608,6 +2608,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '924年前后采用荆南政权形成约年，具体受封和称号存在分期口径；江陵是政治中心，不据此推导大范围直接控制。',
   },
   {
+    eventId: 'jingnan-ended-963',
+    participants: [
+      { personId: 'gao-jichong', role: '荆南末主与纳土归宋者', note: '高继冲在963年向北宋纳土，连接荆南政权终止与江陵地方承接；纳土、行政接收和地方秩序延续分开表达。' },
+      { personId: 'zhao-kuangyin', role: '接受荆南纳土的北宋皇帝', note: '赵匡胤代表北宋中央承接荆南政治身份，不将其个人行为等同于所有地方行政接收已在同日完成。' },
+    ],
+    polityIds: ['jingnan', 'song_northern'],
+    causes: ['北宋统一推进改变五代十国地方政权的生存环境。', '荆南长期的江陵地方自治转入向北宋纳土和行政承接阶段。'],
+    consequences: ['荆南中央政权身份终止，江陵进入北宋地方治理阶段。', '长江—汉水交通、城防与地方社会继续存在，城市遗产不因纳土而消失。'],
+    phases: [
+      { label: '荆南末期', startYear: 948, endYear: 962, summary: '高氏继承者继续以江陵维持荆南地方政权，外部环境逐步转向北宋统一。' },
+      { label: '纳土归宋', startYear: 963, endYear: 963, summary: '高继冲向北宋纳土，荆南政权中央身份终止。' },
+      { label: '地方行政承接', startYear: 963, endYear: 965, summary: '江陵及荆南地方进入北宋行政、军镇和交通网络重组阶段。' },
+    ],
+    locationIds: ['jiangling'],
+    relatedEventIds: ['jingnan-founded', 'northern-song-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '963年纳土归宋是荆南政权身份终止的年份级节点；江陵地方行政接收、军镇调整与城市遗产延续不是同一日完成，故按过程分层表达。',
+  },
+  {
     eventId: 'western-liang-state-founded',
     participants: [
       { personId: 'li-hao', role: '400年被推为凉公并建立西凉、405年迁治酒泉的河西地方统治者', note: '《晋书》与《资治通鉴》共同支持400年建政节点；397—399年受任敦煌太守是前置基础，405年迁治酒泉是后续政治中心转移，不把三个阶段压成同一事件。' },

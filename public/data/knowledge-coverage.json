@@ -2716,6 +2716,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "jingnan-ended-963",
+      "entityKey": "event:jingnan-ended-963",
+      "label": "荆南在江陵归宋终止",
+      "polityIds": [
+        "jingnan",
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "jingnan-ended-963"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-jichong-participated-jingnan-ended-963",
+            "event-detail:jingnan-ended-963"
+          ],
+          "relatedIds": [
+            "gao-jichong",
+            "jingnan",
+            "jingnan-founded",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "jingnan-founded",
       "entityKey": "event:jingnan-founded",
       "label": "荆南政权建立",
@@ -13572,7 +13635,7 @@
       "label": "荆南江陵城址历史层",
       "polityIds": [
         "jingnan",
-        "tang_later"
+        "song_northern"
       ],
       "checks": [
         {
@@ -13609,9 +13672,15 @@
             "heritage-detail:jingnan-jiangling-city-site"
           ],
           "relatedIds": [
+            "gao-baorong",
+            "gao-baoxu",
+            "gao-jichong",
+            "gao-jixing",
             "jingnan",
+            "jingnan-ended-963",
             "jingnan-founded",
-            "li-cunxu"
+            "song_northern",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -21017,6 +21086,129 @@
     },
     {
       "entityType": "person",
+      "entityId": "gao-baorong",
+      "entityKey": "person:gao-baorong",
+      "label": "高保融",
+      "polityIds": [
+        "jingnan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-baorong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-baorong-parent-gao-jichong",
+            "claim:claim-gao-baorong-ruled-jingnan",
+            "claim:claim-gao-jichong-child-gao-baorong",
+            "person-polity:gao-baorong:jingnan"
+          ],
+          "relatedIds": [
+            "gao-jichong",
+            "jingnan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "gao-baoxu",
+      "entityKey": "person:gao-baoxu",
+      "label": "高保勖",
+      "polityIds": [
+        "jingnan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-baoxu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-baoxu-ruled-jingnan",
+            "claim:claim-gao-jichong-sibling-gao-baoxu",
+            "person-polity:gao-baoxu:jingnan"
+          ],
+          "relatedIds": [
+            "gao-jichong",
+            "jingnan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "gao-hongtu",
       "entityKey": "person:gao-hongtu",
       "label": "高弘图",
@@ -21138,6 +21330,76 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "gao-jichong",
+      "entityKey": "person:gao-jichong",
+      "label": "高继冲",
+      "polityIds": [
+        "jingnan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-jichong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-baorong-parent-gao-jichong",
+            "claim:claim-gao-jichong-child-gao-baorong",
+            "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
+            "claim:claim-gao-jichong-participated-jingnan-ended-963",
+            "claim:claim-gao-jichong-ruled-jingnan",
+            "claim:claim-gao-jichong-sibling-gao-baoxu",
+            "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
+            "event-detail:jingnan-ended-963",
+            "person-polity:gao-jichong:jingnan"
+          ],
+          "relatedIds": [
+            "gao-baorong",
+            "gao-baoxu",
+            "jingnan",
+            "jingnan-ended-963",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -33524,6 +33786,8 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
+            "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
@@ -33536,6 +33800,7 @@
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:jingnan-ended-963",
             "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
@@ -33545,7 +33810,9 @@
           ],
           "relatedIds": [
             "chai-rong",
+            "gao-jichong",
             "guo-wei",
+            "jingnan-ended-963",
             "later-shu-ended-965",
             "later-zhou-ended-960",
             "li-yu",
@@ -36020,13 +36287,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gao-baorong-ruled-jingnan",
+            "claim:claim-gao-baoxu-ruled-jingnan",
+            "claim:claim-gao-jichong-ruled-jingnan",
             "claim:claim-gao-jixing-ruled-jingnan-closure",
+            "event-detail:jingnan-ended-963",
             "event-detail:jingnan-founded",
             "heritage-detail:jingnan-jiangling-city-site",
+            "person:gao-baorong",
+            "person:gao-baoxu",
+            "person:gao-jichong",
             "person:gao-jixing"
           ],
           "relatedIds": [
+            "gao-baorong",
+            "gao-baoxu",
+            "gao-jichong",
             "gao-jixing",
+            "jingnan-ended-963",
             "jingnan-founded",
             "jingnan-jiangling-city-site"
           ]
@@ -38155,6 +38433,7 @@
             "claim:claim-taizong-song-ruled-northern-song",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "event-detail:jingnan-ended-963",
             "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-han-ended-979",
@@ -38164,6 +38443,7 @@
             "event-detail:southern-han-ended-971",
             "event-detail:southern-tang-falls",
             "event-detail:wuyue-ended-978",
+            "heritage-detail:jingnan-jiangling-city-site",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
@@ -38176,6 +38456,8 @@
             "person:zong-ze"
           ],
           "relatedIds": [
+            "jingnan-ended-963",
+            "jingnan-jiangling-city-site",
             "jinyang-ancient-city-site",
             "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
@@ -41567,6 +41849,40 @@
       ],
       "evidenceIds": [
         "jinshu-vol112-fu-jian",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "gao-baoxu",
+      "entityKey": "person:gao-baoxu",
+      "label": "高保勖",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "jingnan"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "gao-jichong",
+      "entityKey": "person:gao-jichong",
+      "label": "高继冲",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "jingnan"
+      ],
+      "evidenceIds": [
+        "china-chronology",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -45099,6 +45415,69 @@
             "sima-yan",
             "three-kingdoms",
             "wu_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:jingnan-ended-963": {
+      "entityType": "event",
+      "entityId": "jingnan-ended-963",
+      "entityKey": "event:jingnan-ended-963",
+      "label": "荆南在江陵归宋终止",
+      "polityIds": [
+        "jingnan",
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "jingnan-ended-963"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-jichong-participated-jingnan-ended-963",
+            "event-detail:jingnan-ended-963"
+          ],
+          "relatedIds": [
+            "gao-jichong",
+            "jingnan",
+            "jingnan-founded",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -55968,7 +56347,7 @@
       "label": "荆南江陵城址历史层",
       "polityIds": [
         "jingnan",
-        "tang_later"
+        "song_northern"
       ],
       "checks": [
         {
@@ -56005,9 +56384,15 @@
             "heritage-detail:jingnan-jiangling-city-site"
           ],
           "relatedIds": [
+            "gao-baorong",
+            "gao-baoxu",
+            "gao-jichong",
+            "gao-jixing",
             "jingnan",
+            "jingnan-ended-963",
             "jingnan-founded",
-            "li-cunxu"
+            "song_northern",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -63411,6 +63796,129 @@
         }
       ]
     },
+    "person:gao-baorong": {
+      "entityType": "person",
+      "entityId": "gao-baorong",
+      "entityKey": "person:gao-baorong",
+      "label": "高保融",
+      "polityIds": [
+        "jingnan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-baorong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-baorong-parent-gao-jichong",
+            "claim:claim-gao-baorong-ruled-jingnan",
+            "claim:claim-gao-jichong-child-gao-baorong",
+            "person-polity:gao-baorong:jingnan"
+          ],
+          "relatedIds": [
+            "gao-jichong",
+            "jingnan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:gao-baoxu": {
+      "entityType": "person",
+      "entityId": "gao-baoxu",
+      "entityKey": "person:gao-baoxu",
+      "label": "高保勖",
+      "polityIds": [
+        "jingnan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-baoxu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-baoxu-ruled-jingnan",
+            "claim:claim-gao-jichong-sibling-gao-baoxu",
+            "person-polity:gao-baoxu:jingnan"
+          ],
+          "relatedIds": [
+            "gao-jichong",
+            "jingnan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:gao-hongtu": {
       "entityType": "person",
       "entityId": "gao-hongtu",
@@ -63534,6 +64042,76 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:gao-jichong": {
+      "entityType": "person",
+      "entityId": "gao-jichong",
+      "entityKey": "person:gao-jichong",
+      "label": "高继冲",
+      "polityIds": [
+        "jingnan"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-jichong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-baorong-parent-gao-jichong",
+            "claim:claim-gao-jichong-child-gao-baorong",
+            "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
+            "claim:claim-gao-jichong-participated-jingnan-ended-963",
+            "claim:claim-gao-jichong-ruled-jingnan",
+            "claim:claim-gao-jichong-sibling-gao-baoxu",
+            "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
+            "event-detail:jingnan-ended-963",
+            "person-polity:gao-jichong:jingnan"
+          ],
+          "relatedIds": [
+            "gao-baorong",
+            "gao-baoxu",
+            "jingnan",
+            "jingnan-ended-963",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -75920,6 +76498,8 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
+            "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
@@ -75932,6 +76512,7 @@
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:jingnan-ended-963",
             "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
@@ -75941,7 +76522,9 @@
           ],
           "relatedIds": [
             "chai-rong",
+            "gao-jichong",
             "guo-wei",
+            "jingnan-ended-963",
             "later-shu-ended-965",
             "later-zhou-ended-960",
             "li-yu",
@@ -78416,13 +78999,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gao-baorong-ruled-jingnan",
+            "claim:claim-gao-baoxu-ruled-jingnan",
+            "claim:claim-gao-jichong-ruled-jingnan",
             "claim:claim-gao-jixing-ruled-jingnan-closure",
+            "event-detail:jingnan-ended-963",
             "event-detail:jingnan-founded",
             "heritage-detail:jingnan-jiangling-city-site",
+            "person:gao-baorong",
+            "person:gao-baoxu",
+            "person:gao-jichong",
             "person:gao-jixing"
           ],
           "relatedIds": [
+            "gao-baorong",
+            "gao-baoxu",
+            "gao-jichong",
             "gao-jixing",
+            "jingnan-ended-963",
             "jingnan-founded",
             "jingnan-jiangling-city-site"
           ]
@@ -80551,6 +81145,7 @@
             "claim:claim-taizong-song-ruled-northern-song",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "event-detail:jingnan-ended-963",
             "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-han-ended-979",
@@ -80560,6 +81155,7 @@
             "event-detail:southern-han-ended-971",
             "event-detail:southern-tang-falls",
             "event-detail:wuyue-ended-978",
+            "heritage-detail:jingnan-jiangling-city-site",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
@@ -80572,6 +81168,8 @@
             "person:zong-ze"
           ],
           "relatedIds": [
+            "jingnan-ended-963",
+            "jingnan-jiangling-city-site",
             "jinyang-ancient-city-site",
             "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
@@ -83227,9 +83825,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 192,
+      "totalEntities": 193,
       "statusCounts": {
-        "covered": 919,
+        "covered": 924,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -83305,20 +83903,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 234,
+      "totalEntities": 237,
       "statusCounts": {
-        "covered": 1112,
+        "covered": 1125,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 58,
+        "uncertain": 60,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 58
+        "uncertain": 60
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -83330,6 +83928,8 @@
         "person:feng-hong",
         "person:feng-sufo",
         "person:fu-jian-founder",
+        "person:gao-baoxu",
+        "person:gao-jichong",
         "person:gao-yun",
         "person:geluofeng",
         "person:guacanagari",
@@ -84186,12 +84786,51 @@
       "polityId": "jingnan",
       "polityName": "荆南",
       "entityKeys": [
+        "event:jingnan-ended-963",
         "event:jingnan-founded",
         "heritage:jingnan-jiangling-city-site",
+        "person:gao-baorong",
+        "person:gao-baoxu",
+        "person:gao-jichong",
         "person:gao-jixing",
         "polity:jingnan"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "gao-baoxu",
+          "entityKey": "person:gao-baoxu",
+          "label": "高保勖",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jingnan"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "gao-jichong",
+          "entityKey": "person:gao-jichong",
+          "label": "高继冲",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jingnan"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -84199,7 +84838,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "荆南：学习闭环已覆盖。"
+      "summary": "荆南：有 2 项待核验缺口。"
     },
     "khitan": {
       "polityId": "khitan",
@@ -85575,6 +86214,7 @@
       "polityId": "song_northern",
       "polityName": "北宋",
       "entityKeys": [
+        "event:jingnan-ended-963",
         "event:later-shu-ended-965",
         "event:later-zhou-ended-960",
         "event:northern-han-ended-979",
@@ -85584,6 +86224,7 @@
         "event:southern-han-ended-971",
         "event:southern-tang-falls",
         "event:wuyue-ended-978",
+        "heritage:jingnan-jiangling-city-site",
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
@@ -86066,7 +86707,6 @@
         "event:later-liang-ended-923",
         "event:later-tang-ended-936",
         "event:tang-later-founded",
-        "heritage:jingnan-jiangling-city-site",
         "heritage:later-liang-kaifeng-city-layer",
         "heritage:later-tang-luoyang-city-site",
         "person:li-congke",
@@ -88545,12 +89185,33 @@
       "cityName": "荆州市",
       "capitalRecordCount": 2,
       "entityKeys": [
+        "event:jingnan-ended-963",
         "event:jingnan-founded",
         "heritage:jingnan-jiangling-city-site",
         "heritage:southern-liang-jiangling-city-site",
-        "person:gao-jixing"
+        "person:gao-jichong",
+        "person:gao-jixing",
+        "person:zhao-kuangyin"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "gao-jichong",
+          "entityKey": "person:gao-jichong",
+          "label": "高继冲",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jingnan"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -88558,7 +89219,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "荆州市：学习闭环已覆盖。"
+      "summary": "荆州市：有 1 项待核验缺口。"
     },
     "jiankang": {
       "placeId": "jiankang",

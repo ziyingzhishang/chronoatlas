@@ -53,8 +53,8 @@ describe('ninety-third batch high-confidence governance relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(34);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(13);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(87);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
     for (const personId of ['toghon-temur', 'sun-yat-sen', 'mao-zedong']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');
       expect(report.byPersonId[personId].requiredMissingCategoryKeys, personId).not.toContain('governance');

@@ -112,6 +112,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'southern-chen-ended-589', status: 'confirmed', expectedPrecision: 'year', explanation: '589年隋军攻取建康、陈叔宝出降与南陈中央政权终止有明确编年节点；地方接收过程另行分层。', timelineStrategy: 'year-marker' },
   { eventId: 'northern-han-ended-979', status: 'confirmed', expectedPrecision: 'year', explanation: '979年北宋攻取太原、刘继元出降与北汉中央政权终止有明确编年节点；太原及河东的地方行政接收、军镇重组和辽宋边境变化另按过程分层。', timelineStrategy: 'year-marker' },
   { eventId: 'min-ended-945', status: 'approximate', expectedPrecision: 'approximate', explanation: '945年前后表示南唐攻取福州、王延政降服与闽中央政权终止的连续过程；福建各地接收和福州遗产承接不能压缩为同一日期。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'jingnan-ended-963', status: 'confirmed', expectedPrecision: 'year', explanation: '963年高继冲向北宋纳土，荆南中央政权身份终止；江陵地方行政接收、军镇调整与城市遗产延续另按过程分层。', timelineStrategy: 'year-marker' },
 ];
 
 function unique(values: readonly string[]): string[] {

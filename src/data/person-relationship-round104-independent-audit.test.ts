@@ -16,6 +16,8 @@ const decisions = [
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], kind: 'temporal-or-context-boundary' },
   { personId: 'yuwen-yong', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'qin-mugong', eventIds: [], kind: 'no-direct-role' },
+  { personId: 'gao-baorong', eventIds: [], kind: 'no-direct-role' },
+  { personId: 'gao-baoxu', eventIds: [], kind: 'no-direct-role' },
   { personId: 'liu-sheng', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'seondeok-silla', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'jindeok-silla', eventIds: [], kind: 'no-event-candidate' },

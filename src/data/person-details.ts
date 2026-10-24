@@ -789,6 +789,21 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['jingnan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '高季兴早期受中原政权任命，924年前后才进入荆南政权分期；藩镇任职与地方独立不能混为一谈。',
   },
   {
+    personId: 'gao-baorong', biography: '高保融承接高季兴之后的荆南政权，以江陵为中心维持地方自治；其统治连接荆南中期与北宋统一前的继承阶段。',
+    aliases: ['南平贞懿王'], offices: [{ title: '荆南国主', polityId: 'jingnan', placeId: 'jiangling', validFrom: 948, validTo: 960, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['jingnan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '高保融属于荆南中后期继承阶段，不能由其统治期反推924年政权形成或963年纳土当日的全部地方接收。',
+  },
+  {
+    personId: 'gao-baoxu', biography: '高保勖承接高保融后的荆南高氏政权，短期主持江陵地方事务，处于高继冲纳土归宋前的过渡阶段。',
+    aliases: ['荆南末期国主'], offices: [{ title: '荆南国主', polityId: 'jingnan', placeId: 'jiangling', validFrom: 960, validTo: 962, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['jingnan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '高保勖在位时间较短，人物端点用于补全荆南继承链，不把其短期统治与963年高继冲纳土合并。',
+  },
+  {
+    personId: 'gao-jichong', biography: '高继冲是荆南末主。963年，他向北宋纳土，江陵政治中心转入北宋承接阶段，荆南政权身份由此终止。',
+    aliases: ['荆南末主'], offices: [{ title: '荆南国主', polityId: 'jingnan', placeId: 'jiangling', validFrom: 962, validTo: 963, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['jingnan-ended-963'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '963年纳土归宋是荆南中央政权身份终止的年份级节点；江陵地方行政接收、军镇调整与城市遗产延续按过程分层。',
+  },
+  {
     personId: 'feng-ba', biography: '冯跋在后燕末年于辽西拥立高云并最终掌握政权，409年前后建立北燕，延续东北地区的燕政权传统。',
     aliases: ['北燕文成帝'], offices: [{ title: '北燕皇帝', polityId: 'northern_yan', placeId: 'longcheng', validFrom: 409, validTo: 430, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北燕形成涉及高云被拥立、冯跋掌权等连续阶段，本详情不把后燕末期与北燕正式分期压缩为单一事件。',

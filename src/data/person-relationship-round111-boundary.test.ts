@@ -26,6 +26,8 @@ const eventParticipationGaps = [
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
+  { personId: 'gao-baorong', eventIds: [] },
+  { personId: 'gao-baoxu', eventIds: [] },
   { personId: 'liu-sheng', eventIds: [] },
   { personId: 'seondeok-silla', eventIds: [] },
   { personId: 'jindeok-silla', eventIds: [] },

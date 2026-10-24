@@ -467,10 +467,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'jingnan', perspectiveSummary: '荆南由高季兴在江陵经营形成，是五代十国中以交通枢纽和有限区域治理为特征的地方政权；名义受封与实际自治长期并存。',
     foundationProcess: ['高季兴在五代更替中经营江陵及荆南军政资源。', '924年前后据江陵并获中原政权承认，荆南进入十国分期。', '江陵连接长江、汉水、巴蜀和中原，是外交、转运与地方治理关键。'],
-    turningPoints: [turn(924, '荆南形成', '高季兴据江陵，荆南地方政权进入十国分期。', 'jingnan-founded'), turn(929, '高季兴去世', '荆南进入继承与地方权力延续阶段。'), turn(963, '荆南归宋', '荆南向北宋纳土，政权结束。')],
-    principalFigureIds: ['gao-jixing'], capitalPhases: [capital('jiangling', 924, 963, 'primary', 'formal', '荆南政治中心江陵，今湖北省荆州市一带。')],
-    heritageIds: ['jingnan-jiangling-city-site'], eventIds: ['jingnan-founded'], claimIds: ['claim-gao-jixing-participated-jingnan'], sourceIds: modernSources,
-    uncertaintyNote: '924年前后为荆南政权形成约年，具体受封和称号存在分期口径；江陵城址历史层跨越多代，不能把现存遗存全部归为荆南。',
+    turningPoints: [turn(924, '荆南形成', '高季兴据江陵，荆南地方政权进入十国分期。', 'jingnan-founded'), turn(929, '高季兴去世', '荆南进入继承与地方权力延续阶段。'), turn(948, '高保融承接', '高保融承接荆南高氏政权，江陵继续作为地方政治中心。'), turn(962, '高继冲继位', '高继冲承接荆南末期统治，北宋统一推进改变其政治环境。'), turn(963, '荆南归宋', '高继冲向北宋纳土，荆南中央政权身份终止，江陵转入北宋地方承接阶段。', 'jingnan-ended-963')],
+    principalFigureIds: ['gao-jixing', 'gao-baorong', 'gao-baoxu', 'gao-jichong'], capitalPhases: [capital('jiangling', 924, 963, 'primary', 'formal', '荆南政治中心江陵，今湖北省荆州市一带。')],
+    heritageIds: ['jingnan-jiangling-city-site'], eventIds: ['jingnan-founded', 'jingnan-ended-963'], claimIds: ['claim-gao-jixing-participated-jingnan', 'claim-gao-jichong-ruled-jingnan', 'claim-gao-jichong-participated-jingnan-ended-963', 'claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963'], sourceIds: modernSources,
+    uncertaintyNote: '924年前后为荆南政权形成约年，963年纳土归宋是中央政权身份终止的年份级节点；江陵地方行政接收、军镇调整与城市遗产延续分开表达，不能把现存遗存全部归为荆南原构。',
   }),
   detail({
     polityId: 'northern_han', perspectiveSummary: '北汉由刘旻在后汉覆亡后据太原建立，依托河东军政网络和辽援与后周长期对峙；太原是其正式都城。',

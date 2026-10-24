@@ -47,6 +47,6 @@ describe('fifty-fourth batch high-confidence kinship relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.byPersonId['li-zhi'].requiredMissingCategoryKeys).not.toContain('kinship');
     expect(report.byPersonId['yao-xing'].requiredMissingCategoryKeys).not.toContain('kinship');
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(13);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
   });
 });
