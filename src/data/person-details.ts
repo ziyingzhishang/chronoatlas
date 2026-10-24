@@ -440,7 +440,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'li-yu', biography: '李煜是南唐末代君主，南唐在其统治末期与北宋对峙并于975年覆亡，词作保留了政权末期的文化记忆。',
     aliases: ['南唐后主', '李后主'], offices: [{ title: '南唐国主', polityId: 'southern_tang', placeId: 'jiankang', validFrom: 961, validTo: 975, datePrecision: 'range', sourceIds }],
-    keyEvents: ['southern-tang-founded'], sourceIds, uncertaintyNote: '南唐建政事件早于李煜即位，本处以事件作为政权导航，不把李煜个人统治期前移为南唐建立期。',
+    keyEvents: ['southern-tang-founded', 'southern-tang-ended-975'], sourceIds, uncertaintyNote: '南唐建政事件早于李煜即位；本处同时连接975年南唐终局，但不把李煜个人统治期前移为南唐建立期，也不把出降后的经历等同于地方行政承接。',
   },
   {
     personId: 'yang-xingmi', biography: '杨行密在唐末淮南军镇竞争中积累军政资源，受封吴王后杨吴进入独立发展的分期。',

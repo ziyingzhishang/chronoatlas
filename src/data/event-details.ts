@@ -958,6 +958,20 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '975年是南唐政权终结节点；宋廷对江南各地的行政接收和制度调整仍有后续过程。',
   },
   {
+    eventId: 'southern-tang-ended-975',
+    participants: [
+      { personId: 'li-yu', role: '南唐末主与金陵城破后的出降者', relationType: 'direct', note: '李煜连接南唐末期统治、金陵城破与政权终止；其被迁置后的个人经历不等同于南唐地方行政接收。' },
+      { personId: 'zhao-kuangyin', role: '北宋皇帝与南唐终局的中央承接方', relationType: 'direct', note: '赵匡胤代表北宋中央发动并承接975年南唐终局；具体渡江、攻城和地方接收由将领与地方机构共同完成。' },
+    ],
+    polityIds: ['southern_tang', 'song_northern'],
+    causes: ['南唐在后周南征后长期收缩并奉北方正朔。', '北宋完成北方整合后推进江南统一战争，南唐成为直接进攻目标。'],
+    consequences: ['北宋攻破金陵，李煜出降，南唐中央政权终止。', '金陵进入北宋及后世多政权城市历史层，江南地方行政接收继续经历后续阶段。'],
+    phases: [{ label: '金陵城破与李煜出降', startYear: 975, endYear: 975, summary: '北宋军队攻破金陵，李煜出降，南唐中央政权终止。' }, { label: '江南地方承接', startYear: 975, endYear: 976, summary: '北宋在南唐原有区域展开地方归附、军镇调整和行政承接，具体完成时间因地区而异。' }],
+    locationIds: ['jiankang'], relatedEventIds: ['southern-tang-falls', 'southern-tang-moves-nanchang', 'northern-song-founded'],
+    sourceIds: ['song-history-nantang', 'zizhi-tongjian', 'modern-geography-reference'],
+    uncertaintyNote: '975年采用金陵城破、李煜出降和南唐中央政权终止的节点；北宋对江南各地的行政接收不是同日完成，不能把中央终局直接等同于完整地方控制。',
+  },
+  {
     eventId: 'later-yan-ended-407',
     participants: [
       { personId: 'murong-xi', role: '后燕末帝与龙城终局人物', note: '慕容熙在后燕退守龙城阶段统治，407年政权转换中被高云取代；其终局不等同于北燕后续冯氏统治。' },

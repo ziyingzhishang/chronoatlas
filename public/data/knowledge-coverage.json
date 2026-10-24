@@ -8263,6 +8263,71 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-tang-ended-975",
+      "entityKey": "event:southern-tang-ended-975",
+      "label": "南唐在金陵终结、北宋承接",
+      "polityIds": [
+        "song_northern",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-ended-975"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-yu-participated-southern-tang-ended-975",
+            "claim:claim-zhao-kuangyin-participated-southern-tang-ended-975",
+            "event-detail:southern-tang-ended-975"
+          ],
+          "relatedIds": [
+            "li-yu",
+            "northern-song-founded",
+            "song_northern",
+            "southern-tang-falls",
+            "southern-tang-moves-nanchang",
+            "southern_tang",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-tang-falls",
       "entityKey": "event:southern-tang-falls",
       "label": "南唐覆亡",
@@ -16976,6 +17041,7 @@
             "li-bian",
             "li-jing",
             "li-yu",
+            "southern-tang-ended-975",
             "southern-tang-falls",
             "southern-tang-founded",
             "southern-tang-li-jing-succeeds",
@@ -24545,10 +24611,13 @@
             "claim:claim-li-jing-parent-li-yu",
             "claim:claim-li-yu-child-li-jing",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
+            "claim:claim-li-yu-enemy-zhao-kuangyin-termination-975",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "claim:claim-li-yu-participated-southern-tang",
+            "claim:claim-li-yu-participated-southern-tang-ended-975",
             "claim:claim-li-yu-ruled-southern-tang",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
+            "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
             "event-detail:southern-tang-moves-nanchang",
             "person-polity:li-yu:southern_tang"
@@ -24556,6 +24625,7 @@
           "relatedIds": [
             "li-bian",
             "li-jing",
+            "southern-tang-ended-975",
             "southern-tang-falls",
             "southern-tang-founded",
             "southern-tang-moves-nanchang",
@@ -34061,6 +34131,7 @@
             "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
             "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
+            "claim:claim-li-yu-enemy-zhao-kuangyin-termination-975",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
             "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
@@ -34069,6 +34140,7 @@
             "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
             "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
             "claim:claim-zhao-kuangyin-participated-northern-song",
+            "claim:claim-zhao-kuangyin-participated-southern-tang-ended-975",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
@@ -34078,6 +34150,7 @@
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:southern-han-ended-971",
+            "event-detail:southern-tang-ended-975",
             "person-polity:zhao-kuangyin:song_northern"
           ],
           "relatedIds": [
@@ -34094,7 +34167,8 @@
             "northern-song-founded",
             "song-founded",
             "song_northern",
-            "southern-han-ended-971"
+            "southern-han-ended-971",
+            "southern-tang-ended-975"
           ]
         },
         {
@@ -38724,6 +38798,7 @@
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-han-ended-971",
+            "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
             "event-detail:wuyue-ended-978",
             "heritage-detail:jingnan-jiangling-city-site",
@@ -38754,6 +38829,7 @@
             "song-southward",
             "southern-han-ended-971",
             "southern-han-king-mausoleum",
+            "southern-tang-ended-975",
             "southern-tang-falls",
             "taizong-song",
             "wuyue-ended-978",
@@ -39126,6 +39202,7 @@
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
             "event-detail:southern-tang-conquers-min",
+            "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
             "event-detail:southern-tang-founded",
             "event-detail:southern-tang-li-jing-succeeds",
@@ -39152,6 +39229,7 @@
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
             "southern-tang-conquers-min",
+            "southern-tang-ended-975",
             "southern-tang-er-ling",
             "southern-tang-falls",
             "southern-tang-founded",
@@ -51295,6 +51373,71 @@
         }
       ]
     },
+    "event:southern-tang-ended-975": {
+      "entityType": "event",
+      "entityId": "southern-tang-ended-975",
+      "entityKey": "event:southern-tang-ended-975",
+      "label": "南唐在金陵终结、北宋承接",
+      "polityIds": [
+        "song_northern",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-tang-ended-975"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-yu-participated-southern-tang-ended-975",
+            "claim:claim-zhao-kuangyin-participated-southern-tang-ended-975",
+            "event-detail:southern-tang-ended-975"
+          ],
+          "relatedIds": [
+            "li-yu",
+            "northern-song-founded",
+            "song_northern",
+            "southern-tang-falls",
+            "southern-tang-moves-nanchang",
+            "southern_tang",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:southern-tang-falls": {
       "entityType": "event",
       "entityId": "southern-tang-falls",
@@ -60010,6 +60153,7 @@
             "li-bian",
             "li-jing",
             "li-yu",
+            "southern-tang-ended-975",
             "southern-tang-falls",
             "southern-tang-founded",
             "southern-tang-li-jing-succeeds",
@@ -67579,10 +67723,13 @@
             "claim:claim-li-jing-parent-li-yu",
             "claim:claim-li-yu-child-li-jing",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
+            "claim:claim-li-yu-enemy-zhao-kuangyin-termination-975",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "claim:claim-li-yu-participated-southern-tang",
+            "claim:claim-li-yu-participated-southern-tang-ended-975",
             "claim:claim-li-yu-ruled-southern-tang",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
+            "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
             "event-detail:southern-tang-moves-nanchang",
             "person-polity:li-yu:southern_tang"
@@ -67590,6 +67737,7 @@
           "relatedIds": [
             "li-bian",
             "li-jing",
+            "southern-tang-ended-975",
             "southern-tang-falls",
             "southern-tang-founded",
             "southern-tang-moves-nanchang",
@@ -77095,6 +77243,7 @@
             "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
             "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
             "claim:claim-li-yu-enemy-zhao-kuangyin",
+            "claim:claim-li-yu-enemy-zhao-kuangyin-termination-975",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
             "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
@@ -77103,6 +77252,7 @@
             "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
             "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
             "claim:claim-zhao-kuangyin-participated-northern-song",
+            "claim:claim-zhao-kuangyin-participated-southern-tang-ended-975",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
@@ -77112,6 +77262,7 @@
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:southern-han-ended-971",
+            "event-detail:southern-tang-ended-975",
             "person-polity:zhao-kuangyin:song_northern"
           ],
           "relatedIds": [
@@ -77128,7 +77279,8 @@
             "northern-song-founded",
             "song-founded",
             "song_northern",
-            "southern-han-ended-971"
+            "southern-han-ended-971",
+            "southern-tang-ended-975"
           ]
         },
         {
@@ -81758,6 +81910,7 @@
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-han-ended-971",
+            "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
             "event-detail:wuyue-ended-978",
             "heritage-detail:jingnan-jiangling-city-site",
@@ -81788,6 +81941,7 @@
             "song-southward",
             "southern-han-ended-971",
             "southern-han-king-mausoleum",
+            "southern-tang-ended-975",
             "southern-tang-falls",
             "taizong-song",
             "wuyue-ended-978",
@@ -82160,6 +82314,7 @@
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
             "event-detail:southern-tang-conquers-min",
+            "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
             "event-detail:southern-tang-founded",
             "event-detail:southern-tang-li-jing-succeeds",
@@ -82186,6 +82341,7 @@
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
             "southern-tang-conquers-min",
+            "southern-tang-ended-975",
             "southern-tang-er-ling",
             "southern-tang-falls",
             "southern-tang-founded",
@@ -84434,9 +84590,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 194,
+      "totalEntities": 195,
       "statusCounts": {
-        "covered": 929,
+        "covered": 934,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -86873,6 +87029,7 @@
         "event:song-founded",
         "event:song-southward",
         "event:southern-han-ended-971",
+        "event:southern-tang-ended-975",
         "event:southern-tang-falls",
         "event:wuyue-ended-978",
         "heritage:jingnan-jiangling-city-site",
@@ -87105,6 +87262,7 @@
         "event:southern-tang-cedes-huainan",
         "event:southern-tang-conquers-chu",
         "event:southern-tang-conquers-min",
+        "event:southern-tang-ended-975",
         "event:southern-tang-falls",
         "event:southern-tang-founded",
         "event:southern-tang-li-jing-succeeds",
@@ -89912,6 +90070,7 @@
         "event:southern-qi-ended-502",
         "event:southern-qi-founded",
         "event:southern-tang-cedes-huainan",
+        "event:southern-tang-ended-975",
         "event:southern-tang-falls",
         "event:southern-tang-founded",
         "event:southern-tang-li-jing-succeeds",
@@ -89938,6 +90097,7 @@
         "person:xiao-yan",
         "person:yang-jian",
         "person:yang-pu",
+        "person:zhao-kuangyin",
         "polity:chen_southern",
         "polity:jin_eastern",
         "polity:liang_southern",

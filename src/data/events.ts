@@ -547,6 +547,18 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《宋史》卷478·南唐李氏', url: 'https://zh.wikisource.org/zh-hans/%E5%AE%8B%E5%8F%B2/%E5%8D%B7478', detail: '记载宋军渡江、围攻金陵及李煜出降。' }],
   },
   {
+    id: 'southern-tang-ended-975', year: 975, title: '南唐在金陵终结、北宋承接', summary: '北宋军队攻破金陵，南唐后主李煜出降，南唐中央政权终止；金陵及江南地方接收延续到后续阶段。', placeId: 'jiankang', sourceIds: ['song-history-nantang', 'zizhi-tongjian', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '南唐在958年割江北地、奉后周正朔后转入收缩阶段；北宋完成北方与南方统一战争后，金陵成为直接进攻与政权转换的终局城市节点。',
+    process: '975年北宋军队渡江攻破金陵，李煜出降，南唐中央政权终止；宋廷对江南各地的行政接收、军镇调整和地方归附仍在后续阶段展开。',
+    impact: '南唐作为独立江南政权结束，金陵进入北宋城市历史层；南唐金陵城址、南唐二陵及相关遗产继续存在，不因政权终止而消失。',
+    mapNote: '金陵（今南京市）标记南唐中央政权终止与北宋承接节点；不把975年城破直接绘成北宋当年完成江南所有地方行政整合，也不把现存南京建筑全部归为南唐原构。',
+    references: [
+      { title: '《宋史》卷478·南唐李氏', url: 'https://zh.wikisource.org/zh-hans/%E5%AE%8B%E5%8F%B2/%E5%8D%B7478', detail: '用于核对宋军渡江、攻取金陵与李煜出降。' },
+      { title: '《资治通鉴》宋开宝八年条', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对975年南唐终局及北宋承接过程；地方行政接收保持阶段性表达。' },
+    ],
+  },
+  {
     id: 'later-yan-ended-407', year: 407, title: '后燕在龙城终结', summary: '高云在龙城取代后燕末帝慕容熙，后燕政权终止，新的燕政权承接其辽西政治中心。', placeId: 'longcheng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
     background: '后燕退守龙城后，慕容熙统治下的宫廷与军政集团矛盾加剧，高云及其支持者在辽西取得政治主导权。',

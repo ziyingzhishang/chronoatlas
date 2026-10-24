@@ -458,7 +458,7 @@ const details: HeritageDetail[] = [
     phase('original', '城市与宫城使用', '937—975年', '南唐以金陵为政治中心，沿用并调整建康以来的城市、宫城和水陆交通网络。', 937, 975),
     phase('site', '城市叠压层', '五代南唐历史层', '南唐城市信息主要通过建康六朝、后世南京城址和历史地理研究分层辨识。', 937, 975, '南唐宫城具体位置和可见构件不能由六朝遗址直接替代。'),
     phase('restoration', '现代城市展示', '当代', '博物馆、遗址公园和城市标识解释南唐金陵，不重建完整南唐宫城。', 2000, undefined, '现代纪念设施与南唐原建筑分层记录。'),
-  ], ['li-bian', 'li-jing', 'li-yu'], ['southern_tang'], ['southern-tang-founded', 'southern-tang-li-jing-succeeds', 'southern-tang-moves-nanchang', 'southern-tang-falls'], ['宫城与城市叠压线索', '秦淮水系和交通空间', '南京城市考古与展示'], '从今日南京观察南唐与六朝、明代等多个政权在同一城市空间的叠合。', '南唐遗存多与既有和后世城市层叠压，具体建筑年代和保存状态需逐项核验。', ['zizhi-tongjian', 'song-history-nantang', 'modern-geography-reference']),
+  ], ['li-bian', 'li-jing', 'li-yu'], ['southern_tang'], ['southern-tang-founded', 'southern-tang-li-jing-succeeds', 'southern-tang-moves-nanchang', 'southern-tang-falls', 'southern-tang-ended-975'], ['宫城与城市叠压线索', '秦淮水系和交通空间', '南京城市考古与展示'], '从今日南京观察南唐与六朝、明代等多个政权在同一城市空间的叠合，并把975年南唐终局置于金陵城市承接的连续历史层中。', '南唐遗存多与既有和后世城市层叠压，具体建筑年代和保存状态需逐项核验；975年政权终止不表示城市遗产同时消失，现存建筑也不能全部视作南唐原构。', ['zizhi-tongjian', 'song-history-nantang', 'modern-geography-reference']),
   detail('southern-tang-er-ling', '今南京市江宁区牛首山南麓南唐二陵保护与考古范围；现代江宁行政边界不等同于南唐陵区边界。', ['李昪钦陵与李璟顺陵', '南唐皇室墓葬、陵寝制度与金陵南郊礼制空间'], [
     phase('original', '皇室陵寝营建', '943—961年', '南唐烈祖李昪钦陵与元宗李璟顺陵构成南唐二陵，墓主、陵号与年代按南唐皇室世系和考古资料分层。', 943, 961, '陵园营建、下葬和后世修缮并非同一时间点。'),
     phase('site', '南唐二陵遗址', '20世纪考古发掘以来', '墓室、石刻、随葬遗迹与保护展示共同呈现南唐皇室墓葬制度；不把所有地表构件视作南唐原貌。', 1900, undefined, '发掘、保护和展示状态应以官方文保资料为准。'),
