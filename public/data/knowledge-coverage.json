@@ -30448,6 +30448,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "shiji-meng-tian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -30582,6 +30583,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "shiji-xiongnu-modu",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -38894,6 +38896,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "shiji-zhang-qian-dawan",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -41250,6 +41253,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "luoyang-baimasi-official",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -48330,6 +48334,7 @@
         "qin"
       ],
       "evidenceIds": [
+        "shiji-meng-tian",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -48346,6 +48351,7 @@
         "xiongnu"
       ],
       "evidenceIds": [
+        "shiji-xiongnu-modu",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -49006,6 +49012,7 @@
         "han_western"
       ],
       "evidenceIds": [
+        "shiji-zhang-qian-dawan",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -79561,6 +79568,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "shiji-meng-tian",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -79695,6 +79703,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "shiji-xiongnu-modu",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -88007,6 +88016,7 @@
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
+            "shiji-zhang-qian-dawan",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -90363,6 +90373,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "luoyang-baimasi-official",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -97086,6 +97097,7 @@
             "han_western"
           ],
           "evidenceIds": [
+            "shiji-zhang-qian-dawan",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -98384,6 +98396,7 @@
             "qin"
           ],
           "evidenceIds": [
+            "shiji-meng-tian",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -99223,12 +99236,13 @@
         },
         {
           "entityType": "event",
-          "entityId": "shangyang-palace-built",
-          "entityKey": "event:shangyang-palace-built",
-          "label": "上阳宫营造",
+          "entityId": "silla-tang-war-670-676",
+          "entityKey": "event:silla-tang-war-670-676",
+          "label": "新罗—唐战争结束",
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
+            "silla",
             "tang"
           ],
           "evidenceIds": [],
@@ -99237,13 +99251,12 @@
         },
         {
           "entityType": "event",
-          "entityId": "silla-tang-war-670-676",
-          "entityKey": "event:silla-tang-war-670-676",
-          "label": "新罗—唐战争结束",
+          "entityId": "shangyang-palace-built",
+          "entityKey": "event:shangyang-palace-built",
+          "label": "上阳宫营造",
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
-            "silla",
             "tang"
           ],
           "evidenceIds": [],
@@ -100403,6 +100416,7 @@
             "xiongnu"
           ],
           "evidenceIds": [
+            "shiji-xiongnu-modu",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -104015,6 +104029,7 @@
             "qin"
           ],
           "evidenceIds": [
+            "shiji-meng-tian",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -104273,6 +104288,7 @@
             "xiongnu"
           ],
           "evidenceIds": [
+            "shiji-xiongnu-modu",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
