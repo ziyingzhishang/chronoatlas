@@ -358,6 +358,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['eastern-wei-ended-550', 'northern-qi-founded'], sourceIds, uncertaintyNote: '550年受禅同时构成东魏中央政权终止与北齐建政节点；不把北齐后期控制范围回填到禅代当年。',
   },
   {
+    personId: 'gao-heng', biography: '高恒是北齐末代君主，577年北周攻取邺城后出奔并在北齐终局过程中被俘。',
+    aliases: ['北齐幼主', '北齐末主'], offices: [{ title: '北齐末代皇帝', polityId: 'qi_northern', placeId: 'ye', validFrom: 576, validTo: 577, datePrecision: 'range', sourceIds }],
+    keyEvents: ['northern-qi-ended-577'], sourceIds, uncertaintyNote: '高恒即位、出奔与被俘发生在北齐终末连续阶段；具体行踪、被俘地点与后续处置不压缩为邺城单一时刻。',
+  },
+  {
     personId: 'zhao-gou', biography: '赵构在靖康之变后于应天府即位，重建宋室中央并开启南宋阶段，政权随后经历多地迁驻。',
     aliases: ['宋高宗'], offices: [{ title: '南宋皇帝', polityId: 'song_south', placeId: 'yingtian', validFrom: 1127, validTo: 1162, datePrecision: 'range', sourceIds }],
     keyEvents: ['southern-song-founded', 'song-southward'], sourceIds, uncertaintyNote: '应天即位、南渡迁移与临安主要政治中心形成是连续但不同节点，不能将后来的临安定都提前到1127年。',
@@ -440,7 +445,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'yuwen-yong', biography: '宇文邕是北周武帝，在宇文泰建立的关中军政基础上推进制度和军事整合，北周由此具备继续北伐的能力。',
     aliases: ['北周武帝'], offices: [{ title: '北周皇帝', polityId: 'zhou_northern', placeId: 'changan', validFrom: 560, validTo: 578, datePrecision: 'range', sourceIds }],
-    keyEvents: [], sourceIds, uncertaintyNote: '项目当前没有单独的北周建政事件节点，本详情只链接北周政权和家族关系，不以其他政权事件替代。',
+    keyEvents: ['northern-qi-ended-577'], sourceIds, uncertaintyNote: '宇文邕主持北周灭北齐与北方东部承接；577年战争、邺城接收和北周后续行政整合属于连续但可区分的阶段。',
   },
   {
     personId: 'li-yu', biography: '李煜是南唐末代君主，南唐在其统治末期与北宋对峙并于975年覆亡，词作保留了政权末期的文化记忆。',

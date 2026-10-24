@@ -405,6 +405,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '535年标记西魏建政与即位，不代表西魏当年已经拥有后来北周的全部范围；地方控制须按时段核验。',
   },
   {
+    eventId: 'northern-qi-ended-577',
+    participants: [
+      { personId: 'gao-heng', role: '北齐末代君主与邺城失守阶段的核心人物', note: '高恒在北周攻取邺城后出奔并于终局过程中被俘；其个人行踪与北齐中央政权终止按连续阶段表达。' },
+      { personId: 'yuwen-yong', role: '北周灭北齐与东部承接阶段的最高统治者', note: '宇文邕代表北周北伐和邺城承接的统治端点，不把多路军队行动简化为单一人物现场指挥。' },
+    ],
+    polityIds: ['qi_northern', 'zhou_northern'],
+    causes: ['北周完成关中军政整合并持续向东部推进。', '北齐末期中央军政与邺城防御体系在北周攻势下失去维持能力。'],
+    consequences: ['北齐中央政权终止，高恒退出末代君主位置。', '北周承接邺城及原北齐东部的关键政治资源，北方统一进程进入新阶段。', '邺城城垣、宫城、道路与地方社会继续存在，进入北周、隋及后续城市历史层。'],
+    phases: [
+      { label: '北周东进', startYear: 575, endYear: 576, summary: '北周持续发动对北齐的军事推进，北齐东部防线承受压力。' },
+      { label: '邺城失守与北齐终止', startYear: 577, endYear: 577, summary: '北周攻取邺城，高恒出奔并在终局过程中被俘，北齐中央政权终止。' },
+      { label: '邺城与东部承接', startYear: 577, endYear: 581, summary: '北周在邺及原北齐东部展开政治和行政承接，城市遗产继续延续。' },
+    ],
+    locationIds: ['ye'],
+    relatedEventIds: ['northern-qi-founded', 'sui-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '577年邺城失守与北齐中央政权终止是明确年份节点；高恒出奔、被俘、地方归附和北周行政接收具有过程性，不能压缩为单一人物或城市消失事件。',
+  },
+  {
     eventId: 'southern-liang-founded',
     participants: [
       { personId: 'xiao-yan', role: '受禅建立南梁并在建康即位的君主', note: '萧衍在南齐末年掌握江南军政资源，502年受禅建梁；其前期掌权与正式即位分开记录。' },

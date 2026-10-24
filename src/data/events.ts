@@ -175,6 +175,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》·齐纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对550年元善见禅位于高洋、北齐建立及东魏终止的编年节点；邺城遗产按多政权历史层承接。' }],
   },
   {
+    id: 'northern-qi-ended-577', year: 577, title: '北齐在邺终止、北周承接', summary: '北周攻取邺城，北齐幼主高恒出奔后被俘，北齐中央政权终止；邺城进入北周及后续城市历史层。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '北齐末期在北周持续北伐和东部军政压力下失去战略主动，邺城仍是北齐正式都城与中央权力的核心空间。',
+    process: '577年北周军队攻取邺城，北齐幼主高恒出奔并在终局过程中被俘；北齐中央政权终止，北周在邺及原北齐东部地区展开承接。',
+    impact: '北齐退出北朝东部政权谱系，北周完成对北方东部的关键整合；邺城城垣、宫城和地方社会继续存在，并进入北周、隋及后续城市遗产层。',
+    mapNote: '地图将577年标为北齐中央政权终止与北周承接的年份节点；高恒出奔、被俘、地方归附和邺城遗产延续是相互关联但可分层的过程。',
+    references: [{ title: '《资治通鉴》·陈纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对577年北周攻取邺城、北齐终止与北周承接的编年节点；末主行踪与地方接收保留过程性。' }],
+  },
+  {
     id: 'western-wei-founded', year: 535, title: '西魏建立', summary: '元宝炬在长安即位，北魏西部政权转入西魏阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '北魏孝武帝西奔后，宇文泰控制关中并需要以元魏宗室重新组织西部政治秩序。',

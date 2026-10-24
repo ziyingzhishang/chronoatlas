@@ -24,7 +24,6 @@ const eventParticipationGaps = [
   { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'] },
-  { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'ma-xiguang', eventIds: [] },
   { personId: 'ma-xie', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
@@ -123,10 +122,5 @@ describe('round one hundred eleven person relationship boundary audit', () => {
         .toBeGreaterThan(eventById.get(eventId)!.year);
     }
 
-    for (const personId of ['yuwen-yong'] as const) {
-      expect(eventDetails.some((detail) => detail.participants.some((participant) => (
-        participant.personId === personId
-      ))), `${personId}: direct event-detail candidate`).toBe(false);
-    }
   });
 });

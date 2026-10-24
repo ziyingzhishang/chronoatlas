@@ -13,7 +13,6 @@ const reviewGaps = [
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
   { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
-  { personId: 'yuwen-yong', eventIds: [] },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];
@@ -96,10 +95,5 @@ describe('round one hundred ten event-participation boundary audit', () => {
         .toBeGreaterThan(eventById.get(eventId)!.year);
     }
 
-    for (const personId of ['yuwen-yong']) {
-      expect(eventDetails.some((detail) => detail.participants.some((participant) => (
-        participant.personId === personId
-      ))), `${personId}: direct event-detail candidate`).toBe(false);
-    }
   });
 });

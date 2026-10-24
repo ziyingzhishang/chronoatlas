@@ -63,6 +63,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'western-zhou-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '西周建立涉及克商、分封与东征等阶段，前1046年只作常用约年锚点。', timelineStrategy: 'approximate-marker' },
   { eventId: 'eastern-zhou-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '东周分期以周室东迁为传统节点，政权转移和政治中心变化不等同于精确建国日。', timelineStrategy: 'approximate-marker' },
   { eventId: 'eastern-wei-ended-550', status: 'confirmed', expectedPrecision: 'year', explanation: '550年元善见禅位于高洋、北齐建立与东魏中央政权终止有明确编年节点；高氏实际掌权、北齐地方接收和邺城遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
+  { eventId: 'northern-qi-ended-577', status: 'confirmed', expectedPrecision: 'year', explanation: '577年北周攻取邺城、北齐末主高恒出奔并在终局过程中被俘，北齐中央政权终止与北周承接有明确编年节点；地方归附和邺城遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'qin-state-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '秦国早期建制属于传统分期，前770年只能表示历史阶段起点。', timelineStrategy: 'approximate-marker' },
   { eventId: 'chu-warring-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '战国楚的目录起点是传统分期，前403年只用于时间轴定位。', timelineStrategy: 'approximate-marker' },
   { eventId: 'yan-warring-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '战国燕的目录起点是传统分期，不能据此推断精确的政权成立日期。', timelineStrategy: 'approximate-marker' },

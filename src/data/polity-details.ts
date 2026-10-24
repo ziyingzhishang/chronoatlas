@@ -228,9 +228,9 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'qi_northern', perspectiveSummary: '北齐由高洋承接高氏在东魏的军政基础并受禅建立，以邺为都，经历东部整合、佛教文化发展和北周压力下的覆亡。',
     foundationProcess: ['高氏集团在东魏时期控制邺与东部军政资源。', '550年高洋受禅建立北齐。', '北齐继续以邺为都，最终在北周统一战争中结束。'],
     turningPoints: [turn(550, '北齐建立', '高洋受东魏禅位建立北齐。', 'northern-qi-founded'), turn(555, '东部制度整合', '北齐巩固河北、山东等地的行政与军政秩序。'), turn(577, '北齐覆亡', '北周攻取邺，北齐结束。')],
-    principalFigureIds: ['gao-yang'], capitalPhases: [capital('ye', 550, 577)],
-    heritageIds: ['ye-city-site', 'ye-tongque-platform-site'], eventIds: ['eastern-wei-ended-550', 'northern-qi-founded'], claimIds: ['claim-gao-yang-founded-northern-qi', 'claim-gao-yang-participated-eastern-wei-ended-550'], sourceIds: modernSources,
-    uncertaintyNote: '北齐以邺为正式都城，但疆域和军政控制随北周战争变化；邺城遗址是跨朝代城市层，铜雀台也不是北齐专属建筑。',
+    principalFigureIds: ['gao-yang', 'gao-heng'], capitalPhases: [capital('ye', 550, 577)],
+    heritageIds: ['ye-city-site', 'ye-tongque-platform-site'], eventIds: ['eastern-wei-ended-550', 'northern-qi-founded', 'northern-qi-ended-577'], claimIds: ['claim-gao-yang-founded-northern-qi', 'claim-gao-yang-participated-eastern-wei-ended-550', 'claim-gao-heng-ruled-northern-qi', 'claim-gao-heng-participated-northern-qi-ended-577', 'claim-gao-heng-enemy-yuwen-yong-northern-qi-termination-577', 'claim-yuwen-yong-participated-northern-qi-ended-577'], sourceIds: modernSources,
+    uncertaintyNote: '北齐以邺为正式都城，但疆域和军政控制随北周战争变化；577年邺城失守、高恒出奔被俘与北周地方承接分层记录。邺城遗址是跨朝代城市层，铜雀台也不是北齐专属建筑。',
   }),
   detail({
     polityId: 'zhou_northern', perspectiveSummary: '北周承接西魏的关中军政与长安都城体系，在宇文氏统治下整合北方西部并最终为隋的统一创造条件。',

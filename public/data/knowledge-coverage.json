@@ -5506,6 +5506,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "northern-qi-ended-577",
+      "entityKey": "event:northern-qi-ended-577",
+      "label": "北齐在邺终止、北周承接",
+      "polityIds": [
+        "qi_northern",
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-qi-ended-577"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-heng-participated-northern-qi-ended-577",
+            "claim:claim-yuwen-yong-participated-northern-qi-ended-577",
+            "event-detail:northern-qi-ended-577"
+          ],
+          "relatedIds": [
+            "gao-heng",
+            "northern-qi-founded",
+            "qi_northern",
+            "sui-founded",
+            "yuwen-yong",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "northern-qi-founded",
       "entityKey": "event:northern-qi-founded",
       "label": "北齐建立",
@@ -19002,7 +19066,8 @@
         "former_yan",
         "later_zhao",
         "qi_northern",
-        "wei_eastern"
+        "wei_eastern",
+        "zhou_northern"
       ],
       "checks": [
         {
@@ -19048,6 +19113,7 @@
             "former_qin",
             "former_yan",
             "fu-jian",
+            "gao-heng",
             "gao-huan",
             "gao-yang",
             "later-zhao-founded",
@@ -19055,10 +19121,14 @@
             "later_zhao",
             "murong-huang",
             "murong-wei",
+            "northern-qi-ended-577",
             "northern-qi-founded",
             "qi_northern",
+            "sui-founded",
             "wei_eastern",
-            "yuan-shanjian"
+            "yuan-shanjian",
+            "yuwen-yong",
+            "zhou_northern"
           ]
         },
         {
@@ -21604,6 +21674,70 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "gao-heng",
+      "entityKey": "person:gao-heng",
+      "label": "高恒",
+      "polityIds": [
+        "qi_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-heng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-heng-enemy-yuwen-yong-northern-qi-termination-577",
+            "claim:claim-gao-heng-participated-northern-qi-ended-577",
+            "claim:claim-gao-heng-ruled-northern-qi",
+            "event-detail:northern-qi-ended-577",
+            "person-polity:gao-heng:qi_northern"
+          ],
+          "relatedIds": [
+            "northern-qi-ended-577",
+            "qi_northern",
+            "yuwen-yong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -34017,15 +34151,20 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-chen-qian-enemy-yuwen-yong-ninetyfourth",
+            "claim:claim-gao-heng-enemy-yuwen-yong-northern-qi-termination-577",
             "claim:claim-yuwen-tai-parent-yuwen-yong",
             "claim:claim-yuwen-yong-child-yuwen-tai",
             "claim:claim-yuwen-yong-enemy-chen-xu-seventyninth",
+            "claim:claim-yuwen-yong-participated-northern-qi-ended-577",
             "claim:claim-yuwen-yong-ruled-northern-zhou",
+            "event-detail:northern-qi-ended-577",
             "person-polity:yuwen-yong:zhou_northern"
           ],
           "relatedIds": [
             "chen-qian",
             "chen-xu",
+            "gao-heng",
+            "northern-qi-ended-577",
             "yu-wen-tai",
             "zhou_northern"
           ]
@@ -38576,17 +38715,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gao-heng-ruled-northern-qi",
             "claim:claim-gao-yang-founded-northern-qi",
             "claim:claim-gao-yang-ruled-northern-qi-fiftyeighth",
             "event-detail:eastern-wei-ended-550",
+            "event-detail:northern-qi-ended-577",
             "event-detail:northern-qi-founded",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
+            "person:gao-heng",
             "person:gao-yang"
           ],
           "relatedIds": [
             "eastern-wei-ended-550",
+            "gao-heng",
             "gao-yang",
+            "northern-qi-ended-577",
             "northern-qi-founded",
             "ye-city-site",
             "ye-tongque-platform-site"
@@ -41878,14 +42022,18 @@
           "evidenceIds": [
             "claim:claim-northern-zhou-changan-capital",
             "claim:claim-yuwen-yong-ruled-northern-zhou",
+            "event-detail:northern-qi-ended-577",
             "event-detail:northern-zhou-changan",
             "heritage-detail:northern-zhou-changan-city-layer",
+            "heritage-detail:ye-city-site",
             "person:yuwen-yong"
           ],
           "relatedIds": [
             "changan",
+            "northern-qi-ended-577",
             "northern-zhou-changan",
             "northern-zhou-changan-city-layer",
+            "ye-city-site",
             "yuwen-yong"
           ]
         },
@@ -49133,6 +49281,70 @@
             "later-liang-founded",
             "northern-liang-founded",
             "northern_liang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:northern-qi-ended-577": {
+      "entityType": "event",
+      "entityId": "northern-qi-ended-577",
+      "entityKey": "event:northern-qi-ended-577",
+      "label": "北齐在邺终止、北周承接",
+      "polityIds": [
+        "qi_northern",
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-qi-ended-577"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-heng-participated-northern-qi-ended-577",
+            "claim:claim-yuwen-yong-participated-northern-qi-ended-577",
+            "event-detail:northern-qi-ended-577"
+          ],
+          "relatedIds": [
+            "gao-heng",
+            "northern-qi-founded",
+            "qi_northern",
+            "sui-founded",
+            "yuwen-yong",
+            "zhou_northern"
           ]
         },
         {
@@ -62642,7 +62854,8 @@
         "former_yan",
         "later_zhao",
         "qi_northern",
-        "wei_eastern"
+        "wei_eastern",
+        "zhou_northern"
       ],
       "checks": [
         {
@@ -62688,6 +62901,7 @@
             "former_qin",
             "former_yan",
             "fu-jian",
+            "gao-heng",
             "gao-huan",
             "gao-yang",
             "later-zhao-founded",
@@ -62695,10 +62909,14 @@
             "later_zhao",
             "murong-huang",
             "murong-wei",
+            "northern-qi-ended-577",
             "northern-qi-founded",
             "qi_northern",
+            "sui-founded",
             "wei_eastern",
-            "yuan-shanjian"
+            "yuan-shanjian",
+            "yuwen-yong",
+            "zhou_northern"
           ]
         },
         {
@@ -65244,6 +65462,70 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:gao-heng": {
+      "entityType": "person",
+      "entityId": "gao-heng",
+      "entityKey": "person:gao-heng",
+      "label": "高恒",
+      "polityIds": [
+        "qi_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "gao-heng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-heng-enemy-yuwen-yong-northern-qi-termination-577",
+            "claim:claim-gao-heng-participated-northern-qi-ended-577",
+            "claim:claim-gao-heng-ruled-northern-qi",
+            "event-detail:northern-qi-ended-577",
+            "person-polity:gao-heng:qi_northern"
+          ],
+          "relatedIds": [
+            "northern-qi-ended-577",
+            "qi_northern",
+            "yuwen-yong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -77657,15 +77939,20 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-chen-qian-enemy-yuwen-yong-ninetyfourth",
+            "claim:claim-gao-heng-enemy-yuwen-yong-northern-qi-termination-577",
             "claim:claim-yuwen-tai-parent-yuwen-yong",
             "claim:claim-yuwen-yong-child-yuwen-tai",
             "claim:claim-yuwen-yong-enemy-chen-xu-seventyninth",
+            "claim:claim-yuwen-yong-participated-northern-qi-ended-577",
             "claim:claim-yuwen-yong-ruled-northern-zhou",
+            "event-detail:northern-qi-ended-577",
             "person-polity:yuwen-yong:zhou_northern"
           ],
           "relatedIds": [
             "chen-qian",
             "chen-xu",
+            "gao-heng",
+            "northern-qi-ended-577",
             "yu-wen-tai",
             "zhou_northern"
           ]
@@ -82216,17 +82503,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-gao-heng-ruled-northern-qi",
             "claim:claim-gao-yang-founded-northern-qi",
             "claim:claim-gao-yang-ruled-northern-qi-fiftyeighth",
             "event-detail:eastern-wei-ended-550",
+            "event-detail:northern-qi-ended-577",
             "event-detail:northern-qi-founded",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
+            "person:gao-heng",
             "person:gao-yang"
           ],
           "relatedIds": [
             "eastern-wei-ended-550",
+            "gao-heng",
             "gao-yang",
+            "northern-qi-ended-577",
             "northern-qi-founded",
             "ye-city-site",
             "ye-tongque-platform-site"
@@ -85518,14 +85810,18 @@
           "evidenceIds": [
             "claim:claim-northern-zhou-changan-capital",
             "claim:claim-yuwen-yong-ruled-northern-zhou",
+            "event-detail:northern-qi-ended-577",
             "event-detail:northern-zhou-changan",
             "heritage-detail:northern-zhou-changan-city-layer",
+            "heritage-detail:ye-city-site",
             "person:yuwen-yong"
           ],
           "relatedIds": [
             "changan",
+            "northern-qi-ended-577",
             "northern-zhou-changan",
             "northern-zhou-changan-city-layer",
+            "ye-city-site",
             "yuwen-yong"
           ]
         },
@@ -85612,9 +85908,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 198,
+      "totalEntities": 199,
       "statusCounts": {
-        "covered": 949,
+        "covered": 954,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -85690,9 +85986,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 243,
+      "totalEntities": 244,
       "statusCounts": {
-        "covered": 1151,
+        "covered": 1156,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -87614,9 +87910,11 @@
       "polityName": "北齐",
       "entityKeys": [
         "event:eastern-wei-ended-550",
+        "event:northern-qi-ended-577",
         "event:northern-qi-founded",
         "heritage:ye-city-site",
         "heritage:ye-tongque-platform-site",
+        "person:gao-heng",
         "person:gao-yang",
         "polity:qi_northern"
       ],
@@ -89762,7 +90060,9 @@
       "polityId": "zhou_northern",
       "polityName": "北周",
       "entityKeys": [
+        "event:northern-qi-ended-577",
         "heritage:northern-zhou-changan-city-layer",
+        "heritage:ye-city-site",
         "person:yuwen-yong",
         "polity:zhou_northern"
       ],
@@ -93010,18 +93310,21 @@
         "event:han-eastern-founded",
         "event:later-yan-founded",
         "event:later-zhao-moves-ye",
+        "event:northern-qi-ended-577",
         "event:northern-qi-founded",
         "event:partition-jin",
         "heritage:later-yan-ye-city-site",
         "heritage:ye-city-site",
         "heritage:ye-tongque-platform-site",
         "person:fu-jian",
+        "person:gao-heng",
         "person:gao-huan",
         "person:gao-yang",
         "person:murong-huang",
         "person:murong-wei",
         "person:shi-hu",
         "person:yuan-shanjian",
+        "person:yuwen-yong",
         "polity:former_yan",
         "polity:later_yan",
         "polity:later_zhao",

@@ -14,7 +14,6 @@ const decisions = [
   { personId: 'li-zhi', eventIds: ['daming-palace-built'], kind: 'no-direct-role' },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], kind: 'born-after-event' },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], kind: 'temporal-or-context-boundary' },
-  { personId: 'yuwen-yong', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'ma-xiguang', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'ma-xie', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'qin-mugong', eventIds: [], kind: 'no-direct-role' },
@@ -69,11 +68,6 @@ describe('round 104 independent event-participation audit', () => {
       expect(person.birthYear, `${personId}: birth year`).toBeGreaterThan(event.year);
     }
 
-    for (const personId of ['yuwen-yong']) {
-      expect(eventDetails.some((detail) => detail.participants.some((participant) => (
-        participant.personId === personId
-      ))), `${personId}: no direct event-detail candidate`).toBe(false);
-    }
 
     expect(eventDetails.find((detail) => detail.eventId === 'daming-palace-built')?.participants)
       .toEqual(expect.arrayContaining([

@@ -229,11 +229,11 @@ const details: HeritageDetail[] = [
     phase('site', '分散遗存', '南朝以后', '石刻多以原地、迁移后或残存构件形式保存，分布并非一处完整陵园。', 420, 589, '不同石刻的墓主、原位置和年代需要逐件考证。'),
     phase('restoration', '现代保护', '20世纪以来', '现代以文物保护、标识和环境整治为主，不将补配或景观整理当作南朝原构。', 1900),
   ], ['xiao-daocheng', 'chen-baxian'], ['song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['southern-qi-founded', 'southern-chen-founded', 'sui-unification'], ['石兽、碑刻与神道构件', '陵墓空间与道路关系', '分散遗存的保护标识'], '把南京今日城市景观与南朝政治、礼制和墓葬考古相联系的实物入口。', '现存石刻不等于整座陵墓完整保存；石刻迁移、残缺和墓主认定需分别标注。', ['zizhi-tongjian', 'modern-geography-reference']),
-  detail('ye-city-site', '今河北省邯郸市临漳县邺城遗址保护区一带，漳河改道和现代村镇使古城范围需依考古资料定位。', ['曹魏邺城的规划传统', '后赵、前燕、东魏、北齐的政治中心与宫城空间'], [
+  detail('ye-city-site', '今河北省邯郸市临漳县邺城遗址保护区一带，漳河改道和现代村镇使古城范围需依考古资料定位。', ['曹魏邺城的规划传统', '后赵、前燕、东魏、北齐的政治中心与宫城空间', '577年北齐终止后北周承接的城市历史层'], [
     phase('original', '城市营建', '3世纪前后', '邺城在曹魏时期形成重要城市规划传统，后续十六国和北朝政权继续利用其政治位置。', 204, 350),
     phase('reconstruction', '多政权改造', '335—577年', '后赵、前燕、东魏和北齐时期，宫城、城垣和政治空间持续变化。', 335, 577, '不同政权的城址层、宫城范围和制度用途不能合并为一座静态古城。'),
     phase('site', '考古遗址', '20世纪以来', '城墙、宫殿区、道路和铜雀台等相关遗迹以考古调查、发掘和遗址保护形式保存。', 1900),
-  ], ['gao-huan', 'gao-yang', 'yuan-shanjian', 'murong-huang', 'murong-wei', 'fu-jian'], ['wei_eastern', 'qi_northern', 'later_zhao', 'former_yan', 'former_qin'], ['eastern-wei-founded', 'eastern-wei-ended-550', 'northern-qi-founded', 'later-zhao-founded', 'later-zhao-moves-ye', 'former-yan-founded', 'former-yan-ended-370'], ['城垣与宫城遗址', '道路和台址', '多政权叠压的考古层'], '研究十六国、北朝都城、宫城制度和河北历史地理的关键遗址，并追踪东魏禅代、北齐承接及前燕终止后的城市承接。', '邺城不同阶段城址和建筑的对应关系需考古分期；现存台址、地面标识不等同于历史宫殿完整留存，550年政权终止也不等于城市遗产终止。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference', 'ye-city-official']),
+  ], ['gao-huan', 'gao-yang', 'gao-heng', 'yuan-shanjian', 'yuwen-yong', 'murong-huang', 'murong-wei', 'fu-jian'], ['wei_eastern', 'qi_northern', 'zhou_northern', 'later_zhao', 'former_yan', 'former_qin'], ['eastern-wei-founded', 'eastern-wei-ended-550', 'northern-qi-founded', 'northern-qi-ended-577', 'later-zhao-founded', 'later-zhao-moves-ye', 'former-yan-founded', 'former-yan-ended-370', 'sui-founded'], ['城垣与宫城遗址', '道路和台址', '多政权叠压的考古层'], '研究十六国、北朝都城、宫城制度和河北历史地理的关键遗址，并追踪东魏禅代、北齐终止、北周承接及前燕终止后的城市承接。', '邺城不同阶段城址和建筑的对应关系需考古分期；现存台址、地面标识不等同于历史宫殿完整留存，550年或577年政权终止也不等于城市遗产终止。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference', 'ye-city-official']),
   detail('former-shu-yongling', '今四川省成都市金牛区永陵路一带，墓室和石刻遗存位于现代城市博物馆保护范围内。', ['前蜀王建陵墓', '成都作为十国都城的宫廷、墓葬与城市记忆'], [
     phase('original', '陵墓营建', '918年前后', '王建去世后葬于永陵，墓室、石刻和随葬体系反映前蜀皇帝陵墓制度。', 918),
     phase('site', '墓室遗存', '20世纪发掘与保护', '墓室、石床、石刻和部分遗物以考古遗址与博物馆形式保存。', 900, 2000),
