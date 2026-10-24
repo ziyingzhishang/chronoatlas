@@ -26,7 +26,7 @@ describe('round 106 kinship boundary audit', () => {
 
     expect(peopleIds.has('huhanye')).toBe(true);
     expect(people.find((person) => person.id === 'huhanye')?.aliases).toContain('郅支单于之兄');
-    expect(peopleIds.has('zhizhi-chanyu')).toBe(false);
+    expect(peopleIds.has('zhizhi-chanyu')).toBe(true);
 
     expect(personDetails.find((detail) => detail.personId === 'wang-shenzhi')?.biography).toContain('兄长');
     expect(hasDirectKinship('wang-shenzhi', 'wang-chao')).toBe(false);
@@ -47,8 +47,8 @@ describe('round 106 kinship boundary audit', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(claims.filter((claim) => claim.id.includes('round106') && directKinship.has(claim.predicate))).toEqual([]);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(164);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(169);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(111);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(23);
   });
 });

@@ -33,7 +33,7 @@ describe('round 111 kinship required-gap boundary audit', () => {
   it('keeps the current required kinship baseline and adds no production claims', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(164);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(169);
     expect(claims.filter((claim) => claim.id.includes('round111') && directKinshipPredicates.has(claim.predicate))).toEqual([]);
   });
 
@@ -42,7 +42,6 @@ describe('round 111 kinship required-gap boundary audit', () => {
 
     for (const [personId, missingEndpointId] of [
       ['wang-shenzhi', 'wang-chao'],
-      ['huhanye', 'zhizhi-chanyu'],
     ] as const) {
       expect(report.requiredMissingByCategory.kinship, personId).toContain(personId);
       expect(peopleById.has(personId), personId).toBe(true);

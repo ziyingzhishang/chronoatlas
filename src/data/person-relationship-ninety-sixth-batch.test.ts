@@ -7,9 +7,9 @@ import { people } from './people';
 describe('ninety-sixth batch person relationship audit', () => {
   it('records the current required gap baseline', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.totalPeople).toBe(270);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(164);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
+    expect(report.totalPeople).toBe(283);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(169);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(111);
   });
 
   it('does not upgrade ambiguous kinship candidates into direct family edges', () => {

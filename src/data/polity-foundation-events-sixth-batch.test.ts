@@ -59,7 +59,9 @@ describe('第六批政权建政事件', () => {
           'yongli-zhaoqing-founded',
         ]));
       } else {
-        expect(report.byPolity(polityId)?.establishmentEventIds).toEqual([eventId]);
+        expect(report.byPolity(polityId)?.establishmentEventIds).toEqual(polityId === 'xiongnu'
+          ? [eventId, 'xiongnu-southern-northern-split-48']
+          : [eventId]);
       }
     }
   });

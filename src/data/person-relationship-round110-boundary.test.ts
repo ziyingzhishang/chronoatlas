@@ -76,7 +76,7 @@ describe('round 110 person relationship boundary audit', () => {
 
     expect(wangShenzhi?.description).toContain('兄长');
     expect(huhanye?.aliases).toContain('郅支单于之兄');
-    expect(people.some((person) => person.name === '郅支单于')).toBe(false);
+    expect(people.some((person) => person.name === '郅支单于')).toBe(true);
     expect(claims.some((claim) => (
       (claim.subjectId === 'wang-shenzhi' || claim.objectId === 'wang-shenzhi')
       && claim.predicate === 'sibling-of'
@@ -84,6 +84,6 @@ describe('round 110 person relationship boundary audit', () => {
     expect(claims.some((claim) => (
       (claim.subjectId === 'huhanye' || claim.objectId === 'huhanye')
       && kinshipPredicates.has(claim.predicate)
-    ))).toBe(false);
+    ))).toBe(true);
   });
 });

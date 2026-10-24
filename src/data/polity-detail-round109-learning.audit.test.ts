@@ -141,8 +141,9 @@ describe('Round 109 政权详情学习入口审计', () => {
     expect(gapsByKind.person).toEqual([
       { polityId: 'goguryeo', kind: 'person', id: 'dae-joyeong', year: -37 },
       { polityId: 'goguryeo', kind: 'person', id: 'xue-rengui', year: -37 },
+      { polityId: 'turkic', kind: 'person', id: 'bayanchur', year: 552 },
       { polityId: 'qing', kind: 'person', id: 'nurhaci', year: 1636 },
     ]);
-    expect(gapsByKind.heritage).toHaveLength(126);
+    expect(gapsByKind.heritage).toHaveLength(127);
   });
 });

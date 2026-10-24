@@ -23,6 +23,12 @@ const eventParticipationGaps = [
   { personId: 'seondeok-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '善德女王属于新罗中期统治阶段，当前目录没有可直接挂接的新罗建国事件参与字段。' },
   { personId: 'jindeok-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '真德女王属于新罗中期统治阶段，当前目录没有可直接挂接的新罗建国事件参与字段。' },
   { personId: 'sinmun-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '神文王属于统一新罗后续统治阶段，不能回填为新罗建国事件参与者。' },
+  { personId: 'zhizhi-chanyu', eventIds: [], reasonCode: 'no-event-candidate', reason: '郅支单于属于北匈奴后续分裂阶段，现有终止事件未记录其直接参与。' },
+  { personId: 'dou-xian', eventIds: [], reasonCode: 'no-event-candidate', reason: '窦宪是东汉北击匈奴的后续军事人物，现有终止分层未记录其直接参与。' },
+  { personId: 'qapaghan', eventIds: [], reasonCode: 'no-event-candidate', reason: '默啜可汗属于后突厥继承阶段，不能回填为744年终止事件参与者。' },
+  { personId: 'bilge-khagan', eventIds: [], reasonCode: 'no-event-candidate', reason: '毗伽可汗属于后突厥后续统治阶段，现有终止事件未记录其直接参与。' },
+  { personId: 'kul-tegin', eventIds: [], reasonCode: 'no-event-candidate', reason: '阙特勤属于后突厥军政阶段，碑刻关联不等于终止事件参与。' },
+  { personId: 'bayanchur', eventIds: [], reasonCode: 'no-event-candidate', reason: '磨延啜属于回鹘承接阶段，不能回填为突厥终止事件参与者。' },
   { personId: 'wang-yenxi', eventIds: [], reasonCode: 'no-event-candidate', reason: '王延羲属于闽末继承阶段，当前终结事件仅记录王延政与李璟，不能回填为945年终局参与者。' },
   { personId: 'yeon-gaesomun', eventIds: [], reasonCode: 'no-event-candidate', reason: '渊盖苏文属于高句丽终止前的权臣阶段，现有668年终止事件未记录其直接参与。' },
   { personId: 'yeon-namsaeng', eventIds: [], reasonCode: 'no-event-candidate', reason: '渊男生属于高句丽末期内部分裂阶段，不能回填为668年终止事件参与者。' },
@@ -44,8 +50,8 @@ describe('round one hundred four person relationship boundary audit', () => {
   it('keeps every event-participation gap closed only when endpoint, participant field, and source all exist', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toEqual(
-      eventParticipationGaps.map(({ personId }) => personId),
+    expect([...report.requiredMissingByCategory.eventParticipation].sort()).toEqual(
+      eventParticipationGaps.map(({ personId }) => personId).sort(),
     );
 
     for (const { personId, eventIds, reasonCode, reason } of eventParticipationGaps) {
@@ -97,6 +103,12 @@ describe('round one hundred four person relationship boundary audit', () => {
       ['seondeok-silla', 'no-event-candidate'],
       ['jindeok-silla', 'no-event-candidate'],
       ['sinmun-silla', 'no-event-candidate'],
+      ['zhizhi-chanyu', 'no-event-candidate'],
+      ['dou-xian', 'no-event-candidate'],
+      ['qapaghan', 'no-event-candidate'],
+      ['bilge-khagan', 'no-event-candidate'],
+      ['kul-tegin', 'no-event-candidate'],
+      ['bayanchur', 'no-event-candidate'],
       ['wang-yenxi', 'no-event-candidate'],
       ['yeon-gaesomun', 'no-event-candidate'],
       ['yeon-namsaeng', 'no-event-candidate'],
@@ -150,8 +162,8 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(164);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(169);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(111);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(23);
   });
 });

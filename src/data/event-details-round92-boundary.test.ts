@@ -45,6 +45,7 @@ const reviewBoundaryReasons = {
   'western-zhou-founded-eighth-batch': 'traditional-periodization',
   'xia-early-founded-eighth-batch': 'traditional-periodization',
   'xiongnu-founded': 'formation-approximation',
+  'xiongnu-termination-upper-bound-93': 'termination-approximation',
   'xuanzang-at-ximing-658': 'multi-year-process',
   'yongli-regime-ended-1662': 'location-approximation',
   'shangyang-palace-built': 'construction-range',
@@ -59,7 +60,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 166, 'needs-review': 49, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 171, 'needs-review': 50, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {

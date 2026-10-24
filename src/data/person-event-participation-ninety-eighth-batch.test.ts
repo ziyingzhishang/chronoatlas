@@ -20,9 +20,15 @@ const currentGaps = [
   { personId: 'gao-baorong', eventIds: [], reason: '高保融属于荆南建政后的继承阶段，现有事件未记录其直接参与字段。' },
   { personId: 'gao-baoxu', eventIds: [], reason: '高保勖属于荆南建政后的继承阶段，现有事件未记录其直接参与字段。' },
   { personId: 'liu-sheng', eventIds: [], reason: '刘晟属于南汉建政后的继承阶段，现有建政与终结事件没有其直接参与字段。' },
+  { personId: 'zhizhi-chanyu', eventIds: [], reason: '郅支单于属于北匈奴后续分裂阶段，现有终止事件未记录其直接参与。' },
+  { personId: 'dou-xian', eventIds: [], reason: '窦宪是东汉北击匈奴的后续军事人物，现有匈奴终止分层未记录其直接参与。' },
   { personId: 'seondeok-silla', eventIds: [], reason: '善德女王属于新罗统一战争前的统治阶段，当前建国事件不记录其参与。' },
   { personId: 'jindeok-silla', eventIds: [], reason: '真德女王属于新罗统一战争前的统治阶段，当前建国事件不记录其参与。' },
   { personId: 'sinmun-silla', eventIds: [], reason: '神文王属于统一新罗后续统治阶段，不能回填为新罗建国事件参与者。' },
+  { personId: 'qapaghan', eventIds: [], reason: '默啜可汗属于后突厥重建后的继承阶段，不能回填为744年终止事件参与者。' },
+  { personId: 'bilge-khagan', eventIds: [], reason: '毗伽可汗属于后突厥后续统治阶段，现有终止事件未记录其直接参与。' },
+  { personId: 'kul-tegin', eventIds: [], reason: '阙特勤属于后突厥军政阶段，碑刻关联不等于终止事件参与。' },
+  { personId: 'bayanchur', eventIds: [], reason: '磨延啜属于回鹘承接阶段，不能回填为突厥终止事件参与者。' },
   { personId: 'wang-yenxi', eventIds: [], reason: '王延羲属于闽末继承阶段，现有终结事件不记录其直接参与。' },
   { personId: 'yeon-gaesomun', eventIds: [], reason: '渊盖苏文属于高句丽终止前的权臣阶段，现有终止事件未记录其直接参与。' },
   { personId: 'yeon-namsaeng', eventIds: [], reason: '渊男生属于高句丽末期内部分裂阶段，不能回填为668年终止事件参与者。' },
@@ -76,7 +82,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(23);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (

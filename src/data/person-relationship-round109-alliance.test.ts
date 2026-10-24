@@ -62,7 +62,7 @@ describe('round 109 alliance/conflict no-candidate boundary audit', () => {
   it('keeps the required alliance/conflict gap unchanged when no candidate passes', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(111);
     expect(boundaries).toHaveLength(6);
     for (const boundary of boundaries) {
       expect(pairClaimExists(boundary.left, boundary.right), `${boundary.left}-${boundary.right}`).toBe(false);
