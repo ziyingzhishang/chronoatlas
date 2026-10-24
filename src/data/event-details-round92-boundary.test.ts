@@ -17,6 +17,7 @@ const reviewBoundaryReasons = {
   'eastern-zhou-founded-eighth-batch': 'formation-approximation',
   'former-liang-founded': 'formation-approximation',
   'goguryeo-founded': 'formation-approximation',
+  'han-wudi-expands-changan': 'participant-endpoint-review',
   'qi-warring-founded-eighth-batch': 'traditional-periodization',
   'qin-state-founded-eighth-batch': 'traditional-periodization',
   'republic-chongqing-wartime-center': 'wartime-political-center-range',
@@ -60,7 +61,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 171, 'needs-review': 50, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 171, 'needs-review': 51, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {

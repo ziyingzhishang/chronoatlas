@@ -10,7 +10,7 @@ describe('round 131 event and heritage detail boundary audit', () => {
     const report = buildEventDetailCoverageReport();
 
     expect(report.unresolvedEventIds).toEqual([]);
-    expect(report.statusCounts).toEqual({ covered: 171, 'needs-review': 50, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 171, 'needs-review': 51, unresolved: 0 });
     expect(report.coveredEventIds).toContain('song-founded');
     expect(getEventDetail('song-founded')).toMatchObject({
       polityIds: ['song_northern'],

@@ -52,6 +52,6 @@ describe('polity coverage city-history related events', () => {
     expect(eventDetails.find((detail) => detail.eventId === 'han-wudi-expands-changan')?.relatedEventIds)
       .not.toContain('daming-palace-built');
     expect(eventDetails.find((detail) => detail.eventId === 'han-wudi-expands-changan')?.relatedEventIds)
-      .toContain('han-changan-new-city');
+      .toContain('changan-han-capital');
   });
 });

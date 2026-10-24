@@ -21,7 +21,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘邦在楚汉战争中取得胜利，前202年即皇帝位。', '汉初先都洛阳；《资治通鉴》记高帝七年前200年迁都长安。', '中央与诸侯王并存，统一秩序是一个持续整合过程。'],
     turningPoints: [turn(-202, '刘邦称帝', '汉帝国进入重建秩序阶段。', 'han-imperial-accession'), turn(-200, '迁都长安', '刘邦见萧何治宫室于长安后迁都，长安成为西汉长期政治中心。', 'changan-han-capital'), turn(-200, '长乐宫建成', '汉初长安宫城的重要宫殿空间完成。', 'changle-palace-built'), turn(-141, '武帝时期', '对外战争、郡国关系和帝国制度进入扩展阶段。'), turn(-139, '茂陵开始营建', '汉武帝作寿陵，茂陵进入长期营建阶段。', 'maoling-built'), turn(-65, '杜陵开始营建', '汉宣帝在杜东原择址营建杜陵。', 'du-ling-built')],
     principalFigureIds: ['liu-bang', 'liu-che', 'liu-xun', 'xiao-he', 'han-xin', 'huo-qubing', 'zhang-qian'], capitalPhases: [capital('luoyang', -206, -202, 'primary', 'formal', '汉初阶段性都城'), capital('changan', -200, 9)],
-    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling', 'hanyangling', 'maoling', 'du-ling'], eventIds: ['han-imperial-accession', 'chu-han-contention', 'changan-han-capital', 'changle-palace-built', 'maoling-built', 'du-ling-built'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
+    heritageIds: ['han-changan-city-site', 'weiyang-palace-site', 'han-changling', 'hanyangling', 'maoling', 'du-ling'], eventIds: ['han-imperial-accession', 'chu-han-contention', 'changan-han-capital', 'han-wudi-expands-changan', 'changle-palace-built', 'maoling-built', 'du-ling-built'], claimIds: ['claim-han-changan-capital', 'claim-liu-bang-founded-han', 'claim-han-city-heritage', 'claim-weiyang-heritage'], sourceIds: modernSources,
     uncertaintyNote: '前206年受封汉王、前202年称帝与前200年迁都长安是不同历史节点；本详情采用分阶段表达，不把西汉全期的实际控制范围压缩成单一时点。',
   }),
   detail({
