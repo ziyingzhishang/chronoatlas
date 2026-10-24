@@ -949,6 +949,60 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '385年乞伏国仁建立西秦；金城仅作为陇右河湟方向的区域政治中心参照，不能把后期枹罕或兰州一带的候选位置倒推成建政仪式地点。西秦多次降附、复立，早期形成不能替代各阶段实际控制范围。',
   },
   {
+    eventId: 'western-qin-surrendered-later-qin-400',
+    participants: [
+      { personId: 'qifu-gangui', role: '向后秦降附并使西秦独立阶段中断的西秦君主', note: '乞伏乾归连接西秦前期统治与400年降后秦；降附不等同于乞伏部众或苑川、金城地方社会消失。' },
+      { personId: 'yao-xing', role: '接受乞伏乾归降附的后秦君主', note: '姚兴代表后秦对西秦君主及陇右政治资源的阶段性接收，不把后秦影响扩大为对所有地方的连续直接统治。' },
+    ],
+    polityIds: ['western_qin', 'later_qin'],
+    causes: ['后秦在姚兴时期向陇右推进，西秦承受军事与政治压力。', '西秦内部继承与区域网络需要在后秦压力下重新安排。'],
+    consequences: ['西秦独立政权阶段中断，乞伏乾归进入后秦依附阶段。', '409年复立成为新的独立政权节点，不能把400—408年回填为西秦连续统治。'],
+    phases: [
+      { label: '后秦推进陇右', startYear: 394, endYear: 400, summary: '后秦在姚兴时期扩大对陇右政治格局的影响。' },
+      { label: '乞伏乾归降后秦', startYear: 400, endYear: 400, summary: '乞伏乾归向后秦降附，西秦独立政权阶段中断。' },
+    ],
+    locationIds: ['jincheng'],
+    relatedEventIds: ['western-qin-founded', 'later-qin-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '400年采用年份级精度；不补写未经核实的日月，也不把降附、后秦接收和地方秩序变化压缩成单一现场。',
+  },
+  {
+    eventId: 'western-qin-restored-409',
+    participants: [
+      { personId: 'qifu-gangui', role: '脱离后秦控制并复立西秦的君主', note: '乞伏乾归代表409年西秦复立；其388—400年统治、400—408年降附与409年后的复立必须分段记录。' },
+      { personId: 'yao-xing', role: '西秦复立前的后秦承接方君主', relationType: 'contextual', note: '姚兴作为后秦承接方人物连接西秦中断期；本条不把其写成409年复立现场的共同建政者。' },
+    ],
+    polityIds: ['western_qin', 'later_qin'],
+    causes: ['后秦对乞伏乾归的控制减弱，陇右与河湟部众重新出现独立组织空间。', '乞伏氏既有政治网络为西秦复立提供承接基础。'],
+    consequences: ['西秦独立政权在409年重新出现。', '后续乞伏炽磐统治、河湟整合与431年夏攻枹罕属于复立后的不同阶段。'],
+    phases: [
+      { label: '脱离后秦', startYear: 408, endYear: 409, summary: '乞伏乾归脱离后秦控制并重新组织西秦政治资源。' },
+      { label: '西秦复立', startYear: 409, endYear: 409, summary: '乞伏乾归复立西秦，独立政权重新进入时间线。' },
+    ],
+    locationIds: ['jincheng'],
+    relatedEventIds: ['western-qin-surrendered-later-qin-400'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
+    uncertaintyNote: '409年采用年份级精度；苑川、金城及河湟中心的具体迁移顺序和城址比定不由本事件虚构为单一确定地点。',
+  },
+  {
+    eventId: 'western-qin-ended-431',
+    participants: [
+      { personId: 'qifu-mumo', role: '西秦末代君主与枹罕终局阶段代表', note: '乞伏暮末连接西秦末期统治与431年出降；个人出降不等同于所有河湟地方社会同日消失。' },
+      { personId: 'helian-ding', role: '攻取枹罕并承接西秦部分政治空间的夏君主', note: '赫连定代表夏军政集团的攻取与承接；具体攻城、处置和地方接收不归因于单一人物个人。' },
+    ],
+    polityIds: ['western_qin', 'xia'],
+    causes: ['夏政权在河套、关中方向扩展，与复立后的西秦形成新的军事竞争。', '西秦末期政治中心与陇右—河湟资源承受夏军持续压力。'],
+    consequences: ['西秦统一政治结构终止，部分政治与地方空间转入夏承接。', '枹罕、河湟交通和苑川—金城区域遗产继续存在，不能把政权终止写成城市遗产终止。'],
+    phases: [
+      { label: '夏军进攻枹罕', startYear: 431, endYear: 431, summary: '赫连定率夏军进攻西秦末期政治中心枹罕。' },
+      { label: '乞伏暮末出降与西秦终止', startYear: 431, endYear: 431, summary: '乞伏暮末出降，西秦统一政治结构终止，地方承接进入新的阶段。' },
+    ],
+    locationIds: ['fuhan'],
+    relatedEventIds: ['western-qin-restored-409', 'xia-sixteen-states-founded-eighth-batch'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '431年采用年份级精度；枹罕古城位置、攻城先后、出降处置与夏接收范围保持阶段性和区域性表达，不虚构具体日月。',
+  },
+  {
     eventId: 'later-liang-founded',
     participants: [
       { personId: 'lv-guang', role: '以河西西征军为基础在姑臧建立后凉的军事领袖', note: '吕光是386年姑臧建政的核心人物；其西征军脱离前秦控制、建立后凉与后续河西整合是连续但可区分的阶段。' },

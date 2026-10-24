@@ -251,9 +251,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'western_qin', perspectiveSummary: '西秦由乞伏氏在陇右建立，经历降附、复国和河湟—河西中心转换，展现十六国政权反复重组的特征。',
     foundationProcess: ['乞伏国仁在前秦崩解后于陇右建立西秦。', '385年进入政权形成阶段，金城是前期实际政治中心参照。', '西秦曾降后秦，409年复立后由乞伏氏重新整合陇右与河湟网络。'],
-    turningPoints: [turn(385, '西秦政权形成', '乞伏国仁在陇右建立西秦。', 'western-qin-founded'), turn(400, '降后秦', '西秦进入依附与政权中断阶段。'), turn(409, '西秦复立', '乞伏乾归复国，政权重新进入独立阶段。')],
+    turningPoints: [turn(385, '西秦政权形成', '乞伏国仁在陇右建立西秦。', 'western-qin-founded'), turn(400, '降后秦', '乞伏乾归向后秦降附，西秦独立政权阶段中断。', 'western-qin-surrendered-later-qin-400'), turn(409, '西秦复立', '乞伏乾归复国，政权重新进入独立阶段。', 'western-qin-restored-409'), turn(431, '西秦政权终止', '夏军攻取枹罕，乞伏暮末出降，西秦统一政治结构终止。', 'western-qin-ended-431')],
     principalFigureIds: ['qifu-guoren', 'qifu-gangui', 'qifu-chipan'], capitalPhases: [capital('jincheng', 385, 400, 'primary', 'actual', '前期实际中心；今兰州一带'), capital('guzang', 409, 431, 'de_facto', 'actual', '复国后河湟—河西政治中心参照')],
-    heritageIds: ['western-qin-yuanchuan-city-candidate'], eventIds: ['western-qin-founded'], claimIds: ['claim-qifu-guoren-participated-western-qin-founded', 'claim-qifu-gangui-participated-western-qin', 'claim-qifu-chipan-participated-western-qin'], sourceIds: modernSources,
+    heritageIds: ['western-qin-yuanchuan-city-candidate'], eventIds: ['western-qin-founded', 'western-qin-surrendered-later-qin-400', 'western-qin-restored-409', 'western-qin-ended-431'], claimIds: ['claim-qifu-guoren-participated-western-qin-founded', 'claim-qifu-gangui-participated-western-qin', 'claim-qifu-chipan-participated-western-qin', 'claim-qifu-gangui-participated-western-qin-surrendered-later-qin-400', 'claim-qifu-gangui-participated-western-qin-restored-409', 'claim-qifu-mumo-ruled-western-qin-termination-431', 'claim-qifu-mumo-participated-western-qin-ended-431', 'claim-qifu-mumo-enemy-helian-ding-termination-431'], sourceIds: modernSources,
     uncertaintyNote: '西秦400—408年降后秦期间不作为连续独立政权处理；苑川、金城、枹罕与姑臧是不同阶段或区域参照，现有证据不足以确认全期单一固定首都。',
   }),
   detail({

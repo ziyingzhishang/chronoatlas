@@ -1177,7 +1177,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'qifu-gangui', biography: '乞伏乾归是西秦后续阶段的核心君主，经历称王、降附后秦与复立等过程，体现陇右政权的阶段性和迁徙性。',
     aliases: ['西秦武元王'], offices: [{ title: '西秦君主', polityId: 'western_qin', validFrom: 388, validTo: 400, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }, { title: '西秦复立后的君主', polityId: 'western_qin', validFrom: 409, validTo: 412, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['western-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '西秦形成节点为385年，乞伏乾归主要对应其后的继承、降附与复立阶段，不能把所有阶段压缩为连续稳定的早期建政。',
+    keyEvents: ['western-qin-founded', 'western-qin-surrendered-later-qin-400', 'western-qin-restored-409'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '西秦形成节点为385年，乞伏乾归主要对应其后的继承、降附与复立阶段，不能把所有阶段压缩为连续稳定的早期建政。',
   },
   {
     personId: 'wang-sengbian', biography: '王僧辩是梁末江南军政重建的重要将领，与陈霸先共同平定侯景之乱，后因陈梁政权安排发生政治冲突。',
@@ -1213,6 +1213,16 @@ export const personDetails: PersonDetail[] = [
     personId: 'qifu-chipan', biography: '乞伏炽磐在乞伏乾归之后统治西秦，完成复立后的政权整合并维持陇右、河湟地区的政治网络。',
     aliases: ['西秦文昭王'], offices: [{ title: '西秦君主', polityId: 'western_qin', validFrom: 412, validTo: 428, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['western-qin-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '西秦形成节点为385年，乞伏炽磐属于乞伏乾归之后的复立与整合阶段，不能替代乞伏国仁的早期建政位置。',
+  },
+  {
+    personId: 'qifu-mumo', biography: '乞伏暮末是西秦末代君主，承接乞伏炽磐后的西秦末期政权；431年夏军攻取枹罕并在终局过程中接受其出降，西秦统一政治结构由此终止。',
+    aliases: ['西秦末王', '西秦末代统治者'], offices: [{ title: '西秦末代君主', polityId: 'western_qin', placeId: 'fuhan', validFrom: 428, validTo: 431, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-qin-ended-431'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '431年采用年份级终止节点；乞伏暮末出降、夏军行动和河湟地方接收属于同一终末阶段的不同层次，不虚构具体日月。',
+  },
+  {
+    personId: 'helian-ding', biography: '赫连定是夏政权末期的君主与军事领导者，431年攻取枹罕，连接夏对西秦终末政治空间的承接；具体地方接收与其后政局另行分层。',
+    aliases: ['夏末期君主'], offices: [{ title: '夏君主与军事领导者', polityId: 'xia', placeId: 'fuhan', validFrom: 428, validTo: 431, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-qin-ended-431'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '赫连定连接夏与431年西秦终止事件，不把攻取枹罕和全部地方秩序重组归因于个人单独行动。',
   },
   {
     personId: 'feng-sufo', biography: '冯素弗是北燕建立初期的关键军政人物，与兄冯跋共同维持辽西政权的军事与行政运作。',
