@@ -435,10 +435,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'southern_han', perspectiveSummary: '南汉由刘氏家族承接岭南军政基础建立，以广州为政治中心；刘隐的奠基与刘龑的称帝、改国号必须区分。',
     foundationProcess: ['刘隐在广州及岭南经营军政资源，为政权形成奠基。', '917年刘龑称帝，918年改国号为汉，后世称南汉。', '广州兼具政治中心与海贸枢纽功能，但岭南整合并非建政当年完成。'],
-    turningPoints: [turn(917, '南汉建政过程开始', '刘龑在广州称帝，政权进入正式建政阶段。', 'southern-han-founded'), turn(918, '改国号为汉', '刘龑将国号改为汉，南汉称谓由此确立。'), turn(971, '南汉覆亡', '北宋攻取广州，南汉结束。')],
-    principalFigureIds: ['liu-yin', 'liu-yan'], capitalPhases: [capital('guangzhou', 917, 971, 'primary', 'formal', '兴王府／广州，今广东省广州市。')],
-    heritageIds: ['southern-han-king-mausoleum'], eventIds: ['southern-han-founded'], claimIds: ['claim-liu-yin-ruled-southern-han', 'claim-liu-yan-participated-southern-han'], sourceIds: modernSources,
-    uncertaintyNote: '刘隐是前置奠基者，917年称帝者为刘龑；南汉二陵是王室墓葬遗存，不能据此推断岭南全域或完整宫城保存。',
+    turningPoints: [turn(917, '南汉建政过程开始', '刘龑在广州称帝，政权进入正式建政阶段。', 'southern-han-founded'), turn(918, '改国号为汉', '刘龑将国号改为汉，南汉称谓由此确立。'), turn(958, '刘鋹继位', '刘鋹承接刘晟后的南汉皇位，广州继续作为政治中心。'), turn(971, '南汉覆亡', '北宋攻取广州，刘鋹出降，南汉中央政权结束；广州城市和南汉二陵进入北宋及后世历史层。', 'southern-han-ended-971')],
+    principalFigureIds: ['liu-yin', 'liu-yan', 'liu-sheng', 'liu-chang'], capitalPhases: [capital('guangzhou', 917, 971, 'primary', 'formal', '兴王府／广州，今广东省广州市。')],
+    heritageIds: ['southern-han-king-mausoleum'], eventIds: ['southern-han-founded', 'southern-han-ended-971'], claimIds: ['claim-liu-yin-ruled-southern-han', 'claim-liu-yan-participated-southern-han', 'claim-liu-chang-ruled-southern-han', 'claim-liu-chang-participated-southern-han-ended-971', 'claim-liu-chang-enemy-zhao-kuangyin-termination-971', 'claim-liu-sheng-parent-liu-chang', 'claim-liu-yan-grandparent-liu-chang'], sourceIds: modernSources,
+    uncertaintyNote: '刘隐是前置奠基者，917年称帝者为刘龑；刘晟—刘鋹的王室承接与971年广州失守、出降分层表达。南汉二陵是王室墓葬遗存，不能据此推断岭南全域或完整宫城保存；971年政权终止也不等于广州城市和陵园消失。',
   }),
   detail({
     polityId: 'chu_ten', perspectiveSummary: '马楚由马殷在潭州及湖湘经营军政资源后形成，以潭州为政治中心；册封关系、地方自治和南唐介入需分层理解。',

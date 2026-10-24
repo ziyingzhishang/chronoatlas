@@ -52,8 +52,8 @@ describe('seventy-seventh batch high-confidence alliance relationships', () => {
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(34);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(12);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(13);
     expect(report.byPersonId['feng-sufo'].categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['hou-andu'].categories.allianceConflict.status).toBe('covered');
   });

@@ -809,6 +809,16 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['southern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '917年国号为越、918年改称汉；“南汉”是后世通称，不能把刘龑称帝日与岭南全域整合混为一谈。',
   },
   {
+    personId: 'liu-sheng', biography: '刘晟承接刘龑后的南汉皇位，广州继续作为政治中心。其统治阶段连接南汉王室谱系与刘鋹971年面对北宋攻势的终局。',
+    aliases: ['南汉中宗'], offices: [{ title: '南汉皇帝', polityId: 'southern_han', placeId: 'guangzhou', validFrom: 943, validTo: 958, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘晟个人统治阶段晚于南汉917年建政节点；广州政治中心的延续不等同于南汉对岭南各地的控制始终一致。',
+  },
+  {
+    personId: 'liu-chang', biography: '刘鋹承接刘晟后的南汉皇位，971年北宋军队攻取广州后出降，南汉中央政权终止。其个人结局、北宋接收与广州城市及南汉王陵遗产延续属于不同事实层次。',
+    aliases: ['刘继兴', '南汉后主', '南汉末主'], offices: [{ title: '南汉末主', polityId: 'southern_han', placeId: 'guangzhou', validFrom: 958, validTo: 971, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['southern-han-ended-971'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '971年广州失守、刘鋹出降和岭南地方行政接收是连续但可分层的过程；末主结局不能代替城市遗产的消失。',
+  },
+  {
     personId: 'yelu-dashi', biography: '耶律大石在辽亡危机中自立为王并率契丹部众西行，1124年前后形成西辽政治集团，1132年称帝，1134年建都虎思斡耳朵（八剌沙衮）后进入稳定中心阶段。',
     aliases: ['西辽德宗'], offices: [{ title: '西辽皇帝与西行部众领袖', polityId: 'western_liao', placeId: 'balasagun', validFrom: 1124, validTo: 1143, datePrecision: 'range', sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'] }],
     keyEvents: ['western-liao-founded'], sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay'], uncertaintyNote: '1124年前后是西辽西行建政约年；1132年称帝与1134年建都虎思斡耳朵（八剌沙衮）属于不同阶段，人物任职地点用八剌沙衮作后续政治中心参照，不能把辽旧疆域直接移植为西辽边界。',

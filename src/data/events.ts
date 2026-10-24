@@ -1296,6 +1296,19 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百七十·后梁纪五', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷270', detail: '记载刘龑在岭南称帝、国号由越改汉的过程；南汉后续疆域另按时段核验。' }],
   },
   {
+    id: 'southern-han-ended-971', year: 971, title: '南汉在广州终止、北宋承接', summary: '北宋军队攻取广州，南汉末主刘鋹出降，南汉中央政权结束；广州城市与南汉王室陵墓继续进入宋代及后世历史层。', placeId: 'guangzhou', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '北宋统一战争推进至岭南，南汉长期维持的广州政治中心与岭南军政网络面临直接军事压力；南汉末期宫廷与地方动员能力已经减弱。',
+    process: '971年北宋军队攻取广州，南汉末主刘鋹出降，南汉中央政权终止；广州地方行政转换、岭南各地归附及刘鋹入宋后的处置属于连续而可分层的承接过程。',
+    impact: '南汉结束，广州纳入北宋统一推进的行政秩序；兴王府城市空间、海贸网络与南汉王室陵墓并未因政权终止而消失，而是进入新的城市历史层。',
+    mapNote: '广州（今广东省广州市）标记南汉终结与北宋承接节点；971年广州失守不等同于岭南各地同日完成稳定行政转换，也不把南汉二陵标作终结事件发生地。',
+    references: [
+      { title: '《资治通鉴》卷二百九十二·宋纪', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷292', detail: '用于核对北宋攻取广州、刘鋹出降及南汉中央政权终止的编年节点；地方归附按过程表达。' },
+      { title: '中国历史分期与朝代年表', url: 'https://www.gov.cn/guoqing/2018-03/23/content_5277120.htm', detail: '用于971年南汉终止的年代级交叉核验，不替代编年史对广州接收过程的记载。' },
+      { title: '广州南汉二陵考古与现代地理资料', url: 'https://www.gz.gov.cn/zlgz/whgz/lswh/content/post_2800000.html', detail: '用于南汉王室陵墓与今日广州遗产关联；遗产年代和墓葬归属仍按考古资料分层。' },
+    ],
+  },
+  {
     id: 'min-ended-945', year: 945, title: '闽在福州终结、南唐承接', summary: '南唐军队攻取福州及闽地核心，闽政权在战争与地方接收过程中终止。', placeId: 'fuzhou', sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang', 'modern-geography-reference'],
     datePrecision: 'approximate', region: 'china', category: '政权终结／政权承接', verification: 'checked',
     background: '闽政权在王审知去世后经历继承冲突与内部重组，南唐借机介入福建，福州成为闽—南唐转换的核心城市节点。',

@@ -7281,6 +7281,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "southern-han-ended-971",
+      "entityKey": "event:southern-han-ended-971",
+      "label": "南汉在广州终止、北宋承接",
+      "polityIds": [
+        "song_northern",
+        "southern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-han-ended-971"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chang-participated-southern-han-ended-971",
+            "event-detail:southern-han-ended-971"
+          ],
+          "relatedIds": [
+            "liu-chang",
+            "song_northern",
+            "southern-han-founded",
+            "southern_han",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "southern-han-founded",
       "entityKey": "event:southern-han-founded",
       "label": "南汉政权建立",
@@ -16488,6 +16550,7 @@
       "entityKey": "heritage:southern-han-king-mausoleum",
       "label": "南汉二陵",
       "polityIds": [
+        "song_northern",
         "southern_han"
       ],
       "checks": [
@@ -16525,7 +16588,11 @@
             "heritage-detail:southern-han-king-mausoleum"
           ],
           "relatedIds": [
+            "liu-chang",
+            "liu-yan",
             "liu-yin",
+            "song_northern",
+            "southern-han-ended-971",
             "southern-han-founded",
             "southern_han"
           ]
@@ -24594,6 +24661,76 @@
     },
     {
       "entityType": "person",
+      "entityId": "liu-chang",
+      "entityKey": "person:liu-chang",
+      "label": "刘鋹",
+      "polityIds": [
+        "southern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-chang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chang-child-liu-sheng",
+            "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
+            "claim:claim-liu-chang-participated-southern-han-ended-971",
+            "claim:claim-liu-chang-ruled-southern-han",
+            "claim:claim-liu-chang-succeeded-liu-sheng",
+            "claim:claim-liu-sheng-parent-liu-chang",
+            "claim:claim-liu-yan-grandparent-liu-chang",
+            "event-detail:southern-han-ended-971",
+            "person-polity:liu-chang:southern_han"
+          ],
+          "relatedIds": [
+            "liu-sheng",
+            "liu-yan",
+            "southern-han-ended-971",
+            "southern_han",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "liu-che",
       "entityKey": "person:liu-che",
       "label": "刘彻",
@@ -24918,6 +25055,69 @@
     },
     {
       "entityType": "person",
+      "entityId": "liu-sheng",
+      "entityKey": "person:liu-sheng",
+      "label": "刘晟",
+      "polityIds": [
+        "southern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-sheng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chang-child-liu-sheng",
+            "claim:claim-liu-chang-succeeded-liu-sheng",
+            "claim:claim-liu-sheng-parent-liu-chang",
+            "claim:claim-liu-sheng-ruled-southern-han",
+            "person-polity:liu-sheng:southern_han"
+          ],
+          "relatedIds": [
+            "liu-chang",
+            "southern_han"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "liu-xiu",
       "entityKey": "person:liu-xiu",
       "label": "刘秀",
@@ -25165,6 +25365,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yan-grandparent-liu-chang",
             "claim:claim-liu-yan-participated-southern-han",
             "claim:claim-liu-yan-ruled-southern-han-fortyseventh",
             "claim:claim-liu-yan-sibling-liu-yin",
@@ -25173,6 +25374,7 @@
             "person-polity:liu-yan:southern_han"
           ],
           "relatedIds": [
+            "liu-chang",
             "liu-yin",
             "southern-han-founded",
             "southern_han"
@@ -33324,6 +33526,7 @@
           "evidenceIds": [
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
+            "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
             "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
@@ -33337,6 +33540,7 @@
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
+            "event-detail:southern-han-ended-971",
             "person-polity:zhao-kuangyin:song_northern"
           ],
           "relatedIds": [
@@ -33346,10 +33550,12 @@
             "later-zhou-ended-960",
             "li-yu",
             "li-yuanhao",
+            "liu-chang",
             "meng-chang",
             "northern-song-founded",
             "song-founded",
-            "song_northern"
+            "song_northern",
+            "southern-han-ended-971"
           ]
         },
         {
@@ -37955,12 +38161,14 @@
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
+            "event-detail:southern-han-ended-971",
             "event-detail:southern-tang-falls",
             "event-detail:wuyue-ended-978",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-shu-chengdu-city-site",
+            "heritage-detail:southern-han-king-mausoleum",
             "heritage-detail:wuyue-qian-king-mausoleum",
             "person:li-gang",
             "person:taizong-song",
@@ -37979,6 +38187,8 @@
             "northern-song-founded",
             "song-founded",
             "song-southward",
+            "southern-han-ended-971",
+            "southern-han-king-mausoleum",
             "southern-tang-falls",
             "taizong-song",
             "wuyue-ended-978",
@@ -38195,16 +38405,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-chang-ruled-southern-han",
+            "claim:claim-liu-sheng-ruled-southern-han",
             "claim:claim-liu-yan-ruled-southern-han-fortyseventh",
             "claim:claim-liu-yin-ruled-southern-han",
+            "event-detail:southern-han-ended-971",
             "event-detail:southern-han-founded",
             "heritage-detail:southern-han-king-mausoleum",
+            "person:liu-chang",
+            "person:liu-sheng",
             "person:liu-yan",
             "person:liu-yin"
           ],
           "relatedIds": [
+            "liu-chang",
+            "liu-sheng",
             "liu-yan",
             "liu-yin",
+            "southern-han-ended-971",
             "southern-han-founded",
             "southern-han-king-mausoleum"
           ]
@@ -49457,6 +49675,68 @@
         }
       ]
     },
+    "event:southern-han-ended-971": {
+      "entityType": "event",
+      "entityId": "southern-han-ended-971",
+      "entityKey": "event:southern-han-ended-971",
+      "label": "南汉在广州终止、北宋承接",
+      "polityIds": [
+        "song_northern",
+        "southern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "southern-han-ended-971"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chang-participated-southern-han-ended-971",
+            "event-detail:southern-han-ended-971"
+          ],
+          "relatedIds": [
+            "liu-chang",
+            "song_northern",
+            "southern-han-founded",
+            "southern_han",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:southern-han-founded": {
       "entityType": "event",
       "entityId": "southern-han-founded",
@@ -58666,6 +58946,7 @@
       "entityKey": "heritage:southern-han-king-mausoleum",
       "label": "南汉二陵",
       "polityIds": [
+        "song_northern",
         "southern_han"
       ],
       "checks": [
@@ -58703,7 +58984,11 @@
             "heritage-detail:southern-han-king-mausoleum"
           ],
           "relatedIds": [
+            "liu-chang",
+            "liu-yan",
             "liu-yin",
+            "song_northern",
+            "southern-han-ended-971",
             "southern-han-founded",
             "southern_han"
           ]
@@ -66770,6 +67055,76 @@
         }
       ]
     },
+    "person:liu-chang": {
+      "entityType": "person",
+      "entityId": "liu-chang",
+      "entityKey": "person:liu-chang",
+      "label": "刘鋹",
+      "polityIds": [
+        "southern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-chang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chang-child-liu-sheng",
+            "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
+            "claim:claim-liu-chang-participated-southern-han-ended-971",
+            "claim:claim-liu-chang-ruled-southern-han",
+            "claim:claim-liu-chang-succeeded-liu-sheng",
+            "claim:claim-liu-sheng-parent-liu-chang",
+            "claim:claim-liu-yan-grandparent-liu-chang",
+            "event-detail:southern-han-ended-971",
+            "person-polity:liu-chang:southern_han"
+          ],
+          "relatedIds": [
+            "liu-sheng",
+            "liu-yan",
+            "southern-han-ended-971",
+            "southern_han",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:liu-che": {
       "entityType": "person",
       "entityId": "liu-che",
@@ -67094,6 +67449,69 @@
         }
       ]
     },
+    "person:liu-sheng": {
+      "entityType": "person",
+      "entityId": "liu-sheng",
+      "entityKey": "person:liu-sheng",
+      "label": "刘晟",
+      "polityIds": [
+        "southern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-sheng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chang-child-liu-sheng",
+            "claim:claim-liu-chang-succeeded-liu-sheng",
+            "claim:claim-liu-sheng-parent-liu-chang",
+            "claim:claim-liu-sheng-ruled-southern-han",
+            "person-polity:liu-sheng:southern_han"
+          ],
+          "relatedIds": [
+            "liu-chang",
+            "southern_han"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:liu-xiu": {
       "entityType": "person",
       "entityId": "liu-xiu",
@@ -67343,6 +67761,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yan-grandparent-liu-chang",
             "claim:claim-liu-yan-participated-southern-han",
             "claim:claim-liu-yan-ruled-southern-han-fortyseventh",
             "claim:claim-liu-yan-sibling-liu-yin",
@@ -67351,6 +67770,7 @@
             "person-polity:liu-yan:southern_han"
           ],
           "relatedIds": [
+            "liu-chang",
             "liu-yin",
             "southern-han-founded",
             "southern_han"
@@ -75502,6 +75922,7 @@
           "evidenceIds": [
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
+            "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
             "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
@@ -75515,6 +75936,7 @@
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
+            "event-detail:southern-han-ended-971",
             "person-polity:zhao-kuangyin:song_northern"
           ],
           "relatedIds": [
@@ -75524,10 +75946,12 @@
             "later-zhou-ended-960",
             "li-yu",
             "li-yuanhao",
+            "liu-chang",
             "meng-chang",
             "northern-song-founded",
             "song-founded",
-            "song_northern"
+            "song_northern",
+            "southern-han-ended-971"
           ]
         },
         {
@@ -80133,12 +80557,14 @@
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
+            "event-detail:southern-han-ended-971",
             "event-detail:southern-tang-falls",
             "event-detail:wuyue-ended-978",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-shu-chengdu-city-site",
+            "heritage-detail:southern-han-king-mausoleum",
             "heritage-detail:wuyue-qian-king-mausoleum",
             "person:li-gang",
             "person:taizong-song",
@@ -80157,6 +80583,8 @@
             "northern-song-founded",
             "song-founded",
             "song-southward",
+            "southern-han-ended-971",
+            "southern-han-king-mausoleum",
             "southern-tang-falls",
             "taizong-song",
             "wuyue-ended-978",
@@ -80373,16 +80801,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-chang-ruled-southern-han",
+            "claim:claim-liu-sheng-ruled-southern-han",
             "claim:claim-liu-yan-ruled-southern-han-fortyseventh",
             "claim:claim-liu-yin-ruled-southern-han",
+            "event-detail:southern-han-ended-971",
             "event-detail:southern-han-founded",
             "heritage-detail:southern-han-king-mausoleum",
+            "person:liu-chang",
+            "person:liu-sheng",
             "person:liu-yan",
             "person:liu-yin"
           ],
           "relatedIds": [
+            "liu-chang",
+            "liu-sheng",
             "liu-yan",
             "liu-yin",
+            "southern-han-ended-971",
             "southern-han-founded",
             "southern-han-king-mausoleum"
           ]
@@ -82791,9 +83227,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 191,
+      "totalEntities": 192,
       "statusCounts": {
-        "covered": 914,
+        "covered": 919,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -82869,9 +83305,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 232,
+      "totalEntities": 234,
       "statusCounts": {
-        "covered": 1102,
+        "covered": 1112,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -85145,12 +85581,14 @@
         "event:northern-song-founded",
         "event:song-founded",
         "event:song-southward",
+        "event:southern-han-ended-971",
         "event:southern-tang-falls",
         "event:wuyue-ended-978",
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "heritage:later-shu-chengdu-city-site",
+        "heritage:southern-han-king-mausoleum",
         "heritage:wuyue-qian-king-mausoleum",
         "person:li-gang",
         "person:taizong-song",
@@ -85246,8 +85684,11 @@
       "polityId": "southern_han",
       "polityName": "南汉",
       "entityKeys": [
+        "event:southern-han-ended-971",
         "event:southern-han-founded",
         "heritage:southern-han-king-mausoleum",
+        "person:liu-chang",
+        "person:liu-sheng",
         "person:liu-yan",
         "person:liu-yin",
         "polity:southern_han"
@@ -87753,12 +88194,15 @@
       "capitalRecordCount": 2,
       "entityKeys": [
         "event:shaowu-guangzhou-founded",
+        "event:southern-han-ended-971",
         "event:southern-han-founded",
         "event:southern-ming-founded",
         "heritage:shaowu-junchen-tomb",
         "heritage:southern-han-king-mausoleum",
+        "person:liu-chang",
         "person:liu-yan",
         "person:su-guansheng",
+        "person:zhao-kuangyin",
         "person:zhu-yuyue"
       ],
       "gaps": [

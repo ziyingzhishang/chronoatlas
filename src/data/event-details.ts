@@ -2553,6 +2553,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '917年是称帝节点，918年改国号为汉；广州表示政治中心，不把后期岭南范围提前到917年。',
   },
   {
+    eventId: 'southern-han-ended-971',
+    participants: [
+      { personId: 'liu-chang', role: '南汉末主与广州失守后出降的当事君主', note: '刘鋹代表南汉末期广州政权；出降、北宋接收与刘氏王室后续处置分属连续但不同阶段。' },
+      { personId: 'zhao-kuangyin', role: '北宋皇帝与岭南统一推进阶段的中央决策者', note: '赵匡胤代表北宋对广州的军事与行政承接方向，不把中央征服等同于岭南各地同日完成行政转换。' },
+    ],
+    polityIds: ['southern_han', 'song_northern'],
+    causes: ['北宋统一战争推进至岭南，南汉广州政治中心受到直接军事压力。', '南汉末期中央动员与地方统合能力减弱，刘鋹政权难以维持独立。'],
+    consequences: ['北宋攻取广州，刘鋹出降，南汉中央政权终止。', '广州转入北宋行政承接；南汉二陵、海贸空间与城市遗产继续进入宋代及后世历史层。'],
+    phases: [
+      { label: '北宋进军岭南', startYear: 970, endYear: 971, summary: '北宋军队向岭南推进，南汉核心城市广州成为终局节点。' },
+      { label: '广州失守与刘鋹出降', startYear: 971, endYear: 971, summary: '北宋攻取广州，刘鋹出降，南汉中央政治身份终止。' },
+      { label: '广州与遗产承接', startYear: 971, endYear: 980, summary: '广州逐步进入北宋行政秩序，南汉王室陵墓和城市空间并未因政权终止而消失。' },
+    ],
+    locationIds: ['guangzhou'],
+    relatedEventIds: ['southern-han-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '971年是广州失守、刘鋹出降和南汉中央政权终止的年份级节点；岭南地方归附、北宋行政接收与刘鋹后续处置具有过程性，不把单一终结事件解释为全域同日转换。',
+  },
+  {
     eventId: 'ma-chu-founded',
     participants: [
       { personId: 'ma-yin', role: '经营潭州及湖湘并受封楚王的地方统治者', note: '马殷在唐末军政竞争中取得湖湘核心资源；907年受封楚王是十国分期节点，不等于后期马楚范围已在同日完成。' },

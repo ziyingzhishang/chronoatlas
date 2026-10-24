@@ -17,6 +17,7 @@ const currentGaps = [
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], reason: '后周建立详情只记录郭威参与者，不能以柴荣的后续继承关系替代。' },
   { personId: 'yuwen-yong', eventIds: [], reason: '当前目录没有可直接挂接且包含宇文邕参与者字段的事件节点。' },
   { personId: 'qin-mugong', eventIds: [], reason: '秦穆公晚于秦襄公列侯节点，当前仅作为秦国后续发展阶段的上下文人物。' },
+  { personId: 'liu-sheng', eventIds: [], reason: '刘晟属于南汉建政后的继承阶段，现有建政与终结事件没有其直接参与字段。' },
   { personId: 'seondeok-silla', eventIds: [], reason: '善德女王属于新罗统一战争前的统治阶段，当前建国事件不记录其参与。' },
   { personId: 'jindeok-silla', eventIds: [], reason: '真德女王属于新罗统一战争前的统治阶段，当前建国事件不记录其参与。' },
   { personId: 'sinmun-silla', eventIds: [], reason: '神文王属于统一新罗后续统治阶段，不能回填为新罗建国事件参与者。' },
@@ -71,7 +72,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(12);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(13);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (

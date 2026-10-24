@@ -17,6 +17,7 @@ const eventParticipationGaps = [
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], reasonCode: 'missing-participant', reason: '后周建立详情只记录郭威参与者，不能以柴荣的后续继承关系替代。' },
   { personId: 'yuwen-yong', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
   { personId: 'qin-mugong', eventIds: [], reasonCode: 'no-direct-role', reason: '秦穆公晚于秦襄公列侯节点，当前仅作为秦国后续发展阶段的上下文人物。' },
+  { personId: 'liu-sheng', eventIds: [], reasonCode: 'no-event-candidate', reason: '刘晟属于南汉建政后的继承阶段，现有事件没有其直接参与字段。' },
   { personId: 'seondeok-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '善德女王属于新罗中期统治阶段，当前目录没有可直接挂接的新罗建国事件参与字段。' },
   { personId: 'jindeok-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '真德女王属于新罗中期统治阶段，当前目录没有可直接挂接的新罗建国事件参与字段。' },
   { personId: 'sinmun-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '神文王属于统一新罗后续统治阶段，不能回填为新罗建国事件参与者。' },
@@ -86,6 +87,7 @@ describe('round one hundred four person relationship boundary audit', () => {
       ['chai-rong', 'missing-participant'],
       ['yuwen-yong', 'no-event-candidate'],
       ['qin-mugong', 'no-direct-role'],
+      ['liu-sheng', 'no-event-candidate'],
       ['seondeok-silla', 'no-event-candidate'],
       ['jindeok-silla', 'no-event-candidate'],
       ['sinmun-silla', 'no-event-candidate'],
@@ -141,7 +143,7 @@ describe('round one hundred four person relationship boundary audit', () => {
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(12);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(85);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(13);
   });
 });
