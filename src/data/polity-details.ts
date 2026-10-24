@@ -29,7 +29,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘秀在新末群雄竞争中取得河北及更广泛政治军事基础。', '25年即皇帝位，汉政权重新进入中央建制。', '洛阳成为正式都城，但各地整合持续多年。'],
     turningPoints: [turn(25, '东汉建立', '刘秀即位，东汉政权进入形成阶段。', 'han-eastern-founded'), turn(36, '统一完成', '光武帝时期的战争与招抚逐步恢复汉帝国秩序。'), turn(184, '黄巾起义', '地方军事化与中央权威危机加深，东汉末局势改变。')],
     principalFigureIds: ['liu-xiu', 'ban-gu', 'cao-cao'], capitalPhases: [capital('luoyang', 25, 220)],
-    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['han-eastern-founded', 'eastern-han-moves-luoyang', 'three-kingdoms'], claimIds: [], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site', 'white-horse-temple'], eventIds: ['han-eastern-founded', 'eastern-han-moves-luoyang', 'white-horse-temple-founded', 'three-kingdoms'], claimIds: [], sourceIds: [...modernSources, 'luoyang-baimasi-official'],
     uncertaintyNote: '25年建政不等于当年已控制汉旧地全部区域；东汉末期的政治中心、军镇与实际控制须和正式都城分层展示。',
   }),
   detail({
@@ -93,7 +93,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['李渊控制长安并承接隋末政治资源。', '618年受禅建立唐朝。', '唐初仍经历地方战争与制度整合，后形成长安—洛阳双中心。'],
     turningPoints: [turn(618, '唐建立', '李渊在长安即位建唐。', 'tang-founded'), turn(626, '玄武门之变', '皇位继承与中央权力重新排列。'), turn(755, '安史之乱', '长安、洛阳与中央—地方关系受到重大冲击。', 'an-lushan-rebellion')],
     principalFigureIds: ['li-yuan', 'li-shimin', 'li-longji', 'wu-zhao', 'xuan-zang'], capitalPhases: [capital('changan', 618, 907), capital('luoyang', 618, 907, 'secondary', 'formal', '东都与阶段性政治中心')],
-    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'tang-founded-changan', 'sui-ended-618', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'daming-palace-built', 'tang-changan-end', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'tang-founded-changan', 'sui-ended-618', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'daming-palace-built', 'tang-changan-end', 'court-moves-luoyang', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
     uncertaintyNote: '双都制度、行幸与战乱中的临时中心不能混写为正式迁都；遗产节点展示城市和建筑层，不直接证明帝国疆域。',
   }),
   detail({
@@ -197,7 +197,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['萧衍控制南齐末年朝廷与江南军政资源。', '502年受禅建立南梁。', '侯景之乱改变南梁权力结构，梁元帝时期江陵成为阶段性实际中心。'],
     turningPoints: [turn(502, '南梁建立', '萧衍受禅建立梁朝。', 'southern-liang-founded'), turn(548, '侯景之乱', '南梁中央与地方军政关系遭到重大破坏。'), turn(552, '江陵阶段', '梁元帝以江陵为实际政治中心，南梁进入后期分裂阶段。')],
     principalFigureIds: ['xiao-yan', 'wang-sengbian'], capitalPhases: [capital('jiankang', 502, 551), capital('jiangling', 552, 554, 'primary', 'actual', '侯景之乱后梁元帝阶段性中心'), capital('jiankang', 555, 557, 'primary', 'actual', '梁末恢复的阶段性中心')],
-    heritageIds: ['southern-liang-jiangling-city-site', 'jiankang-six-dynasties-city-site'], eventIds: ['southern-liang-founded'], claimIds: ['claim-xiao-yan-founded-southern-liang'], sourceIds: modernSources,
+    heritageIds: ['southern-liang-jiangling-city-site', 'jiankang-six-dynasties-city-site'], eventIds: ['southern-liang-founded', 'southern-qi-ended-502'], claimIds: ['claim-xiao-yan-founded-southern-liang'], sourceIds: modernSources,
     uncertaintyNote: '南梁后期存在政权分裂与中心转移，江陵记录是阶段性实际中心而非全期正式迁都；江陵与建康遗产均包含多时期叠压层。',
   }),
   detail({
@@ -237,7 +237,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['西魏末年宇文氏掌握关中军政与宫廷资源。', '557年宇文觉受禅建立北周。', '北周以长安为都，宇文邕时期通过军政改革和对北齐战争扩大整合能力。'],
     turningPoints: [turn(557, '北周建立', '北周取代西魏并继续以长安为都。', 'western-wei-founded'), turn(572, '宇文邕亲政', '北周皇权与军政整合进入新阶段。'), turn(577, '灭北齐', '北周攻取邺，北方东部政权被纳入新的统一进程。'), turn(581, '北周禅让终止', '北周静帝宇文阐在长安向杨坚禅位，隋承接北周政治中心。', 'northern-zhou-ended-581')],
     principalFigureIds: ['yuwen-yong', 'yuwen-chan'], capitalPhases: [capital('changan', 557, 581)],
-    heritageIds: ['northern-zhou-changan-city-layer'], eventIds: ['western-wei-founded', 'northern-zhou-ended-581', 'sui-founded'], claimIds: ['claim-northern-zhou-changan-capital', 'claim-yuwen-yong-ruled-northern-zhou', 'claim-yuwen-chan-ruled-northern-zhou', 'claim-yuwen-chan-participated-northern-zhou-ended-581', 'claim-yang-jian-participated-northern-zhou-ended-581'], sourceIds: modernSources,
+    heritageIds: ['northern-zhou-changan-city-layer'], eventIds: ['western-wei-founded', 'western-wei-ended-557', 'northern-zhou-ended-581', 'sui-founded'], claimIds: ['claim-northern-zhou-changan-capital', 'claim-yuwen-yong-ruled-northern-zhou', 'claim-yuwen-chan-ruled-northern-zhou', 'claim-yuwen-chan-participated-northern-zhou-ended-581', 'claim-yang-jian-participated-northern-zhou-ended-581'], sourceIds: modernSources,
     uncertaintyNote: '北周承接西魏的都城与制度资源，但并不等于557年自动继承西魏全部实际控制区；581年禅让是中央政权终止节点，隋后续统一与北周长安遗产延续按不同层次理解。',
   }),
   detail({
