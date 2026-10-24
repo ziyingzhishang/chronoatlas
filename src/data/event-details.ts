@@ -322,6 +322,58 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '552年是汗国建立节点；于都斤／鄂尔浑是突厥移动汗廷的区域性政治核心参照，不是可精确定位的固定建国都城，也不等于当年已经拥有后续东西突厥的最大影响范围。',
   },
   {
+    eventId: 'turkic-first-ended-630',
+    participants: [
+      { personId: 'ilai-khagan', role: '第一汗国东部末期可汗', relationType: 'direct', note: '颉利可汗在630年败亡并被俘，连接东部中央汗权终止；西突厥余部和草原部众另行分层。' },
+    ],
+    polityIds: ['turkic', 'tang'],
+    causes: ['第一突厥汗国内部东西分化与汗位竞争。', '唐朝在东亚北方持续施加军事和羁縻压力。'],
+    consequences: ['第一突厥汗国东部中央汗权终止。', '630—681年进入西突厥余部、唐朝羁縻体系与草原部众重组的间歇期。'],
+    phases: [
+      { label: '颉利可汗败亡', startYear: 630, endYear: 630, summary: '东部末期可汗败于唐军并被俘。' },
+      { label: '第一汗国东部中央汗权终止', startYear: 630, endYear: 630, summary: '以东部中央汗权为口径标记第一汗国终止，不把西部余部和文化网络同步抹去。' },
+      { label: '草原政治重组', startYear: 631, endYear: 681, summary: '西突厥余部、唐朝羁縻安排和地方部众网络并存，不能视为单一连续突厥中央政权。' },
+    ],
+    locationIds: ['uhtuken'], relatedEventIds: ['turkic-founded', 'turkic-restored-682'],
+    sourceIds: ['turkic-history-db', 'turkic-termination-744', 'capital-history-reference'],
+    uncertaintyNote: '630年采用年份级精度，具体战事日月与各部众归附顺序不在本条强行细化；终止口径限定为第一汗国东部中央汗权，而非所有突厥政治、族群和文化延续。',
+  },
+  {
+    eventId: 'turkic-restored-682',
+    participants: [
+      { personId: 'kutlug-ilterish', role: '后突厥汗国复兴者与初代可汗', relationType: 'direct', note: '骨咄禄在682年前后重新组织突厥汗权；本条将其作为新的后突厥阶段，不回填第一汗国连续性。' },
+      { personId: 'tonyukuk', role: '后突厥复兴期谋臣与军政人物', relationType: 'direct', note: '暾欲谷连接后突厥复兴、军政组织和后续碑铭记忆。' },
+    ],
+    polityIds: ['turkic'],
+    causes: ['630年后草原部众与阿史那王统经历长期重组。', '唐朝羁縻秩序与漠北地方政治之间的张力促成复兴。'],
+    consequences: ['后突厥汗国作为新的中央汗权阶段形成。', '于都斤—鄂尔浑重新成为移动汗廷政治核心，后续碑铭传统由此展开。'],
+    phases: [
+      { label: '骨咄禄起兵复兴', startYear: 682, endYear: 691, summary: '骨咄禄在漠北重建汗权并争取部众归附。' },
+      { label: '后突厥汗国形成', startYear: 682, endYear: 744, summary: '后突厥以新的分期延续至744年，不与552—630年第一汗国合并为单一政权。' },
+    ],
+    locationIds: ['uhtuken'], relatedEventIds: ['turkic-first-ended-630', 'turkic-ended-744'],
+    sourceIds: ['turkic-history-db', 'turkic-termination-744', 'turkic-orkhon-collection', 'capital-history-reference'],
+    uncertaintyNote: '682年采用年份级复兴节点；起兵过程、汗廷迁移和部众控制范围是连续变化，不能据复兴节点绘制后突厥完整固定边界。',
+  },
+  {
+    eventId: 'turkic-ended-744',
+    participants: [
+      { personId: 'ozmish-khagan', role: '后突厥末期可汗', relationType: 'direct', note: '乌苏米施可汗连接后突厥末期汗权危机；744年作为中央汗权终止上限，不把所有战事压缩为同一日。' },
+      { personId: 'bayanchur', role: '回鹘承接阶段的核心统治者', relationType: 'contextual', note: '磨延啜属于后突厥终止后的回鹘承接，不写成突厥汗国末代君主。' },
+    ],
+    polityIds: ['turkic'],
+    causes: ['毗伽可汗之后的继承危机与部众关系恶化。', '拔悉密、回鹘和葛逻禄等力量竞争漠北政治空间。'],
+    consequences: ['后突厥中央汗权在744年终止。', '拔悉密—回鹘承接开始，鄂尔浑碑铭和突厥政治记忆作为遗产继续存在。'],
+    phases: [
+      { label: '后突厥汗国末期危机', startYear: 736, endYear: 743, summary: '继承与部众关系恶化，中央汗权持续收缩。' },
+      { label: '后突厥汗国终止上限', startYear: 744, endYear: 744, summary: '以744年标记后突厥中央汗权终止及突厥总览实体终止上限。' },
+      { label: '拔悉密—回鹘承接', startYear: 744, endYear: 745, summary: '拔悉密、回鹘等力量接替漠北政治空间；承接者不是突厥汗国的连续中央政权。' },
+    ],
+    locationIds: ['uhtuken'], relatedEventIds: ['turkic-restored-682', 'tang-founded'],
+    sourceIds: ['turkic-history-db', 'turkic-termination-744', 'turkic-orkhon-collection', 'capital-history-reference'],
+    uncertaintyNote: '744年采用年份级终止上限，表达后突厥中央汗权崩解与继承转换，不主张具体战事日、各部众归附顺序或全年单一控制边界；遗产、语言与历史记忆继续存在。',
+  },
+  {
     eventId: 'tibetan-founded',
     participants: [
       { personId: 'songtsen-gampo', role: '吐蕃形成阶段的核心统治者与高原整合者（本轮限618—622年吐蕃早期整合，不把同期唐建国或后续盛期范围当作建政当年参与边界）', note: '松赞干布对应618—629年形成阶段；吐蕃国家化是多阶段过程，雅砻核心整合与后续逻些政治中心承接不能合并为单一建政时点。' },
@@ -3397,6 +3449,21 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['han-imperial-accession', 'chu-han-contention'],
     sourceIds: ['zizhi-tongjian', 'china-chronology', 'capital-history-reference'],
     uncertaintyNote: '前209年前后是匈奴联盟政权形成的约年，不是固定城市建国事件；龙城／单于庭是蒙古高原中部的候选会聚与政治中心区域，不能视为已确定的固定首都。单于庭位置、部众关系和直接控制范围均需采用移动政治中心口径。',
+  },
+  {
+    eventId: 'xiongnu-southern-northern-split-48',
+    participants: [{ personId: 'xiongnu-southern-chanyu-48', role: '南部八部大人共立的呼韩邪单于比', relationType: 'direct', note: '比代表南匈奴政治节点；北单于体系与其他部众仍在草原网络中延续。' }, { personId: 'huhanye', role: '跨时代单于谱系参照', relationType: 'contextual', note: '呼韩邪为前1世纪人物，此处只用于说明“呼韩邪”称号与单于继承记忆，不把其写成48年事件参与者。' }],
+    polityIds: ['xiongnu'], causes: ['匈奴内部继承竞争和南部部众的安全诉求加剧。', '东汉边疆册立与护卫政策为南部部众建立独立单于节点提供条件。'], consequences: ['南北单于体系并行，南匈奴进入汉边政治空间。', '北匈奴仍保有草原和西域方向的部众网络。', '后续人物和事件必须区分南匈奴承接、北匈奴中央链条和匈奴刘氏政治记忆。'], phases: [{ label: '南北匈奴分裂', startYear: 48, endYear: 48, summary: '八部大人共立比为呼韩邪单于，南匈奴政治节点形成。' }, { label: '南匈奴汉边承接', startYear: 48, endYear: 50, summary: '南匈奴与东汉建立册立、护卫和安置关系，河套成为阶段性政治空间。' }], locationIds: ['xiongnu-southern-frontier'], relatedEventIds: ['xiongnu-founded', 'xiongnu-northern-central-defeat-91'], sourceIds: ['houhanshu-southern-xiongnu', 'houhanshu-xiongnu-termination', 'xiongnu-late-network-study'], uncertaintyNote: '48年表达南北单于体系分化，不是把匈奴固定国家切成南北省制，也不是所有部众从此分属两个边界清晰的国家。',
+  },
+  {
+    eventId: 'xiongnu-northern-central-defeat-91',
+    participants: [{ personId: 'xiongnu-northern-chanyu-91', role: '北单于庭及北匈奴中央单于体系的人物端点', relationType: 'direct', note: '使用职号而非无证据的确定姓名；本条只表达中央节点受击与北迁。' }],
+    polityIds: ['xiongnu'], causes: ['南北分裂后北匈奴仍依托草原交通和部众网络维持单于庭。', '东汉对北匈奴中央节点和西域交通线持续施压。'], consequences: ['北单于庭在金微山受击，北匈奴中央统合能力显著下降。', '北单于脱走并向北迁徙，余部仍在草原、西域和邻近部族网络中活动。', '南匈奴与汉边政治空间并未因91年战事同步消失。'], phases: [{ label: '北匈奴中央单于体系遭重击并北迁', startYear: 91, endYear: 91, summary: '汉军深入北单于庭并在金微山击破核心力量，北单于随后脱走。' }, { label: '中央体系北迁与失稳', startYear: 91, endYear: 93, summary: '旧中央节点失去稳定控制，余部继续迁徙和重组。' }], locationIds: ['xiongnu-jinwei-mountains'], relatedEventIds: ['xiongnu-southern-northern-split-48', 'xiongnu-termination-upper-bound-93'], sourceIds: ['houhanshu-xiongnu-termination', 'xiongnu-late-network-study'], uncertaintyNote: '金微山具体对应、北单于姓名与93年后的路线存在研究差异；91年不等于北匈奴所有部众灭绝。',
+  },
+  {
+    eventId: 'xiongnu-termination-upper-bound-93',
+    participants: [{ personId: 'xiongnu-northern-chanyu-91', role: '北匈奴中央单于体系的后期职号人物端点', relationType: 'contextual', note: '连接91年受击与93年总目录上限，不主张该人物在93年仍保持完整中央权力。' }, { personId: 'liu-yuan', role: '远期匈奴刘氏政治承接参照', relationType: 'contextual', note: '刘渊生活在4世纪，只用于说明后续匈奴刘氏对身份、政治记忆与部分部众资源的承接，不是93年现场参与者。' }],
+    polityIds: ['xiongnu', 'former_zhao'], causes: ['91年北匈奴中央单于体系受击后，北方和西域政治网络继续碎片化。', '南匈奴已形成与汉边相连的独立阶段，后续匈奴身份和部众资源还会进入新的政权结构。'], consequences: ['93年作为xiongnu总目录的时间上限。', '南匈奴、北匈奴余部、地方部众与草原网络继续存在或再组织。', '后续匈奴刘氏政权应在前赵等具体政权中单独记录，不写成匈奴中央政权无缝延续。'], phases: [{ label: '匈奴总目录终止上限', startYear: 93, endYear: 93, summary: '收束本项目对匈奴联盟政治主体的连续导航。' }, { label: '部众与身份网络延续', startYear: 93, endYear: 310, summary: '南匈奴、草原余部和后续匈奴刘氏政治资源在不同空间和政权中继续承接，不能等同于单一国家连续存在。' }], locationIds: ['xiongnu-jinwei-mountains', 'xiongnu-southern-frontier'], relatedEventIds: ['xiongnu-northern-central-defeat-91', 'former-zhao-founded'], sourceIds: ['houhanshu-xiongnu-termination', 'houhanshu-southern-xiongnu', 'xiongnu-late-network-study', 'zizhi-tongjian'], uncertaintyNote: '93年是项目总目录终止上限，不等于所有匈奴部众消失；南匈奴、草原余部、后裔、身份记忆和后续匈奴刘氏政权承接均需另行表达。',
   },
   {
     eventId: 'han-warring-founded-eighth-batch', participants: [

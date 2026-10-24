@@ -1065,6 +1065,26 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['xiongnu-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '匈奴形成节点早于呼韩邪单于数百年；本详情表达其在分裂后阶段的政治继承与重组，不将其写成匈奴开国者或固定首都君主。',
   },
   {
+    personId: 'xiongnu-southern-chanyu-48', biography: '比在48年被南部八部大人共立为呼韩邪单于，南匈奴由此进入与东汉册立、护卫和汉边安置相连的阶段。',
+    aliases: ['比', '南单于'], offices: [{ title: '南匈奴呼韩邪单于', polityId: 'xiongnu', placeId: 'xiongnu-southern-frontier', validFrom: 48, validTo: 56, datePrecision: 'range', sourceIds: ['houhanshu-southern-xiongnu'] }],
+    keyEvents: ['xiongnu-southern-northern-split-48'], sourceIds: ['houhanshu-southern-xiongnu', 'houhanshu-xiongnu-termination'], uncertaintyNote: '48年是南北单于体系分化节点；南匈奴的汉边政治空间不等于匈奴整体疆域或固定国家首都。',
+  },
+  {
+    personId: 'zhizhi-chanyu', biography: '郅支单于在匈奴分裂后的竞争中代表北方单于体系，曾向西经营并在康居方向建立阶段性政治中心。',
+    aliases: ['郅支'], offices: [{ title: '北匈奴单于', polityId: 'xiongnu', validFrom: -56, validTo: -36, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'hanshu-vol94-huhanye'] }],
+    keyEvents: ['xiongnu-southern-northern-split-48'], sourceIds: ['zizhi-tongjian', 'hanshu-vol94-huhanye', 'xiongnu-late-network-study'], uncertaintyNote: '郅支是分裂后北方单于竞争者，不代表91年北单于或北匈奴所有部众；康居中心也不等于匈奴固定首都。',
+  },
+  {
+    personId: 'xiongnu-northern-chanyu-91', biography: '北单于（91年后北迁）是北匈奴后期中央单于体系的职号人物端点，金微山受击后其政治中心失稳并向北迁徙。',
+    aliases: ['北匈奴后期单于'], offices: [{ title: '北匈奴后期单于', polityId: 'xiongnu', placeId: 'xiongnu-jinwei-mountains', validFrom: 89, validTo: 93, datePrecision: 'range', sourceIds: ['houhanshu-xiongnu-termination', 'xiongnu-late-network-study'] }],
+    keyEvents: ['xiongnu-northern-central-defeat-91', 'xiongnu-termination-upper-bound-93'], sourceIds: ['houhanshu-xiongnu-termination', 'xiongnu-late-network-study'], uncertaintyNote: '姓名、具体继承顺序和93年后的去向存在史料差异，故使用职号实体；本条只连接中央单于体系受击与北迁，不宣称部众整体消失。',
+  },
+  {
+    personId: 'liu-yuan', biography: '刘渊以匈奴刘氏身份和并州军政资源为基础，在西晋末年建立前赵（汉赵），承接匈奴政治记忆与部众网络。',
+    aliases: ['汉王', '前赵高祖'], offices: [{ title: '前赵（汉赵）君主', polityId: 'former_zhao', validFrom: 304, validTo: 310, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'xiongnu-late-network-study'] }],
+    keyEvents: ['former-zhao-founded', 'xiongnu-termination-upper-bound-93'], sourceIds: ['zizhi-tongjian', 'xiongnu-late-network-study'], uncertaintyNote: '刘渊的前赵是后世具体政权，不能被写成93年匈奴总目录的无缝延续；“匈奴刘氏”表达身份与政治资源承接，不等于部众、疆域和制度完全连续。',
+  },
+  {
     personId: 'namri-songtsen', biography: '朗日松赞是松赞干布之父，推动悉补野部在雅砻及高原东部扩张，为吐蕃进入帝国形成阶段积累政治与军事基础。',
     aliases: ['南日松赞'], offices: [{ title: '吐蕃赞普', polityId: 'tibetan_empire', validFrom: 600, validTo: 629, datePrecision: 'range', sourceIds: ['china-chronology'] }],
     keyEvents: ['tibetan-founded'], sourceIds: ['china-chronology'], uncertaintyNote: '吐蕃形成是多代王权整合过程；朗日松赞是前置积累阶段人物，不能把其活动单独等同于松赞干布时期的完整国家化。',
@@ -1143,6 +1163,46 @@ export const personDetails: PersonDetail[] = [
     personId: 'gyeongsun-silla', biography: '敬顺王是新罗末代君主，935年向高丽归降，新罗王统结束而庆州王京转入高丽承接阶段。',
     aliases: ['新罗敬顺王'], offices: [{ title: '新罗末代国王', polityId: 'silla', placeId: 'jincheng_silla', validFrom: 927, validTo: 935, datePrecision: 'range', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'] }],
     keyEvents: ['silla-ended-935'], sourceIds: ['silla-encykorea', 'silla-samguksagi-db'], uncertaintyNote: '935年是政权归降节点，不是庆州城市历史和新罗文化遗产的终止。',
+  },
+  {
+    personId: 'ilai-khagan', biography: '颉利可汗是第一突厥汗国东部末期可汗，630年败于唐军并被俘。其个人失败连接东部中央汗权终止，但西突厥余部、唐朝羁縻体系与突厥文化网络另有延续。',
+    aliases: ['咄苾', '利可汗'], offices: [{ title: '第一突厥汗国东部可汗', polityId: 'turkic', placeId: 'uhtuken', validFrom: 620, validTo: 630, datePrecision: 'range', sourceIds: ['turkic-history-db', 'turkic-termination-744'] }],
+    keyEvents: ['turkic-first-ended-630'], sourceIds: ['turkic-history-db', 'turkic-termination-744'], uncertaintyNote: '630年采用年份级终止节点；颉利可汗被俘、东部汗权终止与西部余部及地方部众的后续命运分开表达。',
+  },
+  {
+    personId: 'kutlug-ilterish', biography: '骨咄禄（颉跌利施可汗）在682年前后于漠北重建突厥汗权，开启后突厥汗国阶段；这一复兴是第一汗国终止后的新分期。',
+    aliases: ['阿史那骨咄禄', '颉跌利施可汗'], offices: [{ title: '后突厥汗国可汗', polityId: 'turkic', placeId: 'uhtuken', validFrom: 682, validTo: 691, datePrecision: 'range', sourceIds: ['turkic-history-db', 'turkic-termination-744'] }],
+    keyEvents: ['turkic-restored-682'], sourceIds: ['turkic-history-db', 'turkic-termination-744', 'turkic-orkhon-collection'], uncertaintyNote: '682年为复兴节点，起兵、迁牙和部众归附是连续过程，不由此反推第一汗国无缝延续。',
+  },
+  {
+    personId: 'qapaghan', biography: '默啜可汗承接骨咄禄后的后突厥汗权，推动漠北和北疆方向的军事扩张与部众整合。',
+    aliases: ['颉跌利施可汗之弟', 'Qapaghan'], offices: [{ title: '后突厥汗国可汗', polityId: 'turkic', placeId: 'uhtuken', validFrom: 691, validTo: 716, datePrecision: 'range', sourceIds: ['turkic-history-db', 'turkic-termination-744'] }],
+    keyEvents: ['turkic-restored-682'], sourceIds: ['turkic-history-db', 'turkic-termination-744'], uncertaintyNote: '默啜的扩张范围随战事和部众关系变化，不能用其鼎盛活动范围回填682年复兴节点。',
+  },
+  {
+    personId: 'bilge-khagan', biography: '毗伽可汗是后突厥中期统治者，和阙特勤、暾欲谷共同构成鄂尔浑碑铭所见的王权、军政与历史记忆核心。',
+    aliases: ['阿史那默棘连'], offices: [{ title: '后突厥汗国可汗', polityId: 'turkic', placeId: 'uhtuken', validFrom: 716, validTo: 734, datePrecision: 'range', sourceIds: ['turkic-orkhon-heritage', 'turkic-orkhon-collection', 'turkic-termination-744'] }],
+    keyEvents: ['turkic-restored-682', 'turkic-ended-744'], sourceIds: ['turkic-orkhon-heritage', 'turkic-orkhon-collection', 'turkic-termination-744'], uncertaintyNote: '毗伽可汗属于后突厥中期，不把其碑铭记忆和政治中心稳定性前推到第一汗国。',
+  },
+  {
+    personId: 'kul-tegin', biography: '阙特勤是后突厥王族与军事领袖，参与汗权巩固；其碑铭是鄂尔浑突厥文字遗产的核心节点。',
+    aliases: ['Kül Tigin'], offices: [{ title: '后突厥王族与军事领袖', polityId: 'turkic', placeId: 'uhtuken', validFrom: 716, validTo: 731, datePrecision: 'range', sourceIds: ['turkic-orkhon-heritage', 'turkic-orkhon-collection'] }],
+    keyEvents: ['turkic-restored-682', 'turkic-ended-744'], sourceIds: ['turkic-orkhon-heritage', 'turkic-orkhon-collection'], uncertaintyNote: '阙特勤的军事活动与碑铭纪念分属人物生前和身后遗产阶段，不能将碑铭年代等同于其全部活动年代。',
+  },
+  {
+    personId: 'tonyukuk', biography: '暾欲谷连接后突厥复兴、军政组织和鄂尔浑碑铭传统，其活动属于后突厥阶段，不是第一汗国建国现场人物。',
+    aliases: ['Tonyukuk', '阿史德元珍'], offices: [{ title: '后突厥汗国谋臣与军政人物', polityId: 'turkic', placeId: 'uhtuken', validFrom: 682, validTo: 726, datePrecision: 'range', sourceIds: ['turkic-orkhon-heritage', 'turkic-orkhon-collection', 'turkic-termination-744'] }],
+    keyEvents: ['turkic-restored-682'], sourceIds: ['turkic-orkhon-heritage', 'turkic-orkhon-collection', 'turkic-termination-744'], uncertaintyNote: '暾欲谷连接多个后突厥统治阶段；人物关系和碑铭遗产不能替代对汗权边界的直接证据。',
+  },
+  {
+    personId: 'ozmish-khagan', biography: '乌苏米施可汗是后突厥末期可汗，744年前后在拔悉密、回鹘等力量竞争中失去中央汗权；744年仅作年份级终止上限。',
+    aliases: ['乌苏米施', 'Ozmış'], offices: [{ title: '后突厥汗国末期可汗', polityId: 'turkic', placeId: 'uhtuken', validFrom: 742, validTo: 744, datePrecision: 'range', sourceIds: ['turkic-history-db', 'turkic-termination-744'] }],
+    keyEvents: ['turkic-ended-744'], sourceIds: ['turkic-history-db', 'turkic-termination-744'], uncertaintyNote: '744年是后突厥中央汗权终止上限，不断言具体战事日或乌苏米施个人死亡细节。',
+  },
+  {
+    personId: 'bayanchur', biography: '磨延啜是744年后回鹘承接阶段的核心统治者，属于后续回鹘政治主体，不纳入突厥汗国连续王统。',
+    aliases: ['葛勒可汗', 'Bayanchur'], offices: [{ title: '回鹘可汗（突厥终止后的承接者）', validFrom: 744, validTo: 759, datePrecision: 'range', sourceIds: ['turkic-termination-744', 'turkic-orkhon-collection'] }],
+    keyEvents: ['turkic-ended-744'], sourceIds: ['turkic-termination-744', 'turkic-orkhon-collection'], uncertaintyNote: '磨延啜用于表达后突厥终止后的继承转换，不表示回鹘是突厥汗国的无缝连续中央政权。',
   },
   {
     personId: 'istemi', biography: '室点密在突厥早期汗权形成后经营西部部众，参与突厥向中亚扩展并与萨珊、拜占庭等势力建立外交和军事联系。',

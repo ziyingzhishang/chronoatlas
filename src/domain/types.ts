@@ -63,6 +63,16 @@ export interface PolityTurningPoint {
   eventId?: string;
 }
 
+export interface PolityPeriod {
+  id: string;
+  label: string;
+  startYear: number;
+  endYear: number;
+  datePrecision: 'year' | 'approximate' | 'range';
+  summary: string;
+  eventIds?: string[];
+}
+
 export interface PolityCapitalPhase {
   placeId: string;
   validFrom: number;
@@ -77,6 +87,7 @@ export interface PolityDetail {
   perspectiveSummary: string;
   foundationProcess: string[];
   turningPoints: PolityTurningPoint[];
+  periods?: PolityPeriod[];
   principalFigureIds: string[];
   capitalPhases: PolityCapitalPhase[];
   heritageIds: string[];

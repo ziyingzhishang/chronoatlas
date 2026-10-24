@@ -1,6 +1,9 @@
 import type { SourceNote } from '../domain/types';
 
 export const sourceNotes: SourceNote[] = [
+  {id:'houhanshu-xiongnu-termination',title:'《后汉书》卷八十九·南匈奴列传',authorOrInstitution:'范晔等',urlOrCitation:'https://zh.wikisource.org/zh-hans/後漢書/卷89',scope:'48年南北匈奴分裂、91年北单于受击、93年前后北匈奴余部与南匈奴延续',note:'用于分层表达南北分裂、北匈奴中央单于体系受击和余部延续；不将93年解释为所有匈奴部众消失。'},
+  {id:'houhanshu-southern-xiongnu',title:'《后汉书》南匈奴列传与相关本纪',authorOrInstitution:'范晔等',urlOrCitation:'https://zh.wikisource.org/zh-hans/後漢書/卷89',scope:'南单于比、南匈奴内附、汉边安置与单于体系承接',note:'用于南匈奴在汉边政治空间中的阶段性承接；不把内附、册立和汉朝护卫关系等同于完全行政同化。'},
+  {id:'xiongnu-late-network-study',title:'匈奴晚期草原网络与汉匈分裂研究资料',authorOrInstitution:'项目交叉核验资料',urlOrCitation:'《后汉书》、汉匈关系研究与北方考古资料交叉核验',scope:'南北匈奴、北匈奴后期迁徙、部众延续与后续匈奴刘氏政治记忆',note:'用于把政权终止、部众网络延续、南匈奴承接和后续匈奴刘氏政治资源分层展示；不提供固定边界或单一国家连续性的证明。'},
   {id:'shiji-xiongnu-modu',title:'《史记·匈奴列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/xiong-nu-lie-zhuan',scope:'冒顿单于即位、匈奴部众整合与汉初北方关系',note:'用于冒顿前209年至前174年间的单于与部众整合活动区间；不将草原联盟活动等同于固定都城或完整生卒年。'},
   {id:'shiji-zhang-qian-dawan',title:'《史记·大宛列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/da-yuan-lie-zhuan',scope:'张骞两次出使西域及其外交活动阶段',note:'用于张骞前138年前后出使、前119年前后再出使的活动区间；不据活动起止推定生卒年。'},
   {id:'shiji-meng-tian',title:'《史记·蒙恬列传》',authorOrInstitution:'司马迁／中国哲学书电子化计划',urlOrCitation:'https://ctext.org/shiji/meng-tian-lie-zhuan',scope:'蒙恬任将、北方防务与秦末身死',note:'用于蒙恬约前215年至前210年的北方防务活动窗口；不将任职区间当作生卒年。'},
@@ -475,6 +478,11 @@ export const sourceNotes: SourceNote[] = [
     id: 'goguryeo-capital-unesco', title: 'Capital Cities and Tombs of the Ancient Koguryo Kingdom', authorOrInstitution: 'UNESCO World Heritage Centre', urlOrCitation: 'https://whc.unesco.org/en/list/1135',
     scope: '五女山城、国内城、丸都山城及高句丽都城与王陵遗产；国内城今属吉林集安',
     note: '用于高句丽王都体系和现代地点映射；遗产范围、现代城市边界与政权疆域分开表达，不把集安遗产覆盖平壤遗址。',
+  },
+  {
+    id: 'turkic-termination-744', title: '突厥汗国分期与744年终止专题来源', authorOrInstitution: '项目专题校勘：突厥传、鄂尔浑碑铭与回鹘承接资料', urlOrCitation: '《旧唐书》《新唐书》突厥传；鄂尔浑碑铭研究与相关编年资料',
+    scope: '630年第一汗国东部中央汗权终止、631—681年间歇期、682年后突厥复兴、744年终止上限及拔悉密—回鹘承接',
+    note: '用于本项目的分期和终止口径：630年不代表所有突厥政治网络消失，682年是新阶段复兴而非单一连续政权恢复，744年是年份级终止上限；具体战事日、部众归附和全年边界仍保留不确定性。',
   },
 ];
 

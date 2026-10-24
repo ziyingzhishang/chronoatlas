@@ -297,12 +297,17 @@ export const polityDetails: PolityDetail[] = [
     uncertaintyNote: '吐谷浑形成年代采用313年前后约年；伏俟城以540—663年后期阶段和今共和县石乃亥镇铁卜加村一带的候选地点表达，不能倒推为全期固定首都。663年终止指故地中央政权终止；慕容诺曷钵入唐、安置州和地方族群延续不等同于中央政权连续。',
   }),
   detail({
-    polityId: 'turkic', perspectiveSummary: '突厥是以阿史那氏汗权和草原部众网络为基础的汗国体系，政治核心位于于都斤—鄂尔浑区域但具有移动性。',
-    foundationProcess: ['阿史那土门在柔然秩序中崛起并整合突厥部众。', '552年击败柔然，突厥汗国建立。', '第一汗国分裂后，后突厥汗国在682年重建汗权，不能简单视为单一连续政权。'],
-    turningPoints: [turn(552, '突厥汗国建立', '阿史那土门建立突厥汗国。', 'turkic-founded'), turn(630, '第一汗国受唐影响', '东突厥汗国政治秩序发生重大变化。'), turn(682, '后突厥汗国重建', '草原汗权在于都斤—鄂尔浑区域重新形成。')],
-    principalFigureIds: ['asina-tumen', 'istemi'], capitalPhases: [capital('uhtuken', 552, 630, 'mobile_court', 'actual', '今蒙古国中部的区域政治核心'), capital('uhtuken', 682, 744, 'mobile_court', 'actual', '后突厥时期移动汗廷区域')],
-    heritageIds: ['orkhon-turkic-inscriptions'], eventIds: ['turkic-founded'], claimIds: ['claim-asina-tumen-participated-turkic-founded', 'claim-istemi-participated-turkic-founded'], sourceIds: ['turkic-history-db', 'turkic-orkhon-collection', 'turkic-orkhon-heritage'],
-    uncertaintyNote: '第一、后突厥汗国分期与汗廷移动性必须保留；于都斤—鄂尔浑是区域政治核心而非可唯一定位的固定城市首都，碑刻也不能替代完整宫廷遗址。',
+    polityId: 'turkic', perspectiveSummary: '突厥是以阿史那氏汗权和草原部众网络为基础的汗国体系，政治核心位于于都斤—鄂尔浑区域但具有移动性；本总览实体保留552—744年跨度，但不把其中各阶段压缩成单一连续政权。',
+    foundationProcess: ['阿史那土门在柔然秩序中崛起并整合突厥部众。', '552年击败柔然，第一突厥汗国进入形成阶段。', '630年第一汗国东部中央汗权终止，631—681年为西突厥余部、唐朝羁縻体系与草原部众重组的间歇期。', '682年骨咄禄重建后突厥汗权；744年后突厥中央汗权终止，作为总览实体的终止上限。'],
+    periods: [
+      { id: 'first-khaganate', label: '第一突厥汗国', startYear: 552, endYear: 630, datePrecision: 'year', summary: '阿史那氏建立的第一阶段共同汗权；630年以东部中央汗权终止为分期边界。', eventIds: ['turkic-founded', 'turkic-first-ended-630'] },
+      { id: 'interregnum', label: '第一汗国终止后的间歇期', startYear: 631, endYear: 681, datePrecision: 'range', summary: '西突厥余部、唐朝羁縻安排和草原地方部众并存，不视为单一连续中央政权。', eventIds: ['turkic-first-ended-630'] },
+      { id: 'second-khaganate', label: '后突厥汗国', startYear: 682, endYear: 744, datePrecision: 'year', summary: '骨咄禄复兴后的新阶段，744年以中央汗权终止为总览实体终止上限。', eventIds: ['turkic-restored-682', 'turkic-ended-744'] },
+    ],
+    turningPoints: [turn(552, '第一突厥汗国建立', '阿史那土门建立第一阶段突厥汗权。', 'turkic-founded'), turn(630, '第一汗国东部中央汗权终止', '颉利可汗败亡，进入间歇期。', 'turkic-first-ended-630'), turn(682, '后突厥汗国复兴', '骨咄禄在于都斤—鄂尔浑区域重建新的汗权。', 'turkic-restored-682'), turn(744, '后突厥汗国终止上限', '中央汗权崩解，拔悉密—回鹘开始承接。', 'turkic-ended-744')],
+    principalFigureIds: ['asina-tumen', 'istemi', 'ilai-khagan', 'kutlug-ilterish', 'qapaghan', 'bilge-khagan', 'kul-tegin', 'tonyukuk', 'ozmish-khagan', 'bayanchur'], capitalPhases: [capital('uhtuken', 552, 630, 'mobile_court', 'actual', '第一汗国于都斤—鄂尔浑区域政治核心，不是固定城市'), capital('uhtuken', 682, 744, 'mobile_court', 'actual', '后突厥移动汗廷区域；现代地点仅作蒙古国中部区域参照')],
+    heritageIds: ['orkhon-turkic-inscriptions'], eventIds: ['turkic-founded', 'turkic-first-ended-630', 'turkic-restored-682', 'turkic-ended-744'], claimIds: ['claim-asina-tumen-participated-turkic-founded', 'claim-istemi-participated-turkic-founded', 'claim-turkic-ended-744', 'claim-kutlug-ruled-turkic-second', 'claim-bilge-ruled-turkic-second', 'claim-ozmish-participated-turkic-ended-744', 'claim-basmyl-succeeded-turkic-744', 'claim-turkic-left-orkhon-heritage-744'], sourceIds: ['turkic-history-db', 'turkic-termination-744', 'turkic-orkhon-collection', 'turkic-orkhon-heritage', 'capital-history-reference'],
+    uncertaintyNote: '第一、后突厥汗国必须分期；630年终止口径限定为第一汗国东部中央汗权，682年是新阶段复兴，744年是后突厥中央汗权及总览实体的年份级终止上限。于都斤—鄂尔浑是区域政治核心而非可唯一定位的固定城市首都，碑刻也不能替代完整宫廷遗址。',
   }),
   detail({
     polityId: 'tibetan_empire', perspectiveSummary: '吐蕃由悉补野部在雅砻基础上扩展为高原帝国，逻些成为主要政治与宗教中心，并与唐及中亚长期互动。',
@@ -675,10 +680,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'xiongnu', perspectiveSummary: '匈奴由冒顿整合草原部众形成联盟政治，单于庭和龙城是移动性与候选中心的参照，不能套用固定城市王朝的首都模型。',
     foundationProcess: ['秦汉之际草原部众与继承秩序发生重组。', '前209年前后冒顿整合主要部众，匈奴成为强势草原政治主体。', '单于庭、会聚空间和交通网络随时期与部众关系移动。'],
-    turningPoints: [turn(-209, '匈奴联盟形成', '冒顿单于整合主要部众。', 'xiongnu-founded'), turn(-200, '汉匈关系重组', '匈奴与汉地的战争、和亲和边疆秩序进入新阶段。'), turn(48, '南北匈奴分裂', '匈奴政治结构分化，中心和部众关系进一步变化。')],
-    principalFigureIds: ['modu-chanyu', 'huhanye'], capitalPhases: [capital('xiongnu_core', -209, 93, 'mobile_court', 'uncertain', '龙城／单于庭为区域候选参照，政治中心具有移动性，今蒙古高原中部区域不能指向唯一城址。')],
-    heritageIds: ['xiongnu-longcheng-candidate'], eventIds: ['xiongnu-founded', 'xiongnu-modu-assumes-chanyu'], claimIds: ['claim-modu-founded-xiongnu', 'claim-modu-participated-xiongnu-modu-assumes-chanyu'], sourceIds: modernSources,
-    uncertaintyNote: '前209年前后是联盟形成约年，不是固定城市建国事件；单于庭具有移动政治中心性质，龙城／单于庭位置和性质仍有候选口径，不能写成已确认的固定首都或完整疆界。',
+    turningPoints: [turn(-209, '匈奴联盟形成', '冒顿单于整合主要部众。', 'xiongnu-founded'), turn(-200, '汉匈关系重组', '匈奴与汉地的战争、和亲和边疆秩序进入新阶段。'), turn(48, '南北匈奴分裂', '南北单于体系分化，南匈奴进入汉边政治空间，北匈奴继续经营草原网络。', 'xiongnu-southern-northern-split-48'), turn(91, '北匈奴中央节点受击', '北单于庭在金微山受击并北迁，北匈奴中央统合能力显著下降。', 'xiongnu-northern-central-defeat-91'), turn(93, '总目录终止上限', '以93年收束匈奴总目录连续导航，但部众、南匈奴和后续匈奴刘氏承接继续存在。', 'xiongnu-termination-upper-bound-93')],
+    principalFigureIds: ['modu-chanyu', 'huhanye', 'xiongnu-southern-chanyu-48', 'zhizhi-chanyu', 'xiongnu-northern-chanyu-91'], capitalPhases: [capital('xiongnu_core', -209, 48, 'mobile_court', 'uncertain', '龙城／单于庭为区域候选参照，政治中心具有移动性，不能指向唯一城址。'), capital('xiongnu-southern-frontier', 48, 93, 'mobile_court', 'uncertain', '南匈奴与汉边安置空间是分裂后的阶段性政治参照，不等于匈奴全体固定首都。')],
+    heritageIds: ['xiongnu-longcheng-candidate', 'xiongnu-southern-frontier-network', 'xiongnu-northern-steppe-network'], eventIds: ['xiongnu-founded', 'xiongnu-modu-assumes-chanyu', 'xiongnu-southern-northern-split-48', 'xiongnu-northern-central-defeat-91', 'xiongnu-termination-upper-bound-93'], claimIds: ['claim-modu-founded-xiongnu', 'claim-modu-participated-xiongnu-modu-assumes-chanyu', 'claim-xiongnu-southern-northern-split-48', 'claim-xiongnu-northern-central-defeat-91', 'claim-xiongnu-termination-upper-bound-93'], sourceIds: [...modernSources, 'houhanshu-xiongnu-termination', 'houhanshu-southern-xiongnu', 'xiongnu-late-network-study'],
+    uncertaintyNote: '匈奴是部众、单于庭和交通网络组成的移动性政治共同体，不能套用固定首都王朝模型。48年是南北单于体系分化，91年是北匈奴中央节点受击并北迁，93年只是本项目总目录终止上限；南匈奴、草原余部和后续匈奴刘氏政权承接不等于匈奴部族网络消失。',
   }),
   detail({
     polityId: 'yan_warring', perspectiveSummary: '战国燕延续早期燕国王统，以蓟为主要政治中心；北方交通、燕山边疆和辽西网络使其国家空间具有阶段性。',

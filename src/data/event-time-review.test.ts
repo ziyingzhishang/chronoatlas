@@ -25,6 +25,9 @@ const expectedEventIds = [
   'yan-warring-founded-eighth-batch',
   'qi-warring-founded-eighth-batch',
   'xiongnu-founded',
+  'turkic-first-ended-630',
+  'turkic-restored-682',
+  'turkic-ended-744',
   'chu-han-contention',
   'silla-founded',
   'silla-tang-war-670-676',
@@ -93,12 +96,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(79);
+    expect(report.totalReviewed).toBe(82);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 44, approximate: 35, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 47, approximate: 35, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {
