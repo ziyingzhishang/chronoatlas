@@ -1790,7 +1790,7 @@ const details: HistoricalEventDetail[] = [
     consequences: ['长安宫城和礼制空间继续发展。', '西汉都城的政治象征与帝国动员能力进一步强化。'],
     phases: [{ label: '宫城扩建', startYear: -138, endYear: -138, summary: '汉武帝时期长安宫室体系持续扩展。' }],
     locationIds: ['changan'],
-    relatedEventIds: ['han-changan-new-city'],
+    relatedEventIds: ['changan-han-capital'],
     sourceIds: ['zizhi-tongjian', 'modern-geography-reference'],
     uncertaintyNote: '这里概括的是长期建设过程；单一年份不表示全部宫殿在同年完工。',
   },
