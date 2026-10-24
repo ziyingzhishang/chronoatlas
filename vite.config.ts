@@ -8,6 +8,6 @@ export default defineConfig({
     setupFiles: './src/test/setup.ts',
     css: true,
     // Geometry-heavy suites can exceed the 5 s default when Vitest workers contend.
-    testTimeout: 30_000,
+    testTimeout: 60_000,
   },
 });
