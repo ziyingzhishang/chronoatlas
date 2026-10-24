@@ -2250,6 +2250,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '951年是太原称帝与政权形成节点，不把北汉后期控制范围倒推为建国初期实际控制；太原为政治中心。',
   },
   {
+    eventId: 'northern-han-ended-979',
+    participants: [
+      { personId: 'liu-jiyuan', role: '北汉末代君主，在太原城破后向北宋出降', note: '刘继元的出降标志北汉中央政权终止；其个人处置与太原、河东地方行政接收属于后续层次。' },
+      { personId: 'taizong-song', role: '北宋皇帝与太原终局阶段的军事政治决策者', note: '赵光义代表北宋推进太原战事并接受刘继元出降，不把979年一城出降写成宋朝当日完成所有边疆整合。' },
+    ],
+    polityIds: ['northern_han', 'song_northern'],
+    causes: ['北宋在统一战争中将军事与行政压力推进到河东太原。', '北汉失去辽援以外的持续战略空间，太原长期防守最终崩解。'],
+    consequences: ['刘继元出降，北汉中央政权结束。', '北宋取得太原并开始处理河东地方行政、军镇与社会秩序；辽宋边境竞争仍未结束。'],
+    phases: [
+      { label: '太原城破与刘继元出降', startYear: 979, endYear: 979, summary: '北宋攻取太原，刘继元出降，北汉中央政权终止。' },
+      { label: '地方接收与行政重组', startYear: 979, endYear: 979, summary: '宋军及地方官署接收太原与河东秩序；该过程不与中央政权终止的瞬间混为同一事实。' },
+    ],
+    locationIds: ['taiyuan'],
+    relatedEventIds: ['northern-han-founded', 'northern-song-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '979年太原出降是北汉中央政权终止的年份级节点；地方接收、军镇重组和辽宋边境后续变化分层表达，不把统一战争压缩成单一瞬间。',
+  },
+  {
     eventId: 'song-southward',
     participants: [
       { personId: 'zhao-gou', role: '靖康后在应天即位并重建宋室政权的核心君主', note: '赵构在1127年应天即位，标志南宋阶段开始；其后多次迁驻与临安中心形成属于南渡的后续阶段。' },

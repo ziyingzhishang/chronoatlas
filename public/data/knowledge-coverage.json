@@ -4751,6 +4751,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "northern-han-ended-979",
+      "entityKey": "event:northern-han-ended-979",
+      "label": "北汉终结",
+      "polityIds": [
+        "northern_han",
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-han-ended-979"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-jiyuan-participated-northern-han-ended-979",
+            "claim:claim-taizong-song-participated-northern-han-ended-979",
+            "event-detail:northern-han-ended-979"
+          ],
+          "relatedIds": [
+            "liu-jiyuan",
+            "northern-han-founded",
+            "northern-song-founded",
+            "northern_han",
+            "song_northern",
+            "taizong-song"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "northern-han-founded",
       "entityKey": "event:northern-han-founded",
       "label": "北汉建立",
@@ -13188,6 +13251,7 @@
       "polityIds": [
         "han_later",
         "northern_han",
+        "song_northern",
         "zhou_later"
       ],
       "checks": [
@@ -13228,9 +13292,15 @@
             "five-dynasties",
             "guo-wei",
             "han_later",
+            "liu-jiyuan",
+            "liu-min",
             "liu-zhiyuan",
+            "northern-han-ended-979",
             "northern-han-founded",
-            "northern_han"
+            "northern-song-founded",
+            "northern_han",
+            "song_northern",
+            "taizong-song"
           ]
         },
         {
@@ -24300,6 +24370,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "liu-jiyuan",
+      "entityKey": "person:liu-jiyuan",
+      "label": "刘继元",
+      "polityIds": [
+        "northern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-jiyuan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-jiyuan-enemy-taizong-song-termination-979",
+            "claim:claim-liu-jiyuan-participated-northern-han-ended-979",
+            "claim:claim-liu-jiyuan-ruled-northern-han",
+            "event-detail:northern-han-ended-979",
+            "person-polity:liu-jiyuan:northern_han"
+          ],
+          "relatedIds": [
+            "northern-han-ended-979",
+            "northern_han",
+            "taizong-song"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "liu-min",
       "entityKey": "person:liu-min",
       "label": "刘旻",
@@ -28649,6 +28783,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "taizong-song",
+      "entityKey": "person:taizong-song",
+      "label": "赵光义",
+      "polityIds": [
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "taizong-song"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-jiyuan-enemy-taizong-song-termination-979",
+            "claim:claim-taizong-song-participated-northern-han-ended-979",
+            "claim:claim-taizong-song-ruled-northern-song",
+            "event-detail:northern-han-ended-979",
+            "person-polity:taizong-song:song_northern"
+          ],
+          "relatedIds": [
+            "liu-jiyuan",
+            "northern-han-ended-979",
+            "song_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -36008,14 +36206,19 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-jiyuan-ruled-northern-han",
             "claim:claim-liu-min-ruled-northern-han-fortyseventh",
+            "event-detail:northern-han-ended-979",
             "event-detail:northern-han-founded",
             "heritage-detail:jinyang-ancient-city-site",
+            "person:liu-jiyuan",
             "person:liu-min"
           ],
           "relatedIds": [
             "jinyang-ancient-city-site",
+            "liu-jiyuan",
             "liu-min",
+            "northern-han-ended-979",
             "northern-han-founded"
           ]
         },
@@ -37044,28 +37247,35 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-taizong-song-ruled-northern-song",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "event-detail:later-zhou-ended-960",
+            "event-detail:northern-han-ended-979",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-tang-falls",
+            "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:li-gang",
+            "person:taizong-song",
             "person:zhao-kuangyin",
             "person:zong-ze"
           ],
           "relatedIds": [
+            "jinyang-ancient-city-site",
             "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
             "later-zhou-ended-960",
             "li-gang",
+            "northern-han-ended-979",
             "northern-song-founded",
             "song-founded",
             "song-southward",
             "southern-tang-falls",
+            "taizong-song",
             "zhao-kuangyin",
             "zong-ze"
           ]
@@ -40660,6 +40870,23 @@
       "kind": "uncertain",
       "polityIds": [
         "western_xia"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "liu-jiyuan",
+      "entityKey": "person:liu-jiyuan",
+      "label": "刘继元",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "northern_han"
       ],
       "evidenceIds": [
         "china-chronology",
@@ -45910,6 +46137,69 @@
             "quanfengyou",
             "tang-founded",
             "yimouxun"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:northern-han-ended-979": {
+      "entityType": "event",
+      "entityId": "northern-han-ended-979",
+      "entityKey": "event:northern-han-ended-979",
+      "label": "北汉终结",
+      "polityIds": [
+        "northern_han",
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-han-ended-979"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-jiyuan-participated-northern-han-ended-979",
+            "claim:claim-taizong-song-participated-northern-han-ended-979",
+            "event-detail:northern-han-ended-979"
+          ],
+          "relatedIds": [
+            "liu-jiyuan",
+            "northern-han-founded",
+            "northern-song-founded",
+            "northern_han",
+            "song_northern",
+            "taizong-song"
           ]
         },
         {
@@ -54360,6 +54650,7 @@
       "polityIds": [
         "han_later",
         "northern_han",
+        "song_northern",
         "zhou_later"
       ],
       "checks": [
@@ -54400,9 +54691,15 @@
             "five-dynasties",
             "guo-wei",
             "han_later",
+            "liu-jiyuan",
+            "liu-min",
             "liu-zhiyuan",
+            "northern-han-ended-979",
             "northern-han-founded",
-            "northern_han"
+            "northern-song-founded",
+            "northern_han",
+            "song_northern",
+            "taizong-song"
           ]
         },
         {
@@ -65470,6 +65767,70 @@
         }
       ]
     },
+    "person:liu-jiyuan": {
+      "entityType": "person",
+      "entityId": "liu-jiyuan",
+      "entityKey": "person:liu-jiyuan",
+      "label": "刘继元",
+      "polityIds": [
+        "northern_han"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-jiyuan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-jiyuan-enemy-taizong-song-termination-979",
+            "claim:claim-liu-jiyuan-participated-northern-han-ended-979",
+            "claim:claim-liu-jiyuan-ruled-northern-han",
+            "event-detail:northern-han-ended-979",
+            "person-polity:liu-jiyuan:northern_han"
+          ],
+          "relatedIds": [
+            "northern-han-ended-979",
+            "northern_han",
+            "taizong-song"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:liu-min": {
       "entityType": "person",
       "entityId": "liu-min",
@@ -69821,6 +70182,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:taizong-song": {
+      "entityType": "person",
+      "entityId": "taizong-song",
+      "entityKey": "person:taizong-song",
+      "label": "赵光义",
+      "polityIds": [
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "taizong-song"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-jiyuan-enemy-taizong-song-termination-979",
+            "claim:claim-taizong-song-participated-northern-han-ended-979",
+            "claim:claim-taizong-song-ruled-northern-song",
+            "event-detail:northern-han-ended-979",
+            "person-polity:taizong-song:song_northern"
+          ],
+          "relatedIds": [
+            "liu-jiyuan",
+            "northern-han-ended-979",
+            "song_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -77180,14 +77605,19 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-jiyuan-ruled-northern-han",
             "claim:claim-liu-min-ruled-northern-han-fortyseventh",
+            "event-detail:northern-han-ended-979",
             "event-detail:northern-han-founded",
             "heritage-detail:jinyang-ancient-city-site",
+            "person:liu-jiyuan",
             "person:liu-min"
           ],
           "relatedIds": [
             "jinyang-ancient-city-site",
+            "liu-jiyuan",
             "liu-min",
+            "northern-han-ended-979",
             "northern-han-founded"
           ]
         },
@@ -78216,28 +78646,35 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-taizong-song-ruled-northern-song",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "event-detail:later-zhou-ended-960",
+            "event-detail:northern-han-ended-979",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-tang-falls",
+            "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:li-gang",
+            "person:taizong-song",
             "person:zhao-kuangyin",
             "person:zong-ze"
           ],
           "relatedIds": [
+            "jinyang-ancient-city-site",
             "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
             "later-zhou-ended-960",
             "li-gang",
+            "northern-han-ended-979",
             "northern-song-founded",
             "song-founded",
             "song-southward",
             "southern-tang-falls",
+            "taizong-song",
             "zhao-kuangyin",
             "zong-ze"
           ]
@@ -80846,9 +81283,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 185,
+      "totalEntities": 186,
       "statusCounts": {
-        "covered": 885,
+        "covered": 890,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -80923,20 +81360,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 225,
+      "totalEntities": 227,
       "statusCounts": {
-        "covered": 1070,
+        "covered": 1079,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 55,
+        "uncertain": 56,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 55
+        "uncertain": 56
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -80964,6 +81401,7 @@
         "person:langdarma",
         "person:li-shi",
         "person:li-xian-western-xia",
+        "person:liu-jiyuan",
         "person:liu-xuan",
         "person:liu-yao",
         "person:meng-tian",
@@ -82415,12 +82853,32 @@
       "polityId": "northern_han",
       "polityName": "北汉",
       "entityKeys": [
+        "event:northern-han-ended-979",
         "event:northern-han-founded",
         "heritage:jinyang-ancient-city-site",
+        "person:liu-jiyuan",
         "person:liu-min",
         "polity:northern_han"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "liu-jiyuan",
+          "entityKey": "person:liu-jiyuan",
+          "label": "刘继元",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_han"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -82428,7 +82886,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "北汉：学习闭环已覆盖。"
+      "summary": "北汉：有 1 项待核验缺口。"
     },
     "northern_liang": {
       "polityId": "northern_liang",
@@ -83115,13 +83573,16 @@
       "polityName": "北宋",
       "entityKeys": [
         "event:later-zhou-ended-960",
+        "event:northern-han-ended-979",
         "event:northern-song-founded",
         "event:song-founded",
         "event:song-southward",
         "event:southern-tang-falls",
+        "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "person:li-gang",
+        "person:taizong-song",
         "person:zhao-kuangyin",
         "person:zong-ze",
         "polity:song_northern"
@@ -87133,12 +87594,33 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:han-later-founded",
+        "event:northern-han-ended-979",
         "event:northern-han-founded",
         "heritage:jinci-ancestral-temple",
         "heritage:jinyang-ancient-city-site",
-        "person:liu-zhiyuan"
+        "person:liu-jiyuan",
+        "person:liu-zhiyuan",
+        "person:taizong-song"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "liu-jiyuan",
+          "entityKey": "person:liu-jiyuan",
+          "label": "刘继元",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_han"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -87146,7 +87628,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "太原市：学习闭环已覆盖。"
+      "summary": "太原市：有 1 项待核验缺口。"
     },
     "tuyuhun_core": {
       "placeId": "tuyuhun_core",

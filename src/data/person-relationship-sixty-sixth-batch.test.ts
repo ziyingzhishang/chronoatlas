@@ -52,7 +52,7 @@ describe('sixty-sixth batch high-confidence kinship and alliance/conflict relati
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(134);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(136);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     expect(report.byPersonId.temujin.categories.kinship.status).toBe('covered');

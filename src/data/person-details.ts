@@ -473,6 +473,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['northern-song-founded'], sourceIds, uncertaintyNote: '960年受禅是北宋建政节点，统一南方诸国是后续过程，不由北宋后期范围倒推建国初期控制。',
   },
   {
+    personId: 'taizong-song', biography: '赵光义即宋太宗，承接赵匡胤后的北宋皇位。979年亲征太原，接受刘继元出降，北汉中央政权由此结束；太原及河东地方行政的后续接收另作阶段表达。',
+    aliases: ['宋太宗', '赵炅'], offices: [{ title: '北宋皇帝', polityId: 'song_northern', placeId: 'kaifeng', validFrom: 976, validTo: 997, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-han-ended-979'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '979年太原终局是北汉中央政权终止节点；宋对太原、河东的地方接收和辽宋边境关系属于后续过程，不等同于一日完成全面统一。',
+  },
+  {
     personId: 'wanyan-aguda', biography: '完颜阿骨打整合女真诸部，于1115年在会宁称帝建立金，随后与辽和北宋展开长期战争。',
     aliases: ['金太祖'], offices: [{ title: '金皇帝', polityId: 'jin_jurchen', placeId: 'huining', validFrom: 1115, validTo: 1123, datePrecision: 'range', sourceIds }],
     keyEvents: ['jurchen-jin-founded'], sourceIds, uncertaintyNote: '1115年是会宁建国节点，不以金灭辽和占领北宋后的范围倒推早期女真政权控制区。',
@@ -882,6 +887,11 @@ export const personDetails: PersonDetail[] = [
     personId: 'liu-min', biography: '刘旻初名刘崇，是后汉建立者刘知远的弟弟。后汉覆亡后，他据太原称帝建立北汉，河东成为北汉与后周竞争的核心区域。',
     aliases: ['刘崇', '北汉世祖'], offices: [{ title: '北汉皇帝', polityId: 'northern_han', placeId: 'taiyuan', validFrom: 951, validTo: 954, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['northern-han-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘旻的早期姓名、后汉宗室身份和北汉建立可按不同阶段阅读；951年建政不等于北汉立即控制河东以外的全部区域，契丹援助也不能替代其自身政权建构。',
+  },
+  {
+    personId: 'liu-jiyuan', biography: '刘继元是北汉末代君主，968年继位后继续以太原为政治中心。979年北宋攻取太原、刘继元出降，北汉中央政权终止；太原和河东地方秩序的后续接收另按过程展示。',
+    aliases: ['北汉末帝'], offices: [{ title: '北汉皇帝', polityId: 'northern_han', placeId: 'taiyuan', validFrom: 968, validTo: 979, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-han-ended-979'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘继元是北汉末代统治者；979年出降是中央政权终止节点，不等同于太原城市遗产消失或河东所有地方行政在同日完成转换。',
   },
   {
     personId: 'daemusin', biography: '大武神王是高句丽早期君主，承接朱蒙建立的王权并推动高句丽向鸭绿江、辽东方向扩展。',

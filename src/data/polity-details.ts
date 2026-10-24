@@ -475,10 +475,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'northern_han', perspectiveSummary: '北汉由刘旻在后汉覆亡后据太原建立，依托河东军政网络和辽援与后周长期对峙；太原是其正式都城。',
     foundationProcess: ['后汉覆亡后，刘氏旧部和河东军政集团在太原维持独立力量。', '951年刘旻在太原称帝，北汉政权形成。', '太原连接晋阳传统、河东军政和北方援助网络，实际控制范围随战争变化。'],
-    turningPoints: [turn(951, '北汉建立', '刘旻在太原称帝，北汉成为十国中位于北方的政权。', 'northern-han-founded'), turn(954, '高平对峙', '北汉与后周及契丹援军发生关键军事竞争。'), turn(979, '北汉覆亡', '宋军攻取太原，北汉结束。')],
-    principalFigureIds: ['liu-min'], capitalPhases: [capital('taiyuan', 951, 979, 'primary', 'formal', '北汉正式都城太原，今山西省太原市。')],
-    heritageIds: ['jinyang-ancient-city-site'], eventIds: ['northern-han-founded'], claimIds: ['claim-liu-min-participated-northern-han-founded'], sourceIds: modernSources,
-    uncertaintyNote: '刘旻（初名刘崇）是北汉正式建政者，不能把其兄刘知远写成北汉开国者；“太原”与考古学意义上的晋阳古城范围不能简单完全重合。',
+    turningPoints: [turn(951, '北汉建立', '刘旻在太原称帝，北汉成为十国中位于北方的政权。', 'northern-han-founded'), turn(954, '高平对峙', '北汉与后周及契丹援军发生关键军事竞争。'), turn(968, '刘继元继位', '刘继元承接北汉末期统治，太原继续作为北汉中央政治中心。'), turn(979, '北汉覆亡', '宋军攻取太原、刘继元出降，北汉中央政权结束；地方接收另按过程理解。', 'northern-han-ended-979')],
+    principalFigureIds: ['liu-min', 'liu-jiyuan'], capitalPhases: [capital('taiyuan', 951, 979, 'primary', 'formal', '北汉正式都城太原，今山西省太原市。')],
+    heritageIds: ['jinyang-ancient-city-site'], eventIds: ['northern-han-founded', 'northern-han-ended-979'], claimIds: ['claim-liu-min-participated-northern-han-founded', 'claim-liu-jiyuan-ruled-northern-han', 'claim-liu-jiyuan-participated-northern-han-ended-979', 'claim-liu-jiyuan-enemy-taizong-song-termination-979'], sourceIds: modernSources,
+    uncertaintyNote: '刘旻（初名刘崇）是北汉正式建政者，刘继元是979年末代统治者；不能把刘知远写成北汉开国者，也不能把太原出降瞬间等同于河东地方行政全部完成接收。“太原”与考古学意义上的晋阳古城范围不能简单完全重合。',
   }),
   detail({
     polityId: 'former_liang', perspectiveSummary: '前凉从张氏在西晋衰乱中的河西军政经营发展而来，姑臧是其长期政治中心；名义上的晋臣身份与地方自治需要分层理解。',
@@ -619,9 +619,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'song_northern', perspectiveSummary: '北宋由赵匡胤在五代军政竞争中建立，以开封为东京；统一南方诸国、澶渊和靖康分别构成不同历史阶段。',
     foundationProcess: ['赵匡胤在后周军政体系中取得领导权。', '960年陈桥兵变后受禅建立宋朝，开封成为中央政治中心。', '北宋在后续数十年逐步完成对南方和西南部分地区的整合。'],
-    turningPoints: [turn(960, '北宋建立', '赵匡胤受禅建立宋朝。', 'northern-song-founded'), turn(979, '宋统一主要中原', '北宋完成对北汉等主要竞争政权的征服。'), turn(1127, '靖康与南渡', '开封失守，北宋结束，宋廷转入南宋阶段。', 'song-southward')],
-    principalFigureIds: ['zhao-kuangyin', 'li-gang', 'zong-ze'], capitalPhases: [capital('kaifeng', 960, 1127)],
-    heritageIds: ['kaifeng-northern-song-city-site'], eventIds: ['later-zhou-ended-960', 'northern-song-founded', 'song-southward'], claimIds: ['claim-zhao-kuangyin-founded-northern-song', 'claim-zhao-kuangyin-participated-northern-song', 'claim-zhao-kuangyin-participated-later-zhou-ended-960'], sourceIds: modernSources,
+    turningPoints: [turn(960, '北宋建立', '赵匡胤受禅建立宋朝。', 'northern-song-founded'), turn(979, '北汉终止与太原接收', '宋太宗亲征太原，刘继元出降，北汉中央政权结束；河东地方接收和辽宋边境变化继续展开。', 'northern-han-ended-979'), turn(1127, '靖康与南渡', '开封失守，北宋结束，宋廷转入南宋阶段。', 'song-southward')],
+    principalFigureIds: ['zhao-kuangyin', 'taizong-song', 'li-gang', 'zong-ze'], capitalPhases: [capital('kaifeng', 960, 1127)],
+    heritageIds: ['kaifeng-northern-song-city-site'], eventIds: ['later-zhou-ended-960', 'northern-song-founded', 'northern-han-ended-979', 'song-southward'], claimIds: ['claim-zhao-kuangyin-founded-northern-song', 'claim-zhao-kuangyin-participated-northern-song', 'claim-zhao-kuangyin-participated-later-zhou-ended-960', 'claim-taizong-song-ruled-northern-song', 'claim-taizong-song-participated-northern-han-ended-979'], sourceIds: modernSources,
     uncertaintyNote: '960年是政权建立节点，不代表当年已完成后续统一；开封东京城遗址保存的是多层城市考古信息，1127年南渡后北宋与南宋的首都阶段应分开。',
   }),
   detail({

@@ -957,6 +957,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》·后周纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '951年刘旻在太原称帝、北汉建立的编年节点；具体卷次与异文待专题校勘。' }],
   },
   {
+    id: 'northern-han-ended-979', year: 979, title: '北汉终结', summary: '北宋攻取太原，刘继元出降，北汉中央政权结束；地方接收与行政重组随后展开。', placeId: 'taiyuan', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '北汉长期依托太原与辽援对抗中原政权，北宋完成对南方主要竞争者处理后将统一战争推进到河东。',
+    process: '979年北宋围攻太原，刘继元出降，北汉中央政权终止；宋军接收太原及河东的地方行政、军镇与社会秩序属于随后展开的过程。',
+    impact: '北汉退出十国政治格局，北宋取得太原这一北方战略中心；北宋统一并非在单一投降瞬间完成，辽宋边境关系仍在继续。',
+    mapNote: '太原标记979年北汉中央政权终止和刘继元出降；地方行政接收、军镇重组与城市遗产延续必须与终结节点分层显示。',
+    references: [{ title: '《资治通鉴》·宋太宗纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对979年宋军围太原、刘继元出降与北汉终止的编年节点；地方接收按过程表达。' }],
+  },
+  {
     id: 'wu-zhou-founded', year: 690, title: '武周建立', summary: '武则天改唐为周并即皇帝位，武周政权正式形成。',
     datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian'], verification: 'checked',
     background: '武则天长期以皇太后身份掌握唐朝核心权力，改国号前已形成独立的宫廷与行政控制。',
