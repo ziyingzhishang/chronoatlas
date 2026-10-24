@@ -370,7 +370,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['朱温在宣武军及中原战事中积累军政资源。', '907年受唐禅建立后梁，五代中原王朝由此开始。', '开封成为正式都城，但后梁对各地的控制须与地方政权实际自治分层理解。'],
     turningPoints: [turn(907, '后梁建立', '朱温受唐禅建立后梁，五代分期进入新阶段。', 'later-liang-five-dynasties-founded'), turn(909, '中原秩序重组', '后梁通过册封、战争和节度使体系维持中原政治。'), turn(923, '后梁覆亡', '后唐军队攻入开封，朱友贞自尽，后梁政权结束；开封城市层继续承接后唐。', 'later-liang-ended-923')],
     principalFigureIds: ['zhu-wen', 'zhu-youzhen'], capitalPhases: [capital('kaifeng', 907, 923, 'primary', 'formal', '后梁正式都城，今河南省开封市。')],
-    heritageIds: ['later-liang-kaifeng-city-layer'], eventIds: ['later-liang-five-dynasties-founded', 'later-liang-ended-923'], claimIds: ['claim-zhu-youzhen-ruled-later-liang', 'claim-zhu-youzhen-participated-later-liang-ended-923', 'claim-zhu-youzhen-enemy-li-cunxu-termination-923'], sourceIds: modernSources,
+    heritageIds: ['later-liang-kaifeng-city-layer'], eventIds: ['later-liang-five-dynasties-founded', 'later-liang-ended-923'], claimIds: ['claim-zhu-youzhen-ruled-later-liang', 'claim-zhu-youzhen-participated-later-liang-ended-923', 'claim-zhu-youzhen-enemy-li-cunxu-termination-923', 'claim-li-cunxu-participated-later-liang-ended-923'], sourceIds: modernSources,
     uncertaintyNote: '后梁开封遗产以城市考古历史层表达，不把现存建筑或北宋东京城复原直接归为后梁原构；923年称帝、攻入开封、末帝终局和地方接收是连续但可分层的过程，后梁建政事件与十六国后凉严格区分。',
   }),
   detail({

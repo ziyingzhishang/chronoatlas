@@ -9,6 +9,11 @@ import { people } from './people';
 import { getPersonDetail } from './person-details';
 import { getPolityDetail } from './polity-details';
 import { sourceById } from './sources';
+import { buildPolityStudyView } from '../domain/study-view';
+import { capitalHistory } from './capital-history';
+import { places } from './places';
+import { polities } from './polities';
+import { polityDetails } from './polity-details';
 
 describe('Later Liang termination closure', () => {
   it('records the 923 Kaifeng termination and successor transition', () => {
@@ -60,5 +65,33 @@ describe('Later Liang termination closure', () => {
       associatedPeople: expect.arrayContaining(['zhu-wen', 'zhu-youzhen']),
       associatedPolities: expect.arrayContaining(['liang_later', 'tang_later']),
     });
+  });
+
+  it('keeps the termination participant traceable from the successor side in the learning view', () => {
+    const data = {
+      polities,
+      places,
+      people,
+      heritage: heritageAssets,
+      events,
+      eventDetails,
+      claims,
+      capitalTerms: capitalHistory,
+      polityDetails,
+    };
+    const view = buildPolityStudyView('liang_later', 923, data);
+
+    expect(getPersonDetail('li-cunxu')).toMatchObject({
+      personId: 'li-cunxu',
+      keyEvents: expect.arrayContaining(['later-liang-ended-923']),
+    });
+    expect(claims).toEqual(expect.arrayContaining([
+      expect.objectContaining({ id: 'claim-li-cunxu-participated-later-liang-ended-923' }),
+    ]));
+    expect(getPolityDetail('liang_later')).toMatchObject({
+      claimIds: expect.arrayContaining(['claim-li-cunxu-participated-later-liang-ended-923']),
+    });
+    expect(view?.detailLinkedEvents.map((event) => event.id)).toContain('later-liang-ended-923');
+    expect(view?.detailLinkedHeritage.map((heritage) => heritage.id)).toContain('later-liang-kaifeng-city-layer');
   });
 });

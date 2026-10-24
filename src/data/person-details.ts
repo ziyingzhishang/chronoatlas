@@ -261,7 +261,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'li-cunxu', biography: '李存勖建立后唐，五代时期长安的政治地位已不同于唐代帝国时期。',
     aliases: ['唐庄宗'], offices: [{ title: '后唐皇帝', polityId: 'tang_later', validFrom: 923, validTo: 926, datePrecision: 'range', sourceIds }],
-    keyEvents: ['tang-changan-end', 'five-dynasties'], sourceIds, uncertaintyNote: '“唐庄宗”是后唐庙号称谓，与唐朝本身需区分；不据称谓虚构其与长安的直接任职关系。',
+    keyEvents: ['tang-changan-end', 'later-liang-ended-923', 'five-dynasties'], sourceIds, uncertaintyNote: '“唐庄宗”是后唐庙号称谓，与唐朝本身需区分；923年攻入开封与后梁终止是其承接后梁政治空间的关键节点；不据称谓虚构其与长安的直接任职关系。',
   },
   {
     personId: 'li-congke', biography: '李从珂是后唐末帝。936年后晋军队在契丹支持下推进至洛阳，后唐中央政权在洛阳终局中结束；其个人结局与洛阳城市历史、后晋地方接收分开记录。',
