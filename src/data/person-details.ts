@@ -338,6 +338,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['later-shu-founded'], sourceIds, uncertaintyNote: '孟知祥称帝后不久去世，后蜀的长期统治由后继者延续；本详情不把个人在位期等同于政权存续期。',
   },
   {
+    personId: 'meng-chang', biography: '孟昶承接孟知祥后的后蜀政权，长期以成都为政治中心。965年北宋军队攻取成都，孟昶出降，后蜀中央政权终止。',
+    aliases: ['后蜀后主', '后蜀末主'], offices: [{ title: '后蜀末主', polityId: 'later_shu', placeId: 'chengdu', validFrom: 934, validTo: 965, datePrecision: 'range', sourceIds }],
+    keyEvents: ['later-shu-ended-965'], sourceIds, uncertaintyNote: '孟昶承接后蜀皇位并统治至965年成都失守；出降、北宋接收与巴蜀地方行政重组属于连续但不同阶段。',
+  },
+  {
     personId: 'gao-huan', biography: '高欢在北魏末年掌握东部军政资源，控制邺城并拥立元善见，东魏由此形成。',
     aliases: ['齐神武帝'], offices: [{ title: '东魏权臣与军政核心', polityId: 'wei_eastern', placeId: 'ye', validFrom: 534, validTo: 547, datePrecision: 'range', sourceIds }],
     keyEvents: ['eastern-wei-founded'], sourceIds, uncertaintyNote: '高欢是东魏实际军政核心，但东魏皇帝仍为元善见；本详情区分名义皇统与实际权力结构。',
@@ -470,7 +475,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'zhao-kuangyin', biography: '赵匡胤在后周军政体系中崛起，经陈桥兵变受禅建立北宋，开封继续作为中原政治中心。',
     aliases: ['宋太祖'], offices: [{ title: '北宋皇帝', polityId: 'song_northern', placeId: 'kaifeng', validFrom: 960, validTo: 976, datePrecision: 'range', sourceIds }],
-    keyEvents: ['northern-song-founded'], sourceIds, uncertaintyNote: '960年受禅是北宋建政节点，统一南方诸国是后续过程，不由北宋后期范围倒推建国初期控制。',
+    keyEvents: ['northern-song-founded', 'later-shu-ended-965'], sourceIds, uncertaintyNote: '960年受禅是北宋建政节点，965年成都接收属于后续统一过程，不由北宋后期范围倒推建国初期控制。',
   },
   {
     personId: 'taizong-song', biography: '赵光义即宋太宗，承接赵匡胤后的北宋皇位。979年亲征太原，接受刘继元出降，北汉中央政权由此结束；太原及河东地方行政的后续接收另作阶段表达。',

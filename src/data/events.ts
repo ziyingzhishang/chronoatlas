@@ -948,6 +948,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》·后唐纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '934年孟知祥在蜀地称帝、后蜀形成的编年节点；具体卷次与异文待专题校勘。' }],
   },
   {
+    id: 'later-shu-ended-965', year: 965, title: '后蜀在成都终止', summary: '北宋军队攻取成都，后蜀末主孟昶出降，后蜀中央政权结束；成都城市历史层继续承接北宋及后续政权。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '后蜀以成都为中心延续巴蜀独立政权，北宋完成对荆南、后周旧地及南方战略推进后，将统一战争推进到蜀地。',
+    process: '965年北宋军队攻取成都，后蜀末主孟昶出降，后蜀中央政权终止；宋军接收成都及巴蜀地方行政、军镇和社会秩序属于随后展开的过程。',
+    impact: '后蜀退出五代十国政治格局，北宋取得成都这一西南战略中心；成都城址、宫城和交通网络继续进入北宋及后世城市历史层。',
+    mapNote: '成都标记965年后蜀中央政权终止和孟昶出降；巴蜀地方接收不是单日完成，地图应把政权终局与地方行政重组分层显示。',
+    references: [{ title: '《资治通鉴》宋太祖乾德三年条', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对965年北宋攻取成都、孟昶出降与后蜀终止；成都城市遗产和地方接收按过程表达。' }],
+  },
+  {
     id: 'northern-han-founded', year: 951, title: '北汉建立', summary: '刘旻在太原称帝，北汉成为河东地区政权。', placeId: 'taiyuan', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '后汉覆亡后，刘知远家族与河东军政集团在太原维持独立力量，并寻求契丹支持。',

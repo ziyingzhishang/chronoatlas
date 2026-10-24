@@ -2232,6 +2232,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '934年标记称帝和政权形成，不以936年以后资料面回填建国初期；成都为政治中心，不代表全部巴蜀即时控制。',
   },
   {
+    eventId: 'later-shu-ended-965',
+    participants: [
+      { personId: 'meng-chang', role: '后蜀末主、965年成都失守后出降的统治者', note: '孟昶对应后蜀末期统治与成都终局；出降和北宋接收是连续但可分层的阶段。' },
+      { personId: 'zhao-kuangyin', role: '发动北宋统一战争并接收成都政治空间的君主', note: '赵匡胤代表北宋攻蜀与965年政权转换阶段；巴蜀地方行政重组属于后续过程。' },
+    ],
+    polityIds: ['later_shu', 'song_northern'],
+    causes: ['后蜀长期以成都为中心维持独立政权，北宋统一战争推进到巴蜀。', '后蜀中央政权在北宋军事压力下失去成都这一政治中心。'],
+    consequences: ['孟昶出降，后蜀中央政权终止。', '成都转入北宋接收与后续地方行政重组阶段，城市、道路和宫城历史层继续存在。'],
+    phases: [
+      { label: '北宋攻蜀', startYear: 965, endYear: 965, summary: '北宋军队进入巴蜀并推进至成都。' },
+      { label: '成都失守与出降', startYear: 965, endYear: 965, summary: '成都失守，孟昶出降，后蜀中央政权终止。' },
+      { label: '地方接收', startYear: 965, endYear: 967, summary: '北宋接收成都及巴蜀地方行政、军镇和社会秩序，不能压缩为单一投降瞬间。' },
+    ],
+    locationIds: ['chengdu'],
+    relatedEventIds: ['later-shu-founded', 'northern-song-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '965年是成都失守、孟昶出降和后蜀中央政权终止的年份级节点；巴蜀地方接收与城市历史层延续属于后续过程。',
+  },
+  {
     eventId: 'northern-han-founded',
     participants: [
       { personId: 'liu-zhiyuan', role: '后汉覆亡后在太原延续刘氏政权的君主', note: '刘知远于948年去世，北汉由其弟刘崇在951年建立；本端点用于连接刘氏政治谱系，不将刘知远误写为北汉正式建国者。' },

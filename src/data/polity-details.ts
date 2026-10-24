@@ -460,8 +460,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'later_shu', perspectiveSummary: '后蜀由孟知祥承接后唐在巴蜀的军政基础建立，以成都为政治中心；其建政、继承和成都城市历史层应与前蜀分开。',
     foundationProcess: ['后唐灭前蜀后，孟知祥在成都及巴蜀积累独立军政资源。', '934年在成都称帝，后蜀政权形成。', '成都延续为政治中心，政权由孟知祥去世后的继承阶段继续至965年。'],
     turningPoints: [turn(934, '后蜀建立', '孟知祥在成都称帝，后蜀政权形成。', 'later-shu-founded'), turn(934, '政权承继', '孟知祥去世后，后蜀由后继者继续经营。'), turn(965, '后蜀覆亡', '北宋攻取成都，后蜀结束。')],
-    principalFigureIds: ['meng-zhixiang'], capitalPhases: [capital('chengdu', 934, 965, 'primary', 'formal', '后蜀正式都城成都，今四川省成都市。')],
-    heritageIds: ['later-shu-chengdu-city-site'], eventIds: ['later-shu-founded'], claimIds: ['claim-meng-zhixiang-founded-later-shu'], sourceIds: modernSources,
+    principalFigureIds: ['meng-zhixiang', 'meng-chang'], capitalPhases: [capital('chengdu', 934, 965, 'primary', 'formal', '后蜀正式都城成都，今四川省成都市。')],
+    heritageIds: ['later-shu-chengdu-city-site'], eventIds: ['later-shu-founded', 'later-shu-ended-965'], claimIds: ['claim-meng-zhixiang-founded-later-shu', 'claim-meng-chang-ruled-later-shu', 'claim-meng-chang-participated-later-shu-ended-965', 'claim-meng-chang-enemy-zhao-kuangyin-termination-965', 'claim-zhao-kuangyin-participated-later-shu-ended-965'], sourceIds: modernSources,
     uncertaintyNote: '孟知祥称帝后不久去世，不能把个人统治期等同于后蜀全期；后蜀成都历史层与前蜀、宋代城市叠压，具体宫城遗存需分层核验。',
   }),
   detail({

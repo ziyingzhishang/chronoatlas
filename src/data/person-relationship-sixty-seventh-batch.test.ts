@@ -51,7 +51,7 @@ describe('sixty-seventh batch high-confidence alliance/conflict relationships', 
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(136);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(137);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     expect(report.byPersonId.dorgon.categories.allianceConflict.status).toBe('covered');

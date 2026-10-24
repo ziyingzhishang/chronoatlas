@@ -3379,6 +3379,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-shu-ended-965",
+      "entityKey": "event:later-shu-ended-965",
+      "label": "后蜀在成都终止",
+      "polityIds": [
+        "later_shu",
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-shu-ended-965"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-meng-chang-participated-later-shu-ended-965",
+            "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
+            "event-detail:later-shu-ended-965"
+          ],
+          "relatedIds": [
+            "later-shu-founded",
+            "later_shu",
+            "meng-chang",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-shu-founded",
       "entityKey": "event:later-shu-founded",
       "label": "后蜀建立",
@@ -13711,7 +13774,8 @@
       "entityKey": "heritage:later-shu-chengdu-city-site",
       "label": "后蜀成都宫城历史层",
       "polityIds": [
-        "later_shu"
+        "later_shu",
+        "song_northern"
       ],
       "checks": [
         {
@@ -13748,9 +13812,13 @@
             "heritage-detail:later-shu-chengdu-city-site"
           ],
           "relatedIds": [
+            "later-shu-ended-965",
             "later-shu-founded",
             "later_shu",
-            "meng-zhixiang"
+            "meng-chang",
+            "meng-zhixiang",
+            "song_northern",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -25623,6 +25691,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "meng-chang",
+      "entityKey": "person:meng-chang",
+      "label": "孟昶",
+      "polityIds": [
+        "later_shu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "meng-chang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
+            "claim:claim-meng-chang-participated-later-shu-ended-965",
+            "claim:claim-meng-chang-ruled-later-shu",
+            "event-detail:later-shu-ended-965",
+            "person-polity:meng-chang:later_shu"
+          ],
+          "relatedIds": [
+            "later-shu-ended-965",
+            "later_shu",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "meng-tian",
       "entityKey": "person:meng-tian",
       "label": "蒙恬",
@@ -32642,13 +32774,16 @@
           "evidenceIds": [
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
+            "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
+            "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
             "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
             "claim:claim-zhao-kuangyin-participated-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
@@ -32657,9 +32792,11 @@
           "relatedIds": [
             "chai-rong",
             "guo-wei",
+            "later-shu-ended-965",
             "later-zhou-ended-960",
             "li-yu",
             "li-yuanhao",
+            "meng-chang",
             "northern-song-founded",
             "song-founded",
             "song_northern"
@@ -35484,15 +35621,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-meng-chang-ruled-later-shu",
             "claim:claim-meng-zhixiang-founded-later-shu",
             "claim:claim-meng-zhixiang-ruled-later-shu-ninetyfifth",
+            "event-detail:later-shu-ended-965",
             "event-detail:later-shu-founded",
             "heritage-detail:later-shu-chengdu-city-site",
+            "person:meng-chang",
             "person:meng-zhixiang"
           ],
           "relatedIds": [
             "later-shu-chengdu-city-site",
+            "later-shu-ended-965",
             "later-shu-founded",
+            "meng-chang",
             "meng-zhixiang"
           ]
         },
@@ -37250,6 +37392,7 @@
             "claim:claim-taizong-song-ruled-northern-song",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-han-ended-979",
             "event-detail:northern-song-founded",
@@ -37259,6 +37402,7 @@
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "heritage-detail:later-shu-chengdu-city-site",
             "person:li-gang",
             "person:taizong-song",
             "person:zhao-kuangyin",
@@ -37268,6 +37412,8 @@
             "jinyang-ancient-city-site",
             "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-shu-chengdu-city-site",
+            "later-shu-ended-965",
             "later-zhou-ended-960",
             "li-gang",
             "northern-han-ended-979",
@@ -44765,6 +44911,69 @@
             "northern-wei-founded",
             "yao-chang",
             "yao-xing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-shu-ended-965": {
+      "entityType": "event",
+      "entityId": "later-shu-ended-965",
+      "entityKey": "event:later-shu-ended-965",
+      "label": "后蜀在成都终止",
+      "polityIds": [
+        "later_shu",
+        "song_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-shu-ended-965"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-meng-chang-participated-later-shu-ended-965",
+            "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
+            "event-detail:later-shu-ended-965"
+          ],
+          "relatedIds": [
+            "later-shu-founded",
+            "later_shu",
+            "meng-chang",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -55110,7 +55319,8 @@
       "entityKey": "heritage:later-shu-chengdu-city-site",
       "label": "后蜀成都宫城历史层",
       "polityIds": [
-        "later_shu"
+        "later_shu",
+        "song_northern"
       ],
       "checks": [
         {
@@ -55147,9 +55357,13 @@
             "heritage-detail:later-shu-chengdu-city-site"
           ],
           "relatedIds": [
+            "later-shu-ended-965",
             "later-shu-founded",
             "later_shu",
-            "meng-zhixiang"
+            "meng-chang",
+            "meng-zhixiang",
+            "song_northern",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -67020,6 +67234,70 @@
         }
       ]
     },
+    "person:meng-chang": {
+      "entityType": "person",
+      "entityId": "meng-chang",
+      "entityKey": "person:meng-chang",
+      "label": "孟昶",
+      "polityIds": [
+        "later_shu"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "meng-chang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
+            "claim:claim-meng-chang-participated-later-shu-ended-965",
+            "claim:claim-meng-chang-ruled-later-shu",
+            "event-detail:later-shu-ended-965",
+            "person-polity:meng-chang:later_shu"
+          ],
+          "relatedIds": [
+            "later-shu-ended-965",
+            "later_shu",
+            "zhao-kuangyin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:meng-tian": {
       "entityType": "person",
       "entityId": "meng-tian",
@@ -74041,13 +74319,16 @@
           "evidenceIds": [
             "claim:claim-li-yu-enemy-zhao-kuangyin",
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
+            "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
+            "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
             "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
             "claim:claim-zhao-kuangyin-participated-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
             "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
@@ -74056,9 +74337,11 @@
           "relatedIds": [
             "chai-rong",
             "guo-wei",
+            "later-shu-ended-965",
             "later-zhou-ended-960",
             "li-yu",
             "li-yuanhao",
+            "meng-chang",
             "northern-song-founded",
             "song-founded",
             "song_northern"
@@ -76883,15 +77166,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-meng-chang-ruled-later-shu",
             "claim:claim-meng-zhixiang-founded-later-shu",
             "claim:claim-meng-zhixiang-ruled-later-shu-ninetyfifth",
+            "event-detail:later-shu-ended-965",
             "event-detail:later-shu-founded",
             "heritage-detail:later-shu-chengdu-city-site",
+            "person:meng-chang",
             "person:meng-zhixiang"
           ],
           "relatedIds": [
             "later-shu-chengdu-city-site",
+            "later-shu-ended-965",
             "later-shu-founded",
+            "meng-chang",
             "meng-zhixiang"
           ]
         },
@@ -78649,6 +78937,7 @@
             "claim:claim-taizong-song-ruled-northern-song",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "event-detail:later-shu-ended-965",
             "event-detail:later-zhou-ended-960",
             "event-detail:northern-han-ended-979",
             "event-detail:northern-song-founded",
@@ -78658,6 +78947,7 @@
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "heritage-detail:later-shu-chengdu-city-site",
             "person:li-gang",
             "person:taizong-song",
             "person:zhao-kuangyin",
@@ -78667,6 +78957,8 @@
             "jinyang-ancient-city-site",
             "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-shu-chengdu-city-site",
+            "later-shu-ended-965",
             "later-zhou-ended-960",
             "li-gang",
             "northern-han-ended-979",
@@ -81283,9 +81575,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 186,
+      "totalEntities": 187,
       "statusCounts": {
-        "covered": 890,
+        "covered": 895,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -81360,9 +81652,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 227,
+      "totalEntities": 228,
       "statusCounts": {
-        "covered": 1079,
+        "covered": 1084,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -82360,8 +82652,10 @@
       "polityId": "later_shu",
       "polityName": "后蜀",
       "entityKeys": [
+        "event:later-shu-ended-965",
         "event:later-shu-founded",
         "heritage:later-shu-chengdu-city-site",
+        "person:meng-chang",
         "person:meng-zhixiang",
         "polity:later_shu"
       ],
@@ -83572,6 +83866,7 @@
       "polityId": "song_northern",
       "polityName": "北宋",
       "entityKeys": [
+        "event:later-shu-ended-965",
         "event:later-zhou-ended-960",
         "event:northern-han-ended-979",
         "event:northern-song-founded",
@@ -83581,6 +83876,7 @@
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
+        "heritage:later-shu-chengdu-city-site",
         "person:li-gang",
         "person:taizong-song",
         "person:zhao-kuangyin",
@@ -85753,6 +86049,7 @@
         "event:cheng-han-founded",
         "event:former-shu-ended-925",
         "event:former-shu-founded",
+        "event:later-shu-ended-965",
         "event:later-shu-founded",
         "event:shu-han-founded",
         "event:three-kingdoms",
@@ -85765,9 +86062,11 @@
         "person:li-shi",
         "person:li-xiong",
         "person:liu-bei",
+        "person:meng-chang",
         "person:meng-zhixiang",
         "person:wang-jian",
         "person:wang-yan",
+        "person:zhao-kuangyin",
         "polity:cheng_han",
         "polity:former_shu",
         "polity:later_shu",

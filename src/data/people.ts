@@ -61,6 +61,7 @@ export const people: Person[] = [
   { id: 'wang-jian', name: '王建', aliases: ['前蜀高祖'], birthYear: 847, deathYear: 918, roles: ['皇帝', '军事领袖'], polityIds: ['former_shu'], description: '王建经营巴蜀军政资源，唐亡后在成都称帝建立前蜀。', sourceIds: ['zizhi-tongjian'] },
   { id: 'wang-yan', name: '王衍', aliases: ['前蜀后主', '前蜀末帝'], birthYear: 899, deathYear: 926, roles: ['皇帝', '末代君主'], polityIds: ['former_shu'], description: '王衍是前蜀末帝，925年后唐攻取成都后出降，前蜀政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'meng-zhixiang', name: '孟知祥', aliases: ['后蜀高祖'], birthYear: 874, deathYear: 934, roles: ['皇帝', '军事领袖'], polityIds: ['later_shu'], description: '孟知祥在后唐蜀地军政基础上建立后蜀，成都继续作为政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'meng-chang', name: '孟昶', aliases: ['后蜀后主', '后蜀末主'], birthYear: 919, deathYear: 965, roles: ['皇帝', '末代君主'], polityIds: ['later_shu'], description: '孟昶是后蜀末主，965年北宋攻取成都后出降，后蜀中央政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'gao-huan', name: '高欢', aliases: ['齐神武帝'], birthYear: 496, deathYear: 547, roles: ['军事领袖', '权臣'], polityIds: ['wei_eastern'], description: '高欢控制东魏军政并以邺为核心重组北魏东部秩序，北齐建立前的权力基础由此形成。', sourceIds: ['zizhi-tongjian'] },
   { id: 'gao-yang', name: '高洋', aliases: ['北齐文宣帝'], birthYear: 529, deathYear: 559, roles: ['皇帝'], polityIds: ['qi_northern'], description: '高洋承接高氏在东魏的军政基础，受禅建立北齐。', sourceIds: ['zizhi-tongjian'] },
   { id: 'zhao-gou', name: '赵构', aliases: ['宋高宗'], birthYear: 1107, deathYear: 1187, roles: ['皇帝'], polityIds: ['song_south'], description: '赵构在靖康之变后于应天府即位，重建宋室政权并开启南宋阶段。', sourceIds: ['zizhi-tongjian'] },
