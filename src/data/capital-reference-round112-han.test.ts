@@ -53,14 +53,14 @@ describe('round 112 Qin-Han capital boundary', () => {
     expect(qin?.eventIds).not.toContain('chu-han-contention');
   });
 
-  it('keeps the four Han heritage candidates outside a single-polity closure', () => {
+  it('keeps Changle Palace cross-polity and closes the White Horse Temple endpoint', () => {
     expect(heritageCandidates.filter(hasIndependentConstructionEndpoint)).toEqual(['changle-palace-site', 'maoling', 'du-ling', 'white-horse-temple']);
 
     expect(getHeritageDetail('changle-palace-site')?.associatedPolities).toEqual(['han_western', 'xin']);
     expect(getHeritageDetail('white-horse-temple')?.associatedPolities).toEqual(['han_eastern', 'tang']);
     expect(getPolityDetail('han_western')?.heritageIds).not.toContain('changle-palace-site');
     expect(getPolityDetail('han_western')?.heritageIds).toEqual(expect.arrayContaining(['maoling', 'du-ling']));
-    expect(getPolityDetail('han_eastern')?.heritageIds).not.toContain('white-horse-temple');
+    expect(getPolityDetail('han_eastern')?.heritageIds).toContain('white-horse-temple');
   });
 
   it('does not promote nearby or background events into palace or tomb construction endpoints', () => {

@@ -49,12 +49,9 @@ describe('round 105 capital reference audit', () => {
       .map((row) => `${row.polityId}|${row.placeId}|${row.eventId ?? ''}|${row.heritageId ?? ''}`)
       .sort();
     expect(candidateKeys).toEqual([
-      'han_eastern|luoyang|white-horse-temple-founded|',
-      'han_eastern|luoyang||white-horse-temple',
       'han_western|changan||changle-palace-site',
       'later_liang|guzang||guzang-baita-temple-site',
       'liang_later|kaifeng|five-dynasties|',
-      'liang_southern|jiankang|southern-qi-ended-502|',
       'northern_yan|longcheng|later-yan-ended-407|',
       'qin|xianyang|chu-han-contention|',
       'song_northern|kaifeng|song-founded|',
@@ -63,11 +60,9 @@ describe('round 105 capital reference audit', () => {
       'sui|changan||taiji-palace-site',
       'tang|changan||qianling',
       'tang|changan||ximing-temple-site',
-      'tang|luoyang|court-moves-luoyang|',
       'zhou_eastern|luoyang|zhou-eastward|',
       'zhou_later|kaifeng|later-han-ended-951|',
       'zhou_later|kaifeng||kaifeng-northern-song-city-site',
-      'zhou_northern|changan|western-wei-ended-557|',
     ]);
     expect(rows).not.toContainEqual({
       polityId: 'northern_liang',

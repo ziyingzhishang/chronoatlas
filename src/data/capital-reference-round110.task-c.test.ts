@@ -34,16 +34,6 @@ const candidates: readonly AuditCandidate[] = [
     nextAction: '只有新增带有明确秦方阶段、咸阳地点、参与者与独立来源的事件端点，才可重新评估。',
   },
   {
-    label: '唐—洛阳行幸',
-    targetPolityId: 'tang',
-    placeId: 'luoyang',
-    endpointId: 'court-moves-luoyang',
-    kind: 'event',
-    category: 'shared-transition-event',
-    blockingEvidence: '904年迁廷同时关联唐与后梁，并同时涉及长安、洛阳，是唐末权力转移节点。',
-    nextAction: '补录前必须取得唐首都阶段内、语义独立且不把后梁承接混入的迁都事实端点。',
-  },
-  {
     label: '后梁五代转折',
     targetPolityId: 'liang_later',
     placeId: 'kaifeng',
@@ -100,9 +90,9 @@ const overlaps = (from: number | undefined, to: number | undefined, year: number
 );
 
 describe('round 110 capital reference task C', () => {
-  it('keeps the seven requested candidates in an executable audit queue', () => {
-    expect(candidates).toHaveLength(7);
-    expect(candidates.filter((candidate) => candidate.kind === 'event')).toHaveLength(5);
+  it('keeps the six remaining requested candidates in an executable audit queue', () => {
+    expect(candidates).toHaveLength(6);
+    expect(candidates.filter((candidate) => candidate.kind === 'event')).toHaveLength(4);
     expect(candidates.filter((candidate) => candidate.kind === 'heritage')).toHaveLength(2);
     expect(candidates.every((candidate) => candidate.blockingEvidence && candidate.nextAction)).toBe(true);
   });

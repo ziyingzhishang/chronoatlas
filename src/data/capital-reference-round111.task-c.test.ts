@@ -42,10 +42,9 @@ describe('round 111 capital reference task C', () => {
     expect(polityDetail?.heritageIds).toContain('chu-shouchun-city-site');
   });
 
-  it('keeps the seven cross-polity candidates outside forced single-polity closure', () => {
+  it('keeps the six remaining cross-polity candidates outside forced single-polity closure', () => {
     const sharedEvents = [
       ['chu-han-contention', 'qin'],
-      ['court-moves-luoyang', 'tang'],
       ['five-dynasties', 'liang_later'],
       ['zhou-eastward', 'zhou_eastern'],
     ] as const;

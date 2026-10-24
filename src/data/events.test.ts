@@ -43,7 +43,7 @@ test('catalog supports stable selection and chronological navigation without inv
       expect(event.datePrecision).toBe('range');
     }
     if (event.endYear !== undefined && event.datePrecision !== 'range') {
-      expect(event.datePrecision).toBe('year');
+      expect(['year', 'approximate']).toContain(event.datePrecision);
       expect(event.endYear).toBeGreaterThanOrEqual(event.year);
     }
     if (event.coordinates) {

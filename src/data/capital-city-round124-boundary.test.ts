@@ -35,14 +35,11 @@ const key = (candidate: Candidate) => (
 const categories: Record<string, BoundaryCategory> = {
   'qin|xianyang|chu-han-contention|': 'shared-transition-event',
   'han_western|changan||changle-palace-site': 'cross-polity-heritage',
-  'han_eastern|luoyang||white-horse-temple': 'cross-polity-heritage',
-  'han_eastern|luoyang|white-horse-temple-founded|': 'heritage-event-not-polity-chain',
   'sui|changan||taiji-palace-site': 'layered-capital-heritage',
   'sui|changan||hanguang-gate-site': 'layered-capital-heritage',
   'sui|changan||mingde-gate-site': 'layered-capital-heritage',
   'tang|changan||qianling': 'cross-polity-heritage',
   'tang|changan||ximing-temple-site': 'location-approximate',
-  'tang|luoyang|court-moves-luoyang|': 'shared-transition-event',
   'liang_later|kaifeng|five-dynasties|': 'shared-transition-event',
   'zhou_later|kaifeng|later-han-ended-951|': 'shared-transition-event',
   'zhou_later|kaifeng||kaifeng-northern-song-city-site': 'cross-stage-city-layer',
@@ -50,8 +47,6 @@ const categories: Record<string, BoundaryCategory> = {
   'later_liang|guzang||guzang-baita-temple-site': 'cross-polity-heritage',
   'song_northern|kaifeng|song-founded|': 'duplicate-event-node',
   'northern_yan|longcheng|later-yan-ended-407|': 'shared-transition-event',
-  'liang_southern|jiankang|southern-qi-ended-502|': 'shared-transition-event',
-  'zhou_northern|changan|western-wei-ended-557|': 'shared-transition-event',
 };
 
 function discoverResiduals(): Candidate[] {

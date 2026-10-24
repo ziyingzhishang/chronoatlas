@@ -11,20 +11,13 @@ const overlaps = (from: number | undefined, to: number | undefined, year: number
 );
 
 describe('round 109 capital chain task C', () => {
-  it('audits all seven shared candidates without closing a non-exclusive endpoint', () => {
+  it('audits the six remaining shared candidates without closing a non-exclusive endpoint', () => {
     const eventCandidates = [
       {
         label: '秦—楚汉之争',
         targetPolityId: 'qin',
         placeId: 'xianyang',
         eventId: 'chu-han-contention',
-        category: 'shared-transition-event',
-      },
-      {
-        label: '唐—洛阳行幸',
-        targetPolityId: 'tang',
-        placeId: 'luoyang',
-        eventId: 'court-moves-luoyang',
         category: 'shared-transition-event',
       },
       {
@@ -50,7 +43,7 @@ describe('round 109 capital chain task C', () => {
       },
     ] as const;
 
-    expect(eventCandidates).toHaveLength(5);
+    expect(eventCandidates).toHaveLength(4);
 
     for (const candidate of eventCandidates) {
       const capital = capitalHistory.find((term) => (

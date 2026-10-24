@@ -31,11 +31,11 @@ function hasIndependentConstructionEvent(heritageId: typeof candidateIds[number]
 }
 
 describe('round 110 Han capital heritage boundary', () => {
-  it('keeps cross-polity Changle Palace and White Horse Temple outside a single-polity closure', () => {
+  it('keeps Changle Palace cross-polity and closes the White Horse Temple endpoint', () => {
     expect(getHeritageDetail('changle-palace-site')?.associatedPolities).toEqual(['han_western', 'xin']);
     expect(getHeritageDetail('white-horse-temple')?.associatedPolities).toEqual(['han_eastern', 'tang']);
     expect(getPolityDetail('han_western')?.heritageIds).not.toContain('changle-palace-site');
-    expect(getPolityDetail('han_eastern')?.heritageIds).not.toContain('white-horse-temple');
+    expect(getPolityDetail('han_eastern')?.heritageIds).toContain('white-horse-temple');
   });
 
   it('closes Maoling and Duling only after their independent construction events are attached', () => {
