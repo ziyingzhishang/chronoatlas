@@ -13,6 +13,7 @@ const expectedEventIds = [
   'eastern-wei-ended-550',
   'northern-qi-ended-577',
   'northern-zhou-ended-581',
+  'sui-ended-618',
   'western-wei-ended-557',
   'qin-state-founded-eighth-batch',
   'chu-warring-founded-eighth-batch',
