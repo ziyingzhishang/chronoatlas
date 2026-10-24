@@ -80,8 +80,12 @@ describe('Luoyang capital-history completeness boundary', () => {
     for (const asset of luoyangHeritage) {
       expect(asset.sourceIds.length, asset.id).toBeGreaterThan(0);
       const assetEnd = asset.constructionTo ?? asset.constructionFrom;
-      expect(asset.constructionFrom).toBeLessThanOrEqual(assetEnd);
-      expect(luoyangPhases.some(([, phaseStart, phaseEnd]) => asset.constructionFrom <= phaseEnd && phaseStart <= assetEnd), asset.id).toBe(true);
+      expect(asset.constructionFrom, `${asset.id}: construction start`).toBeDefined();
+      expect(assetEnd, `${asset.id}: construction end`).toBeDefined();
+      if (asset.constructionFrom === undefined || assetEnd === undefined) continue;
+      const assetStart = asset.constructionFrom;
+      expect(assetStart).toBeLessThanOrEqual(assetEnd);
+      expect(luoyangPhases.some(([, phaseStart, phaseEnd]) => assetStart <= phaseEnd && phaseStart <= assetEnd), asset.id).toBe(true);
     }
   });
 

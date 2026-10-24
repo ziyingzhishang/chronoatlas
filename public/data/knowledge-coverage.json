@@ -15823,6 +15823,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -64639,6 +64640,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
