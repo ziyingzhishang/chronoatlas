@@ -1777,7 +1777,14 @@ const details: HistoricalEventDetail[] = [
   },
   {
     eventId: 'han-wudi-expands-changan',
-    participants: [],
+    participants: [
+      {
+        personId: 'liu-che',
+        relationType: 'direct',
+        role: '汉武帝刘彻与前138年长安宫城扩建阶段的西汉君主',
+        note: '刘彻对应前138年长安宫室与礼制空间扩展的君主端点；本条限前138年扩建节点，不把前200年汉长安新城营建或后续宫殿阶段回填为同一事件参与。',
+      },
+    ],
     polityIds: ['han_western'],
     causes: ['帝国人口、礼仪与宫廷活动增长，既有都城空间需要扩展。'],
     consequences: ['长安宫城和礼制空间继续发展。', '西汉都城的政治象征与帝国动员能力进一步强化。'],
