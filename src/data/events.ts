@@ -166,6 +166,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百五十六·梁纪十二', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷156', detail: '记载北魏分裂、元善见在邺即位及高欢控制东部的过程；具体军政控制范围仍需分段核验。' }],
   },
   {
+    id: 'eastern-wei-ended-550', year: 550, title: '东魏禅代终止、北齐承接', summary: '东魏孝静帝元善见在邺禅位于高洋，东魏中央政权终止，北齐承接邺城政治中心。', placeId: 'ye', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '东魏末年高氏家族掌握东部军政与朝廷资源，元善见的名义皇统与实际权力之间的张力最终转化为禅代。',
+    process: '550年元善见在邺禅位于高洋，高洋建立北齐；禅代、东魏中央政权终止与北齐接收东部行政秩序属于同一转换阶段，但不能视作城市遗产消失。',
+    impact: '东魏政权终止，北齐承接邺城及东部政治中心；邺城继续作为多政权叠压的城市与考古遗产存在。',
+    mapNote: '550年标记邺城政治权力的禅代节点；地图应区分东魏名义皇统、北齐承接和东部地方行政整合，不以北齐后期范围回填禅代当年。',
+    references: [{ title: '《资治通鉴》·齐纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对550年元善见禅位于高洋、北齐建立及东魏终止的编年节点；邺城遗产按多政权历史层承接。' }],
+  },
+  {
     id: 'western-wei-founded', year: 535, title: '西魏建立', summary: '元宝炬在长安即位，北魏西部政权转入西魏阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '北魏孝武帝西奔后，宇文泰控制关中并需要以元魏宗室重新组织西部政治秩序。',

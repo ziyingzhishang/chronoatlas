@@ -1320,6 +1320,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "eastern-wei-ended-550",
+      "entityKey": "event:eastern-wei-ended-550",
+      "label": "东魏禅代终止、北齐承接",
+      "polityIds": [
+        "qi_northern",
+        "wei_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "eastern-wei-ended-550"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-yang-participated-eastern-wei-ended-550",
+            "claim:claim-yuan-shanjian-participated-eastern-wei-ended-550",
+            "event-detail:eastern-wei-ended-550"
+          ],
+          "relatedIds": [
+            "eastern-wei-founded",
+            "gao-yang",
+            "northern-qi-founded",
+            "qi_northern",
+            "wei_eastern",
+            "yuan-shanjian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "eastern-wei-founded",
       "entityKey": "event:eastern-wei-founded",
       "label": "东魏建立",
@@ -18977,6 +19041,7 @@
             "heritage-detail:ye-city-site"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "eastern-wei-founded",
             "former-yan-ended-370",
             "former-yan-founded",
@@ -18992,7 +19057,8 @@
             "murong-wei",
             "northern-qi-founded",
             "qi_northern",
-            "wei_eastern"
+            "wei_eastern",
+            "yuan-shanjian"
           ]
         },
         {
@@ -21853,12 +21919,16 @@
             "claim:claim-gao-yang-child-gao-huan",
             "claim:claim-gao-yang-enemy-yuan-shanjian-seventyninth",
             "claim:claim-gao-yang-founded-northern-qi",
+            "claim:claim-gao-yang-participated-eastern-wei-ended-550",
             "claim:claim-gao-yang-participated-northern-qi",
             "claim:claim-gao-yang-ruled-northern-qi-fiftyeighth",
+            "claim:claim-yuan-shanjian-enemy-gao-yang-eastern-wei-termination-550",
+            "event-detail:eastern-wei-ended-550",
             "event-detail:northern-qi-founded",
             "person-polity:gao-yang:qi_northern"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "gao-huan",
             "northern-qi-founded",
             "qi_northern",
@@ -33744,12 +33814,16 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-gao-yang-enemy-yuan-shanjian-seventyninth",
+            "claim:claim-yuan-shanjian-enemy-gao-yang-eastern-wei-termination-550",
             "claim:claim-yuan-shanjian-participated-eastern-wei",
+            "claim:claim-yuan-shanjian-participated-eastern-wei-ended-550",
             "claim:claim-yuan-shanjian-related-gao-huan",
             "claim:claim-yuan-shanjian-ruled-eastern-wei-round105",
+            "event-detail:eastern-wei-ended-550",
             "person-polity:yuan-shanjian:wei_eastern"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "eastern-wei-founded",
             "gao-huan",
             "gao-yang",
@@ -38504,12 +38578,14 @@
           "evidenceIds": [
             "claim:claim-gao-yang-founded-northern-qi",
             "claim:claim-gao-yang-ruled-northern-qi-fiftyeighth",
+            "event-detail:eastern-wei-ended-550",
             "event-detail:northern-qi-founded",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
             "person:gao-yang"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "gao-yang",
             "northern-qi-founded",
             "ye-city-site",
@@ -40284,6 +40360,7 @@
           "evidenceIds": [
             "claim:claim-gao-huan-ruled-eastern-wei",
             "claim:claim-yuan-shanjian-ruled-eastern-wei-round105",
+            "event-detail:eastern-wei-ended-550",
             "event-detail:eastern-wei-founded",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
@@ -40291,6 +40368,7 @@
             "person:yuan-shanjian"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "eastern-wei-founded",
             "gao-huan",
             "ye-city-site",
@@ -44869,6 +44947,70 @@
             "sima-rui",
             "sui-unification",
             "western-jin-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:eastern-wei-ended-550": {
+      "entityType": "event",
+      "entityId": "eastern-wei-ended-550",
+      "entityKey": "event:eastern-wei-ended-550",
+      "label": "东魏禅代终止、北齐承接",
+      "polityIds": [
+        "qi_northern",
+        "wei_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "eastern-wei-ended-550"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-gao-yang-participated-eastern-wei-ended-550",
+            "claim:claim-yuan-shanjian-participated-eastern-wei-ended-550",
+            "event-detail:eastern-wei-ended-550"
+          ],
+          "relatedIds": [
+            "eastern-wei-founded",
+            "gao-yang",
+            "northern-qi-founded",
+            "qi_northern",
+            "wei_eastern",
+            "yuan-shanjian"
           ]
         },
         {
@@ -62539,6 +62681,7 @@
             "heritage-detail:ye-city-site"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "eastern-wei-founded",
             "former-yan-ended-370",
             "former-yan-founded",
@@ -62554,7 +62697,8 @@
             "murong-wei",
             "northern-qi-founded",
             "qi_northern",
-            "wei_eastern"
+            "wei_eastern",
+            "yuan-shanjian"
           ]
         },
         {
@@ -65415,12 +65559,16 @@
             "claim:claim-gao-yang-child-gao-huan",
             "claim:claim-gao-yang-enemy-yuan-shanjian-seventyninth",
             "claim:claim-gao-yang-founded-northern-qi",
+            "claim:claim-gao-yang-participated-eastern-wei-ended-550",
             "claim:claim-gao-yang-participated-northern-qi",
             "claim:claim-gao-yang-ruled-northern-qi-fiftyeighth",
+            "claim:claim-yuan-shanjian-enemy-gao-yang-eastern-wei-termination-550",
+            "event-detail:eastern-wei-ended-550",
             "event-detail:northern-qi-founded",
             "person-polity:gao-yang:qi_northern"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "gao-huan",
             "northern-qi-founded",
             "qi_northern",
@@ -77306,12 +77454,16 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-gao-yang-enemy-yuan-shanjian-seventyninth",
+            "claim:claim-yuan-shanjian-enemy-gao-yang-eastern-wei-termination-550",
             "claim:claim-yuan-shanjian-participated-eastern-wei",
+            "claim:claim-yuan-shanjian-participated-eastern-wei-ended-550",
             "claim:claim-yuan-shanjian-related-gao-huan",
             "claim:claim-yuan-shanjian-ruled-eastern-wei-round105",
+            "event-detail:eastern-wei-ended-550",
             "person-polity:yuan-shanjian:wei_eastern"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "eastern-wei-founded",
             "gao-huan",
             "gao-yang",
@@ -82066,12 +82218,14 @@
           "evidenceIds": [
             "claim:claim-gao-yang-founded-northern-qi",
             "claim:claim-gao-yang-ruled-northern-qi-fiftyeighth",
+            "event-detail:eastern-wei-ended-550",
             "event-detail:northern-qi-founded",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
             "person:gao-yang"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "gao-yang",
             "northern-qi-founded",
             "ye-city-site",
@@ -83846,6 +84000,7 @@
           "evidenceIds": [
             "claim:claim-gao-huan-ruled-eastern-wei",
             "claim:claim-yuan-shanjian-ruled-eastern-wei-round105",
+            "event-detail:eastern-wei-ended-550",
             "event-detail:eastern-wei-founded",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
@@ -83853,6 +84008,7 @@
             "person:yuan-shanjian"
           ],
           "relatedIds": [
+            "eastern-wei-ended-550",
             "eastern-wei-founded",
             "gao-huan",
             "ye-city-site",
@@ -85456,9 +85612,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 197,
+      "totalEntities": 198,
       "statusCounts": {
-        "covered": 944,
+        "covered": 949,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -87457,6 +87613,7 @@
       "polityId": "qi_northern",
       "polityName": "北齐",
       "entityKeys": [
+        "event:eastern-wei-ended-550",
         "event:northern-qi-founded",
         "heritage:ye-city-site",
         "heritage:ye-tongque-platform-site",
@@ -88636,6 +88793,7 @@
       "polityId": "wei_eastern",
       "polityName": "东魏",
       "entityKeys": [
+        "event:eastern-wei-ended-550",
         "event:eastern-wei-founded",
         "heritage:ye-city-site",
         "heritage:ye-tongque-platform-site",
@@ -92845,6 +93003,7 @@
       "cityName": "临漳县一带",
       "capitalRecordCount": 5,
       "entityKeys": [
+        "event:eastern-wei-ended-550",
         "event:eastern-wei-founded",
         "event:former-yan-ended-370",
         "event:former-yan-founded",
@@ -92862,6 +93021,7 @@
         "person:murong-huang",
         "person:murong-wei",
         "person:shi-hu",
+        "person:yuan-shanjian",
         "polity:former_yan",
         "polity:later_yan",
         "polity:later_zhao",

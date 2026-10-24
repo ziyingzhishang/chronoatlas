@@ -368,6 +368,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '534年是政权分立与元善见即位的节点；邺是政治中心，不以东魏后期最大控制范围倒推建国初期疆域。',
   },
   {
+    eventId: 'eastern-wei-ended-550',
+    participants: [
+      { personId: 'yuan-shanjian', role: '东魏末代皇帝与禅代节点的名义君主', note: '元善见在邺禅位于高洋，代表东魏名义皇统的终止；其实际军政权力与高氏集团的控制必须分层表达。' },
+      { personId: 'gao-yang', role: '受东魏禅位并建立北齐的承接者', note: '高洋代表550年北齐建政与邺城政治中心承接，不把北齐后期扩张范围回填到禅代当年。' },
+    ],
+    polityIds: ['wei_eastern', 'qi_northern'],
+    causes: ['东魏末年高氏家族持续掌握东部军政与朝廷资源。', '元善见的名义皇统与高氏实际权力之间的结构性张力无法继续维持。'],
+    consequences: ['东魏中央政权终止，元善见退出帝位。', '高洋受禅建立北齐，邺城政治中心由东魏转入北齐承接。', '邺城宫城、城垣与地方社会继续存在，进入北齐及后续多政权城市历史层。'],
+    phases: [
+      { label: '东魏末期权力转移', startYear: 547, endYear: 549, summary: '高氏集团巩固东部军政与朝廷控制。' },
+      { label: '禅代与政权终止', startYear: 550, endYear: 550, summary: '元善见在邺禅位于高洋，东魏中央政权终止。' },
+      { label: '北齐承接', startYear: 550, endYear: 554, summary: '高洋建立北齐，邺城继续作为东部政治中心。' },
+    ],
+    locationIds: ['ye'],
+    relatedEventIds: ['eastern-wei-founded', 'northern-qi-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '550年禅代是东魏中央政权终止与北齐建立的明确年份节点；高氏实际掌权、元善见个人处置和东部地方行政接收不能压缩为单一人物或城市消失事件。',
+  },
+  {
     eventId: 'western-wei-founded',
     participants: [
       { personId: 'yu-wen-tai', role: '关中军政集团领袖与西魏形成期的实际掌权者', note: '宇文泰主持关中军政整合；元宝炬即位的皇室端点未纳入当前人物目录，保留权力结构说明。' },

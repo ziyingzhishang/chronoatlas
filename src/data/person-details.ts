@@ -355,7 +355,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'gao-yang', biography: '高洋承接高欢家族在东魏的军政基础，550年受禅建立北齐。',
     aliases: ['北齐文宣帝'], offices: [{ title: '北齐皇帝', polityId: 'qi_northern', placeId: 'ye', validFrom: 550, validTo: 559, datePrecision: 'range', sourceIds }],
-    keyEvents: ['northern-qi-founded'], sourceIds, uncertaintyNote: '550年受禅是北齐建政节点，不把北齐后期控制范围回填到禅代当年。',
+    keyEvents: ['eastern-wei-ended-550', 'northern-qi-founded'], sourceIds, uncertaintyNote: '550年受禅同时构成东魏中央政权终止与北齐建政节点；不把北齐后期控制范围回填到禅代当年。',
   },
   {
     personId: 'zhao-gou', biography: '赵构在靖康之变后于应天府即位，重建宋室中央并开启南宋阶段，政权随后经历多地迁驻。',
@@ -981,7 +981,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'yuan-shanjian', biography: '元善见即东魏孝静帝，534年在邺即位，东魏由此形成；高欢及其集团掌握主要实际军政权力。',
     aliases: ['东魏孝静帝'], offices: [{ title: '东魏皇帝', polityId: 'wei_eastern', placeId: 'ye', validFrom: 534, validTo: 550, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['eastern-wei-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '东魏名义皇统与高欢、高澄家族的实际权力需要分层记录；元善见即位不等于其独立掌握全部军政资源。',
+    keyEvents: ['eastern-wei-founded', 'eastern-wei-ended-550'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '元善见连接534年东魏形成与550年禅代终止；东魏名义皇统与高欢、高澄家族的实际权力需要分层记录。',
   },
   {
     personId: 'liu-yilong', biography: '刘义隆即宋文帝，继承刘裕建立的刘宋，在元嘉时期整顿江南政权并参与南北军事与外交竞争。',

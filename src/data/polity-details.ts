@@ -213,7 +213,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['北魏末年洛阳中央秩序崩解，东部军政集团控制邺城。', '534年元善见在邺即位，东魏形成。', '高欢及其集团维持东部政权运作，550年禅代为北齐。'],
     turningPoints: [turn(534, '东魏建立', '元善见在邺即位，东魏政权形成。', 'eastern-wei-founded'), turn(537, '东西魏竞争', '东魏与西魏围绕关中、河东和河北展开战争。'), turn(550, '东魏禅代', '高洋受禅建立北齐，东魏结束。')],
     principalFigureIds: ['gao-huan', 'yuan-shanjian'], capitalPhases: [capital('ye', 534, 550)],
-    heritageIds: ['ye-city-site', 'ye-tongque-platform-site'], eventIds: ['eastern-wei-founded'], claimIds: ['claim-gao-huan-ruled-eastern-wei'], sourceIds: modernSources,
+    heritageIds: ['ye-city-site', 'ye-tongque-platform-site'], eventIds: ['eastern-wei-founded', 'eastern-wei-ended-550'], claimIds: ['claim-gao-huan-ruled-eastern-wei', 'claim-yuan-shanjian-ruled-eastern-wei-round105', 'claim-yuan-shanjian-participated-eastern-wei-ended-550', 'claim-yuan-shanjian-enemy-gao-yang-eastern-wei-termination-550', 'claim-gao-yang-participated-eastern-wei-ended-550'], sourceIds: modernSources,
     uncertaintyNote: '东魏名义皇帝与实际掌权集团必须分层展示；邺城及铜雀台遗址覆盖曹魏、十六国、东魏、北齐等多重历史层，不能全部归于东魏。',
   }),
   detail({
@@ -229,7 +229,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['高氏集团在东魏时期控制邺与东部军政资源。', '550年高洋受禅建立北齐。', '北齐继续以邺为都，最终在北周统一战争中结束。'],
     turningPoints: [turn(550, '北齐建立', '高洋受东魏禅位建立北齐。', 'northern-qi-founded'), turn(555, '东部制度整合', '北齐巩固河北、山东等地的行政与军政秩序。'), turn(577, '北齐覆亡', '北周攻取邺，北齐结束。')],
     principalFigureIds: ['gao-yang'], capitalPhases: [capital('ye', 550, 577)],
-    heritageIds: ['ye-city-site', 'ye-tongque-platform-site'], eventIds: ['northern-qi-founded'], claimIds: ['claim-gao-yang-founded-northern-qi'], sourceIds: modernSources,
+    heritageIds: ['ye-city-site', 'ye-tongque-platform-site'], eventIds: ['eastern-wei-ended-550', 'northern-qi-founded'], claimIds: ['claim-gao-yang-founded-northern-qi', 'claim-gao-yang-participated-eastern-wei-ended-550'], sourceIds: modernSources,
     uncertaintyNote: '北齐以邺为正式都城，但疆域和军政控制随北周战争变化；邺城遗址是跨朝代城市层，铜雀台也不是北齐专属建筑。',
   }),
   detail({

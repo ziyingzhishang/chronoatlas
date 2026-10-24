@@ -233,7 +233,7 @@ const details: HeritageDetail[] = [
     phase('original', '城市营建', '3世纪前后', '邺城在曹魏时期形成重要城市规划传统，后续十六国和北朝政权继续利用其政治位置。', 204, 350),
     phase('reconstruction', '多政权改造', '335—577年', '后赵、前燕、东魏和北齐时期，宫城、城垣和政治空间持续变化。', 335, 577, '不同政权的城址层、宫城范围和制度用途不能合并为一座静态古城。'),
     phase('site', '考古遗址', '20世纪以来', '城墙、宫殿区、道路和铜雀台等相关遗迹以考古调查、发掘和遗址保护形式保存。', 1900),
-  ], ['gao-huan', 'gao-yang', 'murong-huang', 'murong-wei', 'fu-jian'], ['wei_eastern', 'qi_northern', 'later_zhao', 'former_yan', 'former_qin'], ['eastern-wei-founded', 'northern-qi-founded', 'later-zhao-founded', 'later-zhao-moves-ye', 'former-yan-founded', 'former-yan-ended-370'], ['城垣与宫城遗址', '道路和台址', '多政权叠压的考古层'], '研究十六国、北朝都城、宫城制度和河北历史地理的关键遗址，并追踪前燕终止后的城市承接。', '邺城不同阶段城址和建筑的对应关系仍需考古分期；现存台址、地面标识不等同于历史宫殿完整留存，370年政权终止也不等于城市遗产终止。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference', 'ye-city-official']),
+  ], ['gao-huan', 'gao-yang', 'yuan-shanjian', 'murong-huang', 'murong-wei', 'fu-jian'], ['wei_eastern', 'qi_northern', 'later_zhao', 'former_yan', 'former_qin'], ['eastern-wei-founded', 'eastern-wei-ended-550', 'northern-qi-founded', 'later-zhao-founded', 'later-zhao-moves-ye', 'former-yan-founded', 'former-yan-ended-370'], ['城垣与宫城遗址', '道路和台址', '多政权叠压的考古层'], '研究十六国、北朝都城、宫城制度和河北历史地理的关键遗址，并追踪东魏禅代、北齐承接及前燕终止后的城市承接。', '邺城不同阶段城址和建筑的对应关系需考古分期；现存台址、地面标识不等同于历史宫殿完整留存，550年政权终止也不等于城市遗产终止。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference', 'ye-city-official']),
   detail('former-shu-yongling', '今四川省成都市金牛区永陵路一带，墓室和石刻遗存位于现代城市博物馆保护范围内。', ['前蜀王建陵墓', '成都作为十国都城的宫廷、墓葬与城市记忆'], [
     phase('original', '陵墓营建', '918年前后', '王建去世后葬于永陵，墓室、石刻和随葬体系反映前蜀皇帝陵墓制度。', 918),
     phase('site', '墓室遗存', '20世纪发掘与保护', '墓室、石床、石刻和部分遗物以考古遗址与博物馆形式保存。', 900, 2000),
