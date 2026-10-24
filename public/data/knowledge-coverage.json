@@ -4462,6 +4462,71 @@
     },
     {
       "entityType": "event",
+      "entityId": "ma-chu-ended-951",
+      "entityKey": "event:ma-chu-ended-951",
+      "label": "马楚在长沙终结、南唐承接",
+      "polityIds": [
+        "chu_ten",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "ma-chu-ended-951"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "song-history-nantang",
+            "southern-tang-periods",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-participated-ma-chu-ended-951",
+            "event-detail:ma-chu-ended-951"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "ma-chu-founded",
+            "ma-xichong",
+            "ma-xie",
+            "southern-tang-conquers-chu",
+            "southern_tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "ma-chu-founded",
       "entityKey": "event:ma-chu-founded",
       "label": "马楚政权建立",
@@ -14949,7 +15014,8 @@
       "entityKey": "heritage:ma-chu-tan-zhou-city-site",
       "label": "马楚潭州城址历史层",
       "polityIds": [
-        "chu_ten"
+        "chu_ten",
+        "southern_tang"
       ],
       "checks": [
         {
@@ -14987,8 +15053,14 @@
           ],
           "relatedIds": [
             "chu_ten",
+            "li-jing",
+            "ma-chu-ended-951",
             "ma-chu-founded",
-            "ma-yin"
+            "ma-xichong",
+            "ma-xie",
+            "ma-xiguang",
+            "ma-yin",
+            "southern_tang"
           ]
         },
         {
@@ -24042,7 +24114,10 @@
             "claim:claim-li-jing-participated-min-ended-945",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-child-li-jing",
+            "claim:claim-ma-xichong-submitted-to-li-jing-termination-951",
+            "claim:claim-ma-xie-enemy-li-jing-termination-951",
             "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
+            "event-detail:ma-chu-ended-951",
             "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -24054,6 +24129,9 @@
           "relatedIds": [
             "li-bian",
             "li-yu",
+            "ma-chu-ended-951",
+            "ma-xichong",
+            "ma-xie",
             "min-ended-945",
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
@@ -26191,6 +26269,200 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "ma-xichong",
+      "entityKey": "person:ma-xichong",
+      "label": "马希崇",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ma-xichong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-participated-ma-chu-ended-951",
+            "claim:claim-ma-xichong-ruled-chu",
+            "claim:claim-ma-xichong-sibling-ma-xie",
+            "claim:claim-ma-xichong-sibling-ma-xiguang",
+            "claim:claim-ma-xichong-submitted-to-li-jing-termination-951",
+            "event-detail:ma-chu-ended-951",
+            "person-polity:ma-xichong:chu_ten"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "ma-chu-ended-951",
+            "ma-xie",
+            "ma-xiguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "ma-xie",
+      "entityKey": "person:ma-xie",
+      "label": "马希萼",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ma-xie"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-sibling-ma-xie",
+            "claim:claim-ma-xie-enemy-li-jing-termination-951",
+            "event-detail:ma-chu-ended-951",
+            "person-polity:ma-xie:chu_ten"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "ma-chu-ended-951",
+            "ma-xichong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "ma-xiguang",
+      "entityKey": "person:ma-xiguang",
+      "label": "马希广",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ma-xiguang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-sibling-ma-xiguang",
+            "person-polity:ma-xiguang:chu_ten"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "ma-xichong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -34967,6 +35239,8 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "song-history-nantang",
+            "southern-tang-periods",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -34976,15 +35250,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-ma-xichong-ruled-chu",
             "claim:claim-ma-yin-ruled-chu",
+            "event-detail:ma-chu-ended-951",
             "event-detail:ma-chu-founded",
             "event-detail:southern-tang-conquers-chu",
             "heritage-detail:ma-chu-tan-zhou-city-site",
+            "person:ma-xichong",
+            "person:ma-xie",
+            "person:ma-xiguang",
             "person:ma-yin"
           ],
           "relatedIds": [
+            "ma-chu-ended-951",
             "ma-chu-founded",
             "ma-chu-tan-zhou-city-site",
+            "ma-xichong",
+            "ma-xie",
+            "ma-xiguang",
             "ma-yin",
             "southern-tang-conquers-chu"
           ]
@@ -38838,6 +39121,7 @@
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
+            "event-detail:ma-chu-ended-951",
             "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -38848,6 +39132,7 @@
             "event-detail:southern-tang-moves-nanchang",
             "event-detail:yang-wu-ended-937",
             "event-detail:yang-wu-yangzhou-transferred-937",
+            "heritage-detail:ma-chu-tan-zhou-city-site",
             "heritage-detail:min-wang-mausoleum",
             "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
@@ -38860,6 +39145,8 @@
             "li-bian",
             "li-jing",
             "li-yu",
+            "ma-chu-ended-951",
+            "ma-chu-tan-zhou-city-site",
             "min-ended-945",
             "min-wang-mausoleum",
             "southern-tang-cedes-huainan",
@@ -42201,6 +42488,41 @@
       ],
       "evidenceIds": [
         "jinshu-vol103-liu-yao",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "ma-xichong",
+      "entityKey": "person:ma-xichong",
+      "label": "马希崇",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "song-history-nantang",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "ma-xiguang",
+      "entityKey": "person:ma-xiguang",
+      "label": "马希广",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "evidenceIds": [
+        "china-chronology",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -47161,6 +47483,71 @@
             "yongli-zhaoqing-founded",
             "zheng-zhi-long",
             "zhu-yujian"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:ma-chu-ended-951": {
+      "entityType": "event",
+      "entityId": "ma-chu-ended-951",
+      "entityKey": "event:ma-chu-ended-951",
+      "label": "马楚在长沙终结、南唐承接",
+      "polityIds": [
+        "chu_ten",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "ma-chu-ended-951"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "song-history-nantang",
+            "southern-tang-periods",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-participated-ma-chu-ended-951",
+            "event-detail:ma-chu-ended-951"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "ma-chu-founded",
+            "ma-xichong",
+            "ma-xie",
+            "southern-tang-conquers-chu",
+            "southern_tang"
           ]
         },
         {
@@ -57661,7 +58048,8 @@
       "entityKey": "heritage:ma-chu-tan-zhou-city-site",
       "label": "马楚潭州城址历史层",
       "polityIds": [
-        "chu_ten"
+        "chu_ten",
+        "southern_tang"
       ],
       "checks": [
         {
@@ -57699,8 +58087,14 @@
           ],
           "relatedIds": [
             "chu_ten",
+            "li-jing",
+            "ma-chu-ended-951",
             "ma-chu-founded",
-            "ma-yin"
+            "ma-xichong",
+            "ma-xie",
+            "ma-xiguang",
+            "ma-yin",
+            "southern_tang"
           ]
         },
         {
@@ -66754,7 +67148,10 @@
             "claim:claim-li-jing-participated-min-ended-945",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-child-li-jing",
+            "claim:claim-ma-xichong-submitted-to-li-jing-termination-951",
+            "claim:claim-ma-xie-enemy-li-jing-termination-951",
             "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
+            "event-detail:ma-chu-ended-951",
             "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -66766,6 +67163,9 @@
           "relatedIds": [
             "li-bian",
             "li-yu",
+            "ma-chu-ended-951",
+            "ma-xichong",
+            "ma-xie",
             "min-ended-945",
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
@@ -68903,6 +69303,200 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:ma-xichong": {
+      "entityType": "person",
+      "entityId": "ma-xichong",
+      "entityKey": "person:ma-xichong",
+      "label": "马希崇",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ma-xichong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-participated-ma-chu-ended-951",
+            "claim:claim-ma-xichong-ruled-chu",
+            "claim:claim-ma-xichong-sibling-ma-xie",
+            "claim:claim-ma-xichong-sibling-ma-xiguang",
+            "claim:claim-ma-xichong-submitted-to-li-jing-termination-951",
+            "event-detail:ma-chu-ended-951",
+            "person-polity:ma-xichong:chu_ten"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "ma-chu-ended-951",
+            "ma-xie",
+            "ma-xiguang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:ma-xie": {
+      "entityType": "person",
+      "entityId": "ma-xie",
+      "entityKey": "person:ma-xie",
+      "label": "马希萼",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ma-xie"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-sibling-ma-xie",
+            "claim:claim-ma-xie-enemy-li-jing-termination-951",
+            "event-detail:ma-chu-ended-951",
+            "person-polity:ma-xie:chu_ten"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "li-jing",
+            "ma-chu-ended-951",
+            "ma-xichong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:ma-xiguang": {
+      "entityType": "person",
+      "entityId": "ma-xiguang",
+      "entityKey": "person:ma-xiguang",
+      "label": "马希广",
+      "polityIds": [
+        "chu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "ma-xiguang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-ma-xichong-sibling-ma-xiguang",
+            "person-polity:ma-xiguang:chu_ten"
+          ],
+          "relatedIds": [
+            "chu_ten",
+            "ma-xichong"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -77679,6 +78273,8 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "song-history-nantang",
+            "southern-tang-periods",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -77688,15 +78284,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-ma-xichong-ruled-chu",
             "claim:claim-ma-yin-ruled-chu",
+            "event-detail:ma-chu-ended-951",
             "event-detail:ma-chu-founded",
             "event-detail:southern-tang-conquers-chu",
             "heritage-detail:ma-chu-tan-zhou-city-site",
+            "person:ma-xichong",
+            "person:ma-xie",
+            "person:ma-xiguang",
             "person:ma-yin"
           ],
           "relatedIds": [
+            "ma-chu-ended-951",
             "ma-chu-founded",
             "ma-chu-tan-zhou-city-site",
+            "ma-xichong",
+            "ma-xie",
+            "ma-xiguang",
             "ma-yin",
             "southern-tang-conquers-chu"
           ]
@@ -81550,6 +82155,7 @@
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
+            "event-detail:ma-chu-ended-951",
             "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
@@ -81560,6 +82166,7 @@
             "event-detail:southern-tang-moves-nanchang",
             "event-detail:yang-wu-ended-937",
             "event-detail:yang-wu-yangzhou-transferred-937",
+            "heritage-detail:ma-chu-tan-zhou-city-site",
             "heritage-detail:min-wang-mausoleum",
             "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
@@ -81572,6 +82179,8 @@
             "li-bian",
             "li-jing",
             "li-yu",
+            "ma-chu-ended-951",
+            "ma-chu-tan-zhou-city-site",
             "min-ended-945",
             "min-wang-mausoleum",
             "southern-tang-cedes-huainan",
@@ -83825,9 +84434,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 193,
+      "totalEntities": 194,
       "statusCounts": {
-        "covered": 924,
+        "covered": 929,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -83903,20 +84512,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 237,
+      "totalEntities": 240,
       "statusCounts": {
-        "covered": 1125,
+        "covered": 1138,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 60,
+        "uncertain": 62,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 60
+        "uncertain": 62
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -83949,6 +84558,8 @@
         "person:liu-jiyuan",
         "person:liu-xuan",
         "person:liu-yao",
+        "person:ma-xichong",
+        "person:ma-xiguang",
         "person:meng-tian",
         "person:modu-chanyu",
         "person:naemul-isageum",
@@ -84071,13 +84682,53 @@
       "polityId": "chu_ten",
       "polityName": "马楚",
       "entityKeys": [
+        "event:ma-chu-ended-951",
         "event:ma-chu-founded",
         "event:southern-tang-conquers-chu",
         "heritage:ma-chu-tan-zhou-city-site",
+        "person:ma-xichong",
+        "person:ma-xie",
+        "person:ma-xiguang",
         "person:ma-yin",
         "polity:chu_ten"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "ma-xiguang",
+          "entityKey": "person:ma-xiguang",
+          "label": "马希广",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "chu_ten"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "ma-xichong",
+          "entityKey": "person:ma-xichong",
+          "label": "马希崇",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "chu_ten"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -84085,7 +84736,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "马楚：学习闭环已覆盖。"
+      "summary": "马楚：有 2 项待核验缺口。"
     },
     "chu_warring": {
       "polityId": "chu_warring",
@@ -86449,6 +87100,7 @@
       "polityId": "southern_tang",
       "polityName": "南唐",
       "entityKeys": [
+        "event:ma-chu-ended-951",
         "event:min-ended-945",
         "event:southern-tang-cedes-huainan",
         "event:southern-tang-conquers-chu",
@@ -86459,6 +87111,7 @@
         "event:southern-tang-moves-nanchang",
         "event:yang-wu-ended-937",
         "event:yang-wu-yangzhou-transferred-937",
+        "heritage:ma-chu-tan-zhou-city-site",
         "heritage:min-wang-mausoleum",
         "heritage:southern-tang-er-ling",
         "heritage:southern-tang-jiankang-city-site",
@@ -88406,13 +89059,35 @@
       "cityName": "长沙市",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:ma-chu-ended-951",
         "event:ma-chu-founded",
         "event:southern-tang-conquers-chu",
         "heritage:ma-chu-tan-zhou-city-site",
         "person:li-jing",
+        "person:ma-xichong",
+        "person:ma-xie",
         "person:ma-yin"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "ma-xichong",
+          "entityKey": "person:ma-xichong",
+          "label": "马希崇",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "chu_ten"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -88420,7 +89095,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "长沙市：学习闭环已覆盖。"
+      "summary": "长沙市：有 1 项待核验缺口。"
     },
     "chengdu": {
       "placeId": "chengdu",

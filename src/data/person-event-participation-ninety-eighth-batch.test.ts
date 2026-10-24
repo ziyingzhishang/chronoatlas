@@ -16,6 +16,8 @@ const currentGaps = [
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reason: '北魏建政详情只记录拓跋珪参与者，不能以同一政权继承关系替代。' },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], reason: '后周建立详情只记录郭威参与者，不能以柴荣的后续继承关系替代。' },
   { personId: 'yuwen-yong', eventIds: [], reason: '当前目录没有可直接挂接且包含宇文邕参与者字段的事件节点。' },
+  { personId: 'ma-xiguang', eventIds: [], reason: '马希广属于马楚末期争位阶段，现有终结事件不把其作为长沙终局的直接参与者。' },
+  { personId: 'ma-xie', eventIds: [], reason: '马希萼属于马楚末期衡山阶段，不能将其后续处置直接等同于长沙终结参与。' },
   { personId: 'qin-mugong', eventIds: [], reason: '秦穆公晚于秦襄公列侯节点，当前仅作为秦国后续发展阶段的上下文人物。' },
   { personId: 'gao-baorong', eventIds: [], reason: '高保融属于荆南建政后的继承阶段，现有事件未记录其直接参与字段。' },
   { personId: 'gao-baoxu', eventIds: [], reason: '高保勖属于荆南建政后的继承阶段，现有事件未记录其直接参与字段。' },
@@ -74,7 +76,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (

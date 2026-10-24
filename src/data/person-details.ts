@@ -478,6 +478,21 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['ma-chu-founded'], sourceIds, uncertaintyNote: '907年受封标记马楚政权分期，不把中原册封直接等同于湖湘所有地区同日完成直接控制。',
   },
   {
+    personId: 'ma-xiguang', biography: '马希广是马楚末期君主，马希萼进攻长沙与兄弟争位使马楚中央秩序走向终局。',
+    aliases: ['楚废王'], offices: [{ title: '楚王', polityId: 'chu_ten', placeId: 'changsha', validFrom: 947, validTo: 951, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['ma-chu-ended-951'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '马希广之死属于951年马楚终结前的内乱阶段，不能把其死亡、长沙失守和湖南全域接收视为同一时刻。',
+  },
+  {
+    personId: 'ma-xie', biography: '马希萼是马楚末期宗室竞争者，曾控制长沙并在951年后退守衡山，后续归附南唐。',
+    aliases: ['楚恭孝王'], offices: [{ title: '楚王', polityId: 'chu_ten', placeId: 'changsha', validFrom: 950, validTo: 951, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['ma-chu-ended-951'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '马希萼的长沙、衡山和南唐处置属于马楚终结期不同阶段，不能把衡山阶段直接等同于长沙中央政权控制。',
+  },
+  {
+    personId: 'ma-xichong', biography: '马希崇在马希萼控制长沙后参与楚末政局，951年政变后被推为武安留后并向南唐求援，长沙被边镐军接收后降服。',
+    aliases: ['马楚末主', '武安留后'], offices: [{ title: '武安留后', polityId: 'chu_ten', placeId: 'changsha', validFrom: 951, validTo: 951, datePrecision: 'year', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['ma-chu-ended-951'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang'], uncertaintyNote: '马希崇降服标记马楚中央政权终止，不代表湖南各地和朗州同日完成南唐行政接收。',
+  },
+  {
     personId: 'sima-yan', biography: '司马炎承接司马氏在曹魏中枢形成的权力，受禅建立西晋，并在280年灭吴实现短暂统一。',
     aliases: ['晋武帝'], offices: [{ title: '西晋皇帝', polityId: 'jin_western', placeId: 'luoyang', validFrom: 265, validTo: 290, datePrecision: 'range', sourceIds }],
     keyEvents: ['western-jin-founded'], sourceIds, uncertaintyNote: '265年受禅建立西晋与280年灭吴分别是建政和统一节点，不能把后者的版图回填到建国当年。',

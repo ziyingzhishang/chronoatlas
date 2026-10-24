@@ -11,7 +11,7 @@ import { polities } from './polities';
 import { sourceNotes } from './sources';
 
 const requiredGovernanceGaps = [
-  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'huan-wen', 'yu-the-great', 'ogedei', 'jamukha', 'chiang-kai-shek', 'han-kangzi',
+  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'huan-wen', 'ma-xiguang', 'ma-xie', 'yu-the-great', 'ogedei', 'jamukha', 'chiang-kai-shek', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'seondeok-silla', 'jindeok-silla', 'kim-yushin', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt', 'wang-yenxi',
@@ -25,6 +25,8 @@ const eventParticipationGaps = [
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
+  { personId: 'ma-xiguang', eventIds: [] },
+  { personId: 'ma-xie', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
   { personId: 'gao-baorong', eventIds: [] },
   { personId: 'gao-baoxu', eventIds: [] },

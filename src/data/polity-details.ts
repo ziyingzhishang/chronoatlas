@@ -444,9 +444,9 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'chu_ten', perspectiveSummary: '马楚由马殷在潭州及湖湘经营军政资源后形成，以潭州为政治中心；册封关系、地方自治和南唐介入需分层理解。',
     foundationProcess: ['马殷在潭州及湖湘军政竞争中扩张势力。', '907年受封楚王，马楚进入十国分期。', '潭州连接湘江水运和湖湘治理，受封范围不等于后期直接控制边界。'],
     turningPoints: [turn(907, '马楚形成', '马殷受封楚王，湖湘地方政权进入马楚阶段。', 'ma-chu-founded'), turn(927, '正式称国王', '马殷完成称王阶段，制度地位发生变化。'), turn(951, '马楚覆亡', '南唐攻取潭州，马楚结束。')],
-    principalFigureIds: ['ma-yin'], capitalPhases: [capital('changsha', 907, 951, 'primary', 'formal', '潭州／长沙，今湖南省长沙市。')],
-    heritageIds: ['ma-chu-tan-zhou-city-site'], eventIds: ['ma-chu-founded', 'southern-tang-conquers-chu'], claimIds: ['claim-ma-yin-ruled-chu'], sourceIds: modernSources,
-    uncertaintyNote: '907年受封与927年正式称王是不同节点；马楚潭州城址历史层依托现代城市考古理解，不能把后世建筑直接标作马楚原构。',
+    principalFigureIds: ['ma-yin', 'ma-xiguang', 'ma-xie', 'ma-xichong'], capitalPhases: [capital('changsha', 907, 951, 'primary', 'formal', '潭州／长沙，今湖南省长沙市；951年转入南唐承接阶段。')],
+    heritageIds: ['ma-chu-tan-zhou-city-site'], eventIds: ['ma-chu-founded', 'southern-tang-conquers-chu', 'ma-chu-ended-951'], claimIds: ['claim-ma-yin-ruled-chu', 'claim-ma-xichong-ruled-chu', 'claim-ma-xichong-participated-ma-chu-ended-951', 'claim-ma-xichong-submitted-to-li-jing-termination-951', 'claim-ma-xichong-sibling-ma-xie', 'claim-ma-xichong-sibling-ma-xiguang', 'claim-ma-xie-enemy-li-jing-termination-951'], sourceIds: [...modernSources, 'song-history-nantang', 'southern-tang-periods'],
+    uncertaintyNote: '907年受封与927年正式称王是不同节点；951年长沙中央政权终止与衡山、朗州等地的后续接收属于连续阶段；潭州城址历史层依托现代城市考古理解，不能把后世建筑直接标作马楚原构。',
   }),
   detail({
     polityId: 'former_shu', perspectiveSummary: '前蜀由王建在唐末巴蜀军政基础上建立，以成都为都，925年成都失守后终止；成都宫城、永陵和巴蜀地方治理共同构成其可见历史线索。',

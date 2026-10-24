@@ -16,6 +16,8 @@ const eventParticipationGaps = [
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '元宏出生于北魏建政之后，不能回填为建政参与者。' },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], reasonCode: 'missing-participant', reason: '后周建立详情只记录郭威参与者，不能以柴荣的后续继承关系替代。' },
   { personId: 'yuwen-yong', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
+  { personId: 'ma-xiguang', eventIds: [], reasonCode: 'no-event-candidate', reason: '马希广属于马楚末期争位阶段，现有终结事件不把其作为长沙终局的直接参与者。' },
+  { personId: 'ma-xie', eventIds: [], reasonCode: 'no-event-candidate', reason: '马希萼属于马楚末期衡山阶段，不能将其后续处置直接等同于长沙终结参与。' },
   { personId: 'qin-mugong', eventIds: [], reasonCode: 'no-direct-role', reason: '秦穆公晚于秦襄公列侯节点，当前仅作为秦国后续发展阶段的上下文人物。' },
   { personId: 'gao-baorong', eventIds: [], reasonCode: 'no-direct-role', reason: '高保融属于荆南建政后的继承阶段，现有事件未记录其直接参与字段。' },
   { personId: 'gao-baoxu', eventIds: [], reasonCode: 'no-direct-role', reason: '高保勖属于荆南建政后的继承阶段，现有事件未记录其直接参与字段。' },
@@ -88,6 +90,8 @@ describe('round one hundred four person relationship boundary audit', () => {
       ['yuan-hong', 'born-after-event'],
       ['chai-rong', 'missing-participant'],
       ['yuwen-yong', 'no-event-candidate'],
+      ['ma-xiguang', 'no-event-candidate'],
+      ['ma-xie', 'no-event-candidate'],
       ['qin-mugong', 'no-direct-role'],
       ['gao-baorong', 'no-direct-role'],
       ['gao-baoxu', 'no-direct-role'],
@@ -147,7 +151,7 @@ describe('round one hundred four person relationship boundary audit', () => {
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
     expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(87);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
   });
 });

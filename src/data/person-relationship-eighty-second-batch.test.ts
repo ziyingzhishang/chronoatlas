@@ -11,6 +11,8 @@ const eventParticipationReviewBoundary = [
   'yuan-hong',
   'chai-rong',
   'yuwen-yong',
+  'ma-xiguang',
+  'ma-xie',
   'qin-mugong',
   'gao-baorong',
   'gao-baoxu',
@@ -25,9 +27,9 @@ describe('eighty-second batch relationship audit', () => {
   it('freezes the current four-category gap boundary', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(34);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(87);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });
 

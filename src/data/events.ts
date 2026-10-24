@@ -508,6 +508,18 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《宋史》卷478·南唐李氏', url: 'https://zh.wikisource.org/zh-hans/%E5%AE%8B%E5%8F%B2/%E5%8D%B7478', detail: '记载李璟时期边镐平湖湘及南方政权竞争。' }],
   },
   {
+    id: 'ma-chu-ended-951', year: 951, title: '马楚在长沙终结、南唐承接', summary: '南唐边镐军进入长沙，马希崇降服，马楚中央政权终止；衡山马希萼和朗州等地的后续处置仍属承接过程。', placeId: 'changsha', sourceIds: ['zizhi-tongjian', 'song-history-nantang', 'southern-tang-periods', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '马楚末期的兄弟继承冲突、长沙军队政变和南唐介入叠加，潭州政治中心失去独立政权的维持条件。',
+    process: '951年马希崇在长沙拥兵自立并向南唐求援，南唐边镐率军进入长沙，马希崇降服；马希萼退守衡山并在随后阶段受南唐处置，朗州等地的军政归属仍经历后续调整。',
+    impact: '马楚中央政权在长沙终止，潭州／长沙转入南唐承接阶段；南唐对湖南的军事控制、地方行政接收与后周及北宋后续推进不能压缩为同日完成。',
+    mapNote: '长沙（今湖南省长沙市）标记马楚中央政权终止与南唐承接节点；不把长沙失守直接绘成南唐当日完成湖南全域稳定行政控制，也不把衡山、朗州后续处置混同为同一城市事件。',
+    references: [
+      { title: '《资治通鉴》后周广顺元年条', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对951年马楚内乱、马希崇据长沙及南唐边镐入楚的终局过程；长沙、衡山和朗州的接收按阶段表达。' },
+      { title: '《宋史》卷478·南唐李氏', url: 'https://zh.wikisource.org/zh-hans/%E5%AE%8B%E5%8F%B2/%E5%8D%B7478', detail: '交叉核验李璟时期南唐平湖湘、边镐进入长沙与马楚政权转换。' },
+    ],
+  },
+  {
     id: 'southern-tang-cedes-huainan', year: 958, title: '南唐割江北地并称臣后周', summary: '后周南征后，南唐割让江北土地、去帝号并奉后周正朔。', placeId: 'jiankang', sourceIds: ['song-history-nantang', 'southern-tang-periods'],
     datePrecision: 'year', region: 'china', category: '战争／外交秩序', verification: 'checked',
     background: '后周世宗南征击破南唐军队，寿州、濠州等淮南节点相继失守。',

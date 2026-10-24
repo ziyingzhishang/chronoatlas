@@ -51,10 +51,10 @@ describe('fifty-seventh batch high-confidence person relationships', () => {
 
   it('reduces only the directly evidenced coverage gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.governance).toHaveLength(34);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(87);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
     expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     for (const personId of ['daemusin', 'namhae-chachaung', 'naemul-isageum', 'tridu-songtsen']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');
       expect(report.byPersonId[personId].requiredMissingCategoryKeys, personId).not.toContain('governance');

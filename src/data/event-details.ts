@@ -905,6 +905,26 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '长沙是马楚政治中心和军事节点；短期军事控制不等同于南唐全境稳定边界。',
   },
   {
+    eventId: 'ma-chu-ended-951',
+    participants: [
+      { personId: 'ma-xichong', role: '马楚末代统治者，951年在长沙向南唐降服', relationType: 'direct', note: '马希崇连接长沙政变、向南唐求援和中央政权终止；南唐军队进入及地方接收仍是连续过程。' },
+      { personId: 'li-jing', role: '南唐君主与湖南承接阶段的中央决策者', relationType: 'direct', note: '李璟代表南唐接受马希崇归附并派边镐入长沙；具体军事行动由将领执行，不把君主等同于现场统帅。' },
+      { personId: 'ma-xie', role: '马楚末期在衡山延续争位的宗室与竞争者', relationType: 'contextual', note: '马希萼在长沙失守后退守衡山，后续归附与处置不能与长沙中央终止节点混为同一时刻。' },
+    ],
+    polityIds: ['chu_ten', 'southern_tang'],
+    causes: ['马楚末期马希广、马希萼、马希崇之间的继承与军镇冲突削弱长沙中央统合。', '南唐利用湖南内乱和马希崇求援取得介入潭州的机会。'],
+    consequences: ['马楚中央政权在长沙终止，潭州／长沙进入南唐承接阶段。', '马希萼在衡山、朗州等地的军政处置与南唐地方接收继续展开，不能由长沙失守一项事件替代。', '长沙城址、湘江水运与后世城市遗产继续承接马楚历史层，不因政权更替而消失。'],
+    phases: [
+      { label: '楚末兄弟内乱', startYear: 950, endYear: 951, summary: '马希萼与马希广争位，马希崇在长沙政局中上升，中央统合能力继续下降。' },
+      { label: '长沙被南唐承接', startYear: 951, endYear: 951, summary: '马希崇向南唐求援，边镐率军进入长沙，马希崇降服，马楚中央政权终止。' },
+      { label: '衡山与湖南地方接收', startYear: 951, endYear: 952, summary: '马希萼及朗州等地的后续归附、军镇调整和南唐地方接收继续展开。' },
+    ],
+    locationIds: ['changsha'],
+    relatedEventIds: ['ma-chu-founded', 'southern-tang-conquers-chu'],
+    sourceIds: ['zizhi-tongjian', 'song-history-nantang', 'southern-tang-periods', 'modern-geography-reference'],
+    uncertaintyNote: '951年是长沙失守、马希崇降服与马楚中央政权终止的年份级节点；马希萼衡山阶段、朗州及湖南各地的后续接收具有过程性，不把单一长沙节点解释为全湖南同日完成行政转换。',
+  },
+  {
     eventId: 'southern-tang-cedes-huainan',
     participants: [{ personId: 'li-jing', role: '后周南征后割地称臣的南唐君主', note: '李璟在后周压力下割江北、去帝号并奉后周正朔；名义秩序与江南实际自治分开表达。' }],
     polityIds: ['southern_tang', 'zhou_later'],
