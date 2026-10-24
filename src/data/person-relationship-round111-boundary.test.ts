@@ -14,7 +14,7 @@ const requiredGovernanceGaps = [
   'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'shi-zhi', 'huan-wen', 'ma-xiguang', 'ma-xie', 'yu-the-great', 'ogedei', 'jamukha', 'chiang-kai-shek', 'deng-ai', 'zhong-hui', 'lushangzan', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'seondeok-silla', 'jindeok-silla', 'kim-yushin', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'helian-ding', 'zheng-maisi', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
-  'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt', 'wang-yenxi',
+  'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt', 'wang-yenxi', 'yeon-gaesomun', 'yeon-namsaeng', 'yeon-namgeon',
 ] as const;
 
 const eventParticipationGaps = [
@@ -33,6 +33,8 @@ const eventParticipationGaps = [
   { personId: 'jindeok-silla', eventIds: [] },
   { personId: 'sinmun-silla', eventIds: [] },
   { personId: 'wang-yenxi', eventIds: [] },
+  { personId: 'yeon-gaesomun', eventIds: [] },
+  { personId: 'yeon-namsaeng', eventIds: [] },
 ] as const;
 
 const explicitRulerTitle = /皇帝|君主|国王|可汗|大汗|单于|汗|赞普|南诏王|苏丹|诸侯/;

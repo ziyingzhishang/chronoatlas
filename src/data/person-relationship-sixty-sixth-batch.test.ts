@@ -51,10 +51,10 @@ describe('sixty-sixth batch high-confidence kinship and alliance/conflict relati
   it('reduces only the two requested relationship-gap categories', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(42);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(160);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(97);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(45);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(164);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     expect(report.byPersonId.temujin.categories.kinship.status).toBe('covered');
     expect(report.byPersonId['murong-chao'].categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['tuoba-tao'].categories.allianceConflict.status).toBe('covered');

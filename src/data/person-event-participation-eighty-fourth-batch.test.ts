@@ -24,6 +24,8 @@ const reviewBoundary = [
   { personId: 'jindeok-silla', eventIds: [] },
   { personId: 'sinmun-silla', eventIds: [] },
   { personId: 'wang-yenxi', eventIds: [] },
+  { personId: 'yeon-gaesomun', eventIds: [] },
+  { personId: 'yeon-namsaeng', eventIds: [] },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];

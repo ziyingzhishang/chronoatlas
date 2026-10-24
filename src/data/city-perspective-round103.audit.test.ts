@@ -52,7 +52,7 @@ describe('round 103 city perspective audit', () => {
         expect.objectContaining({ personId: 'jangsu-goguryeo' }),
       ]),
     }));
-    expect(heritage).toEqual(expect.objectContaining({ placeId: 'pyongyang', constructionFrom: 427, constructionTo: 585 }));
+    expect(heritage).toEqual(expect.objectContaining({ placeId: 'pyongyang', constructionFrom: 427, constructionTo: 668 }));
     expect(heritageDetail).toEqual(expect.objectContaining({
       associatedPeople: expect.arrayContaining(['jangsu-goguryeo']),
       associatedPolities: expect.arrayContaining(['goguryeo']),

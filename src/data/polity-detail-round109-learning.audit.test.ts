@@ -139,6 +139,8 @@ describe('Round 109 政权详情学习入口审计', () => {
       { polityId: 'zhou_northern', kind: 'event', id: 'sui-founded', year: 581 },
     ]);
     expect(gapsByKind.person).toEqual([
+      { polityId: 'goguryeo', kind: 'person', id: 'dae-joyeong', year: -37 },
+      { polityId: 'goguryeo', kind: 'person', id: 'xue-rengui', year: -37 },
       { polityId: 'qing', kind: 'person', id: 'nurhaci', year: 1636 },
     ]);
     expect(gapsByKind.heritage).toHaveLength(126);

@@ -24,6 +24,8 @@ const eventParticipationGaps = [
   { personId: 'jindeok-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '真德女王属于新罗中期统治阶段，当前目录没有可直接挂接的新罗建国事件参与字段。' },
   { personId: 'sinmun-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '神文王属于统一新罗后续统治阶段，不能回填为新罗建国事件参与者。' },
   { personId: 'wang-yenxi', eventIds: [], reasonCode: 'no-event-candidate', reason: '王延羲属于闽末继承阶段，当前终结事件仅记录王延政与李璟，不能回填为945年终局参与者。' },
+  { personId: 'yeon-gaesomun', eventIds: [], reasonCode: 'no-event-candidate', reason: '渊盖苏文属于高句丽终止前的权臣阶段，现有668年终止事件未记录其直接参与。' },
+  { personId: 'yeon-namsaeng', eventIds: [], reasonCode: 'no-event-candidate', reason: '渊男生属于高句丽末期内部分裂阶段，不能回填为668年终止事件参与者。' },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];
@@ -96,6 +98,8 @@ describe('round one hundred four person relationship boundary audit', () => {
       ['jindeok-silla', 'no-event-candidate'],
       ['sinmun-silla', 'no-event-candidate'],
       ['wang-yenxi', 'no-event-candidate'],
+      ['yeon-gaesomun', 'no-event-candidate'],
+      ['yeon-namsaeng', 'no-event-candidate'],
     ]);
 
     for (const { personId, eventIds, reasonCode } of eventParticipationGaps) {
@@ -146,8 +150,8 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(160);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(97);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(164);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
   });
 });

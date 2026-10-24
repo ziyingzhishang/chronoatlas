@@ -24,6 +24,8 @@ const currentGaps = [
   { personId: 'jindeok-silla', eventIds: [], reason: '真德女王属于新罗统一战争前的统治阶段，当前建国事件不记录其参与。' },
   { personId: 'sinmun-silla', eventIds: [], reason: '神文王属于统一新罗后续统治阶段，不能回填为新罗建国事件参与者。' },
   { personId: 'wang-yenxi', eventIds: [], reason: '王延羲属于闽末继承阶段，现有终结事件不记录其直接参与。' },
+  { personId: 'yeon-gaesomun', eventIds: [], reason: '渊盖苏文属于高句丽终止前的权臣阶段，现有终止事件未记录其直接参与。' },
+  { personId: 'yeon-namsaeng', eventIds: [], reason: '渊男生属于高句丽末期内部分裂阶段，不能回填为668年终止事件参与者。' },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];
@@ -74,7 +76,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (

@@ -19,15 +19,17 @@ const eventParticipationReviewBoundary = [
   'jindeok-silla',
   'sinmun-silla',
   'wang-yenxi',
+  'yeon-gaesomun',
+  'yeon-namsaeng',
 ] as const;
 
 describe('eighty-second batch relationship audit', () => {
   it('freezes the current four-category gap boundary', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(42);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(160);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(97);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(45);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(164);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(103);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });
 
