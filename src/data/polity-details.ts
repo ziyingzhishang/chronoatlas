@@ -276,8 +276,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'western_liang', perspectiveSummary: '西凉由李暠在河西西部建立，以敦煌、酒泉为阶段性中心，维系绿洲城市与丝路交通网络。',
     foundationProcess: ['李暠在河西地方军政竞争中取得敦煌、酒泉一带的控制。', '400年西凉政权形成，敦煌是前期政治中心。', '西凉在北凉压力下维持河西西部秩序，421年灭亡。'],
     turningPoints: [turn(400, '西凉政权建立', '李暠被推为凉公、改元庚子，北凉分出西凉。', 'western-liang-state-founded'), turn(405, '迁治酒泉', '李暠由敦煌迁居酒泉，敦煌仍由太守与护军镇守。'), turn(421, '西凉覆亡', '沮渠蒙逊攻取酒泉，西凉结束。')],
-    principalFigureIds: ['li-hao'], capitalPhases: [capital('dunhuang', 400, 404, 'primary', 'actual', '400年建政后的前期政治中心；不把受命阶段回填为正式建政。'), capital('jiuquan', 405, 421, 'primary', 'actual', '《晋书》卷87明确记载405年迁居酒泉；敦煌仍保留西部军政节点。')],
-    heritageIds: ['dunhuang-western-liang-city-site'], eventIds: ['western-liang-state-founded'], claimIds: ['claim-li-hao-participated-western-liang'], sourceIds: [...modernSources, 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'],
+    principalFigureIds: ['li-hao', 'li-xin'], capitalPhases: [capital('dunhuang', 400, 404, 'primary', 'actual', '400年建政后的前期政治中心；不把受命阶段回填为正式建政。'), capital('jiuquan', 405, 421, 'primary', 'actual', '《晋书》卷87明确记载405年迁居酒泉；敦煌仍保留西部军政节点。')],
+    heritageIds: ['dunhuang-western-liang-city-site', 'jiuquan-western-liang-city-site'], eventIds: ['western-liang-state-founded', 'western-liang-ended-421'], claimIds: ['claim-li-hao-participated-western-liang', 'claim-li-xin-ruled-western-liang-closure', 'claim-li-xin-participated-western-liang-ended-421', 'claim-li-xin-enemy-juqu-mengxun-termination-421', 'claim-juqu-mengxun-participated-western-liang-ended-421', 'claim-northern-liang-succeeded-western-liang-421'], sourceIds: [...modernSources, 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'],
     uncertaintyNote: '400年是西凉建政确定年；397—399年李暠受命敦煌属于前置阶段，405年迁居酒泉是明确的政治中心转移。敦煌与酒泉遗址均为多时期绿洲城市历史层，不能将全部现存遗存直接归为西凉。',
   }),
   detail({
@@ -291,10 +291,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'tuyuhun', perspectiveSummary: '吐谷浑是河湟—青海地区持续发展的区域政权，政治中心具有阶段变化，伏俟城只能作为后期王都候选理解。',
     foundationProcess: ['慕容吐谷浑率部众迁入河湟后形成新的区域政治网络。', '313年作为持续性政权形成节点纳入目录。', '吐谷浑通过河湟、青海和丝路交通维持与中原及高原政权的互动。'],
-    turningPoints: [turn(313, '吐谷浑政权形成', '迁入河湟的部众形成持续性区域政权。', 'tuyuhun-founded'), turn(500, '伏俟城阶段', '伏俟城成为后期王都候选，青海政治中心进一步集中。'), turn(663, '吐谷浑覆亡', '吐蕃攻灭吐谷浑王国，区域政治秩序改变。')],
-    principalFigureIds: ['murong-tuyuhun'], capitalPhases: [capital('tuyuhun_core', 313, 663, 'disputed', 'uncertain', '伏俟城为后期王都候选；今青海共和一带')],
-    heritageIds: ['tuyuhun-fuqisi-city-candidate'], eventIds: ['tuyuhun-founded'], claimIds: ['claim-murong-tuyuhun-participated-tuyuhun-founded', 'claim-murong-tuyuhun-related-murong-chui'], sourceIds: modernSources,
-    uncertaintyNote: '吐谷浑首都与政权起始年代存在研究差异；伏俟城遗址尚属候选，不能把区域参照点解释为全期固定首都或完整王都遗存。',
+    turningPoints: [turn(313, '吐谷浑政权形成', '迁入河湟的部众形成持续性区域政权。', 'tuyuhun-founded'), turn(540, '伏俟城后期王都阶段', '地方资料将夸吕建都伏俟城置于540年；本项目只将其作为后期王都与遗址候选阶段，不前推为全期固定首都。'), turn(663, '中央政权在故地终止', '吐蕃击破吐谷浑，慕容诺曷钵率部分部众入唐；吐蕃控制、唐境安置和族群延续分层表达。', 'tuyuhun-ended-663')],
+    principalFigureIds: ['murong-tuyuhun', 'murong-nuohebo'], capitalPhases: [capital('tuyuhun_core', 313, 663, 'disputed', 'uncertain', '伏俟城为后期王都候选；540年后方有较明确的后期王都地方口径，今青海省海南藏族自治州共和县石乃亥镇铁卜加村一带')],
+    heritageIds: ['tuyuhun-fuqisi-city-candidate'], eventIds: ['tuyuhun-founded', 'tuyuhun-ended-663'], claimIds: ['claim-murong-tuyuhun-participated-tuyuhun-founded', 'claim-murong-tuyuhun-related-murong-chui', 'claim-tuyuhun-ended-663', 'claim-murong-nuohebo-ruled-tuyuhun-closure', 'claim-murong-nuohebo-participated-tuyuhun-ended-663', 'claim-murong-nuohebo-enemy-lushangzan-termination-663', 'claim-tibetan-empire-succeeded-tuyuhun-663', 'claim-tang-received-tuyuhun-exiles-663', 'claim-tuyuhun-left-heritage-fuqisi-663'], sourceIds: [...modernSources, 'tuyuhun-termination-663', 'tuyuhun-fuqisi-official'],
+    uncertaintyNote: '吐谷浑形成年代采用313年前后约年；伏俟城以540—663年后期阶段和今共和县石乃亥镇铁卜加村一带的候选地点表达，不能倒推为全期固定首都。663年终止指故地中央政权终止；慕容诺曷钵入唐、安置州和地方族群延续不等同于中央政权连续。',
   }),
   detail({
     polityId: 'turkic', perspectiveSummary: '突厥是以阿史那氏汗权和草原部众网络为基础的汗国体系，政治核心位于于都斤—鄂尔浑区域但具有移动性。',

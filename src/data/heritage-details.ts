@@ -389,11 +389,6 @@ const details: HeritageDetail[] = [
     phase('site', '城门遗址', '夏都使用阶段', '门址、夯土城垣、道路和风蚀遗迹以考古遗址形式保存。', 413, 431, '城门各层位、维修痕迹和后续利用需按考古分区区分。'),
     phase('restoration', '现代保护展示', '当代', '遗址公园通过保护、步道和说明系统展示南城门与城垣，不重建完整城门楼。', 2000, undefined, '现代加固和展示构筑物不能当作夏代原建筑。'),
   ], ['heliAN-bobo'], ['xia'], ['xia-sixteen-states-founded-eighth-batch'], ['南城门门址', '夯土城垣与道路', '遗址公园保护展示设施'], '把统万城总体遗址进一步拆解为城门、防御和交通的可学习节点。', '南城门具体建筑形制和修缮阶段仍需考古资料支持；本条不把现代保护工程当作原城门复原。', ['zizhi-tongjian', 'modern-geography-reference']),
-  detail('tuyuhun-fuqisi-city-candidate', '今青海省海南州共和县一带候选范围；伏俟城具体位置和遗址性质仍有不同研究意见。', ['吐谷浑后期王都与河湟—青海政治网络', '牧地、交通和王权中心之间的区域关系'], [
-    phase('original', '王都形成', '6世纪前后', '吐谷浑后期围绕河湟、青海及相关交通节点形成较稳定的王权中心。', 500, 663, '伏俟城年代和王都性质不能由单一文献或现代地名直接确定。'),
-    phase('site', '候选城址', '现代考古研究', '现有点位用于表达候选范围，尚不能确认完整城墙、宫殿和连续城市层。', 1900, undefined, '候选地点不等于已确认考古遗址。'),
-    phase('restoration', '区域历史展示', '当代', '现代通过地方博物馆、考古调查和历史地图解释吐谷浑政治中心。', 2000, undefined, '展示性复原不得替代城址考古证据。'),
-  ], ['modu-chanyu'], ['tuyuhun'], ['tuyuhun-founded'], ['区域候选范围', '河湟—青海交通与牧地景观', '地方考古和历史地图展示'], '帮助学习者理解吐谷浑的区域性和迁徙性政治中心。', '冒顿只作为草原政权比较人物，并非吐谷浑王室成员；伏俟城具体地点和年代应保持候选标注。', ['zizhi-tongjian', 'china-chronology']),
   detail('western-qin-yuanchuan-city-candidate', '今甘肃兰州及陇右相关区域的候选范围；“苑川”与现代金城区域不完全重合。', ['西秦形成期陇右军政网络', '乞伏部迁徙、河湟交通和十六国区域政权'], [
     phase('original', '区域中心形成', '385年前后', '西秦在陇右建立后，苑川等地可能承担阶段性军政与交通功能。', 385, 400, '不能据此认定一处固定、连续使用的西秦首都。'),
     phase('site', '候选城址与区域层', '十六国时期', '相关城址线索主要依赖文献、地理和考古区域研究，尚不具备完整城址确认条件。', 385, 431, '候选区域、城址名称和政权控制范围需分别记录。'),
@@ -635,7 +630,12 @@ const details: HeritageDetail[] = [
     phase('original', '前期城市与政治中心使用', '400—404年', '李暠在敦煌建立西凉后，敦煌绿洲城市、城防和河西交通网络支撑前期政权；405年政治中心迁至酒泉，敦煌仍保留西部军政节点。', 400, 404),
     phase('site', '城市考古层', '十六国敦煌历史层', '古城、墓葬、道路和水利线索以区域考古和历史地理研究形式保存。', 400, 421, '敦煌石窟和后续城址营造跨越多朝代，不能全部归入西凉。'),
     phase('restoration', '现代遗址保护展示', '当代', '遗址保护、博物馆和历史地图解释西凉敦煌，不重建未经确认的西凉宫城。', 2000, undefined, '现代展示设施与西凉原建筑分层记录。'),
-  ], ['li-yuanhao'], ['western_liang'], ['western-liang-state-founded'], ['古城与城防线索', '绿洲水利和河西交通', '墓葬与区域考古展示'], '从敦煌今日遗址观察西凉都城、河西交通和后续西北政权的城市连续性。', '李元昊属于后来的西夏，此处仅作西北政权城市连续性比较入口，不表示其参与西凉建设；敦煌不同年代遗存必须分层。', ['zizhi-tongjian', 'modern-geography-reference', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang']),
+  ], ['li-hao', 'li-xin'], ['western_liang'], ['western-liang-state-founded', 'western-liang-ended-421'], ['古城与城防线索', '绿洲水利和河西交通', '墓葬与区域考古展示'], '从敦煌今日遗址观察西凉都城、河西交通和后续西北政权的城市连续性。', '李暠与李歆分别连接西凉前后期；敦煌石窟、古城和后续城址营造跨越多朝代，不能把全部现存遗存归入西凉或421年终局。', ['zizhi-tongjian', 'modern-geography-reference', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang']),
+  detail('jiuquan-western-liang-city-site', '今甘肃省酒泉市及酒泉古城、河西交通与相关考古研究区域。', ['西凉后期酒泉政治中心', '绿洲城市、城防、军政与丝路交通网络'], [
+    phase('original', '迁治后的政治中心使用', '405—421年', '李暠405年由敦煌迁居酒泉，酒泉成为西凉主要政治中心；李歆承继后延续至421年北凉攻取酒泉。', 405, 421),
+    phase('site', '城市考古与历史地理层', '十六国酒泉历史层', '酒泉古城、道路、水利和河西交通线索通过考古与历史地理研究理解，不能据此复原完整西凉宫城。', 405, 421, '酒泉城市空间和遗存跨越西凉、北凉及后续时期，421年政权终止不等于城市遗产消失。'),
+    phase('restoration', '现代城市保护展示', '当代', '地方博物馆、城市考古、历史地图和文化遗产展示解释西凉酒泉阶段。', 2000, undefined, '现代展示设施与西凉原建筑分层记录。'),
+  ], ['li-hao', 'li-xin', 'juqu-mengxun'], ['western_liang', 'northern_liang'], ['western-liang-state-founded', 'western-liang-ended-421'], ['古城与城防线索', '绿洲水利和河西交通', '多政权叠压的城市历史层'], '从今日酒泉观察西凉405年迁治、李歆末期和421年北凉承接；城市与遗产连续性不等同于政权连续。', '酒泉现代城市与古代城址范围不完全重合，现存遗存不能直接视作西凉原构；北凉承接表达政治阶段转换，不表示地方社会和建筑同日更替。', ['zizhi-tongjian', 'modern-geography-reference', 'capital-history-reference', 'jinshu-vol87-li-hao']),
   detail('zhangye-northern-liang-city-layer', '今甘肃省张掖市及甘州古城、相关城市考古与历史地理研究范围。', ['北凉早期张掖政治中心', '河西走廊城市、城防与交通网络'], [
     phase('original', '政治中心使用', '397—400年', '段业在张掖被拥立后，张掖承担北凉早期政权的城市政治与军政组织功能；该阶段与401年后姑臧都城阶段分开记录。', 397, 400, '此处按北凉首都阶段记录城市历史层，不把后世城市建筑直接归为北凉原构。'),
     phase('site', '城市历史层', '十六国河西城市考古研究', '张掖古城、道路、水利与河西交通线索通过考古和历史地理研究理解，现存城市并非一座完整保存的北凉都城。', 397, 400, '古城范围、建筑层位和北凉时期具体遗存需依考古资料分区核验。'),
@@ -727,6 +727,11 @@ const details: HeritageDetail[] = [
     historicalPhase('site', '候选城址与城市历史层', '南凉时期', '今日乐都的南凉文化展示与地方历史空间提供城市记忆入口；具体古城遗址、城垣和宫城分区仍需考古报告逐项比定。', 399, 414, '候选历史层不等同于已经完成考古定名的遗址。', ['jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
     historicalPhase('restoration', '现代文化展示', '当代', '地方文化展示、旅游线路和历史地图帮助理解南凉乐都阶段，但现代设施不视为南凉建筑遗存。', 2000, undefined, '现代展示空间与南凉原城、原建筑严格分层。', ['mct-ledu-southern-liang']),
   ], ['tufa-wugu', 'tufa-rutan', 'qifu-chipan'], ['southern_liang', 'western_qin'], ['southern-liang-founded-397', 'southern-liang-moves-ledu', 'southern-liang-ended-414'], ['乐都河湟城市空间', '南凉迁都文献记忆', '地方文化展示与候选遗址线索'], '从今日乐都观察南凉由西平转入乐都的政治中心变化、414年政权转换，并理解河湟政权的流动性与城市遗产证据边界。', '现有证据足以关联南凉—乐都的历史层和今日文化展示，但不足以确认某一现存建筑为南凉原构；414年是政治转换节点，不意味着候选城址或现代乐都城市层消失。', ['taiping-yulan-southern-liang-ledu', 'jinshu-vol126-tufa-wugu', 'mct-ledu-southern-liang']),
+  detail('tuyuhun-fuqisi-city-candidate', '今青海省海南藏族自治州共和县石乃亥镇铁卜加村一带；地方文物资料将伏俟城遗址定位于此，古城范围与现代县镇边界不完全重合。', ['吐谷浑后期王都伏俟城候选遗址', '河湟—青海交通、牧地与后期政治中心', '663年中央政权终止后的城市遗产延续'], [
+    historicalPhase('original', '后期王都阶段', '约540—663年', '地方历史资料将夸吕建都伏俟城置于540年；项目以540—663年作为后期王都与政治中心候选阶段，保留文献口径和遗址比定的差异。', 540, 663, '伏俟城是否为全期唯一首都、古城具体范围及夸吕建都年代需与文献、考古分层理解。', ['tuyuhun-fuqisi-official', 'zizhi-tongjian']),
+    historicalPhase('site', '铁卜加古城遗址', '吐谷浑后期历史层', '城墙、门址、房基和交通节点等遗址线索构成今日伏俟城考古观察入口；现存遗存不等于完整王都原构。', 540, 663, '候选王都、遗址年代与考古分区不能直接换算为吐谷浑全部疆域。', ['tuyuhun-fuqisi-official']),
+    historicalPhase('restoration', '现代文物保护与地方历史展示', '1986年至今', '伏俟城作为共和县文物保护与地方历史地理节点被保护、说明和展示，今地名对应为共和县石乃亥镇铁卜加村一带。', 1986, undefined, '现代保护设施、说明文字和行政区划不等同于吐谷浑时期城市原貌。', ['tuyuhun-fuqisi-official', 'modern-geography-reference']),
+  ], ['murong-nuohebo', 'lushangzan'], ['tuyuhun', 'tibetan_empire'], ['tuyuhun-founded', 'tuyuhun-ended-663'], ['城墙、门址与房基遗迹线索', '青海湖盆地与河湟交通空间', '共和县文物保护与地方历史展示'], '从今日共和县观察吐谷浑后期王都候选、青海交通网络与663年政权终止后的遗产延续；城市遗址继续存在，不与中央政权连续混同。', '伏俟城的后期王都性质与具体年代需保留研究差异；663年标记吐谷浑中央政权在故地终止，不表示古城、地方族群或历史记忆同步消失。', ['tuyuhun-fuqisi-official', 'zizhi-tongjian', 'modern-geography-reference']),
 ];
 
 const detailById = new Map(details.map((heritageDetail) => [heritageDetail.heritageId, heritageDetail]));

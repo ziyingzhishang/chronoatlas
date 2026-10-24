@@ -86,6 +86,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'former-liang-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '314年前后表示河西张氏地方统治的独立形成，前凉建政起点存在口径差异。', timelineStrategy: 'approximate-marker' },
   { eventId: 'changan-former-qin', status: 'approximate', expectedPrecision: 'approximate', explanation: '351年前后表示前秦据长安并经营关中的阶段，建政与取得城市控制不能压缩为同一无争议日期。', timelineStrategy: 'approximate-marker' },
   { eventId: 'western-liang-state-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '《晋书》卷87与《资治通鉴》卷111均记400年李暠被推为凉公、改元庚子；《资治通鉴》明确说北凉由此分出西凉。397—399年受命敦煌是前置基础，405年迁居酒泉是后续政治中心转移。', timelineStrategy: 'year-marker' },
+  { eventId: 'western-liang-ended-421', status: 'confirmed', expectedPrecision: 'year', explanation: '421年沮渠蒙逊攻取酒泉、李歆败亡与西凉政权终止构成年份级终局节点；北凉承接、地方行政接收和敦煌—酒泉城市遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'tibetan-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '618年前后表示吐蕃形成阶段，松赞干布后的高原整合不能回填为建政当年。', timelineStrategy: 'approximate-marker' },
   { eventId: 'tibetan-yalong-center', status: 'confirmed', expectedPrecision: 'range', explanation: '618—629年表示吐蕃雅砻早期政治中心阶段；这是阶段范围，不是新的单日建政节点。', timelineStrategy: 'range-band' },
   { eventId: 'tibetan-ended-842', status: 'approximate', expectedPrecision: 'approximate', explanation: '842年前后表示吐蕃统一政治结构进入解体阶段；王权终止、继承竞争和地方化并非同日完成。', timelineStrategy: 'approximate-marker' },

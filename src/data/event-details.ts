@@ -280,6 +280,26 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '313年前后采用政权形成约年；伏俟城是吐谷浑后期王都候选，今共和县一带仅作低置信度区域参照，不能据此断定313年的固定首都。迁徙、首领体系和直接控制范围不能压缩为单日建国事件。',
   },
   {
+    eventId: 'tuyuhun-ended-663',
+    participants: [
+      { personId: 'murong-nuohebo', role: '吐谷浑末代可汗，率部分部众逃入唐境的终局人物', note: '诺曷钵连接吐谷浑故地中央政权终止与唐境内安置；其流亡王室身份不表示吐谷浑中央政权在故地继续存在。' },
+      { personId: 'lushangzan', role: '吐蕃大相，代表吐蕃进攻吐谷浑的军事政治决策体系', note: '禄东赞连接吐蕃扩张与663年吐谷浑终局；本条不将其个人行动等同于吐蕃全部地方接收过程。' },
+      { personId: 'li-zhi', role: '唐高宗，处理诺曷钵部众入唐与唐蕃交涉的唐廷君主', note: '李治代表唐朝的保护、安置与后续交涉阶段，不表示唐恢复吐谷浑原中央政权。' },
+    ],
+    polityIds: ['tuyuhun', 'tibetan_empire', 'tang'],
+    causes: ['吐蕃在高原东部持续扩张，吐谷浑面临军事与政治压力。', '吐谷浑内部与外部关系恶化，已不足以在故地维持独立中央政权。'],
+    consequences: ['663年吐谷浑中央政权在故地终止，吐蕃成为故地主要控制者。', '慕容诺曷钵及部分部众入唐，唐境内的保护、迁置和安乐州承接形成新的阶段。', '伏俟城作为后期王都遗产和今日共和县古城遗址继续存在，不因中央政权终止而消失。', '吐谷浑地方族群、王室后裔与历史记忆的延续不能等同于吐谷浑中央政权连续。'],
+    phases: [
+      { label: '吐蕃攻灭吐谷浑中央政权', startYear: 663, endYear: 663, summary: '吐蕃击破吐谷浑，诺曷钵失去在故地维持中央政权的条件。' },
+      { label: '慕容诺曷钵率部投唐安置', startYear: 663, endYear: 672, summary: '诺曷钵与弘化公主率数千帐部众至凉州，请求唐朝保护；这是政权终止后的流亡与安置阶段。' },
+      { label: '唐境内羁縻州承接', startYear: 672, endYear: 688, summary: '唐廷将部分吐谷浑部众迁置并以诺曷钵等承接羁縻州职名，不能写作吐谷浑故地中央政权复立。' },
+    ],
+    locationIds: ['tuyuhun_core', 'liangzhou'],
+    relatedEventIds: ['tuyuhun-founded', 'tibetan-founded'],
+    sourceIds: ['zizhi-tongjian', 'tuyuhun-termination-663', 'tuyuhun-fuqisi-official'],
+    uncertaintyNote: '663年采用年份级终止精度，标记吐谷浑中央政权在故地的终止；唐境内安置和后续羁縻州是承接阶段，不能把族群、王室或地方政权延续等同于原中央政权连续。',
+  },
+  {
     eventId: 'turkic-founded',
     participants: [
       { personId: 'asina-tumen', role: '击败柔然并建立突厥汗权的核心首领', note: '阿史那土门对应552年前后汗国形成节点；汗廷位置和部众范围仍具有流动性。' },
@@ -3006,6 +3026,25 @@ const details: HistoricalEventDetail[] = [
     relatedEventIds: ['former-liang-founded', 'later-liang-founded', 'northern-liang-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'],
     uncertaintyNote: '400年建政是两部正史均有编年依据的确定年节点；397—399年受命是前置阶段，405年迁治酒泉是后续中心转移。两书不提供400年已完成整条河西走廊直接控制的依据，故疆域与节点控制仍按阶段展示。',
+  },
+  {
+    eventId: 'western-liang-ended-421',
+    participants: [
+      { personId: 'li-xin', role: '西凉末主与酒泉终局人物', relationType: 'direct', note: '李歆承继李暠后主持西凉末期，421年酒泉失守连接其末主阶段与西凉政权终止；不把战争全过程归因于个人。' },
+      { personId: 'juqu-mengxun', role: '北凉统治者与攻取酒泉者', relationType: 'direct', note: '沮渠蒙逊代表北凉攻取酒泉并承接西凉部分河西政治资源；地方接收与城市遗产延续另行表达。' },
+    ],
+    polityIds: ['western_liang', 'northern_liang'],
+    causes: ['李暠去世后李歆承继西凉，河西西部与北凉之间的政治军事竞争继续。', '酒泉是405年后西凉主要政治中心，成为421年终局与北凉承接的核心节点。'],
+    consequences: ['西凉中央政权身份终止，北凉承接酒泉、敦煌等节点的部分政治资源。', '酒泉、敦煌的城市、绿洲、水利和丝路交通网络继续存在，不因政权终止而消失。'],
+    phases: [
+      { label: '李歆承继与酒泉末期', startYear: 417, endYear: 420, summary: '李歆承继李暠后以酒泉为主要政治中心，西凉与北凉竞争延续。' },
+      { label: '酒泉失守与西凉终止', startYear: 421, endYear: 421, summary: '沮渠蒙逊攻取酒泉，李歆败亡，西凉政权终止。' },
+      { label: '北凉承接与城市连续', startYear: 421, endYear: 421, summary: '北凉进入酒泉等河西西部节点；城市遗产和地方社会转入新的多政权历史层。' },
+    ],
+    locationIds: ['jiuquan', 'dunhuang'],
+    relatedEventIds: ['western-liang-state-founded', 'northern-liang-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang', 'modern-geography-reference'],
+    uncertaintyNote: '421年作为西凉中央政权终止和北凉攻取酒泉的年份级节点；李歆败亡、地方接收、敦煌与酒泉城市连续性分层表达，不将政权终止等同于遗产消失。',
   },
   {
     eventId: 'western-liao-emperor-1132',

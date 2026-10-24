@@ -1530,6 +1530,18 @@ const catalog: HistoricalEvent[] = [
     ],
   },
   {
+    id: 'western-liang-ended-421', year: 421, title: '北凉攻灭西凉、酒泉承接', summary: '沮渠蒙逊攻取酒泉，李歆败亡，西凉政权终止；酒泉与敦煌城市历史进入北凉承接阶段。', placeId: 'jiuquan', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／战争', verification: 'checked',
+    background: '李暠去世后李歆承继西凉，河西西部与沮渠蒙逊统治的北凉之间的竞争继续集中到酒泉等节点。',
+    process: '421年沮渠蒙逊攻取酒泉，李歆在战争中败亡；西凉中央政治身份由此终止，敦煌、酒泉的城市、绿洲和丝路网络不因政权转换而消失。',
+    impact: '北凉承接西凉在酒泉、敦煌等河西西部节点的政治资源，西凉退出十六国政权谱系；城市遗产和地方社会进入新的多政权历史层。',
+    mapNote: '421年标记酒泉（今甘肃省酒泉市）为西凉终止与北凉承接节点；敦煌（今甘肃省酒泉市敦煌市）作为西部城市和交通节点继续保留，不能把攻取酒泉等同于所有地方同日完成行政转换。',
+    references: [
+      { title: '《晋书》卷八十七·凉武昭王李暠传', url: 'https://zh.wikisource.org/zh-hans/%E6%99%89%E6%9B%B8/%E5%8D%B7087', detail: '用于核对李暠死后李歆承继及西凉末期酒泉阶段；终局战事与人物结局按年份级表达。' },
+      { title: '《资治通鉴》卷一百十八·北凉攻酒泉', url: 'https://zh.wikisource.org/wiki/%E8%B3%87%E6%B2%BB%E9%80%9A%E9%91%91/%E5%8D%B7118', detail: '用于核对421年沮渠蒙逊攻取酒泉、西凉终止与北凉承接；地方接收和城市遗产延续分层表达。' },
+    ],
+  },
+  {
     id: 'western-liao-founded', year: 1124, title: '西辽政权形成', summary: '耶律大石在1124年前后自立为王并率部西行，西辽进入形成阶段；1132年称帝、1134年建都虎思斡耳朵（八剌沙衮）分属后续制度化节点。', sourceIds: ['china-chronology', 'liaoshi-vol30-yelu-dashi', 'iranica-qara-ketay', 'iranica-balasagun', 'unesco-chui-balasagun'],
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', verification: 'partial',
     background: '辽朝灭亡后，耶律大石率部西行，在中亚草原与绿洲社会中重新组织契丹政治力量。',

@@ -69,6 +69,21 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '397年是南凉形成节点；秃发氏政权的后续继承与414年覆亡不能归并为秃发乌孤个人统治期。',
   },
   {
+    personId: 'murong-nuohebo', biography: '慕容诺曷钵是吐谷浑末期可汗。663年吐蕃击破吐谷浑后，他与弘化公主率部分部众逃入唐境；其后唐境内的安置和羁縻州承接，与吐谷浑中央政权在故地的终止分层记录。',
+    aliases: ['诺曷钵', '乌地也拔勤豆可汗', '吐谷浑末代可汗'],
+    offices: [
+      { title: '吐谷浑可汗', polityId: 'tuyuhun', placeId: 'tuyuhun_core', validFrom: 635, validTo: 663, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'tuyuhun-termination-663'] },
+      { title: '唐境内安置的吐谷浑部落首领／安乐州刺史', polityId: 'tang', placeId: 'liangzhou', validFrom: 663, validTo: 688, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'tuyuhun-termination-663'], uncertaintyNote: '此阶段属于唐境内保护与羁縻州承接，不表示吐谷浑中央政权在故地复立。' },
+    ],
+    keyEvents: ['tuyuhun-ended-663'], sourceIds: ['zizhi-tongjian', 'tuyuhun-termination-663'], uncertaintyNote: '诺曷钵的王室与部众延续不能等同于吐谷浑中央政权连续；663年是故地中央政权终止节点，672年以后为唐境内安置阶段。',
+  },
+  {
+    personId: 'lushangzan', biography: '禄东赞是吐蕃早期的大相，参与吐蕃扩张与对唐外交。663年吐蕃击破吐谷浑的终局链与其所代表的吐蕃军政体系相连，但不能把个人角色扩展为全部地方接收过程。',
+    aliases: ['论钦陵之父', '噶尔·东赞'],
+    offices: [{ title: '吐蕃大相', polityId: 'tibetan_empire', validFrom: 630, validTo: 667, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'tuyuhun-termination-663'] }],
+    keyEvents: ['tuyuhun-ended-663'], sourceIds: ['zizhi-tongjian', 'tuyuhun-termination-663'], uncertaintyNote: '禄东赞的生卒和663年具体指挥链采用综合约年；本条只确认其作为吐蕃大相连接终局阶段，不断言其亲自统领每一场战事。',
+  },
+  {
     personId: 'tufa-lilugu', biography: '秃发利鹿孤是秃发乌孤之弟，399年继承南凉，在河湟政权延续中承接乌孤的统治。',
     aliases: ['南凉康王'], offices: [{ title: '南凉君主', polityId: 'southern_liang', validFrom: 399, validTo: 402, datePrecision: 'range', sourceIds: ['jinshu-vol126-tufa-wugu'] }],
     keyEvents: [], sourceIds: ['jinshu-vol126-tufa-wugu'],
@@ -878,6 +893,11 @@ export const personDetails: PersonDetail[] = [
     personId: 'li-hao', biography: '李暠在397—399年经营敦煌并取得军政基础，400年建立西凉，405年迁治酒泉，维系河西西部政权与丝路交通。',
     aliases: ['西凉武昭王'], offices: [{ title: '西凉君主', polityId: 'western_liang', placeId: 'dunhuang', validFrom: 400, validTo: 404, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'] }, { title: '西凉君主', polityId: 'western_liang', placeId: 'jiuquan', validFrom: 405, validTo: 417, datePrecision: 'range', sourceIds: ['jinshu-vol87-li-hao'] }],
     keyEvents: ['western-liang-state-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'], uncertaintyNote: '400年为西凉建政确定年；397—399年受命敦煌与405年迁治酒泉分别是前置和后续阶段，不能压成固定单一都城。',
+  },
+  {
+    personId: 'li-xin', biography: '李歆承继李暠后的西凉政权，417—421年以酒泉为主要政治中心；421年沮渠蒙逊攻取酒泉，西凉政权终止。',
+    aliases: ['西凉后主', '西凉末主'], offices: [{ title: '西凉末主', polityId: 'western_liang', placeId: 'jiuquan', validFrom: 417, validTo: 421, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao'] }],
+    keyEvents: ['western-liang-ended-421'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao'], uncertaintyNote: '李歆承继李暠与421年酒泉失守属于相连但不同阶段；421年采用政权终止年份级节点，不把酒泉城市或敦煌地方社会写成同日消失。',
   },
   {
     personId: 'gao-jixing', biography: '高季兴在五代中原政权更替中经营江陵，924年前后形成荆南地方政权并维持其相对独立。',
