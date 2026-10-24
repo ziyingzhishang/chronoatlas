@@ -12,7 +12,6 @@ const currentGaps = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录霍去病参与者。' },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录张骞参与者。' },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录班固参与者。' },
-  { personId: 'li-zhi', eventIds: ['daming-palace-built'], reason: '事件节点是大明宫营建，未记录李治参与者。' },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reason: '北魏建政详情只记录拓跋珪参与者，不能以同一政权继承关系替代。' },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], reason: '后周建立详情只记录郭威参与者，不能以柴荣的后续继承关系替代。' },
   { personId: 'ma-xiguang', eventIds: [], reason: '马希广属于马楚末期争位阶段，现有终结事件不把其作为长沙终局的直接参与者。' },
@@ -75,7 +74,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(15);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (

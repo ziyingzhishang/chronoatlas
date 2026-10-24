@@ -12,7 +12,6 @@ const reviewGaps = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
-  { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'] },
   { personId: 'ma-xiguang', eventIds: [] },
@@ -75,6 +74,7 @@ describe('round one hundred eight event-participation evidence audit', () => {
       })));
 
     expect(liZhiRecords).toEqual([
+      { eventId: 'tuyuhun-ended-663', relationType: undefined, overlapsLife: true, sharedSourceIds: ['zizhi-tongjian'] },
       { eventId: 'ximing-temple-built', relationType: 'contextual', overlapsLife: true, sharedSourceIds: [] },
       { eventId: 'shangyang-palace-built', relationType: 'contextual', overlapsLife: true, sharedSourceIds: [] },
       { eventId: 'shangyang-palace-completed-679', relationType: 'contextual', overlapsLife: true, sharedSourceIds: [] },
@@ -88,7 +88,7 @@ describe('round one hundred eight event-participation evidence audit', () => {
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(
       reviewGaps.map(({ personId }) => personId),
     );
-    expect(reviewGaps).toHaveLength(16);
+    expect(reviewGaps).toHaveLength(15);
 
     for (const { personId, eventIds } of reviewGaps) {
       expect(peopleById.has(personId), `${personId}: person endpoint`).toBe(true);

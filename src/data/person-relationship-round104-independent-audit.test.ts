@@ -11,7 +11,6 @@ const decisions = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'], kind: 'temporal-or-context-boundary' },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'], kind: 'no-direct-role' },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], kind: 'temporal-or-context-boundary' },
-  { personId: 'li-zhi', eventIds: ['daming-palace-built'], kind: 'no-direct-role' },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], kind: 'born-after-event' },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'], kind: 'temporal-or-context-boundary' },
   { personId: 'ma-xiguang', eventIds: [], kind: 'no-event-candidate' },

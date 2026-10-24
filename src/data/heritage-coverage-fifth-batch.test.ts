@@ -65,8 +65,8 @@ describe('heritage coverage fifth batch', () => {
   it('keeps mobile or disputed political centres explicitly uncertain', () => {
     for (const id of ['xiongnu-longcheng-candidate', 'northern-yuan-khan-court-landscape', 'tuyuhun-fuqisi-city-candidate', 'western-qin-yuanchuan-city-candidate']) {
       const asset = heritageAssets.find((item) => item.id === id);
-      expect(asset?.modernStatus).toBe('uncertain');
-      expect(getHeritageDetail(id)?.uncertaintyNote).toMatch(/候选|争议|不确定|移动|阶段性/);
+      expect(asset?.modernStatus).toBe(id === 'tuyuhun-fuqisi-city-candidate' ? 'archaeological-site' : 'uncertain');
+      expect(getHeritageDetail(id)?.uncertaintyNote).toMatch(/候选|争议|不确定|移动|阶段性|研究差异/);
     }
   });
 });

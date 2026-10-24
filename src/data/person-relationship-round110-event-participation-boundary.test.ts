@@ -11,7 +11,6 @@ const reviewGaps = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
-  { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
 ] as const;
 
@@ -82,6 +81,7 @@ describe('round one hundred ten event-participation boundary audit', () => {
       })));
 
     expect(liZhiRecords).toEqual([
+      { eventId: 'tuyuhun-ended-663', relationType: undefined },
       { eventId: 'ximing-temple-built', relationType: 'contextual' },
       { eventId: 'shangyang-palace-built', relationType: 'contextual' },
       { eventId: 'shangyang-palace-completed-679', relationType: 'contextual' },

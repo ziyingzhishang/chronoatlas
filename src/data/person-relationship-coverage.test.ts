@@ -7,8 +7,8 @@ describe('person relationship coverage audit', () => {
   it('audits all people and keeps key relationship categories separate', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.totalPeople).toBe(260);
-    expect(report.records).toHaveLength(260);
+    expect(report.totalPeople).toBe(263);
+    expect(report.records).toHaveLength(263);
     expect(report.byPersonId['li-shimin'].categories.governance.status).toBe('covered');
     expect(report.byPersonId['li-shimin'].categories.kinship.status).toBe('covered');
     expect(report.byPersonId['li-shimin'].categories.allianceConflict.status).toBe('covered');
@@ -100,8 +100,8 @@ describe('person relationship coverage audit', () => {
     const governance = report.coverageByCategory.governance;
     const counts = report.applicabilityStatusCounts.governance;
 
-    expect(counts.required + counts['not-applicable'] + counts.review).toBe(260);
-    expect(governance.totalPeople).toBe(260);
+    expect(counts.required + counts['not-applicable'] + counts.review).toBe(263);
+    expect(governance.totalPeople).toBe(263);
     expect(governance.notApplicable).toBe(counts['not-applicable']);
     expect(governance.coverageRate).toBeGreaterThanOrEqual(0);
     expect(governance.coverageRate).toBeLessThanOrEqual(1);
@@ -117,11 +117,12 @@ describe('person relationship coverage audit', () => {
       relationType: 'contextual',
     }));
     expect(liZhi.categories.eventParticipation).toMatchObject({
-      status: 'missing',
-      relatedIds: [],
+      status: 'covered',
+      relatedIds: ['tuyuhun-ended-663'],
     });
-    expect(liZhi.categories.eventParticipation.evidence.filter((item) => item.kind === 'event-detail')).toEqual([]);
-    expect(report.requiredMissingByCategory.eventParticipation).toContain('li-zhi');
+    expect(liZhi.categories.eventParticipation.evidence.filter((item) => item.kind === 'event-detail')).toEqual([expect.objectContaining({ evidenceId: 'event-detail:tuyuhun-ended-663' })]);
+    expect(report.requiredMissingByCategory.eventParticipation).not.toContain('li-zhi');
+    expect(liZhi.categories.eventParticipation.relatedIds).toContain('tuyuhun-ended-663');
     expect(liZhi.categories.eventParticipation.relatedIds).not.toContain('ximing-temple-built');
 
     const xuanZang = report.byPersonId['xuan-zang'];

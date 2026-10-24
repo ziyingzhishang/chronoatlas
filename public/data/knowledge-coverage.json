@@ -28336,9 +28336,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "人物详情记录不存在或缺少生平摘要。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "lushangzan"
+          ],
           "relatedIds": []
         },
         {
@@ -45956,20 +45958,6 @@
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
-    },
-    {
-      "entityType": "person",
-      "entityId": "lushangzan",
-      "entityKey": "person:lushangzan",
-      "label": "禄东赞",
-      "dimension": "detail",
-      "kind": "data-missing",
-      "polityIds": [
-        "tibetan_empire"
-      ],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物详情记录不存在或缺少生平摘要。"
     },
     {
       "entityType": "person",
@@ -74984,9 +74972,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "人物详情记录不存在或缺少生平摘要。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "lushangzan"
+          ],
           "relatedIds": []
         },
         {
@@ -91542,15 +91532,15 @@
     "person": {
       "totalEntities": 263,
       "statusCounts": {
-        "covered": 1242,
-        "data-missing": 1,
+        "covered": 1243,
+        "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
         "uncertain": 72,
         "not-applicable": 0
       },
       "gapCounts": {
-        "data-missing": 1,
+        "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
         "uncertain": 72
@@ -91588,7 +91578,6 @@
         "person:liu-jiyuan",
         "person:liu-xuan",
         "person:liu-yao",
-        "person:lushangzan",
         "person:ma-xichong",
         "person:ma-xiguang",
         "person:meng-tian",
@@ -94544,20 +94533,6 @@
       "gaps": [
         {
           "entityType": "person",
-          "entityId": "lushangzan",
-          "entityKey": "person:lushangzan",
-          "label": "禄东赞",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "tibetan_empire"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物详情记录不存在或缺少生平摘要。"
-        },
-        {
-          "entityType": "person",
           "entityId": "namri-songtsen",
           "entityKey": "person:namri-songtsen",
           "label": "朗日松赞",
@@ -94639,7 +94614,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "吐蕃：有 6 项待核验缺口。"
+      "summary": "吐蕃：有 5 项待核验缺口。"
     },
     "turkic": {
       "polityId": "turkic",
@@ -98680,20 +98655,6 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         },
         {
-          "entityType": "person",
-          "entityId": "lushangzan",
-          "entityKey": "person:lushangzan",
-          "label": "禄东赞",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "tibetan_empire"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物详情记录不存在或缺少生平摘要。"
-        },
-        {
           "entityType": "event",
           "entityId": "tuyuhun-founded",
           "entityKey": "event:tuyuhun-founded",
@@ -98715,7 +98676,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "青海省海南藏族自治州共和县石乃亥镇铁卜加村一带：有 3 项待核验缺口。"
+      "summary": "青海省海南藏族自治州共和县石乃亥镇铁卜加村一带：有 2 项待核验缺口。"
     },
     "uhtuken": {
       "placeId": "uhtuken",

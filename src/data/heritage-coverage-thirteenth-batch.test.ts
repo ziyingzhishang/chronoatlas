@@ -30,6 +30,7 @@ const plannedHeritageIds = [
 
 const laterAddedHeritageIds = [
   'chu-shouchun-city-site',
+  'jiuquan-western-liang-city-site',
 ] as const;
 
 const newHeritagePolityLinks: Record<string, string[]> = {

@@ -34,6 +34,7 @@ const expectedEventIds = [
   'former-liang-founded',
   'changan-former-qin',
   'western-liang-state-founded',
+  'western-liang-ended-421',
   'tibetan-founded',
   'tibetan-yalong-center',
   'tibetan-ended-842',
@@ -90,12 +91,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(76);
+    expect(report.totalReviewed).toBe(77);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 41, approximate: 35, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 42, approximate: 35, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

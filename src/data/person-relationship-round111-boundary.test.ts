@@ -11,7 +11,7 @@ import { polities } from './polities';
 import { sourceNotes } from './sources';
 
 const requiredGovernanceGaps = [
-  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'shi-zhi', 'huan-wen', 'ma-xiguang', 'ma-xie', 'yu-the-great', 'ogedei', 'jamukha', 'chiang-kai-shek', 'deng-ai', 'zhong-hui', 'han-kangzi',
+  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'shi-zhi', 'huan-wen', 'ma-xiguang', 'ma-xie', 'yu-the-great', 'ogedei', 'jamukha', 'chiang-kai-shek', 'deng-ai', 'zhong-hui', 'lushangzan', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'seondeok-silla', 'jindeok-silla', 'kim-yushin', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'helian-ding', 'zheng-maisi', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt', 'wang-yenxi',
@@ -21,7 +21,6 @@ const eventParticipationGaps = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
-  { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
   { personId: 'chai-rong', eventIds: ['zhou-later-founded'] },
   { personId: 'ma-xiguang', eventIds: [] },
@@ -109,6 +108,7 @@ describe('round one hundred eleven person relationship boundary audit', () => {
       .map((participant) => ({ eventId: detail.eventId, relationType: participant.relationType })));
 
     expect(liZhiRecords).toEqual([
+      { eventId: 'tuyuhun-ended-663', relationType: undefined },
       { eventId: 'ximing-temple-built', relationType: 'contextual' },
       { eventId: 'shangyang-palace-built', relationType: 'contextual' },
       { eventId: 'shangyang-palace-completed-679', relationType: 'contextual' },
