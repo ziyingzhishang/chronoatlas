@@ -7,8 +7,8 @@ import { people } from './people';
 describe('ninety-sixth batch person relationship audit', () => {
   it('records the current required gap baseline', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.totalPeople).toBe(240);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
+    expect(report.totalPeople).toBe(242);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(141);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
   });
 

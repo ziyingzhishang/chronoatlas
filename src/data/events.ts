@@ -31,6 +31,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于南诏与唐关系、皮罗阁时期西南政治整合的编年参照；738年作为形成节点，后续整合仍分阶段表达。' }],
   },
   {
+    id: 'nanzhao-ended-902', year: 902, title: '南诏在羊苴咩城终止、大长和承接', summary: '南诏末代君主舜化贞在权臣郑买嗣夺权过程中退场，蒙氏王室政权终止；郑买嗣在羊苴咩城建立大长和，城市与洱海政治空间继续承接。', placeId: 'yangjumei', sourceIds: ['zizhi-tongjian', 'china-chronology', 'dali-yangjumei-mct'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'partial',
+    background: '南诏晚期清平官郑氏掌握的政治权力上升，蒙氏王室与权臣集团之间的矛盾在902年前后转化为政权更替。',
+    process: '902年南诏末主舜化贞退出政治中心，郑买嗣夺取蒙氏王室政权并建立大长和；关于舜化贞死亡究竟是自然死亡还是被郑买嗣所杀，后出史料存在异说，因此本事件只确认政权转换，不断言单一死因。',
+    impact: '南诏中央政权退出历史序列，大长和在羊苴咩城承接洱海政治中心；羊苴咩城、太和城及洱海交通网络并不因政权更替而在902年消失。',
+    mapNote: '地图将902年标为南诏政权终止与大长和承接的年份级节点，继续显示羊苴咩城的现代位置；不把政权更替日当作城市遗址或地方社会的终止日。',
+    references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于南诏晚期王权、郑氏权力与902年政权转换的编年框架；舜化贞死因及夺权细节按后出材料保留异说。' }, { title: '文化和旅游部：中国文化报·阳苴咩城城墙遗址', url: 'https://www.mct.gov.cn/whzx/qgwhxxlb/yn/201307/t20130711_791318.htm', detail: '用于羊苴咩城今大理古城一带的现代地点与城墙考古关联，不用于断定902年政权转换的全部细节。' }],
+  },
+  {
     id: 'goguryeo-founded', year: -37, title: '高句丽政权建立（传统纪年）', summary: '朱蒙在东北亚建立高句丽政权，早期国家形态随后逐步整合。', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'approximate', region: 'world', category: '政权建立／更替', verification: 'partial',
     background: '夫余及辽东、浑江流域的族群与地方政治网络持续重组，朱蒙传说与早期王权传统成为高句丽建国叙事的核心。',

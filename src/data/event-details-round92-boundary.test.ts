@@ -25,6 +25,7 @@ const reviewBoundaryReasons = {
   'southern-liang-founded-397': 'formation-approximation',
   'southern-liang-moves-ledu': 'formation-approximation',
   'mongol-karakorum-fixed-center': 'formation-approximation',
+  'nanzhao-ended-902': 'participant-endpoint-review',
   'yuan-shangdu-built': 'construction-range',
   'southern-ming-founded': 'formation-approximation',
   'tang-changan-end': 'participant-endpoint-review',
@@ -57,7 +58,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 148, 'needs-review': 47, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 148, 'needs-review': 48, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {

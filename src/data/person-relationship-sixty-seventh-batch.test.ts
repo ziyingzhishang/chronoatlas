@@ -50,8 +50,8 @@ describe('sixty-seventh batch high-confidence alliance/conflict relationships', 
   it('reduces only the requested alliance/conflict relationship-gap category', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(37);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(141);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     expect(report.byPersonId.dorgon.categories.allianceConflict.status).toBe('covered');

@@ -4942,6 +4942,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "nanzhao-ended-902",
+      "entityKey": "event:nanzhao-ended-902",
+      "label": "南诏在羊苴咩城终止、大长和承接",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "nanzhao-ended-902"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-yangjumei-mct",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shun-huazhen-participated-nanzhao-ended-902",
+            "claim:claim-zheng-maisi-participated-nanzhao-ended-902",
+            "event-detail:nanzhao-ended-902"
+          ],
+          "relatedIds": [
+            "dali-founded",
+            "nanzhao",
+            "nanzhao-founded",
+            "shun-huazhen",
+            "zheng-maisi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "nanzhao-founded",
       "entityKey": "event:nanzhao-founded",
       "label": "南诏建立（形成阶段）",
@@ -15722,6 +15784,68 @@
             "li-longji",
             "nanzhao",
             "nanzhao-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "nanzhao-yangjumei-city-site",
+      "entityKey": "heritage:nanzhao-yangjumei-city-site",
+      "label": "南诏羊苴咩城遗址历史层",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "nanzhao-yangjumei-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "dali-yangjumei-mct",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:nanzhao-yangjumei-city-site"
+          ],
+          "relatedIds": [
+            "nanzhao",
+            "nanzhao-ended-902",
+            "nanzhao-founded",
+            "quanfengyou",
+            "shun-huazhen",
+            "yimouxun",
+            "zheng-maisi"
           ]
         },
         {
@@ -29540,6 +29664,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "shun-huazhen",
+      "entityKey": "person:shun-huazhen",
+      "label": "舜化贞",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shun-huazhen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shun-huazhen-enemy-zheng-maisi-termination-902",
+            "claim:claim-shun-huazhen-participated-nanzhao-ended-902",
+            "claim:claim-shun-huazhen-ruled-nanzhao",
+            "event-detail:nanzhao-ended-902",
+            "person-polity:shun-huazhen:nanzhao"
+          ],
+          "relatedIds": [
+            "nanzhao",
+            "nanzhao-ended-902",
+            "zheng-maisi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "shunzhi",
       "entityKey": "person:shunzhi",
       "label": "福临",
@@ -34380,6 +34568,69 @@
     },
     {
       "entityType": "person",
+      "entityId": "zheng-maisi",
+      "entityKey": "person:zheng-maisi",
+      "label": "郑买嗣",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zheng-maisi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shun-huazhen-enemy-zheng-maisi-termination-902",
+            "claim:claim-zheng-maisi-participated-nanzhao-ended-902",
+            "event-detail:nanzhao-ended-902",
+            "person-polity:zheng-maisi:nanzhao"
+          ],
+          "relatedIds": [
+            "nanzhao",
+            "nanzhao-ended-902",
+            "shun-huazhen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "zheng-zhi-long",
       "entityKey": "person:zheng-zhi-long",
       "label": "郑芝龙",
@@ -37679,21 +37930,30 @@
             "claim:claim-geluofeng-ruled-nanzhao-round107",
             "claim:claim-piluo-ge-ruled-nanzhao-sixtyfourth",
             "claim:claim-quanfengyou-ruled-nanzhao-round107",
+            "claim:claim-shun-huazhen-ruled-nanzhao",
             "claim:claim-yimouxun-ruled-nanzhao-round107",
+            "event-detail:nanzhao-ended-902",
             "event-detail:nanzhao-founded",
             "heritage-detail:nanzhao-taihe-city-site",
+            "heritage-detail:nanzhao-yangjumei-city-site",
             "person:geluofeng",
             "person:piluo-ge",
             "person:quanfengyou",
-            "person:yimouxun"
+            "person:shun-huazhen",
+            "person:yimouxun",
+            "person:zheng-maisi"
           ],
           "relatedIds": [
             "geluofeng",
+            "nanzhao-ended-902",
             "nanzhao-founded",
             "nanzhao-taihe-city-site",
+            "nanzhao-yangjumei-city-site",
             "piluo-ge",
             "quanfengyou",
-            "yimouxun"
+            "shun-huazhen",
+            "yimouxun",
+            "zheng-maisi"
           ]
         },
         {
@@ -42777,6 +43037,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "shun-huazhen",
+      "entityKey": "person:shun-huazhen",
+      "label": "舜化贞",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "sinmun-silla",
       "entityKey": "person:sinmun-silla",
       "label": "神文王",
@@ -43071,6 +43348,23 @@
       "kind": "uncertain",
       "polityIds": [
         "zhao_warring"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "zheng-maisi",
+      "entityKey": "person:zheng-maisi",
+      "label": "郑买嗣",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "nanzhao"
       ],
       "evidenceIds": [
         "china-chronology",
@@ -48047,6 +48341,68 @@
           "dimension": "time",
           "status": "uncertain",
           "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:nanzhao-ended-902": {
+      "entityType": "event",
+      "entityId": "nanzhao-ended-902",
+      "entityKey": "event:nanzhao-ended-902",
+      "label": "南诏在羊苴咩城终止、大长和承接",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "nanzhao-ended-902"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "dali-yangjumei-mct",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shun-huazhen-participated-nanzhao-ended-902",
+            "claim:claim-zheng-maisi-participated-nanzhao-ended-902",
+            "event-detail:nanzhao-ended-902"
+          ],
+          "relatedIds": [
+            "dali-founded",
+            "nanzhao",
+            "nanzhao-founded",
+            "shun-huazhen",
+            "zheng-maisi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -58834,6 +59190,68 @@
             "li-longji",
             "nanzhao",
             "nanzhao-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:nanzhao-yangjumei-city-site": {
+      "entityType": "heritage",
+      "entityId": "nanzhao-yangjumei-city-site",
+      "entityKey": "heritage:nanzhao-yangjumei-city-site",
+      "label": "南诏羊苴咩城遗址历史层",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "nanzhao-yangjumei-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "dali-yangjumei-mct",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:nanzhao-yangjumei-city-site"
+          ],
+          "relatedIds": [
+            "nanzhao",
+            "nanzhao-ended-902",
+            "nanzhao-founded",
+            "quanfengyou",
+            "shun-huazhen",
+            "yimouxun",
+            "zheng-maisi"
           ]
         },
         {
@@ -72650,6 +73068,70 @@
         }
       ]
     },
+    "person:shun-huazhen": {
+      "entityType": "person",
+      "entityId": "shun-huazhen",
+      "entityKey": "person:shun-huazhen",
+      "label": "舜化贞",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "shun-huazhen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shun-huazhen-enemy-zheng-maisi-termination-902",
+            "claim:claim-shun-huazhen-participated-nanzhao-ended-902",
+            "claim:claim-shun-huazhen-ruled-nanzhao",
+            "event-detail:nanzhao-ended-902",
+            "person-polity:shun-huazhen:nanzhao"
+          ],
+          "relatedIds": [
+            "nanzhao",
+            "nanzhao-ended-902",
+            "zheng-maisi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:shunzhi": {
       "entityType": "person",
       "entityId": "shunzhi",
@@ -77490,6 +77972,69 @@
         }
       ]
     },
+    "person:zheng-maisi": {
+      "entityType": "person",
+      "entityId": "zheng-maisi",
+      "entityKey": "person:zheng-maisi",
+      "label": "郑买嗣",
+      "polityIds": [
+        "nanzhao"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zheng-maisi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-shun-huazhen-enemy-zheng-maisi-termination-902",
+            "claim:claim-zheng-maisi-participated-nanzhao-ended-902",
+            "event-detail:nanzhao-ended-902",
+            "person-polity:zheng-maisi:nanzhao"
+          ],
+          "relatedIds": [
+            "nanzhao",
+            "nanzhao-ended-902",
+            "shun-huazhen"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:zheng-zhi-long": {
       "entityType": "person",
       "entityId": "zheng-zhi-long",
@@ -80791,21 +81336,30 @@
             "claim:claim-geluofeng-ruled-nanzhao-round107",
             "claim:claim-piluo-ge-ruled-nanzhao-sixtyfourth",
             "claim:claim-quanfengyou-ruled-nanzhao-round107",
+            "claim:claim-shun-huazhen-ruled-nanzhao",
             "claim:claim-yimouxun-ruled-nanzhao-round107",
+            "event-detail:nanzhao-ended-902",
             "event-detail:nanzhao-founded",
             "heritage-detail:nanzhao-taihe-city-site",
+            "heritage-detail:nanzhao-yangjumei-city-site",
             "person:geluofeng",
             "person:piluo-ge",
             "person:quanfengyou",
-            "person:yimouxun"
+            "person:shun-huazhen",
+            "person:yimouxun",
+            "person:zheng-maisi"
           ],
           "relatedIds": [
             "geluofeng",
+            "nanzhao-ended-902",
             "nanzhao-founded",
             "nanzhao-taihe-city-site",
+            "nanzhao-yangjumei-city-site",
             "piluo-ge",
             "quanfengyou",
-            "yimouxun"
+            "shun-huazhen",
+            "yimouxun",
+            "zheng-maisi"
           ]
         },
         {
@@ -84590,9 +85144,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 195,
+      "totalEntities": 196,
       "statusCounts": {
-        "covered": 934,
+        "covered": 939,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -84650,9 +85204,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 122,
+      "totalEntities": 123,
       "statusCounts": {
-        "covered": 610,
+        "covered": 615,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -84668,20 +85222,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 240,
+      "totalEntities": 242,
       "statusCounts": {
-        "covered": 1138,
+        "covered": 1146,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 62,
+        "uncertain": 64,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 62
+        "uncertain": 64
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -84726,6 +85280,7 @@
         "person:qin-mugong",
         "person:qin-xiangong",
         "person:quanfengyou",
+        "person:shun-huazhen",
         "person:sinmun-silla",
         "person:su-guansheng",
         "person:tufa-lilugu",
@@ -84744,6 +85299,7 @@
         "person:zhang-qian",
         "person:zhao-liehou",
         "person:zhao-xiangzi",
+        "person:zheng-maisi",
         "person:zhou-gong-dan",
         "person:zhu-youzhen"
       ]
@@ -86210,12 +86766,16 @@
       "polityId": "nanzhao",
       "polityName": "南诏",
       "entityKeys": [
+        "event:nanzhao-ended-902",
         "event:nanzhao-founded",
         "heritage:nanzhao-taihe-city-site",
+        "heritage:nanzhao-yangjumei-city-site",
         "person:geluofeng",
         "person:piluo-ge",
         "person:quanfengyou",
+        "person:shun-huazhen",
         "person:yimouxun",
+        "person:zheng-maisi",
         "polity:nanzhao"
       ],
       "gaps": [
@@ -86287,6 +86847,40 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "shun-huazhen",
+          "entityKey": "person:shun-huazhen",
+          "label": "舜化贞",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "nanzhao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "zheng-maisi",
+          "entityKey": "person:zheng-maisi",
+          "label": "郑买嗣",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "nanzhao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
       ],
       "taskCounts": {
@@ -86296,7 +86890,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "南诏：有 4 项待核验缺口。"
+      "summary": "南诏：有 6 项待核验缺口。"
     },
     "northern_han": {
       "polityId": "northern_han",
@@ -89414,6 +90008,7 @@
       "entityKeys": [
         "event:dali-ended-1253",
         "event:dali-founded",
+        "event:nanzhao-ended-902",
         "heritage:dali-city-site",
         "person:duan-siping",
         "person:duan-xingzhi",
@@ -91783,9 +92378,47 @@
       "capitalRecordCount": 2,
       "entityKeys": [
         "event:dali-ended-1253",
-        "event:dali-founded"
+        "event:dali-founded",
+        "event:nanzhao-ended-902",
+        "heritage:nanzhao-yangjumei-city-site",
+        "person:shun-huazhen",
+        "person:zheng-maisi"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "shun-huazhen",
+          "entityKey": "person:shun-huazhen",
+          "label": "舜化贞",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "nanzhao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "zheng-maisi",
+          "entityKey": "person:zheng-maisi",
+          "label": "郑买嗣",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "nanzhao"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "dali-founded",
@@ -91824,7 +92457,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "大理古城一带：有 2 项待核验缺口。"
+      "summary": "大理古城一带：有 4 项待核验缺口。"
     },
     "yangzhou": {
       "placeId": "yangzhou",

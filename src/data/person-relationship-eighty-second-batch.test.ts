@@ -27,8 +27,8 @@ describe('eighty-second batch relationship audit', () => {
   it('freezes the current four-category gap boundary', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(37);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(141);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });

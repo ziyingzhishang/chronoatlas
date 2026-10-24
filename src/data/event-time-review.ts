@@ -95,6 +95,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'jin-ended-1234', status: 'approximate', expectedPrecision: 'approximate', explanation: '1234年前后表示完颜守绪政权被蒙古与南宋联军击败、金统一政治结构结束的过程；末帝结局、地方接收与开封城市遗产延续分层记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'southern-song-ended-1279', status: 'approximate', expectedPrecision: 'approximate', explanation: '1279年前后表示赵昺政权在崖门终局阶段结束的过程；海战、人物结局、元军接收与临安城市遗产延续分层记录。', timelineStrategy: 'approximate-marker' },
   { eventId: 'dali-ended-1253', status: 'approximate', expectedPrecision: 'approximate', explanation: '1253年前后表示蒙古进入大理核心、段兴智政权结束与地方行政接收的连续过程；羊苴咩城和大理古城遗产继续存在。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'nanzhao-ended-902', status: 'confirmed', expectedPrecision: 'year', explanation: '902年表示南诏蒙氏王室政权在郑买嗣夺权与大长和承接过程中终止；舜化贞死因、夺权细节与羊苴咩城地方承接分层记录。', timelineStrategy: 'year-marker' },
   { eventId: 'southern-yan-ended-410', status: 'confirmed', expectedPrecision: 'year', explanation: '410年表示刘裕攻取广固与南燕政权终止的明确年份；围城、俘获和地方接收仍按连续过程记录。', timelineStrategy: 'year-marker' },
   { eventId: 'southern-liang-ended-414', status: 'confirmed', expectedPrecision: 'year', explanation: '414年表示西秦攻取乐都、秃发傉檀政权结束与地方接收的明确年份；乐都候选城址和河湟城市层继续存在。', timelineStrategy: 'year-marker' },
   { eventId: 'former-zhao-ended-329', status: 'confirmed', expectedPrecision: 'year', explanation: '329年表示后赵攻取长安、刘曜被俘与前赵统一政治结构终止的明确年份；长安城市遗产和地方承接另行分层。', timelineStrategy: 'year-marker' },

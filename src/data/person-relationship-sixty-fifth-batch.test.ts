@@ -52,8 +52,8 @@ describe('sixty-fifth batch high-confidence event participation relationships', 
   it('reduces only the two directly evidenced event participation gaps', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(37);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(141);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     for (const personId of ['wei-zheng', 'yao-xing']) {

@@ -43,6 +43,7 @@ const expectedEventIds = [
   'jin-ended-1234',
   'southern-song-ended-1279',
   'dali-ended-1253',
+  'nanzhao-ended-902',
   'southern-yan-ended-410',
   'southern-liang-ended-414',
   'former-zhao-ended-329',
@@ -71,12 +72,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(57);
+    expect(report.totalReviewed).toBe(58);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 23, approximate: 34, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 24, approximate: 34, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

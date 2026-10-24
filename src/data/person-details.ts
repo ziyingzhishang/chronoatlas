@@ -1159,6 +1159,16 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['nanzhao-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '劝丰祐属于南诏中后期继承阶段；其统治只能作为南诏长期政权的后续节点，不能倒推为738年建政参与者。',
   },
   {
+    personId: 'shun-huazhen', biography: '舜化贞是南诏末代君主，897—902年在位。902年前后郑买嗣夺取蒙氏王室政权，南诏中央政权终止；其死亡原因在后出材料中有异说。',
+    aliases: ['舜化真', '南诏孝哀帝'], offices: [{ title: '南诏末代君主', polityId: 'nanzhao', placeId: 'yangjumei', validFrom: 897, validTo: 902, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['nanzhao-ended-902'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '舜化贞与902年南诏终局相连，但“卒于自然原因”与“为郑买嗣所杀”的记载不能在当前数据层面强行合并；人物详情只确认其处于末代政权终止节点。',
+  },
+  {
+    personId: 'zheng-maisi', biography: '郑买嗣是南诏晚期清平官，902年前后利用蒙氏王室危机夺取政权并建立大长和，羊苴咩城继续作为洱海政治中心。',
+    aliases: ['郑昶', '大长和建立者'], offices: [{ title: '南诏晚期清平官', polityId: 'nanzhao', placeId: 'yangjumei', validFrom: 897, validTo: 902, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['nanzhao-ended-902'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '郑买嗣在902年政权转换中是夺权方和承接方人物；本条不把其902年后的大长和统治整体回填为南诏人物经历。',
+  },
+  {
     personId: 'octavian', biography: '屋大维在罗马共和国晚期内战中胜出，前27年由元老院授予奥古斯都称号，成为元首制形成阶段的核心人物。',
     aliases: ['奥古斯都'], offices: [{ title: '罗马政治主导者', validFrom: -31, validTo: 14, datePrecision: 'range', sourceIds: ['augustus-metmuseum'] }],
     keyEvents: ['augustus-principate'], sourceIds: ['augustus-metmuseum'], uncertaintyNote: '前27年是称号与政治形式转折的标志节点；元首制的形成是长期过程，不把该年写成共和制度瞬时消失或疆域突然改变。',

@@ -49,8 +49,8 @@ describe('seventy-third batch high-confidence alliance relationships', () => {
   it('closes only the evidenced alliance gap and leaves kinship and event gaps unchanged', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(36);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(37);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(141);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     expect(report.byPersonId['zhou-gong-dan'].categories.allianceConflict.status).toBe('covered');

@@ -315,10 +315,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'nanzhao', perspectiveSummary: '南诏由洱海区域诸诏整合而成，以太和城、羊苴咩城为阶段性中心，连接西南地方政权、唐朝册封与滇西交通网络。',
     foundationProcess: ['皮罗阁在唐廷册封和洱海区域竞争中整合诸诏。', '738年南诏进入政权形成阶段。', '阁罗凤、异牟寻等继承者调整对唐关系并维持滇西政治网络。'],
-    turningPoints: [turn(738, '南诏建立', '蒙舍诏在册封与地方整合中形成南诏。', 'nanzhao-founded'), turn(779, '迁都羊苴咩城', '政治中心由太和城转向羊苴咩城。'), turn(794, '与唐恢复关系', '异牟寻调整外交方向，南诏进入新的区域秩序。')],
+    turningPoints: [turn(738, '南诏建立', '蒙舍诏在册封与地方整合中形成南诏。', 'nanzhao-founded'), turn(779, '迁都羊苴咩城', '政治中心由太和城转向羊苴咩城。'), turn(794, '与唐恢复关系', '异牟寻调整外交方向，南诏进入新的区域秩序。'), turn(902, '南诏终止', '郑买嗣夺取蒙氏王室政权并建立大长和，羊苴咩城继续承接洱海政治中心。', 'nanzhao-ended-902')],
     principalFigureIds: ['piluo-ge', 'geluofeng', 'yimouxun', 'quanfengyou'], capitalPhases: [capital('taihe', 738, 778), capital('yangjumei', 779, 902)],
-    heritageIds: ['nanzhao-taihe-city-site'], eventIds: ['nanzhao-founded'], claimIds: ['claim-piluo-ge-participated-nanzhao-founded', 'claim-geluofeng-related-nanzhao-founded', 'claim-yimouxun-participated-nanzhao', 'claim-quanfengyou-participated-nanzhao'], sourceIds: modernSources,
-    uncertaintyNote: '南诏建国、迁都与对唐关系调整是不同节点；太和城和羊苴咩城遗产分别对应不同阶段，不能以单一遗址代表南诏全部政治空间。',
+    heritageIds: ['nanzhao-taihe-city-site', 'nanzhao-yangjumei-city-site'], eventIds: ['nanzhao-founded', 'nanzhao-ended-902'], claimIds: ['claim-piluo-ge-participated-nanzhao-founded', 'claim-geluofeng-related-nanzhao-founded', 'claim-yimouxun-participated-nanzhao', 'claim-quanfengyou-participated-nanzhao', 'claim-shun-huazhen-ruled-nanzhao', 'claim-shun-huazhen-participated-nanzhao-ended-902', 'claim-shun-huazhen-enemy-zheng-maisi-termination-902', 'claim-zheng-maisi-participated-nanzhao-ended-902'], sourceIds: modernSources,
+    uncertaintyNote: '南诏建国、迁都、对唐关系调整和902年王室政权终止是不同节点；太和城和羊苴咩城遗产分别对应不同阶段，902年大长和承接不等于羊苴咩城及洱海地方社会消失。舜化贞死因与郑买嗣夺权细节保留史料异说。',
   }),
   detail({
     polityId: 'khitan', perspectiveSummary: '辽由契丹部落联盟与耶律阿保机的汗权整合发展而来，实行五京制度，上京临潢府是核心首都而非唯一政治空间。',

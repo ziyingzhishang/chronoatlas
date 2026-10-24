@@ -84,6 +84,24 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '738年作为南诏形成节点；太和城是南诏早期政治中心的现今遗址参照，不能把后期影响范围倒推为建政当年疆域。册封、部族联盟和直接控制范围不是同一概念。',
   },
   {
+    eventId: 'nanzhao-ended-902',
+    participants: [
+      { personId: 'shun-huazhen', role: '南诏末代君主与蒙氏王室终局人物', note: '舜化贞对应897—902年南诏末期；关于其902年死亡原因，后出材料有自然死亡与被杀两种说法，本条不替史料作单一裁断。' },
+      { personId: 'zheng-maisi', role: '夺取蒙氏王室政权并建立大长和的清平官', note: '郑买嗣代表902年权臣集团夺权与新政权承接，不把其政治行动扩展为羊苴咩城或洱海地方社会的消失。' },
+    ],
+    polityIds: ['nanzhao'],
+    causes: ['南诏晚期清平官郑氏及权臣集团掌握的政治资源不断上升。', '蒙氏王室的继承与中央权力结构失衡，902年前后形成政权转换条件。'],
+    consequences: ['南诏中央政权终止，大长和在羊苴咩城承接洱海政治中心。', '羊苴咩城及其城墙、道路和洱海交通网络继续作为城市历史层存在，不能把政权更替等同于遗址消失。'],
+    phases: [
+      { label: '蒙氏王室终局', startYear: 902, endYear: 902, summary: '舜化贞退出政治中心，南诏蒙氏王室政权在权臣夺权过程中终止；死因和具体行动顺序保留史料异说。' },
+      { label: '大长和承接', startYear: 902, endYear: 902, summary: '郑买嗣建立大长和并继续以羊苴咩城为政治中心，城市空间承接而非重新消失。' },
+    ],
+    locationIds: ['yangjumei', 'dali_city'],
+    relatedEventIds: ['nanzhao-founded', 'dali-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'dali-yangjumei-mct'],
+    uncertaintyNote: '902年作为南诏中央政权终止和大长和承接的年份级节点较稳定；舜化贞死因、郑买嗣夺权细节及902年后大长和内部过程不能用单一事件完全替代。羊苴咩城的现代位置与南诏—大理城市连续性可由考古资料支持，但不等于完整宫城保存。',
+  },
+  {
     eventId: 'jurchen-jin-moves-zhongdu',
     participants: [
       { personId: 'wanyan-liang', role: '推动金迁都中都并重建华北政治中心的君主', relationType: 'direct', note: '完颜亮对应1153年迁都与中都营建阶段；不将其与1115年完颜阿骨打建国合并。' },
