@@ -10,15 +10,39 @@ import { people } from '../data/people';
 import { places } from '../data/places';
 import { polities } from '../data/polities';
 import { polityDetails } from '../data/polity-details';
-import { buildPolityStudyView } from '../domain/study-view';
+import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import type { DetailEntity } from '../domain/detail-entity';
 import { RelationshipGraph } from './RelationshipGraph';
+import { toCityRelationshipGraphView, toPolityRelationshipGraphView } from './relationship-graph-model';
 
 describe('RelationshipGraph', () => {
+  it('renders a city-centered graph and navigates city graph nodes', () => {
+    const city = buildCityStudyView('changan', 650, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
+    const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
+    render(<RelationshipGraph graph={toCityRelationshipGraphView(city!)} onOpenEntity={onOpenEntity} />);
+
+    expect(screen.getByRole('img', { name: '城市关系网络' })).toBeInTheDocument();
+    expect(screen.getByRole('link', { name: '长安' })).toBeInTheDocument();
+    fireEvent.click(screen.getByRole('link', { name: '隋' }));
+
+    expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'sui' });
+  });
+
+  it('keeps evidence expansion and source traceability for city graph edges', () => {
+    const city = buildCityStudyView('changan', 650, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
+    render(<RelationshipGraph graph={toCityRelationshipGraphView(city!)} />);
+
+    const evidenceToggle = screen.getAllByRole('button', { name: /查看边证据/ })[0];
+    fireEvent.click(evidenceToggle);
+
+    expect(screen.getByRole('region', { name: /关系边证据/ })).toBeInTheDocument();
+    expect(screen.getByRole('list', { name: '关系来源：' })).toBeInTheDocument();
+  });
+
   it('renders person, polity and heritage connections as accessible text and SVG', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
-    render(<RelationshipGraph view={view!} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} />);
 
     expect(screen.getByRole('img', { name: '人物关系网络' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐 · 626—649年.*本年事实/ })).toBeInTheDocument();
@@ -36,7 +60,7 @@ describe('RelationshipGraph', () => {
         evidenceType: 'inference' as const, confidence: 'low' as const, sourceIds: ['missing-fixture-source'],
       }],
     };
-    render(<RelationshipGraph view={graphView} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     for (const heading of ['治理／君臣', '亲属', '联盟与对立', '事件参与', '遗产关联']) {
       expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
@@ -56,7 +80,7 @@ describe('RelationshipGraph', () => {
         evidenceType: 'cross-checked' as const, confidence: 'medium' as const, sourceIds: ['zizhi-tongjian'],
       }],
     };
-    render(<RelationshipGraph view={graphView} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     expect(screen.getByRole('heading', { name: '历史关联' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /李世民 · 历史关联 · 历史关联 · 方向：李世民 → 李渊 · 618—626年/ })).toBeInTheDocument();
@@ -71,7 +95,7 @@ describe('RelationshipGraph', () => {
       events: [...view!.events, events.find((event) => event.id === 'three-kingdoms')!],
       claims: [...view!.claims, claims.find((claim) => claim.id === 'claim-cao-cao-participated-three-kingdoms-fiftyfifth')!],
     };
-    render(<RelationshipGraph view={graphView} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     expect(screen.getByRole('heading', { name: '事件参与' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /曹操 · 事件参与 · 参与事件 · 方向：曹操 → 三国开始 · 220年 · 时间精度：年 · 来源：可用/ })).toBeInTheDocument();
@@ -79,7 +103,7 @@ describe('RelationshipGraph', () => {
 
   it('renders fifty-sixth batch ruler edges in the governance category', () => {
     const view = buildPolityStudyView('qing', 1643, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
-    render(<RelationshipGraph view={view!} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} />);
 
     expect(screen.getByRole('button', { name: /皇太极 · 治理／君臣 · 统治 · 方向：皇太极 → 清 · 1636—1643年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: /福临 · 治理／君臣 · 统治 · 方向：福临 → 清 · 1643—1661年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
@@ -87,7 +111,7 @@ describe('RelationshipGraph', () => {
 
   it('renders fifty-ninth batch ruler edges in the governance category', () => {
     const view = buildPolityStudyView('wu_three', 240, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
-    render(<RelationshipGraph view={view!} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} />);
 
     expect(screen.getByRole('button', { name: /孙权 · 治理／君臣 · 统治 · 方向：孙权 → 吴 · 229—252年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
   });
@@ -99,7 +123,7 @@ describe('RelationshipGraph', () => {
       people: [...view!.people, people.find((person) => person.id === 'chen-baxian')!],
       claims: [...view!.claims, claims.find((claim) => claim.id === 'claim-wang-sengbian-enemy-chen-baxian-fiftyseventh')!],
     };
-    render(<RelationshipGraph view={graphView} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     expect(screen.getByRole('button', { name: /王僧辩 · 联盟与对立 · 对立 · 方向：王僧辩 → 陈霸先 · 555年 · 时间精度：年 · 来源：可用/ })).toBeInTheDocument();
   });
@@ -108,7 +132,7 @@ describe('RelationshipGraph', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
     const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
-    render(<RelationshipGraph view={view!} onOpenEntity={onOpenEntity} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} onOpenEntity={onOpenEntity} />);
 
     const personNode = screen.getByRole('link', { name: '李世民' });
     expect(personNode).toHaveAttribute('tabindex', '0');
@@ -121,7 +145,7 @@ describe('RelationshipGraph', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
     const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
-    render(<RelationshipGraph view={view!} onOpenEntity={onOpenEntity} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} onOpenEntity={onOpenEntity} />);
 
     fireEvent.click(screen.getByRole('link', { name: '大明宫遗址' }));
 
@@ -132,7 +156,7 @@ describe('RelationshipGraph', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
     const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
-    render(<RelationshipGraph view={view!} onOpenEntity={onOpenEntity} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} onOpenEntity={onOpenEntity} />);
 
     fireEvent.click(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐/ }));
 
@@ -150,7 +174,7 @@ describe('RelationshipGraph', () => {
         { ...qingDetail, claimIds: [detailClaim.id] },
       ],
     });
-    render(<RelationshipGraph view={view!} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} />);
 
     expect(screen.getByRole('link', { name: '努尔哈赤' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: '清入关' })).toBeInTheDocument();
@@ -172,7 +196,7 @@ describe('RelationshipGraph', () => {
         uncertaintyNote: '关系方向是阶段性概括。',
       }],
     };
-    render(<RelationshipGraph view={graphView} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     const evidenceToggle = screen.getByRole('button', { name: /查看边证据.*李世民.*联盟/ });
     expect(evidenceToggle).toHaveAttribute('aria-expanded', 'false');
@@ -198,7 +222,7 @@ describe('RelationshipGraph', () => {
         evidenceType: 'explicit-record' as const, confidence: 'medium' as const, sourceIds: ['zizhi-tongjian', 'missing-edge-source'],
       }],
     };
-    render(<RelationshipGraph view={graphView} />);
+    render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     const evidenceToggle = screen.getByRole('button', { name: /查看边证据.*李世民.*对立/ });
     fireEvent.click(evidenceToggle);

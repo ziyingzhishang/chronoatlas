@@ -5,15 +5,12 @@ import type { ClaimEvidenceType, HistoricalClaim } from '../domain/types';
 import { sourceById } from '../data/sources';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
+import { toPolityRelationshipGraphView, type RelationshipGraphNode, type RelationshipGraphView } from './relationship-graph-model';
 
 export type RelationshipGraphCategory = 'governance' | 'kinship' | 'allianceConflict' | 'eventParticipation' | 'heritage' | 'context';
 export type RelationshipGraphScope = 'current-fact' | 'detail-linked';
 
-interface GraphNode {
-  id: string;
-  label: string;
-  kind: DetailEntity['type'];
-}
+type GraphNode = RelationshipGraphNode;
 
 export interface RelationshipGraphEdge {
   claim: HistoricalClaim;
@@ -72,22 +69,22 @@ export function relationshipSummary(edge: RelationshipGraphEdge, t: (text: strin
   return `${edge.from.label} · ${category} · ${predicate} · ${t('方向：')}${edge.from.label} → ${edge.to.label} · ${relationshipDateLabel(edge.claim)} · ${t('时间精度：')}${precision} · ${source} · ${scope}`;
 }
 
-export function RelationshipGraph({ view, onOpenEntity }: { view: PolityStudyView; onOpenEntity?: (entity: DetailEntity) => void }) {
+type RelationshipGraphProps = {
+  graph?: RelationshipGraphView;
+  view?: PolityStudyView;
+  onOpenEntity?: (entity: DetailEntity) => void;
+};
+
+export function RelationshipGraph({ graph, view, onOpenEntity }: RelationshipGraphProps) {
   const { t } = useLocale();
-  const detailLinkedEvents = [...view.detailLinkedEvents, ...view.detailLinkedTransitionEvents];
-  const rawNodes: GraphNode[] = [
-    { id: view.subject.id, label: view.subject.name, kind: 'polity' },
-    ...view.people.map((person) => ({ id: person.id, label: person.name, kind: 'person' as const })),
-    ...view.detailLinkedPeople.map((person) => ({ id: person.id, label: person.name, kind: 'person' as const })),
-    ...view.events.map((event) => ({ id: event.id, label: t(event.title), kind: 'event' as const })),
-    ...detailLinkedEvents.map((event) => ({ id: event.id, label: t(event.title), kind: 'event' as const })),
-    ...view.heritage.map((asset) => ({ id: asset.id, label: asset.name, kind: 'heritage' as const })),
-    ...view.detailLinkedHeritage.map((asset) => ({ id: asset.id, label: asset.name, kind: 'heritage' as const })),
-  ];
-  const nodes = [...new Map(rawNodes.map((node) => [node.id, node])).values()];
+  const normalizedGraph = graph ?? (view ? toPolityRelationshipGraphView(view) : undefined);
+  if (!normalizedGraph) return null;
+  const detailGraphNodes = normalizedGraph.detailNodes ?? [];
+  const localizeNode = (node: GraphNode): GraphNode => ({ ...node, label: t(node.label) });
+  const nodes = [...new Map([...normalizedGraph.currentNodes, ...detailGraphNodes].map(localizeNode).map((node) => [node.id, node])).values()];
   const nodeById = new Map(nodes.map((node) => [node.id, node]));
-  const currentClaimIds = new Set(view.claims.map((claim) => claim.id));
-  const claims = [...new Map([...view.claims, ...view.detailLinkedClaims].map((claim) => [claim.id, claim])).values()];
+  const currentClaimIds = new Set(normalizedGraph.currentClaims.map((claim) => claim.id));
+  const claims = [...new Map([...normalizedGraph.currentClaims, ...(normalizedGraph.detailClaims ?? [])].map((claim) => [claim.id, claim])).values()];
   const edges = claims.flatMap((claim): RelationshipGraphEdge[] => {
     const category = classifyRelationshipClaim(claim);
     const from = nodeById.get(claim.subjectId);
@@ -99,17 +96,8 @@ export function RelationshipGraph({ view, onOpenEntity }: { view: PolityStudyVie
       scope: currentClaimIds.has(claim.id) ? 'current-fact' : 'detail-linked',
     }];
   });
-  const currentEntityIds = new Set([
-    view.subject.id,
-    ...view.people.map((person) => person.id),
-    ...view.events.map((event) => event.id),
-    ...view.heritage.map((asset) => asset.id),
-  ]);
-  const detailEntityIds = new Set([
-    ...view.detailLinkedPeople.map((person) => person.id),
-    ...detailLinkedEvents.map((event) => event.id),
-    ...view.detailLinkedHeritage.map((asset) => asset.id),
-  ]);
+  const currentEntityIds = new Set(normalizedGraph.currentNodes.map((node) => node.id));
+  const detailEntityIds = new Set(detailGraphNodes.map((node) => node.id));
   const detailOnlyNodes = nodes.filter((node) => detailEntityIds.has(node.id) && !currentEntityIds.has(node.id));
   const positions = new Map(nodes.map((node, index) => [node.id, { x: 30 + (index % 3) * 130, y: 30 + Math.floor(index / 3) * 58 }]));
   const grouped = (Object.keys(categoryLabels) as RelationshipGraphCategory[]).map((category) => ({ category, edges: edges.filter((edge) => edge.category === category) }));
@@ -123,7 +111,7 @@ export function RelationshipGraph({ view, onOpenEntity }: { view: PolityStudyVie
   };
 
   return (
-    <div className="relationship-graph" role="img" aria-label={t('人物关系网络')}>
+    <div className="relationship-graph" role="img" aria-label={t(normalizedGraph.subject.kind === 'place' ? '城市关系网络' : '人物关系网络')}>
       <svg viewBox={`0 0 420 ${svgHeight}`}>
         {edges.map((edge) => <GraphEdge key={edge.claim.id} edge={edge} positions={positions} summary={relationshipSummary(edge, t)} t={t} />)}
         {nodes.map((node) => {
