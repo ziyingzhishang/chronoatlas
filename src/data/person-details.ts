@@ -1142,7 +1142,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'feng-hong', biography: '冯弘承接冯跋后的北燕王位，在辽西维持燕室统治，并在北魏压力下迁徙与寻求外援，最终见证北燕政权终结。',
     aliases: ['北燕昭成帝'], offices: [{ title: '北燕皇帝', polityId: 'northern_yan', validFrom: 430, validTo: 436, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['northern-yan-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '北燕形成节点为407年，冯弘属于其后期统治者；北燕建立、冯氏继承和436年灭亡应按连续但不同阶段叙述。',
+    keyEvents: ['northern-yan-founded', 'northern-yan-ended-436'], sourceIds: ['zizhi-tongjian-vol123-northern-yan', 'china-chronology'], uncertaintyNote: '北燕形成节点为407年，冯弘属于其后期统治者；北燕建立、冯氏继承和436年灭亡应按连续但不同阶段叙述。436年只采用年份精度，不虚构具体日月。',
   },
   {
     personId: 'murong-chao', biography: '慕容超是南燕末代君主，统治中心在广固，410年刘裕北伐攻灭南燕，南燕由此结束。',

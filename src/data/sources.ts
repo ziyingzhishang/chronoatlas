@@ -103,6 +103,14 @@ export const sourceNotes: SourceNote[] = [
     note: '卷一百十一明确记载推李暠为凉公、改元庚子，并说明“北凉之地至此又分为西凉”；同时列出六郡与敦煌太守等政治范围，不能据此回填后期完整疆域。',
   },
   {
+    id: 'zizhi-tongjian-vol123-northern-yan',
+    title: '《资治通鉴》卷一百二十三·北魏灭北燕',
+    authorOrInstitution: '司马光等',
+    urlOrCitation: 'https://zh.wikisource.org/wiki/資治通鑑/卷123',
+    scope: '436年北魏进取和龙、冯弘率宗族与龙城人户东撤及北燕中央政权终止',
+    note: '支持436年北燕终止与北魏承接的年份级表达；本项目不把纪月、日干支硬编码为无统一审计依据的具体日月。',
+  },
+  {
     id: 'historical-basemaps',
     title: 'Historical Basemaps · 原始历史矢量断面',
     authorOrInstitution: 'André Ourednik 与贡献者',

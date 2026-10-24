@@ -1123,6 +1123,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '407年与409年代表不同的政权转换节点；龙城是北燕承接后燕辽东政治中心的区域性现今参照，具体城址在朝阳、和龙等语境中存在差异，北燕起点存在分期口径差异。',
   },
   {
+    eventId: 'northern-yan-ended-436',
+    participants: [
+      { personId: 'feng-hong', role: '北燕末代君主，率宗族与龙城人户东撤', note: '冯弘对应北燕后期终局；不把其撤往高句丽后的流亡阶段写成北燕继续统治。' },
+      { personId: 'tuoba-tao', role: '北魏太武帝与承接者', note: '拓跋焘代表北魏进取和龙及承接辽西政治空间；不把其个人行动等同于所有地方同日完成行政转换。' },
+    ],
+    polityIds: ['northern_yan', 'wei_northern'],
+    causes: ['北魏持续推进辽西军事压力，北燕失去维持龙城独立秩序的能力。', '冯弘转向高句丽求援，北燕中央政权进入撤离阶段。'],
+    consequences: ['北燕中央政权终止。', '北魏承接辽西政治与行政空间，龙城及其区域城市遗产继续存在。'],
+    phases: [
+      { label: '北燕形成阶段', startYear: 407, endYear: 407, summary: '高云在龙城取代后燕，北燕进入形成阶段。' },
+      { label: '冯氏掌权阶段', startYear: 409, endYear: 409, summary: '冯跋掌权，北燕转入冯氏统治结构。' },
+      { label: '北魏灭北燕', startYear: 436, endYear: 436, summary: '北魏进取和龙，冯弘东撤，北燕中央政权终止。' },
+    ],
+    locationIds: ['longcheng'],
+    relatedEventIds: ['northern-yan-founded', 'northern-wei-founded'],
+    sourceIds: ['zizhi-tongjian-vol123-northern-yan', 'capital-history-reference', 'modern-geography-reference'],
+    uncertaintyNote: '436年采用年份精度；《资治通鉴》相关叙事包含四月、五月等纪月与日干支，但本目录不在缺少统一核验需求时虚构或硬编码具体日月。和龙、朝阳与历史龙城的对应关系仍按区域参照表达。',
+  },
+  {
     eventId: 'zhou-eastward',
     participants: [
       { personId: 'ji-yijiu', role: '周王室东迁后的即位君主', note: '姬宜臼即周平王，洛邑成为东迁后的政治中心；迁徙路线与具体王城位置仍按考古分层理解。' },

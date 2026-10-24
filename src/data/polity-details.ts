@@ -283,9 +283,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'northern_yan', perspectiveSummary: '北燕在后燕末年辽西政治转折中形成，先由高云承接政权，再由冯氏维持龙城中心的燕室统治。',
     foundationProcess: ['后燕末年辽西军政集团拥立高云，407年形成北燕政权节点。', '409年冯跋掌权，北燕进入冯氏统治阶段。', '冯弘继承后在北魏压力下维持辽西政权，436年结束。'],
-    turningPoints: [turn(407, '北燕政权形成', '高云取代后燕，北燕进入形成阶段。', 'northern-yan-founded'), turn(409, '冯跋掌权', '冯氏接管北燕军政，龙城中心得到延续。'), turn(436, '北燕覆亡', '北魏攻取龙城，北燕结束。')],
+    turningPoints: [turn(407, '北燕政权形成', '高云取代后燕，北燕进入形成阶段。', 'northern-yan-founded'), turn(409, '冯跋掌权', '冯氏接管北燕军政，龙城中心得到延续。'), turn(436, '北燕覆亡', '北魏进取和龙，冯弘东撤，北燕中央政权终止，北魏承接辽西政治空间。', 'northern-yan-ended-436')],
     principalFigureIds: ['gao-yun', 'feng-ba', 'feng-hong', 'feng-sufo'], capitalPhases: [capital('longcheng', 407, 436)],
-    heritageIds: ['northern-yan-longcheng-tomb'], eventIds: ['northern-yan-founded'], claimIds: ['claim-gao-yun-participated-northern-yan', 'claim-feng-ba-participated-northern-yan', 'claim-feng-hong-participated-northern-yan', 'claim-feng-sufo-participated-northern-yan'], sourceIds: modernSources,
+    heritageIds: ['northern-yan-longcheng-tomb'], eventIds: ['northern-yan-founded', 'northern-yan-ended-436'], claimIds: ['claim-gao-yun-participated-northern-yan', 'claim-feng-ba-participated-northern-yan', 'claim-feng-hong-participated-northern-yan', 'claim-feng-sufo-participated-northern-yan', 'claim-feng-hong-participated-northern-yan-ended-436', 'claim-tuoba-tao-participated-northern-yan-ended-436', 'claim-feng-hong-enemy-tuoba-tao-termination-436'], sourceIds: modernSources,
     uncertaintyNote: '407年高云政变与409年冯跋掌权是不同阶段，不能把冯跋写成407年唯一建国者；龙城墓葬和城址线索的具体归属仍需谨慎。',
   }),
   detail({

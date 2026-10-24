@@ -622,6 +622,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百一十五·晋纪三十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷115', detail: '记载后燕末年高云、冯跋政权转换；407年与409年节点及“北燕”起点口径差异保留。' }],
   },
   {
+    id: 'northern-yan-ended-436', year: 436, title: '北魏灭北燕、龙城政权终止', summary: '北魏攻取和龙，冯弘率宗族与龙城人户撤往高句丽，北燕中央政权终止；北魏承接辽西政治空间。', placeId: 'longcheng', sourceIds: ['zizhi-tongjian-vol123-northern-yan', 'capital-history-reference', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '北燕末期在北魏持续进逼下寻求高句丽援助，冯弘已无法维持龙城周边的独立政权秩序。',
+    process: '436年北魏军进逼和龙；高句丽援军接应冯弘东撤，龙城宫室与城邑被焚，北燕中央政权由此终止。事件只采用年份精度，不虚构具体日月。',
+    impact: '北燕结束，北魏承接辽西的政治与行政空间；龙城城址、墓葬、交通网络和今日朝阳及和龙区域历史不会因政权终止而消失。',
+    mapNote: '龙城继续使用已有区域性地点，现代参照为朝阳及和龙一带；北魏承接表示政权层面的后续控制，不等同于436年同日完成所有地方行政接收。',
+    references: [{ title: '《资治通鉴》卷一百二十三·宋纪五', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷123', detail: '用于核对436年北魏进取和龙、冯弘东撤及北燕政权终止；本项目保留年份精度。' }],
+  },
+  {
     id: 'zhou-conquest', year: -1046, title: '周克商',
     summary: '周取代商成为新的王朝；前1046年作为常用约年展示。',
     datePrecision: 'approximate', region: 'china', category: '政权建立／更替', sourceIds: [], verification: 'partial',
