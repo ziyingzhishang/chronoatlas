@@ -103,10 +103,10 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '新罗与唐的战争 · 韩国史数据库', url: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i101220', detail: '用于670—676年新罗—唐战争与唐军退出半岛主要地区的阶段核验。' }],
   },
   {
-    id: 'silla-ended-935', year: 935, title: '新罗向高丽归降', summary: '敬顺王向高丽王建归降，新罗王统结束，庆州进入高丽地方政治与历史遗产阶段。', placeId: 'jincheng_silla', sourceIds: ['silla-encykorea', 'silla-samguksagi-db'],
+    id: 'silla-ended-935', year: 935, title: '敬顺王向高丽王建归附', summary: '敬顺王向高丽王建归附，新罗中央王统结束，庆州进入高丽地方政治与新罗遗产承接阶段。', placeId: 'jincheng_silla', sourceIds: ['silla-encykorea', 'silla-samguksagi-db', 'yuan-goryeo-records'],
     datePrecision: 'year', region: 'world', category: '政权终结／政权承接', verification: 'checked',
     background: '后新罗时期地方势力竞争加剧，高丽逐步扩大对半岛中南部的政治吸纳。',
-    process: '935年敬顺王向高丽归降，新罗政权终结；敬顺王及新罗王族的后续待遇与庆州地方地位属于高丽承接阶段。',
+    process: '935年敬顺王向高丽王建归附，新罗中央王统终结；敬顺王及新罗王族的后续待遇、庆州地方地位和高丽接收属于后续承接阶段。',
     impact: '新罗935年政权时段结束，后三国时期的政治整合进一步转入高丽统一进程。',
     mapNote: '庆州标记新罗终结与王京遗产承接，不把归降日解释为庆州城市历史的终止。',
     references: [{ title: '新罗 · 韩国民族文化大百科', url: 'https://encykorea.aks.ac.kr/Article/E0032800', detail: '用于新罗终结年代和敬顺王归降阶段核验。' }, { title: '《三国史记》新罗本纪数据库', url: 'https://db.history.go.kr/ancient/level.do?levelId=sg_045r_0080_0020', detail: '用于新罗末代王统与终结节点交叉参照。' }],

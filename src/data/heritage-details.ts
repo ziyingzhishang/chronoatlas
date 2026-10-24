@@ -575,7 +575,7 @@ const details: HeritageDetail[] = [
     phase('original', '早期王京形成与发展', '前57—100年', '新罗以金城、徐罗伐为中心经营早期王京，宫城、聚落和王权网络持续形成；前57年是传统纪年节点。', -57, 100),
     phase('site', '月城与统一新罗王京遗址群', '101—935年', '月城、王陵、寺院、瞻星台和道路遗址共同保留庆州王京的多层证据；不同遗址不能压缩为一座连续建筑。', 101, 935, '月城与金城、徐罗伐等文献名称的对应需按考古分期理解。'),
     phase('restoration', '现代遗址保护', '现代历史城区保护', '庆州历史区以遗址公园、博物馆、世界遗产保护和城市展示连接新罗与现代城市，不把复原建筑当作原构。', 1900),
-  ], ['park-hyeokgeose', 'kim-chunchu', 'kim-yushin', 'munmu-silla', 'gyeongsun-silla'], ['silla'], ['silla-founded', 'silla-tang-alliance-648', 'silla-tang-war-670-676', 'silla-ended-935'], ['月城与王京遗址', '古坟群与王陵', '寺院、瞻星台及城市遗迹'], '从庆州今日城市视角观察新罗长期首都、统一战争与王京遗产。', '新罗王京是长期扩展的城市系统，各遗址年代、功能与复原程度不同；唐—新罗外交关系应通过独立事件和人物连接，不把李世民直接挂到前57年新罗遗产节点。', ['silla-encykorea', 'silla-samguksagi-db', 'silla-unification-wars-official', 'silla-gyeongju-unesco']),
+  ], ['park-hyeokgeose', 'kim-chunchu', 'kim-yushin', 'munmu-silla', 'gyeongsun-silla'], ['silla'], ['silla-founded', 'silla-tang-alliance-648', 'silla-tang-war-670-676', 'silla-ended-935'], ['月城与王京遗址', '古坟群与王陵', '寺院、瞻星台及城市遗迹'], '从庆州今日城市视角观察新罗长期首都、统一战争、935年中央王统终止与高丽承接后的王京遗产连续性。', '新罗王京是长期扩展的城市系统，各遗址年代、功能与复原程度不同；935年政权终止不等于城市遗产终止，庆州进入高丽地方政治与历史连续性阶段；唐—新罗外交关系应通过独立事件和人物连接，不把李世民直接挂到前57年新罗遗产节点。', ['silla-encykorea', 'silla-samguksagi-db', 'silla-unification-wars-official', 'silla-gyeongju-unesco', 'yuan-goryeo-records']),
   detail('tibetan-lhasa-city-site', '今西藏自治区拉萨市布达拉宫、大昭寺及拉萨河谷历史城区；吐蕃王城与现代城区边界不重合。', ['吐蕃逻些城与高原帝国政治中心', '宫城、佛教建筑、交通和唐蕃交流网络'], [
     phase('original', '政治中心形成', '7世纪至9世纪', '吐蕃政权在逻些形成长期政治与宗教中心，宫城、寺院和交通节点共同支撑高原帝国治理。', 618, 842),
     phase('site', '历史城区与建筑遗存', '吐蕃及后世叠合层', '布达拉宫、大昭寺及相关历史城区保存建筑、地层和宗教空间线索，需与后世重修分层。', 618, 842, '现存主体经历后世修缮，不能全部视为吐蕃时期原构。'),
