@@ -762,8 +762,8 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷七十一·魏纪三', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷071', detail: '黄龙元年（229）孙权在建业即皇帝位、国号吴；项目将建业作为建康城市实体的历史别名处理。' }],
   },
   {
-    id: 'jin-unification', year: 280, title: '西晋灭吴', summary: '晋军攻入建业，孙皓投降，三国鼎立结束。',
-    datePrecision: 'year', region: 'china', category: '统一／分裂', sourceIds: ['zizhi-tongjian'], verification: 'checked',
+    id: 'jin-unification', year: 280, title: '西晋灭吴', summary: '晋军攻入建业，孙皓投降，三国鼎立结束。', placeId: 'jiankang',
+    datePrecision: 'year', region: 'china', category: '政权终止／政权承接', sourceIds: ['zizhi-tongjian'], verification: 'checked',
     background: '晋已承接魏的统治区域，并从长江上游和北岸部署攻吴。',
     process: '晋军水陆推进，王濬舟师顺流东下，攻破吴军沿江防御，孙皓向晋军投降。',
     impact: '吴的独立政权结束，长江南北重新处于晋的统治框架之内；统一后的稳定仍需另作观察。',

@@ -775,6 +775,11 @@ export const personDetails: PersonDetail[] = [
     ], keyEvents: ['red-cliffs', 'three-kingdoms'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '孙权在称帝前长期以汉臣和江东实际统治者身份活动，222年吴王阶段与229年正式称帝应与孙吴全期分层展示。',
   },
   {
+    personId: 'sun-hao', biography: '孙皓是孙吴末代君主，统治至280年西晋灭吴。建业失守后向晋军投降，吴的中央政权终止；归晋后的个人处置与建康城市历史延续不等同于同日消失。',
+    aliases: ['吴末帝', '归命侯'], offices: [{ title: '孙吴末代皇帝', polityId: 'wu_three', placeId: 'jiankang', validFrom: 264, validTo: 280, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['jin-unification'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '孙皓的264—280年统治与280年投降分别表达；政权终止不等于建康城市遗产或江南地方社会同步消失。',
+  },
+  {
     personId: 'han-qian', biography: '韩虔即韩景侯，三家分晋后韩在前403年获周王室承认，韩作为战国诸侯国进入传统编年。',
     aliases: ['韩景侯'], offices: [{ title: '韩国诸侯', polityId: 'han_warring', validFrom: -403, validTo: -400, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['han-warring-founded-eighth-batch'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '前403年是周王室册命与战国分期的传统节点，不等同于韩在此前没有独立政治活动，也不据此推导完整疆域。',

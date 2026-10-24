@@ -1374,6 +1374,7 @@ const details: HistoricalEventDetail[] = [
     eventId: 'jin-unification',
     participants: [
       { personId: 'sima-yan', role: '西晋皇帝与统一战争的最高决策者', note: '司马炎承接曹魏北方资源并组织灭吴，具体水陆进军由诸将分路执行。' },
+      { personId: 'sun-hao', role: '孙吴末代君主与建业失守后的投降者', note: '孙皓在晋军攻入建业后向晋军投降，标记孙吴中央政权终止；投降后的个人处置与建康城市遗产延续分开表达。' },
     ],
     polityIds: ['jin_western', 'wu_three'],
     causes: ['西晋承接曹魏的北方政治资源，并从长江上游和北岸部署攻吴。', '吴的防线和内部政治已难以抵挡晋军的多路推进。'],
@@ -1384,7 +1385,7 @@ const details: HistoricalEventDetail[] = [
       { label: '吴主投降', startYear: 280, endYear: 280, summary: '孙皓向晋军投降，吴亡。' },
     ],
     locationIds: ['jiankang'],
-    relatedEventIds: ['three-kingdoms', 'eastern-jin'],
+    relatedEventIds: ['three-kingdoms', 'western-jin-founded', 'eastern-jin'],
     sourceIds: ['zizhi-tongjian'],
     uncertaintyNote: '建业是战争终点，不是完整进军范围；统一后的行政整合和地方差异需另行观察。',
   },

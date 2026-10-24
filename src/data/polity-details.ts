@@ -52,8 +52,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'wu_three', perspectiveSummary: '孙吴以江东军政网络和长江防线为基础，在三国竞争中形成长期政权，建业／建康是其政治中心。',
     foundationProcess: ['孙氏承接江东地方军政资源并经营长江中下游。', '222年孙吴进入独立政权阶段，229年孙权称帝。', '建业后改名建邺，统一映射至建康地点。'],
     turningPoints: [turn(208, '赤壁之战', '孙权与刘备联盟阻止曹操迅速南下。', 'red-cliffs'), turn(222, '孙吴形成', '江东政权进入长期独立阶段。'), turn(229, '孙吴建国完成', '孙权在建业称帝，孙吴完成正式称帝建国阶段。', 'wu-three-founded'), turn(280, '西晋灭吴', '孙吴向晋军投降，三国鼎立结束。', 'jin-unification')],
-    principalFigureIds: ['sun-quan'], capitalPhases: [capital('jiankang', 222, 280)],
-    heritageIds: ['jiankang-six-dynasties-city-site'], eventIds: ['red-cliffs', 'wu-three-founded', 'jin-unification'], claimIds: ['claim-sun-quan-ruled-wu-fiftyninth'], sourceIds: modernSources,
+    principalFigureIds: ['sun-quan', 'sun-hao'], capitalPhases: [capital('jiankang', 222, 280)],
+    heritageIds: ['jiankang-six-dynasties-city-site'], eventIds: ['red-cliffs', 'wu-three-founded', 'jin-unification'], claimIds: ['claim-wu-three-jiankang-capital', 'claim-wu-three-left-jiankang-heritage', 'claim-sun-quan-ruled-wu-fiftyninth', 'claim-sun-hao-ruled-wu-three', 'claim-sun-hao-participated-jin-unification', 'claim-sun-hao-submitted-to-sima-yan-jin-unification'], sourceIds: modernSources,
     uncertaintyNote: '赤壁战场具体位置仍需与传统地域参照区分；建康城市遗产覆盖六朝叠压层，不能单独还原孙吴城市全貌。',
   }),
   detail({
@@ -61,7 +61,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['司马氏在魏廷掌握军政权力。', '265年司马炎受禅建立西晋。', '280年灭吴完成短暂统一，但八王之乱及北方战争随后改变政权结构。'],
     turningPoints: [turn(265, '西晋建立', '司马炎受魏禅建立晋朝。', 'western-jin-founded'), turn(280, '灭吴统一', '三国鼎立结束。', 'jin-unification'), turn(311, '洛阳失守', '正式都城失守，晋廷政治中心转向长安。')],
     principalFigureIds: ['sima-yan'], capitalPhases: [capital('luoyang', 265, 311), capital('changan', 312, 316, 'primary', 'actual', '末期实际政治中心')],
-    heritageIds: ['luoyang-han-wei-city-site', 'western-jin-changan-city-layer'], eventIds: ['western-jin-founded', 'wei-three-ended-265', 'jin-unification', 'western-jin-loses-changan'], claimIds: ['claim-sima-yan-founded-western-jin', 'claim-sima-yan-succeeded-wei-three', 'claim-sima-yan-participated-wei-three-ended-265', 'claim-sima-ye-ruled-western-jin', 'claim-sima-ye-participated-western-jin-loses-changan'], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site', 'western-jin-changan-city-layer'], eventIds: ['western-jin-founded', 'wei-three-ended-265', 'jin-unification', 'western-jin-loses-changan'], claimIds: ['claim-sima-yan-founded-western-jin', 'claim-sima-yan-succeeded-wei-three', 'claim-sima-yan-participated-wei-three-ended-265', 'claim-sima-yan-participated-jin-unification-fortyfourth', 'claim-jin-western-inherited-wu-jiankang', 'claim-sima-ye-ruled-western-jin', 'claim-sima-ye-participated-western-jin-loses-changan'], sourceIds: modernSources,
     uncertaintyNote: '280年统一与265年建政不可合并为一个疆域节点；311年后的长安是后期实际中心，不应反写成全期正式首都。',
   }),
   detail({

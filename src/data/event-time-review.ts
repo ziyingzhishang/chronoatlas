@@ -70,6 +70,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'western-jin-loses-changan', status: 'confirmed', expectedPrecision: 'year', explanation: '316年刘曜攻取长安、晋愍帝司马邺出降与西晋北方中央政权终止有明确编年节点；317年东晋建政、前赵后续地方承接和长安城市遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'eastern-jin-ended-420', status: 'confirmed', expectedPrecision: 'year', explanation: '420年东晋恭帝司马德文在建康禅位于刘裕与东晋中央政权终止有明确编年节点；刘宋后续治理、南北边界和建康城市遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'wei-three-ended-265', status: 'confirmed', expectedPrecision: 'year', explanation: '265年曹魏元帝曹奂在洛阳禅位于司马炎、西晋建立与曹魏中央政权终止有明确编年节点；地方行政承接、280年灭吴统一和洛阳城市遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
+  { eventId: 'jin-unification', status: 'confirmed', expectedPrecision: 'year', explanation: '280年晋军攻入建业、孙皓投降与孙吴中央政权终止有明确编年节点；西晋对江南地方行政的后续整合、建康城市遗产延续和孙皓归晋后的个人处置另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'shu-han-ended-263', status: 'confirmed', expectedPrecision: 'year', explanation: '263年邓艾进入成都、刘禅归降与蜀汉中央政权终止有明确年份级节点；具体日月、魏军各路行动先后、蜀地地方接收和成都城市遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'qin-state-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '秦国早期建制属于传统分期，前770年只能表示历史阶段起点。', timelineStrategy: 'approximate-marker' },
   { eventId: 'chu-warring-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '战国楚的目录起点是传统分期，前403年只用于时间轴定位。', timelineStrategy: 'approximate-marker' },

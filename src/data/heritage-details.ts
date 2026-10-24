@@ -228,7 +228,7 @@ const details: HeritageDetail[] = [
     phase('original', '都城形成', '229年后', '孙吴以建业为都，南渡后的东晋和南朝继续在此经营建康政治空间。', 229, 589),
     phase('site', '遗址与城市层', '六朝时期', '城墙、宫城、道路和水系信息主要通过考古发现、城市地层和历史地理复原辨识。', 229, 589),
     phase('restoration', '现代展示', '当代城市考古', '现代博物馆、遗址标识和城市公共空间解释六朝都城，不重建完整台城或宫城。', 2000, undefined, '现代城市道路和纪念性设施不能直接视为六朝原建筑。'),
-  ], ['xiao-daocheng', 'xiao-baorong', 'chen-baxian', 'chen-shubao', 'sun-quan'], ['wu_three', 'jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['wu-three-founded', 'eastern-jin', 'liu-song-ended-479', 'sui-unification', 'southern-qi-founded', 'southern-qi-ended-502', 'southern-chen-founded', 'southern-chen-ended-589'], ['城墙、台城和石头城相关遗迹', '秦淮河水系与城市空间', '考古地层和历史地理标识'], '理解六朝政治中心南移、都城制度和南京城市层累的重要节点。', '六朝建康的宫城、外郭城和各时期边界仍需按考古与文献分期，不能用现代南京边界替代。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['xiao-daocheng', 'xiao-baorong', 'chen-baxian', 'chen-shubao', 'sun-quan', 'sun-hao'], ['wu_three', 'jin_western', 'jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['wu-three-founded', 'jin-unification', 'eastern-jin', 'liu-song-ended-479', 'sui-unification', 'southern-qi-founded', 'southern-qi-ended-502', 'southern-chen-founded', 'southern-chen-ended-589'], ['城墙、台城和石头城相关遗迹', '秦淮河水系与城市空间', '考古地层和历史地理标识'], '理解六朝政治中心南移、都城制度和南京城市层累的重要节点。', '六朝建康的宫城、外郭城和各时期边界仍需按考古与文献分期，不能用现代南京边界替代。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('southern-dynasties-stone-carvings', '今南京及其周边南朝陵墓石刻分布区，单点坐标只作建康城市圈导航。', ['南朝帝陵制度与神道石刻', '建康政治中心周边的陵墓、礼仪与交通景观'], [
     phase('original', '陵墓石刻营造', '420—589年', '刘宋、南齐、梁、陈时期的陵墓神道配置石兽、碑刻等礼仪性设施。', 420, 589),
     phase('site', '分散遗存', '南朝以后', '石刻多以原地、迁移后或残存构件形式保存，分布并非一处完整陵园。', 420, 589, '不同石刻的墓主、原位置和年代需要逐件考证。'),
