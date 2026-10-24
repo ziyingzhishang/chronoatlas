@@ -3310,6 +3310,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-cunxu-participated-later-liang-ended-923",
             "claim:claim-zhu-youzhen-participated-later-liang-ended-923",
             "event-detail:later-liang-ended-923"
           ],
@@ -26889,6 +26890,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-cunxu-participated-five-dynasties-fortyfourth",
+            "claim:claim-li-cunxu-participated-later-liang-ended-923",
             "claim:claim-li-cunxu-ruled-tang-later-closure",
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
@@ -52124,6 +52126,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-cunxu-participated-later-liang-ended-923",
             "claim:claim-zhu-youzhen-participated-later-liang-ended-923",
             "event-detail:later-liang-ended-923"
           ],
@@ -75703,6 +75706,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-cunxu-participated-five-dynasties-fortyfourth",
+            "claim:claim-li-cunxu-participated-later-liang-ended-923",
             "claim:claim-li-cunxu-ruled-tang-later-closure",
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
