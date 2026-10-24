@@ -55,7 +55,7 @@ describe('Round 110 政权学习视图详情关联集成', () => {
       }
     }
 
-    expect(closed).toHaveLength(128);
+    expect(closed).toHaveLength(127);
     expect(retained).toEqual([
       'wei_three:event:jin-unification',
       'shu_three:event:jin-unification',

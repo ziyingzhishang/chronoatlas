@@ -55,9 +55,9 @@ describe('ninety-fifth batch Qin Han Northern and Southern Dynasties governance 
   it('closes exactly the three audited governance gaps without changing other categories', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(38);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(151);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(96);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(40);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(155);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(98);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
     for (const personId of ['qin-xiaogong', 'liu-yilong', 'chen-xu']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');

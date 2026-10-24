@@ -2823,13 +2823,16 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-sima-yan-participated-jin-unification-fortyfourth",
+            "claim:claim-sun-hao-participated-jin-unification",
             "event-detail:jin-unification"
           ],
           "relatedIds": [
             "eastern-jin",
             "jin_western",
             "sima-yan",
+            "sun-hao",
             "three-kingdoms",
+            "western-jin-founded",
             "wu_three"
           ]
         },
@@ -7218,6 +7221,72 @@
             "su-guansheng",
             "yongli-zhaoqing-founded",
             "zhu-yuyue"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "shu-han-ended-263",
+      "entityKey": "event:shu-han-ended-263",
+      "label": "魏灭蜀、蜀汉中央政权终止",
+      "polityIds": [
+        "shu_three",
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "shu-han-ended-263"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-deng-ai-participated-shu-han-ended-263",
+            "claim:claim-liu-chan-participated-shu-han-ended-263",
+            "claim:claim-zhong-hui-participated-shu-han-ended-263",
+            "event-detail:shu-han-ended-263"
+          ],
+          "relatedIds": [
+            "deng-ai",
+            "liu-chan",
+            "shu-han-founded",
+            "shu_three",
+            "three-kingdoms",
+            "wei_three",
+            "zhong-hui"
           ]
         },
         {
@@ -14230,6 +14299,7 @@
         "chen_southern",
         "han_eastern",
         "jin_eastern",
+        "jin_western",
         "liang_southern",
         "qi_southern",
         "song_southern",
@@ -14267,6 +14337,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-wu-three-left-jiankang-heritage",
             "heritage-detail:jiankang-six-dynasties-city-site"
           ],
           "relatedIds": [
@@ -14274,7 +14345,9 @@
             "chen-shubao",
             "chen_southern",
             "eastern-jin",
+            "jin-unification",
             "jin_eastern",
+            "jin_western",
             "liang_southern",
             "liu-song-ended-479",
             "qi_southern",
@@ -14284,6 +14357,7 @@
             "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
+            "sun-hao",
             "sun-quan",
             "wu-three-founded",
             "wu_three",
@@ -17495,7 +17569,8 @@
       "label": "蜀汉成都城市历史层",
       "polityIds": [
         "han_eastern",
-        "shu_three"
+        "shu_three",
+        "wei_three"
       ],
       "checks": [
         {
@@ -17520,6 +17595,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
+            "shu-han-termination-263",
             "shuhan-chengdu-official",
             "zizhi-tongjian"
           ],
@@ -17534,8 +17610,11 @@
           ],
           "relatedIds": [
             "liu-bei",
+            "liu-chan",
+            "shu-han-ended-263",
             "shu-han-founded",
-            "shu_three"
+            "shu_three",
+            "wei_three"
           ]
         },
         {
@@ -21382,6 +21461,71 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "deng-ai",
+      "entityKey": "person:deng-ai",
+      "label": "邓艾",
+      "polityIds": [
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "deng-ai"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-deng-ai-participated-shu-han-ended-263",
+            "claim:claim-liu-chan-submitted-to-deng-ai-shu-han-termination-263",
+            "claim:claim-zhong-hui-enemy-of-deng-ai-264",
+            "event-detail:shu-han-ended-263",
+            "person-polity:deng-ai:wei_three"
+          ],
+          "relatedIds": [
+            "liu-chan",
+            "shu-han-ended-263",
+            "wei_three",
+            "zhong-hui"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -26213,6 +26357,72 @@
           "evidenceIds": [
             "yuan-li-bingzhong",
             "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "liu-chan",
+      "entityKey": "person:liu-chan",
+      "label": "刘禅",
+      "polityIds": [
+        "shu_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-chan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chan-participated-shu-han-ended-263",
+            "claim:claim-liu-chan-ruled-shu-three",
+            "claim:claim-liu-chan-submitted-to-deng-ai-shu-han-termination-263",
+            "event-detail:shu-han-ended-263",
+            "person-polity:liu-chan:shu_three"
+          ],
+          "relatedIds": [
+            "deng-ai",
+            "shu-han-ended-263",
+            "shu_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "shu-han-termination-263",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -31134,6 +31344,7 @@
             "claim:claim-sima-yan-related-sima-rui",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
             "claim:claim-sima-yan-succeeded-wei-three",
+            "claim:claim-sun-hao-submitted-to-sima-yan-jin-unification",
             "event-detail:jin-unification",
             "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
@@ -31144,6 +31355,7 @@
             "jin-unification",
             "jin_western",
             "sima-rui",
+            "sun-hao",
             "wei-three-ended-265",
             "wei_three",
             "western-jin-founded"
@@ -31417,6 +31629,70 @@
           "evidenceIds": [
             "guangzhou-shaowu-tomb",
             "southern-ming-shaowu"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "sun-hao",
+      "entityKey": "person:sun-hao",
+      "label": "孙皓",
+      "polityIds": [
+        "wu_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sun-hao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-sun-hao-participated-jin-unification",
+            "claim:claim-sun-hao-ruled-wu-three",
+            "claim:claim-sun-hao-submitted-to-sima-yan-jin-unification",
+            "event-detail:jin-unification",
+            "person-polity:sun-hao:wu_three"
+          ],
+          "relatedIds": [
+            "jin-unification",
+            "sima-yan",
+            "wu_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -36411,6 +36687,69 @@
     },
     {
       "entityType": "person",
+      "entityId": "zhong-hui",
+      "entityKey": "person:zhong-hui",
+      "label": "钟会",
+      "polityIds": [
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhong-hui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhong-hui-enemy-of-deng-ai-264",
+            "claim:claim-zhong-hui-participated-shu-han-ended-263",
+            "event-detail:shu-han-ended-263",
+            "person-polity:zhong-hui:wei_three"
+          ],
+          "relatedIds": [
+            "deng-ai",
+            "shu-han-ended-263",
+            "wei_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "zhou-gong-dan",
       "entityKey": "person:zhou-gong-dan",
       "label": "姬旦",
@@ -38559,6 +38898,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-jin-western-inherited-wu-jiankang",
             "claim:claim-sima-yan-founded-western-jin",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
             "claim:claim-sima-ye-ruled-western-jin",
@@ -38566,12 +38906,14 @@
             "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
             "event-detail:western-jin-loses-changan",
+            "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:western-jin-changan-city-layer",
             "person:sima-yan",
             "person:sima-ye"
           ],
           "relatedIds": [
+            "jiankang-six-dynasties-city-site",
             "jin-unification",
             "luoyang-han-wei-city-site",
             "sima-yan",
@@ -38579,7 +38921,8 @@
             "wei-three-ended-265",
             "western-jin-changan-city-layer",
             "western-jin-founded",
-            "western-jin-loses-changan"
+            "western-jin-loses-changan",
+            "wu_three"
           ]
         },
         {
@@ -40634,6 +40977,7 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "shu-han-termination-263",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -40644,18 +40988,25 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-liu-bei-ruled-shu-three-closure",
+            "claim:claim-liu-chan-ruled-shu-three",
+            "claim:claim-wei-three-succeeded-shu-three-263",
             "event-detail:red-cliffs",
+            "event-detail:shu-han-ended-263",
             "event-detail:shu-han-founded",
             "event-detail:three-kingdoms",
             "heritage-detail:shu-han-chengdu-city-site",
-            "person:liu-bei"
+            "person:liu-bei",
+            "person:liu-chan"
           ],
           "relatedIds": [
             "liu-bei",
+            "liu-chan",
             "red-cliffs",
             "shu-han-chengdu-city-site",
+            "shu-han-ended-263",
             "shu-han-founded",
-            "three-kingdoms"
+            "three-kingdoms",
+            "wei_three"
           ]
         },
         {
@@ -42065,21 +42416,31 @@
             "claim:claim-cao-cao-ruled-wei-three-closure",
             "claim:claim-cao-huan-ruled-wei-three",
             "claim:claim-sima-yan-succeeded-wei-three",
+            "claim:claim-wei-three-succeeded-shu-three-263",
             "event-detail:red-cliffs",
+            "event-detail:shu-han-ended-263",
             "event-detail:three-kingdoms",
             "event-detail:wei-three-ended-265",
             "heritage-detail:luoyang-han-wei-city-site",
+            "heritage-detail:shu-han-chengdu-city-site",
             "person:cao-cao",
-            "person:cao-huan"
+            "person:cao-huan",
+            "person:deng-ai",
+            "person:zhong-hui"
           ],
           "relatedIds": [
             "cao-cao",
             "cao-huan",
+            "deng-ai",
             "luoyang-han-wei-city-site",
             "red-cliffs",
+            "shu-han-chengdu-city-site",
+            "shu-han-ended-263",
+            "shu_three",
             "sima-yan",
             "three-kingdoms",
-            "wei-three-ended-265"
+            "wei-three-ended-265",
+            "zhong-hui"
           ]
         },
         {
@@ -42622,18 +42983,26 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-jin-western-inherited-wu-jiankang",
+            "claim:claim-sun-hao-ruled-wu-three",
             "claim:claim-sun-quan-ruled-wu-fiftyninth",
+            "claim:claim-wu-three-jiankang-capital",
+            "claim:claim-wu-three-left-jiankang-heritage",
             "event-detail:jin-unification",
             "event-detail:red-cliffs",
             "event-detail:three-kingdoms",
             "event-detail:wu-three-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
+            "person:sun-hao",
             "person:sun-quan"
           ],
           "relatedIds": [
+            "jiankang",
             "jiankang-six-dynasties-city-site",
             "jin-unification",
+            "jin_western",
             "red-cliffs",
+            "sun-hao",
             "sun-quan",
             "three-kingdoms",
             "wu-three-founded"
@@ -48137,13 +48506,16 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-sima-yan-participated-jin-unification-fortyfourth",
+            "claim:claim-sun-hao-participated-jin-unification",
             "event-detail:jin-unification"
           ],
           "relatedIds": [
             "eastern-jin",
             "jin_western",
             "sima-yan",
+            "sun-hao",
             "three-kingdoms",
+            "western-jin-founded",
             "wu_three"
           ]
         },
@@ -52532,6 +52904,72 @@
             "su-guansheng",
             "yongli-zhaoqing-founded",
             "zhu-yuyue"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:shu-han-ended-263": {
+      "entityType": "event",
+      "entityId": "shu-han-ended-263",
+      "entityKey": "event:shu-han-ended-263",
+      "label": "魏灭蜀、蜀汉中央政权终止",
+      "polityIds": [
+        "shu_three",
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "shu-han-ended-263"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-deng-ai-participated-shu-han-ended-263",
+            "claim:claim-liu-chan-participated-shu-han-ended-263",
+            "claim:claim-zhong-hui-participated-shu-han-ended-263",
+            "event-detail:shu-han-ended-263"
+          ],
+          "relatedIds": [
+            "deng-ai",
+            "liu-chan",
+            "shu-han-founded",
+            "shu_three",
+            "three-kingdoms",
+            "wei_three",
+            "zhong-hui"
           ]
         },
         {
@@ -59544,6 +59982,7 @@
         "chen_southern",
         "han_eastern",
         "jin_eastern",
+        "jin_western",
         "liang_southern",
         "qi_southern",
         "song_southern",
@@ -59581,6 +60020,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-wu-three-left-jiankang-heritage",
             "heritage-detail:jiankang-six-dynasties-city-site"
           ],
           "relatedIds": [
@@ -59588,7 +60028,9 @@
             "chen-shubao",
             "chen_southern",
             "eastern-jin",
+            "jin-unification",
             "jin_eastern",
+            "jin_western",
             "liang_southern",
             "liu-song-ended-479",
             "qi_southern",
@@ -59598,6 +60040,7 @@
             "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
+            "sun-hao",
             "sun-quan",
             "wu-three-founded",
             "wu_three",
@@ -62809,7 +63252,8 @@
       "label": "蜀汉成都城市历史层",
       "polityIds": [
         "han_eastern",
-        "shu_three"
+        "shu_three",
+        "wei_three"
       ],
       "checks": [
         {
@@ -62834,6 +63278,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
+            "shu-han-termination-263",
             "shuhan-chengdu-official",
             "zizhi-tongjian"
           ],
@@ -62848,8 +63293,11 @@
           ],
           "relatedIds": [
             "liu-bei",
+            "liu-chan",
+            "shu-han-ended-263",
             "shu-han-founded",
-            "shu_three"
+            "shu_three",
+            "wei_three"
           ]
         },
         {
@@ -66696,6 +67144,71 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:deng-ai": {
+      "entityType": "person",
+      "entityId": "deng-ai",
+      "entityKey": "person:deng-ai",
+      "label": "邓艾",
+      "polityIds": [
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "deng-ai"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-deng-ai-participated-shu-han-ended-263",
+            "claim:claim-liu-chan-submitted-to-deng-ai-shu-han-termination-263",
+            "claim:claim-zhong-hui-enemy-of-deng-ai-264",
+            "event-detail:shu-han-ended-263",
+            "person-polity:deng-ai:wei_three"
+          ],
+          "relatedIds": [
+            "liu-chan",
+            "shu-han-ended-263",
+            "wei_three",
+            "zhong-hui"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -71527,6 +72040,72 @@
           "evidenceIds": [
             "yuan-li-bingzhong",
             "yuan-nationalities-history"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:liu-chan": {
+      "entityType": "person",
+      "entityId": "liu-chan",
+      "entityKey": "person:liu-chan",
+      "label": "刘禅",
+      "polityIds": [
+        "shu_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-chan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chan-participated-shu-han-ended-263",
+            "claim:claim-liu-chan-ruled-shu-three",
+            "claim:claim-liu-chan-submitted-to-deng-ai-shu-han-termination-263",
+            "event-detail:shu-han-ended-263",
+            "person-polity:liu-chan:shu_three"
+          ],
+          "relatedIds": [
+            "deng-ai",
+            "shu-han-ended-263",
+            "shu_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "shu-han-termination-263",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -76448,6 +77027,7 @@
             "claim:claim-sima-yan-related-sima-rui",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
             "claim:claim-sima-yan-succeeded-wei-three",
+            "claim:claim-sun-hao-submitted-to-sima-yan-jin-unification",
             "event-detail:jin-unification",
             "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
@@ -76458,6 +77038,7 @@
             "jin-unification",
             "jin_western",
             "sima-rui",
+            "sun-hao",
             "wei-three-ended-265",
             "wei_three",
             "western-jin-founded"
@@ -76731,6 +77312,70 @@
           "evidenceIds": [
             "guangzhou-shaowu-tomb",
             "southern-ming-shaowu"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:sun-hao": {
+      "entityType": "person",
+      "entityId": "sun-hao",
+      "entityKey": "person:sun-hao",
+      "label": "孙皓",
+      "polityIds": [
+        "wu_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sun-hao"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-sun-hao-participated-jin-unification",
+            "claim:claim-sun-hao-ruled-wu-three",
+            "claim:claim-sun-hao-submitted-to-sima-yan-jin-unification",
+            "event-detail:jin-unification",
+            "person-polity:sun-hao:wu_three"
+          ],
+          "relatedIds": [
+            "jin-unification",
+            "sima-yan",
+            "wu_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -81723,6 +82368,69 @@
         }
       ]
     },
+    "person:zhong-hui": {
+      "entityType": "person",
+      "entityId": "zhong-hui",
+      "entityKey": "person:zhong-hui",
+      "label": "钟会",
+      "polityIds": [
+        "wei_three"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "zhong-hui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-zhong-hui-enemy-of-deng-ai-264",
+            "claim:claim-zhong-hui-participated-shu-han-ended-263",
+            "event-detail:shu-han-ended-263",
+            "person-polity:zhong-hui:wei_three"
+          ],
+          "relatedIds": [
+            "deng-ai",
+            "shu-han-ended-263",
+            "wei_three"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "shu-han-termination-263",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:zhou-gong-dan": {
       "entityType": "person",
       "entityId": "zhou-gong-dan",
@@ -83873,6 +84581,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-jin-western-inherited-wu-jiankang",
             "claim:claim-sima-yan-founded-western-jin",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
             "claim:claim-sima-ye-ruled-western-jin",
@@ -83880,12 +84589,14 @@
             "event-detail:wei-three-ended-265",
             "event-detail:western-jin-founded",
             "event-detail:western-jin-loses-changan",
+            "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:western-jin-changan-city-layer",
             "person:sima-yan",
             "person:sima-ye"
           ],
           "relatedIds": [
+            "jiankang-six-dynasties-city-site",
             "jin-unification",
             "luoyang-han-wei-city-site",
             "sima-yan",
@@ -83893,7 +84604,8 @@
             "wei-three-ended-265",
             "western-jin-changan-city-layer",
             "western-jin-founded",
-            "western-jin-loses-changan"
+            "western-jin-loses-changan",
+            "wu_three"
           ]
         },
         {
@@ -85948,6 +86660,7 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "shu-han-termination-263",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -85958,18 +86671,25 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-liu-bei-ruled-shu-three-closure",
+            "claim:claim-liu-chan-ruled-shu-three",
+            "claim:claim-wei-three-succeeded-shu-three-263",
             "event-detail:red-cliffs",
+            "event-detail:shu-han-ended-263",
             "event-detail:shu-han-founded",
             "event-detail:three-kingdoms",
             "heritage-detail:shu-han-chengdu-city-site",
-            "person:liu-bei"
+            "person:liu-bei",
+            "person:liu-chan"
           ],
           "relatedIds": [
             "liu-bei",
+            "liu-chan",
             "red-cliffs",
             "shu-han-chengdu-city-site",
+            "shu-han-ended-263",
             "shu-han-founded",
-            "three-kingdoms"
+            "three-kingdoms",
+            "wei_three"
           ]
         },
         {
@@ -87379,21 +88099,31 @@
             "claim:claim-cao-cao-ruled-wei-three-closure",
             "claim:claim-cao-huan-ruled-wei-three",
             "claim:claim-sima-yan-succeeded-wei-three",
+            "claim:claim-wei-three-succeeded-shu-three-263",
             "event-detail:red-cliffs",
+            "event-detail:shu-han-ended-263",
             "event-detail:three-kingdoms",
             "event-detail:wei-three-ended-265",
             "heritage-detail:luoyang-han-wei-city-site",
+            "heritage-detail:shu-han-chengdu-city-site",
             "person:cao-cao",
-            "person:cao-huan"
+            "person:cao-huan",
+            "person:deng-ai",
+            "person:zhong-hui"
           ],
           "relatedIds": [
             "cao-cao",
             "cao-huan",
+            "deng-ai",
             "luoyang-han-wei-city-site",
             "red-cliffs",
+            "shu-han-chengdu-city-site",
+            "shu-han-ended-263",
+            "shu_three",
             "sima-yan",
             "three-kingdoms",
-            "wei-three-ended-265"
+            "wei-three-ended-265",
+            "zhong-hui"
           ]
         },
         {
@@ -87936,18 +88666,26 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-jin-western-inherited-wu-jiankang",
+            "claim:claim-sun-hao-ruled-wu-three",
             "claim:claim-sun-quan-ruled-wu-fiftyninth",
+            "claim:claim-wu-three-jiankang-capital",
+            "claim:claim-wu-three-left-jiankang-heritage",
             "event-detail:jin-unification",
             "event-detail:red-cliffs",
             "event-detail:three-kingdoms",
             "event-detail:wu-three-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
+            "person:sun-hao",
             "person:sun-quan"
           ],
           "relatedIds": [
+            "jiankang",
             "jiankang-six-dynasties-city-site",
             "jin-unification",
+            "jin_western",
             "red-cliffs",
+            "sun-hao",
             "sun-quan",
             "three-kingdoms",
             "wu-three-founded"
@@ -88876,9 +89614,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 208,
+      "totalEntities": 209,
       "statusCounts": {
-        "covered": 998,
+        "covered": 1003,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -88955,9 +89693,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 254,
+      "totalEntities": 258,
       "statusCounts": {
-        "covered": 1202,
+        "covered": 1222,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -89875,6 +90613,7 @@
         "event:wei-three-ended-265",
         "event:western-jin-founded",
         "event:western-jin-loses-changan",
+        "heritage:jiankang-six-dynasties-city-site",
         "heritage:luoyang-han-wei-city-site",
         "heritage:western-jin-changan-city-layer",
         "person:sima-yan",
@@ -91269,10 +92008,12 @@
       "polityName": "蜀汉",
       "entityKeys": [
         "event:red-cliffs",
+        "event:shu-han-ended-263",
         "event:shu-han-founded",
         "event:three-kingdoms",
         "heritage:shu-han-chengdu-city-site",
         "person:liu-bei",
+        "person:liu-chan",
         "polity:shu_three"
       ],
       "gaps": [],
@@ -92221,11 +92962,15 @@
       "polityName": "魏",
       "entityKeys": [
         "event:red-cliffs",
+        "event:shu-han-ended-263",
         "event:three-kingdoms",
         "event:wei-three-ended-265",
         "heritage:luoyang-han-wei-city-site",
+        "heritage:shu-han-chengdu-city-site",
         "person:cao-cao",
         "person:cao-huan",
+        "person:deng-ai",
+        "person:zhong-hui",
         "polity:wei_three"
       ],
       "gaps": [],
@@ -92623,6 +93368,7 @@
         "event:three-kingdoms",
         "event:wu-three-founded",
         "heritage:jiankang-six-dynasties-city-site",
+        "person:sun-hao",
         "person:sun-quan",
         "polity:wu_three"
       ],
@@ -93840,22 +94586,26 @@
         "event:former-shu-founded",
         "event:later-shu-ended-965",
         "event:later-shu-founded",
+        "event:shu-han-ended-263",
         "event:shu-han-founded",
         "event:three-kingdoms",
         "heritage:cheng-han-chengdu-site",
         "heritage:former-shu-yongling",
         "heritage:later-shu-chengdu-city-site",
         "heritage:shu-han-chengdu-city-site",
+        "person:deng-ai",
         "person:huan-wen",
         "person:li-cunxu",
         "person:li-shi",
         "person:li-xiong",
         "person:liu-bei",
+        "person:liu-chan",
         "person:meng-chang",
         "person:meng-zhixiang",
         "person:wang-jian",
         "person:wang-yan",
         "person:zhao-kuangyin",
+        "person:zhong-hui",
         "polity:cheng_han",
         "polity:former_shu",
         "polity:later_shu",
@@ -94670,6 +95420,8 @@
         "person:liu-zhun",
         "person:sima-dewen",
         "person:sima-rui",
+        "person:sima-yan",
+        "person:sun-hao",
         "person:sun-quan",
         "person:xiao-baorong",
         "person:xiao-daocheng",
