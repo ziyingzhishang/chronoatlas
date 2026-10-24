@@ -873,6 +873,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》·晋纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '386年拓跋珪复代、改国号为魏的编年节点；卷次及异文需在专题校勘中继续核对。' }],
   },
   {
+    id: 'northern-wei-ended-534', year: 534, title: '北魏在洛阳分裂终止、东西魏承接', summary: '北魏孝武帝元修离开洛阳西奔长安，高欢在邺拥立元善见、宇文泰在关中承接魏室，北魏统一中央政权由此终止；东魏与西魏的分别建立按后续节点记录。', placeId: 'luoyang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'china', category: '政权终结／政权承接', verification: 'partial',
+    background: '北魏末年皇权与高欢、宇文泰等军政集团的关系持续紧张，洛阳中央秩序和关中、河北地方权力已出现分化。',
+    process: '534年前后元修离开洛阳赴长安，东部高欢集团在邺拥立元善见，关中宇文泰集团承接魏室并于次年形成西魏；本事件记录北魏统一中央政权的终止，不把两个继承政权压缩为同一日建立。',
+    impact: '北魏进入东魏、西魏并立阶段，洛阳不再作为统一北魏中央的首都；邺与长安分别承接东部、关中政治中心，城市遗产继续跨政权叠加。',
+    mapNote: '洛阳是北魏中央秩序瓦解的城市节点，邺与长安是承接方向；534年不能直接绘成东魏、西魏已经完成全部疆域接收。',
+    references: [{ title: '《资治通鉴》·梁纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对534年前后元修西奔、东部拥立与关中承接的连续过程；东魏、西魏正式建政分列后续节点。' }],
+  },
+  {
     id: 'southern-qi-ended-502', year: 502, title: '南齐在建康终止', summary: '南齐和帝萧宝融在建康禅位于萧衍，南齐政权终止，南梁承接建康政治中心。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
     background: '南齐末年皇室权力衰弱，雍州军政集团的萧衍控制建康朝廷与江南核心资源，南齐和帝成为禅代节点上的末代君主。',

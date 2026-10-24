@@ -5688,6 +5688,74 @@
     },
     {
       "entityType": "event",
+      "entityId": "northern-wei-ended-534",
+      "entityKey": "event:northern-wei-ended-534",
+      "label": "北魏在洛阳分裂终止、东西魏承接",
+      "polityIds": [
+        "wei_eastern",
+        "wei_northern",
+        "wei_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-wei-ended-534"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yu-wen-tai-participated-northern-wei-ended-534",
+            "claim:claim-yuan-xiu-participated-northern-wei-ended-534",
+            "event-detail:northern-wei-ended-534"
+          ],
+          "relatedIds": [
+            "eastern-wei-founded",
+            "gao-huan",
+            "northern-wei-founded",
+            "wei_eastern",
+            "wei_northern",
+            "wei_western",
+            "western-wei-founded",
+            "yu-wen-tai",
+            "yuan-xiu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "northern-wei-founded",
       "entityKey": "event:northern-wei-founded",
       "label": "北魏建立",
@@ -15279,8 +15347,10 @@
         "gengshi",
         "han_eastern",
         "jin_western",
+        "wei_eastern",
         "wei_northern",
-        "wei_three"
+        "wei_three",
+        "wei_western"
       ],
       "checks": [
         {
@@ -15322,11 +15392,15 @@
             "jin-unification",
             "jin_western",
             "liu-xiu",
+            "northern-wei-ended-534",
             "northern-wei-founded",
             "tuoba-tao",
+            "wei_eastern",
             "wei_northern",
             "wei_three",
-            "yuan-hong"
+            "wei_western",
+            "yuan-hong",
+            "yuan-xiu"
           ]
         },
         {
@@ -21924,15 +21998,19 @@
             "claim:claim-gao-yang-child-gao-huan",
             "claim:claim-yu-wen-tai-enemy-gao-huan-fortyfirst",
             "claim:claim-yuan-shanjian-related-gao-huan",
+            "claim:claim-yuan-xiu-enemy-gao-huan-northern-wei-termination-534",
             "event-detail:eastern-wei-founded",
+            "event-detail:northern-wei-ended-534",
             "person-polity:gao-huan:wei_eastern"
           ],
           "relatedIds": [
             "eastern-wei-founded",
             "gao-yang",
+            "northern-wei-ended-534",
             "wei_eastern",
             "yu-wen-tai",
-            "yuan-shanjian"
+            "yuan-shanjian",
+            "yuan-xiu"
           ]
         },
         {
@@ -33893,10 +33971,12 @@
           "evidenceIds": [
             "claim:claim-gao-huan-enemy-yu-wen-tai",
             "claim:claim-yu-wen-tai-enemy-gao-huan-fortyfirst",
+            "claim:claim-yu-wen-tai-participated-northern-wei-ended-534",
             "claim:claim-yu-wen-tai-participated-western-wei-founded-fortyfourth",
             "claim:claim-yu-wen-tai-ruled-western-wei-fortythird",
             "claim:claim-yuwen-tai-parent-yuwen-yong",
             "claim:claim-yuwen-yong-child-yuwen-tai",
+            "event-detail:northern-wei-ended-534",
             "event-detail:northern-zhou-changan",
             "event-detail:western-wei-changan",
             "event-detail:western-wei-founded",
@@ -33904,6 +33984,7 @@
           ],
           "relatedIds": [
             "gao-huan",
+            "northern-wei-ended-534",
             "northern-zhou-changan",
             "wei_western",
             "western-wei-changan",
@@ -34038,6 +34119,70 @@
             "gao-huan",
             "gao-yang",
             "wei_eastern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "yuan-xiu",
+      "entityKey": "person:yuan-xiu",
+      "label": "元修",
+      "polityIds": [
+        "wei_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuan-xiu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-xiu-enemy-gao-huan-northern-wei-termination-534",
+            "claim:claim-yuan-xiu-participated-northern-wei-ended-534",
+            "claim:claim-yuan-xiu-ruled-northern-wei",
+            "event-detail:northern-wei-ended-534",
+            "person-polity:yuan-xiu:wei_northern"
+          ],
+          "relatedIds": [
+            "gao-huan",
+            "northern-wei-ended-534",
+            "wei_northern"
           ]
         },
         {
@@ -40650,6 +40795,8 @@
             "claim:claim-yuan-shanjian-ruled-eastern-wei-round105",
             "event-detail:eastern-wei-ended-550",
             "event-detail:eastern-wei-founded",
+            "event-detail:northern-wei-ended-534",
+            "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
             "person:gao-huan",
@@ -40659,6 +40806,8 @@
             "eastern-wei-ended-550",
             "eastern-wei-founded",
             "gao-huan",
+            "luoyang-han-wei-city-site",
+            "northern-wei-ended-534",
             "ye-city-site",
             "ye-tongque-platform-site",
             "yuan-shanjian"
@@ -40719,7 +40868,9 @@
             "claim:claim-tuoba-si-ruled-northern-wei-sixtyfourth",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-ruled-northern-wei",
+            "claim:claim-yuan-xiu-ruled-northern-wei",
             "event-detail:northern-liang-ended-439",
+            "event-detail:northern-wei-ended-534",
             "event-detail:northern-wei-founded",
             "heritage-detail:longmen-grottoes",
             "heritage-detail:luoyang-han-wei-city-site",
@@ -40728,18 +40879,21 @@
             "person:tuoba-gui",
             "person:tuoba-si",
             "person:tuoba-tao",
-            "person:yuan-hong"
+            "person:yuan-hong",
+            "person:yuan-xiu"
           ],
           "relatedIds": [
             "longmen-grottoes",
             "luoyang-han-wei-city-site",
             "northern-liang-ended-439",
+            "northern-wei-ended-534",
             "northern-wei-founded",
             "tuoba-gui",
             "tuoba-si",
             "tuoba-tao",
             "yongning-temple-pagoda-site",
             "yuan-hong",
+            "yuan-xiu",
             "yungang-grottoes"
           ]
         },
@@ -40925,13 +41079,17 @@
           "evidenceIds": [
             "claim:claim-wei-western-changan-capital",
             "claim:claim-yu-wen-tai-ruled-western-wei-fortythird",
+            "event-detail:northern-wei-ended-534",
             "event-detail:western-wei-changan",
             "event-detail:western-wei-founded",
+            "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:western-wei-changan-city-layer",
             "person:yu-wen-tai"
           ],
           "relatedIds": [
             "changan",
+            "luoyang-han-wei-city-site",
+            "northern-wei-ended-534",
             "western-wei-changan",
             "western-wei-changan-city-layer",
             "western-wei-founded",
@@ -42466,6 +42624,22 @@
       "polityIds": [
         "northern_liang",
         "wei_northern"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
+      "entityId": "northern-wei-ended-534",
+      "entityKey": "event:northern-wei-ended-534",
+      "label": "北魏在洛阳分裂终止、东西魏承接",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "wei_eastern",
+        "wei_northern",
+        "wei_western"
       ],
       "evidenceIds": [],
       "relatedIds": [],
@@ -49618,6 +49792,74 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:northern-wei-ended-534": {
+      "entityType": "event",
+      "entityId": "northern-wei-ended-534",
+      "entityKey": "event:northern-wei-ended-534",
+      "label": "北魏在洛阳分裂终止、东西魏承接",
+      "polityIds": [
+        "wei_eastern",
+        "wei_northern",
+        "wei_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-wei-ended-534"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yu-wen-tai-participated-northern-wei-ended-534",
+            "claim:claim-yuan-xiu-participated-northern-wei-ended-534",
+            "event-detail:northern-wei-ended-534"
+          ],
+          "relatedIds": [
+            "eastern-wei-founded",
+            "gao-huan",
+            "northern-wei-founded",
+            "wei_eastern",
+            "wei_northern",
+            "wei_western",
+            "western-wei-founded",
+            "yu-wen-tai",
+            "yuan-xiu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -59216,8 +59458,10 @@
         "gengshi",
         "han_eastern",
         "jin_western",
+        "wei_eastern",
         "wei_northern",
-        "wei_three"
+        "wei_three",
+        "wei_western"
       ],
       "checks": [
         {
@@ -59259,11 +59503,15 @@
             "jin-unification",
             "jin_western",
             "liu-xiu",
+            "northern-wei-ended-534",
             "northern-wei-founded",
             "tuoba-tao",
+            "wei_eastern",
             "wei_northern",
             "wei_three",
-            "yuan-hong"
+            "wei_western",
+            "yuan-hong",
+            "yuan-xiu"
           ]
         },
         {
@@ -65861,15 +66109,19 @@
             "claim:claim-gao-yang-child-gao-huan",
             "claim:claim-yu-wen-tai-enemy-gao-huan-fortyfirst",
             "claim:claim-yuan-shanjian-related-gao-huan",
+            "claim:claim-yuan-xiu-enemy-gao-huan-northern-wei-termination-534",
             "event-detail:eastern-wei-founded",
+            "event-detail:northern-wei-ended-534",
             "person-polity:gao-huan:wei_eastern"
           ],
           "relatedIds": [
             "eastern-wei-founded",
             "gao-yang",
+            "northern-wei-ended-534",
             "wei_eastern",
             "yu-wen-tai",
-            "yuan-shanjian"
+            "yuan-shanjian",
+            "yuan-xiu"
           ]
         },
         {
@@ -77830,10 +78082,12 @@
           "evidenceIds": [
             "claim:claim-gao-huan-enemy-yu-wen-tai",
             "claim:claim-yu-wen-tai-enemy-gao-huan-fortyfirst",
+            "claim:claim-yu-wen-tai-participated-northern-wei-ended-534",
             "claim:claim-yu-wen-tai-participated-western-wei-founded-fortyfourth",
             "claim:claim-yu-wen-tai-ruled-western-wei-fortythird",
             "claim:claim-yuwen-tai-parent-yuwen-yong",
             "claim:claim-yuwen-yong-child-yuwen-tai",
+            "event-detail:northern-wei-ended-534",
             "event-detail:northern-zhou-changan",
             "event-detail:western-wei-changan",
             "event-detail:western-wei-founded",
@@ -77841,6 +78095,7 @@
           ],
           "relatedIds": [
             "gao-huan",
+            "northern-wei-ended-534",
             "northern-zhou-changan",
             "wei_western",
             "western-wei-changan",
@@ -77975,6 +78230,70 @@
             "gao-huan",
             "gao-yang",
             "wei_eastern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:yuan-xiu": {
+      "entityType": "person",
+      "entityId": "yuan-xiu",
+      "entityKey": "person:yuan-xiu",
+      "label": "元修",
+      "polityIds": [
+        "wei_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuan-xiu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-xiu-enemy-gao-huan-northern-wei-termination-534",
+            "claim:claim-yuan-xiu-participated-northern-wei-ended-534",
+            "claim:claim-yuan-xiu-ruled-northern-wei",
+            "event-detail:northern-wei-ended-534",
+            "person-polity:yuan-xiu:wei_northern"
+          ],
+          "relatedIds": [
+            "gao-huan",
+            "northern-wei-ended-534",
+            "wei_northern"
           ]
         },
         {
@@ -84587,6 +84906,8 @@
             "claim:claim-yuan-shanjian-ruled-eastern-wei-round105",
             "event-detail:eastern-wei-ended-550",
             "event-detail:eastern-wei-founded",
+            "event-detail:northern-wei-ended-534",
+            "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:ye-city-site",
             "heritage-detail:ye-tongque-platform-site",
             "person:gao-huan",
@@ -84596,6 +84917,8 @@
             "eastern-wei-ended-550",
             "eastern-wei-founded",
             "gao-huan",
+            "luoyang-han-wei-city-site",
+            "northern-wei-ended-534",
             "ye-city-site",
             "ye-tongque-platform-site",
             "yuan-shanjian"
@@ -84656,7 +84979,9 @@
             "claim:claim-tuoba-si-ruled-northern-wei-sixtyfourth",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-ruled-northern-wei",
+            "claim:claim-yuan-xiu-ruled-northern-wei",
             "event-detail:northern-liang-ended-439",
+            "event-detail:northern-wei-ended-534",
             "event-detail:northern-wei-founded",
             "heritage-detail:longmen-grottoes",
             "heritage-detail:luoyang-han-wei-city-site",
@@ -84665,18 +84990,21 @@
             "person:tuoba-gui",
             "person:tuoba-si",
             "person:tuoba-tao",
-            "person:yuan-hong"
+            "person:yuan-hong",
+            "person:yuan-xiu"
           ],
           "relatedIds": [
             "longmen-grottoes",
             "luoyang-han-wei-city-site",
             "northern-liang-ended-439",
+            "northern-wei-ended-534",
             "northern-wei-founded",
             "tuoba-gui",
             "tuoba-si",
             "tuoba-tao",
             "yongning-temple-pagoda-site",
             "yuan-hong",
+            "yuan-xiu",
             "yungang-grottoes"
           ]
         },
@@ -84862,13 +85190,17 @@
           "evidenceIds": [
             "claim:claim-wei-western-changan-capital",
             "claim:claim-yu-wen-tai-ruled-western-wei-fortythird",
+            "event-detail:northern-wei-ended-534",
             "event-detail:western-wei-changan",
             "event-detail:western-wei-founded",
+            "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:western-wei-changan-city-layer",
             "person:yu-wen-tai"
           ],
           "relatedIds": [
             "changan",
+            "luoyang-han-wei-city-site",
+            "northern-wei-ended-534",
             "western-wei-changan",
             "western-wei-changan-city-layer",
             "western-wei-founded",
@@ -86206,20 +86538,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 200,
+      "totalEntities": 201,
       "statusCounts": {
-        "covered": 959,
+        "covered": 963,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 41,
+        "uncertain": 42,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 41
+        "uncertain": 42
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -86236,6 +86568,7 @@
         "event:min-ended-945",
         "event:mongol-karakorum-fixed-center",
         "event:northern-liang-ended-439",
+        "event:northern-wei-ended-534",
         "event:qi-warring-founded-eighth-batch",
         "event:qin-state-founded-eighth-batch",
         "event:republic-chongqing-wartime-center",
@@ -86284,9 +86617,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 245,
+      "totalEntities": 246,
       "statusCounts": {
-        "covered": 1161,
+        "covered": 1166,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -89393,13 +89726,32 @@
       "entityKeys": [
         "event:eastern-wei-ended-550",
         "event:eastern-wei-founded",
+        "event:northern-wei-ended-534",
+        "heritage:luoyang-han-wei-city-site",
         "heritage:ye-city-site",
         "heritage:ye-tongque-platform-site",
         "person:gao-huan",
         "person:yuan-shanjian",
         "polity:wei_eastern"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "northern-wei-ended-534",
+          "entityKey": "event:northern-wei-ended-534",
+          "label": "北魏在洛阳分裂终止、东西魏承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_eastern",
+            "wei_northern",
+            "wei_western"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -89407,13 +89759,14 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "东魏：学习闭环已覆盖。"
+      "summary": "东魏：有 1 项待核验缺口。"
     },
     "wei_northern": {
       "polityId": "wei_northern",
       "polityName": "北魏",
       "entityKeys": [
         "event:northern-liang-ended-439",
+        "event:northern-wei-ended-534",
         "event:northern-wei-founded",
         "heritage:longmen-grottoes",
         "heritage:luoyang-han-wei-city-site",
@@ -89423,6 +89776,7 @@
         "person:tuoba-si",
         "person:tuoba-tao",
         "person:yuan-hong",
+        "person:yuan-xiu",
         "polity:wei_northern"
       ],
       "gaps": [
@@ -89440,6 +89794,22 @@
           "evidenceIds": [],
           "relatedIds": [],
           "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "northern-wei-ended-534",
+          "entityKey": "event:northern-wei-ended-534",
+          "label": "北魏在洛阳分裂终止、东西魏承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_eastern",
+            "wei_northern",
+            "wei_western"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
         }
       ],
       "taskCounts": {
@@ -89449,7 +89819,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "北魏：有 1 项待核验缺口。"
+      "summary": "北魏：有 2 项待核验缺口。"
     },
     "wei_three": {
       "polityId": "wei_three",
@@ -89515,12 +89885,31 @@
       "polityId": "wei_western",
       "polityName": "西魏",
       "entityKeys": [
+        "event:northern-wei-ended-534",
         "event:western-wei-founded",
+        "heritage:luoyang-han-wei-city-site",
         "heritage:western-wei-changan-city-layer",
         "person:yu-wen-tai",
         "polity:wei_western"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "northern-wei-ended-534",
+          "entityKey": "event:northern-wei-ended-534",
+          "label": "北魏在洛阳分裂终止、东西魏承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_eastern",
+            "wei_northern",
+            "wei_western"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -89528,7 +89917,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西魏：学习闭环已覆盖。"
+      "summary": "西魏：有 1 项待核验缺口。"
     },
     "western_liang": {
       "polityId": "western_liang",
@@ -90667,6 +91056,7 @@
         "event:later-qin-falls-changan",
         "event:later-qin-founded",
         "event:maoling-built",
+        "event:northern-wei-ended-534",
         "event:northern-zhou-ended-581",
         "event:qin-state-founded-eighth-batch",
         "event:sui-founded",
@@ -90834,6 +91224,22 @@
         },
         {
           "entityType": "event",
+          "entityId": "northern-wei-ended-534",
+          "entityKey": "event:northern-wei-ended-534",
+          "label": "北魏在洛阳分裂终止、东西魏承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_eastern",
+            "wei_northern",
+            "wei_western"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "daming-palace-built",
           "entityKey": "event:daming-palace-built",
           "label": "大明宫营建",
@@ -90882,7 +91288,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 9 项待核验缺口。"
+      "summary": "西安市：有 10 项待核验缺口。"
     },
     "changsha": {
       "placeId": "changsha",
@@ -92459,6 +92865,7 @@
         "event:gengshi-founded",
         "event:han-eastern-founded",
         "event:later-tang-ended-936",
+        "event:northern-wei-ended-534",
         "event:partition-jin",
         "event:shangyang-palace-built",
         "event:shangyang-palace-completed-679",
@@ -92479,6 +92886,7 @@
         "heritage:white-horse-temple",
         "heritage:yongning-temple-pagoda-site",
         "person:an-lushan",
+        "person:gao-huan",
         "person:ji-yijiu",
         "person:li-congke",
         "person:li-longji",
@@ -92487,6 +92895,8 @@
         "person:liu-zhuang",
         "person:shi-jingtang",
         "person:sima-yan",
+        "person:yu-wen-tai",
+        "person:yuan-xiu",
         "person:zhu-wen",
         "polity:han_eastern",
         "polity:jin_western",
@@ -92544,6 +92954,22 @@
         },
         {
           "entityType": "event",
+          "entityId": "northern-wei-ended-534",
+          "entityKey": "event:northern-wei-ended-534",
+          "label": "北魏在洛阳分裂终止、东西魏承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_eastern",
+            "wei_northern",
+            "wei_western"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
+        {
+          "entityType": "event",
           "entityId": "shangyang-palace-built",
           "entityKey": "event:shangyang-palace-built",
           "label": "上阳宫营造",
@@ -92578,7 +93004,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "洛阳市：有 5 项待核验缺口。"
+      "summary": "洛阳市：有 6 项待核验缺口。"
     },
     "mongol_karakorum": {
       "placeId": "mongol_karakorum",
@@ -93616,6 +94042,7 @@
         "event:later-zhao-moves-ye",
         "event:northern-qi-ended-577",
         "event:northern-qi-founded",
+        "event:northern-wei-ended-534",
         "event:partition-jin",
         "heritage:later-yan-ye-city-site",
         "heritage:ye-city-site",
@@ -93635,7 +94062,24 @@
         "polity:qi_northern",
         "polity:wei_eastern"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "northern-wei-ended-534",
+          "entityKey": "event:northern-wei-ended-534",
+          "label": "北魏在洛阳分裂终止、东西魏承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_eastern",
+            "wei_northern",
+            "wei_western"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -93643,7 +94087,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "临漳县一带：学习闭环已覆盖。"
+      "summary": "临漳县一带：有 1 项待核验缺口。"
     },
     "ying": {
       "placeId": "ying",

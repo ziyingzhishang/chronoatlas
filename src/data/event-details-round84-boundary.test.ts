@@ -5,6 +5,7 @@ import { buildEventDetailCoverageReport } from './event-detail-coverage';
 // datePrecision。当前这批 needs-review 条目均是形成约年、传统纪年或跨年过程；
 // 详情叙事的增加不能替代年代证据，因此保留在复核区。
 const reviewBoundaryIds = [
+  'northern-wei-ended-534',
   'northern-liang-ended-439',
   'an-lushan-rebellion',
   'changan-former-qin',
@@ -53,7 +54,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 152, 'needs-review': 48, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 152, 'needs-review': 49, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.needsReviewChecks.includes('timePrecision'));
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
@@ -76,7 +77,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       item.status === 'needs-review' && item.needsReviewChecks.includes('timePrecision')
     ));
 
-    expect(precisionGaps).toHaveLength(41);
+    expect(precisionGaps).toHaveLength(42);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
     expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });

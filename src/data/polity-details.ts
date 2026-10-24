@@ -75,10 +75,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'wei_northern', perspectiveSummary: '北魏由拓跋部重建而成，经历平城时期的扩张与国家化，迁都洛阳后制度和文化方向发生显著转折。',
     foundationProcess: ['前秦崩解后拓跋部重新聚合。', '386年拓跋珪复代并改国号为魏。', '平城与洛阳分别代表早期和后期首都阶段。'],
-    turningPoints: [turn(386, '北魏建立', '北魏政权进入形成阶段。', 'northern-wei-founded'), turn(439, '统一北方', '北魏成为北方主要统一政权。'), turn(494, '迁都洛阳', '孝文帝迁都与改革改变国家制度与文化空间。')],
-    principalFigureIds: ['tuoba-gui', 'tuoba-tao', 'yuan-hong'], capitalPhases: [capital('pingcheng', 386, 494), capital('luoyang', 495, 534)],
-    heritageIds: ['luoyang-han-wei-city-site', 'yungang-grottoes', 'yongning-temple-pagoda-site'], eventIds: ['northern-wei-founded'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei'], sourceIds: modernSources,
-    uncertaintyNote: '北魏疆域变化很大，首都迁移不等于控制范围同步变化；平城、洛阳的遗存与政治阶段需要分开说明。',
+    turningPoints: [turn(386, '北魏建立', '北魏政权进入形成阶段。', 'northern-wei-founded'), turn(439, '统一北方', '北魏成为北方主要统一政权。'), turn(494, '迁都洛阳', '孝文帝迁都与改革改变国家制度与文化空间。'), turn(534, '北魏分裂终止', '孝武帝元修离开洛阳，东魏与西魏分别在邺、长安承接，北魏统一中央政权终止。', 'northern-wei-ended-534')],
+    principalFigureIds: ['tuoba-gui', 'tuoba-tao', 'yuan-hong', 'yuan-xiu'], capitalPhases: [capital('pingcheng', 386, 494), capital('luoyang', 495, 534)],
+    heritageIds: ['luoyang-han-wei-city-site', 'yungang-grottoes', 'yongning-temple-pagoda-site'], eventIds: ['northern-wei-founded', 'northern-wei-ended-534'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei', 'claim-yuan-xiu-ruled-northern-wei', 'claim-yuan-xiu-participated-northern-wei-ended-534'], sourceIds: modernSources,
+    uncertaintyNote: '北魏疆域变化很大，首都迁移不等于控制范围同步变化；534年前后洛阳中央秩序瓦解是过程性终止节点，东魏、西魏的正式建政和地方承接需分别记录。平城、洛阳及后续邺、长安遗存属于多政权叠压城市层。',
   }),
   detail({
     polityId: 'sui', perspectiveSummary: '隋以北周政治资源为基础重新统一南北，长安与洛阳形成双都格局，隋的统一为唐代国家结构提供前置条件。',

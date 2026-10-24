@@ -350,6 +350,26 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '842年是吐蕃帝国解体阶段的约年节点；王权终止、地方政权形成和宗教网络变化并非同日完成，逻些城市历史也不随政权终结而终止。',
   },
   {
+    eventId: 'northern-wei-ended-534',
+    participants: [
+      { personId: 'yuan-xiu', role: '北魏末代皇帝与洛阳中央秩序瓦解阶段的名义君主', note: '元修离开洛阳西奔长安，534年前后北魏统一中央政权终止；西魏正式建政在535年另行记录。' },
+      { personId: 'gao-huan', role: '控制邺城并推动东部魏室承接的军政核心', note: '高欢代表东魏形成方向，不把其在邺的控制直接等同于东魏已完成全部地方接收。' },
+      { personId: 'yu-wen-tai', role: '承接关中魏室与长安政治中心的军政核心', note: '宇文泰代表西魏形成方向；长安即位和西魏正式建政发生在535年。' },
+    ],
+    polityIds: ['wei_northern', 'wei_eastern', 'wei_western'],
+    causes: ['北魏末年皇权与地方军政集团之间的张力持续扩大。', '高欢控制邺城、宇文泰经营关中，使洛阳中央秩序无法继续维持统一结构。'],
+    consequences: ['北魏统一中央政权在534年前后终止。', '东魏在邺、西魏在长安分别承接魏室与地方政治资源，正式建政节点按534—535年分层。', '洛阳、邺、长安的城市与遗产进入东魏、西魏及后续北齐、北周的多层承接。'],
+    phases: [
+      { label: '洛阳中央危机', startYear: 534, endYear: 534, summary: '元修离开洛阳，北魏统一中央秩序失去持续条件。' },
+      { label: '东部邺城承接', startYear: 534, endYear: 534, summary: '高欢集团在邺拥立元善见，东魏形成方向明确。' },
+      { label: '关中长安承接', startYear: 534, endYear: 535, summary: '元修抵达长安，宇文泰集团在次年以魏室名义建立西魏。' },
+    ],
+    locationIds: ['luoyang', 'ye', 'changan'],
+    relatedEventIds: ['northern-wei-founded', 'eastern-wei-founded', 'western-wei-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '534年前后是北魏统一中央政权瓦解的过程性节点；元修西奔、东魏形成与西魏建政不是同一日事实，东魏、西魏的地方接收范围也不能由洛阳失序当年直接推导。',
+  },
+  {
     eventId: 'eastern-wei-founded',
     participants: [
       { personId: 'gao-huan', role: '控制邺城并主导东魏军政重组的权臣', note: '高欢是东魏实际军政基础的建立者；元善见即位的皇室端点未纳入当前人物目录，故不虚构人物记录。' },

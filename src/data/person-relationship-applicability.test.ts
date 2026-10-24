@@ -8,9 +8,9 @@ import {
 
 describe('person relationship applicability catalog', () => {
   it('covers every person and every relationship category exactly once', () => {
-    expect(personRelationshipApplicability.totalPeople).toBe(245);
-    expect(personRelationshipApplicability.records).toHaveLength(245);
-    expect(Object.keys(personRelationshipApplicability.byPersonId)).toHaveLength(245);
+    expect(personRelationshipApplicability.totalPeople).toBe(246);
+    expect(personRelationshipApplicability.records).toHaveLength(246);
+    expect(Object.keys(personRelationshipApplicability.byPersonId)).toHaveLength(246);
 
     for (const record of personRelationshipApplicability.records) {
       expect(Object.keys(record.categories).sort()).toEqual([...personRelationshipApplicabilityCategoryKeys].sort());

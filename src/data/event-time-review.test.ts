@@ -67,6 +67,7 @@ const expectedEventIds = [
   'jingnan-ended-963',
   'ma-chu-ended-951',
   'liao-ended-1125',
+  'northern-wei-ended-534',
 ] as const;
 
 describe('event time evidence review', () => {
@@ -76,12 +77,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(62);
+    expect(report.totalReviewed).toBe(63);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 28, approximate: 34, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 28, approximate: 35, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

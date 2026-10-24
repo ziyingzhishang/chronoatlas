@@ -148,7 +148,7 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(144);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(145);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(90);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
   });

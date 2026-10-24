@@ -207,7 +207,7 @@ const details: HeritageDetail[] = [
     phase('original', '原城营建', '东汉25年后', '刘秀定都洛阳后，汉魏洛阳城成为东汉中央政治与礼制空间。', 25, 220),
     phase('site', '遗址', '东汉至北魏城址层', '城墙、宫城、道路和排水等遗迹以考古地层和夯土遗存形式保存。', 25, 534),
     phase('restoration', '现代保护展示', '20世纪以来', '保护区通过考古工作、标识和遗址展示解释城址格局，不重建完整汉魏都城。', 1900, undefined, '不同朝代城址叠压，现地可见遗迹不等于某一朝代建筑完整保存。'),
-  ], ['liu-xiu', 'yuan-hong', 'tuoba-tao'], ['han_eastern', 'wei_three', 'jin_western', 'wei_northern'], ['han-eastern-founded', 'jin-unification', 'northern-wei-founded'], ['城墙与宫城夯土', '道路和排水遗迹', '多朝代叠压地层'], '洛阳古都史、都城制度和考古学学习的核心遗址。', '古城范围、各朝代城垣对应关系和部分宫殿位置需以考古报告分层理解；遗址现状不等同于历史建筑完整留存。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['liu-xiu', 'yuan-hong', 'tuoba-tao', 'yuan-xiu'], ['han_eastern', 'wei_three', 'jin_western', 'wei_northern', 'wei_eastern', 'wei_western'], ['han-eastern-founded', 'jin-unification', 'northern-wei-founded', 'northern-wei-ended-534'], ['城墙与宫城夯土', '道路和排水遗迹', '多朝代叠压地层'], '洛阳古都史、北魏迁都与分裂、东西魏城市承接和考古学学习的核心遗址。', '古城范围、各朝代城垣对应关系和部分宫殿位置需以考古报告分层理解；534年前后政权分裂只标记城市政治层转换，不表示遗址建筑在同日改造或完整保存。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('luoyang-sui-tang-city-site', '今洛阳市区及偃师、洛龙等隋唐洛阳城遗址分布区，现代城市与古城范围并不重合。', ['隋炀帝营建东都', '唐代东都、武周神都的宫城与里坊体系'], [
     phase('original', '原城营建', '605年起', '隋代营建东都，宫城、皇城、外郭城和洛水水系共同构成新的都城格局。', 605, 618),
     phase('reconstruction', '历代沿用与改造', '唐至武周时期', '唐及武周继续使用并调整宫城、里坊和水运设施，洛阳与长安共同承担帝国政治功能。', 618, 907, '“沿用”表示城市制度和空间被继续利用，不表示隋代原建筑全部保存。'),

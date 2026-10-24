@@ -119,6 +119,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'jingnan-ended-963', status: 'confirmed', expectedPrecision: 'year', explanation: '963年高继冲向北宋纳土，荆南中央政权身份终止；江陵地方行政接收、军镇调整与城市遗产延续另按过程分层。', timelineStrategy: 'year-marker' },
   { eventId: 'ma-chu-ended-951', status: 'confirmed', expectedPrecision: 'year', explanation: '951年长沙失守、马希崇降服与马楚中央政权终止有明确年份级节点；马希萼衡山阶段、朗州及湖南各地的南唐接收另按过程分层。', timelineStrategy: 'year-marker' },
   { eventId: 'liao-ended-1125', status: 'confirmed', expectedPrecision: 'year', explanation: '1125年前后表示金军攻取辽核心城市、天祚帝出奔被俘与辽中央政权终止的年份级节点；辽南京1122年已先脱离辽控制，五京接收、西辽形成与末帝个人结局另按过程分层。', timelineStrategy: 'year-marker' },
+  { eventId: 'northern-wei-ended-534', status: 'approximate', expectedPrecision: 'approximate', explanation: '534年前后元修离开洛阳、东魏在邺形成方向与西魏在长安承接魏室是连续过程；北魏统一中央政权在此过程中终止，东魏534年与西魏535年正式建政分层记录。', timelineStrategy: 'approximate-marker' },
 ];
 
 function unique(values: readonly string[]): string[] {

@@ -243,6 +243,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '孝文帝改革涉及制度、语言和族群认同等多个层面，详情不把后世“汉化”标签当作单一政策结果。',
   },
   {
+    personId: 'yuan-xiu', biography: '元修即北魏孝武帝与末代君主。534年前后北魏中央秩序在洛阳瓦解，元修西奔长安，东魏与西魏分别承接魏室和地方政治资源；其个人结局与两个继承政权的建立分开记录。',
+    aliases: ['北魏孝武帝', '北魏末帝'], offices: [{ title: '北魏末代皇帝', polityId: 'wei_northern', placeId: 'luoyang', validFrom: 532, validTo: 534, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['northern-wei-ended-534'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '534年前后元修西奔、东魏形成与西魏建政是连续过程；本详情不把元修个人结局直接等同于洛阳城市或北魏全部地方秩序消失。',
+  },
+  {
     personId: 'tuoba-tao', biography: '拓跋焘即北魏太武帝，长期以平城为核心推进北魏的军事整合与北方扩张。',
     aliases: ['北魏太武帝'], offices: [{ title: '北魏皇帝', polityId: 'wei_northern', placeId: 'pingcheng', validFrom: 423, validTo: 452, datePrecision: 'range', sourceIds }],
     keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '建政事件节点早于拓跋焘即位，本处用于时间轴导航；其具体军事控制范围需按战事阶段区分。',
