@@ -25427,11 +25427,13 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-hongtaiji-child-nurhaci-fortysecond",
+            "claim:claim-hongtaiji-child-nurhaci-round132",
             "claim:claim-hongtaiji-parent-shunzhi",
             "claim:claim-hongtaiji-ruled-qing-fiftysixth",
             "claim:claim-hongtaiji-succeeded-nurhaci-fortieth",
             "claim:claim-nurhaci-parent-hongtaiji",
             "claim:claim-shunzhi-child-hongtaiji-fortysecond",
+            "claim:claim-shunzhi-child-hongtaiji-round132",
             "claim:claim-shunzhi-succeeded-hongtaiji",
             "event-detail:qing-founded",
             "person-polity:hongtaiji:later_jin",
@@ -27535,6 +27537,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-ilai-khagan-enemy-li-shimin-closure",
+            "claim:claim-li-shimin-child-li-yuan-round132",
             "claim:claim-li-shimin-parent-li-zhi-fiftyfourth",
             "claim:claim-li-shimin-participated-tang-founded-fortyfourth",
             "claim:claim-li-shimin-ruled-tang",
@@ -27886,6 +27889,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-shimin-child-li-yuan-round132",
             "claim:claim-li-shimin-served-li-yuan",
             "claim:claim-li-yuan-ally-li-shimin",
             "claim:claim-li-yuan-appointed-li-shimin",
@@ -28458,12 +28462,15 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-liu-che-grandparent-liu-xun",
+            "claim:claim-liu-che-participated-han-wudi-expands-changan-round132",
             "claim:claim-liu-che-ruled-western-han",
             "claim:claim-liu-xun-grandchild-liu-che",
+            "event-detail:han-wudi-expands-changan",
             "event-detail:maoling-built",
             "person-polity:liu-che:han_western"
           ],
           "relatedIds": [
+            "han-wudi-expands-changan",
             "han_western",
             "liu-xun",
             "maoling-built"
@@ -31428,6 +31435,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-hongtaiji-child-nurhaci-fortysecond",
+            "claim:claim-hongtaiji-child-nurhaci-round132",
             "claim:claim-hongtaiji-succeeded-nurhaci-fortieth",
             "claim:claim-nurhaci-parent-hongtaiji",
             "claim:claim-nurhaci-ruled-later-jin-fiftysixth",
@@ -33455,6 +33463,7 @@
             "claim:claim-hongtaiji-parent-shunzhi",
             "claim:claim-shunzhi-ally-dorgon-seventyninth",
             "claim:claim-shunzhi-child-hongtaiji-fortysecond",
+            "claim:claim-shunzhi-child-hongtaiji-round132",
             "claim:claim-shunzhi-participated-qing-enters-pass-fortyseventh",
             "claim:claim-shunzhi-ruled-qing-fiftysixth",
             "claim:claim-shunzhi-succeeded-hongtaiji",
@@ -74473,11 +74482,13 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-hongtaiji-child-nurhaci-fortysecond",
+            "claim:claim-hongtaiji-child-nurhaci-round132",
             "claim:claim-hongtaiji-parent-shunzhi",
             "claim:claim-hongtaiji-ruled-qing-fiftysixth",
             "claim:claim-hongtaiji-succeeded-nurhaci-fortieth",
             "claim:claim-nurhaci-parent-hongtaiji",
             "claim:claim-shunzhi-child-hongtaiji-fortysecond",
+            "claim:claim-shunzhi-child-hongtaiji-round132",
             "claim:claim-shunzhi-succeeded-hongtaiji",
             "event-detail:qing-founded",
             "person-polity:hongtaiji:later_jin",
@@ -76581,6 +76592,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-ilai-khagan-enemy-li-shimin-closure",
+            "claim:claim-li-shimin-child-li-yuan-round132",
             "claim:claim-li-shimin-parent-li-zhi-fiftyfourth",
             "claim:claim-li-shimin-participated-tang-founded-fortyfourth",
             "claim:claim-li-shimin-ruled-tang",
@@ -76932,6 +76944,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-shimin-child-li-yuan-round132",
             "claim:claim-li-shimin-served-li-yuan",
             "claim:claim-li-yuan-ally-li-shimin",
             "claim:claim-li-yuan-appointed-li-shimin",
@@ -77504,12 +77517,15 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-liu-che-grandparent-liu-xun",
+            "claim:claim-liu-che-participated-han-wudi-expands-changan-round132",
             "claim:claim-liu-che-ruled-western-han",
             "claim:claim-liu-xun-grandchild-liu-che",
+            "event-detail:han-wudi-expands-changan",
             "event-detail:maoling-built",
             "person-polity:liu-che:han_western"
           ],
           "relatedIds": [
+            "han-wudi-expands-changan",
             "han_western",
             "liu-xun",
             "maoling-built"
@@ -80474,6 +80490,7 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-hongtaiji-child-nurhaci-fortysecond",
+            "claim:claim-hongtaiji-child-nurhaci-round132",
             "claim:claim-hongtaiji-succeeded-nurhaci-fortieth",
             "claim:claim-nurhaci-parent-hongtaiji",
             "claim:claim-nurhaci-ruled-later-jin-fiftysixth",
@@ -82501,6 +82518,7 @@
             "claim:claim-hongtaiji-parent-shunzhi",
             "claim:claim-shunzhi-ally-dorgon-seventyninth",
             "claim:claim-shunzhi-child-hongtaiji-fortysecond",
+            "claim:claim-shunzhi-child-hongtaiji-round132",
             "claim:claim-shunzhi-participated-qing-enters-pass-fortyseventh",
             "claim:claim-shunzhi-ruled-qing-fiftysixth",
             "claim:claim-shunzhi-succeeded-hongtaiji",
