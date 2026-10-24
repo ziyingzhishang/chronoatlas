@@ -253,7 +253,7 @@ const details: HeritageDetail[] = [
     phase('original', '都城营建', '960年后', '北宋以开封为都，继承五代城市基础并不断扩建宫城、外城和漕运设施。', 960, 1127),
     phase('site', '城摞城遗址', '北宋城址考古层', '城墙、宫城、水系和道路遗存与后世城市层叠压，主要通过考古发掘和地下探测认识。', 960, 1127),
     phase('restoration', '现代考古展示', '当代城市保护', '现代博物馆、遗址公园和地面标识解释北宋东京，不重建完整北宋都城。', 2000, undefined, '开封现存建筑和复原景观不能直接视作北宋原建筑连续留存。'),
-  ], ['zhu-wen', 'shi-jingtang', 'liu-zhiyuan', 'guo-wei'], ['liang_later', 'jin_later', 'han_later', 'zhou_later', 'song_northern'], ['later-liang-five-dynasties-founded', 'five-dynasties', 'northern-song-founded', 'song-southward'], ['城摞城地层', '宫城与外城遗迹', '河道、城门和城市考古展示'], '观察五代至北宋都城延续、城市水运和中原政治中心变迁的关键地点。', '北宋东京城的复原范围应以考古资料为依据，现代开封城不能直接替代北宋城界；五代后梁关联的是城市考古历史层，不代表现存可见建筑即为后梁原构。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['zhu-wen', 'shi-jingtang', 'liu-zhiyuan', 'guo-wei'], ['liang_later', 'jin_later', 'han_later', 'zhou_later', 'song_northern'], ['later-liang-five-dynasties-founded', 'five-dynasties', 'northern-song-founded', 'song-southward'], ['城摞城地层', '宫城与外城遗迹', '河道、城门和城市考古展示'], '观察五代至北宋都城延续、城市水运和中原政治中心变迁的关键地点。', '北宋东京城的复原范围应以考古资料为依据，现代开封城不能直接替代北宋城界；五代后梁关联的是城市考古历史层，不代表现存可见建筑即为后梁原构。', ['zizhi-tongjian', 'capital-history-reference', 'modern-geography-reference']),
   detail('kaifeng-later-jin-han-city-layer', '今河南省开封市区及其地下城摞城分布区；后晋、后汉城址层与后梁、后周、北宋城市层相互叠压。', ['后晋、后汉以开封为都城阶段的宫城、官署与城市交通', '五代中原政权更替中的开封城市连续性'], [
     historicalPhase('original', '后晋开封都城阶段', '936—947年', '后晋承接后唐中原政治机构，以开封为正式都城；相关城市空间应通过五代编年与开封城址考古分层理解。', 936, 947, '现存开封城市遗存多为后世叠压层，不能据此指认后晋专属建筑。'),
     historicalPhase('reconstruction', '后汉开封都城阶段', '947—951年', '后汉进入中原后继续以开封为正式都城，城市政治功能在短时段内承接后晋秩序。', 947, 951, '后汉时期缺少可单独归属的完整地面建筑，遗产表达限于城市历史层。'),
