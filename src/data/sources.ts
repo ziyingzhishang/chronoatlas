@@ -263,6 +263,16 @@ export const sourceNotes: SourceNote[] = [
     note: '坐标用于帮助用户定位历史地点，地名沿革和古今对应关系需要结合具体史料理解。',
   },
   {
+    id: 'tuyuhun-termination-663', title: '《资治通鉴》卷二百一·吐蕃击破吐谷浑', authorOrInstitution: '司马光等', urlOrCitation: 'https://zh.wikisource.org/wiki/資治通鑑/卷201',
+    scope: '663年吐蕃进攻吐谷浑、慕容诺曷钵率部入唐境及唐蕃交涉',
+    note: '用于663年吐谷浑中央政权在故地终止的年份级节点；唐境内收容、迁置和后续安乐州属于政权终止后的承接阶段，不据此证明吐谷浑中央政权连续。',
+  },
+  {
+    id: 'tuyuhun-fuqisi-official', title: '共和县人民政府：伏俟城遗址与文物保护资料', authorOrInstitution: '青海省海南藏族自治州共和县人民政府', urlOrCitation: 'https://www.gonghe.gov.cn/xwdt/tzgg/content_400000',
+    scope: '伏俟城遗址位于今共和县石乃亥镇铁卜加村一带、文物保护身份与地方历史地理对应',
+    note: '用于今地名、遗址保护与候选王都地点参照；地方概述中的540年建都口径与“后期王都候选”并置，不把现存遗址直接等同于完整王都原构。',
+  },
+  {
     id: 'southern-ming-overview',
     title: '故宫博物院：南明与永历政权专题',
     authorOrInstitution: '故宫博物院',

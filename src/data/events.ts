@@ -121,6 +121,18 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》与中国历史分期资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于吐谷浑迁徙、河湟政治和十六国时期分期参照；形成年代保留约年。' }],
   },
   {
+    id: 'tuyuhun-ended-663', year: 663, title: '吐谷浑中央政权终止、吐蕃控制与唐安置承接', summary: '吐蕃在青海击破吐谷浑，慕容诺曷钵率部众逃入唐境；663年标记吐谷浑中央政权在故地终止，唐对流亡部众的安置与后续羁縻州承接另属阶段。', placeId: 'tuyuhun_core', sourceIds: ['zizhi-tongjian', 'tuyuhun-termination-663', 'tuyuhun-fuqisi-official'],
+    datePrecision: 'year', region: 'china', category: '政权终结／征服与安置承接', verification: 'checked',
+    background: '吐蕃在高原东部扩张，吐谷浑内部权力与外部压力叠加；663年吐蕃大举进攻后，慕容诺曷钵不能继续在故地维持中央政权。',
+    process: '663年吐蕃击破吐谷浑，慕容诺曷钵与弘化公主率数千帐部众逃至凉州并请求唐朝救援。吐蕃取代吐谷浑在故地的中央控制是本事件的终止端；唐收容、迁置及672年安乐州刺史安排是后续承接，不把流亡王室或地方族群延续写成吐谷浑中央政权继续存在。',
+    impact: '吐谷浑中央政权在青海故地终止，吐蕃进入当地主导阶段；诺曷钵及部分部众在唐境内形成受唐保护和安置的延续链，地方族群、王室后裔与唐代羁縻制度不等同于原中央政权连续。',
+    mapNote: '663年只标记吐谷浑中央政权在故地的终止与吐蕃控制转折；伏俟城遗产继续作为考古与地方历史空间存在，唐境内的流亡部众安置不绘为吐谷浑原疆域复立。',
+    references: [
+      { title: '《资治通鉴》卷二百一·唐纪十七', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷201', detail: '用于663年吐蕃击破吐谷浑、诺曷钵率部入唐境及唐蕃交涉的年份级终止节点。' },
+      { title: '《新唐书》卷二百二十一上·吐谷浑传', url: 'https://zh.wikisource.org/wiki/新唐書/卷221上', detail: '用于诺曷钵末期、吐谷浑故地被吐蕃控制及王系在唐境内后续承接的分层参照。' },
+    ],
+  },
+  {
     id: 'turkic-founded', year: 552, title: '突厥汗国建立', summary: '阿史那土门击败柔然并建立突厥汗国，草原政治体系进入新阶段。', sourceIds: ['turkic-history-db', 'turkic-orkhon-collection'],
     datePrecision: 'year', region: 'world', category: '政权建立／更替', verification: 'checked',
     background: '突厥部在阿史那氏领导下积累冶铁、军事与部众组织能力，并与柔然宗主秩序发生冲突。',

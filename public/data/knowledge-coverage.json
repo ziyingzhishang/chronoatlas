@@ -10131,6 +10131,72 @@
     },
     {
       "entityType": "event",
+      "entityId": "tuyuhun-ended-663",
+      "entityKey": "event:tuyuhun-ended-663",
+      "label": "吐谷浑中央政权终止、吐蕃控制与唐安置承接",
+      "polityIds": [
+        "tang",
+        "tibetan_empire",
+        "tuyuhun"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "tuyuhun-ended-663"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "tuyuhun-fuqisi-official",
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-nuohebo-participated-tuyuhun-ended-663",
+            "event-detail:tuyuhun-ended-663"
+          ],
+          "relatedIds": [
+            "li-zhi",
+            "lushangzan",
+            "murong-nuohebo",
+            "tang",
+            "tibetan-founded",
+            "tibetan_empire",
+            "tuyuhun",
+            "tuyuhun-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "tuyuhun-founded",
       "entityKey": "event:tuyuhun-founded",
       "label": "吐谷浑政权建立（形成阶段）",
@@ -10486,6 +10552,72 @@
             "jin_western",
             "liu-yao",
             "sima-ye"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "western-liang-ended-421",
+      "entityKey": "event:western-liang-ended-421",
+      "label": "北凉攻灭西凉、酒泉承接",
+      "polityIds": [
+        "northern_liang",
+        "western_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-liang-ended-421"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "modern-geography-reference",
+            "zizhi-tongjian",
+            "zizhi-tongjian-vol111-western-liang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-juqu-mengxun-participated-western-liang-ended-421",
+            "claim:claim-li-xin-participated-western-liang-ended-421",
+            "event-detail:western-liang-ended-421"
+          ],
+          "relatedIds": [
+            "juqu-mengxun",
+            "li-xin",
+            "northern-liang-founded",
+            "northern_liang",
+            "western-liang-state-founded",
+            "western_liang"
           ]
         },
         {
@@ -13531,8 +13663,7 @@
       "entityKey": "heritage:dunhuang-western-liang-city-site",
       "label": "西凉敦煌城址历史层",
       "polityIds": [
-        "western_liang",
-        "western_xia"
+        "western_liang"
       ],
       "checks": [
         {
@@ -13571,7 +13702,9 @@
             "heritage-detail:dunhuang-western-liang-city-site"
           ],
           "relatedIds": [
-            "li-yuanhao",
+            "li-hao",
+            "li-xin",
+            "western-liang-ended-421",
             "western-liang-state-founded",
             "western_liang"
           ]
@@ -15049,6 +15182,70 @@
             "northern_han",
             "song_northern",
             "taizong-song"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "jiuquan-western-liang-city-site",
+      "entityKey": "heritage:jiuquan-western-liang-city-site",
+      "label": "西凉酒泉城址历史层",
+      "polityIds": [
+        "northern_liang",
+        "western_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "jiuquan-western-liang-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "jinshu-vol87-li-hao",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:jiuquan-western-liang-city-site"
+          ],
+          "relatedIds": [
+            "juqu-mengxun",
+            "li-hao",
+            "li-xin",
+            "northern_liang",
+            "western-liang-ended-421",
+            "western-liang-state-founded",
+            "western_liang"
           ]
         },
         {
@@ -18691,8 +18888,8 @@
       "entityKey": "heritage:tuyuhun-fuqisi-city-candidate",
       "label": "吐谷浑伏俟城候选遗址",
       "polityIds": [
-        "tuyuhun",
-        "xiongnu"
+        "tibetan_empire",
+        "tuyuhun"
       ],
       "checks": [
         {
@@ -18716,7 +18913,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "china-chronology",
+            "modern-geography-reference",
+            "tuyuhun-fuqisi-official",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -18726,11 +18924,15 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-tuyuhun-left-heritage-fuqisi-663",
             "heritage-detail:tuyuhun-fuqisi-city-candidate"
           ],
           "relatedIds": [
-            "modu-chanyu",
+            "lushangzan",
+            "murong-nuohebo",
+            "tibetan_empire",
             "tuyuhun",
+            "tuyuhun-ended-663",
             "tuyuhun-founded"
           ]
         },
@@ -24953,16 +25155,21 @@
           "evidenceIds": [
             "claim:claim-juqu-mengxun-enemy-duan-ye",
             "claim:claim-juqu-mengxun-participated-northern-liang",
+            "claim:claim-juqu-mengxun-participated-western-liang-ended-421",
             "claim:claim-juqu-mengxun-ruled-northern-liang-sixtyfourth",
+            "claim:claim-li-xin-enemy-juqu-mengxun-termination-421",
             "event-detail:northern-liang-founded",
             "event-detail:northern-liang-moved-guzang",
+            "event-detail:western-liang-ended-421",
             "person-polity:juqu-mengxun:northern_liang"
           ],
           "relatedIds": [
             "duan-ye",
+            "li-xin",
             "northern-liang-founded",
             "northern-liang-moved-guzang",
-            "northern_liang"
+            "northern_liang",
+            "western-liang-ended-421"
           ]
         },
         {
@@ -26128,6 +26335,72 @@
     },
     {
       "entityType": "person",
+      "entityId": "li-xin",
+      "entityKey": "person:li-xin",
+      "label": "李歆",
+      "polityIds": [
+        "western_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-xin"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-xin-enemy-juqu-mengxun-termination-421",
+            "claim:claim-li-xin-participated-western-liang-ended-421",
+            "claim:claim-li-xin-ruled-western-liang-closure",
+            "event-detail:western-liang-ended-421",
+            "person-polity:li-xin:western_liang"
+          ],
+          "relatedIds": [
+            "juqu-mengxun",
+            "western-liang-ended-421",
+            "western_liang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "li-xiong",
       "entityKey": "person:li-xiong",
       "label": "李雄",
@@ -26453,6 +26726,7 @@
             "claim:claim-wu-zhao-spouse-li-zhi-fortieth",
             "event-detail:shangyang-palace-built",
             "event-detail:shangyang-palace-completed-679",
+            "event-detail:tuyuhun-ended-663",
             "event-detail:ximing-temple-built",
             "person-polity:li-zhi:tang"
           ],
@@ -26462,6 +26736,7 @@
             "shangyang-palace-built",
             "shangyang-palace-completed-679",
             "tang",
+            "tuyuhun-ended-663",
             "wu-zhao",
             "ximing-temple-built"
           ]
@@ -28045,6 +28320,66 @@
     },
     {
       "entityType": "person",
+      "entityId": "lushangzan",
+      "entityKey": "person:lushangzan",
+      "label": "禄东赞",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "data-missing",
+          "note": "人物详情记录不存在或缺少生平摘要。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-nuohebo-enemy-lushangzan-termination-663",
+            "event-detail:tuyuhun-ended-663",
+            "person-polity:lushangzan:tibetan_empire"
+          ],
+          "relatedIds": [
+            "murong-nuohebo",
+            "tibetan_empire",
+            "tuyuhun-ended-663"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "lv-guang",
       "entityKey": "person:lv-guang",
       "label": "吕光",
@@ -29211,6 +29546,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "murong-nuohebo",
+      "entityKey": "person:murong-nuohebo",
+      "label": "慕容诺曷钵",
+      "polityIds": [
+        "tuyuhun"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "murong-nuohebo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-nuohebo-enemy-lushangzan-termination-663",
+            "claim:claim-murong-nuohebo-participated-tuyuhun-ended-663",
+            "claim:claim-murong-nuohebo-ruled-tuyuhun-closure",
+            "event-detail:tuyuhun-ended-663",
+            "person-polity:murong-nuohebo:tuyuhun"
+          ],
+          "relatedIds": [
+            "lushangzan",
+            "tuyuhun",
+            "tuyuhun-ended-663"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -40592,11 +40991,14 @@
             "claim:claim-duan-ye-ruled-northern-liang-ninetysecond",
             "claim:claim-juqu-mengxun-ruled-northern-liang-sixtyfourth",
             "claim:claim-juqu-mujian-ruled-northern-liang",
+            "claim:claim-northern-liang-succeeded-western-liang-421",
             "event-detail:northern-liang-ended-439",
             "event-detail:northern-liang-founded",
             "event-detail:northern-liang-moved-guzang",
+            "event-detail:western-liang-ended-421",
             "heritage-detail:guzang-ancient-city-site",
             "heritage-detail:guzang-baita-temple-site",
+            "heritage-detail:jiuquan-western-liang-city-site",
             "heritage-detail:zhangye-northern-liang-city-layer",
             "person:duan-ye",
             "person:juqu-mengxun",
@@ -40606,11 +41008,14 @@
             "duan-ye",
             "guzang-ancient-city-site",
             "guzang-baita-temple-site",
+            "jiuquan-western-liang-city-site",
             "juqu-mengxun",
             "juqu-mujian",
             "northern-liang-ended-439",
             "northern-liang-founded",
             "northern-liang-moved-guzang",
+            "western-liang-ended-421",
+            "western_liang",
             "zhangye-northern-liang-city-layer"
           ]
         },
@@ -42256,6 +42661,7 @@
             "claim:claim-li-yuan-founded-tang",
             "claim:claim-tang-changan-capital",
             "claim:claim-tang-city-heritage",
+            "claim:claim-tang-received-tuyuhun-exiles-663",
             "event-detail:an-lushan-rebellion",
             "event-detail:court-moves-luoyang",
             "event-detail:daming-palace-built",
@@ -42273,6 +42679,7 @@
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
+            "event-detail:tuyuhun-ended-663",
             "event-detail:ximing-temple-built",
             "event-detail:xuanwu-gate",
             "event-detail:xuanzang-at-ximing-658",
@@ -42345,6 +42752,8 @@
             "tang-changan-occupation",
             "tang-founded",
             "tang-founded-changan",
+            "tuyuhun",
+            "tuyuhun-ended-663",
             "wang-wei",
             "wei-zheng",
             "white-horse-temple",
@@ -42484,25 +42893,34 @@
             "claim:claim-langdarma-ruled-tibetan-empire",
             "claim:claim-namri-songtsen-ruled-tibetan-empire-ninetysecond",
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
+            "claim:claim-tibetan-empire-succeeded-tuyuhun-663",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
+            "claim:claim-tuyuhun-ended-663",
             "event-detail:tibetan-ended-842",
             "event-detail:tibetan-founded",
             "event-detail:tibetan-yalong-center",
+            "event-detail:tuyuhun-ended-663",
             "heritage-detail:tibetan-lhasa-city-site",
+            "heritage-detail:tuyuhun-fuqisi-city-candidate",
             "person:langdarma",
+            "person:lushangzan",
             "person:namri-songtsen",
             "person:songtsen-gampo",
             "person:tridu-songtsen"
           ],
           "relatedIds": [
             "langdarma",
+            "lushangzan",
             "namri-songtsen",
             "songtsen-gampo",
             "tibetan-ended-842",
             "tibetan-founded",
             "tibetan-lhasa-city-site",
             "tibetan-yalong-center",
-            "tridu-songtsen"
+            "tridu-songtsen",
+            "tuyuhun",
+            "tuyuhun-ended-663",
+            "tuyuhun-fuqisi-city-candidate"
           ]
         },
         {
@@ -42610,6 +43028,8 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "tuyuhun-fuqisi-official",
+            "tuyuhun-termination-663",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -42619,13 +43039,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-murong-nuohebo-ruled-tuyuhun-closure",
             "claim:claim-murong-tuyuhun-ruled-tuyuhun-closure",
+            "claim:claim-tang-received-tuyuhun-exiles-663",
+            "claim:claim-tibetan-empire-succeeded-tuyuhun-663",
+            "claim:claim-tuyuhun-ended-663",
+            "claim:claim-tuyuhun-left-heritage-fuqisi-663",
+            "event-detail:tuyuhun-ended-663",
             "event-detail:tuyuhun-founded",
             "heritage-detail:tuyuhun-fuqisi-city-candidate",
+            "person:murong-nuohebo",
             "person:murong-tuyuhun"
           ],
           "relatedIds": [
+            "murong-nuohebo",
             "murong-tuyuhun",
+            "tang",
+            "tibetan_empire",
+            "tuyuhun-ended-663",
             "tuyuhun-founded",
             "tuyuhun-fuqisi-city-candidate"
           ]
@@ -43066,13 +43497,22 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-hao-ruled-western-liang-closure",
+            "claim:claim-li-xin-ruled-western-liang-closure",
+            "claim:claim-northern-liang-succeeded-western-liang-421",
+            "event-detail:western-liang-ended-421",
             "event-detail:western-liang-state-founded",
             "heritage-detail:dunhuang-western-liang-city-site",
-            "person:li-hao"
+            "heritage-detail:jiuquan-western-liang-city-site",
+            "person:li-hao",
+            "person:li-xin"
           ],
           "relatedIds": [
             "dunhuang-western-liang-city-site",
+            "jiuquan-western-liang-city-site",
             "li-hao",
+            "li-xin",
+            "northern_liang",
+            "western-liang-ended-421",
             "western-liang-state-founded"
           ]
         },
@@ -45451,6 +45891,24 @@
     },
     {
       "entityType": "person",
+      "entityId": "li-xin",
+      "entityKey": "person:li-xin",
+      "label": "李歆",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "western_liang"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "jinshu-vol87-li-hao",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "liu-jiyuan",
       "entityKey": "person:liu-jiyuan",
       "label": "刘继元",
@@ -45498,6 +45956,20 @@
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "lushangzan",
+      "entityKey": "person:lushangzan",
+      "label": "禄东赞",
+      "dimension": "detail",
+      "kind": "data-missing",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "人物详情记录不存在或缺少生平摘要。"
     },
     {
       "entityType": "person",
@@ -45561,6 +46033,23 @@
         "xiongnu"
       ],
       "evidenceIds": [
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "murong-nuohebo",
+      "entityKey": "person:murong-nuohebo",
+      "label": "慕容诺曷钵",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "tuyuhun"
+      ],
+      "evidenceIds": [
+        "tuyuhun-termination-663",
         "zizhi-tongjian"
       ],
       "relatedIds": [],
@@ -56288,6 +56777,72 @@
         }
       ]
     },
+    "event:tuyuhun-ended-663": {
+      "entityType": "event",
+      "entityId": "tuyuhun-ended-663",
+      "entityKey": "event:tuyuhun-ended-663",
+      "label": "吐谷浑中央政权终止、吐蕃控制与唐安置承接",
+      "polityIds": [
+        "tang",
+        "tibetan_empire",
+        "tuyuhun"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "tuyuhun-ended-663"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "tuyuhun-fuqisi-official",
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-nuohebo-participated-tuyuhun-ended-663",
+            "event-detail:tuyuhun-ended-663"
+          ],
+          "relatedIds": [
+            "li-zhi",
+            "lushangzan",
+            "murong-nuohebo",
+            "tang",
+            "tibetan-founded",
+            "tibetan_empire",
+            "tuyuhun",
+            "tuyuhun-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:tuyuhun-founded": {
       "entityType": "event",
       "entityId": "tuyuhun-founded",
@@ -56645,6 +57200,72 @@
             "jin_western",
             "liu-yao",
             "sima-ye"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:western-liang-ended-421": {
+      "entityType": "event",
+      "entityId": "western-liang-ended-421",
+      "entityKey": "event:western-liang-ended-421",
+      "label": "北凉攻灭西凉、酒泉承接",
+      "polityIds": [
+        "northern_liang",
+        "western_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-liang-ended-421"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "modern-geography-reference",
+            "zizhi-tongjian",
+            "zizhi-tongjian-vol111-western-liang"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-juqu-mengxun-participated-western-liang-ended-421",
+            "claim:claim-li-xin-participated-western-liang-ended-421",
+            "event-detail:western-liang-ended-421"
+          ],
+          "relatedIds": [
+            "juqu-mengxun",
+            "li-xin",
+            "northern-liang-founded",
+            "northern_liang",
+            "western-liang-state-founded",
+            "western_liang"
           ]
         },
         {
@@ -59690,8 +60311,7 @@
       "entityKey": "heritage:dunhuang-western-liang-city-site",
       "label": "西凉敦煌城址历史层",
       "polityIds": [
-        "western_liang",
-        "western_xia"
+        "western_liang"
       ],
       "checks": [
         {
@@ -59730,7 +60350,9 @@
             "heritage-detail:dunhuang-western-liang-city-site"
           ],
           "relatedIds": [
-            "li-yuanhao",
+            "li-hao",
+            "li-xin",
+            "western-liang-ended-421",
             "western-liang-state-founded",
             "western_liang"
           ]
@@ -61208,6 +61830,70 @@
             "northern_han",
             "song_northern",
             "taizong-song"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:jiuquan-western-liang-city-site": {
+      "entityType": "heritage",
+      "entityId": "jiuquan-western-liang-city-site",
+      "entityKey": "heritage:jiuquan-western-liang-city-site",
+      "label": "西凉酒泉城址历史层",
+      "polityIds": [
+        "northern_liang",
+        "western_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "jiuquan-western-liang-city-site"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "jinshu-vol87-li-hao",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:jiuquan-western-liang-city-site"
+          ],
+          "relatedIds": [
+            "juqu-mengxun",
+            "li-hao",
+            "li-xin",
+            "northern_liang",
+            "western-liang-ended-421",
+            "western-liang-state-founded",
+            "western_liang"
           ]
         },
         {
@@ -64850,8 +65536,8 @@
       "entityKey": "heritage:tuyuhun-fuqisi-city-candidate",
       "label": "吐谷浑伏俟城候选遗址",
       "polityIds": [
-        "tuyuhun",
-        "xiongnu"
+        "tibetan_empire",
+        "tuyuhun"
       ],
       "checks": [
         {
@@ -64875,7 +65561,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "china-chronology",
+            "modern-geography-reference",
+            "tuyuhun-fuqisi-official",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -64885,11 +65572,15 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-tuyuhun-left-heritage-fuqisi-663",
             "heritage-detail:tuyuhun-fuqisi-city-candidate"
           ],
           "relatedIds": [
-            "modu-chanyu",
+            "lushangzan",
+            "murong-nuohebo",
+            "tibetan_empire",
             "tuyuhun",
+            "tuyuhun-ended-663",
             "tuyuhun-founded"
           ]
         },
@@ -71112,16 +71803,21 @@
           "evidenceIds": [
             "claim:claim-juqu-mengxun-enemy-duan-ye",
             "claim:claim-juqu-mengxun-participated-northern-liang",
+            "claim:claim-juqu-mengxun-participated-western-liang-ended-421",
             "claim:claim-juqu-mengxun-ruled-northern-liang-sixtyfourth",
+            "claim:claim-li-xin-enemy-juqu-mengxun-termination-421",
             "event-detail:northern-liang-founded",
             "event-detail:northern-liang-moved-guzang",
+            "event-detail:western-liang-ended-421",
             "person-polity:juqu-mengxun:northern_liang"
           ],
           "relatedIds": [
             "duan-ye",
+            "li-xin",
             "northern-liang-founded",
             "northern-liang-moved-guzang",
-            "northern_liang"
+            "northern_liang",
+            "western-liang-ended-421"
           ]
         },
         {
@@ -72285,6 +72981,72 @@
         }
       ]
     },
+    "person:li-xin": {
+      "entityType": "person",
+      "entityId": "li-xin",
+      "entityKey": "person:li-xin",
+      "label": "李歆",
+      "polityIds": [
+        "western_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-xin"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-xin-enemy-juqu-mengxun-termination-421",
+            "claim:claim-li-xin-participated-western-liang-ended-421",
+            "claim:claim-li-xin-ruled-western-liang-closure",
+            "event-detail:western-liang-ended-421",
+            "person-polity:li-xin:western_liang"
+          ],
+          "relatedIds": [
+            "juqu-mengxun",
+            "western-liang-ended-421",
+            "western_liang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:li-xiong": {
       "entityType": "person",
       "entityId": "li-xiong",
@@ -72612,6 +73374,7 @@
             "claim:claim-wu-zhao-spouse-li-zhi-fortieth",
             "event-detail:shangyang-palace-built",
             "event-detail:shangyang-palace-completed-679",
+            "event-detail:tuyuhun-ended-663",
             "event-detail:ximing-temple-built",
             "person-polity:li-zhi:tang"
           ],
@@ -72621,6 +73384,7 @@
             "shangyang-palace-built",
             "shangyang-palace-completed-679",
             "tang",
+            "tuyuhun-ended-663",
             "wu-zhao",
             "ximing-temple-built"
           ]
@@ -74202,6 +74966,66 @@
         }
       ]
     },
+    "person:lushangzan": {
+      "entityType": "person",
+      "entityId": "lushangzan",
+      "entityKey": "person:lushangzan",
+      "label": "禄东赞",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "data-missing",
+          "note": "人物详情记录不存在或缺少生平摘要。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-nuohebo-enemy-lushangzan-termination-663",
+            "event-detail:tuyuhun-ended-663",
+            "person-polity:lushangzan:tibetan_empire"
+          ],
+          "relatedIds": [
+            "murong-nuohebo",
+            "tibetan_empire",
+            "tuyuhun-ended-663"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:lv-guang": {
       "entityType": "person",
       "entityId": "lv-guang",
@@ -75370,6 +76194,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:murong-nuohebo": {
+      "entityType": "person",
+      "entityId": "murong-nuohebo",
+      "entityKey": "person:murong-nuohebo",
+      "label": "慕容诺曷钵",
+      "polityIds": [
+        "tuyuhun"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "murong-nuohebo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-murong-nuohebo-enemy-lushangzan-termination-663",
+            "claim:claim-murong-nuohebo-participated-tuyuhun-ended-663",
+            "claim:claim-murong-nuohebo-ruled-tuyuhun-closure",
+            "event-detail:tuyuhun-ended-663",
+            "person-polity:murong-nuohebo:tuyuhun"
+          ],
+          "relatedIds": [
+            "lushangzan",
+            "tuyuhun",
+            "tuyuhun-ended-663"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "tuyuhun-termination-663",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -86751,11 +87639,14 @@
             "claim:claim-duan-ye-ruled-northern-liang-ninetysecond",
             "claim:claim-juqu-mengxun-ruled-northern-liang-sixtyfourth",
             "claim:claim-juqu-mujian-ruled-northern-liang",
+            "claim:claim-northern-liang-succeeded-western-liang-421",
             "event-detail:northern-liang-ended-439",
             "event-detail:northern-liang-founded",
             "event-detail:northern-liang-moved-guzang",
+            "event-detail:western-liang-ended-421",
             "heritage-detail:guzang-ancient-city-site",
             "heritage-detail:guzang-baita-temple-site",
+            "heritage-detail:jiuquan-western-liang-city-site",
             "heritage-detail:zhangye-northern-liang-city-layer",
             "person:duan-ye",
             "person:juqu-mengxun",
@@ -86765,11 +87656,14 @@
             "duan-ye",
             "guzang-ancient-city-site",
             "guzang-baita-temple-site",
+            "jiuquan-western-liang-city-site",
             "juqu-mengxun",
             "juqu-mujian",
             "northern-liang-ended-439",
             "northern-liang-founded",
             "northern-liang-moved-guzang",
+            "western-liang-ended-421",
+            "western_liang",
             "zhangye-northern-liang-city-layer"
           ]
         },
@@ -88415,6 +89309,7 @@
             "claim:claim-li-yuan-founded-tang",
             "claim:claim-tang-changan-capital",
             "claim:claim-tang-city-heritage",
+            "claim:claim-tang-received-tuyuhun-exiles-663",
             "event-detail:an-lushan-rebellion",
             "event-detail:court-moves-luoyang",
             "event-detail:daming-palace-built",
@@ -88432,6 +89327,7 @@
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
+            "event-detail:tuyuhun-ended-663",
             "event-detail:ximing-temple-built",
             "event-detail:xuanwu-gate",
             "event-detail:xuanzang-at-ximing-658",
@@ -88504,6 +89400,8 @@
             "tang-changan-occupation",
             "tang-founded",
             "tang-founded-changan",
+            "tuyuhun",
+            "tuyuhun-ended-663",
             "wang-wei",
             "wei-zheng",
             "white-horse-temple",
@@ -88643,25 +89541,34 @@
             "claim:claim-langdarma-ruled-tibetan-empire",
             "claim:claim-namri-songtsen-ruled-tibetan-empire-ninetysecond",
             "claim:claim-songtsen-gampo-ruled-tibetan-empire-sixtyfourth",
+            "claim:claim-tibetan-empire-succeeded-tuyuhun-663",
             "claim:claim-tridu-ruled-tibetan-fiftyseventh",
+            "claim:claim-tuyuhun-ended-663",
             "event-detail:tibetan-ended-842",
             "event-detail:tibetan-founded",
             "event-detail:tibetan-yalong-center",
+            "event-detail:tuyuhun-ended-663",
             "heritage-detail:tibetan-lhasa-city-site",
+            "heritage-detail:tuyuhun-fuqisi-city-candidate",
             "person:langdarma",
+            "person:lushangzan",
             "person:namri-songtsen",
             "person:songtsen-gampo",
             "person:tridu-songtsen"
           ],
           "relatedIds": [
             "langdarma",
+            "lushangzan",
             "namri-songtsen",
             "songtsen-gampo",
             "tibetan-ended-842",
             "tibetan-founded",
             "tibetan-lhasa-city-site",
             "tibetan-yalong-center",
-            "tridu-songtsen"
+            "tridu-songtsen",
+            "tuyuhun",
+            "tuyuhun-ended-663",
+            "tuyuhun-fuqisi-city-candidate"
           ]
         },
         {
@@ -88769,6 +89676,8 @@
           "evidenceIds": [
             "china-chronology",
             "modern-geography-reference",
+            "tuyuhun-fuqisi-official",
+            "tuyuhun-termination-663",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -88778,13 +89687,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-murong-nuohebo-ruled-tuyuhun-closure",
             "claim:claim-murong-tuyuhun-ruled-tuyuhun-closure",
+            "claim:claim-tang-received-tuyuhun-exiles-663",
+            "claim:claim-tibetan-empire-succeeded-tuyuhun-663",
+            "claim:claim-tuyuhun-ended-663",
+            "claim:claim-tuyuhun-left-heritage-fuqisi-663",
+            "event-detail:tuyuhun-ended-663",
             "event-detail:tuyuhun-founded",
             "heritage-detail:tuyuhun-fuqisi-city-candidate",
+            "person:murong-nuohebo",
             "person:murong-tuyuhun"
           ],
           "relatedIds": [
+            "murong-nuohebo",
             "murong-tuyuhun",
+            "tang",
+            "tibetan_empire",
+            "tuyuhun-ended-663",
             "tuyuhun-founded",
             "tuyuhun-fuqisi-city-candidate"
           ]
@@ -89225,13 +90145,22 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-li-hao-ruled-western-liang-closure",
+            "claim:claim-li-xin-ruled-western-liang-closure",
+            "claim:claim-northern-liang-succeeded-western-liang-421",
+            "event-detail:western-liang-ended-421",
             "event-detail:western-liang-state-founded",
             "heritage-detail:dunhuang-western-liang-city-site",
-            "person:li-hao"
+            "heritage-detail:jiuquan-western-liang-city-site",
+            "person:li-hao",
+            "person:li-xin"
           ],
           "relatedIds": [
             "dunhuang-western-liang-city-site",
+            "jiuquan-western-liang-city-site",
             "li-hao",
+            "li-xin",
+            "northern_liang",
+            "western-liang-ended-421",
             "western-liang-state-founded"
           ]
         },
@@ -90532,9 +91461,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 213,
+      "totalEntities": 215,
       "statusCounts": {
-        "covered": 1023,
+        "covered": 1033,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -90593,9 +91522,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 124,
+      "totalEntities": 125,
       "statusCounts": {
-        "covered": 620,
+        "covered": 625,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -90611,20 +91540,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 260,
+      "totalEntities": 263,
       "statusCounts": {
-        "covered": 1230,
-        "data-missing": 0,
+        "covered": 1242,
+        "data-missing": 1,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 70,
+        "uncertain": 72,
         "not-applicable": 0
       },
       "gapCounts": {
-        "data-missing": 0,
+        "data-missing": 1,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 70
+        "uncertain": 72
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -90655,13 +91584,16 @@
         "person:langdarma",
         "person:li-shi",
         "person:li-xian-western-xia",
+        "person:li-xin",
         "person:liu-jiyuan",
         "person:liu-xuan",
         "person:liu-yao",
+        "person:lushangzan",
         "person:ma-xichong",
         "person:ma-xiguang",
         "person:meng-tian",
         "person:modu-chanyu",
+        "person:murong-nuohebo",
         "person:naemul-isageum",
         "person:namri-songtsen",
         "person:piluo-ge",
@@ -92384,8 +93316,10 @@
         "event:northern-liang-ended-439",
         "event:northern-liang-founded",
         "event:northern-liang-moved-guzang",
+        "event:western-liang-ended-421",
         "heritage:guzang-ancient-city-site",
         "heritage:guzang-baita-temple-site",
+        "heritage:jiuquan-western-liang-city-site",
         "heritage:zhangye-northern-liang-city-layer",
         "person:duan-ye",
         "person:juqu-mengxun",
@@ -93427,6 +94361,7 @@
         "event:tang-changan-end",
         "event:tang-founded",
         "event:tang-founded-changan",
+        "event:tuyuhun-ended-663",
         "event:wu-zhou-founded",
         "event:ximing-temple-built",
         "event:xuanwu-gate",
@@ -93596,14 +94531,31 @@
         "event:tibetan-ended-842",
         "event:tibetan-founded",
         "event:tibetan-yalong-center",
+        "event:tuyuhun-ended-663",
         "heritage:tibetan-lhasa-city-site",
+        "heritage:tuyuhun-fuqisi-city-candidate",
         "person:langdarma",
+        "person:lushangzan",
         "person:namri-songtsen",
         "person:songtsen-gampo",
         "person:tridu-songtsen",
         "polity:tibetan_empire"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "lushangzan",
+          "entityKey": "person:lushangzan",
+          "label": "禄东赞",
+          "dimension": "detail",
+          "kind": "data-missing",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "人物详情记录不存在或缺少生平摘要。"
+        },
         {
           "entityType": "person",
           "entityId": "namri-songtsen",
@@ -93687,7 +94639,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "吐蕃：有 5 项待核验缺口。"
+      "summary": "吐蕃：有 6 项待核验缺口。"
     },
     "turkic": {
       "polityId": "turkic",
@@ -93748,12 +94700,31 @@
       "polityId": "tuyuhun",
       "polityName": "吐谷浑",
       "entityKeys": [
+        "event:tuyuhun-ended-663",
         "event:tuyuhun-founded",
         "heritage:tuyuhun-fuqisi-city-candidate",
+        "person:murong-nuohebo",
         "person:murong-tuyuhun",
         "polity:tuyuhun"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "murong-nuohebo",
+          "entityKey": "person:murong-nuohebo",
+          "label": "慕容诺曷钵",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tuyuhun"
+          ],
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "tuyuhun-founded",
@@ -93776,7 +94747,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "吐谷浑：有 1 项待核验缺口。"
+      "summary": "吐谷浑：有 2 项待核验缺口。"
     },
     "wei_eastern": {
       "polityId": "wei_eastern",
@@ -94008,12 +94979,34 @@
       "polityId": "western_liang",
       "polityName": "西凉",
       "entityKeys": [
+        "event:western-liang-ended-421",
         "event:western-liang-state-founded",
         "heritage:dunhuang-western-liang-city-site",
+        "heritage:jiuquan-western-liang-city-site",
         "person:li-hao",
+        "person:li-xin",
         "polity:western_liang"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "li-xin",
+          "entityKey": "person:li-xin",
+          "label": "李歆",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_liang"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -94021,7 +95014,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西凉：学习闭环已覆盖。"
+      "summary": "西凉：有 1 项待核验缺口。"
     },
     "western_liao": {
       "polityId": "western_liao",
@@ -94229,7 +95222,6 @@
       "entityKeys": [
         "event:western-xia-ended-1227",
         "event:western-xia-founded",
-        "heritage:dunhuang-western-liang-city-site",
         "heritage:western-xia-imperial-tombs",
         "person:li-xian-western-xia",
         "person:li-yuanhao",
@@ -94493,7 +95485,6 @@
         "event:xiongnu-founded",
         "event:xiongnu-modu-assumes-chanyu",
         "heritage:orkhon-turkic-inscriptions",
-        "heritage:tuyuhun-fuqisi-city-candidate",
         "heritage:xiongnu-longcheng-candidate",
         "person:huhanye",
         "person:modu-chanyu",
@@ -95774,6 +96765,7 @@
       "cityName": "敦煌市",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:western-liang-ended-421",
         "event:western-liang-state-founded",
         "heritage:dunhuang-western-liang-city-site",
         "person:li-hao"
@@ -96571,9 +97563,31 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:former-liang-founded",
-        "event:western-liang-state-founded"
+        "event:western-liang-ended-421",
+        "event:western-liang-state-founded",
+        "heritage:jiuquan-western-liang-city-site",
+        "person:juqu-mengxun",
+        "person:li-xin"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "li-xin",
+          "entityKey": "person:li-xin",
+          "label": "李歆",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_liang"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "jinshu-vol87-li-hao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "former-liang-founded",
@@ -96596,7 +97610,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "酒泉市：有 1 项待核验缺口。"
+      "summary": "酒泉市：有 2 项待核验缺口。"
     },
     "kaifeng": {
       "placeId": "kaifeng",
@@ -96793,6 +97807,7 @@
       "cityName": "武威及河西走廊",
       "capitalRecordCount": 0,
       "entityKeys": [
+        "event:tuyuhun-ended-663",
         "event:western-liang-state-founded"
       ],
       "gaps": [],
@@ -97636,13 +98651,48 @@
     },
     "tuyuhun_core": {
       "placeId": "tuyuhun_core",
-      "cityName": "青海共和县一带（候选）",
+      "cityName": "青海省海南藏族自治州共和县石乃亥镇铁卜加村一带",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:tuyuhun-ended-663",
         "event:tuyuhun-founded",
-        "heritage:tuyuhun-fuqisi-city-candidate"
+        "heritage:tuyuhun-fuqisi-city-candidate",
+        "person:li-zhi",
+        "person:lushangzan",
+        "person:murong-nuohebo"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "murong-nuohebo",
+          "entityKey": "person:murong-nuohebo",
+          "label": "慕容诺曷钵",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tuyuhun"
+          ],
+          "evidenceIds": [
+            "tuyuhun-termination-663",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "lushangzan",
+          "entityKey": "person:lushangzan",
+          "label": "禄东赞",
+          "dimension": "detail",
+          "kind": "data-missing",
+          "polityIds": [
+            "tibetan_empire"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "人物详情记录不存在或缺少生平摘要。"
+        },
         {
           "entityType": "event",
           "entityId": "tuyuhun-founded",
@@ -97665,7 +98715,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "青海共和县一带（候选）：有 1 项待核验缺口。"
+      "summary": "青海省海南藏族自治州共和县石乃亥镇铁卜加村一带：有 3 项待核验缺口。"
     },
     "uhtuken": {
       "placeId": "uhtuken",
