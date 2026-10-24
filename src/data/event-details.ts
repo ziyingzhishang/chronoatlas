@@ -1661,6 +1661,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '大兴城建设是多年工程；583年用于标记城市与政治中心成形，不表示所有街坊同时完成。',
   },
   {
+    eventId: 'northern-zhou-ended-581',
+    participants: [
+      { personId: 'yuwen-chan', role: '北周末代君主与581年禅让终局人物', note: '宇文阐在长安向杨坚禅位，北周中央政权由此终止；个人退位与隋完成南北统一分开记录。' },
+      { personId: 'yang-jian', role: '接受北周禅位并建立隋的辅政者', note: '杨坚代表受禅与隋承接端点，不把其受禅行为扩展为隋已在581年完成全境统一。' },
+    ],
+    polityIds: ['zhou_northern', 'sui'],
+    causes: ['北周末年杨坚掌握朝廷与关中军政资源，静帝年幼，中央权力转移通过禅让制度完成。'],
+    consequences: ['北周中央政权终止，隋在长安承接新的王朝政治中心。', '北周长安宫城、官署、道路和地方社会进入隋唐城市历史层，遗产延续不等于北周原构完整留存。', '隋灭陈统一南北属于589年的后续事件，不能与581年受禅合并。'],
+    phases: [
+      { label: '北周末年权力集中', startYear: 579, endYear: 581, summary: '杨坚以辅政和外戚身份掌握朝廷与关中军政资源，静帝年幼。' },
+      { label: '长安禅让与隋承接', startYear: 581, endYear: 581, summary: '宇文阐向杨坚禅位，北周中央政权终止，隋建立。' },
+      { label: '长安城市层延续', startYear: 581, endYear: 589, summary: '隋承接长安政治中心并继续经营关中，589年灭陈是后续统一节点。' },
+    ],
+    locationIds: ['changan'],
+    relatedEventIds: ['sui-founded', 'sui-unification', 'daxing-capital'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '581年北周静帝禅位与杨坚受禅建立隋有明确年份节点；个人退位、制度承接、地方控制和589年南北统一是不同层次。长安现代位置与遗产层按西安历史城市考古范围表达，不等同于某座现存建筑属于北周原构。',
+  },
+  {
     eventId: 'xuanwu-gate',
     participants: [{ personId: 'li-shimin', role: '玄武门冲突中的核心皇子与后续即位者', note: '李世民对应626年皇位继承冲突；本条只记录宫城权力转折，不扩展为全国控制变化。' }],
     polityIds: ['tang'],

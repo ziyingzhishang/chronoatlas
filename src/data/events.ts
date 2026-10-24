@@ -789,6 +789,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百七十五·陈纪九', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷175', detail: '开皇元年（581）北周禅位、杨坚即皇帝位及隋国号建立。' }],
   },
   {
+    id: 'northern-zhou-ended-581', year: 581, title: '北周在长安禅让终止、隋承接', summary: '北周静帝宇文阐向杨坚禅让，北周中央政权终止，长安政治中心转入隋的承接阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '北周末年杨坚以外戚和辅政身份掌握朝廷与关中军政资源，静帝年幼，禅让成为政权转换的制度性路径。',
+    process: '581年北周静帝宇文阐禅位于杨坚，杨坚即皇帝位并建立隋；本节点确认北周中央政权终止与隋承接，不把受禅当日等同于隋已完成南北统一。',
+    impact: '北周退出历史序列，隋在长安承接关中都城与制度资源；北周长安城的宫城、官署、道路和地方社会进入隋唐城市历史层，并未因政权更替而消失。',
+    mapNote: '长安标记581年北周终止与隋承接的政治中心，现代西安、北周长安遗址层和隋大兴城应分层显示；589年隋灭陈是后续统一节点。',
+    references: [{ title: '《资治通鉴》卷一百七十五·陈纪九', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷175', detail: '开皇元年（581）记北周静帝禅位、杨坚即位及隋建立；用于政权终止与承接节点。' }],
+  },
+  {
     id: 'tang-founded', year: 618, title: '唐建立', summary: '李渊在长安建立唐朝。', placeId: 'changan', sourceIds: ['zizhi-tongjian'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '隋末各地起兵，李渊控制长安；江都发生政变，隋炀帝遇害。',

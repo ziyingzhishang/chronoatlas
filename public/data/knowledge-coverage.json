@@ -5878,6 +5878,71 @@
     },
     {
       "entityType": "event",
+      "entityId": "northern-zhou-ended-581",
+      "entityKey": "event:northern-zhou-ended-581",
+      "label": "北周在长安禅让终止、隋承接",
+      "polityIds": [
+        "sui",
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-zhou-ended-581"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yang-jian-participated-northern-zhou-ended-581",
+            "claim:claim-yuwen-chan-participated-northern-zhou-ended-581",
+            "event-detail:northern-zhou-ended-581"
+          ],
+          "relatedIds": [
+            "daxing-capital",
+            "sui",
+            "sui-founded",
+            "sui-unification",
+            "yang-jian",
+            "yuwen-chan",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "partition-jin",
       "entityKey": "event:partition-jin",
       "label": "三家分晋",
@@ -16184,6 +16249,7 @@
       "entityKey": "heritage:northern-zhou-changan-city-layer",
       "label": "北周长安城政治空间历史层",
       "polityIds": [
+        "sui",
         "zhou_northern"
       ],
       "checks": [
@@ -16208,6 +16274,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -16221,7 +16288,11 @@
             "heritage-detail:northern-zhou-changan-city-layer"
           ],
           "relatedIds": [
+            "northern-zhou-ended-581",
+            "sui",
             "sui-founded",
+            "yang-jian",
+            "yuwen-chan",
             "yuwen-yong",
             "zhou_northern"
           ]
@@ -32934,11 +33005,14 @@
             "claim:claim-chen-shubao-enemy-yang-jian-589",
             "claim:claim-yang-jian-built-daxing",
             "claim:claim-yang-jian-founded-sui",
+            "claim:claim-yang-jian-participated-northern-zhou-ended-581",
             "claim:claim-yang-jian-participated-sui-founded",
             "claim:claim-yang-jian-participated-sui-unification-fiftyfifth",
             "claim:claim-yang-jian-related-li-yuan",
             "claim:claim-yang-jian-ruled-sui-fortythird",
+            "claim:claim-yuwen-chan-succeeded-by-yang-jian-northern-zhou-termination-581",
             "event-detail:daxing-capital",
+            "event-detail:northern-zhou-ended-581",
             "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
@@ -32948,11 +33022,13 @@
             "chen-shubao",
             "daxing-capital",
             "li-yuan",
+            "northern-zhou-ended-581",
             "southern-chen-ended-589",
             "sui",
             "sui-founded",
             "sui-unification",
-            "tang-changan-city-site"
+            "tang-changan-city-site",
+            "yuwen-chan"
           ]
         },
         {
@@ -34106,6 +34182,70 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "yuwen-chan",
+      "entityKey": "person:yuwen-chan",
+      "label": "宇文阐",
+      "polityIds": [
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuwen-chan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuwen-chan-participated-northern-zhou-ended-581",
+            "claim:claim-yuwen-chan-ruled-northern-zhou",
+            "claim:claim-yuwen-chan-succeeded-by-yang-jian-northern-zhou-termination-581",
+            "event-detail:northern-zhou-ended-581",
+            "person-polity:yuwen-chan:zhou_northern"
+          ],
+          "relatedIds": [
+            "northern-zhou-ended-581",
+            "yang-jian",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -39997,6 +40137,7 @@
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-ruled-sui-fortythird",
             "event-detail:daxing-capital",
+            "event-detail:northern-zhou-ended-581",
             "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
@@ -40005,6 +40146,7 @@
             "heritage-detail:hanguang-gate-site",
             "heritage-detail:luoyang-sui-tang-city-site",
             "heritage-detail:mingde-gate-site",
+            "heritage-detail:northern-zhou-changan-city-layer",
             "heritage-detail:taiji-palace-site",
             "heritage-detail:tang-changan-city-site",
             "person:yang-jian"
@@ -40016,6 +40158,8 @@
             "hanguang-gate-site",
             "luoyang-sui-tang-city-site",
             "mingde-gate-site",
+            "northern-zhou-changan-city-layer",
+            "northern-zhou-ended-581",
             "southern-chen-ended-589",
             "sui-founded",
             "sui-unification",
@@ -42021,11 +42165,14 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-northern-zhou-changan-capital",
+            "claim:claim-yuwen-chan-ruled-northern-zhou",
             "claim:claim-yuwen-yong-ruled-northern-zhou",
             "event-detail:northern-qi-ended-577",
             "event-detail:northern-zhou-changan",
+            "event-detail:northern-zhou-ended-581",
             "heritage-detail:northern-zhou-changan-city-layer",
             "heritage-detail:ye-city-site",
+            "person:yuwen-chan",
             "person:yuwen-yong"
           ],
           "relatedIds": [
@@ -42033,7 +42180,9 @@
             "northern-qi-ended-577",
             "northern-zhou-changan",
             "northern-zhou-changan-city-layer",
+            "northern-zhou-ended-581",
             "ye-city-site",
+            "yuwen-chan",
             "yuwen-yong"
           ]
         },
@@ -49653,6 +49802,71 @@
             "northern_yuan",
             "toghon-temur",
             "tuotuobuhua"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:northern-zhou-ended-581": {
+      "entityType": "event",
+      "entityId": "northern-zhou-ended-581",
+      "entityKey": "event:northern-zhou-ended-581",
+      "label": "北周在长安禅让终止、隋承接",
+      "polityIds": [
+        "sui",
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-zhou-ended-581"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yang-jian-participated-northern-zhou-ended-581",
+            "claim:claim-yuwen-chan-participated-northern-zhou-ended-581",
+            "event-detail:northern-zhou-ended-581"
+          ],
+          "relatedIds": [
+            "daxing-capital",
+            "sui",
+            "sui-founded",
+            "sui-unification",
+            "yang-jian",
+            "yuwen-chan",
+            "zhou_northern"
           ]
         },
         {
@@ -59972,6 +60186,7 @@
       "entityKey": "heritage:northern-zhou-changan-city-layer",
       "label": "北周长安城政治空间历史层",
       "polityIds": [
+        "sui",
         "zhou_northern"
       ],
       "checks": [
@@ -59996,6 +60211,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -60009,7 +60225,11 @@
             "heritage-detail:northern-zhou-changan-city-layer"
           ],
           "relatedIds": [
+            "northern-zhou-ended-581",
+            "sui",
             "sui-founded",
+            "yang-jian",
+            "yuwen-chan",
             "yuwen-yong",
             "zhou_northern"
           ]
@@ -76722,11 +76942,14 @@
             "claim:claim-chen-shubao-enemy-yang-jian-589",
             "claim:claim-yang-jian-built-daxing",
             "claim:claim-yang-jian-founded-sui",
+            "claim:claim-yang-jian-participated-northern-zhou-ended-581",
             "claim:claim-yang-jian-participated-sui-founded",
             "claim:claim-yang-jian-participated-sui-unification-fiftyfifth",
             "claim:claim-yang-jian-related-li-yuan",
             "claim:claim-yang-jian-ruled-sui-fortythird",
+            "claim:claim-yuwen-chan-succeeded-by-yang-jian-northern-zhou-termination-581",
             "event-detail:daxing-capital",
+            "event-detail:northern-zhou-ended-581",
             "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
@@ -76736,11 +76959,13 @@
             "chen-shubao",
             "daxing-capital",
             "li-yuan",
+            "northern-zhou-ended-581",
             "southern-chen-ended-589",
             "sui",
             "sui-founded",
             "sui-unification",
-            "tang-changan-city-site"
+            "tang-changan-city-site",
+            "yuwen-chan"
           ]
         },
         {
@@ -77894,6 +78119,70 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:yuwen-chan": {
+      "entityType": "person",
+      "entityId": "yuwen-chan",
+      "entityKey": "person:yuwen-chan",
+      "label": "宇文阐",
+      "polityIds": [
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuwen-chan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuwen-chan-participated-northern-zhou-ended-581",
+            "claim:claim-yuwen-chan-ruled-northern-zhou",
+            "claim:claim-yuwen-chan-succeeded-by-yang-jian-northern-zhou-termination-581",
+            "event-detail:northern-zhou-ended-581",
+            "person-polity:yuwen-chan:zhou_northern"
+          ],
+          "relatedIds": [
+            "northern-zhou-ended-581",
+            "yang-jian",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -83785,6 +84074,7 @@
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-ruled-sui-fortythird",
             "event-detail:daxing-capital",
+            "event-detail:northern-zhou-ended-581",
             "event-detail:southern-chen-ended-589",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
@@ -83793,6 +84083,7 @@
             "heritage-detail:hanguang-gate-site",
             "heritage-detail:luoyang-sui-tang-city-site",
             "heritage-detail:mingde-gate-site",
+            "heritage-detail:northern-zhou-changan-city-layer",
             "heritage-detail:taiji-palace-site",
             "heritage-detail:tang-changan-city-site",
             "person:yang-jian"
@@ -83804,6 +84095,8 @@
             "hanguang-gate-site",
             "luoyang-sui-tang-city-site",
             "mingde-gate-site",
+            "northern-zhou-changan-city-layer",
+            "northern-zhou-ended-581",
             "southern-chen-ended-589",
             "sui-founded",
             "sui-unification",
@@ -85809,11 +86102,14 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-northern-zhou-changan-capital",
+            "claim:claim-yuwen-chan-ruled-northern-zhou",
             "claim:claim-yuwen-yong-ruled-northern-zhou",
             "event-detail:northern-qi-ended-577",
             "event-detail:northern-zhou-changan",
+            "event-detail:northern-zhou-ended-581",
             "heritage-detail:northern-zhou-changan-city-layer",
             "heritage-detail:ye-city-site",
+            "person:yuwen-chan",
             "person:yuwen-yong"
           ],
           "relatedIds": [
@@ -85821,7 +86117,9 @@
             "northern-qi-ended-577",
             "northern-zhou-changan",
             "northern-zhou-changan-city-layer",
+            "northern-zhou-ended-581",
             "ye-city-site",
+            "yuwen-chan",
             "yuwen-yong"
           ]
         },
@@ -85908,9 +86206,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 199,
+      "totalEntities": 200,
       "statusCounts": {
-        "covered": 954,
+        "covered": 959,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -85986,9 +86284,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 244,
+      "totalEntities": 245,
       "statusCounts": {
-        "covered": 1156,
+        "covered": 1161,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -88695,6 +88993,7 @@
       "polityName": "隋",
       "entityKeys": [
         "event:daxing-capital",
+        "event:northern-zhou-ended-581",
         "event:southern-chen-ended-589",
         "event:sui-founded",
         "event:sui-unification",
@@ -88703,6 +89002,7 @@
         "heritage:hanguang-gate-site",
         "heritage:luoyang-sui-tang-city-site",
         "heritage:mingde-gate-site",
+        "heritage:northern-zhou-changan-city-layer",
         "heritage:taiji-palace-site",
         "heritage:tang-changan-city-site",
         "person:yang-jian",
@@ -90061,8 +90361,10 @@
       "polityName": "北周",
       "entityKeys": [
         "event:northern-qi-ended-577",
+        "event:northern-zhou-ended-581",
         "heritage:northern-zhou-changan-city-layer",
         "heritage:ye-city-site",
+        "person:yuwen-chan",
         "person:yuwen-yong",
         "polity:zhou_northern"
       ],
@@ -90365,6 +90667,7 @@
         "event:later-qin-falls-changan",
         "event:later-qin-founded",
         "event:maoling-built",
+        "event:northern-zhou-ended-581",
         "event:qin-state-founded-eighth-batch",
         "event:sui-founded",
         "event:tang-changan-end",
@@ -90425,6 +90728,7 @@
         "person:yao-hong",
         "person:yao-xing",
         "person:yu-wen-tai",
+        "person:yuwen-chan",
         "person:zhu-wen",
         "polity:former_qin",
         "polity:former_zhao",

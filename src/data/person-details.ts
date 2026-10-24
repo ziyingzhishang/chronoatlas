@@ -89,8 +89,8 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'yang-jian', biography: '杨坚建立隋朝，并在汉长安城东南营建大兴城，开启隋唐长安城市空间的新阶段。',
     aliases: ['隋文帝'], offices: [{ title: '隋皇帝', polityId: 'sui', placeId: 'changan', validFrom: 581, validTo: 604, datePrecision: 'range', sourceIds }],
-    keyEvents: ['daxing-built'], sourceIds,
-    uncertaintyNote: '大兴城与汉长安城是相邻而有区别的城市空间，不能用现代西安边界替代历史城址。',
+    keyEvents: ['northern-zhou-ended-581', 'daxing-built'], sourceIds,
+    uncertaintyNote: '杨坚受北周禅让、建立隋与大兴城营建属于不同节点；大兴城与汉长安城是相邻而有区别的城市空间，不能用现代西安边界替代历史城址。',
   },
   {
     personId: 'li-yuan', biography: '李渊控制长安后建立唐朝，唐初长安成为新的帝国政治中心。',
@@ -446,6 +446,11 @@ export const personDetails: PersonDetail[] = [
     personId: 'yuwen-yong', biography: '宇文邕是北周武帝，在宇文泰建立的关中军政基础上推进制度和军事整合，北周由此具备继续北伐的能力。',
     aliases: ['北周武帝'], offices: [{ title: '北周皇帝', polityId: 'zhou_northern', placeId: 'changan', validFrom: 560, validTo: 578, datePrecision: 'range', sourceIds }],
     keyEvents: ['northern-qi-ended-577'], sourceIds, uncertaintyNote: '宇文邕主持北周灭北齐与北方东部承接；577年战争、邺城接收和北周后续行政整合属于连续但可区分的阶段。',
+  },
+  {
+    personId: 'yuwen-chan', biography: '宇文阐是北周静帝与末代君主。581年杨坚掌握朝廷与关中军政资源后，宇文阐在长安禅位，北周中央政权终止，隋由此承接；个人退位与隋后续统一分开表达。',
+    aliases: ['北周静帝', '北周末帝'], offices: [{ title: '北周末代皇帝', polityId: 'zhou_northern', placeId: 'changan', validFrom: 579, validTo: 581, datePrecision: 'range', sourceIds }],
+    keyEvents: ['northern-zhou-ended-581'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '581年禅让是北周中央政权终止节点；宇文阐的个人退位、杨坚受禅和隋完成南北统一不是同一事实，589年灭陈另行记录。',
   },
   {
     personId: 'li-yu', biography: '李煜是南唐末代君主，南唐在其统治末期与北宋对峙并于975年覆亡，词作保留了政权末期的文化记忆。',

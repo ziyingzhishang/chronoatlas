@@ -83,9 +83,9 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'sui', perspectiveSummary: '隋以北周政治资源为基础重新统一南北，长安与洛阳形成双都格局，隋的统一为唐代国家结构提供前置条件。',
     foundationProcess: ['杨坚在北周末年取得中央权力。', '581年受禅建立隋朝。', '589年灭陈完成南北统一，605年后东都洛阳的地位增强。'],
-    turningPoints: [turn(581, '隋建立', '杨坚受禅建立隋朝。', 'sui-founded'), turn(589, '统一南北', '隋灭陈，长期分裂结束。', 'sui-unification'), turn(605, '营建东都', '洛阳成为隋唐多中心首都体系的重要一环。')],
+    turningPoints: [turn(581, '北周禅让与隋建立', '杨坚受北周静帝禅位建立隋朝，长安政治中心完成政权承接。', 'northern-zhou-ended-581'), turn(589, '统一南北', '隋灭陈，长期分裂结束。', 'sui-unification'), turn(605, '营建东都', '洛阳成为隋唐多中心首都体系的重要一环。')],
     principalFigureIds: ['yang-jian'], capitalPhases: [capital('changan', 581, 604), capital('luoyang', 605, 618)],
-    heritageIds: ['tang-changan-city-site', 'luoyang-sui-tang-city-site', 'dingding-gate-site'], eventIds: ['sui-founded', 'sui-unification', 'daxing-capital'], claimIds: ['claim-sui-changan-capital', 'claim-yang-jian-founded-sui'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'luoyang-sui-tang-city-site', 'dingding-gate-site'], eventIds: ['northern-zhou-ended-581', 'sui-founded', 'sui-unification', 'daxing-capital'], claimIds: ['claim-sui-changan-capital', 'claim-yang-jian-founded-sui', 'claim-yang-jian-participated-northern-zhou-ended-581'], sourceIds: modernSources,
     uncertaintyNote: '581年建国与589年统一是不同历史节点；隋代首都体系包含长安、洛阳及工程阶段，不能只用单一都城概括。',
   }),
   detail({
@@ -235,10 +235,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'zhou_northern', perspectiveSummary: '北周承接西魏的关中军政与长安都城体系，在宇文氏统治下整合北方西部并最终为隋的统一创造条件。',
     foundationProcess: ['西魏末年宇文氏掌握关中军政与宫廷资源。', '557年宇文觉受禅建立北周。', '北周以长安为都，宇文邕时期通过军政改革和对北齐战争扩大整合能力。'],
-    turningPoints: [turn(557, '北周建立', '北周取代西魏并继续以长安为都。', 'western-wei-founded'), turn(572, '宇文邕亲政', '北周皇权与军政整合进入新阶段。'), turn(577, '灭北齐', '北周攻取邺，北方东部政权被纳入新的统一进程。'), turn(581, '隋受禅', '杨坚受禅建立隋，北周结束。', 'sui-founded')],
-    principalFigureIds: ['yuwen-yong'], capitalPhases: [capital('changan', 557, 581)],
-    heritageIds: ['northern-zhou-changan-city-layer'], eventIds: ['western-wei-founded', 'sui-founded'], claimIds: ['claim-northern-zhou-changan-capital', 'claim-yuwen-yong-ruled-northern-zhou'], sourceIds: modernSources,
-    uncertaintyNote: '北周承接西魏的都城与制度资源，但并不等于557年自动继承西魏全部实际控制区；北周长安遗产依托多朝叠压城市考古层理解。',
+    turningPoints: [turn(557, '北周建立', '北周取代西魏并继续以长安为都。', 'western-wei-founded'), turn(572, '宇文邕亲政', '北周皇权与军政整合进入新阶段。'), turn(577, '灭北齐', '北周攻取邺，北方东部政权被纳入新的统一进程。'), turn(581, '北周禅让终止', '北周静帝宇文阐在长安向杨坚禅位，隋承接北周政治中心。', 'northern-zhou-ended-581')],
+    principalFigureIds: ['yuwen-yong', 'yuwen-chan'], capitalPhases: [capital('changan', 557, 581)],
+    heritageIds: ['northern-zhou-changan-city-layer'], eventIds: ['western-wei-founded', 'northern-zhou-ended-581', 'sui-founded'], claimIds: ['claim-northern-zhou-changan-capital', 'claim-yuwen-yong-ruled-northern-zhou', 'claim-yuwen-chan-ruled-northern-zhou', 'claim-yuwen-chan-participated-northern-zhou-ended-581', 'claim-yang-jian-participated-northern-zhou-ended-581'], sourceIds: modernSources,
+    uncertaintyNote: '北周承接西魏的都城与制度资源，但并不等于557年自动继承西魏全部实际控制区；581年禅让是中央政权终止节点，隋后续统一与北周长安遗产延续按不同层次理解。',
   }),
   detail({
     polityId: 'cheng_han', perspectiveSummary: '成汉从巴蜀地方军政网络中形成，以成都为核心承接西晋末年区域秩序，是十六国早期南方政权的重要节点。',

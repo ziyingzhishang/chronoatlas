@@ -41,8 +41,8 @@ describe('ninety-second batch high-confidence governance relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(37);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(143);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(144);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(90);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
     for (const personId of ['duan-ye', 'namri-songtsen']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');
