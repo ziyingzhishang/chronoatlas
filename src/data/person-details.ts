@@ -753,6 +753,21 @@ export const personDetails: PersonDetail[] = [
     ], keyEvents: ['red-cliffs', 'three-kingdoms'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘备的汉室宗亲身份、政治合法性主张与蜀汉称帝分别属于不同层次；赤壁联盟是阶段性军事合作，不等同于长期同盟。',
   },
   {
+    personId: 'liu-chan', biography: '刘禅承接刘备后的蜀汉皇位，在成都维持蜀汉中央政权至263年魏军入城并归降邓艾。其个人归降、曹魏中央承接和成都城市遗产延续属于不同事实层次。',
+    aliases: ['蜀汉后主', '阿斗'], offices: [{ title: '蜀汉皇帝', polityId: 'shu_three', placeId: 'chengdu', validFrom: 223, validTo: 263, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'shu-han-termination-263'] }],
+    keyEvents: ['shu-han-founded', 'shu-han-ended-263'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'shu-han-termination-263'], uncertaintyNote: '刘禅统治蜀汉至263年成都终局；归降是中央政权终止节点，不表示蜀地各处或成都城市遗产同日消失。',
+  },
+  {
+    personId: 'deng-ai', biography: '邓艾为曹魏将领，263年伐蜀时由阴平方向进入成都并接受刘禅归降；264年其后结局与蜀汉终止事件分开记录。',
+    aliases: ['邓士载'], offices: [{ title: '曹魏伐蜀将领', polityId: 'wei_three', validFrom: 263, validTo: 264, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'shu-han-termination-263'] }],
+    keyEvents: ['shu-han-ended-263'], sourceIds: ['zizhi-tongjian', 'shu-han-termination-263'], uncertaintyNote: '邓艾是魏军入成都与刘禅归降的直接人物端点；其后与钟会的冲突不回填为蜀汉中央终止本身。',
+  },
+  {
+    personId: 'zhong-hui', biography: '钟会为曹魏伐蜀主将之一，参与263年蜀汉终止前的军事进程；其264年成都事变属于后续曹魏内部冲突。',
+    aliases: ['钟士季'], offices: [{ title: '曹魏伐蜀主将', polityId: 'wei_three', validFrom: 263, validTo: 264, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'shu-han-termination-263'] }],
+    keyEvents: ['shu-han-ended-263'], sourceIds: ['zizhi-tongjian', 'shu-han-termination-263'], uncertaintyNote: '钟会参与伐蜀军事链，但成都归降直接由刘禅与邓艾连接；264年事变与263年蜀汉终止分层表达。',
+  },
+  {
     personId: 'sun-quan', biography: '孙权继承孙氏在江东的军政基础，赤壁之战中与刘备共同抵抗曹操，随后在建业经营孙吴并完成称帝建国。',
     aliases: ['吴大帝', '孙仲谋'], offices: [
       { title: '东汉讨虏将军与江东统治者', polityId: 'han_eastern', placeId: 'jiankang', validFrom: 200, validTo: 220, datePrecision: 'range', sourceIds: ['zizhi-tongjian'] },

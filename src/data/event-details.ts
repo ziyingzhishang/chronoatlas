@@ -1294,6 +1294,26 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '221年是成都称帝与蜀汉建政节点，不把后期控制范围倒推为建政当年疆域；成都古城边界与现代成都市区也需分层。',
   },
   {
+    eventId: 'shu-han-ended-263',
+    participants: [
+      { personId: 'liu-chan', role: '蜀汉末代君主，263年成都失守后向邓艾归降', relationType: 'direct', note: '刘禅代表蜀汉中央政权的末代君主端点；“归降”表达成都终局中的政治承接，不等同于蜀地各处同日完成行政转换。' },
+      { personId: 'deng-ai', role: '由阴平进入成都并接受刘禅归降的曹魏将领', relationType: 'direct', note: '邓艾连接魏军入成都与刘禅归降；其个人军队行动不替代钟会等其他魏军方向，也不把263年写成全部蜀地即时接收。' },
+      { personId: 'zhong-hui', role: '曹魏伐蜀主将之一，参与成都终局前的军事进程', relationType: 'contextual', note: '钟会参与263年伐蜀军事链，但成都归降的直接人物端点是刘禅与邓艾；不把其后与邓艾的冲突回填为蜀汉终止本身。' },
+    ],
+    polityIds: ['shu_three', 'wei_three'],
+    causes: ['曹魏在三国后期完成对蜀汉的战略包围与伐蜀准备。', '蜀汉中央政权在魏军突破与成都危机中失去继续组织首都防御的能力。'],
+    consequences: ['蜀汉中央政权终止，曹魏承接成都及蜀汉中央政治秩序。', '刘禅归降、魏军路线和蜀地地方行政接收是连续但分层的过程。', '成都城市、道路水系与蜀汉历史遗产继续存在，政权终止不等于城市或遗产消失。'],
+    phases: [
+      { label: '魏军伐蜀', startYear: 263, endYear: 263, summary: '钟会、邓艾等曹魏军队从不同方向进入蜀汉战略空间。' },
+      { label: '邓艾入成都与刘禅归降', startYear: 263, endYear: 263, summary: '邓艾进入成都，刘禅归降，蜀汉中央政权终止。' },
+      { label: '曹魏承接与地方分层', startYear: 263, endYear: 264, summary: '曹魏承接成都中央政治秩序，蜀地各处接收和后续钟会、邓艾冲突另行分层。' },
+    ],
+    locationIds: ['chengdu'],
+    relatedEventIds: ['shu-han-founded', 'three-kingdoms'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'shu-han-termination-263'],
+    uncertaintyNote: '263年是魏军进入成都、刘禅归降与蜀汉中央政权终止的年份级节点；具体日月、魏军各路行动先后、蜀地地方归附和成都城市遗产延续不等于同一事实，也不等于全蜀地方在同日完成承接。',
+  },
+  {
     eventId: 'three-kingdoms',
     participants: [
       { personId: 'cao-cao', role: '曹魏政权形成前的北方军政基础奠定者', note: '曹操于220年前去世，未作为220年受禅即位者；此处记录其在曹魏形成链条中的前置作用。' },

@@ -44,9 +44,9 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'shu_three', perspectiveSummary: '蜀汉以汉室延续和成都盆地为政治基础，在三国竞争中形成相对独立的西南政权。',
     foundationProcess: ['刘备以汉室宗亲和军政联盟为政治资源。', '221年在成都称帝，蜀汉政权形成。', '成都兼具宫城、行政与连接蜀地交通网络的中心功能。'],
     turningPoints: [turn(221, '蜀汉建立', '刘备称帝，蜀汉进入正式建政阶段。'), turn(223, '夷陵之后', '刘备去世后，诸葛亮主持政权重建与对外战略。'), turn(263, '蜀汉灭亡', '魏军进入成都，蜀汉政权结束。')],
-    principalFigureIds: ['liu-bei'], capitalPhases: [capital('chengdu', 221, 263)],
-    heritageIds: ['shu-han-chengdu-city-site'], eventIds: ['shu-han-founded', 'three-kingdoms', 'jin-unification'], claimIds: ['claim-liu-bei-ruled-shu-three-closure'], sourceIds: modernSources,
-    uncertaintyNote: '蜀汉对汉统的政治主张与实际控制范围是不同层次；成都遗产节点表达城市历史层，不等于完整蜀汉疆域。',
+    principalFigureIds: ['liu-bei', 'liu-chan'], capitalPhases: [capital('chengdu', 221, 263)],
+    heritageIds: ['shu-han-chengdu-city-site'], eventIds: ['shu-han-founded', 'shu-han-ended-263', 'three-kingdoms', 'jin-unification'], claimIds: ['claim-liu-bei-ruled-shu-three-closure', 'claim-liu-chan-ruled-shu-three', 'claim-liu-chan-participated-shu-han-ended-263', 'claim-liu-chan-submitted-to-deng-ai-shu-han-termination-263', 'claim-deng-ai-participated-shu-han-ended-263', 'claim-zhong-hui-participated-shu-han-ended-263', 'claim-wei-three-succeeded-shu-three-263'], sourceIds: [...modernSources, 'shu-han-termination-263'],
+    uncertaintyNote: '蜀汉对汉统的政治主张与实际控制范围是不同层次；263年是中央政权终止与曹魏承接的年份级节点，不等于蜀地各处同日归附，也不等于成都城市遗产消失。',
   }),
   detail({
     polityId: 'wu_three', perspectiveSummary: '孙吴以江东军政网络和长江防线为基础，在三国竞争中形成长期政权，建业／建康是其政治中心。',

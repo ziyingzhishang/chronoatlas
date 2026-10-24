@@ -744,6 +744,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '刘先主赐名“汉丰县”', url: 'https://dfz.cq.gov.cn/fzyd/qk/202311/P020200609568017419302.pdf', detail: '地方志资料记载建安二十六年（221）刘备在成都称帝、国号汉，支持成都建政节点。' }, { title: '《资治通鉴》卷六十九·魏纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷069', detail: '用于核对刘备称帝及三国建政阶段的编年背景。' }],
   },
   {
+    id: 'shu-han-ended-263', year: 263, title: '魏灭蜀、蜀汉中央政权终止', summary: '魏军攻入成都，刘禅向邓艾归降，蜀汉中央政权在263年终止；地方秩序与成都城市遗产继续分层承接。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'china-chronology', 'shu-han-termination-263'], verification: 'checked',
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接',
+    background: '曹魏在263年发动对蜀汉的军事行动，邓艾由阴平方向进入成都，蜀汉中央政权面临首都失守与君主归降。',
+    process: '263年魏军进入成都，刘禅向邓艾归降，蜀汉中央政权由此终止；邓艾、钟会军队行动与蜀地后续行政接收是连续过程，不能压缩为一个无争议的日时刻。',
+    impact: '蜀汉退出三国中央政权序列，曹魏承接成都及蜀汉中央政治秩序；成都城市、交通网络和遗产并未因政权终止而消失。',
+    mapNote: '263年只标记蜀汉中央政权终止与曹魏承接的年份级节点，不把成都失守等同于蜀地各处同日完成归附，也不把城市历史层写成终止。',
+    references: [{ title: '《资治通鉴》卷七十八·魏灭蜀', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷078', detail: '用于核对263年邓艾入成都、刘禅归降与蜀汉中央政权终止的编年节点；不据此压缩地方行政接收和人物结局的全部过程。' }],
+  },
+  {
     id: 'wu-three-founded', year: 229, title: '孙吴建国完成', summary: '孙权在建业称帝，孙吴完成由江东政权向正式帝国政权的建国阶段。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '孙氏已在江东经营多年，222年进入相对独立阶段；至229年，孙权在建业称帝，制度名号进一步定型。',

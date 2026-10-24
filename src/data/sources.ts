@@ -438,6 +438,11 @@ export const sourceNotes: SourceNote[] = [
     scope: '1044年辽兴宗升云州为西京府及今大同城市史',
     note: '支持1044年西京设置与今大同映射；大同古城及云冈等遗存经历多时代叠压，不能直接视为辽代原构。',
   },
+  {
+    id: 'shu-han-termination-263', title: '《资治通鉴》卷七十八·魏灭蜀', authorOrInstitution: '司马光等', urlOrCitation: 'https://zh.wikisource.org/wiki/資治通鑑/卷078',
+    scope: '263年魏军伐蜀、邓艾进入成都、刘禅归降与蜀汉中央政权终止',
+    note: '用于263年年份级终止节点、刘禅向邓艾归降和曹魏承接方向；具体日月、各路军行动先后、蜀地地方接收及成都城市遗产延续不压缩为同一事实。',
+  },
 ];
 
 export const sourceById = Object.fromEntries(sourceNotes.map((source) => [source.id, source]));
