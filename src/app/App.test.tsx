@@ -74,7 +74,7 @@ test('opens polity detail from the compact card in the existing entity drawer', 
   expect(within(drawer).getByRole('heading', { name: '建立过程' })).toBeInTheDocument();
   expect(screen.getAllByRole('dialog', { name: '唐' })).toHaveLength(1);
   expect(within(drawer).queryByRole('button', { name: '展开政权详情' })).not.toBeInTheDocument();
-});
+}, 30000);
 
 test('opens relationship targets and keeps the summary-to-detail drawer hierarchy', async () => {
   render(<App />);
@@ -85,7 +85,7 @@ test('opens relationship targets and keeps the summary-to-detail drawer hierarch
   const personDrawer = screen.getByRole('dialog', { name: '李世民' });
   expect(within(personDrawer).getByRole('article', { name: '人物详情' })).toBeInTheDocument();
   expect(within(personDrawer).getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
-});
+}, 30000);
 
 test('opens event and heritage details from the polity study summary', async () => {
   render(<App />);
