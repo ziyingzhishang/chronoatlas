@@ -18815,6 +18815,63 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "southern-liang-xiping-city-layer",
+      "entityKey": "heritage:southern-liang-xiping-city-layer",
+      "label": "南凉西平政治中心候选历史层",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "southern-liang-xiping-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:southern-liang-xiping-city-layer"
+          ],
+          "relatedIds": [
+            "southern-liang-founded-397",
+            "southern_liang",
+            "tufa-wugu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "southern-tang-er-ling",
       "entityKey": "heritage:southern-tang-er-ling",
       "label": "南唐二陵",
@@ -44174,6 +44231,7 @@
             "event-detail:southern-liang-founded-397",
             "event-detail:southern-liang-moves-ledu",
             "heritage-detail:southern-liang-ledu-city-site",
+            "heritage-detail:southern-liang-xiping-city-layer",
             "person:tufa-lilugu",
             "person:tufa-rutan",
             "person:tufa-wugu"
@@ -44183,6 +44241,7 @@
             "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
             "southern-liang-moves-ledu",
+            "southern-liang-xiping-city-layer",
             "tufa-lilugu",
             "tufa-rutan",
             "tufa-wugu"
@@ -67635,6 +67694,63 @@
             "tufa-rutan",
             "tufa-wugu",
             "western_qin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:southern-liang-xiping-city-layer": {
+      "entityType": "heritage",
+      "entityId": "southern-liang-xiping-city-layer",
+      "entityKey": "heritage:southern-liang-xiping-city-layer",
+      "label": "南凉西平政治中心候选历史层",
+      "polityIds": [
+        "southern_liang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "southern-liang-xiping-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:southern-liang-xiping-city-layer"
+          ],
+          "relatedIds": [
+            "southern-liang-founded-397",
+            "southern_liang",
+            "tufa-wugu"
           ]
         },
         {
@@ -93007,6 +93123,7 @@
             "event-detail:southern-liang-founded-397",
             "event-detail:southern-liang-moves-ledu",
             "heritage-detail:southern-liang-ledu-city-site",
+            "heritage-detail:southern-liang-xiping-city-layer",
             "person:tufa-lilugu",
             "person:tufa-rutan",
             "person:tufa-wugu"
@@ -93016,6 +93133,7 @@
             "southern-liang-founded-397",
             "southern-liang-ledu-city-site",
             "southern-liang-moves-ledu",
+            "southern-liang-xiping-city-layer",
             "tufa-lilugu",
             "tufa-rutan",
             "tufa-wugu"
@@ -95605,9 +95723,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 127,
+      "totalEntities": 128,
       "statusCounts": {
-        "covered": 635,
+        "covered": 640,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -98337,6 +98455,7 @@
         "event:southern-liang-founded-397",
         "event:southern-liang-moves-ledu",
         "heritage:southern-liang-ledu-city-site",
+        "heritage:southern-liang-xiping-city-layer",
         "person:tufa-lilugu",
         "person:tufa-rutan",
         "person:tufa-wugu",
@@ -103741,6 +103860,7 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:southern-liang-founded-397",
+        "heritage:southern-liang-xiping-city-layer",
         "person:tufa-wugu"
       ],
       "gaps": [
