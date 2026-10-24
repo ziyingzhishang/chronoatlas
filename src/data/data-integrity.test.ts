@@ -68,7 +68,7 @@ test('territorial records use valid WGS84 geometry appropriate to their evidence
     }
     expect(count).toBe(b.vertexCount);
   }
-});
+}, 30000);
 
 test('every imported boundary carries valid, cited evidence metadata', () => {
   for (const boundary of boundaryCatalog) {

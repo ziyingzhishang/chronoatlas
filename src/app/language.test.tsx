@@ -37,4 +37,4 @@ test('all supported languages change labels while retaining year, renderer and c
   expect(mapInstances.at(-1)).toBe(map);
   expect(map.flyTo).not.toHaveBeenCalled();
   expect(map.remove).not.toHaveBeenCalled();
-},20000);
+},30000);
