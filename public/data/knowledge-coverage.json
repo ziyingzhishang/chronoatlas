@@ -1320,6 +1320,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "eastern-jin-ended-420",
+      "entityKey": "event:eastern-jin-ended-420",
+      "label": "东晋在建康受禅终止、刘宋承接",
+      "polityIds": [
+        "jin_eastern",
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "eastern-jin-ended-420"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:eastern-jin-ended-420"
+          ],
+          "relatedIds": [
+            "eastern-jin",
+            "jin_eastern",
+            "liu-song-founded",
+            "liu-yu",
+            "sima-dewen",
+            "song_southern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "eastern-wei-ended-550",
       "entityKey": "event:eastern-wei-ended-550",
       "label": "东魏禅代终止、北齐承接",
@@ -4450,6 +4512,69 @@
             "khitan",
             "liao-founded",
             "shengzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "liu-song-ended-479",
+      "entityKey": "event:liu-song-ended-479",
+      "label": "刘宋在建康终止",
+      "polityIds": [
+        "qi_southern",
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liu-song-ended-479"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-zhun-participated-liu-song-ended-479",
+            "claim:claim-xiao-daocheng-participated-liu-song-ended-479",
+            "event-detail:liu-song-ended-479"
+          ],
+          "relatedIds": [
+            "liu-song-founded",
+            "liu-zhun",
+            "qi_southern",
+            "song_southern",
+            "southern-qi-founded",
+            "xiao-daocheng"
           ]
         },
         {
@@ -10050,6 +10175,68 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-jin-loses-changan",
+      "entityKey": "event:western-jin-loses-changan",
+      "label": "西晋失守长安、北方中央终止",
+      "polityIds": [
+        "former_zhao",
+        "jin_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-jin-loses-changan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:western-jin-loses-changan"
+          ],
+          "relatedIds": [
+            "eastern-jin",
+            "former-zhao-capital-changan",
+            "former_zhao",
+            "jin_western",
+            "liu-yao",
+            "sima-ye"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "western-liang-state-founded",
       "entityKey": "event:western-liang-state-founded",
       "label": "西凉政权建立",
@@ -13959,6 +14146,7 @@
             "eastern-jin",
             "jin_eastern",
             "liang_southern",
+            "liu-song-ended-479",
             "qi_southern",
             "song_southern",
             "southern-chen-ended-589",
@@ -17338,6 +17526,7 @@
             "chen-baxian",
             "chen_southern",
             "liang_southern",
+            "liu-song-ended-479",
             "qi_southern",
             "song_southern",
             "southern-chen-founded",
@@ -26547,6 +26736,7 @@
             "claim:claim-shi-le-enemy-liu-yao",
             "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
+            "event-detail:western-jin-loses-changan",
             "person-polity:liu-yao:former_zhao"
           ],
           "relatedIds": [
@@ -26554,7 +26744,8 @@
             "former-zhao-founded",
             "former_zhao",
             "shi-hu",
-            "shi-le"
+            "shi-le",
+            "western-jin-loses-changan"
           ]
         },
         {
@@ -26749,6 +26940,7 @@
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
             "claim:claim-murong-chao-enemy-liu-yu-termination-410",
             "claim:claim-yao-hong-enemy-liu-yu-termination-417",
+            "event-detail:eastern-jin-ended-420",
             "event-detail:later-qin-falls-changan",
             "event-detail:liu-song-founded",
             "event-detail:liu-yu-captures-changan",
@@ -26757,6 +26949,7 @@
           ],
           "relatedIds": [
             "eastern-jin",
+            "eastern-jin-ended-420",
             "later-qin-falls-changan",
             "liu-muzi",
             "liu-song-founded",
@@ -32843,13 +33036,18 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479",
             "claim:claim-xiao-daocheng-founded-southern-qi",
+            "claim:claim-xiao-daocheng-participated-liu-song-ended-479",
             "claim:claim-xiao-daocheng-related-xiao-yan",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
+            "event-detail:liu-song-ended-479",
             "event-detail:southern-qi-founded",
             "person-polity:xiao-daocheng:qi_southern"
           ],
           "relatedIds": [
+            "liu-song-ended-479",
+            "liu-zhun",
             "qi_southern",
             "southern-qi-founded",
             "xiao-yan"
@@ -37049,6 +37247,7 @@
             "event-detail:former-zhao-capital-changan",
             "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
+            "event-detail:western-jin-loses-changan",
             "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
             "person:liu-yao"
@@ -37060,7 +37259,8 @@
             "former-zhao-ended-329",
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
-            "liu-yao"
+            "liu-yao",
+            "western-jin-loses-changan"
           ]
         },
         {
@@ -37595,6 +37795,7 @@
             "claim:claim-sima-rui-ruled-eastern-jin",
             "event-detail:cheng-han-ended-347",
             "event-detail:eastern-jin",
+            "event-detail:eastern-jin-ended-420",
             "event-detail:liu-yu-captures-changan",
             "heritage-detail:cheng-han-chengdu-site",
             "heritage-detail:jiankang-six-dynasties-city-site",
@@ -37608,6 +37809,7 @@
             "cheng-han-chengdu-site",
             "cheng-han-ended-347",
             "eastern-jin",
+            "eastern-jin-ended-420",
             "huan-wen",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
@@ -39416,6 +39618,7 @@
             "claim:claim-xiao-baorong-ruled-southern-qi",
             "claim:claim-xiao-daocheng-founded-southern-qi",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
+            "event-detail:liu-song-ended-479",
             "event-detail:southern-qi-ended-502",
             "event-detail:southern-qi-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
@@ -39427,6 +39630,7 @@
           "relatedIds": [
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
+            "liu-song-ended-479",
             "southern-dynasties-stone-carvings",
             "southern-qi-ended-502",
             "southern-qi-founded",
@@ -40241,6 +40445,9 @@
           "evidenceIds": [
             "claim:claim-liu-yilong-ruled-liu-song-ninetyfifth",
             "claim:claim-liu-yu-founded-liu-song",
+            "claim:claim-liu-zhun-ruled-liu-song",
+            "event-detail:eastern-jin-ended-420",
+            "event-detail:liu-song-ended-479",
             "event-detail:liu-song-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
@@ -40250,12 +40457,15 @@
             "person:liu-yu"
           ],
           "relatedIds": [
+            "eastern-jin-ended-420",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
             "liu-muzi",
+            "liu-song-ended-479",
             "liu-song-founded",
             "liu-yilong",
             "liu-yu",
+            "liu-zhun",
             "southern-dynasties-stone-carvings"
           ]
         },
@@ -45825,6 +46035,68 @@
         }
       ]
     },
+    "event:eastern-jin-ended-420": {
+      "entityType": "event",
+      "entityId": "eastern-jin-ended-420",
+      "entityKey": "event:eastern-jin-ended-420",
+      "label": "东晋在建康受禅终止、刘宋承接",
+      "polityIds": [
+        "jin_eastern",
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "eastern-jin-ended-420"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:eastern-jin-ended-420"
+          ],
+          "relatedIds": [
+            "eastern-jin",
+            "jin_eastern",
+            "liu-song-founded",
+            "liu-yu",
+            "sima-dewen",
+            "song_southern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:eastern-wei-ended-550": {
       "entityType": "event",
       "entityId": "eastern-wei-ended-550",
@@ -48957,6 +49229,69 @@
             "khitan",
             "liao-founded",
             "shengzong-liao"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:liu-song-ended-479": {
+      "entityType": "event",
+      "entityId": "liu-song-ended-479",
+      "entityKey": "event:liu-song-ended-479",
+      "label": "刘宋在建康终止",
+      "polityIds": [
+        "qi_southern",
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "liu-song-ended-479"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-zhun-participated-liu-song-ended-479",
+            "claim:claim-xiao-daocheng-participated-liu-song-ended-479",
+            "event-detail:liu-song-ended-479"
+          ],
+          "relatedIds": [
+            "liu-song-founded",
+            "liu-zhun",
+            "qi_southern",
+            "song_southern",
+            "southern-qi-founded",
+            "xiao-daocheng"
           ]
         },
         {
@@ -54555,6 +54890,68 @@
         }
       ]
     },
+    "event:western-jin-loses-changan": {
+      "entityType": "event",
+      "entityId": "western-jin-loses-changan",
+      "entityKey": "event:western-jin-loses-changan",
+      "label": "西晋失守长安、北方中央终止",
+      "polityIds": [
+        "former_zhao",
+        "jin_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-jin-loses-changan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:western-jin-loses-changan"
+          ],
+          "relatedIds": [
+            "eastern-jin",
+            "former-zhao-capital-changan",
+            "former_zhao",
+            "jin_western",
+            "liu-yao",
+            "sima-ye"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:western-liang-state-founded": {
       "entityType": "event",
       "entityId": "western-liang-state-founded",
@@ -58466,6 +58863,7 @@
             "eastern-jin",
             "jin_eastern",
             "liang_southern",
+            "liu-song-ended-479",
             "qi_southern",
             "song_southern",
             "southern-chen-ended-589",
@@ -61845,6 +62243,7 @@
             "chen-baxian",
             "chen_southern",
             "liang_southern",
+            "liu-song-ended-479",
             "qi_southern",
             "song_southern",
             "southern-chen-founded",
@@ -71054,6 +71453,7 @@
             "claim:claim-shi-le-enemy-liu-yao",
             "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
+            "event-detail:western-jin-loses-changan",
             "person-polity:liu-yao:former_zhao"
           ],
           "relatedIds": [
@@ -71061,7 +71461,8 @@
             "former-zhao-founded",
             "former_zhao",
             "shi-hu",
-            "shi-le"
+            "shi-le",
+            "western-jin-loses-changan"
           ]
         },
         {
@@ -71256,6 +71657,7 @@
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
             "claim:claim-murong-chao-enemy-liu-yu-termination-410",
             "claim:claim-yao-hong-enemy-liu-yu-termination-417",
+            "event-detail:eastern-jin-ended-420",
             "event-detail:later-qin-falls-changan",
             "event-detail:liu-song-founded",
             "event-detail:liu-yu-captures-changan",
@@ -71264,6 +71666,7 @@
           ],
           "relatedIds": [
             "eastern-jin",
+            "eastern-jin-ended-420",
             "later-qin-falls-changan",
             "liu-muzi",
             "liu-song-founded",
@@ -77350,13 +77753,18 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479",
             "claim:claim-xiao-daocheng-founded-southern-qi",
+            "claim:claim-xiao-daocheng-participated-liu-song-ended-479",
             "claim:claim-xiao-daocheng-related-xiao-yan",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
+            "event-detail:liu-song-ended-479",
             "event-detail:southern-qi-founded",
             "person-polity:xiao-daocheng:qi_southern"
           ],
           "relatedIds": [
+            "liu-song-ended-479",
+            "liu-zhun",
             "qi_southern",
             "southern-qi-founded",
             "xiao-yan"
@@ -81556,6 +81964,7 @@
             "event-detail:former-zhao-capital-changan",
             "event-detail:former-zhao-ended-329",
             "event-detail:former-zhao-founded",
+            "event-detail:western-jin-loses-changan",
             "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
             "person:liu-yao"
@@ -81567,7 +81976,8 @@
             "former-zhao-ended-329",
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
-            "liu-yao"
+            "liu-yao",
+            "western-jin-loses-changan"
           ]
         },
         {
@@ -82102,6 +82512,7 @@
             "claim:claim-sima-rui-ruled-eastern-jin",
             "event-detail:cheng-han-ended-347",
             "event-detail:eastern-jin",
+            "event-detail:eastern-jin-ended-420",
             "event-detail:liu-yu-captures-changan",
             "heritage-detail:cheng-han-chengdu-site",
             "heritage-detail:jiankang-six-dynasties-city-site",
@@ -82115,6 +82526,7 @@
             "cheng-han-chengdu-site",
             "cheng-han-ended-347",
             "eastern-jin",
+            "eastern-jin-ended-420",
             "huan-wen",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
@@ -83923,6 +84335,7 @@
             "claim:claim-xiao-baorong-ruled-southern-qi",
             "claim:claim-xiao-daocheng-founded-southern-qi",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
+            "event-detail:liu-song-ended-479",
             "event-detail:southern-qi-ended-502",
             "event-detail:southern-qi-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
@@ -83934,6 +84347,7 @@
           "relatedIds": [
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
+            "liu-song-ended-479",
             "southern-dynasties-stone-carvings",
             "southern-qi-ended-502",
             "southern-qi-founded",
@@ -84748,6 +85162,9 @@
           "evidenceIds": [
             "claim:claim-liu-yilong-ruled-liu-song-ninetyfifth",
             "claim:claim-liu-yu-founded-liu-song",
+            "claim:claim-liu-zhun-ruled-liu-song",
+            "event-detail:eastern-jin-ended-420",
+            "event-detail:liu-song-ended-479",
             "event-detail:liu-song-founded",
             "heritage-detail:jiankang-six-dynasties-city-site",
             "heritage-detail:jiankang-taicheng-site",
@@ -84757,12 +85174,15 @@
             "person:liu-yu"
           ],
           "relatedIds": [
+            "eastern-jin-ended-420",
             "jiankang-six-dynasties-city-site",
             "jiankang-taicheng-site",
             "liu-muzi",
+            "liu-song-ended-479",
             "liu-song-founded",
             "liu-yilong",
             "liu-yu",
+            "liu-zhun",
             "southern-dynasties-stone-carvings"
           ]
         },
@@ -87296,9 +87716,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 203,
+      "totalEntities": 206,
       "statusCounts": {
-        "covered": 973,
+        "covered": 988,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -87871,6 +88291,7 @@
       "entityKeys": [
         "event:former-zhao-ended-329",
         "event:former-zhao-founded",
+        "event:western-jin-loses-changan",
         "heritage:former-zhao-changan-city-layer",
         "heritage:former-zhao-xiangguo-city-site",
         "person:liu-yao",
@@ -88195,6 +88616,7 @@
       "entityKeys": [
         "event:cheng-han-ended-347",
         "event:eastern-jin",
+        "event:eastern-jin-ended-420",
         "event:liu-song-founded",
         "heritage:cheng-han-chengdu-site",
         "heritage:jiankang-six-dynasties-city-site",
@@ -88287,6 +88709,7 @@
       "entityKeys": [
         "event:jin-unification",
         "event:western-jin-founded",
+        "event:western-jin-loses-changan",
         "heritage:luoyang-han-wei-city-site",
         "person:sima-yan",
         "polity:jin_western"
@@ -89323,6 +89746,7 @@
       "polityId": "qi_southern",
       "polityName": "南齐",
       "entityKeys": [
+        "event:liu-song-ended-479",
         "event:southern-qi-ended-502",
         "event:southern-qi-founded",
         "heritage:jiankang-six-dynasties-city-site",
@@ -89863,7 +90287,9 @@
       "polityName": "刘宋",
       "entityKeys": [
         "event:eastern-jin",
+        "event:eastern-jin-ended-420",
         "event:later-qin-falls-changan",
+        "event:liu-song-ended-479",
         "event:liu-song-founded",
         "event:southern-yan-ended-410",
         "heritage:jiankang-six-dynasties-city-site",
@@ -91867,6 +92293,7 @@
         "event:tang-changan-end",
         "event:tang-founded",
         "event:tang-founded-changan",
+        "event:western-jin-loses-changan",
         "event:western-wei-ended-557",
         "event:western-wei-founded",
         "event:western-zhou-founded-eighth-batch",
@@ -91915,6 +92342,7 @@
         "person:liu-yao",
         "person:liu-yu",
         "person:shi-le",
+        "person:sima-ye",
         "person:wang-mang",
         "person:xiao-he",
         "person:xuan-zang",
@@ -92981,7 +93409,9 @@
       "capitalRecordCount": 9,
       "entityKeys": [
         "event:eastern-jin",
+        "event:eastern-jin-ended-420",
         "event:jin-unification",
+        "event:liu-song-ended-479",
         "event:liu-song-founded",
         "event:republic-founded",
         "event:song-linan-center-formed",
@@ -93011,6 +93441,8 @@
         "person:li-jing",
         "person:li-yu",
         "person:liu-yu",
+        "person:liu-zhun",
+        "person:sima-dewen",
         "person:sima-rui",
         "person:sun-quan",
         "person:xiao-baorong",

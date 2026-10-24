@@ -61,7 +61,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['司马氏在魏廷掌握军政权力。', '265年司马炎受禅建立西晋。', '280年灭吴完成短暂统一，但八王之乱及北方战争随后改变政权结构。'],
     turningPoints: [turn(265, '西晋建立', '司马炎受魏禅建立晋朝。', 'western-jin-founded'), turn(280, '灭吴统一', '三国鼎立结束。', 'jin-unification'), turn(311, '洛阳失守', '正式都城失守，晋廷政治中心转向长安。')],
     principalFigureIds: ['sima-yan'], capitalPhases: [capital('luoyang', 265, 311), capital('changan', 312, 316, 'primary', 'actual', '末期实际政治中心')],
-    heritageIds: ['luoyang-han-wei-city-site'], eventIds: ['western-jin-founded', 'jin-unification'], claimIds: ['claim-sima-yan-founded-western-jin'], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site', 'western-jin-changan-city-layer'], eventIds: ['western-jin-founded', 'jin-unification', 'western-jin-loses-changan'], claimIds: ['claim-sima-yan-founded-western-jin', 'claim-sima-ye-ruled-western-jin', 'claim-sima-ye-participated-western-jin-loses-changan'], sourceIds: modernSources,
     uncertaintyNote: '280年统一与265年建政不可合并为一个疆域节点；311年后的长安是后期实际中心，不应反写成全期正式首都。',
   }),
   detail({
@@ -69,7 +69,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['西晋北方秩序崩解后，司马睿在江东成为晋室重建核心。', '317年称晋王，318年称帝，两个节点共同构成东晋建立过程。', '建康成为东晋正式都城和南朝政治中心的前身。'],
     turningPoints: [turn(317, '晋室南渡建政', '司马睿在建康重建晋朝。', 'eastern-jin'), turn(383, '淝水前后', '北方统一尝试失败，东晋南方格局得到延续。'), turn(420, '刘裕受禅', '东晋结束，南朝刘宋开始。')],
     principalFigureIds: ['sima-rui', 'huan-wen'], capitalPhases: [capital('jiankang', 317, 420)],
-    heritageIds: ['jiankang-taicheng-site', 'jiankang-six-dynasties-city-site'], eventIds: ['eastern-jin', 'jin-unification', 'cheng-han-ended-347'], claimIds: ['claim-sima-rui-ruled-eastern-jin'], sourceIds: modernSources,
+    heritageIds: ['jiankang-taicheng-site', 'jiankang-six-dynasties-city-site'], eventIds: ['eastern-jin', 'jin-unification', 'cheng-han-ended-347', 'eastern-jin-ended-420'], claimIds: ['claim-sima-rui-ruled-eastern-jin', 'claim-sima-dewen-ruled-eastern-jin', 'claim-sima-dewen-participated-eastern-jin-ended-420'], sourceIds: modernSources,
     uncertaintyNote: '“南渡”是政治与人口过程，不应简化为一次性迁移；建康遗产存在六朝叠压，具体宫城层次需分别标注。',
   }),
   detail({
@@ -180,8 +180,8 @@ export const polityDetails: PolityDetail[] = [
     polityId: 'song_southern', perspectiveSummary: '刘宋由刘裕在东晋末年军政整合与受禅中建立，以建康为都，延续南朝的江南国家形态并面对南北长期竞争。',
     foundationProcess: ['刘裕通过北伐、平乱与朝廷控制取得建政基础。', '420年受东晋禅让建立刘宋。', '建康继续作为南朝政治中心，政权的疆域与军政整合按阶段展开。'],
     turningPoints: [turn(420, '刘宋建立', '刘裕受禅建立南朝刘宋。', 'liu-song-founded'), turn(424, '元嘉政局展开', '刘宋进入皇权重建与江南治理阶段。'), turn(479, '刘宋禅代', '萧道成受禅，刘宋转入南齐。')],
-    principalFigureIds: ['liu-yu', 'liu-yilong', 'liu-muzi'], capitalPhases: [capital('jiankang', 420, 479)],
-    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['liu-song-founded'], claimIds: ['claim-liu-yu-founded-liu-song'], sourceIds: modernSources,
+    principalFigureIds: ['liu-yu', 'liu-yilong', 'liu-muzi', 'liu-zhun'], capitalPhases: [capital('jiankang', 420, 479)],
+    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['liu-song-founded', 'liu-song-ended-479'], claimIds: ['claim-liu-yu-founded-liu-song', 'claim-liu-zhun-ruled-liu-song', 'claim-liu-zhun-participated-liu-song-ended-479', 'claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479', 'claim-xiao-daocheng-participated-liu-song-ended-479'], sourceIds: modernSources,
     uncertaintyNote: '刘穆之主要参与建宋前的军政整合，刘义隆属于后续继承治理阶段；建康六朝遗址与南朝陵墓石刻是叠压城市遗产，不是刘宋单一建筑的直接保存。',
   }),
   detail({

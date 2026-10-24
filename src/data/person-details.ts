@@ -42,7 +42,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'liu-yao', biography: '刘曜是十六国时期前赵的重要君主，前赵经营关中时，长安成为北方政治竞争的关键节点。',
     aliases: [], offices: [{ title: '前赵皇帝', polityId: 'former_zhao', placeId: 'changan', validFrom: 318, validTo: 329, datePrecision: 'range', sourceIds }],
-    keyEvents: ['changan-former-zhao', 'former-zhao-ended-329'], sourceIds,
+    keyEvents: ['western-jin-loses-changan', 'changan-former-zhao', 'former-zhao-ended-329'], sourceIds,
     uncertaintyNote: '十六国时期的政治中心和直接控制范围变化频繁；刘曜与329年长安失守、前赵终止相关，但不能据此把前赵全期简化为单一都城或连续边界。',
   },
   {
@@ -271,7 +271,12 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'xiao-daocheng', biography: '萧道成在刘宋末年掌握军政要务，受禅建立南齐，建康仍是南朝核心都城。',
     aliases: ['齐高帝'], offices: [{ title: '南齐皇帝', polityId: 'qi_southern', placeId: 'jiankang', validFrom: 479, validTo: 482, datePrecision: 'range', sourceIds }],
-    keyEvents: ['southern-qi-founded'], sourceIds, uncertaintyNote: '479年受禅与南齐对各地的实际整合是不同过程，详情不从称帝节点推导完整疆域。',
+    keyEvents: ['liu-song-ended-479', 'southern-qi-founded'], sourceIds, uncertaintyNote: '479年受禅同时连接刘宋终止与南齐建立；南齐对各地的实际整合是不同过程，详情不从称帝节点推导完整疆域。',
+  },
+  {
+    personId: 'liu-zhun', biography: '刘准即宋顺帝，是刘宋末代君主。479年在建康禅位于萧道成，刘宋中央政权由此终止，南齐承接南朝政治中心。',
+    aliases: ['宋顺帝', '刘宋末帝'], offices: [{ title: '刘宋末代皇帝', polityId: 'song_southern', placeId: 'jiankang', validFrom: 477, validTo: 479, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['liu-song-ended-479'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘准对应479年建康禅代终局；个人退位、萧道成受禅和南齐地方接收是连续但可区分的事实层。',
   },
   {
     personId: 'xiao-baorong', biography: '萧宝融是南齐和帝与末代君主。南齐末年萧衍控制建康朝廷，502年萧宝融在建康禅位，南齐政权终止并转入南梁阶段。',
@@ -411,7 +416,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'liu-yu', biography: '刘裕在东晋末年通过北伐与军政整合取得权力，最终受禅建立刘宋，开启南朝新阶段。',
     aliases: ['宋武帝'], offices: [{ title: '刘宋皇帝', polityId: 'song_southern', placeId: 'jiankang', validFrom: 420, validTo: 422, datePrecision: 'range', sourceIds }],
-    keyEvents: ['eastern-jin'], sourceIds, uncertaintyNote: '东晋末年掌权、北伐和420年受禅建宋是连续过程；本详情用东晋政权节点导航，不把其等同于单一战役。',
+    keyEvents: ['eastern-jin', 'eastern-jin-ended-420'], sourceIds, uncertaintyNote: '东晋末年掌权、北伐、420年受禅终止东晋与建宋是连续但可区分的过程；本详情不把其等同于单一战役。',
   },
   {
     personId: 'murong-chui', biography: '慕容垂曾在前秦体系中任职，淝水之战后重建慕容氏政权，后燕由此形成。',
@@ -462,6 +467,16 @@ export const personDetails: PersonDetail[] = [
     personId: 'sima-rui', biography: '司马睿是西晋宗室，北方秩序崩解后在江东士族支持下于建康重建晋室，东晋由此展开。',
     aliases: ['晋元帝'], offices: [{ title: '东晋皇帝', polityId: 'jin_eastern', placeId: 'jiankang', validFrom: 317, validTo: 323, datePrecision: 'range', sourceIds }],
     keyEvents: ['eastern-jin'], sourceIds, uncertaintyNote: '317年称晋王、318年称帝是连续但不同的建政节点；建康政治中心身份不代表东晋当年已恢复西晋旧境。',
+  },
+  {
+    personId: 'sima-ye', biography: '司马邺是西晋末帝。316年刘曜攻取长安后出降，西晋北方中央政权终止；其个人结局与317年司马睿在建康重建晋室分开表达。',
+    aliases: ['晋愍帝', '西晋末帝'], offices: [{ title: '西晋末代皇帝', polityId: 'jin_western', placeId: 'changan', validFrom: 313, validTo: 316, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-jin-loses-changan'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '316年长安失守与317年东晋建政是相邻但不同的政权转换节点，不把司马邺的末帝阶段延伸为东晋。',
+  },
+  {
+    personId: 'sima-dewen', biography: '司马德文是东晋末帝。420年在建康向刘裕禅位，东晋中央政权终止；刘宋建政和建康城市遗产承接另按事件与遗产层记录。',
+    aliases: ['晋恭帝', '东晋末帝'], offices: [{ title: '东晋末代皇帝', polityId: 'jin_eastern', placeId: 'jiankang', validFrom: 418, validTo: 420, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['eastern-jin-ended-420'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '420年禅代标记东晋中央政权终止，不把司马德文个人退位与刘宋全期治理或南北疆域变化混为一谈。',
   },
   {
     personId: 'yuwen-yong', biography: '宇文邕是北周武帝，在宇文泰建立的关中军政基础上推进制度和军事整合，北周由此具备继续北伐的能力。',
