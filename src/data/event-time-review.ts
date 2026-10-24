@@ -85,6 +85,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'tibetan-yalong-center', status: 'confirmed', expectedPrecision: 'range', explanation: '618—629年表示吐蕃雅砻早期政治中心阶段；这是阶段范围，不是新的单日建政节点。', timelineStrategy: 'range-band' },
   { eventId: 'tibetan-ended-842', status: 'approximate', expectedPrecision: 'approximate', explanation: '842年前后表示吐蕃统一政治结构进入解体阶段；王权终止、继承竞争和地方化并非同日完成。', timelineStrategy: 'approximate-marker' },
   { eventId: 'an-lushan-rebellion', status: 'confirmed', expectedPrecision: 'range', explanation: '安史之乱的755—763年区间有明确编年边界，但战局和控制范围随阶段变化。', timelineStrategy: 'range-band' },
+  { eventId: 'tang-changan-end', status: 'confirmed', expectedPrecision: 'year', explanation: '907年唐亡与后梁建立构成明确的政权终止—承接节点；904年迁洛是重要前置过程，长安城市功能与地方社会延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'xuanzang-at-ximing-658', status: 'confirmed', expectedPrecision: 'range', explanation: '玄奘在西明寺的活动限定为658—659年阶段，次年赴玉华寺，不能扩展为其全部译经生涯。', timelineStrategy: 'range-band' },
   { eventId: 'shangyang-palace-built', status: 'confirmed', expectedPrecision: 'range', explanation: '上阳宫始建材料只明确为上元年间，674—676年是稳妥范围，675年为通行整理年；不能升级为绝对单年。', timelineStrategy: 'range-band' },
   { eventId: 'daming-palace-built', status: 'approximate', expectedPrecision: 'approximate', explanation: '大明宫营建是持续工程，634年前后只作启动阶段约年，不能把全部宫城建成压缩为单一日期。', timelineStrategy: 'approximate-marker' },

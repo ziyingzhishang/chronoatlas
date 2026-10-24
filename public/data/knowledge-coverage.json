@@ -9234,11 +9234,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-zhu-wen-participated-tang-changan-end",
             "event-detail:tang-changan-end"
           ],
           "relatedIds": [
             "court-moves-luoyang",
             "five-dynasties",
+            "later-liang-five-dynasties-founded",
+            "liang_later",
             "tang",
             "zhu-wen"
           ]
@@ -17769,6 +17772,7 @@
             "sui",
             "sui-unification",
             "tang",
+            "tang-changan-end",
             "tang-founded",
             "yang-jian"
           ]
@@ -35730,6 +35734,7 @@
             "claim:claim-wang-shenzhi-ally-zhu-wen-seventyeighth",
             "claim:claim-wang-shenzhi-served-zhu-wen",
             "claim:claim-zhu-wen-participated-five-dynasties-fiftyfifth",
+            "claim:claim-zhu-wen-participated-tang-changan-end",
             "claim:claim-zhu-wen-ruled-later-liang-fortythird",
             "event-detail:court-moves-luoyang",
             "event-detail:five-dynasties",
@@ -38327,6 +38332,7 @@
             "event-detail:five-dynasties",
             "event-detail:later-liang-ended-923",
             "event-detail:later-liang-five-dynasties-founded",
+            "event-detail:tang-changan-end",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-liang-kaifeng-city-layer",
             "person:zhu-wen",
@@ -38339,6 +38345,7 @@
             "later-liang-ended-923",
             "later-liang-five-dynasties-founded",
             "later-liang-kaifeng-city-layer",
+            "tang-changan-end",
             "zhu-wen",
             "zhu-youzhen"
           ]
@@ -53593,11 +53600,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-zhu-wen-participated-tang-changan-end",
             "event-detail:tang-changan-end"
           ],
           "relatedIds": [
             "court-moves-luoyang",
             "five-dynasties",
+            "later-liang-five-dynasties-founded",
+            "liang_later",
             "tang",
             "zhu-wen"
           ]
@@ -62128,6 +62138,7 @@
             "sui",
             "sui-unification",
             "tang",
+            "tang-changan-end",
             "tang-founded",
             "yang-jian"
           ]
@@ -80089,6 +80100,7 @@
             "claim:claim-wang-shenzhi-ally-zhu-wen-seventyeighth",
             "claim:claim-wang-shenzhi-served-zhu-wen",
             "claim:claim-zhu-wen-participated-five-dynasties-fiftyfifth",
+            "claim:claim-zhu-wen-participated-tang-changan-end",
             "claim:claim-zhu-wen-ruled-later-liang-fortythird",
             "event-detail:court-moves-luoyang",
             "event-detail:five-dynasties",
@@ -82686,6 +82698,7 @@
             "event-detail:five-dynasties",
             "event-detail:later-liang-ended-923",
             "event-detail:later-liang-five-dynasties-founded",
+            "event-detail:tang-changan-end",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-liang-kaifeng-city-layer",
             "person:zhu-wen",
@@ -82698,6 +82711,7 @@
             "later-liang-ended-923",
             "later-liang-five-dynasties-founded",
             "later-liang-kaifeng-city-layer",
+            "tang-changan-end",
             "zhu-wen",
             "zhu-youzhen"
           ]
@@ -92880,6 +92894,7 @@
         "event:northern-song-founded",
         "event:song-founded",
         "event:song-southward",
+        "event:tang-changan-end",
         "event:zhou-later-founded",
         "heritage:jin-kaifeng-city-layer",
         "heritage:kaifeng-later-jin-han-city-layer",

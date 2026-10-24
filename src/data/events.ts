@@ -1861,7 +1861,7 @@ const catalog: HistoricalEvent[] = [
   },
   {
     id: 'tang-changan-end', year: 907, title: '唐亡与长安政治中心转移', summary: '唐朝结束后，长安不再是中原王朝持续稳定的首都。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'capital-history-reference'],
-    datePrecision: 'year', region: 'china', category: '城市史／都城转移', verification: 'partial',
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'partial',
     background: '唐末中央权力衰落，长安的持续性都城功能已在朱全忠控制朝廷与迁洛过程中明显削弱。',
     process: '907年唐亡、后梁建立，长安不再承担中原王朝持续稳定的帝国首都角色。',
     impact: '长安由帝国首都转为后续历史中的区域与文化中心，城市政治功能进入新的阶段。',

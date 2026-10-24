@@ -13,7 +13,6 @@ const expectedEventIds = [
   'eastern-wei-ended-550',
   'northern-qi-ended-577',
   'northern-zhou-ended-581',
-  'sui-ended-618',
   'western-wei-ended-557',
   'qin-state-founded-eighth-batch',
   'chu-warring-founded-eighth-batch',
@@ -33,6 +32,7 @@ const expectedEventIds = [
   'tibetan-yalong-center',
   'tibetan-ended-842',
   'an-lushan-rebellion',
+  'tang-changan-end',
   'xuanzang-at-ximing-658',
   'shangyang-palace-built',
   'daming-palace-built',
@@ -79,12 +79,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(65);
+    expect(report.totalReviewed).toBe(66);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 30, approximate: 35, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 31, approximate: 35, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

@@ -236,7 +236,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'zhu-wen', biography: '朱温建立后梁，唐亡后长安不再是中原王朝持续稳定的首都。',
     aliases: ['朱全忠'], offices: [{ title: '后梁皇帝', polityId: 'liang_later', validFrom: 907, validTo: 912, datePrecision: 'range', sourceIds }],
-    keyEvents: ['tang-changan-end', 'five-dynasties'], sourceIds, uncertaintyNote: '后梁都城并非长安，本详情将其作为长安政治中心转移后的对照人物。',
+    keyEvents: ['tang-changan-end', 'later-liang-five-dynasties-founded', 'five-dynasties'], sourceIds, uncertaintyNote: '后梁都城并非长安，本详情将其作为907年唐亡、后梁建立与长安政治中心转移的对照人物。',
   },
   {
     personId: 'zhu-youzhen', biography: '朱友贞是后梁末帝。923年后唐军攻入开封后，朱友贞自尽，后梁统一政治结构终止；开封城市遗产则继续进入后唐及后续五代城市层。',
