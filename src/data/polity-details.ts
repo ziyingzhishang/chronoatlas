@@ -610,7 +610,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['努尔哈赤通过战争、联盟和八旗组织整合建州女真。', '1616年建立后金，赫图阿拉是早期政治中心。', '后金继续向辽东推进，改国号为清与入关分别属于后续阶段。'],
     turningPoints: [turn(1616, '后金建立', '努尔哈赤建立后金并确立汗国体制。', 'later-jin-founded'), turn(1625, '迁往盛京阶段', '政治中心由赫图阿拉转向辽东更大的城市空间。'), turn(1636, '改国号为清', '后金国家形态转入清政权阶段。', 'qing-founded')],
     principalFigureIds: ['nurhaci', 'hongtaiji'], capitalPhases: [capital('heturnala', 1616, 1625), capital('shengjing', 1626, 1636)],
-    heritageIds: ['later-jin-hetu-ala-city-site'], eventIds: ['later-jin-founded'], claimIds: ['claim-nurhaci-parent-hongtaiji'], sourceIds: modernSources,
+    heritageIds: ['later-jin-hetu-ala-city-site', 'qing-shengjing-palace-city-site'], eventIds: ['later-jin-founded'], claimIds: ['claim-nurhaci-parent-hongtaiji'], sourceIds: modernSources,
     uncertaintyNote: '1616年是后金建政节点，辽阳及盛京阶段不应前推为建政当日的正式中心；1636年改国号为清、1644年入关不属于后金建立事件本身。',
   }),
   detail({
