@@ -115,6 +115,6 @@ describe('thirty-seventh-batch polity detail integrity', () => {
     expect(getPolityDetail('liang_later')!.heritageIds).toEqual(['later-liang-kaifeng-city-layer']);
     expect(getPolityDetail('jin_later')!.heritageIds).toEqual(['kaifeng-later-jin-han-city-layer']);
     expect(getPolityDetail('han_later')!.heritageIds).toEqual(['kaifeng-later-jin-han-city-layer']);
-    expect(getPolityDetail('zhou_later')!.heritageIds).toEqual([]);
+    expect(getPolityDetail('zhou_later')!.heritageIds).toEqual(['kaifeng-later-zhou-city-layer']);
   });
 });

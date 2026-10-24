@@ -395,10 +395,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'zhou_later', perspectiveSummary: '后周由郭威受后汉禅位建立，以开封为都，在周世宗时期推进军政整顿和统一战争，为北宋建立提供直接前史。',
     foundationProcess: ['郭威在后汉军政体系中成为关键将领。', '951年受后汉禅位建立后周。', '开封继续作为正式都城，后周的制度整顿和统一战争延续到960年。'],
-    turningPoints: [turn(951, '后周建立', '郭威受禅建立后周，五代最后一个中原王朝形成。', 'zhou-later-founded'), turn(954, '高平之战', '后周击退北汉与契丹联军，中央军政整合增强。'), turn(959, '周世宗北伐', '后周向北推进并继续整顿中原秩序。')],
-    principalFigureIds: ['guo-wei'], capitalPhases: [capital('kaifeng', 951, 960, 'primary', 'formal', '后周正式都城，今河南省开封市。')],
-    heritageIds: [], eventIds: ['zhou-later-founded'], claimIds: ['claim-guo-wei-founded-later-zhou'], sourceIds: modernSources,
-    uncertaintyNote: '现有遗产目录未提供可安全归属后周专属的遗产节点；高平与北伐是事件层，不据此虚构遗产建筑。',
+    turningPoints: [turn(951, '后周建立', '郭威受禅建立后周，五代最后一个中原王朝形成。', 'zhou-later-founded'), turn(954, '高平之战', '后周击退北汉与契丹联军，中央军政整合增强。'), turn(954, '柴荣继位', '柴荣继承后周并推进军政整顿与对外扩张。'), turn(959, '周世宗去世', '柴荣去世，幼主柴宗训继位，后周进入末期。'), turn(960, '后周终止', '陈桥兵变后赵匡胤回师开封受禅，后周中央政权结束，北宋建立。', 'later-zhou-ended-960')],
+    principalFigureIds: ['guo-wei', 'chai-rong', 'chai-zongxun'], capitalPhases: [capital('kaifeng', 951, 960, 'primary', 'formal', '后周正式都城，今河南省开封市。')],
+    heritageIds: ['kaifeng-later-zhou-city-layer'], eventIds: ['zhou-later-founded', 'later-zhou-ended-960'], claimIds: ['claim-guo-wei-founded-later-zhou', 'claim-chai-rong-child-guo-wei', 'claim-chai-zongxun-ruled-later-zhou', 'claim-chai-zongxun-participated-later-zhou-ended-960'], sourceIds: modernSources,
+    uncertaintyNote: '后周遗产以开封城市历史层表达，不指认现存建筑为后周专属原构；柴荣去世、柴宗训继位、960年陈桥拥立、回师受禅和北宋建立是连续但可分层的过程，不能将北宋后续统一前置为后周终止当日事实。',
   }),
   detail({
     polityId: 'wu_ten', perspectiveSummary: '杨吴由杨行密在唐末淮南军政竞争中建立，以扬州为政治中心；受封、地方自治和后续南唐禅代构成不同阶段。',
@@ -621,7 +621,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['赵匡胤在后周军政体系中取得领导权。', '960年陈桥兵变后受禅建立宋朝，开封成为中央政治中心。', '北宋在后续数十年逐步完成对南方和西南部分地区的整合。'],
     turningPoints: [turn(960, '北宋建立', '赵匡胤受禅建立宋朝。', 'northern-song-founded'), turn(979, '宋统一主要中原', '北宋完成对北汉等主要竞争政权的征服。'), turn(1127, '靖康与南渡', '开封失守，北宋结束，宋廷转入南宋阶段。', 'song-southward')],
     principalFigureIds: ['zhao-kuangyin', 'li-gang', 'zong-ze'], capitalPhases: [capital('kaifeng', 960, 1127)],
-    heritageIds: ['kaifeng-northern-song-city-site'], eventIds: ['northern-song-founded', 'song-southward'], claimIds: ['claim-zhao-kuangyin-founded-northern-song', 'claim-zhao-kuangyin-participated-northern-song'], sourceIds: modernSources,
+    heritageIds: ['kaifeng-northern-song-city-site'], eventIds: ['later-zhou-ended-960', 'northern-song-founded', 'song-southward'], claimIds: ['claim-zhao-kuangyin-founded-northern-song', 'claim-zhao-kuangyin-participated-northern-song', 'claim-zhao-kuangyin-participated-later-zhou-ended-960'], sourceIds: modernSources,
     uncertaintyNote: '960年是政权建立节点，不代表当年已完成后续统一；开封东京城遗址保存的是多层城市考古信息，1127年南渡后北宋与南宋的首都阶段应分开。',
   }),
   detail({

@@ -14,6 +14,7 @@ const reviewBoundary = [
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
   { personId: 'li-zhi', eventIds: ['daming-palace-built'] },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'] },
+  { personId: 'chai-rong', eventIds: ['zhou-later-founded'] },
   { personId: 'yuwen-yong', eventIds: [] },
   { personId: 'qin-mugong', eventIds: [] },
   { personId: 'seondeok-silla', eventIds: [] },

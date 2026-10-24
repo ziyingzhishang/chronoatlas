@@ -293,6 +293,16 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['zhou-later-founded'], sourceIds, uncertaintyNote: '后周受禅、军镇归附和后续制度整顿并非同一时点，详情按政权建立节点与任职阶段分开表达。',
   },
   {
+    personId: 'chai-rong', biography: '柴荣（郭荣）是郭威的养子，954年继承后周皇位，推动军政整顿、南征北伐与开封都城秩序建设；959年去世后，幼主柴宗训即位，后周进入末期。',
+    aliases: ['郭荣', '周世宗'], offices: [{ title: '后周皇帝', polityId: 'zhou_later', placeId: 'kaifeng', validFrom: 954, validTo: 959, datePrecision: 'range', sourceIds }],
+    keyEvents: ['zhou-later-founded'], sourceIds, uncertaintyNote: '柴荣是后周第二位皇帝；其军政整顿和959年去世与960年陈桥兵变、后周终止分别表达，不把其本人写成960年现场人物。',
+  },
+  {
+    personId: 'chai-zongxun', biography: '柴宗训是柴荣之子，959年继位为后周末帝。960年赵匡胤在陈桥被拥立并回师开封受禅，后周中央政权终止。',
+    aliases: ['周恭帝'], offices: [{ title: '后周末帝', polityId: 'zhou_later', placeId: 'kaifeng', validFrom: 959, validTo: 960, datePrecision: 'range', sourceIds }],
+    keyEvents: ['later-zhou-ended-960'], sourceIds, uncertaintyNote: '柴宗训对应后周末帝与960年禅代节点；陈桥拥立、回师开封和北宋建立是连续阶段，不等于后周遗产或地方秩序同日消失。',
+  },
+  {
     personId: 'yelu-abaoji', biography: '耶律阿保机整合契丹诸部并于916年称帝，辽上京及其后五京体系逐步成为政治空间。',
     aliases: ['辽太祖'], offices: [{ title: '契丹／辽皇帝', polityId: 'khitan', placeId: 'liao_shangjing', validFrom: 916, validTo: 926, datePrecision: 'range', sourceIds }],
     keyEvents: ['liao-founded'], sourceIds, uncertaintyNote: '契丹、辽的国号和政权分期存在不同叙述口径，本详情沿用项目目录并保留建国节点与后续国号变化的区别。',

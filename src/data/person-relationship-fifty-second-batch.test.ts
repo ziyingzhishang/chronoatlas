@@ -50,9 +50,9 @@ describe('fifty-second batch high-confidence person relationships', () => {
     expect(report.byPersonId['esen-taishi'].requiredMissingCategoryKeys).not.toContain('eventParticipation');
     expect(report.byPersonId.tuotuobuhua.requiredMissingCategoryKeys).not.toContain('eventParticipation');
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(135);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(82);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
-    expect(report.needsSupplementPersonIds).toHaveLength(179);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(134);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
+    expect(report.needsSupplementPersonIds).toHaveLength(180);
   });
 });

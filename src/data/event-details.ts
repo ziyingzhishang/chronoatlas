@@ -1853,6 +1853,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '后周建立是受禅与国号转换节点；开封是后梁以来中原政治中心的现今地名参照，不把后期整顿成果或最大参考范围提前到951年，也不将其视为受禅仪式的精确殿址。',
   },
   {
+    eventId: 'later-zhou-ended-960',
+    participants: [
+      { personId: 'chai-zongxun', role: '后周末帝与960年禅代节点人物', note: '柴宗训于959年继位；960年陈桥兵变后后周禅位，末帝节点与赵匡胤建立北宋分层表达。' },
+      { personId: 'zhao-kuangyin', role: '陈桥拥立、回师受禅并建立北宋的军政领袖', note: '赵匡胤在陈桥被拥立后回到开封受禅；兵变、受禅和北宋后续统一属于连续但不同阶段。' },
+    ],
+    polityIds: ['zhou_later', 'song_northern'],
+    causes: ['后周世宗柴荣去世后幼主即位，中央军政权力进入高风险承接阶段。', '赵匡胤掌握殿前军等关键军事资源，陈桥拥立成为政权转换的直接入口。'],
+    consequences: ['后周中央政权终止，赵匡胤回师开封接受禅让。', '北宋政权建立，但辽、北汉与南方诸政权仍然存在，统一战争尚未完成。'],
+    phases: [
+      { label: '陈桥拥立', startYear: 960, endYear: 960, summary: '赵匡胤在开封东北陈桥被部众拥立。' },
+      { label: '回师受禅与后周终止', startYear: 960, endYear: 960, summary: '赵匡胤回到开封接受后周禅让，后周中央政权终止。' },
+      { label: '北宋建立', startYear: 960, endYear: 960, summary: '赵匡胤建立宋朝，史称北宋；建国与后续统一战争分开记录。' },
+    ],
+    locationIds: ['kaifeng'],
+    relatedEventIds: ['zhou-later-founded', 'northern-song-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '960年陈桥拥立、回师开封、后周终止和北宋建立是连续过程；陈桥在开封东北，开封城市点表示政治承接与受禅关联，不表示精确兵变坐标，也不把北宋后续统一前置为建国当日事实。',
+  },
+  {
     eventId: 'yuan-founded',
     participants: [
       { personId: 'kublai', role: '定国号为大元并主持元初国家整合的君主', note: '忽必烈于1271年定国号为大元；南宋灭亡、完整中原控制和后续制度整合属于不同阶段。' },

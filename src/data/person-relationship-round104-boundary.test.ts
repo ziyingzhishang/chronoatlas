@@ -14,6 +14,7 @@ const eventParticipationGaps = [
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], reasonCode: 'missing-participant', reason: '城市辅助事件已存在，但没有班固参与字段，且班固属于东汉后期人物。' },
   { personId: 'li-zhi', eventIds: ['daming-palace-built'], reasonCode: 'missing-participant', reason: '城市营建事件已存在，但没有李治参与字段，且现有来源仅支持城市建设层。' },
   { personId: 'yuan-hong', eventIds: ['northern-wei-founded'], reasonCode: 'born-after-event', reason: '元宏出生于北魏建政之后，不能回填为建政参与者。' },
+  { personId: 'chai-rong', eventIds: ['zhou-later-founded'], reasonCode: 'missing-participant', reason: '后周建立详情只记录郭威参与者，不能以柴荣的后续继承关系替代。' },
   { personId: 'yuwen-yong', eventIds: [], reasonCode: 'no-event-candidate', reason: '当前事件目录没有同时具备宇文邕参与字段和来源的事件节点。' },
   { personId: 'qin-mugong', eventIds: [], reasonCode: 'no-direct-role', reason: '秦穆公晚于秦襄公列侯节点，当前仅作为秦国后续发展阶段的上下文人物。' },
   { personId: 'seondeok-silla', eventIds: [], reasonCode: 'no-event-candidate', reason: '善德女王属于新罗中期统治阶段，当前目录没有可直接挂接的新罗建国事件参与字段。' },
@@ -81,6 +82,7 @@ describe('round one hundred four person relationship boundary audit', () => {
       ['ban-gu', 'missing-participant'],
       ['li-zhi', 'missing-participant'],
       ['yuan-hong', 'born-after-event'],
+      ['chai-rong', 'missing-participant'],
       ['yuwen-yong', 'no-event-candidate'],
       ['qin-mugong', 'no-direct-role'],
       ['seondeok-silla', 'no-event-candidate'],
@@ -136,8 +138,8 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(135);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(82);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(134);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
   });
 });

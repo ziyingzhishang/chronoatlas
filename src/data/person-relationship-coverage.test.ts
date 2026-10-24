@@ -7,8 +7,8 @@ describe('person relationship coverage audit', () => {
   it('audits all people and keeps key relationship categories separate', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.totalPeople).toBe(223);
-    expect(report.records).toHaveLength(223);
+    expect(report.totalPeople).toBe(225);
+    expect(report.records).toHaveLength(225);
     expect(report.byPersonId['li-shimin'].categories.governance.status).toBe('covered');
     expect(report.byPersonId['li-shimin'].categories.kinship.status).toBe('covered');
     expect(report.byPersonId['li-shimin'].categories.allianceConflict.status).toBe('covered');
@@ -100,8 +100,8 @@ describe('person relationship coverage audit', () => {
     const governance = report.coverageByCategory.governance;
     const counts = report.applicabilityStatusCounts.governance;
 
-    expect(counts.required + counts['not-applicable'] + counts.review).toBe(223);
-    expect(governance.totalPeople).toBe(223);
+    expect(counts.required + counts['not-applicable'] + counts.review).toBe(225);
+    expect(governance.totalPeople).toBe(225);
     expect(governance.notApplicable).toBe(counts['not-applicable']);
     expect(governance.coverageRate).toBeGreaterThanOrEqual(0);
     expect(governance.coverageRate).toBeLessThanOrEqual(1);

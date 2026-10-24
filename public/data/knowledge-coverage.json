@@ -3742,6 +3742,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-zhou-ended-960",
+      "entityKey": "event:later-zhou-ended-960",
+      "label": "后周在开封终止",
+      "polityIds": [
+        "song_northern",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-zhou-ended-960"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chai-zongxun-participated-later-zhou-ended-960",
+            "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
+            "event-detail:later-zhou-ended-960"
+          ],
+          "relatedIds": [
+            "chai-zongxun",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin",
+            "zhou-later-founded",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "liao-dongdan-nanjing",
       "entityKey": "event:liao-dongdan-nanjing",
       "label": "东丹国民迁入东平，辽阳升为南京",
@@ -13252,6 +13315,71 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "kaifeng-later-zhou-city-layer",
+      "entityKey": "heritage:kaifeng-later-zhou-city-layer",
+      "label": "五代后周开封城市历史层",
+      "polityIds": [
+        "song_northern",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "kaifeng-later-zhou-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:kaifeng-later-zhou-city-layer"
+          ],
+          "relatedIds": [
+            "chai-rong",
+            "chai-zongxun",
+            "guo-wei",
+            "later-zhou-ended-960",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin",
+            "zhou-later-founded",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "kaifeng-northern-song-city-site",
       "entityKey": "heritage:kaifeng-northern-song-city-site",
       "label": "北宋东京城遗址",
@@ -18740,6 +18868,136 @@
     },
     {
       "entityType": "person",
+      "entityId": "chai-rong",
+      "entityKey": "person:chai-rong",
+      "label": "柴荣",
+      "polityIds": [
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chai-rong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chai-rong-child-guo-wei",
+            "claim:claim-chai-rong-parent-chai-zongxun",
+            "claim:claim-chai-zongxun-child-chai-rong",
+            "claim:claim-zhao-kuangyin-served-chai-rong",
+            "person-polity:chai-rong:zhou_later"
+          ],
+          "relatedIds": [
+            "chai-zongxun",
+            "guo-wei",
+            "zhao-kuangyin",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "chai-zongxun",
+      "entityKey": "person:chai-zongxun",
+      "label": "柴宗训",
+      "polityIds": [
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chai-zongxun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chai-rong-parent-chai-zongxun",
+            "claim:claim-chai-zongxun-child-chai-rong",
+            "claim:claim-chai-zongxun-participated-later-zhou-ended-960",
+            "claim:claim-chai-zongxun-ruled-later-zhou",
+            "event-detail:later-zhou-ended-960",
+            "person-polity:chai-zongxun:zhou_later"
+          ],
+          "relatedIds": [
+            "chai-rong",
+            "later-zhou-ended-960",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "chen-baxian",
       "entityKey": "person:chen-baxian",
       "label": "陈霸先",
@@ -20773,6 +21031,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chai-rong-child-guo-wei",
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
             "claim:claim-guo-wei-served-liu-zhiyuan",
@@ -20784,6 +21043,7 @@
             "person-polity:guo-wei:zhou_later"
           ],
           "relatedIds": [
+            "chai-rong",
             "later-han-ended-951",
             "liu-chengyou",
             "liu-min",
@@ -32186,15 +32446,20 @@
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
+            "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
             "claim:claim-zhao-kuangyin-participated-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "person-polity:zhao-kuangyin:song_northern"
           ],
           "relatedIds": [
+            "chai-rong",
             "guo-wei",
+            "later-zhou-ended-960",
             "li-yu",
             "li-yuanhao",
             "northern-song-founded",
@@ -36781,17 +37046,21 @@
           "evidenceIds": [
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-tang-falls",
+            "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:li-gang",
             "person:zhao-kuangyin",
             "person:zong-ze"
           ],
           "relatedIds": [
+            "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-zhou-ended-960",
             "li-gang",
             "northern-song-founded",
             "song-founded",
@@ -39232,20 +39501,29 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chai-zongxun-ruled-later-zhou",
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
             "event-detail:later-han-ended-951",
+            "event-detail:later-zhou-ended-960",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:zhou-later-founded",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
+            "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "person:chai-rong",
+            "person:chai-zongxun",
             "person:guo-wei"
           ],
           "relatedIds": [
+            "chai-rong",
+            "chai-zongxun",
             "guo-wei",
             "kaifeng-later-jin-han-city-layer",
+            "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
             "later-han-ended-951",
+            "later-zhou-ended-960",
             "southern-tang-cedes-huainan",
             "zhou-later-founded"
           ]
@@ -44623,6 +44901,69 @@
             "later_zhao",
             "northern-qi-founded",
             "shi-hu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-zhou-ended-960": {
+      "entityType": "event",
+      "entityId": "later-zhou-ended-960",
+      "entityKey": "event:later-zhou-ended-960",
+      "label": "后周在开封终止",
+      "polityIds": [
+        "song_northern",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-zhou-ended-960"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chai-zongxun-participated-later-zhou-ended-960",
+            "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
+            "event-detail:later-zhou-ended-960"
+          ],
+          "relatedIds": [
+            "chai-zongxun",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin",
+            "zhou-later-founded",
+            "zhou_later"
           ]
         },
         {
@@ -54144,6 +54485,71 @@
         }
       ]
     },
+    "heritage:kaifeng-later-zhou-city-layer": {
+      "entityType": "heritage",
+      "entityId": "kaifeng-later-zhou-city-layer",
+      "entityKey": "heritage:kaifeng-later-zhou-city-layer",
+      "label": "五代后周开封城市历史层",
+      "polityIds": [
+        "song_northern",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "kaifeng-later-zhou-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:kaifeng-later-zhou-city-layer"
+          ],
+          "relatedIds": [
+            "chai-rong",
+            "chai-zongxun",
+            "guo-wei",
+            "later-zhou-ended-960",
+            "northern-song-founded",
+            "song_northern",
+            "zhao-kuangyin",
+            "zhou-later-founded",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "heritage:kaifeng-northern-song-city-site": {
       "entityType": "heritage",
       "entityId": "kaifeng-northern-song-city-site",
@@ -59632,6 +60038,136 @@
         }
       ]
     },
+    "person:chai-rong": {
+      "entityType": "person",
+      "entityId": "chai-rong",
+      "entityKey": "person:chai-rong",
+      "label": "柴荣",
+      "polityIds": [
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chai-rong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chai-rong-child-guo-wei",
+            "claim:claim-chai-rong-parent-chai-zongxun",
+            "claim:claim-chai-zongxun-child-chai-rong",
+            "claim:claim-zhao-kuangyin-served-chai-rong",
+            "person-polity:chai-rong:zhou_later"
+          ],
+          "relatedIds": [
+            "chai-zongxun",
+            "guo-wei",
+            "zhao-kuangyin",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:chai-zongxun": {
+      "entityType": "person",
+      "entityId": "chai-zongxun",
+      "entityKey": "person:chai-zongxun",
+      "label": "柴宗训",
+      "polityIds": [
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "chai-zongxun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-chai-rong-parent-chai-zongxun",
+            "claim:claim-chai-zongxun-child-chai-rong",
+            "claim:claim-chai-zongxun-participated-later-zhou-ended-960",
+            "claim:claim-chai-zongxun-ruled-later-zhou",
+            "event-detail:later-zhou-ended-960",
+            "person-polity:chai-zongxun:zhou_later"
+          ],
+          "relatedIds": [
+            "chai-rong",
+            "later-zhou-ended-960",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:chen-baxian": {
       "entityType": "person",
       "entityId": "chen-baxian",
@@ -61667,6 +62203,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chai-rong-child-guo-wei",
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
             "claim:claim-guo-wei-served-liu-zhiyuan",
@@ -61678,6 +62215,7 @@
             "person-polity:guo-wei:zhou_later"
           ],
           "relatedIds": [
+            "chai-rong",
             "later-han-ended-951",
             "liu-chengyou",
             "liu-min",
@@ -73080,15 +73618,20 @@
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
+            "claim:claim-zhao-kuangyin-participated-later-zhou-ended-960",
             "claim:claim-zhao-kuangyin-participated-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "claim:claim-zhao-kuangyin-served-chai-rong",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "person-polity:zhao-kuangyin:song_northern"
           ],
           "relatedIds": [
+            "chai-rong",
             "guo-wei",
+            "later-zhou-ended-960",
             "li-yu",
             "li-yuanhao",
             "northern-song-founded",
@@ -77675,17 +78218,21 @@
           "evidenceIds": [
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-ruled-northern-song-fiftysixth",
+            "event-detail:later-zhou-ended-960",
             "event-detail:northern-song-founded",
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-tang-falls",
+            "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:li-gang",
             "person:zhao-kuangyin",
             "person:zong-ze"
           ],
           "relatedIds": [
+            "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-zhou-ended-960",
             "li-gang",
             "northern-song-founded",
             "song-founded",
@@ -80126,20 +80673,29 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-chai-zongxun-ruled-later-zhou",
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
             "event-detail:later-han-ended-951",
+            "event-detail:later-zhou-ended-960",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:zhou-later-founded",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
+            "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "person:chai-rong",
+            "person:chai-zongxun",
             "person:guo-wei"
           ],
           "relatedIds": [
+            "chai-rong",
+            "chai-zongxun",
             "guo-wei",
             "kaifeng-later-jin-han-city-layer",
+            "kaifeng-later-zhou-city-layer",
             "kaifeng-northern-song-city-site",
             "later-han-ended-951",
+            "later-zhou-ended-960",
             "southern-tang-cedes-huainan",
             "zhou-later-founded"
           ]
@@ -80290,9 +80846,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 184,
+      "totalEntities": 185,
       "statusCounts": {
-        "covered": 880,
+        "covered": 885,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -80349,9 +80905,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 121,
+      "totalEntities": 122,
       "statusCounts": {
-        "covered": 605,
+        "covered": 610,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -80367,9 +80923,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 223,
+      "totalEntities": 225,
       "statusCounts": {
-        "covered": 1060,
+        "covered": 1070,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -82558,10 +83114,12 @@
       "polityId": "song_northern",
       "polityName": "北宋",
       "entityKeys": [
+        "event:later-zhou-ended-960",
         "event:northern-song-founded",
         "event:song-founded",
         "event:song-southward",
         "event:southern-tang-falls",
+        "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "person:li-gang",
         "person:zhao-kuangyin",
@@ -84160,11 +84718,15 @@
       "polityName": "后周",
       "entityKeys": [
         "event:later-han-ended-951",
+        "event:later-zhou-ended-960",
         "event:southern-tang-cedes-huainan",
         "event:zhou-later-founded",
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-jin-han-city-layer",
+        "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
+        "person:chai-rong",
+        "person:chai-zongxun",
         "person:guo-wei",
         "polity:zhou_later"
       ],
@@ -85653,14 +86215,17 @@
         "event:later-jin-ended-947",
         "event:later-liang-ended-923",
         "event:later-liang-five-dynasties-founded",
+        "event:later-zhou-ended-960",
         "event:northern-song-founded",
         "event:song-founded",
         "event:song-southward",
         "event:zhou-later-founded",
         "heritage:jin-kaifeng-city-layer",
         "heritage:kaifeng-later-jin-han-city-layer",
+        "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "heritage:later-liang-kaifeng-city-layer",
+        "person:chai-zongxun",
         "person:guo-wei",
         "person:li-cunxu",
         "person:liu-chengyou",

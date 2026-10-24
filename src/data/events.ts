@@ -1020,6 +1020,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百九十·后周纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷290', detail: '广顺元年（951）郭威受禅即位、国号周及后周建立。' }],
   },
   {
+    id: 'later-zhou-ended-960', year: 960, title: '后周在开封终止', summary: '陈桥兵变后赵匡胤回师开封受禅，后周中央政权终止，北宋随之建立；两者是连续但可分层的政治过程。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '后周世宗柴荣去世后，幼主柴宗训即位，禁军统帅赵匡胤在北征途中于陈桥被部众拥立。',
+    process: '960年赵匡胤在陈桥被拥立，随后回师开封并接受后周禅让；后周中央政权终止，赵匡胤建立宋朝，史称北宋。',
+    impact: '五代中原王朝序列结束并进入北宋阶段；辽、北汉、南方诸政权仍然存在，北宋建立不等于当年完成统一。',
+    mapNote: '开封标记的是回师受禅与后周中央政权终止的城市关联；陈桥位于开封东北，开封城市点不替代兵变现场的精确定位，也不把北宋后续统一范围前置到960年。',
+    references: [{ title: '《资治通鉴》卷二百九十二·后周纪三', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷292', detail: '用于核对960年陈桥拥立、赵匡胤回师开封受禅、后周终止与宋建立的连续过程。' }],
+  },
+  {
     id: 'song-founded', year: 960, title: '宋建立', summary: '赵匡胤通过陈桥兵变建立宋朝。',
     datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian', 'china-chronology'], verification: 'checked', placeId: 'kaifeng',
     background: '赵匡胤担任后周殿前都点检，掌握重要军事力量。',
