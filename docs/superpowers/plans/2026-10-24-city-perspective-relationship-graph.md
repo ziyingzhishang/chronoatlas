@@ -30,7 +30,7 @@
 - Consumes: `PolityStudyView`, `CityStudyView`, `HistoricalClaim`, `DetailEntity`.
 - Produces: `RelationshipGraphView`, `RelationshipGraphNode`, `toPolityRelationshipGraphView(view)`, `toCityRelationshipGraphView(view)`.
 
-- [ ] **Step 1: Write the failing domain tests**
+- [x] **Step 1: Write the failing domain tests**
 
 ```ts
 it('adapts Chang’an into a graph with city, polity, person, event and heritage nodes', () => {
@@ -60,23 +60,23 @@ it('preserves the existing polity graph input through the same normalized contra
 });
 ```
 
-- [ ] **Step 2: Run the focused tests and verify they fail**
+- [x] **Step 2: Run the focused tests and verify they fail**
 
 Run: `npx vitest run --exclude '**/.worktrees/**' src/components/relationship-graph-model.test.ts`
 
 Expected: FAIL because the normalized graph interfaces and adapters do not exist.
 
-- [ ] **Step 3: Implement the normalized model and adapters**
+- [x] **Step 3: Implement the normalized model and adapters**
 
 Use a single node shape with `id`, localized-ready `label`, and `kind`. The city adapter must include the city subject plus every entity present in `view.polities`, `view.people`, `view.events`, and `view.heritage`; it must derive `currentClaims` from `view.claims` and leave `detailClaims` empty unless a future view explicitly supplies detail-only claims. The polity adapter must include the polity subject, current people/events/heritage, detail-linked people/events/heritage, and use `view.claims` plus `view.detailLinkedClaims` without duplicate claim IDs.
 
-- [ ] **Step 4: Run the focused tests and type-check**
+- [x] **Step 4: Run the focused tests and type-check**
 
 Run: `npx vitest run --exclude '**/.worktrees/**' src/components/relationship-graph-model.test.ts && npx tsc -b`
 
 Expected: 3 tests pass and TypeScript exits 0.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/relationship-graph-model.ts src/components/relationship-graph-model.test.ts src/domain/study-view.ts
@@ -93,7 +93,7 @@ git commit -m "refactor: normalize relationship graph study inputs"
 - Consumes: `RelationshipGraphView` and adapter functions from Task 1.
 - Produces: a graph component that accepts `{ graph, onOpenEntity }` and preserves all current category, evidence, scope, and keyboard behavior.
 
-- [ ] **Step 1: Add failing city graph tests**
+- [x] **Step 1: Add failing city graph tests**
 
 ```tsx
 it('renders a city-centered graph and navigates city graph nodes', async () => {
@@ -116,23 +116,23 @@ it('keeps evidence expansion and source traceability for city graph edges', asyn
 });
 ```
 
-- [ ] **Step 2: Run the focused component tests and verify the new tests fail**
+- [x] **Step 2: Run the focused component tests and verify the new tests fail**
 
 Run: `npx vitest run --exclude '**/.worktrees/**' src/components/RelationshipGraph.test.tsx`
 
 Expected: existing polity tests pass or compile against the old API while the new city tests fail until the component accepts normalized input.
 
-- [ ] **Step 3: Refactor the component without changing graph semantics**
+- [x] **Step 3: Refactor the component without changing graph semantics**
 
 Move node collection, claim de-duplication, category classification, source availability, current/detail scope, SVG layout, text categories, edge evidence, and keyboard handlers to consume the normalized `graph` prop. Keep `RelationshipGraphEdge`, `relationshipSummary`, category labels, and source rendering behavior unchanged. Use `graph.subject.kind` for the accessible graph label (`人物关系网络` for a polity subject and `城市关系网络` for a place subject).
 
-- [ ] **Step 4: Run all graph tests and type-check**
+- [x] **Step 4: Run all graph tests and type-check**
 
 Run: `npx vitest run --exclude '**/.worktrees/**' src/components/RelationshipGraph.test.tsx src/components/relationship-graph-model.test.ts && npx tsc -b`
 
 Expected: all graph tests pass and TypeScript exits 0.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/RelationshipGraph.tsx src/components/RelationshipGraph.test.tsx
@@ -150,7 +150,7 @@ git commit -m "feat: render city relationship graphs"
 - Consumes: `CityStudyView`, `PolityStudyView`, `toCityRelationshipGraphView`, `toPolityRelationshipGraphView`, and the refactored `RelationshipGraph` API.
 - Produces: city panel section titled `城市关系网络`, with existing `onOpenEntity` navigation.
 
-- [ ] **Step 1: Write failing panel integration tests**
+- [x] **Step 1: Write failing panel integration tests**
 
 ```tsx
 it('renders and navigates the city relationship graph', async () => {
@@ -172,17 +172,17 @@ it('keeps the city graph title and node labels available in English', () => {
 });
 ```
 
-- [ ] **Step 2: Run the panel tests and verify the new assertions fail**
+- [x] **Step 2: Run the panel tests and verify the new assertions fail**
 
 Run: `npx vitest run --exclude '**/.worktrees/**' src/components/StudyRelationsPanel.integration.test.tsx src/components/StudyRelationsPanel.test.tsx`
 
 Expected: the existing city panel tests pass, while the new heading and graph navigation assertions fail because the city graph is not mounted.
 
-- [ ] **Step 3: Mount the adapter result in the city branch**
+- [x] **Step 3: Mount the adapter result in the city branch**
 
 Import `toCityRelationshipGraphView` and `toPolityRelationshipGraphView`. Render one `study-block` after the city polity list and before the shared related-event block for city views; render the existing polity graph through the polity adapter in the same location as today. Pass through `onOpenEntity` unchanged.
 
-- [ ] **Step 4: Run the complete focused regression set**
+- [x] **Step 4: Run the complete focused regression set**
 
 Run:
 
@@ -199,7 +199,7 @@ git diff --check
 
 Expected: all listed tests pass, TypeScript exits 0, and `git diff --check` emits no output.
 
-- [ ] **Step 5: Commit**
+- [x] **Step 5: Commit**
 
 ```bash
 git add src/components/StudyRelationsPanel.tsx src/components/StudyRelationsPanel.integration.test.tsx src/components/StudyRelationsPanel.test.tsx
@@ -215,19 +215,19 @@ git commit -m "feat: expose city relationship graph in study panel"
 - Consumes: all completed tasks and existing project test/build commands.
 - Produces: verified working tree, unchanged coverage semantics, and full test evidence.
 
-- [ ] **Step 1: Rebuild the coverage artifact**
+- [x] **Step 1: Rebuild the coverage artifact**
 
 Run: `npm run build:knowledge-coverage`
 
 Expected: the report remains a 4-type entity report; city graph work does not create `place` coverage entities or actionable tasks.
 
-- [ ] **Step 2: Run the full verification suite**
+- [x] **Step 2: Run the full verification suite**
 
 Run: `npx tsc -b && npx vitest run --exclude '**/.worktrees/**' && git diff --check`
 
 Expected: TypeScript passes, all Vitest files/tests pass, and no whitespace errors are reported.
 
-- [ ] **Step 3: Inspect final state and commit generated output if required**
+- [x] **Step 3: Inspect final state and commit generated output if required**
 
 Run: `git status --short && git log -5 --oneline`.
 
