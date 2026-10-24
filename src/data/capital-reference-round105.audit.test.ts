@@ -65,6 +65,7 @@ describe('round 105 capital reference audit', () => {
       'tang|changan||ximing-temple-site',
       'tang|luoyang|court-moves-luoyang|',
       'zhou_eastern|luoyang|zhou-eastward|',
+      'zhou_later|kaifeng|later-han-ended-951|',
       'zhou_later|kaifeng||kaifeng-northern-song-city-site',
     ]);
     expect(rows).not.toContainEqual({

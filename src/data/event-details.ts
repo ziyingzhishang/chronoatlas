@@ -1816,6 +1816,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '后汉经历太原起兵、称帝和进入中原的过程，不以单一地点代表947年的完整控制范围。',
   },
   {
+    eventId: 'later-han-ended-951',
+    participants: [
+      { personId: 'liu-chengyou', role: '后汉末帝与951年政权终止节点人物', note: '刘承祐在后汉末期统治；950年前后禁军危机与951年郭威受禅属于连续但可区分的阶段。' },
+      { personId: 'guo-wei', role: '后汉禁军将领与受禅建立后周的政治军事领袖', note: '郭威代表951年受禅与后周承接阶段；其此前在后汉军政体系中的积累不等同于951年终局本身。' },
+    ],
+    polityIds: ['han_later', 'zhou_later'],
+    causes: ['后汉末年皇室与禁军将领之间的权力冲突加剧。', '950年前后军事危机使后汉中央政权难以维持稳定的继承与指挥秩序。'],
+    consequences: ['后汉中央政权终止，郭威受禅建立后周。', '开封继续作为中原政治中心进入后周阶段，刘氏旧部在太原的延续另形成北汉。'],
+    phases: [
+      { label: '禁军与朝廷危机', startYear: 950, endYear: 950, summary: '后汉末年禁军与朝廷矛盾激化，中央权力结构出现决定性裂缝。' },
+      { label: '受禅与后汉终止', startYear: 951, endYear: 951, summary: '郭威受禅即皇帝位，后周建立，后汉中央政权终止。' },
+      { label: '刘氏旧部延续', startYear: 951, endYear: 951, summary: '河东刘氏旧部在太原另行进入北汉建政阶段，不与开封后汉终局混为一事。' },
+    ],
+    locationIds: ['kaifeng'],
+    relatedEventIds: ['han-later-founded', 'zhou-later-founded', 'northern-han-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '950年前后禁军危机、951年郭威受禅、刘承祐个人结局、后周建立和北汉在太原形成是连续但可分层的过程；后汉终止节点不等于地方行政在同日全部转换，也不等于开封城市遗产消失。',
+  },
+  {
     eventId: 'zhou-later-founded',
     participants: [
       { personId: 'guo-wei', role: '掌握后汉禁军并受禅建立后周的君主', note: '郭威于951年受禅建立后周；其前期军政积累、受禅和后续整顿属于连续但可区分的阶段。' },

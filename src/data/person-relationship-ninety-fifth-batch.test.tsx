@@ -56,7 +56,7 @@ describe('ninety-fifth batch Qin Han Northern and Southern Dynasties governance 
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(134);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(135);
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(82);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(10);
     for (const personId of ['qin-xiaogong', 'liu-yilong', 'chen-xu']) {

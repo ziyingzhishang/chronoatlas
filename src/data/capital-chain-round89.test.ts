@@ -43,8 +43,8 @@ describe('eighty-ninth capital chain audit', () => {
     expect(heritage?.placeId).toBe('kaifeng');
     expect(heritage?.sourceIds.every((sourceId) => sourceById[sourceId])).toBe(true);
     expect(heritageDetail).toBeDefined();
-    expect(heritageDetail?.associatedPolities).toEqual(['jin_later', 'han_later']);
-    expect(heritageDetail?.associatedEvents).toEqual(['jin-later-founded', 'later-jin-ended-947', 'han-later-founded']);
+    expect(heritageDetail?.associatedPolities).toEqual(['jin_later', 'han_later', 'zhou_later']);
+    expect(heritageDetail?.associatedEvents).toEqual(['jin-later-founded', 'later-jin-ended-947', 'han-later-founded', 'later-han-ended-951']);
     expect(heritageDetail?.sourceIds.every((sourceId) => sourceById[sourceId])).toBe(true);
 
     for (const polityId of auditedPolityIds) {

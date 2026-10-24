@@ -283,6 +283,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['han-later-founded'], sourceIds, uncertaintyNote: '后汉建立经历太原即位与进入开封两个阶段，不能将单一即位地点等同于全政权即时控制范围。',
   },
   {
+    personId: 'liu-chengyou', biography: '刘承祐是后汉末帝。950年前后后汉禁军与朝廷矛盾升级，951年郭威受禅建立后周，后汉中央政权终止。',
+    aliases: ['后汉隐帝', '隐帝'], offices: [{ title: '后汉末帝', polityId: 'han_later', placeId: 'kaifeng', validFrom: 948, validTo: 951, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['later-han-ended-951'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘承祐个人结局、950年前后禁军冲突、951年郭威受禅和后汉中央政权终止分别表达；刘氏旧部在太原的延续不等同于后汉中央政权继续存在。',
+  },
+  {
     personId: 'guo-wei', biography: '郭威是后汉禁军与中原军政体系中的关键将领，受禅建立后周。',
     aliases: ['周太祖'], offices: [{ title: '后周皇帝', polityId: 'zhou_later', placeId: 'kaifeng', validFrom: 951, validTo: 954, datePrecision: 'range', sourceIds }],
     keyEvents: ['zhou-later-founded'], sourceIds, uncertaintyNote: '后周受禅、军镇归附和后续制度整顿并非同一时点，详情按政权建立节点与任职阶段分开表达。',

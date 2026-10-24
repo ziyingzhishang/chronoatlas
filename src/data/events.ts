@@ -1002,6 +1002,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百八十六·后汉纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷286', detail: '天福十二年（947）刘知远即皇帝位、国号汉及入中原过程。' }],
   },
   {
+    id: 'later-han-ended-951', year: 951, title: '后汉在开封终止', summary: '后汉末年禁军与朝廷矛盾激化，郭威受禅建立后周，后汉中央政权终止；开封继续作为五代都城空间承接后周阶段。', placeId: 'kaifeng', sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '后汉建立于947年后晋覆亡的连续转换阶段，刘知远去世后，隐帝刘承祐与禁军将领之间的权力关系在950年前后持续紧张。',
+    process: '950年前后后汉禁军与朝廷冲突升级；951年郭威受后汉禅位即帝位，后周建立，后汉中央政权随之终止。950年的军事危机与951年的受禅终局分开表达。',
+    impact: '后汉进入后周承接阶段，开封继续作为中原政治中心；刘氏宗室与河东旧部在太原的延续另由北汉建立事件表达。',
+    mapNote: '开封标记的是951年后汉中央政权终止与后周承接，不表示950年危机或951年受禅同日完成所有地方的行政转换，也不把北汉据太原前置为后汉终止的同一地点。',
+    references: [{ title: '《资治通鉴》卷二百九十·后周纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷290', detail: '用于核对后汉末年禁军冲突、郭威受禅和951年后周建立；950年危机与951年受禅按阶段区分。' }],
+  },
+  {
     id: 'zhou-later-founded', year: 951, title: '后周建立', summary: '郭威受后汉禅位建立后周，五代最后一个中原王朝形成。',
     datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian'], verification: 'checked',
     background: '后汉末年皇室与禁军将领的矛盾加剧，郭威在中原军政体系中掌握关键力量。',

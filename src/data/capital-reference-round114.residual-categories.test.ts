@@ -34,6 +34,7 @@ const expectedCategories = {
   'tang|changan||ximing-temple-site': 'location-approximate',
   'tang|luoyang|court-moves-luoyang|': 'shared-transition-event',
   'liang_later|kaifeng|five-dynasties|': 'shared-transition-event',
+  'zhou_later|kaifeng|later-han-ended-951|': 'shared-transition-event',
   'zhou_later|kaifeng||kaifeng-northern-song-city-site': 'cross-stage-city-layer',
   'zhou_eastern|luoyang|zhou-eastward|': 'foundation-stage-boundary',
   'later_liang|guzang||guzang-baita-temple-site': 'cross-polity-heritage',
@@ -68,7 +69,7 @@ describe('round 114 residual capital reference categories', () => {
     expect(Object.fromEntries(rows.map((row) => [key(row), true]))).toEqual(
       Object.fromEntries(Object.keys(expectedCategories).map((candidateKey) => [candidateKey, true])),
     );
-    expect(Object.keys(expectedCategories)).toHaveLength(17);
+    expect(Object.keys(expectedCategories)).toHaveLength(18);
   });
 
   it('requires future closures to preserve the category-specific boundary', () => {

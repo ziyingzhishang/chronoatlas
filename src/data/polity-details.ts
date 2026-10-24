@@ -387,10 +387,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'han_later', perspectiveSummary: '后汉由刘知远在后晋覆亡后建立，先以太原为政治起点、后进入开封；其存续短暂，政权形成与首都阶段必须分开呈现。',
     foundationProcess: ['刘知远在后晋军政体系中积累河东力量。', '947年后晋覆亡后，刘知远即帝位，后汉形成。', '政权由太原进入开封，后汉的中原控制只维持到951年。'],
-    turningPoints: [turn(947, '后汉建立', '刘知远在后晋覆亡后即帝位，后汉政权形成。', 'han-later-founded'), turn(948, '进入开封', '后汉承接中原政治中心和行政体系。'), turn(951, '后汉覆亡', '郭威受禅建立后周，后汉结束。')],
-    principalFigureIds: ['liu-zhiyuan'], capitalPhases: [capital('kaifeng', 947, 951, 'primary', 'formal', '后汉正式都城，今河南省开封市。')],
-    heritageIds: ['kaifeng-later-jin-han-city-layer'], eventIds: ['later-jin-ended-947', 'han-later-founded'], claimIds: ['claim-liu-zhiyuan-founded-later-han'], sourceIds: modernSources,
-    uncertaintyNote: '刘知远先在太原即位、后进入开封；开封遗产以五代后晋—后汉共享城市历史层表达，不把后周或北汉遗产替代为后汉专属建筑。',
+    turningPoints: [turn(947, '后汉建立', '刘知远在后晋覆亡后即帝位，后汉政权形成。', 'han-later-founded'), turn(948, '进入开封', '后汉承接中原政治中心和行政体系。'), turn(950, '禁军与朝廷危机', '后汉末年禁军与朝廷关系持续紧张，政权终局进入倒计时。'), turn(951, '后汉覆亡', '郭威受禅建立后周，后汉中央政权结束。', 'later-han-ended-951')],
+    principalFigureIds: ['liu-zhiyuan', 'liu-chengyou'], capitalPhases: [capital('kaifeng', 947, 951, 'primary', 'formal', '后汉正式都城，今河南省开封市。')],
+    heritageIds: ['kaifeng-later-jin-han-city-layer'], eventIds: ['later-jin-ended-947', 'han-later-founded', 'later-han-ended-951'], claimIds: ['claim-liu-zhiyuan-founded-later-han', 'claim-liu-chengyou-ruled-later-han', 'claim-liu-chengyou-participated-later-han-ended-951', 'claim-liu-chengyou-enemy-guo-wei-termination-951'], sourceIds: modernSources,
+    uncertaintyNote: '刘知远先在太原即位、后进入开封；950年前后禁军危机与951年郭威受禅终局分开表达。开封遗产以五代后晋—后汉共享城市历史层表达，不把后周或北汉遗产替代为后汉专属建筑。',
   }),
   detail({
     polityId: 'zhou_later', perspectiveSummary: '后周由郭威受后汉禅位建立，以开封为都，在周世宗时期推进军政整顿和统一战争，为北宋建立提供直接前史。',

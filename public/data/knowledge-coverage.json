@@ -2892,6 +2892,69 @@
     },
     {
       "entityType": "event",
+      "entityId": "later-han-ended-951",
+      "entityKey": "event:later-han-ended-951",
+      "label": "后汉在开封终止",
+      "polityIds": [
+        "han_later",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-han-ended-951"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chengyou-participated-later-han-ended-951",
+            "event-detail:later-han-ended-951"
+          ],
+          "relatedIds": [
+            "guo-wei",
+            "han-later-founded",
+            "han_later",
+            "liu-chengyou",
+            "northern-han-founded",
+            "zhou-later-founded",
+            "zhou_later"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "later-jin-ended-947",
       "entityKey": "event:later-jin-ended-947",
       "label": "后晋在开封终止",
@@ -13124,7 +13187,8 @@
       "polityIds": [
         "han_later",
         "jin_later",
-        "khitan"
+        "khitan",
+        "zhou_later"
       ],
       "checks": [
         {
@@ -13162,15 +13226,19 @@
             "heritage-detail:kaifeng-later-jin-han-city-layer"
           ],
           "relatedIds": [
+            "guo-wei",
             "han-later-founded",
             "han_later",
             "jin-later-founded",
             "jin_later",
+            "later-han-ended-951",
             "later-jin-ended-947",
+            "liu-chengyou",
             "liu-zhiyuan",
             "shi-chonggui",
             "shi-jingtang",
-            "yelu-deguang"
+            "yelu-deguang",
+            "zhou_later"
           ]
         },
         {
@@ -20708,12 +20776,16 @@
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
             "claim:claim-guo-wei-served-liu-zhiyuan",
+            "claim:claim-liu-chengyou-enemy-guo-wei-termination-951",
             "claim:claim-liu-min-enemy-guo-wei",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:later-han-ended-951",
             "event-detail:zhou-later-founded",
             "person-polity:guo-wei:zhou_later"
           ],
           "relatedIds": [
+            "later-han-ended-951",
+            "liu-chengyou",
             "liu-min",
             "liu-zhiyuan",
             "zhao-kuangyin",
@@ -23896,6 +23968,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "xian-local-chronicle-western-han-mausoleums",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "liu-chengyou",
+      "entityKey": "person:liu-chengyou",
+      "label": "刘承祐",
+      "polityIds": [
+        "han_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-chengyou"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chengyou-enemy-guo-wei-termination-951",
+            "claim:claim-liu-chengyou-participated-later-han-ended-951",
+            "claim:claim-liu-chengyou-ruled-later-han",
+            "event-detail:later-han-ended-951",
+            "person-polity:liu-chengyou:han_later"
+          ],
+          "relatedIds": [
+            "guo-wei",
+            "han_later",
+            "later-han-ended-951"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -33993,13 +34129,16 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-chengyou-ruled-later-han",
             "claim:claim-liu-zhiyuan-founded-later-han",
             "claim:claim-liu-zhiyuan-ruled-later-han-fortythird",
             "event-detail:han-later-founded",
+            "event-detail:later-han-ended-951",
             "event-detail:later-jin-ended-947",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "person:liu-chengyou",
             "person:liu-zhiyuan"
           ],
           "relatedIds": [
@@ -34007,7 +34146,9 @@
             "jinyang-ancient-city-site",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-han-ended-951",
             "later-jin-ended-947",
+            "liu-chengyou",
             "liu-zhiyuan"
           ]
         },
@@ -39093,14 +39234,18 @@
           "evidenceIds": [
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
+            "event-detail:later-han-ended-951",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:zhou-later-founded",
+            "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:guo-wei"
           ],
           "relatedIds": [
             "guo-wei",
+            "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-han-ended-951",
             "southern-tang-cedes-huainan",
             "zhou-later-founded"
           ]
@@ -43628,6 +43773,69 @@
             "jin_jurchen",
             "jurchen-jin-founded",
             "wanyan-liang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:later-han-ended-951": {
+      "entityType": "event",
+      "entityId": "later-han-ended-951",
+      "entityKey": "event:later-han-ended-951",
+      "label": "后汉在开封终止",
+      "polityIds": [
+        "han_later",
+        "zhou_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "later-han-ended-951"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chengyou-participated-later-han-ended-951",
+            "event-detail:later-han-ended-951"
+          ],
+          "relatedIds": [
+            "guo-wei",
+            "han-later-founded",
+            "han_later",
+            "liu-chengyou",
+            "northern-han-founded",
+            "zhou-later-founded",
+            "zhou_later"
           ]
         },
         {
@@ -53873,7 +54081,8 @@
       "polityIds": [
         "han_later",
         "jin_later",
-        "khitan"
+        "khitan",
+        "zhou_later"
       ],
       "checks": [
         {
@@ -53911,15 +54120,19 @@
             "heritage-detail:kaifeng-later-jin-han-city-layer"
           ],
           "relatedIds": [
+            "guo-wei",
             "han-later-founded",
             "han_later",
             "jin-later-founded",
             "jin_later",
+            "later-han-ended-951",
             "later-jin-ended-947",
+            "liu-chengyou",
             "liu-zhiyuan",
             "shi-chonggui",
             "shi-jingtang",
-            "yelu-deguang"
+            "yelu-deguang",
+            "zhou_later"
           ]
         },
         {
@@ -61457,12 +61670,16 @@
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
             "claim:claim-guo-wei-served-liu-zhiyuan",
+            "claim:claim-liu-chengyou-enemy-guo-wei-termination-951",
             "claim:claim-liu-min-enemy-guo-wei",
             "claim:claim-zhao-kuangyin-served-guo-wei",
+            "event-detail:later-han-ended-951",
             "event-detail:zhou-later-founded",
             "person-polity:guo-wei:zhou_later"
           ],
           "relatedIds": [
+            "later-han-ended-951",
+            "liu-chengyou",
             "liu-min",
             "liu-zhiyuan",
             "zhao-kuangyin",
@@ -64645,6 +64862,70 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "xian-local-chronicle-western-han-mausoleums",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:liu-chengyou": {
+      "entityType": "person",
+      "entityId": "liu-chengyou",
+      "entityKey": "person:liu-chengyou",
+      "label": "刘承祐",
+      "polityIds": [
+        "han_later"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-chengyou"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-chengyou-enemy-guo-wei-termination-951",
+            "claim:claim-liu-chengyou-participated-later-han-ended-951",
+            "claim:claim-liu-chengyou-ruled-later-han",
+            "event-detail:later-han-ended-951",
+            "person-polity:liu-chengyou:han_later"
+          ],
+          "relatedIds": [
+            "guo-wei",
+            "han_later",
+            "later-han-ended-951"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -74742,13 +75023,16 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-chengyou-ruled-later-han",
             "claim:claim-liu-zhiyuan-founded-later-han",
             "claim:claim-liu-zhiyuan-ruled-later-han-fortythird",
             "event-detail:han-later-founded",
+            "event-detail:later-han-ended-951",
             "event-detail:later-jin-ended-947",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
+            "person:liu-chengyou",
             "person:liu-zhiyuan"
           ],
           "relatedIds": [
@@ -74756,7 +75040,9 @@
             "jinyang-ancient-city-site",
             "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-han-ended-951",
             "later-jin-ended-947",
+            "liu-chengyou",
             "liu-zhiyuan"
           ]
         },
@@ -79842,14 +80128,18 @@
           "evidenceIds": [
             "claim:claim-guo-wei-founded-later-zhou",
             "claim:claim-guo-wei-ruled-later-zhou-ninetyfifth",
+            "event-detail:later-han-ended-951",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:zhou-later-founded",
+            "heritage-detail:kaifeng-later-jin-han-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "person:guo-wei"
           ],
           "relatedIds": [
             "guo-wei",
+            "kaifeng-later-jin-han-city-layer",
             "kaifeng-northern-song-city-site",
+            "later-han-ended-951",
             "southern-tang-cedes-huainan",
             "zhou-later-founded"
           ]
@@ -80000,9 +80290,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 183,
+      "totalEntities": 184,
       "statusCounts": {
-        "covered": 875,
+        "covered": 880,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -80077,9 +80367,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 222,
+      "totalEntities": 223,
       "statusCounts": {
-        "covered": 1055,
+        "covered": 1060,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -80695,11 +80985,13 @@
       "polityName": "后汉",
       "entityKeys": [
         "event:han-later-founded",
+        "event:later-han-ended-951",
         "event:later-jin-ended-947",
         "event:northern-han-founded",
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:kaifeng-northern-song-city-site",
+        "person:liu-chengyou",
         "person:liu-zhiyuan",
         "polity:han_later"
       ],
@@ -83867,9 +84159,11 @@
       "polityId": "zhou_later",
       "polityName": "后周",
       "entityKeys": [
+        "event:later-han-ended-951",
         "event:southern-tang-cedes-huainan",
         "event:zhou-later-founded",
         "heritage:jinyang-ancient-city-site",
+        "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "person:guo-wei",
         "polity:zhou_later"
@@ -85355,6 +85649,7 @@
         "event:han-later-founded",
         "event:jin-ended-1234",
         "event:jin-later-founded",
+        "event:later-han-ended-951",
         "event:later-jin-ended-947",
         "event:later-liang-ended-923",
         "event:later-liang-five-dynasties-founded",
@@ -85366,7 +85661,9 @@
         "heritage:kaifeng-later-jin-han-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "heritage:later-liang-kaifeng-city-layer",
+        "person:guo-wei",
         "person:li-cunxu",
+        "person:liu-chengyou",
         "person:ogedei",
         "person:shi-chonggui",
         "person:wanyan-shouxu",
