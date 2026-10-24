@@ -15862,6 +15862,7 @@
             "shi-jingtang",
             "song-southward",
             "song_northern",
+            "zhao-kuangyin",
             "zhou_later",
             "zhu-wen"
           ]
@@ -24588,6 +24589,7 @@
             "claim:claim-geluofeng-child-piluo-ge",
             "claim:claim-geluofeng-related-nanzhao-founded",
             "claim:claim-geluofeng-ruled-nanzhao-round107",
+            "claim:claim-geluofeng-succeeded-piluo-ge-round130",
             "claim:claim-piluo-ge-parent-geluofeng-fortieth",
             "claim:claim-yimouxun-child-geluofeng",
             "event-detail:nanzhao-founded",
@@ -26958,6 +26960,7 @@
             "claim:claim-li-bian-related-yang-xingmi",
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-child-li-bian",
+            "claim:claim-li-jing-succeeded-li-bian-round130",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "claim:claim-yang-pu-enemy-li-bian-termination-937",
             "event-detail:southern-tang-founded",
@@ -27308,7 +27311,9 @@
             "claim:claim-li-jing-parent-li-yu",
             "claim:claim-li-jing-participated-min-ended-945",
             "claim:claim-li-jing-ruled-southern-tang",
+            "claim:claim-li-jing-succeeded-li-bian-round130",
             "claim:claim-li-yu-child-li-jing",
+            "claim:claim-li-yu-succeeded-li-jing-round130",
             "claim:claim-ma-xichong-submitted-to-li-jing-termination-951",
             "claim:claim-ma-xie-enemy-li-jing-termination-951",
             "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
@@ -27813,6 +27818,7 @@
             "claim:claim-li-yu-participated-southern-tang",
             "claim:claim-li-yu-participated-southern-tang-ended-975",
             "claim:claim-li-yu-ruled-southern-tang",
+            "claim:claim-li-yu-succeeded-li-jing-round130",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
@@ -28778,10 +28784,12 @@
             "claim:claim-liu-chang-succeeded-liu-sheng",
             "claim:claim-liu-sheng-parent-liu-chang",
             "claim:claim-liu-sheng-ruled-southern-han",
+            "claim:claim-liu-sheng-succeeded-liu-yan-round130",
             "person-polity:liu-sheng:southern_han"
           ],
           "relatedIds": [
             "liu-chang",
+            "liu-yan",
             "southern_han"
           ]
         },
@@ -29046,6 +29054,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-sheng-succeeded-liu-yan-round130",
             "claim:claim-liu-yan-grandparent-liu-chang",
             "claim:claim-liu-yan-participated-southern-han",
             "claim:claim-liu-yan-ruled-southern-han-fortyseventh",
@@ -29056,6 +29065,7 @@
           ],
           "relatedIds": [
             "liu-chang",
+            "liu-sheng",
             "liu-yin",
             "southern-han-founded",
             "southern_han"
@@ -31793,6 +31803,7 @@
           "evidenceIds": [
             "claim:claim-duan-siping-related-piluo-ge",
             "claim:claim-geluofeng-child-piluo-ge",
+            "claim:claim-geluofeng-succeeded-piluo-ge-round130",
             "claim:claim-piluo-ge-parent-geluofeng-fortieth",
             "claim:claim-piluo-ge-participated-nanzhao-founded",
             "claim:claim-piluo-ge-related-li-longji",
@@ -64891,6 +64902,7 @@
             "shi-jingtang",
             "song-southward",
             "song_northern",
+            "zhao-kuangyin",
             "zhou_later",
             "zhu-wen"
           ]
@@ -73617,6 +73629,7 @@
             "claim:claim-geluofeng-child-piluo-ge",
             "claim:claim-geluofeng-related-nanzhao-founded",
             "claim:claim-geluofeng-ruled-nanzhao-round107",
+            "claim:claim-geluofeng-succeeded-piluo-ge-round130",
             "claim:claim-piluo-ge-parent-geluofeng-fortieth",
             "claim:claim-yimouxun-child-geluofeng",
             "event-detail:nanzhao-founded",
@@ -75987,6 +76000,7 @@
             "claim:claim-li-bian-related-yang-xingmi",
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-child-li-bian",
+            "claim:claim-li-jing-succeeded-li-bian-round130",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
             "claim:claim-yang-pu-enemy-li-bian-termination-937",
             "event-detail:southern-tang-founded",
@@ -76337,7 +76351,9 @@
             "claim:claim-li-jing-parent-li-yu",
             "claim:claim-li-jing-participated-min-ended-945",
             "claim:claim-li-jing-ruled-southern-tang",
+            "claim:claim-li-jing-succeeded-li-bian-round130",
             "claim:claim-li-yu-child-li-jing",
+            "claim:claim-li-yu-succeeded-li-jing-round130",
             "claim:claim-ma-xichong-submitted-to-li-jing-termination-951",
             "claim:claim-ma-xie-enemy-li-jing-termination-951",
             "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
@@ -76842,6 +76858,7 @@
             "claim:claim-li-yu-participated-southern-tang",
             "claim:claim-li-yu-participated-southern-tang-ended-975",
             "claim:claim-li-yu-ruled-southern-tang",
+            "claim:claim-li-yu-succeeded-li-jing-round130",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "event-detail:southern-tang-ended-975",
             "event-detail:southern-tang-falls",
@@ -77807,10 +77824,12 @@
             "claim:claim-liu-chang-succeeded-liu-sheng",
             "claim:claim-liu-sheng-parent-liu-chang",
             "claim:claim-liu-sheng-ruled-southern-han",
+            "claim:claim-liu-sheng-succeeded-liu-yan-round130",
             "person-polity:liu-sheng:southern_han"
           ],
           "relatedIds": [
             "liu-chang",
+            "liu-yan",
             "southern_han"
           ]
         },
@@ -78075,6 +78094,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-sheng-succeeded-liu-yan-round130",
             "claim:claim-liu-yan-grandparent-liu-chang",
             "claim:claim-liu-yan-participated-southern-han",
             "claim:claim-liu-yan-ruled-southern-han-fortyseventh",
@@ -78085,6 +78105,7 @@
           ],
           "relatedIds": [
             "liu-chang",
+            "liu-sheng",
             "liu-yin",
             "southern-han-founded",
             "southern_han"
@@ -80822,6 +80843,7 @@
           "evidenceIds": [
             "claim:claim-duan-siping-related-piluo-ge",
             "claim:claim-geluofeng-child-piluo-ge",
+            "claim:claim-geluofeng-succeeded-piluo-ge-round130",
             "claim:claim-piluo-ge-parent-geluofeng-fortieth",
             "claim:claim-piluo-ge-participated-nanzhao-founded",
             "claim:claim-piluo-ge-related-li-longji",
