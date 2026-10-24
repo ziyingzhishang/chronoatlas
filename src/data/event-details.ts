@@ -3415,6 +3415,25 @@ const details: HistoricalEventDetail[] = [
     sourceIds: ['zizhi-tongjian', 'capital-history-reference'],
     uncertaintyNote: '907年是政治秩序转折，904年迁洛是重要前置节点；唐亡不表示长安在907年立即失去全部城市功能。',
   },
+  {
+    eventId: 'min-ended-945',
+    participants: [
+      { personId: 'wang-yanzheng', role: '闽末代君主，连接福州失守与闽政权终止', relationType: 'direct', note: '王延政对应945年前后闽末政权在福州及福建核心区域的终局；“参与”不表示其主动发动南唐攻闽。' },
+      { personId: 'li-jing', role: '南唐君主，推动对闽军事介入并承接闽地政治资源', relationType: 'direct', note: '李璟对应南唐灭闽阶段；南唐军队、地方势力和后续行政接收不简化为君主个人单独行为。' },
+    ],
+    polityIds: ['min', 'southern_tang'],
+    causes: ['闽政权在王审知去世后出现继承与宫廷权力冲突。', '南唐在江淮及东南扩张过程中获得介入福建的军事与政治条件。'],
+    consequences: ['闽中央政权在福州失守及王延政降服后终止。', '南唐取得福建核心政治资源，但泉州、漳州等地方的接收与稳定行政化是后续阶段。', '福州由闽政治中心转入南唐控制下的城市历史层，王审知陵等遗产并未因政权更替而消失。'],
+    phases: [
+      { label: '闽末继承危机', startYear: 925, endYear: 944, summary: '王审知去世后，闽政权内部经历继承、政变与地方分裂，中央统合能力下降。' },
+      { label: '南唐攻取福州', startYear: 945, endYear: 945, summary: '南唐军队进入福建并攻取福州，闽末中央政权失去核心城市。' },
+      { label: '闽政权终止与地方承接', startYear: 945, endYear: 946, summary: '王延政降服后闽政权终止，福建各地转入南唐及地方军政接收的连续过程。' },
+    ],
+    locationIds: ['fuzhou'],
+    relatedEventIds: ['min-founded', 'southern-tang-conquers-min'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang', 'modern-geography-reference'],
+    uncertaintyNote: '945年采用闽中央政权终止的过程性约年；福州失守、王延政降服与泉州、漳州等地后续接收不是同一时刻，不能据此推定南唐当年已完成福建全域稳定行政控制。',
+  },
 ];
 
 const detailById = new Map(details.map((detail) => [detail.eventId, detail]));

@@ -111,6 +111,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'republic-chongqing-wartime-center', status: 'confirmed', expectedPrecision: 'range', explanation: '1938—1945年重庆战时中央驻地阶段按区间表达；战时中央驻地与永久迁都、永久首都分层。', timelineStrategy: 'range-band' },
   { eventId: 'southern-chen-ended-589', status: 'confirmed', expectedPrecision: 'year', explanation: '589年隋军攻取建康、陈叔宝出降与南陈中央政权终止有明确编年节点；地方接收过程另行分层。', timelineStrategy: 'year-marker' },
   { eventId: 'northern-han-ended-979', status: 'confirmed', expectedPrecision: 'year', explanation: '979年北宋攻取太原、刘继元出降与北汉中央政权终止有明确编年节点；太原及河东的地方行政接收、军镇重组和辽宋边境变化另按过程分层。', timelineStrategy: 'year-marker' },
+  { eventId: 'min-ended-945', status: 'approximate', expectedPrecision: 'approximate', explanation: '945年前后表示南唐攻取福州、王延政降服与闽中央政权终止的连续过程；福建各地接收和福州遗产承接不能压缩为同一日期。', timelineStrategy: 'approximate-marker' },
 ];
 
 function unique(values: readonly string[]): string[] {

@@ -19,6 +19,7 @@ const decisions = [
   { personId: 'seondeok-silla', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'jindeok-silla', eventIds: [], kind: 'no-event-candidate' },
   { personId: 'sinmun-silla', eventIds: [], kind: 'no-event-candidate' },
+  { personId: 'wang-yenxi', eventIds: [], kind: 'no-event-candidate' },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];

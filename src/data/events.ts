@@ -1296,6 +1296,18 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百七十·后梁纪五', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷270', detail: '记载刘龑在岭南称帝、国号由越改汉的过程；南汉后续疆域另按时段核验。' }],
   },
   {
+    id: 'min-ended-945', year: 945, title: '闽在福州终结、南唐承接', summary: '南唐军队攻取福州及闽地核心，闽政权在战争与地方接收过程中终止。', placeId: 'fuzhou', sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang', 'modern-geography-reference'],
+    datePrecision: 'approximate', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '闽政权在王审知去世后经历继承冲突与内部重组，南唐借机介入福建，福州成为闽—南唐转换的核心城市节点。',
+    process: '945年前后南唐军队攻取福州并击溃闽末政权，王延政降服，闽中央政权终止；泉州、漳州等地的归属和南唐行政接收存在阶段差异，不能压缩为同日完成。',
+    impact: '闽政权结束，福建政治秩序转入南唐影响与地方军政重组；福州城市、王陵和港口网络继续承接闽以前及南唐以后的多重历史层。',
+    mapNote: '福州（今福建省福州市）标记闽末核心城市与南唐承接节点；945年采用过程性约年，不把南唐攻取福州直接等同于全福建同日完成稳定行政控制。',
+    references: [
+      { title: '《资治通鉴》闽亡与南唐攻闽编年', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于核对南唐攻闽、福州失守与王延政降服的终局过程；具体战事先后和地方接收按阶段表达。' },
+      { title: '南唐史料与闽地政权分期', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于交叉核验945年前后闽—南唐转换，不将南唐军事进入、福州失守和福建全域行政整合视为同一事实。' },
+    ],
+  },
+  {
     id: 'ma-chu-founded', year: 907, title: '马楚政权建立', summary: '马殷受封楚王，湖湘地方政权进入马楚阶段。', placeId: 'changsha', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末湖南军政秩序瓦解，马殷在潭州及湖湘地区扩张势力，并通过接受中原册封巩固地方统治。',

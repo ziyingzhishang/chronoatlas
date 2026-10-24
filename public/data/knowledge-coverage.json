@@ -4514,6 +4514,71 @@
     },
     {
       "entityType": "event",
+      "entityId": "min-ended-945",
+      "entityKey": "event:min-ended-945",
+      "label": "闽在福州终结、南唐承接",
+      "polityIds": [
+        "min",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "min-ended-945"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-jing-participated-min-ended-945",
+            "claim:claim-wang-yanzheng-participated-min-ended-945",
+            "event-detail:min-ended-945"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "min",
+            "min-founded",
+            "southern-tang-conquers-min",
+            "southern_tang",
+            "wang-yanzheng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "min-founded",
       "entityKey": "event:min-founded",
       "label": "闽政权建立",
@@ -14868,7 +14933,8 @@
       "entityKey": "heritage:min-wang-mausoleum",
       "label": "闽王王审知陵",
       "polityIds": [
-        "min"
+        "min",
+        "southern_tang"
       ],
       "checks": [
         {
@@ -14905,9 +14971,13 @@
             "heritage-detail:min-wang-mausoleum"
           ],
           "relatedIds": [
+            "li-jing",
             "min",
+            "min-ended-945",
             "min-founded",
-            "wang-shenzhi"
+            "southern_tang",
+            "wang-shenzhi",
+            "wang-yanzheng"
           ]
         },
         {
@@ -23640,8 +23710,11 @@
             "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-jing-parent-li-yu",
+            "claim:claim-li-jing-participated-min-ended-945",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-child-li-jing",
+            "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
+            "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
             "event-detail:southern-tang-conquers-min",
@@ -23652,12 +23725,14 @@
           "relatedIds": [
             "li-bian",
             "li-yu",
+            "min-ended-945",
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
             "southern-tang-conquers-min",
             "southern-tang-li-jing-succeeds",
             "southern-tang-moves-nanchang",
-            "southern_tang"
+            "southern_tang",
+            "wang-yanzheng"
           ]
         },
         {
@@ -30380,6 +30455,134 @@
     },
     {
       "entityType": "person",
+      "entityId": "wang-yanzheng",
+      "entityKey": "person:wang-yanzheng",
+      "label": "王延政",
+      "polityIds": [
+        "min"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wang-yanzheng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
+            "claim:claim-wang-yanzheng-participated-min-ended-945",
+            "claim:claim-wang-yanzheng-ruled-min",
+            "claim:claim-wang-yanzheng-sibling-wang-yenxi",
+            "event-detail:min-ended-945",
+            "person-polity:wang-yanzheng:min"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "min",
+            "min-ended-945",
+            "wang-yenxi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "wang-yenxi",
+      "entityKey": "person:wang-yenxi",
+      "label": "王延羲",
+      "polityIds": [
+        "min"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wang-yenxi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yanzheng-sibling-wang-yenxi",
+            "person-polity:wang-yenxi:min"
+          ],
+          "relatedIds": [
+            "min",
+            "wang-yanzheng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "wanyan-aguda",
       "entityKey": "person:wanyan-aguda",
       "label": "完颜阿骨打",
@@ -36315,16 +36518,23 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-wang-shenzhi-ruled-min",
+            "claim:claim-wang-yanzheng-ruled-min",
+            "event-detail:min-ended-945",
             "event-detail:min-founded",
             "event-detail:southern-tang-conquers-min",
             "heritage-detail:min-wang-mausoleum",
-            "person:wang-shenzhi"
+            "person:wang-shenzhi",
+            "person:wang-yanzheng",
+            "person:wang-yenxi"
           ],
           "relatedIds": [
+            "min-ended-945",
             "min-founded",
             "min-wang-mausoleum",
             "southern-tang-conquers-min",
-            "wang-shenzhi"
+            "wang-shenzhi",
+            "wang-yanzheng",
+            "wang-yenxi"
           ]
         },
         {
@@ -38128,6 +38338,7 @@
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
+            "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
             "event-detail:southern-tang-conquers-min",
@@ -38137,6 +38348,7 @@
             "event-detail:southern-tang-moves-nanchang",
             "event-detail:yang-wu-ended-937",
             "event-detail:yang-wu-yangzhou-transferred-937",
+            "heritage-detail:min-wang-mausoleum",
             "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
             "heritage-detail:yang-wu-yangzhou-city-site",
@@ -38148,6 +38360,8 @@
             "li-bian",
             "li-jing",
             "li-yu",
+            "min-ended-945",
+            "min-wang-mausoleum",
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
             "southern-tang-conquers-min",
@@ -40558,6 +40772,21 @@
     },
     {
       "entityType": "event",
+      "entityId": "min-ended-945",
+      "entityKey": "event:min-ended-945",
+      "label": "闽在福州终结、南唐承接",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "min",
+        "southern_tang"
+      ],
+      "evidenceIds": [],
+      "relatedIds": [],
+      "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+    },
+    {
+      "entityType": "event",
       "entityId": "mongol-karakorum-fixed-center",
       "entityKey": "event:mongol-karakorum-fixed-center",
       "label": "哈拉和林成为较固定政治中心",
@@ -41687,6 +41916,41 @@
       "kind": "uncertain",
       "polityIds": [
         "southern_liang"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "wang-yanzheng",
+      "entityKey": "person:wang-yanzheng",
+      "label": "王延政",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "min"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "song-history-nantang",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "wang-yenxi",
+      "entityKey": "person:wang-yenxi",
+      "label": "王延羲",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "min"
       ],
       "evidenceIds": [
         "china-chronology",
@@ -46421,6 +46685,71 @@
           "dimension": "time",
           "status": "covered",
           "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:min-ended-945": {
+      "entityType": "event",
+      "entityId": "min-ended-945",
+      "entityKey": "event:min-ended-945",
+      "label": "闽在福州终结、南唐承接",
+      "polityIds": [
+        "min",
+        "southern_tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "min-ended-945"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-jing-participated-min-ended-945",
+            "claim:claim-wang-yanzheng-participated-min-ended-945",
+            "event-detail:min-ended-945"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "min",
+            "min-founded",
+            "southern-tang-conquers-min",
+            "southern_tang",
+            "wang-yanzheng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。",
           "evidenceIds": [],
           "relatedIds": []
         }
@@ -56782,7 +57111,8 @@
       "entityKey": "heritage:min-wang-mausoleum",
       "label": "闽王王审知陵",
       "polityIds": [
-        "min"
+        "min",
+        "southern_tang"
       ],
       "checks": [
         {
@@ -56819,9 +57149,13 @@
             "heritage-detail:min-wang-mausoleum"
           ],
           "relatedIds": [
+            "li-jing",
             "min",
+            "min-ended-945",
             "min-founded",
-            "wang-shenzhi"
+            "southern_tang",
+            "wang-shenzhi",
+            "wang-yanzheng"
           ]
         },
         {
@@ -65554,8 +65888,11 @@
             "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-jing-parent-li-yu",
+            "claim:claim-li-jing-participated-min-ended-945",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-child-li-jing",
+            "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
+            "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
             "event-detail:southern-tang-conquers-min",
@@ -65566,12 +65903,14 @@
           "relatedIds": [
             "li-bian",
             "li-yu",
+            "min-ended-945",
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
             "southern-tang-conquers-min",
             "southern-tang-li-jing-succeeds",
             "southern-tang-moves-nanchang",
-            "southern_tang"
+            "southern_tang",
+            "wang-yanzheng"
           ]
         },
         {
@@ -72292,6 +72631,134 @@
         }
       ]
     },
+    "person:wang-yanzheng": {
+      "entityType": "person",
+      "entityId": "wang-yanzheng",
+      "entityKey": "person:wang-yanzheng",
+      "label": "王延政",
+      "polityIds": [
+        "min"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wang-yanzheng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yanzheng-enemy-li-jing-termination-945",
+            "claim:claim-wang-yanzheng-participated-min-ended-945",
+            "claim:claim-wang-yanzheng-ruled-min",
+            "claim:claim-wang-yanzheng-sibling-wang-yenxi",
+            "event-detail:min-ended-945",
+            "person-polity:wang-yanzheng:min"
+          ],
+          "relatedIds": [
+            "li-jing",
+            "min",
+            "min-ended-945",
+            "wang-yenxi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:wang-yenxi": {
+      "entityType": "person",
+      "entityId": "wang-yenxi",
+      "entityKey": "person:wang-yenxi",
+      "label": "王延羲",
+      "polityIds": [
+        "min"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "wang-yenxi"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-wang-yanzheng-sibling-wang-yenxi",
+            "person-polity:wang-yenxi:min"
+          ],
+          "relatedIds": [
+            "min",
+            "wang-yanzheng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:wanyan-aguda": {
       "entityType": "person",
       "entityId": "wanyan-aguda",
@@ -78229,16 +78696,23 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-wang-shenzhi-ruled-min",
+            "claim:claim-wang-yanzheng-ruled-min",
+            "event-detail:min-ended-945",
             "event-detail:min-founded",
             "event-detail:southern-tang-conquers-min",
             "heritage-detail:min-wang-mausoleum",
-            "person:wang-shenzhi"
+            "person:wang-shenzhi",
+            "person:wang-yanzheng",
+            "person:wang-yenxi"
           ],
           "relatedIds": [
+            "min-ended-945",
             "min-founded",
             "min-wang-mausoleum",
             "southern-tang-conquers-min",
-            "wang-shenzhi"
+            "wang-shenzhi",
+            "wang-yanzheng",
+            "wang-yenxi"
           ]
         },
         {
@@ -80042,6 +80516,7 @@
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-ruled-southern-tang",
             "claim:claim-li-yu-ruled-southern-tang",
+            "event-detail:min-ended-945",
             "event-detail:southern-tang-cedes-huainan",
             "event-detail:southern-tang-conquers-chu",
             "event-detail:southern-tang-conquers-min",
@@ -80051,6 +80526,7 @@
             "event-detail:southern-tang-moves-nanchang",
             "event-detail:yang-wu-ended-937",
             "event-detail:yang-wu-yangzhou-transferred-937",
+            "heritage-detail:min-wang-mausoleum",
             "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
             "heritage-detail:yang-wu-yangzhou-city-site",
@@ -80062,6 +80538,8 @@
             "li-bian",
             "li-jing",
             "li-yu",
+            "min-ended-945",
+            "min-wang-mausoleum",
             "southern-tang-cedes-huainan",
             "southern-tang-conquers-chu",
             "southern-tang-conquers-min",
@@ -82313,20 +82791,20 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 190,
+      "totalEntities": 191,
       "statusCounts": {
-        "covered": 910,
+        "covered": 914,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 40,
+        "uncertain": 41,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 40
+        "uncertain": 41
       },
       "entitiesWithGaps": [
         "event:an-lushan-rebellion",
@@ -82340,6 +82818,7 @@
         "event:former-liang-founded",
         "event:goguryeo-founded",
         "event:jin-ended-1234",
+        "event:min-ended-945",
         "event:mongol-karakorum-fixed-center",
         "event:northern-liang-ended-439",
         "event:qi-warring-founded-eighth-batch",
@@ -82390,20 +82869,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 230,
+      "totalEntities": 232,
       "statusCounts": {
-        "covered": 1094,
+        "covered": 1102,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 56,
+        "uncertain": 58,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 56
+        "uncertain": 58
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -82449,6 +82928,8 @@
         "person:tufa-lilugu",
         "person:tufa-rutan",
         "person:tufa-wugu",
+        "person:wang-yanzheng",
+        "person:wang-yenxi",
         "person:wei-huanzi",
         "person:wu-ding",
         "person:yan-zhaowang",
@@ -83526,13 +84007,67 @@
       "polityId": "min",
       "polityName": "闽",
       "entityKeys": [
+        "event:min-ended-945",
         "event:min-founded",
         "event:southern-tang-conquers-min",
         "heritage:min-wang-mausoleum",
         "person:wang-shenzhi",
+        "person:wang-yanzheng",
+        "person:wang-yenxi",
         "polity:min"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "wang-yanzheng",
+          "entityKey": "person:wang-yanzheng",
+          "label": "王延政",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "min"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "wang-yenxi",
+          "entityKey": "person:wang-yenxi",
+          "label": "王延羲",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "min"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "min-ended-945",
+          "entityKey": "event:min-ended-945",
+          "label": "闽在福州终结、南唐承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "min",
+            "southern_tang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -83540,7 +84075,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "闽：学习闭环已覆盖。"
+      "summary": "闽：有 3 项待核验缺口。"
     },
     "ming": {
       "polityId": "ming",
@@ -84832,6 +85367,7 @@
       "polityId": "southern_tang",
       "polityName": "南唐",
       "entityKeys": [
+        "event:min-ended-945",
         "event:southern-tang-cedes-huainan",
         "event:southern-tang-conquers-chu",
         "event:southern-tang-conquers-min",
@@ -84841,6 +85377,7 @@
         "event:southern-tang-moves-nanchang",
         "event:yang-wu-ended-937",
         "event:yang-wu-yangzhou-transferred-937",
+        "heritage:min-wang-mausoleum",
         "heritage:southern-tang-er-ling",
         "heritage:southern-tang-jiankang-city-site",
         "heritage:yang-wu-yangzhou-city-site",
@@ -84849,7 +85386,23 @@
         "person:li-yu",
         "polity:southern_tang"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "event",
+          "entityId": "min-ended-945",
+          "entityKey": "event:min-ended-945",
+          "label": "闽在福州终结、南唐承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "min",
+            "southern_tang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -84857,7 +85410,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "南唐：学习闭环已覆盖。"
+      "summary": "南唐：有 1 项待核验缺口。"
     },
     "southern_yan": {
       "polityId": "southern_yan",
@@ -87085,6 +87638,7 @@
       "capitalRecordCount": 2,
       "entityKeys": [
         "event:longwu-fuzhou-founded",
+        "event:min-ended-945",
         "event:min-founded",
         "event:southern-ming-founded",
         "event:southern-tang-conquers-min",
@@ -87093,10 +87647,44 @@
         "person:huang-daozhou",
         "person:li-jing",
         "person:wang-shenzhi",
+        "person:wang-yanzheng",
         "person:zheng-zhi-long",
         "person:zhu-yujian"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "wang-yanzheng",
+          "entityKey": "person:wang-yanzheng",
+          "label": "王延政",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "min"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "song-history-nantang",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "event",
+          "entityId": "min-ended-945",
+          "entityKey": "event:min-ended-945",
+          "label": "闽在福州终结、南唐承接",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "min",
+            "southern_tang"
+          ],
+          "evidenceIds": [],
+          "relatedIds": [],
+          "note": "事件年份存在，但目录明确标注为约年或时间范围。"
+        },
         {
           "entityType": "event",
           "entityId": "southern-ming-founded",
@@ -87119,7 +87707,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "福州市：有 1 项待核验缺口。"
+      "summary": "福州市：有 3 项待核验缺口。"
     },
     "guanahani": {
       "placeId": "guanahani",

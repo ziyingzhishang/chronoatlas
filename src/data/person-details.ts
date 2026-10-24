@@ -801,7 +801,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'li-jing', biography: '李璟是李昪之子，942年继位为南唐中主，先后灭闽、楚，后周南征后割地称臣并迁居豫章，961年去世后由李煜继位。',
     aliases: ['李景通', '南唐中主', '元宗'], offices: [{ title: '南唐皇帝', polityId: 'southern_tang', placeId: 'jiankang', validFrom: 943, validTo: 960, datePrecision: 'range', sourceIds: ['song-history-nantang', 'palace-museum-li-jing'] }, { title: '南唐后期君主／豫章政治中心', polityId: 'southern_tang', placeId: 'nanchang', validFrom: 961, validTo: 961, datePrecision: 'year', sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记为迁于豫章，属于李璟去世前的短时段中心，不代表南唐长期正式迁都。' }],
-    keyEvents: ['southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang'], sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记李璟942年袭位；项目事件以943年作为政权承接目录节点，保留史料纪年与事件分期差异。'
+    keyEvents: ['southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'min-ended-945', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang'], sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记李璟942年袭位；项目事件以943年作为政权承接目录节点，保留史料纪年与事件分期差异；945年攻闽与福州承接仍按过程性约年展示。'
   },
   {
     personId: 'liu-yan', biography: '刘龑承接兄长刘隐在广州经营的岭南军政资源，917年称帝，918年改国号为汉，南汉进入正式建政阶段。',
@@ -1177,6 +1177,16 @@ export const personDetails: PersonDetail[] = [
     personId: 'edward-stettinius', biography: '斯退丁纽斯主持美国方面的旧金山会议组织工作，是联合国宪章形成、谈判与签署阶段的关键代表。',
     aliases: ['Edward Stettinius Jr.'], offices: [{ title: '美国国务卿与旧金山会议主席', validFrom: 1944, validTo: 1945, datePrecision: 'range', sourceIds: ['un-charter-treaty', 'un-history-official'] }],
     keyEvents: ['un-founded'], sourceIds: ['un-charter-treaty', 'un-history-official'], uncertaintyNote: '其角色是美国代表与会议组织者，不等于个人代表所有国家的批准行为；签署与10月24日生效仍是不同节点。',
+  },
+  {
+    personId: 'wang-yanzheng', biography: '王延政是闽末代君主。闽末继承冲突和南唐军事介入后，福州在945年前后失守，王延政降服，闽政权终止。',
+    aliases: ['闽末代君主', '大殷末主'], offices: [{ title: '闽王／大殷末主', polityId: 'min', placeId: 'fuzhou', validFrom: 943, validTo: 945, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['min-ended-945'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang'], uncertaintyNote: '王延政在位与福州失守采用945年前后的阶段表达；南唐攻闽、王延政降服及福建各地后续接收不是同一日期完成。',
+  },
+  {
+    personId: 'wang-yenxi', biography: '王延羲是王审知之后的闽王，闽末宫廷继承与权力冲突的重要人物；其统治阶段为945年闽政权终止前的前置背景。',
+    aliases: ['闽康宗'], offices: [{ title: '闽王', polityId: 'min', placeId: 'fuzhou', validFrom: 939, validTo: 944, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['min-ended-945'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '王延羲用于连接闽末继承危机与终局，不将其个人统治等同于945年终止事件的直接发动者。',
   },
 ];
 

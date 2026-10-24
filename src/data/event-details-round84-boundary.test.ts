@@ -34,6 +34,7 @@ const reviewBoundaryIds = [
   'western-liao-ended-1218',
   'western-xia-ended-1227',
   'jin-ended-1234',
+  'min-ended-945',
   'southern-song-ended-1279',
   'dali-ended-1253',
   'western-zhou-founded-eighth-batch',
@@ -52,7 +53,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
     const report = buildEventDetailCoverageReport();
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
 
-    expect(report.statusCounts).toEqual({ covered: 144, 'needs-review': 46, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 144, 'needs-review': 47, unresolved: 0 });
     const precisionReviewItems = reviewItems.filter((item) => item.needsReviewChecks.includes('timePrecision'));
     expect(precisionReviewItems.map((item) => item.eventId)).toEqual([...reviewBoundaryIds].sort());
 
@@ -75,7 +76,7 @@ describe('event details eighty-fourth batch boundary audit', () => {
       item.status === 'needs-review' && item.needsReviewChecks.includes('timePrecision')
     ));
 
-    expect(precisionGaps).toHaveLength(40);
+    expect(precisionGaps).toHaveLength(41);
     expect(precisionGaps.every((item) => item.sourceComplete)).toBe(true);
     expect(precisionGaps.every((item) => item.timePrecision === 'approximate' || item.timePrecision === 'range')).toBe(true);
   });

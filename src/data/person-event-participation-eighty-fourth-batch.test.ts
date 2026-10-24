@@ -20,6 +20,7 @@ const reviewBoundary = [
   { personId: 'seondeok-silla', eventIds: [] },
   { personId: 'jindeok-silla', eventIds: [] },
   { personId: 'sinmun-silla', eventIds: [] },
+  { personId: 'wang-yenxi', eventIds: [] },
 ] as const;
 
 const eventCatalog = [...events, ...changanEvents];

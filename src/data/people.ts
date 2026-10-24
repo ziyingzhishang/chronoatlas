@@ -231,6 +231,8 @@ export const people: Person[] = [
   { id: 'franklin-roosevelt', name: '富兰克林·德拉诺·罗斯福', aliases: ['罗斯福', 'Franklin D. Roosevelt'], birthYear: 1882, deathYear: 1945, roles: ['美国总统', '国际组织倡议者'], polityIds: [], description: '罗斯福在二战时期推动以联合国为名的战后国际合作框架，但在宪章签署前去世。', sourceIds: ['un-history-official'] },
   { id: 'harry-truman', name: '哈里·杜鲁门', aliases: ['杜鲁门', 'Harry S. Truman'], birthYear: 1884, deathYear: 1972, roles: ['美国总统', '会议致辞者'], polityIds: [], description: '杜鲁门在联合国宪章签署与组织成立过渡阶段代表美国政府，参与战后国际组织的政治承接。', sourceIds: ['un-charter-treaty', 'un-history-official'] },
   { id: 'edward-stettinius', name: '爱德华·斯退丁纽斯', aliases: ['Edward Stettinius Jr.'], birthYear: 1900, deathYear: 1949, roles: ['美国国务卿', '旧金山会议主席'], polityIds: [], description: '斯退丁纽斯主持美国方面的旧金山会议组织工作，是联合国宪章形成与签署阶段的关键代表。', sourceIds: ['un-charter-treaty', 'un-history-official'] },
+  { id: 'wang-yanzheng', name: '王延政', aliases: ['闽末代君主', '大殷末主'], deathYear: 951, roles: ['君主', '末代君主'], polityIds: ['min'], description: '王延政是闽末代君主，945年前后在南唐攻闽与福州失守的连续过程中降服，闽政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang'] },
+  { id: 'wang-yenxi', name: '王延羲', aliases: ['闽康宗'], deathYear: 944, roles: ['君主', '闽王'], polityIds: ['min'], description: '王延羲是王审知之后的闽王之一，闽末继承冲突和宫廷权力重组的重要人物。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

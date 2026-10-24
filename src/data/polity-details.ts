@@ -413,7 +413,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['李昪在杨吴权力体系中取得实际掌权地位。', '937年受吴禅建立齐，939年改国号为唐，南唐形成过程由此完成。', '金陵承接六朝城市传统并成为南唐政治中心。'],
     turningPoints: [turn(937, '南唐政权建立', '李昪受吴禅建立齐，南唐进入形成阶段。', 'southern-tang-founded'), turn(939, '改国号为唐', '李昪将国号改为唐，后世称南唐。'), turn(975, '南唐覆亡', '北宋攻取金陵，南唐结束。')],
     principalFigureIds: ['li-bian', 'li-jing', 'li-yu'], capitalPhases: [capital('jiankang', 937, 960, 'primary', 'formal', '金陵／建康；今南京市。'), capital('nanchang', 961, 961, 'primary', 'actual', '李璟末期迁居豫章，今南昌市；短时段政治中心。'), capital('jiankang', 961, 975, 'primary', 'actual', '李煜即位后居建康，今南京市。')],
-    heritageIds: ['southern-tang-jiankang-city-site', 'southern-tang-er-ling', 'yang-wu-yangzhou-city-site'], eventIds: ['southern-tang-founded', 'yang-wu-ended-937', 'yang-wu-yangzhou-transferred-937', 'southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang', 'southern-tang-falls'], claimIds: ['claim-li-bian-participated-southern-tang', 'claim-li-bian-participated-yang-wu-ended-937', 'claim-li-bian-received-yangzhou-937', 'claim-li-bian-ruled-southern-tang-sixtieth', 'claim-li-jing-ruled-southern-tang', 'claim-li-yu-ruled-southern-tang', 'claim-li-bian-parent-li-jing', 'claim-li-jing-parent-li-yu', 'claim-li-bian-grandparent-li-yu-ninetyfourth'], sourceIds: [...modernSources, 'song-history-nantang', 'palace-museum-li-jing', 'southern-tang-imperial-lineage'],
+    heritageIds: ['southern-tang-jiankang-city-site', 'southern-tang-er-ling', 'yang-wu-yangzhou-city-site'], eventIds: ['southern-tang-founded', 'yang-wu-ended-937', 'yang-wu-yangzhou-transferred-937', 'southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'min-ended-945', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang', 'southern-tang-falls'], claimIds: ['claim-li-bian-participated-southern-tang', 'claim-li-bian-participated-yang-wu-ended-937', 'claim-li-bian-received-yangzhou-937', 'claim-li-bian-ruled-southern-tang-sixtieth', 'claim-li-jing-ruled-southern-tang', 'claim-li-jing-participated-min-ended-945', 'claim-li-yu-ruled-southern-tang', 'claim-li-bian-parent-li-jing', 'claim-li-jing-parent-li-yu', 'claim-li-bian-grandparent-li-yu-ninetyfourth'], sourceIds: [...modernSources, 'song-history-nantang', 'palace-museum-li-jing', 'southern-tang-imperial-lineage'],
     uncertaintyNote: '937年受禅建齐与939年改国号为唐是两个节点；961年豫章迁居是短时段中心转换，不能把南唐全期压缩为单一南京或南昌首都；南唐城市与二陵遗产均需与后世叠压层分开。',
   }),
   detail({
@@ -427,10 +427,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'min', perspectiveSummary: '闽由王审知兄弟在福建经营军政资源后形成，以福州为政治中心；地方自治、港口贸易和继承危机构成政权史。',
     foundationProcess: ['王审知兄弟控制福州及福建主要军政资源。', '909年王审知受封闽王，闽进入十国分期。', '福州连接福建山海交通和海上贸易，实际控制须按地区和阶段核验。'],
-    turningPoints: [turn(909, '闽政权形成', '王审知受封闽王，福建地方政权进入闽国阶段。', 'min-founded'), turn(925, '王审知去世', '闽政权进入继承与权力重组阶段。'), turn(945, '闽亡', '南唐攻灭闽，福建政权格局改变。')],
-    principalFigureIds: ['wang-shenzhi'], capitalPhases: [capital('fuzhou', 909, 945, 'primary', 'formal', '闽政治中心福州，今福建省福州市。')],
-    heritageIds: ['min-wang-mausoleum'], eventIds: ['min-founded', 'southern-tang-conquers-min'], claimIds: ['claim-wang-shenzhi-ruled-min'], sourceIds: modernSources,
-    uncertaintyNote: '王审知与兄长共同经营福建，不能把909年受封简化为单一人物独立建国；闽王陵是王审知相关遗存，不代表闽全期建筑保存。',
+    turningPoints: [turn(909, '闽政权形成', '王审知受封闽王，福建地方政权进入闽国阶段。', 'min-founded'), turn(925, '王审知去世', '闽政权进入继承与权力重组阶段。'), turn(945, '闽在福州终止', '南唐攻取福州并承接闽末政治资源，闽中央政权终止；地方接收仍需分阶段观察。', 'min-ended-945')],
+    principalFigureIds: ['wang-shenzhi', 'wang-yenxi', 'wang-yanzheng'], capitalPhases: [capital('fuzhou', 909, 945, 'primary', 'formal', '闽政治中心福州，今福建省福州市；945年前后由南唐承接城市政治功能。')],
+    heritageIds: ['min-wang-mausoleum'], eventIds: ['min-founded', 'southern-tang-conquers-min', 'min-ended-945'], claimIds: ['claim-wang-shenzhi-ruled-min', 'claim-wang-yanzheng-ruled-min', 'claim-wang-yanzheng-participated-min-ended-945', 'claim-wang-yanzheng-enemy-li-jing-termination-945', 'claim-wang-yanzheng-sibling-wang-yenxi'], sourceIds: modernSources,
+    uncertaintyNote: '王审知与兄长共同经营福建，不能把909年受封简化为单一人物独立建国；945年福州失守与福建各地被南唐稳定接收并非同日完成；闽王陵是王审知相关遗存，不代表闽全期建筑保存。',
   }),
   detail({
     polityId: 'southern_han', perspectiveSummary: '南汉由刘氏家族承接岭南军政基础建立，以广州为政治中心；刘隐的奠基与刘龑的称帝、改国号必须区分。',

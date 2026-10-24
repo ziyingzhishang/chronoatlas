@@ -59,6 +59,7 @@ const expectedEventIds = [
   'republic-chongqing-wartime-center',
   'southern-chen-ended-589',
   'northern-han-ended-979',
+  'min-ended-945',
 ] as const;
 
 describe('event time evidence review', () => {
@@ -68,12 +69,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(54);
+    expect(report.totalReviewed).toBe(55);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 21, approximate: 33, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 21, approximate: 34, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {
