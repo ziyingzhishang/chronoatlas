@@ -9077,6 +9077,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "sui-ended-618",
+      "entityKey": "event:sui-ended-618",
+      "label": "隋在长安禅让终止、唐承接",
+      "polityIds": [
+        "sui",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "sui-ended-618"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-yuan-participated-sui-ended-618",
+            "claim:claim-yang-you-participated-sui-ended-618",
+            "event-detail:sui-ended-618"
+          ],
+          "relatedIds": [
+            "li-yuan",
+            "sui",
+            "tang",
+            "tang-founded",
+            "tang-founded-changan",
+            "yang-you"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "sui-founded",
       "entityKey": "event:sui-founded",
       "label": "隋建立",
@@ -17770,6 +17834,7 @@
             "li-shimin",
             "li-yuan",
             "sui",
+            "sui-ended-618",
             "sui-unification",
             "tang",
             "tang-changan-end",
@@ -25316,9 +25381,12 @@
             "claim:claim-li-yuan-appointed-li-shimin",
             "claim:claim-li-yuan-founded-tang",
             "claim:claim-li-yuan-parent-li-shimin",
+            "claim:claim-li-yuan-participated-sui-ended-618",
             "claim:claim-li-yuan-participated-tang-founded-fortyfourth",
             "claim:claim-yang-jian-related-li-yuan",
+            "claim:claim-yang-you-succeeded-by-li-yuan",
             "event-detail:daming-palace-built",
+            "event-detail:sui-ended-618",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
             "person-polity:li-yuan:tang"
@@ -25326,10 +25394,12 @@
           "relatedIds": [
             "daming-palace-built",
             "li-shimin",
+            "sui-ended-618",
             "tang",
             "tang-founded",
             "tang-founded-changan",
-            "yang-jian"
+            "yang-jian",
+            "yang-you"
           ]
         },
         {
@@ -33329,6 +33399,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "yang-you",
+      "entityKey": "person:yang-you",
+      "label": "杨侑",
+      "polityIds": [
+        "sui"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yang-you"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yang-you-participated-sui-ended-618",
+            "claim:claim-yang-you-ruled-sui",
+            "claim:claim-yang-you-succeeded-by-li-yuan",
+            "event-detail:sui-ended-618",
+            "person-polity:yang-you:sui"
+          ],
+          "relatedIds": [
+            "li-yuan",
+            "sui",
+            "sui-ended-618"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "yao-chang",
       "entityKey": "person:yao-chang",
       "label": "姚苌",
@@ -40489,9 +40623,11 @@
             "claim:claim-sui-changan-capital",
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-ruled-sui-fortythird",
+            "claim:claim-yang-you-ruled-sui",
             "event-detail:daxing-capital",
             "event-detail:northern-zhou-ended-581",
             "event-detail:southern-chen-ended-589",
+            "event-detail:sui-ended-618",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
             "event-detail:tang-founded",
@@ -40502,7 +40638,8 @@
             "heritage-detail:northern-zhou-changan-city-layer",
             "heritage-detail:taiji-palace-site",
             "heritage-detail:tang-changan-city-site",
-            "person:yang-jian"
+            "person:yang-jian",
+            "person:yang-you"
           ],
           "relatedIds": [
             "changan",
@@ -40514,12 +40651,14 @@
             "northern-zhou-changan-city-layer",
             "northern-zhou-ended-581",
             "southern-chen-ended-589",
+            "sui-ended-618",
             "sui-founded",
             "sui-unification",
             "taiji-palace-site",
             "tang-changan-city-site",
             "tang-founded",
-            "yang-jian"
+            "yang-jian",
+            "yang-you"
           ]
         },
         {
@@ -40589,6 +40728,7 @@
             "event-detail:silla-tang-baekje-660",
             "event-detail:silla-tang-goguryeo-668",
             "event-detail:silla-tang-war-670-676",
+            "event-detail:sui-ended-618",
             "event-detail:tang-changan-end",
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
@@ -40658,6 +40798,7 @@
             "silla-tang-baekje-660",
             "silla-tang-goguryeo-668",
             "silla-tang-war-670-676",
+            "sui-ended-618",
             "taiji-palace-site",
             "tang-changan-city-site",
             "tang-changan-end",
@@ -53441,6 +53582,70 @@
         }
       ]
     },
+    "event:sui-ended-618": {
+      "entityType": "event",
+      "entityId": "sui-ended-618",
+      "entityKey": "event:sui-ended-618",
+      "label": "隋在长安禅让终止、唐承接",
+      "polityIds": [
+        "sui",
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "sui-ended-618"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-yuan-participated-sui-ended-618",
+            "claim:claim-yang-you-participated-sui-ended-618",
+            "event-detail:sui-ended-618"
+          ],
+          "relatedIds": [
+            "li-yuan",
+            "sui",
+            "tang",
+            "tang-founded",
+            "tang-founded-changan",
+            "yang-you"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:sui-founded": {
       "entityType": "event",
       "entityId": "sui-founded",
@@ -62136,6 +62341,7 @@
             "li-shimin",
             "li-yuan",
             "sui",
+            "sui-ended-618",
             "sui-unification",
             "tang",
             "tang-changan-end",
@@ -69682,9 +69888,12 @@
             "claim:claim-li-yuan-appointed-li-shimin",
             "claim:claim-li-yuan-founded-tang",
             "claim:claim-li-yuan-parent-li-shimin",
+            "claim:claim-li-yuan-participated-sui-ended-618",
             "claim:claim-li-yuan-participated-tang-founded-fortyfourth",
             "claim:claim-yang-jian-related-li-yuan",
+            "claim:claim-yang-you-succeeded-by-li-yuan",
             "event-detail:daming-palace-built",
+            "event-detail:sui-ended-618",
             "event-detail:tang-founded",
             "event-detail:tang-founded-changan",
             "person-polity:li-yuan:tang"
@@ -69692,10 +69901,12 @@
           "relatedIds": [
             "daming-palace-built",
             "li-shimin",
+            "sui-ended-618",
             "tang",
             "tang-founded",
             "tang-founded-changan",
-            "yang-jian"
+            "yang-jian",
+            "yang-you"
           ]
         },
         {
@@ -77693,6 +77904,70 @@
         }
       ]
     },
+    "person:yang-you": {
+      "entityType": "person",
+      "entityId": "yang-you",
+      "entityKey": "person:yang-you",
+      "label": "杨侑",
+      "polityIds": [
+        "sui"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yang-you"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yang-you-participated-sui-ended-618",
+            "claim:claim-yang-you-ruled-sui",
+            "claim:claim-yang-you-succeeded-by-li-yuan",
+            "event-detail:sui-ended-618",
+            "person-polity:yang-you:sui"
+          ],
+          "relatedIds": [
+            "li-yuan",
+            "sui",
+            "sui-ended-618"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:yao-chang": {
       "entityType": "person",
       "entityId": "yao-chang",
@@ -84855,9 +85130,11 @@
             "claim:claim-sui-changan-capital",
             "claim:claim-yang-jian-founded-sui",
             "claim:claim-yang-jian-ruled-sui-fortythird",
+            "claim:claim-yang-you-ruled-sui",
             "event-detail:daxing-capital",
             "event-detail:northern-zhou-ended-581",
             "event-detail:southern-chen-ended-589",
+            "event-detail:sui-ended-618",
             "event-detail:sui-founded",
             "event-detail:sui-unification",
             "event-detail:tang-founded",
@@ -84868,7 +85145,8 @@
             "heritage-detail:northern-zhou-changan-city-layer",
             "heritage-detail:taiji-palace-site",
             "heritage-detail:tang-changan-city-site",
-            "person:yang-jian"
+            "person:yang-jian",
+            "person:yang-you"
           ],
           "relatedIds": [
             "changan",
@@ -84880,12 +85158,14 @@
             "northern-zhou-changan-city-layer",
             "northern-zhou-ended-581",
             "southern-chen-ended-589",
+            "sui-ended-618",
             "sui-founded",
             "sui-unification",
             "taiji-palace-site",
             "tang-changan-city-site",
             "tang-founded",
-            "yang-jian"
+            "yang-jian",
+            "yang-you"
           ]
         },
         {
@@ -84955,6 +85235,7 @@
             "event-detail:silla-tang-baekje-660",
             "event-detail:silla-tang-goguryeo-668",
             "event-detail:silla-tang-war-670-676",
+            "event-detail:sui-ended-618",
             "event-detail:tang-changan-end",
             "event-detail:tang-changan-occupation",
             "event-detail:tang-founded",
@@ -85024,6 +85305,7 @@
             "silla-tang-baekje-660",
             "silla-tang-goguryeo-668",
             "silla-tang-war-670-676",
+            "sui-ended-618",
             "taiji-palace-site",
             "tang-changan-city-site",
             "tang-changan-end",
@@ -87014,9 +87296,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 202,
+      "totalEntities": 203,
       "statusCounts": {
-        "covered": 968,
+        "covered": 973,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -87093,9 +87375,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 248,
+      "totalEntities": 249,
       "statusCounts": {
-        "covered": 1174,
+        "covered": 1179,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -89806,6 +90088,7 @@
         "event:daxing-capital",
         "event:northern-zhou-ended-581",
         "event:southern-chen-ended-589",
+        "event:sui-ended-618",
         "event:sui-founded",
         "event:sui-unification",
         "event:tang-founded",
@@ -89817,6 +90100,7 @@
         "heritage:taiji-palace-site",
         "heritage:tang-changan-city-site",
         "person:yang-jian",
+        "person:yang-you",
         "polity:sui"
       ],
       "gaps": [],
@@ -89844,6 +90128,7 @@
         "event:silla-tang-baekje-660",
         "event:silla-tang-goguryeo-668",
         "event:silla-tang-war-670-676",
+        "event:sui-ended-618",
         "event:tang-changan-end",
         "event:tang-founded",
         "event:tang-founded-changan",
@@ -91577,6 +91862,7 @@
         "event:northern-wei-ended-534",
         "event:northern-zhou-ended-581",
         "event:qin-state-founded-eighth-batch",
+        "event:sui-ended-618",
         "event:sui-founded",
         "event:tang-changan-end",
         "event:tang-founded",
@@ -91633,6 +91919,7 @@
         "person:xiao-he",
         "person:xuan-zang",
         "person:yang-jian",
+        "person:yang-you",
         "person:yao-chang",
         "person:yao-hong",
         "person:yao-xing",
