@@ -19,7 +19,10 @@ describe('person relationships', () => {
 
   it('groups person relations and ignores inactive claims', () => {
     const grouped = groupPersonRelationships('li-yuan', 618, claims);
-    expect(grouped['person-polity'].map((relation) => relation.claim.id)).toEqual(['claim-li-yuan-founded-tang']);
+    expect(grouped['person-polity'].map((relation) => relation.claim.id)).toEqual([
+      'claim-li-yuan-founded-tang',
+      'claim-li-yuan-succeeded-yang-you-round131',
+    ]);
     expect(grouped['person-heritage']).toEqual([]);
   });
 
