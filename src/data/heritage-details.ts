@@ -224,16 +224,16 @@ const details: HeritageDetail[] = [
     historicalPhase('reconstruction', '历代重建', '东汉以后至明清', '寺院经历毁损、重修和格局调整，今日建筑群不是东汉原貌的连续留存。', 100, 1900, '各殿宇的始建、重修和现存构件年代不能用寺院创建年一概替代。', whiteHorseSourceIds),
     historicalPhase('restoration', '现代保护', '近现代以来', '现代维修和景观整治维持寺院使用与展示功能，部分建筑为后世重建或保护性修缮。', 1900, undefined, undefined, whiteHorseSourceIds),
   ], ['liu-xiu', 'ban-gu', 'xuan-zang'], ['han_eastern', 'tang'], ['white-horse-temple-founded', 'han-eastern-founded', 'tang-founded'], ['寺院中轴与殿宇群', '碑刻、塔院和历史陈设', '历代修缮叠合的建筑环境'], '东汉洛阳与佛教中国化研究的城市文化节点。', '白马寺“始建”与今日可见建筑并非同一保存层；具体殿宇年代和早期遗存应逐项核验。', whiteHorseSourceIds),
-  detail('jiankang-six-dynasties-city-site', '今南京市主城及秦淮河、石头城等历史空间；六朝城界与今日南京市区不重合。', ['孙吴建业、东晋建康及南朝都城空间', '宫城、台城、石头城与秦淮水运体系'], [
+  detail('jiankang-six-dynasties-city-site', '今南京市主城及秦淮河、石头城等历史空间；六朝城界与今日南京市区不重合。', ['东晋、刘宋、南齐、南梁、南陈建康都城空间', '宫城、台城、石头城与秦淮水运体系'], [
     phase('original', '都城形成', '229年后', '孙吴以建业为都，南渡后的东晋和南朝继续在此经营建康政治空间。', 229, 589),
     phase('site', '遗址与城市层', '六朝时期', '城墙、宫城、道路和水系信息主要通过考古发现、城市地层和历史地理复原辨识。', 229, 589),
     phase('restoration', '现代展示', '当代城市考古', '现代博物馆、遗址标识和城市公共空间解释六朝都城，不重建完整台城或宫城。', 2000, undefined, '现代城市道路和纪念性设施不能直接视为六朝原建筑。'),
-  ], ['xiao-daocheng', 'xiao-baorong', 'chen-baxian', 'chen-shubao', 'sun-quan', 'sun-hao'], ['wu_three', 'jin_western', 'jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['wu-three-founded', 'jin-unification', 'eastern-jin', 'liu-song-ended-479', 'sui-unification', 'southern-qi-founded', 'southern-qi-ended-502', 'southern-chen-founded', 'southern-chen-ended-589'], ['城墙、台城和石头城相关遗迹', '秦淮河水系与城市空间', '考古地层和历史地理标识'], '理解六朝政治中心南移、都城制度和南京城市层累的重要节点。', '六朝建康的宫城、外郭城和各时期边界仍需按考古与文献分期，不能用现代南京边界替代。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['xiao-daocheng', 'xiao-baorong', 'chen-baxian', 'chen-shubao', 'sun-quan', 'sun-hao'], ['wu_three', 'jin_western', 'jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['wu-three-founded', 'jin-unification', 'eastern-jin', 'eastern-jin-ended-420', 'liu-song-founded', 'liu-song-ended-479', 'southern-qi-founded', 'southern-qi-ended-502', 'southern-liang-founded', 'southern-chen-founded', 'southern-chen-ended-589', 'sui-unification'], ['城墙、台城和石头城相关遗迹', '秦淮河水系与城市空间', '考古地层和历史地理标识'], '理解东晋南渡、南朝政权更替、都城制度和南京城市层累的重要节点。', '六朝建康的宫城、外郭城和各时期边界仍需按考古与文献分期，不能用现代南京边界替代。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference']),
   detail('southern-dynasties-stone-carvings', '今南京及其周边南朝陵墓石刻分布区，单点坐标只作建康城市圈导航。', ['南朝帝陵制度与神道石刻', '建康政治中心周边的陵墓、礼仪与交通景观'], [
     phase('original', '陵墓石刻营造', '420—589年', '刘宋、南齐、梁、陈时期的陵墓神道配置石兽、碑刻等礼仪性设施。', 420, 589),
     phase('site', '分散遗存', '南朝以后', '石刻多以原地、迁移后或残存构件形式保存，分布并非一处完整陵园。', 420, 589, '不同石刻的墓主、原位置和年代需要逐件考证。'),
     phase('restoration', '现代保护', '20世纪以来', '现代以文物保护、标识和环境整治为主，不将补配或景观整理当作南朝原构。', 1900),
-  ], ['xiao-daocheng', 'chen-baxian'], ['song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['liu-song-ended-479', 'southern-qi-founded', 'southern-chen-founded', 'sui-unification'], ['石兽、碑刻与神道构件', '陵墓空间与道路关系', '分散遗存的保护标识'], '把南京今日城市景观与南朝政治、礼制和墓葬考古相联系的实物入口。', '现存石刻不等于整座陵墓完整保存；石刻迁移、残缺和墓主认定需分别标注。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['xiao-daocheng', 'chen-baxian'], ['song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['liu-song-founded', 'liu-song-ended-479', 'southern-qi-founded', 'southern-qi-ended-502', 'southern-liang-founded', 'southern-chen-founded', 'southern-chen-ended-589', 'sui-unification'], ['石兽、碑刻与神道构件', '陵墓空间与道路关系', '分散遗存的保护标识'], '把南京今日城市景观与刘宋、南齐、南梁、南陈政治、礼制和墓葬考古相联系的实物入口。', '现存石刻不等于整座陵墓完整保存；石刻迁移、残缺和墓主认定需分别标注。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference']),
   detail('ye-city-site', '今河北省邯郸市临漳县邺城遗址保护区一带，漳河改道和现代村镇使古城范围需依考古资料定位。', ['曹魏邺城的规划传统', '后赵终止后前燕承接的邺城政治空间', '后赵、前燕、东魏、北齐的政治中心与宫城空间', '577年北齐终止后北周承接的城市历史层'], [
     phase('original', '城市营建', '3世纪前后', '邺城在曹魏时期形成重要城市规划传统，后续十六国和北朝政权继续利用其政治位置。', 204, 350),
     phase('reconstruction', '多政权改造', '335—577年', '后赵、前燕、东魏和北齐时期，宫城、城垣和政治空间持续变化。', 335, 577, '不同政权的城址层、宫城范围和制度用途不能合并为一座静态古城。'),
@@ -383,7 +383,7 @@ const details: HeritageDetail[] = [
     phase('original', '宫城营建与使用', '317—589年', '东晋南朝在建康经营宫城、台城和相关城防体系，台城是政治仪式与宫廷生活的重要空间。', 317, 589),
     phase('site', '考古与城墙遗存', '六朝至今', '台城城墙、门址和城市地层通过考古发现、城墙遗迹和历史地理复原辨识。', 317, 589, '不同朝代台城边界和建筑单元需分期核对。'),
     phase('restoration', '现代城市展示', '当代', '现代城墙公园、博物馆和城市标识解释台城历史，不重建完整六朝宫城。', 2000, undefined, '现代城墙与展示设施不等于六朝原构。'),
-  ], ['sima-rui', 'sima-dewen', 'liu-yu'], ['jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['eastern-jin', 'eastern-jin-ended-420'], ['台城城墙与门址线索', '宫城考古地层', '现代城墙公园与历史标识'], '补充建康城市遗址中的宫城视角，连接东晋建立、420年禅代和今日南京。', '台城的具体范围、各朝代改造和现代地面遗存对应关系仍需按考古资料分期核对；420年政权终止不等于城市遗产终止。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference']),
+  ], ['sima-rui', 'sima-dewen', 'liu-yu'], ['jin_eastern', 'song_southern', 'qi_southern', 'liang_southern', 'chen_southern'], ['eastern-jin', 'eastern-jin-ended-420', 'liu-song-founded', 'liu-song-ended-479', 'southern-qi-founded', 'southern-qi-ended-502', 'southern-liang-founded', 'southern-chen-founded', 'southern-chen-ended-589'], ['台城城墙与门址线索', '宫城考古地层', '现代城墙公园与历史标识'], '补充建康城市遗址中的宫城视角，连接东晋建立、南朝政权更替和今日南京。', '台城的具体范围、各朝代改造和现代地面遗存对应关系仍需按考古资料分期核对；420年政权终止不等于城市遗产终止。', ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference']),
   detail('ye-tongque-platform-site', '今河北省邯郸市临漳县邺城遗址保护区内，铜雀台位置及遗存程度以考古资料和遗址标识为准。', ['曹魏邺城台观建筑与政治文化', '东魏、北齐等后续政权对邺城城市记忆和空间的重叠使用'], [
     phase('original', '台观营建', '210年前后', '曹操时期在邺城营建铜雀台等台观，形成兼具礼仪、宴飨和权力展示的城市地标。', 210, 220),
     phase('reconstruction', '多政权记忆叠合', '4—6世纪', '十六国及北朝时期邺城政治中心地位延续，台址和文献记忆被不同政权重新解释。', 335, 577, '具体台址、建筑层和后世重修不能合并为单一原建筑。'),
