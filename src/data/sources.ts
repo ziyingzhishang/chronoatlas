@@ -461,6 +461,21 @@ export const sourceNotes: SourceNote[] = [
     scope: '263年魏军伐蜀、邓艾进入成都、刘禅归降与蜀汉中央政权终止',
     note: '用于263年年份级终止节点、刘禅向邓艾归降和曹魏承接方向；具体日月、各路军行动先后、蜀地地方接收及成都城市遗产延续不压缩为同一事实。',
   },
+  {
+    id: 'goguryeo-termination-official', title: '高句丽灭亡与复兴运动 · 韩国史数据库', authorOrInstitution: '韩国国史编纂委员会／韩国学中央研究院', urlOrCitation: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i100200',
+    scope: '668年平壤城陷、高句丽中央政权终止、唐设安东都护府、遗民复兴运动与新罗—唐冲突',
+    note: '用于区分平壤失守、政权终止、唐的羁縻接收和669年后的遗民复兴；不把遗民运动或新罗后续战争写成高句丽中央政权持续。',
+  },
+  {
+    id: 'goguryeo-bojang-samguksagi', title: '《三国史记》高句丽本纪·宝藏王', authorOrInstitution: '韩国国史编纂委员会古代史料数据库', urlOrCitation: 'https://db.history.go.kr/ancient/level.do?levelId=sg_021r_0020_0010',
+    scope: '宝藏王642—668年在位、末代君主身份及与渊盖苏文权力结构的关系',
+    note: '用于末代君主、统治时段和末期政治权力边界；不以王统记录单独推导平壤古城边界或高句丽全境控制。',
+  },
+  {
+    id: 'goguryeo-capital-unesco', title: 'Capital Cities and Tombs of the Ancient Koguryo Kingdom', authorOrInstitution: 'UNESCO World Heritage Centre', urlOrCitation: 'https://whc.unesco.org/en/list/1135',
+    scope: '五女山城、国内城、丸都山城及高句丽都城与王陵遗产；国内城今属吉林集安',
+    note: '用于高句丽王都体系和现代地点映射；遗产范围、现代城市边界与政权疆域分开表达，不把集安遗产覆盖平壤遗址。',
+  },
 ];
 
 export const sourceById = Object.fromEntries(sourceNotes.map((source) => [source.id, source]));

@@ -7426,7 +7426,7 @@
       "entityType": "event",
       "entityId": "silla-ended-935",
       "entityKey": "event:silla-ended-935",
-      "label": "新罗向高丽归降",
+      "label": "敬顺王向高丽王建归附",
       "polityIds": [
         "silla"
       ],
@@ -7453,7 +7453,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "silla-encykorea",
-            "silla-samguksagi-db"
+            "silla-samguksagi-db",
+            "yuan-goryeo-records"
           ],
           "relatedIds": []
         },
@@ -7468,6 +7469,7 @@
           "relatedIds": [
             "gyeongsun-silla",
             "silla",
+            "silla-founded",
             "silla-tang-war-670-676"
           ]
         },
@@ -7700,6 +7702,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "goguryeo-termination-official",
             "silla-unification-wars-official"
           ],
           "relatedIds": []
@@ -7709,17 +7712,25 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-bojang-participated-goguryeo-termination",
+            "claim:claim-dae-joyeong-related-goguryeo-termination",
+            "claim:claim-go-yeonmu-participated-goguryeo-termination",
             "claim:claim-kim-yushin-participated-silla-tang-goguryeo",
             "event-detail:silla-tang-goguryeo-668"
           ],
           "relatedIds": [
+            "bojang-goguryeo",
+            "dae-joyeong",
+            "go-yeonmu",
             "goguryeo",
             "kim-yushin",
             "munmu-silla",
             "silla",
             "silla-tang-baekje-660",
             "silla-tang-war-670-676",
-            "tang"
+            "tang",
+            "xue-rengui",
+            "yeon-namgeon"
           ]
         },
         {
@@ -14108,6 +14119,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "goguryeo-capital-unesco",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -14142,7 +14154,9 @@
       "entityKey": "heritage:goguryeo-pyongyang-city-layer",
       "label": "高句丽平壤都城历史层",
       "polityIds": [
-        "goguryeo"
+        "goguryeo",
+        "silla",
+        "tang"
       ],
       "checks": [
         {
@@ -14168,6 +14182,7 @@
           "evidenceIds": [
             "capital-history-reference",
             "china-chronology",
+            "goguryeo-termination-official",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -14180,10 +14195,15 @@
             "heritage-detail:goguryeo-pyongyang-city-layer"
           ],
           "relatedIds": [
+            "bojang-goguryeo",
             "goguryeo",
             "goguryeo-moves-pyongyang",
             "gwanggaeto",
-            "jangsu-goguryeo"
+            "jangsu-goguryeo",
+            "silla",
+            "silla-tang-goguryeo-668",
+            "tang",
+            "yeon-gaesomun"
           ]
         },
         {
@@ -18111,7 +18131,8 @@
             "silla-encykorea",
             "silla-gyeongju-unesco",
             "silla-samguksagi-db",
-            "silla-unification-wars-official"
+            "silla-unification-wars-official",
+            "yuan-goryeo-records"
           ],
           "relatedIds": []
         },
@@ -21030,6 +21051,74 @@
     },
     {
       "entityType": "person",
+      "entityId": "bojang-goguryeo",
+      "entityKey": "person:bojang-goguryeo",
+      "label": "宝藏王",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "bojang-goguryeo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bojang-participated-goguryeo-termination",
+            "claim:claim-bojang-ruled-goguryeo-termination",
+            "claim:claim-go-yeonmu-related-bojang-termination",
+            "claim:claim-xue-rengui-related-bojang-termination",
+            "claim:claim-yeon-gaesomun-related-bojang-termination",
+            "event-detail:silla-tang-goguryeo-668",
+            "person-polity:bojang-goguryeo:goguryeo"
+          ],
+          "relatedIds": [
+            "go-yeonmu",
+            "goguryeo",
+            "silla-tang-goguryeo-668",
+            "xue-rengui",
+            "yeon-gaesomun"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "cao-cao",
       "entityKey": "person:cao-cao",
       "label": "曹操",
@@ -21864,6 +21953,62 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "constantinople-metmuseum"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "dae-joyeong",
+      "entityKey": "person:dae-joyeong",
+      "label": "大祚荣",
+      "polityIds": [],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "dae-joyeong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-dae-joyeong-related-go-yeonmu",
+            "claim:claim-dae-joyeong-related-goguryeo-termination"
+          ],
+          "relatedIds": [
+            "go-yeonmu",
+            "silla-tang-goguryeo-668"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
           ],
           "relatedIds": []
         }
@@ -23573,6 +23718,68 @@
     },
     {
       "entityType": "person",
+      "entityId": "go-yeonmu",
+      "entityKey": "person:go-yeonmu",
+      "label": "高延武",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "go-yeonmu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-dae-joyeong-related-go-yeonmu",
+            "claim:claim-go-yeonmu-participated-goguryeo-termination",
+            "claim:claim-go-yeonmu-related-bojang-termination",
+            "person-polity:go-yeonmu:goguryeo"
+          ],
+          "relatedIds": [
+            "bojang-goguryeo",
+            "dae-joyeong",
+            "goguryeo",
+            "silla-tang-goguryeo-668"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "guacanagari",
       "entityKey": "person:guacanagari",
       "label": "瓜卡纳加里克斯",
@@ -23807,6 +24014,7 @@
             "claim:claim-gyeongsun-participated-silla-ended",
             "claim:claim-gyeongsun-related-sinmun",
             "claim:claim-gyeongsun-ruled-silla",
+            "claim:claim-gyeongsun-submitted-to-goryeo-silla-termination-935",
             "event-detail:silla-ended-935",
             "person-polity:gyeongsun-silla:silla"
           ],
@@ -34939,6 +35147,66 @@
     },
     {
       "entityType": "person",
+      "entityId": "xue-rengui",
+      "entityKey": "person:xue-rengui",
+      "label": "薛仁贵",
+      "polityIds": [
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xue-rengui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xue-rengui-related-bojang-termination",
+            "event-detail:silla-tang-goguryeo-668",
+            "person-polity:xue-rengui:tang"
+          ],
+          "relatedIds": [
+            "bojang-goguryeo",
+            "silla-tang-goguryeo-668",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "yan-zhaowang",
       "entityKey": "person:yan-zhaowang",
       "label": "燕昭王",
@@ -35827,6 +36095,188 @@
             "china-chronology",
             "iranica-qara-ketay",
             "liaoshi-vol30-yelu-dashi"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "yeon-gaesomun",
+      "entityKey": "person:yeon-gaesomun",
+      "label": "渊盖苏文",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yeon-gaesomun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yeon-gaesomun-related-bojang-termination",
+            "claim:claim-yeon-namgeon-related-yeon-gaesomun",
+            "claim:claim-yeon-namsaeng-related-yeon-gaesomun",
+            "person-polity:yeon-gaesomun:goguryeo"
+          ],
+          "relatedIds": [
+            "bojang-goguryeo",
+            "goguryeo",
+            "yeon-namgeon",
+            "yeon-namsaeng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "yeon-namgeon",
+      "entityKey": "person:yeon-namgeon",
+      "label": "渊男建",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yeon-namgeon"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yeon-namgeon-related-yeon-gaesomun",
+            "event-detail:silla-tang-goguryeo-668",
+            "person-polity:yeon-namgeon:goguryeo"
+          ],
+          "relatedIds": [
+            "goguryeo",
+            "silla-tang-goguryeo-668",
+            "yeon-gaesomun"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "yeon-namsaeng",
+      "entityKey": "person:yeon-namsaeng",
+      "label": "渊男生",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yeon-namsaeng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yeon-namsaeng-related-yeon-gaesomun",
+            "person-polity:yeon-namsaeng:goguryeo"
+          ],
+          "relatedIds": [
+            "goguryeo",
+            "yeon-gaesomun"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
           ],
           "relatedIds": []
         }
@@ -39062,6 +39512,9 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-capital-unesco",
+            "goguryeo-termination-official",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -39072,6 +39525,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-bojang-ruled-goguryeo-termination",
             "claim:claim-daemusin-ruled-goguryeo-fiftyseventh",
             "claim:claim-gwanggaeto-ruled-goguryeo-round103",
             "claim:claim-jangsu-goguryeo-ruled-goguryeo-round103",
@@ -39083,14 +39537,21 @@
             "heritage-detail:goguryeo-guonei-city-site",
             "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:wunvshan-goguryeo-early-capital-site",
+            "person:bojang-goguryeo",
             "person:daemusin",
+            "person:go-yeonmu",
             "person:gwanggaeto",
             "person:jangsu-goguryeo",
             "person:jumong",
+            "person:yeon-gaesomun",
+            "person:yeon-namgeon",
+            "person:yeon-namsaeng",
             "person:yuri-goguryeo"
           ],
           "relatedIds": [
+            "bojang-goguryeo",
             "daemusin",
+            "go-yeonmu",
             "goguryeo-founded",
             "goguryeo-guonei-city-site",
             "goguryeo-moves-pyongyang",
@@ -39100,6 +39561,9 @@
             "jumong",
             "silla-tang-goguryeo-668",
             "wunvshan-goguryeo-early-capital-site",
+            "yeon-gaesomun",
+            "yeon-namgeon",
+            "yeon-namsaeng",
             "yuri-goguryeo"
           ]
         },
@@ -41908,6 +42372,7 @@
             "event-detail:silla-tang-baekje-660",
             "event-detail:silla-tang-goguryeo-668",
             "event-detail:silla-tang-war-670-676",
+            "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:silla-gyeongju-capital-site",
             "person:gyeongsun-silla",
             "person:jindeok-silla",
@@ -41921,6 +42386,7 @@
             "person:sinmun-silla"
           ],
           "relatedIds": [
+            "goguryeo-pyongyang-city-layer",
             "gyeongsun-silla",
             "jindeok-silla",
             "kim-chunchu",
@@ -42688,6 +43154,7 @@
             "heritage-detail:big-wild-goose-pagoda",
             "heritage-detail:daming-palace-site",
             "heritage-detail:dingding-gate-site",
+            "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:hanguang-gate-site",
             "heritage-detail:huaqing-palace",
             "heritage-detail:jinci-ancestral-temple",
@@ -42713,7 +43180,8 @@
             "person:wang-wei",
             "person:wei-zheng",
             "person:wu-zhao",
-            "person:xuan-zang"
+            "person:xuan-zang",
+            "person:xue-rengui"
           ],
           "relatedIds": [
             "an-lushan",
@@ -42726,6 +43194,7 @@
             "dingding-gate-site",
             "du-fu",
             "five-dynasties",
+            "goguryeo-pyongyang-city-layer",
             "hanguang-gate-site",
             "huang-chao-changan",
             "huaqing-palace",
@@ -42767,7 +43236,8 @@
             "xingqing-palace-site",
             "xuan-zang",
             "xuanwu-gate",
-            "xuanzang-at-ximing-658"
+            "xuanzang-at-ximing-658",
+            "xue-rengui"
           ]
         },
         {
@@ -45455,6 +45925,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "bojang-goguryeo",
+      "entityKey": "person:bojang-goguryeo",
+      "label": "宝藏王",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "evidenceIds": [
+        "goguryeo-bojang-samguksagi",
+        "goguryeo-termination-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "chu-we-wang",
       "entityKey": "person:chu-we-wang",
       "label": "楚威王",
@@ -45466,6 +45953,20 @@
       "evidenceIds": [
         "china-chronology",
         "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "dae-joyeong",
+      "entityKey": "person:dae-joyeong",
+      "label": "大祚荣",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [],
+      "evidenceIds": [
+        "goguryeo-termination-official"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -45636,6 +46137,22 @@
       "evidenceIds": [
         "china-chronology",
         "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "go-yeonmu",
+      "entityKey": "person:go-yeonmu",
+      "label": "高延武",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "evidenceIds": [
+        "goguryeo-termination-official"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -46401,6 +46918,22 @@
     },
     {
       "entityType": "person",
+      "entityId": "xue-rengui",
+      "entityKey": "person:xue-rengui",
+      "label": "薛仁贵",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "tang"
+      ],
+      "evidenceIds": [
+        "goguryeo-termination-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "yan-zhaowang",
       "entityKey": "person:yan-zhaowang",
       "label": "燕昭王",
@@ -46448,6 +46981,38 @@
         "china-chronology",
         "iranica-qara-ketay",
         "liaoshi-vol30-yelu-dashi"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "yeon-namgeon",
+      "entityKey": "person:yeon-namgeon",
+      "label": "渊男建",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "evidenceIds": [
+        "goguryeo-termination-official"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "yeon-namsaeng",
+      "entityKey": "person:yeon-namsaeng",
+      "label": "渊男生",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "evidenceIds": [
+        "goguryeo-termination-official"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -54062,7 +54627,7 @@
       "entityType": "event",
       "entityId": "silla-ended-935",
       "entityKey": "event:silla-ended-935",
-      "label": "新罗向高丽归降",
+      "label": "敬顺王向高丽王建归附",
       "polityIds": [
         "silla"
       ],
@@ -54089,7 +54654,8 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "silla-encykorea",
-            "silla-samguksagi-db"
+            "silla-samguksagi-db",
+            "yuan-goryeo-records"
           ],
           "relatedIds": []
         },
@@ -54104,6 +54670,7 @@
           "relatedIds": [
             "gyeongsun-silla",
             "silla",
+            "silla-founded",
             "silla-tang-war-670-676"
           ]
         },
@@ -54336,6 +54903,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "goguryeo-termination-official",
             "silla-unification-wars-official"
           ],
           "relatedIds": []
@@ -54345,17 +54913,25 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-bojang-participated-goguryeo-termination",
+            "claim:claim-dae-joyeong-related-goguryeo-termination",
+            "claim:claim-go-yeonmu-participated-goguryeo-termination",
             "claim:claim-kim-yushin-participated-silla-tang-goguryeo",
             "event-detail:silla-tang-goguryeo-668"
           ],
           "relatedIds": [
+            "bojang-goguryeo",
+            "dae-joyeong",
+            "go-yeonmu",
             "goguryeo",
             "kim-yushin",
             "munmu-silla",
             "silla",
             "silla-tang-baekje-660",
             "silla-tang-war-670-676",
-            "tang"
+            "tang",
+            "xue-rengui",
+            "yeon-namgeon"
           ]
         },
         {
@@ -60744,6 +61320,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "goguryeo-capital-unesco",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -60778,7 +61355,9 @@
       "entityKey": "heritage:goguryeo-pyongyang-city-layer",
       "label": "高句丽平壤都城历史层",
       "polityIds": [
-        "goguryeo"
+        "goguryeo",
+        "silla",
+        "tang"
       ],
       "checks": [
         {
@@ -60804,6 +61383,7 @@
           "evidenceIds": [
             "capital-history-reference",
             "china-chronology",
+            "goguryeo-termination-official",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -60816,10 +61396,15 @@
             "heritage-detail:goguryeo-pyongyang-city-layer"
           ],
           "relatedIds": [
+            "bojang-goguryeo",
             "goguryeo",
             "goguryeo-moves-pyongyang",
             "gwanggaeto",
-            "jangsu-goguryeo"
+            "jangsu-goguryeo",
+            "silla",
+            "silla-tang-goguryeo-668",
+            "tang",
+            "yeon-gaesomun"
           ]
         },
         {
@@ -64747,7 +65332,8 @@
             "silla-encykorea",
             "silla-gyeongju-unesco",
             "silla-samguksagi-db",
-            "silla-unification-wars-official"
+            "silla-unification-wars-official",
+            "yuan-goryeo-records"
           ],
           "relatedIds": []
         },
@@ -67664,6 +68250,74 @@
         }
       ]
     },
+    "person:bojang-goguryeo": {
+      "entityType": "person",
+      "entityId": "bojang-goguryeo",
+      "entityKey": "person:bojang-goguryeo",
+      "label": "宝藏王",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "bojang-goguryeo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-bojang-participated-goguryeo-termination",
+            "claim:claim-bojang-ruled-goguryeo-termination",
+            "claim:claim-go-yeonmu-related-bojang-termination",
+            "claim:claim-xue-rengui-related-bojang-termination",
+            "claim:claim-yeon-gaesomun-related-bojang-termination",
+            "event-detail:silla-tang-goguryeo-668",
+            "person-polity:bojang-goguryeo:goguryeo"
+          ],
+          "relatedIds": [
+            "go-yeonmu",
+            "goguryeo",
+            "silla-tang-goguryeo-668",
+            "xue-rengui",
+            "yeon-gaesomun"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:cao-cao": {
       "entityType": "person",
       "entityId": "cao-cao",
@@ -68500,6 +69154,62 @@
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
             "constantinople-metmuseum"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:dae-joyeong": {
+      "entityType": "person",
+      "entityId": "dae-joyeong",
+      "entityKey": "person:dae-joyeong",
+      "label": "大祚荣",
+      "polityIds": [],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "dae-joyeong"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-dae-joyeong-related-go-yeonmu",
+            "claim:claim-dae-joyeong-related-goguryeo-termination"
+          ],
+          "relatedIds": [
+            "go-yeonmu",
+            "silla-tang-goguryeo-668"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
           ],
           "relatedIds": []
         }
@@ -70207,6 +70917,68 @@
         }
       ]
     },
+    "person:go-yeonmu": {
+      "entityType": "person",
+      "entityId": "go-yeonmu",
+      "entityKey": "person:go-yeonmu",
+      "label": "高延武",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "go-yeonmu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-dae-joyeong-related-go-yeonmu",
+            "claim:claim-go-yeonmu-participated-goguryeo-termination",
+            "claim:claim-go-yeonmu-related-bojang-termination",
+            "person-polity:go-yeonmu:goguryeo"
+          ],
+          "relatedIds": [
+            "bojang-goguryeo",
+            "dae-joyeong",
+            "goguryeo",
+            "silla-tang-goguryeo-668"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:guacanagari": {
       "entityType": "person",
       "entityId": "guacanagari",
@@ -70443,6 +71215,7 @@
             "claim:claim-gyeongsun-participated-silla-ended",
             "claim:claim-gyeongsun-related-sinmun",
             "claim:claim-gyeongsun-ruled-silla",
+            "claim:claim-gyeongsun-submitted-to-goryeo-silla-termination-935",
             "event-detail:silla-ended-935",
             "person-polity:gyeongsun-silla:silla"
           ],
@@ -81573,6 +82346,66 @@
         }
       ]
     },
+    "person:xue-rengui": {
+      "entityType": "person",
+      "entityId": "xue-rengui",
+      "entityKey": "person:xue-rengui",
+      "label": "薛仁贵",
+      "polityIds": [
+        "tang"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xue-rengui"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-xue-rengui-related-bojang-termination",
+            "event-detail:silla-tang-goguryeo-668",
+            "person-polity:xue-rengui:tang"
+          ],
+          "relatedIds": [
+            "bojang-goguryeo",
+            "silla-tang-goguryeo-668",
+            "tang"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:yan-zhaowang": {
       "entityType": "person",
       "entityId": "yan-zhaowang",
@@ -82463,6 +83296,188 @@
             "china-chronology",
             "iranica-qara-ketay",
             "liaoshi-vol30-yelu-dashi"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:yeon-gaesomun": {
+      "entityType": "person",
+      "entityId": "yeon-gaesomun",
+      "entityKey": "person:yeon-gaesomun",
+      "label": "渊盖苏文",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yeon-gaesomun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yeon-gaesomun-related-bojang-termination",
+            "claim:claim-yeon-namgeon-related-yeon-gaesomun",
+            "claim:claim-yeon-namsaeng-related-yeon-gaesomun",
+            "person-polity:yeon-gaesomun:goguryeo"
+          ],
+          "relatedIds": [
+            "bojang-goguryeo",
+            "goguryeo",
+            "yeon-namgeon",
+            "yeon-namsaeng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:yeon-namgeon": {
+      "entityType": "person",
+      "entityId": "yeon-namgeon",
+      "entityKey": "person:yeon-namgeon",
+      "label": "渊男建",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yeon-namgeon"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yeon-namgeon-related-yeon-gaesomun",
+            "event-detail:silla-tang-goguryeo-668",
+            "person-polity:yeon-namgeon:goguryeo"
+          ],
+          "relatedIds": [
+            "goguryeo",
+            "silla-tang-goguryeo-668",
+            "yeon-gaesomun"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:yeon-namsaeng": {
+      "entityType": "person",
+      "entityId": "yeon-namsaeng",
+      "entityKey": "person:yeon-namsaeng",
+      "label": "渊男生",
+      "polityIds": [
+        "goguryeo"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yeon-namsaeng"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yeon-namsaeng-related-yeon-gaesomun",
+            "person-polity:yeon-namsaeng:goguryeo"
+          ],
+          "relatedIds": [
+            "goguryeo",
+            "yeon-gaesomun"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "goguryeo-termination-official"
           ],
           "relatedIds": []
         }
@@ -85698,6 +86713,9 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-capital-unesco",
+            "goguryeo-termination-official",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -85708,6 +86726,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-bojang-ruled-goguryeo-termination",
             "claim:claim-daemusin-ruled-goguryeo-fiftyseventh",
             "claim:claim-gwanggaeto-ruled-goguryeo-round103",
             "claim:claim-jangsu-goguryeo-ruled-goguryeo-round103",
@@ -85719,14 +86738,21 @@
             "heritage-detail:goguryeo-guonei-city-site",
             "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:wunvshan-goguryeo-early-capital-site",
+            "person:bojang-goguryeo",
             "person:daemusin",
+            "person:go-yeonmu",
             "person:gwanggaeto",
             "person:jangsu-goguryeo",
             "person:jumong",
+            "person:yeon-gaesomun",
+            "person:yeon-namgeon",
+            "person:yeon-namsaeng",
             "person:yuri-goguryeo"
           ],
           "relatedIds": [
+            "bojang-goguryeo",
             "daemusin",
+            "go-yeonmu",
             "goguryeo-founded",
             "goguryeo-guonei-city-site",
             "goguryeo-moves-pyongyang",
@@ -85736,6 +86762,9 @@
             "jumong",
             "silla-tang-goguryeo-668",
             "wunvshan-goguryeo-early-capital-site",
+            "yeon-gaesomun",
+            "yeon-namgeon",
+            "yeon-namsaeng",
             "yuri-goguryeo"
           ]
         },
@@ -88544,6 +89573,7 @@
             "event-detail:silla-tang-baekje-660",
             "event-detail:silla-tang-goguryeo-668",
             "event-detail:silla-tang-war-670-676",
+            "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:silla-gyeongju-capital-site",
             "person:gyeongsun-silla",
             "person:jindeok-silla",
@@ -88557,6 +89587,7 @@
             "person:sinmun-silla"
           ],
           "relatedIds": [
+            "goguryeo-pyongyang-city-layer",
             "gyeongsun-silla",
             "jindeok-silla",
             "kim-chunchu",
@@ -89324,6 +90355,7 @@
             "heritage-detail:big-wild-goose-pagoda",
             "heritage-detail:daming-palace-site",
             "heritage-detail:dingding-gate-site",
+            "heritage-detail:goguryeo-pyongyang-city-layer",
             "heritage-detail:hanguang-gate-site",
             "heritage-detail:huaqing-palace",
             "heritage-detail:jinci-ancestral-temple",
@@ -89349,7 +90381,8 @@
             "person:wang-wei",
             "person:wei-zheng",
             "person:wu-zhao",
-            "person:xuan-zang"
+            "person:xuan-zang",
+            "person:xue-rengui"
           ],
           "relatedIds": [
             "an-lushan",
@@ -89362,6 +90395,7 @@
             "dingding-gate-site",
             "du-fu",
             "five-dynasties",
+            "goguryeo-pyongyang-city-layer",
             "hanguang-gate-site",
             "huang-chao-changan",
             "huaqing-palace",
@@ -89403,7 +90437,8 @@
             "xingqing-palace-site",
             "xuan-zang",
             "xuanwu-gate",
-            "xuanzang-at-ximing-658"
+            "xuanzang-at-ximing-658",
+            "xue-rengui"
           ]
         },
         {
@@ -91530,25 +92565,27 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 263,
+      "totalEntities": 270,
       "statusCounts": {
-        "covered": 1243,
+        "covered": 1272,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 72,
+        "uncertain": 78,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 72
+        "uncertain": 78
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
         "person:bayan",
+        "person:bojang-goguryeo",
         "person:chu-we-wang",
+        "person:dae-joyeong",
         "person:duan-xingzhi",
         "person:duan-ye",
         "person:feng-ba",
@@ -91559,6 +92596,7 @@
         "person:gao-jichong",
         "person:gao-yun",
         "person:geluofeng",
+        "person:go-yeonmu",
         "person:guacanagari",
         "person:han-kangzi",
         "person:han-qian",
@@ -91604,9 +92642,12 @@
         "person:wang-yenxi",
         "person:wei-huanzi",
         "person:wu-ding",
+        "person:xue-rengui",
         "person:yan-zhaowang",
         "person:yelu-dashi",
         "person:yelu-yilie",
+        "person:yeon-namgeon",
+        "person:yeon-namsaeng",
         "person:yimouxun",
         "person:yu-the-great",
         "person:yuan-kuo",
@@ -92119,10 +93160,15 @@
         "heritage:goguryeo-guonei-city-site",
         "heritage:goguryeo-pyongyang-city-layer",
         "heritage:wunvshan-goguryeo-early-capital-site",
+        "person:bojang-goguryeo",
         "person:daemusin",
+        "person:go-yeonmu",
         "person:gwanggaeto",
         "person:jangsu-goguryeo",
         "person:jumong",
+        "person:yeon-gaesomun",
+        "person:yeon-namgeon",
+        "person:yeon-namsaeng",
         "person:yuri-goguryeo",
         "polity:goguryeo"
       ],
@@ -92139,6 +93185,71 @@
           ],
           "evidenceIds": [
             "china-chronology"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "bojang-goguryeo",
+          "entityKey": "person:bojang-goguryeo",
+          "label": "宝藏王",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "goguryeo"
+          ],
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "yeon-namsaeng",
+          "entityKey": "person:yeon-namsaeng",
+          "label": "渊男生",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "goguryeo"
+          ],
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "yeon-namgeon",
+          "entityKey": "person:yeon-namgeon",
+          "label": "渊男建",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "goguryeo"
+          ],
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "go-yeonmu",
+          "entityKey": "person:go-yeonmu",
+          "label": "高延武",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "goguryeo"
+          ],
+          "evidenceIds": [
+            "goguryeo-termination-official"
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -92165,7 +93276,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "高句丽：有 2 项待核验缺口。"
+      "summary": "高句丽：有 6 项待核验缺口。"
     },
     "han_eastern": {
       "polityId": "han_eastern",
@@ -93881,6 +94992,7 @@
         "event:silla-tang-baekje-660",
         "event:silla-tang-goguryeo-668",
         "event:silla-tang-war-670-676",
+        "heritage:goguryeo-pyongyang-city-layer",
         "heritage:silla-gyeongju-capital-site",
         "person:gyeongsun-silla",
         "person:jindeok-silla",
@@ -94359,6 +95471,7 @@
         "heritage:daming-palace-site",
         "heritage:dingding-gate-site",
         "heritage:goguryeo-guonei-city-site",
+        "heritage:goguryeo-pyongyang-city-layer",
         "heritage:hanguang-gate-site",
         "heritage:hanyangling",
         "heritage:huaqing-palace",
@@ -94389,9 +95502,26 @@
         "person:wei-zheng",
         "person:wu-zhao",
         "person:xuan-zang",
+        "person:xue-rengui",
         "polity:tang"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "xue-rengui",
+          "entityKey": "person:xue-rengui",
+          "label": "薛仁贵",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tang"
+          ],
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "silla-founded",
@@ -94486,7 +95616,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "唐：有 6 项待核验缺口。"
+      "summary": "唐：有 7 项待核验缺口。"
     },
     "tang_later": {
       "polityId": "tang_later",
@@ -98410,12 +99540,65 @@
         "event:goguryeo-moves-pyongyang",
         "event:silla-tang-goguryeo-668",
         "heritage:goguryeo-pyongyang-city-layer",
+        "person:bojang-goguryeo",
         "person:gwanggaeto",
         "person:jangsu-goguryeo",
         "person:kim-yushin",
-        "person:munmu-silla"
+        "person:munmu-silla",
+        "person:xue-rengui",
+        "person:yeon-namgeon"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "bojang-goguryeo",
+          "entityKey": "person:bojang-goguryeo",
+          "label": "宝藏王",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "goguryeo"
+          ],
+          "evidenceIds": [
+            "goguryeo-bojang-samguksagi",
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "yeon-namgeon",
+          "entityKey": "person:yeon-namgeon",
+          "label": "渊男建",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "goguryeo"
+          ],
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "xue-rengui",
+          "entityKey": "person:xue-rengui",
+          "label": "薛仁贵",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "tang"
+          ],
+          "evidenceIds": [
+            "goguryeo-termination-official"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -98423,7 +99606,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "平壤市：学习闭环已覆盖。"
+      "summary": "平壤市：有 3 项待核验缺口。"
     },
     "rome": {
       "placeId": "rome",

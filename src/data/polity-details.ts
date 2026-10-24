@@ -507,10 +507,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'goguryeo', perspectiveSummary: '高句丽从朱蒙建国叙事和东北亚早期国家化过程中形成，经历纥升骨城、国内城和后期平壤的政治中心迁移。',
     foundationProcess: ['传统纪年以公元前37年作为朱蒙建立高句丽的节点。', '早期王权在山城、河谷与部众网络中逐步整合。', '国内城及丸都山城、后期平壤分别代表不同都城阶段。'],
-    turningPoints: [turn(-37, '高句丽建立', '朱蒙建立高句丽，早期国家形态随后逐步整合。', 'goguryeo-founded'), turn(3, '迁至国内城', '琉璃明王时期政治中心转向国内城。'), turn(427, '迁都平壤', '高句丽政治中心转向平壤，国家空间发生变化。')],
-    principalFigureIds: ['jumong', 'yuri-goguryeo', 'daemusin', 'gwanggaeto', 'jangsu-goguryeo'], capitalPhases: [capital('wunvshan', -37, 2), capital('guonei', 3, 426), capital('pyongyang', 427, 585), capital('pyongyang', 586, 668, 'primary', 'formal', '586年后政治中心转入长安城，现代地点仍以平壤历史区域作参照。')],
-    heritageIds: ['wunvshan-goguryeo-early-capital-site', 'goguryeo-guonei-city-site', 'goguryeo-pyongyang-city-layer'], eventIds: ['goguryeo-founded', 'goguryeo-moves-pyongyang', 'silla-tang-goguryeo-668'], claimIds: ['claim-jumong-ruled-goguryeo-fiftyninth', 'claim-daemusin-ruled-goguryeo-fiftyseventh'], sourceIds: modernSources,
-    uncertaintyNote: '前37年属于传统建国纪年，早期国家化与城址对应不能视为精确日期；国内城、丸都山城和平壤是不同年代与功能层，遗产节点不等于单一完整宫城。',
+    turningPoints: [turn(-37, '高句丽建立', '朱蒙建立高句丽，早期国家形态随后逐步整合。', 'goguryeo-founded'), turn(3, '迁至国内城', '琉璃明王时期政治中心转向国内城。'), turn(427, '迁都平壤', '高句丽政治中心转向平壤，国家空间发生变化。', 'goguryeo-moves-pyongyang'), turn(668, '平壤失守与中央政权终止', '平壤失守，高句丽中央政权终止；唐的故地接收、遗民复兴和后续渤海分层展开。', 'silla-tang-goguryeo-668')],
+    principalFigureIds: ['jumong', 'yuri-goguryeo', 'daemusin', 'gwanggaeto', 'jangsu-goguryeo', 'bojang-goguryeo', 'yeon-gaesomun', 'yeon-namsaeng', 'yeon-namgeon', 'go-yeonmu', 'dae-joyeong', 'xue-rengui'], capitalPhases: [capital('wunvshan', -37, 2), capital('guonei', 3, 426), capital('pyongyang', 427, 585), capital('pyongyang', 586, 668, 'primary', 'formal', '586年后政治中心转入长安城，现代地点仍以平壤历史区域作参照；668年平壤失守不等于城市遗产消失。')],
+    heritageIds: ['wunvshan-goguryeo-early-capital-site', 'goguryeo-guonei-city-site', 'goguryeo-pyongyang-city-layer'], eventIds: ['goguryeo-founded', 'goguryeo-moves-pyongyang', 'silla-tang-goguryeo-668'], claimIds: ['claim-jumong-ruled-goguryeo-fiftyninth', 'claim-daemusin-ruled-goguryeo-fiftyseventh', 'claim-bojang-ruled-goguryeo-termination', 'claim-bojang-participated-goguryeo-termination'], sourceIds: [...modernSources, 'goguryeo-termination-official', 'goguryeo-bojang-samguksagi', 'goguryeo-capital-unesco'],
+    uncertaintyNote: '前37年属于传统建国纪年，早期国家化与城址对应不能视为精确日期；国内城、丸都山城和平壤是不同年代与功能层，668年是平壤失守和中央政权终止的年份级节点，不等于地方社会、遗民运动、后续渤海或城市遗产同步终止。',
   }),
   detail({
     polityId: 'han_warring', perspectiveSummary: '战国韩由晋国韩氏卿族转为周王室承认的诸侯国，以新郑为都；三家分晋的制度节点与韩氏更早的政治积累需要区分。',

@@ -85,13 +85,13 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '新罗与唐的战争 · 韩国史数据库', url: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i101220', detail: '用于660年百济灭亡与新罗—唐联军阶段核验。' }],
   },
   {
-    id: 'silla-tang-goguryeo-668', year: 668, title: '新罗—唐联军灭高句丽', summary: '高句丽王都平壤失守，东北亚政治格局进入新阶段。', placeId: 'pyongyang', sourceIds: ['silla-unification-wars-official'],
-    datePrecision: 'year', region: 'world', category: '战争／区域整合', verification: 'checked',
+    id: 'silla-tang-goguryeo-668', year: 668, endYear: 668, title: '新罗—唐联军灭高句丽', summary: '668年九月高句丽王都平壤失守，中央政权终止；唐设安东都护府，新罗与唐的承接冲突进入下一阶段。', placeId: 'pyongyang', sourceIds: ['silla-unification-wars-official', 'goguryeo-termination-official'],
+    datePrecision: 'year', region: 'world', category: '战争／政权终结／承接', verification: 'checked',
     background: '百济灭亡后，新罗—唐联军继续对高句丽发动战争，高句丽内部与外部压力持续累积。',
-    process: '668年高句丽覆亡；唐朝在高句丽故地设置安东都护府，新罗与唐的利益冲突随后转为直接战争。',
-    impact: '高句丽政权终结，半岛北部与辽东进入唐、新罗及地方势力重新竞争的阶段；统一新罗尚未在668年完成。',
+    process: '668年九月平壤城失守，高句丽中央政权终止；唐朝随后在高句丽故地设置安东都护府并组织羁縻接收，部分人口迁徙，遗民复兴与新罗—唐战争延续到668年之后。',
+    impact: '高句丽中央政权终结，但平壤城市遗产、地方社会、遗民抵抗和后续渤海形成没有同步消失；统一新罗尚未在668年完成。',
     mapNote: '庆州与平壤分别作为新罗王权和高句丽终结节点参照，不将联军胜利直接绘成新罗全半岛控制。',
-    references: [{ title: '新罗与唐的战争 · 韩国史数据库', url: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i101220', detail: '用于668年高句丽灭亡及其后新罗—唐冲突的阶段核验。' }],
+    references: [{ title: '新罗与唐的战争 · 韩国史数据库', url: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i101220', detail: '用于668年高句丽灭亡及其后新罗—唐冲突的阶段核验。' }, { title: '高句丽灭亡与复兴运动 · 韩国史数据库', url: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i100200', detail: '用于平壤失守、唐设安东都护府、遗民复兴和668年后历史延续的分层核验。' }],
   },
   {
     id: 'silla-tang-war-670-676', year: 676, title: '新罗—唐战争结束', summary: '670—676年新罗与唐围绕百济、高句丽旧地展开战争，唐军退出半岛主要地区，统一新罗阶段形成。', placeId: 'jincheng_silla', sourceIds: ['silla-unification-wars-official', 'silla-encykorea'],

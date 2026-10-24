@@ -264,6 +264,13 @@ export const people: Person[] = [
   { id: 'edward-stettinius', name: '爱德华·斯退丁纽斯', aliases: ['Edward Stettinius Jr.'], birthYear: 1900, deathYear: 1949, roles: ['美国国务卿', '旧金山会议主席'], polityIds: [], description: '斯退丁纽斯主持美国方面的旧金山会议组织工作，是联合国宪章形成与签署阶段的关键代表。', sourceIds: ['un-charter-treaty', 'un-history-official'] },
   { id: 'wang-yanzheng', name: '王延政', aliases: ['闽末代君主', '大殷末主'], deathYear: 951, roles: ['君主', '末代君主'], polityIds: ['min'], description: '王延政是闽末代君主，945年前后在南唐攻闽与福州失守的连续过程中降服，闽政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang'] },
   { id: 'wang-yenxi', name: '王延羲', aliases: ['闽康宗'], deathYear: 944, roles: ['君主', '闽王'], polityIds: ['min'], description: '王延羲是王审知之后的闽王之一，闽末继承冲突和宫廷权力重组的重要人物。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'bojang-goguryeo', name: '宝藏王', aliases: ['高句丽宝藏王', '宝臧王'], deathYear: 682, roles: ['国王', '末代君主'], polityIds: ['goguryeo'], description: '宝藏王是高句丽第二十八代、末代君主，642—668年在位；其名义王权与渊盖苏文家族掌握的实际军政权力需要分层理解。668年平壤失守后被带入唐境，个人后续处置不等同于高句丽中央政权延续。', sourceIds: ['goguryeo-bojang-samguksagi', 'goguryeo-termination-official'] },
+  { id: 'yeon-gaesomun', name: '渊盖苏文', aliases: ['泉盖苏文', '盖苏文'], birthYear: 603, deathYear: 666, roles: ['莫离支', '军政领袖', '高句丽末期权臣'], polityIds: ['goguryeo'], description: '渊盖苏文是高句丽末期掌握核心军政权力的莫离支，642年政变后拥立宝藏王；其去世后的继承与内部分裂是668年终局的重要前置背景。', sourceIds: ['goguryeo-termination-official', 'goguryeo-bojang-samguksagi'] },
+  { id: 'yeon-namsaeng', name: '渊男生', aliases: ['泉男生'], deathYear: 679, roles: ['高句丽末期大臣', '唐朝归附者'], polityIds: ['goguryeo'], description: '渊男生是渊盖苏文长子，父死后参与高句丽末期权力继承，后归附唐并参与唐对高句丽作战；其个人投唐不能等同于高句丽全体社会的选择。', sourceIds: ['goguryeo-termination-official'] },
+  { id: 'yeon-namgeon', name: '渊男建', aliases: ['泉男建'], deathYear: 679, roles: ['高句丽末期大臣', '平壤守卫者'], polityIds: ['goguryeo'], description: '渊男建是渊盖苏文之子，代表高句丽末期留在平壤抵抗唐军的权力集团；668年被俘后入唐，不能以其个人结局替代高句丽遗民后续。', sourceIds: ['goguryeo-termination-official'] },
+  { id: 'go-yeonmu', name: '高延武', aliases: ['高句丽复兴军将领'], roles: ['高句丽遗民将领', '复兴运动参与者'], polityIds: ['goguryeo'], description: '高延武在高句丽中央政权终止后参与遗民复兴，并与新罗方面共同对抗唐军；该角色属于668年后的复兴运动，不表示高句丽中央政权连续存在。', sourceIds: ['goguryeo-termination-official'] },
+  { id: 'dae-joyeong', name: '大祚荣', aliases: ['渤海大祚荣', '乞乞仲象之子'], roles: ['渤海建立者', '高句丽遗民后续人物'], description: '大祚荣在高句丽灭亡后的东北亚重组中联合部分高句丽遗民与靺鞨力量，约698年前后建立渤海；渤海是后续政权，不是高句丽中央政权的无缝延续。', sourceIds: ['goguryeo-termination-official'] },
+  { id: 'xue-rengui', name: '薛仁贵', aliases: ['唐将薛仁贵'], roles: ['唐朝将领', '安东都护'], polityIds: ['tang'], description: '薛仁贵代表唐军在高句丽灭亡后对故地的军事与羁縻接收，668年后任安东都护相关职；唐的机构接收与新罗后续战争不能简化为高句丽政权的直接继承。', sourceIds: ['goguryeo-termination-official'] },
 ];
 
 export const personById = Object.fromEntries(people.map((person) => [person.id, person]));

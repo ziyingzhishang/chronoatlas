@@ -1349,6 +1349,41 @@ export const personDetails: PersonDetail[] = [
     aliases: ['闽康宗'], offices: [{ title: '闽王', polityId: 'min', placeId: 'fuzhou', validFrom: 939, validTo: 944, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['min-ended-945'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '王延羲用于连接闽末继承危机与终局，不将其个人统治等同于945年终止事件的直接发动者。',
   },
+  {
+    personId: 'bojang-goguryeo', biography: '宝藏王是高句丽末代君主，642年即位，668年平壤失守后被俘入唐。其名义王权与渊盖苏文家族掌握的末期军政权力分开表达；宝藏王在唐境内的后续任命也不代表高句丽中央政权复立。',
+    aliases: ['高句丽宝藏王', '宝臧王'], offices: [{ title: '高句丽末代国王', polityId: 'goguryeo', placeId: 'pyongyang', validFrom: 642, validTo: 668, datePrecision: 'range', sourceIds: ['goguryeo-bojang-samguksagi', 'goguryeo-termination-official'] }],
+    keyEvents: ['silla-tang-goguryeo-668'], sourceIds: ['goguryeo-bojang-samguksagi', 'goguryeo-termination-official'], uncertaintyNote: '668年是平壤失守和高句丽中央政权终止节点；宝藏王被俘、唐境内安置与高句丽遗民复兴分别记录。',
+  },
+  {
+    personId: 'yeon-gaesomun', biography: '渊盖苏文是高句丽末期莫离支，642年政变后拥立宝藏王并掌握实际军政权力。其666年去世后的继承分裂，为唐—新罗联军在668年取得平壤提供了重要前置背景。',
+    aliases: ['泉盖苏文', '盖苏文'], offices: [{ title: '高句丽莫离支', polityId: 'goguryeo', placeId: 'pyongyang', validFrom: 642, validTo: 666, datePrecision: 'range', sourceIds: ['goguryeo-termination-official', 'goguryeo-bojang-samguksagi'] }],
+    keyEvents: ['silla-tang-goguryeo-668'], sourceIds: ['goguryeo-termination-official', 'goguryeo-bojang-samguksagi'], uncertaintyNote: '渊盖苏文去世、三子继承冲突与668年平壤失守是相互关联但不同层次的阶段；不把个人权力等同于高句丽全部中央制度。',
+  },
+  {
+    personId: 'yeon-namsaeng', biography: '渊男生是渊盖苏文长子，父死后参与高句丽末期权力继承，后归附唐并在唐军攻高句丽阶段提供协助。其归附是末期权力集团的个人路径，不代表高句丽遗民整体或中央政权的连续。',
+    aliases: ['泉男生'], offices: [{ title: '高句丽末期大臣', polityId: 'goguryeo', validFrom: 666, validTo: 668, datePrecision: 'range', sourceIds: ['goguryeo-termination-official'] }],
+    keyEvents: ['silla-tang-goguryeo-668'], sourceIds: ['goguryeo-termination-official'], uncertaintyNote: '渊男生归附唐与平壤陷落属于末期军事政治过程；人物去向和政权终止不可互相替代。',
+  },
+  {
+    personId: 'yeon-namgeon', biography: '渊男建是渊盖苏文之子，代表留在平壤抵抗唐军的末期权力集团，668年平壤失守后被俘入唐。其个人结局不代表平壤城市遗产或高句丽遗民同时消失。',
+    aliases: ['泉男建'], offices: [{ title: '高句丽末期军政人物', polityId: 'goguryeo', placeId: 'pyongyang', validFrom: 666, validTo: 668, datePrecision: 'range', sourceIds: ['goguryeo-termination-official'] }],
+    keyEvents: ['silla-tang-goguryeo-668'], sourceIds: ['goguryeo-termination-official'], uncertaintyNote: '渊男建与平壤守卫、被俘入唐相连；不能由其个人投降或被俘推导全部地方同日归附。',
+  },
+  {
+    personId: 'go-yeonmu', biography: '高延武在668年后参与高句丽遗民复兴运动，并与新罗方面联合攻击唐军。该人物连接的是政权终止后的抵抗与遗民历史，不是高句丽中央政权继续存在的证明。',
+    aliases: ['高句丽复兴军将领'], offices: [{ title: '高句丽遗民复兴军将领', polityId: 'goguryeo', validFrom: 669, validTo: 676, datePrecision: 'range', sourceIds: ['goguryeo-termination-official'] }],
+    keyEvents: ['silla-tang-goguryeo-668', 'silla-tang-war-670-676'], sourceIds: ['goguryeo-termination-official'], uncertaintyNote: '高延武属于668年后遗民复兴与新罗—唐冲突阶段；复兴运动、唐羁縻统治和新罗控制扩展须分层。',
+  },
+  {
+    personId: 'dae-joyeong', biography: '大祚荣在高句丽灭亡后的东北亚重组中联合部分高句丽遗民与靺鞨力量，约698年前后建立渤海。渤海吸收了高句丽遗民因素，但作为后续政权单独记录，不把它写成高句丽中央政权的无缝延续。',
+    aliases: ['渤海大祚荣', '乞乞仲象之子'], offices: [{ title: '渤海建立者', validFrom: 698, datePrecision: 'approximate', sourceIds: ['goguryeo-termination-official'] }],
+    keyEvents: ['silla-tang-goguryeo-668'], sourceIds: ['goguryeo-termination-official'], uncertaintyNote: '约698年为渤海形成的项目精度；高句丽遗民、靺鞨部众与渤海国家形成之间存在连续过程，不将后续政权回填为668年高句丽仍存。',
+  },
+  {
+    personId: 'xue-rengui', biography: '薛仁贵是唐军将领，连接668年高句丽中央政权终止后唐在平壤设置安东都护府及其故地羁縻接收。唐的行政与军事安排属于胜利后的承接阶段，不等同于高句丽中央政权的制度连续。',
+    aliases: ['唐将薛仁贵'], offices: [{ title: '唐朝将领／安东都护相关职', polityId: 'tang', placeId: 'pyongyang', validFrom: 668, validTo: 669, datePrecision: 'range', sourceIds: ['goguryeo-termination-official'] }],
+    keyEvents: ['silla-tang-goguryeo-668'], sourceIds: ['goguryeo-termination-official'], uncertaintyNote: '薛仁贵用于连接唐军接收与安东都护府阶段；唐的故地治理和新罗的后续争夺不能合并为单一承接事实。',
+  },
 ];
 
 const detailById = new Map(personDetails.map((detail) => [detail.personId, detail]));

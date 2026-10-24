@@ -82,6 +82,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'silla-tang-war-670-676', status: 'confirmed', expectedPrecision: 'range', explanation: '670—676年新罗与唐的战争是有明确起止范围的连续过程，不能压缩为676年单日。', timelineStrategy: 'range-band' },
   { eventId: 'silla-ended-935', status: 'confirmed', expectedPrecision: 'year', explanation: '935年敬顺王向高丽王建归附、新罗中央王统终止与高丽承接构成年份级节点；庆州城市遗产、王族后续身份和高丽地方行政接收另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'goguryeo-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '前37年是高句丽传统建国纪年，早期国家化与城址对应不能被视为精确日期。', timelineStrategy: 'approximate-marker' },
+  { eventId: 'silla-tang-goguryeo-668', status: 'confirmed', expectedPrecision: 'year', explanation: '668年九月平壤城陷与高句丽中央政权终止构成年份级节点；唐设安东都护府、669年后人口迁徙、遗民复兴、新罗—唐战争和约698年渤海形成另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'cheng-han-founded', status: 'confirmed', expectedPrecision: 'year', explanation: '《资治通鉴》卷八十五明确记载304年十月李雄即成都王位，形成政权单年节点；306年称帝是后续阶段，不能据此推断304年已控制整个巴蜀。', timelineStrategy: 'year-marker' },
   { eventId: 'tuyuhun-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '313年前后表示吐谷浑部众形成稳定政治共同体，迁徙与建制不是单日完成。', timelineStrategy: 'approximate-marker' },
   { eventId: 'former-liang-founded', status: 'approximate', expectedPrecision: 'approximate', explanation: '314年前后表示河西张氏地方统治的独立形成，前凉建政起点存在口径差异。', timelineStrategy: 'approximate-marker' },
