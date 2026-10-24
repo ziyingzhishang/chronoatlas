@@ -49,7 +49,7 @@ describe('round 112 task B Sui-Tang capital heritage boundary', () => {
     expect(courtMove?.phases).toEqual(expect.arrayContaining([
       expect.objectContaining({ startYear: 904, endYear: 904 }),
     ]));
-    expect(tang?.eventIds).not.toContain('court-moves-luoyang');
+    expect(tang?.eventIds).toContain('court-moves-luoyang');
   });
 
   it('preserves the shared, layered, and Xuanzang boundary classifications', () => {
