@@ -15109,6 +15109,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -15127,15 +15128,18 @@
             "chen-shubao",
             "chen_southern",
             "eastern-jin",
+            "eastern-jin-ended-420",
             "jin-unification",
             "jin_eastern",
             "jin_western",
             "liang_southern",
             "liu-song-ended-479",
+            "liu-song-founded",
             "qi_southern",
             "song_southern",
             "southern-chen-ended-589",
             "southern-chen-founded",
+            "southern-liang-founded",
             "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
@@ -15209,11 +15213,18 @@
             "eastern-jin-ended-420",
             "jin_eastern",
             "liang_southern",
+            "liu-song-ended-479",
+            "liu-song-founded",
             "liu-yu",
             "qi_southern",
             "sima-dewen",
             "sima-rui",
-            "song_southern"
+            "song_southern",
+            "southern-chen-ended-589",
+            "southern-chen-founded",
+            "southern-liang-founded",
+            "southern-qi-ended-502",
+            "southern-qi-founded"
           ]
         },
         {
@@ -18580,6 +18591,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -18597,9 +18609,13 @@
             "chen_southern",
             "liang_southern",
             "liu-song-ended-479",
+            "liu-song-founded",
             "qi_southern",
             "song_southern",
+            "southern-chen-ended-589",
             "southern-chen-founded",
+            "southern-liang-founded",
+            "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
             "xiao-daocheng"
@@ -63926,6 +63942,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -63944,15 +63961,18 @@
             "chen-shubao",
             "chen_southern",
             "eastern-jin",
+            "eastern-jin-ended-420",
             "jin-unification",
             "jin_eastern",
             "jin_western",
             "liang_southern",
             "liu-song-ended-479",
+            "liu-song-founded",
             "qi_southern",
             "song_southern",
             "southern-chen-ended-589",
             "southern-chen-founded",
+            "southern-liang-founded",
             "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
@@ -64026,11 +64046,18 @@
             "eastern-jin-ended-420",
             "jin_eastern",
             "liang_southern",
+            "liu-song-ended-479",
+            "liu-song-founded",
             "liu-yu",
             "qi_southern",
             "sima-dewen",
             "sima-rui",
-            "song_southern"
+            "song_southern",
+            "southern-chen-ended-589",
+            "southern-chen-founded",
+            "southern-liang-founded",
+            "southern-qi-ended-502",
+            "southern-qi-founded"
           ]
         },
         {
@@ -67397,6 +67424,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -67414,9 +67442,13 @@
             "chen_southern",
             "liang_southern",
             "liu-song-ended-479",
+            "liu-song-founded",
             "qi_southern",
             "song_southern",
+            "southern-chen-ended-589",
             "southern-chen-founded",
+            "southern-liang-founded",
+            "southern-qi-ended-502",
             "southern-qi-founded",
             "sui-unification",
             "xiao-daocheng"

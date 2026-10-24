@@ -46,7 +46,7 @@ describe('建康／南京城市遗产审计', () => {
       expect(detail?.presentDayValue, target.heritageId).toBeTruthy();
       expect(detail?.sourceIds.every((sourceId) => sourceById[sourceId]), target.heritageId).toBe(true);
       expect(detail?.associatedPolities, target.heritageId).toContain(target.polityId);
-      expect(detail?.associatedEvents, target.heritageId).toEqual(expect.arrayContaining(target.eventIds));
+      expect(detail?.associatedEvents, target.heritageId).toEqual(expect.arrayContaining([...target.eventIds]));
 
       expect(polity, target.polityId).toBeDefined();
       expect(capitalTerm, target.polityId).toMatchObject({ placeId: 'jiankang' });
@@ -64,7 +64,7 @@ describe('建康／南京城市遗产审计', () => {
   });
 
   it('只审计建康阶段的既有高置信节点，不把弱考据寺院或传说性宫殿扩为遗产对象', () => {
-    const auditedIds = new Set(jiankangCoverage.map(({ heritageId }) => heritageId));
+    const auditedIds: Set<string> = new Set(jiankangCoverage.map(({ heritageId }) => heritageId));
     const jiankangAssets = heritageAssets.filter((asset) => (
       asset.placeId === 'jiankang' && (asset.constructionTo ?? Number.POSITIVE_INFINITY) <= 589
     ));
