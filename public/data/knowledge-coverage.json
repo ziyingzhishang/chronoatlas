@@ -6009,6 +6009,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "northern-yan-ended-436",
+      "entityKey": "event:northern-yan-ended-436",
+      "label": "北魏灭北燕、龙城政权终止",
+      "polityIds": [
+        "northern_yan",
+        "wei_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-yan-ended-436"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian-vol123-northern-yan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-feng-hong-participated-northern-yan-ended-436",
+            "claim:claim-tuoba-tao-participated-northern-yan-ended-436",
+            "event-detail:northern-yan-ended-436"
+          ],
+          "relatedIds": [
+            "feng-hong",
+            "northern-wei-founded",
+            "northern-yan-founded",
+            "northern_yan",
+            "tuoba-tao",
+            "wei_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "northern-yan-founded",
       "entityKey": "event:northern-yan-founded",
       "label": "北燕政权形成",
@@ -10683,6 +10747,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-qin-ended-431",
+      "entityKey": "event:western-qin-ended-431",
+      "label": "西秦政权终止",
+      "polityIds": [
+        "western_qin",
+        "xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-qin-ended-431"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-helian-ding-participated-western-qin-ended-431",
+            "claim:claim-qifu-mumo-participated-western-qin-ended-431",
+            "event-detail:western-qin-ended-431"
+          ],
+          "relatedIds": [
+            "helian-ding",
+            "qifu-mumo",
+            "western-qin-restored-409",
+            "western_qin",
+            "xia",
+            "xia-sixteen-states-founded-eighth-batch"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "western-qin-founded",
       "entityKey": "event:western-qin-founded",
       "label": "西秦政权形成",
@@ -10734,6 +10862,131 @@
             "qifu-gangui",
             "qifu-guoren",
             "western_qin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "western-qin-restored-409",
+      "entityKey": "event:western-qin-restored-409",
+      "label": "西秦复立",
+      "polityIds": [
+        "later_qin",
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-qin-restored-409"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qifu-gangui-participated-western-qin-restored-409",
+            "event-detail:western-qin-restored-409"
+          ],
+          "relatedIds": [
+            "later_qin",
+            "qifu-gangui",
+            "western-qin-surrendered-later-qin-400",
+            "western_qin",
+            "yao-xing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "western-qin-surrendered-later-qin-400",
+      "entityKey": "event:western-qin-surrendered-later-qin-400",
+      "label": "西秦降后秦",
+      "polityIds": [
+        "later_qin",
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-qin-surrendered-later-qin-400"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qifu-gangui-participated-western-qin-surrendered-later-qin-400",
+            "event-detail:western-qin-surrendered-later-qin-400"
+          ],
+          "relatedIds": [
+            "later-qin-founded",
+            "later_qin",
+            "qifu-gangui",
+            "western-qin-founded",
+            "western_qin",
+            "yao-xing"
           ]
         },
         {
@@ -16736,8 +16989,8 @@
       "entityKey": "heritage:northern-yan-longcheng-tomb",
       "label": "北燕龙城冯氏墓葬遗址群",
       "polityIds": [
-        "later_yan",
-        "northern_yan"
+        "northern_yan",
+        "wei_northern"
       ],
       "checks": [
         {
@@ -16762,7 +17015,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
-            "zizhi-tongjian"
+            "zizhi-tongjian-vol123-northern-yan"
           ],
           "relatedIds": []
         },
@@ -16774,9 +17027,11 @@
             "heritage-detail:northern-yan-longcheng-tomb"
           ],
           "relatedIds": [
-            "murong-chui",
+            "feng-hong",
+            "northern-yan-ended-436",
             "northern-yan-founded",
-            "northern_yan"
+            "northern_yan",
+            "wei_northern"
           ]
         },
         {
@@ -18736,7 +18991,8 @@
       "label": "西秦苑川城址候选遗产",
       "polityIds": [
         "later_qin",
-        "western_qin"
+        "western_qin",
+        "xia"
       ],
       "checks": [
         {
@@ -18760,7 +19016,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "china-chronology",
+            "modern-geography-reference",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -18773,8 +19031,16 @@
             "heritage-detail:western-qin-yuanchuan-city-candidate"
           ],
           "relatedIds": [
+            "helian-ding",
+            "later_qin",
+            "qifu-gangui",
+            "qifu-mumo",
+            "western-qin-ended-431",
             "western-qin-founded",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
             "western_qin",
+            "xia",
             "yao-xing"
           ]
         },
@@ -22079,7 +22345,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
-            "zizhi-tongjian"
+            "zizhi-tongjian-vol123-northern-yan"
           ],
           "relatedIds": []
         },
@@ -22088,16 +22354,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-feng-hong-enemy-tuoba-tao-termination-436",
             "claim:claim-feng-hong-participated-northern-yan",
+            "claim:claim-feng-hong-participated-northern-yan-ended-436",
             "claim:claim-feng-hong-ruled-northern-yan-sixtysecond",
             "claim:claim-feng-hong-sibling-feng-ba",
             "claim:claim-feng-hong-succeeded-feng-ba-fortieth",
             "claim:claim-tuoba-tao-enemy-feng-hong-sixtysixth",
+            "event-detail:northern-yan-ended-436",
             "event-detail:northern-yan-founded",
             "person-polity:feng-hong:northern_yan"
           ],
           "relatedIds": [
             "feng-ba",
+            "northern-yan-ended-436",
             "northern-yan-founded",
             "northern_yan",
             "tuoba-tao"
@@ -22109,7 +22379,7 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
-            "zizhi-tongjian"
+            "zizhi-tongjian-vol123-northern-yan"
           ],
           "relatedIds": []
         }
@@ -23739,6 +24009,69 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "helian-ding",
+      "entityKey": "person:helian-ding",
+      "label": "赫连定",
+      "polityIds": [
+        "xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "helian-ding"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-helian-ding-participated-western-qin-ended-431",
+            "claim:claim-qifu-mumo-enemy-helian-ding-termination-431",
+            "event-detail:western-qin-ended-431",
+            "person-polity:helian-ding:xia"
+          ],
+          "relatedIds": [
+            "qifu-mumo",
+            "western-qin-ended-431",
+            "xia"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -29961,18 +30294,26 @@
           "evidenceIds": [
             "claim:claim-qifu-chipan-child-qifu-gangui",
             "claim:claim-qifu-chipan-succeeded-qifu-gangui-fortieth",
+            "claim:claim-qifu-gangui-enemy-yao-xing-western-qin-surrender-400",
             "claim:claim-qifu-gangui-participated-western-qin",
+            "claim:claim-qifu-gangui-participated-western-qin-restored-409",
+            "claim:claim-qifu-gangui-participated-western-qin-surrendered-later-qin-400",
             "claim:claim-qifu-gangui-related-qifu-guoren",
             "claim:claim-qifu-gangui-ruled-western-qin-sixtysecond",
             "claim:claim-qifu-gangui-succeeded-qifu-guoren-fortieth",
             "event-detail:western-qin-founded",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "person-polity:qifu-gangui:western_qin"
           ],
           "relatedIds": [
             "qifu-chipan",
             "qifu-guoren",
             "western-qin-founded",
-            "western_qin"
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
+            "western_qin",
+            "yao-xing"
           ]
         },
         {
@@ -30041,6 +30382,70 @@
             "fu-jian",
             "qifu-gangui",
             "western-qin-founded",
+            "western_qin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "qifu-mumo",
+      "entityKey": "person:qifu-mumo",
+      "label": "乞伏暮末",
+      "polityIds": [
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qifu-mumo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qifu-mumo-enemy-helian-ding-termination-431",
+            "claim:claim-qifu-mumo-participated-western-qin-ended-431",
+            "claim:claim-qifu-mumo-ruled-western-qin-termination-431",
+            "event-detail:western-qin-ended-431",
+            "person-polity:qifu-mumo:western_qin"
+          ],
+          "relatedIds": [
+            "helian-ding",
+            "western-qin-ended-431",
             "western_qin"
           ]
         },
@@ -32547,18 +32952,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-feng-hong-enemy-tuoba-tao-termination-436",
             "claim:claim-juqu-mujian-enemy-tuoba-tao",
             "claim:claim-tuoba-si-parent-tuoba-tao",
             "claim:claim-tuoba-tao-enemy-feng-hong-sixtysixth",
+            "claim:claim-tuoba-tao-participated-northern-yan-ended-436",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-related-tuoba-tao",
             "event-detail:northern-liang-ended-439",
+            "event-detail:northern-yan-ended-436",
             "person-polity:tuoba-tao:wei_northern"
           ],
           "relatedIds": [
             "feng-hong",
             "juqu-mujian",
             "northern-liang-ended-439",
+            "northern-yan-ended-436",
             "tuoba-si",
             "wei_northern",
             "yuan-hong"
@@ -34642,12 +35051,15 @@
             "claim:claim-heliAN-bobo-enemy-yao-xing",
             "claim:claim-li-xiong-related-yao-xing",
             "claim:claim-liu-yu-enemy-yao-xing",
+            "claim:claim-qifu-gangui-enemy-yao-xing-western-qin-surrender-400",
             "claim:claim-yao-chang-parent-yao-xing",
             "claim:claim-yao-xing-child-yao-chang-fiftyfourth",
             "claim:claim-yao-xing-participated-later-qin-founded-sixtyfifth",
             "claim:claim-yao-xing-ruled-later-qin-fortyseventh",
             "claim:claim-yao-xing-succeeded-yao-chang-fortieth",
             "event-detail:former-qin-ended-394",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "person-polity:yao-xing:later_qin"
           ],
           "relatedIds": [
@@ -34658,6 +35070,9 @@
             "later_qin",
             "li-xiong",
             "liu-yu",
+            "qifu-gangui",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
             "yao-chang"
           ]
         },
@@ -39279,8 +39694,11 @@
             "event-detail:later-qin-falls-changan",
             "event-detail:later-qin-founded",
             "event-detail:liu-yu-captures-changan",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "heritage-detail:former-qin-changan-city-layer",
             "heritage-detail:later-qin-changan-city-layer",
+            "heritage-detail:western-qin-yuanchuan-city-candidate",
             "person:yao-chang",
             "person:yao-hong",
             "person:yao-xing"
@@ -39293,6 +39711,9 @@
             "later-qin-falls-changan",
             "later-qin-founded",
             "liu-yu-captures-changan",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
+            "western-qin-yuanchuan-city-candidate",
             "yao-chang",
             "yao-hong",
             "yao-xing"
@@ -40247,6 +40668,7 @@
             "claim:claim-feng-hong-ruled-northern-yan-sixtysecond",
             "claim:claim-gao-yun-ruled-northern-yan-sixtysecond",
             "event-detail:later-yan-ended-407",
+            "event-detail:northern-yan-ended-436",
             "event-detail:northern-yan-founded",
             "heritage-detail:northern-yan-longcheng-tomb",
             "person:feng-ba",
@@ -40260,6 +40682,7 @@
             "feng-sufo",
             "gao-yun",
             "later-yan-ended-407",
+            "northern-yan-ended-436",
             "northern-yan-founded",
             "northern-yan-longcheng-tomb"
           ]
@@ -42338,8 +42761,10 @@
             "event-detail:northern-liang-ended-439",
             "event-detail:northern-wei-ended-534",
             "event-detail:northern-wei-founded",
+            "event-detail:northern-yan-ended-436",
             "heritage-detail:longmen-grottoes",
             "heritage-detail:luoyang-han-wei-city-site",
+            "heritage-detail:northern-yan-longcheng-tomb",
             "heritage-detail:yongning-temple-pagoda-site",
             "heritage-detail:yungang-grottoes",
             "person:tuoba-gui",
@@ -42354,6 +42779,8 @@
             "northern-liang-ended-439",
             "northern-wei-ended-534",
             "northern-wei-founded",
+            "northern-yan-ended-436",
+            "northern-yan-longcheng-tomb",
             "tuoba-gui",
             "tuoba-si",
             "tuoba-tao",
@@ -42777,21 +43204,30 @@
             "claim:claim-qifu-chipan-ruled-western-qin-sixtythird",
             "claim:claim-qifu-gangui-ruled-western-qin-sixtysecond",
             "claim:claim-qifu-guoren-ruled-western-qin-sixtyfirst",
+            "claim:claim-qifu-mumo-ruled-western-qin-termination-431",
             "event-detail:southern-liang-ended-414",
+            "event-detail:western-qin-ended-431",
             "event-detail:western-qin-founded",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "heritage-detail:southern-liang-ledu-city-site",
             "heritage-detail:western-qin-yuanchuan-city-candidate",
             "person:qifu-chipan",
             "person:qifu-gangui",
-            "person:qifu-guoren"
+            "person:qifu-guoren",
+            "person:qifu-mumo"
           ],
           "relatedIds": [
             "qifu-chipan",
             "qifu-gangui",
             "qifu-guoren",
+            "qifu-mumo",
             "southern-liang-ended-414",
             "southern-liang-ledu-city-site",
+            "western-qin-ended-431",
             "western-qin-founded",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
             "western-qin-yuanchuan-city-candidate"
           ]
         },
@@ -43195,16 +43631,22 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-he-lian-bo-bo-ruled-xia-sixtyfirst",
+            "event-detail:western-qin-ended-431",
             "event-detail:xia-capital-tongwan-established",
             "event-detail:xia-sixteen-states-founded-eighth-batch",
             "heritage-detail:tongwan-city-site",
             "heritage-detail:tongwan-south-gate-site",
-            "person:heliAN-bobo"
+            "heritage-detail:western-qin-yuanchuan-city-candidate",
+            "person:heliAN-bobo",
+            "person:helian-ding"
           ],
           "relatedIds": [
             "heliAN-bobo",
+            "helian-ding",
             "tongwan-city-site",
             "tongwan-south-gate-site",
+            "western-qin-ended-431",
+            "western-qin-yuanchuan-city-candidate",
             "xia-capital-tongwan-established",
             "xia-sixteen-states-founded-eighth-batch"
           ]
@@ -44649,7 +45091,7 @@
       ],
       "evidenceIds": [
         "china-chronology",
-        "zizhi-tongjian"
+        "zizhi-tongjian-vol123-northern-yan"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -44796,6 +45238,23 @@
       "kind": "uncertain",
       "polityIds": [
         "han_warring"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "helian-ding",
+      "entityKey": "person:helian-ding",
+      "label": "赫连定",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "xia"
       ],
       "evidenceIds": [
         "china-chronology",
@@ -45180,6 +45639,23 @@
       "entityId": "qifu-guoren",
       "entityKey": "person:qifu-guoren",
       "label": "乞伏国仁",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "western_qin"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "qifu-mumo",
+      "entityKey": "person:qifu-mumo",
+      "label": "乞伏暮末",
       "dimension": "time",
       "kind": "uncertain",
       "polityIds": [
@@ -51690,6 +52166,70 @@
         }
       ]
     },
+    "event:northern-yan-ended-436": {
+      "entityType": "event",
+      "entityId": "northern-yan-ended-436",
+      "entityKey": "event:northern-yan-ended-436",
+      "label": "北魏灭北燕、龙城政权终止",
+      "polityIds": [
+        "northern_yan",
+        "wei_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "northern-yan-ended-436"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "modern-geography-reference",
+            "zizhi-tongjian-vol123-northern-yan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-feng-hong-participated-northern-yan-ended-436",
+            "claim:claim-tuoba-tao-participated-northern-yan-ended-436",
+            "event-detail:northern-yan-ended-436"
+          ],
+          "relatedIds": [
+            "feng-hong",
+            "northern-wei-founded",
+            "northern-yan-founded",
+            "northern_yan",
+            "tuoba-tao",
+            "wei_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:northern-yan-founded": {
       "entityType": "event",
       "entityId": "northern-yan-founded",
@@ -56364,6 +56904,70 @@
         }
       ]
     },
+    "event:western-qin-ended-431": {
+      "entityType": "event",
+      "entityId": "western-qin-ended-431",
+      "entityKey": "event:western-qin-ended-431",
+      "label": "西秦政权终止",
+      "polityIds": [
+        "western_qin",
+        "xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-qin-ended-431"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-helian-ding-participated-western-qin-ended-431",
+            "claim:claim-qifu-mumo-participated-western-qin-ended-431",
+            "event-detail:western-qin-ended-431"
+          ],
+          "relatedIds": [
+            "helian-ding",
+            "qifu-mumo",
+            "western-qin-restored-409",
+            "western_qin",
+            "xia",
+            "xia-sixteen-states-founded-eighth-batch"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:western-qin-founded": {
       "entityType": "event",
       "entityId": "western-qin-founded",
@@ -56417,6 +57021,131 @@
             "qifu-gangui",
             "qifu-guoren",
             "western_qin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:western-qin-restored-409": {
+      "entityType": "event",
+      "entityId": "western-qin-restored-409",
+      "entityKey": "event:western-qin-restored-409",
+      "label": "西秦复立",
+      "polityIds": [
+        "later_qin",
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-qin-restored-409"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qifu-gangui-participated-western-qin-restored-409",
+            "event-detail:western-qin-restored-409"
+          ],
+          "relatedIds": [
+            "later_qin",
+            "qifu-gangui",
+            "western-qin-surrendered-later-qin-400",
+            "western_qin",
+            "yao-xing"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:western-qin-surrendered-later-qin-400": {
+      "entityType": "event",
+      "entityId": "western-qin-surrendered-later-qin-400",
+      "entityKey": "event:western-qin-surrendered-later-qin-400",
+      "label": "西秦降后秦",
+      "polityIds": [
+        "later_qin",
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-qin-surrendered-later-qin-400"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qifu-gangui-participated-western-qin-surrendered-later-qin-400",
+            "event-detail:western-qin-surrendered-later-qin-400"
+          ],
+          "relatedIds": [
+            "later-qin-founded",
+            "later_qin",
+            "qifu-gangui",
+            "western-qin-founded",
+            "western_qin",
+            "yao-xing"
           ]
         },
         {
@@ -62419,8 +63148,8 @@
       "entityKey": "heritage:northern-yan-longcheng-tomb",
       "label": "北燕龙城冯氏墓葬遗址群",
       "polityIds": [
-        "later_yan",
-        "northern_yan"
+        "northern_yan",
+        "wei_northern"
       ],
       "checks": [
         {
@@ -62445,7 +63174,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "modern-geography-reference",
-            "zizhi-tongjian"
+            "zizhi-tongjian-vol123-northern-yan"
           ],
           "relatedIds": []
         },
@@ -62457,9 +63186,11 @@
             "heritage-detail:northern-yan-longcheng-tomb"
           ],
           "relatedIds": [
-            "murong-chui",
+            "feng-hong",
+            "northern-yan-ended-436",
             "northern-yan-founded",
-            "northern_yan"
+            "northern_yan",
+            "wei_northern"
           ]
         },
         {
@@ -64419,7 +65150,8 @@
       "label": "西秦苑川城址候选遗产",
       "polityIds": [
         "later_qin",
-        "western_qin"
+        "western_qin",
+        "xia"
       ],
       "checks": [
         {
@@ -64443,7 +65175,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "capital-history-reference",
             "china-chronology",
+            "modern-geography-reference",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -64456,8 +65190,16 @@
             "heritage-detail:western-qin-yuanchuan-city-candidate"
           ],
           "relatedIds": [
+            "helian-ding",
+            "later_qin",
+            "qifu-gangui",
+            "qifu-mumo",
+            "western-qin-ended-431",
             "western-qin-founded",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
             "western_qin",
+            "xia",
             "yao-xing"
           ]
         },
@@ -67762,7 +68504,7 @@
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
             "china-chronology",
-            "zizhi-tongjian"
+            "zizhi-tongjian-vol123-northern-yan"
           ],
           "relatedIds": []
         },
@@ -67771,16 +68513,20 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-feng-hong-enemy-tuoba-tao-termination-436",
             "claim:claim-feng-hong-participated-northern-yan",
+            "claim:claim-feng-hong-participated-northern-yan-ended-436",
             "claim:claim-feng-hong-ruled-northern-yan-sixtysecond",
             "claim:claim-feng-hong-sibling-feng-ba",
             "claim:claim-feng-hong-succeeded-feng-ba-fortieth",
             "claim:claim-tuoba-tao-enemy-feng-hong-sixtysixth",
+            "event-detail:northern-yan-ended-436",
             "event-detail:northern-yan-founded",
             "person-polity:feng-hong:northern_yan"
           ],
           "relatedIds": [
             "feng-ba",
+            "northern-yan-ended-436",
             "northern-yan-founded",
             "northern_yan",
             "tuoba-tao"
@@ -67792,7 +68538,7 @@
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
-            "zizhi-tongjian"
+            "zizhi-tongjian-vol123-northern-yan"
           ],
           "relatedIds": []
         }
@@ -69422,6 +70168,69 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:helian-ding": {
+      "entityType": "person",
+      "entityId": "helian-ding",
+      "entityKey": "person:helian-ding",
+      "label": "赫连定",
+      "polityIds": [
+        "xia"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "helian-ding"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-helian-ding-participated-western-qin-ended-431",
+            "claim:claim-qifu-mumo-enemy-helian-ding-termination-431",
+            "event-detail:western-qin-ended-431",
+            "person-polity:helian-ding:xia"
+          ],
+          "relatedIds": [
+            "qifu-mumo",
+            "western-qin-ended-431",
+            "xia"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -75644,18 +76453,26 @@
           "evidenceIds": [
             "claim:claim-qifu-chipan-child-qifu-gangui",
             "claim:claim-qifu-chipan-succeeded-qifu-gangui-fortieth",
+            "claim:claim-qifu-gangui-enemy-yao-xing-western-qin-surrender-400",
             "claim:claim-qifu-gangui-participated-western-qin",
+            "claim:claim-qifu-gangui-participated-western-qin-restored-409",
+            "claim:claim-qifu-gangui-participated-western-qin-surrendered-later-qin-400",
             "claim:claim-qifu-gangui-related-qifu-guoren",
             "claim:claim-qifu-gangui-ruled-western-qin-sixtysecond",
             "claim:claim-qifu-gangui-succeeded-qifu-guoren-fortieth",
             "event-detail:western-qin-founded",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "person-polity:qifu-gangui:western_qin"
           ],
           "relatedIds": [
             "qifu-chipan",
             "qifu-guoren",
             "western-qin-founded",
-            "western_qin"
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
+            "western_qin",
+            "yao-xing"
           ]
         },
         {
@@ -75724,6 +76541,70 @@
             "fu-jian",
             "qifu-gangui",
             "western-qin-founded",
+            "western_qin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:qifu-mumo": {
+      "entityType": "person",
+      "entityId": "qifu-mumo",
+      "entityKey": "person:qifu-mumo",
+      "label": "乞伏暮末",
+      "polityIds": [
+        "western_qin"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qifu-mumo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qifu-mumo-enemy-helian-ding-termination-431",
+            "claim:claim-qifu-mumo-participated-western-qin-ended-431",
+            "claim:claim-qifu-mumo-ruled-western-qin-termination-431",
+            "event-detail:western-qin-ended-431",
+            "person-polity:qifu-mumo:western_qin"
+          ],
+          "relatedIds": [
+            "helian-ding",
+            "western-qin-ended-431",
             "western_qin"
           ]
         },
@@ -78230,18 +79111,22 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-feng-hong-enemy-tuoba-tao-termination-436",
             "claim:claim-juqu-mujian-enemy-tuoba-tao",
             "claim:claim-tuoba-si-parent-tuoba-tao",
             "claim:claim-tuoba-tao-enemy-feng-hong-sixtysixth",
+            "claim:claim-tuoba-tao-participated-northern-yan-ended-436",
             "claim:claim-tuoba-tao-ruled-northern-wei",
             "claim:claim-yuan-hong-related-tuoba-tao",
             "event-detail:northern-liang-ended-439",
+            "event-detail:northern-yan-ended-436",
             "person-polity:tuoba-tao:wei_northern"
           ],
           "relatedIds": [
             "feng-hong",
             "juqu-mujian",
             "northern-liang-ended-439",
+            "northern-yan-ended-436",
             "tuoba-si",
             "wei_northern",
             "yuan-hong"
@@ -80325,12 +81210,15 @@
             "claim:claim-heliAN-bobo-enemy-yao-xing",
             "claim:claim-li-xiong-related-yao-xing",
             "claim:claim-liu-yu-enemy-yao-xing",
+            "claim:claim-qifu-gangui-enemy-yao-xing-western-qin-surrender-400",
             "claim:claim-yao-chang-parent-yao-xing",
             "claim:claim-yao-xing-child-yao-chang-fiftyfourth",
             "claim:claim-yao-xing-participated-later-qin-founded-sixtyfifth",
             "claim:claim-yao-xing-ruled-later-qin-fortyseventh",
             "claim:claim-yao-xing-succeeded-yao-chang-fortieth",
             "event-detail:former-qin-ended-394",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "person-polity:yao-xing:later_qin"
           ],
           "relatedIds": [
@@ -80341,6 +81229,9 @@
             "later_qin",
             "li-xiong",
             "liu-yu",
+            "qifu-gangui",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
             "yao-chang"
           ]
         },
@@ -84962,8 +85853,11 @@
             "event-detail:later-qin-falls-changan",
             "event-detail:later-qin-founded",
             "event-detail:liu-yu-captures-changan",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "heritage-detail:former-qin-changan-city-layer",
             "heritage-detail:later-qin-changan-city-layer",
+            "heritage-detail:western-qin-yuanchuan-city-candidate",
             "person:yao-chang",
             "person:yao-hong",
             "person:yao-xing"
@@ -84976,6 +85870,9 @@
             "later-qin-falls-changan",
             "later-qin-founded",
             "liu-yu-captures-changan",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
+            "western-qin-yuanchuan-city-candidate",
             "yao-chang",
             "yao-hong",
             "yao-xing"
@@ -85930,6 +86827,7 @@
             "claim:claim-feng-hong-ruled-northern-yan-sixtysecond",
             "claim:claim-gao-yun-ruled-northern-yan-sixtysecond",
             "event-detail:later-yan-ended-407",
+            "event-detail:northern-yan-ended-436",
             "event-detail:northern-yan-founded",
             "heritage-detail:northern-yan-longcheng-tomb",
             "person:feng-ba",
@@ -85943,6 +86841,7 @@
             "feng-sufo",
             "gao-yun",
             "later-yan-ended-407",
+            "northern-yan-ended-436",
             "northern-yan-founded",
             "northern-yan-longcheng-tomb"
           ]
@@ -88021,8 +88920,10 @@
             "event-detail:northern-liang-ended-439",
             "event-detail:northern-wei-ended-534",
             "event-detail:northern-wei-founded",
+            "event-detail:northern-yan-ended-436",
             "heritage-detail:longmen-grottoes",
             "heritage-detail:luoyang-han-wei-city-site",
+            "heritage-detail:northern-yan-longcheng-tomb",
             "heritage-detail:yongning-temple-pagoda-site",
             "heritage-detail:yungang-grottoes",
             "person:tuoba-gui",
@@ -88037,6 +88938,8 @@
             "northern-liang-ended-439",
             "northern-wei-ended-534",
             "northern-wei-founded",
+            "northern-yan-ended-436",
+            "northern-yan-longcheng-tomb",
             "tuoba-gui",
             "tuoba-si",
             "tuoba-tao",
@@ -88460,21 +89363,30 @@
             "claim:claim-qifu-chipan-ruled-western-qin-sixtythird",
             "claim:claim-qifu-gangui-ruled-western-qin-sixtysecond",
             "claim:claim-qifu-guoren-ruled-western-qin-sixtyfirst",
+            "claim:claim-qifu-mumo-ruled-western-qin-termination-431",
             "event-detail:southern-liang-ended-414",
+            "event-detail:western-qin-ended-431",
             "event-detail:western-qin-founded",
+            "event-detail:western-qin-restored-409",
+            "event-detail:western-qin-surrendered-later-qin-400",
             "heritage-detail:southern-liang-ledu-city-site",
             "heritage-detail:western-qin-yuanchuan-city-candidate",
             "person:qifu-chipan",
             "person:qifu-gangui",
-            "person:qifu-guoren"
+            "person:qifu-guoren",
+            "person:qifu-mumo"
           ],
           "relatedIds": [
             "qifu-chipan",
             "qifu-gangui",
             "qifu-guoren",
+            "qifu-mumo",
             "southern-liang-ended-414",
             "southern-liang-ledu-city-site",
+            "western-qin-ended-431",
             "western-qin-founded",
+            "western-qin-restored-409",
+            "western-qin-surrendered-later-qin-400",
             "western-qin-yuanchuan-city-candidate"
           ]
         },
@@ -88878,16 +89790,22 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-he-lian-bo-bo-ruled-xia-sixtyfirst",
+            "event-detail:western-qin-ended-431",
             "event-detail:xia-capital-tongwan-established",
             "event-detail:xia-sixteen-states-founded-eighth-batch",
             "heritage-detail:tongwan-city-site",
             "heritage-detail:tongwan-south-gate-site",
-            "person:heliAN-bobo"
+            "heritage-detail:western-qin-yuanchuan-city-candidate",
+            "person:heliAN-bobo",
+            "person:helian-ding"
           ],
           "relatedIds": [
             "heliAN-bobo",
+            "helian-ding",
             "tongwan-city-site",
             "tongwan-south-gate-site",
+            "western-qin-ended-431",
+            "western-qin-yuanchuan-city-candidate",
             "xia-capital-tongwan-established",
             "xia-sixteen-states-founded-eighth-batch"
           ]
@@ -89614,9 +90532,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 209,
+      "totalEntities": 213,
       "statusCounts": {
-        "covered": 1003,
+        "covered": 1023,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -89693,20 +90611,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 258,
+      "totalEntities": 260,
       "statusCounts": {
-        "covered": 1222,
+        "covered": 1230,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 68,
+        "uncertain": 70,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 68
+        "uncertain": 70
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -89725,6 +90643,7 @@
         "person:guacanagari",
         "person:han-kangzi",
         "person:han-qian",
+        "person:helian-ding",
         "person:huhanye",
         "person:istemi",
         "person:jamukha",
@@ -89748,6 +90667,7 @@
         "person:piluo-ge",
         "person:qifu-chipan",
         "person:qifu-guoren",
+        "person:qifu-mumo",
         "person:qin-mugong",
         "person:qin-xiangong",
         "person:quanfengyou",
@@ -90792,6 +91712,8 @@
         "event:former-qin-ended-394",
         "event:later-qin-falls-changan",
         "event:later-qin-founded",
+        "event:western-qin-restored-409",
+        "event:western-qin-surrendered-later-qin-400",
         "heritage:former-qin-changan-city-layer",
         "heritage:later-qin-changan-city-layer",
         "heritage:western-qin-yuanchuan-city-candidate",
@@ -90839,7 +91761,6 @@
         "event:later-yan-founded",
         "heritage:later-yan-longcheng-terminal-site",
         "heritage:later-yan-ye-city-site",
-        "heritage:northern-yan-longcheng-tomb",
         "heritage:southern-yan-guanggu-city-site",
         "person:murong-chui",
         "person:murong-xi",
@@ -91536,6 +92457,7 @@
       "polityName": "北燕",
       "entityKeys": [
         "event:later-yan-ended-407",
+        "event:northern-yan-ended-436",
         "event:northern-yan-founded",
         "heritage:northern-yan-longcheng-tomb",
         "person:feng-ba",
@@ -91591,7 +92513,7 @@
           ],
           "evidenceIds": [
             "china-chronology",
-            "zizhi-tongjian"
+            "zizhi-tongjian-vol123-northern-yan"
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -92904,8 +93826,10 @@
         "event:northern-liang-ended-439",
         "event:northern-wei-ended-534",
         "event:northern-wei-founded",
+        "event:northern-yan-ended-436",
         "heritage:longmen-grottoes",
         "heritage:luoyang-han-wei-city-site",
+        "heritage:northern-yan-longcheng-tomb",
         "heritage:yongning-temple-pagoda-site",
         "heritage:yungang-grottoes",
         "person:tuoba-gui",
@@ -93225,12 +94149,16 @@
       "polityName": "西秦",
       "entityKeys": [
         "event:southern-liang-ended-414",
+        "event:western-qin-ended-431",
         "event:western-qin-founded",
+        "event:western-qin-restored-409",
+        "event:western-qin-surrendered-later-qin-400",
         "heritage:southern-liang-ledu-city-site",
         "heritage:western-qin-yuanchuan-city-candidate",
         "person:qifu-chipan",
         "person:qifu-gangui",
         "person:qifu-guoren",
+        "person:qifu-mumo",
         "polity:western_qin"
       ],
       "gaps": [
@@ -93239,6 +94167,23 @@
           "entityId": "qifu-guoren",
           "entityKey": "person:qifu-guoren",
           "label": "乞伏国仁",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_qin"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "qifu-mumo",
+          "entityKey": "person:qifu-mumo",
+          "label": "乞伏暮末",
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
@@ -93276,7 +94221,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西秦：有 2 项待核验缺口。"
+      "summary": "西秦：有 3 项待核验缺口。"
     },
     "western_xia": {
       "polityId": "western_xia",
@@ -93430,14 +94375,35 @@
       "polityId": "xia",
       "polityName": "夏",
       "entityKeys": [
+        "event:western-qin-ended-431",
         "event:xia-capital-tongwan-established",
         "event:xia-sixteen-states-founded-eighth-batch",
         "heritage:tongwan-city-site",
         "heritage:tongwan-south-gate-site",
+        "heritage:western-qin-yuanchuan-city-candidate",
         "person:heliAN-bobo",
+        "person:helian-ding",
         "polity:xia"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "helian-ding",
+          "entityKey": "person:helian-ding",
+          "label": "赫连定",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xia"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -93445,7 +94411,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "夏：学习闭环已覆盖。"
+      "summary": "夏：有 1 项待核验缺口。"
     },
     "xia_early": {
       "polityId": "xia_early",
@@ -94871,6 +95837,60 @@
       },
       "summary": "二里头村附近：有 2 项待核验缺口。"
     },
+    "fuhan": {
+      "placeId": "fuhan",
+      "cityName": "临夏市一带",
+      "capitalRecordCount": 0,
+      "entityKeys": [
+        "event:western-qin-ended-431",
+        "person:helian-ding",
+        "person:qifu-mumo"
+      ],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "qifu-mumo",
+          "entityKey": "person:qifu-mumo",
+          "label": "乞伏暮末",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "western_qin"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "helian-ding",
+          "entityKey": "person:helian-ding",
+          "label": "赫连定",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "xia"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
+      "taskCounts": {
+        "polity-heritage-missing": 0,
+        "person-person-relationship-missing": 0,
+        "event-participant-missing": 0,
+        "event-location-missing": 0,
+        "relationship-missing": 0
+      },
+      "summary": "临夏市一带：有 2 项待核验缺口。"
+    },
     "fuzhou": {
       "placeId": "fuzhou",
       "cityName": "福州市",
@@ -95471,7 +96491,11 @@
       "capitalRecordCount": 1,
       "entityKeys": [
         "event:western-qin-founded",
-        "heritage:western-qin-yuanchuan-city-candidate"
+        "event:western-qin-restored-409",
+        "event:western-qin-surrendered-later-qin-400",
+        "heritage:western-qin-yuanchuan-city-candidate",
+        "person:qifu-gangui",
+        "person:yao-xing"
       ],
       "gaps": [],
       "taskCounts": {
@@ -95984,11 +97008,14 @@
       "capitalRecordCount": 3,
       "entityKeys": [
         "event:later-yan-ended-407",
+        "event:northern-yan-ended-436",
         "event:northern-yan-founded",
         "heritage:later-yan-longcheng-terminal-site",
         "heritage:northern-yan-longcheng-tomb",
+        "person:feng-hong",
         "person:gao-yun",
-        "person:murong-xi"
+        "person:murong-xi",
+        "person:tuoba-tao"
       ],
       "gaps": [
         {
@@ -96007,6 +97034,23 @@
           ],
           "relatedIds": [],
           "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "feng-hong",
+          "entityKey": "person:feng-hong",
+          "label": "冯弘",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "northern_yan"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian-vol123-northern-yan"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
         }
       ],
       "taskCounts": {
@@ -96016,7 +97060,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "朝阳及和龙一带：有 1 项待核验缺口。"
+      "summary": "朝阳及和龙一带：有 2 项待核验缺口。"
     },
     "luosie": {
       "placeId": "luosie",

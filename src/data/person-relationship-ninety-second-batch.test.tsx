@@ -40,9 +40,9 @@ describe('ninety-second batch high-confidence governance relationships', () => {
   it('closes only the two evidenced governance gaps and leaves other categories unchanged', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(40);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(155);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(98);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(41);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(157);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(97);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
     for (const personId of ['duan-ye', 'namri-songtsen']) {
       expect(report.byPersonId[personId].categories.governance.status, personId).toBe('covered');

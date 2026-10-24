@@ -69,7 +69,7 @@ describe('eighty-fourth batch event-participation boundary audit', () => {
   });
 
   it('does not mistake a person detail navigation link for a verified event participation edge', () => {
-    const detailOnlyPeople = ['huo-qubing', 'zhang-qian', 'ban-gu', 'li-zhi', 'yuan-hong', 'tuoba-tao', 'mongke'];
+    const detailOnlyPeople = ['huo-qubing', 'zhang-qian', 'ban-gu', 'li-zhi', 'yuan-hong', 'mongke'];
 
     for (const personId of detailOnlyPeople) {
       expect(peopleIds.has(personId), personId).toBe(true);
