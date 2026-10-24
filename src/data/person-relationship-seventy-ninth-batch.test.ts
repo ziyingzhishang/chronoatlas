@@ -54,8 +54,8 @@ describe('seventy-ninth batch high-confidence alliance/conflict relationships', 
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(37);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(148);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(93);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(151);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(94);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
     for (const personId of ['gao-yang', 'yuan-shanjian', 'xiao-yan', 'chen-baxian', 'shunzhi', 'dorgon', 'asina-tumen', 'istemi', 'yuwen-yong', 'chen-xu']) {
       expect(report.byPersonId[personId].categories.allianceConflict.status, personId).toBe('covered');

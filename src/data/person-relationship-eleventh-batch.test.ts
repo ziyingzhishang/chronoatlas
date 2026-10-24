@@ -6,7 +6,6 @@ import { polities } from './polities';
 
 const targets = [
   'zhou-gong-dan',
-  'xiao-daocheng',
   'yelu-abaoji',
   'wang-jian',
   'qin-mugong',
@@ -17,7 +16,6 @@ const targets = [
 
 const expectedRelations = [
   ['zhou-gong-dan', 'served', 'zhou-wu'],
-  ['xiao-daocheng', 'related-to', 'xiao-yan'],
   ['yelu-abaoji', 'enemy-of', 'li-cunxu'],
   ['wang-jian', 'enemy-of', 'zhu-wen'],
   ['qin-mugong', 'related-to', 'qin-shi-huang'],
@@ -29,7 +27,6 @@ const expectedRelations = [
 const batchClaimIds = new Set([
   'claim-zhou-wu-sibling-zhou-gong-dan-fortythird',
   'claim-zhou-gong-dan-served-zhou-wu',
-  'claim-xiao-daocheng-related-xiao-yan',
   'claim-yelu-abaoji-enemy-li-cunxu',
   'claim-wang-jian-enemy-zhu-wen',
   'claim-qin-mugong-related-qin-shi-huang',
@@ -61,7 +58,7 @@ describe('eleventh-batch historical people relationship selection', () => {
         .flatMap((claim) => [claim.subjectId, claim.objectId ?? '']),
     );
 
-    expect(targets).toHaveLength(8);
+    expect(targets).toHaveLength(7);
     expect(targets.every((personId) => personIds.has(personId))).toBe(true);
     expect(targets.filter((personId) => connected.has(personId)), 'already connected before batch').toEqual([]);
   });

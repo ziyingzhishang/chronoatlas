@@ -125,7 +125,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘渊在西晋末年依托匈奴部众与并州军政资源起兵。', '304年前后称汉王，政权由此进入前赵（汉赵）形成阶段。', '刘曜时期取得关中并以长安为政治中心，政权结构发生重要转折。'],
     turningPoints: [turn(304, '汉赵形成', '刘渊称汉王，匈奴刘氏政权进入形成阶段。', 'former-zhao-founded'), turn(318, '刘曜继承与改国号', '刘曜承接政权并将政治重心逐步转向关中。'), turn(329, '前赵覆亡', '后赵攻取长安，前赵政权结束。')],
     principalFigureIds: ['liu-yao'], capitalPhases: [capital('changan', 304, 329)],
-    heritageIds: ['former-zhao-xiangguo-city-site', 'former-zhao-changan-city-layer'], eventIds: ['former-zhao-founded', 'former-zhao-ended-329'], claimIds: ['claim-former-zhao-changan-capital', 'claim-liu-yao-participated-former-zhao-ended-329', 'claim-liu-yao-enemy-shi-le-termination-329'], sourceIds: modernSources,
+    heritageIds: ['former-zhao-xiangguo-city-site', 'former-zhao-changan-city-layer', 'western-jin-changan-city-layer'], eventIds: ['former-zhao-founded', 'western-jin-loses-changan', 'former-zhao-ended-329'], claimIds: ['claim-former-zhao-changan-capital', 'claim-liu-yao-participated-former-zhao-ended-329', 'claim-liu-yao-enemy-shi-le-termination-329'], sourceIds: modernSources,
     uncertaintyNote: '304年是刘渊称汉王的形成节点，刘曜时期的长安中心不能反推为全期唯一首都；襄国遗址层是跨政权城市空间参照，不等于前赵专属建筑遗存。',
   }),
   detail({
@@ -181,7 +181,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['刘裕通过北伐、平乱与朝廷控制取得建政基础。', '420年受东晋禅让建立刘宋。', '建康继续作为南朝政治中心，政权的疆域与军政整合按阶段展开。'],
     turningPoints: [turn(420, '刘宋建立', '刘裕受禅建立南朝刘宋。', 'liu-song-founded'), turn(424, '元嘉政局展开', '刘宋进入皇权重建与江南治理阶段。'), turn(479, '刘宋禅代', '萧道成受禅，刘宋转入南齐。')],
     principalFigureIds: ['liu-yu', 'liu-yilong', 'liu-muzi', 'liu-zhun'], capitalPhases: [capital('jiankang', 420, 479)],
-    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['liu-song-founded', 'liu-song-ended-479'], claimIds: ['claim-liu-yu-founded-liu-song', 'claim-liu-zhun-ruled-liu-song', 'claim-liu-zhun-participated-liu-song-ended-479', 'claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479', 'claim-xiao-daocheng-participated-liu-song-ended-479'], sourceIds: modernSources,
+    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['liu-song-founded', 'eastern-jin-ended-420', 'liu-song-ended-479'], claimIds: ['claim-liu-yu-founded-liu-song', 'claim-liu-zhun-ruled-liu-song', 'claim-liu-zhun-participated-liu-song-ended-479', 'claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479', 'claim-xiao-daocheng-participated-liu-song-ended-479'], sourceIds: modernSources,
     uncertaintyNote: '刘穆之主要参与建宋前的军政整合，刘义隆属于后续继承治理阶段；建康六朝遗址与南朝陵墓石刻是叠压城市遗产，不是刘宋单一建筑的直接保存。',
   }),
   detail({
@@ -189,7 +189,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['萧道成在刘宋末年控制关键军政资源。', '479年受禅建立南齐。', '南齐以建康为都，处理江南州郡、宗室与南北竞争。'],
     turningPoints: [turn(479, '南齐建立', '萧道成受禅即位，南齐形成。', 'southern-qi-founded'), turn(482, '武帝继承', '南齐由萧赜承接，进入制度与行政延续阶段。'), turn(502, '南齐终止', '南齐和帝萧宝融在建康禅位于萧衍，南齐转入南梁。', 'southern-qi-ended-502')],
     principalFigureIds: ['xiao-daocheng', 'xiao-baorong'], capitalPhases: [capital('jiankang', 479, 502)],
-    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['southern-qi-founded', 'southern-qi-ended-502'], claimIds: ['claim-xiao-daocheng-founded-southern-qi', 'claim-xiao-baorong-ruled-southern-qi', 'claim-xiao-baorong-participated-southern-qi-ended-502', 'claim-xiao-baorong-enemy-xiao-yan-termination-502'], sourceIds: modernSources,
+    heritageIds: ['jiankang-six-dynasties-city-site', 'southern-dynasties-stone-carvings'], eventIds: ['southern-qi-founded', 'liu-song-ended-479', 'southern-qi-ended-502'], claimIds: ['claim-xiao-daocheng-founded-southern-qi', 'claim-xiao-baorong-ruled-southern-qi', 'claim-xiao-baorong-participated-southern-qi-ended-502', 'claim-xiao-baorong-enemy-xiao-yan-termination-502'], sourceIds: modernSources,
     uncertaintyNote: '479年禅代与502年禅代分别标记南齐的形成和终止；南齐的地方控制、萧衍掌权与南梁整合不能压缩到单一节点，建康遗产也包含多个南朝政权层次。',
   }),
   detail({

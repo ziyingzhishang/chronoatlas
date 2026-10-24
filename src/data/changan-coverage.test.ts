@@ -9,7 +9,7 @@ describe('Chang’an coverage report', () => {
       polityStages: 17,
       people: 49,
       events: 30,
-      heritage: 27,
+      heritage: 28,
     });
     expect(report.targets).toEqual({
       polityStages: 15,
@@ -29,8 +29,8 @@ describe('Chang’an coverage report', () => {
     const report = getChanganCoverageReport();
 
     expect(report.sourceCoverage).toEqual({
-      total: 123,
-      covered: 123,
+      total: 124,
+      covered: 124,
       rate: 1,
       missingNodeIds: [],
     });
@@ -45,7 +45,7 @@ describe('Chang’an coverage report', () => {
       { type: 'polityStages', target: 15, current: 17, shortfall: 0 },
       { type: 'people', target: 30, current: 49, shortfall: 0 },
       { type: 'events', target: 30, current: 30, shortfall: 0 },
-      { type: 'heritage', target: 20, current: 27, shortfall: 0 },
+      { type: 'heritage', target: 20, current: 28, shortfall: 0 },
     ]);
   });
 });

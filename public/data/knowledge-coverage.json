@@ -1360,6 +1360,8 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yu-participated-eastern-jin-ended-420",
+            "claim:claim-sima-dewen-participated-eastern-jin-ended-420",
             "event-detail:eastern-jin-ended-420"
           ],
           "relatedIds": [
@@ -10215,11 +10217,13 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yao-participated-western-jin-loses-changan",
+            "claim:claim-sima-ye-participated-western-jin-loses-changan",
             "event-detail:western-jin-loses-changan"
           ],
           "relatedIds": [
             "eastern-jin",
-            "former-zhao-capital-changan",
+            "former-zhao-founded",
             "former_zhao",
             "jin_western",
             "liu-yao",
@@ -14204,6 +14208,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -14219,10 +14224,12 @@
           "relatedIds": [
             "chen_southern",
             "eastern-jin",
+            "eastern-jin-ended-420",
             "jin_eastern",
             "liang_southern",
             "liu-yu",
             "qi_southern",
+            "sima-dewen",
             "sima-rui",
             "song_southern"
           ]
@@ -18381,6 +18388,67 @@
             "qin-unification",
             "wang-mang",
             "xin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
+      "entityId": "western-jin-changan-city-layer",
+      "entityKey": "heritage:western-jin-changan-city-layer",
+      "label": "西晋末期长安城市历史层",
+      "polityIds": [
+        "former_zhao",
+        "jin_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "western-jin-changan-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:western-jin-changan-city-layer"
+          ],
+          "relatedIds": [
+            "former_zhao",
+            "jin_western",
+            "liu-yao",
+            "sima-ye",
+            "western-jin-loses-changan"
           ]
         },
         {
@@ -26731,6 +26799,7 @@
           "evidenceIds": [
             "claim:claim-liu-yao-enemy-shi-le-termination-329",
             "claim:claim-liu-yao-participated-former-zhao-ended-329",
+            "claim:claim-liu-yao-participated-western-jin-loses-changan",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
             "claim:claim-shi-hu-enemy-liu-yao",
             "claim:claim-shi-le-enemy-liu-yao",
@@ -26937,8 +27006,10 @@
             "claim:claim-liu-yu-founded-liu-song",
             "claim:claim-liu-yu-parent-liu-yilong-fortieth",
             "claim:claim-liu-yu-participated-eastern-jin",
+            "claim:claim-liu-yu-participated-eastern-jin-ended-420",
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
             "claim:claim-murong-chao-enemy-liu-yu-termination-410",
+            "claim:claim-sima-dewen-succeeded-by-liu-yu",
             "claim:claim-yao-hong-enemy-liu-yu-termination-417",
             "event-detail:eastern-jin-ended-420",
             "event-detail:later-qin-falls-changan",
@@ -26956,6 +27027,7 @@
             "liu-yilong",
             "liu-yu-captures-changan",
             "murong-chao",
+            "sima-dewen",
             "song_southern",
             "southern-yan-ended-410",
             "yao-hong",
@@ -27102,6 +27174,70 @@
           "evidenceIds": [
             "houhanshu-vol2-liuzhuang",
             "luoyang-baimasi-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "liu-zhun",
+      "entityKey": "person:liu-zhun",
+      "label": "刘准",
+      "polityIds": [
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-zhun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479",
+            "claim:claim-liu-zhun-participated-liu-song-ended-479",
+            "claim:claim-liu-zhun-ruled-liu-song",
+            "event-detail:liu-song-ended-479",
+            "person-polity:liu-zhun:song_southern"
+          ],
+          "relatedIds": [
+            "liu-song-ended-479",
+            "song_southern",
+            "xiao-daocheng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -30564,6 +30700,70 @@
     },
     {
       "entityType": "person",
+      "entityId": "sima-dewen",
+      "entityKey": "person:sima-dewen",
+      "label": "司马德文",
+      "polityIds": [
+        "jin_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sima-dewen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-sima-dewen-participated-eastern-jin-ended-420",
+            "claim:claim-sima-dewen-ruled-eastern-jin",
+            "claim:claim-sima-dewen-succeeded-by-liu-yu",
+            "event-detail:eastern-jin-ended-420",
+            "person-polity:sima-dewen:jin_eastern"
+          ],
+          "relatedIds": [
+            "eastern-jin-ended-420",
+            "jin_eastern",
+            "liu-yu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "sima-rui",
       "entityKey": "person:sima-rui",
       "label": "司马睿",
@@ -30605,13 +30805,15 @@
             "claim:claim-sima-rui-related-sima-yan",
             "claim:claim-sima-rui-ruled-eastern-jin",
             "claim:claim-sima-yan-related-sima-rui",
+            "claim:claim-sima-ye-succeeded-by-sima-rui",
             "event-detail:eastern-jin",
             "person-polity:sima-rui:jin_eastern"
           ],
           "relatedIds": [
             "eastern-jin",
             "jin_eastern",
-            "sima-yan"
+            "sima-yan",
+            "sima-ye"
           ]
         },
         {
@@ -30686,6 +30888,70 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "sima-ye",
+      "entityKey": "person:sima-ye",
+      "label": "司马邺",
+      "polityIds": [
+        "jin_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sima-ye"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-sima-ye-participated-western-jin-loses-changan",
+            "claim:claim-sima-ye-ruled-western-jin",
+            "claim:claim-sima-ye-succeeded-by-sima-rui",
+            "event-detail:western-jin-loses-changan",
+            "person-polity:sima-ye:jin_western"
+          ],
+          "relatedIds": [
+            "jin_western",
+            "sima-rui",
+            "western-jin-loses-changan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -37250,6 +37516,7 @@
             "event-detail:western-jin-loses-changan",
             "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
+            "heritage-detail:western-jin-changan-city-layer",
             "person:liu-yao"
           ],
           "relatedIds": [
@@ -37260,6 +37527,7 @@
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
             "liu-yao",
+            "western-jin-changan-city-layer",
             "western-jin-loses-changan"
           ]
         },
@@ -37792,6 +38060,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-sima-dewen-ruled-eastern-jin",
             "claim:claim-sima-rui-ruled-eastern-jin",
             "event-detail:cheng-han-ended-347",
             "event-detail:eastern-jin",
@@ -37803,6 +38072,7 @@
             "heritage-detail:later-qin-changan-city-layer",
             "person:huan-wen",
             "person:liu-muzi",
+            "person:sima-dewen",
             "person:sima-rui"
           ],
           "relatedIds": [
@@ -37816,6 +38086,7 @@
             "later-qin-changan-city-layer",
             "liu-muzi",
             "liu-yu-captures-changan",
+            "sima-dewen",
             "sima-rui"
           ]
         },
@@ -38022,16 +38293,21 @@
           "evidenceIds": [
             "claim:claim-sima-yan-founded-western-jin",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
+            "claim:claim-sima-ye-ruled-western-jin",
             "event-detail:jin-unification",
             "event-detail:western-jin-founded",
             "event-detail:western-jin-loses-changan",
             "heritage-detail:luoyang-han-wei-city-site",
-            "person:sima-yan"
+            "heritage-detail:western-jin-changan-city-layer",
+            "person:sima-yan",
+            "person:sima-ye"
           ],
           "relatedIds": [
             "jin-unification",
             "luoyang-han-wei-city-site",
             "sima-yan",
+            "sima-ye",
+            "western-jin-changan-city-layer",
             "western-jin-founded",
             "western-jin-loses-changan"
           ]
@@ -40454,7 +40730,8 @@
             "heritage-detail:southern-dynasties-stone-carvings",
             "person:liu-muzi",
             "person:liu-yilong",
-            "person:liu-yu"
+            "person:liu-yu",
+            "person:liu-zhun"
           ],
           "relatedIds": [
             "eastern-jin-ended-420",
@@ -44331,6 +44608,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "sima-ye",
+      "entityKey": "person:sima-ye",
+      "label": "司马邺",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "jin_western"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "sinmun-silla",
       "entityKey": "person:sinmun-silla",
       "label": "神文王",
@@ -46077,6 +46371,8 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yu-participated-eastern-jin-ended-420",
+            "claim:claim-sima-dewen-participated-eastern-jin-ended-420",
             "event-detail:eastern-jin-ended-420"
           ],
           "relatedIds": [
@@ -54932,11 +55228,13 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-yao-participated-western-jin-loses-changan",
+            "claim:claim-sima-ye-participated-western-jin-loses-changan",
             "event-detail:western-jin-loses-changan"
           ],
           "relatedIds": [
             "eastern-jin",
-            "former-zhao-capital-changan",
+            "former-zhao-founded",
             "former_zhao",
             "jin_western",
             "liu-yao",
@@ -58921,6 +59219,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -58936,10 +59235,12 @@
           "relatedIds": [
             "chen_southern",
             "eastern-jin",
+            "eastern-jin-ended-420",
             "jin_eastern",
             "liang_southern",
             "liu-yu",
             "qi_southern",
+            "sima-dewen",
             "sima-rui",
             "song_southern"
           ]
@@ -63098,6 +63399,67 @@
             "qin-unification",
             "wang-mang",
             "xin"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:western-jin-changan-city-layer": {
+      "entityType": "heritage",
+      "entityId": "western-jin-changan-city-layer",
+      "entityKey": "heritage:western-jin-changan-city-layer",
+      "label": "西晋末期长安城市历史层",
+      "polityIds": [
+        "former_zhao",
+        "jin_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "western-jin-changan-city-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:western-jin-changan-city-layer"
+          ],
+          "relatedIds": [
+            "former_zhao",
+            "jin_western",
+            "liu-yao",
+            "sima-ye",
+            "western-jin-loses-changan"
           ]
         },
         {
@@ -71448,6 +71810,7 @@
           "evidenceIds": [
             "claim:claim-liu-yao-enemy-shi-le-termination-329",
             "claim:claim-liu-yao-participated-former-zhao-ended-329",
+            "claim:claim-liu-yao-participated-western-jin-loses-changan",
             "claim:claim-liu-yao-ruled-former-zhao-fortythird",
             "claim:claim-shi-hu-enemy-liu-yao",
             "claim:claim-shi-le-enemy-liu-yao",
@@ -71654,8 +72017,10 @@
             "claim:claim-liu-yu-founded-liu-song",
             "claim:claim-liu-yu-parent-liu-yilong-fortieth",
             "claim:claim-liu-yu-participated-eastern-jin",
+            "claim:claim-liu-yu-participated-eastern-jin-ended-420",
             "claim:claim-murong-chao-enemy-liu-yu-sixtysixth",
             "claim:claim-murong-chao-enemy-liu-yu-termination-410",
+            "claim:claim-sima-dewen-succeeded-by-liu-yu",
             "claim:claim-yao-hong-enemy-liu-yu-termination-417",
             "event-detail:eastern-jin-ended-420",
             "event-detail:later-qin-falls-changan",
@@ -71673,6 +72038,7 @@
             "liu-yilong",
             "liu-yu-captures-changan",
             "murong-chao",
+            "sima-dewen",
             "song_southern",
             "southern-yan-ended-410",
             "yao-hong",
@@ -71819,6 +72185,70 @@
           "evidenceIds": [
             "houhanshu-vol2-liuzhuang",
             "luoyang-baimasi-official"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:liu-zhun": {
+      "entityType": "person",
+      "entityId": "liu-zhun",
+      "entityKey": "person:liu-zhun",
+      "label": "刘准",
+      "polityIds": [
+        "song_southern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "liu-zhun"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479",
+            "claim:claim-liu-zhun-participated-liu-song-ended-479",
+            "claim:claim-liu-zhun-ruled-liu-song",
+            "event-detail:liu-song-ended-479",
+            "person-polity:liu-zhun:song_southern"
+          ],
+          "relatedIds": [
+            "liu-song-ended-479",
+            "song_southern",
+            "xiao-daocheng"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
           ],
           "relatedIds": []
         }
@@ -75279,6 +75709,70 @@
         }
       ]
     },
+    "person:sima-dewen": {
+      "entityType": "person",
+      "entityId": "sima-dewen",
+      "entityKey": "person:sima-dewen",
+      "label": "司马德文",
+      "polityIds": [
+        "jin_eastern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sima-dewen"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-sima-dewen-participated-eastern-jin-ended-420",
+            "claim:claim-sima-dewen-ruled-eastern-jin",
+            "claim:claim-sima-dewen-succeeded-by-liu-yu",
+            "event-detail:eastern-jin-ended-420",
+            "person-polity:sima-dewen:jin_eastern"
+          ],
+          "relatedIds": [
+            "eastern-jin-ended-420",
+            "jin_eastern",
+            "liu-yu"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:sima-rui": {
       "entityType": "person",
       "entityId": "sima-rui",
@@ -75322,13 +75816,15 @@
             "claim:claim-sima-rui-related-sima-yan",
             "claim:claim-sima-rui-ruled-eastern-jin",
             "claim:claim-sima-yan-related-sima-rui",
+            "claim:claim-sima-ye-succeeded-by-sima-rui",
             "event-detail:eastern-jin",
             "person-polity:sima-rui:jin_eastern"
           ],
           "relatedIds": [
             "eastern-jin",
             "jin_eastern",
-            "sima-yan"
+            "sima-yan",
+            "sima-ye"
           ]
         },
         {
@@ -75403,6 +75899,70 @@
           "status": "covered",
           "note": "人物生卒年均有记录。",
           "evidenceIds": [
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:sima-ye": {
+      "entityType": "person",
+      "entityId": "sima-ye",
+      "entityKey": "person:sima-ye",
+      "label": "司马邺",
+      "polityIds": [
+        "jin_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "sima-ye"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-sima-ye-participated-western-jin-loses-changan",
+            "claim:claim-sima-ye-ruled-western-jin",
+            "claim:claim-sima-ye-succeeded-by-sima-rui",
+            "event-detail:western-jin-loses-changan",
+            "person-polity:sima-ye:jin_western"
+          ],
+          "relatedIds": [
+            "jin_western",
+            "sima-rui",
+            "western-jin-loses-changan"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": []
@@ -81967,6 +82527,7 @@
             "event-detail:western-jin-loses-changan",
             "heritage-detail:former-zhao-changan-city-layer",
             "heritage-detail:former-zhao-xiangguo-city-site",
+            "heritage-detail:western-jin-changan-city-layer",
             "person:liu-yao"
           ],
           "relatedIds": [
@@ -81977,6 +82538,7 @@
             "former-zhao-founded",
             "former-zhao-xiangguo-city-site",
             "liu-yao",
+            "western-jin-changan-city-layer",
             "western-jin-loses-changan"
           ]
         },
@@ -82509,6 +83071,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-sima-dewen-ruled-eastern-jin",
             "claim:claim-sima-rui-ruled-eastern-jin",
             "event-detail:cheng-han-ended-347",
             "event-detail:eastern-jin",
@@ -82520,6 +83083,7 @@
             "heritage-detail:later-qin-changan-city-layer",
             "person:huan-wen",
             "person:liu-muzi",
+            "person:sima-dewen",
             "person:sima-rui"
           ],
           "relatedIds": [
@@ -82533,6 +83097,7 @@
             "later-qin-changan-city-layer",
             "liu-muzi",
             "liu-yu-captures-changan",
+            "sima-dewen",
             "sima-rui"
           ]
         },
@@ -82739,16 +83304,21 @@
           "evidenceIds": [
             "claim:claim-sima-yan-founded-western-jin",
             "claim:claim-sima-yan-ruled-western-jin-fiftythird",
+            "claim:claim-sima-ye-ruled-western-jin",
             "event-detail:jin-unification",
             "event-detail:western-jin-founded",
             "event-detail:western-jin-loses-changan",
             "heritage-detail:luoyang-han-wei-city-site",
-            "person:sima-yan"
+            "heritage-detail:western-jin-changan-city-layer",
+            "person:sima-yan",
+            "person:sima-ye"
           ],
           "relatedIds": [
             "jin-unification",
             "luoyang-han-wei-city-site",
             "sima-yan",
+            "sima-ye",
+            "western-jin-changan-city-layer",
             "western-jin-founded",
             "western-jin-loses-changan"
           ]
@@ -85171,7 +85741,8 @@
             "heritage-detail:southern-dynasties-stone-carvings",
             "person:liu-muzi",
             "person:liu-yilong",
-            "person:liu-yu"
+            "person:liu-yu",
+            "person:liu-zhun"
           ],
           "relatedIds": [
             "eastern-jin-ended-420",
@@ -87777,9 +88348,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 123,
+      "totalEntities": 124,
       "statusCounts": {
-        "covered": 615,
+        "covered": 620,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -87795,20 +88366,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 249,
+      "totalEntities": 252,
       "statusCounts": {
-        "covered": 1179,
+        "covered": 1193,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 66,
+        "uncertain": 67,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 66
+        "uncertain": 67
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -87854,6 +88425,7 @@
         "person:qin-xiangong",
         "person:quanfengyou",
         "person:shun-huazhen",
+        "person:sima-ye",
         "person:sinmun-silla",
         "person:su-guansheng",
         "person:tufa-lilugu",
@@ -88294,6 +88866,7 @@
         "event:western-jin-loses-changan",
         "heritage:former-zhao-changan-city-layer",
         "heritage:former-zhao-xiangguo-city-site",
+        "heritage:western-jin-changan-city-layer",
         "person:liu-yao",
         "polity:former_zhao"
       ],
@@ -88624,6 +89197,7 @@
         "heritage:later-qin-changan-city-layer",
         "person:huan-wen",
         "person:liu-muzi",
+        "person:sima-dewen",
         "person:sima-rui",
         "polity:jin_eastern"
       ],
@@ -88711,10 +89285,30 @@
         "event:western-jin-founded",
         "event:western-jin-loses-changan",
         "heritage:luoyang-han-wei-city-site",
+        "heritage:western-jin-changan-city-layer",
         "person:sima-yan",
+        "person:sima-ye",
         "polity:jin_western"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "sima-ye",
+          "entityKey": "person:sima-ye",
+          "label": "司马邺",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jin_western"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -88722,7 +89316,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西晋：学习闭环已覆盖。"
+      "summary": "西晋：有 1 项待核验缺口。"
     },
     "jingnan": {
       "polityId": "jingnan",
@@ -90298,6 +90892,7 @@
         "person:liu-muzi",
         "person:liu-yilong",
         "person:liu-yu",
+        "person:liu-zhun",
         "polity:song_southern"
       ],
       "gaps": [],
@@ -92323,6 +92918,7 @@
         "heritage:taiji-palace-site",
         "heritage:tang-changan-city-site",
         "heritage:weiyang-palace-site",
+        "heritage:western-jin-changan-city-layer",
         "heritage:western-wei-changan-city-layer",
         "heritage:western-zhou-fenghao-reference",
         "heritage:xian-beilin",
@@ -92379,6 +92975,23 @@
           ],
           "evidenceIds": [
             "jinshu-vol103-liu-yao",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "sima-ye",
+          "entityKey": "person:sima-ye",
+          "label": "司马邺",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "jin_western"
+          ],
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -92558,7 +93171,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 12 项待核验缺口。"
+      "summary": "西安市：有 13 项待核验缺口。"
     },
     "changsha": {
       "placeId": "changsha",

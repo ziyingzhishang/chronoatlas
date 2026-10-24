@@ -80,8 +80,8 @@ describe('heritage detail coverage audit', () => {
   it('keeps unresolved event endpoints explicit after normalizing existing person references', () => {
     const report = buildHeritageDetailCoverageReport();
 
-    expect(report.totalHeritageAssets).toBe(123);
-    expect(report.completeHeritageIds).toHaveLength(119);
+    expect(report.totalHeritageAssets).toBe(124);
+    expect(report.completeHeritageIds).toHaveLength(120);
     expect(report.needsReviewHeritageIds).toEqual([
       'big-wild-goose-pagoda',
       'qinglong-temple-site',
@@ -89,7 +89,7 @@ describe('heritage detail coverage audit', () => {
       'xiao-yan-ta',
     ]);
     expect(report.uncoveredHeritageIds).toEqual([]);
-    expect(report.sourceCompleteHeritageIds).toHaveLength(123);
+    expect(report.sourceCompleteHeritageIds).toHaveLength(124);
     expect(report.sourceCoverageRate).toBe(1);
     const reviewItems = report.items.filter((item) => [
       'big-wild-goose-pagoda',

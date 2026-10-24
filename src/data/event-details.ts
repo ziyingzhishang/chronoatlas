@@ -1640,7 +1640,7 @@ const details: HistoricalEventDetail[] = [
     consequences: ['西晋在长安的中央统治终结，前赵承接长安政治空间。', '晋室南渡与东晋在江南延续成为317年后的新政治格局。', '长安城市、道路与遗址继续承接后续十六国政权，政权终止与城市遗产延续分层记录。'],
     phases: [{ label: '长安失守', startYear: 316, endYear: 316, summary: '西晋失去长安，北方中央统治崩溃。' }],
     locationIds: ['changan'],
-    relatedEventIds: ['eastern-jin', 'former-zhao-capital-changan'],
+    relatedEventIds: ['eastern-jin', 'former-zhao-founded'],
     sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
     uncertaintyNote: '316年长安失守标志西晋北方中央政权终止；317年司马睿在建康建政是后续东晋节点，不表示各地在同日完成政权转换。',
   },
