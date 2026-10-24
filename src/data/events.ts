@@ -729,6 +729,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷十一·汉纪三', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷011', detail: '高帝五年二月即皇帝位，及同年罢兵、复户籍等记载；与卷九受封汉王区别。' }],
   },
   {
+    id: 'han-wudi-expands-changan', year: -138, title: '汉武帝扩建长安', summary: '汉武帝时期长安宫室与礼制空间继续扩展，西汉都城进入新的建设阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '遗产营建／宫城', verification: 'partial',
+    background: '西汉中期帝国人口、礼仪和宫廷活动增长，既有都城空间需要持续扩展。',
+    process: '前138年作为汉武帝时期长安宫室与礼制空间扩建的阶段节点；具体宫殿工程并非在单日全部完成。',
+    impact: '长安宫城网络与帝国礼制空间继续发展，为后续西汉都城政治活动提供基础。',
+    mapNote: '本节点只表达前138年扩建阶段，不把前200年汉长安新城营建或后续宫殿阶段合并为同一事件。',
+    references: [{ title: '《资治通鉴》汉纪与长安城市史资料', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于前138年汉武帝时期长安宫室扩建阶段的时间与城市背景参照；不据此断言全部宫殿同年完工。' }],
+  },
+  {
     id: 'maoling-built', year: -139, title: '汉武帝营建茂陵', summary: '汉武帝建元二年作寿陵，茂陵进入长期营建阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-western-han-mausoleums'],
     datePrecision: 'year', region: 'china', category: '遗产营建／帝陵', verification: 'checked',
     background: '西汉帝陵制度与关中陵区持续发展，帝陵营建既是皇帝个人身后安排，也牵动陵园、陪葬和陵邑等空间。',

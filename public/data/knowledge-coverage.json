@@ -2601,6 +2601,64 @@
     },
     {
       "entityType": "event",
+      "entityId": "han-wudi-expands-changan",
+      "entityKey": "event:han-wudi-expands-changan",
+      "label": "汉武帝扩建长安",
+      "polityIds": [
+        "han_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "han-wudi-expands-changan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-che-participated-han-wudi-expands-changan-round132",
+            "event-detail:han-wudi-expands-changan"
+          ],
+          "relatedIds": [
+            "han-changan-new-city",
+            "han_western",
+            "liu-che"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "hongguang-nanjing-founded",
       "entityKey": "event:hongguang-nanjing-founded",
       "label": "弘光政权在南京建立",
@@ -51654,6 +51712,64 @@
         }
       ]
     },
+    "event:han-wudi-expands-changan": {
+      "entityType": "event",
+      "entityId": "han-wudi-expands-changan",
+      "entityKey": "event:han-wudi-expands-changan",
+      "label": "汉武帝扩建长安",
+      "polityIds": [
+        "han_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "han-wudi-expands-changan"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-liu-che-participated-han-wudi-expands-changan-round132",
+            "event-detail:han-wudi-expands-changan"
+          ],
+          "relatedIds": [
+            "han-changan-new-city",
+            "han_western",
+            "liu-che"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:hongguang-nanjing-founded": {
       "entityType": "event",
       "entityId": "hongguang-nanjing-founded",
@@ -95988,9 +96104,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 221,
+      "totalEntities": 222,
       "statusCounts": {
-        "covered": 1063,
+        "covered": 1068,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -96940,6 +97056,7 @@
         "event:chu-han-contention",
         "event:du-ling-built",
         "event:han-imperial-accession",
+        "event:han-wudi-expands-changan",
         "event:maoling-built",
         "heritage:changle-palace-site",
         "heritage:du-ling",
@@ -101029,6 +101146,7 @@
         "event:former-zhao-ended-329",
         "event:former-zhao-founded",
         "event:gengshi-founded",
+        "event:han-wudi-expands-changan",
         "event:later-qin-falls-changan",
         "event:later-qin-founded",
         "event:maoling-built",

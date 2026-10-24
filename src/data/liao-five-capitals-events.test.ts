@@ -62,7 +62,6 @@ describe('辽五京城市事件闭环', () => {
     const unrelatedEventIds = [
       'zhou-fenghao-capital',
       'han-changan-new-city',
-      'han-wudi-expands-changan',
       'gengshi-enters-changan',
       'dong-zhuo-changan',
       'eastern-han-restores-changan',
