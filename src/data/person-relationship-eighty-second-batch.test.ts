@@ -27,8 +27,8 @@ describe('eighty-second batch relationship audit', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(37);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(147);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(92);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(148);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(93);
     expect(report.requiredMissingByCategory.eventParticipation).toEqual(eventParticipationReviewBoundary);
   });
 

@@ -13,6 +13,7 @@ export const people: Person[] = [
   { id: 'fu-jian-founder', name: '苻健', aliases: ['前秦景明帝'], deathYear: 355, roles: ['皇帝', '建国者'], polityIds: ['former_qin'], description: '苻健在后赵瓦解后的关中建立秦政权，是前秦早期建政与长安政治中心形成的关键人物。', sourceIds: ['jinshu-vol112-fu-jian', 'zizhi-tongjian'] },
   { id: 'yao-chang', name: '姚苌', birthYear: 330, deathYear: 393, roles: ['皇帝', '军事领袖'], polityIds: ['later_qin'], description: '后秦建立者，后秦以长安为都。', sourceIds: ['zizhi-tongjian'] },
   { id: 'yang-jian', name: '杨坚', aliases: ['隋文帝'], birthYear: 541, deathYear: 604, roles: ['皇帝'], polityIds: ['sui'], description: '建立隋朝；隋初在长安营建大兴城。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'yang-you', name: '杨侑', aliases: ['隋恭帝', '隋末帝'], birthYear: 605, deathYear: 619, roles: ['皇帝', '末代君主'], polityIds: ['sui'], description: '杨侑是隋恭帝，618年在长安向李渊禅位，隋中央政权由此转入唐承接阶段。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'li-yuan', name: '李渊', aliases: ['唐高祖'], birthYear: 566, deathYear: 635, roles: ['皇帝', '军事领袖'], polityIds: ['tang'], description: '入据长安并建立唐朝。', sourceIds: ['zizhi-tongjian'] },
   { id: 'li-shimin', name: '李世民', aliases: ['唐太宗'], birthYear: 598, deathYear: 649, roles: ['皇帝', '军事领袖'], polityIds: ['tang'], description: '唐太宗时期以长安为帝国政治与文化中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'zhou-wu', name: '姬发', aliases: ['周武王'], birthYear: -1087, deathYear: -1043, roles: ['君主', '军事领袖'], polityIds: ['zhou_western'], description: '周武王克商建周，奠定西周王朝的政治秩序。', sourceIds: ['zizhi-tongjian'] },

@@ -103,7 +103,7 @@ const details: HeritageDetail[] = [
     phase('original', '原建筑', '582—907年', '隋大兴城与唐长安城沿用并调整棋盘式街道、坊墙、宫城和城门体系。', 582, 907),
     phase('site', '遗址', '隋唐城址遗存', '城墙、坊区、道路和门址以地下遗存、夯土台基和考古分区形式保存。', 582, 907),
     phase('restoration', '现代复原', '当代城市考古展示', '现代城市中的遗址公园、标识和局部展示用于解释隋唐城市结构。', 2000, undefined, '现代道路和行政区边界不能直接替代隋唐城界。'),
-  ], ['yang-jian', 'li-yuan', 'li-shimin'], ['sui', 'tang'], ['sui-unification', 'tang-founded', 'an-lushan-rebellion'], ['城墙与城门遗迹', '坊区与道路遗迹', '宫城和官署区考古信息'], '城市考古、遗址保护和历史地理研究的重要基础。', '隋唐长安城与现代西安城区不是同一边界，点位仅作学习导航。', ['zizhi-tongjian', 'modern-geography-reference']),
+  ], ['yang-jian', 'yang-you', 'li-yuan', 'li-shimin'], ['sui', 'tang'], ['sui-unification', 'sui-ended-618', 'tang-founded', 'an-lushan-rebellion', 'tang-changan-end'], ['城墙与城门遗迹', '坊区与道路遗迹', '宫城和官署区考古信息'], '城市考古、遗址保护和历史地理研究的重要基础。', '隋唐长安城与现代西安城区不是同一边界；618年隋唐承接与907年唐亡均是政权节点，不表示城市遗产在同日中断。', ['zizhi-tongjian', 'modern-geography-reference']),
   detail('daming-palace-site', '今西安市新城区北部，大明宫国家遗址公园一带。', ['唐代宫城北部扩展', '唐太宗以后长安政治空间'], [
     phase('original', '原建筑', '634—904年', '大明宫作为唐长安城北部宫城，包含含元殿、宣政殿和紫宸殿等主要空间。', 634, 904),
     phase('site', '遗址', '唐代宫城遗址', '殿址夯土台基、宫墙和门址构成今日遗址公园的核心考古对象。', 634, 904),

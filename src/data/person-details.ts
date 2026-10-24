@@ -93,9 +93,15 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '杨坚受北周禅让、建立隋与大兴城营建属于不同节点；大兴城与汉长安城是相邻而有区别的城市空间，不能用现代西安边界替代历史城址。',
   },
   {
+    personId: 'yang-you', biography: '杨侑是隋恭帝与隋末代君主。618年在长安向李渊禅位，隋中央政权转入唐承接阶段；个人退位与地方秩序、城市遗产延续分开表达。',
+    aliases: ['隋恭帝', '隋末帝'], offices: [{ title: '隋末代皇帝', polityId: 'sui', placeId: 'changan', validFrom: 617, validTo: 618, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['sui-ended-618'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '杨侑作为末代君主连接618年禅代节点，不把个人退位等同于隋末各地秩序同日完成转换。',
+  },
+  {
     personId: 'li-yuan', biography: '李渊控制长安后建立唐朝，唐初长安成为新的帝国政治中心。',
     aliases: ['唐高祖'], offices: [{ title: '唐皇帝', polityId: 'tang', placeId: 'changan', validFrom: 618, validTo: 626, datePrecision: 'range', sourceIds }],
-    keyEvents: ['tang-founded-changan'], sourceIds,
+    keyEvents: ['tang-founded-changan', 'sui-ended-618'], sourceIds,
     uncertaintyNote: '618年是唐建立的关键节点，不代表唐在当年已经完成对所有地区的整合。',
   },
   {

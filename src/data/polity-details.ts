@@ -85,7 +85,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['杨坚在北周末年取得中央权力。', '581年受禅建立隋朝。', '589年灭陈完成南北统一，605年后东都洛阳的地位增强。'],
     turningPoints: [turn(581, '北周禅让与隋建立', '杨坚受北周静帝禅位建立隋朝，长安政治中心完成政权承接。', 'northern-zhou-ended-581'), turn(589, '统一南北', '隋灭陈，长期分裂结束。', 'sui-unification'), turn(605, '营建东都', '洛阳成为隋唐多中心首都体系的重要一环。')],
     principalFigureIds: ['yang-jian'], capitalPhases: [capital('changan', 581, 604), capital('luoyang', 605, 618)],
-    heritageIds: ['tang-changan-city-site', 'luoyang-sui-tang-city-site', 'dingding-gate-site'], eventIds: ['northern-zhou-ended-581', 'sui-founded', 'sui-unification', 'daxing-capital'], claimIds: ['claim-sui-changan-capital', 'claim-yang-jian-founded-sui', 'claim-yang-jian-participated-northern-zhou-ended-581'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'luoyang-sui-tang-city-site', 'dingding-gate-site'], eventIds: ['northern-zhou-ended-581', 'sui-founded', 'sui-unification', 'daxing-capital', 'sui-ended-618'], claimIds: ['claim-sui-changan-capital', 'claim-yang-jian-founded-sui', 'claim-yang-jian-participated-northern-zhou-ended-581', 'claim-yang-you-ruled-sui', 'claim-yang-you-participated-sui-ended-618', 'claim-yang-you-succeeded-by-li-yuan', 'claim-li-yuan-participated-sui-ended-618'], sourceIds: modernSources,
     uncertaintyNote: '581年建国与589年统一是不同历史节点；隋代首都体系包含长安、洛阳及工程阶段，不能只用单一都城概括。',
   }),
   detail({
@@ -93,7 +93,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['李渊控制长安并承接隋末政治资源。', '618年受禅建立唐朝。', '唐初仍经历地方战争与制度整合，后形成长安—洛阳双中心。'],
     turningPoints: [turn(618, '唐建立', '李渊在长安即位建唐。', 'tang-founded'), turn(626, '玄武门之变', '皇位继承与中央权力重新排列。'), turn(755, '安史之乱', '长安、洛阳与中央—地方关系受到重大冲击。', 'an-lushan-rebellion')],
     principalFigureIds: ['li-yuan', 'li-shimin', 'li-longji', 'wu-zhao', 'xuan-zang'], capitalPhases: [capital('changan', 618, 907), capital('luoyang', 618, 907, 'secondary', 'formal', '东都与阶段性政治中心')],
-    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'tang-founded-changan', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'daming-palace-built', 'tang-changan-end', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'tang-founded-changan', 'sui-ended-618', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'daming-palace-built', 'tang-changan-end', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
     uncertaintyNote: '双都制度、行幸与战乱中的临时中心不能混写为正式迁都；遗产节点展示城市和建筑层，不直接证明帝国疆域。',
   }),
   detail({

@@ -1391,6 +1391,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '长安是建国政治中心关联，不提供即位殿址的精确定位，也不把618年建国理解为唐代最大范围。',
   },
   {
+    eventId: 'sui-ended-618',
+    participants: [
+      { personId: 'yang-you', role: '隋恭帝与禅让方', relationType: 'direct', note: '杨侑在长安向李渊禅位，代表隋中央政权名义终止；个人退位与隋地方秩序、城市遗产延续分层表达。' },
+      { personId: 'li-yuan', role: '唐承接者与受禅即位者', relationType: 'direct', note: '李渊承接长安中央政治资源并建立唐；唐后续对各地的整合不压缩为618年单一节点。' },
+    ],
+    polityIds: ['sui', 'tang'],
+    causes: ['李渊集团已控制长安并取得隋都的中央政治资源。', '隋末中央权威瓦解，杨侑禅位成为隋—唐中央政权转换的制度节点。'],
+    consequences: ['隋中央政权终止，唐在长安承接新的王朝中央。', '隋唐长安城、宫城和官署空间继续沿用，城市遗产不因政权更替消失。', '唐对地方势力的战争与行政整合属于618年后的连续阶段。'],
+    phases: [
+      { label: '长安承接', startYear: 617, endYear: 617, summary: '李渊集团控制长安并接收隋都政治资源。' },
+      { label: '隋恭帝禅位', startYear: 618, endYear: 618, summary: '杨侑向李渊禅位，隋中央政权在长安终止。' },
+      { label: '唐即位承接', startYear: 618, endYear: 618, summary: '李渊即皇帝位，唐在长安建立。' },
+    ],
+    locationIds: ['changan'],
+    relatedEventIds: ['tang-founded', 'tang-founded-changan'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '本条只确认618年长安中央政权的禅代终止与唐承接；隋炀帝遇害、隋末地方势力和唐统一战争是相邻但不同的历史层次。',
+  },
+  {
     eventId: 'ximing-temple-built',
     participants: [{ personId: 'li-zhi', role: '唐高宗时期西明寺营建的皇室与国家权力背景人物', relationType: 'contextual', note: '西明寺营建属于唐高宗时期国家寺院建设；本条不把李治写成亲自主持全部工程的建筑负责人。' }],
     polityIds: ['tang'],

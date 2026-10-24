@@ -816,6 +816,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百八十五·唐纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷185', detail: '武德元年（618）五月，隋恭帝禅位、唐王在太极殿即位及同年各地政权。' }],
   },
   {
+    id: 'sui-ended-618', year: 618, title: '隋在长安禅让终止、唐承接', summary: '隋恭帝杨侑在长安向李渊禅位，隋中央政权终止，唐承接长安政治中心。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '李渊集团已控制长安，隋末各地势力仍在竞争；隋恭帝禅位是中央政权名义转换节点。',
+    process: '618年隋恭帝杨侑在长安禅位于唐王李渊，李渊即皇帝位建立唐；本条单独表达隋终止，唐建立的建国叙述仍由 tang-founded 承担。',
+    impact: '隋中央政权退出历史序列，唐在长安承接隋的都城与制度资源；隋末地方势力和唐后续统一战争不因禅位当日而立即结束。',
+    mapNote: '长安对应今西安的隋唐城市遗址层；政权终止点不表示隋唐长安城市遗产消失，也不把618年视为唐已完成全部区域整合。',
+    references: [{ title: '《资治通鉴》卷一百八十五·唐纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷185', detail: '武德元年（618）五月，隋恭帝禅位、李渊即位及唐朝建立。' }],
+  },
+  {
     id: 'ximing-temple-built', year: 656, title: '西明寺营建并初成', summary: '唐显庆元年营建西明寺，寺院成为长安佛教与国家寺院网络的重要节点。', placeId: 'changan', sourceIds: ['xian-local-chronicle-ximing-temple', 'ximing-temple-primary-biography'],
     datePrecision: 'year', region: 'china', category: '遗产营建／寺院', verification: 'checked',
     background: '唐高宗时期皇室与国家寺院体系继续扩展，长安需要承载僧侣驻锡、讲经和译经活动的新的大型寺院空间。',
