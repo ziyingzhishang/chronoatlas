@@ -19305,6 +19305,66 @@
     },
     {
       "entityType": "heritage",
+      "entityId": "tibetan-yalong-political-center-layer",
+      "entityKey": "heritage:tibetan-yalong-political-center-layer",
+      "label": "吐蕃雅砻早期政治中心历史层",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "tibetan-yalong-political-center-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:tibetan-yalong-political-center-layer"
+          ],
+          "relatedIds": [
+            "namri-songtsen",
+            "songtsen-gampo",
+            "tibetan-founded",
+            "tibetan-yalong-center",
+            "tibetan_empire"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "heritage",
       "entityId": "tongwan-city-site",
       "entityKey": "heritage:tongwan-city-site",
       "label": "统万城遗址",
@@ -44866,6 +44926,7 @@
             "event-detail:tibetan-yalong-center",
             "event-detail:tuyuhun-ended-663",
             "heritage-detail:tibetan-lhasa-city-site",
+            "heritage-detail:tibetan-yalong-political-center-layer",
             "heritage-detail:tuyuhun-fuqisi-city-candidate",
             "person:langdarma",
             "person:lushangzan",
@@ -44882,6 +44943,7 @@
             "tibetan-founded",
             "tibetan-lhasa-city-site",
             "tibetan-yalong-center",
+            "tibetan-yalong-political-center-layer",
             "tridu-songtsen",
             "tuyuhun",
             "tuyuhun-ended-663",
@@ -68244,6 +68306,66 @@
             "li-shimin",
             "tibetan-ended-842",
             "tibetan-founded",
+            "tibetan_empire"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "遗产有始建或形成起始年代。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "heritage:tibetan-yalong-political-center-layer": {
+      "entityType": "heritage",
+      "entityId": "tibetan-yalong-political-center-layer",
+      "entityKey": "heritage:tibetan-yalong-political-center-layer",
+      "label": "吐蕃雅砻早期政治中心历史层",
+      "polityIds": [
+        "tibetan_empire"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "遗产详情包含现代位置、历史关联、遗存和当代价值。",
+          "evidenceIds": [
+            "tibetan-yalong-political-center-layer"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "capital-history-reference",
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "heritage-detail:tibetan-yalong-political-center-layer"
+          ],
+          "relatedIds": [
+            "namri-songtsen",
+            "songtsen-gampo",
+            "tibetan-founded",
+            "tibetan-yalong-center",
             "tibetan_empire"
           ]
         },
@@ -93819,6 +93941,7 @@
             "event-detail:tibetan-yalong-center",
             "event-detail:tuyuhun-ended-663",
             "heritage-detail:tibetan-lhasa-city-site",
+            "heritage-detail:tibetan-yalong-political-center-layer",
             "heritage-detail:tuyuhun-fuqisi-city-candidate",
             "person:langdarma",
             "person:lushangzan",
@@ -93835,6 +93958,7 @@
             "tibetan-founded",
             "tibetan-lhasa-city-site",
             "tibetan-yalong-center",
+            "tibetan-yalong-political-center-layer",
             "tridu-songtsen",
             "tuyuhun",
             "tuyuhun-ended-663",
@@ -95845,9 +95969,9 @@
       ]
     },
     "heritage": {
-      "totalEntities": 129,
+      "totalEntities": 130,
       "statusCounts": {
-        "covered": 645,
+        "covered": 650,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -98987,6 +99111,7 @@
         "event:tibetan-yalong-center",
         "event:tuyuhun-ended-663",
         "heritage:tibetan-lhasa-city-site",
+        "heritage:tibetan-yalong-political-center-layer",
         "heritage:tuyuhun-fuqisi-city-candidate",
         "person:langdarma",
         "person:lushangzan",
@@ -104037,6 +104162,7 @@
       "entityKeys": [
         "event:tibetan-founded",
         "event:tibetan-yalong-center",
+        "heritage:tibetan-yalong-political-center-layer",
         "person:songtsen-gampo"
       ],
       "gaps": [
