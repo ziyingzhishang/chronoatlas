@@ -27893,6 +27893,7 @@
             "claim:claim-li-yuan-parent-li-shimin",
             "claim:claim-li-yuan-participated-sui-ended-618",
             "claim:claim-li-yuan-participated-tang-founded-fortyfourth",
+            "claim:claim-li-yuan-succeeded-yang-you-round131",
             "claim:claim-yang-jian-related-li-yuan",
             "claim:claim-yang-you-succeeded-by-li-yuan",
             "event-detail:daming-palace-built",
@@ -34196,6 +34197,7 @@
             "claim:claim-qian-chu-submitted-to-zhao-kuangyi-termination-978",
             "claim:claim-taizong-song-participated-northern-han-ended-979",
             "claim:claim-taizong-song-ruled-northern-song",
+            "claim:claim-taizong-song-succeeded-zhao-kuangyin-round131",
             "claim:claim-zhao-kuangyi-participated-wuyue-ended-978",
             "event-detail:northern-han-ended-979",
             "event-detail:wuyue-ended-978",
@@ -34206,7 +34208,8 @@
             "northern-han-ended-979",
             "qian-chu",
             "song_northern",
-            "wuyue-ended-978"
+            "wuyue-ended-978",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -37021,6 +37024,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-yuan-succeeded-yang-you-round131",
             "claim:claim-yang-you-participated-sui-ended-618",
             "claim:claim-yang-you-ruled-sui",
             "claim:claim-yang-you-succeeded-by-li-yuan",
@@ -39081,6 +39085,7 @@
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
             "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
+            "claim:claim-taizong-song-succeeded-zhao-kuangyin-round131",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
@@ -39114,7 +39119,8 @@
             "song-founded",
             "song_northern",
             "southern-han-ended-971",
-            "southern-tang-ended-975"
+            "southern-tang-ended-975",
+            "taizong-song"
           ]
         },
         {
@@ -76933,6 +76939,7 @@
             "claim:claim-li-yuan-parent-li-shimin",
             "claim:claim-li-yuan-participated-sui-ended-618",
             "claim:claim-li-yuan-participated-tang-founded-fortyfourth",
+            "claim:claim-li-yuan-succeeded-yang-you-round131",
             "claim:claim-yang-jian-related-li-yuan",
             "claim:claim-yang-you-succeeded-by-li-yuan",
             "event-detail:daming-palace-built",
@@ -83236,6 +83243,7 @@
             "claim:claim-qian-chu-submitted-to-zhao-kuangyi-termination-978",
             "claim:claim-taizong-song-participated-northern-han-ended-979",
             "claim:claim-taizong-song-ruled-northern-song",
+            "claim:claim-taizong-song-succeeded-zhao-kuangyin-round131",
             "claim:claim-zhao-kuangyi-participated-wuyue-ended-978",
             "event-detail:northern-han-ended-979",
             "event-detail:wuyue-ended-978",
@@ -83246,7 +83254,8 @@
             "northern-han-ended-979",
             "qian-chu",
             "song_northern",
-            "wuyue-ended-978"
+            "wuyue-ended-978",
+            "zhao-kuangyin"
           ]
         },
         {
@@ -86061,6 +86070,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-yuan-succeeded-yang-you-round131",
             "claim:claim-yang-you-participated-sui-ended-618",
             "claim:claim-yang-you-ruled-sui",
             "claim:claim-yang-you-succeeded-by-li-yuan",
@@ -88121,6 +88131,7 @@
             "claim:claim-li-yuanhao-related-zhao-kuangyin",
             "claim:claim-liu-chang-enemy-zhao-kuangyin-termination-971",
             "claim:claim-meng-chang-enemy-zhao-kuangyin-termination-965",
+            "claim:claim-taizong-song-succeeded-zhao-kuangyin-round131",
             "claim:claim-zhao-kuangyin-enemy-li-yu",
             "claim:claim-zhao-kuangyin-founded-northern-song",
             "claim:claim-zhao-kuangyin-participated-later-shu-ended-965",
@@ -88154,7 +88165,8 @@
             "song-founded",
             "song_northern",
             "southern-han-ended-971",
-            "southern-tang-ended-975"
+            "southern-tang-ended-975",
+            "taizong-song"
           ]
         },
         {
