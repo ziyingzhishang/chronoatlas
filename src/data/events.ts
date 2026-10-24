@@ -857,7 +857,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百七十七·隋纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷177', detail: '开皇九年（589），渡江、攻取建康及陈叔宝被俘诸条。' }],
   },
   {
-    id: 'sui-founded', year: 581, title: '隋建立', summary: '杨坚受禅建立隋朝，北方新的中央政权由此形成。',
+    id: 'sui-founded', year: 581, title: '隋建立', summary: '杨坚受禅建立隋朝，北方新的中央政权由此形成。', placeId: 'changan',
     datePrecision: 'year', region: 'china', category: '政权建立／更替', sourceIds: ['zizhi-tongjian'], verification: 'checked',
     background: '北周末年皇室与外戚权力重新分配，杨坚掌握朝廷和关中军事资源。',
     process: '开皇元年，北周静帝禅位于杨坚，杨坚即皇帝位，改国号为隋；南方陈朝仍保持独立。',
