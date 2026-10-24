@@ -94,7 +94,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '新罗与唐的战争 · 韩国史数据库', url: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i101220', detail: '用于668年高句丽灭亡及其后新罗—唐冲突的阶段核验。' }, { title: '高句丽灭亡与复兴运动 · 韩国史数据库', url: 'https://contents.history.go.kr/mobile/kc/view.do?code=kc_age_10&levelId=kc_i100200', detail: '用于平壤失守、唐设安东都护府、遗民复兴和668年后历史延续的分层核验。' }],
   },
   {
-    id: 'silla-tang-war-670-676', year: 676, title: '新罗—唐战争结束', summary: '670—676年新罗与唐围绕百济、高句丽旧地展开战争，唐军退出半岛主要地区，统一新罗阶段形成。', placeId: 'jincheng_silla', sourceIds: ['silla-unification-wars-official', 'silla-encykorea'],
+    id: 'silla-tang-war-670-676', year: 670, endYear: 676, title: '新罗—唐战争结束', summary: '670—676年新罗与唐围绕百济、高句丽旧地展开战争，唐军退出半岛主要地区，统一新罗阶段形成。', placeId: 'jincheng_silla', sourceIds: ['silla-unification-wars-official', 'silla-encykorea'],
     datePrecision: 'range', region: 'world', category: '战争／政权整合', verification: 'checked',
     background: '百济、高句丽灭亡后，唐朝试图经营旧地，新罗则推动将半岛大部纳入自身王权秩序。',
     process: '670—676年新罗与唐发生连续军事冲突；676年后唐势力退出半岛主要政治空间，但北部边界、渤海形成和地方控制仍需另行分层。',
@@ -241,7 +241,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《晋书》卷一二六·秃发乌孤载记', url: 'https://zh.wikisource.org/wiki/晉書/卷126', detail: '用于核验秃发乌孤与南凉早期建政、继承和河湟政治空间。' }, { title: '《资治通鉴》', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于前后凉—南凉竞争和397年前后政权形成的编年背景。' }],
   },
   {
-    id: 'southern-liang-moves-ledu', year: 399, title: '南凉政治中心转向乐都', summary: '南凉在河湟经营过程中将政治中心转向乐都，城市进入南凉中后期都城阶段。', placeId: 'ledu', sourceIds: ['jinshu-vol126-tufa-wugu', 'capital-history-reference'],
+    id: 'southern-liang-moves-ledu', year: 399, endYear: 402, title: '南凉政治中心转向乐都', summary: '南凉在河湟经营过程中将政治中心转向乐都，城市进入南凉中后期都城阶段。', placeId: 'ledu', sourceIds: ['jinshu-vol126-tufa-wugu', 'capital-history-reference'],
     datePrecision: 'approximate', region: 'china', category: '都城营建／迁都', verification: 'partial',
     background: '南凉在西平形成政权后继续经营河湟，秃发氏统治下的政治中心随军政与交通网络调整。',
     process: '约399年南凉政治中心转向乐都；项目将其记录为迁移与都城阶段形成节点，不把“约年”写成无争议的单日迁都。',
@@ -968,7 +968,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》·晋纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '386年拓跋珪复代、改国号为魏的编年节点；卷次及异文需在专题校勘中继续核对。' }],
   },
   {
-    id: 'northern-wei-ended-534', year: 534, title: '北魏在洛阳分裂终止、东西魏承接', summary: '北魏孝武帝元修离开洛阳西奔长安，高欢在邺拥立元善见、宇文泰在关中承接魏室，北魏统一中央政权由此终止；东魏与西魏的分别建立按后续节点记录。', placeId: 'luoyang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    id: 'northern-wei-ended-534', year: 534, endYear: 535, title: '北魏在洛阳分裂终止、东西魏承接', summary: '北魏孝武帝元修离开洛阳西奔长安，高欢在邺拥立元善见、宇文泰在关中承接魏室，北魏统一中央政权由此终止；东魏与西魏的分别建立按后续节点记录。', placeId: 'luoyang', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
     datePrecision: 'approximate', region: 'china', category: '政权终结／政权承接', verification: 'partial',
     background: '北魏末年皇权与高欢、宇文泰等军政集团的关系持续紧张，洛阳中央秩序和关中、河北地方权力已出现分化。',
     process: '534年前后元修离开洛阳赴长安，东部高欢集团在邺拥立元善见，关中宇文泰集团承接魏室并于次年形成西魏；本事件记录北魏统一中央政权的终止，不把两个继承政权压缩为同一日建立。',
@@ -1259,7 +1259,7 @@ const catalog: HistoricalEvent[] = [
     ],
   },
   {
-    id: 'yuan-shangdu-built', year: 1256, title: '开平／上都营建启动', summary: '忽必烈时期营建开平城，后发展为元两都体系中的上都。', placeId: 'shangdu', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong', 'capital-history-reference'],
+    id: 'yuan-shangdu-built', year: 1256, endYear: 1271, title: '开平／上都营建启动', summary: '忽必烈时期营建开平城，后发展为元两都体系中的上都。', placeId: 'shangdu', sourceIds: ['yuan-nationalities-history', 'yuan-li-bingzhong', 'capital-history-reference'],
     datePrecision: 'approximate', region: 'china', category: '都城营建／城市史', verification: 'checked',
     background: '蒙古汗权在漠南与华北的统治需要新的城市、宫殿和行政空间，忽必烈时期开始营建开平城。',
     process: '1256年前后启动开平营建，后在元朝国号确立后发展为上都；营建启动、国号建立与两都制度成熟分别记录。',
@@ -1625,7 +1625,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '中国历史分期与朝代年表', url: 'https://www.chnmuseum.cn/portals/0/web/zt/gudai/en/index.html', detail: '用于蒙古统一与元代前史的年代框架；大会地点、部众边界和后续汗国关系需分阶段核验。' }],
   },
   {
-    id: 'mongol-karakorum-fixed-center', year: 1235, title: '哈拉和林成为较固定政治中心', summary: '窝阔台时期蒙古汗国在鄂尔浑河谷发展出较固定的城市政治中心。', placeId: 'mongol_karakorum', sourceIds: ['china-chronology', 'capital-history-reference', 'modern-geography-reference'],
+    id: 'mongol-karakorum-fixed-center', year: 1235, endYear: 1260, title: '哈拉和林成为较固定政治中心', summary: '窝阔台时期蒙古汗国在鄂尔浑河谷发展出较固定的城市政治中心。', placeId: 'mongol_karakorum', sourceIds: ['china-chronology', 'capital-history-reference', 'modern-geography-reference'],
     datePrecision: 'approximate', region: 'world', category: '都城营建／城市史', verification: 'partial',
     background: '蒙古汗国早期以移动汗廷和部众网络为主，统一后需要更稳定的宫殿、行政和使节汇聚空间。',
     process: '约1235年前后，哈拉和林在鄂尔浑河谷发展为较固定的政治中心；窝阔台时期的城市建设与早期移动汗廷分开记录。',
@@ -2012,7 +2012,7 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》唐纪', url: 'https://zh.wikisource.org/wiki/資治通鑑', detail: '用于李渊控制长安、受禅即位与唐朝建立的编年参照。' }],
   },
   {
-    id: 'daming-palace-built', year: 634, title: '大明宫营建', summary: '唐太宗先营永安宫、次年改名大明宫；高宗时期又重建并完成新的宫城阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'tanghuiyao-vol30-daming-palace', 'modern-geography-reference'],
+    id: 'daming-palace-built', year: 634, endYear: 663, title: '大明宫营建', summary: '唐太宗先营永安宫、次年改名大明宫；高宗时期又重建并完成新的宫城阶段。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'tanghuiyao-vol30-daming-palace', 'modern-geography-reference'],
     datePrecision: 'approximate', region: 'china', category: '城市史／宫城营建', verification: 'partial',
     background: '唐代长安的宫城与礼制空间不断扩展，帝国宫廷需要新的大型政治与居住空间。',
     process: '634年营建永安宫，635年改名大明宫；662—663年唐高宗重建并完成新的宫城阶段。',
