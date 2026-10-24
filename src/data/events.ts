@@ -954,6 +954,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '大同市人民政府：历史溯源', url: 'https://www.dt.gov.cn/dtszf/sqgllssy/202510/2f0c0525819a4af3ae0ba42eb47ad053.shtml', detail: '记辽重熙十三年（1044）辽兴宗把云州升为西京府。' }],
   },
   {
+    id: 'liao-ended-1125', year: 1125, title: '辽政权在金军攻势下终止', summary: '金军攻取辽上京等核心城市，天祚帝出奔后被俘，辽中央政权终止；五京城市与契丹政治遗产进入金及西辽的不同承接阶段。', placeId: 'liao_shangjing', sourceIds: ['zizhi-tongjian', 'china-chronology', 'liao-imperial-genealogy'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '女真金在1115年建国后持续挑战辽的北方秩序，辽廷在战争、内部政治和区域城市控制变化中逐步失去主动权。',
+    process: '1125年前后金军攻取辽上京及其他辽朝核心节点，天祚帝出奔并被俘，辽中央政权终止；辽南京早在1122年已脱离辽控制，不能把五京终止理解为同一日同步发生。',
+    impact: '辽的中央政权被金取代，辽上京、东京、中京、西京等城市转入金及后续地方秩序；耶律大石在辽亡危机中西行形成西辽，是另一条契丹政治承接链。',
+    mapNote: '1125年标记辽中央政权终止和金的接收阶段，不把辽后期五京范围倒推为同一时点的连续控制，也不把西辽形成直接绘制成辽上京的后续疆域。',
+    references: [{ title: '《资治通鉴》宋纪与《辽史》本纪', url: 'https://zh.wikisource.org/wiki/資治通鑑；https://zh.wikisource.org/zh-hans/遼史/卷27', detail: '用于核对1125年前后辽天祚帝出奔、被俘及辽中央政权终止；辽南京1122年失守与西辽形成另按阶段分层。' }],
+  },
+  {
     id: 'former-shu-ended-925', year: 925, title: '前蜀在成都终止', summary: '后唐军队攻取成都，前蜀末帝王衍出降，前蜀政权终止，成都转入后续蜀地政权承接阶段。', placeId: 'chengdu', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
     background: '前蜀后期宫廷与地方军政关系趋于脆弱，后唐在李存勖时期向蜀地发动攻势。',

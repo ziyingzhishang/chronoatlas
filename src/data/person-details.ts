@@ -323,6 +323,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['liao-xijing-established'], sourceIds: ['datong-liao-xijing-official'], uncertaintyNote: '1044年是云州升西京府的城市制度节点，西京城市层与北魏平城及后世大同分层理解。',
   },
   {
+    personId: 'yelu-yanxi', biography: '耶律延禧即辽天祚帝，承接辽末皇位并面对金军持续进攻。1125年前后辽中央政权终止；其出奔、被俘和辽亡后的个人结局需与政权终止及西辽形成分别记录。',
+    aliases: ['辽天祚帝', '天祚帝'], offices: [{ title: '辽末代皇帝', polityId: 'khitan', placeId: 'liao_shangjing', validFrom: 1101, validTo: 1125, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'liao-imperial-genealogy'] }],
+    keyEvents: ['liao-ended-1125'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'liao-imperial-genealogy'], uncertaintyNote: '耶律延禧是辽末代君主；1125年是中央政权终止的年份级节点，出奔、被俘和其后个人命运不等同于辽五京城市遗产同时消失。',
+  },
+  {
     personId: 'wang-jian', biography: '王建在唐末经营巴蜀军政资源，907年在成都称帝，前蜀由此形成。',
     aliases: ['前蜀高祖'], offices: [{ title: '前蜀皇帝', polityId: 'former_shu', placeId: 'chengdu', validFrom: 907, validTo: 918, datePrecision: 'range', sourceIds }],
     keyEvents: ['former-shu-founded'], sourceIds, uncertaintyNote: '907年称帝标志前蜀政权形成，但巴蜀各地的实际控制仍需结合阶段性军事与行政资料。',

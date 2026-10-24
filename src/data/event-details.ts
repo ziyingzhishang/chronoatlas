@@ -2230,6 +2230,26 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '1044年为重熙十三年升西京府节点；现代大同古城、云冈及相关遗存经历多时代叠压，不能直接代表辽代西京原貌。',
   },
   {
+    eventId: 'liao-ended-1125',
+    participants: [
+      { personId: 'yelu-yanxi', role: '辽末代皇帝与中央政权终止节点人物', note: '耶律延禧对应1125年前后出奔、被俘与辽中央政权终止；其个人命运、五京接收和西辽形成分别记录。' },
+      { personId: 'yelu-dashi', role: '辽亡危机中西行并形成西辽政治集团的契丹宗室', note: '耶律大石连接辽亡后的契丹政治承接，但不是1125年辽上京终局的末帝，也不把西辽直接等同于辽中央政权。' },
+      { personId: 'wanyan-aguda', role: '前期反辽战争与金政权建立的关键人物', note: '完颜阿骨打于1123年去世，本条仅作为金攻辽链条的前置人物，不把他写成1125年现场统帅。' },
+    ],
+    polityIds: ['khitan', 'jin_jurchen'],
+    causes: ['金在1115年建国后持续扩张，辽的北方军政秩序受到根本挑战。', '辽末中央权力、军事动员与五京区域控制逐步失衡，辽南京已在1122年脱离辽控制。'],
+    consequences: ['辽中央政权终止，天祚帝出奔后被俘。', '上京、东京、中京、西京等城市进入金及后续地方行政承接；城市遗产与人口社会不会因政权终止而同时消失。', '耶律大石在辽亡危机中西行形成西辽，西辽建政、称帝与八剌沙衮建都属于另一条时间链。'],
+    phases: [
+      { label: '金兴起与辽局势恶化', startYear: 1115, endYear: 1122, summary: '金建立并持续挑战辽，辽南京在1122年先脱离辽控制。' },
+      { label: '辽中央政权终止', startYear: 1125, endYear: 1125, summary: '金军攻取辽核心城市，天祚帝出奔并被俘，辽中央政权进入终止节点。' },
+      { label: '契丹政治遗产分流', startYear: 1124, endYear: 1134, summary: '耶律大石西行形成西辽；1124年前后形成、1132年称帝、1134年八剌沙衮建都按不同节点表达。' },
+    ],
+    locationIds: ['liao_shangjing', 'liao_dongjing', 'liao_zhongjing', 'liao_xijing'],
+    relatedEventIds: ['liao-founded', 'liao-nanjing-established', 'western-liao-founded', 'jurchen-jin-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'liao-imperial-genealogy'],
+    uncertaintyNote: '1125年前后是辽中央政权终止的年份级节点；辽南京1122年已先脱离辽控制，五京接收不是同日完成。天祚帝出奔、被俘与其后个人结局、耶律大石西行及西辽制度化分别记录，不以单一事件替代完整过程。',
+  },
+  {
     eventId: 'former-shu-ended-925',
     participants: [
       { personId: 'wang-yan', role: '前蜀末帝与成都失守节点人物', note: '王衍在前蜀末期统治，925年后唐攻取成都后出降；末代君主身份不等同于成都城市遗产消失。' },

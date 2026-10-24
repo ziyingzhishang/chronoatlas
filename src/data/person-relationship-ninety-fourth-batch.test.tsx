@@ -48,7 +48,7 @@ describe('ninety-fourth batch high-confidence alliance and conflict relationship
 
     expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(89);
     expect(report.requiredMissingByCategory.governance).toHaveLength(37);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(141);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(142);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(17);
     for (const personId of ['songtsen-gampo', 'murong-huang', 'chen-qian']) {
       expect(report.byPersonId[personId].categories.allianceConflict.status, personId).toBe('covered');
