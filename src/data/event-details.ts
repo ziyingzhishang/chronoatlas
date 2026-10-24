@@ -425,6 +425,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '535年标记西魏建政与即位，不代表西魏当年已经拥有后来北周的全部范围；地方控制须按时段核验。',
   },
   {
+    eventId: 'western-wei-ended-557',
+    participants: [
+      { personId: 'yuan-kuo', role: '西魏末代皇帝与禅代者', note: '元廓在长安禅位，西魏中央政权由此转入北周；个人退位与地方接收分层表达。' },
+      { personId: 'yuwen-jue', role: '受禅建立北周的承接者', note: '宇文觉承接宇文氏关中军政基础，557年受禅建立北周。' },
+    ],
+    polityIds: ['wei_western', 'zhou_northern'],
+    causes: ['宇文氏集团在关中持续掌握军政与宫廷资源，西魏皇室的名义统治进入禅代阶段。', '西魏需要以政权转换形式完成关中政治中心的继承，而非另行迁离长安。'],
+    consequences: ['西魏中央政权在557年终止，北周承接关中都城与政治资源。', '长安继续作为北朝西部政治中心，城市、官署和地方社会进入北周历史层。', '北周后续的制度整合、北伐与581年隋承接属于后续节点，不与557年禅代合并。'],
+    phases: [
+      { label: '西魏末期', startYear: 554, endYear: 556, summary: '元廓名义统治与宇文氏集团实际军政权力并存。' },
+      { label: '长安禅代', startYear: 557, endYear: 557, summary: '元廓禅位，宇文觉受禅建立北周。' },
+      { label: '北周承接', startYear: 557, endYear: 560, summary: '北周继续以长安为都并组织新的皇室与军政秩序。' },
+    ],
+    locationIds: ['changan'],
+    relatedEventIds: ['western-wei-founded', 'northern-zhou-ended-581'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '557年禅代与北周建立是明确年份节点；元廓个人退位、宇文觉受禅、地方行政接收和长安遗产延续不能压缩为同一动作，也不表示城市遗址在政权终止时消失。',
+  },
+  {
     eventId: 'northern-qi-ended-577',
     participants: [
       { personId: 'gao-heng', role: '北齐末代君主与邺城失守阶段的核心人物', note: '高恒在北周攻取邺城后出奔并于终局过程中被俘；其个人行踪与北齐中央政权终止按连续阶段表达。' },

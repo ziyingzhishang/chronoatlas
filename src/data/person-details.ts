@@ -178,6 +178,16 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['daxing-built'], sourceIds, uncertaintyNote: '宇文泰并非隋大兴城营建者，关键事件只用于长安—关中政治连续性的导航，不能替代具体任职记录。',
   },
   {
+    personId: 'yuan-kuo', biography: '元廓是西魏末代皇帝。557年在长安禅位于宇文觉，西魏中央政权转入北周；个人退位、北周建立和长安城市层延续是相互关联但可区分的事实。',
+    aliases: ['魏恭帝', '西魏恭帝', '拓跋廓', '西魏末帝'], offices: [{ title: '西魏末代皇帝', polityId: 'wei_western', placeId: 'changan', validFrom: 554, validTo: 557, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-wei-ended-557'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '557年禅代是西魏中央政权终止节点；元廓的退位、宇文觉受禅和地方承接不等于长安城市或地方社会在同年消失。',
+  },
+  {
+    personId: 'yuwen-jue', biography: '宇文觉是北周初代皇帝，557年在长安受魏恭帝元廓禅位，承接宇文氏关中军政资源建立北周。',
+    aliases: ['北周孝闵帝', '北周初代皇帝'], offices: [{ title: '北周皇帝', polityId: 'zhou_northern', placeId: 'changan', validFrom: 557, validTo: 557, datePrecision: 'year', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['western-wei-ended-557'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '宇文觉受禅与北周后续制度整合、宇文毓继位及581年北周终止属于不同阶段；本详情不把其短暂在位压缩为北周全期。',
+  },
+  {
     personId: 'li-zhi', biography: '李治即唐高宗，继承唐初帝国体系，长安继续作为唐代宫廷与行政中心。',
     aliases: ['唐高宗'], offices: [{ title: '唐皇帝', polityId: 'tang', placeId: 'changan', validFrom: 649, validTo: 683, datePrecision: 'range', sourceIds }],
     keyEvents: ['daming-palace-built'], sourceIds, uncertaintyNote: '唐代长安与洛阳存在多中心格局，不把单一城市概括为全部政治活动地点。',

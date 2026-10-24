@@ -219,10 +219,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'wei_western', perspectiveSummary: '西魏由北魏孝武帝西奔后在长安重建，宇文泰掌握关中军政，西魏的制度与都城资源后来由北周承接。',
     foundationProcess: ['北魏分裂后，关中军政集团需要以魏宗室重建西部秩序。', '535年元宝炬在长安即位，西魏建立。', '宇文泰整合关中、陇右与河东资源，为北周形成奠定基础。'],
-    turningPoints: [turn(535, '西魏建立', '元宝炬在长安即位，西魏形成。', 'western-wei-founded'), turn(537, '沙苑之战', '东西魏竞争进入关键军事阶段。'), turn(557, '西魏禅代', '北周取代西魏，关中政权进入新阶段。')],
-    principalFigureIds: ['yu-wen-tai'], capitalPhases: [capital('changan', 535, 557)],
-    heritageIds: ['western-wei-changan-city-layer'], eventIds: ['western-wei-founded'], claimIds: ['claim-wei-western-changan-capital'], sourceIds: modernSources,
-    uncertaintyNote: '宇文泰是实际军政核心，但不替代元宝炬的皇帝端点；西魏长安历史层依托多时期都城遗址识别，不能把隋唐遗存直接当作西魏原貌。',
+    turningPoints: [turn(535, '西魏建立', '元宝炬在长安即位，西魏形成。', 'western-wei-founded'), turn(537, '沙苑之战', '东西魏竞争进入关键军事阶段。'), turn(557, '西魏禅代', '魏恭帝元廓在长安禅位于宇文觉，西魏中央政权终止，北周承接。', 'western-wei-ended-557')],
+    principalFigureIds: ['yu-wen-tai', 'yuan-kuo'], capitalPhases: [capital('changan', 535, 557)],
+    heritageIds: ['western-wei-changan-city-layer'], eventIds: ['western-wei-founded', 'western-wei-ended-557'], claimIds: ['claim-wei-western-changan-capital', 'claim-yuan-kuo-ruled-western-wei', 'claim-yuan-kuo-participated-western-wei-ended-557', 'claim-yuwen-jue-succeeded-western-wei', 'claim-yuwen-jue-participated-western-wei-ended-557'], sourceIds: modernSources,
+    uncertaintyNote: '宇文泰是实际军政核心，元廓是末代名义皇帝，宇文觉是受禅承接者，三者角色必须分层；557年禅代是中央政权终止节点，不等同于长安城市或地方社会消失。',
   }),
   detail({
     polityId: 'qi_northern', perspectiveSummary: '北齐由高洋承接高氏在东魏的军政基础并受禅建立，以邺为都，经历东部整合、佛教文化发展和北周压力下的覆亡。',

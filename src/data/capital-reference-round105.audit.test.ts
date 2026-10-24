@@ -67,6 +67,7 @@ describe('round 105 capital reference audit', () => {
       'zhou_eastern|luoyang|zhou-eastward|',
       'zhou_later|kaifeng|later-han-ended-951|',
       'zhou_later|kaifeng||kaifeng-northern-song-city-site',
+      'zhou_northern|changan|western-wei-ended-557|',
     ]);
     expect(rows).not.toContainEqual({
       polityId: 'northern_liang',

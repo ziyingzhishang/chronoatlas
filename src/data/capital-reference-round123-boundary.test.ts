@@ -28,6 +28,7 @@ const residual = [
   ['song_northern|kaifeng|song-founded|', 'duplicate-event-node'],
   ['northern_yan|longcheng|later-yan-ended-407|', 'shared-transition-event'],
   ['liang_southern|jiankang|southern-qi-ended-502|', 'shared-transition-event'],
+  ['zhou_northern|changan|western-wei-ended-557|', 'shared-transition-event'],
 ] as const;
 
 const key = (polityId: string, placeId: string, eventId = '', heritageId = '') => (

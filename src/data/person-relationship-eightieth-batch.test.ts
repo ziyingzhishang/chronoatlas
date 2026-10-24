@@ -54,8 +54,8 @@ describe('eightieth batch high-confidence alliance relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(37);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(145);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(90);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(147);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(92);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(16);
     for (const personId of ['wang-wei', 'li-hao', 'gao-jixing', 'gao-hongtu', 'harry-truman', 'edward-stettinius']) {
       expect(report.byPersonId[personId].categories.allianceConflict.status, personId).toBe('covered');

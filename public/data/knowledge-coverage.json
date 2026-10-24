@@ -10295,6 +10295,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "western-wei-ended-557",
+      "entityKey": "event:western-wei-ended-557",
+      "label": "西魏在长安禅代、北周承接",
+      "polityIds": [
+        "wei_western",
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-wei-ended-557"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-kuo-participated-western-wei-ended-557",
+            "claim:claim-yuwen-jue-participated-western-wei-ended-557",
+            "event-detail:western-wei-ended-557"
+          ],
+          "relatedIds": [
+            "northern-zhou-ended-581",
+            "wei_western",
+            "western-wei-founded",
+            "yuan-kuo",
+            "yuwen-jue",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "western-wei-founded",
       "entityKey": "event:western-wei-founded",
       "label": "西魏建立",
@@ -18195,7 +18259,8 @@
       "entityKey": "heritage:western-wei-changan-city-layer",
       "label": "西魏长安城政治空间历史层",
       "polityIds": [
-        "wei_western"
+        "wei_western",
+        "zhou_northern"
       ],
       "checks": [
         {
@@ -18219,6 +18284,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -18233,8 +18299,12 @@
           ],
           "relatedIds": [
             "wei_western",
+            "western-wei-ended-557",
             "western-wei-founded",
-            "yu-wen-tai"
+            "yu-wen-tai",
+            "yuan-kuo",
+            "yuwen-jue",
+            "zhou_northern"
           ]
         },
         {
@@ -34066,6 +34136,71 @@
     },
     {
       "entityType": "person",
+      "entityId": "yuan-kuo",
+      "entityKey": "person:yuan-kuo",
+      "label": "元廓",
+      "polityIds": [
+        "wei_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuan-kuo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-kuo-participated-western-wei-ended-557",
+            "claim:claim-yuan-kuo-ruled-western-wei",
+            "claim:claim-yuan-kuo-submitted-to-yuwen-jue-557",
+            "claim:claim-yuwen-jue-succeeded-yuan-kuo",
+            "event-detail:western-wei-ended-557",
+            "person-polity:yuan-kuo:wei_western"
+          ],
+          "relatedIds": [
+            "wei_western",
+            "western-wei-ended-557",
+            "yuwen-jue"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "yuan-shanjian",
       "entityKey": "person:yuan-shanjian",
       "label": "元善见",
@@ -34388,6 +34523,72 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
+      "entityId": "yuwen-jue",
+      "entityKey": "person:yuwen-jue",
+      "label": "宇文觉",
+      "polityIds": [
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuwen-jue"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-kuo-submitted-to-yuwen-jue-557",
+            "claim:claim-yuwen-jue-participated-western-wei-ended-557",
+            "claim:claim-yuwen-jue-succeeded-western-wei",
+            "claim:claim-yuwen-jue-succeeded-yuan-kuo",
+            "event-detail:western-wei-ended-557",
+            "person-polity:yuwen-jue:zhou_northern"
+          ],
+          "relatedIds": [
+            "wei_western",
+            "western-wei-ended-557",
+            "yuan-kuo",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -41079,12 +41280,16 @@
           "evidenceIds": [
             "claim:claim-wei-western-changan-capital",
             "claim:claim-yu-wen-tai-ruled-western-wei-fortythird",
+            "claim:claim-yuan-kuo-ruled-western-wei",
+            "claim:claim-yuwen-jue-succeeded-western-wei",
             "event-detail:northern-wei-ended-534",
             "event-detail:western-wei-changan",
+            "event-detail:western-wei-ended-557",
             "event-detail:western-wei-founded",
             "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:western-wei-changan-city-layer",
-            "person:yu-wen-tai"
+            "person:yu-wen-tai",
+            "person:yuan-kuo"
           ],
           "relatedIds": [
             "changan",
@@ -41092,8 +41297,11 @@
             "northern-wei-ended-534",
             "western-wei-changan",
             "western-wei-changan-city-layer",
+            "western-wei-ended-557",
             "western-wei-founded",
-            "yu-wen-tai"
+            "yu-wen-tai",
+            "yuan-kuo",
+            "yuwen-jue"
           ]
         },
         {
@@ -42328,9 +42536,12 @@
             "event-detail:northern-qi-ended-577",
             "event-detail:northern-zhou-changan",
             "event-detail:northern-zhou-ended-581",
+            "event-detail:western-wei-ended-557",
             "heritage-detail:northern-zhou-changan-city-layer",
+            "heritage-detail:western-wei-changan-city-layer",
             "heritage-detail:ye-city-site",
             "person:yuwen-chan",
+            "person:yuwen-jue",
             "person:yuwen-yong"
           ],
           "relatedIds": [
@@ -42339,8 +42550,11 @@
             "northern-zhou-changan",
             "northern-zhou-changan-city-layer",
             "northern-zhou-ended-581",
+            "western-wei-changan-city-layer",
+            "western-wei-ended-557",
             "ye-city-site",
             "yuwen-chan",
+            "yuwen-jue",
             "yuwen-yong"
           ]
         },
@@ -43997,6 +44211,23 @@
     },
     {
       "entityType": "person",
+      "entityId": "yuan-kuo",
+      "entityKey": "person:yuan-kuo",
+      "label": "元廓",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "wei_western"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
       "entityId": "yuri-goguryeo",
       "entityKey": "person:yuri-goguryeo",
       "label": "琉璃明王",
@@ -44007,6 +44238,23 @@
       ],
       "evidenceIds": [
         "china-chronology"
+      ],
+      "relatedIds": [],
+      "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+    },
+    {
+      "entityType": "person",
+      "entityId": "yuwen-jue",
+      "entityKey": "person:yuwen-jue",
+      "label": "宇文觉",
+      "dimension": "time",
+      "kind": "uncertain",
+      "polityIds": [
+        "zhou_northern"
+      ],
+      "evidenceIds": [
+        "china-chronology",
+        "zizhi-tongjian"
       ],
       "relatedIds": [],
       "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
@@ -54404,6 +54652,70 @@
         }
       ]
     },
+    "event:western-wei-ended-557": {
+      "entityType": "event",
+      "entityId": "western-wei-ended-557",
+      "entityKey": "event:western-wei-ended-557",
+      "label": "西魏在长安禅代、北周承接",
+      "polityIds": [
+        "wei_western",
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "western-wei-ended-557"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-kuo-participated-western-wei-ended-557",
+            "claim:claim-yuwen-jue-participated-western-wei-ended-557",
+            "event-detail:western-wei-ended-557"
+          ],
+          "relatedIds": [
+            "northern-zhou-ended-581",
+            "wei_western",
+            "western-wei-founded",
+            "yuan-kuo",
+            "yuwen-jue",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:western-wei-founded": {
       "entityType": "event",
       "entityId": "western-wei-founded",
@@ -62306,7 +62618,8 @@
       "entityKey": "heritage:western-wei-changan-city-layer",
       "label": "西魏长安城政治空间历史层",
       "polityIds": [
-        "wei_western"
+        "wei_western",
+        "zhou_northern"
       ],
       "checks": [
         {
@@ -62330,6 +62643,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -62344,8 +62658,12 @@
           ],
           "relatedIds": [
             "wei_western",
+            "western-wei-ended-557",
             "western-wei-founded",
-            "yu-wen-tai"
+            "yu-wen-tai",
+            "yuan-kuo",
+            "yuwen-jue",
+            "zhou_northern"
           ]
         },
         {
@@ -78175,6 +78493,71 @@
         }
       ]
     },
+    "person:yuan-kuo": {
+      "entityType": "person",
+      "entityId": "yuan-kuo",
+      "entityKey": "person:yuan-kuo",
+      "label": "元廓",
+      "polityIds": [
+        "wei_western"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuan-kuo"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-kuo-participated-western-wei-ended-557",
+            "claim:claim-yuan-kuo-ruled-western-wei",
+            "claim:claim-yuan-kuo-submitted-to-yuwen-jue-557",
+            "claim:claim-yuwen-jue-succeeded-yuan-kuo",
+            "event-detail:western-wei-ended-557",
+            "person-polity:yuan-kuo:wei_western"
+          ],
+          "relatedIds": [
+            "wei_western",
+            "western-wei-ended-557",
+            "yuwen-jue"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:yuan-shanjian": {
       "entityType": "person",
       "entityId": "yuan-shanjian",
@@ -78499,6 +78882,72 @@
           "dimension": "time",
           "status": "covered",
           "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    "person:yuwen-jue": {
+      "entityType": "person",
+      "entityId": "yuwen-jue",
+      "entityKey": "person:yuwen-jue",
+      "label": "宇文觉",
+      "polityIds": [
+        "zhou_northern"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yuwen-jue"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-yuan-kuo-submitted-to-yuwen-jue-557",
+            "claim:claim-yuwen-jue-participated-western-wei-ended-557",
+            "claim:claim-yuwen-jue-succeeded-western-wei",
+            "claim:claim-yuwen-jue-succeeded-yuan-kuo",
+            "event-detail:western-wei-ended-557",
+            "person-polity:yuwen-jue:zhou_northern"
+          ],
+          "relatedIds": [
+            "wei_western",
+            "western-wei-ended-557",
+            "yuan-kuo",
+            "zhou_northern"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "uncertain",
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。",
           "evidenceIds": [
             "china-chronology",
             "zizhi-tongjian"
@@ -85190,12 +85639,16 @@
           "evidenceIds": [
             "claim:claim-wei-western-changan-capital",
             "claim:claim-yu-wen-tai-ruled-western-wei-fortythird",
+            "claim:claim-yuan-kuo-ruled-western-wei",
+            "claim:claim-yuwen-jue-succeeded-western-wei",
             "event-detail:northern-wei-ended-534",
             "event-detail:western-wei-changan",
+            "event-detail:western-wei-ended-557",
             "event-detail:western-wei-founded",
             "heritage-detail:luoyang-han-wei-city-site",
             "heritage-detail:western-wei-changan-city-layer",
-            "person:yu-wen-tai"
+            "person:yu-wen-tai",
+            "person:yuan-kuo"
           ],
           "relatedIds": [
             "changan",
@@ -85203,8 +85656,11 @@
             "northern-wei-ended-534",
             "western-wei-changan",
             "western-wei-changan-city-layer",
+            "western-wei-ended-557",
             "western-wei-founded",
-            "yu-wen-tai"
+            "yu-wen-tai",
+            "yuan-kuo",
+            "yuwen-jue"
           ]
         },
         {
@@ -86439,9 +86895,12 @@
             "event-detail:northern-qi-ended-577",
             "event-detail:northern-zhou-changan",
             "event-detail:northern-zhou-ended-581",
+            "event-detail:western-wei-ended-557",
             "heritage-detail:northern-zhou-changan-city-layer",
+            "heritage-detail:western-wei-changan-city-layer",
             "heritage-detail:ye-city-site",
             "person:yuwen-chan",
+            "person:yuwen-jue",
             "person:yuwen-yong"
           ],
           "relatedIds": [
@@ -86450,8 +86909,11 @@
             "northern-zhou-changan",
             "northern-zhou-changan-city-layer",
             "northern-zhou-ended-581",
+            "western-wei-changan-city-layer",
+            "western-wei-ended-557",
             "ye-city-site",
             "yuwen-chan",
+            "yuwen-jue",
             "yuwen-yong"
           ]
         },
@@ -86538,9 +87000,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 201,
+      "totalEntities": 202,
       "statusCounts": {
-        "covered": 963,
+        "covered": 968,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -86617,20 +87079,20 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 246,
+      "totalEntities": 248,
       "statusCounts": {
-        "covered": 1166,
+        "covered": 1174,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 64,
+        "uncertain": 66,
         "not-applicable": 0
       },
       "gapCounts": {
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
-        "uncertain": 64
+        "uncertain": 66
       },
       "entitiesWithGaps": [
         "person:asina-tumen",
@@ -86690,7 +87152,9 @@
         "person:yelu-yilie",
         "person:yimouxun",
         "person:yu-the-great",
+        "person:yuan-kuo",
         "person:yuri-goguryeo",
+        "person:yuwen-jue",
         "person:zhang-qian",
         "person:zhao-liehou",
         "person:zhao-xiangzi",
@@ -89886,13 +90350,32 @@
       "polityName": "西魏",
       "entityKeys": [
         "event:northern-wei-ended-534",
+        "event:western-wei-ended-557",
         "event:western-wei-founded",
         "heritage:luoyang-han-wei-city-site",
         "heritage:western-wei-changan-city-layer",
         "person:yu-wen-tai",
+        "person:yuan-kuo",
         "polity:wei_western"
       ],
       "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "yuan-kuo",
+          "entityKey": "person:yuan-kuo",
+          "label": "元廓",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_western"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
         {
           "entityType": "event",
           "entityId": "northern-wei-ended-534",
@@ -89917,7 +90400,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西魏：有 1 项待核验缺口。"
+      "summary": "西魏：有 2 项待核验缺口。"
     },
     "western_liang": {
       "polityId": "western_liang",
@@ -90751,13 +91234,34 @@
       "entityKeys": [
         "event:northern-qi-ended-577",
         "event:northern-zhou-ended-581",
+        "event:western-wei-ended-557",
         "heritage:northern-zhou-changan-city-layer",
+        "heritage:western-wei-changan-city-layer",
         "heritage:ye-city-site",
         "person:yuwen-chan",
+        "person:yuwen-jue",
         "person:yuwen-yong",
         "polity:zhou_northern"
       ],
-      "gaps": [],
+      "gaps": [
+        {
+          "entityType": "person",
+          "entityId": "yuwen-jue",
+          "entityKey": "person:yuwen-jue",
+          "label": "宇文觉",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "zhou_northern"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        }
+      ],
       "taskCounts": {
         "polity-heritage-missing": 0,
         "person-person-relationship-missing": 0,
@@ -90765,7 +91269,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "北周：学习闭环已覆盖。"
+      "summary": "北周：有 1 项待核验缺口。"
     },
     "zhou_western": {
       "polityId": "zhou_western",
@@ -91063,6 +91567,7 @@
         "event:tang-changan-end",
         "event:tang-founded",
         "event:tang-founded-changan",
+        "event:western-wei-ended-557",
         "event:western-wei-founded",
         "event:western-zhou-founded-eighth-batch",
         "event:wu-zhou-founded",
@@ -91118,7 +91623,9 @@
         "person:yao-hong",
         "person:yao-xing",
         "person:yu-wen-tai",
+        "person:yuan-kuo",
         "person:yuwen-chan",
+        "person:yuwen-jue",
         "person:zhu-wen",
         "polity:former_qin",
         "polity:former_zhao",
@@ -91160,6 +91667,40 @@
           ],
           "evidenceIds": [
             "jinshu-vol112-fu-jian",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "yuan-kuo",
+          "entityKey": "person:yuan-kuo",
+          "label": "元廓",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "wei_western"
+          ],
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": [],
+          "note": "人物生卒年不完整，目录将其视为史料不确定而非自动补值。"
+        },
+        {
+          "entityType": "person",
+          "entityId": "yuwen-jue",
+          "entityKey": "person:yuwen-jue",
+          "label": "宇文觉",
+          "dimension": "time",
+          "kind": "uncertain",
+          "polityIds": [
+            "zhou_northern"
+          ],
+          "evidenceIds": [
+            "china-chronology",
             "zizhi-tongjian"
           ],
           "relatedIds": [],
@@ -91288,7 +91829,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "西安市：有 10 项待核验缺口。"
+      "summary": "西安市：有 12 项待核验缺口。"
     },
     "changsha": {
       "placeId": "changsha",

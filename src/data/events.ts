@@ -193,6 +193,15 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷一百五十七·梁纪十三', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷157', detail: '记载元宝炬即位、宇文泰辅政及西魏政权形成；不据此推导完整边界。' }],
   },
   {
+    id: 'western-wei-ended-557', year: 557, title: '西魏在长安禅代、北周承接', summary: '魏恭帝元廓在长安禅位于宇文觉，西魏中央政权终止，北周承接关中政治中心。', placeId: 'changan', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '宇文泰去世后，宇文氏集团继续掌握关中军政与宫廷资源；西魏恭帝元廓的禅代是西魏转入北周的中央政权节点。',
+    process: '557年元廓在长安禅位，宇文觉受禅建立北周；北周继续以长安为都，西魏的中央政治结构由此终止。',
+    impact: '北周承接西魏的关中都城、官署与军政资源，长安城市空间进入北周阶段；西魏终止、北周建立和后续北周制度整合按不同层次表达。',
+    mapNote: '地图将557年标为西魏中央政权终止与北周承接的明确年份节点；禅代、宇文觉受禅、地方行政接收和长安遗产延续不压缩为城市消失或单一建筑更替。',
+    references: [{ title: '《周书》卷三·孝闵帝纪', url: 'https://zh.wikisource.org/zh-hans/%E5%91%A8%E6%9B%B8/%E5%8D%B703', detail: '用于核对宇文觉与魏恭帝三年禅代前后的身份和北周承接；不据此推导完整疆域。' }],
+  },
+  {
     id: 'southern-liang-founded', year: 502, title: '南梁建立', summary: '萧衍受禅建立梁朝，南梁成为南朝新的政权。', placeId: 'jiankang', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '南齐末年皇室权力衰落，雍州军政集团的萧衍控制建康及朝廷核心资源。',

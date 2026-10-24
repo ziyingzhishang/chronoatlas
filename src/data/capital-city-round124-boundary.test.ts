@@ -51,6 +51,7 @@ const categories: Record<string, BoundaryCategory> = {
   'song_northern|kaifeng|song-founded|': 'duplicate-event-node',
   'northern_yan|longcheng|later-yan-ended-407|': 'shared-transition-event',
   'liang_southern|jiankang|southern-qi-ended-502|': 'shared-transition-event',
+  'zhou_northern|changan|western-wei-ended-557|': 'shared-transition-event',
 };
 
 function discoverResiduals(): Candidate[] {

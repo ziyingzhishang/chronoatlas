@@ -41,6 +41,7 @@ const expectedCategories = {
   'song_northern|kaifeng|song-founded|': 'duplicate-event-node',
   'northern_yan|longcheng|later-yan-ended-407|': 'shared-transition-event',
   'liang_southern|jiankang|southern-qi-ended-502|': 'shared-transition-event',
+  'zhou_northern|changan|western-wei-ended-557|': 'shared-transition-event',
 } as const;
 
 describe('round 114 residual capital reference categories', () => {
@@ -69,7 +70,7 @@ describe('round 114 residual capital reference categories', () => {
     expect(Object.fromEntries(rows.map((row) => [key(row), true]))).toEqual(
       Object.fromEntries(Object.keys(expectedCategories).map((candidateKey) => [candidateKey, true])),
     );
-    expect(Object.keys(expectedCategories)).toHaveLength(18);
+    expect(Object.keys(expectedCategories)).toHaveLength(19);
   });
 
   it('requires future closures to preserve the category-specific boundary', () => {

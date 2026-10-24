@@ -65,6 +65,7 @@ export const eventTimeReview: readonly EventTimeReviewEntry[] = [
   { eventId: 'eastern-wei-ended-550', status: 'confirmed', expectedPrecision: 'year', explanation: '550年元善见禅位于高洋、北齐建立与东魏中央政权终止有明确编年节点；高氏实际掌权、北齐地方接收和邺城遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'northern-qi-ended-577', status: 'confirmed', expectedPrecision: 'year', explanation: '577年北周攻取邺城、北齐末主高恒出奔并在终局过程中被俘，北齐中央政权终止与北周承接有明确编年节点；地方归附和邺城遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'northern-zhou-ended-581', status: 'confirmed', expectedPrecision: 'year', explanation: '581年北周静帝禅位于杨坚、隋建立与北周中央政权终止有明确编年节点；宇文阐个人退位、隋地方承接、长安城市遗产延续及589年灭陈另按阶段分层。', timelineStrategy: 'year-marker' },
+  { eventId: 'western-wei-ended-557', status: 'confirmed', expectedPrecision: 'year', explanation: '557年魏恭帝元廓在长安禅位于宇文觉、北周建立与西魏中央政权终止有明确编年节点；宇文氏集团实际掌权、地方行政接收和长安城市遗产延续另按阶段分层。', timelineStrategy: 'year-marker' },
   { eventId: 'qin-state-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '秦国早期建制属于传统分期，前770年只能表示历史阶段起点。', timelineStrategy: 'approximate-marker' },
   { eventId: 'chu-warring-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '战国楚的目录起点是传统分期，前403年只用于时间轴定位。', timelineStrategy: 'approximate-marker' },
   { eventId: 'yan-warring-founded-eighth-batch', status: 'approximate', expectedPrecision: 'approximate', explanation: '战国燕的目录起点是传统分期，不能据此推断精确的政权成立日期。', timelineStrategy: 'approximate-marker' },
