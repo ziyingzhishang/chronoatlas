@@ -1266,6 +1266,18 @@ const catalog: HistoricalEvent[] = [
     references: [{ title: '《资治通鉴》卷二百六十六·后梁纪一', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷266', detail: '记载唐亡后钱镠受后梁封吴越王及两浙政局；吴越内部沿革与边界另按时段核验。' }],
   },
   {
+    id: 'wuyue-ended-978', year: 978, title: '吴越在杭州纳土归宋', summary: '吴越末王钱俶向北宋纳土，杭州政治中心转入北宋承接阶段，吴越政权结束。', placeId: 'hangzhou', sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    datePrecision: 'year', region: 'china', category: '政权终结／政权承接', verification: 'checked',
+    background: '北宋完成中原与南方主要政权的统一推进后，吴越保留的地方自治与中原册封关系进入最后转换阶段。',
+    process: '978年钱俶向北宋纳土，吴越中央政权与两浙地方国主身份终止；钱俶入朝、北宋地方行政接收和杭州城市秩序延续属于连续但可分层的过程。',
+    impact: '吴越政权结束，两浙纳入北宋行政体系；杭州的城市、海贸、水利与钱氏王室遗产继续进入宋代及后续历史层。',
+    mapNote: '地图将杭州（今浙江省杭州市）标记为吴越终结与北宋承接节点；纳土归宋不等于杭州城市遗产或两浙地方社会在同日消失，也不把钱俶入朝地点与杭州地方接收混为一事。',
+    references: [
+      { title: '《资治通鉴》卷二百九十四·宋纪六', url: 'https://zh.wikisource.org/wiki/資治通鑑/卷294', detail: '用于核对钱俶纳土归宋及吴越政权身份转换；纳土、入朝和地方行政接收按过程分层。' },
+      { title: '中国历史分期与朝代年表', url: 'https://www.gov.cn/guoqing/2018-03/23/content_5277120.htm', detail: '用于978年吴越终止的年代级交叉核验，不替代编年史对具体接收过程的记载。' },
+    ],
+  },
+  {
     id: 'min-founded', year: 909, title: '闽政权建立', summary: '王审知受封闽王，福建地方政权进入闽国阶段。', placeId: 'fuzhou', sourceIds: ['zizhi-tongjian', 'china-chronology'],
     datePrecision: 'year', region: 'china', category: '政权建立／更替', verification: 'checked',
     background: '唐末福建山海阻隔、藩镇分立，王审知兄弟在福州经营地方军政并逐渐取得对闽地的控制。',

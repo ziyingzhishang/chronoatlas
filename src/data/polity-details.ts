@@ -419,10 +419,10 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'wuyue', perspectiveSummary: '吴越由钱镠在两浙军政竞争中建立，以杭州为政治中心；其名义受封与实际自治并存，区域治理是重要历史线索。',
     foundationProcess: ['钱镠控制杭州及两浙核心军政资源。', '907年受封吴越王，吴越进入十国分期。', '杭州成为政治、经济和海贸中心，钱氏对中原保持名义臣属而维持区域自治。'],
-    turningPoints: [turn(907, '吴越形成', '钱镠受封吴越王，两浙地方政权进入吴越阶段。', 'wuyue-founded'), turn(923, '区域治理延续', '钱氏经营两浙城市、水利和海贸网络。'), turn(978, '纳土归宋', '吴越向北宋纳土，政权结束。')],
-    principalFigureIds: ['qian-liu'], capitalPhases: [capital('hangzhou', 907, 978, 'primary', 'formal', '吴越政治中心杭州，今浙江省杭州市。')],
-    heritageIds: ['wuyue-qian-king-mausoleum'], eventIds: ['wuyue-founded'], claimIds: ['claim-qian-liu-founded-wuyue'], sourceIds: modernSources,
-    uncertaintyNote: '907年是受封与政权分期节点，不将册封范围等同于两浙全部直接控制；钱王陵是王室墓葬遗存，不能代替吴越完整城市和水利系统。',
+    turningPoints: [turn(907, '吴越形成', '钱镠受封吴越王，两浙地方政权进入吴越阶段。', 'wuyue-founded'), turn(923, '区域治理延续', '钱氏经营两浙城市、水利和海贸网络。'), turn(978, '纳土归宋', '钱俶向北宋纳土，吴越中央政权结束，杭州进入北宋承接阶段。', 'wuyue-ended-978')],
+    principalFigureIds: ['qian-liu', 'qian-chu'], capitalPhases: [capital('hangzhou', 907, 978, 'primary', 'formal', '吴越政治中心杭州，今浙江省杭州市。')],
+    heritageIds: ['wuyue-qian-king-mausoleum'], eventIds: ['wuyue-founded', 'wuyue-ended-978'], claimIds: ['claim-qian-liu-founded-wuyue', 'claim-qian-chu-ruled-wuyue', 'claim-qian-chu-participated-wuyue-ended-978', 'claim-qian-chu-submitted-to-zhao-kuangyi-termination-978', 'claim-zhao-kuangyi-participated-wuyue-ended-978'], sourceIds: modernSources,
+    uncertaintyNote: '907年是受封与政权分期节点，978年是钱俶纳土与吴越中央政权终止节点；两者都不将名义册封或中央纳土直接等同于两浙全部地方同日完成行政转换。钱王陵是王室墓葬遗存，不能代替吴越完整城市和水利系统。',
   }),
   detail({
     polityId: 'min', perspectiveSummary: '闽由王审知兄弟在福建经营军政资源后形成，以福州为政治中心；地方自治、港口贸易和继承危机构成政权史。',

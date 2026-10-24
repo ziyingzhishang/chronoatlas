@@ -51,8 +51,8 @@ describe('seventy-seventh batch high-confidence alliance relationships', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toHaveLength(33);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(138);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(83);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(139);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
     expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(11);
     expect(report.byPersonId['feng-sufo'].categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['hou-andu'].categories.allianceConflict.status).toBe('covered');

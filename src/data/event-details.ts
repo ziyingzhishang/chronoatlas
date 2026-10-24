@@ -2498,6 +2498,25 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '907年标记受封与政权分期，不把册封范围直接等同于直接控制边界；杭州是政治中心，地方归属须按阶段核验。',
   },
   {
+    eventId: 'wuyue-ended-978',
+    participants: [
+      { personId: 'qian-chu', role: '吴越末王与978年纳土归宋的当事君主', note: '钱俶代表吴越末期国主身份与纳土归宋节点；入朝、纳土和两浙地方行政接收属于连续但可分层的过程。' },
+      { personId: 'taizong-song', role: '北宋皇帝与吴越纳土承接阶段的中央决策者', note: '赵光义代表北宋接收吴越政治名义与行政承接阶段，不把中央纳土等同于杭州城市遗产消失。' },
+    ],
+    polityIds: ['wuyue', 'song_northern'],
+    causes: ['北宋统一战争推进到两浙周边，吴越原有地方自治与中原册封关系进入终局。', '钱俶选择纳土，避免杭州及两浙继续承受全面军事对抗。'],
+    consequences: ['钱俶纳土，吴越中央政权结束。', '杭州与两浙转入北宋地方行政承接，城市、水利、海贸和王室遗产继续延续。'],
+    phases: [
+      { label: '纳土归宋', startYear: 978, endYear: 978, summary: '钱俶向北宋纳土，吴越政权身份终止。' },
+      { label: '杭州地方承接', startYear: 978, endYear: 980, summary: '北宋逐步承接杭州及两浙地方行政，不能将中央纳土瞬间等同于所有地方制度同日完成转换。' },
+      { label: '城市与遗产延续', startYear: 978, endYear: 978, summary: '杭州城市、水利、海贸和钱氏王室遗产进入北宋及后续历史层。' },
+    ],
+    locationIds: ['hangzhou'],
+    relatedEventIds: ['wuyue-founded', 'northern-song-founded'],
+    sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '978年纳土归宋是吴越中央政权终止的年份级节点；钱俶入朝、地方行政接收和杭州城市历史层延续分层表达，不把纳土日写成两浙所有地方秩序同日完成转换。',
+  },
+  {
     eventId: 'min-founded',
     participants: [
       { personId: 'wang-shenzhi', role: '经营福建并受封闽王的地方统治者', note: '王审知与兄长共同经营福建，909年受封闽王是政权分期节点；不能把兄弟共同经营简化为单一人物独立建国。' },

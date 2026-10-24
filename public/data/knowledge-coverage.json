@@ -10002,6 +10002,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "wuyue-ended-978",
+      "entityKey": "event:wuyue-ended-978",
+      "label": "吴越在杭州纳土归宋",
+      "polityIds": [
+        "song_northern",
+        "wuyue"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "wuyue-ended-978"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qian-chu-participated-wuyue-ended-978",
+            "claim:claim-zhao-kuangyi-participated-wuyue-ended-978",
+            "event-detail:wuyue-ended-978"
+          ],
+          "relatedIds": [
+            "northern-song-founded",
+            "qian-chu",
+            "song_northern",
+            "taizong-song",
+            "wuyue",
+            "wuyue-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "wuyue-founded",
       "entityKey": "event:wuyue-founded",
       "label": "吴越政权建立",
@@ -17613,6 +17677,7 @@
       "entityKey": "heritage:wuyue-qian-king-mausoleum",
       "label": "吴越钱王陵",
       "polityIds": [
+        "song_northern",
         "wuyue"
       ],
       "checks": [
@@ -17637,6 +17702,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -17650,8 +17716,11 @@
             "heritage-detail:wuyue-qian-king-mausoleum"
           ],
           "relatedIds": [
+            "qian-chu",
             "qian-liu",
+            "song_northern",
             "wuyue",
+            "wuyue-ended-978",
             "wuyue-founded"
           ]
         },
@@ -27341,6 +27410,71 @@
     },
     {
       "entityType": "person",
+      "entityId": "qian-chu",
+      "entityKey": "person:qian-chu",
+      "label": "钱俶",
+      "polityIds": [
+        "wuyue"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qian-chu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qian-chu-participated-wuyue-ended-978",
+            "claim:claim-qian-chu-ruled-wuyue",
+            "claim:claim-qian-chu-served-zhao-kuangyi-after-submission",
+            "claim:claim-qian-chu-submitted-to-zhao-kuangyi-termination-978",
+            "event-detail:wuyue-ended-978",
+            "person-polity:qian-chu:wuyue"
+          ],
+          "relatedIds": [
+            "taizong-song",
+            "wuyue",
+            "wuyue-ended-978"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "qian-liu",
       "entityKey": "person:qian-liu",
       "label": "钱镠",
@@ -29101,15 +29235,21 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-liu-jiyuan-enemy-taizong-song-termination-979",
+            "claim:claim-qian-chu-served-zhao-kuangyi-after-submission",
+            "claim:claim-qian-chu-submitted-to-zhao-kuangyi-termination-978",
             "claim:claim-taizong-song-participated-northern-han-ended-979",
             "claim:claim-taizong-song-ruled-northern-song",
+            "claim:claim-zhao-kuangyi-participated-wuyue-ended-978",
             "event-detail:northern-han-ended-979",
+            "event-detail:wuyue-ended-978",
             "person-polity:taizong-song:song_northern"
           ],
           "relatedIds": [
             "liu-jiyuan",
             "northern-han-ended-979",
-            "song_northern"
+            "qian-chu",
+            "song_northern",
+            "wuyue-ended-978"
           ]
         },
         {
@@ -37606,10 +37746,12 @@
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-tang-falls",
+            "event-detail:wuyue-ended-978",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-shu-chengdu-city-site",
+            "heritage-detail:wuyue-qian-king-mausoleum",
             "person:li-gang",
             "person:taizong-song",
             "person:zhao-kuangyin",
@@ -37629,6 +37771,8 @@
             "song-southward",
             "southern-tang-falls",
             "taizong-song",
+            "wuyue-ended-978",
+            "wuyue-qian-king-mausoleum",
             "zhao-kuangyin",
             "zong-ze"
           ]
@@ -39466,14 +39610,19 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-qian-chu-ruled-wuyue",
             "claim:claim-qian-liu-founded-wuyue",
             "claim:claim-qian-liu-ruled-wuyue-fiftythird",
+            "event-detail:wuyue-ended-978",
             "event-detail:wuyue-founded",
             "heritage-detail:wuyue-qian-king-mausoleum",
+            "person:qian-chu",
             "person:qian-liu"
           ],
           "relatedIds": [
+            "qian-chu",
             "qian-liu",
+            "wuyue-ended-978",
             "wuyue-founded",
             "wuyue-qian-king-mausoleum"
           ]
@@ -51765,6 +51914,70 @@
         }
       ]
     },
+    "event:wuyue-ended-978": {
+      "entityType": "event",
+      "entityId": "wuyue-ended-978",
+      "entityKey": "event:wuyue-ended-978",
+      "label": "吴越在杭州纳土归宋",
+      "polityIds": [
+        "song_northern",
+        "wuyue"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "wuyue-ended-978"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qian-chu-participated-wuyue-ended-978",
+            "claim:claim-zhao-kuangyi-participated-wuyue-ended-978",
+            "event-detail:wuyue-ended-978"
+          ],
+          "relatedIds": [
+            "northern-song-founded",
+            "qian-chu",
+            "song_northern",
+            "taizong-song",
+            "wuyue",
+            "wuyue-founded"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:wuyue-founded": {
       "entityType": "event",
       "entityId": "wuyue-founded",
@@ -59378,6 +59591,7 @@
       "entityKey": "heritage:wuyue-qian-king-mausoleum",
       "label": "吴越钱王陵",
       "polityIds": [
+        "song_northern",
         "wuyue"
       ],
       "checks": [
@@ -59402,6 +59616,7 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
+            "china-chronology",
             "modern-geography-reference",
             "zizhi-tongjian"
           ],
@@ -59415,8 +59630,11 @@
             "heritage-detail:wuyue-qian-king-mausoleum"
           ],
           "relatedIds": [
+            "qian-chu",
             "qian-liu",
+            "song_northern",
             "wuyue",
+            "wuyue-ended-978",
             "wuyue-founded"
           ]
         },
@@ -69104,6 +69322,71 @@
         }
       ]
     },
+    "person:qian-chu": {
+      "entityType": "person",
+      "entityId": "qian-chu",
+      "entityKey": "person:qian-chu",
+      "label": "钱俶",
+      "polityIds": [
+        "wuyue"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "qian-chu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-qian-chu-participated-wuyue-ended-978",
+            "claim:claim-qian-chu-ruled-wuyue",
+            "claim:claim-qian-chu-served-zhao-kuangyi-after-submission",
+            "claim:claim-qian-chu-submitted-to-zhao-kuangyi-termination-978",
+            "event-detail:wuyue-ended-978",
+            "person-polity:qian-chu:wuyue"
+          ],
+          "relatedIds": [
+            "taizong-song",
+            "wuyue",
+            "wuyue-ended-978"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:qian-liu": {
       "entityType": "person",
       "entityId": "qian-liu",
@@ -70866,15 +71149,21 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-liu-jiyuan-enemy-taizong-song-termination-979",
+            "claim:claim-qian-chu-served-zhao-kuangyi-after-submission",
+            "claim:claim-qian-chu-submitted-to-zhao-kuangyi-termination-978",
             "claim:claim-taizong-song-participated-northern-han-ended-979",
             "claim:claim-taizong-song-ruled-northern-song",
+            "claim:claim-zhao-kuangyi-participated-wuyue-ended-978",
             "event-detail:northern-han-ended-979",
+            "event-detail:wuyue-ended-978",
             "person-polity:taizong-song:song_northern"
           ],
           "relatedIds": [
             "liu-jiyuan",
             "northern-han-ended-979",
-            "song_northern"
+            "qian-chu",
+            "song_northern",
+            "wuyue-ended-978"
           ]
         },
         {
@@ -79371,10 +79660,12 @@
             "event-detail:song-founded",
             "event-detail:song-southward",
             "event-detail:southern-tang-falls",
+            "event-detail:wuyue-ended-978",
             "heritage-detail:jinyang-ancient-city-site",
             "heritage-detail:kaifeng-later-zhou-city-layer",
             "heritage-detail:kaifeng-northern-song-city-site",
             "heritage-detail:later-shu-chengdu-city-site",
+            "heritage-detail:wuyue-qian-king-mausoleum",
             "person:li-gang",
             "person:taizong-song",
             "person:zhao-kuangyin",
@@ -79394,6 +79685,8 @@
             "song-southward",
             "southern-tang-falls",
             "taizong-song",
+            "wuyue-ended-978",
+            "wuyue-qian-king-mausoleum",
             "zhao-kuangyin",
             "zong-ze"
           ]
@@ -81231,14 +81524,19 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-qian-chu-ruled-wuyue",
             "claim:claim-qian-liu-founded-wuyue",
             "claim:claim-qian-liu-ruled-wuyue-fiftythird",
+            "event-detail:wuyue-ended-978",
             "event-detail:wuyue-founded",
             "heritage-detail:wuyue-qian-king-mausoleum",
+            "person:qian-chu",
             "person:qian-liu"
           ],
           "relatedIds": [
+            "qian-chu",
             "qian-liu",
+            "wuyue-ended-978",
             "wuyue-founded",
             "wuyue-qian-king-mausoleum"
           ]
@@ -82015,9 +82313,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 189,
+      "totalEntities": 190,
       "statusCounts": {
-        "covered": 905,
+        "covered": 910,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -82092,9 +82390,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 229,
+      "totalEntities": 230,
       "statusCounts": {
-        "covered": 1089,
+        "covered": 1094,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -84313,10 +84611,12 @@
         "event:song-founded",
         "event:song-southward",
         "event:southern-tang-falls",
+        "event:wuyue-ended-978",
         "heritage:jinyang-ancient-city-site",
         "heritage:kaifeng-later-zhou-city-layer",
         "heritage:kaifeng-northern-song-city-site",
         "heritage:later-shu-chengdu-city-site",
+        "heritage:wuyue-qian-king-mausoleum",
         "person:li-gang",
         "person:taizong-song",
         "person:zhao-kuangyin",
@@ -85447,8 +85747,10 @@
       "polityId": "wuyue",
       "polityName": "吴越",
       "entityKeys": [
+        "event:wuyue-ended-978",
         "event:wuyue-founded",
         "heritage:wuyue-qian-king-mausoleum",
+        "person:qian-chu",
         "person:qian-liu",
         "polity:wuyue"
       ],
@@ -87101,9 +87403,12 @@
       "cityName": "杭州市",
       "capitalRecordCount": 1,
       "entityKeys": [
+        "event:wuyue-ended-978",
         "event:wuyue-founded",
         "heritage:wuyue-qian-king-mausoleum",
-        "person:qian-liu"
+        "person:qian-chu",
+        "person:qian-liu",
+        "person:taizong-song"
       ],
       "gaps": [],
       "taskCounts": {

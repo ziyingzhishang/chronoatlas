@@ -458,6 +458,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['wuyue-founded'], sourceIds, uncertaintyNote: '907年受封标记吴越政权分期，不把册封范围直接等同于两浙全部地区的稳定直接控制。',
   },
   {
+    personId: 'qian-chu', biography: '钱俶是吴越末王，承接钱氏在杭州及两浙的地方统治。978年向北宋纳土后，吴越中央政权终止，钱氏王室与杭州城市遗产进入北宋及后续历史层。',
+    aliases: ['钱弘俶', '吴越忠懿王', '吴越末王'], offices: [{ title: '吴越末王', polityId: 'wuyue', placeId: 'hangzhou', validFrom: 947, validTo: 978, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['wuyue-ended-978'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '钱俶的纳土归宋是978年吴越中央政权终止节点；其入朝、北宋地方接收和钱氏后续待遇属于不同事实层次。',
+  },
+  {
     personId: 'wang-shenzhi', biography: '王审知与兄长在福建经营军政资源，受封闽王后以福州为中心维持闽地地方政权。',
     aliases: ['闽太祖'], offices: [{ title: '闽王', polityId: 'min', placeId: 'fuzhou', validFrom: 909, validTo: 925, datePrecision: 'range', sourceIds }],
     keyEvents: ['min-founded'], sourceIds, uncertaintyNote: '909年是受封与政权分期节点，福建各地的实际归属仍需按阶段核验；王审知并非以称帝节点定义全部闽国史。',
