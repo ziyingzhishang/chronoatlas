@@ -7405,6 +7405,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-bei-participated-shu-han-founded-round129",
             "event-detail:shu-han-founded"
           ],
           "relatedIds": [
@@ -8663,6 +8664,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiao-daocheng-participated-southern-qi-founded-round129",
             "event-detail:southern-qi-founded"
           ],
           "relatedIds": [
@@ -11731,6 +11733,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-sun-quan-participated-wu-three-founded-round129",
             "event-detail:wu-three-founded"
           ],
           "relatedIds": [
@@ -23982,10 +23985,12 @@
           "evidenceIds": [
             "claim:claim-gao-baorong-parent-gao-jichong",
             "claim:claim-gao-baorong-ruled-jingnan",
+            "claim:claim-gao-baoxu-succeeded-gao-baorong-round128",
             "claim:claim-gao-jichong-child-gao-baorong",
             "person-polity:gao-baorong:jingnan"
           ],
           "relatedIds": [
+            "gao-baoxu",
             "gao-jichong",
             "jingnan"
           ]
@@ -24043,10 +24048,14 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-gao-baoxu-ruled-jingnan",
+            "claim:claim-gao-baoxu-sibling-gao-jichong-round128",
+            "claim:claim-gao-baoxu-succeeded-gao-baorong-round128",
             "claim:claim-gao-jichong-sibling-gao-baoxu",
+            "claim:claim-gao-jichong-succeeded-gao-baoxu-round128",
             "person-polity:gao-baoxu:jingnan"
           ],
           "relatedIds": [
+            "gao-baorong",
             "gao-jichong",
             "jingnan"
           ]
@@ -24301,12 +24310,14 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-gao-baorong-parent-gao-jichong",
+            "claim:claim-gao-baoxu-sibling-gao-jichong-round128",
             "claim:claim-gao-jichong-child-gao-baorong",
             "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
             "claim:claim-gao-jichong-participated-jingnan-ended-963",
             "claim:claim-gao-jichong-ruled-jingnan",
             "claim:claim-gao-jichong-sibling-gao-baoxu",
             "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
+            "claim:claim-gao-jichong-succeeded-gao-baoxu-round128",
             "event-detail:jingnan-ended-963",
             "person-polity:gao-jichong:jingnan"
           ],
@@ -28163,6 +28174,7 @@
             "claim:claim-liu-bei-ally-sun-quan",
             "claim:claim-liu-bei-enemy-cao-cao",
             "claim:claim-liu-bei-participated-red-cliffs",
+            "claim:claim-liu-bei-participated-shu-han-founded-round129",
             "claim:claim-liu-bei-participated-three-kingdoms-fiftyfifth",
             "claim:claim-liu-bei-ruled-shu-three-closure",
             "claim:claim-liu-bei-served-cao-cao-fortyfirst",
@@ -34034,6 +34046,7 @@
             "claim:claim-sun-quan-enemy-cao-cao",
             "claim:claim-sun-quan-participated-red-cliffs",
             "claim:claim-sun-quan-participated-three-kingdoms-fiftyfifth",
+            "claim:claim-sun-quan-participated-wu-three-founded-round129",
             "claim:claim-sun-quan-ruled-wu-fiftyninth",
             "event-detail:red-cliffs",
             "event-detail:three-kingdoms",
@@ -36206,6 +36219,7 @@
             "claim:claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479",
             "claim:claim-xiao-daocheng-founded-southern-qi",
             "claim:claim-xiao-daocheng-participated-liu-song-ended-479",
+            "claim:claim-xiao-daocheng-participated-southern-qi-founded-round129",
             "claim:claim-xiao-daocheng-related-xiao-yan",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
             "event-detail:liu-song-ended-479",
@@ -56420,6 +56434,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-bei-participated-shu-han-founded-round129",
             "event-detail:shu-han-founded"
           ],
           "relatedIds": [
@@ -57678,6 +57693,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiao-daocheng-participated-southern-qi-founded-round129",
             "event-detail:southern-qi-founded"
           ],
           "relatedIds": [
@@ -60746,6 +60762,7 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-sun-quan-participated-wu-three-founded-round129",
             "event-detail:wu-three-founded"
           ],
           "relatedIds": [
@@ -72997,10 +73014,12 @@
           "evidenceIds": [
             "claim:claim-gao-baorong-parent-gao-jichong",
             "claim:claim-gao-baorong-ruled-jingnan",
+            "claim:claim-gao-baoxu-succeeded-gao-baorong-round128",
             "claim:claim-gao-jichong-child-gao-baorong",
             "person-polity:gao-baorong:jingnan"
           ],
           "relatedIds": [
+            "gao-baoxu",
             "gao-jichong",
             "jingnan"
           ]
@@ -73058,10 +73077,14 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-gao-baoxu-ruled-jingnan",
+            "claim:claim-gao-baoxu-sibling-gao-jichong-round128",
+            "claim:claim-gao-baoxu-succeeded-gao-baorong-round128",
             "claim:claim-gao-jichong-sibling-gao-baoxu",
+            "claim:claim-gao-jichong-succeeded-gao-baoxu-round128",
             "person-polity:gao-baoxu:jingnan"
           ],
           "relatedIds": [
+            "gao-baorong",
             "gao-jichong",
             "jingnan"
           ]
@@ -73316,12 +73339,14 @@
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
             "claim:claim-gao-baorong-parent-gao-jichong",
+            "claim:claim-gao-baoxu-sibling-gao-jichong-round128",
             "claim:claim-gao-jichong-child-gao-baorong",
             "claim:claim-gao-jichong-enemy-zhao-kuangyin-termination-963",
             "claim:claim-gao-jichong-participated-jingnan-ended-963",
             "claim:claim-gao-jichong-ruled-jingnan",
             "claim:claim-gao-jichong-sibling-gao-baoxu",
             "claim:claim-gao-jichong-submitted-to-zhao-kuangyin-termination-963",
+            "claim:claim-gao-jichong-succeeded-gao-baoxu-round128",
             "event-detail:jingnan-ended-963",
             "person-polity:gao-jichong:jingnan"
           ],
@@ -77178,6 +77203,7 @@
             "claim:claim-liu-bei-ally-sun-quan",
             "claim:claim-liu-bei-enemy-cao-cao",
             "claim:claim-liu-bei-participated-red-cliffs",
+            "claim:claim-liu-bei-participated-shu-han-founded-round129",
             "claim:claim-liu-bei-participated-three-kingdoms-fiftyfifth",
             "claim:claim-liu-bei-ruled-shu-three-closure",
             "claim:claim-liu-bei-served-cao-cao-fortyfirst",
@@ -83049,6 +83075,7 @@
             "claim:claim-sun-quan-enemy-cao-cao",
             "claim:claim-sun-quan-participated-red-cliffs",
             "claim:claim-sun-quan-participated-three-kingdoms-fiftyfifth",
+            "claim:claim-sun-quan-participated-wu-three-founded-round129",
             "claim:claim-sun-quan-ruled-wu-fiftyninth",
             "event-detail:red-cliffs",
             "event-detail:three-kingdoms",
@@ -85221,6 +85248,7 @@
             "claim:claim-liu-zhun-enemy-xiao-daocheng-liu-song-termination-479",
             "claim:claim-xiao-daocheng-founded-southern-qi",
             "claim:claim-xiao-daocheng-participated-liu-song-ended-479",
+            "claim:claim-xiao-daocheng-participated-southern-qi-founded-round129",
             "claim:claim-xiao-daocheng-related-xiao-yan",
             "claim:claim-xiao-daocheng-ruled-southern-qi-fortythird",
             "event-detail:liu-song-ended-479",
