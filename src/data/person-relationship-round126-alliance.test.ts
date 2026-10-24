@@ -147,7 +147,7 @@ describe('round 126 alliance/conflict required-gap boundary audit', () => {
     const report = buildPersonRelationshipCoverageReport();
     const required = new Set(report.requiredMissingByCategory.allianceConflict);
 
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(84);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(83);
     expect(boundaries).toHaveLength(20);
     for (const boundary of boundaries) {
       expect(required.has(boundary.left), `${boundary.left}: required gap`).toBe(true);

@@ -2447,6 +2447,39 @@ const details: HistoricalEventDetail[] = [
     uncertaintyNote: '902年是受封与政权分期节点，不等同于正式称帝或完整主权独立；扬州为政治中心参照，不能用南唐后期范围回填。',
   },
   {
+    eventId: 'yang-wu-ended-937',
+    participants: [
+      { personId: 'yang-pu', role: '杨吴末代君主与禅让方', note: '杨溥在937年向徐知诰禅让；其退位是杨吴中央政权终止节点，不等同于扬州地方行政同日完成接收。' },
+      { personId: 'li-bian', role: '受禅建立齐、南唐前身的权力核心', note: '李昪在金陵受杨溥禅让建立齐，939年改国号为唐；中央禅代与后续国号变化分层记录。' },
+    ],
+    polityIds: ['wu_ten', 'southern_tang'],
+    causes: ['杨吴后期徐知诰在权力体系中占据主导地位。', '杨溥所代表的吴廷名义与实际军政权力逐渐分离。'],
+    consequences: ['杨吴中央政权终止，南唐前身在金陵承接。', '原杨吴首都扬州的地方接收和城市连续性另由扬州事件表达。'],
+    phases: [
+      { label: '徐知诰掌权', startYear: 927, endYear: 936, summary: '徐知诰在杨吴中枢掌握更大实际权力。' },
+      { label: '金陵受禅', startYear: 937, endYear: 937, summary: '杨溥禅让，徐知诰建立齐，杨吴中央政权终止。' },
+      { label: '改号为唐', startYear: 939, endYear: 939, summary: '李昪改国号为唐，南唐名称与制度阶段定型。' },
+    ],
+    locationIds: ['jiankang'], relatedEventIds: ['yang-wu-founded', 'yang-wu-yangzhou-transferred-937', 'southern-tang-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology'],
+    uncertaintyNote: '937年禅代地点在金陵，扬州地方接收是另一层次的连续过程；本事件不宣称江淮所有地方在同日完成行政重组。',
+  },
+  {
+    eventId: 'yang-wu-yangzhou-transferred-937',
+    participants: [
+      { personId: 'li-bian', role: '南唐承接方代表', note: '李昪在中央受禅后承接杨吴政治资源；本条关注扬州地方接收，不把其等同于亲临扬州的单一军事行动。' },
+      { personId: 'yang-pu', role: '原杨吴末代君主', note: '杨溥连接扬州原首都和杨吴中央终止阶段；地方接收的具体官员、军镇和日期仍需按史料逐项补充。' },
+    ],
+    polityIds: ['wu_ten', 'southern_tang'],
+    causes: ['中央禅代后，杨吴原有扬州—淮南军政网络需要转入南唐秩序。', '扬州作为江淮财政、运河和军政节点具有独立的地方承接意义。'],
+    consequences: ['扬州由杨吴政治中心转为南唐控制下的江淮城市。', '城址、运河和地方社会延续，不因政权终止而消失。'],
+    phases: [
+      { label: '中央禅代后的地方转换', startYear: 937, endYear: 937, summary: '南唐承接杨吴后，扬州地方行政与军政秩序转入新的政权框架。' },
+      { label: '城市连续性', startYear: 937, endYear: 937, summary: '扬州城市、运河和财政节点继续运行，进入南唐历史层。' },
+    ],
+    locationIds: ['yangzhou'], relatedEventIds: ['yang-wu-ended-937', 'yang-wu-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'modern-geography-reference'],
+    uncertaintyNote: '此处以937年表达政权承接后的地方转换，不把概括性接收节点误写成已核实的单日全域行政完成；扬州古城范围与现代扬州市区不完全重合。',
+  },
+  {
     eventId: 'wuyue-founded',
     participants: [
       { personId: 'qian-liu', role: '经营两浙并受封吴越王的地方统治者', note: '钱镠控制杭州及两浙核心资源；907年受封吴越王是十国分期节点，名义臣属与实际自治并存。' },

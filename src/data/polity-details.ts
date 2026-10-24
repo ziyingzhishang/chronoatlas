@@ -403,17 +403,17 @@ export const polityDetails: PolityDetail[] = [
   detail({
     polityId: 'wu_ten', perspectiveSummary: '杨吴由杨行密在唐末淮南军政竞争中建立，以扬州为政治中心；受封、地方自治和后续南唐禅代构成不同阶段。',
     foundationProcess: ['杨行密控制扬州及淮南主要军政资源。', '902年受封吴王，杨吴进入十国分期。', '扬州连接江淮漕运与财政网络，杨吴实际自治不能等同于中原册封范围。'],
-    turningPoints: [turn(902, '杨吴形成', '杨行密受封吴王，江淮地方政权进入杨吴阶段。', 'yang-wu-founded'), turn(905, '政权承接', '杨行密去世后，杨吴由继承者和权臣体系维持。'), turn(937, '南唐受禅', '李昪受吴禅建立南唐，杨吴结束。', 'southern-tang-founded')],
-    principalFigureIds: ['yang-xingmi', 'li-bian'], capitalPhases: [capital('yangzhou', 902, 937, 'primary', 'formal', '杨吴政治中心扬州，今江苏省扬州市。')],
-    heritageIds: ['yang-wu-yangzhou-city-site'], eventIds: ['yang-wu-founded'], claimIds: ['claim-yang-xingmi-founded-yang-wu'], sourceIds: modernSources,
-    uncertaintyNote: '902年是受封与政权分期节点，不等同于完全脱离唐廷；扬州城址历史层跨越多代，不能把现存遗存全部归为杨吴。',
+    turningPoints: [turn(902, '杨吴形成', '杨行密受封吴王，江淮地方政权进入杨吴阶段。', 'yang-wu-founded'), turn(905, '政权承接', '杨行密去世后，杨吴由继承者和权臣体系维持。'), turn(937, '中央禅代终止', '杨溥向徐知诰禅让，杨吴中央政权终止，南唐前身在金陵承接。', 'yang-wu-ended-937'), turn(937, '扬州地方接收', '原杨吴首都扬州转入南唐地方控制，城市与运河功能继续延续。', 'yang-wu-yangzhou-transferred-937')],
+    principalFigureIds: ['yang-xingmi', 'yang-pu', 'li-bian'], capitalPhases: [capital('yangzhou', 902, 937, 'primary', 'formal', '杨吴政治中心扬州，今江苏省扬州市。')],
+    heritageIds: ['yang-wu-yangzhou-city-site'], eventIds: ['yang-wu-founded', 'yang-wu-ended-937', 'yang-wu-yangzhou-transferred-937'], claimIds: ['claim-yang-xingmi-founded-yang-wu', 'claim-yang-pu-ruled-yang-wu', 'claim-yang-pu-participated-yang-wu-ended-937', 'claim-li-bian-received-yangzhou-937'], sourceIds: modernSources,
+    uncertaintyNote: '902年是受封与政权分期节点，937年中央禅代与扬州地方接收分属不同事实层次；扬州城址历史层跨越多代，不能把现存遗存全部归为杨吴。',
   }),
   detail({
     polityId: 'southern_tang', perspectiveSummary: '南唐承接杨吴的江淮—江南政权基础，由李昪受禅建立，以金陵为都；其早期扩展和后期与北宋的战争应分阶段观察。',
     foundationProcess: ['李昪在杨吴权力体系中取得实际掌权地位。', '937年受吴禅建立齐，939年改国号为唐，南唐形成过程由此完成。', '金陵承接六朝城市传统并成为南唐政治中心。'],
     turningPoints: [turn(937, '南唐政权建立', '李昪受吴禅建立齐，南唐进入形成阶段。', 'southern-tang-founded'), turn(939, '改国号为唐', '李昪将国号改为唐，后世称南唐。'), turn(975, '南唐覆亡', '北宋攻取金陵，南唐结束。')],
     principalFigureIds: ['li-bian', 'li-jing', 'li-yu'], capitalPhases: [capital('jiankang', 937, 960, 'primary', 'formal', '金陵／建康；今南京市。'), capital('nanchang', 961, 961, 'primary', 'actual', '李璟末期迁居豫章，今南昌市；短时段政治中心。'), capital('jiankang', 961, 975, 'primary', 'actual', '李煜即位后居建康，今南京市。')],
-    heritageIds: ['southern-tang-jiankang-city-site', 'southern-tang-er-ling'], eventIds: ['southern-tang-founded', 'southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang', 'southern-tang-falls'], claimIds: ['claim-li-bian-participated-southern-tang', 'claim-li-bian-ruled-southern-tang-sixtieth', 'claim-li-jing-ruled-southern-tang', 'claim-li-yu-ruled-southern-tang', 'claim-li-bian-parent-li-jing', 'claim-li-jing-parent-li-yu', 'claim-li-bian-grandparent-li-yu-ninetyfourth'], sourceIds: [...modernSources, 'song-history-nantang', 'palace-museum-li-jing', 'southern-tang-imperial-lineage'],
+    heritageIds: ['southern-tang-jiankang-city-site', 'southern-tang-er-ling', 'yang-wu-yangzhou-city-site'], eventIds: ['southern-tang-founded', 'yang-wu-ended-937', 'yang-wu-yangzhou-transferred-937', 'southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang', 'southern-tang-falls'], claimIds: ['claim-li-bian-participated-southern-tang', 'claim-li-bian-participated-yang-wu-ended-937', 'claim-li-bian-received-yangzhou-937', 'claim-li-bian-ruled-southern-tang-sixtieth', 'claim-li-jing-ruled-southern-tang', 'claim-li-yu-ruled-southern-tang', 'claim-li-bian-parent-li-jing', 'claim-li-jing-parent-li-yu', 'claim-li-bian-grandparent-li-yu-ninetyfourth'], sourceIds: [...modernSources, 'song-history-nantang', 'palace-museum-li-jing', 'southern-tang-imperial-lineage'],
     uncertaintyNote: '937年受禅建齐与939年改国号为唐是两个节点；961年豫章迁居是短时段中心转换，不能把南唐全期压缩为单一南京或南昌首都；南唐城市与二陵遗产均需与后世叠压层分开。',
   }),
   detail({

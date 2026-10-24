@@ -448,6 +448,11 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['yang-wu-founded'], sourceIds, uncertaintyNote: '902年是受封与政权分期节点，不等同于正式称帝或完整主权独立；扬州是政治中心参照。',
   },
   {
+    personId: 'yang-pu', biography: '杨溥是杨吴末代君主，在徐知诰掌握核心权力的背景下维持吴廷名义；937年禅让使杨吴中央政权终止，扬州地方接收另属后续承接层次。',
+    aliases: ['吴睿帝', '杨吴末帝'], offices: [{ title: '杨吴末代君主', polityId: 'wu_ten', placeId: 'yangzhou', validFrom: 920, validTo: 937, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
+    keyEvents: ['yang-wu-ended-937'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '937年禅让是杨吴中央政权终止节点；杨溥个人退位、徐知诰受禅和扬州地方行政接收不能压缩为同一事实。',
+  },
+  {
     personId: 'qian-liu', biography: '钱镠控制两浙并以杭州为中心维持地方政权，吴越在中原册封和地方自治之间延续。',
     aliases: ['吴越武肃王'], offices: [{ title: '吴越国王', polityId: 'wuyue', placeId: 'hangzhou', validFrom: 907, validTo: 932, datePrecision: 'range', sourceIds }],
     keyEvents: ['wuyue-founded'], sourceIds, uncertaintyNote: '907年受封标记吴越政权分期，不把册封范围直接等同于两浙全部地区的稳定直接控制。',

@@ -10644,6 +10644,70 @@
     },
     {
       "entityType": "event",
+      "entityId": "yang-wu-ended-937",
+      "entityKey": "event:yang-wu-ended-937",
+      "label": "杨吴受禅终止、南唐承接",
+      "polityIds": [
+        "southern_tang",
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yang-wu-ended-937"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-bian-participated-yang-wu-ended-937",
+            "claim:claim-yang-pu-participated-yang-wu-ended-937",
+            "event-detail:yang-wu-ended-937"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "southern-tang-founded",
+            "southern_tang",
+            "wu_ten",
+            "yang-pu",
+            "yang-wu-founded",
+            "yang-wu-yangzhou-transferred-937"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
       "entityId": "yang-wu-founded",
       "entityKey": "event:yang-wu-founded",
       "label": "杨吴政权建立",
@@ -10690,6 +10754,68 @@
             "southern-tang-founded",
             "wu_ten",
             "yang-xingmi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "event",
+      "entityId": "yang-wu-yangzhou-transferred-937",
+      "entityKey": "event:yang-wu-yangzhou-transferred-937",
+      "label": "扬州地方政权转入南唐控制",
+      "polityIds": [
+        "southern_tang",
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yang-wu-yangzhou-transferred-937"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:yang-wu-yangzhou-transferred-937"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "southern_tang",
+            "wu_ten",
+            "yang-pu",
+            "yang-wu-ended-937",
+            "yang-wu-founded"
           ]
         },
         {
@@ -18129,8 +18255,9 @@
       "entityType": "heritage",
       "entityId": "yang-wu-yangzhou-city-site",
       "entityKey": "heritage:yang-wu-yangzhou-city-site",
-      "label": "杨吴扬州城址历史层",
+      "label": "杨吴—南唐扬州城址历史层",
       "polityIds": [
+        "southern_tang",
         "wu_ten"
       ],
       "checks": [
@@ -18168,8 +18295,13 @@
             "heritage-detail:yang-wu-yangzhou-city-site"
           ],
           "relatedIds": [
+            "li-bian",
+            "southern_tang",
             "wu_ten",
+            "yang-pu",
+            "yang-wu-ended-937",
             "yang-wu-founded",
+            "yang-wu-yangzhou-transferred-937",
             "yang-xingmi"
           ]
         },
@@ -23087,11 +23219,16 @@
             "claim:claim-li-bian-grandparent-li-yu-ninetyfourth",
             "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-bian-participated-southern-tang",
+            "claim:claim-li-bian-participated-yang-wu-ended-937",
+            "claim:claim-li-bian-received-yangzhou-937",
             "claim:claim-li-bian-related-yang-xingmi",
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
+            "claim:claim-yang-pu-enemy-li-bian-termination-937",
             "event-detail:southern-tang-founded",
+            "event-detail:yang-wu-ended-937",
+            "event-detail:yang-wu-yangzhou-transferred-937",
             "person-polity:li-bian:southern_tang",
             "person-polity:li-bian:wu_ten"
           ],
@@ -23101,6 +23238,9 @@
             "southern-tang-founded",
             "southern_tang",
             "wu_ten",
+            "yang-pu",
+            "yang-wu-ended-937",
+            "yang-wu-yangzhou-transferred-937",
             "yang-xingmi"
           ]
         },
@@ -31206,6 +31346,73 @@
     },
     {
       "entityType": "person",
+      "entityId": "yang-pu",
+      "entityKey": "person:yang-pu",
+      "label": "杨溥",
+      "polityIds": [
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yang-pu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-bian-received-yangzhou-937",
+            "claim:claim-yang-pu-enemy-li-bian-termination-937",
+            "claim:claim-yang-pu-participated-yang-wu-ended-937",
+            "claim:claim-yang-pu-ruled-yang-wu",
+            "event-detail:yang-wu-ended-937",
+            "event-detail:yang-wu-yangzhou-transferred-937",
+            "person-polity:yang-pu:wu_ten"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "wu_ten",
+            "yang-wu-ended-937",
+            "yang-wu-yangzhou-transferred-937"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
+    {
+      "entityType": "person",
       "entityId": "yang-xingmi",
       "entityKey": "person:yang-xingmi",
       "label": "杨行密",
@@ -37784,8 +37991,11 @@
             "event-detail:southern-tang-founded",
             "event-detail:southern-tang-li-jing-succeeds",
             "event-detail:southern-tang-moves-nanchang",
+            "event-detail:yang-wu-ended-937",
+            "event-detail:yang-wu-yangzhou-transferred-937",
             "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
+            "heritage-detail:yang-wu-yangzhou-city-site",
             "person:li-bian",
             "person:li-jing",
             "person:li-yu"
@@ -37802,7 +38012,10 @@
             "southern-tang-founded",
             "southern-tang-jiankang-city-site",
             "southern-tang-li-jing-succeeds",
-            "southern-tang-moves-nanchang"
+            "southern-tang-moves-nanchang",
+            "yang-wu-ended-937",
+            "yang-wu-yangzhou-city-site",
+            "yang-wu-yangzhou-transferred-937"
           ]
         },
         {
@@ -39046,17 +39259,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-yang-pu-ruled-yang-wu",
             "claim:claim-yang-xingmi-founded-yang-wu",
             "claim:claim-yang-xingmi-ruled-yang-wu-fiftythird",
+            "event-detail:yang-wu-ended-937",
             "event-detail:yang-wu-founded",
+            "event-detail:yang-wu-yangzhou-transferred-937",
             "heritage-detail:yang-wu-yangzhou-city-site",
             "person:li-bian",
+            "person:yang-pu",
             "person:yang-xingmi"
           ],
           "relatedIds": [
             "li-bian",
+            "yang-pu",
+            "yang-wu-ended-937",
             "yang-wu-founded",
             "yang-wu-yangzhou-city-site",
+            "yang-wu-yangzhou-transferred-937",
             "yang-xingmi"
           ]
         },
@@ -52187,6 +52407,70 @@
         }
       ]
     },
+    "event:yang-wu-ended-937": {
+      "entityType": "event",
+      "entityId": "yang-wu-ended-937",
+      "entityKey": "event:yang-wu-ended-937",
+      "label": "杨吴受禅终止、南唐承接",
+      "polityIds": [
+        "southern_tang",
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yang-wu-ended-937"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-bian-participated-yang-wu-ended-937",
+            "claim:claim-yang-pu-participated-yang-wu-ended-937",
+            "event-detail:yang-wu-ended-937"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "southern-tang-founded",
+            "southern_tang",
+            "wu_ten",
+            "yang-pu",
+            "yang-wu-founded",
+            "yang-wu-yangzhou-transferred-937"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
     "event:yang-wu-founded": {
       "entityType": "event",
       "entityId": "yang-wu-founded",
@@ -52235,6 +52519,68 @@
             "southern-tang-founded",
             "wu_ten",
             "yang-xingmi"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "事件有明确的编年字段。",
+          "evidenceIds": [],
+          "relatedIds": []
+        }
+      ]
+    },
+    "event:yang-wu-yangzhou-transferred-937": {
+      "entityType": "event",
+      "entityId": "yang-wu-yangzhou-transferred-937",
+      "entityKey": "event:yang-wu-yangzhou-transferred-937",
+      "label": "扬州地方政权转入南唐控制",
+      "polityIds": [
+        "southern_tang",
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "事件详情包含因果、结果或阶段叙事。",
+          "evidenceIds": [
+            "yang-wu-yangzhou-transferred-937"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "modern-geography-reference",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "event-detail:yang-wu-yangzhou-transferred-937"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "southern_tang",
+            "wu_ten",
+            "yang-pu",
+            "yang-wu-ended-937",
+            "yang-wu-founded"
           ]
         },
         {
@@ -59674,8 +60020,9 @@
       "entityType": "heritage",
       "entityId": "yang-wu-yangzhou-city-site",
       "entityKey": "heritage:yang-wu-yangzhou-city-site",
-      "label": "杨吴扬州城址历史层",
+      "label": "杨吴—南唐扬州城址历史层",
       "polityIds": [
+        "southern_tang",
         "wu_ten"
       ],
       "checks": [
@@ -59713,8 +60060,13 @@
             "heritage-detail:yang-wu-yangzhou-city-site"
           ],
           "relatedIds": [
+            "li-bian",
+            "southern_tang",
             "wu_ten",
+            "yang-pu",
+            "yang-wu-ended-937",
             "yang-wu-founded",
+            "yang-wu-yangzhou-transferred-937",
             "yang-xingmi"
           ]
         },
@@ -64632,11 +64984,16 @@
             "claim:claim-li-bian-grandparent-li-yu-ninetyfourth",
             "claim:claim-li-bian-parent-li-jing",
             "claim:claim-li-bian-participated-southern-tang",
+            "claim:claim-li-bian-participated-yang-wu-ended-937",
+            "claim:claim-li-bian-received-yangzhou-937",
             "claim:claim-li-bian-related-yang-xingmi",
             "claim:claim-li-bian-ruled-southern-tang-sixtieth",
             "claim:claim-li-jing-child-li-bian",
             "claim:claim-li-yu-grandchild-li-bian-ninetyfourth",
+            "claim:claim-yang-pu-enemy-li-bian-termination-937",
             "event-detail:southern-tang-founded",
+            "event-detail:yang-wu-ended-937",
+            "event-detail:yang-wu-yangzhou-transferred-937",
             "person-polity:li-bian:southern_tang",
             "person-polity:li-bian:wu_ten"
           ],
@@ -64646,6 +65003,9 @@
             "southern-tang-founded",
             "southern_tang",
             "wu_ten",
+            "yang-pu",
+            "yang-wu-ended-937",
+            "yang-wu-yangzhou-transferred-937",
             "yang-xingmi"
           ]
         },
@@ -72749,6 +73109,73 @@
         }
       ]
     },
+    "person:yang-pu": {
+      "entityType": "person",
+      "entityId": "yang-pu",
+      "entityKey": "person:yang-pu",
+      "label": "杨溥",
+      "polityIds": [
+        "wu_ten"
+      ],
+      "checks": [
+        {
+          "dimension": "summary",
+          "status": "covered",
+          "note": "摘要字段有内容。",
+          "evidenceIds": [],
+          "relatedIds": []
+        },
+        {
+          "dimension": "detail",
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "yang-pu"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "source",
+          "status": "covered",
+          "note": "实体及其详情至少有一个可解析的来源 ID。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        },
+        {
+          "dimension": "relationship",
+          "status": "covered",
+          "note": "至少存在一条可追踪的图谱关联。",
+          "evidenceIds": [
+            "claim:claim-li-bian-received-yangzhou-937",
+            "claim:claim-yang-pu-enemy-li-bian-termination-937",
+            "claim:claim-yang-pu-participated-yang-wu-ended-937",
+            "claim:claim-yang-pu-ruled-yang-wu",
+            "event-detail:yang-wu-ended-937",
+            "event-detail:yang-wu-yangzhou-transferred-937",
+            "person-polity:yang-pu:wu_ten"
+          ],
+          "relatedIds": [
+            "li-bian",
+            "wu_ten",
+            "yang-wu-ended-937",
+            "yang-wu-yangzhou-transferred-937"
+          ]
+        },
+        {
+          "dimension": "time",
+          "status": "covered",
+          "note": "人物生卒年均有记录。",
+          "evidenceIds": [
+            "china-chronology",
+            "zizhi-tongjian"
+          ],
+          "relatedIds": []
+        }
+      ]
+    },
     "person:yang-xingmi": {
       "entityType": "person",
       "entityId": "yang-xingmi",
@@ -79329,8 +79756,11 @@
             "event-detail:southern-tang-founded",
             "event-detail:southern-tang-li-jing-succeeds",
             "event-detail:southern-tang-moves-nanchang",
+            "event-detail:yang-wu-ended-937",
+            "event-detail:yang-wu-yangzhou-transferred-937",
             "heritage-detail:southern-tang-er-ling",
             "heritage-detail:southern-tang-jiankang-city-site",
+            "heritage-detail:yang-wu-yangzhou-city-site",
             "person:li-bian",
             "person:li-jing",
             "person:li-yu"
@@ -79347,7 +79777,10 @@
             "southern-tang-founded",
             "southern-tang-jiankang-city-site",
             "southern-tang-li-jing-succeeds",
-            "southern-tang-moves-nanchang"
+            "southern-tang-moves-nanchang",
+            "yang-wu-ended-937",
+            "yang-wu-yangzhou-city-site",
+            "yang-wu-yangzhou-transferred-937"
           ]
         },
         {
@@ -80591,17 +81024,24 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-yang-pu-ruled-yang-wu",
             "claim:claim-yang-xingmi-founded-yang-wu",
             "claim:claim-yang-xingmi-ruled-yang-wu-fiftythird",
+            "event-detail:yang-wu-ended-937",
             "event-detail:yang-wu-founded",
+            "event-detail:yang-wu-yangzhou-transferred-937",
             "heritage-detail:yang-wu-yangzhou-city-site",
             "person:li-bian",
+            "person:yang-pu",
             "person:yang-xingmi"
           ],
           "relatedIds": [
             "li-bian",
+            "yang-pu",
+            "yang-wu-ended-937",
             "yang-wu-founded",
             "yang-wu-yangzhou-city-site",
+            "yang-wu-yangzhou-transferred-937",
             "yang-xingmi"
           ]
         },
@@ -81575,9 +82015,9 @@
   },
   "byType": {
     "event": {
-      "totalEntities": 187,
+      "totalEntities": 189,
       "statusCounts": {
-        "covered": 895,
+        "covered": 905,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -81652,9 +82092,9 @@
       "entitiesWithGaps": []
     },
     "person": {
-      "totalEntities": 228,
+      "totalEntities": 229,
       "statusCounts": {
-        "covered": 1084,
+        "covered": 1089,
         "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
@@ -84099,8 +84539,11 @@
         "event:southern-tang-founded",
         "event:southern-tang-li-jing-succeeds",
         "event:southern-tang-moves-nanchang",
+        "event:yang-wu-ended-937",
+        "event:yang-wu-yangzhou-transferred-937",
         "heritage:southern-tang-er-ling",
         "heritage:southern-tang-jiankang-city-site",
+        "heritage:yang-wu-yangzhou-city-site",
         "person:li-bian",
         "person:li-jing",
         "person:li-yu",
@@ -84934,11 +85377,14 @@
       "polityName": "杨吴",
       "entityKeys": [
         "event:southern-tang-founded",
+        "event:yang-wu-ended-937",
         "event:yang-wu-founded",
+        "event:yang-wu-yangzhou-transferred-937",
         "heritage:southern-tang-er-ling",
         "heritage:southern-tang-jiankang-city-site",
         "heritage:yang-wu-yangzhou-city-site",
         "person:li-bian",
+        "person:yang-pu",
         "person:yang-xingmi",
         "polity:wu_ten"
       ],
@@ -86800,6 +87246,7 @@
         "event:sui-unification",
         "event:three-kingdoms",
         "event:wu-three-founded",
+        "event:yang-wu-ended-937",
         "heritage:jiankang-six-dynasties-city-site",
         "heritage:jiankang-taicheng-site",
         "heritage:southern-dynasties-stone-carvings",
@@ -86817,6 +87264,7 @@
         "person:xiao-daocheng",
         "person:xiao-yan",
         "person:yang-jian",
+        "person:yang-pu",
         "polity:chen_southern",
         "polity:jin_eastern",
         "polity:liang_southern",
@@ -88553,7 +89001,10 @@
         "event:hongguang-nanjing-founded",
         "event:southern-ming-founded",
         "event:yang-wu-founded",
+        "event:yang-wu-yangzhou-transferred-937",
         "heritage:yang-wu-yangzhou-city-site",
+        "person:li-bian",
+        "person:yang-pu",
         "person:yang-xingmi"
       ],
       "gaps": [
