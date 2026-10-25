@@ -25,7 +25,21 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
   const relationshipTitle = cityView
     ? locale === 'en' ? 'City relationship network' : '城市关系网络'
     : t('关系网络');
-  const relationshipLabel: Record<string, string> = { founded: '建立', ruled: '统治', succeeded: '承接', commissioned: '营建' };
+  const relationshipLabel: Record<string, string> = {
+    founded: '建立',
+    ruled: '统治',
+    succeeded: '承接',
+    commissioned: '营建',
+    'participated-in': '参与事件',
+    served: '任职／效力',
+    appointed: '任用',
+    'parent-of': '亲属：父母',
+    'child-of': '亲属：子女',
+    'sibling-of': '亲属：兄弟姐妹',
+    'spouse-of': '亲属：配偶',
+    'ally-of': '联盟',
+    'enemy-of': '对立',
+  };
   const cityTimeline = cityView ? buildCityHistoryTimeline(cityView.subject.id, {
     places: [cityView.subject], polities: cityView.polities, people: cityView.people,
     heritage: cityView.heritage, events: cityView.events, eventDetails, claims: cityView.claims,
@@ -44,10 +58,6 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
   const detailLinkedHeritage = polityView
     ? polityView.detailLinkedHeritage.filter((asset) => !polityView.heritage.some((current) => current.id === asset.id))
     : [];
-  const datePrecisionLabel: Record<NonNullable<PolityStudyView['detailLinkedEvents'][number]['datePrecision']>, string> = {
-    year: '年', approximate: '约年', range: '范围',
-  };
-
   return (
     <section className="study-relations" aria-label={t('历史关系研究视图')}>
       <div className="study-relations-heading">
@@ -77,24 +87,24 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
         })}</ul>
       </div>}
       {polityView && (detailLinkedPeople.length > 0 || detailLinkedEvents.length > 0 || detailLinkedTransitionEvents.length > 0 || detailLinkedHeritage.length > 0) && <div className="study-block study-contextual-links" data-testid="detail-linked-entries">
-        <h3>{t('详情关联入口')}</h3>
-        <p className="detail-note">{t('仅表示详情关联，不等同于本年事实；时间、有效期与政权归属仍以各自证据为准。')}</p>
+        <h3>{t('专题相关内容')}</h3>
+        <p className="detail-note">{t('以下内容与本专题相关，未必发生在地图所示年份。')}</p>
         {detailLinkedPeople.length > 0 && <>
-          <h4>{t('详情关联人物')}</h4>
+          <h4>{t('相关人物')}</h4>
           <ul className="study-chip-list">{detailLinkedPeople.map((person) => <li key={person.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'person', id: person.id })}>{person.name}</button></li>)}</ul>
         </>}
         {detailLinkedEvents.length > 0 && <>
-          <h4>{t('详情关联事件')}</h4>
-          <ul className="study-list">{detailLinkedEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{formatHistoricalYear(event.year)}{event.datePrecision && ` · ${t('时间精度：')}${t(datePrecisionLabel[event.datePrecision])}`}</span></li>)}</ul>
+          <h4>{t('相关事件')}</h4>
+          <ul className="study-list">{detailLinkedEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{event.datePrecision === 'approximate' ? `${t('约')} ` : ''}{formatHistoricalYear(event.year)}</span></li>)}</ul>
         </>}
         {detailLinkedTransitionEvents.length > 0 && <>
-          <h4>{t('详情关联过渡事件')}</h4>
-          <p className="detail-note">{t('关联但非本年事实；政权归属以事件证据为准。')}</p>
-          <ul className="study-list">{detailLinkedTransitionEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{formatHistoricalYear(event.year)}{event.datePrecision && ` · ${t('时间精度：')}${t(datePrecisionLabel[event.datePrecision])}`}</span></li>)}</ul>
+          <h4>{t('政权转折事件')}</h4>
+          <p className="detail-note">{t('这些事件用于理解政权变化，未必发生在地图所示年份。')}</p>
+          <ul className="study-list">{detailLinkedTransitionEvents.map((event) => <li key={event.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'event', id: event.id })}><strong>{t(event.title)}</strong></button><span>{event.datePrecision === 'approximate' ? `${t('约')} ` : ''}{formatHistoricalYear(event.year)}</span></li>)}</ul>
         </>}
         {detailLinkedHeritage.length > 0 && <>
-          <h4>{t('详情关联遗产')}</h4>
-          <ul className="study-list study-heritage-list">{detailLinkedHeritage.map((asset) => <li key={asset.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'heritage', id: asset.id })}><strong>{t(asset.name)}</strong></button><span>{t('详情关联；不等同于本年归属')}</span></li>)}</ul>
+          <h4>{t('相关遗产')}</h4>
+          <ul className="study-list study-heritage-list">{detailLinkedHeritage.map((asset) => <li key={asset.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'heritage', id: asset.id })}><strong>{t(asset.name)}</strong></button><span>{t('与本专题相关')}</span></li>)}</ul>
         </>}
       </div>}
       {relationshipGraph && <div className="study-block">
@@ -109,7 +119,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
       </div>
       <div className="study-block">
         <h3>{t('遗产与城市记忆')}</h3>
-        {view.heritage.length > 0 ? <ul className="study-list study-heritage-list">{view.heritage.slice(0, 5).map((asset) => { const detail = heritageDetails.find((item) => item.heritageId === asset.id); return <li key={asset.id}><details><summary><button type="button" onClick={(event) => { event.preventDefault(); onOpenEntity?.({ type: 'heritage', id: asset.id }); }}><strong>{t(asset.name)}</strong></button><span>{t(asset.modernStatus === 'extant' ? '现存' : '遗址')}</span></summary>{detail && <div className="study-heritage-detail"><p>{t(detail.modernLocation)}</p><p>{detail.historicalAssociations.map(t).join('；')}</p><p>{t(detail.presentDayValue)}</p><p className="detail-note">{t('不确定性：')}{t(detail.uncertaintyNote)}</p></div>}</details></li>; })}</ul> : <p className="detail-note">{t('暂无已关联遗产')}</p>}
+        {view.heritage.length > 0 ? <ul className="study-list study-heritage-list">{view.heritage.slice(0, 5).map((asset) => { const detail = heritageDetails.find((item) => item.heritageId === asset.id); return <li key={asset.id}><details><summary><button type="button" onClick={(event) => { event.preventDefault(); onOpenEntity?.({ type: 'heritage', id: asset.id }); }}><strong>{t(asset.name)}</strong></button><span>{t(asset.modernStatus === 'extant' ? '现存' : '遗址')}</span></summary>{detail && <div className="study-heritage-detail"><p>{t(detail.modernLocation)}</p><p>{detail.historicalAssociations.map(t).join('；')}</p><p>{t(detail.presentDayValue)}</p></div>}</details></li>; })}</ul> : <p className="detail-note">{t('暂无已关联遗产')}</p>}
       </div>
     </section>
   );

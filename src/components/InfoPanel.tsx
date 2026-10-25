@@ -1,5 +1,5 @@
 import { useLocale } from '../i18n/locale';
-import type { HistoricalState, SelectedEntity } from '../domain/types';
+import type { BoundaryState, HistoricalState, SelectedEntity } from '../domain/types';
 import { useMemo } from 'react';
 import { formatHistoricalYear } from '../domain/timeline';
 import { boundariesByPolity } from '../data/boundaries';
@@ -11,10 +11,10 @@ import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
 import type { DetailEntity } from '../domain/detail-entity';
 import { PolityDetail } from './PolityDetail';
-import { auditKnowledgeCoverage } from '../data/knowledge-coverage';
-import { KnowledgeCoveragePanel } from './KnowledgeCoveragePanel';
 import { useHistoricalContent } from '../content/ContentContext';
 import type { Polity } from '../domain/types';
+import { ReaderNotes } from './ReaderNotes';
+import { toReaderSources } from '../presentation/reader-content';
 
 interface InfoPanelProps {
   state: HistoricalState;
@@ -33,9 +33,15 @@ const controlLabels = {
 } as const;
 
 const range = (from:number,to:number) => from===to ? formatHistoricalYear(from) : `${formatHistoricalYear(from)}—${formatHistoricalYear(to)}`;
-const sourceYear = (year:number) => year===0 ? '0（来源边界值，非公元0年）' : formatHistoricalYear(year);
-const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `${sourceYear(from)}—${sourceYear(to)}`;
 const uniquePolities = (items: readonly Polity[]) => [...new Map(items.map((polity) => [polity.id, polity])).values()];
+
+function boundaryExpressionNote(boundary: BoundaryState) {
+  if (boundary.presentation === 'maximum') return '此范围仅用于说明资料中的较大范围，不代表所选年份的实际控制。';
+  if (boundary.evidence.derivation === 'cultural-core') return '地图表达的是文化核心，不是政权边界。';
+  if (boundary.evidence.derivation === 'control-centers') return '地图仅表达可核实的控制中心，不推定连续疆域。';
+  if (boundary.evidence.derivation === 'influence-area') return '地图表达影响范围，不等同于直接统治。';
+  return '边界依据该时段资料绘制，不代表逐年测绘或每一处边界都能精确确定。';
+}
 
 export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
@@ -43,7 +49,6 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
   const { capitalTerms, claims, eventDetails, events, studyEvents: polityStudyEvents, heritage, heritageDetails, people, personDetails, places, polities, polityDetails, sources } = catalog;
   const cityStudyEvents = polityStudyEvents;
   const sourceById = useMemo(() => Object.fromEntries(sources.map((source) => [source.id, source])), [sources]);
-  const knowledgeCoverageReport = useMemo(() => auditKnowledgeCoverage({ polities, people, events, eventDetails, heritageAssets: heritage, heritageDetails, personDetails, polityDetails, claims, sourceNotes: sources, places, capitalTerms }), [polities, people, events, eventDetails, heritage, heritageDetails, personDetails, polityDetails, claims, sources, places, capitalTerms]);
   const prose = (value:string) => locale==='en' && /[\u3400-\u9fff]/.test(value) && t(value)===value
     ? 'Verification note retained in the Chinese data record; consult the linked source for details.' : t(value);
   const listSeparator=locale==='en' ? ', ' : '、';
@@ -57,11 +62,6 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
     ? buildPolityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage, events: polityStudyEvents, eventDetails, claims, capitalTerms, polityDetails })
     : selectedEntity?.type === 'place'
       ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage, events: cityStudyEvents, eventDetails, claims, capitalTerms })
-      : undefined;
-  const coverageContext = selectedEntity?.type === 'polity' && selected
-    ? { type: 'polity' as const, id: selected.id }
-    : selectedEntity?.type === 'place' && selected
-      ? { type: 'city' as const, id: selected.id }
       : undefined;
   const selectedPolityDetail = selectedEntity?.type === 'polity' ? polityDetails.find((detail) => detail.polityId === selectedEntity.id) : undefined;
   const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
@@ -93,8 +93,6 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           )}
           {!state.activePolities.length && <p className="detail-note">{t("史前时期展示文化分期，不虚构统一政权或明确国界。")}</p>}
           <p className="uncertainty-note">{t("每年按来源区间查询。最大参考用虚线区分，不等于该年的实际控制范围。世界目录可在地图下方搜索并定位。")}</p>
-          <KnowledgeCoveragePanel report={knowledgeCoverageReport} onOpenEntity={onOpenEntity} />
-          <a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t("逐政权覆盖、缺年与核验备注 ↗")}</a>
         </>
       )}
       {selectedEntity?.type === 'place' && selected && 'historicalName' in selected && (
@@ -107,8 +105,6 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
             <dd>{t(selected.modernName ?? '暂无对应名称')}</dd>
             <dt>{t("现代行政参照")}</dt>
             <dd>{t(selected.modernAdministrativeUnit ?? '暂无')}</dd>
-            <dt>{t("坐标")}</dt>
-            <dd>{selected.latitude.toFixed(2)}°N{locale==='en'?', ':'，'}{selected.longitude.toFixed(2)}°E</dd>
             {selectedPlaceCapitalTerms.length > 0 && <>
               <dt>{t("政权角色")}</dt>
               <dd>{selectedPlaceCapitalTerms.map(record => `${t(record.role==='primary'?'首都':record.role==='secondary'?'陪都／副都':record.role==='mobile_court'?'移动政治中心':'政治中心')} · ${t(record.status==='uncertain'?'待核验':'已核验')}`).join(listSeparator)}</dd>
@@ -117,7 +113,6 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           {selected.notes && <p className="detail-note">{t(selected.notes)}</p>}
           <p className="detail-note">{t("此处为精选古地名参照，尚未逐年校勘更名与归属；名称不保证适用于所选年的每个时点。")}</p>
           {studyView && <StudyRelationsPanel view={studyView} onOpenEntity={onOpenEntity} />}
-          <KnowledgeCoveragePanel report={knowledgeCoverageReport} context={coverageContext} onOpenEntity={onOpenEntity} />
         </>
       )}
       {selectedEntity?.type === 'polity' && selected && 'name' in selected && (
@@ -146,31 +141,17 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
             <dt>{t("当前状态")}</dt>
             <dd>{state.boundaries.filter((boundary) => boundary.polityId === selected.id).map((boundary) => t(controlLabels[boundary.controlType])).join(listSeparator) || t('暂无疆域几何')}</dd>
           </dl>
-          {state.boundaries.filter(b => b.polityId === selected.id).map(b => <details className="boundary-source" data-testid="boundary-evidence" key={b.id}>
-            <summary><strong>{t(b.presentation==='maximum' ? '最大范围参考 · 非本年实况' : b.temporalKind==='interval' ? '按来源时段查询 · 非逐年考证' : '同年资料断面')}</strong><span>{t('证据级别：')}{b.evidence.evidenceLevel} · {t(range(b.validFrom,b.validTo))}</span></summary>
-            <div className="boundary-source-body"><p>{t('证据级别：')}{b.evidence.evidenceLevel}</p>
-            <p>{t('派生方式：')}{t({
-              'direct-source':'直接来源', 'licensed-digitization':'数字化参考', 'nearest-same-polity':'过渡参考',
-              'maximum-record':'最大参考', 'administrative-synthesis':'行政区综合', 'cultural-core':'文化核心',
-              'control-centers':'控制中心', 'influence-area':'影响范围',
-            }[b.evidence.derivation])}</p>
-            <p>{t('复核状态：')}{t(b.evidence.reviewStatus==='pending'?'待逐段复核':b.evidence.reviewStatus==='cross-checked'?'已交叉复核':'已核对来源')}</p>
-            <p>{t("适用时段：")}{t(range(b.validFrom,b.validTo))}</p>
-            {b.sourceFrom!==undefined && b.sourceTo!==undefined && <p>{t("来源原始时段：")}{t(sourceRange(b.sourceFrom,b.sourceTo))}</p>}
-            {b.areaKm2!==undefined && <p>{t("来源模型面积约")} {(b.areaKm2/10000).toFixed(1)} {t("万平方公里")}{t(b.presentation==='maximum'?'（已收录单条记录最大值）':'')}</p>}
-            <p>{b.vertexCount.toLocaleString()} {t("个原始坐标点")} · {sourceField('sourceName',b.sourceName).label}{sourceField('sourceName',b.sourceName).value}</p>
-            {b.memberOf && <p>{sourceField('membership',b.memberOf).label}{sourceField('membership',b.memberOf).value}{t("（不等于直接管辖）")}</p>}
-            {b.notes && <p>{prose(b.notes)}</p>}
-            <ul className="source-links">{b.evidence.citations.map(citation=><li key={`${b.id}-${citation.title}-${citation.pageOrRecord??''}`}><a href={citation.urlOrCitation} target="_blank" rel="noreferrer">{t(citation.title)}{citation.version?` · ${citation.version}`:''}{citation.pageOrRecord?` · ${prose(citation.pageOrRecord)}`:''}</a></li>)}</ul>
-            <a href={b.sourceUrl} target="_blank" rel="noreferrer">{t("查看原始矢量来源 ↗")}</a>
-            </div></details>)}
-          {mappingNotes[selected.id] && <p className="detail-note">{t("核验备注：")}{prose(mappingNotes[selected.id])}</p>}
+          {state.boundaries.filter(b => b.polityId === selected.id).map(b => <ReaderNotes key={b.id} className="boundary-source" note={{
+            dateDescription: range(b.validFrom, b.validTo),
+            uncertainty: [boundaryExpressionNote(b), b.evidence.uncertaintyNote, b.notes, b.memberOf ? `${b.memberOf}，不等于直接管辖。` : undefined].filter(Boolean).map((note) => prose(note!)).join('；'),
+            sources: b.evidence.citations.map((citation) => ({ title: citation.title, citation: [citation.version, citation.pageOrRecord].filter(Boolean).join(' · ') || undefined, url: citation.urlOrCitation })),
+          }} />)}
+          {mappingNotes[selected.id] && <ReaderNotes note={{ uncertainty: prose(mappingNotes[selected.id]), sources: toReaderSources(selected.sourceIds, sources) }} />}
           {onYearChange && !!boundariesByPolity.get(selected.id)?.length && <details className="boundary-history"><summary>{t("本政权的资料变化 · 点击比较")}</summary><p>{t("以下是数据分段，不是全部历史变化。相邻段也可能沿用同一几何。")}</p><div>
             {boundariesByPolity.get(selected.id)?.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}{t(b.areaKm2 ? ` · 约${(b.areaKm2/10000).toFixed(0)}万 km²` : '')}</button>)}
           </div></details>}
           {selected.sourceIds.map(id => sourceById[id]).filter(Boolean).map(s => {const field=sourceField('documentTitle',s.title);return <p className="detail-note" key={s.id}>{field.label}{field.value} · {prose(s.note)}</p>;})}
           {studyView && <StudyRelationsPanel view={studyView} onOpenEntity={onOpenEntity} />}
-          <KnowledgeCoveragePanel report={knowledgeCoverageReport} context={coverageContext} onOpenEntity={onOpenEntity} />
         </>
       )}
       {selectedEntity?.type === 'event' && selected && 'title' in selected && (

@@ -50,4 +50,14 @@ describe('StudyRelationsPanel', () => {
     await userEvent.click(within(regimeBlock).getByRole('button', { name: '隋' }));
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'sui' });
   });
+
+  it('uses reader language for related content instead of detail-link workflow terms', () => {
+    const bundle = getChanganStudyBundle();
+    const view = buildCityStudyView('changan', 650, { ...bundle, capitalTerms: capitalHistory, places: [bundle.city] });
+    render(<StudyRelationsPanel view={view!} />);
+
+    expect(document.body).not.toHaveTextContent('时间精度：');
+    expect(document.body).not.toHaveTextContent('详情关联入口');
+    expect(document.body).not.toHaveTextContent('非本年事实');
+  });
 });

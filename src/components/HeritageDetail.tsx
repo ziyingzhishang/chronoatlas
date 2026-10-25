@@ -1,6 +1,8 @@
 import type { HeritageDetail as HeritageDetailData, HeritagePhaseType } from '../data/heritage-details';
 import { useLocale } from '../i18n/locale';
 import { useHistoricalContent } from '../content/ContentContext';
+import { toReaderSources } from '../presentation/reader-content';
+import { ReaderNotes } from './ReaderNotes';
 
 export interface HeritageNavigationTarget {
   type: 'person' | 'polity' | 'event' | 'place';
@@ -87,10 +89,7 @@ export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOp
         {detail.constructionHistory.map((item, index) => <li key={`${item.type}-${item.period}-${index}`} className={`heritage-phase heritage-phase-${item.type}`}>
           <div className="heritage-phase-heading"><strong>{t(item.label || phaseLabels[item.type])}</strong><span>{t(item.period)}</span></div>
           <p>{t(item.description)}</p>
-          {item.sourceIds.length > 0 && <p className="detail-note heritage-phase-sources">
-            <span>{t('阶段依据：')}</span><SourceEvidenceSummary sourceIds={item.sourceIds} />
-          </p>}
-          {item.uncertaintyNote && <p className="detail-note"><span>{t('不确定性：')}</span><span>{t(item.uncertaintyNote)}</span></p>}
+          <ReaderNotes className="heritage-phase-sources" note={{ uncertainty: item.uncertaintyNote, sources: toReaderSources(item.sourceIds, catalog.sources) }} />
         </li>)}
       </ol>
     </section>
@@ -121,46 +120,6 @@ export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOp
       <p className="heritage-present-day-value">{t('今日价值：')}{t(detail.presentDayValue)}</p>
     </section>
 
-    <section className="heritage-detail-section" aria-labelledby="heritage-evidence-heading">
-      <h3 id="heritage-evidence-heading">{t('来源与依据')}</h3>
-      <details open>
-        <summary>{t('查看来源')}</summary>
-        <ul className="heritage-source-list">{detail.sourceIds.map((sourceId) => <HeritageSourceEvidence key={sourceId} sourceId={sourceId} />)}</ul>
-      </details>
-      <p className="detail-note"><span>{t('不确定性：')}</span><span>{t(detail.uncertaintyNote)}</span></p>
-    </section>
+    <ReaderNotes className="heritage-detail-section" note={{ uncertainty: detail.uncertaintyNote, sources: toReaderSources(detail.sourceIds, catalog.sources) }} />
   </article>;
-}
-
-function sourceUrls(citation?: string) {
-  return (citation ?? '').split(/[；;]/).map((part) => part.trim()).filter((part) => /^https?:\/\//.test(part));
-}
-
-function SourceEvidenceSummary({ sourceIds }: { sourceIds: string[] }) {
-  const { t } = useLocale();
-  const { catalog } = useHistoricalContent();
-  return <span>{sourceIds.map((sourceId) => {
-    const source = catalog.sources.find((item) => item.id === sourceId);
-    const urls = sourceUrls(source?.urlOrCitation);
-    const status = !source ? '来源未解析' : urls.length > 0 ? '来源链接' : '书目引文';
-    const label = t(source?.title ?? sourceId);
-    const evidence = source && urls.length > 0
-      ? urls.map((url, index) => <span key={url}>{index > 0 && '、'}<a href={url} target="_blank" rel="noreferrer" aria-label={`${t('阶段依据：')}${label}`}>{label}</a></span>)
-      : label;
-    return <span key={sourceId}>{evidence}（{t(status)}）</span>;
-  }).reduce<React.ReactNode[]>((items, item, index) => index === 0 ? [item] : [...items, '、', item], [])}</span>;
-}
-
-function HeritageSourceEvidence({ sourceId }: { sourceId: string }) {
-  const { t } = useLocale();
-  const { catalog } = useHistoricalContent();
-  const source = catalog.sources.find((item) => item.id === sourceId);
-  const urls = sourceUrls(source?.urlOrCitation);
-  if (!source) return <li><strong>{t(sourceId)}</strong><span className="detail-note"> · {t('来源未解析')}</span></li>;
-  return <li>
-    <strong>{urls.length > 0 ? urls.map((url) => <a key={url} href={url} target="_blank" rel="noreferrer">{t(source.title)}</a>) : t(source.title)}</strong>
-    <span className="detail-note"> · {t(urls.length > 0 ? '来源链接' : '书目引文')}</span>
-    {urls.length === 0 && source.urlOrCitation && <small>{source.urlOrCitation}</small>}
-    {source.note && <p>{t(source.note)}</p>}
-  </li>;
 }

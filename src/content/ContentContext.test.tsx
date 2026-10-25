@@ -10,6 +10,10 @@ function Probe() {
   return <p>{revision}:{catalog.people[0]?.name}</p>;
 }
 
+function ReaderProbe() {
+  return <p>读者正文</p>;
+}
+
 describe('ContentProvider', () => {
   it('publishes a repository snapshot to consumers without changing component imports', async () => {
     const repository = new InMemoryContentRepository(
@@ -41,5 +45,13 @@ describe('ContentProvider', () => {
     expect(screen.getByRole('status')).toHaveTextContent('Loading historical content');
     expect(await screen.findByRole('alert')).toHaveTextContent('Historical content failed to load');
     localStorage.setItem('history-locale', 'zh-CN');
+  });
+
+  it('keeps the content revision available to the application without rendering it to readers', () => {
+    const { container } = render(<ContentProvider><ReaderProbe /></ContentProvider>);
+
+    expect(screen.getByText('读者正文').parentElement).toHaveAttribute('data-content-revision', bundledContentManifest.revision);
+    expect(container).not.toHaveTextContent(bundledContentManifest.revision);
+    expect(screen.queryByLabelText('内容版本')).not.toBeInTheDocument();
   });
 });

@@ -183,7 +183,7 @@ test('opens the complete heritage drawer from the city relation panel', async ()
   expect(heritageDrawer).toHaveClass('entity-drawer-heritage');
   expect(getComputedStyle(heritageDrawer).width).toBe('44%');
   expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
-  expect(within(heritageDrawer).getAllByText('不确定性：').length).toBeGreaterThan(0);
+  expect(within(heritageDrawer).getAllByText('资料说明').length).toBeGreaterThan(0);
   expect(within(heritageDrawer).getByRole('button', { name: '返回上一个实体' })).toBeInTheDocument();
 });
 

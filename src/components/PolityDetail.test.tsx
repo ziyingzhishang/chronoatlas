@@ -23,11 +23,14 @@ describe('PolityDetail navigation', () => {
     ]));
   });
 
-  it('shows existing evidence status beside capital, people, events, and heritage', () => {
+  it('presents sources and uncertainty as reader-facing notes without audit vocabulary', () => {
     render(<PolityDetail detail={getPolityDetail('qin')!} mode="drawer" />);
 
-    expect(screen.getByText(/有效期：前221年—前206年/)).toBeInTheDocument();
-    expect(screen.getAllByText(/来源解析：2\/2 已解析/).length).toBeGreaterThanOrEqual(4);
-    expect(screen.getAllByText(/不确定性提示：/).length).toBeGreaterThanOrEqual(1);
+    expect(screen.getAllByText('资料说明').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('前221年—前206年').length).toBeGreaterThan(0);
+    expect(screen.getAllByText('《资治通鉴》').length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('来源解析');
+    expect(document.body).not.toHaveTextContent('已解析');
+    expect(document.body).not.toHaveTextContent('bundled-');
   });
 });

@@ -19,15 +19,15 @@ describe('HeritageDetail', () => {
     expect(screen.getByRole('heading', { name: '现存特征' })).toBeInTheDocument();
     expect(screen.getByText(detail.modernLocation)).toBeInTheDocument();
     expect(screen.getByText(detail.uncertaintyNote)).toBeInTheDocument();
-    expect(screen.getByText('来源与依据')).toBeInTheDocument();
+    expect(screen.getAllByText('资料说明').length).toBeGreaterThan(0);
   });
 
-  it('shows the evidence attached to each construction phase', () => {
+  it('collects the evidence attached to each construction phase in material notes', () => {
     const detail = getHeritageDetail('big-wild-goose-pagoda')!;
 
     render(<HeritageDetail detail={detail} heritageName="大雁塔" />);
 
-    expect(screen.getAllByText('阶段依据：')).toHaveLength(detail.constructionHistory.length);
+    expect(screen.getAllByText('资料说明')).toHaveLength(detail.constructionHistory.length + 1);
   });
 
   it('makes URL-backed phase evidence directly navigable without turning citations into links', () => {
@@ -35,8 +35,8 @@ describe('HeritageDetail', () => {
 
     render(<HeritageDetail detail={detail} heritageName="白马寺" />);
 
-    const phaseEvidenceLinks = screen.getAllByRole('link', { name: '阶段依据：洛阳白马寺官方历史与保护资料' });
-    expect(phaseEvidenceLinks).toHaveLength(detail.constructionHistory.length * 2);
+    const phaseEvidenceLinks = screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' });
+    expect(phaseEvidenceLinks).toHaveLength((detail.constructionHistory.length + 1) * 2);
     expect(phaseEvidenceLinks[0]).toHaveAttribute('href', 'https://www.mct.gov.cn/preview/special/3578/3597/201203/t20120330_235404.html');
     expect(phaseEvidenceLinks[0]).toHaveAttribute('target', '_blank');
     expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
@@ -99,18 +99,19 @@ describe('HeritageDetail', () => {
       expect(screen.getByRole('article', { name: 'Heritage details' })).toBeInTheDocument();
       expect(screen.getByRole('heading', { name: 'Construction history' })).toBeInTheDocument();
       expect(screen.getByText('Modern location:')).toBeInTheDocument();
-      expect(screen.getByText('Sources and evidence')).toBeInTheDocument();
+      expect(screen.getAllByText('Material notes').length).toBeGreaterThan(0);
     } finally {
       if (previousLocale === null) localStorage.removeItem('history-locale');
       else localStorage.setItem('history-locale', previousLocale);
     }
   });
 
-  it('splits multi-link citations and marks unresolved sources explicitly', () => {
+  it('splits multi-link citations and never exposes unresolved source identifiers', () => {
     const detail = getHeritageDetail('white-horse-temple')!;
     render(<LocaleProvider><HeritageDetail detail={{ ...detail, sourceIds: [...detail.sourceIds, 'missing-source'] }} /></LocaleProvider>);
 
-    expect(screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' })).toHaveLength(2);
-    expect(screen.getByText(/来源未解析/)).toBeInTheDocument();
+    expect(screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' })).toHaveLength((detail.constructionHistory.length + 1) * 2);
+    expect(document.body).not.toHaveTextContent('missing-source');
+    expect(document.body).not.toHaveTextContent('来源未解析');
   });
 });

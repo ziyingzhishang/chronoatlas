@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { fireEvent, render, screen, within } from '@testing-library/react';
 import { describe, expect, it, vi } from 'vitest';
 import { getChanganStudyBundle } from '../data/changan-study';
 import { capitalHistory } from '../data/capital-history';
@@ -28,15 +28,12 @@ describe('RelationshipGraph', () => {
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'sui' });
   });
 
-  it('keeps evidence expansion and source traceability for city graph edges', () => {
+  it('keeps reader-facing material notes and source traceability for city graph edges', () => {
     const city = buildCityStudyView('changan', 650, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
     render(<RelationshipGraph graph={toCityRelationshipGraphView(city!)} />);
 
-    const evidenceToggle = screen.getAllByRole('button', { name: /查看边证据/ })[0];
-    fireEvent.click(evidenceToggle);
-
-    expect(screen.getByRole('region', { name: /关系边证据/ })).toBeInTheDocument();
-    expect(screen.getByRole('list', { name: '关系来源：' })).toBeInTheDocument();
+    expect(screen.getAllByText('资料说明').length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('边证据');
   });
 
   it('renders person, polity and heritage connections as accessible text and SVG', () => {
@@ -45,11 +42,11 @@ describe('RelationshipGraph', () => {
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} />);
 
     expect(screen.getByRole('img', { name: '人物关系网络' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐 · 626—649年.*本年事实/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /唐 · 遗产关联 · 遗留 · 方向：唐 → 大明宫遗址/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 唐 · 626—649年.*当前地图时段/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /唐 · 遗产关联 · 遗留 · 大明宫遗址/ })).toBeInTheDocument();
   });
 
-  it('groups claims into five categories and exposes direction, time precision, and source state', () => {
+  it('groups claims into five categories without exposing direction, precision, or source workflow state', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
     const graphView = {
@@ -65,8 +62,10 @@ describe('RelationshipGraph', () => {
     for (const heading of ['治理／君臣', '亲属', '联盟与对立', '事件参与', '遗产关联']) {
       expect(screen.getByRole('heading', { name: heading })).toBeInTheDocument();
     }
-    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐 · 626—649年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /李世民 · 联盟与对立 · 联盟 · 方向：李世民 → 李渊 · 618—626年 · 时间精度：约年 · 来源：待解析/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 唐 · 626—649年/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 联盟与对立 · 联盟 · 李渊 · 618—626年/ })).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('方向：');
+    expect(document.body).not.toHaveTextContent('待解析');
   });
 
   it('shows generic historical associations in a separate graph category', () => {
@@ -83,7 +82,7 @@ describe('RelationshipGraph', () => {
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     expect(screen.getByRole('heading', { name: '历史关联' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /李世民 · 历史关联 · 历史关联 · 方向：李世民 → 李渊 · 618—626年/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /李世民 · 历史关联 · 历史关联 · 李渊 · 618—626年/ })).toBeInTheDocument();
   });
 
   it('renders the fifty-fifth batch event edges in the event participation category', () => {
@@ -98,22 +97,22 @@ describe('RelationshipGraph', () => {
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
     expect(screen.getByRole('heading', { name: '事件参与' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /曹操 · 事件参与 · 参与事件 · 方向：曹操 → 三国开始 · 220年 · 时间精度：年 · 来源：可用/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /曹操 · 事件参与 · 参与事件 · 三国开始 · 220年/ })).toBeInTheDocument();
   });
 
   it('renders fifty-sixth batch ruler edges in the governance category', () => {
     const view = buildPolityStudyView('qing', 1643, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} />);
 
-    expect(screen.getByRole('button', { name: /皇太极 · 治理／君臣 · 统治 · 方向：皇太极 → 清 · 1636—1643年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /福临 · 治理／君臣 · 统治 · 方向：福临 → 清 · 1643—1661年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /皇太极 · 治理／君臣 · 统治 · 清 · 1636—1643年/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /福临 · 治理／君臣 · 统治 · 清 · 1643—1661年/ })).toBeInTheDocument();
   });
 
   it('renders fifty-ninth batch ruler edges in the governance category', () => {
     const view = buildPolityStudyView('wu_three', 240, { polities, places, people, heritage: heritageAssets, events, claims, capitalTerms: capitalHistory });
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} />);
 
-    expect(screen.getByRole('button', { name: /孙权 · 治理／君臣 · 统治 · 方向：孙权 → 吴 · 229—252年 · 时间精度：范围 · 来源：可用/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /孙权 · 治理／君臣 · 统治 · 吴 · 229—252年/ })).toBeInTheDocument();
   });
 
   it('renders the fifty-seventh batch conflict edge in the alliance and conflict category', () => {
@@ -125,7 +124,7 @@ describe('RelationshipGraph', () => {
     };
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
-    expect(screen.getByRole('button', { name: /王僧辩 · 联盟与对立 · 对立 · 方向：王僧辩 → 陈霸先 · 555年 · 时间精度：年 · 来源：可用/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: /王僧辩 · 联盟与对立 · 对立 · 陈霸先 · 555年/ })).toBeInTheDocument();
   });
 
   it('opens a person entity from a focusable SVG node', () => {
@@ -158,7 +157,7 @@ describe('RelationshipGraph', () => {
     const onOpenEntity = vi.fn<(entity: DetailEntity) => void>();
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(view!)} onOpenEntity={onOpenEntity} />);
 
-    fireEvent.click(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 方向：李世民 → 唐/ }));
+    fireEvent.click(screen.getByRole('button', { name: /李世民 · 治理／君臣 · 统治 · 唐/ }));
 
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'tang' });
   });
@@ -179,12 +178,12 @@ describe('RelationshipGraph', () => {
     expect(screen.getByRole('link', { name: '努尔哈赤' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: '清入关' })).toBeInTheDocument();
     expect(screen.getByRole('link', { name: '清盛京宫殿与城市历史层' })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /努尔哈赤 · 亲属 · 亲属：父母 · 方向：努尔哈赤 → 皇太极 · 1592—1626年.*详情关联／非本年事实/ })).toBeInTheDocument();
-    expect(screen.getByRole('button', { name: '清入关 · 详情关联／非本年事实' })).toBeInTheDocument();
-    expect(screen.getAllByText('详情关联／非本年事实').length).toBeGreaterThan(0);
+    expect(screen.getByRole('button', { name: /努尔哈赤 · 亲属 · 亲属：父母 · 皇太极 · 1592—1626年.*与本专题相关/ })).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '清入关 · 与本专题相关' })).toBeInTheDocument();
+    expect(screen.getByText('专题相关内容')).toBeInTheDocument();
   });
 
-  it('expands relationship edge evidence from a keyboard-accessible control', () => {
+  it('expands relationship material notes with readable uncertainty and sources', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
     const graphView = {
@@ -198,20 +197,17 @@ describe('RelationshipGraph', () => {
     };
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
-    const evidenceToggle = screen.getByRole('button', { name: /查看边证据.*李世民.*联盟/ });
-    expect(evidenceToggle).toHaveAttribute('aria-expanded', 'false');
-    fireEvent.keyDown(evidenceToggle, { key: 'Enter' });
-
-    expect(evidenceToggle).toHaveAttribute('aria-expanded', 'true');
-    expect(screen.getByRole('region', { name: '关系边证据：李世民 → 李渊' })).toBeInTheDocument();
-    expect(screen.getByText(/有效期：618—626年/)).toBeInTheDocument();
-    expect(screen.getByText(/证据类型：推断/)).toBeInTheDocument();
-    expect(screen.getByText(/可信度：低/)).toBeInTheDocument();
-    expect(screen.getByText(/不确定性：关系方向是阶段性概括。/)).toBeInTheDocument();
+    const relation = screen.getByRole('button', { name: /李世民 · 联盟与对立 · 联盟 · 李渊 · 618—626年/ });
+    const relationItem = within(relation.closest('li')!);
+    fireEvent.click(relationItem.getByText('资料说明'));
+    expect(relationItem.getByText('618—626年')).toBeInTheDocument();
+    expect(relationItem.getByText('关系方向是阶段性概括。')).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('证据类型');
+    expect(document.body).not.toHaveTextContent('可信度');
     expect(screen.getByRole('link', { name: '新罗 · 韩国民族文化大百科' })).toHaveAttribute('href', 'https://encykorea.aks.ac.kr/Article/E0032800');
   });
 
-  it('renders non-URL and unresolved relationship sources as text evidence states', () => {
+  it('renders bibliography text without unresolved source ids or workflow states', () => {
     const bundle = getChanganStudyBundle();
     const view = buildPolityStudyView('tang', 640, { polities, places, people, heritage: heritageAssets, events: bundle.events, claims, capitalTerms: capitalHistory });
     const graphView = {
@@ -224,14 +220,9 @@ describe('RelationshipGraph', () => {
     };
     render(<RelationshipGraph graph={toPolityRelationshipGraphView(graphView)} />);
 
-    const evidenceToggle = screen.getByRole('button', { name: /查看边证据.*李世民.*对立/ });
-    fireEvent.click(evidenceToggle);
-
-    const evidenceRegion = screen.getByRole('region', { name: '关系边证据：李世民 → 李渊' });
-    expect(evidenceRegion).toHaveTextContent('《资治通鉴》');
-    expect(evidenceRegion).toHaveTextContent('书目引文');
-    expect(evidenceRegion).toHaveTextContent('missing-edge-source');
-    expect(evidenceRegion).toHaveTextContent('来源未解析');
+    expect(screen.getAllByText('《资治通鉴》').length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('missing-edge-source');
+    expect(document.body).not.toHaveTextContent('来源未解析');
     expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
   });
 });

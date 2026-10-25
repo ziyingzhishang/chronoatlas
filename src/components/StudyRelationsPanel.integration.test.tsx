@@ -109,8 +109,8 @@ describe('StudyRelationsPanel integration', () => {
     const onOpenEntity = vi.fn();
     render(<LocaleProvider><StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} /></LocaleProvider>);
 
-    expect(screen.getByText('详情关联入口')).toBeInTheDocument();
-    expect(screen.getByText(/仅表示详情关联，不等同于本年事实/)).toBeInTheDocument();
+    expect(screen.getByRole('heading', { level: 3, name: '专题相关内容' })).toBeInTheDocument();
+    expect(screen.getAllByText(/与本专题相关，未必发生在地图所示年份/).length).toBeGreaterThan(0);
     expect(screen.getByRole('button', { name: '努尔哈赤' })).toBeInTheDocument();
 
     await userEvent.click(screen.getByRole('button', { name: '努尔哈赤' }));
@@ -122,8 +122,8 @@ describe('StudyRelationsPanel integration', () => {
     const onOpenEntity = vi.fn();
     render(<StudyRelationsPanel view={view!} onOpenEntity={onOpenEntity} />);
 
-    expect(screen.getByText('详情关联过渡事件')).toBeInTheDocument();
-    expect(screen.getByText('关联但非本年事实；政权归属以事件证据为准。')).toBeInTheDocument();
+    expect(screen.getByText('政权转折事件')).toBeInTheDocument();
+    expect(screen.getByText('这些事件用于理解政权变化，未必发生在地图所示年份。')).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '西魏建立' })).toBeInTheDocument();
     expect(screen.getByRole('button', { name: '隋建立' })).toBeInTheDocument();
 
@@ -162,8 +162,8 @@ describe('StudyRelationsPanel integration', () => {
     const view = buildPolityStudyView('zhou_northern', 581, { ...completeData, eventDetails, polityDetails });
     render(<LocaleProvider><StudyRelationsPanel view={view!} /></LocaleProvider>);
 
-    expect(screen.getByText('Related transition events')).toBeInTheDocument();
-    expect(screen.getByText('Associated reference, not a fact of the selected year; polity attribution follows the event evidence.')).toBeInTheDocument();
+    expect(screen.getByText('Polity transition events')).toBeInTheDocument();
+    expect(screen.getByText('These events help explain polity change and may not occur in the year shown on the map.')).toBeInTheDocument();
     localStorage.removeItem('history-locale');
   });
 });

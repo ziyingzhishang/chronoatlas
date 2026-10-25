@@ -2,9 +2,11 @@ import { useLocale } from '../i18n/locale';
 import type { DetailEntity } from '../domain/detail-entity';
 import type { HistoricalEvent, HistoricalEventDetail } from '../domain/types';
 import { eventDate } from './EventDetailCard';
-import { reviewEventTimeCoverage, type EventTimeReviewEntry, type EventTimeReviewStatus } from '../data/event-time-review';
+import { reviewEventTimeCoverage, type EventTimeReviewEntry } from '../data/event-time-review';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useHistoricalContent } from '../content/ContentContext';
+import { toReaderSources } from '../presentation/reader-content';
+import { ReaderNotes } from './ReaderNotes';
 
 export interface EventDetailProps {
   event: HistoricalEvent;
@@ -50,7 +52,6 @@ export function EventDetail({ event, detail: suppliedDetail, onNavigate, onOpenE
     <div className="event-meta">{t(eventDate(event))} · {t(event.region === 'world' ? '同期世界' : '中国历史')} · {t(event.category ?? '历史转折')}</div>
     <h3>{t(event.title)}</h3>
     <p className="event-lead">{t(event.summary)}</p>
-    <TimeEvidenceReview review={timeReview} t={t} />
 
     <section className="event-detail-section">
       <h4>{t('原因')}</h4>
@@ -70,16 +71,16 @@ export function EventDetail({ event, detail: suppliedDetail, onNavigate, onOpenE
       {detail.participants.length > 0 ? <ul>{detail.participants.map((participant) => {
         const person = participantById.get(participant.personId);
         return <li key={`${participant.personId}-${participant.role}`}>
-          <LinkedLabel label={t(person?.name ?? participant.personId)} entity={{ type: 'person', id: participant.personId }} onNavigate={navigate} />
+          <LinkedLabel label={t(person?.name ?? '相关人物')} entity={{ type: 'person', id: participant.personId }} onNavigate={person ? navigate : undefined} />
           <span> · {t(participant.role)}</span>
           {participant.note && <small>（{t(participant.note)}）</small>}
         </li>;
-      })}</ul> : <p className="detail-note">{t('当前没有可核验参与人物')}；<a href="/data/knowledge-coverage.json" target="_blank" rel="noreferrer" aria-label={t('打开知识覆盖报告')}>{t('该缺口已记录在知识覆盖报告中')}</a>。</p>}
+      })}</ul> : <p className="detail-note">{t('相关资料尚待补充')}</p>}
     </section>
 
     <section className="event-detail-section">
       <h4>{t('参与政权')}</h4>
-      <ul>{detail.polityIds.map((polityId) => <li key={polityId}><LinkedLabel label={t(polityById.get(polityId)?.name ?? polityId)} entity={{ type: 'polity', id: polityId }} onNavigate={navigate} /></li>)}</ul>
+      <ul>{detail.polityIds.map((polityId) => { const polity = polityById.get(polityId); return <li key={polityId}><LinkedLabel label={t(polity?.name ?? '相关政权')} entity={{ type: 'polity', id: polityId }} onNavigate={polity ? navigate : undefined} /></li>; })}</ul>
     </section>
 
     <section className="event-detail-section">
@@ -90,61 +91,33 @@ export function EventDetail({ event, detail: suppliedDetail, onNavigate, onOpenE
 
     <section className="event-detail-section">
       <h4>{t('关联地点')}</h4>
-      {detail.locationIds.length > 0 ? <ul>{detail.locationIds.map((placeId) => <li key={placeId}><LinkedLabel label={t(placeById.get(placeId)?.historicalName ?? placeId)} entity={{ type: 'place', id: placeId }} onNavigate={navigate} /></li>)}</ul> : <p className="detail-note">{t('暂无已收录关联地点')}</p>}
+      {detail.locationIds.length > 0 ? <ul>{detail.locationIds.map((placeId) => { const place = placeById.get(placeId); return <li key={placeId}><LinkedLabel label={t(place?.historicalName ?? '相关地点')} entity={{ type: 'place', id: placeId }} onNavigate={place ? navigate : undefined} /></li>; })}</ul> : <p className="detail-note">{t('暂无已收录关联地点')}</p>}
     </section>
 
     <section className="event-detail-section">
       <h4>{t('关联事件')}</h4>
-      {detail.relatedEventIds.length > 0 ? <ul>{detail.relatedEventIds.map((eventId) => <li key={eventId}><LinkedLabel label={t(eventById.get(eventId)?.title ?? eventId)} entity={{ type: 'event', id: eventId }} onNavigate={navigate} /></li>)}</ul> : <p className="detail-note">{t('暂无已收录关联事件')}</p>}
+      {detail.relatedEventIds.length > 0 ? <ul>{detail.relatedEventIds.map((eventId) => { const related = eventById.get(eventId); return <li key={eventId}><LinkedLabel label={t(related?.title ?? '相关事件')} entity={{ type: 'event', id: eventId }} onNavigate={related ? navigate : undefined} /></li>; })}</ul> : <p className="detail-note">{t('暂无已收录关联事件')}</p>}
     </section>
 
-    <section className="event-detail-section event-sources">
-      <h4>{t('来源')}</h4>
-      <ul>{detail.sourceIds.map((sourceId) => <SourceEvidence key={sourceId} sourceId={sourceId} />)}</ul>
-      {detail.uncertaintyNote && <p className="detail-note"><strong>{t('不确定性')}</strong>：{t(detail.uncertaintyNote)}</p>}
-    </section>
+    <ReaderNotes className="event-detail-section event-sources" note={{
+      dateDescription: eventTimeDescription(timeReview),
+      uncertainty: [timeReview.explanation, detail.uncertaintyNote].filter(Boolean).join('；'),
+      sources: toReaderSources([...detail.sourceIds, ...timeReview.sourceIds], sources),
+    }} />
   </article>;
 }
 
-function sourceUrls(citation?: string) {
-  return (citation ?? '').split(/[；;]/).map((part) => part.trim()).filter((part) => /^https?:\/\//.test(part));
-}
-
-function SourceEvidence({ sourceId }: { sourceId: string }) {
-  const { t } = useLocale();
-  const { catalog } = useHistoricalContent();
-  const source = catalog.sources.find((item) => item.id === sourceId);
-  const urls = sourceUrls(source?.urlOrCitation);
-  if (!source) {
-    return <li><span>{t(sourceId)}</span><span className="detail-note"> · {t('来源未解析')}</span></li>;
-  }
-  return <li>
-    {urls.length > 0 ? urls.map((url) => <a key={url} href={url} target="_blank" rel="noreferrer">{t(source.title)}</a>) : <span>{t(source.title)}</span>}
-    <span className="detail-note"> · {t(urls.length > 0 ? '来源链接' : '书目引文')}</span>
-  </li>;
-}
-
-function TimeEvidenceReview({ review, t }: { review: Pick<EventTimeReviewEntry, 'eventId' | 'status' | 'explanation' | 'timelineStrategy'> & { sourceIds: string[] }; t: (text: string) => string }) {
-  const { catalog } = useHistoricalContent();
-  const sourceNames = review.sourceIds.map((sourceId) => catalog.sources.find((source) => source.id === sourceId)?.title ?? sourceId);
-  const allowTimelinePosition = review.timelineStrategy !== 'unknown-window';
-  return <section className="time-evidence-review" aria-label={t('时间证据审计')}>
-    <h4>{t('时间证据审计')}</h4>
-    <p><strong>{t(eventTimeStatusLabel(review.status))}</strong> · {t(allowTimelinePosition ? '可定位到时间轴' : '暂不允许时间轴定位')}</p>
-    <p className="detail-note">{t(review.explanation)}</p>
-    <p className="detail-note">{t('证据来源：')}{sourceNames.length > 0 ? sourceNames.map(t).join('、') : t('暂无可解析来源')}</p>
-  </section>;
-}
-
-function eventTimeStatusLabel(status: EventTimeReviewStatus) {
-  return status === 'confirmed' ? '已确证' : status === 'approximate' ? '约年' : '未知';
+function eventTimeDescription(review: Pick<EventTimeReviewEntry, 'status' | 'timelineStrategy'>) {
+  if (review.status === 'confirmed') return '年代记录较明确';
+  if (review.status === 'approximate') return '约在该年前后';
+  return '具体年代尚待核实';
 }
 
 function unknownEventTimeReview(eventId: string): Pick<EventTimeReviewEntry, 'eventId' | 'status' | 'explanation' | 'timelineStrategy'> & { sourceIds: string[] } {
   return {
     eventId,
     status: 'unknown',
-    explanation: '当前事件尚未纳入时间证据审计目录，暂不把目录年份升级为已确证时间。',
+    explanation: '现有资料尚不足以确定更精确的时间。',
     timelineStrategy: 'unknown-window',
     sourceIds: [],
   };

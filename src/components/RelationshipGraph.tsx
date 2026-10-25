@@ -1,11 +1,13 @@
-import { useState, type KeyboardEvent } from 'react';
+import type { KeyboardEvent } from 'react';
 import type { DetailEntity } from '../domain/detail-entity';
 import type { PolityStudyView } from '../domain/study-view';
-import type { ClaimEvidenceType, HistoricalClaim } from '../domain/types';
+import type { HistoricalClaim } from '../domain/types';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
 import { toPolityRelationshipGraphView, type RelationshipGraphNode, type RelationshipGraphView } from './relationship-graph-model';
 import { useHistoricalContent } from '../content/ContentContext';
+import { ReaderNotes } from './ReaderNotes';
+import { toReaderSources } from '../presentation/reader-content';
 
 export type RelationshipGraphCategory = 'governance' | 'kinship' | 'allianceConflict' | 'eventParticipation' | 'heritage' | 'context';
 export type RelationshipGraphScope = 'current-fact' | 'detail-linked';
@@ -40,10 +42,6 @@ const categoryLabels: Record<RelationshipGraphCategory, string> = {
   governance: '治理／君臣', kinship: '亲属', allianceConflict: '联盟与对立', eventParticipation: '事件参与', heritage: '遗产关联', context: '历史关联',
 };
 
-const datePrecisionLabels: Record<HistoricalClaim['datePrecision'], string> = {
-  day: '日', year: '年', approximate: '约年', range: '范围', century: '世纪', unknown: '未知',
-};
-
 export function classifyRelationshipClaim(claim: HistoricalClaim): RelationshipGraphCategory | undefined {
   return categoryForPredicate[claim.predicate];
 }
@@ -61,10 +59,8 @@ export function relationshipDateLabel(claim: HistoricalClaim): string {
 export function relationshipSummary(edge: RelationshipGraphEdge, t: (text: string) => string): string {
   const predicate = t(predicateLabels[edge.claim.predicate] ?? edge.claim.predicate);
   const category = t(categoryLabels[edge.category]);
-  const precision = t(datePrecisionLabels[edge.claim.datePrecision]);
-  const source = t(edge.sourceAvailable ? '来源：可用' : '来源：待解析');
-  const scope = t(edge.scope === 'current-fact' ? '本年事实' : '详情关联／非本年事实');
-  return `${edge.from.label} · ${category} · ${predicate} · ${t('方向：')}${edge.from.label} → ${edge.to.label} · ${relationshipDateLabel(edge.claim)} · ${t('时间精度：')}${precision} · ${source} · ${scope}`;
+  const scope = t(edge.scope === 'current-fact' ? '当前地图时段' : '与本专题相关');
+  return `${edge.from.label} · ${category} · ${predicate} · ${edge.to.label} · ${relationshipDateLabel(edge.claim)} · ${scope}`;
 }
 
 type RelationshipGraphProps = {
@@ -131,10 +127,10 @@ export function RelationshipGraph({ graph, view, onOpenEntity }: RelationshipGra
           })}</ul> : <p className="relationship-category-empty">{t('暂无已收录关系')}</p>}
         </section>)}
         {detailOnlyNodes.length > 0 && <section className="relationship-category relationship-category-detail" aria-labelledby="relationship-category-detail">
-          <h4 id="relationship-category-detail">{t('详情关联／非本年事实')}</h4>
-          <p className="relationship-category-note">{t('关系图谱中的详情关联／非本年事实；时间、有效期与政权归属仍以各自证据为准。')}</p>
+          <h4 id="relationship-category-detail">{t('专题相关内容')}</h4>
+          <p className="relationship-category-note">{t('以下内容与本专题相关，未必发生在地图所示年份。')}</p>
           <ul>{detailOnlyNodes.map((node) => {
-            const summary = `${node.label} · ${t('详情关联／非本年事实')}`;
+            const summary = `${node.label} · ${t('与本专题相关')}`;
             return <li key={`detail-${node.id}`}><button type="button" aria-label={summary} onClick={() => openNode(node)}>{summary}</button></li>;
           })}</ul>
         </section>}
@@ -143,61 +139,13 @@ export function RelationshipGraph({ graph, view, onOpenEntity }: RelationshipGra
   );
 }
 
-function RelationshipEdgeEvidence({ edge, t }: { edge: RelationshipGraphEdge; t: (text: string) => string }) {
-  const [expanded, setExpanded] = useState(false);
-  const predicate = t(predicateLabels[edge.claim.predicate] ?? edge.claim.predicate);
-  const evidenceId = `relationship-edge-evidence-${edge.claim.id}`;
-  const toggle = () => setExpanded((value) => !value);
-  const handleKeyDown = (event: KeyboardEvent<HTMLButtonElement>) => {
-    if (event.key !== 'Enter' && event.key !== ' ') return;
-    event.preventDefault();
-    toggle();
-  };
-
-  return <div className="relationship-edge-evidence">
-    <button
-      type="button"
-      aria-expanded={expanded}
-      aria-controls={evidenceId}
-      aria-label={`${t(expanded ? '收起边证据' : '查看边证据')}：${edge.from.label} · ${predicate}`}
-      onClick={toggle}
-      onKeyDown={handleKeyDown}
-    >
-      {t(expanded ? '收起边证据' : '查看边证据')}
-    </button>
-    {expanded && <section id={evidenceId} className="relationship-edge-evidence-detail" role="region" aria-label={`${t('关系边证据：')}${edge.from.label} → ${edge.to.label}`}>
-      <p>{t('有效期：')}{relationshipDateLabel(edge.claim)} · {t('时间精度：')}{t(datePrecisionLabels[edge.claim.datePrecision])}</p>
-      <p>{t('证据类型：')}{t(claimEvidenceTypeLabel(edge.claim.evidenceType))} · {t('可信度：')}{t(confidenceLabel(edge.claim.confidence))}</p>
-      <p>{t('不确定性：')}{t(edge.claim.uncertaintyNote ?? '未记录不确定性')}</p>
-      <ul aria-label={t('关系来源：')}>
-        {edge.claim.sourceIds.length > 0 ? edge.claim.sourceIds.map((sourceId) => <RelationshipEdgeSource key={sourceId} sourceId={sourceId} t={t} />) : <li>{t('暂无可解析来源')}</li>}
-      </ul>
-    </section>}
-  </div>;
-}
-
-function RelationshipEdgeSource({ sourceId, t }: { sourceId: string; t: (text: string) => string }) {
+function RelationshipEdgeEvidence({ edge }: { edge: RelationshipGraphEdge; t: (text: string) => string }) {
   const { catalog } = useHistoricalContent();
-  const source = catalog.sources.find((item) => item.id === sourceId);
-  if (!source) return <li>{t(sourceId)} · {t('来源未解析')}</li>;
-  const urls = sourceUrls(source.urlOrCitation);
-  return <li>
-    {urls.length > 0 ? urls.map((url) => <a key={url} href={url} target="_blank" rel="noreferrer">{t(source.title)}</a>) : <span>{t(source.title)}</span>}
-    <span> · {t(urls.length > 0 ? '来源链接' : '书目引文')}</span>
-    {urls.length === 0 && source.urlOrCitation && <small> · {t(source.urlOrCitation)}</small>}
-  </li>;
-}
-
-function sourceUrls(citation?: string) {
-  return (citation ?? '').split(/[；;]/).map((part) => part.trim()).filter((part) => /^https?:\/\//.test(part));
-}
-
-function claimEvidenceTypeLabel(type: ClaimEvidenceType) {
-  return type === 'explicit-record' ? '明确记载' : type === 'archaeology' ? '考古证据' : type === 'cross-checked' ? '交叉核验' : type === 'inference' ? '推断' : '传统记载';
-}
-
-function confidenceLabel(confidence: HistoricalClaim['confidence']) {
-  return confidence === 'high' ? '高' : confidence === 'medium' ? '中' : '低';
+  return <ReaderNotes className="relationship-edge-evidence" note={{
+    dateDescription: relationshipDateLabel(edge.claim),
+    uncertainty: edge.claim.uncertaintyNote,
+    sources: toReaderSources(edge.claim.sourceIds, catalog.sources),
+  }} />;
 }
 
 function GraphEdge({ edge, positions, summary, t }: { edge: RelationshipGraphEdge; positions: Map<string, { x: number; y: number }>; summary: string; t: (text: string) => string }) {

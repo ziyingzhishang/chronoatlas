@@ -5,7 +5,6 @@ import { getHistoricalState } from '../domain/history-state';
 import { InfoPanel } from './InfoPanel';
 import { LocaleProvider } from '../i18n/locale';
 import { localizeState } from '../i18n/content';
-import { auditKnowledgeCoverage } from '../data/knowledge-coverage';
 
 test('shows current polities when no entity is selected', () => {
   render(<InfoPanel state={getHistoricalState(937)} selectedEntity={undefined} />);
@@ -14,12 +13,12 @@ test('shows current polities when no entity is selected', () => {
   expect(screen.getAllByText('暂无国家边界资料').length).toBeGreaterThan(0);
 });
 
-test('shows the closed-task empty state when no actionable coverage task remains', async () => {
+test('does not expose coverage workflow state on the reader surface', async () => {
   const onOpenEntity = vi.fn();
   render(<LocaleProvider><InfoPanel state={getHistoricalState(937)} selectedEntity={undefined} onOpenEntity={onOpenEntity} /></LocaleProvider>);
 
-  expect(screen.getByText('当前没有可行动缺口')).toBeInTheDocument();
-  expect(screen.queryByText('展开可行动缺口')).not.toBeInTheDocument();
+  expect(screen.queryByTestId('knowledge-coverage-panel')).not.toBeInTheDocument();
+  expect(document.body).not.toHaveTextContent('覆盖审计');
   expect(onOpenEntity).not.toHaveBeenCalled();
 });
 
@@ -54,26 +53,19 @@ test('shows historical and modern names for a selected place', () => {
   expect(screen.getAllByText('咸阳市').length).toBeGreaterThanOrEqual(1);
 });
 
-test('shows the selected polity coverage report instead of the global report', () => {
-  const report = auditKnowledgeCoverage();
-  const polityReport = report.byPolity.qin;
+test('keeps polity audit reports out of the reader panel', () => {
   render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'polity', id: 'qin' }} />);
 
-  expect(polityReport).toBeDefined();
-  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`政权视角 · ${polityReport.polityName}`);
-  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`实体 ${polityReport.entityKeys.length}`);
-  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`缺口 ${polityReport.gaps.length}`);
+  expect(screen.queryByTestId('knowledge-coverage-panel')).not.toBeInTheDocument();
+  expect(screen.queryByRole('link', { name: /覆盖/ })).not.toBeInTheDocument();
 });
 
-test('shows the selected city coverage report instead of the global report', () => {
-  const report = auditKnowledgeCoverage();
-  const cityReport = report.byCity.xianyang;
+test('keeps city audit reports and coordinates out of the reader panel', () => {
   render(<InfoPanel state={getHistoricalState(-221)} selectedEntity={{ type: 'place', id: 'xianyang' }} />);
 
-  expect(cityReport).toBeDefined();
-  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`城市视角 · ${cityReport.cityName}`);
-  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`实体 ${cityReport.entityKeys.length}`);
-  expect(screen.getByTestId('knowledge-coverage-panel')).toHaveTextContent(`缺口 ${cityReport.gaps.length}`);
+  expect(screen.queryByTestId('knowledge-coverage-panel')).not.toBeInTheDocument();
+  expect(document.body).not.toHaveTextContent('坐标');
+  expect(document.body).not.toHaveTextContent('34.33°N');
 });
 
 test('uses the full event catalog in a non-Changan city study view', () => {
@@ -82,14 +74,14 @@ test('uses the full event catalog in a non-Changan city study view', () => {
   expect(screen.getAllByRole('button', { name: '秦统一后咸阳成为帝国中心' }).length).toBeGreaterThanOrEqual(2);
 });
 
-test('preserves a raw source zero endpoint without treating it as a selectable civil year', () => {
+test('does not expose a raw source zero endpoint as reader content', () => {
   const state = getHistoricalState(-1);
   const boundary = state.boundaries[0];
   state.activePolities.push({id:'world-rome',name:'罗马帝国',originalName:'Roman Empire',region:'world',type:'regime',startYear:-14,endYear:-1,color:'#888888',description:'来源记录',sourceIds:['cliopatria']});
   state.boundaries.push({...boundary,id:'rome-test',polityId:'world-rome',validFrom:-14,validTo:-1,sourceFrom:-14,sourceTo:0,sourceName:'Roman Empire',presentation:'interval'});
   render(<InfoPanel state={state} selectedEntity={{type:'polity',id:'world-rome'}} />);
-  expect(screen.getByText('适用时段：前14年—前1年')).toBeInTheDocument();
-  expect(screen.getByText(/来源原始时段：前14年—0（来源边界值，非公元0年）/)).toBeInTheDocument();
+  expect(screen.getByText('前14年—前1年')).toBeInTheDocument();
+  expect(document.body).not.toHaveTextContent('来源原始时段');
 });
 
 test('uses localized dates, control labels and source notes in an English polity detail', () => {
@@ -119,15 +111,16 @@ test('shows the approved Taiwan sovereignty notice in PRC details from 1949', ()
   expect(screen.getByRole('link', {name:'《反分裂国家法》第二条'})).toHaveAttribute('href', expect.stringContaining('moe.gov.cn'));
 });
 
-test('shows evidence level, derivation, review state and citation for a curated boundary', () => {
+test('shows boundary sources and limitations without internal evidence codes', () => {
   const state = getHistoricalState(937);
   const base = state.boundaries[0];
   state.boundaries.push({...base, id:'test-southern-tang-maximum', polityId:'southern_tang', validFrom:937, validTo:959, snapshotYear:937, presentation:'maximum', evidence:{...base.evidence, evidenceLevel:'C', derivation:'maximum-record', reviewStatus:'pending'}});
   render(<LocaleProvider><InfoPanel state={state} selectedEntity={{type:'polity', id:'southern_tang'}} /></LocaleProvider>);
-  expect(screen.getAllByTestId('boundary-evidence')[0]).not.toHaveAttribute('open');
-  expect(screen.getByText('证据级别：C')).toBeInTheDocument();
-  expect(screen.getByText('派生方式：最大参考')).toBeInTheDocument();
-  expect(screen.getByText('复核状态：待逐段复核')).toBeInTheDocument();
+  expect(screen.getAllByText('资料说明').length).toBeGreaterThan(0);
+  expect(document.body).not.toHaveTextContent('证据级别：C');
+  expect(document.body).not.toHaveTextContent('派生方式');
+  expect(document.body).not.toHaveTextContent('复核状态');
+  expect(document.body).not.toHaveTextContent('个原始坐标点');
   expect(screen.getByRole('link', {name:/Cliopatria/})).toBeInTheDocument();
 });
 

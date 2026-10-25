@@ -29,19 +29,20 @@ describe('CityHistoryTimeline', () => {
     expect(screen.getByText('暂无已收录人物')).toBeInTheDocument();
   });
 
-  it('shows evidence status and expands its details with a keyboard-accessible disclosure', () => {
+  it('shows reader-facing material notes without evidence workflow status', () => {
     render(<CityHistoryTimeline nodes={nodes} onOpenEntity={vi.fn()} />);
 
-    expect(screen.getByText('来源：可用')).toBeInTheDocument();
-    expect(screen.getByText('时间精度：范围')).toBeInTheDocument();
-    expect(screen.getByText('不确定性：有记录')).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('来源：可用');
+    expect(document.body).not.toHaveTextContent('来源：待解析');
+    expect(document.body).not.toHaveTextContent('时间精度：');
 
-    const disclosure = screen.getByText('查看证据：大明宫营建');
+    const disclosure = screen.getAllByText('资料说明')[0];
     expect(disclosure.tagName).toBe('SUMMARY');
     disclosure.focus();
     fireEvent.click(disclosure);
 
-    expect(screen.getByRole('region', { name: '大明宫营建证据' })).toHaveTextContent('营建年代仍需结合阶段证据。');
+    expect(screen.getByText('营建年代仍需结合阶段证据。')).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('关系数量');
   });
 
   it('keeps the node entity button as the drawer navigation target', () => {

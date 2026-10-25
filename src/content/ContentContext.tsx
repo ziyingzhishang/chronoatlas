@@ -54,7 +54,7 @@ export function ContentProvider({
   const stableValue = useMemo(() => state.status === 'ready' ? state.value : undefined, [state]);
   if (state.status === 'loading') return <main className="content-load-state" role="status">{t('正在加载历史内容…')}</main>;
   if (state.status === 'error') return <main className="content-load-state content-load-error" role="alert"><h1>{t('历史内容加载失败')}</h1><p>{state.error.message}</p></main>;
-  return <ContentContext.Provider value={stableValue!}><div className="content-provider" data-content-revision={state.value.revision}>{children}<output className="content-revision" aria-label={t('内容版本')}>{state.value.revision}</output></div></ContentContext.Provider>;
+  return <ContentContext.Provider value={stableValue!}><div className="content-provider" data-content-revision={state.value.revision}>{children}</div></ContentContext.Provider>;
 }
 
 export function useHistoricalContent() {

@@ -20,7 +20,7 @@ test('renders the event narrative, relationships, evidence, and uncertainty', ()
   expect(screen.getByRole('button', { name: '隋统一南北' })).toBeInTheDocument();
   expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
   expect(screen.getByText('现代地理位置参照')).toBeInTheDocument();
-  expect(screen.getByText(/不确定性/)).toBeInTheDocument();
+  expect(screen.getByText('资料说明')).toBeInTheDocument();
 });
 
 test('renders a clear empty state when no detail record exists', () => {
@@ -29,26 +29,26 @@ test('renders a clear empty state when no detail record exists', () => {
   expect(screen.getByText('暂无已收录事件详情')).toBeInTheDocument();
 });
 
-test('renders the audited approximate time evidence and timeline permission', () => {
+test('renders approximate time evidence in reader language inside material notes', () => {
   const event = events.find((item) => item.id === 'dali-founded')!;
   render(<LocaleProvider><EventDetail event={event} onNavigate={vi.fn()} /></LocaleProvider>);
 
-  expect(screen.getByText('约年')).toBeInTheDocument();
-  expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
-  expect(screen.getByText('937年前后表示大理政权形成；《滇载记》按后晋天福二年记937年，而国家社科成果摘要采用938年，杨干贞改国号、段氏承接和高氏阶段不能混为精确建国日，因此保留约年。')).toBeInTheDocument();
-  expect(screen.getAllByText(/中国历史分期与朝代年表/)).toHaveLength(2);
+  expect(screen.getByText('资料说明')).toBeInTheDocument();
+  expect(screen.getByText(/约在该年前后/)).toBeInTheDocument();
+  expect(screen.getByText(/937年前后表示大理政权形成/)).toBeInTheDocument();
+  expect(screen.getAllByText(/中国历史分期与朝代年表/).length).toBeGreaterThan(0);
+  expect(document.body).not.toHaveTextContent('时间证据审计');
 });
 
-test('renders confirmed and unknown event time review states separately', () => {
+test('renders confirmed and unknown dates without exposing workflow states', () => {
   const confirmedEvent = events.find((item) => item.id === 'an-lushan-rebellion')!;
   render(<LocaleProvider><EventDetail event={confirmedEvent} onNavigate={vi.fn()} /></LocaleProvider>);
-  expect(screen.getByText('已确证')).toBeInTheDocument();
-  expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
+  expect(screen.getByText('年代记录较明确')).toBeInTheDocument();
 
   const unreviewedEvent = events.find((item) => item.id === 'tang-founded')!;
   render(<LocaleProvider><EventDetail event={unreviewedEvent} onNavigate={vi.fn()} /></LocaleProvider>);
-  expect(screen.getByText('未知')).toBeInTheDocument();
-  expect(screen.getByText(/暂不允许时间轴定位/)).toBeInTheDocument();
+  expect(screen.getByText('具体年代尚待核实')).toBeInTheDocument();
+  expect(document.body).not.toHaveTextContent('可定位到时间轴');
 });
 
 test('renders the verified participant record for the Han capital event', () => {
@@ -113,7 +113,7 @@ test('keeps bibliographic citations as text instead of invalid links', () => {
   expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
 });
 
-test('splits multi-link citations and exposes source resolution status', () => {
+test('splits multi-link citations and hides unresolved source identifiers', () => {
   render(<LocaleProvider><EventDetail event={event} detail={{
     eventId: event.id,
     causes: [],
@@ -127,5 +127,6 @@ test('splits multi-link citations and exposes source resolution status', () => {
 
   expect(screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' })).toHaveLength(2);
   expect(screen.getAllByRole('link', { name: '洛阳白马寺官方历史与保护资料' })[0]).toHaveAttribute('href', 'https://www.mct.gov.cn/preview/special/3578/3597/201203/t20120330_235404.html');
-  expect(screen.getByText(/来源未解析/)).toBeInTheDocument();
+  expect(document.body).not.toHaveTextContent('missing-source');
+  expect(document.body).not.toHaveTextContent('来源未解析');
 });

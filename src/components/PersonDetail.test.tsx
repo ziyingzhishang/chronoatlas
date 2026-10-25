@@ -63,8 +63,8 @@ describe('PersonDetail', () => {
     expect(screen.getByRole('heading', { name: '对立关系' })).toBeInTheDocument();
     expect(screen.getAllByText(/李渊/).length).toBeGreaterThan(0);
     expect(screen.getAllByText(/王莽/).length).toBeGreaterThan(0);
-    expect(screen.getByText('来源与考据')).toBeInTheDocument();
-    expect(screen.getAllByText(/不确定性/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText('资料说明').length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('时间证据审计');
   });
 
   it('shows an explicit empty state when detail data is unavailable', () => {
@@ -73,12 +73,11 @@ describe('PersonDetail', () => {
     expect(screen.getByText('暂无已收录人物详情')).toBeInTheDocument();
   });
 
-  it('shows the audited confirmed time evidence and timeline permission', () => {
+  it('shows confirmed time evidence in reader language', () => {
     render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={[]} />);
 
-    expect(screen.getByText('已确证')).toBeInTheDocument();
-    expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
-    expect(screen.getByText(/现有人物目录同时记录生年与卒年/)).toBeInTheDocument();
+    expect(screen.getAllByText('生卒年记录较明确').length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/现有人物目录同时记录生年与卒年/).length).toBeGreaterThan(0);
   });
 
   it('shows approximate and unknown states without inventing a life date', () => {
@@ -91,28 +90,22 @@ describe('PersonDetail', () => {
     };
     render(<PersonDetail person={approximatePerson} detail={getPersonDetail('yu-the-great')} year={2200} claims={[]} />);
 
-    expect(screen.getByText('约年')).toBeInTheDocument();
-    expect(screen.getByText(/可定位到时间轴/)).toBeInTheDocument();
-    expect(screen.getByText(/不将其扩展为完整生卒区间/)).toBeInTheDocument();
+    expect(screen.getAllByText('相关活动年代为约数').length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/不将其扩展为完整生卒区间/).length).toBeGreaterThan(0);
 
     render(<PersonDetail person={{ ...person, id: 'not-in-review', name: '未审计人物' }} detail={getPersonDetail('li-shimin')} year={620} claims={[]} />);
-    expect(screen.getByText('未知')).toBeInTheDocument();
-    expect(screen.getByText(/暂不允许时间轴定位/)).toBeInTheDocument();
+    expect(screen.getAllByText('生卒年尚待核实').length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('可定位到时间轴');
   });
 
-  it('shows relationship coverage audit status above the existing relationship list', () => {
+  it('keeps relationship audit status and internal claim ids out of the reader view', () => {
     render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} />);
 
-    const audit = screen.getByRole('region', { name: '人物关系覆盖审计' });
-    expect(audit).toBeInTheDocument();
-    expect(within(audit).getByText('君臣／治理')).toBeInTheDocument();
-    expect(within(audit).getByText('亲属')).toBeInTheDocument();
-    expect(within(audit).getByText('联盟／对立')).toBeInTheDocument();
-    expect(within(audit).getByText('事件参与')).toBeInTheDocument();
-    expect(audit.querySelectorAll('[data-relationship-coverage-status]')).toHaveLength(4);
-    expect(audit.querySelectorAll('.relationship-coverage-note')).toHaveLength(4);
-    expect(within(audit).getByText('直接关系证据 · claim:claim-li-shimin-ruled-tang')).toBeInTheDocument();
     expect(screen.getByRole('heading', { name: '人物关系' })).toBeInTheDocument();
+    expect(screen.queryByRole('region', { name: '人物关系覆盖审计' })).not.toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('claim:');
+    expect(document.body).not.toHaveTextContent(' claim ');
+    expect(document.body).not.toHaveTextContent('覆盖状态');
   });
 
   it('renders an interactive person-centered relationship graph summary', () => {
@@ -121,13 +114,13 @@ describe('PersonDetail', () => {
 
     const graph = screen.getByRole('region', { name: '人物关系图谱' });
     expect(graph).toBeInTheDocument();
-    const kinshipNode = within(graph).getByRole('button', { name: /父母／子女：李世民 → 李渊/ });
+    const kinshipNode = within(graph).getByRole('button', { name: '父母／子女：李渊' });
     expect(kinshipNode).toBeInTheDocument();
     kinshipNode.click();
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'li-yuan' });
   });
 
-  it('links required relationship coverage to the knowledge coverage report', () => {
+  it('does not link readers to the internal knowledge coverage report', () => {
     const tufaWugu = catalogPeople.find((item) => item.id === 'tufa-wugu')!;
     render(
       <PersonDetail
@@ -140,15 +133,15 @@ describe('PersonDetail', () => {
       />,
     );
 
-    expect(screen.getByRole('link', { name: '打开知识覆盖报告' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
+    expect(screen.queryByRole('link', { name: '打开知识覆盖报告' })).not.toBeInTheDocument();
   });
 
-  it('localizes relationship evidence labels in English', () => {
+  it('keeps internal relationship evidence labels out of the English reader view', () => {
     localStorage.setItem('history-locale', 'en');
     render(<LocaleProvider><PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} /></LocaleProvider>);
 
-    expect(screen.getAllByRole('list', { name: 'Coverage evidence' }).length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/Direct relationship evidence/).length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('Coverage evidence');
+    expect(document.body).not.toHaveTextContent('Direct relationship evidence');
     localStorage.removeItem('history-locale');
   });
 
@@ -157,14 +150,14 @@ describe('PersonDetail', () => {
     render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} onOpenEntity={onOpenEntity} />);
 
     expect(screen.getByRole('heading', { name: '事件参与' })).toBeInTheDocument();
-    const eventRelation = screen.getByRole('button', { name: /参与事件.*方向：李世民.*618年—620年.*时间精度：年.*来源：可用/ });
+    const eventRelation = screen.getAllByRole('button', { name: /参与事件.*唐在长安建立/ }).at(-1)!;
     expect(eventRelation).toBeInTheDocument();
     eventRelation.click();
 
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'event', id: 'tang-founded-changan' });
   });
 
-  it('shows incoming governance relations with the source direction preserved', () => {
+  it('shows incoming governance relations without debug direction text', () => {
     const onOpenEntity = vi.fn();
     render(<PersonDetail
       person={person}
@@ -179,7 +172,8 @@ describe('PersonDetail', () => {
       onOpenEntity={onOpenEntity}
     />);
 
-    expect(screen.getByRole('button', { name: /侍奉／效力.*方向：李渊 → 李世民/ })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /侍奉／效力.*李渊/ }).length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('方向：');
   });
 
   it('renders an HTTP source note for a relationship as a keyboard-accessible external link', () => {
@@ -202,7 +196,7 @@ describe('PersonDetail', () => {
     expect(sourceLink).toHaveAttribute('href', 'https://dfz.shaanxi.gov.cn/zslm/fzzlk/xbsxsxz/xbsxz/xas/201803/P020250630548327427771.pdf');
     expect(sourceLink).toHaveAttribute('target', '_blank');
     expect(sourceLink).toHaveAttribute('rel', 'noreferrer');
-    expect(screen.getByRole('button', { name: /侍奉／效力.*有效期：618年—626年.*来源：可用/ })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /侍奉／效力.*李渊/ }).length).toBeGreaterThan(0);
   });
 
   it('keeps a non-URL relationship bibliography as text rather than a link', () => {
@@ -216,12 +210,12 @@ describe('PersonDetail', () => {
       onOpenEntity={onOpenEntity}
     />);
 
-    expect(screen.getByText('《资治通鉴》')).toBeInTheDocument();
+    expect(screen.getAllByText('《资治通鉴》').length).toBeGreaterThan(0);
     expect(screen.queryByRole('link', { name: '《资治通鉴》' })).not.toBeInTheDocument();
-    expect(screen.getByRole('button', { name: /侍奉／效力.*有效期：618年—626年.*来源：可用/ })).toBeInTheDocument();
+    expect(screen.getAllByRole('button', { name: /侍奉／效力.*李渊/ }).length).toBeGreaterThan(0);
   });
 
-  it('shows traceability metadata on non-event relations and opens person and polity targets', () => {
+  it('opens person and polity targets without exposing traceability codes', () => {
     const onOpenEntity = vi.fn();
     const foundedClaim: HistoricalClaim = {
       id: 'founded-tang', subjectId: 'li-shimin', predicate: 'founded', objectId: 'tang',
@@ -239,12 +233,12 @@ describe('PersonDetail', () => {
       onOpenEntity={onOpenEntity}
     />);
 
-    const kinship = screen.getByRole('button', { name: /父母／子女 · 李渊.*有效期：618年—649年.*时间精度：范围.*证据：交叉核验.*可信度：中.*来源：可用/ });
+    const kinship = screen.getAllByRole('button', { name: /父母／子女.*李渊/ }).at(-1)!;
     expect(kinship).toBeInTheDocument();
     kinship.click();
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'person', id: 'li-yuan' });
 
-    const founded = screen.getByRole('button', { name: /建立 · 唐.*有效期：618年.*证据：明确记载.*来源：可用/ });
+    const founded = screen.getAllByRole('button', { name: /建立.*唐/ }).at(-1)!;
     expect(founded).toBeInTheDocument();
     founded.click();
     expect(onOpenEntity).toHaveBeenCalledWith({ type: 'polity', id: 'tang' });
@@ -254,7 +248,8 @@ describe('PersonDetail', () => {
     const unresolvedClaims = relationshipClaims.map((claim) => claim.id === 'participated' ? { ...claim, sourceIds: ['missing-event-source'] } : claim);
     render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={unresolvedClaims} people={relationPeople} events={events} />);
 
-    expect(screen.getByText(/方向：李世民.*来源：待解析/)).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('missing-event-source');
+    expect(document.body).not.toHaveTextContent('待解析');
   });
 
   it('shows a fifty-sixth batch ruler relation in the person detail governance section', () => {
@@ -308,14 +303,12 @@ describe('PersonDetail', () => {
     expect(screen.getByText(/对立\s+·\s+陈霸先/)).toBeInTheDocument();
   });
 
-  it('keeps relationship coverage status labels available in English', () => {
+  it('keeps relationship audit status labels out of English', () => {
     localStorage.setItem('history-locale', 'en');
     render(<LocaleProvider><PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} /></LocaleProvider>);
 
-    expect(screen.getByRole('region', { name: 'Person relationship coverage audit' })).toBeInTheDocument();
-    expect(screen.getByText('Coverage status')).toBeInTheDocument();
-    expect(screen.getByText('Governance / ruler-subject')).toBeInTheDocument();
-    expect(screen.getByText('Alliance / conflict')).toBeInTheDocument();
+    expect(screen.queryByRole('region', { name: 'Person relationship coverage audit' })).not.toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('Coverage status');
     localStorage.removeItem('history-locale');
   });
 
