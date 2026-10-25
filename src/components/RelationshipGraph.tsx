@@ -2,10 +2,10 @@ import { useState, type KeyboardEvent } from 'react';
 import type { DetailEntity } from '../domain/detail-entity';
 import type { PolityStudyView } from '../domain/study-view';
 import type { ClaimEvidenceType, HistoricalClaim } from '../domain/types';
-import { sourceById } from '../data/sources';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
 import { toPolityRelationshipGraphView, type RelationshipGraphNode, type RelationshipGraphView } from './relationship-graph-model';
+import { useHistoricalContent } from '../content/ContentContext';
 
 export type RelationshipGraphCategory = 'governance' | 'kinship' | 'allianceConflict' | 'eventParticipation' | 'heritage' | 'context';
 export type RelationshipGraphScope = 'current-fact' | 'detail-linked';
@@ -44,8 +44,6 @@ const datePrecisionLabels: Record<HistoricalClaim['datePrecision'], string> = {
   day: '日', year: '年', approximate: '约年', range: '范围', century: '世纪', unknown: '未知',
 };
 
-const knownSourceIds = new Set(Object.keys(sourceById));
-
 export function classifyRelationshipClaim(claim: HistoricalClaim): RelationshipGraphCategory | undefined {
   return categoryForPredicate[claim.predicate];
 }
@@ -77,6 +75,8 @@ type RelationshipGraphProps = {
 
 export function RelationshipGraph({ graph, view, onOpenEntity }: RelationshipGraphProps) {
   const { t } = useLocale();
+  const { catalog } = useHistoricalContent();
+  const knownSourceIds = new Set(catalog.sources.map((source) => source.id));
   const normalizedGraph = graph ?? (view ? toPolityRelationshipGraphView(view) : undefined);
   if (!normalizedGraph) return null;
   const detailGraphNodes = normalizedGraph.detailNodes ?? [];
@@ -177,7 +177,8 @@ function RelationshipEdgeEvidence({ edge, t }: { edge: RelationshipGraphEdge; t:
 }
 
 function RelationshipEdgeSource({ sourceId, t }: { sourceId: string; t: (text: string) => string }) {
-  const source = sourceById[sourceId];
+  const { catalog } = useHistoricalContent();
+  const source = catalog.sources.find((item) => item.id === sourceId);
   if (!source) return <li>{t(sourceId)} · {t('来源未解析')}</li>;
   const urls = sourceUrls(source.urlOrCitation);
   return <li>

@@ -5,7 +5,6 @@ import type { HistoricalEvent, SelectedEntity } from '../domain/types';
 import { EventDetailCard } from '../components/EventDetailCard';
 import { DirectoryPopover } from '../components/DirectoryPopover';
 import { eventYear, eventsAtYear } from '../domain/events';
-import { events } from '../data/events';
 import { InfoPanel } from '../components/InfoPanel';
 import { Legend } from '../components/Legend';
 import { MapView, allLayers, type MapLayer } from '../components/MapView';
@@ -24,23 +23,22 @@ import { PersonDetail } from '../components/PersonDetail';
 import { EventDetail } from '../components/EventDetail';
 import { HeritageDetail } from '../components/HeritageDetail';
 import type { DetailEntity, DetailHistoryEntry } from '../domain/detail-entity';
-import { people } from '../data/people';
-import { heritageById } from '../data/heritage';
-import { getPersonDetail } from '../data/person-details';
-import { getHeritageDetail } from '../data/heritage-details';
-import { claims } from '../data/claims';
-import { changanEvents } from '../data/changan-study';
-import { polities } from '../data/polities';
-import { places } from '../data/places';
+import { ContentProvider, useHistoricalContent } from '../content/ContentContext';
+import type { HistoricalContentRepository } from '../content/repository';
+import { useSingleTopicView } from '../workspace/useSingleTopicView';
 
-const detailEvents = [...events, ...changanEvents.filter((event) => !events.some((catalogEvent) => catalogEvent.id === event.id))];
-
-export function App() {
-  return <LocaleProvider><HistoryWorkspace/></LocaleProvider>;
+export function App({ contentRepository }: { contentRepository?: HistoricalContentRepository } = {}) {
+  return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace/></ContentProvider></LocaleProvider>;
 }
 
 function HistoryWorkspace() {
   const {locale,setLocale,t}=useLocale();
+  const { catalog } = useHistoricalContent();
+  const { claims, events, heritage, heritageDetails, people, personDetails, places, polities, studyEvents: detailEvents } = catalog;
+  const heritageById = useMemo(() => new Map(heritage.map((asset) => [asset.id, asset])), [heritage]);
+  const heritageDetailById = useMemo(() => new Map(heritageDetails.map((detail) => [detail.heritageId, detail])), [heritageDetails]);
+  const personDetailById = useMemo(() => new Map(personDetails.map((detail) => [detail.personId, detail])), [personDetails]);
+  const singleTopicView = useSingleTopicView();
   const [currentYear, setCurrentYear] = useState(800);
   const [selectedEntity, setSelectedEntity] = useState<SelectedEntity>(undefined);
   const [visibleLayers, setVisibleLayers] = useState<Set<MapLayer>>(() => new Set(allLayers.filter(l=>l!=='events')));
@@ -61,6 +59,8 @@ function HistoryWorkspace() {
   const [timelineHistory,setTimelineHistory]=useState<Array<{window:YearWindow;label:string}>>([]);
   const [detailEntity, setDetailEntity] = useState<DetailEntity>();
   const [detailHistory, setDetailHistory] = useState<DetailHistoryEntry[]>([]);
+  const [detailOrigin, setDetailOrigin] = useState({ directoryOpen: false, eventSearchOpen: false });
+  const [topicWidth, setTopicWidth] = useState(44);
   const world = useWorldSlice(currentYear, showWorld);
   const historicalState = useMemo(() => localizeState(getHistoricalState(currentYear, {world:world.slice}),locale), [currentYear,world.slice,locale]);
   const localizedEvents=useMemo(()=>localizeEvents(events,locale),[locale]);
@@ -120,13 +120,22 @@ function HistoryWorkspace() {
   function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
   function openDetail(entity: DetailEntity) {
     if (detailEntity?.type === entity.type && detailEntity.id === entity.id) return;
+    if (!detailEntity) setDetailOrigin({ directoryOpen, eventSearchOpen });
     if (detailEntity && (detailEntity.type !== entity.type || detailEntity.id !== entity.id)) {
-      const title = detailTitle(detailEntity);
+      const title = detailTitle(detailEntity, catalog);
       setDetailHistory((history) => [...history, { entity: detailEntity, title }].slice(-12));
     }
+    setDirectoryOpen(false);
+    setEventSearchOpen(false);
+    setPanel(null);
     setDetailEntity(entity);
   }
-  function closeDetail() { setDetailEntity(undefined); setDetailHistory([]); }
+  function closeDetail() {
+    setDetailEntity(undefined);
+    setDetailHistory([]);
+    setDirectoryOpen(detailOrigin.directoryOpen);
+    setEventSearchOpen(detailOrigin.eventSearchOpen);
+  }
   function backDetail() {
     const previous = detailHistory.at(-1);
     if (!previous) return;
@@ -148,8 +157,9 @@ function HistoryWorkspace() {
   const visibleSearchEvents=eventSearchQuery.trim()?eventSearchMatches:timelineEvents;
   const selectedSearchEvent=selectedEntity?.type==='event'?visibleSearchEvents.find(event=>event.id===selectedEntity.id):undefined;
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
+  const singleViewBackgroundProps = detailEntity && singleTopicView ? { inert: '', 'aria-hidden': true } : {};
   return <main className="workspace">
-    <header className="workspace-header">
+    <header className="workspace-header" {...singleViewBackgroundProps}>
       <div className="workspace-header-left">
         <button className="map-status-hud" type="button" aria-label={t('当前历史状态')} aria-expanded={directoryOpen} aria-controls="directory-popover" onClick={()=>{setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}}>
           <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
@@ -177,7 +187,8 @@ function HistoryWorkspace() {
         <button className="workspace-tool-icon" aria-label={t('更多')} title={t('更多')} aria-expanded={panel==='more'} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p==='more'?null:'more');}}>⋯</button>
       </nav>
     </header>
-    <div className="workspace-map-area">
+    <div className={`workspace-content${detailEntity ? ' has-topic' : ''}`}>
+      <div className="workspace-map-area" {...singleViewBackgroundProps}>
       <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onLayerChange={updateLayer} showWorld={showWorld} onShowWorldChange={value=>{setShowWorld(value);setSelectedEntity(undefined);}} onSelectEntity={selectEntity} onClearSelection={clearMapSelection} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
@@ -185,23 +196,26 @@ function HistoryWorkspace() {
         {panel==='more'&&<><label className="language-setting">{t('显示语言')}<select aria-label={t('显示语言')} value={locale} onChange={e=>setLocale(readLocale(e.target.value))}>{Object.entries(localeNames).map(([value,name])=><option key={value} value={value}>{name}</option>)}</select></label><MapReadingGuide year={currentYear}/><Legend/><p className="detail-note">{t('时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。')}</p><p className="detail-note">{t('桌面可停靠或悬浮时间控制器；手机使用收起、紧凑和展开三档。拖动年份不会改变地图视角。独立网页应用试用版，尚未公开发布。')}</p></>}
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
-    </div>
-      {detailEntity && <EntityDrawer title={detailTitle(detailEntity)} entityType={detailEntity.type} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0}>
-        {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={getPersonDetail(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
+      </div>
+      {detailEntity && <EntityDrawer title={detailTitle(detailEntity, catalog)} entityType={detailEntity.type} mapYear={currentYear} widthPercent={topicWidth} onWidthChange={setTopicWidth} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0} singleView={singleTopicView}>
+        {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={personDetailById.get(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
         {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
-        {detailEntity.type === 'heritage' && (() => { const asset = heritageById[detailEntity.id]; const detail = getHeritageDetail(detailEntity.id); return asset && detail ? <HeritageDetail detail={detail} heritageName={asset.name} placeId={asset.placeId} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录遗产详情')}</p>; })()}
+        {detailEntity.type === 'heritage' && (() => { const asset = heritageById.get(detailEntity.id); const detail = heritageDetailById.get(detailEntity.id); return asset && detail ? <HeritageDetail detail={detail} heritageName={asset.name} placeId={asset.placeId} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录遗产详情')}</p>; })()}
         {(detailEntity.type === 'polity' || detailEntity.type === 'place') && (
           <InfoPanel state={historicalState} selectedEntity={detailEntity} onYearChange={changeYear} onOpenEntity={openDetail} polityDetailMode={detailEntity.type === 'polity' ? 'drawer' : 'summary'}/>
         )}
       </EntityDrawer>}
-    <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
+    </div>
+    <div {...singleViewBackgroundProps}><TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/></div>
   </main>;
 }
 
-function detailTitle(entity: DetailEntity): string {
+function detailTitle(entity: DetailEntity, catalog: ReturnType<typeof useHistoricalContent>['catalog']): string {
+  const { people, studyEvents: detailEvents, heritage, polities, places } = catalog;
+  const heritageById = new Map(heritage.map((item) => [item.id, item]));
   if (entity.type === 'person') return people.find((item) => item.id === entity.id)?.name ?? '人物详情';
   if (entity.type === 'event') return detailEvents.find((item) => item.id === entity.id)?.title ?? '事件详情';
-  if (entity.type === 'heritage') return heritageById[entity.id]?.name ?? '遗产详情';
+  if (entity.type === 'heritage') return heritageById.get(entity.id)?.name ?? '遗产详情';
   if (entity.type === 'polity') return polities.find((item) => item.id === entity.id)?.name ?? '政权详情';
   return places.find((item) => item.id === entity.id)?.historicalName ?? '地点详情';
 }

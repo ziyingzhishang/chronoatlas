@@ -1,7 +1,6 @@
 import type { ClaimEvidenceType, Confidence, HistoricalClaim, HistoricalEvent, Person, PersonDetail as PersonDetailRecord, PersonRelationType, Polity } from '../domain/types';
 import { groupPersonRelationships, type PersonRelationship } from '../domain/relationships';
 import { formatHistoricalYear } from '../domain/timeline';
-import { sourceById } from '../data/sources';
 import { buildPersonTimeCoverageReport, type PersonTimeReview, type PersonTimeReviewStatus } from '../data/person-time-review';
 import {
   buildPersonRelationshipCoverageReport,
@@ -11,6 +10,7 @@ import {
 } from '../data/person-relationship-coverage';
 import type { PersonRelationshipEvidenceKind } from '../data/person-relationship-evidence';
 import { useLocale } from '../i18n/locale';
+import { useHistoricalContent } from '../content/ContentContext';
 
 export interface PersonDetailProps {
   person: Person;
@@ -49,15 +49,32 @@ const relationDatePrecisionLabels: Record<HistoricalClaim['datePrecision'], stri
 
 export function PersonDetail({ person, detail, year, claims, people = [], polities = [], events = [], onOpenEntity }: PersonDetailProps) {
   const { t } = useLocale();
+  const { catalog, external } = useHistoricalContent();
   if (!detail) return <article className="event-detail person-detail" aria-label={t('人物详情')}><h3>{t(person.name)}</h3><p className="detail-note">{t('暂无已收录人物详情')}</p></article>;
 
   const grouped = groupPersonRelationships(person.id, year, claims);
   const personById = new Map(people.map((item) => [item.id, item]));
   const polityById = new Map(polities.map((item) => [item.id, item]));
   const eventById = new Map(events.map((item) => [item.id, item]));
-  const sources = [...new Set(detail.sourceIds)].map((sourceId) => sourceById[sourceId]).filter(Boolean);
-  const timeReview = buildPersonTimeCoverageReport().byPersonId[person.id] ?? unknownPersonTimeReview(person);
-  const relationshipCoverage = buildPersonRelationshipCoverageReport().byPersonId[person.id];
+  const sourceById = new Map(catalog.sources.map((source) => [source.id, source]));
+  const sources = [...new Set(detail.sourceIds)].map((sourceId) => sourceById.get(sourceId)).filter((source): source is NonNullable<typeof source> => Boolean(source));
+  const timeReview = (external ? buildPersonTimeCoverageReport({ people, personDetails: catalog.personDetails, claims }) : buildPersonTimeCoverageReport()).byPersonId[person.id] ?? unknownPersonTimeReview(person);
+  const relationshipCoverage = (external ? buildPersonRelationshipCoverageReport({
+    catalog: {
+      polities,
+      people,
+      events,
+      eventDetails: catalog.eventDetails,
+      heritageAssets: catalog.heritage,
+      heritageDetails: catalog.heritageDetails,
+      personDetails: catalog.personDetails,
+      polityDetails: catalog.polityDetails,
+      claims,
+      sourceNotes: catalog.sources,
+      places: catalog.places,
+      capitalTerms: catalog.capitalTerms,
+    },
+  }) : buildPersonRelationshipCoverageReport()).byPersonId[person.id];
 
   return <article className="event-detail person-detail" aria-label={t('人物详情')}>
     <div className="event-meta">{t(person.roles?.join('／') ?? '历史人物')} · {formatLife(person.birthYear, person.deathYear)}</div>
@@ -160,7 +177,8 @@ function PersonRelationshipGraph({ personName, grouped, people, polities, events
 }
 
 function TimeEvidenceReview({ review, t }: { review: PersonTimeReview; t: (text: string) => string }) {
-  const sourceNames = review.evidenceSourceIds.map((sourceId) => sourceById[sourceId]?.title ?? sourceId);
+  const { catalog } = useHistoricalContent();
+  const sourceNames = review.evidenceSourceIds.map((sourceId) => catalog.sources.find((source) => source.id === sourceId)?.title ?? sourceId);
   return <section className="time-evidence-review" aria-label={t('时间证据审计')}>
     <h4>{t('时间证据审计')}</h4>
     <p><strong>{t(personTimeStatusLabel(review.status))}</strong> · {t(review.allowTimelinePosition ? '可定位到时间轴' : '暂不允许时间轴定位')}</p>
@@ -191,20 +209,24 @@ function RelationSection({ title, personName, types, grouped, people, polities, 
 }
 
 function RelationItem({ relation, personName, people, polities, events, onOpenEntity, t }: { relation: PersonRelationship; personName: string; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {
+  const { catalog } = useHistoricalContent();
+  const knownSourceIds = new Set(catalog.sources.map((source) => source.id));
   const objectId = relation.claim.objectId ?? '';
   const target = relation.kind === 'person-person' ? people.get(objectId) : relation.kind === 'person-polity' ? polities.get(objectId) : events.get(objectId);
   const label = target ? ('title' in target ? t(target.title) : t(target.name)) : objectId;
   const targetType = relation.kind === 'person-person' ? 'person' : relation.kind === 'person-polity' ? 'polity' : relation.kind === 'person-event' ? 'event' : 'heritage';
   const relationLabel = t(relationLabels[relation.relationType] ?? relation.claim.predicate);
   const direction = relation.direction === 'incoming' ? `${label} → ${personName}` : `${personName} → ${label}`;
-  const content = <>{relationLabel} · {label}<small className="person-relation-meta">{t('方向：')}{t(direction)} · {t('有效期：')}{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)} · {t('时间精度：')}{t(relationDatePrecisionLabels[relation.claim.datePrecision])} · {t('证据：')}{t(claimEvidenceTypeLabel(relation.claim.evidenceType))} · {t('可信度：')}{t(confidenceLabel(relation.claim.confidence))} · {t('来源：')}{t(hasResolvableSources(relation.claim) ? '可用' : '待解析')}</small>{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
+  const content = <>{relationLabel} · {label}<small className="person-relation-meta">{t('方向：')}{t(direction)} · {t('有效期：')}{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)} · {t('时间精度：')}{t(relationDatePrecisionLabels[relation.claim.datePrecision])} · {t('证据：')}{t(claimEvidenceTypeLabel(relation.claim.evidenceType))} · {t('可信度：')}{t(confidenceLabel(relation.claim.confidence))} · {t('来源：')}{t(hasResolvableSources(relation.claim, knownSourceIds) ? '可用' : '待解析')}</small>{relation.claim.uncertaintyNote && <small>{t('不确定性：')}{t(relation.claim.uncertaintyNote)}</small>}</>;
   return <li>{onOpenEntity ? <button type="button" onClick={() => onOpenEntity({ type: targetType, id: objectId })}>{content}</button> : <span>{content}</span>}<RelationshipSourceLinks sourceIds={relation.claim.sourceIds} t={t} /></li>;
 }
 
 function RelationshipSourceLinks({ sourceIds, t }: { sourceIds: string[]; t: (text: string) => string }) {
+  const { catalog } = useHistoricalContent();
+  const sourceById = new Map(catalog.sources.map((source) => [source.id, source]));
   return <small className="person-relation-sources" aria-label={t('关系来源：')}>
     {t('关系来源：')}{sourceIds.length > 0 ? sourceIds.map((sourceId, index) => {
-      const source = sourceById[sourceId];
+      const source = sourceById.get(sourceId);
       const isHttpUrl = source?.urlOrCitation?.startsWith('http://') || source?.urlOrCitation?.startsWith('https://');
       return <span key={sourceId}>{index > 0 && '、'}{source ? (isHttpUrl ? <a href={source.urlOrCitation} target="_blank" rel="noreferrer">{t(source.title)}</a> : <span>{t(source.title)}{source.urlOrCitation && ` · ${t(source.urlOrCitation)}`}</span>) : sourceId}</span>;
     }) : t('待补')}
@@ -219,8 +241,8 @@ function confidenceLabel(confidence: Confidence) {
   return confidence === 'high' ? '高' : confidence === 'medium' ? '中' : '低';
 }
 
-function hasResolvableSources(claim: HistoricalClaim) {
-  return claim.sourceIds.length > 0 && claim.sourceIds.every((sourceId) => sourceById[sourceId] !== undefined);
+function hasResolvableSources(claim: HistoricalClaim, knownSourceIds: Set<string>) {
+  return claim.sourceIds.length > 0 && claim.sourceIds.every((sourceId) => knownSourceIds.has(sourceId));
 }
 
 function formatLife(birthYear?: number, deathYear?: number) {

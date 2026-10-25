@@ -1,29 +1,20 @@
 import { useLocale } from '../i18n/locale';
 import type { HistoricalState, SelectedEntity } from '../domain/types';
-import { sourceById } from '../data/sources';
+import { useMemo } from 'react';
 import { formatHistoricalYear } from '../domain/timeline';
 import { boundariesByPolity } from '../data/boundaries';
 import { mappingNotes } from '../data/cliopatria-mapping';
 import { formatSourceField } from '../i18n/source-display';
 import { sovereigntyNoticesFor } from '../data/sovereignty';
 import { boundaryStatusLabel } from '../map/presentation';
-import { activeCapitalRecords } from '../data/capital-history';
-import { capitalHistory } from '../data/capital-history';
-import { claims } from '../data/claims';
-import { events as historicalEvents } from '../data/events';
-import { eventDetails } from '../data/event-details';
-import { changanEvents } from '../data/changan-study';
-import { heritageAssets } from '../data/heritage';
-import { people } from '../data/people';
-import { places } from '../data/places';
-import { polities } from '../data/polities';
 import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
 import type { DetailEntity } from '../domain/detail-entity';
-import { getPolityDetail, polityDetails } from '../data/polity-details';
 import { PolityDetail } from './PolityDetail';
 import { auditKnowledgeCoverage } from '../data/knowledge-coverage';
 import { KnowledgeCoveragePanel } from './KnowledgeCoveragePanel';
+import { useHistoricalContent } from '../content/ContentContext';
+import type { Polity } from '../domain/types';
 
 interface InfoPanelProps {
   state: HistoricalState;
@@ -44,31 +35,35 @@ const controlLabels = {
 const range = (from:number,to:number) => from===to ? formatHistoricalYear(from) : `${formatHistoricalYear(from)}—${formatHistoricalYear(to)}`;
 const sourceYear = (year:number) => year===0 ? '0（来源边界值，非公元0年）' : formatHistoricalYear(year);
 const sourceRange = (from:number,to:number) => from===to ? sourceYear(from) : `${sourceYear(from)}—${sourceYear(to)}`;
-const polityStudyEvents = [...historicalEvents, ...changanEvents].filter((event, index, all) => all.findIndex((candidate) => candidate.id === event.id) === index);
-const cityStudyEvents = polityStudyEvents;
-const uniquePolities = (items: typeof polities) => [...new Map(items.map((polity) => [polity.id, polity])).values()];
-const knowledgeCoverageReport = auditKnowledgeCoverage();
+const uniquePolities = (items: readonly Polity[]) => [...new Map(items.map((polity) => [polity.id, polity])).values()];
 
 export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
+  const { catalog } = useHistoricalContent();
+  const { capitalTerms, claims, eventDetails, events, studyEvents: polityStudyEvents, heritage, heritageDetails, people, personDetails, places, polities, polityDetails, sources } = catalog;
+  const cityStudyEvents = polityStudyEvents;
+  const sourceById = useMemo(() => Object.fromEntries(sources.map((source) => [source.id, source])), [sources]);
+  const knowledgeCoverageReport = useMemo(() => auditKnowledgeCoverage({ polities, people, events, eventDetails, heritageAssets: heritage, heritageDetails, personDetails, polityDetails, claims, sourceNotes: sources, places, capitalTerms }), [polities, people, events, eventDetails, heritage, heritageDetails, personDetails, polityDetails, claims, sources, places, capitalTerms]);
   const prose = (value:string) => locale==='en' && /[\u3400-\u9fff]/.test(value) && t(value)===value
     ? 'Verification note retained in the Chinese data record; consult the linked source for details.' : t(value);
   const listSeparator=locale==='en' ? ', ' : '、';
   const allPolities = uniquePolities([...polities, ...state.activePolities]);
   const selected = selectedEntity ? selectedEntity.type==='polity' ? allPolities.find(p=>p.id===selectedEntity.id) : selectedEntity.type==='place' ? state.places.find(p=>p.id===selectedEntity.id) : state.events.find(e=>e.id===selectedEntity.id) : undefined;
   const capital = selected && 'capitalPlaceId' in selected && selected.capitalPlaceId ? state.places.find(place=>place.id===selected.capitalPlaceId) : undefined;
-  const currentCapitalTerms = selected && 'name' in selected ? activeCapitalRecords(state.year, selected.id) : [];
-  const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalRecords(state.year).filter(record=>record.placeId===selected.id) : [];
+  const activeCapitalTerms = capitalTerms.filter((record) => record.validFrom <= state.year && record.validTo >= state.year);
+  const currentCapitalTerms = selected && 'name' in selected ? activeCapitalTerms.filter((record) => record.polityId === selected.id) : [];
+  const selectedPlaceCapitalTerms = selected && 'historicalName' in selected ? activeCapitalTerms.filter(record=>record.placeId===selected.id) : [];
   const studyView = selectedEntity?.type === 'polity'
-    ? buildPolityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: polityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory, polityDetails })
+    ? buildPolityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage, events: polityStudyEvents, eventDetails, claims, capitalTerms, polityDetails })
     : selectedEntity?.type === 'place'
-      ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage: heritageAssets, events: cityStudyEvents, eventDetails, claims, capitalTerms: capitalHistory })
+      ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage, events: cityStudyEvents, eventDetails, claims, capitalTerms })
       : undefined;
   const coverageContext = selectedEntity?.type === 'polity' && selected
     ? { type: 'polity' as const, id: selected.id }
     : selectedEntity?.type === 'place' && selected
       ? { type: 'city' as const, id: selected.id }
       : undefined;
+  const selectedPolityDetail = selectedEntity?.type === 'polity' ? polityDetails.find((detail) => detail.polityId === selectedEntity.id) : undefined;
   const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
 
   return (
@@ -130,7 +125,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           <span className="eyebrow">{t("历史政权")}</span>
           <h2>{selected.name}</h2>
           <p className="panel-intro">{t(selected.description)}</p>
-          {getPolityDetail(selected.id) && <PolityDetail detail={getPolityDetail(selected.id)!} mode={polityDetailMode} onOpenEntity={onOpenEntity} />}
+          {selectedPolityDetail && <PolityDetail detail={selectedPolityDetail} mode={polityDetailMode} onOpenEntity={onOpenEntity} />}
           {sovereigntyNoticesFor(state.year, selected.id).map(notice => <section className="sovereignty-notice" data-testid="taiwan-sovereignty-notice" key={notice.id}>
             <h3>{t(notice.title)}</h3>
             <p>{t(notice.statement)}</p>

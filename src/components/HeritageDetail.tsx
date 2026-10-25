@@ -1,11 +1,6 @@
-import { events } from '../data/events';
-import { heritageById } from '../data/heritage';
-import { people } from '../data/people';
-import { places } from '../data/places';
-import { polities } from '../data/polities';
-import { sourceById } from '../data/sources';
 import type { HeritageDetail as HeritageDetailData, HeritagePhaseType } from '../data/heritage-details';
 import { useLocale } from '../i18n/locale';
+import { useHistoricalContent } from '../content/ContentContext';
 
 export interface HeritageNavigationTarget {
   type: 'person' | 'polity' | 'event' | 'place';
@@ -32,19 +27,19 @@ const fallbackLabels: Record<string, string> = {
   'xuanzang-translations': '玄奘取经',
 };
 
-function entityLabel(type: HeritageNavigationTarget['type'], id: string): string {
+function entityLabel(type: HeritageNavigationTarget['type'], id: string, catalog: ReturnType<typeof useHistoricalContent>['catalog']): string {
   if (fallbackLabels[id]) return fallbackLabels[id];
-  if (type === 'person') return people.find((person) => person.id === id)?.name ?? id;
-  if (type === 'polity') return polities.find((polity) => polity.id === id)?.name ?? id;
-  if (type === 'place') return places.find((place) => place.id === id)?.historicalName ?? id;
-  return events.find((event) => event.id === id)?.title ?? id;
+  if (type === 'person') return catalog.people.find((person) => person.id === id)?.name ?? id;
+  if (type === 'polity') return catalog.polities.find((polity) => polity.id === id)?.name ?? id;
+  if (type === 'place') return catalog.places.find((place) => place.id === id)?.historicalName ?? id;
+  return catalog.studyEvents.find((event) => event.id === id)?.title ?? id;
 }
 
-function hasEntity(type: HeritageNavigationTarget['type'], id: string): boolean {
-  if (type === 'person') return people.some((person) => person.id === id);
-  if (type === 'polity') return polities.some((polity) => polity.id === id);
-  if (type === 'place') return places.some((place) => place.id === id);
-  return events.some((event) => event.id === id);
+function hasEntity(type: HeritageNavigationTarget['type'], id: string, catalog: ReturnType<typeof useHistoricalContent>['catalog']): boolean {
+  if (type === 'person') return catalog.people.some((person) => person.id === id);
+  if (type === 'polity') return catalog.polities.some((polity) => polity.id === id);
+  if (type === 'place') return catalog.places.some((place) => place.id === id);
+  return catalog.studyEvents.some((event) => event.id === id);
 }
 
 function RelatedEntityList({
@@ -57,12 +52,13 @@ function RelatedEntityList({
   onNavigate?: (target: HeritageNavigationTarget) => void;
 }) {
   const { t } = useLocale();
+  const { catalog } = useHistoricalContent();
   if (ids.length === 0) return <p className="detail-note">{t('暂无已关联资料')}</p>;
   return <ul className="heritage-related-list">
     {ids.map((id) => {
-      const resolved = hasEntity(type, id);
+      const resolved = hasEntity(type, id, catalog);
       return <li key={id}>
-        {onNavigate && resolved ? <button type="button" onClick={() => onNavigate({ type, id })}>{t(entityLabel(type, id))}</button> : <span>{t(entityLabel(type, id))}</span>}
+        {onNavigate && resolved ? <button type="button" onClick={() => onNavigate({ type, id })}>{t(entityLabel(type, id, catalog))}</button> : <span>{t(entityLabel(type, id, catalog))}</span>}
         {!resolved && <span className="detail-note">（{t('暂无已关联资料')}）</span>}
       </li>;
     })}
@@ -71,8 +67,9 @@ function RelatedEntityList({
 
 export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOpenEntity }: HeritageDetailProps) {
   const { t } = useLocale();
+  const { catalog } = useHistoricalContent();
   const navigate = onNavigate ?? onOpenEntity;
-  const name = heritageName ?? heritageById[detail.heritageId]?.name ?? detail.heritageId;
+  const name = heritageName ?? catalog.heritage.find((asset) => asset.id === detail.heritageId)?.name ?? detail.heritageId;
 
   return <article className="heritage-detail" aria-label={t('遗产详情')}>
     <header className="heritage-detail-header">
@@ -80,7 +77,7 @@ export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOp
       <h2>{t(name)}</h2>
       <p className="heritage-detail-location">
         <span>{t('现代位置：')}</span><span>{t(detail.modernLocation)}</span>
-        {placeId && <><span>{t('关联地点：')}</span>{navigate ? <button type="button" onClick={() => navigate({ type: 'place', id: placeId })}>{t(entityLabel('place', placeId))}</button> : <span>{t(entityLabel('place', placeId))}</span>}</>}
+        {placeId && <><span>{t('关联地点：')}</span>{navigate ? <button type="button" onClick={() => navigate({ type: 'place', id: placeId })}>{t(entityLabel('place', placeId, catalog))}</button> : <span>{t(entityLabel('place', placeId, catalog))}</span>}</>}
       </p>
     </header>
 
@@ -141,8 +138,9 @@ function sourceUrls(citation?: string) {
 
 function SourceEvidenceSummary({ sourceIds }: { sourceIds: string[] }) {
   const { t } = useLocale();
+  const { catalog } = useHistoricalContent();
   return <span>{sourceIds.map((sourceId) => {
-    const source = sourceById[sourceId];
+    const source = catalog.sources.find((item) => item.id === sourceId);
     const urls = sourceUrls(source?.urlOrCitation);
     const status = !source ? '来源未解析' : urls.length > 0 ? '来源链接' : '书目引文';
     const label = t(source?.title ?? sourceId);
@@ -155,7 +153,8 @@ function SourceEvidenceSummary({ sourceIds }: { sourceIds: string[] }) {
 
 function HeritageSourceEvidence({ sourceId }: { sourceId: string }) {
   const { t } = useLocale();
-  const source = sourceById[sourceId];
+  const { catalog } = useHistoricalContent();
+  const source = catalog.sources.find((item) => item.id === sourceId);
   const urls = sourceUrls(source?.urlOrCitation);
   if (!source) return <li><strong>{t(sourceId)}</strong><span className="detail-note"> · {t('来源未解析')}</span></li>;
   return <li>

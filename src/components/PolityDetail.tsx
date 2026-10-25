@@ -1,15 +1,8 @@
 import type { DetailEntity } from '../domain/detail-entity';
 import type { PolityDetail as PolityDetailRecord } from '../domain/types';
-import { events } from '../data/events';
-import { people } from '../data/people';
-import { heritageById } from '../data/heritage';
-import { heritageDetails } from '../data/heritage-details';
-import { places } from '../data/places';
-import { eventDetails } from '../data/event-details';
-import { personDetails } from '../data/person-details';
-import { sourceById } from '../data/sources';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
+import { useHistoricalContent } from '../content/ContentContext';
 
 interface PolityDetailProps {
   detail: PolityDetailRecord;
@@ -34,8 +27,10 @@ function EvidenceMeta({
   uncertaintyNote?: string;
   t: (text: string) => string;
 }) {
+  const { catalog } = useHistoricalContent();
+  const sourceIdsAvailable = new Set(catalog.sources.map((source) => source.id));
   const ids = unique(sourceIds);
-  const resolvedCount = ids.filter((sourceId) => sourceById[sourceId]).length;
+  const resolvedCount = ids.filter((sourceId) => sourceIdsAvailable.has(sourceId)).length;
   return <small className="polity-detail-evidence">
     {optionalRange(validFrom, validTo) && <span>{t('有效期：')}{t(optionalRange(validFrom, validTo)!)}</span>}
     <span>{t('来源解析：')}{resolvedCount}/{ids.length} {t(resolvedCount === ids.length && ids.length > 0 ? '已解析' : '未解析')}</span>
@@ -50,6 +45,10 @@ function EntityLink({ label, entity, onOpenEntity }: { label: string; entity: De
 
 export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityDetailProps) {
   const { t } = useLocale();
+  const { catalog } = useHistoricalContent();
+  const { studyEvents: events, people, heritage, heritageDetails, places, eventDetails, personDetails, sources } = catalog;
+  const heritageById = Object.fromEntries(heritage.map((item) => [item.id, item]));
+  const sourceById = Object.fromEntries(sources.map((item) => [item.id, item]));
   const personById = new Map(people.map((person) => [person.id, person]));
   const eventById = new Map(events.map((event) => [event.id, event]));
   const placeById = new Map(places.map((place) => [place.id, place]));

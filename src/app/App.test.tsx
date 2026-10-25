@@ -44,12 +44,13 @@ test('opens a deep entity drawer from the polity study view and supports back na
   await userEvent.click(screen.getByRole('button', { name: /唐/ }));
   await userEvent.click(screen.getByRole('button', { name: /^李世民$/ }));
   expect(screen.getByRole('dialog', { name: '李世民' })).toHaveClass('entity-drawer');
+  expect(screen.queryByRole('complementary', { name: '政权目录' })).not.toBeInTheDocument();
   expect(screen.getByText('人物关系')).toBeInTheDocument();
   await userEvent.click(within(screen.getByRole('dialog', { name: '李世民' })).getByRole('button', { name: '关闭详情' }));
   expect(screen.queryByRole('dialog', { name: '李世民' })).not.toBeInTheDocument();
 });
 
-test('opens the 50vw event drawer from the event search result card', async () => {
+test('opens a resizable event topic beside the map from the event search result card', async () => {
   render(<App />);
   const search = screen.getByRole('searchbox', { name: '搜索历史事件' });
 
@@ -59,7 +60,10 @@ test('opens the 50vw event drawer from the event search result card', async () =
 
   const drawer = screen.getByRole('dialog', { name: '秦统一六国' });
   expect(drawer).toHaveClass('entity-drawer', 'entity-drawer-event');
-  expect(getComputedStyle(drawer).width).toBe('50vw');
+  expect(getComputedStyle(drawer).width).toBe('44%');
+  expect(drawer.parentElement).toHaveClass('workspace-content', 'has-topic');
+  expect(within(drawer).getByRole('separator', { name: '调整地图与专题栏宽度' })).toHaveAttribute('aria-valuenow', '44');
+  expect(within(drawer).getByText('地图时点：前221年')).toBeInTheDocument();
   expect(within(drawer).getByRole('article', { name: '事件详情' })).toBeInTheDocument();
 });
 
@@ -95,7 +99,7 @@ test('opens event and heritage details from the polity study summary', async () 
   await userEvent.click(screen.getByRole('button', { name: '唐在长安建立' }));
   const eventDrawer = screen.getByRole('dialog', { name: '唐在长安建立' });
   expect(eventDrawer).toHaveClass('entity-drawer');
-  expect(getComputedStyle(eventDrawer).width).toBe('50vw');
+  expect(getComputedStyle(eventDrawer).width).toBe('44%');
   expect(within(eventDrawer).getByRole('article', { name: '事件详情' })).toContainElement(within(eventDrawer).getByRole('heading', { name: '唐在长安建立', level: 3 }));
 
   await userEvent.click(within(eventDrawer).getByRole('button', { name: '李渊' }));
@@ -106,7 +110,7 @@ test('opens event and heritage details from the polity study summary', async () 
   await userEvent.click(screen.getByRole('button', { name: '大明宫遗址' }));
   const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
   expect(heritageDrawer).toHaveClass('entity-drawer');
-  expect(getComputedStyle(heritageDrawer).width).toBe('50vw');
+  expect(getComputedStyle(heritageDrawer).width).toBe('44%');
   expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
 });
 
@@ -121,7 +125,7 @@ test('opens the capital place detail from the polity study summary', async () =>
   expect(within(placeDrawer).getByRole('button', { name: '西安市' })).toBeInTheDocument();
 });
 
-test('opens an ended historical polity from the city study view in the 50vw entity drawer', async () => {
+test('opens an ended historical polity from the city study view in the topic split', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
   await userEvent.click(screen.getByRole('button', { name: /唐/ }));
@@ -133,7 +137,7 @@ test('opens an ended historical polity from the city study view in the 50vw enti
 
   const polityDrawer = screen.getByRole('dialog', { name: '隋' });
   expect(polityDrawer).toHaveClass('entity-drawer', 'entity-drawer-polity');
-  expect(getComputedStyle(polityDrawer).width).toBe('50vw');
+  expect(getComputedStyle(polityDrawer).width).toBe('44%');
   expect(within(polityDrawer).getByRole('heading', { name: '建立过程' })).toBeInTheDocument();
 });
 
@@ -173,7 +177,7 @@ test('opens the complete heritage drawer from the city relation panel', async ()
 
   const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
   expect(heritageDrawer).toHaveClass('entity-drawer-heritage');
-  expect(getComputedStyle(heritageDrawer).width).toBe('50vw');
+  expect(getComputedStyle(heritageDrawer).width).toBe('44%');
   expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
   expect(within(heritageDrawer).getAllByText('不确定性：').length).toBeGreaterThan(0);
   expect(within(heritageDrawer).getByRole('button', { name: '返回上一个实体' })).toBeInTheDocument();
@@ -194,6 +198,6 @@ test('opens the complete heritage drawer from a map-selected place detail', asyn
 
   const heritageDrawer = screen.getByRole('dialog', { name: '大明宫遗址' });
   expect(heritageDrawer).toHaveClass('entity-drawer-heritage');
-  expect(getComputedStyle(heritageDrawer).width).toBe('50vw');
+  expect(getComputedStyle(heritageDrawer).width).toBe('44%');
   expect(within(heritageDrawer).getByRole('heading', { name: '建造沿革' })).toBeInTheDocument();
 });

@@ -2,15 +2,9 @@ import { useLocale } from '../i18n/locale';
 import type { DetailEntity } from '../domain/detail-entity';
 import type { HistoricalEvent, HistoricalEventDetail } from '../domain/types';
 import { eventDate } from './EventDetailCard';
-import { events } from '../data/events';
-import { changanEvents } from '../data/changan-study';
-import { getEventDetail } from '../data/event-details';
-import { people } from '../data/people';
-import { polities } from '../data/polities';
-import { places } from '../data/places';
-import { sourceById } from '../data/sources';
 import { reviewEventTimeCoverage, type EventTimeReviewEntry, type EventTimeReviewStatus } from '../data/event-time-review';
 import { formatHistoricalYear } from '../domain/timeline';
+import { useHistoricalContent } from '../content/ContentContext';
 
 export interface EventDetailProps {
   event: HistoricalEvent;
@@ -32,8 +26,11 @@ function LinkedLabel({
   return <button type="button" onClick={() => onNavigate(entity)}>{label}</button>;
 }
 
-export function EventDetail({ event, detail = getEventDetail(event.id), onNavigate, onOpenEntity }: EventDetailProps) {
+export function EventDetail({ event, detail: suppliedDetail, onNavigate, onOpenEntity }: EventDetailProps) {
   const { t } = useLocale();
+  const { catalog } = useHistoricalContent();
+  const { people, polities, places, events, studyEvents: detailEvents, eventDetails, eventTimeReviews, sources } = catalog;
+  const detail = suppliedDetail ?? eventDetails.find((item) => item.eventId === event.id);
   const navigate = onNavigate ?? onOpenEntity;
 
   if (!detail) {
@@ -46,9 +43,8 @@ export function EventDetail({ event, detail = getEventDetail(event.id), onNaviga
   const participantById = new Map(people.map((person) => [person.id, person]));
   const polityById = new Map(polities.map((polity) => [polity.id, polity]));
   const placeById = new Map(places.map((place) => [place.id, place]));
-  const detailEvents = [...events, ...changanEvents.filter((item) => !events.some((eventItem) => eventItem.id === item.id))];
   const eventById = new Map(detailEvents.map((item) => [item.id, item]));
-  const timeReview = reviewEventTimeCoverage().records.find((record) => record.eventId === event.id) ?? unknownEventTimeReview(event.id);
+  const timeReview = reviewEventTimeCoverage({ events, eventDetails, reviewEntries: eventTimeReviews, knownSourceIds: sources.map((source) => source.id) }).records.find((record) => record.eventId === event.id) ?? unknownEventTimeReview(event.id);
 
   return <article className="event-detail" aria-label={t('事件详情')}>
     <div className="event-meta">{t(eventDate(event))} · {t(event.region === 'world' ? '同期世界' : '中国历史')} · {t(event.category ?? '历史转折')}</div>
@@ -116,7 +112,8 @@ function sourceUrls(citation?: string) {
 
 function SourceEvidence({ sourceId }: { sourceId: string }) {
   const { t } = useLocale();
-  const source = sourceById[sourceId];
+  const { catalog } = useHistoricalContent();
+  const source = catalog.sources.find((item) => item.id === sourceId);
   const urls = sourceUrls(source?.urlOrCitation);
   if (!source) {
     return <li><span>{t(sourceId)}</span><span className="detail-note"> · {t('来源未解析')}</span></li>;
@@ -128,7 +125,8 @@ function SourceEvidence({ sourceId }: { sourceId: string }) {
 }
 
 function TimeEvidenceReview({ review, t }: { review: Pick<EventTimeReviewEntry, 'eventId' | 'status' | 'explanation' | 'timelineStrategy'> & { sourceIds: string[] }; t: (text: string) => string }) {
-  const sourceNames = review.sourceIds.map((sourceId) => sourceById[sourceId]?.title ?? sourceId);
+  const { catalog } = useHistoricalContent();
+  const sourceNames = review.sourceIds.map((sourceId) => catalog.sources.find((source) => source.id === sourceId)?.title ?? sourceId);
   const allowTimelinePosition = review.timelineStrategy !== 'unknown-window';
   return <section className="time-evidence-review" aria-label={t('时间证据审计')}>
     <h4>{t('时间证据审计')}</h4>
