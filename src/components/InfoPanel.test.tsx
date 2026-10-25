@@ -121,6 +121,8 @@ test('shows boundary sources and limitations without internal evidence codes', (
   expect(document.body).not.toHaveTextContent('派生方式');
   expect(document.body).not.toHaveTextContent('复核状态');
   expect(document.body).not.toHaveTextContent('个原始坐标点');
+  expect(document.body).not.toHaveTextContent(/万 km²/);
+  expect(document.body).not.toHaveTextContent('来源文献原题：');
   expect(screen.getByRole('link', {name:/Cliopatria/})).toBeInTheDocument();
 });
 

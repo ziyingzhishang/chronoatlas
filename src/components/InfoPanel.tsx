@@ -1,10 +1,8 @@
 import { useLocale } from '../i18n/locale';
 import type { BoundaryState, HistoricalState, SelectedEntity } from '../domain/types';
-import { useMemo } from 'react';
 import { formatHistoricalYear } from '../domain/timeline';
 import { boundariesByPolity } from '../data/boundaries';
 import { mappingNotes } from '../data/cliopatria-mapping';
-import { formatSourceField } from '../i18n/source-display';
 import { sovereigntyNoticesFor } from '../data/sovereignty';
 import { boundaryStatusLabel } from '../map/presentation';
 import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
@@ -48,7 +46,6 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
   const { catalog } = useHistoricalContent();
   const { capitalTerms, claims, eventDetails, events, studyEvents: polityStudyEvents, heritage, heritageDetails, people, personDetails, places, polities, polityDetails, sources } = catalog;
   const cityStudyEvents = polityStudyEvents;
-  const sourceById = useMemo(() => Object.fromEntries(sources.map((source) => [source.id, source])), [sources]);
   const prose = (value:string) => locale==='en' && /[\u3400-\u9fff]/.test(value) && t(value)===value
     ? 'Verification note retained in the Chinese data record; consult the linked source for details.' : t(value);
   const listSeparator=locale==='en' ? ', ' : '、';
@@ -64,7 +61,6 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
       ? buildCityStudyView(selectedEntity.id, state.year, { polities: allPolities, places, people, heritage, events: cityStudyEvents, eventDetails, claims, capitalTerms })
       : undefined;
   const selectedPolityDetail = selectedEntity?.type === 'polity' ? polityDetails.find((detail) => detail.polityId === selectedEntity.id) : undefined;
-  const sourceField=(kind:Parameters<typeof formatSourceField>[0],value:string)=>formatSourceField(kind,value,locale);
 
   return (
     <aside className="info-panel" aria-label={t("历史信息")}>
@@ -134,7 +130,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
             <dt>{t("当前都城／政治中心")}</dt>
             <dd>{currentCapitalTerms.length > 0 ? currentCapitalTerms.map(record => {
               const place = state.places.find(item=>item.id===record.placeId);
-              return `${t(place?.historicalName ?? record.placeId)}${place?.modernName ? `（${t('今·')}${t(place.modernName)}）` : ''}`;
+              return `${t(place?.historicalName ?? '相关地点')}${place?.modernName ? `（${t('今·')}${t(place.modernName)}）` : ''}`;
             }).join(listSeparator) : t(capital && 'historicalName' in capital ? capital.historicalName : '未标注')}</dd>
             <dt>{t("首都沿革")}</dt>
             <dd>{currentCapitalTerms.length > 0 ? currentCapitalTerms.map(record => `${t(formatHistoricalYear(record.validFrom))}—${t(formatHistoricalYear(record.validTo))}`).join(listSeparator) : t("暂无已核验沿革")}</dd>
@@ -148,9 +144,12 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           }} />)}
           {mappingNotes[selected.id] && <ReaderNotes note={{ uncertainty: prose(mappingNotes[selected.id]), sources: toReaderSources(selected.sourceIds, sources) }} />}
           {onYearChange && !!boundariesByPolity.get(selected.id)?.length && <details className="boundary-history"><summary>{t("本政权的资料变化 · 点击比较")}</summary><p>{t("以下是数据分段，不是全部历史变化。相邻段也可能沿用同一几何。")}</p><div>
-            {boundariesByPolity.get(selected.id)?.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}{t(b.areaKm2 ? ` · 约${(b.areaKm2/10000).toFixed(0)}万 km²` : '')}</button>)}
+            {boundariesByPolity.get(selected.id)?.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}</button>)}
           </div></details>}
-          {selected.sourceIds.map(id => sourceById[id]).filter(Boolean).map(s => {const field=sourceField('documentTitle',s.title);return <p className="detail-note" key={s.id}>{field.label}{field.value} · {prose(s.note)}</p>;})}
+          <ReaderNotes note={{
+            uncertainty: selected.sourceIds.map((id) => sources.find((source) => source.id === id)?.note).filter(Boolean).map((note) => prose(note!)).join('；') || undefined,
+            sources: toReaderSources(selected.sourceIds, sources),
+          }} />
           {studyView && <StudyRelationsPanel view={studyView} onOpenEntity={onOpenEntity} />}
         </>
       )}

@@ -33,4 +33,20 @@ describe('PolityDetail navigation', () => {
     expect(document.body).not.toHaveTextContent('已解析');
     expect(document.body).not.toHaveTextContent('bundled-');
   });
+
+  it('uses reader labels instead of unresolved internal entity IDs', () => {
+    const base = getPolityDetail('qin')!;
+    render(<PolityDetail detail={{
+      ...base,
+      principalFigureIds: ['missing-person-id'],
+      capitalPhases: [{ ...base.capitalPhases[0], placeId: 'missing-place-id' }],
+      heritageIds: ['missing-heritage-id'],
+      eventIds: ['missing-event-id'],
+    }} mode="drawer" />);
+
+    for (const internalId of ['missing-person-id', 'missing-place-id', 'missing-heritage-id', 'missing-event-id']) {
+      expect(document.body).not.toHaveTextContent(internalId);
+    }
+    expect(screen.getByText('相关地点')).toBeInTheDocument();
+  });
 });

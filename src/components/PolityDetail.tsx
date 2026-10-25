@@ -79,7 +79,7 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
           const personDetail = personDetailById.get(personId);
           const office = personDetail?.offices.find((item) => item.polityId === detail.polityId) ?? personDetail?.offices[0];
           return <li key={personId}>
-            <EntityLink label={t(person?.name ?? personId)} entity={{ type: 'person', id: personId }} onOpenEntity={onOpenEntity} />
+            {person ? <EntityLink label={t(person.name)} entity={{ type: 'person', id: personId }} onOpenEntity={onOpenEntity} /> : <span>{t('相关人物')}</span>}
             <EvidenceMeta sourceIds={unique([...(person?.sourceIds ?? []), ...(personDetail?.sourceIds ?? []), ...(office?.sourceIds ?? [])])} validFrom={office?.validFrom} validTo={office?.validTo} uncertaintyNote={personDetail?.uncertaintyNote} />
           </li>;
         })}</ul>
@@ -90,7 +90,7 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
         <ul className="study-list">{detail.capitalPhases.map((phase) => {
           const place = placeById.get(phase.placeId);
           return <li key={`${phase.placeId}-${phase.validFrom}-${phase.validTo}`}>
-            <EntityLink label={t(place?.historicalName ?? phase.placeId)} entity={{ type: 'place', id: phase.placeId }} onOpenEntity={onOpenEntity} />
+            {place ? <EntityLink label={t(place.historicalName)} entity={{ type: 'place', id: phase.placeId }} onOpenEntity={onOpenEntity} /> : <span>{t('相关地点')}</span>}
             <span> · {t(range(phase.validFrom, phase.validTo))}</span>{place?.modernName && <span> · {t('今·')}{t(place.modernName)}</span>}{phase.note && <small>{t(phase.note)}</small>}
             <EvidenceMeta sourceIds={place?.sourceIds ?? []} uncertaintyNote={place?.mappingStatus && place.mappingStatus !== 'exact' ? place.notes : undefined} />
           </li>;
@@ -104,7 +104,7 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
             const heritage = heritageById[heritageId];
             const heritageDetail = heritageDetailById.get(heritageId);
             return <li key={heritageId}>
-              <EntityLink label={t(heritage?.name ?? heritageId)} entity={{ type: 'heritage', id: heritageId }} onOpenEntity={onOpenEntity} />
+              {heritage ? <EntityLink label={t(heritage.name)} entity={{ type: 'heritage', id: heritageId }} onOpenEntity={onOpenEntity} /> : <span>{t('相关遗产')}</span>}
               <EvidenceMeta sourceIds={unique([...(heritage?.sourceIds ?? []), ...(heritageDetail?.sourceIds ?? [])])} validFrom={heritage?.constructionFrom} validTo={heritage?.constructionTo} uncertaintyNote={heritageDetail?.uncertaintyNote} />
             </li>;
           })}
@@ -112,7 +112,7 @@ export function PolityDetail({ detail, onOpenEntity, mode = 'summary' }: PolityD
             const event = eventById.get(eventId);
             const eventDetail = eventDetailById.get(eventId);
             return <li key={eventId}>
-              <EntityLink label={t(event?.title ?? eventId)} entity={{ type: 'event', id: eventId }} onOpenEntity={onOpenEntity} />
+              {event ? <EntityLink label={t(event.title)} entity={{ type: 'event', id: eventId }} onOpenEntity={onOpenEntity} /> : <span>{t('相关事件')}</span>}
               <EvidenceMeta sourceIds={unique([...(event?.sourceIds ?? []), ...(eventDetail?.sourceIds ?? [])])} validFrom={event?.year} validTo={event?.endYear} uncertaintyNote={eventDetail?.uncertaintyNote} />
             </li>;
           })}

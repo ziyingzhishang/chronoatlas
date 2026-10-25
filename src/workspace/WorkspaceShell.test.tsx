@@ -1,7 +1,7 @@
 import { fireEvent, render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { useState } from 'react';
-import { WorkspaceShell } from './WorkspaceShell';
+import { topicWidthBounds, WorkspaceShell } from './WorkspaceShell';
 
 function Demo({ singleView = false }: { singleView?: boolean }) {
   const [width, setWidth] = useState(44);
@@ -15,6 +15,12 @@ function Demo({ singleView = false }: { singleView?: boolean }) {
 }
 
 describe('WorkspaceShell', () => {
+  it('preserves both pixel minimums at the 1024px split-view threshold', () => {
+    expect(topicWidthBounds(1024)).toEqual({ min: 41.02, max: 45.31 });
+    expect(topicWidthBounds(1440)).toEqual({ min: 34, max: 61.11 });
+    expect(topicWidthBounds(1600)).toEqual({ min: 34, max: 62 });
+  });
+
   it('keeps the map and timeline together beside the topic pane', () => {
     render(<Demo />);
 

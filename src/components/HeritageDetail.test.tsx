@@ -114,4 +114,14 @@ describe('HeritageDetail', () => {
     expect(document.body).not.toHaveTextContent('missing-source');
     expect(document.body).not.toHaveTextContent('来源未解析');
   });
+
+  it('never falls back to unresolved heritage or place IDs', () => {
+    const detail = getHeritageDetail('white-horse-temple')!;
+    render(<HeritageDetail detail={{ ...detail, heritageId: 'missing-heritage-id' }} placeId="missing-place-id" onNavigate={vi.fn()} />);
+
+    expect(screen.getByRole('heading', { name: '相关遗产' })).toBeInTheDocument();
+    expect(screen.getByText('相关地点')).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('missing-heritage-id');
+    expect(document.body).not.toHaveTextContent('missing-place-id');
+  });
 });

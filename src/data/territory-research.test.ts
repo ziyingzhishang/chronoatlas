@@ -51,6 +51,8 @@ describe('territory research ledger', () => {
         'Accepted tasks require source records.',
         'Accepted tasks require a rights review.',
         'Accepted tasks require a publication review.',
+        'Accepted tasks require a historical reviewer.',
+        'Accepted tasks require a cartographic reviewer.',
         'Accepted tasks require named reviewers and a review date.',
       ]));
     expect(validateTerritoryResearchTask({
@@ -82,10 +84,21 @@ describe('territory research ledger', () => {
       rightsReview: '许可与改绘条件已记录。',
       publicationReview: '公开展示条件已单独核对。',
       reviewedBy: ['history-reviewer', 'cartography-reviewer'],
+      historicalReviewedBy: ['history-reviewer'],
+      cartographicReviewedBy: ['cartography-reviewer'],
       reviewedAt: '2026-10-25',
     }));
-    expect(acceptedTerritoryGeometryTasks(accepted)).toHaveLength(2);
-    expect(acceptedTerritoryGeometryTasks(accepted, [{
+    const assets = accepted.map((task, index) => ({
+      assetId: task.geometryAssetId!,
+      taskId: task.taskId,
+      version: 1,
+      uri: `object://territory/conflict-${index}.geojson`,
+      sha256: String(index + 1).repeat(64),
+      sourceIds: [...task.sourceIds],
+      license: 'research-only',
+    }));
+    expect(acceptedTerritoryGeometryTasks(accepted, assets)).toHaveLength(2);
+    expect(acceptedTerritoryGeometryTasks(accepted, assets, [{
       conflictId: 'conflict:test',
       taskIds: [accepted[0].taskId, accepted[1].taskId],
       years: [-221],
@@ -112,6 +125,8 @@ describe('territory research ledger', () => {
       rightsReview: '许可与改绘条件已记录。',
       publicationReview: '公开展示条件已单独核对。',
       reviewedBy: ['history-reviewer', 'cartography-reviewer'],
+      historicalReviewedBy: ['history-reviewer'],
+      cartographicReviewedBy: ['cartography-reviewer'],
       reviewedAt: '2026-10-25',
     };
     const asset = {
@@ -124,10 +139,12 @@ describe('territory research ledger', () => {
       license: 'research-only; source-specific reuse review recorded',
     };
     expect(validateTerritoryGeometryAssets([task], [asset])).toEqual([]);
+    expect(acceptedTerritoryGeometryTasks([task], [asset])).toEqual([task]);
     expect(validateTerritoryGeometryAssets([task], [{ ...asset, taskId: 'wrong-task', sourceIds: ['unknown-source'] }]))
       .toEqual(expect.arrayContaining([
         'Geometry geometry:test:v1 does not point back to territory-research:gap-han_warring--230--230:v1.',
         'Geometry geometry:test:v1 references source unknown-source outside its decision.',
       ]));
+    expect(acceptedTerritoryGeometryTasks([task], [{ ...asset, taskId: 'wrong-task' }])).toEqual([]);
   });
 });

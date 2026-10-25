@@ -35,6 +35,8 @@ export interface TerritoryResearchTask {
   rightsReview?: string;
   publicationReview?: string;
   reviewedBy: string[];
+  historicalReviewedBy: string[];
+  cartographicReviewedBy: string[];
   reviewedAt?: string;
 }
 
@@ -147,6 +149,8 @@ function buildTask(decision: CoverageDecision): TerritoryResearchTask {
     sourceIds: [...decision.citationIds],
     historicalDecision: decision.rationale,
     reviewedBy: [],
+    historicalReviewedBy: [],
+    cartographicReviewedBy: [],
   };
 }
 
@@ -178,22 +182,26 @@ export function validateTerritoryResearchTask(task: TerritoryResearchTask): stri
     if (!task.historicalDecision?.trim()) problems.push('Accepted tasks require a historical decision.');
     if (!task.rightsReview?.trim()) problems.push('Accepted tasks require a rights review.');
     if (!task.publicationReview?.trim()) problems.push('Accepted tasks require a publication review.');
-    if (task.reviewedBy.length === 0 || !task.reviewedAt) {
-      problems.push('Accepted tasks require named reviewers and a review date.');
-    }
+    if (task.historicalReviewedBy.length === 0) problems.push('Accepted tasks require a historical reviewer.');
+    if (task.cartographicReviewedBy.length === 0) problems.push('Accepted tasks require a cartographic reviewer.');
+    if (task.reviewedBy.length === 0 || !task.reviewedAt) problems.push('Accepted tasks require named reviewers and a review date.');
   }
   return problems;
 }
 
 export function acceptedTerritoryGeometryTasks(
   tasks = territoryResearchTasks,
+  assets: TerritoryGeometryAsset[] = [],
   conflicts: TerritoryGeometryConflict[] = [],
 ): TerritoryResearchTask[] {
+  if (validateTerritoryGeometryAssets(tasks, assets).length > 0) return [];
+  const availableAssetIds = new Set(assets.map((asset) => asset.assetId));
   const heldTaskIds = new Set(conflicts
     .filter((conflict) => conflict.status === 'requires-review')
     .flatMap((conflict) => conflict.taskIds));
   return tasks.filter((task) => task.status === 'accepted'
     && Boolean(task.geometryAssetId)
+    && availableAssetIds.has(task.geometryAssetId!)
     && !heldTaskIds.has(task.taskId)
     && validateTerritoryResearchTask(task).length === 0);
 }
@@ -234,7 +242,7 @@ export function validateTerritoryGeometryAssets(
         problems.push(`Geometry ${asset.assetId} references source ${sourceId} outside its decision.`);
       }
     }
-    if (asset.version < 1 || !asset.uri.trim() || !/^[a-f\d]{64}$/i.test(asset.sha256) || !asset.license.trim()) {
+    if (asset.version < 1 || !asset.uri.trim() || !/^[a-f\d]{64}$/i.test(asset.sha256) || !asset.license.trim() || asset.sourceIds.length === 0) {
       problems.push(`Geometry ${asset.assetId} is missing versioned file, checksum, or license metadata.`);
     }
   }

@@ -31,10 +31,10 @@ const fallbackLabels: Record<string, string> = {
 
 function entityLabel(type: HeritageNavigationTarget['type'], id: string, catalog: ReturnType<typeof useHistoricalContent>['catalog']): string {
   if (fallbackLabels[id]) return fallbackLabels[id];
-  if (type === 'person') return catalog.people.find((person) => person.id === id)?.name ?? id;
-  if (type === 'polity') return catalog.polities.find((polity) => polity.id === id)?.name ?? id;
-  if (type === 'place') return catalog.places.find((place) => place.id === id)?.historicalName ?? id;
-  return catalog.studyEvents.find((event) => event.id === id)?.title ?? id;
+  if (type === 'person') return catalog.people.find((person) => person.id === id)?.name ?? '相关人物';
+  if (type === 'polity') return catalog.polities.find((polity) => polity.id === id)?.name ?? '相关政权';
+  if (type === 'place') return catalog.places.find((place) => place.id === id)?.historicalName ?? '相关地点';
+  return catalog.studyEvents.find((event) => event.id === id)?.title ?? '相关事件';
 }
 
 function hasEntity(type: HeritageNavigationTarget['type'], id: string, catalog: ReturnType<typeof useHistoricalContent>['catalog']): boolean {
@@ -71,7 +71,8 @@ export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOp
   const { t } = useLocale();
   const { catalog } = useHistoricalContent();
   const navigate = onNavigate ?? onOpenEntity;
-  const name = heritageName ?? catalog.heritage.find((asset) => asset.id === detail.heritageId)?.name ?? detail.heritageId;
+  const name = heritageName ?? catalog.heritage.find((asset) => asset.id === detail.heritageId)?.name ?? '相关遗产';
+  const hasPlace = Boolean(placeId && hasEntity('place', placeId, catalog));
 
   return <article className="heritage-detail" aria-label={t('遗产详情')}>
     <header className="heritage-detail-header">
@@ -79,7 +80,7 @@ export function HeritageDetail({ detail, heritageName, placeId, onNavigate, onOp
       <h2>{t(name)}</h2>
       <p className="heritage-detail-location">
         <span>{t('现代位置：')}</span><span>{t(detail.modernLocation)}</span>
-        {placeId && <><span>{t('关联地点：')}</span>{navigate ? <button type="button" onClick={() => navigate({ type: 'place', id: placeId })}>{t(entityLabel('place', placeId, catalog))}</button> : <span>{t(entityLabel('place', placeId, catalog))}</span>}</>}
+        {placeId && <><span>{t('关联地点：')}</span>{navigate && hasPlace ? <button type="button" onClick={() => navigate({ type: 'place', id: placeId })}>{t(entityLabel('place', placeId, catalog))}</button> : <span>{t(entityLabel('place', placeId, catalog))}</span>}</>}
       </p>
     </header>
 
