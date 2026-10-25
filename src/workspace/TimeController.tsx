@@ -7,6 +7,7 @@ const storageKey = 'history-workspace-v1';
 export function TimeController(props: ComponentProps<typeof Timeline>) {
   const { t } = useLocale();
   const [viewport, setViewport] = useState(() => ({width:window.innerWidth,height:window.innerHeight}));
+  const [bounds, setBounds] = useState(() => ({width:window.innerWidth,height:window.innerHeight}));
   const [preference, setPreference] = useState(() => {
     try { return readPreference(localStorage.getItem(storageKey)); } catch { return readPreference(null); }
   });
@@ -17,10 +18,20 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
   const floating = !mobile && preference.mode === 'floating';
   const effectiveDensity = short && density === 'compact' ? 'collapsed' : density;
 
-  useEffect(() => {
-    const resize = () => setViewport({width:window.innerWidth,height:window.innerHeight});
+  useLayoutEffect(() => {
+    const container = box.current?.parentElement;
+    const resize = () => {
+      setViewport(previous => previous.width === window.innerWidth && previous.height === window.innerHeight ? previous : { width: window.innerWidth, height: window.innerHeight });
+      const rect = container?.getBoundingClientRect();
+      const next = rect?.width && rect.height ? { width: rect.width, height: rect.height } : { width: window.innerWidth, height: window.innerHeight };
+      setBounds(previous => previous.width === next.width && previous.height === next.height ? previous : next);
+    };
+    resize();
     window.addEventListener('resize',resize);
-    return () => window.removeEventListener('resize',resize);
+    if (!container) return () => window.removeEventListener('resize',resize);
+    const observer = new ResizeObserver(resize);
+    observer.observe(container);
+    return () => { observer.disconnect(); window.removeEventListener('resize',resize); };
   },[]);
   useEffect(() => {
     try { localStorage.setItem(storageKey,JSON.stringify(preference)); } catch { /* Private/storage-disabled mode still works. */ }
@@ -31,7 +42,7 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
       const rect = box.current?.getBoundingClientRect();
       if (!rect) return;
       setPreference(previous => {
-        const position = clampPosition(previous.position,viewport,rect);
+        const position = clampPosition(previous.position,bounds,rect);
         return position.x === previous.position.x && position.y === previous.position.y ? previous : {...previous,position};
       });
     };
@@ -39,15 +50,15 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
     const observer = new ResizeObserver(constrain);
     observer.observe(box.current);
     return () => observer.disconnect();
-  },[floating,viewport,density]);
+  },[floating,bounds,density]);
 
   function move(position:Point, snap = false) {
     const rect = box.current?.getBoundingClientRect();
     if (!rect) return;
-    const clamped = clampPosition(position,viewport,rect);
+    const clamped = clampPosition(position,bounds,rect);
     if (snap) {
       if (clamped.x < 36) clamped.x = 12;
-      if (viewport.width - rect.width - clamped.x < 36) clamped.x = Math.max(12,viewport.width-rect.width-12);
+      if (bounds.width - rect.width - clamped.x < 36) clamped.x = Math.max(12,bounds.width-rect.width-12);
     }
     setPreference(previous=>({...previous,position:clamped}));
   }

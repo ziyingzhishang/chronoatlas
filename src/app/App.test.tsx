@@ -59,10 +59,14 @@ test('opens a resizable event topic beside the map from the event search result 
   await userEvent.click(screen.getByRole('button', { name: '打开完整事件详情' }));
 
   const drawer = screen.getByRole('dialog', { name: '秦统一六国' });
+  const mapPane = screen.getByRole('region', { name: '地图工作区' });
+  const divider = screen.getByRole('separator', { name: '调整地图与专题栏宽度' });
   expect(drawer).toHaveClass('entity-drawer', 'entity-drawer-event');
   expect(getComputedStyle(drawer).width).toBe('44%');
-  expect(drawer.parentElement).toHaveClass('workspace-content', 'has-topic');
-  expect(within(drawer).getByRole('separator', { name: '调整地图与专题栏宽度' })).toHaveAttribute('aria-valuenow', '44');
+  expect(drawer.parentElement).toBe(mapPane.parentElement);
+  expect(mapPane).toContainElement(screen.getByRole('button', { name: '下一年' }).closest('.time-controller'));
+  expect(drawer).not.toContainElement(divider);
+  expect(divider).toHaveAttribute('aria-valuenow', '44');
   expect(within(drawer).getByText('地图时点：前221年')).toBeInTheDocument();
   expect(within(drawer).getByRole('article', { name: '事件详情' })).toBeInTheDocument();
 });

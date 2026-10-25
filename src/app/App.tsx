@@ -26,6 +26,7 @@ import type { DetailEntity, DetailHistoryEntry } from '../domain/detail-entity';
 import { ContentProvider, useHistoricalContent } from '../content/ContentContext';
 import type { HistoricalContentRepository } from '../content/repository';
 import { useSingleTopicView } from '../workspace/useSingleTopicView';
+import { WorkspaceShell } from '../workspace/WorkspaceShell';
 
 export function App({ contentRepository }: { contentRepository?: HistoricalContentRepository } = {}) {
   return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace/></ContentProvider></LocaleProvider>;
@@ -157,9 +158,13 @@ function HistoryWorkspace() {
   const visibleSearchEvents=eventSearchQuery.trim()?eventSearchMatches:timelineEvents;
   const selectedSearchEvent=selectedEntity?.type==='event'?visibleSearchEvents.find(event=>event.id===selectedEntity.id):undefined;
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
-  const singleViewBackgroundProps = detailEntity && singleTopicView ? { inert: '', 'aria-hidden': true } : {};
   return <main className="workspace">
-    <header className="workspace-header" {...singleViewBackgroundProps}>
+    <WorkspaceShell
+      topicWidthPercent={topicWidth}
+      onTopicWidthChange={setTopicWidth}
+      singleTopicView={singleTopicView}
+      mapPane={<>
+    <header className="workspace-header">
       <div className="workspace-header-left">
         <button className="map-status-hud" type="button" aria-label={t('当前历史状态')} aria-expanded={directoryOpen} aria-controls="directory-popover" onClick={()=>{setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}}>
           <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
@@ -187,8 +192,7 @@ function HistoryWorkspace() {
         <button className="workspace-tool-icon" aria-label={t('更多')} title={t('更多')} aria-expanded={panel==='more'} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p==='more'?null:'more');}}>⋯</button>
       </nav>
     </header>
-    <div className={`workspace-content${detailEntity ? ' has-topic' : ''}`}>
-      <div className="workspace-map-area" {...singleViewBackgroundProps}>
+      <div className="workspace-map-area">
       <MapView state={historicalState} selectedEntity={selectedEntity} visibleLayers={visibleLayers} onLayerChange={updateLayer} showWorld={showWorld} onShowWorldChange={value=>{setShowWorld(value);setSelectedEntity(undefined);}} onSelectEntity={selectEntity} onClearSelection={clearMapSelection} workspacePanel={panel} panelTarget={panelTarget} focusRequest={focusRequest} refreshToken={mapRefreshToken}/>
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
@@ -197,16 +201,17 @@ function HistoryWorkspace() {
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
       </div>
-      {detailEntity && <EntityDrawer title={detailTitle(detailEntity, catalog)} entityType={detailEntity.type} mapYear={currentYear} widthPercent={topicWidth} onWidthChange={setTopicWidth} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0} singleView={singleTopicView}>
+      <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
+      </>}
+      topicPane={detailEntity ? <EntityDrawer title={detailTitle(detailEntity, catalog)} entityType={detailEntity.type} mapYear={currentYear} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0} singleView={singleTopicView}>
         {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={personDetailById.get(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
         {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
         {detailEntity.type === 'heritage' && (() => { const asset = heritageById.get(detailEntity.id); const detail = heritageDetailById.get(detailEntity.id); return asset && detail ? <HeritageDetail detail={detail} heritageName={asset.name} placeId={asset.placeId} onNavigate={openDetail} /> : <p className="detail-note">{t('暂无已收录遗产详情')}</p>; })()}
         {(detailEntity.type === 'polity' || detailEntity.type === 'place') && (
           <InfoPanel state={historicalState} selectedEntity={detailEntity} onYearChange={changeYear} onOpenEntity={openDetail} polityDetailMode={detailEntity.type === 'polity' ? 'drawer' : 'summary'}/>
         )}
-      </EntityDrawer>}
-    </div>
-    <div {...singleViewBackgroundProps}><TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/></div>
+      </EntityDrawer> : undefined}
+    />
   </main>;
 }
 

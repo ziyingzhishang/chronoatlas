@@ -6,6 +6,7 @@ afterEach(() => vi.unstubAllGlobals());
 
 describe('useSingleTopicView', () => {
   it('switches for either narrow width or low effective height', () => {
+    expect(SINGLE_TOPIC_VIEW_QUERY).toBe('(max-width: 1023px), (max-height: 600px)');
     let listener: (() => void) | undefined;
     const media = {
       matches: true,
