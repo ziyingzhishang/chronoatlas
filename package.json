@@ -10,6 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "node scripts/strip-source-map-references.mjs dist",
     "preview": "vite preview",
     "test": "vitest",
     "audit:coverage": "node scripts/audit-coverage.mjs",
@@ -29,6 +30,7 @@
     "build:curated-boundaries": "node scripts/build-curated-boundaries.mjs",
     "build:modern-reference": "node scripts/build-modern-sovereignty-reference.mjs",
     "build:notices": "node scripts/build-third-party-notices.mjs",
+    "verify:pages-artifact": "node scripts/verify-pages-artifact.mjs",
     "verify:map-release": "node scripts/verify-map-release.mjs"
   },
   "dependencies": {
