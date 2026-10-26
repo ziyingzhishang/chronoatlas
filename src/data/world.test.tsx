@@ -2,8 +2,28 @@ import { act, renderHook, waitFor } from '@testing-library/react';
 import { afterEach, expect, test, vi } from 'vitest';
 import { useWorldSlice } from './world';
 
-afterEach(() => vi.unstubAllGlobals());
+const assetUrl = vi.hoisted(() => vi.fn((path:string) => `/chronoatlas/${path}`));
+vi.mock('../runtime/asset-url', () => ({ publicAssetUrl: assetUrl }));
+
+afterEach(() => {
+  vi.unstubAllGlobals();
+  assetUrl.mockClear();
+});
 const chunk = (start:number) => ({ start, end:start+99, polities:[], records:[], geometries:[] });
+
+test('loads world chunks beneath the configured site base', async () => {
+  const fetcher = vi.fn().mockResolvedValue({ok:true,json:async()=>chunk(-200)});
+  vi.stubGlobal('fetch', fetcher);
+
+  const {result} = renderHook(() => useWorldSlice(-200, true));
+
+  await waitFor(() => expect(result.current.status).toBe('ready'));
+  expect(assetUrl).toHaveBeenCalledWith('data/world/-200.json');
+  expect(fetcher).toHaveBeenCalledWith(
+    '/chronoatlas/data/world/-200.json',
+    expect.objectContaining({signal: expect.any(AbortSignal)}),
+  );
+});
 test('a slow previous century cannot replace the requested world data', async () => {
   let finishOld!: (value:unknown)=>void;
   vi.stubGlobal('fetch', vi.fn((url:string) => url.endsWith('/800.json')

@@ -1,4 +1,5 @@
 import { useLocale } from '../i18n/locale';
+import { publicAssetUrl } from '../runtime/asset-url';
 import type { DetailEntity } from '../domain/detail-entity';
 import { claims } from '../data/claims';
 import { eventDetails } from '../data/event-details';
@@ -149,7 +150,7 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
             {contextualReport ? <>{t(perspective!)} · {t(reportName!)}</> : t('覆盖报告摘要')}
           </h3>
         </div>
-        <a href="/data/knowledge-coverage.json" target="_blank" rel="noreferrer">{t('查看完整审计 ↗')}</a>
+        <a href={publicAssetUrl('data/knowledge-coverage.json')} target="_blank" rel="noreferrer">{t('查看完整审计 ↗')}</a>
       </div>
       <p className="detail-note">
         {t('实体')} {entityCount} · {t('缺口')} {gapCount} · {t('可行动缺口')} {contextualReport ? contextTasks.length : report.tasks.length}
@@ -173,7 +174,7 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
                     {t(task.subjectLabel)}
                   </button>
                 ) : (
-                  <a href="/data/knowledge-coverage.json" target="_blank" rel="noreferrer">{t(task.subjectLabel)}</a>
+                  <a href={publicAssetUrl('data/knowledge-coverage.json')} target="_blank" rel="noreferrer">{t(task.subjectLabel)}</a>
                 )}
                 <span className="detail-note"> · {t(perspectiveLabels[task.perspective])} · {t(taskLabels[task.taskKind])}</span>
                 <p className="detail-note">{t(task.note)}</p>
@@ -198,7 +199,7 @@ export function KnowledgeCoveragePanel({ report, maxTasks = 8, onOpenEntity, con
                     {t(gap.label)}
                   </button>
                 ) : (
-                  <a href="/data/knowledge-coverage.json" target="_blank" rel="noreferrer">{t(gap.label)}</a>
+                  <a href={publicAssetUrl('data/knowledge-coverage.json')} target="_blank" rel="noreferrer">{t(gap.label)}</a>
                 )}
                 <span className="detail-note"> · {t(gapEntityTypeLabels[gap.entityType])} · {t(gapDimensionLabels[gap.dimension])} · {t(gapStatusLabels[gap.kind])}</span>
                 <p className="detail-note">{t('说明：')}{t(gap.note)}</p>

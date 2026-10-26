@@ -6,6 +6,9 @@ import type { DetailEntity } from '../domain/detail-entity';
 import { LocaleProvider } from '../i18n/locale';
 import { KnowledgeCoveragePanel } from './KnowledgeCoveragePanel';
 
+const assetUrl = vi.hoisted(() => vi.fn((path:string) => `/chronoatlas/${path}`));
+vi.mock('../runtime/asset-url', () => ({ publicAssetUrl: assetUrl }));
+
 test('shows real coverage totals and the closed-task empty state', () => {
   const report = auditKnowledgeCoverage();
 
@@ -16,7 +19,7 @@ test('shows real coverage totals and the closed-task empty state', () => {
   expect(report.tasks).toHaveLength(0);
   expect(screen.getByText('当前没有可行动缺口')).toBeInTheDocument();
   expect(screen.queryByText('展开可行动缺口')).not.toBeInTheDocument();
-  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
+  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/chronoatlas/data/knowledge-coverage.json');
 });
 
 test('keeps the detail drawer callback idle when the audit has no actionable task', async () => {
@@ -28,7 +31,7 @@ test('keeps the detail drawer callback idle when the audit has no actionable tas
   expect(report.tasks).toHaveLength(0);
   expect(screen.queryByRole('button', { name: /打开实体详情：/ })).not.toBeInTheDocument();
   expect(onOpenEntity).not.toHaveBeenCalled();
-  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
+  expect(screen.getByRole('link', { name: '查看完整审计 ↗' })).toHaveAttribute('href', '/chronoatlas/data/knowledge-coverage.json');
 });
 
 test('uses the localized empty state for an English reader', async () => {
@@ -39,7 +42,7 @@ test('uses the localized empty state for an English reader', async () => {
 
   expect(report.tasks).toHaveLength(0);
   expect(screen.getByText('There are currently no actionable gaps')).toBeInTheDocument();
-  expect(screen.getByRole('link', { name: 'View full audit ↗' })).toHaveAttribute('href', '/data/knowledge-coverage.json');
+  expect(screen.getByRole('link', { name: 'View full audit ↗' })).toHaveAttribute('href', '/chronoatlas/data/knowledge-coverage.json');
   localStorage.removeItem('history-locale');
 });
 

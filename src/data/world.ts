@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import type { BoundaryState, Polity, WorldSlice } from '../domain/types';
+import { publicAssetUrl } from '../runtime/asset-url';
 
 interface PackedWorld {
   start:number; end:number; polities:Polity[];
@@ -21,7 +22,7 @@ function acquireCentury(start:number) {
   if(!entry) {
     const controller=new AbortController();
     const request=(async()=>{
-    const response=await fetch(`/data/world/${start}.json`,{signal:controller.signal});
+    const response=await fetch(publicAssetUrl(`data/world/${start}.json`),{signal:controller.signal});
     if(!response.ok) throw Error(`World data HTTP ${response.status}`);
     const data=await response.json() as PackedWorld;
     if(data.start!==start || !Array.isArray(data.records) || !Array.isArray(data.geometries)) throw Error('Wrong world data chunk');
