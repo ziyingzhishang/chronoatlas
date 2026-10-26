@@ -36,7 +36,7 @@ export function App({ contentRepository }: { contentRepository?: HistoricalConte
 
 function HistoryWorkspace() {
   const {locale,setLocale,t}=useLocale();
-  const { catalog } = useHistoricalContent();
+  const { catalog, historySource } = useHistoricalContent();
   const { claims, events, heritage, heritageDetails, people, personDetails, places, polities, studyEvents: detailEvents } = catalog;
   const heritageById = useMemo(() => new Map(heritage.map((asset) => [asset.id, asset])), [heritage]);
   const heritageDetailById = useMemo(() => new Map(heritageDetails.map((detail) => [detail.heritageId, detail])), [heritageDetails]);
@@ -65,7 +65,10 @@ function HistoryWorkspace() {
   const [detailOrigin, setDetailOrigin] = useState({ directoryOpen: false, eventSearchOpen: false });
   const [topicWidth, setTopicWidth] = useState(44);
   const world = useWorldSlice(currentYear, showWorld);
-  const historicalState = useMemo(() => localizeState(getHistoricalState(currentYear, {world:world.slice}),locale), [currentYear,world.slice,locale]);
+  const historicalState = useMemo(
+    () => localizeState(getHistoricalState(historySource, currentYear, { world: world.slice }), locale),
+    [currentYear, historySource, world.slice, locale],
+  );
   const eraLabel = primaryPolityName(historicalState.activePolities);
   const distanceLabel = formatPresentDistance(yearsFromPresent(currentYear, new Date().getFullYear()), locale);
   const timelineWindowLabel = `${t('当前视窗')} · ${formatHistoricalYear(timelineWindow[0])}—${formatHistoricalYear(timelineWindow[1])}`;

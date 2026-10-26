@@ -1,4 +1,4 @@
-import { bundledAuthoringSnapshot, bundledPublicCollections } from './bundled-adapter';
+import { bundledAuthoringSnapshot, bundledHistoricalStateSource, bundledPublicCollections } from './bundled-adapter';
 import { InMemoryContentRepository, type ContentManifest } from './repository';
 import { InMemoryHistoricalSnapshot } from './snapshot';
 import type { ReleaseManifest } from './release-types';
@@ -58,3 +58,5 @@ export const bundledHistoricalSnapshot = new InMemoryHistoricalSnapshot(
   bundledContentCatalog,
   { boundaries: bundledAuthoringSnapshot.territory.boundaries, coverageConclusions },
 );
+
+export { bundledHistoricalStateSource };

@@ -48,12 +48,47 @@ describe('ContentProvider', () => {
     const snapshot = new InMemoryHistoricalSnapshot(release, {
       ...bundledContentCatalog,
       people: [{ ...bundledContentCatalog.people[0], name: '版本化人物' }],
-    });
+    }, { boundaries: [], coverageConclusions: [] });
     const repository = { open: async () => snapshot };
     render(<ContentProvider repository={repository}><><Probe /><ReleaseProbe /></></ContentProvider>);
 
     expect(await screen.findByText('release-context:版本化人物')).toBeInTheDocument();
     expect(screen.getByText('release-context:release-context')).toBeInTheDocument();
+  });
+
+  it('fails closed before publishing a release with malformed map boundaries', async () => {
+    const release = { ...bundledReleaseManifest, releaseId: 'malformed-map-release' };
+    const snapshot = new InMemoryHistoricalSnapshot(release, bundledContentCatalog, {
+      boundaries: [{
+        id: 'bad-boundary', polityId: 'qin', validFrom: -221, validTo: -207, snapshotYear: -221,
+        geometry: { type: 'Point', coordinates: [Number.NaN, 34] }, controlType: 'direct',
+        sourceIds: [], mapRepresentation: 'direct-boundary', evidence: { citations: [], uncertaintyNote: '' },
+      }],
+      coverageConclusions: [],
+    });
+
+    render(<ContentProvider repository={{ open: async () => snapshot }}><Probe /></ContentProvider>);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Release boundary collection is malformed');
+    expect(screen.queryByText(/malformed-map-release:/)).not.toBeInTheDocument();
+  });
+
+  it('rejects internal evidence enums instead of trusting incompatible release values', async () => {
+    const release = { ...bundledReleaseManifest, releaseId: 'invalid-evidence-release' };
+    const snapshot = new InMemoryHistoricalSnapshot(release, bundledContentCatalog, {
+      boundaries: [{
+        id: 'bad-evidence', polityId: 'qin', validFrom: -221, validTo: -207, snapshotYear: -221,
+        geometry: { type: 'Point', coordinates: [108, 34] }, controlType: 'direct', confidence: 'high',
+        sourceIds: [], mapRepresentation: 'direct-boundary',
+        evidence: { evidenceLevel: 'X', derivation: 'invented', reviewStatus: 'approved', citations: [], uncertaintyNote: '' },
+      }],
+      coverageConclusions: [],
+    });
+
+    render(<ContentProvider repository={{ open: async () => snapshot }}><Probe /></ContentProvider>);
+
+    expect(await screen.findByRole('alert')).toHaveTextContent('Release boundary collection is malformed');
+    expect(screen.queryByText(/invalid-evidence-release:/)).not.toBeInTheDocument();
   });
 
   it('localizes external repository loading and failure states', async () => {

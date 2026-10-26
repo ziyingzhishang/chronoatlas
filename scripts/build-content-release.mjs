@@ -125,7 +125,10 @@ function normalizeCollections(collections) {
 }
 
 function buildTerritory(territory) {
-  const boundaries = sanitizeAndSort(territory.boundaries ?? []);
+  const boundaries = sanitizeAndSort((territory.boundaries ?? []).map((boundary) => ({
+    ...boundary,
+    mapRepresentation: publicMapRepresentation(boundary),
+  })));
   const coverageConclusions = [...(territory.coverageDecisions ?? [])]
     .sort((a, b) => a.polityId.localeCompare(b.polityId) || a.from - b.from || a.to - b.to)
     .map((decision) => {
@@ -141,6 +144,16 @@ function buildTerritory(territory) {
       return conclusion;
     });
   return { boundaries, coverageConclusions };
+}
+
+function publicMapRepresentation(boundary) {
+  if (boundary.presentation === 'maximum' || boundary.evidence?.derivation === 'maximum-record') return 'maximum-reference';
+  if (boundary.presentation === 'reference' || boundary.evidence?.derivation === 'nearest-same-polity') return 'reference-boundary';
+  if (boundary.evidence?.derivation === 'licensed-digitization') return 'licensed-digitization';
+  if (boundary.evidence?.derivation === 'control-centers') return 'control-centers';
+  if (boundary.evidence?.derivation === 'cultural-core') return 'cultural-core';
+  if (boundary.evidence?.derivation === 'influence-area' || boundary.controlType === 'influence') return 'influence-area';
+  return 'direct-boundary';
 }
 
 function sanitizeAndSort(value) {

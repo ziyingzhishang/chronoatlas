@@ -28,7 +28,7 @@ export class InMemoryHistoricalSnapshot implements HistoricalSnapshot {
   ) {}
 
   async getCollection(name: string) {
-    const value = this.core[name];
+    const value = name === 'boundaries' || name === 'coverageConclusions' ? this.territory[name] : this.core[name];
     if (!value) throw new Error(`Historical collection is unavailable: ${name}`);
     return validateRecords(name, value);
   }
@@ -93,8 +93,10 @@ export class RemoteHistoricalSnapshot implements HistoricalSnapshot {
   }
 
   async getCollection(name: string): Promise<readonly HistoricalRecord[]> {
-    const core = await this.loadObjectPackage('core-zh');
-    const value = core[name];
+    const content = name === 'boundaries' || name === 'coverageConclusions'
+      ? await this.loadObjectPackage('china-territory')
+      : await this.loadObjectPackage('core-zh');
+    const value = content[name];
     if (!Array.isArray(value)) throw new Error(`Historical collection is unavailable: ${name}`);
     return validateRecords(name, value);
   }

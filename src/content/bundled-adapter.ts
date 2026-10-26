@@ -14,6 +14,8 @@ import { places } from '../data/places';
 import { polities } from '../data/polities';
 import { polityDetails } from '../data/polity-details';
 import { sourceNotes } from '../data/sources';
+import { modernSovereigntyFeatures } from '../data/modern-reference';
+import type { HistoricalStateSource } from '../domain/history-state';
 import worldManifest from '../../public/data/cliopatria-manifest.json';
 
 const allEvents = [
@@ -40,6 +42,11 @@ export const bundledPublicCollections = {
   polityDetails,
   sources: sourceNotes,
   eventTimeReviews: eventTimeReview,
+  mapReferences: [{
+    id: 'modern-sovereignty',
+    effectiveFrom: 1949,
+    featureCollection: modernSovereigntyFeatures(1949),
+  }],
 } as const;
 
 export const bundledAuthoringSnapshot = {
@@ -50,3 +57,12 @@ export const bundledAuthoringSnapshot = {
   },
   worldChunks: worldManifest.chunks,
 } as const;
+
+export const bundledHistoricalStateSource: HistoricalStateSource = {
+  polities,
+  boundaries: boundaryCatalog,
+  places,
+  events,
+  capitalTerms: capitalHistory,
+  modernSovereignty: bundledPublicCollections.mapReferences,
+};

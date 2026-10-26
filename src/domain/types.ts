@@ -229,6 +229,7 @@ export interface BoundaryState {
   sourceRecord?: number;
   areaKm2?: number;
   memberOf?: string;
+  mapRepresentation?: 'direct-boundary' | 'licensed-digitization' | 'reference-boundary' | 'cultural-core' | 'control-centers' | 'influence-area' | 'maximum-reference';
   evidence: BoundaryEvidence;
 }
 
@@ -296,6 +297,8 @@ export interface HistoricalState {
   boundaries: BoundaryState[];
   places: Place[];
   events: HistoricalEvent[];
+  capitalTerms?: CapitalTerm[];
+  modernSovereignty?: GeoJSON.FeatureCollection;
   coverage: {
     mode: 'snapshot' | 'reference' | 'missing' | 'interval' | 'mixed' | 'maximum';
     snapshotYear?: number;

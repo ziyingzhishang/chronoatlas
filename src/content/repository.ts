@@ -175,6 +175,7 @@ const collectionRequiredStrings: Record<string, readonly string[]> = {
   polityDetails: ['polityId'],
   sources: ['id', 'title'],
   eventTimeReviews: ['eventId', 'status', 'expectedPrecision', 'explanation', 'timelineStrategy'],
+  mapReferences: ['id'],
 };
 
 export function validateContentCollections(collections: ContentCollections) {
@@ -326,6 +327,15 @@ function validateRecordShape(name: string, record: Record<string, unknown>, inde
     requireEnum(record, 'status', ['confirmed', 'approximate', 'unknown'], at);
     requireEnum(record, 'expectedPrecision', ['year', 'approximate', 'range'], at);
     requireEnum(record, 'timelineStrategy', ['year-marker', 'approximate-marker', 'range-band', 'unknown-window'], at);
+  } else if (name === 'mapReferences') {
+    requireNumber(record, 'effectiveFrom', at);
+    if (!record.featureCollection || typeof record.featureCollection !== 'object' || Array.isArray(record.featureCollection)) {
+      throw new Error(`${at}.featureCollection must be a GeoJSON feature collection`);
+    }
+    const featureCollection = record.featureCollection as Record<string, unknown>;
+    if (featureCollection.type !== 'FeatureCollection' || !Array.isArray(featureCollection.features)) {
+      throw new Error(`${at}.featureCollection must be a GeoJSON feature collection`);
+    }
   }
 }
 

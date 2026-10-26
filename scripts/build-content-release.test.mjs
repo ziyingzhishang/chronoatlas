@@ -21,7 +21,11 @@ function fixtureAuthoring() {
       boundaries: [{
         id: 'boundary-a', polityId: 'polity-a', sourceIds: ['cliopatria'],
         geometry: { type: 'Point', coordinates: [1, 2] },
-        evidence: { reviewStatus: 'source-checked', citations: [] },
+        evidence: { evidenceLevel: 'D', derivation: 'control-centers', reviewStatus: 'source-checked', citations: [], uncertaintyNote: 'Only centers are known.' },
+      }, {
+        id: 'boundary-reference', polityId: 'polity-a', sourceIds: ['cliopatria'],
+        geometry: { type: 'Point', coordinates: [3, 4] }, presentation: 'reference',
+        evidence: { evidenceLevel: 'C', derivation: 'nearest-same-polity', reviewStatus: 'source-checked', citations: [], uncertaintyNote: 'Nearest known outline only.' },
       }],
       coverageDecisions: [{
         id: 'gap-a', polityId: 'polity-a', from: 10, to: 11,
@@ -84,6 +88,9 @@ test('publishes leave-unfilled as a conclusion without attaching geometry', asyn
     assert.equal('geometryIds' in territory.coverageConclusions[0], false);
     assert.equal(JSON.stringify(territory).includes('reviewStatus'), false);
     assert.equal(JSON.stringify(territory).includes('rationale'), false);
+    assert.equal(territory.boundaries.find((boundary) => boundary.id === 'boundary-a').mapRepresentation, 'control-centers');
+    assert.equal(territory.boundaries.find((boundary) => boundary.id === 'boundary-reference').mapRepresentation, 'reference-boundary');
+    assert.equal(JSON.stringify(territory).includes('evidenceLevel'), false);
   } finally {
     await rm(root, { recursive: true, force: true });
   }
