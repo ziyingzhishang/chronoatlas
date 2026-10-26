@@ -1,13 +1,21 @@
 import { act, render, screen, within } from '@testing-library/react';
-import { expect, test } from 'vitest';
+import { afterEach, expect, test, vi } from 'vitest';
 import { App } from './App';
 import userEvent from '@testing-library/user-event';
 import { mapInstances } from '../test/maplibre-mock';
 
+afterEach(() => vi.restoreAllMocks());
+
 test('keeps secondary controls closed until requested', async () => {
+  vi.spyOn(Date.prototype, 'getFullYear').mockReturnValue(2026);
   render(<App />);
   expect(screen.queryByRole('heading', { level: 1 })).not.toBeInTheDocument();
-  expect(screen.getByRole('button', { name: '当前历史状态' })).toHaveTextContent('800年');
+  const status = screen.getByRole('button', { name: '当前历史状态' });
+  expect(status).toHaveTextContent('800年');
+  expect(status).toHaveTextContent('唐');
+  expect(status).toHaveTextContent('王朝至今');
+  expect(status).toHaveTextContent('距今1226年');
+  expect(status.nextElementSibling).toHaveClass('event-search-dock-wrap');
   expect(screen.queryByRole('button', { name: '图层' })).not.toBeInTheDocument();
   expect(screen.queryByRole('button', { name: '事件' })).not.toBeInTheDocument();
   expect(screen.queryByRole('button', { name: '详情' })).not.toBeInTheDocument();

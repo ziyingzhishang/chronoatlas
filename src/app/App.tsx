@@ -27,6 +27,8 @@ import { ContentProvider, useHistoricalContent } from '../content/ContentContext
 import type { HistoricalContentRepository } from '../content/repository';
 import { useSingleTopicView } from '../workspace/useSingleTopicView';
 import { WorkspaceShell } from '../workspace/WorkspaceShell';
+import { MapStatusHud } from '../components/MapStatusHud';
+import { formatPresentDistance, primaryPolityName, yearsFromPresent } from '../presentation/map-status';
 
 export function App({ contentRepository }: { contentRepository?: HistoricalContentRepository } = {}) {
   return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace/></ContentProvider></LocaleProvider>;
@@ -64,6 +66,9 @@ function HistoryWorkspace() {
   const [topicWidth, setTopicWidth] = useState(44);
   const world = useWorldSlice(currentYear, showWorld);
   const historicalState = useMemo(() => localizeState(getHistoricalState(currentYear, {world:world.slice}),locale), [currentYear,world.slice,locale]);
+  const eraLabel = primaryPolityName(historicalState.activePolities);
+  const distanceLabel = formatPresentDistance(yearsFromPresent(currentYear, new Date().getFullYear()), locale);
+  const timelineWindowLabel = `${t('当前视窗')} · ${formatHistoricalYear(timelineWindow[0])}—${formatHistoricalYear(timelineWindow[1])}`;
   const localizedEvents=useMemo(()=>localizeEvents(events,locale),[locale]);
   const eventSearchMatches=useMemo(()=>queryEvents(localizedEvents,{region:eventSearchRegion,category:eventSearchCategory}).filter(event=>!eventSearchQuery.trim()||contentSearchText(event).includes(eventSearchQuery.trim().toLocaleLowerCase())).slice(0,6),[localizedEvents,eventSearchQuery,eventSearchRegion,eventSearchCategory]);
   const timelineEvents=useMemo(()=>{
@@ -166,12 +171,11 @@ function HistoryWorkspace() {
       mapPane={<>
     <header className="workspace-header">
       <div className="workspace-header-left">
-        <button className="map-status-hud" type="button" aria-label={t('当前历史状态')} aria-expanded={directoryOpen} aria-controls="directory-popover" onClick={()=>{setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}}>
-          <strong>{t(historicalState.displayLabel)} · {t(timelineViewLabel)}</strong>
-          <span>{t('当前视窗')} · {formatHistoricalYear(timelineWindow[0])}—{formatHistoricalYear(timelineWindow[1])}</span>
-        </button>
+        <MapStatusHud yearLabel={historicalState.displayLabel} eraLabel={eraLabel} viewLabel={timelineViewLabel}
+          distanceLabel={distanceLabel} windowLabel={timelineWindowLabel} expanded={directoryOpen}
+          onToggle={()=>{setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}} />
         <div className="event-search-dock-wrap" onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setEventSearchOpen(false);}}>
-          <label className="event-search-dock">{t('查找历史转折')}<input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>{setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
+          <label className="event-search-dock"><span className="sr-only">{t('查找历史转折')}</span><input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>{setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
           {directoryOpen&&!eventSearchOpen&&(
               <DirectoryPopover id="directory-popover" state={historicalState} selectedEntity={selectedEntity} onSelectEntity={selectEntity} onBackToDirectory={()=>setSelectedEntity(undefined)} onClose={()=>{setSelectedEntity(undefined);setDirectoryOpen(false);}} onYearChange={changeYear} onOpenEntity={openDetail}/>
           )}
