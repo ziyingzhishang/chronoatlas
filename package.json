@@ -31,7 +31,8 @@
     "build:modern-reference": "node scripts/build-modern-sovereignty-reference.mjs",
     "build:notices": "node scripts/build-third-party-notices.mjs",
     "verify:pages-artifact": "node scripts/verify-pages-artifact.mjs",
-    "verify:map-release": "node scripts/verify-map-release.mjs"
+    "verify:map-release": "node scripts/verify-map-release.mjs",
+    "verify:release-readiness": "npm run build:knowledge-coverage && npx vitest --run --exclude '.worktrees/**' --exclude 'scripts/**/*.test.mjs' && node --test scripts/*.test.mjs && npm run build:notices && npm run build && npm run verify:pages-artifact -- dist && git diff --exit-code -- public/data/knowledge-coverage.json public/data/licenses/project-third-party-notices.json && git diff --check"
   },
   "dependencies": {
     "d3-geo": "^3.1.1",
