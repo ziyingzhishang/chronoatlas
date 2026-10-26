@@ -28,6 +28,7 @@
     "review:southern-tang-gap": "node scripts/review-southern-tang-gap.mjs",
     "build:curated-boundaries": "node scripts/build-curated-boundaries.mjs",
     "build:modern-reference": "node scripts/build-modern-sovereignty-reference.mjs",
+    "build:notices": "node scripts/build-third-party-notices.mjs",
     "verify:map-release": "node scripts/verify-map-release.mjs"
   },
   "dependencies": {
