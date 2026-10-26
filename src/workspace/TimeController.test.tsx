@@ -4,25 +4,38 @@ import userEvent from '@testing-library/user-event';
 import { afterEach, expect, test, vi } from 'vitest';
 import { TimeController } from './TimeController';
 
-function Demo(){const [year,setYear]=useState(-1);return <TimeController year={year} onYearChange={setYear} isPlaying={false} onPlayToggle={()=>{}}/>;}
+function Demo(){const [year,setYear]=useState(-1);return <TimeController year={year} eraLabel="西汉" onYearChange={setYear} isPlaying={false} onPlayToggle={()=>{}}/>;}
 afterEach(()=>localStorage.clear());
 test('density and docking preserve year and allow stepping over the absent year zero',async()=>{
-  render(<Demo/>);
+  const { container } = render(<Demo/>);
+  expect(screen.getByRole('group', { name: '简明时间控制' })).toHaveTextContent('前1年西汉');
+  expect(container.querySelector('.controller-content')).not.toBeInTheDocument();
   expect(screen.queryByRole('spinbutton')).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button',{name:'下一年'}));
-  expect(screen.getByRole('heading',{name:'公元1年'})).toBeInTheDocument();
+  expect(screen.getByRole('group', { name: '简明时间控制' })).toHaveTextContent('公元1年西汉');
   await userEvent.click(screen.getByRole('button',{name:'悬浮时间控制器'}));
-  await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));
-  expect(screen.getByRole('spinbutton')).toHaveValue(1);
+  await userEvent.click(screen.getByRole('button',{name:'紧凑时间控制器'}));
+  expect(screen.getByRole('slider')).toHaveAttribute('aria-valuetext', '公元1年');
   await userEvent.click(screen.getByRole('button',{name:'收起时间控制器'}));
+  expect(container.querySelector('.controller-content')).not.toBeInTheDocument();
   expect(screen.queryByRole('slider')).not.toBeInTheDocument();
   expect(screen.getByRole('button',{name:'下一年'})).toBeInTheDocument();
+});
+
+test('collapsed playback uses the shared controller callback', async () => {
+  const onPlayToggle = vi.fn();
+  render(<TimeController year={800} eraLabel="唐" onYearChange={()=>{}} isPlaying={false} onPlayToggle={onPlayToggle}/>);
+
+  await userEvent.click(screen.getByRole('button', { name: '播放' }));
+  expect(onPlayToggle).toHaveBeenCalledOnce();
 });
 test('mobile forces docking without discarding the desktop preference',()=>{
   localStorage.setItem('history-workspace-v1',JSON.stringify({mode:'floating',position:{x:80,y:100}}));
   Object.defineProperty(window,'innerWidth',{configurable:true,value:390,writable:true});
   render(<Demo/>);
   expect(screen.queryByRole('button',{name:'停靠时间控制器'})).not.toBeInTheDocument();
+  expect(screen.getByRole('button',{name:'紧凑时间控制器'})).toBeInTheDocument();
+  expect(screen.queryByRole('button',{name:'展开时间控制器'})).not.toBeInTheDocument();
   window.innerWidth=1200;fireEvent(window,new Event('resize'));
   expect(screen.getByRole('button',{name:'停靠时间控制器'})).toBeInTheDocument();
 });

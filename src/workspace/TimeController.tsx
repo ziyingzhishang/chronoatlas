@@ -2,9 +2,12 @@ import { useLocale } from '../i18n/locale';
 import { Timeline } from '../components/Timeline';
 import { useEffect, useLayoutEffect, useRef, useState, type ComponentProps } from 'react';
 import { clampPosition, layoutFor, readPreference, type Point } from './layout';
+import { CollapsedTimeControls } from './CollapsedTimeControls';
 
 const storageKey = 'history-workspace-v1';
-export function TimeController(props: ComponentProps<typeof Timeline>) {
+type TimeControllerProps = ComponentProps<typeof Timeline> & { eraLabel?: string };
+
+export function TimeController({ eraLabel, ...timelineProps }: TimeControllerProps) {
   const { t } = useLocale();
   const [viewport, setViewport] = useState(() => ({width:window.innerWidth,height:window.innerHeight}));
   const [bounds, setBounds] = useState(() => ({width:window.innerWidth,height:window.innerHeight}));
@@ -63,7 +66,7 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
     setPreference(previous=>({...previous,position:clamped}));
   }
 
-  const mode = props.mode ?? 'explore';
+  const mode = timelineProps.mode ?? 'explore';
   return <div className={`time-controller ${floating?'is-floating':'is-docked'} mode-${mode}`} data-density={effectiveDensity}
     ref={box} style={floating?{left:preference.position.x,top:preference.position.y}:undefined}>
     <div className="controller-handlebar">
@@ -82,15 +85,17 @@ export function TimeController(props: ComponentProps<typeof Timeline>) {
           const delta:Record<string,Point>={ArrowLeft:{x:-16,y:0},ArrowRight:{x:16,y:0},ArrowUp:{x:0,y:-16},ArrowDown:{x:0,y:16}};
           if(delta[e.key]){e.preventDefault();move({x:preference.position.x+delta[e.key].x,y:preference.position.y+delta[e.key].y});}
       }}><span aria-hidden="true">⠿</span><span className="controller-title">{t("时间导航")}</span></button>
+      {effectiveDensity === 'collapsed' && <CollapsedTimeControls year={timelineProps.year} eraLabel={eraLabel}
+        isPlaying={timelineProps.isPlaying} onYearChange={timelineProps.onYearChange} onPlayToggle={timelineProps.onPlayToggle} />}
       <div className="controller-layout-actions">
         {!mobile && <button aria-label={t(floating?'停靠时间控制器':'悬浮时间控制器')} onClick={()=>setPreference(p=>({...p,mode:floating?'docked':'floating'}))}>{t(floating?'停靠':'悬浮')}</button>}
         {floating && <button onClick={()=>move({x:24,y:80})}>{t("归位")}</button>}
         {effectiveDensity!=='collapsed' && <button aria-label={t("收起时间控制器")} onClick={()=>setDensity('collapsed')}>{t("收起")}</button>}
         {effectiveDensity==='collapsed' && <button aria-label={t("紧凑时间控制器")} onClick={()=>setDensity(short?'expanded':'compact')}>{t("刻度")}</button>}
-        <button aria-label={t(density==='expanded'?'精简时间控制器':'展开时间控制器')} aria-expanded={density==='expanded'} aria-controls="time-controller-content"
-          onClick={()=>setDensity(d=>d==='expanded'?'compact':'expanded')}>{t(density==='expanded'?'精简':'展开')}</button>
+        {!(mobile && effectiveDensity === 'collapsed') && <button aria-label={t(density==='expanded'?'精简时间控制器':'展开时间控制器')} aria-expanded={density==='expanded'} aria-controls="time-controller-content"
+          onClick={()=>setDensity(d=>d==='expanded'?'compact':'expanded')}>{t(density==='expanded'?'精简':'展开')}</button>}
       </div>
     </div>
-    <div id="time-controller-content" className="controller-content"><Timeline {...props} density={effectiveDensity}/></div>
+    {effectiveDensity !== 'collapsed' && <div id="time-controller-content" className="controller-content"><Timeline {...timelineProps} density={effectiveDensity}/></div>}
   </div>;
 }
