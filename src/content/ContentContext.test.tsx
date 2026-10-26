@@ -1,8 +1,9 @@
 import { render, screen } from '@testing-library/react';
 import { describe, expect, it } from 'vitest';
 import { ContentProvider, useHistoricalContent } from './ContentContext';
-import { bundledContentCatalog, bundledContentManifest } from './bundled-content';
+import { bundledContentCatalog, bundledContentManifest, bundledReleaseManifest } from './bundled-content';
 import { InMemoryContentRepository, type HistoricalContentRepository } from './repository';
+import { InMemoryHistoricalSnapshot } from './snapshot';
 import { LocaleProvider } from '../i18n/locale';
 
 function Probe() {
@@ -12,6 +13,11 @@ function Probe() {
 
 function ReaderProbe() {
   return <p>读者正文</p>;
+}
+
+function ReleaseProbe() {
+  const { release, snapshot } = useHistoricalContent();
+  return <p>{release.releaseId}:{snapshot.release.releaseId}</p>;
 }
 
 describe('ContentProvider', () => {
@@ -35,6 +41,19 @@ describe('ContentProvider', () => {
     expect(await screen.findByRole('alert')).toHaveTextContent('历史内容加载失败');
     expect(screen.getByRole('alert')).toHaveTextContent('版本校验失败');
     expect(screen.queryByText(/bundled-initial/)).not.toBeInTheDocument();
+  });
+
+  it('publishes one fixed release snapshot and its validated reader catalog', async () => {
+    const release = { ...bundledReleaseManifest, releaseId: 'release-context' };
+    const snapshot = new InMemoryHistoricalSnapshot(release, {
+      ...bundledContentCatalog,
+      people: [{ ...bundledContentCatalog.people[0], name: '版本化人物' }],
+    });
+    const repository = { open: async () => snapshot };
+    render(<ContentProvider repository={repository}><><Probe /><ReleaseProbe /></></ContentProvider>);
+
+    expect(await screen.findByText('release-context:版本化人物')).toBeInTheDocument();
+    expect(screen.getByText('release-context:release-context')).toBeInTheDocument();
   });
 
   it('localizes external repository loading and failure states', async () => {

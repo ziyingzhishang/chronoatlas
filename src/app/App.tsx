@@ -24,13 +24,13 @@ import { EventDetail } from '../components/EventDetail';
 import { HeritageDetail } from '../components/HeritageDetail';
 import type { DetailEntity, DetailHistoryEntry } from '../domain/detail-entity';
 import { ContentProvider, useHistoricalContent } from '../content/ContentContext';
-import type { HistoricalContentRepository } from '../content/repository';
+import type { HistoricalContentRepository, ReleaseSnapshotRepository } from '../content/repository';
 import { useSingleTopicView } from '../workspace/useSingleTopicView';
 import { WorkspaceShell } from '../workspace/WorkspaceShell';
 import { MapStatusHud } from '../components/MapStatusHud';
 import { formatPresentDistance, primaryPolityName, yearsFromPresent } from '../presentation/map-status';
 
-export function App({ contentRepository }: { contentRepository?: HistoricalContentRepository } = {}) {
+export function App({ contentRepository }: { contentRepository?: HistoricalContentRepository | ReleaseSnapshotRepository } = {}) {
   return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace/></ContentProvider></LocaleProvider>;
 }
 
