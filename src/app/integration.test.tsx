@@ -46,6 +46,7 @@ test('clicking blank map closes an open territory detail panel',async()=>{
 
 test('ordinary year navigation returns the timeline search to the current window',async()=>{
   render(<App/>);
+  await userEvent.click(screen.getByRole('button',{name:'紧凑时间控制器'}));
   await userEvent.click(screen.getByRole('button',{name:/查看前1046年附近/}));
   expect(screen.getByRole('option',{name:/周克商/})).toBeInTheDocument();
   expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
@@ -73,6 +74,7 @@ test('choosing an event changes the map year and keeps its details open',async()
 
 test('changing the event query hides a stale detail card and clears timeline groups',async()=>{
   render(<App/>);
+  await userEvent.click(screen.getByRole('button',{name:'紧凑时间控制器'}));
   await userEvent.click(screen.getByRole('button',{name:/查看前1046年附近/}));
   await userEvent.type(screen.getByRole('searchbox',{name:'搜索历史事件'}),'秦统一');
   await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
