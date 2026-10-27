@@ -1,7 +1,6 @@
 import type { HistoricalClaim, HistoricalEvent, Person, PersonDetail as PersonDetailRecord, PersonRelationType, Polity } from '../domain/types';
 import { groupPersonRelationships, type PersonRelationship } from '../domain/relationships';
 import { formatHistoricalYear } from '../domain/timeline';
-import { buildPersonTimeCoverageReport, type PersonTimeReview } from '../data/person-time-review';
 import { useLocale } from '../i18n/locale';
 import { useHistoricalContent } from '../content/ContentContext';
 import { toReaderSources } from '../presentation/reader-content';
@@ -33,21 +32,20 @@ const relationLabels: Partial<Record<PersonRelationType, string>> = {
 
 export function PersonDetail({ person, detail, year, claims, people = [], polities = [], events = [], onOpenEntity }: PersonDetailProps) {
   const { t } = useLocale();
-  const { catalog, external } = useHistoricalContent();
+  const { catalog } = useHistoricalContent();
   if (!detail) return <article className="event-detail person-detail" aria-label={t('人物详情')}><h3>{t(person.name)}</h3><p className="detail-note">{t('暂无已收录人物详情')}</p></article>;
 
   const grouped = groupPersonRelationships(person.id, year, claims);
   const personById = new Map(people.map((item) => [item.id, item]));
   const polityById = new Map(polities.map((item) => [item.id, item]));
   const eventById = new Map(events.map((item) => [item.id, item]));
-  const timeReview = (external ? buildPersonTimeCoverageReport({ people, personDetails: catalog.personDetails, claims }) : buildPersonTimeCoverageReport()).byPersonId[person.id] ?? unknownPersonTimeReview(person);
+  const timeNote = catalog.personTimeNotes.find((record) => record.personId === person.id);
 
   return <article className="event-detail person-detail" aria-label={t('人物详情')}>
     <div className="event-meta">{t(person.roles?.join('／') ?? '历史人物')} · {formatLife(person.birthYear, person.deathYear)}</div>
     <h3>{t(person.name)}</h3>
     {detail.aliases.length > 0 && <p className="aliases">{t('别名：')}{detail.aliases.map(t).join('、')}</p>}
     <p className="event-lead">{t(detail.biography)}</p>
-    <TimeEvidenceReview review={timeReview} t={t} />
 
     <section className="person-detail-section">
       <h4>{t('任职经历')}</h4>
@@ -67,9 +65,9 @@ export function PersonDetail({ person, detail, year, claims, people = [], politi
     </section>
 
     <ReaderNotes className="event-sources" note={{
-      dateDescription: personTimeDescription(timeReview),
-      uncertainty: [timeReview.explanation, detail.uncertaintyNote].filter(Boolean).join('；'),
-      sources: toReaderSources([...detail.sourceIds, ...timeReview.evidenceSourceIds], catalog.sources),
+      dateDescription: timeNote?.dateDescription ?? '生卒年尚待核实',
+      uncertainty: [timeNote?.uncertainty, detail.uncertaintyNote].filter(Boolean).join('；'),
+      sources: toReaderSources([...detail.sourceIds, ...(timeNote?.sourceIds ?? [])], catalog.sources),
     }} />
   </article>;
 }
@@ -95,27 +93,6 @@ function PersonRelationshipGraph({ personName, grouped, people, polities, events
       })}
     </ul>
   </section>;
-}
-
-function TimeEvidenceReview({ review }: { review: PersonTimeReview; t: (text: string) => string }) {
-  const { catalog } = useHistoricalContent();
-  return <ReaderNotes note={{ dateDescription: personTimeDescription(review), uncertainty: review.explanation, sources: toReaderSources(review.evidenceSourceIds, catalog.sources) }} />;
-}
-
-function personTimeDescription(review: PersonTimeReview) {
-  return review.status === 'confirmed' ? '生卒年记录较明确' : review.status === 'approximate' ? '相关活动年代为约数' : '生卒年尚待核实';
-}
-
-function unknownPersonTimeReview(person: Person): PersonTimeReview {
-  return {
-    personId: person.id,
-    personName: person.name,
-    status: 'unknown',
-    evidence: [],
-    evidenceSourceIds: [],
-    allowTimelinePosition: false,
-    explanation: `现有资料尚不足以确定${person.name}更精确的生卒年。`,
-  };
 }
 
 function RelationSection({ title, types, grouped, people, polities, events, onOpenEntity, t }: { title: string; types: PersonRelationType[]; grouped: ReturnType<typeof groupPersonRelationships>; people: Map<string, Person>; polities: Map<string, Polity>; events: Map<string, HistoricalEvent>; onOpenEntity?: PersonDetailProps['onOpenEntity']; t: (text: string) => string }) {

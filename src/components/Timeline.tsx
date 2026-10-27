@@ -1,15 +1,24 @@
 import { useLocale } from '../i18n/locale';
 import { useEffect, useMemo, useRef, useState, type SetStateAction } from 'react';
-import { events } from '../data/events';
 import type { HistoricalEvent } from '../domain/types';
 import { clusterEvents } from '../domain/event-clusters';
-import { periods, periodBands, periodAtYear, type HistoricalPeriod } from '../data/periods';
-import { boundaryYears } from '../data/boundaries';
 import {
   TIMELINE_MAX_YEAR, TIMELINE_MIN_YEAR, TONGJIAN_RANGE, formatHistoricalYear,
   fitWindow, indexToYear, makeTicks, yearPosition, yearToIndex, type YearWindow,
 } from '../domain/timeline';
 import { localizeEvents } from '../i18n/content';
+import { useHistoricalContent } from '../content/ContentContext';
+
+interface HistoricalPeriod {
+  id: string;
+  name: string;
+  start: number;
+  end: number;
+  color: string;
+  lane: number;
+  approximate?: boolean;
+  intervals?: readonly (readonly [number, number])[];
+}
 
 interface TimelineProps {
   mode?: 'explore'|'analysis';
@@ -36,6 +45,18 @@ const shortYear = (y: number) => y < 0 ? `前${-y}` : `公元${y}`;
 
 export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayToggle, density = 'expanded', onEventSelect, onEventGroup, viewWindow, onViewWindowChange, onSemanticViewChange, viewLabel, canGoBack, onBackView }: TimelineProps) {
   const { locale, t } = useLocale();
+  const { catalog, historySource } = useHistoricalContent();
+  const events = catalog.events;
+  const periods: readonly HistoricalPeriod[] = catalog.periods;
+  const periodBands = useMemo(() => periods.flatMap(period => (period.intervals ?? [[period.start, period.end]]).map(([start, end], index) => ({
+    ...period,
+    id: period.intervals ? `${period.id}-${index}` : period.id,
+    start,
+    end,
+  }))), [periods]);
+  const boundaryYears = useMemo(() => [...new Set(historySource.boundaries.flatMap(boundary => boundary.temporalKind === 'interval'
+    ? [boundary.validFrom, boundary.validTo === -1 ? 1 : boundary.validTo + 1]
+    : [boundary.snapshotYear]))].filter(candidate => candidate <= TIMELINE_MAX_YEAR && candidate !== 0).sort((a, b) => a - b), [historySource]);
   const listSeparator=locale==='en' ? ', ' : '、';
   const expanded = density === 'expanded';
   const track = useRef<HTMLDivElement>(null);
@@ -54,7 +75,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   const index = yearToIndex(year), span = endIndex - startIndex;
   const inView = index >= startIndex && index <= endIndex;
   const ticks = useMemo(() => makeTicks(window), [window]);
-  const currentPeriods = periodAtYear(year);
+  const currentPeriods = periodBands.filter(period => period.start <= year && period.end >= year);
   const previousChange = boundaryYears.filter(y=>y<year).at(-1);
   const nextChange = boundaryYears.find(y=>y>year);
   const windowChanges = boundaryYears.filter(y=>y>=window[0]&&y<=window[1]);

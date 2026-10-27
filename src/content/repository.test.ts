@@ -95,6 +95,13 @@ describe('historical content repositories', () => {
     }).load()).rejects.toThrow(/mapReferences.*effectiveFrom/);
   });
 
+  it('rejects malformed reader navigation collections before presentation uses them', async () => {
+    const manifest: ContentManifest = { schemaVersion: 1, revision: 'bad-period', collections: { periods: 'memory://periods' }, media: [] };
+    await expect(new InMemoryContentRepository(manifest, {
+      periods: [{ id: 'bad-period', name: '错误分期', color: '#000', start: 'unknown', end: 10, lane: 0 }],
+    }).load()).rejects.toThrow(/periods.*start/);
+  });
+
   it('publishes the existing in-code catalogs through the repository boundary during migration', async () => {
     const snapshot = await bundledContentRepository.load();
 

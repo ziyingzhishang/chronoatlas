@@ -174,7 +174,10 @@ const collectionRequiredStrings: Record<string, readonly string[]> = {
   heritageDetails: ['heritageId'],
   polityDetails: ['polityId'],
   sources: ['id', 'title'],
-  eventTimeReviews: ['eventId', 'status', 'expectedPrecision', 'explanation', 'timelineStrategy'],
+  eventTimeNotes: ['eventId', 'dateDescription', 'uncertainty'],
+  personTimeNotes: ['personId', 'dateDescription', 'uncertainty'],
+  knowledgeCoverageSummaries: ['id', 'perspective', 'contextId', 'label', 'summary'],
+  periods: ['id', 'name', 'color'],
   mapReferences: ['id'],
 };
 
@@ -323,10 +326,29 @@ function validateRecordShape(name: string, record: Record<string, unknown>, inde
   } else if (name === 'sources') {
     requireStrings(record, ['scope', 'note'], at);
     optionalStrings(record, ['authorOrInstitution', 'urlOrCitation'], at);
-  } else if (name === 'eventTimeReviews') {
-    requireEnum(record, 'status', ['confirmed', 'approximate', 'unknown'], at);
-    requireEnum(record, 'expectedPrecision', ['year', 'approximate', 'range'], at);
-    requireEnum(record, 'timelineStrategy', ['year-marker', 'approximate-marker', 'range-band', 'unknown-window'], at);
+  } else if (name === 'eventTimeNotes' || name === 'personTimeNotes') {
+    requireStringArray(record, 'sourceIds', at);
+  } else if (name === 'knowledgeCoverageSummaries') {
+    requireEnum(record, 'perspective', ['global', 'polity', 'city'], at);
+    requireNumber(record, 'entityCount', at);
+  } else if (name === 'periods') {
+    requireNumbers(record, ['start', 'end', 'lane'], at);
+    if (record.approximate !== undefined && typeof record.approximate !== 'boolean') {
+      throw new Error(`${at}.approximate must be a boolean`);
+    }
+    if (record.intervals !== undefined && (!Array.isArray(record.intervals) || record.intervals.some((interval) => (
+      !Array.isArray(interval) || interval.length !== 2 || interval.some((value) => typeof value !== 'number' || !Number.isFinite(value))
+    )))) {
+      throw new Error(`${at}.intervals must contain finite year pairs`);
+    }
+  } else if (name === 'mappingNotes') {
+    requireString(record, 'note', at);
+  } else if (name === 'sovereigntyNotices') {
+    requireStrings(record, ['polityId', 'title', 'statement', 'modernReferenceNote'], at);
+    requireNumber(record, 'effectiveFrom', at);
+    requireObjectArray(record, 'citations', at, (citation, citationAt) => {
+      requireStrings(citation, ['title', 'urlOrCitation'], citationAt);
+    });
   } else if (name === 'mapReferences') {
     requireNumber(record, 'effectiveFrom', at);
     if (!record.featureCollection || typeof record.featureCollection !== 'object' || Array.isArray(record.featureCollection)) {
