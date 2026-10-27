@@ -257,6 +257,25 @@
 .sr-only { position:absolute; width:1px; height:1px; padding:0; margin:-1px; overflow:hidden; clip:rect(0,0,0,0); white-space:nowrap; border:0; }
 .language-setting { display:grid; gap:8px; margin:0 0 20px; }
 .language-setting select { width:100%; min-height:44px; }
+.offline-data-manager { margin:0 0 20px; padding:14px; border:1px solid #756f50; border-radius:6px; background:#202d25; color:#dce0d2; }
+.offline-data-manager>header h3 { margin:0 0 6px; color:#efd79d; font-size:15px; font-weight:500; }
+.offline-data-manager>header p,.offline-storage-note { margin:0 0 12px; color:#b8c2b2; font:12px/1.7 system-ui,sans-serif; }
+.offline-package-list { display:grid; gap:8px; }
+.offline-package-card { padding:10px; border:1px solid #536247; border-radius:5px; background:#17231c; }
+.offline-package-card h4 { margin:0 0 8px; color:#e5d3a9; font-size:13px; }
+.offline-package-card dl { display:grid; grid-template-columns:1fr 1fr; gap:5px 12px; margin:0; font:11px/1.5 system-ui,sans-serif; }
+.offline-package-card dl div { min-width:0; }
+.offline-package-card dt { color:#8fa08d; }
+.offline-package-card dd { margin:0; overflow-wrap:anywhere; color:#d9ded1; }
+.offline-package-actions,.offline-release-actions { display:flex; flex-wrap:wrap; gap:6px; margin-top:10px; }
+.offline-package-actions button,.offline-release-actions button { min-height:44px; padding:0 12px; border:1px solid #697657; border-radius:4px; color:#e8e2d2; background:#2a3a2e; }
+.offline-package-actions button:first-child { color:#19231c; background:#c6a15b; border-color:#c6a15b; }
+.offline-package-actions button:disabled,.offline-release-actions button:disabled { opacity:.5; }
+.offline-install-progress { margin-top:8px; color:#e3c986; font:11px/1.5 system-ui,sans-serif; }
+.offline-storage-note { margin:10px 0 0; }
+.offline-unavailable-note { margin:12px 0 0; color:#e6d4aa; font:13px/1.7 system-ui,sans-serif; }
+.offline-data-manager [role="alert"] { color:#f2ba9f; font:12px/1.6 system-ui,sans-serif; }
+.offline-data-manager [role="status"] { color:#cbd6c6; font:12px/1.6 system-ui,sans-serif; }
 .map-reading-guide,.sovereignty-notice { margin:0 0 18px; padding:14px; border:1px solid #756f50; border-radius:6px; background:#28352d; color:#dce0d2; }
 .map-reading-guide h3,.sovereignty-notice h3 { margin:0 0 8px; color:#efd79d; font-size:15px; font-weight:500; }
 .map-reading-guide p,.sovereignty-notice p { margin:7px 0; font:13px/1.8 system-ui,sans-serif; }

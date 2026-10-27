@@ -42,8 +42,10 @@ test('keeps secondary controls closed until requested', async () => {
 
 test('opens the more information as a bottom-right HUD', async () => {
   render(<App />);
+  expect(screen.queryByRole('heading', { name: '离线历史资料' })).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button', { name: '更多' }));
   expect(screen.getByRole('dialog', { name: '阅读说明与来源' })).toHaveClass('workspace-hud');
+  expect(screen.getByRole('heading', { name: '离线历史资料' })).toBeInTheDocument();
 });
 
 test('opens a deep entity drawer from the polity study view and supports back navigation', async () => {

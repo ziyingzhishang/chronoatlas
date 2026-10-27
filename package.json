@@ -10,7 +10,7 @@
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
-    "postbuild": "node scripts/strip-source-map-references.mjs dist",
+    "postbuild": "node scripts/strip-source-map-references.mjs dist && node scripts/inject-service-worker-manifest.mjs dist",
     "preview": "vite preview",
     "test": "vitest",
     "audit:coverage": "node scripts/audit-coverage.mjs",
