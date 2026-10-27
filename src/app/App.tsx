@@ -29,13 +29,22 @@ import { useSingleTopicView } from '../workspace/useSingleTopicView';
 import { WorkspaceShell } from '../workspace/WorkspaceShell';
 import { MapStatusHud } from '../components/MapStatusHud';
 import { formatPresentDistance, primaryPolityName, yearsFromPresent } from '../presentation/map-status';
-import { OfflineDataManager } from '../components/OfflineDataManager';
+import { OfflineDataManager, type OfflineManager } from '../components/OfflineDataManager';
+import type { ReleaseManifest } from '../content/release-types';
 
-export function App({ contentRepository }: { contentRepository?: HistoricalContentRepository | ReleaseSnapshotRepository } = {}) {
-  return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace/></ContentProvider></LocaleProvider>;
+export interface OfflineRuntimeView {
+  availableManifest: ReleaseManifest;
+  manager: OfflineManager;
 }
 
-function HistoryWorkspace() {
+export function App({ contentRepository, offlineRuntime }: {
+  contentRepository?: HistoricalContentRepository | ReleaseSnapshotRepository;
+  offlineRuntime?: OfflineRuntimeView;
+} = {}) {
+  return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace offlineRuntime={offlineRuntime}/></ContentProvider></LocaleProvider>;
+}
+
+function HistoryWorkspace({ offlineRuntime }: { offlineRuntime?: OfflineRuntimeView }) {
   const {locale,setLocale,t}=useLocale();
   const { catalog, historySource, release } = useHistoricalContent();
   const { claims, events, heritage, heritageDetails, people, personDetails, places, polities, studyEvents: detailEvents } = catalog;
@@ -205,7 +214,7 @@ function HistoryWorkspace() {
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
         {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear} onOpenEntity={openDetail}/>}
-        {panel==='more'&&<><label className="language-setting">{t('显示语言')}<select aria-label={t('显示语言')} value={locale} onChange={e=>setLocale(readLocale(e.target.value))}>{Object.entries(localeNames).map(([value,name])=><option key={value} value={value}>{name}</option>)}</select></label><OfflineDataManager manifest={release}/><MapReadingGuide year={currentYear}/><Legend/><p className="detail-note">{t('时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。')}</p><p className="detail-note">{t('桌面可停靠或悬浮时间控制器；手机使用收起、紧凑和展开三档。拖动年份不会改变地图视角。独立网页应用试用版，尚未公开发布。')}</p></>}
+        {panel==='more'&&<><label className="language-setting">{t('显示语言')}<select aria-label={t('显示语言')} value={locale} onChange={e=>setLocale(readLocale(e.target.value))}>{Object.entries(localeNames).map(([value,name])=><option key={value} value={value}>{name}</option>)}</select></label><OfflineDataManager manifest={offlineRuntime?.availableManifest ?? release} manager={offlineRuntime?.manager}/><MapReadingGuide year={currentYear}/><Legend/><p className="detail-note">{t('时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。')}</p><p className="detail-note">{t('桌面可停靠或悬浮时间控制器；手机使用收起、紧凑和展开三档。拖动年份不会改变地图视角。独立网页应用试用版，尚未公开发布。')}</p></>}
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
       </div>

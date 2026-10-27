@@ -39,8 +39,20 @@ describe('ContentProvider', () => {
 
     expect(screen.getByRole('status')).toHaveTextContent('正在加载历史内容');
     expect(await screen.findByRole('alert')).toHaveTextContent('历史内容加载失败');
-    expect(screen.getByRole('alert')).toHaveTextContent('版本校验失败');
+    expect(screen.getByRole('alert')).toHaveTextContent('历史资料暂时无法加载，请稍后重试');
+    expect(screen.getByRole('alert')).not.toHaveTextContent('版本校验失败');
     expect(screen.queryByText(/bundled-initial/)).not.toBeInTheDocument();
+  });
+
+  it('does not expose package ids, immutable paths, or integrity diagnostics to readers', async () => {
+    const repository: HistoricalContentRepository = {
+      load: async () => { throw new Error('SHA-256 mismatch for releases/private/core-zh.json'); },
+    };
+    render(<ContentProvider repository={repository}><Probe /></ContentProvider>);
+
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('历史资料校验失败，请稍后重试或使用当前内置资料');
+    expect(alert).not.toHaveTextContent(/SHA-256|releases\/|core-zh/);
   });
 
   it('publishes one fixed release snapshot and its validated reader catalog', async () => {
@@ -69,7 +81,8 @@ describe('ContentProvider', () => {
 
     render(<ContentProvider repository={{ open: async () => snapshot }}><Probe /></ContentProvider>);
 
-    expect(await screen.findByRole('alert')).toHaveTextContent('Release boundary collection is malformed');
+    expect(await screen.findByRole('alert')).toHaveTextContent('历史资料暂时无法加载，请稍后重试');
+    expect(screen.getByRole('alert')).not.toHaveTextContent('Release boundary collection is malformed');
     expect(screen.queryByText(/malformed-map-release:/)).not.toBeInTheDocument();
   });
 
@@ -87,7 +100,8 @@ describe('ContentProvider', () => {
 
     render(<ContentProvider repository={{ open: async () => snapshot }}><Probe /></ContentProvider>);
 
-    expect(await screen.findByRole('alert')).toHaveTextContent('Release boundary collection is malformed');
+    expect(await screen.findByRole('alert')).toHaveTextContent('历史资料暂时无法加载，请稍后重试');
+    expect(screen.getByRole('alert')).not.toHaveTextContent('Release boundary collection is malformed');
     expect(screen.queryByText(/invalid-evidence-release:/)).not.toBeInTheDocument();
   });
 

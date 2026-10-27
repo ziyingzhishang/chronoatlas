@@ -177,6 +177,34 @@ describe('OfflinePackageManager', () => {
     expect(await store.activationState()).toEqual({ activeReleaseId: 'release-old', previousReleaseId: undefined });
   });
 
+  it('does not leave activatable packages when persisting the release manifest fails', async () => {
+    const { manifest, bodies } = await fixtureManifest();
+    class ManifestFailureStore extends MemoryPackageStore {
+      override async saveReleaseManifest() { throw new Error('manifest persistence failed'); }
+    }
+    const store = new ManifestFailureStore();
+    const manager = new OfflinePackageManager({ manifest, store, fetcher: responseFetcher(bodies), resolveAsset: (uri) => uri });
+
+    await expect(manager.install('core-zh')).rejects.toThrow(/manifest persistence/i);
+
+    expect(await store.listInstalled()).toEqual([]);
+    await expect(manager.activate()).rejects.toThrow(/manifest/i);
+  });
+
+  it('rejects a changed manifest that reuses an installed immutable release id', async () => {
+    const { manifest, bodies } = await fixtureManifest();
+    const store = new MemoryPackageStore();
+    const first = new OfflinePackageManager({ manifest, store, fetcher: responseFetcher(bodies), resolveAsset: (uri) => uri });
+    await first.install('core-zh');
+
+    const changed = structuredClone(manifest);
+    changed.packages[0].files[0].sha256 = 'f'.repeat(64);
+    const second = new OfflinePackageManager({ manifest: changed, store, fetcher: responseFetcher(bodies), resolveAsset: (uri) => uri });
+
+    await expect(second.install('core-zh')).rejects.toThrow(/immutable manifest/i);
+    expect(await store.readReleaseManifest(manifest.releaseId)).toEqual(manifest);
+  });
+
   it('rejects mutable latest metadata instead of caching it as a package file', async () => {
     const { manifest, bodies } = await fixtureManifest();
     const mutableUri = 'releases/latest.json';

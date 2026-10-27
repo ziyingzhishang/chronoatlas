@@ -3,6 +3,7 @@ import userEvent from '@testing-library/user-event';
 import { describe, expect, it, vi } from 'vitest';
 import type { ReleaseManifest } from '../content/release-types';
 import { OfflineDataManager, type OfflineManager } from './OfflineDataManager';
+import { OFFLINE_RELEASE_CHANGE_EVENT } from '../offline/release-events';
 
 const manifest: ReleaseManifest = {
   releaseId: '2026.10.27', schemaVersion: '1', minimumAppVersion: '0.1.0',
@@ -102,5 +103,37 @@ describe('OfflineDataManager', () => {
     expect(alert).toHaveTextContent('资料校验失败');
     expect(alert).toHaveTextContent('已保留当前版本');
     expect(alert).not.toHaveTextContent(/SHA-256|private-core|releases\//);
+  });
+
+  it('announces a successful activation so the shared content snapshot reloads', async () => {
+    const activate = vi.fn().mockResolvedValue(undefined);
+    const listener = vi.fn();
+    globalThis.addEventListener(OFFLINE_RELEASE_CHANGE_EVENT, listener);
+    render(<OfflineDataManager manifest={manifest} manager={manager({ activate })}/>);
+
+    await userEvent.click(await screen.findByRole('button', { name: '启用已安装版本' }));
+
+    await waitFor(() => expect(activate).toHaveBeenCalledTimes(1));
+    expect(listener).toHaveBeenCalledTimes(1);
+    globalThis.removeEventListener(OFFLINE_RELEASE_CHANGE_EVENT, listener);
+  });
+
+  it('still announces a committed activation when the following package-list refresh fails', async () => {
+    const activate = vi.fn().mockResolvedValue(undefined);
+    const listAvailable = vi.fn()
+      .mockResolvedValueOnce([{ releasePackage: manifest.packages[0], installed: true }])
+      .mockRejectedValueOnce(new Error('refresh failed'));
+    const listener = vi.fn();
+    globalThis.addEventListener(OFFLINE_RELEASE_CHANGE_EVENT, listener);
+    render(<OfflineDataManager manifest={manifest} manager={manager({ activate, listAvailable })}/>);
+
+    await userEvent.click(await screen.findByRole('button', { name: '启用已安装版本' }));
+
+    await waitFor(() => expect(listener).toHaveBeenCalledTimes(1));
+    const alert = await screen.findByRole('alert');
+    expect(alert).toHaveTextContent('版本已切换');
+    expect(alert).toHaveTextContent('列表刷新失败');
+    expect(alert).not.toHaveTextContent('当前版本未改变');
+    globalThis.removeEventListener(OFFLINE_RELEASE_CHANGE_EVENT, listener);
   });
 });

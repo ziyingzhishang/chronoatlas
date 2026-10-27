@@ -43,10 +43,13 @@ export class OfflinePackageManager {
   }
 
   async install(packageId: string): Promise<void> {
+    await this.store.saveReleaseManifest(this.manifest);
     await this.installWithDependencies(packageId, new Set());
   }
 
   async activate(): Promise<void> {
+    const persistedManifest = await this.store.readReleaseManifest(this.manifest.releaseId);
+    if (!persistedManifest) throw new Error(`Release manifest is not installed: ${this.manifest.releaseId}`);
     const required = this.activePackageIds();
     for (const packageId of required) {
       if (!await this.store.isPackageComplete(this.manifest.releaseId, packageId)) {
@@ -97,13 +100,23 @@ export class OfflinePackageManager {
           throw new Error('Mutable latest.json cannot be installed as an immutable package file');
         }
         publicAssetUrl(file.uri, '/');
-        const response = await this.fetcher(this.resolveAsset(file.uri));
-        if (!response.ok) throw new Error(`Unable to download ${file.uri}: ${response.status}`);
-        const bytes = new Uint8Array(await response.arrayBuffer());
-        if (bytes.byteLength !== file.bytes) {
-          throw new Error(`Byte size mismatch for ${file.uri}: expected ${file.bytes}, got ${bytes.byteLength}`);
+        let bytes = await this.store.findReusableFile(file);
+        if (bytes) {
+          try {
+            await verifySha256(bytes, file.sha256);
+          } catch {
+            bytes = undefined;
+          }
         }
-        await verifySha256(bytes, file.sha256);
+        if (!bytes) {
+          const response = await this.fetcher(this.resolveAsset(file.uri));
+          if (!response.ok) throw new Error(`Unable to download ${file.uri}: ${response.status}`);
+          bytes = new Uint8Array(await response.arrayBuffer());
+          if (bytes.byteLength !== file.bytes) {
+            throw new Error(`Byte size mismatch for ${file.uri}: expected ${file.bytes}, got ${bytes.byteLength}`);
+          }
+          await verifySha256(bytes, file.sha256);
+        }
         await this.store.writeStagedFile(this.manifest.releaseId, packageId, file, bytes);
       }
       await this.store.completePackage(this.manifest.releaseId, packageId);

@@ -1,4 +1,4 @@
-import type { ReleaseFile, ReleasePackage } from '../content/release-types';
+import type { ReleaseFile, ReleaseManifest, ReleasePackage } from '../content/release-types';
 
 export interface InstalledPackage {
   releaseId: string;
@@ -16,6 +16,9 @@ export interface ActivationState {
 }
 
 export interface PackageStore {
+  saveReleaseManifest(manifest: ReleaseManifest): Promise<void>;
+  readReleaseManifest(releaseId: string): Promise<ReleaseManifest | undefined>;
+  findReusableFile(file: ReleaseFile): Promise<Uint8Array | undefined>;
   availableBytes(): Promise<number | undefined>;
   beginPackage(releaseId: string, releasePackage: ReleasePackage): Promise<void>;
   writeStagedFile(releaseId: string, packageId: string, file: ReleaseFile, bytes: Uint8Array): Promise<void>;

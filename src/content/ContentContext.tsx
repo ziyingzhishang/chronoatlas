@@ -19,6 +19,7 @@ import type { ReleaseManifest } from './release-types';
 import type { HistoricalStateSource } from '../domain/history-state';
 import type { BoundaryEvidence, BoundaryState } from '../domain/types';
 import { useLocale } from '../i18n/locale';
+import { OFFLINE_RELEASE_CHANGE_EVENT } from '../offline/release-events';
 
 interface ContentContextValue {
   catalog: BundledContentCatalog;
@@ -52,9 +53,16 @@ export function ContentProvider({ children, repository }: {
   const { t } = useLocale();
   const activeRepository = repository ?? bundledContentRepository;
   const usesBundledRepository = activeRepository === bundledContentRepository;
+  const [reloadToken, setReloadToken] = useState(0);
   const [state, setState] = useState<ContentState>(usesBundledRepository
     ? { status: 'ready', value: bundledValue, snapshot: bundledHistoricalSnapshot, release: bundledReleaseManifest }
     : { status: 'loading' });
+
+  useEffect(() => {
+    const reload = () => setReloadToken((value) => value + 1);
+    globalThis.addEventListener?.(OFFLINE_RELEASE_CHANGE_EVENT, reload);
+    return () => globalThis.removeEventListener?.(OFFLINE_RELEASE_CHANGE_EVENT, reload);
+  }, []);
 
   useEffect(() => {
     let active = true;
@@ -69,12 +77,19 @@ export function ContentProvider({ children, repository }: {
       if (active) setState({ status: 'error', error: reason instanceof Error ? reason : new Error(String(reason)) });
     });
     return () => { active = false; };
-  }, [activeRepository, usesBundledRepository]);
+  }, [activeRepository, reloadToken, usesBundledRepository]);
 
   const stableValue = useMemo(() => state.status === 'ready' ? state.value : undefined, [state]);
   if (state.status === 'loading') return <main className="content-load-state" role="status">{t('正在加载历史内容…')}</main>;
-  if (state.status === 'error') return <main className="content-load-state content-load-error" role="alert"><h1>{t('历史内容加载失败')}</h1><p>{state.error.message}</p></main>;
+  if (state.status === 'error') return <main className="content-load-state content-load-error" role="alert"><h1>{t('历史内容加载失败')}</h1><p>{readerSafeContentError(state.error, t)}</p></main>;
   return <ContentContext.Provider value={stableValue!}><div className="content-provider" data-content-revision={state.value.revision}>{children}</div></ContentContext.Provider>;
+}
+
+function readerSafeContentError(error: Error, t: (key: string) => string) {
+  if (/sha-?256|checksum|digest|integrity|byte size|releases\/|core-zh|china-territory|package/i.test(error.message)) {
+    return t('历史资料校验失败，请稍后重试或使用当前内置资料。');
+  }
+  return t('历史资料暂时无法加载，请稍后重试。');
 }
 
 async function loadRepository(repository: HistoricalContentRepository | ReleaseSnapshotRepository): Promise<ContentContextValue> {

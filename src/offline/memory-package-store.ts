@@ -1,20 +1,48 @@
-import type { ReleaseFile, ReleasePackage } from '../content/release-types';
+import type { ReleaseFile, ReleaseManifest, ReleasePackage } from '../content/release-types';
+import { validateReleaseManifest } from '../content/release-validation';
 import type { ActivationState, InstalledPackage, PackageStore } from './package-store';
 
 interface StoredPackage {
   metadata: InstalledPackage;
   files: Map<string, Uint8Array>;
+  fileDigests: Map<string, string>;
   expectedFileUris: readonly string[];
 }
 
 export class MemoryPackageStore implements PackageStore {
   private readonly packages = new Map<string, StoredPackage>();
   private readonly activatedRequirements = new Map<string, readonly string[]>();
+  private readonly manifests = new Map<string, ReleaseManifest>();
   private activation: ActivationState = {};
   private readonly capacityBytes?: number;
 
   constructor(options: { capacityBytes?: number } = {}) {
     this.capacityBytes = options.capacityBytes;
+  }
+
+  async saveReleaseManifest(manifest: ReleaseManifest) {
+    const validated = validateReleaseManifest(structuredClone(manifest));
+    const existing = this.manifests.get(validated.releaseId);
+    if (existing && JSON.stringify(existing) !== JSON.stringify(validated)) {
+      throw new Error(`Cannot replace immutable manifest for release ${validated.releaseId}`);
+    }
+    this.manifests.set(validated.releaseId, structuredClone(validated));
+  }
+
+  async readReleaseManifest(releaseId: string) {
+    const manifest = this.manifests.get(releaseId);
+    return manifest ? structuredClone(manifest) : undefined;
+  }
+
+  async findReusableFile(file: ReleaseFile) {
+    for (const stored of this.packages.values()) {
+      if (stored.metadata.state !== 'complete') continue;
+      for (const [uri, digest] of stored.fileDigests) {
+        const bytes = stored.files.get(uri);
+        if (digest === file.sha256 && bytes?.byteLength === file.bytes) return bytes.slice();
+      }
+    }
+    return undefined;
   }
 
   async availableBytes() {
@@ -36,6 +64,7 @@ export class MemoryPackageStore implements PackageStore {
         dependencies: [...releasePackage.dependencies],
       },
       files: new Map(),
+      fileDigests: new Map(),
       expectedFileUris: releasePackage.files.map((file) => file.uri),
     });
   }
@@ -48,6 +77,7 @@ export class MemoryPackageStore implements PackageStore {
     const additional = bytes.byteLength - previous;
     if (available !== undefined && additional > available) throw new Error(`Insufficient storage space for ${file.uri}`);
     stored.files.set(file.uri, bytes.slice());
+    stored.fileDigests.set(file.uri, file.sha256);
     stored.metadata = {
       ...stored.metadata,
       bytes: stored.metadata.bytes + additional,

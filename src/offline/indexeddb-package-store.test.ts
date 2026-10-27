@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import type { ReleaseFile, ReleasePackage } from '../content/release-types';
+import type { ReleaseFile, ReleaseManifest, ReleasePackage } from '../content/release-types';
 import { FakeIndexedDbFactory } from '../test/fake-indexeddb';
 import { CachePackageFiles } from './cache-package-files';
 import { IndexedDbPackageStore } from './indexeddb-package-store';
@@ -39,6 +39,11 @@ const releasePackage = (releaseId: string, id = 'core-zh'): ReleasePackage => ({
   recordCount: 1,
   licenseIds: ['MIT'],
   files: [releaseFile(releaseId)],
+});
+
+const releaseManifest = (releaseId: string): ReleaseManifest => ({
+  releaseId, schemaVersion: '1', minimumAppVersion: '0.1.0', createdAt: '2026-10-27T00:00:00Z',
+  channel: 'preview', complianceProfile: 'internal-research', packages: [releasePackage(releaseId)],
 });
 
 async function install(store: PackageStore, releaseId: string, packageId = 'core-zh') {
@@ -98,6 +103,16 @@ describe.each(contractFactories)('PackageStore contract: %s', (_name, createFixt
 
     expect(await store.listStaging()).toEqual([]);
     expect(await store.isPackageComplete('release-a', 'core-zh')).toBe(true);
+  });
+
+  it('persists validated release manifests and reuses a verified file by hash', async () => {
+    const { store } = await createFixture();
+    const manifest = releaseManifest('release-a');
+    await store.saveReleaseManifest(manifest);
+    await install(store, 'release-a');
+
+    expect(await store.readReleaseManifest('release-a')).toEqual(manifest);
+    expect(Array.from((await store.findReusableFile(releaseFile('release-b'))) ?? [])).toEqual([1, 2, 3]);
   });
 });
 

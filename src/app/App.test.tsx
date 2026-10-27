@@ -3,6 +3,8 @@ import { afterEach, expect, test, vi } from 'vitest';
 import { App } from './App';
 import userEvent from '@testing-library/user-event';
 import { mapInstances } from '../test/maplibre-mock';
+import type { ReleaseManifest } from '../content/release-types';
+import type { OfflineManager } from '../components/OfflineDataManager';
 
 afterEach(() => vi.restoreAllMocks());
 
@@ -46,6 +48,30 @@ test('opens the more information as a bottom-right HUD', async () => {
   await userEvent.click(screen.getByRole('button', { name: '更多' }));
   expect(screen.getByRole('dialog', { name: '阅读说明与来源' })).toHaveClass('workspace-hud');
   expect(screen.getByRole('heading', { name: '离线历史资料' })).toBeInTheDocument();
+});
+
+test('shows the separately discovered release while the active content snapshot remains fixed', async () => {
+  const availableManifest: ReleaseManifest = {
+    releaseId: 'release-update', schemaVersion: '1', minimumAppVersion: '0.1.0',
+    createdAt: '2026-10-27T00:00:00Z', channel: 'preview', complianceProfile: 'internal-research',
+    packages: [{
+      id: 'core-zh', kind: 'content', required: true, dependencies: [], compressedBytes: 12,
+      recordCount: 1, licenseIds: ['MIT'], files: [{
+        uri: 'releases/release-update/core.json', mediaType: 'application/json', sha256: 'a'.repeat(64),
+        bytes: 12, collection: 'core-zh', sourceDigest: 'b'.repeat(64),
+      }],
+    }],
+  };
+  const manager: OfflineManager = {
+    listAvailable: async () => [{ releasePackage: availableManifest.packages[0], installed: false }],
+    listInstalled: async () => [], install: async () => {}, activate: async () => {}, rollback: async () => {}, remove: async () => {},
+  };
+  render(<App offlineRuntime={{ availableManifest, manager }}/>);
+
+  await userEvent.click(screen.getByRole('button', { name: '更多' }));
+
+  expect(screen.getByText('release-update')).toBeInTheDocument();
+  expect(document.querySelector('.content-provider')).toHaveAttribute('data-content-revision', expect.stringMatching(/^bundled-/));
 });
 
 test('opens a deep entity drawer from the polity study view and supports back navigation', async () => {

@@ -5,6 +5,7 @@ import { IndexedDbPackageStore } from '../offline/indexeddb-package-store';
 import type { AvailablePackage } from '../offline/offline-package-manager';
 import { OfflinePackageManager } from '../offline/offline-package-manager';
 import type { InstalledPackage } from '../offline/package-store';
+import { announceOfflineReleaseChange } from '../offline/release-events';
 
 export interface OfflineManager {
   listAvailable(): Promise<readonly AvailablePackage[]>;
@@ -106,12 +107,21 @@ export function OfflineDataManager({ manifest, manager: providedManager, storage
     }
   }
 
-  async function runAction(label: string, action: () => Promise<void>) {
+  async function runAction(label: 'activate' | 'rollback' | 'remove', action: () => Promise<void>) {
     setBusyAction(label);
     setMessage(undefined);
     try {
       await action();
-      if (manager) await refresh(manager);
+      const releaseChanged = label === 'activate' || label === 'rollback';
+      if (releaseChanged) announceOfflineReleaseChange();
+      try {
+        if (manager) await refresh(manager);
+      } catch {
+        setMessage({ kind: 'alert', text: t(releaseChanged
+          ? '版本已切换，但离线资料列表刷新失败。'
+          : '操作已完成，但离线资料列表刷新失败。') });
+        return;
+      }
       setMessage({ kind: 'status', text: t('离线资料状态已更新。') });
     } catch (error) {
       setMessage({ kind: 'alert', text: readerSafeError(error, t) });

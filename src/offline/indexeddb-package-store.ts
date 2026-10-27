@@ -1,4 +1,5 @@
-import type { ReleaseFile, ReleasePackage } from '../content/release-types';
+import type { ReleaseFile, ReleaseManifest, ReleasePackage } from '../content/release-types';
+import { validateReleaseManifest } from '../content/release-validation';
 import { CachePackageFiles } from './cache-package-files';
 import type { ActivationState, InstalledPackage, PackageStore } from './package-store';
 
@@ -9,6 +10,7 @@ const ROOT_KEY = 'root';
 
 interface PersistedPackage extends InstalledPackage {
   expectedFileUris: readonly string[];
+  fileDigests: Record<string, string>;
 }
 
 interface PersistedState {
@@ -16,6 +18,7 @@ interface PersistedState {
   packages: Record<string, PersistedPackage>;
   activation: ActivationState;
   activatedRequirements: Record<string, readonly string[]>;
+  manifests: Record<string, ReleaseManifest>;
 }
 
 export interface IndexedDbPackageStoreOptions {
@@ -53,6 +56,34 @@ export class IndexedDbPackageStore implements PackageStore {
     this.database.close();
   }
 
+  async saveReleaseManifest(manifest: ReleaseManifest) {
+    const validated = validateReleaseManifest(structuredClone(manifest));
+    await this.updateState((state) => {
+      const existing = state.manifests[validated.releaseId];
+      if (existing && JSON.stringify(existing) !== JSON.stringify(validated)) {
+        throw new Error(`Cannot replace immutable manifest for release ${validated.releaseId}`);
+      }
+      state.manifests[validated.releaseId] = structuredClone(validated);
+    });
+  }
+
+  async readReleaseManifest(releaseId: string) {
+    const manifest = (await this.requireState()).manifests[releaseId];
+    return manifest ? structuredClone(manifest) : undefined;
+  }
+
+  async findReusableFile(file: ReleaseFile) {
+    const state = await this.requireState();
+    for (const stored of Object.values(state.packages)) {
+      if (stored.state !== 'complete') continue;
+      const uri = stored.fileUris.find((candidate) => stored.fileDigests[candidate] === file.sha256);
+      if (!uri) continue;
+      const bytes = await this.files.read(stored.releaseId, stored.packageId, uri);
+      if (bytes?.byteLength === file.bytes) return bytes;
+    }
+    return undefined;
+  }
+
   async availableBytes() {
     if (!this.storageManager) return undefined;
     const estimate = await this.storageManager.estimate();
@@ -73,6 +104,7 @@ export class IndexedDbPackageStore implements PackageStore {
         fileUris: [],
         dependencies: [...releasePackage.dependencies],
         expectedFileUris: releasePackage.files.map((file) => file.uri),
+        fileDigests: {},
       };
       return existing?.state === 'staging';
     });
@@ -102,6 +134,7 @@ export class IndexedDbPackageStore implements PackageStore {
         ...nextStored,
         bytes: nextStored.bytes + additional,
         fileUris: [...fileUris].sort(),
+        fileDigests: { ...nextStored.fileDigests, [file.uri]: file.sha256 },
       };
     });
   }
@@ -221,7 +254,7 @@ export class IndexedDbPackageStore implements PackageStore {
     return this.runStateTransaction((state) => {
       if (state === undefined) return { state: emptyState(), result: undefined };
       assertSupportedState(state);
-      return { state, result: undefined };
+      return { state: normalizeState(state), result: undefined };
     });
   }
 
@@ -260,7 +293,13 @@ export class IndexedDbPackageStore implements PackageStore {
 }
 
 function emptyState(): PersistedState {
-  return { schemaVersion: METADATA_SCHEMA_VERSION, packages: {}, activation: {}, activatedRequirements: {} };
+  return { schemaVersion: METADATA_SCHEMA_VERSION, packages: {}, activation: {}, activatedRequirements: {}, manifests: {} };
+}
+
+function normalizeState(state: PersistedState) {
+  state.manifests ??= {};
+  for (const stored of Object.values(state.packages)) stored.fileDigests ??= {};
+  return state;
 }
 
 function assertSupportedState(value: unknown): asserts value is PersistedState {
