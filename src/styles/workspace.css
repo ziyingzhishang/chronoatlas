@@ -146,6 +146,15 @@
 .collapsed-time-actions { display:flex; flex:none; gap:4px; }
 .collapsed-time-actions button { min-width:44px; min-height:44px; padding:0 9px; border:1px solid #566449; }
 .collapsed-time-actions .collapsed-play { color:#18241c; background:#c6a15b; border-color:#c6a15b; }
+.time-exploration-bar { height:52px; min-height:52px; min-width:0; display:flex; align-items:center; gap:10px; padding:0 10px; overflow:hidden; }
+.time-exploration-reading { min-width:0; display:flex; align-items:baseline; gap:8px; }
+.time-exploration-reading strong { flex:none; font-size:18px; font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.time-exploration-reading span { overflow:hidden; color:#c7cdbb; font-size:12px; text-overflow:ellipsis; white-space:nowrap; }
+.time-exploration-actions { display:flex; flex:none; gap:4px; }
+.time-exploration-bar button { min-height:44px; min-width:44px; padding:0 10px; border:1px solid #566449; }
+.time-exploration-play,.time-analysis-open { color:#18241c; background:#c6a15b; border-color:#c6a15b; }
+.time-exploration-scrubber { min-width:80px; flex:1; }
+.time-analysis-open { flex:none; white-space:nowrap; }
 .controller-content { max-height:calc(55dvh - 48px); overflow:auto; overscroll-behavior:contain; }
 .mode-explore .controller-content { max-height:calc(42dvh - 48px); }
 .mode-explore[data-density="collapsed"] .controller-content { max-height:64px; overflow:hidden; }
