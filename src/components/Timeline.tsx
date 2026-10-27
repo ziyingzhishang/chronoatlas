@@ -22,15 +22,9 @@ export interface HistoricalPeriod {
 }
 
 export interface TimelineProps {
-  mode?: 'explore'|'analysis';
   year: number;
   onYearChange: (year: number) => void;
   onYearCommit?: (year:number)=>void;
-  /** Compatibility only until TimeController completes its two-state migration. */
-  isPlaying: boolean;
-  /** Compatibility only until TimeController completes its two-state migration. */
-  onPlayToggle: () => void;
-  density?: 'collapsed'|'compact'|'expanded';
   annotationLayer?: TimelineAnnotationLayer;
   onEventSelect?: (event:HistoricalEvent)=>void;
   onEventGroup?: (ids:string[])=>void;

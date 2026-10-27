@@ -112,8 +112,6 @@ export function TimeAnalysisPanel({
       year={year}
       onYearChange={onYearChange}
       onYearCommit={onYearCommit}
-      isPlaying={false}
-      onPlayToggle={() => {}}
       annotationLayer={annotationLayer}
       onEventSelect={onEventSelect}
       onEventGroup={onEventGroup}

@@ -8,11 +8,11 @@ import { yearToIndex } from '../domain/timeline';
 test('selecting a new year updates the year label, active polity summary, and map state', async () => {
   const user = userEvent.setup();
   render(<App />);
-  await user.click(screen.getByRole('button',{name:'展开时间控制器'}));
+  await user.click(screen.getByRole('button',{name:'打开时间轴'}));
   await user.clear(screen.getByRole('spinbutton', { name: '输入历史年份' }));
   await user.type(screen.getByRole('spinbutton', { name: '输入历史年份' }), '959{Enter}');
 
-  expect(screen.getByRole('heading', { name: '959年' })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: '当前历史状态' })).toHaveTextContent('959年');
   const map = mapInstances.at(-1)!;
   map.queryRenderedFeatures.mockReturnValue([{layer:{id:'boundary-fill'},properties:{entityId:'later_zhou'}}] as any);
   act(()=>map.emit('click',{point:{x:1,y:1}}));
@@ -20,7 +20,7 @@ test('selecting a new year updates the year label, active polity summary, and ma
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '959');
   await user.click(screen.getByRole('button',{name:'收起'}));
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
-  await user.click(screen.getByRole('button',{name:'悬浮时间控制器'}));
+  await user.click(screen.getByRole('button',{name:'关闭时间分析'}));
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year','959');
 });
 
@@ -46,7 +46,8 @@ test('clicking blank map closes an open territory detail panel',async()=>{
 
 test('ordinary year navigation returns the timeline search to the current window',async()=>{
   render(<App/>);
-  await userEvent.click(screen.getByRole('button',{name:'紧凑时间控制器'}));
+  await userEvent.click(screen.getByRole('button',{name:'打开时间轴'}));
+  await userEvent.click(screen.getByRole('button',{name:'历史事件'}));
   await userEvent.click(screen.getByRole('button',{name:/查看前1046年附近/}));
   expect(screen.getByRole('option',{name:/周克商/})).toBeInTheDocument();
   expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
@@ -74,7 +75,8 @@ test('choosing an event changes the map year and keeps its details open',async()
 
 test('changing the event query hides a stale detail card and clears timeline groups',async()=>{
   render(<App/>);
-  await userEvent.click(screen.getByRole('button',{name:'紧凑时间控制器'}));
+  await userEvent.click(screen.getByRole('button',{name:'打开时间轴'}));
+  await userEvent.click(screen.getByRole('button',{name:'历史事件'}));
   await userEvent.click(screen.getByRole('button',{name:/查看前1046年附近/}));
   await userEvent.type(screen.getByRole('searchbox',{name:'搜索历史事件'}),'秦统一');
   await userEvent.click(screen.getByRole('option',{name:/秦统一六国/}));
@@ -87,7 +89,7 @@ test('changing the event query hides a stale detail card and clears timeline gro
 
 test('rapid timeline dragging commits the final territory year without recreating or moving the map',async()=>{
   render(<App/>);
-  await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));
+  await userEvent.click(screen.getByRole('button',{name:'打开时间轴'}));
   const map=mapInstances.at(-1)!;
   const instanceCount=mapInstances.length;
   act(()=>map.emit('style.load'));

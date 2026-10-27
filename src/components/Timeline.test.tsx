@@ -7,7 +7,6 @@ import { LocaleProvider } from '../i18n/locale';
 import { TimeAnalysisPanel } from '../workspace/TimeAnalysisPanel';
 
 afterEach(() => localStorage.clear());
-const compatibilityProps = { isPlaying: false, onPlayToggle: vi.fn() };
 
 test('English analysis exposes dates, period choices and validation in the selected language', async () => {
   localStorage.setItem('history-locale', 'en');
@@ -23,7 +22,7 @@ test('English analysis exposes dates, period choices and validation in the selec
 
 test('changes the selected year through the slider and exposes a historical accessible label', () => {
   const onYearChange = vi.fn();
-  render(<Timeline {...compatibilityProps} year={-221} onYearChange={onYearChange} annotationLayer="none"/>);
+  render(<Timeline year={-221} onYearChange={onYearChange} annotationLayer="none"/>);
   const slider = screen.getByRole('slider');
   expect(slider).toHaveAttribute('aria-valuetext', '前221年');
   fireEvent.change(slider, { target: { value: String(yearToIndex(-220)) } });
@@ -33,7 +32,7 @@ test('changes the selected year through the slider and exposes a historical acce
 test('previews rapid slider input and commits the final year',()=>{
   const preview=vi.fn();
   const commit=vi.fn();
-  render(<Timeline {...compatibilityProps} year={800} onYearChange={preview} onYearCommit={commit} annotationLayer="none"/>);
+  render(<Timeline year={800} onYearChange={preview} onYearCommit={commit} annotationLayer="none"/>);
   const slider=screen.getByRole('slider');
   fireEvent.input(slider,{target:{value:String(yearToIndex(1271))}});
   fireEvent.input(slider,{target:{value:String(yearToIndex(1644))}});
@@ -45,7 +44,7 @@ test('previews rapid slider input and commits the final year',()=>{
 
 test('event annotations expose clustered event navigation without mounting the full directory', async () => {
   const selectGroup=vi.fn();
-  render(<Timeline {...compatibilityProps} year={800} onYearChange={vi.fn()} annotationLayer="events" onEventGroup={selectGroup}/>);
+  render(<Timeline year={800} onYearChange={vi.fn()} annotationLayer="events" onEventGroup={selectGroup}/>);
   await userEvent.click(screen.getByRole('button',{name:'查看前65年附近19个事件'}));
   expect(selectGroup).toHaveBeenCalledWith(expect.arrayContaining(['red-cliffs']));
   expect(screen.queryByText('历史转折快捷跳转')).not.toBeInTheDocument();
@@ -79,7 +78,7 @@ test('selects the Tongjian range without removing access to all history', async 
 
 test('validates a complete input instead of jumping as each digit is typed', async () => {
   const onYearChange = vi.fn();
-  render(<Timeline {...compatibilityProps} year={800} onYearChange={onYearChange} annotationLayer="none"/>);
+  render(<Timeline year={800} onYearChange={onYearChange} annotationLayer="none"/>);
   const input = screen.getByRole('spinbutton', { name: '输入历史年份' });
   await userEvent.clear(input);
   await userEvent.type(input, '1500');
@@ -92,7 +91,7 @@ test('validates a complete input instead of jumping as each digit is typed', asy
 });
 
 test('submitting the selected year recenters a viewport that was panned away', async () => {
-  render(<Timeline {...compatibilityProps} year={800} onYearChange={vi.fn()} annotationLayer="none"/>);
+  render(<Timeline year={800} onYearChange={vi.fn()} annotationLayer="none"/>);
   await userEvent.click(screen.getByRole('button', { name: '逐年' }));
   await userEvent.click(screen.getByRole('button', { name: '时间轴向后平移' }));
   expect(Number(screen.getByRole('slider').getAttribute('min'))).toBeGreaterThan(yearToIndex(800));
@@ -103,7 +102,7 @@ test('submitting the selected year recenters a viewport that was panned away', a
 
 test('change annotations can move directly to a published source change', async () => {
   const change=vi.fn();
-  render(<Timeline {...compatibilityProps} year={-213} onYearChange={change} annotationLayer="changes"/>);
+  render(<Timeline year={-213} onYearChange={change} annotationLayer="changes"/>);
   await userEvent.click(screen.getByRole('button',{name:'查看前212年疆域断面'}));
   expect(change).toHaveBeenCalledWith(-212);
 });

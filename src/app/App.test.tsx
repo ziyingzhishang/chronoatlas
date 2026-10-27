@@ -38,8 +38,30 @@ test('keeps secondary controls closed until requested', async () => {
   expect(screen.queryByRole('status', { name: '疆域资料状态' })).not.toBeInTheDocument();
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'全历史'})).not.toBeInTheDocument();
-  await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));
+  await userEvent.click(screen.getByRole('button',{name:'打开时间轴'}));
+  expect(screen.getByRole('region', { name: '时间分析' })).toBeInTheDocument();
   expect(screen.getByRole('button', { name: '全历史' })).toBeInTheDocument();
+});
+
+test('opening and closing time analysis preserves map, layers, view, and topic state', async () => {
+  render(<App/>);
+  await userEvent.type(screen.getByRole('searchbox', { name: '搜索历史事件' }), '秦统一');
+  await userEvent.click(screen.getByRole('option', { name: /秦统一六国/ }));
+  await userEvent.click(screen.getByRole('button', { name: '打开完整事件详情' }));
+  const topic = screen.getByRole('dialog', { name: '秦统一六国' });
+  const map = mapInstances.at(-1)!;
+  const territoryLayer = screen.getByRole('checkbox', { name: '历史疆域' });
+  const cameraCalls = map.flyTo.mock.calls.length + map.easeTo.mock.calls.length + map.fitBounds.mock.calls.length;
+
+  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  await userEvent.click(screen.getByRole('button', { name: '聚焦资治通鉴 前403年至959年' }));
+  await userEvent.click(screen.getByRole('button', { name: '关闭时间分析' }));
+
+  expect(topic).toBeInTheDocument();
+  expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '-221');
+  expect(territoryLayer).toBeChecked();
+  expect(screen.getByRole('button', { name: '当前历史状态' })).toHaveTextContent('《资治通鉴》');
+  expect(map.flyTo.mock.calls.length + map.easeTo.mock.calls.length + map.fitBounds.mock.calls.length).toBe(cameraCalls);
 });
 
 test('opens the more information as a bottom-right HUD', async () => {
