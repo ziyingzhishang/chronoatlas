@@ -74,6 +74,7 @@ function HistoryWorkspace({ offlineRuntime }: { offlineRuntime?: OfflineRuntimeV
   const [detailHistory, setDetailHistory] = useState<DetailHistoryEntry[]>([]);
   const [detailOrigin, setDetailOrigin] = useState({ directoryOpen: false, eventSearchOpen: false });
   const [topicWidth, setTopicWidth] = useState(44);
+  const [exclusiveTimeAnalysis, setExclusiveTimeAnalysis] = useState(false);
   const world = useWorldSlice(currentYear, showWorld);
   const historicalState = useMemo(
     () => localizeState(getHistoricalState(historySource, currentYear, { world: world.slice }), locale),
@@ -181,6 +182,7 @@ function HistoryWorkspace({ offlineRuntime }: { offlineRuntime?: OfflineRuntimeV
       topicWidthPercent={topicWidth}
       onTopicWidthChange={setTopicWidth}
       singleTopicView={singleTopicView}
+      exclusiveTimeAnalysis={exclusiveTimeAnalysis}
       mapPane={<>
     <header className="workspace-header">
       <div className="workspace-header-left">
@@ -218,8 +220,8 @@ function HistoryWorkspace({ offlineRuntime }: { offlineRuntime?: OfflineRuntimeV
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
       </div>
-      <TimeController year={currentYear} eraLabel={eraLabel} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
       </>}
+      timeNavigationPane={<TimeController year={currentYear} eraLabel={eraLabel} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView} onExclusiveAnalysisChange={setExclusiveTimeAnalysis}/>}
       topicPane={detailEntity ? <EntityDrawer title={detailTitle(detailEntity, catalog)} entityType={detailEntity.type} mapYear={currentYear} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0} singleView={singleTopicView}>
         {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={personDetailById.get(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
         {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}

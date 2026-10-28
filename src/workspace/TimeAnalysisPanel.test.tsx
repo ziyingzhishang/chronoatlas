@@ -1,4 +1,4 @@
-import { render, screen } from '@testing-library/react';
+import { fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { useState } from 'react';
 import { expect, test, vi } from 'vitest';
@@ -47,6 +47,20 @@ test('close button and Escape request closing the analysis panel', async () => {
   expect(onClose).toHaveBeenCalledTimes(2);
 });
 
+test('Escape is owned by time analysis before background panel handlers', () => {
+  const backgroundEscape = vi.fn();
+  const onClose = vi.fn();
+  document.addEventListener('keydown', backgroundEscape);
+  try {
+    render(<TimeAnalysisPanel year={800} onYearChange={() => {}} annotationLayer="none" onAnnotationLayerChange={() => {}} onClose={onClose}/>);
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).toHaveBeenCalledOnce();
+    expect(backgroundEscape).not.toHaveBeenCalled();
+  } finally {
+    document.removeEventListener('keydown', backgroundEscape);
+  }
+});
+
 test('reselecting the current range does not add a duplicate semantic view', async () => {
   const onViewWindowChange = vi.fn();
   const onSemanticViewChange = vi.fn();
@@ -63,4 +77,16 @@ test('reselecting the current range does not add a duplicate semantic view', asy
   await userEvent.click(screen.getByRole('button', { name: '王朝至今' }));
   expect(onViewWindowChange).not.toHaveBeenCalled();
   expect(onSemanticViewChange).not.toHaveBeenCalled();
+});
+
+test.each(['wide', 'narrow', 'mobile', 'short'] as const)('marks the %s responsive presentation', (presentation) => {
+  render(<TimeAnalysisPanel
+    year={800}
+    onYearChange={() => {}}
+    annotationLayer="none"
+    onAnnotationLayerChange={() => {}}
+    onClose={() => {}}
+    presentation={presentation}
+  />);
+  expect(screen.getByRole('region', { name: '时间分析' })).toHaveClass(`presentation-${presentation}`);
 });

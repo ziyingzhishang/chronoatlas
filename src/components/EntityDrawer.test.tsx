@@ -31,4 +31,22 @@ describe('EntityDrawer', () => {
     fireEvent.keyDown(document, { key: 'Tab' });
     expect(close).toHaveFocus();
   });
+
+  it('does not steal focus or handle Escape while suspended behind time analysis', () => {
+    const onClose = vi.fn();
+    const trigger = document.createElement('button');
+    document.body.append(trigger);
+    trigger.focus();
+
+    const { rerender } = render(<EntityDrawer title="人物专题" entityType="person" hidden inert="" aria-hidden onClose={onClose}><p>人物内容</p></EntityDrawer>);
+    expect(trigger).toHaveFocus();
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).not.toHaveBeenCalled();
+
+    rerender(<EntityDrawer title="人物专题" entityType="person" onClose={onClose}><p>人物内容</p></EntityDrawer>);
+    expect(trigger).toHaveFocus();
+    fireEvent.keyDown(document, { key: 'Escape' });
+    expect(onClose).toHaveBeenCalledOnce();
+    trigger.remove();
+  });
 });

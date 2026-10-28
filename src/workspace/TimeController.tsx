@@ -26,6 +26,7 @@ export interface TimeControllerProps {
   viewLabel?: string;
   canGoBack?: boolean;
   onBackView?: () => void;
+  onExclusiveAnalysisChange?: (active: boolean) => void;
 }
 
 export function TimeController({
@@ -43,6 +44,7 @@ export function TimeController({
   viewLabel,
   canGoBack,
   onBackView,
+  onExclusiveAnalysisChange,
 }: TimeControllerProps) {
   const { t } = useLocale();
   const [navigation, dispatch] = useReducer(timeNavigationReducer, initialTimeNavigationState);
@@ -57,6 +59,7 @@ export function TimeController({
   const paneSize = usePaneSize(pane);
   const supportsFloating = paneSize.presentation === 'wide';
   const floating = supportsFloating && preference.mode === 'floating';
+  const exclusiveAnalysis = navigation.mode === 'analysis' && paneSize.presentation === 'short';
 
   const setRoot = useCallback((node: HTMLDivElement | null) => {
     root.current = node;
@@ -66,6 +69,12 @@ export function TimeController({
   useEffect(() => {
     try { localStorage.setItem(storageKey, JSON.stringify(preference)); } catch { /* Storage-disabled mode still works. */ }
   }, [preference]);
+
+  useEffect(() => {
+    onExclusiveAnalysisChange?.(exclusiveAnalysis);
+  }, [exclusiveAnalysis, onExclusiveAnalysisChange]);
+
+  useEffect(() => () => onExclusiveAnalysisChange?.(false), [onExclusiveAnalysisChange]);
 
   useLayoutEffect(() => {
     if (!floating || !root.current) return undefined;
@@ -180,6 +189,7 @@ export function TimeController({
       canGoBack={canGoBack}
       onBackView={onBackView}
       advancedTools={layoutTools}
+      presentation={paneSize.presentation}
     />}
   </div>;
 }

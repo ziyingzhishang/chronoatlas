@@ -60,8 +60,9 @@
 .workspace-tool-icon { width:42px; padding:0 !important; font-size:18px !important; }
 .workspace-shell { width:100%; height:100%; min-height:0; position:relative; display:flex; overflow:hidden; container:topic-workspace / inline-size; }
 .workspace-map-pane { min-width:0; min-height:0; position:relative; display:grid; grid-template-rows:minmax(0,1fr) auto; flex:1; overflow:hidden; }
+.workspace-map-content { width:100%; min-width:0; min-height:0; position:relative; display:flex; }
 .workspace-shell.has-topic:not(.single-topic-view) .workspace-map-pane { min-width:560px; }
-.workspace-map-area { width:auto; min-width:0; min-height:0; position:relative; display:flex; }
+.workspace-map-area { width:auto; min-width:0; min-height:0; position:relative; display:flex; flex:1; }
 .workspace .map-view { position:relative; padding:0; border:0; flex:1; display:flex; flex-direction:column; min-height:0; background:#b3ccd5; }
 .workspace .map-stage { flex:1; min-height:0; border:0; border-radius:0; }
 .workspace .interactive-map-wrap,.workspace .interactive-map { height:100%; min-height:0; }
@@ -132,7 +133,7 @@
 .workspace-panel .legend-group { margin:8px 0; }
 .workspace .map-footer { flex-direction:column; }
 .time-controller { color:#e8e5d6; background:#1c2722; border-top:1px solid #536247; min-width:0; z-index:5; padding-bottom:env(safe-area-inset-bottom); }
-.time-controller.is-docked { position:relative; width:100%; background:linear-gradient(0deg,#18211ff5 0%,#1c2722ee 72%,#1c2722cc 100%); }
+.time-controller.is-docked { position:relative; width:100%; z-index:auto; background:linear-gradient(0deg,#18211ff5 0%,#1c2722ee 72%,#1c2722cc 100%); }
 .time-controller.is-floating { position:absolute; width:min(760px,calc(100% - 24px)); border:1px solid #788064; border-radius:10px; overflow:hidden; box-shadow:0 12px 36px #0b160f55; }
 .controller-handlebar { min-height:36px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; border-bottom:1px solid #a2ac881c; }
 .controller-grip { display:flex; align-items:center; gap:8px; color:#bdc6af !important; }
@@ -155,6 +156,24 @@
 .time-exploration-play,.time-analysis-open { color:#18241c; background:#c6a15b; border-color:#c6a15b; }
 .time-exploration-scrubber { min-width:80px; flex:1; }
 .time-analysis-open { flex:none; white-space:nowrap; }
+.time-controller.mode-analysis.is-docked { display:grid; grid-template-rows:52px minmax(0,1fr); }
+.time-controller.mode-analysis.presentation-wide,.time-controller.mode-analysis.presentation-narrow { max-height:220px; }
+.time-controller.mode-analysis.presentation-mobile { max-height:42dvh; }
+.time-analysis-panel { min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; border-top:1px solid #a2ac881c; }
+.time-analysis-header { position:sticky; top:0; z-index:1; display:flex; align-items:center; gap:12px; min-height:42px; padding:0 14px; background:#1c2722f5; border-bottom:1px solid #a2ac881c; }
+.time-analysis-header h2 { flex:none; margin:0; color:#f2dfb9; font-size:14px; font-weight:500; }
+.time-analysis-header .timeline-view-context { min-width:0; flex:1; margin:0; }
+.time-analysis-header>button { flex:none; min-width:44px; min-height:44px; border:0; color:#d8ddcd; background:transparent; }
+.time-analysis-panel>.timeline-navigation { display:flex; align-items:end; flex-wrap:wrap; gap:8px 12px; padding:8px 24px 2px; }
+.time-annotation-controls { display:flex; flex-wrap:wrap; gap:4px; }
+.time-annotation-controls button,.time-layout-tools button { min-height:44px; }
+.time-advanced-tools { min-width:0; }
+.time-advanced-tools summary { min-height:44px; display:flex; align-items:center; color:#d7bf8e; }
+.time-layout-tools { display:flex; align-items:center; flex-wrap:wrap; gap:4px; padding:6px 0; }
+.workspace-shell.has-topic.time-analysis-exclusive .workspace-map-pane,.workspace-shell.time-analysis-exclusive .workspace-map-pane { min-width:0; grid-template-rows:minmax(0,1fr); }
+.workspace-shell.time-analysis-exclusive .workspace-map-content { display:none; }
+.workspace-shell.time-analysis-exclusive .time-controller.mode-analysis.presentation-short { height:100%; max-height:none; display:grid; grid-template-rows:52px minmax(0,1fr); }
+.workspace-shell.time-analysis-exclusive .time-analysis-panel.presentation-short { height:100%; max-height:none; }
 .controller-content { max-height:calc(55dvh - 48px); overflow:auto; overscroll-behavior:contain; }
 .mode-explore .controller-content { max-height:calc(42dvh - 48px); }
 .mode-explore[data-density="collapsed"] .controller-content { max-height:64px; overflow:hidden; }

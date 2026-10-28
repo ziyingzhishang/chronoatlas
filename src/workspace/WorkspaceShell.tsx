@@ -13,10 +13,12 @@ import {
 
 interface WorkspaceShellProps {
   mapPane: ReactNode;
+  timeNavigationPane?: ReactNode;
   topicPane?: ReactNode;
   topicWidthPercent: number;
   onTopicWidthChange: (widthPercent: number) => void;
   singleTopicView: boolean;
+  exclusiveTimeAnalysis?: boolean;
 }
 
 const MIN_TOPIC_WIDTH = 34;
@@ -38,7 +40,7 @@ export function topicWidthBounds(containerWidth: number) {
   };
 }
 
-export function WorkspaceShell({ mapPane, topicPane, topicWidthPercent, onTopicWidthChange, singleTopicView }: WorkspaceShellProps) {
+export function WorkspaceShell({ mapPane, timeNavigationPane, topicPane, topicWidthPercent, onTopicWidthChange, singleTopicView, exclusiveTimeAnalysis = false }: WorkspaceShellProps) {
   const shell = useRef<HTMLDivElement>(null);
   const dragCleanup = useRef<(() => void) | undefined>();
   const [containerWidth, setContainerWidth] = useState(0);
@@ -46,7 +48,7 @@ export function WorkspaceShell({ mapPane, topicPane, topicWidthPercent, onTopicW
   const bounds = topicWidthBounds(containerWidth);
   const boundedWidth = Math.min(bounds.max, Math.max(bounds.min, topicWidthPercent));
   const width = singleTopicView ? 100 : boundedWidth;
-  const topic = topicPane && applyWidth(topicPane, width);
+  const topic = topicPane && applyTopicPresentation(topicPane, width, exclusiveTimeAnalysis);
 
   useLayoutEffect(() => {
     const element = shell.current;
@@ -91,10 +93,15 @@ export function WorkspaceShell({ mapPane, topicPane, topicWidthPercent, onTopicW
     document.addEventListener('pointerup', stopDragging);
   }
 
-  const hiddenMapProps = hasTopic && singleTopicView ? { inert: '', 'aria-hidden': true } : {};
-  return <div ref={shell} className={`workspace-shell${hasTopic ? ' has-topic' : ''}${hasTopic && singleTopicView ? ' single-topic-view' : ''}`}>
-    <section className="workspace-map-pane" aria-label="地图工作区" {...hiddenMapProps}>{mapPane}</section>
-    {hasTopic && !singleTopicView && <div
+  const mapHiddenForTopic = hasTopic && singleTopicView && !exclusiveTimeAnalysis;
+  const hiddenMapProps = mapHiddenForTopic ? { inert: '', 'aria-hidden': true } : {};
+  const hiddenMapContentProps = exclusiveTimeAnalysis ? { inert: '', 'aria-hidden': true } : {};
+  return <div ref={shell} className={`workspace-shell${hasTopic ? ' has-topic' : ''}${mapHiddenForTopic ? ' single-topic-view' : ''}${exclusiveTimeAnalysis ? ' time-analysis-exclusive' : ''}`}>
+    <section className={`workspace-map-pane${exclusiveTimeAnalysis ? ' time-analysis-exclusive' : ''}`} aria-label="地图工作区" {...hiddenMapProps}>
+      <div className="workspace-map-content" {...hiddenMapContentProps}>{mapPane}</div>
+      {timeNavigationPane}
+    </section>
+    {hasTopic && !singleTopicView && !exclusiveTimeAnalysis && <div
       className="workspace-divider"
       role="separator"
       tabIndex={0}
@@ -110,8 +117,18 @@ export function WorkspaceShell({ mapPane, topicPane, topicWidthPercent, onTopicW
   </div>;
 }
 
-function applyWidth(node: ReactNode, widthPercent: number) {
+function applyTopicPresentation(node: ReactNode, widthPercent: number, hidden: boolean) {
   if (!isValidElement(node)) return node;
-  const element = node as ReactElement<{ style?: CSSProperties }>;
-  return cloneElement(element, { style: { ...element.props.style, width: `${widthPercent}%` } });
+  const element = node as ReactElement<{
+    style?: CSSProperties;
+    inert?: '';
+    'aria-hidden'?: boolean;
+    hidden?: boolean;
+  }>;
+  return cloneElement(element, {
+    style: { ...element.props.style, width: `${widthPercent}%` },
+    inert: hidden ? '' : undefined,
+    'aria-hidden': hidden || undefined,
+    hidden: hidden || undefined,
+  });
 }

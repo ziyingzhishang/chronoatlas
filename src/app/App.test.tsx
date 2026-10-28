@@ -53,10 +53,15 @@ test('opening and closing time analysis preserves map, layers, view, and topic s
   const territoryLayer = screen.getByRole('checkbox', { name: '历史疆域' });
   const cameraCalls = map.flyTo.mock.calls.length + map.easeTo.mock.calls.length + map.fitBounds.mock.calls.length;
 
-  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  const openTimeline = screen.getByRole('button', { name: '打开时间轴' });
+  await userEvent.click(openTimeline);
+  expect(screen.queryByRole('region', { name: '历史地图' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('dialog', { name: '秦统一六国' })).not.toBeInTheDocument();
+  expect(screen.getByRole('region', { name: '时间分析' })).toBeInTheDocument();
   await userEvent.click(screen.getByRole('button', { name: '聚焦资治通鉴 前403年至959年' }));
   await userEvent.click(screen.getByRole('button', { name: '关闭时间分析' }));
 
+  expect(openTimeline).toHaveFocus();
   expect(topic).toBeInTheDocument();
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '-221');
   expect(territoryLayer).toBeChecked();

@@ -5,6 +5,7 @@ import type { HistoricalEvent } from '../domain/types';
 import { useHistoricalContent } from '../content/ContentContext';
 import { useLocale } from '../i18n/locale';
 import type { TimelineAnnotationLayer } from './time-navigation-state';
+import type { PanePresentation } from './layout';
 
 export interface TimeAnalysisPanelProps {
   year: number;
@@ -22,6 +23,7 @@ export interface TimeAnalysisPanelProps {
   canGoBack?: boolean;
   onBackView?: () => void;
   advancedTools?: ReactNode;
+  presentation?: PanePresentation;
 }
 
 const sameRange = (left: YearWindow, right: YearWindow) => left[0] === right[0] && left[1] === right[1];
@@ -43,6 +45,7 @@ export function TimeAnalysisPanel({
   canGoBack,
   onBackView,
   advancedTools,
+  presentation = 'wide',
 }: TimeAnalysisPanelProps) {
   const { t } = useLocale();
   const { catalog } = useHistoricalContent();
@@ -53,10 +56,13 @@ export function TimeAnalysisPanel({
 
   useEffect(() => {
     const closeOnEscape = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') onClose();
+      if (event.key !== 'Escape') return;
+      event.preventDefault();
+      event.stopImmediatePropagation();
+      onClose();
     };
-    document.addEventListener('keydown', closeOnEscape);
-    return () => document.removeEventListener('keydown', closeOnEscape);
+    document.addEventListener('keydown', closeOnEscape, true);
+    return () => document.removeEventListener('keydown', closeOnEscape, true);
   }, [onClose]);
 
   const updateWindow = (next: YearWindow) => {
@@ -75,7 +81,7 @@ export function TimeAnalysisPanel({
     chooseRange([period.start, period.end], period.name);
   };
 
-  return <section id="time-analysis-panel" className="time-analysis-panel" aria-label={t('时间分析')}>
+  return <section id="time-analysis-panel" className={`time-analysis-panel presentation-${presentation}`} aria-label={t('时间分析')}>
     <header className="time-analysis-header">
       <h2>{t('时间分析')}</h2>
       <div className="timeline-view-context">
