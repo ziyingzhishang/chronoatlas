@@ -121,6 +121,10 @@ function HistoryWorkspace({ offlineRuntime }: { offlineRuntime?: OfflineRuntimeV
 
   function changeYear(year:number){setCurrentYear(year);setSelectedEntity(undefined);setEventGroup(undefined);setIsPlaying(false);}
   function commitYear(year:number){changeYear(year);setMapRefreshToken(token=>token+1);}
+  function togglePlayback(){
+    if(isPlaying){setIsPlaying(false);setMapRefreshToken(token=>token+1);return;}
+    setIsPlaying(true);
+  }
   function navigateTimelineView(next:YearWindow,label:string){
     setTimelineHistory(previous=>[...previous,{window:timelineWindow,label:timelineViewLabel}].slice(-20));
     setTimelineWindow(next);
@@ -221,7 +225,7 @@ function HistoryWorkspace({ offlineRuntime }: { offlineRuntime?: OfflineRuntimeV
       </WorkspacePanel>}
       </div>
       </>}
-      timeNavigationPane={<TimeController year={currentYear} eraLabel={eraLabel} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView} onExclusiveAnalysisChange={setExclusiveTimeAnalysis}/>}
+      timeNavigationPane={<TimeController year={currentYear} eraLabel={eraLabel} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={togglePlayback} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView} onExclusiveAnalysisChange={setExclusiveTimeAnalysis}/>}
       topicPane={detailEntity ? <EntityDrawer title={detailTitle(detailEntity, catalog)} entityType={detailEntity.type} mapYear={currentYear} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0} singleView={singleTopicView}>
         {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={personDetailById.get(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
         {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
