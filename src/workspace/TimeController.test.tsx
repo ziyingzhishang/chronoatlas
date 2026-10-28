@@ -55,6 +55,21 @@ test('orchestrates only bar and analysis without legacy density controls', async
   expect(screen.getByRole('button', { name: '打开时间轴' })).toHaveAttribute('aria-expanded', 'true');
 });
 
+test('supports a controlled analysis state so the workspace can coordinate transient surfaces', async () => {
+  const onAnalysisOpenChange = vi.fn();
+  const { rerender } = renderController({ analysisOpen: false, onAnalysisOpenChange });
+
+  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  expect(onAnalysisOpenChange).toHaveBeenCalledWith(true);
+  expect(screen.queryByRole('region', { name: '时间分析' })).not.toBeInTheDocument();
+
+  rerender(<div className="map-pane-fixture"><TimeController {...baseProps} analysisOpen onAnalysisOpenChange={onAnalysisOpenChange}/></div>);
+  expect(screen.getByRole('region', { name: '时间分析' })).toBeInTheDocument();
+
+  await userEvent.click(screen.getByRole('button', { name: '关闭时间分析' }));
+  expect(onAnalysisOpenChange).toHaveBeenLastCalledWith(false);
+});
+
 test('close and Escape restore focus without changing the selected year or view', async () => {
   const onYearChange = vi.fn();
   const onViewWindowChange = vi.fn();
@@ -88,6 +103,7 @@ test('wide panes expose floating layout only inside advanced tools', async () =>
 
 test.each([
   ['narrow', 560, 800],
+  ['portrait tablet', 809, 934],
   ['mobile', 390, 844],
   ['short', 844, 390],
 ] as const)('%s panes ignore a stored floating preference and hide layout tools', async (_name, width, height) => {

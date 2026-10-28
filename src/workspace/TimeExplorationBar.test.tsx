@@ -91,5 +91,6 @@ describe('TimeExplorationBar', () => {
     expect(getComputedStyle(bar).height).toBe('52px');
     expect(getComputedStyle(bar).minHeight).toBe('52px');
     expect(getComputedStyle(screen.getByRole('button', { name: '播放' })).minHeight).toBe('44px');
+    expect(getComputedStyle(screen.getByRole('slider', { name: '快速浏览年份' })).height).toBe('44px');
   });
 });

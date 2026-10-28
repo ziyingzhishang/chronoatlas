@@ -6,6 +6,7 @@ export function layoutFor(width: number, height: number) { return { mobile: widt
 export function presentationForPane(width: number, height: number): PanePresentation {
   if (height < 500) return 'short';
   if (width < 480) return 'mobile';
+  if (height > width) return 'narrow';
   if (width < 768) return 'narrow';
   return 'wide';
 }

@@ -154,7 +154,7 @@
 .time-exploration-actions { display:flex; flex:none; gap:4px; }
 .time-exploration-bar button { min-height:44px; min-width:44px; padding:0 10px; border:1px solid #566449; }
 .time-exploration-play,.time-analysis-open { color:#18241c; background:#c6a15b; border-color:#c6a15b; }
-.time-exploration-scrubber { min-width:80px; flex:1; }
+.time-exploration-scrubber { min-width:80px; height:44px; flex:1; }
 .time-analysis-open { flex:none; white-space:nowrap; }
 .time-controller.mode-analysis.is-docked { display:grid; grid-template-rows:52px minmax(0,1fr); }
 .time-controller.mode-analysis.presentation-wide,.time-controller.mode-analysis.presentation-narrow { max-height:220px; }
@@ -165,6 +165,17 @@
 .time-analysis-header .timeline-view-context { min-width:0; flex:1; margin:0; }
 .time-analysis-header>button { flex:none; min-width:44px; min-height:44px; border:0; color:#d8ddcd; background:transparent; }
 .time-analysis-panel>.timeline-navigation { display:flex; align-items:end; flex-wrap:wrap; gap:8px 12px; padding:8px 24px 2px; }
+.time-analysis-panel .range-presets button,
+.time-analysis-panel .period-select select,
+.time-analysis-panel .year-form input,
+.time-analysis-panel .year-form button,
+.time-analysis-panel .scale-controls button,
+.time-analysis-panel .year-steppers button,
+.time-analysis-panel .snapshot-nodes button,
+.time-analysis-panel .timeline-view-context button { min-height:44px; }
+.time-analysis-panel .scale-controls button,
+.time-analysis-panel .time-annotation-controls button { min-width:44px; }
+.time-analysis-panel .timeline-slider { min-height:44px; height:44px; }
 .time-annotation-controls { display:flex; flex-wrap:wrap; gap:4px; }
 .time-annotation-controls button,.time-layout-tools button { min-height:44px; }
 .time-advanced-tools { min-width:0; }
@@ -192,7 +203,7 @@
 .workspace .timeline-bottom-line { margin-bottom:8px; }
 .workspace .density-expanded .timeline-navigation { margin-top:10px; }
 .timeline-view-context { display:flex; align-items:center; gap:8px; margin-top:6px; color:#c7cdbb; font:11px/1.4 system-ui,sans-serif; }
-.timeline-view-context button { min-height:32px; padding:0 8px; color:#f1d692; border:1px solid #566449; border-radius:4px; background:#27362acc; }
+.timeline-view-context button { min-height:44px; padding:0 8px; color:#f1d692; border:1px solid #566449; border-radius:4px; background:#27362acc; }
 .timeline-out-of-view { color:#f0c58f; font:11px/1.5 system-ui,sans-serif; }
 .workspace .density-expanded .history-overview { margin:16px 0; }
 .workspace .density-expanded button:not(.dynasty-band):not(.overview-tongjian) { min-height:36px; }

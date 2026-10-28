@@ -52,3 +52,9 @@ test('responds to pane-only resizing without reading window dimensions', () => {
   expect(window.innerWidth).toBe(originalWindowWidth);
   expect(screen.getByTestId('pane')).toHaveTextContent('560×800:narrow');
 });
+
+test('classifies a portrait tablet pane as narrow even above the desktop width threshold', () => {
+  paneRect = { width: 809, height: 934 };
+  render(<Probe/>);
+  expect(screen.getByTestId('pane')).toHaveTextContent('809×934:narrow');
+});

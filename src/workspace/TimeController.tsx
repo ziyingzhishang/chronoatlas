@@ -27,6 +27,8 @@ export interface TimeControllerProps {
   canGoBack?: boolean;
   onBackView?: () => void;
   onExclusiveAnalysisChange?: (active: boolean) => void;
+  analysisOpen?: boolean;
+  onAnalysisOpenChange?: (open: boolean) => void;
 }
 
 export function TimeController({
@@ -45,6 +47,8 @@ export function TimeController({
   canGoBack,
   onBackView,
   onExclusiveAnalysisChange,
+  analysisOpen,
+  onAnalysisOpenChange,
 }: TimeControllerProps) {
   const { t } = useLocale();
   const [navigation, dispatch] = useReducer(timeNavigationReducer, initialTimeNavigationState);
@@ -57,9 +61,10 @@ export function TimeController({
   const pane = useRef<HTMLElement | null>(null);
   const drag = useRef<{ pointer: number; start: Point; position: Point; latest: Point } | null>(null);
   const paneSize = usePaneSize(pane);
+  const navigationMode = analysisOpen === undefined ? navigation.mode : analysisOpen ? 'analysis' : 'bar';
   const supportsFloating = paneSize.presentation === 'wide';
   const floating = supportsFloating && preference.mode === 'floating';
-  const exclusiveAnalysis = navigation.mode === 'analysis' && paneSize.presentation === 'short';
+  const exclusiveAnalysis = navigationMode === 'analysis' && paneSize.presentation === 'short';
 
   const setRoot = useCallback((node: HTMLDivElement | null) => {
     root.current = node;
@@ -107,7 +112,13 @@ export function TimeController({
 
   const closeAnalysis = () => {
     dispatch({ type: 'close-analysis' });
+    onAnalysisOpenChange?.(false);
     root.current?.querySelector<HTMLButtonElement>('.time-analysis-open')?.focus();
+  };
+
+  const openAnalysis = () => {
+    dispatch({ type: 'open-analysis' });
+    onAnalysisOpenChange?.(true);
   };
 
   const setAnnotationLayer = (layer: TimelineAnnotationLayer) => {
@@ -158,7 +169,7 @@ export function TimeController({
 
   return <div
     ref={setRoot}
-    className={`time-controller is-${floating ? 'floating' : 'docked'} mode-${navigation.mode} presentation-${paneSize.presentation}`}
+    className={`time-controller is-${floating ? 'floating' : 'docked'} mode-${navigationMode} presentation-${paneSize.presentation}`}
     style={floating ? { left: preference.position.x, top: preference.position.y } : undefined}
   >
     <TimeExplorationBar
@@ -167,13 +178,13 @@ export function TimeController({
       viewWindow={activeViewWindow}
       isPlaying={isPlaying}
       presentation={paneSize.presentation}
-      analysisOpen={navigation.mode === 'analysis'}
+      analysisOpen={navigationMode === 'analysis'}
       onYearChange={onYearChange}
       onYearCommit={onYearCommit ?? onYearChange}
       onPlayToggle={onPlayToggle}
-      onOpenAnalysis={() => dispatch({ type: 'open-analysis' })}
+      onOpenAnalysis={openAnalysis}
     />
-    {navigation.mode === 'analysis' && <TimeAnalysisPanel
+    {navigationMode === 'analysis' && <TimeAnalysisPanel
       year={year}
       onYearChange={onYearChange}
       onYearCommit={onYearCommit}

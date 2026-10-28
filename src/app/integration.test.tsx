@@ -31,7 +31,7 @@ test('selecting a new year updates the year label, active polity summary, and ma
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '959');
   await user.click(screen.getByRole('button',{name:'收起'}));
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
-  await user.click(screen.getByRole('button',{name:'关闭时间分析'}));
+  expect(screen.queryByRole('button',{name:'关闭时间分析'})).not.toBeInTheDocument();
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year','959');
 });
 
@@ -64,6 +64,23 @@ test('ordinary year navigation returns the timeline search to the current window
   expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button',{name:'下一年'}));
   expect(screen.queryByRole('complementary',{name:'历史转折'})).not.toBeInTheDocument();
+});
+
+test('time analysis and transient map popovers are mutually exclusive', async () => {
+  const user = userEvent.setup();
+  render(<App/>);
+
+  await user.click(screen.getByRole('button', { name: '当前历史状态' }));
+  expect(screen.getByRole('button', { name: '当前历史状态' })).toHaveAttribute('aria-expanded', 'true');
+  await user.click(screen.getByRole('button', { name: '打开时间轴' }));
+  expect(screen.queryByRole('complementary', { name: '历史信息' })).not.toBeInTheDocument();
+  expect(screen.getByRole('button', { name: '当前历史状态' })).toHaveAttribute('aria-expanded', 'false');
+  expect(screen.getByRole('region', { name: '时间分析' })).toBeInTheDocument();
+
+  await user.click(screen.getByRole('button', { name: '当前历史状态' }));
+  expect(screen.queryByRole('region', { name: '时间分析' })).not.toBeInTheDocument();
+  expect(screen.getByRole('complementary', { name: '政权目录' })).toBeInTheDocument();
+  expect(screen.getByRole('button', { name: '当前历史状态' })).toHaveAttribute('aria-expanded', 'true');
 });
 
 test('choosing an event changes the map year and keeps its details open',async()=>{

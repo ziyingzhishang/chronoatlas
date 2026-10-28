@@ -5,6 +5,8 @@ import { expect, test, vi } from 'vitest';
 import type { TimelineAnnotationLayer } from './time-navigation-state';
 import { TimeExplorationBar } from './TimeExplorationBar';
 import { TimeAnalysisPanel } from './TimeAnalysisPanel';
+import '../styles/theme.css';
+import '../styles/workspace.css';
 
 function AnnotationHarness() {
   const [layer, setLayer] = useState<TimelineAnnotationLayer>('none');
@@ -89,4 +91,26 @@ test.each(['wide', 'narrow', 'mobile', 'short'] as const)('marks the %s responsi
     presentation={presentation}
   />);
   expect(screen.getByRole('region', { name: '时间分析' })).toHaveClass(`presentation-${presentation}`);
+});
+
+test('general analysis controls expose 44px touch targets without distorting proportional dynasty bands', () => {
+  render(<TimeAnalysisPanel
+    year={800}
+    onYearChange={() => {}}
+    annotationLayer="none"
+    onAnnotationLayerChange={() => {}}
+    onClose={() => {}}
+  />);
+
+  const targets = [
+    screen.getByRole('button', { name: '全历史' }),
+    screen.getByRole('combobox', { name: '选择朝代并放大时间轴' }),
+    screen.getByRole('spinbutton', { name: '输入历史年份' }),
+    screen.getByRole('button', { name: '前往' }),
+    screen.getByRole('button', { name: '缩小时间轴' }),
+    screen.getByRole('slider', { name: '选择历史年份' }),
+  ];
+
+  for (const target of targets) expect(getComputedStyle(target).minHeight).toBe('44px');
+  expect(getComputedStyle(screen.getByRole('button', { name: /聚焦秦/ })).minHeight).not.toBe('44px');
 });

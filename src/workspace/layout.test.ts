@@ -9,6 +9,7 @@ test('short windows use compact controls even when landscape is wide', () => {
 test('classifies the actual map pane across supported screen shapes', () => {
   expect(presentationForPane(900, 800)).toBe('wide');
   expect(presentationForPane(560, 800)).toBe('narrow');
+  expect(presentationForPane(809, 934)).toBe('narrow');
   expect(presentationForPane(390, 844)).toBe('mobile');
   expect(presentationForPane(844, 390)).toBe('short');
 });
