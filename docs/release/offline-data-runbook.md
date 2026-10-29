@@ -28,7 +28,7 @@ npm run verify:data-runtime
 2. 每个文件的字节数、SHA-256、记录数和来源引用一致；
 3. 许可标识完整，公开范围不含内部字段；
 4. `leave-unfilled` 没有绑定几何；
-5. `npm run verify:map-release` 的公开地图门禁状态已被单独记录。
+5. `npm run verify:map-release -- public/releases/<release-id>/manifest.json` 的公开地图批准已绑定该版本 manifest 的 SHA-256。
 
 ## 从预览提升到稳定
 
@@ -38,7 +38,16 @@ npm run verify:data-runtime
 4. 完整上传 `releases/<release-id>/` 后，最后原子更新可变指针 `releases/latest.json`。
 5. 不得先更新 `latest.json` 再上传内容文件，否则客户端可能看到不完整版本。
 
-GitHub Pages 的正式工作流使用受保护 `main` 分支的 40 位 commit SHA 作为稳定版本标识。只有公开地图门禁通过后，才会生成 `offline-public` 资料包，校验 manifest 和全部文件，再与应用外壳一起纳入严格白名单审计的 Pages 产物。未通过地图门禁时，该步骤不会执行。
+GitHub Pages 的正式工作流使用受保护 `main` 分支的 40 位 commit SHA 作为稳定版本标识。工作流先生成并校验 `offline-public` 资料包，并在日志中输出 manifest SHA-256；随后才从受保护的 `map-release-approval` GitHub Environment 读取 `MAP_RELEASE_APPROVAL_JSON`，临时写入本次工作目录并校验。仓库中的 `public/data/map-release-compliance.json` 始终保持 `research-only`，避免把摘要提交回仓库后改变 commit SHA、releaseId 和 manifest，形成不可满足的自引用。
+
+真实批准流程：
+
+1. 候选提交进入 `main` 后，让 Pages 工作流生成并校验不可变 manifest；首次没有审批 secret 时应在“Load protected map release approval”处失败，但前一步日志会给出候选 SHA 和 manifest SHA-256。
+2. 审批人核对候选资料与公开地图要求，把完整批准 JSON 写入 `map-release-approval` Environment 的 `MAP_RELEASE_APPROVAL_JSON` secret。批准 JSON 必须包含 `approvedReleaseId`（该候选 commit SHA）和 `approvedReleaseManifestSha256`（前一步日志值），以及真实审图号、有效期、已核来源与公开提示。
+3. 在 GitHub Actions 中重跑**同一次工作流、同一个 commit SHA**。不要为写入摘要再创建提交，也不要改用新的分支头。
+4. 工作流只在 secret 结构完整、未过期、releaseId 和 manifest 摘要都匹配时继续构建；注入后的批准状态会一并进入读者页面。切换到其他离线资料版本时，页面不会沿用该批批准。
+
+只有公开地图门禁通过后，应用外壳和资料包才会一起进入严格白名单审计的 Pages 产物。批准 JSON 的内容会公开显示或参与公开状态判断，因此不得在其中放令牌、内部备注或其他秘密；注入脚本会拒绝未列明字段。
 
 ## 浏览器安装与启用
 
@@ -77,7 +86,7 @@ GitHub Pages 的正式工作流使用受保护 `main` 分支的 40 位 commit SH
 ```bash
 npm run verify:data-runtime
 npm run verify:release-readiness
-npm run verify:map-release
+npm run verify:map-release -- public/releases/<release-id>/manifest.json
 git diff --check
 ```
 

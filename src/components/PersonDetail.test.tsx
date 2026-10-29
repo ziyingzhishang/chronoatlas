@@ -108,6 +108,18 @@ describe('PersonDetail', () => {
     expect(document.body).not.toHaveTextContent('覆盖状态');
   });
 
+  it('maps heritage relationship predicates to reader language', () => {
+    const commissioned: HistoricalClaim = {
+      id: 'commissioned-reader-label', subjectId: 'li-shimin', predicate: 'commissioned', objectId: 'heritage-a',
+      validFrom: 620, validTo: 620, datePrecision: 'year', perspective: 'person',
+      evidenceType: 'cross-checked', confidence: 'medium', sourceIds: ['zizhi-tongjian'],
+    };
+    render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={[commissioned]} />);
+
+    expect(screen.getByText(/^营建／关联遗产/)).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('commissioned');
+  });
+
   it('renders an interactive person-centered relationship graph summary', () => {
     const onOpenEntity = vi.fn();
     render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={relationshipClaims} people={relationPeople} events={events} onOpenEntity={onOpenEntity} />);

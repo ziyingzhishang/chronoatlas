@@ -86,7 +86,7 @@ Expected: PASS; then run the repository-wide test suite.
 ### Task 3: Regenerate and verify release artifacts
 
 **Files:**
-- Modify: `public/data/knowledge-coverage.json`
+- Modify: `internal/audits/knowledge-coverage.json`
 - Create or modify: `docs/audits/2026-10-24-southern-liang-zhao-event-chain.md`
 
 - [ ] **Step 1: Regenerate coverage**

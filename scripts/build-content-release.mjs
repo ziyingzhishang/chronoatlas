@@ -54,12 +54,15 @@ export async function buildContentRelease({
 
     const worldPackages = [];
     for (const chunk of [...(authoring.worldChunks ?? [])].sort((a, b) => a.start - b.start)) {
-      const uri = `data/world/${chunk.filename}`;
-      const absolutePath = path.join(publicRoot, ...uri.split('/'));
+      const sourceUri = `data/world/${chunk.filename}`;
+      const absolutePath = path.join(publicRoot, ...sourceUri.split('/'));
       const bytes = await readFile(absolutePath);
       const sha256 = hash(bytes);
       const parsed = JSON.parse(bytes.toString('utf8'));
       const recordCount = Array.isArray(parsed.records) ? parsed.records.length : chunk.records;
+      const filename = `world-${yearToken(chunk.start)}.json`;
+      const uri = `releases/${releaseId}/${filename}`;
+      await writeFile(path.join(temporaryDirectory, filename), bytes);
       worldPackages.push({
         id: `world-${yearToken(chunk.start)}`,
         kind: 'world', region: 'world', yearRange: [chunk.start, chunk.end], required: false,

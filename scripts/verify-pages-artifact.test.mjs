@@ -66,6 +66,25 @@ function publicReleaseFiles(overrides = {}) {
   };
 }
 
+function publicReleaseWithWorld() {
+  const files = publicReleaseFiles();
+  const manifestPath = `releases/${publicReleaseId}/manifest.json`;
+  const manifest = JSON.parse(files[manifestPath]);
+  const world = '{"start":100,"end":199,"polities":[],"records":[],"geometries":[]}\n';
+  manifest.packages.push({
+    id: 'world-ce-100', kind: 'world', region: 'world', yearRange: [100, 199],
+    required: false, dependencies: ['core-zh'], compressedBytes: Buffer.byteLength(world),
+    recordCount: 0, licenseIds: ['CC-BY-4.0'], files: [{
+      uri: `releases/${publicReleaseId}/world-ce-100.json`, mediaType: 'application/json',
+      sha256: sha256(world), bytes: Buffer.byteLength(world), collection: 'world-100', sourceDigest: sha256(world),
+    }],
+  });
+  files[manifestPath] = `${JSON.stringify(manifest)}\n`;
+  files[`releases/${publicReleaseId}/world-ce-100.json`] = world;
+  files['releases/latest.json'] = `${JSON.stringify({ releaseId: publicReleaseId, manifestSha256: sha256(files[manifestPath]) })}\n`;
+  return files;
+}
+
 test('accepts a project-base Pages artifact in the public layout', async () => {
   const root = await fixture({
     'index.html': '<script type="module" src="/chronoatlas/assets/app.js"></script>',
@@ -91,6 +110,23 @@ test('accepts a root-base Pages artifact', async () => {
 test('accepts one hash-verified stable offline release selected by latest', async () => {
   const root = await fixture(publicReleaseFiles());
   await assert.doesNotReject(() => verifyArtifact(root, { base: '/' }));
+});
+
+test('accepts hash-verified release-owned world slices declared by the latest manifest', async () => {
+  const root = await fixture(publicReleaseWithWorld());
+  await assert.doesNotReject(() => verifyArtifact(root, { base: '/' }));
+});
+
+test('rejects a malformed package collection as a validation error', async () => {
+  const files = publicReleaseFiles();
+  const manifestPath = `releases/${publicReleaseId}/manifest.json`;
+  const manifest = JSON.parse(files[manifestPath]);
+  manifest.packages = {};
+  files[manifestPath] = `${JSON.stringify(manifest)}\n`;
+  files['releases/latest.json'] = `${JSON.stringify({ releaseId: publicReleaseId, manifestSha256: sha256(files[manifestPath]) })}\n`;
+  const root = await fixture(files);
+
+  await assert.rejects(() => verifyArtifact(root, { base: '/' }), /Invalid release manifest/);
 });
 
 test('rejects research releases even when the pointer and files are internally consistent', async () => {
@@ -136,6 +172,8 @@ test('reports every unsafe file, internal ledger and sensitive signature', async
     'assets/app.js.map': '{}',
     'assets/source.ts': 'export const secret = true;',
     'data/territory-research-tasks.json': '{}',
+    'data/coverage-audit.json': '{}',
+    'data/knowledge-coverage.json': '{}',
     '.env.production': 'TOKEN=secret',
   });
 
@@ -147,6 +185,8 @@ test('reports every unsafe file, internal ledger and sensitive signature', async
       assert.match(error.message, /sensitive/i);
       assert.match(error.message, /TypeScript source/i);
       assert.match(error.message, /internal research ledger/i);
+      assert.match(error.message, /coverage-audit\.json/);
+      assert.match(error.message, /knowledge-coverage\.json/);
       assert.match(error.message, /\.env/i);
       return true;
     },

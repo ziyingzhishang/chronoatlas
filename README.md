@@ -88,7 +88,7 @@ npm test -- --run
 npm run build
 ```
 
-逐政权覆盖表为 `public/data/coverage-audit.json`，版本及输入哈希在 `public/data/cliopatria-manifest.json`。重新导入旧断面（需要联网，原始文件缓存于 `/tmp/china-history-boundaries-source`）：
+逐政权覆盖表为仅供研究和构建流程使用的 `internal/audits/coverage-audit.json`，不会进入公开站点；版本及输入哈希在 `public/data/cliopatria-manifest.json`。重新导入旧断面（需要联网，原始文件缓存于 `/tmp/china-history-boundaries-source`）：
 
 ```bash
 node scripts/import-boundaries.mjs

@@ -6,6 +6,7 @@ import { mapInstances } from '../test/maplibre-mock';
 import type { ReleaseManifest } from '../content/release-types';
 import type { OfflineManager } from '../components/OfflineDataManager';
 import type { MapReleaseCompliance } from '../compliance/map-release';
+import { bundledReleaseManifest } from '../content/bundled-content';
 
 afterEach(() => vi.restoreAllMocks());
 
@@ -84,6 +85,8 @@ test('shows the approved map review number and expiry to readers', async () => {
     status: 'approved-for-public-release',
     reviewNumber: 'GS(2026)0001号',
     reviewExpiresAt: '2099-10-20',
+    approvedReleaseId: bundledReleaseManifest.releaseId,
+    approvedReleaseManifestSha256: 'a'.repeat(64),
     checkedSources: [{ id: 'modern-reference', license: 'public domain', attribution: 'Natural Earth' }],
     requiredNotices: ['review number displayed'],
   };
@@ -95,6 +98,21 @@ test('shows the approved map review number and expiry to readers', async () => {
   expect(status).toHaveTextContent('已获公开发布批准');
   expect(status).toHaveTextContent('审图号GS(2026)0001号');
   expect(status).toHaveTextContent('有效期至2099-10-20');
+});
+
+test('does not show approval for a different active content release', async () => {
+  const compliance: MapReleaseCompliance = {
+    status: 'approved-for-public-release', reviewNumber: 'GS(2026)0001号', reviewExpiresAt: '2099-10-20',
+    approvedReleaseId: 'another-release', approvedReleaseManifestSha256: 'a'.repeat(64),
+    checkedSources: [{ id: 'modern-reference', license: 'public domain', attribution: 'Natural Earth' }],
+    requiredNotices: ['review number displayed'],
+  };
+  render(<App mapReleaseCompliance={compliance}/>);
+
+  await userEvent.click(screen.getByRole('button', { name: '更多' }));
+
+  expect(screen.getByRole('region', { name: '地图公开状态' })).toHaveTextContent('公开发布批准信息无效或已过期');
+  expect(screen.queryByText('已获公开发布批准')).not.toBeInTheDocument();
 });
 
 test('shows the separately discovered release while the active content snapshot remains fixed', async () => {
@@ -117,8 +135,9 @@ test('shows the separately discovered release while the active content snapshot 
 
   await userEvent.click(screen.getByRole('button', { name: '更多' }));
 
-  expect(screen.getByText('release-update')).toBeInTheDocument();
-  expect(document.querySelector('.content-provider')).toHaveAttribute('data-content-revision', expect.stringMatching(/^bundled-/));
+  expect(screen.getByText('2026年10月27日')).toBeInTheDocument();
+  expect(screen.queryByText('release-update')).not.toBeInTheDocument();
+  expect(document.querySelector('.content-provider')).not.toHaveAttribute('data-content-revision');
 });
 
 test('opens a deep entity drawer from the polity study view and supports back navigation', async () => {

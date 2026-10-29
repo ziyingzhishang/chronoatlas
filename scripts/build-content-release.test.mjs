@@ -64,7 +64,8 @@ test('builds byte-identical manifests and content from the same authoring snapsh
         .flatMap((releasePackage) => releasePackage.files.map((file) => file.uri)),
       ['releases/fixture-release/core-zh.json', 'releases/fixture-release/china-territory.json'],
     );
-    assert.equal(firstResult.manifest.packages.find((releasePackage) => releasePackage.kind === 'world').files[0].uri, 'data/world/100.json');
+    assert.equal(firstResult.manifest.packages.find((releasePackage) => releasePackage.kind === 'world').files[0].uri, 'releases/fixture-release/world-ce-100.json');
+    await readFile(path.join(first, 'releases', 'fixture-release', 'world-ce-100.json'));
     const firstCore = await readFile(path.join(first, 'releases', 'fixture-release', 'core-zh.json'), 'utf8');
     const secondCore = await readFile(path.join(second, 'releases', 'fixture-release', 'core-zh.json'), 'utf8');
     assert.equal(firstCore, secondCore);

@@ -46,7 +46,7 @@ function isAllowedLayout(relativePath) {
   if (relativePath.startsWith('assets/')) return ASSET_EXTENSIONS.has(extension);
   if (relativePath.startsWith('data/')) return DATA_EXTENSIONS.has(extension);
   if (relativePath === 'releases/latest.json') return true;
-  if (/^releases\/[a-f0-9]{40}\/(?:manifest|core-zh|china-territory)\.json$/.test(relativePath)) return true;
+  if (/^releases\/[a-f0-9]{40}\/(?:manifest|core-zh|china-territory|world-(?:bce|ce)-\d+)\.json$/.test(relativePath)) return true;
   return false;
 }
 
@@ -68,7 +68,7 @@ function fileNameViolations(relativePath) {
   if (pathSegments.slice(0, -1).some((part) => /^(?:test|tests|spec|specs)$/i.test(part))) {
     violations.push('test or spec directory files are forbidden');
   }
-  if (/(?:territory-research|research-tasks?|coverage-decisions|internal-audit|review-ledger)/i.test(relativePath)) {
+  if (/(?:territory-research|research-tasks?|coverage-decisions|coverage-audit|knowledge-coverage|internal-audit|review-ledger)/i.test(relativePath)) {
     violations.push('internal research ledger files are forbidden');
   }
   if (!isAllowedLayout(relativePath)) {
@@ -152,18 +152,13 @@ async function verifyPublicRelease(root, files, violations) {
   }
 
   const releaseId = pointer.releaseId;
-  const expectedReleaseFiles = new Set([
+  const requiredReleaseFiles = new Set([
     'releases/latest.json',
     `releases/${releaseId}/manifest.json`,
     `releases/${releaseId}/core-zh.json`,
     `releases/${releaseId}/china-territory.json`,
   ]);
-  for (const { relativePath } of releaseFiles) {
-    if (!expectedReleaseFiles.has(relativePath)) {
-      violations.push(`${relativePath}: unexpected release file; only the latest immutable release is public`);
-    }
-  }
-  for (const relativePath of expectedReleaseFiles) {
+  for (const relativePath of requiredReleaseFiles) {
     if (!releaseFiles.some((file) => file.relativePath === relativePath)) {
       violations.push(`${relativePath}: required public release file is missing`);
     }
@@ -208,16 +203,23 @@ async function verifyPublicRelease(root, files, violations) {
       violations.push(`${manifestFile.relativePath}: required package ${packageId} must contain only ${expectedUri}`);
     }
   }
-  const ownedUris = (manifest.packages ?? [])
+  const declaredUris = (Array.isArray(manifest.packages) ? manifest.packages : [])
     .flatMap((releasePackage) => releasePackage?.files ?? [])
     .map((file) => file?.uri)
-    .filter((uri) => typeof uri === 'string' && uri.startsWith(`releases/${releaseId}/`));
-  const expectedOwnedUris = [
-    `releases/${releaseId}/china-territory.json`,
-    `releases/${releaseId}/core-zh.json`,
-  ];
-  if ([...ownedUris].sort().join('\n') !== expectedOwnedUris.join('\n')) {
-    violations.push(`${manifestFile.relativePath}: release-owned files must be exactly core-zh.json and china-territory.json`);
+    .filter((uri) => typeof uri === 'string');
+  if (declaredUris.some((uri) => !uri.startsWith(`releases/${releaseId}/`))) {
+    violations.push(`${manifestFile.relativePath}: every offline-public package file must belong to release ${releaseId}`);
+  }
+  const expectedReleaseFiles = new Set(['releases/latest.json', `releases/${releaseId}/manifest.json`, ...declaredUris]);
+  for (const { relativePath } of releaseFiles) {
+    if (!expectedReleaseFiles.has(relativePath)) {
+      violations.push(`${relativePath}: unexpected release file; only files declared by the latest immutable release are public`);
+    }
+  }
+  for (const relativePath of expectedReleaseFiles) {
+    if (!releaseFiles.some((file) => file.relativePath === relativePath)) {
+      violations.push(`${relativePath}: declared public release file is missing`);
+    }
   }
 
   try {

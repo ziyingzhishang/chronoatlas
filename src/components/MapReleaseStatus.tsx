@@ -1,10 +1,10 @@
 import { evaluateMapRelease, type MapReleaseCompliance } from '../compliance/map-release';
 import { useLocale } from '../i18n/locale';
 
-export function MapReleaseStatus({ compliance }: { compliance: MapReleaseCompliance }) {
+export function MapReleaseStatus({ compliance, releaseId }: { compliance: MapReleaseCompliance; releaseId: string }) {
   const { t } = useLocale();
   const approved = compliance.status === 'approved-for-public-release'
-    && evaluateMapRelease(compliance).length === 0;
+    && evaluateMapRelease(compliance, new Date(), undefined, releaseId).length === 0;
 
   return <section className="map-release-status" aria-label={t('地图公开状态')}>
     <h3>{t('地图公开状态')}</h3>

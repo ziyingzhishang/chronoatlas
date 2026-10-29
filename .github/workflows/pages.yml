@@ -14,6 +14,8 @@ jobs:
   build:
     if: github.ref == 'refs/heads/main'
     name: Build gated Pages artifact
+    environment:
+      name: map-release-approval
     runs-on: ubuntu-latest
     timeout-minutes: 25
     permissions:
@@ -40,14 +42,19 @@ jobs:
       - name: Run non-deploying release checks
         run: npm run verify:release-readiness
 
-      - name: Verify public map approval
-        run: npm run verify:map-release
-
       - name: Prepare immutable public offline release
         run: npm run build:content-release -- --release "$GITHUB_SHA" --profile offline-public --channel stable --write-latest
 
       - name: Verify immutable public offline release
         run: npm run verify:content-release -- "public/releases/$GITHUB_SHA/manifest.json"
+
+      - name: Load protected map release approval
+        env:
+          MAP_RELEASE_APPROVAL_JSON: ${{ secrets.MAP_RELEASE_APPROVAL_JSON }}
+        run: node scripts/materialize-map-release-approval.mjs
+
+      - name: Verify public map approval for this release
+        run: npm run verify:map-release -- "public/releases/$GITHUB_SHA/manifest.json"
 
       - name: Build project-path site
         env:

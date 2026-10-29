@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdtemp, mkdir, readFile, rm, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -38,6 +39,7 @@ test('verifies hashes, counts, source references, licenses and leave-unfilled se
     });
     assert.equal(result.releaseId, 'fixture-release');
     assert.equal(result.files, 3);
+    assert.equal(result.manifestSha256, createHash('sha256').update(await readFile(fixture.manifestPath)).digest('hex'));
   } finally {
     await rm(fixture.root, { recursive: true, force: true });
   }

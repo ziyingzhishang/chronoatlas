@@ -26,7 +26,7 @@ export function OfflineDataManager({ manifest, manager: providedManager, storage
   manager?: OfflineManager;
   storageManager?: BrowserStorageManager;
 }) {
-  const { t } = useLocale();
+  const { locale, t } = useLocale();
   const [manager, setManager] = useState<OfflineManager | undefined>(providedManager);
   const [available, setAvailable] = useState<readonly AvailablePackage[]>([]);
   const [installed, setInstalled] = useState<readonly InstalledPackage[]>([]);
@@ -153,7 +153,7 @@ export function OfflineDataManager({ manifest, manager: providedManager, storage
           <div className="offline-package-summary">
             <h4>{t(packageLabel(releasePackage))}</h4>
             <dl>
-              <div><dt>{t('版本')}</dt><dd>{manifest.releaseId}</dd></div>
+              <div><dt>{t('资料日期')}</dt><dd>{formatReleaseDate(manifest.createdAt, locale)}</dd></div>
               <div><dt>{t('下载大小')}</dt><dd>{formatBytes(releasePackage.compressedBytes)}</dd></div>
               <div><dt>{t('许可')}</dt><dd>{releasePackage.licenseIds.join('、')}</dd></div>
               <div><dt>{t('状态')}</dt><dd>{t(installedCurrent ? '已安装' : hasOlder ? '有可用更新' : '未安装')}</dd></div>
@@ -189,6 +189,12 @@ function formatBytes(bytes: number) {
   if (bytes < 1024) return `${bytes} B`;
   if (bytes < 1024 * 1024) return `${Math.round(bytes / 1024)} KB`;
   return `${(bytes / 1024 / 1024).toFixed(bytes < 10 * 1024 * 1024 ? 1 : 0)} MB`;
+}
+
+function formatReleaseDate(createdAt: string, locale: string) {
+  const date = new Date(createdAt);
+  if (Number.isNaN(date.getTime())) return '日期待核';
+  return new Intl.DateTimeFormat(locale, { year: 'numeric', month: 'long', day: 'numeric', timeZone: 'UTC' }).format(date);
 }
 
 function installBytes(manifest: ReleaseManifest, packageId: string, installed: Set<string>) {

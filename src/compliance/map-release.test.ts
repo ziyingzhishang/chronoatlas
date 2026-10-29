@@ -3,6 +3,8 @@ import { evaluateMapRelease, type MapReleaseCompliance } from './map-release';
 
 const researchOnly: MapReleaseCompliance = {
   status:'research-only', reviewNumber:null, reviewExpiresAt:null,
+  approvedReleaseId:null,
+  approvedReleaseManifestSha256:null,
   checkedSources:[], requiredNotices:[],
 };
 
@@ -13,6 +15,8 @@ test('blocks public release without a review number', () => {
 test('accepts only a complete, unexpired public-release manifest', () => {
   const approved: MapReleaseCompliance = {
     status:'approved-for-public-release', reviewNumber:'GS(2026)0001号', reviewExpiresAt:'2027-10-20',
+    approvedReleaseId:'release-a',
+    approvedReleaseManifestSha256:'a'.repeat(64),
     checkedSources:[{id:'modern-reference',license:'public domain',attribution:'Natural Earth'}],
     requiredNotices:['review number displayed'],
   };
@@ -28,6 +32,8 @@ test.each([
 ])('rejects an invalid map review expiry date: %s', (reviewExpiresAt) => {
   const approved: MapReleaseCompliance = {
     status:'approved-for-public-release', reviewNumber:'GS(2026)0001号', reviewExpiresAt,
+    approvedReleaseId:'release-a',
+    approvedReleaseManifestSha256:'a'.repeat(64),
     checkedSources:[{id:'modern-reference',license:'public domain',attribution:'Natural Earth'}],
     requiredNotices:['review number displayed'],
   };
@@ -42,6 +48,8 @@ test.each([
 ])('rejects a placeholder or malformed map review number: %s', (reviewNumber) => {
   const approved: MapReleaseCompliance = {
     status:'approved-for-public-release', reviewNumber, reviewExpiresAt:'2027-10-20',
+    approvedReleaseId:'release-a',
+    approvedReleaseManifestSha256:'a'.repeat(64),
     checkedSources:[{id:'modern-reference',license:'public domain',attribution:'Natural Earth'}],
     requiredNotices:['review number displayed'],
   };
@@ -55,6 +63,8 @@ test.each([
 ] as const)('rejects incomplete checked map source fields', (source, issue) => {
   const approved: MapReleaseCompliance = {
     status:'approved-for-public-release', reviewNumber:'GS(2026)0001号', reviewExpiresAt:'2027-10-20',
+    approvedReleaseId:'release-a',
+    approvedReleaseManifestSha256:'a'.repeat(64),
     checkedSources:[source], requiredNotices:['review number displayed'],
   };
   expect(evaluateMapRelease(approved, new Date('2026-10-20'))).toContain(issue);
@@ -63,8 +73,36 @@ test.each([
 test('rejects empty required publication notices', () => {
   const approved: MapReleaseCompliance = {
     status:'approved-for-public-release', reviewNumber:'GS(2026)0001号', reviewExpiresAt:'2027-10-20',
+    approvedReleaseId:'release-a',
+    approvedReleaseManifestSha256:'a'.repeat(64),
     checkedSources:[{id:'modern-reference',license:'public domain',attribution:'Natural Earth'}],
     requiredNotices:['  '],
   };
   expect(evaluateMapRelease(approved, new Date('2026-10-20'))).toContain('required publication notice must not be empty');
+});
+
+test('binds public approval to the exact release manifest digest', () => {
+  const approved: MapReleaseCompliance = {
+    status:'approved-for-public-release', reviewNumber:'GS(2026)0001号', reviewExpiresAt:'2027-10-20',
+    approvedReleaseId:'release-a',
+    approvedReleaseManifestSha256:'a'.repeat(64),
+    checkedSources:[{id:'modern-reference',license:'public domain',attribution:'Natural Earth'}],
+    requiredNotices:['review number displayed'],
+  };
+  expect(evaluateMapRelease(approved, new Date('2026-10-20'), 'b'.repeat(64)))
+    .toContain('map approval does not match this release manifest');
+  expect(evaluateMapRelease({...approved, approvedReleaseManifestSha256:null}, new Date('2026-10-20')))
+    .toContain('approved release manifest digest is required');
+});
+
+test('binds public approval to the active release id', () => {
+  const approved = {
+    status:'approved-for-public-release', reviewNumber:'GS(2026)0001号', reviewExpiresAt:'2027-10-20',
+    approvedReleaseId:'release-a', approvedReleaseManifestSha256:'a'.repeat(64),
+    checkedSources:[{id:'modern-reference',license:'public domain',attribution:'Natural Earth'}],
+    requiredNotices:['review number displayed'],
+  } as MapReleaseCompliance & { approvedReleaseId: string };
+
+  expect(evaluateMapRelease(approved, new Date('2026-10-20'), 'a'.repeat(64), 'release-b'))
+    .toContain('map approval does not match this release id');
 });

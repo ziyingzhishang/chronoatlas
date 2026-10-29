@@ -46,7 +46,7 @@ test('release-readiness script contains every non-deploying quality check', asyn
   assert.match(command, /npm run build:notices/);
   assert.match(command, /npm run build/);
   assert.match(command, /npm run verify:pages-artifact -- dist/);
-  assert.match(command, /git diff --exit-code -- public\/data\/knowledge-coverage\.json public\/data\/licenses\/project-third-party-notices\.json/);
+  assert.match(command, /git diff --exit-code -- internal\/audits\/knowledge-coverage\.json public\/data\/licenses\/project-third-party-notices\.json/);
   assert.match(command, /git diff --check/);
   assert.doesNotMatch(command, /verify:map-release|deploy/);
 });
@@ -124,14 +124,18 @@ test('Pages build pins npm, uses the project base and uploads only dist', async 
   assert.match(build, /actions\/upload-pages-artifact@[0-9a-f]{40}[\s\S]*?with:\s*\n\s{10}path:\s*dist/);
 });
 
-test('Pages prepares and verifies one immutable public offline release after the map gate and before build', async () => {
+test('Pages prepares and verifies one immutable public offline release, then binds map approval before build', async () => {
   const source = await readFile(pagesWorkflowUrl, 'utf8');
   const build = source.match(/^  build:\n([\s\S]*?)(?=^  deploy:)/m)?.[1] ?? '';
-  const mapGate = build.indexOf('npm run verify:map-release');
   const prepare = build.indexOf('npm run build:content-release -- --release "$GITHUB_SHA" --profile offline-public --channel stable --write-latest');
   const verify = build.indexOf('npm run verify:content-release -- "public/releases/$GITHUB_SHA/manifest.json"');
+  const injectApproval = build.indexOf('node scripts/materialize-map-release-approval.mjs');
+  const mapGate = build.indexOf('npm run verify:map-release -- "public/releases/$GITHUB_SHA/manifest.json"');
   const siteBuild = build.indexOf('npm run build', prepare + 1);
 
-  assert.ok(mapGate >= 0 && mapGate < prepare, 'the map gate must pass before public data is prepared');
-  assert.ok(prepare < verify && verify < siteBuild, 'the immutable release must be built and verified before the site build');
+  assert.ok(prepare >= 0 && prepare < verify, 'the immutable release must be prepared before verification');
+  assert.ok(verify < injectApproval && injectApproval < mapGate && mapGate < siteBuild,
+    'protected approval must be injected and matched to the verified release before the site build');
+  assert.match(build, /environment:\s*\n\s{6}name:\s*map-release-approval/);
+  assert.match(build, /MAP_RELEASE_APPROVAL_JSON:\s*\$\{\{ secrets\.MAP_RELEASE_APPROVAL_JSON \}\}/);
 });

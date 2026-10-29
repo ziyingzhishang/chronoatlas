@@ -8,6 +8,7 @@ import { toPolityRelationshipGraphView, type RelationshipGraphNode, type Relatio
 import { useHistoricalContent } from '../content/ContentContext';
 import { ReaderNotes } from './ReaderNotes';
 import { toReaderSources } from '../presentation/reader-content';
+import { readerRelationshipLabel } from '../presentation/relationship-label';
 
 export type RelationshipGraphCategory = 'governance' | 'kinship' | 'allianceConflict' | 'eventParticipation' | 'heritage' | 'context';
 export type RelationshipGraphScope = 'current-fact' | 'detail-linked';
@@ -32,12 +33,6 @@ const categoryForPredicate: Record<string, RelationshipGraphCategory> = {
   'left-heritage': 'heritage', commissioned: 'heritage',
 };
 
-const predicateLabels: Record<string, string> = {
-  founded: '建立', ruled: '统治', served: '任职／效力', appointed: '任用', succeeded: '承接',
-  'parent-of': '亲属：父母', 'child-of': '亲属：子女', 'grandparent-of': '亲属：祖父母', 'grandchild-of': '亲属：孙辈', 'sibling-of': '亲属：兄弟姐妹', 'spouse-of': '亲属：配偶',
-  'ally-of': '联盟', 'enemy-of': '对立', 'participated-in': '参与事件', 'related-to': '历史关联', commissioned: '营建', 'left-heritage': '遗留',
-};
-
 const categoryLabels: Record<RelationshipGraphCategory, string> = {
   governance: '治理／君臣', kinship: '亲属', allianceConflict: '联盟与对立', eventParticipation: '事件参与', heritage: '遗产关联', context: '历史关联',
 };
@@ -57,7 +52,7 @@ export function relationshipDateLabel(claim: HistoricalClaim): string {
 }
 
 export function relationshipSummary(edge: RelationshipGraphEdge, t: (text: string) => string): string {
-  const predicate = t(predicateLabels[edge.claim.predicate] ?? edge.claim.predicate);
+  const predicate = t(readerRelationshipLabel(edge.claim.predicate));
   const category = t(categoryLabels[edge.category]);
   const scope = t(edge.scope === 'current-fact' ? '当前地图时段' : '与本专题相关');
   return `${edge.from.label} · ${category} · ${predicate} · ${edge.to.label} · ${relationshipDateLabel(edge.claim)} · ${scope}`;
@@ -151,6 +146,6 @@ function RelationshipEdgeEvidence({ edge }: { edge: RelationshipGraphEdge; t: (t
 function GraphEdge({ edge, positions, summary, t }: { edge: RelationshipGraphEdge; positions: Map<string, { x: number; y: number }>; summary: string; t: (text: string) => string }) {
   const from = positions.get(edge.from.id)!;
   const to = positions.get(edge.to.id)!;
-  const label = `${t(categoryLabels[edge.category])} · ${t(predicateLabels[edge.claim.predicate] ?? edge.claim.predicate)}`;
+  const label = `${t(categoryLabels[edge.category])} · ${t(readerRelationshipLabel(edge.claim.predicate))}`;
   return <g className={`relationship-edge relationship-edge-${edge.category} relationship-edge-${edge.scope}`} aria-label={summary}><title>{summary}</title><line x1={from.x} y1={from.y} x2={to.x} y2={to.y} /><text x={(from.x + to.x) / 2} y={(from.y + to.y) / 2 - 4}>{label}</text></g>;
 }

@@ -37,7 +37,7 @@
     "verify:data-runtime": "vitest --run src/content/release-validation.test.ts src/content/snapshot.test.ts src/content/repository.test.ts src/content/ContentContext.test.tsx src/offline/offline-package-manager.test.ts src/offline/cache-package-files.test.ts src/offline/indexeddb-package-store.test.ts src/app/offline-release.integration.test.tsx",
     "verify:pages-artifact": "node scripts/verify-pages-artifact.mjs",
     "verify:map-release": "node scripts/verify-map-release.mjs",
-    "verify:release-readiness": "npm run build:knowledge-coverage && npx vitest --run --exclude '.worktrees/**' --exclude 'scripts/**/*.test.mjs' && node --test scripts/*.test.mjs && npm run build:notices && npm run build && npm run verify:pages-artifact -- dist && git diff --exit-code -- public/data/knowledge-coverage.json public/data/licenses/project-third-party-notices.json && git diff --check"
+    "verify:release-readiness": "npm run build:knowledge-coverage && npx vitest --run --exclude '.worktrees/**' --exclude 'scripts/**/*.test.mjs' && node --test scripts/*.test.mjs && npm run build:notices && npm run build && npm run verify:pages-artifact -- dist && git diff --exit-code -- internal/audits/knowledge-coverage.json public/data/licenses/project-third-party-notices.json && git diff --check"
   },
   "dependencies": {
     "ajv": "^8.20.0",

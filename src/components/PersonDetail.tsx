@@ -5,6 +5,7 @@ import { useLocale } from '../i18n/locale';
 import { useHistoricalContent } from '../content/ContentContext';
 import { toReaderSources } from '../presentation/reader-content';
 import { ReaderNotes } from './ReaderNotes';
+import { readerPersonRelationshipLabel } from '../presentation/relationship-label';
 
 export interface PersonDetailProps {
   person: Person;
@@ -24,11 +25,6 @@ const relationSections: Array<{ title: string; types: PersonRelationType[] }> = 
   { title: '对立关系', types: ['enemy-of'] },
   { title: '事件参与', types: ['participated-in'] },
 ];
-
-const relationLabels: Partial<Record<PersonRelationType, string>> = {
-  'parent-of': '父母／子女', 'child-of': '子女／父母', 'grandparent-of': '祖父母／外祖父母', 'grandchild-of': '孙辈／外孙辈', 'spouse-of': '配偶', 'sibling-of': '兄弟姊妹',
-  'teacher-of': '师承', 'student-of': '弟子', served: '侍奉／效力', appointed: '任用', succeeded: '承接', founded: '建立', ruled: '统治', 'ally-of': '盟友', 'enemy-of': '对立', 'participated-in': '参与事件',
-};
 
 export function PersonDetail({ person, detail, year, claims, people = [], polities = [], events = [], onOpenEntity }: PersonDetailProps) {
   const { t } = useLocale();
@@ -85,7 +81,7 @@ function PersonRelationshipGraph({ personName, grouped, people, polities, events
         const target = relation.kind === 'person-person' ? people.get(objectId) : relation.kind === 'person-polity' ? polities.get(objectId) : events.get(objectId);
         const targetLabel = target ? ('title' in target ? t(target.title) : t(target.name)) : t('相关对象');
         const targetType = relation.kind === 'person-person' ? 'person' : relation.kind === 'person-polity' ? 'polity' : relation.kind === 'person-event' ? 'event' : 'heritage';
-        const relationLabel = t(relationLabels[relation.relationType] ?? relation.claim.predicate);
+        const relationLabel = t(readerPersonRelationshipLabel(relation.relationType));
         const accessibleLabel = `${relationLabel}：${targetLabel}`;
         return <li key={`graph-${relation.claim.id}`} className="person-relationship-graph-edge">
           {onOpenEntity ? <button type="button" aria-label={accessibleLabel} onClick={() => onOpenEntity({ type: targetType, id: objectId })}><span>{t(category)} · {targetLabel}</span><small>{relationLabel} · {formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)}</small></button> : <span><span>{t(category)} · {targetLabel}</span><small>{relationLabel} · {formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)}</small></span>}
@@ -106,7 +102,7 @@ function RelationItem({ relation, people, polities, events, onOpenEntity, t }: {
   const target = relation.kind === 'person-person' ? people.get(objectId) : relation.kind === 'person-polity' ? polities.get(objectId) : events.get(objectId);
   const label = target ? ('title' in target ? t(target.title) : t(target.name)) : t('相关对象');
   const targetType = relation.kind === 'person-person' ? 'person' : relation.kind === 'person-polity' ? 'polity' : relation.kind === 'person-event' ? 'event' : 'heritage';
-  const relationLabel = t(relationLabels[relation.relationType] ?? relation.claim.predicate);
+  const relationLabel = t(readerPersonRelationshipLabel(relation.relationType));
   const content = <>{relationLabel} · {label}<small className="person-relation-meta">{formatRange(relation.claim.validFrom, relation.claim.validTo, relation.claim.datePrecision)}</small></>;
   return <li>{onOpenEntity ? <button type="button" onClick={() => onOpenEntity({ type: targetType, id: objectId })}>{content}</button> : <span>{content}</span>}<ReaderNotes note={{ uncertainty: relation.claim.uncertaintyNote, sources: toReaderSources(relation.claim.sourceIds, catalog.sources) }} /></li>;
 }

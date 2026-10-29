@@ -44,7 +44,7 @@
 ### Task 3: Coverage and verification
 
 **Files:**
-- Modify: `public/data/knowledge-coverage.json`
+- Modify: `internal/audits/knowledge-coverage.json`
 
 - [ ] **Step 1: Run `npm run build:knowledge-coverage`.**
 - [ ] **Step 2: Run `npm test -- --run`.**

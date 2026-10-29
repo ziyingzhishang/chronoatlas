@@ -1,6 +1,7 @@
 import { act, renderHook, waitFor } from '@testing-library/react';
 import { afterEach, expect, test, vi } from 'vitest';
 import type { ReleaseManifest } from '../content/release-types';
+import { CachePackageFiles } from '../offline/cache-package-files';
 import { sha256Hex } from '../offline/hash';
 import { useWorldSlice } from './world';
 
@@ -9,6 +10,7 @@ vi.mock('../runtime/asset-url', () => ({ publicAssetUrl: assetUrl }));
 
 afterEach(() => {
   vi.unstubAllGlobals();
+  vi.restoreAllMocks();
   assetUrl.mockClear();
 });
 const chunk = (start:number) => ({ start, end:start+99, polities:[], records:[], geometries:[] });
@@ -91,6 +93,43 @@ test('isolates cached world files by release id and URI', async () => {
   await waitFor(() => expect(second.result.current.status).toBe('ready'));
   expect(second.result.current.slice?.polities[0]?.id).toBe('second-release');
   expect(fetcher).toHaveBeenCalledTimes(2);
+});
+
+test('includes the declared SHA-256 in the in-memory cache identity', async () => {
+  const firstBody = JSON.stringify({ ...chunk(600), polities: [{ id: 'first-hash' }] });
+  const secondBody = JSON.stringify({ ...chunk(600), polities: [{ id: 'second-hash' }] });
+  const firstRelease = await releaseWithWorld({ releaseId: 'same-release-id', start: 600, body: firstBody });
+  const secondRelease = await releaseWithWorld({ releaseId: 'same-release-id', start: 600, body: secondBody });
+  const fetcher = vi.fn().mockResolvedValueOnce(new Response(firstBody)).mockResolvedValueOnce(new Response(secondBody));
+  vi.stubGlobal('fetch', fetcher);
+  const first = renderHook(() => useWorldSlice(620, true, firstRelease));
+  await waitFor(() => expect(first.result.current.status).toBe('ready'));
+  first.unmount();
+
+  const second = renderHook(() => useWorldSlice(620, true, secondRelease));
+  await waitFor(() => expect(second.result.current.status).toBe('ready'));
+
+  expect(second.result.current.slice?.polities[0]?.id).toBe('second-hash');
+  expect(fetcher).toHaveBeenCalledTimes(2);
+});
+
+test('loads an installed release-owned world slice before using the network', async () => {
+  const body = JSON.stringify(chunk(700));
+  const release = await releaseWithWorld({
+    releaseId: 'installed-world-release', start: 700, body,
+    uri: 'releases/installed-world-release/world-ce-700.json',
+  });
+  vi.stubGlobal('caches', {});
+  const installed = vi.spyOn(CachePackageFiles.prototype, 'read')
+    .mockResolvedValue(new TextEncoder().encode(body));
+  const fetcher = vi.fn();
+  vi.stubGlobal('fetch', fetcher);
+
+  const { result } = renderHook(() => useWorldSlice(720, true, release));
+  await waitFor(() => expect(result.current.status).toBe('ready'));
+
+  expect(installed).toHaveBeenCalledWith('installed-world-release', 'world-700', 'releases/installed-world-release/world-ce-700.json');
+  expect(fetcher).not.toHaveBeenCalled();
 });
 
 test('reports unavailable when the active release has no world package for the year', async () => {

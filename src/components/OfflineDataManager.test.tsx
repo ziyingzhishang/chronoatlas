@@ -30,6 +30,25 @@ function manager(overrides: Partial<OfflineManager> = {}): OfflineManager {
 }
 
 describe('OfflineDataManager', () => {
+  it('offers release-owned world slices as installable packages', async () => {
+    const world = {
+      id: 'world-ce-100', kind: 'world', region: 'world', yearRange: [100, 199],
+      required: false, dependencies: ['core-zh'], compressedBytes: 512, recordCount: 2,
+      licenseIds: ['CC-BY-4.0'], files: [{
+        uri: 'releases/2026.10.27/world-ce-100.json', mediaType: 'application/json', sha256: 'e'.repeat(64),
+        bytes: 512, collection: 'world-100', sourceDigest: 'f'.repeat(64),
+      }],
+    } satisfies ReleaseManifest['packages'][number];
+    const released = { ...manifest, packages: [...manifest.packages, world] } satisfies ReleaseManifest;
+    const releasedManager = manager({
+      listAvailable: vi.fn().mockResolvedValue(released.packages.map((releasePackage) => ({ releasePackage, installed: false }))),
+    });
+
+    render(<OfflineDataManager manifest={released} manager={releasedManager}/>);
+
+    expect(await screen.findByRole('article', { name: '同期世界资料' })).toBeInTheDocument();
+  });
+
   it('keeps release-owned core and China packages downloadable when exported world files are external', async () => {
     const exported = {
       ...manifest,
@@ -89,7 +108,8 @@ describe('OfflineDataManager', () => {
     }}/>)
 
     const item = await screen.findByRole('article', { name: '中文核心历史资料' });
-    expect(item).toHaveTextContent('2026.10.27');
+    expect(item).toHaveTextContent('2026年10月27日');
+    expect(item).not.toHaveTextContent(manifest.releaseId);
     expect(item).toHaveTextContent('2 KB');
     expect(item).toHaveTextContent('MIT、CC-BY-4.0');
     expect(item).toHaveTextContent('未安装');

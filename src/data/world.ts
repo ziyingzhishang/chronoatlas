@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import type { ReleaseFile, ReleaseManifest } from '../content/release-types';
 import type { BoundaryState, Polity, WorldSlice } from '../domain/types';
+import { CachePackageFiles } from '../offline/cache-package-files';
 import { verifySha256 } from '../offline/hash';
 import { publicAssetUrl } from '../runtime/asset-url';
 
@@ -14,9 +15,9 @@ const cache = new Map<string, WorldSlice>();
 interface Pending { promise:Promise<WorldSlice>; controller:AbortController; consumers:number }
 const pending = new Map<string, Pending>();
 
-interface WorldRequest { key:string; start:number; file?:ReleaseFile }
+interface WorldRequest { key:string; start:number; releaseId?:string; packageId?:string; file?:ReleaseFile }
 
-function acquireCentury({key,start,file}:WorldRequest) {
+function acquireCentury({key,start,releaseId,packageId,file}:WorldRequest) {
   const cached=cache.get(key);
   if(cached) {
     cache.delete(key);cache.set(key,cached);
@@ -27,15 +28,18 @@ function acquireCentury({key,start,file}:WorldRequest) {
     const controller=new AbortController();
     const request=(async()=>{
       const uri=file?.uri ?? `data/world/${start}.json`;
-      const response=await fetch(publicAssetUrl(uri),{signal:controller.signal});
-      if(!response.ok) throw Error(`World data HTTP ${response.status}`);
       let data:PackedWorld;
       if(file) {
-        const bytes=new Uint8Array(await response.arrayBuffer());
+        const installed=releaseId&&packageId ? await readInstalledWorldFile(releaseId,packageId,file) : undefined;
+        const bytes=installed ?? await fetchWorldBytes(uri,controller.signal);
         if(bytes.byteLength!==file.bytes) throw Error(`World data byte length mismatch for ${uri}`);
         await verifySha256(bytes,file.sha256);
         data=JSON.parse(new TextDecoder().decode(bytes)) as PackedWorld;
-      } else data=await response.json() as PackedWorld;
+      } else {
+        const response=await fetch(publicAssetUrl(uri),{signal:controller.signal});
+        if(!response.ok) throw Error(`World data HTTP ${response.status}`);
+        data=await response.json() as PackedWorld;
+      }
       if(data.start!==start || !Array.isArray(data.records) || !Array.isArray(data.geometries)) throw Error('Wrong world data chunk');
       const slice={start:data.start,end:data.end,polities:data.polities,boundaries:data.records.map(({geometryIndex,...boundary})=>{
         const geometry=data.geometries[geometryIndex];
@@ -59,6 +63,17 @@ function acquireCentury({key,start,file}:WorldRequest) {
   }};
 }
 
+async function fetchWorldBytes(uri:string,signal:AbortSignal) {
+  const response=await fetch(publicAssetUrl(uri),{signal});
+  if(!response.ok) throw Error(`World data HTTP ${response.status}`);
+  return new Uint8Array(await response.arrayBuffer());
+}
+
+async function readInstalledWorldFile(releaseId:string,packageId:string,file:ReleaseFile) {
+  try { return await new CachePackageFiles().read(releaseId,packageId,file.uri); }
+  catch { return undefined; }
+}
+
 function requestForYear(year:number, release?:ReleaseManifest):WorldRequest|undefined {
   const century=Math.floor(year/100)*100;
   if(!release) return {key:`legacy:${century}`,start:century};
@@ -71,7 +86,7 @@ function requestForYear(year:number, release?:ReleaseManifest):WorldRequest|unde
   ));
   if(!releasePackage) return undefined;
   const file=releasePackage.files[0];
-  return {key:`${release.releaseId}:${file.uri}`,start:releasePackage.yearRange![0],file};
+  return {key:`${release.releaseId}:${file.uri}:${file.sha256}`,start:releasePackage.yearRange![0],releaseId:release.releaseId,packageId:releasePackage.id,file};
 }
 
 export function useWorldSlice(year:number, enabled:boolean, release?:ReleaseManifest) {

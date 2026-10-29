@@ -1,5 +1,5 @@
 import { expect, test } from 'vitest';
-import audit from '../../public/data/coverage-audit.json';
+import audit from '../../internal/audits/coverage-audit.json';
 import { boundaryCatalog } from './boundaries';
 import { coverageDecisions, decisionKey, gapKey } from './coverage-decisions';
 import { getHistoricalState } from '../domain/history-state';

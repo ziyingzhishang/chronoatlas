@@ -2,11 +2,13 @@ export interface MapReleaseCompliance {
   status: 'research-only' | 'approved-for-public-release';
   reviewNumber: string | null;
   reviewExpiresAt: string | null;
+  approvedReleaseId: string | null;
+  approvedReleaseManifestSha256: string | null;
   checkedSources: Array<{id: string; license: string; attribution: string}>;
   requiredNotices: string[];
 }
 
-export function evaluateMapRelease(manifest: MapReleaseCompliance, now = new Date()): string[] {
+export function evaluateMapRelease(manifest: MapReleaseCompliance, now = new Date(), releaseManifestSha256?: string, releaseId?: string): string[] {
   const issues: string[] = [];
   if (manifest.status !== 'approved-for-public-release') issues.push('manifest is research-only');
   const reviewNumber = manifest.reviewNumber?.trim();
@@ -18,6 +20,20 @@ export function evaluateMapRelease(manifest: MapReleaseCompliance, now = new Dat
     const expiry = reviewExpiry(manifest.reviewExpiresAt);
     if (expiry === undefined) issues.push('map review expiry date is invalid');
     else if (expiry < now.getTime()) issues.push('map review approval is expired');
+  }
+
+  const approvedDigest = manifest.approvedReleaseManifestSha256?.trim().toLowerCase();
+  if (!approvedDigest || !/^[a-f0-9]{64}$/.test(approvedDigest)) {
+    issues.push('approved release manifest digest is required');
+  } else if (releaseManifestSha256 && approvedDigest !== releaseManifestSha256.toLowerCase()) {
+    issues.push('map approval does not match this release manifest');
+  }
+
+  const approvedReleaseId = manifest.approvedReleaseId?.trim();
+  if (!approvedReleaseId || !/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(approvedReleaseId)) {
+    issues.push('approved release id is required');
+  } else if (releaseId && approvedReleaseId !== releaseId) {
+    issues.push('map approval does not match this release id');
   }
 
   if (!Array.isArray(manifest.checkedSources) || !manifest.checkedSources.length) {

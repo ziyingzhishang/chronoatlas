@@ -30,7 +30,7 @@ describe('ContentProvider', () => {
 
     const probe = await screen.findByText('database-snapshot-7:仓储注入人物');
     expect(probe).toBeInTheDocument();
-    expect(probe.parentElement).toHaveAttribute('data-content-revision', 'database-snapshot-7');
+    expect(probe.parentElement).not.toHaveAttribute('data-content-revision');
   });
 
   it('does not silently publish bundled content when an external repository fails', async () => {
@@ -118,7 +118,7 @@ describe('ContentProvider', () => {
   it('keeps the content revision available to the application without rendering it to readers', () => {
     const { container } = render(<ContentProvider><ReaderProbe /></ContentProvider>);
 
-    expect(screen.getByText('读者正文').parentElement).toHaveAttribute('data-content-revision', bundledContentManifest.revision);
+    expect(screen.getByText('读者正文').parentElement).not.toHaveAttribute('data-content-revision');
     expect(container).not.toHaveTextContent(bundledContentManifest.revision);
     expect(screen.queryByLabelText('内容版本')).not.toBeInTheDocument();
   });

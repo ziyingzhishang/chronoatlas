@@ -9,7 +9,8 @@ const DEFAULT_LICENSE_IDS = new Set(['MIT', 'CC-BY-4.0', 'GPL-3.0', 'Public-Doma
 
 export async function verifyContentRelease(manifestPath, options = {}) {
   const absoluteManifest = path.resolve(manifestPath);
-  const manifest = JSON.parse(await readFile(absoluteManifest, 'utf8'));
+  const manifestBytes = await readFile(absoluteManifest);
+  const manifest = JSON.parse(manifestBytes.toString('utf8'));
   if (!validateSchema(manifest)) {
     throw new Error(`Invalid release manifest: ${validateSchema.errors?.map((item) => `${item.instancePath} ${item.message}`).join('; ')}`);
   }
@@ -61,7 +62,11 @@ export async function verifyContentRelease(manifestPath, options = {}) {
     if (!sources.has(sourceId)) violations.push(`Unknown source reference: ${sourceId}`);
   }
   if (violations.length) throw new Error(`Content release verification failed:\n- ${violations.join('\n- ')}`);
-  return { releaseId: manifest.releaseId, files };
+  return {
+    releaseId: manifest.releaseId,
+    files,
+    manifestSha256: createHash('sha256').update(manifestBytes).digest('hex'),
+  };
 }
 
 async function safePublicPath(publicRoot, uri) {
@@ -171,7 +176,7 @@ async function main() {
   const manifestPath = process.argv[2];
   if (!manifestPath) throw new Error('Usage: verify-content-release <manifest.json>');
   const result = await verifyContentRelease(manifestPath);
-  console.log(`Verified content release ${result.releaseId}: ${result.files} files`);
+  console.log(`Verified content release ${result.releaseId}: ${result.files} files; manifest SHA-256 ${result.manifestSha256}`);
 }
 
 if (path.basename(process.argv[1] ?? '') === 'verify-content-release.mjs') await main();
