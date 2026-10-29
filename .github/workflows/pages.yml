@@ -12,6 +12,7 @@ concurrency:
 
 jobs:
   build:
+    if: github.ref == 'refs/heads/main'
     name: Build gated Pages artifact
     runs-on: ubuntu-latest
     timeout-minutes: 25

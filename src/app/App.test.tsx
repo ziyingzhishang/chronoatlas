@@ -5,6 +5,7 @@ import userEvent from '@testing-library/user-event';
 import { mapInstances } from '../test/maplibre-mock';
 import type { ReleaseManifest } from '../content/release-types';
 import type { OfflineManager } from '../components/OfflineDataManager';
+import type { MapReleaseCompliance } from '../compliance/map-release';
 
 afterEach(() => vi.restoreAllMocks());
 
@@ -75,6 +76,25 @@ test('opens the more information as a bottom-right HUD', async () => {
   await userEvent.click(screen.getByRole('button', { name: '更多' }));
   expect(screen.getByRole('dialog', { name: '阅读说明与来源' })).toHaveClass('workspace-hud');
   expect(screen.getByRole('heading', { name: '离线历史资料' })).toBeInTheDocument();
+  expect(screen.getByRole('region', { name: '地图公开状态' })).toHaveTextContent('当前版本仅供研究与内部评审，尚未公开发布。');
+});
+
+test('shows the approved map review number and expiry to readers', async () => {
+  const compliance: MapReleaseCompliance = {
+    status: 'approved-for-public-release',
+    reviewNumber: 'GS(2026)0001号',
+    reviewExpiresAt: '2099-10-20',
+    checkedSources: [{ id: 'modern-reference', license: 'public domain', attribution: 'Natural Earth' }],
+    requiredNotices: ['review number displayed'],
+  };
+  render(<App mapReleaseCompliance={compliance}/>);
+
+  await userEvent.click(screen.getByRole('button', { name: '更多' }));
+
+  const status = screen.getByRole('region', { name: '地图公开状态' });
+  expect(status).toHaveTextContent('已获公开发布批准');
+  expect(status).toHaveTextContent('审图号GS(2026)0001号');
+  expect(status).toHaveTextContent('有效期至2099-10-20');
 });
 
 test('shows the separately discovered release while the active content snapshot remains fixed', async () => {

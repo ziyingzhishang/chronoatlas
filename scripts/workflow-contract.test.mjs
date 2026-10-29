@@ -102,6 +102,13 @@ test('Pages workflow deploys only main pushes or explicit manual runs', async ()
   assert.match(events, /^  push:\n    branches:\n      - main\n  workflow_dispatch:\s*$/m);
 });
 
+test('Pages build refuses to publish a manual run from any ref except main', async () => {
+  const source = await readFile(pagesWorkflowUrl, 'utf8');
+  const build = source.match(/^  build:\n([\s\S]*?)(?=^  deploy:)/m)?.[1] ?? '';
+
+  assert.match(build, /^    if:\s*github\.ref\s*==\s*['"]refs\/heads\/main['"]\s*$/m);
+});
+
 test('Pages build pins npm, uses the project base and uploads only dist', async () => {
   const source = await readFile(pagesWorkflowUrl, 'utf8');
   const build = source.match(/^  build:\n([\s\S]*?)(?=^  deploy:)/m)?.[1] ?? '';

@@ -26,3 +26,8 @@ test('translates heritage detail structure labels', () => {
   expect(translateText('建造沿革', 'en')).toBe('Construction history');
   expect(translateText('来源与依据', 'en')).toBe('Sources and evidence');
 });
+
+test('describes the two-state time navigation without the removed density modes', () => {
+  expect(translateText('桌面宽屏可在地图栏内停靠或悬浮时间控制器；手机使用简明时间条和时间分析两种状态。拖动年份不会改变地图视角。', 'en'))
+    .toBe('On wide desktop screens, the time controller can be docked or floated within the map pane. Phones use two states: the concise time bar and time analysis. Scrubbing years preserves the map view.');
+});
