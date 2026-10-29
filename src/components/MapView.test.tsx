@@ -8,12 +8,13 @@ import { mapInstances } from '../test/maplibre-mock';
 const assetUrl = vi.hoisted(() => vi.fn((path:string) => `/chronoatlas/${path}`));
 vi.mock('../runtime/asset-url', () => ({ publicAssetUrl: assetUrl }));
 
-test('resolves public map metadata links beneath the configured site base', () => {
+test('keeps internal manifests and coverage audits out of the reader interface', () => {
   render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} />);
 
-  expect(screen.getByRole('link', {name: '版本清单'})).toHaveAttribute('href', '/chronoatlas/data/cliopatria-manifest.json');
-  expect(screen.getByRole('link', {name: '逐政权核验表'})).toHaveAttribute('href', '/chronoatlas/data/coverage-audit.json');
-  expect(screen.getByRole('link', {name: '旧断面 · GPL-3.0'})).toHaveAttribute('href', '/chronoatlas/data/boundary-manifest.json');
+  expect(screen.getByRole('link', {name: /Cliopatria/})).toHaveAttribute('href', 'https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.1');
+  expect(screen.queryByText('版本清单')).not.toBeInTheDocument();
+  expect(screen.queryByText('逐政权核验表')).not.toBeInTheDocument();
+  expect(screen.queryByText(/个目录政权待补/)).not.toBeInTheDocument();
 });
 
 test('renders the current polity names and selects a polity when its area is clicked', async () => {

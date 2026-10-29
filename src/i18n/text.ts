@@ -74,6 +74,7 @@ const english: Record<string, string> = {
   '地形 © Esri, USGS, NOAA':'Terrain © Esri, USGS, NOAA', '影像 © Esri, Maxar, Earthstar Geographics, GIS User Community':'Imagery © Esri, Maxar, Earthstar Geographics, GIS User Community',
   '现代地理与主权说明':'Modern geography and sovereignty', '台湾主权说明':'Taiwan sovereignty statement',
   '疆域证据':'Territorial evidence', 'A级 · 直接来源':'Level A · Direct source', 'B级 · 数字化参考':'Level B · Digitized reference', 'C级 · 过渡／最大参考':'Level C · Transitional / maximum reference', 'D级 · 文化核心／影响范围':'Level D · Cultural core / influence area',
+  '地图表达':'Map expression', '有来源支持的范围':'Source-supported extent', '数字化参考范围':'Digitized reference extent', '过渡或最大参考范围':'Transitional or maximum reference extent', '文化核心或影响范围':'Cultural core or influence area', '资料不足时留空':'Leave unfilled when evidence is insufficient', '地图范围为历史研究表达，不等同于测绘边界。':'Map extents are historical research expressions, not surveyed boundaries.',
   '证据级别：':'Evidence level: ', '派生方式：':'Derivation: ', '复核状态：':'Review status: ', '待逐段复核':'Pending segment review', '已交叉复核':'Cross-checked', '已核对来源':'Source checked',
   '直接来源':'Direct source', '数字化参考':'Digitized reference', '过渡参考':'Transitional reference', '行政区综合':'Administrative synthesis', '文化核心':'Cultural core', '控制中心':'Control centers',
   '暂无国家边界资料':'No national-boundary evidence', '展示文化核心区':'Cultural core shown', '展示控制中心／影响范围':'Control centers / influence area shown', '使用过渡参考':'Transitional reference used', '使用最大参考':'Maximum reference used',

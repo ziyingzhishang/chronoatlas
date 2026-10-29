@@ -3,13 +3,12 @@ import { expect, test } from 'vitest';
 import { LocaleProvider } from '../i18n/locale';
 import { Legend } from './Legend';
 
-test('explains all four evidence levels separately from control relationships', () => {
+test('explains map expressions in reader language without internal evidence codes', () => {
   render(<LocaleProvider><Legend/></LocaleProvider>);
-  expect(screen.getByText('疆域证据')).toBeInTheDocument();
-  expect(screen.getByText('A级 · 直接来源')).toBeInTheDocument();
-  expect(screen.getByText('B级 · 数字化参考')).toBeInTheDocument();
-  expect(screen.getByText('C级 · 过渡／最大参考')).toBeInTheDocument();
-  expect(screen.getByText('D级 · 文化核心／影响范围')).toBeInTheDocument();
+  expect(screen.getByText('地图表达')).toBeInTheDocument();
+  expect(screen.getByText('有来源支持的范围')).toBeInTheDocument();
+  expect(screen.getByText('资料不足时留空')).toBeInTheDocument();
+  expect(screen.queryByText(/^[ABCD]级/)).not.toBeInTheDocument();
   expect(screen.getByText('控制关系')).toBeInTheDocument();
   expect(screen.getByText('首都／政治中心')).toBeInTheDocument();
 });
