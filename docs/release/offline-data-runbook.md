@@ -1,0 +1,93 @@
+# 离线历史资料发布与回退手册
+
+本文说明如何生成、核验、安装、启用和回退山河年轮的版本化历史资料。应用外壳与历史资料分别发布；历史资料版本一经发布不得覆盖写入。
+
+## 发布边界
+
+- 当前发布定位仍为 `internal-research`。公开网页地图必须另行通过历史审核、来源与版权审核、地图公开合规审核；构建成功不等于获准公开。
+- 运行时只读取一个 `releaseId` 对应的完整快照。地图、时间轴、搜索、人物／事件／地点详情不得混用多个版本。
+- `leave-unfilled` 是正式研究结论，不得用最近年份、最大轮廓或现代边界自动补色。
+- 研究任务、内部审核状态、原始反馈和受限附件不得进入读者资料包。
+- ArcGIS 地形、卫星影像等第三方在线底图不在离线包承诺范围内，也不得由本项目擅自缓存后再分发。
+
+## 生成与核验
+
+从已审核的作者数据生成候选版本：
+
+```bash
+npm run build:content-release -- --release <release-id> --profile internal-research
+npm run verify:content-release -- public/releases/<release-id>/manifest.json
+npm run verify:data-runtime
+```
+
+`release-id` 应使用新的、稳定且可追溯的标识。若同名目录已存在，构建器会拒绝复用被修改的不可变版本。不得为了修正错误而覆盖旧版本；应发布新版本并保留替代关系与研究记录。
+
+独立核验至少确认：
+
+1. manifest 结构、依赖、文件路径和公历年份有效；
+2. 每个文件的字节数、SHA-256、记录数和来源引用一致；
+3. 许可标识完整，公开范围不含内部字段；
+4. `leave-unfilled` 没有绑定几何；
+5. `npm run verify:map-release -- public/releases/<release-id>/manifest.json` 的公开地图批准已绑定该版本 manifest 的 SHA-256。
+
+## 从预览提升到稳定
+
+1. 先以预览 channel 生成候选版本并在隔离环境验证。
+2. 历史审核、制图审核、权利审核和公开地图合规审核分别签署；不要互相替代。
+3. 使用新的稳定版本标识重新生成并复验全部包。
+4. 完整上传 `releases/<release-id>/` 后，最后原子更新可变指针 `releases/latest.json`。
+5. 不得先更新 `latest.json` 再上传内容文件，否则客户端可能看到不完整版本。
+
+GitHub Pages 的正式工作流使用受保护 `main` 分支的 40 位 commit SHA 作为稳定版本标识。工作流先生成并校验 `offline-public` 资料包，并在日志中输出 manifest SHA-256；随后才从受保护的 `map-release-approval` GitHub Environment 读取 `MAP_RELEASE_APPROVAL_JSON`，临时写入本次工作目录并校验。仓库中的 `public/data/map-release-compliance.json` 始终保持 `research-only`，避免把摘要提交回仓库后改变 commit SHA、releaseId 和 manifest，形成不可满足的自引用。
+
+真实批准流程：
+
+1. 候选提交进入 `main` 后，让 Pages 工作流生成并校验不可变 manifest；首次没有审批 secret 时应在“Load protected map release approval”处失败，但前一步日志会给出候选 SHA 和 manifest SHA-256。
+2. 审批人核对候选资料与公开地图要求，把完整批准 JSON 写入 `map-release-approval` Environment 的 `MAP_RELEASE_APPROVAL_JSON` secret。批准 JSON 必须包含 `approvedReleaseId`（该候选 commit SHA）和 `approvedReleaseManifestSha256`（前一步日志值），以及真实审图号、有效期、已核来源与公开提示。
+3. 在 GitHub Actions 中重跑**同一次工作流、同一个 commit SHA**。不要为写入摘要再创建提交，也不要改用新的分支头。
+4. 工作流只在 secret 结构完整、未过期、releaseId 和 manifest 摘要都匹配时继续构建；注入后的批准状态会一并进入读者页面。切换到其他离线资料版本时，页面不会沿用该批批准。
+
+只有公开地图门禁通过后，应用外壳和资料包才会一起进入严格白名单审计的 Pages 产物。批准 JSON 的内容会公开显示或参与公开状态判断，因此不得在其中放令牌、内部备注或其他秘密；注入脚本会拒绝未列明字段。
+
+## 浏览器安装与启用
+
+- “可用版本”来自在线最新 manifest；“当前阅读版本”来自已激活的完整本地版本，两者可以不同。
+- 安装前应用检查浏览器估算空间；安装成功后才申请持久存储。
+- 相同 SHA-256 与字节数的文件会从已核验本地包复用，只下载发生变化的文件。
+- 所有必需包及其依赖完成大小和 SHA-256 校验后，版本才可原子启用。
+- 启用成功会重载统一内容快照，使地图、时间轴、搜索和详情同时切换。安装失败或校验失败不会改变当前激活版本。
+
+浏览器仍可在空间紧张时清理站点数据；持久存储请求也可能被拒绝。应明确告诉读者离线能力是浏览器本地副本，而不是永久备份。
+
+## 离线启动与回退
+
+启动时应用先读取 IndexedDB 中的激活状态，再从 Cache Storage 读取该版本的已安装文件和本地 manifest。网络不可用时，只要必需包完整，应用仍可打开核心中文历史内容与中国疆域资料。
+
+回退步骤：
+
+1. 在“更多 → 离线历史资料”确认上一版本仍为完整安装状态；
+2. 选择“回退到上一版本”；
+3. 应用原子更新 active/previous，并重载统一内容快照；
+4. 验证地图、时间轴、搜索和详情显示同一个旧 `releaseId`；
+5. 不要在回退验证前删除新旧任一必需包。
+
+若新版本文件损坏或校验失败，保持当前稳定版本激活，发布新的修复版本；不要修改已发布目录。
+
+## 清理与故障处理
+
+- 每次生产启动都会清理中断安装留下的 `staging` 记录与对应缓存文件，不影响 active 版本。
+- active 版本所依赖的包不能删除。先回退或启用另一完整版本，再清理不再需要的包。
+- 删除旧版本前保留 manifest、来源、许可、审核和替代关系的长期记录；浏览器缓存不是研究档案。
+- 若 Cache Storage、IndexedDB 或持久存储不可用，应用安全回退到随应用打包的只读资料，并清楚显示离线包尚不可用。
+- Service Worker 对 `latest.json` 使用网络优先并在临时错误时回退缓存；不可变版本文件使用缓存优先。缓存写失败不得让成功的在线读取失败。
+
+## 发布前检查
+
+```bash
+npm run verify:data-runtime
+npm run verify:release-readiness
+npm run verify:map-release -- public/releases/<release-id>/manifest.json
+git diff --check
+```
+
+其中 `verify:map-release` 在缺少真实公开地图批文时应继续失败；不得通过削弱门禁来换取部署成功。

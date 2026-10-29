@@ -110,7 +110,7 @@ const audit=polities.map(p=>{
     missingRanges:gaps(missing),maximum:maximum?{id:maximum.id,from:maximum.validFrom,to:maximum.validTo,areaKm2:maximum.areaKm2}:null,
     review:'已核对标识、存续期和几何结构；非逐界史料复核',note:mappingNotes[p.id]??'来源日期与目录日期不一致处取交集，缺年另标最大参考，不外推为实况。'};
 });
-await writeFile(`${root}public/data/coverage-audit.json`,JSON.stringify(audit,null,2));
+await writeFile(`${root}internal/audits/coverage-audit.json`,JSON.stringify(audit,null,2));
 await writeFile(`${root}public/data/cliopatria-manifest.json`,JSON.stringify({version:'0.2.1',sourceUrl,license:'CC-BY-4.0',
   licenseUrl:'https://creativecommons.org/licenses/by/4.0/',attribution:'Bennett et al. (2025), Cliopatria, Seshat Global History Databank. DOI:10.1038/s41597-025-04516-9',
   inputSha256:createHash('sha256').update(bytes).digest('hex'),sourceRecords:features.length,chinaRecords:china.length,chinaPolities:new Set(china.map(b=>b.polityId)).size,

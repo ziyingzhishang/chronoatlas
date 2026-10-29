@@ -4,9 +4,6 @@ import worldTopology from 'world-atlas/land-110m.json';
 import type { StyleSpecification, SymbolLayerSpecification } from 'maplibre-gl';
 import type { HistoricalState } from '../domain/types';
 import { satelliteColor } from './presentation';
-import { modernSovereigntyFeatures } from '../data/modern-reference';
-import { activeCapitalRecords } from '../data/capital-history';
-import { places as allPlaces } from '../data/places';
 
 export const allLayers = ['boundaries', 'places', 'modernReference', 'events'] as const;
 export type MapLayer = (typeof allLayers)[number];
@@ -65,8 +62,8 @@ export function buildLocalMapData(state:HistoricalState,t:(text:string)=>string=
   const events = collection(state.events.flatMap(event => {
     return event.coordinates && event.locationPrecision ? [point(event.coordinates, { entityId: event.id, name: event.title })] : [];
   }));
-  const placeById = new Map([...allPlaces, ...state.places].map(place => [place.id, place]));
-  const capitalPlaces = collection(activeCapitalRecords(state.year).flatMap(record => {
+  const placeById = new Map(state.places.map(place => [place.id, place]));
+  const capitalPlaces = collection((state.capitalTerms ?? []).flatMap(record => {
     const place = placeById.get(record.placeId);
     const polity = state.activePolities.find(item => item.id === record.polityId);
     if (!place || !polity) return [];
@@ -78,10 +75,11 @@ export function buildLocalMapData(state:HistoricalState,t:(text:string)=>string=
       confidence: record.confidence, note: record.notes ?? '',
     })];
   }));
+  const modernSource = state.modernSovereignty ?? collection([]);
   const modernSovereignty = {
-    ...modernSovereigntyFeatures(state.year),
-    features: modernSovereigntyFeatures(state.year).features.map(feature => ({...feature, properties:{
-      ...feature.properties, label:t(feature.properties.administrativeLabel), color:'#b76c5d',
+    ...modernSource,
+    features: modernSource.features.map(feature => ({...feature, properties:{
+      ...feature.properties, label:t(String(feature.properties?.administrativeLabel ?? '')), color:'#b76c5d',
       satelliteColor:satelliteColor('#b76c5d'),
     }})),
   };

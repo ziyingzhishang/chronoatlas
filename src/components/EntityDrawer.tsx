@@ -1,4 +1,4 @@
-import { useEffect, useRef, type CSSProperties, type ReactNode } from 'react';
+import { useEffect, useLayoutEffect, useRef, type CSSProperties, type ReactNode } from 'react';
 import { useLocale } from '../i18n/locale';
 import { formatHistoricalYear } from '../domain/timeline';
 
@@ -12,9 +12,12 @@ interface EntityDrawerProps {
   mapYear?: number;
   singleView?: boolean;
   style?: CSSProperties;
+  inert?: '';
+  'aria-hidden'?: boolean;
+  hidden?: boolean;
 }
 
-export function EntityDrawer({ title, entityType, children, onClose, onBack, canGoBack = false, mapYear, singleView = false, style }: EntityDrawerProps) {
+export function EntityDrawer({ title, entityType, children, onClose, onBack, canGoBack = false, mapYear, singleView = false, style, inert, 'aria-hidden': ariaHidden, hidden }: EntityDrawerProps) {
   const { t } = useLocale();
   const closeButton = useRef<HTMLButtonElement>(null);
   const drawer = useRef<HTMLElement>(null);
@@ -22,10 +25,24 @@ export function EntityDrawer({ title, entityType, children, onClose, onBack, can
   const onCloseRef = useRef(onClose);
   onCloseRef.current = onClose;
 
+  useLayoutEffect(() => {
+    const element = drawer.current;
+    if (!element) return;
+    if (inert !== undefined) element.setAttribute('inert', '');
+    else element.removeAttribute('inert');
+  }, [inert]);
+
   useEffect(() => {
     const active = document.activeElement;
     if (active instanceof HTMLElement) opener.current = active;
-    closeButton.current?.focus();
+    if (!hidden) closeButton.current?.focus();
+    return () => {
+      if (opener.current?.isConnected) opener.current.focus();
+    };
+  }, []);
+
+  useEffect(() => {
+    if (hidden) return undefined;
     const handleKeyDown = (event: KeyboardEvent) => {
       if (event.key === 'Escape') {
         event.preventDefault();
@@ -49,11 +66,10 @@ export function EntityDrawer({ title, entityType, children, onClose, onBack, can
     document.addEventListener('keydown', handleKeyDown);
     return () => {
       document.removeEventListener('keydown', handleKeyDown);
-      if (opener.current?.isConnected) opener.current.focus();
     };
-  }, [singleView]);
+  }, [hidden, singleView]);
 
-  return <aside ref={drawer} className={`entity-drawer entity-drawer-${entityType}`} role="dialog" aria-modal={singleView || undefined} aria-label={t(title)} style={style}>
+  return <aside ref={drawer} className={`entity-drawer entity-drawer-${entityType}`} role="dialog" aria-modal={singleView || undefined} aria-label={t(title)} aria-hidden={ariaHidden} hidden={hidden} style={style}>
       <header className="entity-drawer-heading">
         <div className="entity-drawer-heading-actions">
           {canGoBack && onBack && <button type="button" aria-label={t('返回上一个实体')} onClick={onBack}>‹</button>}

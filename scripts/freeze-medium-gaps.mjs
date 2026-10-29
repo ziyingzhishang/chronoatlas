@@ -12,7 +12,7 @@ if (!process.argv.includes('--force')) {
     if (error?.code !== 'ENOENT') throw error;
   }
 }
-const auditText = await readFile(`${root}public/data/coverage-audit.json`, 'utf8');
+const auditText = await readFile(`${root}internal/audits/coverage-audit.json`, 'utf8');
 const audit = JSON.parse(auditText);
 const rows = audit.flatMap(polity => (polity.missingRanges ?? []).map(([from, to]) => ({
   id: `gap-${polity.id}-${from}-${to}`,

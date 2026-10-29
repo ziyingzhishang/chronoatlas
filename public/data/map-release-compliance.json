@@ -2,6 +2,8 @@
   "status": "research-only",
   "reviewNumber": null,
   "reviewExpiresAt": null,
+  "approvedReleaseId": null,
+  "approvedReleaseManifestSha256": null,
   "checkedSources": [
     {"id":"modern-reference","license":"Natural Earth public domain via world-atlas 2.0.2","attribution":"Physical island outline: Natural Earth / world-atlas"},
     {"id":"cliopatria","license":"CC BY 4.0","attribution":"Bennett et al. (2025), Cliopatria v0.2.1"},

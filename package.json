@@ -3,14 +3,19 @@
   "private": true,
   "version": "0.1.0",
   "type": "module",
+  "engines": {
+    "node": "24.14.1"
+  },
+  "packageManager": "npm@11.14.1",
   "scripts": {
     "dev": "vite",
     "build": "tsc -b && vite build",
+    "postbuild": "node scripts/strip-source-map-references.mjs dist && node scripts/inject-service-worker-manifest.mjs dist",
     "preview": "vite preview",
     "test": "vitest",
     "audit:coverage": "node scripts/audit-coverage.mjs",
     "build:knowledge-coverage": "vite-node scripts/build-knowledge-coverage.mjs",
-    "prebuild": "npm run build:knowledge-coverage",
+    "prebuild": "npm run verify:release-schema-types && npm run build:knowledge-coverage",
     "freeze:short-gaps": "node scripts/freeze-short-gaps.mjs",
     "review:short-gaps": "node scripts/review-short-gaps.mjs",
     "report:short-gaps": "node scripts/build-short-gap-report.mjs",
@@ -24,9 +29,18 @@
     "review:southern-tang-gap": "node scripts/review-southern-tang-gap.mjs",
     "build:curated-boundaries": "node scripts/build-curated-boundaries.mjs",
     "build:modern-reference": "node scripts/build-modern-sovereignty-reference.mjs",
-    "verify:map-release": "node scripts/verify-map-release.mjs"
+    "build:notices": "node scripts/build-third-party-notices.mjs",
+    "build:release-schema-types": "node scripts/build-release-schema-types.mjs",
+    "build:content-release": "vite-node --script scripts/build-content-release.mjs",
+    "verify:content-release": "node scripts/verify-content-release.mjs",
+    "verify:release-schema-types": "node scripts/build-release-schema-types.mjs --check",
+    "verify:data-runtime": "vitest --run src/content/release-validation.test.ts src/content/snapshot.test.ts src/content/repository.test.ts src/content/ContentContext.test.tsx src/offline/offline-package-manager.test.ts src/offline/cache-package-files.test.ts src/offline/indexeddb-package-store.test.ts src/app/offline-release.integration.test.tsx",
+    "verify:pages-artifact": "node scripts/verify-pages-artifact.mjs",
+    "verify:map-release": "node scripts/verify-map-release.mjs",
+    "verify:release-readiness": "npm run build:knowledge-coverage && npx vitest --run --exclude '.worktrees/**' --exclude 'scripts/**/*.test.mjs' && node --test scripts/*.test.mjs && npm run build:notices && npm run build && npm run verify:pages-artifact -- dist && git diff --exit-code -- internal/audits/knowledge-coverage.json public/data/licenses/project-third-party-notices.json && git diff --check"
   },
   "dependencies": {
+    "ajv": "^8.20.0",
     "d3-geo": "^3.1.1",
     "maplibre-gl": "^6.14.0",
     "opencc-js": "1.3.1",
@@ -45,9 +59,10 @@
     "@types/topojson-client": "^3.1.0",
     "@vitejs/plugin-react": "^4.3.4",
     "jsdom": "^25.0.1",
+    "json-schema-to-ts": "^3.1.1",
     "typescript": "^5.7.3",
     "vite": "^6.0.11",
     "vite-node": "^3.2.4",
-    "vitest": "^3.0.5"
+    "vitest": "^4.1.12"
   }
 }

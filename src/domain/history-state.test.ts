@@ -1,5 +1,32 @@
 import { expect, test } from 'vitest';
 import { getHistoricalState } from './history-state';
+import type { BoundaryState, CapitalTerm, HistoricalEvent, Place, Polity } from './types';
+
+test('uses the injected release data rather than compile-time catalogs', () => {
+  const polity = { id: 'release-a', name: '版本 A', type: 'dynasty', startYear: 1, endYear: 10, color: '#000', description: '', sourceIds: [] } satisfies Polity;
+  const boundary = {
+    id: 'boundary-a', polityId: polity.id, validFrom: 1, validTo: 10, snapshotYear: 1,
+    sourceName: 'fixture', sourceUrl: 'https://example.test', vertexCount: 1,
+    geometry: { type: 'Point', coordinates: [100, 30] }, controlType: 'direct', confidence: 'high', sourceIds: [],
+    temporalKind: 'interval', evidence: { evidenceLevel: 'A', derivation: 'direct-source', reviewStatus: 'source-checked', citations: [], uncertaintyNote: '' },
+  } satisfies BoundaryState;
+  const source = {
+    polities: [polity], boundaries: [boundary], places: [] as Place[], events: [] as HistoricalEvent[], capitalTerms: [] as CapitalTerm[],
+    modernSovereignty: [],
+  };
+
+  const state = getHistoricalState(source, 5);
+  const alternate = getHistoricalState({
+    ...source,
+    polities: [{ ...polity, id: 'release-b', name: '版本 B' }],
+    boundaries: [{ ...boundary, id: 'boundary-b', polityId: 'release-b' }],
+  }, 5);
+
+  expect(state.activePolities.map((item) => item.id)).toEqual(['release-a']);
+  expect(state.boundaries.map((item) => item.id)).toEqual(['boundary-a']);
+  expect(alternate.activePolities.map((item) => item.id)).toEqual(['release-b']);
+  expect(alternate.boundaries.map((item) => item.id)).toEqual(['boundary-b']);
+});
 
 test('returns active polities and places for the selected year', () => {
   const state = getHistoricalState(-221);

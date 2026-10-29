@@ -1,0 +1,96 @@
+name: Pages
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    if: github.ref == 'refs/heads/main'
+    name: Build gated Pages artifact
+    environment:
+      name: map-release-approval
+    runs-on: ubuntu-latest
+    timeout-minutes: 25
+    permissions:
+      contents: read
+
+    steps:
+      - name: Check out repository
+        # actions/checkout v6.1.0
+        uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803
+
+      - name: Set up Node.js
+        # actions/setup-node v6.5.0
+        uses: actions/setup-node@249970729cb0ef3589644e2896645e5dc5ba9c38
+        with:
+          node-version: 24.14.1
+          cache: npm
+
+      - name: Pin npm
+        run: npm install --global npm@11.14.1
+
+      - name: Install locked dependencies
+        run: npm ci
+
+      - name: Run non-deploying release checks
+        run: npm run verify:release-readiness
+
+      - name: Prepare immutable public offline release
+        run: npm run build:content-release -- --release "$GITHUB_SHA" --profile offline-public --channel stable --write-latest
+
+      - name: Verify immutable public offline release
+        run: npm run verify:content-release -- "public/releases/$GITHUB_SHA/manifest.json"
+
+      - name: Load protected map release approval
+        env:
+          MAP_RELEASE_APPROVAL_JSON: ${{ secrets.MAP_RELEASE_APPROVAL_JSON }}
+        run: node scripts/materialize-map-release-approval.mjs
+
+      - name: Verify public map approval for this release
+        run: npm run verify:map-release -- "public/releases/$GITHUB_SHA/manifest.json"
+
+      - name: Build project-path site
+        env:
+          VITE_BASE_PATH: /chronoatlas/
+        run: npm run build
+
+      - name: Audit project-path artifact
+        env:
+          VITE_BASE_PATH: /chronoatlas/
+        run: npm run verify:pages-artifact -- dist
+
+      - name: Upload Pages artifact
+        # actions/upload-pages-artifact v4.0.0
+        uses: actions/upload-pages-artifact@7b1f4a764d45c48632c6b24a0339c27f5614fb0b
+        with:
+          path: dist
+
+  deploy:
+    name: Deploy Pages
+    needs: build
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+
+    steps:
+      - name: Configure Pages
+        # actions/configure-pages v5.0.0
+        uses: actions/configure-pages@983d7736d9b0ae728b81ab479565c72886d7745b
+
+      - name: Deploy Pages
+        id: deployment
+        # actions/deploy-pages v4.0.5
+        uses: actions/deploy-pages@d6db90164ac5ed86f2b6aed7e0febac5b3c0c03e

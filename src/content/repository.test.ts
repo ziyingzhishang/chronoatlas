@@ -88,6 +88,20 @@ describe('historical content repositories', () => {
     }).load()).rejects.toThrow('events[0].references must be an array');
   });
 
+  it('rejects malformed snapshot map references before map presentation uses them', async () => {
+    const manifest: ContentManifest = { schemaVersion: 1, revision: 'bad-map-reference', collections: { mapReferences: 'memory://map' }, media: [] };
+    await expect(new InMemoryContentRepository(manifest, {
+      mapReferences: [{ id: 'modern-sovereignty', effectiveFrom: '1949', featureCollection: { type: 'FeatureCollection', features: [] } }],
+    }).load()).rejects.toThrow(/mapReferences.*effectiveFrom/);
+  });
+
+  it('rejects malformed reader navigation collections before presentation uses them', async () => {
+    const manifest: ContentManifest = { schemaVersion: 1, revision: 'bad-period', collections: { periods: 'memory://periods' }, media: [] };
+    await expect(new InMemoryContentRepository(manifest, {
+      periods: [{ id: 'bad-period', name: '错误分期', color: '#000', start: 'unknown', end: 10, lane: 0 }],
+    }).load()).rejects.toThrow(/periods.*start/);
+  });
+
   it('publishes the existing in-code catalogs through the repository boundary during migration', async () => {
     const snapshot = await bundledContentRepository.load();
 

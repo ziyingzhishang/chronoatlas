@@ -8,6 +8,7 @@ import type { DetailEntity } from '../domain/detail-entity';
 import { buildCityHistoryTimeline } from '../domain/city-timeline';
 import { CityHistoryTimeline } from './CityHistoryTimeline';
 import { useHistoricalContent } from '../content/ContentContext';
+import { readerRelationshipLabel } from '../presentation/relationship-label';
 
 type StudyView = CityStudyView | PolityStudyView;
 
@@ -25,21 +26,6 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
   const relationshipTitle = cityView
     ? locale === 'en' ? 'City relationship network' : '城市关系网络'
     : t('关系网络');
-  const relationshipLabel: Record<string, string> = {
-    founded: '建立',
-    ruled: '统治',
-    succeeded: '承接',
-    commissioned: '营建',
-    'participated-in': '参与事件',
-    served: '任职／效力',
-    appointed: '任用',
-    'parent-of': '亲属：父母',
-    'child-of': '亲属：子女',
-    'sibling-of': '亲属：兄弟姐妹',
-    'spouse-of': '亲属：配偶',
-    'ally-of': '联盟',
-    'enemy-of': '对立',
-  };
   const cityTimeline = cityView ? buildCityHistoryTimeline(cityView.subject.id, {
     places: [cityView.subject], polities: cityView.polities, people: cityView.people,
     heritage: cityView.heritage, events: cityView.events, eventDetails, claims: cityView.claims,
@@ -83,7 +69,7 @@ export function StudyRelationsPanel({ view, onOpenEntity }: { view: StudyView; o
         <ul className="study-chip-list">{polityView.people.map((person) => {
           const relations = groupPersonRelationships(person.id, view.year, view.claims);
           const relationList = Object.values(relations).flat();
-          return <li key={person.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'person', id: person.id })}>{person.name}</button>{relationList.length > 0 && <span className="study-relation-label"> · {relationList.map((relation) => t(relationshipLabel[relation.claim.predicate] ?? relation.claim.predicate)).join('、')}</span>}</li>;
+          return <li key={person.id}><button type="button" onClick={() => onOpenEntity?.({ type: 'person', id: person.id })}>{person.name}</button>{relationList.length > 0 && <span className="study-relation-label"> · {relationList.map((relation) => t(readerRelationshipLabel(relation.claim.predicate))).join('、')}</span>}</li>;
         })}</ul>
       </div>}
       {polityView && (detailLinkedPeople.length > 0 || detailLinkedEvents.length > 0 || detailLinkedTransitionEvents.length > 0 || detailLinkedHeritage.length > 0) && <div className="study-block study-contextual-links" data-testid="detail-linked-entries">

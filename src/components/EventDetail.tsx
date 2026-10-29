@@ -2,7 +2,6 @@ import { useLocale } from '../i18n/locale';
 import type { DetailEntity } from '../domain/detail-entity';
 import type { HistoricalEvent, HistoricalEventDetail } from '../domain/types';
 import { eventDate } from './EventDetailCard';
-import { reviewEventTimeCoverage, type EventTimeReviewEntry } from '../data/event-time-review';
 import { formatHistoricalYear } from '../domain/timeline';
 import { useHistoricalContent } from '../content/ContentContext';
 import { toReaderSources } from '../presentation/reader-content';
@@ -31,7 +30,7 @@ function LinkedLabel({
 export function EventDetail({ event, detail: suppliedDetail, onNavigate, onOpenEntity }: EventDetailProps) {
   const { t } = useLocale();
   const { catalog } = useHistoricalContent();
-  const { people, polities, places, events, studyEvents: detailEvents, eventDetails, eventTimeReviews, sources } = catalog;
+  const { people, polities, places, studyEvents: detailEvents, eventDetails, eventTimeNotes, sources } = catalog;
   const detail = suppliedDetail ?? eventDetails.find((item) => item.eventId === event.id);
   const navigate = onNavigate ?? onOpenEntity;
 
@@ -46,7 +45,7 @@ export function EventDetail({ event, detail: suppliedDetail, onNavigate, onOpenE
   const polityById = new Map(polities.map((polity) => [polity.id, polity]));
   const placeById = new Map(places.map((place) => [place.id, place]));
   const eventById = new Map(detailEvents.map((item) => [item.id, item]));
-  const timeReview = reviewEventTimeCoverage({ events, eventDetails, reviewEntries: eventTimeReviews, knownSourceIds: sources.map((source) => source.id) }).records.find((record) => record.eventId === event.id) ?? unknownEventTimeReview(event.id);
+  const timeNote = eventTimeNotes.find((record) => record.eventId === event.id);
 
   return <article className="event-detail" aria-label={t('事件详情')}>
     <div className="event-meta">{t(eventDate(event))} · {t(event.region === 'world' ? '同期世界' : '中国历史')} · {t(event.category ?? '历史转折')}</div>
@@ -100,25 +99,9 @@ export function EventDetail({ event, detail: suppliedDetail, onNavigate, onOpenE
     </section>
 
     <ReaderNotes className="event-detail-section event-sources" note={{
-      dateDescription: eventTimeDescription(timeReview),
-      uncertainty: [timeReview.explanation, detail.uncertaintyNote].filter(Boolean).join('；'),
-      sources: toReaderSources([...detail.sourceIds, ...timeReview.sourceIds], sources),
+      dateDescription: timeNote?.dateDescription ?? '具体年代尚待核实',
+      uncertainty: [timeNote?.uncertainty ?? '现有资料尚不足以确定更精确的时间。', detail.uncertaintyNote].filter(Boolean).join('；'),
+      sources: toReaderSources([...detail.sourceIds, ...(timeNote?.sourceIds ?? [])], sources),
     }} />
   </article>;
-}
-
-function eventTimeDescription(review: Pick<EventTimeReviewEntry, 'status' | 'timelineStrategy'>) {
-  if (review.status === 'confirmed') return '年代记录较明确';
-  if (review.status === 'approximate') return '约在该年前后';
-  return '具体年代尚待核实';
-}
-
-function unknownEventTimeReview(eventId: string): Pick<EventTimeReviewEntry, 'eventId' | 'status' | 'explanation' | 'timelineStrategy'> & { sourceIds: string[] } {
-  return {
-    eventId,
-    status: 'unknown',
-    explanation: '现有资料尚不足以确定更精确的时间。',
-    timelineStrategy: 'unknown-window',
-    sourceIds: [],
-  };
 }

@@ -1,3 +1,7 @@
+import { publicAssetUrl } from '../runtime/asset-url';
+import { validateReleaseManifest } from './release-validation';
+import { RemoteHistoricalSnapshot, type HistoricalSnapshot } from './snapshot';
+
 export type ContentMediaKind = 'image' | 'audio' | 'video' | 'document' | 'map-overlay';
 
 export interface ContentMediaAsset {
@@ -32,6 +36,60 @@ export interface HistoricalContentRepository {
 
 type ContentFetch = (input: RequestInfo | URL, init?: RequestInit) => Promise<Response>;
 
+export interface HistoricalDataRepositoryOptions {
+  fetcher?: ContentFetch;
+  baseUrl?: string;
+}
+
+export interface ReleaseSnapshotRepository {
+  open(releaseId?: string): Promise<HistoricalSnapshot>;
+}
+
+/** Opens one immutable release. The mutable latest pointer is resolved once. */
+export class HistoricalDataRepository implements ReleaseSnapshotRepository {
+  private readonly fetcher: ContentFetch;
+  private readonly baseUrl: string;
+
+  constructor(options: HistoricalDataRepositoryOptions = {}) {
+    this.fetcher = options.fetcher ?? fetch;
+    this.baseUrl = options.baseUrl ?? import.meta.env.BASE_URL;
+  }
+
+  async open(releaseId?: string): Promise<HistoricalSnapshot> {
+    const fixedReleaseId = releaseId ?? await this.resolveLatestReleaseId();
+    assertReleaseId(fixedReleaseId);
+    const manifestUrl = publicAssetUrl(`releases/${fixedReleaseId}/manifest.json`, this.baseUrl);
+    const response = await this.fetcher(manifestUrl);
+    if (!response.ok) throw new Error(`Unable to load release manifest ${fixedReleaseId}: ${response.status}`);
+    const manifest = validateReleaseManifest(await response.json() as unknown);
+    if (manifest.schemaVersion !== '1') {
+      throw new Error(`Unsupported release schema version: ${manifest.schemaVersion}`);
+    }
+    if (manifest.releaseId !== fixedReleaseId) {
+      throw new Error(`Release manifest identity mismatch: expected ${fixedReleaseId}, got ${manifest.releaseId}`);
+    }
+    return new RemoteHistoricalSnapshot(
+      manifest,
+      this.fetcher,
+      (uri) => publicAssetUrl(uri, this.baseUrl),
+    );
+  }
+
+  private async resolveLatestReleaseId() {
+    const response = await this.fetcher(publicAssetUrl('releases/latest.json', this.baseUrl), { cache: 'no-store' });
+    if (!response.ok) throw new Error(`Unable to load latest release pointer: ${response.status}`);
+    const value = await response.json() as unknown;
+    if (!value || typeof value !== 'object' || typeof (value as { releaseId?: unknown }).releaseId !== 'string') {
+      throw new Error('Latest release pointer must contain releaseId');
+    }
+    return (value as { releaseId: string }).releaseId;
+  }
+}
+
+function assertReleaseId(value: string) {
+  if (!/^[A-Za-z0-9][A-Za-z0-9._-]*$/.test(value)) throw new Error(`Unsafe release id: ${value}`);
+}
+
 export class InMemoryContentRepository implements HistoricalContentRepository {
   constructor(
     private readonly manifest: ContentManifest,
@@ -40,7 +98,7 @@ export class InMemoryContentRepository implements HistoricalContentRepository {
 
   async load(): Promise<ContentSnapshot> {
     validateManifest(this.manifest);
-    validateCollections(this.collections);
+    validateContentCollections(this.collections);
     return { manifest: this.manifest, collections: this.collections };
   }
 }
@@ -116,10 +174,14 @@ const collectionRequiredStrings: Record<string, readonly string[]> = {
   heritageDetails: ['heritageId'],
   polityDetails: ['polityId'],
   sources: ['id', 'title'],
-  eventTimeReviews: ['eventId', 'status', 'expectedPrecision', 'explanation', 'timelineStrategy'],
+  eventTimeNotes: ['eventId', 'dateDescription', 'uncertainty'],
+  personTimeNotes: ['personId', 'dateDescription', 'uncertainty'],
+  knowledgeCoverageSummaries: ['id', 'perspective', 'contextId', 'label', 'summary'],
+  periods: ['id', 'name', 'color'],
+  mapReferences: ['id'],
 };
 
-function validateCollections(collections: ContentCollections) {
+export function validateContentCollections(collections: ContentCollections) {
   for (const [name, collection] of Object.entries(collections)) validateCollection(name, collection);
 }
 
@@ -264,10 +326,38 @@ function validateRecordShape(name: string, record: Record<string, unknown>, inde
   } else if (name === 'sources') {
     requireStrings(record, ['scope', 'note'], at);
     optionalStrings(record, ['authorOrInstitution', 'urlOrCitation'], at);
-  } else if (name === 'eventTimeReviews') {
-    requireEnum(record, 'status', ['confirmed', 'approximate', 'unknown'], at);
-    requireEnum(record, 'expectedPrecision', ['year', 'approximate', 'range'], at);
-    requireEnum(record, 'timelineStrategy', ['year-marker', 'approximate-marker', 'range-band', 'unknown-window'], at);
+  } else if (name === 'eventTimeNotes' || name === 'personTimeNotes') {
+    requireStringArray(record, 'sourceIds', at);
+  } else if (name === 'knowledgeCoverageSummaries') {
+    requireEnum(record, 'perspective', ['global', 'polity', 'city'], at);
+    requireNumber(record, 'entityCount', at);
+  } else if (name === 'periods') {
+    requireNumbers(record, ['start', 'end', 'lane'], at);
+    if (record.approximate !== undefined && typeof record.approximate !== 'boolean') {
+      throw new Error(`${at}.approximate must be a boolean`);
+    }
+    if (record.intervals !== undefined && (!Array.isArray(record.intervals) || record.intervals.some((interval) => (
+      !Array.isArray(interval) || interval.length !== 2 || interval.some((value) => typeof value !== 'number' || !Number.isFinite(value))
+    )))) {
+      throw new Error(`${at}.intervals must contain finite year pairs`);
+    }
+  } else if (name === 'mappingNotes') {
+    requireString(record, 'note', at);
+  } else if (name === 'sovereigntyNotices') {
+    requireStrings(record, ['polityId', 'title', 'statement', 'modernReferenceNote'], at);
+    requireNumber(record, 'effectiveFrom', at);
+    requireObjectArray(record, 'citations', at, (citation, citationAt) => {
+      requireStrings(citation, ['title', 'urlOrCitation'], citationAt);
+    });
+  } else if (name === 'mapReferences') {
+    requireNumber(record, 'effectiveFrom', at);
+    if (!record.featureCollection || typeof record.featureCollection !== 'object' || Array.isArray(record.featureCollection)) {
+      throw new Error(`${at}.featureCollection must be a GeoJSON feature collection`);
+    }
+    const featureCollection = record.featureCollection as Record<string, unknown>;
+    if (featureCollection.type !== 'FeatureCollection' || !Array.isArray(featureCollection.features)) {
+      throw new Error(`${at}.featureCollection must be a GeoJSON feature collection`);
+    }
   }
 }
 

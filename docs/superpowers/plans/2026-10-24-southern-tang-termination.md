@@ -42,7 +42,7 @@
 ### Task 3: Refresh generated coverage and verify
 
 **Files:**
-- Modify: `public/data/knowledge-coverage.json`
+- Modify: `internal/audits/knowledge-coverage.json`
 - Modify: affected coverage baseline tests only if counts change.
 
 - [ ] Run `npm run build:knowledge-coverage`.

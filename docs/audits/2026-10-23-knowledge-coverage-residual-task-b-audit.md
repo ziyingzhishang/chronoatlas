@@ -2,7 +2,7 @@
 
 ## 结论
 
-本轮以 `auditKnowledgeCoverage()` 的当前结果、`public/data/knowledge-coverage.json` 静态导出和现有主数据为准，确认 residual tasks 恰为 6 项。按当前报告的闭合契约，没有一项可以仅凭现有目录安全移除；安全闭合数为 **0/6**。
+本轮以 `auditKnowledgeCoverage()` 的当前结果、`internal/audits/knowledge-coverage.json` 静态导出和现有主数据为准，确认 residual tasks 恰为 6 项。按当前报告的闭合契约，没有一项可以仅凭现有目录安全移除；安全闭合数为 **0/6**。
 
 这不是说所有任务都没有任何相关线索，而是说现有线索尚不足以把任务转化为报告所要求的直接、可追踪关系。特别是 `changan-han-capital` 已有刘邦的人物导航线索，但仍缺少事件详情中的参与角色记录，因此只能列为“最接近闭合的候选”，不能在不改变主数据的情况下宣称已闭合。
 
@@ -31,7 +31,7 @@
 
 ## 当前报告与回归证据
 
-`public/data/knowledge-coverage.json` 当前 `tasks.length` 为6，任务键集合为：
+`internal/audits/knowledge-coverage.json` 当前 `tasks.length` 为6，任务键集合为：
 
 ```text
 event-participant-missing:changan-former-qin

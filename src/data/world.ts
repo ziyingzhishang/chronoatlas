@@ -1,5 +1,9 @@
 import { useEffect, useState } from 'react';
+import type { ReleaseFile, ReleaseManifest } from '../content/release-types';
 import type { BoundaryState, Polity, WorldSlice } from '../domain/types';
+import { CachePackageFiles } from '../offline/cache-package-files';
+import { verifySha256 } from '../offline/hash';
+import { publicAssetUrl } from '../runtime/asset-url';
 
 interface PackedWorld {
   start:number; end:number; polities:Polity[];
@@ -7,60 +11,99 @@ interface PackedWorld {
   geometries:GeoJSON.Geometry[];
 }
 type Status = 'off'|'loading'|'ready'|'error'|'unavailable';
-const cache = new Map<number, WorldSlice>();
+const cache = new Map<string, WorldSlice>();
 interface Pending { promise:Promise<WorldSlice>; controller:AbortController; consumers:number }
-const pending = new Map<number, Pending>();
+const pending = new Map<string, Pending>();
 
-function acquireCentury(start:number) {
-  const cached=cache.get(start);
+interface WorldRequest { key:string; start:number; releaseId?:string; packageId?:string; file?:ReleaseFile }
+
+function acquireCentury({key,start,releaseId,packageId,file}:WorldRequest) {
+  const cached=cache.get(key);
   if(cached) {
-    cache.delete(start);cache.set(start,cached);
+    cache.delete(key);cache.set(key,cached);
     return {promise:Promise.resolve(cached),release:()=>{}};
   }
-  let entry=pending.get(start);
+  let entry=pending.get(key);
   if(!entry) {
     const controller=new AbortController();
     const request=(async()=>{
-    const response=await fetch(`/data/world/${start}.json`,{signal:controller.signal});
-    if(!response.ok) throw Error(`World data HTTP ${response.status}`);
-    const data=await response.json() as PackedWorld;
-    if(data.start!==start || !Array.isArray(data.records) || !Array.isArray(data.geometries)) throw Error('Wrong world data chunk');
-    const slice={start:data.start,end:data.end,polities:data.polities,boundaries:data.records.map(({geometryIndex,...b})=>{
-      const geometry=data.geometries[geometryIndex];
-      if(!geometry) throw Error('Missing geometry');
-      return {...b,geometry};
-    })};
-    if(!controller.signal.aborted) {
-      cache.set(start,slice);
-      if(cache.size>4) cache.delete(cache.keys().next().value!);
-    }
-    return slice;
-    })().finally(()=>{if(pending.get(start)?.controller===controller)pending.delete(start);});
+      const uri=file?.uri ?? `data/world/${start}.json`;
+      let data:PackedWorld;
+      if(file) {
+        const installed=releaseId&&packageId ? await readInstalledWorldFile(releaseId,packageId,file) : undefined;
+        const bytes=installed ?? await fetchWorldBytes(uri,controller.signal);
+        if(bytes.byteLength!==file.bytes) throw Error(`World data byte length mismatch for ${uri}`);
+        await verifySha256(bytes,file.sha256);
+        data=JSON.parse(new TextDecoder().decode(bytes)) as PackedWorld;
+      } else {
+        const response=await fetch(publicAssetUrl(uri),{signal:controller.signal});
+        if(!response.ok) throw Error(`World data HTTP ${response.status}`);
+        data=await response.json() as PackedWorld;
+      }
+      if(data.start!==start || !Array.isArray(data.records) || !Array.isArray(data.geometries)) throw Error('Wrong world data chunk');
+      const slice={start:data.start,end:data.end,polities:data.polities,boundaries:data.records.map(({geometryIndex,...boundary})=>{
+        const geometry=data.geometries[geometryIndex];
+        if(!geometry) throw Error('Missing geometry');
+        return {...boundary,geometry};
+      })};
+      if(!controller.signal.aborted) {
+        cache.set(key,slice);
+        if(cache.size>4) cache.delete(cache.keys().next().value!);
+      }
+      return slice;
+    })().finally(()=>{if(pending.get(key)?.controller===controller)pending.delete(key);});
     entry={promise:request,controller,consumers:0};
-    pending.set(start,entry);
+    pending.set(key,entry);
   }
   const held=entry;
   held.consumers++;
   return {promise:held.promise,release:()=>{
     held.consumers--;
-    if(!held.consumers && pending.get(start)===held){pending.delete(start);held.controller.abort();}
+    if(!held.consumers && pending.get(key)===held){pending.delete(key);held.controller.abort();}
   }};
 }
 
-export function useWorldSlice(year:number, enabled:boolean) {
+async function fetchWorldBytes(uri:string,signal:AbortSignal) {
+  const response=await fetch(publicAssetUrl(uri),{signal});
+  if(!response.ok) throw Error(`World data HTTP ${response.status}`);
+  return new Uint8Array(await response.arrayBuffer());
+}
+
+async function readInstalledWorldFile(releaseId:string,packageId:string,file:ReleaseFile) {
+  try { return await new CachePackageFiles().read(releaseId,packageId,file.uri); }
+  catch { return undefined; }
+}
+
+function requestForYear(year:number, release?:ReleaseManifest):WorldRequest|undefined {
   const century=Math.floor(year/100)*100;
-  const available=year>=-3400 && year<=2024 && year!==0;
+  if(!release) return {key:`legacy:${century}`,start:century};
+  const releasePackage=release.packages.find((candidate)=>(
+    candidate.kind==='world'
+    && candidate.yearRange?.length===2
+    && year>=candidate.yearRange[0]
+    && year<=candidate.yearRange[1]
+    && candidate.files.length===1
+  ));
+  if(!releasePackage) return undefined;
+  const file=releasePackage.files[0];
+  return {key:`${release.releaseId}:${file.uri}:${file.sha256}`,start:releasePackage.yearRange![0],releaseId:release.releaseId,packageId:releasePackage.id,file};
+}
+
+export function useWorldSlice(year:number, enabled:boolean, release?:ReleaseManifest) {
+  const requestSpec=requestForYear(year,release);
+  const resultKey=requestSpec?.key ?? `${release?.releaseId ?? 'legacy'}:unavailable:${year}`;
+  const available=Boolean(requestSpec) && year!==0 && (release ? true : year>=-3400 && year<=2024);
   const [attempt,setAttempt]=useState(0);
-  const [result,setResult]=useState<{key:number;status:Status;slice?:WorldSlice}>({key:century,status:'off'});
+  const [result,setResult]=useState<{key:string;status:Status;slice?:WorldSlice}>({key:resultKey,status:'off'});
   useEffect(()=>{
-    if(!enabled||!available) return;
+    if(!enabled||!available||!requestSpec) return;
     let cancelled=false;
-    setResult({key:century,status:'loading'});
-    const request=acquireCentury(century);
-    request.promise.then(slice=>{if(!cancelled)setResult({key:century,status:'ready',slice});})
-      .catch(()=>{if(!cancelled)setResult({key:century,status:'error'});});
+    setResult({key:resultKey,status:'loading'});
+    const request=acquireCentury(requestSpec);
+    request.promise.then(slice=>{if(!cancelled)setResult({key:resultKey,status:'ready',slice});})
+      .catch(()=>{if(!cancelled)setResult({key:resultKey,status:'error'});});
     return ()=>{cancelled=true;request.release();};
-  },[century,enabled,available,attempt]);
-  const status:Status=!enabled?'off':!available?'unavailable':result.key!==century?'loading':result.status;
+  },[resultKey,enabled,available,attempt]);
+  const status:Status=!enabled?'off':!available?'unavailable':result.key!==resultKey?'loading':result.status;
   return {status,slice:status==='ready'?result.slice:undefined,retry:()=>setAttempt(n=>n+1)};
 }

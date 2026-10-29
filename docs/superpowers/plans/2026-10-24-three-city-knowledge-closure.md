@@ -72,7 +72,7 @@
 
 **Files:**
 - Create: `docs/audits/2026-10-24-three-city-knowledge-closure.md`
-- Modify if needed: `public/data/knowledge-coverage.json`
+- Modify if needed: `internal/audits/knowledge-coverage.json`
 
 - [ ] **Step 1: 运行 `npm run build:knowledge-coverage`**，确认三城市不再出现“已记录首都但无知识节点”。
 - [ ] **Step 2: 运行 `npm run build` 与 `npm test -- --runInBand`**，修复仅由本批数据引起的回归。

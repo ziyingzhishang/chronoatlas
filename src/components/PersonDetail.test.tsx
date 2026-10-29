@@ -77,7 +77,7 @@ describe('PersonDetail', () => {
     render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={[]} />);
 
     expect(screen.getAllByText('生卒年记录较明确').length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/现有人物目录同时记录生年与卒年/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/现有资料同时记录生年与卒年/).length).toBeGreaterThan(0);
   });
 
   it('shows approximate and unknown states without inventing a life date', () => {
@@ -91,7 +91,7 @@ describe('PersonDetail', () => {
     render(<PersonDetail person={approximatePerson} detail={getPersonDetail('yu-the-great')} year={2200} claims={[]} />);
 
     expect(screen.getAllByText('相关活动年代为约数').length).toBeGreaterThan(0);
-    expect(screen.getAllByText(/不将其扩展为完整生卒区间/).length).toBeGreaterThan(0);
+    expect(screen.getAllByText(/生卒年尚不完整；现有任职或活动年代仅用于说明其活跃时期/).length).toBeGreaterThan(0);
 
     render(<PersonDetail person={{ ...person, id: 'not-in-review', name: '未审计人物' }} detail={getPersonDetail('li-shimin')} year={620} claims={[]} />);
     expect(screen.getAllByText('生卒年尚待核实').length).toBeGreaterThan(0);
@@ -106,6 +106,18 @@ describe('PersonDetail', () => {
     expect(document.body).not.toHaveTextContent('claim:');
     expect(document.body).not.toHaveTextContent(' claim ');
     expect(document.body).not.toHaveTextContent('覆盖状态');
+  });
+
+  it('maps heritage relationship predicates to reader language', () => {
+    const commissioned: HistoricalClaim = {
+      id: 'commissioned-reader-label', subjectId: 'li-shimin', predicate: 'commissioned', objectId: 'heritage-a',
+      validFrom: 620, validTo: 620, datePrecision: 'year', perspective: 'person',
+      evidenceType: 'cross-checked', confidence: 'medium', sourceIds: ['zizhi-tongjian'],
+    };
+    render(<PersonDetail person={person} detail={getPersonDetail('li-shimin')!} year={620} claims={[commissioned]} />);
+
+    expect(screen.getByText(/^营建／关联遗产/)).toBeInTheDocument();
+    expect(document.body).not.toHaveTextContent('commissioned');
   });
 
   it('renders an interactive person-centered relationship graph summary', () => {

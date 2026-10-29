@@ -11,7 +11,7 @@ if (!process.argv.includes('--force')) {
     if (error?.code !== 'ENOENT') throw error;
   }
 }
-const audit = JSON.parse(await readFile(`${root}public/data/coverage-audit.json`, 'utf8'));
+const audit = JSON.parse(await readFile(`${root}internal/audits/coverage-audit.json`, 'utf8'));
 const sources = [
   ...JSON.parse(await readFile(`${root}src/data/generated/cliopatria-china.json`, 'utf8')),
   ...JSON.parse(await readFile(`${root}src/data/generated/boundaries.json`, 'utf8')),

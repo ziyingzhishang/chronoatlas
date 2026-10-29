@@ -4,7 +4,7 @@ import { auditKnowledgeCoverage, serializeKnowledgeCoverageReport } from '../src
 
 const root = fileURLToPath(new URL('../', import.meta.url));
 const report = serializeKnowledgeCoverageReport(auditKnowledgeCoverage());
-const outputPath = `${root}public/data/knowledge-coverage.json`;
+const outputPath = `${root}internal/audits/knowledge-coverage.json`;
 
 await writeFile(outputPath, `${JSON.stringify(report, null, 2)}\n`);
 console.log(JSON.stringify({

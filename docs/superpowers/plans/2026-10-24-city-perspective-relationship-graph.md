@@ -209,7 +209,7 @@ git commit -m "feat: expose city relationship graph in study panel"
 ### Task 4: Full verification and coverage artifact integrity
 
 **Files:**
-- Modify: `public/data/knowledge-coverage.json` only if the existing build command deterministically changes it
+- Modify: `internal/audits/knowledge-coverage.json` only if the existing build command deterministically changes it
 
 **Interfaces:**
 - Consumes: all completed tasks and existing project test/build commands.
@@ -234,7 +234,7 @@ Run: `git status --short && git log -5 --oneline`.
 If the coverage artifact changed, commit it with:
 
 ```bash
-git add public/data/knowledge-coverage.json
+git add internal/audits/knowledge-coverage.json
 git commit -m "chore: refresh knowledge coverage after city graph"
 ```
 

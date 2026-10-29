@@ -1,9 +1,6 @@
 import { useLocale } from '../i18n/locale';
 import type { BoundaryState, HistoricalState, SelectedEntity } from '../domain/types';
 import { formatHistoricalYear } from '../domain/timeline';
-import { boundariesByPolity } from '../data/boundaries';
-import { mappingNotes } from '../data/cliopatria-mapping';
-import { sovereigntyNoticesFor } from '../data/sovereignty';
 import { boundaryStatusLabel } from '../map/presentation';
 import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
@@ -43,13 +40,17 @@ function boundaryExpressionNote(boundary: BoundaryState) {
 
 export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, polityDetailMode = 'summary' }: InfoPanelProps) {
   const { locale, t } = useLocale();
-  const { catalog } = useHistoricalContent();
-  const { capitalTerms, claims, eventDetails, events, studyEvents: polityStudyEvents, heritage, heritageDetails, people, personDetails, places, polities, polityDetails, sources } = catalog;
+  const { catalog, historySource } = useHistoricalContent();
+  const { capitalTerms, claims, eventDetails, events, studyEvents: polityStudyEvents, heritage, heritageDetails, people, personDetails, places, polities, polityDetails, sources, mappingNotes, sovereigntyNotices } = catalog;
   const cityStudyEvents = polityStudyEvents;
   const prose = (value:string) => locale==='en' && /[\u3400-\u9fff]/.test(value) && t(value)===value
     ? 'Verification note retained in the Chinese data record; consult the linked source for details.' : t(value);
   const listSeparator=locale==='en' ? ', ' : '、';
   const allPolities = uniquePolities([...polities, ...state.activePolities]);
+  const mappingNoteByPolity = new Map(mappingNotes.map((note) => [note.id, note.note]));
+  const boundariesForSelectedPolity = selectedEntity?.type === 'polity'
+    ? historySource.boundaries.filter((boundary) => boundary.polityId === selectedEntity.id)
+    : [];
   const selected = selectedEntity ? selectedEntity.type==='polity' ? allPolities.find(p=>p.id===selectedEntity.id) : selectedEntity.type==='place' ? state.places.find(p=>p.id===selectedEntity.id) : state.events.find(e=>e.id===selectedEntity.id) : undefined;
   const capital = selected && 'capitalPlaceId' in selected && selected.capitalPlaceId ? state.places.find(place=>place.id===selected.capitalPlaceId) : undefined;
   const activeCapitalTerms = capitalTerms.filter((record) => record.validFrom <= state.year && record.validTo >= state.year);
@@ -117,7 +118,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
           <h2>{selected.name}</h2>
           <p className="panel-intro">{t(selected.description)}</p>
           {selectedPolityDetail && <PolityDetail detail={selectedPolityDetail} mode={polityDetailMode} onOpenEntity={onOpenEntity} />}
-          {sovereigntyNoticesFor(state.year, selected.id).map(notice => <section className="sovereignty-notice" data-testid="taiwan-sovereignty-notice" key={notice.id}>
+          {sovereigntyNotices.filter((notice) => notice.polityId === selected.id && state.year >= notice.effectiveFrom).map(notice => <section className="sovereignty-notice" data-testid="taiwan-sovereignty-notice" key={notice.id}>
             <h3>{t(notice.title)}</h3>
             <p>{t(notice.statement)}</p>
             <p className="detail-note">{t(notice.modernReferenceNote)}</p>
@@ -142,9 +143,9 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
             uncertainty: [boundaryExpressionNote(b), b.evidence.uncertaintyNote, b.notes, b.memberOf ? `${b.memberOf}，不等于直接管辖。` : undefined].filter(Boolean).map((note) => prose(note!)).join('；'),
             sources: b.evidence.citations.map((citation) => ({ title: citation.title, citation: [citation.version, citation.pageOrRecord].filter(Boolean).join(' · ') || undefined, url: citation.urlOrCitation })),
           }} />)}
-          {mappingNotes[selected.id] && <ReaderNotes note={{ uncertainty: prose(mappingNotes[selected.id]), sources: toReaderSources(selected.sourceIds, sources) }} />}
-          {onYearChange && !!boundariesByPolity.get(selected.id)?.length && <details className="boundary-history"><summary>{t("本政权的资料变化 · 点击比较")}</summary><p>{t("以下是数据分段，不是全部历史变化。相邻段也可能沿用同一几何。")}</p><div>
-            {boundariesByPolity.get(selected.id)?.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}</button>)}
+          {mappingNoteByPolity.get(selected.id) && <ReaderNotes note={{ uncertainty: prose(mappingNoteByPolity.get(selected.id)!), sources: toReaderSources(selected.sourceIds, sources) }} />}
+          {onYearChange && boundariesForSelectedPolity.length > 0 && <details className="boundary-history"><summary>{t("本政权的资料变化 · 点击比较")}</summary><p>{t("以下是数据分段，不是全部历史变化。相邻段也可能沿用同一几何。")}</p><div>
+            {boundariesForSelectedPolity.filter(b=>b.temporalKind==='interval').map(b=><button key={b.id} onClick={()=>onYearChange(b.validFrom)}>{t(range(b.validFrom,b.validTo))}</button>)}
           </div></details>}
           <ReaderNotes note={{
             uncertainty: selected.sourceIds.map((id) => sources.find((source) => source.id === id)?.note).filter(Boolean).map((note) => prose(note!)).join('；') || undefined,

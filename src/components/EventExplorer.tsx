@@ -1,17 +1,19 @@
 import { useLocale } from '../i18n/locale';
 import type { HistoricalEvent } from '../domain/types';
 import { useEffect, useMemo, useRef, useState } from 'react';
-import { events } from '../data/events';
 import { eventsAtYear, queryEvents } from '../domain/events';
 import { formatHistoricalYear, yearToIndex } from '../domain/timeline';
 import { contentSearchText, localizeEvents } from '../i18n/content';
 import { EventDetailCard } from './EventDetailCard';
+import { useHistoricalContent } from '../content/ContentContext';
 export interface EventExplorerProps { items?:HistoricalEvent[]; year:number;selectedId?:string;onSelect:(event:HistoricalEvent)=>void;onYearChange:(year:number)=>void;onLocate?:(event:HistoricalEvent)=>void;groupIds?:string[];onClearGroup?:()=>void;onBackToList?:()=>void;queryValue?:string;onQueryChange?:(query:string)=>void;regionValue?:string;onRegionChange?:(region:string)=>void;categoryValue?:string;onCategoryChange?:(category:string)=>void;hideSearch?:boolean }
 export function eventDate(event:HistoricalEvent){
   return `${event.datePrecision==='approximate'?'约 ':''}${formatHistoricalYear(event.year)}${event.endYear&&event.endYear!==event.year?`—${formatHistoricalYear(event.endYear)}`:''}`;
 }
-export function EventExplorer({items=events,year,selectedId,onSelect,onYearChange,onLocate,groupIds,onClearGroup,onBackToList,queryValue,onQueryChange,regionValue,onRegionChange,categoryValue,onCategoryChange,hideSearch}:EventExplorerProps){
+export function EventExplorer({items: suppliedItems,year,selectedId,onSelect,onYearChange,onLocate,groupIds,onClearGroup,onBackToList,queryValue,onQueryChange,regionValue,onRegionChange,categoryValue,onCategoryChange,hideSearch}:EventExplorerProps){
   const { locale, t } = useLocale();
+  const { catalog } = useHistoricalContent();
+  const items = suppliedItems ?? catalog.events;
   const [localQuery,setLocalQuery]=useState('');
   const [localRegion,setLocalRegion]=useState('');
   const [localCategory,setLocalCategory]=useState('');

@@ -61,7 +61,7 @@ Expected: PASS, including zero `person-person-relationship-missing` tasks.
 ### Task 3: Regenerate and verify derived coverage
 
 **Files:**
-- Modify: `public/data/knowledge-coverage.json`
+- Modify: `internal/audits/knowledge-coverage.json`
 
 - [ ] **Step 1: Regenerate the knowledge coverage artifact**
 

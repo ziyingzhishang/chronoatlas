@@ -3,6 +3,10 @@ import { afterEach, expect, test, vi } from 'vitest';
 import { App } from './App';
 import userEvent from '@testing-library/user-event';
 import { mapInstances } from '../test/maplibre-mock';
+import type { ReleaseManifest } from '../content/release-types';
+import type { OfflineManager } from '../components/OfflineDataManager';
+import type { MapReleaseCompliance } from '../compliance/map-release';
+import { bundledReleaseManifest } from '../content/bundled-content';
 
 afterEach(() => vi.restoreAllMocks());
 
@@ -36,14 +40,104 @@ test('keeps secondary controls closed until requested', async () => {
   expect(screen.queryByRole('status', { name: '疆域资料状态' })).not.toBeInTheDocument();
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'全历史'})).not.toBeInTheDocument();
-  await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));
+  await userEvent.click(screen.getByRole('button',{name:'打开时间轴'}));
+  expect(screen.getByRole('region', { name: '时间分析' })).toBeInTheDocument();
   expect(screen.getByRole('button', { name: '全历史' })).toBeInTheDocument();
+});
+
+test('opening and closing time analysis preserves map, layers, view, and topic state', async () => {
+  render(<App/>);
+  await userEvent.type(screen.getByRole('searchbox', { name: '搜索历史事件' }), '秦统一');
+  await userEvent.click(screen.getByRole('option', { name: /秦统一六国/ }));
+  await userEvent.click(screen.getByRole('button', { name: '打开完整事件详情' }));
+  const topic = screen.getByRole('dialog', { name: '秦统一六国' });
+  const map = mapInstances.at(-1)!;
+  const territoryLayer = screen.getByRole('checkbox', { name: '历史疆域' });
+  const cameraCalls = map.flyTo.mock.calls.length + map.easeTo.mock.calls.length + map.fitBounds.mock.calls.length;
+
+  const openTimeline = screen.getByRole('button', { name: '打开时间轴' });
+  await userEvent.click(openTimeline);
+  expect(screen.queryByRole('region', { name: '历史地图' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('dialog', { name: '秦统一六国' })).not.toBeInTheDocument();
+  expect(screen.getByRole('region', { name: '时间分析' })).toBeInTheDocument();
+  await userEvent.click(screen.getByRole('button', { name: '聚焦资治通鉴 前403年至959年' }));
+  await userEvent.click(screen.getByRole('button', { name: '关闭时间分析' }));
+
+  expect(openTimeline).toHaveFocus();
+  expect(topic).toBeInTheDocument();
+  expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '-221');
+  expect(territoryLayer).toBeChecked();
+  expect(screen.getByRole('button', { name: '当前历史状态' })).toHaveTextContent('《资治通鉴》');
+  expect(map.flyTo.mock.calls.length + map.easeTo.mock.calls.length + map.fitBounds.mock.calls.length).toBe(cameraCalls);
 });
 
 test('opens the more information as a bottom-right HUD', async () => {
   render(<App />);
+  expect(screen.queryByRole('heading', { name: '离线历史资料' })).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button', { name: '更多' }));
   expect(screen.getByRole('dialog', { name: '阅读说明与来源' })).toHaveClass('workspace-hud');
+  expect(screen.getByRole('heading', { name: '离线历史资料' })).toBeInTheDocument();
+  expect(screen.getByRole('region', { name: '地图公开状态' })).toHaveTextContent('当前版本仅供研究与内部评审，尚未公开发布。');
+});
+
+test('shows the approved map review number and expiry to readers', async () => {
+  const compliance: MapReleaseCompliance = {
+    status: 'approved-for-public-release',
+    reviewNumber: 'GS(2026)0001号',
+    reviewExpiresAt: '2099-10-20',
+    approvedReleaseId: bundledReleaseManifest.releaseId,
+    approvedReleaseManifestSha256: 'a'.repeat(64),
+    checkedSources: [{ id: 'modern-reference', license: 'public domain', attribution: 'Natural Earth' }],
+    requiredNotices: ['review number displayed'],
+  };
+  render(<App mapReleaseCompliance={compliance}/>);
+
+  await userEvent.click(screen.getByRole('button', { name: '更多' }));
+
+  const status = screen.getByRole('region', { name: '地图公开状态' });
+  expect(status).toHaveTextContent('已获公开发布批准');
+  expect(status).toHaveTextContent('审图号GS(2026)0001号');
+  expect(status).toHaveTextContent('有效期至2099-10-20');
+});
+
+test('does not show approval for a different active content release', async () => {
+  const compliance: MapReleaseCompliance = {
+    status: 'approved-for-public-release', reviewNumber: 'GS(2026)0001号', reviewExpiresAt: '2099-10-20',
+    approvedReleaseId: 'another-release', approvedReleaseManifestSha256: 'a'.repeat(64),
+    checkedSources: [{ id: 'modern-reference', license: 'public domain', attribution: 'Natural Earth' }],
+    requiredNotices: ['review number displayed'],
+  };
+  render(<App mapReleaseCompliance={compliance}/>);
+
+  await userEvent.click(screen.getByRole('button', { name: '更多' }));
+
+  expect(screen.getByRole('region', { name: '地图公开状态' })).toHaveTextContent('公开发布批准信息无效或已过期');
+  expect(screen.queryByText('已获公开发布批准')).not.toBeInTheDocument();
+});
+
+test('shows the separately discovered release while the active content snapshot remains fixed', async () => {
+  const availableManifest: ReleaseManifest = {
+    releaseId: 'release-update', schemaVersion: '1', minimumAppVersion: '0.1.0',
+    createdAt: '2026-10-27T00:00:00Z', channel: 'preview', complianceProfile: 'internal-research',
+    packages: [{
+      id: 'core-zh', kind: 'content', required: true, dependencies: [], compressedBytes: 12,
+      recordCount: 1, licenseIds: ['MIT'], files: [{
+        uri: 'releases/release-update/core.json', mediaType: 'application/json', sha256: 'a'.repeat(64),
+        bytes: 12, collection: 'core-zh', sourceDigest: 'b'.repeat(64),
+      }],
+    }],
+  };
+  const manager: OfflineManager = {
+    listAvailable: async () => [{ releasePackage: availableManifest.packages[0], installed: false }],
+    listInstalled: async () => [], install: async () => {}, activate: async () => {}, rollback: async () => {}, remove: async () => {},
+  };
+  render(<App offlineRuntime={{ availableManifest, manager }}/>);
+
+  await userEvent.click(screen.getByRole('button', { name: '更多' }));
+
+  expect(screen.getByText('2026年10月27日')).toBeInTheDocument();
+  expect(screen.queryByText('release-update')).not.toBeInTheDocument();
+  expect(document.querySelector('.content-provider')).not.toHaveAttribute('data-content-revision');
 });
 
 test('opens a deep entity drawer from the polity study view and supports back navigation', async () => {

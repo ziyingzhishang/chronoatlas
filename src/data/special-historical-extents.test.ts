@@ -1,7 +1,7 @@
 import { expect, test } from 'vitest';
 import { getHistoricalState } from '../domain/history-state';
 import { isDefiniteBoundary } from '../domain/boundary-evidence';
-import audit from '../../public/data/coverage-audit.json';
+import audit from '../../internal/audits/coverage-audit.json';
 
 test('Xia is represented by a D cultural-core point, not a national border', () => {
   const state = getHistoricalState(-1800);

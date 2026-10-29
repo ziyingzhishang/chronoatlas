@@ -6,11 +6,12 @@ export function Legend() {
       <h3>{t("图例")}</h3>
       <p className="legend-current">{t("实线＋半透明色面：所选年匹配的来源时段模型。虚线＋浅色面＋“最大参考”：缺年时使用的已收录最大单条轮廓，不是本年实况。两者均非测绘或主权依据；下列控制类型仅在来源具备分类时使用。")}</p>
       <div className="legend-group evidence-legend">
-        <span className="legend-title">{t("疆域证据")}</span>
-        <span><i className="legend-evidence level-a" />{t("A级 · 直接来源")}</span>
-        <span><i className="legend-evidence level-b" />{t("B级 · 数字化参考")}</span>
-        <span><i className="legend-evidence level-c" />{t("C级 · 过渡／最大参考")}</span>
-        <span><i className="legend-evidence level-d" />{t("D级 · 文化核心／影响范围")}</span>
+        <span className="legend-title">{t("地图表达")}</span>
+        <span><i className="legend-evidence level-a" />{t("有来源支持的范围")}</span>
+        <span><i className="legend-evidence level-b" />{t("数字化参考范围")}</span>
+        <span><i className="legend-evidence level-c" />{t("过渡或最大参考范围")}</span>
+        <span><i className="legend-evidence level-d" />{t("文化核心或影响范围")}</span>
+        <span>{t("资料不足时留空")}</span>
       </div>
       <div className="legend-group">
         <span className="legend-title">{t("首都／政治中心")}</span>

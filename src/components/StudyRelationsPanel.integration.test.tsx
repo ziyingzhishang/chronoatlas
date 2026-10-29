@@ -15,6 +15,7 @@ import { buildCityStudyView, buildPolityStudyView } from '../domain/study-view';
 import { groupPersonRelationships } from '../domain/relationships';
 import { LocaleProvider } from '../i18n/locale';
 import { StudyRelationsPanel } from './StudyRelationsPanel';
+import type { HistoricalClaim } from '../domain/types';
 
 const data = { polities, places, people, heritage: heritageAssets, events: getChanganStudyBundle().events, claims, capitalTerms: capitalHistory };
 const completeData = { polities, places, people, heritage: heritageAssets, events: historicalEvents, claims, capitalTerms: capitalHistory };
@@ -30,6 +31,19 @@ describe('StudyRelationsPanel integration', () => {
     expect(screen.getAllByText(/李世民/).length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText(/统治/).length).toBeGreaterThanOrEqual(2);
     expect(screen.getAllByText('唐在长安建立').length).toBeGreaterThanOrEqual(1);
+  });
+
+  it('never falls back to internal relationship predicates', () => {
+    const view = buildPolityStudyView('tang', 640, data)!;
+    const related: HistoricalClaim = {
+      id: 'reader-fallback-related', subjectId: 'li-shimin', predicate: 'related-to', objectId: 'li-yuan',
+      validFrom: 600, validTo: 650, datePrecision: 'range', perspective: 'person',
+      evidenceType: 'cross-checked', confidence: 'medium', sourceIds: ['zizhi-tongjian'],
+    };
+    render(<StudyRelationsPanel view={{ ...view, claims: [...view.claims, related] }} />);
+
+    expect(screen.getAllByText(/历史关联/).length).toBeGreaterThan(0);
+    expect(document.body).not.toHaveTextContent('related-to');
   });
 
   it('renders new study labels in English', () => {

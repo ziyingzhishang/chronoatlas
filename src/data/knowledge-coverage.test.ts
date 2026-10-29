@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest';
-import exportedKnowledgeCoverage from '../../public/data/knowledge-coverage.json';
+import exportedKnowledgeCoverage from '../../internal/audits/knowledge-coverage.json';
 import type {
   CapitalTerm,
   HistoricalClaim,

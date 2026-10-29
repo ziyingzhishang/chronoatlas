@@ -1,7 +1,15 @@
 export interface Point { x: number; y: number }
 export interface Size { width: number; height: number }
 export interface Preference { mode: 'docked'|'floating'; position: Point }
+export type PanePresentation = 'wide'|'narrow'|'mobile'|'short';
 export function layoutFor(width: number, height: number) { return { mobile: width < 768, short: height < 500 }; }
+export function presentationForPane(width: number, height: number): PanePresentation {
+  if (height < 500) return 'short';
+  if (width < 480) return 'mobile';
+  if (height > width) return 'narrow';
+  if (width < 768) return 'narrow';
+  return 'wide';
+}
 export function clampPosition(point: Point, bounds: Size, size: Size): Point {
   const x = Math.max(12, Math.min(point.x, bounds.width - size.width - 12));
   const y = Math.max(64, Math.min(point.y, bounds.height - size.height - 64));

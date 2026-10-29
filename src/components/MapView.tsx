@@ -93,7 +93,7 @@ export function MapView(props: MapViewProps) {
     </div>
     {auxiliary('more',<>
     <div className="map-footer"><output aria-label={t("当前地图视角")}>{t(`缩放 ${camera.zoom.toFixed(1)} · 方位 ${Math.round(camera.bearing)}° · 俯仰 ${Math.round(camera.pitch)}°`)}</output><span>{t(`${state.activePolities.length} 个政权 · ${state.places.length} 个地点`)}</span></div>
-    <div className="coverage-footer"><span>{t(`${displayed.boundaries.length} 个显示图形 · ${state.coverage.missingPolityIds.length} 个目录政权待补`)}</span><a href="https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.1" target="_blank" rel="noreferrer">Cliopatria · CC BY 4.0 ↗</a><a href="/data/cliopatria-manifest.json" target="_blank" rel="noreferrer">{t("版本清单")}</a><a href="/data/coverage-audit.json" target="_blank" rel="noreferrer">{t("逐政权核验表")}</a><a href="/data/boundary-manifest.json" target="_blank" rel="noreferrer">{t("旧断面 · GPL-3.0")}</a></div>
+    <div className="coverage-footer"><span>{t('地图范围为历史研究表达，不等同于测绘边界。')}</span><a href="https://github.com/Seshat-Global-History-Databank/cliopatria/tree/v0.2.1" target="_blank" rel="noreferrer">Cliopatria · CC BY 4.0 ↗</a></div>
     <details className="map-help"><summary>{t("地图操作指南")}</summary><p>{t("鼠标拖动平移，滚轮或双击缩放；右键拖动旋转及俯仰。触屏单指拖动，双指捏合缩放、旋转，双指上下拖动调整俯仰。地图获得焦点后，方向键平移，＋/− 缩放，Shift＋方向键旋转或俯仰。")}</p><p>{t("“亚洲复位”回到起始视角；“北”恢复正北和平视。现代地名在放大后显示。倾斜用于调整观察角度。")}</p></details>
     </>)}
     {auxiliary('details',<>

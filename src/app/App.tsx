@@ -24,19 +24,33 @@ import { EventDetail } from '../components/EventDetail';
 import { HeritageDetail } from '../components/HeritageDetail';
 import type { DetailEntity, DetailHistoryEntry } from '../domain/detail-entity';
 import { ContentProvider, useHistoricalContent } from '../content/ContentContext';
-import type { HistoricalContentRepository } from '../content/repository';
+import type { HistoricalContentRepository, ReleaseSnapshotRepository } from '../content/repository';
 import { useSingleTopicView } from '../workspace/useSingleTopicView';
 import { WorkspaceShell } from '../workspace/WorkspaceShell';
 import { MapStatusHud } from '../components/MapStatusHud';
 import { formatPresentDistance, primaryPolityName, yearsFromPresent } from '../presentation/map-status';
+import { OfflineDataManager, type OfflineManager } from '../components/OfflineDataManager';
+import type { ReleaseManifest } from '../content/release-types';
+import { MapReleaseStatus } from '../components/MapReleaseStatus';
+import type { MapReleaseCompliance } from '../compliance/map-release';
+import mapReleaseCompliance from '../../public/data/map-release-compliance.json';
 
-export function App({ contentRepository }: { contentRepository?: HistoricalContentRepository } = {}) {
-  return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace/></ContentProvider></LocaleProvider>;
+export interface OfflineRuntimeView {
+  availableManifest: ReleaseManifest;
+  manager: OfflineManager;
 }
 
-function HistoryWorkspace() {
+export function App({ contentRepository, offlineRuntime, mapReleaseCompliance: compliance = mapReleaseCompliance as MapReleaseCompliance }: {
+  contentRepository?: HistoricalContentRepository | ReleaseSnapshotRepository;
+  offlineRuntime?: OfflineRuntimeView;
+  mapReleaseCompliance?: MapReleaseCompliance;
+} = {}) {
+  return <LocaleProvider><ContentProvider repository={contentRepository}><HistoryWorkspace offlineRuntime={offlineRuntime} mapReleaseCompliance={compliance}/></ContentProvider></LocaleProvider>;
+}
+
+function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: { offlineRuntime?: OfflineRuntimeView; mapReleaseCompliance: MapReleaseCompliance }) {
   const {locale,setLocale,t}=useLocale();
-  const { catalog } = useHistoricalContent();
+  const { catalog, historySource, release } = useHistoricalContent();
   const { claims, events, heritage, heritageDetails, people, personDetails, places, polities, studyEvents: detailEvents } = catalog;
   const heritageById = useMemo(() => new Map(heritage.map((asset) => [asset.id, asset])), [heritage]);
   const heritageDetailById = useMemo(() => new Map(heritageDetails.map((detail) => [detail.heritageId, detail])), [heritageDetails]);
@@ -64,8 +78,13 @@ function HistoryWorkspace() {
   const [detailHistory, setDetailHistory] = useState<DetailHistoryEntry[]>([]);
   const [detailOrigin, setDetailOrigin] = useState({ directoryOpen: false, eventSearchOpen: false });
   const [topicWidth, setTopicWidth] = useState(44);
-  const world = useWorldSlice(currentYear, showWorld);
-  const historicalState = useMemo(() => localizeState(getHistoricalState(currentYear, {world:world.slice}),locale), [currentYear,world.slice,locale]);
+  const [exclusiveTimeAnalysis, setExclusiveTimeAnalysis] = useState(false);
+  const [timeAnalysisOpen, setTimeAnalysisOpen] = useState(false);
+  const world = useWorldSlice(currentYear, showWorld, release);
+  const historicalState = useMemo(
+    () => localizeState(getHistoricalState(historySource, currentYear, { world: world.slice }), locale),
+    [currentYear, historySource, world.slice, locale],
+  );
   const eraLabel = primaryPolityName(historicalState.activePolities);
   const distanceLabel = formatPresentDistance(yearsFromPresent(currentYear, new Date().getFullYear()), locale);
   const timelineWindowLabel = `${t('当前视窗')} · ${formatHistoricalYear(timelineWindow[0])}—${formatHistoricalYear(timelineWindow[1])}`;
@@ -107,6 +126,10 @@ function HistoryWorkspace() {
 
   function changeYear(year:number){setCurrentYear(year);setSelectedEntity(undefined);setEventGroup(undefined);setIsPlaying(false);}
   function commitYear(year:number){changeYear(year);setMapRefreshToken(token=>token+1);}
+  function togglePlayback(){
+    if(isPlaying){setIsPlaying(false);setMapRefreshToken(token=>token+1);return;}
+    setIsPlaying(true);
+  }
   function navigateTimelineView(next:YearWindow,label:string){
     setTimelineHistory(previous=>[...previous,{window:timelineWindow,label:timelineViewLabel}].slice(-20));
     setTimelineWindow(next);
@@ -121,9 +144,17 @@ function HistoryWorkspace() {
   }
   function selectEntity(entity:Exclude<SelectedEntity,undefined>){
     if(entity.type==='event'){const event=events.find(e=>e.id===entity.id);if(event)selectEvent(event);return;}
-    setSelectedEntity(entity);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(true);
+    setTimeAnalysisOpen(false);setSelectedEntity(entity);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(true);
   }
-  function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
+  function selectEvent(event:HistoricalEvent){setTimeAnalysisOpen(false);setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
+  function changeTimeAnalysisOpen(open:boolean){
+    setTimeAnalysisOpen(open);
+    if(!open)return;
+    setSelectedEntity(undefined);
+    setDirectoryOpen(false);
+    setEventSearchOpen(false);
+    setPanel(null);
+  }
   function openDetail(entity: DetailEntity) {
     if (detailEntity?.type === entity.type && detailEntity.id === entity.id) return;
     if (!detailEntity) setDetailOrigin({ directoryOpen, eventSearchOpen });
@@ -168,14 +199,15 @@ function HistoryWorkspace() {
       topicWidthPercent={topicWidth}
       onTopicWidthChange={setTopicWidth}
       singleTopicView={singleTopicView}
+      exclusiveTimeAnalysis={exclusiveTimeAnalysis}
       mapPane={<>
     <header className="workspace-header">
       <div className="workspace-header-left">
         <MapStatusHud yearLabel={historicalState.displayLabel} eraLabel={eraLabel} viewLabel={timelineViewLabel}
           distanceLabel={distanceLabel} windowLabel={timelineWindowLabel} expanded={directoryOpen}
-          onToggle={()=>{setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}} />
+          onToggle={()=>{setTimeAnalysisOpen(false);setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}} />
         <div className="event-search-dock-wrap" onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setEventSearchOpen(false);}}>
-          <label className="event-search-dock"><span className="sr-only">{t('查找历史转折')}</span><input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>{setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
+          <label className="event-search-dock"><span className="sr-only">{t('查找历史转折')}</span><input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>{setTimeAnalysisOpen(false);setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
           {directoryOpen&&!eventSearchOpen&&(
               <DirectoryPopover id="directory-popover" state={historicalState} selectedEntity={selectedEntity} onSelectEntity={selectEntity} onBackToDirectory={()=>setSelectedEntity(undefined)} onClose={()=>{setSelectedEntity(undefined);setDirectoryOpen(false);}} onYearChange={changeYear} onOpenEntity={openDetail}/>
           )}
@@ -193,7 +225,7 @@ function HistoryWorkspace() {
         </div>
       </div>
       <nav className="workspace-tool-nav" aria-label={t('工作台工具')}>
-        <button className="workspace-tool-icon" aria-label={t('更多')} title={t('更多')} aria-expanded={panel==='more'} aria-controls="workspace-panel" onClick={()=>{setEventGroup(undefined);setPanel(p=>p==='more'?null:'more');}}>⋯</button>
+        <button className="workspace-tool-icon" aria-label={t('更多')} title={t('更多')} aria-expanded={panel==='more'} aria-controls="workspace-panel" onClick={()=>{setTimeAnalysisOpen(false);setEventGroup(undefined);setPanel(p=>p==='more'?null:'more');}}>⋯</button>
       </nav>
     </header>
       <div className="workspace-map-area">
@@ -201,12 +233,30 @@ function HistoryWorkspace() {
       {showWorld && <div className={`world-status ${world.status}`} role="status">{t(worldMessage)}{world.status==='error'&&<button onClick={world.retry}>{t('重试世界资料')}</button>}</div>}
       {panel && <WorkspacePanel variant={panel==='more'?'hud':'panel'} title={t(titles[panel])} onClose={()=>setPanel(null)}>
         {panel==='details'&&<InfoPanel state={historicalState} selectedEntity={selectedEntity} onYearChange={changeYear} onOpenEntity={openDetail}/>}
-        {panel==='more'&&<><label className="language-setting">{t('显示语言')}<select aria-label={t('显示语言')} value={locale} onChange={e=>setLocale(readLocale(e.target.value))}>{Object.entries(localeNames).map(([value,name])=><option key={value} value={value}>{name}</option>)}</select></label><MapReadingGuide year={currentYear}/><Legend/><p className="detail-note">{t('时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。')}</p><p className="detail-note">{t('桌面可停靠或悬浮时间控制器；手机使用收起、紧凑和展开三档。拖动年份不会改变地图视角。独立网页应用试用版，尚未公开发布。')}</p></>}
+        {panel==='more'&&<><label className="language-setting">{t('显示语言')}<select aria-label={t('显示语言')} value={locale} onChange={e=>setLocale(readLocale(e.target.value))}>{Object.entries(localeNames).map(([value,name])=><option key={value} value={value}>{name}</option>)}</select></label><MapReleaseStatus compliance={compliance} releaseId={release.releaseId}/><OfflineDataManager manifest={offlineRuntime?.availableManifest ?? release} manager={offlineRuntime?.manager}/><MapReadingGuide year={currentYear}/><Legend/><p className="detail-note">{t('时间导航：前8000—2026年。史前文化不是国家疆域；朝代目录并非穷尽名录。按年查询来源时段不等于逐年考证，最大已收录范围不是本年实况。古今海岸线与河道可能不同。地名仍为精选参照，尚未逐年校勘。现代底图和历史轮廓不作为历史实际控制的独立依据。')}</p><p className="detail-note">{t('桌面宽屏可在地图栏内停靠或悬浮时间控制器；手机使用简明时间条和时间分析两种状态。拖动年份不会改变地图视角。')}</p></>}
         <div ref={setPanelTarget}/>
       </WorkspacePanel>}
       </div>
-      <TimeController mode={panel ? 'analysis' : 'explore'} year={currentYear} eraLabel={eraLabel} onYearChange={changeYear} onYearCommit={commitYear} isPlaying={isPlaying} onPlayToggle={()=>setIsPlaying(v=>!v)} onEventSelect={selectEvent} onEventGroup={ids=>{setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}} viewWindow={timelineWindow} onViewWindowChange={setTimelineWindow} onSemanticViewChange={navigateTimelineView} viewLabel={timelineViewLabel} canGoBack={timelineHistory.length>0} onBackView={backTimelineView}/>
       </>}
+      timeNavigationPane={<TimeController
+        year={currentYear}
+        eraLabel={eraLabel}
+        onYearChange={changeYear}
+        onYearCommit={commitYear}
+        isPlaying={isPlaying}
+        onPlayToggle={togglePlayback}
+        onEventSelect={selectEvent}
+        onEventGroup={ids=>{setTimeAnalysisOpen(false);setEventGroup(ids);setPanel(null);setSelectedEntity(undefined);setEventSearchOpen(true);}}
+        viewWindow={timelineWindow}
+        onViewWindowChange={setTimelineWindow}
+        onSemanticViewChange={navigateTimelineView}
+        viewLabel={timelineViewLabel}
+        canGoBack={timelineHistory.length>0}
+        onBackView={backTimelineView}
+        onExclusiveAnalysisChange={setExclusiveTimeAnalysis}
+        analysisOpen={timeAnalysisOpen}
+        onAnalysisOpenChange={changeTimeAnalysisOpen}
+      />}
       topicPane={detailEntity ? <EntityDrawer title={detailTitle(detailEntity, catalog)} entityType={detailEntity.type} mapYear={currentYear} onClose={closeDetail} onBack={detailHistory.length ? backDetail : undefined} canGoBack={detailHistory.length > 0} singleView={singleTopicView}>
         {detailEntity.type === 'person' && (() => { const person = people.find((item) => item.id === detailEntity.id); return person ? <PersonDetail person={person} detail={personDetailById.get(person.id)} year={currentYear} claims={claims} people={people} polities={polities} events={events} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录人物详情')}</p>; })()}
         {detailEntity.type === 'event' && (() => { const event = detailEvents.find((item) => item.id === detailEntity.id); return event ? <EventDetail event={event} onOpenEntity={openDetail} /> : <p className="detail-note">{t('暂无已收录事件详情')}</p>; })()}
