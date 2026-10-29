@@ -38,7 +38,25 @@ export const bundledReleaseManifest = {
       uri: 'data/bundled-content.json', mediaType: 'application/json', sha256: '0'.repeat(64),
       bytes: 0, collection: 'core-zh', sourceDigest: '0'.repeat(64),
     }],
-  }],
+  }, ...bundledAuthoringSnapshot.worldChunks.map((chunk) => ({
+    id: `world-${chunk.start < 0 ? `bce-${Math.abs(chunk.start)}` : `ce-${chunk.start}`}`,
+    kind: 'world' as const,
+    region: 'world',
+    yearRange: [chunk.start, chunk.end] as [number, number],
+    required: false,
+    dependencies: ['core-zh'],
+    compressedBytes: chunk.bytes,
+    recordCount: chunk.records,
+    licenseIds: ['CC-BY-4.0'],
+    files: [{
+      uri: `data/world/${chunk.filename}`,
+      mediaType: 'application/json',
+      sha256: chunk.sha256,
+      bytes: chunk.bytes,
+      collection: `world-${chunk.start}`,
+      sourceDigest: chunk.sha256,
+    }],
+  }))],
 } satisfies ReleaseManifest;
 
 const coverageConclusions = bundledAuthoringSnapshot.territory.coverageDecisions.map((decision) => ({
