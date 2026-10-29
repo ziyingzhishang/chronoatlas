@@ -30,6 +30,41 @@ function manager(overrides: Partial<OfflineManager> = {}): OfflineManager {
 }
 
 describe('OfflineDataManager', () => {
+  it('keeps release-owned core and China packages downloadable when exported world files are external', async () => {
+    const exported = {
+      ...manifest,
+      packages: [
+        manifest.packages[0],
+        {
+          id: 'china-territory', kind: 'territory', region: 'china', yearRange: [-221, 2026],
+          required: true, dependencies: ['core-zh'], compressedBytes: 1024, recordCount: 10,
+          licenseIds: ['CC-BY-4.0'], files: [{
+            uri: 'releases/2026.10.27/china-territory.json', mediaType: 'application/json', sha256: 'c'.repeat(64),
+            bytes: 1024, collection: 'china-territory', sourceDigest: 'd'.repeat(64),
+          }],
+        },
+        {
+          id: 'world-ce-100', kind: 'world', region: 'world', yearRange: [100, 199],
+          required: false, dependencies: ['core-zh'], compressedBytes: 512, recordCount: 2,
+          licenseIds: ['CC-BY-4.0'], files: [{
+            uri: 'data/world/100.json', mediaType: 'application/json', sha256: 'e'.repeat(64),
+            bytes: 512, collection: 'world-100', sourceDigest: 'f'.repeat(64),
+          }],
+        },
+      ],
+    } satisfies ReleaseManifest;
+    const exportedManager = manager({
+      listAvailable: vi.fn().mockResolvedValue(exported.packages.map((releasePackage) => ({ releasePackage, installed: false }))),
+    });
+
+    render(<OfflineDataManager manifest={exported} manager={exportedManager}/>);
+
+    expect(await screen.findByRole('article', { name: '中文核心历史资料' })).toBeInTheDocument();
+    expect(screen.getByRole('article', { name: '中国疆域资料' })).toBeInTheDocument();
+    expect(screen.queryByRole('article', { name: '同期世界资料' })).not.toBeInTheDocument();
+    expect(screen.queryByText(/当前内置资料尚未发布为可下载离线包/)).not.toBeInTheDocument();
+  });
+
   it('shows an honest unsupported state for bundled content without leaking its internal revision', async () => {
     const bundled = {
       ...manifest,

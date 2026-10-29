@@ -34,18 +34,20 @@ export function OfflineDataManager({ manifest, manager: providedManager, storage
   const [busyAction, setBusyAction] = useState<string>();
   const [message, setMessage] = useState<{ kind: 'status' | 'alert'; text: string }>();
   const storage = providedStorage ?? globalThis.navigator?.storage;
-  const downloadableRelease = manifest.packages.length > 0 && manifest.packages.every((releasePackage) =>
+  const downloadablePackages = useMemo(() => manifest.packages.filter((releasePackage) => (
     releasePackage.files.length > 0
-    && releasePackage.files.every((file) => file.uri.startsWith(`releases/${manifest.releaseId}/`)),
-  );
+    && releasePackage.files.every((file) => file.uri.startsWith(`releases/${manifest.releaseId}/`))
+  )), [manifest]);
+  const downloadablePackageIds = useMemo(() => new Set(downloadablePackages.map((item) => item.id)), [downloadablePackages]);
+  const downloadableRelease = downloadablePackages.length > 0;
 
   const refresh = useCallback(async (activeManager: OfflineManager) => {
     const [nextAvailable, nextInstalled] = await Promise.all([
       activeManager.listAvailable(), activeManager.listInstalled(),
     ]);
-    setAvailable(nextAvailable);
+    setAvailable(nextAvailable.filter(({ releasePackage }) => downloadablePackageIds.has(releasePackage.id)));
     setInstalled(nextInstalled);
-  }, []);
+  }, [downloadablePackageIds]);
 
   useEffect(() => {
     let active = true;
@@ -59,7 +61,7 @@ export function OfflineDataManager({ manifest, manager: providedManager, storage
           const store = await IndexedDbPackageStore.open();
           close = () => store.close();
           await store.cleanupAbandonedStaging();
-          activeManager = new OfflinePackageManager({ manifest, store });
+          activeManager = new OfflinePackageManager({ manifest: { ...manifest, packages: downloadablePackages }, store });
         }
         if (!active) { close?.(); return; }
         setManager(activeManager);
@@ -70,7 +72,7 @@ export function OfflineDataManager({ manifest, manager: providedManager, storage
     };
     void initialize();
     return () => { active = false; close?.(); };
-  }, [downloadableRelease, manifest, providedManager, refresh, t]);
+  }, [downloadablePackages, downloadableRelease, manifest, providedManager, refresh, t]);
 
   const installedByPackage = useMemo(() => {
     const values = new Map<string, InstalledPackage[]>();

@@ -80,7 +80,7 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
   const [topicWidth, setTopicWidth] = useState(44);
   const [exclusiveTimeAnalysis, setExclusiveTimeAnalysis] = useState(false);
   const [timeAnalysisOpen, setTimeAnalysisOpen] = useState(false);
-  const world = useWorldSlice(currentYear, showWorld);
+  const world = useWorldSlice(currentYear, showWorld, release);
   const historicalState = useMemo(
     () => localizeState(getHistoricalState(historySource, currentYear, { world: world.slice }), locale),
     [currentYear, historySource, world.slice, locale],
