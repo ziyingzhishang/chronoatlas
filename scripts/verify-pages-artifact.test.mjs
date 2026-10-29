@@ -1,4 +1,5 @@
 import assert from 'node:assert/strict';
+import { createHash } from 'node:crypto';
 import { mkdir, mkdtemp, readFile, symlink, writeFile } from 'node:fs/promises';
 import { tmpdir } from 'node:os';
 import path from 'node:path';
@@ -15,6 +16,54 @@ async function fixture(files) {
     await writeFile(target, content);
   }
   return root;
+}
+
+const publicReleaseId = 'a'.repeat(40);
+
+function sha256(value) {
+  return createHash('sha256').update(value).digest('hex');
+}
+
+function publicReleaseFiles(overrides = {}) {
+  const core = '{"sources":[]}\n';
+  const territory = '{"boundaries":[],"coverageConclusions":[]}\n';
+  const manifest = {
+    releaseId: publicReleaseId,
+    schemaVersion: '1',
+    minimumAppVersion: '0.1.0',
+    createdAt: '2026-10-29T00:00:00Z',
+    channel: 'stable',
+    complianceProfile: 'offline-public',
+    packages: [{
+      id: 'core-zh', kind: 'content', required: true, dependencies: [],
+      compressedBytes: Buffer.byteLength(core), recordCount: 0, licenseIds: ['MIT'],
+      files: [{
+        uri: `releases/${publicReleaseId}/core-zh.json`, mediaType: 'application/json',
+        sha256: sha256(core), bytes: Buffer.byteLength(core), collection: 'core-zh', sourceDigest: sha256(core),
+      }],
+    }, {
+      id: 'china-territory', kind: 'territory', region: 'china', yearRange: [-1, 1],
+      required: true, dependencies: ['core-zh'], compressedBytes: Buffer.byteLength(territory),
+      recordCount: 0, licenseIds: ['MIT'],
+      files: [{
+        uri: `releases/${publicReleaseId}/china-territory.json`, mediaType: 'application/json',
+        sha256: sha256(territory), bytes: Buffer.byteLength(territory),
+        collection: 'china-territory', sourceDigest: sha256(territory),
+      }],
+    }],
+    ...overrides,
+  };
+  const manifestText = `${JSON.stringify(manifest)}\n`;
+  return {
+    'index.html': '<main>safe</main>',
+    [`releases/${publicReleaseId}/manifest.json`]: manifestText,
+    [`releases/${publicReleaseId}/core-zh.json`]: core,
+    [`releases/${publicReleaseId}/china-territory.json`]: territory,
+    'releases/latest.json': `${JSON.stringify({
+      releaseId: publicReleaseId,
+      manifestSha256: sha256(manifestText),
+    })}\n`,
+  };
 }
 
 test('accepts a project-base Pages artifact in the public layout', async () => {
@@ -37,6 +86,47 @@ test('accepts a root-base Pages artifact', async () => {
   });
 
   await assert.doesNotReject(() => verifyArtifact(root, { base: '/' }));
+});
+
+test('accepts one hash-verified stable offline release selected by latest', async () => {
+  const root = await fixture(publicReleaseFiles());
+  await assert.doesNotReject(() => verifyArtifact(root, { base: '/' }));
+});
+
+test('rejects research releases even when the pointer and files are internally consistent', async () => {
+  const files = publicReleaseFiles({ complianceProfile: 'internal-research' });
+  const manifestPath = `releases/${publicReleaseId}/manifest.json`;
+  files['releases/latest.json'] = `${JSON.stringify({
+    releaseId: publicReleaseId,
+    manifestSha256: sha256(files[manifestPath]),
+  })}\n`;
+  const root = await fixture(files);
+
+  await assert.rejects(() => verifyArtifact(root), /offline-public/i);
+});
+
+test('rejects latest manifest hash drift and tampered release files', async () => {
+  const pointerFiles = publicReleaseFiles();
+  pointerFiles['releases/latest.json'] = `${JSON.stringify({
+    releaseId: publicReleaseId,
+    manifestSha256: '0'.repeat(64),
+  })}\n`;
+  const pointerRoot = await fixture(pointerFiles);
+  await assert.rejects(() => verifyArtifact(pointerRoot), /manifest.*hash/i);
+
+  const tamperedFiles = publicReleaseFiles();
+  tamperedFiles[`releases/${publicReleaseId}/core-zh.json`] = '{"sources":[{"id":"tampered"}]}\n';
+  const tamperedRoot = await fixture(tamperedFiles);
+  await assert.rejects(() => verifyArtifact(tamperedRoot), /sha-?256|hash mismatch/i);
+});
+
+test('rejects arbitrary files or another release beneath releases', async () => {
+  const files = publicReleaseFiles();
+  files[`releases/${publicReleaseId}/private-notes.json`] = '{}\n';
+  files[`releases/${'b'.repeat(40)}/manifest.json`] = '{}\n';
+  const root = await fixture(files);
+
+  await assert.rejects(() => verifyArtifact(root), /unexpected release file/i);
 });
 
 test('reports every unsafe file, internal ledger and sensitive signature', async () => {

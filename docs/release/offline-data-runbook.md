@@ -38,6 +38,8 @@ npm run verify:data-runtime
 4. 完整上传 `releases/<release-id>/` 后，最后原子更新可变指针 `releases/latest.json`。
 5. 不得先更新 `latest.json` 再上传内容文件，否则客户端可能看到不完整版本。
 
+GitHub Pages 的正式工作流使用受保护 `main` 分支的 40 位 commit SHA 作为稳定版本标识。只有公开地图门禁通过后，才会生成 `offline-public` 资料包，校验 manifest 和全部文件，再与应用外壳一起纳入严格白名单审计的 Pages 产物。未通过地图门禁时，该步骤不会执行。
+
 ## 浏览器安装与启用
 
 - “可用版本”来自在线最新 manifest；“当前阅读版本”来自已激活的完整本地版本，两者可以不同。

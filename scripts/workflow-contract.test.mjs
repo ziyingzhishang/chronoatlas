@@ -123,3 +123,15 @@ test('Pages build pins npm, uses the project base and uploads only dist', async 
   assert.match(build, /VITE_BASE_PATH:\s*\/chronoatlas\/[\s\S]*?npm run verify:pages-artifact -- dist/);
   assert.match(build, /actions\/upload-pages-artifact@[0-9a-f]{40}[\s\S]*?with:\s*\n\s{10}path:\s*dist/);
 });
+
+test('Pages prepares and verifies one immutable public offline release after the map gate and before build', async () => {
+  const source = await readFile(pagesWorkflowUrl, 'utf8');
+  const build = source.match(/^  build:\n([\s\S]*?)(?=^  deploy:)/m)?.[1] ?? '';
+  const mapGate = build.indexOf('npm run verify:map-release');
+  const prepare = build.indexOf('npm run build:content-release -- --release "$GITHUB_SHA" --profile offline-public --channel stable --write-latest');
+  const verify = build.indexOf('npm run verify:content-release -- "public/releases/$GITHUB_SHA/manifest.json"');
+  const siteBuild = build.indexOf('npm run build', prepare + 1);
+
+  assert.ok(mapGate >= 0 && mapGate < prepare, 'the map gate must pass before public data is prepared');
+  assert.ok(prepare < verify && verify < siteBuild, 'the immutable release must be built and verified before the site build');
+});

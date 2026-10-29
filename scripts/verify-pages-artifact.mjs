@@ -1,6 +1,9 @@
+import { createHash } from 'node:crypto';
 import { lstat, readFile, readdir } from 'node:fs/promises';
 import path from 'node:path';
 import { fileURLToPath } from 'node:url';
+
+import { verifyContentRelease } from './verify-content-release.mjs';
 
 const CONTENT_EXTENSIONS = new Set([
   '.css', '.geojson', '.html', '.js', '.json', '.md', '.mjs', '.svg', '.topojson',
@@ -42,6 +45,8 @@ function isAllowedLayout(relativePath) {
   const extension = path.posix.extname(relativePath).toLowerCase();
   if (relativePath.startsWith('assets/')) return ASSET_EXTENSIONS.has(extension);
   if (relativePath.startsWith('data/')) return DATA_EXTENSIONS.has(extension);
+  if (relativePath === 'releases/latest.json') return true;
+  if (/^releases\/[a-f0-9]{40}\/(?:manifest|core-zh|china-territory)\.json$/.test(relativePath)) return true;
   return false;
 }
 
@@ -119,6 +124,109 @@ async function collectFiles(root, directory = root, violations = []) {
   return files;
 }
 
+async function verifyPublicRelease(root, files, violations) {
+  const releaseFiles = files.filter(({ relativePath }) => relativePath.startsWith('releases/'));
+  if (releaseFiles.length === 0) return;
+
+  const latest = releaseFiles.find(({ relativePath }) => relativePath === 'releases/latest.json');
+  if (!latest) {
+    violations.push('releases/latest.json: required when release files are present');
+    return;
+  }
+
+  let pointer;
+  try {
+    pointer = JSON.parse(await readFile(latest.absolutePath, 'utf8'));
+  } catch (error) {
+    violations.push(`releases/latest.json: invalid JSON: ${error.message}`);
+    return;
+  }
+  const pointerKeys = pointer && typeof pointer === 'object' && !Array.isArray(pointer)
+    ? Object.keys(pointer).sort()
+    : [];
+  if (pointerKeys.join(',') !== 'manifestSha256,releaseId'
+    || !/^[a-f0-9]{40}$/.test(pointer?.releaseId ?? '')
+    || !/^[a-f0-9]{64}$/.test(pointer?.manifestSha256 ?? '')) {
+    violations.push('releases/latest.json: expected only immutable releaseId and manifestSha256');
+    return;
+  }
+
+  const releaseId = pointer.releaseId;
+  const expectedReleaseFiles = new Set([
+    'releases/latest.json',
+    `releases/${releaseId}/manifest.json`,
+    `releases/${releaseId}/core-zh.json`,
+    `releases/${releaseId}/china-territory.json`,
+  ]);
+  for (const { relativePath } of releaseFiles) {
+    if (!expectedReleaseFiles.has(relativePath)) {
+      violations.push(`${relativePath}: unexpected release file; only the latest immutable release is public`);
+    }
+  }
+  for (const relativePath of expectedReleaseFiles) {
+    if (!releaseFiles.some((file) => file.relativePath === relativePath)) {
+      violations.push(`${relativePath}: required public release file is missing`);
+    }
+  }
+
+  const manifestFile = releaseFiles.find(({ relativePath }) => (
+    relativePath === `releases/${releaseId}/manifest.json`
+  ));
+  if (!manifestFile) return;
+
+  const manifestBytes = await readFile(manifestFile.absolutePath);
+  const manifestDigest = createHash('sha256').update(manifestBytes).digest('hex');
+  if (manifestDigest !== pointer.manifestSha256) {
+    violations.push(`${manifestFile.relativePath}: manifest hash does not match releases/latest.json`);
+  }
+
+  let manifest;
+  try {
+    manifest = JSON.parse(manifestBytes.toString('utf8'));
+  } catch (error) {
+    violations.push(`${manifestFile.relativePath}: invalid JSON: ${error.message}`);
+    return;
+  }
+  if (manifest.releaseId !== releaseId) {
+    violations.push(`${manifestFile.relativePath}: releaseId does not match releases/latest.json`);
+  }
+  if (manifest.channel !== 'stable' || manifest.complianceProfile !== 'offline-public') {
+    violations.push(`${manifestFile.relativePath}: Pages releases must be stable and offline-public`);
+  }
+
+  const packageById = new Map(Array.isArray(manifest.packages)
+    ? manifest.packages.map((releasePackage) => [releasePackage?.id, releasePackage])
+    : []);
+  for (const [packageId, filename] of [
+    ['core-zh', 'core-zh.json'],
+    ['china-territory', 'china-territory.json'],
+  ]) {
+    const releasePackage = packageById.get(packageId);
+    const expectedUri = `releases/${releaseId}/${filename}`;
+    if (!releasePackage || releasePackage.required !== true
+      || releasePackage.files?.length !== 1 || releasePackage.files[0]?.uri !== expectedUri) {
+      violations.push(`${manifestFile.relativePath}: required package ${packageId} must contain only ${expectedUri}`);
+    }
+  }
+  const ownedUris = (manifest.packages ?? [])
+    .flatMap((releasePackage) => releasePackage?.files ?? [])
+    .map((file) => file?.uri)
+    .filter((uri) => typeof uri === 'string' && uri.startsWith(`releases/${releaseId}/`));
+  const expectedOwnedUris = [
+    `releases/${releaseId}/china-territory.json`,
+    `releases/${releaseId}/core-zh.json`,
+  ];
+  if ([...ownedUris].sort().join('\n') !== expectedOwnedUris.join('\n')) {
+    violations.push(`${manifestFile.relativePath}: release-owned files must be exactly core-zh.json and china-territory.json`);
+  }
+
+  try {
+    await verifyContentRelease(manifestFile.absolutePath);
+  } catch (error) {
+    violations.push(`${manifestFile.relativePath}: ${error.message}`);
+  }
+}
+
 export async function verifyArtifact(artifactDirectory, options = {}) {
   const root = path.resolve(artifactDirectory);
   const base = normalizeBase(options.base ?? process.env.VITE_BASE_PATH ?? '/');
@@ -141,6 +249,8 @@ export async function verifyArtifact(artifactDirectory, options = {}) {
       }
     }
   }
+
+  await verifyPublicRelease(root, files, violations);
 
   if (violations.length > 0) {
     throw new Error(`Pages artifact verification failed:\n- ${violations.sort().join('\n- ')}`);

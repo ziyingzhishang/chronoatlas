@@ -18,11 +18,20 @@ const VERDICT_REPRESENTATION = {
   'nearest-same-polity': 'direct-boundary',
 };
 
-export async function buildContentRelease({ publicRoot, releaseId, profile, createdAt, authoring }) {
+export async function buildContentRelease({
+  publicRoot,
+  releaseId,
+  profile,
+  channel = 'preview',
+  writeLatest = false,
+  createdAt,
+  authoring,
+}) {
   if (!publicRoot || !releaseId || !profile || !createdAt || !authoring) {
     throw new Error('publicRoot, releaseId, profile, createdAt and authoring are required');
   }
   validateReleaseId(releaseId);
+  validatePublicationMode({ releaseId, profile, channel, writeLatest });
 
   const releasesRoot = path.join(publicRoot, 'releases');
   const finalDirectory = path.join(releasesRoot, releaseId);
@@ -65,7 +74,7 @@ export async function buildContentRelease({ publicRoot, releaseId, profile, crea
 
     const manifest = {
       releaseId, schemaVersion: '1', minimumAppVersion: '0.1.0', createdAt,
-      channel: 'preview', complianceProfile: profile,
+      channel, complianceProfile: profile,
       packages: [
         packageFor('core-zh', 'content', true, [], ['MIT'], coreFile, countRecords(core)),
         packageFor(
@@ -88,10 +97,41 @@ export async function buildContentRelease({ publicRoot, releaseId, profile, crea
       await rename(temporaryDirectory, finalDirectory);
     }
 
+    if (writeLatest) {
+      await writeLatestPointer(releasesRoot, {
+        releaseId,
+        manifestSha256: hash(Buffer.from(manifestText)),
+      });
+    }
+
     return { manifest, manifestPath: path.join(finalDirectory, 'manifest.json') };
   } catch (error) {
     await rm(temporaryDirectory, { recursive: true, force: true });
     throw error;
+  }
+}
+
+function validatePublicationMode({ releaseId, profile, channel, writeLatest }) {
+  if (!['internal-research', 'public-web', 'offline-public'].includes(profile)) {
+    throw new Error(`Unsupported compliance profile: ${profile}`);
+  }
+  if (!['preview', 'stable'].includes(channel)) throw new Error(`Unsupported release channel: ${channel}`);
+  if (writeLatest && (profile !== 'offline-public' || channel !== 'stable')) {
+    throw new Error('latest may only point to an offline-public stable release');
+  }
+  if (writeLatest && !/^[a-f0-9]{40}$/.test(releaseId)) {
+    throw new Error('latest releaseId must be an immutable 40-character commit SHA');
+  }
+}
+
+async function writeLatestPointer(releasesRoot, pointer) {
+  const temporaryPath = path.join(releasesRoot, `.latest.tmp-${process.pid}`);
+  await rm(temporaryPath, { force: true });
+  try {
+    await writeFile(temporaryPath, serialize(pointer));
+    await rename(temporaryPath, path.join(releasesRoot, 'latest.json'));
+  } finally {
+    await rm(temporaryPath, { force: true });
   }
 }
 
@@ -222,10 +262,17 @@ async function exists(target) {
 function parseCliArgs(argv) {
   const releaseIndex = argv.indexOf('--release');
   const profileIndex = argv.indexOf('--profile');
+  const channelIndex = argv.indexOf('--channel');
   if (releaseIndex < 0 || !argv[releaseIndex + 1] || profileIndex < 0 || !argv[profileIndex + 1]) {
-    throw new Error('Usage: build-content-release --release <id> --profile <profile>');
+    throw new Error('Usage: build-content-release --release <id> --profile <profile> [--channel <channel>] [--write-latest]');
   }
-  return { releaseId: argv[releaseIndex + 1], profile: argv[profileIndex + 1] };
+  if (channelIndex >= 0 && !argv[channelIndex + 1]) throw new Error('--channel requires a value');
+  return {
+    releaseId: argv[releaseIndex + 1],
+    profile: argv[profileIndex + 1],
+    channel: channelIndex >= 0 ? argv[channelIndex + 1] : 'preview',
+    writeLatest: argv.includes('--write-latest'),
+  };
 }
 
 function deterministicCreatedAt() {
@@ -234,11 +281,11 @@ function deterministicCreatedAt() {
 }
 
 async function main() {
-  const { releaseId, profile } = parseCliArgs(process.argv.slice(2));
+  const { releaseId, profile, channel, writeLatest } = parseCliArgs(process.argv.slice(2));
   const { bundledAuthoringSnapshot } = await import('../src/content/bundled-adapter.ts');
   const publicRoot = path.resolve('public');
   const result = await buildContentRelease({
-    publicRoot, releaseId, profile, createdAt: deterministicCreatedAt(),
+    publicRoot, releaseId, profile, channel, writeLatest, createdAt: deterministicCreatedAt(),
     authoring: bundledAuthoringSnapshot,
   });
   console.log(`Built content release ${result.manifest.releaseId}: ${result.manifestPath}`);
