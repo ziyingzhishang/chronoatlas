@@ -135,6 +135,10 @@
 .time-controller { color:#e8e5d6; background:#1c2722; border-top:1px solid #536247; min-width:0; z-index:5; padding-bottom:env(safe-area-inset-bottom); }
 .time-controller.is-docked { position:relative; width:100%; z-index:auto; background:linear-gradient(0deg,#18211ff5 0%,#1c2722ee 72%,#1c2722cc 100%); }
 .time-controller.is-floating { position:absolute; width:min(760px,calc(100% - 24px)); border:1px solid #788064; border-radius:10px; overflow:hidden; box-shadow:0 12px 36px #0b160f55; }
+.controller-resize-handle { position:absolute; z-index:7; top:0; left:50%; width:76px; height:12px; transform:translateX(-50%); display:grid; place-items:center; cursor:ns-resize; touch-action:none; user-select:none; outline-offset:-2px; }
+.controller-resize-handle span { width:42px; height:4px; border-radius:4px; background:linear-gradient(90deg,#736746,#e0bd73,#736746); box-shadow:0 1px 2px #090d0b; transition:width .18s ease,transform .18s ease,box-shadow .18s ease; }
+.controller-resize-handle:hover span,.controller-resize-handle:focus-visible span { width:58px; transform:scaleY(1.3); box-shadow:0 0 10px #d7b45d88; }
+.controller-resize-handle:focus-visible { outline:2px solid #d7b45d; }
 .controller-handlebar { min-height:36px; display:flex; align-items:center; justify-content:space-between; padding:0 14px; border-bottom:1px solid #a2ac881c; }
 .controller-grip { display:flex; align-items:center; gap:8px; color:#bdc6af !important; }
 .is-floating .controller-grip { cursor:move; touch-action:none; }
@@ -157,7 +161,7 @@
 .time-exploration-scrubber { min-width:80px; height:44px; flex:1; }
 .time-analysis-open { flex:none; white-space:nowrap; }
 .time-controller.mode-analysis.is-docked { display:grid; grid-template-rows:52px minmax(0,1fr); }
-.time-controller.mode-analysis.presentation-wide,.time-controller.mode-analysis.presentation-narrow { max-height:220px; }
+.time-controller.mode-analysis.presentation-wide,.time-controller.mode-analysis.presentation-narrow { max-height:var(--time-controller-max-height,65dvh); }
 .time-controller.mode-analysis.presentation-mobile { max-height:42dvh; }
 .time-analysis-panel { min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; border-top:1px solid #a2ac881c; }
 .time-analysis-header { position:sticky; top:0; z-index:1; display:flex; align-items:center; gap:12px; min-height:42px; padding:0 14px; background:#1c2722f5; border-bottom:1px solid #a2ac881c; }
