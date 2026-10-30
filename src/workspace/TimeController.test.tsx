@@ -55,6 +55,127 @@ test('orchestrates only bar and analysis without legacy density controls', async
   expect(screen.getByRole('button', { name: '打开时间轴' })).toHaveAttribute('aria-expanded', 'true');
 });
 
+test('dragging the top handle upward opens and expands the analysis panel', async () => {
+  const { container } = renderController();
+  const handle = screen.getByRole('separator', { name: '调整时间控制器高度' });
+  const pointer = (type: string, clientY: number) => {
+    const event = new MouseEvent(type, { bubbles: true, button: 0, clientY });
+    Object.defineProperty(event, 'pointerId', { value: 21 });
+    fireEvent(handle, event);
+  };
+
+  pointer('pointerdown', 400);
+  pointer('pointermove', 280);
+
+  await waitFor(() => expect(screen.getByRole('region', { name: '时间分析' })).toBeInTheDocument());
+  expect(container.querySelector<HTMLElement>('.time-controller')).toHaveStyle({ height: '172px' });
+  pointer('pointerup', 280);
+});
+
+test('dragging the top handle downward collapses the analysis panel', async () => {
+  const { container } = renderController();
+  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  const handle = screen.getByRole('separator', { name: '调整时间控制器高度' });
+  const pointer = (type: string, clientY: number) => {
+    const event = new MouseEvent(type, { bubbles: true, button: 0, clientY });
+    Object.defineProperty(event, 'pointerId', { value: 22 });
+    fireEvent(handle, event);
+  };
+
+  pointer('pointerdown', 300);
+  pointer('pointermove', 520);
+  pointer('pointerup', 520);
+
+  await waitFor(() => expect(screen.queryByRole('region', { name: '时间分析' })).not.toBeInTheDocument());
+  expect(container.querySelector<HTMLElement>('.time-controller')?.style.height).toBe('');
+});
+
+test('floating top-handle resizing keeps the panel bottom edge anchored', async () => {
+  localStorage.setItem('history-workspace-v1', JSON.stringify({ mode: 'floating', position: { x: 80, y: 100 } }));
+  const { container } = renderController();
+  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  const panel = container.querySelector<HTMLElement>('.time-controller')!;
+  const handle = screen.getByRole('separator', { name: '调整时间控制器高度' });
+  const bottomBefore = Number.parseFloat(panel.style.top || '100') + Number.parseFloat(panel.style.height || '220');
+  const pointer = (type: string, clientY: number) => {
+    const event = new MouseEvent(type, { bubbles: true, button: 0, clientY });
+    Object.defineProperty(event, 'pointerId', { value: 23 });
+    fireEvent(handle, event);
+  };
+
+  pointer('pointerdown', 200);
+  pointer('pointermove', 240);
+
+  expect(Number.parseFloat(panel.style.top) + Number.parseFloat(panel.style.height)).toBe(bottomBefore);
+  pointer('pointerup', 240);
+});
+
+test('floating resize observation uses target height instead of the transition height', async () => {
+  localStorage.setItem('history-workspace-v1', JSON.stringify({ mode: 'floating', position: { x: 80, y: 480 } }));
+  const { container } = renderController();
+  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  const panel = container.querySelector<HTMLElement>('.time-controller')!;
+  const handle = screen.getByRole('separator', { name: '调整时间控制器高度' });
+  const pointer = (type: string, clientY: number) => {
+    const event = new MouseEvent(type, { bubbles: true, button: 0, clientY });
+    Object.defineProperty(event, 'pointerId', { value: 24 });
+    fireEvent(handle, event);
+  };
+
+  pointer('pointerdown', 200);
+  pointer('pointermove', 280);
+  act(() => observedResizes.at(-1)?.([], {} as ResizeObserver));
+
+  const top = Number.parseFloat(panel.style.top);
+  const height = Number.parseFloat(panel.style.height);
+  expect(top + height).toBe(700);
+  pointer('pointerup', 280);
+});
+
+test('floating resize clamps at its maximum while preserving the bounded bottom edge', async () => {
+  localStorage.setItem('history-workspace-v1', JSON.stringify({ mode: 'floating', position: { x: 80, y: 500 } }));
+  const { container } = renderController();
+  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  const panel = container.querySelector<HTMLElement>('.time-controller')!;
+  const handle = screen.getByRole('separator', { name: '调整时间控制器高度' });
+  const pointer = (type: string, clientY: number) => {
+    const event = new MouseEvent(type, { bubbles: true, button: 0, clientY });
+    Object.defineProperty(event, 'pointerId', { value: 25 });
+    fireEvent(handle, event);
+  };
+
+  pointer('pointerdown', 200);
+  pointer('pointermove', -1000);
+
+  expect(panel.style.height).toBe('520px');
+  expect(Number.parseFloat(panel.style.top) + Number.parseFloat(panel.style.height)).toBe(720);
+  pointer('pointerup', -1000);
+});
+
+test('keyboard floating resize follows the same bottom anchored rule', () => {
+  localStorage.setItem('history-workspace-v1', JSON.stringify({ mode: 'floating', position: { x: 80, y: 100 } }));
+  const { container } = renderController();
+  const panel = container.querySelector<HTMLElement>('.time-controller')!;
+  const handle = screen.getByRole('separator', { name: '调整时间控制器高度' });
+
+  fireEvent.keyDown(handle, { key: 'ArrowUp' });
+
+  expect(panel.style.height).toBe('76px');
+  expect(Number.parseFloat(panel.style.top) + Number.parseFloat(panel.style.height)).toBe(152);
+});
+
+test('floating panel repositions inside the resized pane using its target height', async () => {
+  localStorage.setItem('history-workspace-v1', JSON.stringify({ mode: 'floating', position: { x: 80, y: 400 } }));
+  const { container } = renderController();
+  await userEvent.click(screen.getByRole('button', { name: '打开时间轴' }));
+  const panel = container.querySelector<HTMLElement>('.time-controller')!;
+
+  paneRect = { width: 900, height: 600 };
+  act(() => observedResizes.forEach((callback) => callback([], {} as ResizeObserver)));
+
+  expect(Number.parseFloat(panel.style.top) + Number.parseFloat(panel.style.height)).toBe(536);
+});
+
 test('supports a controlled analysis state so the workspace can coordinate transient surfaces', async () => {
   const onAnalysisOpenChange = vi.fn();
   const { rerender } = renderController({ analysisOpen: false, onAnalysisOpenChange });

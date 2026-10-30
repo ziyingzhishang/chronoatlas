@@ -60,11 +60,28 @@ export function TimeController({
   const root = useRef<HTMLDivElement | null>(null);
   const pane = useRef<HTMLElement | null>(null);
   const drag = useRef<{ pointer: number; start: Point; position: Point; latest: Point } | null>(null);
+  const resizeDrag = useRef<{ pointer: number; startY: number; startHeight: number; bottomY?: number } | null>(null);
+  const [analysisHeight, setAnalysisHeight] = useState(220);
   const paneSize = usePaneSize(pane);
   const navigationMode = analysisOpen === undefined ? navigation.mode : analysisOpen ? 'analysis' : 'bar';
   const supportsFloating = paneSize.presentation === 'wide';
   const floating = supportsFloating && preference.mode === 'floating';
   const exclusiveAnalysis = navigationMode === 'analysis' && paneSize.presentation === 'short';
+  const minimumControllerHeight = 52;
+  const maximumControllerHeight = Math.max(minimumControllerHeight, Math.min(paneSize.height - 24, paneSize.height * (paneSize.presentation === 'mobile' ? 0.42 : 0.65)));
+  const visibleAnalysisHeight = Math.min(analysisHeight, maximumControllerHeight);
+
+  const resizeController = (height: number, bottomY?: number) => {
+    const anchoredBottom = bottomY === undefined ? undefined : Math.min(bottomY, paneSize.height - 64);
+    const maxHeight = anchoredBottom === undefined ? maximumControllerHeight : Math.min(maximumControllerHeight, anchoredBottom - 64);
+    const nextHeight = Math.round(Math.max(minimumControllerHeight, Math.min(height, maxHeight)));
+    setAnalysisHeight(nextHeight);
+    if (anchoredBottom !== undefined) {
+      setPreference((previous) => ({ ...previous, position: { ...previous.position, y: anchoredBottom - nextHeight } }));
+    }
+    if (nextHeight > minimumControllerHeight && navigationMode !== 'analysis') openAnalysis();
+    return nextHeight;
+  };
 
   const setRoot = useCallback((node: HTMLDivElement | null) => {
     root.current = node;
@@ -86,8 +103,9 @@ export function TimeController({
     const constrain = () => {
       const rect = root.current?.getBoundingClientRect();
       if (!rect) return;
+      const targetHeight = navigationMode === 'analysis' ? visibleAnalysisHeight : minimumControllerHeight;
       setPreference((previous) => {
-        const position = clampPosition(previous.position, paneSize, rect);
+        const position = clampPosition(previous.position, paneSize, { width: rect.width, height: targetHeight });
         return position.x === previous.position.x && position.y === previous.position.y
           ? previous
           : { ...previous, position };
@@ -97,7 +115,7 @@ export function TimeController({
     const observer = new ResizeObserver(constrain);
     observer.observe(root.current);
     return () => observer.disconnect();
-  }, [floating, paneSize.width, paneSize.height]);
+  }, [floating, navigationMode, paneSize.width, paneSize.height, visibleAnalysisHeight]);
 
   const move = (position: Point, snap = false) => {
     const rect = root.current?.getBoundingClientRect();
@@ -167,11 +185,58 @@ export function TimeController({
     {floating && <button type="button" onClick={() => move({ x: 24, y: 80 })}>{t('归位')}</button>}
   </div> : undefined;
 
+  const resizeHandle = !exclusiveAnalysis && <div
+    className="controller-resize-handle"
+    role="separator"
+    aria-orientation="horizontal"
+    aria-label={t('调整时间控制器高度')}
+    aria-valuemin={minimumControllerHeight}
+    aria-valuemax={maximumControllerHeight}
+    aria-valuenow={navigationMode === 'analysis' ? visibleAnalysisHeight : minimumControllerHeight}
+    tabIndex={0}
+    onPointerDown={(event) => {
+      if (event.button !== 0) return;
+      const startHeight = navigationMode === 'analysis' ? visibleAnalysisHeight : minimumControllerHeight;
+      resizeDrag.current = {
+        pointer: event.pointerId,
+        startY: event.clientY,
+        startHeight,
+        ...(floating ? { bottomY: preference.position.y + startHeight } : {}),
+      };
+      event.currentTarget.setPointerCapture?.(event.pointerId);
+    }}
+    onPointerMove={(event) => {
+      const active = resizeDrag.current;
+      if (!active || active.pointer !== event.pointerId) return;
+      resizeController(active.startHeight + active.startY - event.clientY, active.bottomY);
+    }}
+    onPointerUp={(event) => {
+      const active = resizeDrag.current;
+      if (!active || active.pointer !== event.pointerId) return;
+      const nextHeight = resizeController(active.startHeight + active.startY - event.clientY, active.bottomY);
+      resizeDrag.current = null;
+      if (nextHeight === minimumControllerHeight && navigationMode === 'analysis') closeAnalysis();
+    }}
+    onPointerCancel={() => { resizeDrag.current = null; }}
+    onKeyDown={(event) => {
+      if (event.key !== 'ArrowUp' && event.key !== 'ArrowDown') return;
+      event.preventDefault();
+      const height = navigationMode === 'analysis' ? visibleAnalysisHeight : minimumControllerHeight;
+      const bottomY = floating ? preference.position.y + height : undefined;
+      const nextHeight = resizeController(height + (event.key === 'ArrowUp' ? 24 : -24), bottomY);
+      if (event.key === 'ArrowDown' && nextHeight === minimumControllerHeight && navigationMode === 'analysis') closeAnalysis();
+    }}
+  ><span aria-hidden="true" /></div>;
+
   return <div
     ref={setRoot}
     className={`time-controller is-${floating ? 'floating' : 'docked'} mode-${navigationMode} presentation-${paneSize.presentation}`}
-    style={floating ? { left: preference.position.x, top: preference.position.y } : undefined}
+    style={{
+      ...(floating ? { left: preference.position.x, top: preference.position.y } : {}),
+      ...(navigationMode === 'analysis' ? { height: visibleAnalysisHeight, '--time-controller-max-height': `${maximumControllerHeight}px` } : {}),
+    } as React.CSSProperties}
   >
+    {resizeHandle}
     <TimeExplorationBar
       year={year}
       eraLabel={eraLabel}
