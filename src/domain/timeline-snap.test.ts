@@ -14,8 +14,14 @@ test('does not snap to markers outside the visible window', () => {
 });
 
 test('shared candidates include period boundaries and event start and end years', () => {
-  const candidates=timelineSnapCandidates([{year:42,endYear:45} as never]);
+  const candidates=timelineSnapCandidates(
+    [{start:600,end:618}],
+    [700],
+    [{year:42,endYear:45}],
+  );
+  expect(candidates).toContain(600);
   expect(candidates).toContain(618);
+  expect(candidates).toContain(700);
   expect(candidates).toContain(42);
   expect(candidates).toContain(45);
 });

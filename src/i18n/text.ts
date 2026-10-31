@@ -3,6 +3,7 @@ import { chineseText } from './chinese';
 // Source strings are display text, never entity IDs or filter values. Unknown
 // historical names deliberately remain unchanged rather than being guessed.
 const english: Record<string, string> = {
+  '桌面宽屏可在地图栏内停靠或悬浮时间控制器；手机使用简明时间条和时间分析两种状态。拖动年份不会改变地图视角。':'On wide desktop screens, the time controller can be docked or floated within the map pane. Phones use two states: the concise time bar and time analysis. Scrubbing years preserves the map view.',
   '打开完整事件详情':'Open full event details',
   '证据追踪':'Evidence traceability', '关联追踪':'Related-ID traceability', '来源 ID：':'Source ID: ',
   '山河变迁':'Lands Through Time', '中国历史地图':'China Historical Map', '中国历史 · 山河变迁':'China History · Lands Through Time',

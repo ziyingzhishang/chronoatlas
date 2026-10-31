@@ -1,14 +1,21 @@
 import { yearToIndex, type YearWindow } from './timeline';
-import { boundaryYears } from '../data/boundaries';
-import { periodBands } from '../data/periods';
-import { events as historicalEvents } from '../data/events';
 import type { HistoricalEvent } from './types';
 
-export function timelineSnapCandidates(items: Pick<HistoricalEvent, 'year'|'endYear'>[] = historicalEvents): number[] {
+interface SnapPeriod {
+  start: number;
+  end: number;
+  intervals?: readonly (readonly [number, number])[];
+}
+
+export function timelineSnapCandidates(
+  periods: readonly SnapPeriod[],
+  boundaries: readonly number[],
+  events: readonly Pick<HistoricalEvent, 'year'|'endYear'>[],
+): number[] {
   return [...new Set([
-    ...periodBands.flatMap(period=>[period.start,period.end]),
-    ...boundaryYears,
-    ...items.flatMap(event=>event.endYear===undefined?[event.year]:[event.year,event.endYear]),
+    ...periods.flatMap(period => (period.intervals ?? [[period.start, period.end]]).flatMap(([start, end]) => [start, end])),
+    ...boundaries,
+    ...events.flatMap(event=>event.endYear===undefined?[event.year]:[event.year,event.endYear]),
   ])];
 }
 

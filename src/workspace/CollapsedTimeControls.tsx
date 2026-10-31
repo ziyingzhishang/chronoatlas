@@ -1,9 +1,8 @@
 import { TIMELINE_MAX_YEAR, formatHistoricalYear, indexToYear, yearPosition, yearToIndex, type YearWindow } from '../domain/timeline';
 import { useLocale } from '../i18n/locale';
 import { useEffect, useMemo, useRef } from 'react';
-import { periodBands } from '../data/periods';
+import { useHistoricalContent } from '../content/ContentContext';
 import { snapTimelineYear, timelineSnapCandidates } from '../domain/timeline-snap';
-import { boundaryYears } from '../data/boundaries';
 import { playMechanicalTick } from '../domain/mechanical-sound';
 
 export interface CollapsedTimeControlsProps {
@@ -15,13 +14,24 @@ export interface CollapsedTimeControlsProps {
   onYearChange: (year: number) => void;
   onYearCommit?: (year:number) => void;
   rangeControlsRef?: (element: HTMLDivElement | null) => void;
+  sliderLabel?: string;
 }
 
 const defaultWindow:YearWindow=[-2070,TIMELINE_MAX_YEAR];
-const snapCandidates=timelineSnapCandidates();
 
-export function CollapsedTimeControls({ year, viewWindow=defaultWindow, showRail=true, onYearChange, onYearCommit, rangeControlsRef }: CollapsedTimeControlsProps) {
+export function CollapsedTimeControls({ year, viewWindow=defaultWindow, showRail=true, isPlaying, onPlayToggle, onYearChange, onYearCommit, rangeControlsRef, sliderLabel='选择历史年份' }: CollapsedTimeControlsProps) {
   const { t } = useLocale();
+  const { catalog, historySource } = useHistoricalContent();
+  const periodBands = useMemo(() => catalog.periods.flatMap(period => (period.intervals ?? [[period.start, period.end]]).map(([start, end], index) => ({
+    ...period,
+    id: period.intervals ? `${period.id}-${index}` : period.id,
+    start,
+    end,
+  }))), [catalog.periods]);
+  const boundaryYears = useMemo(() => [...new Set(historySource.boundaries.flatMap(boundary => boundary.temporalKind === 'interval'
+    ? [boundary.validFrom, boundary.validTo === -1 ? 1 : boundary.validTo + 1]
+    : [boundary.snapshotYear]))].filter(candidate => candidate <= TIMELINE_MAX_YEAR && candidate !== 0).sort((a, b) => a - b), [historySource]);
+  const snapCandidates = useMemo(() => timelineSnapCandidates(catalog.periods, boundaryYears, catalog.events), [catalog.periods, boundaryYears, catalog.events]);
   const input=useRef<HTMLInputElement>(null);
   const previewYear=useRef(year);
   const commitRef=useRef(onYearCommit);
@@ -67,6 +77,11 @@ export function CollapsedTimeControls({ year, viewWindow=defaultWindow, showRail
     onYearChange(selected);
     return selected;
   }
+  const step=(delta:-1|1)=>{
+    const next=indexToYear(Math.max(0,Math.min(yearToIndex(TIMELINE_MAX_YEAR),yearToIndex(year)+delta)));
+    onYearChange(next);
+    onYearCommit?.(next);
+  };
   return <div className="collapsed-time-controls" role="group" aria-label={t('简明时间控制')}>
     {showRail&&<div className="collapsed-year-rail" data-year={year} style={{'--year-position':`${position}%`} as React.CSSProperties}>
       <div className="collapsed-year-segments" aria-hidden="true">
@@ -74,11 +89,19 @@ export function CollapsedTimeControls({ year, viewWindow=defaultWindow, showRail
       </div>
       <i className="collapsed-year-cursor" aria-hidden="true"/>
       <input ref={input} className="collapsed-year-slider" type="range" min={start} max={end} step={1} value={index}
-        aria-label={t('选择历史年份')} aria-valuetext={t(formatHistoricalYear(indexToYear(index)))}
+        aria-label={t(sliderLabel)} aria-valuetext={t(formatHistoricalYear(indexToYear(index)))}
         onInput={event=>select(indexToYear(Number(event.currentTarget.value)),event.currentTarget.clientWidth)}
         onPointerUp={()=>{lastSoundNode.current=null;}}
         onKeyUp={()=>{lastSoundNode.current=null;}} />
     </div>}
-    {!showRail&&<div ref={rangeControlsRef} className="collapsed-range-controls" />}
+    {!showRail&&<>
+      <div className="collapsed-time-reading" aria-hidden="true"><strong>{t(formatHistoricalYear(year))}</strong></div>
+      <div className="collapsed-time-actions">
+        <button type="button" aria-label={t('上一年')} disabled={index===0} onClick={()=>step(-1)}>−1</button>
+        <button type="button" className="collapsed-play" aria-label={t(isPlaying?'暂停':'播放')} onClick={onPlayToggle}>{t(isPlaying?'暂停':'播放')}</button>
+        <button type="button" aria-label={t('下一年')} disabled={year===TIMELINE_MAX_YEAR} onClick={()=>step(1)}>+1</button>
+      </div>
+      <div ref={rangeControlsRef} className="collapsed-range-controls" />
+    </>}
   </div>;
 }

@@ -248,7 +248,7 @@
 .controller-range-navigation .year-form { flex:0 1 auto; align-items:center; }
 .controller-range-navigation .year-entry span { display:none; }
 .timeline-view-context { display:flex; align-items:center; gap:8px; margin-top:6px; color:#c7cdbb; font:11px/1.4 system-ui,sans-serif; }
-.timeline-view-context button { min-height:44px; padding:0 8px; color:#f1d692; border:1px solid #566449; border-radius:4px; background:#27362acc; }
+.timeline-view-context button { min-height:32px; padding:0 8px; color:#f1d692; border:1px solid #566449; border-radius:4px; background:#27362acc; }
 .timeline-out-of-view { color:#f0c58f; font:11px/1.5 system-ui,sans-serif; }
 .workspace .density-expanded .history-overview { margin:16px 0; }
 .workspace .density-expanded .timeline-scale-heading .scale-controls button { min-height:28px; padding-top:0; padding-bottom:0; }
@@ -384,3 +384,39 @@
 .legend-evidence.level-c { border-style:dashed; opacity:.55; }
 .legend-evidence.level-d { border:0; border-radius:50%; background:radial-gradient(circle,#b77a6077 0,#b77a6022 60%,transparent 72%); }
 .localized-map-scale { position:absolute; bottom:10px; left:10px; z-index:2; white-space:nowrap; background:#ffffe4cc; color:#253731; border:2px solid #69766c; border-top:0; padding:2px 4px; font:11px sans-serif; box-sizing:border-box; pointer-events:none; }
+
+.time-exploration-bar { height:52px; min-height:52px; min-width:0; display:flex; align-items:center; gap:10px; padding:0 10px; overflow:hidden; }
+.time-exploration-reading { min-width:0; display:flex; align-items:baseline; gap:8px; }
+.time-exploration-reading strong { flex:none; font-size:18px; font-weight:500; font-variant-numeric:tabular-nums; white-space:nowrap; }
+.time-exploration-reading span { overflow:hidden; color:#c7cdbb; font-size:12px; text-overflow:ellipsis; white-space:nowrap; }
+.time-exploration-actions { display:flex; flex:none; gap:4px; }
+.time-exploration-bar button { min-height:44px; min-width:44px; padding:0 10px; border:1px solid #566449; }
+.time-exploration-play,.time-analysis-open { color:#18241c; background:#c6a15b; border-color:#c6a15b; }
+.time-exploration-scrubber { min-width:80px; height:44px; flex:1; }
+.time-analysis-open { flex:none; white-space:nowrap; }
+.time-analysis-panel { min-width:0; min-height:0; overflow:auto; overscroll-behavior:contain; border-top:1px solid #a2ac881c; }
+.time-analysis-header { position:sticky; top:0; z-index:1; display:flex; align-items:center; gap:12px; min-height:42px; padding:0 14px; background:#1c2722f5; border-bottom:1px solid #a2ac881c; }
+.time-analysis-header h2 { flex:none; margin:0; color:#f2dfb9; font-size:14px; font-weight:500; }
+.time-analysis-header .timeline-view-context { min-width:0; flex:1; margin:0; }
+.time-analysis-header>button { flex:none; min-width:44px; min-height:44px; border:0; color:#d8ddcd; background:transparent; }
+.time-analysis-panel>.timeline-navigation { display:flex; align-items:end; flex-wrap:wrap; gap:8px 12px; padding:8px 24px 2px; }
+.time-analysis-panel .range-presets button,
+.time-analysis-panel .period-select select,
+.time-analysis-panel .year-form input,
+.time-analysis-panel .year-form button,
+.time-analysis-panel .scale-controls button,
+.time-analysis-panel .year-steppers button,
+.time-analysis-panel .snapshot-nodes button,
+.time-analysis-panel .timeline-view-context button { min-height:44px; }
+.time-analysis-panel .scale-controls button,
+.time-analysis-panel .time-annotation-controls button { min-width:44px; }
+.time-analysis-panel .timeline-slider { min-height:44px; height:44px; }
+.time-annotation-controls { display:flex; flex-wrap:wrap; gap:4px; }
+.time-annotation-controls button,.time-layout-tools button { min-height:44px; }
+.time-advanced-tools { min-width:0; }
+.time-advanced-tools summary { min-height:44px; display:flex; align-items:center; color:#d7bf8e; }
+.time-layout-tools { display:flex; align-items:center; flex-wrap:wrap; gap:4px; padding:6px 0; }
+.workspace-shell.has-topic.time-analysis-exclusive .workspace-map-pane,.workspace-shell.time-analysis-exclusive .workspace-map-pane { min-width:0; grid-template-rows:minmax(0,1fr); }
+.workspace-shell.time-analysis-exclusive .workspace-map-content { display:none; }
+.workspace-shell.time-analysis-exclusive .time-controller.mode-analysis.presentation-short { height:100%; max-height:none; display:grid; grid-template-rows:52px minmax(0,1fr); }
+.workspace-shell.time-analysis-exclusive .time-analysis-panel.presentation-short { height:100%; max-height:none; }

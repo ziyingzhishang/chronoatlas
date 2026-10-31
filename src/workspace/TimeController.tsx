@@ -1,7 +1,3 @@
-import { useCallback, useEffect, useLayoutEffect, useReducer, useRef, useState } from 'react';
-import type { HistoricalEvent } from '../domain/types';
-import type { YearWindow } from '../domain/timeline';
-import { DEFAULT_TIMELINE_WINDOW } from '../components/Timeline';
 import { useLocale } from '../i18n/locale';
 import { Timeline } from '../components/Timeline';
 import { useEffect, useLayoutEffect, useRef, useState, type ComponentProps } from 'react';
@@ -15,9 +11,8 @@ type TimeControllerProps = ComponentProps<typeof Timeline> & {
 
 export function TimeController({ onResizeInteractionChange, ...timelineProps }: TimeControllerProps) {
   const { t } = useLocale();
-  const [navigation, dispatch] = useReducer(timeNavigationReducer, initialTimeNavigationState);
-  const [localViewWindow, setLocalViewWindow] = useState<YearWindow>(DEFAULT_TIMELINE_WINDOW);
-  const activeViewWindow = viewWindow ?? localViewWindow;
+  const [viewport, setViewport] = useState(() => ({width:window.innerWidth,height:window.innerHeight}));
+  const [bounds, setBounds] = useState(() => ({width:window.innerWidth,height:window.innerHeight}));
   const [preference, setPreference] = useState(() => {
     try { return readPreference(localStorage.getItem(storageKey)); } catch { return readPreference(null); }
   });
@@ -58,7 +53,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
   useLayoutEffect(() => {
     if (!floating || !box.current) return;
     const constrain = () => {
-      const rect = root.current?.getBoundingClientRect();
+      const rect = box.current?.getBoundingClientRect();
       if (!rect) return;
       const size = {width:rect.width || Math.min(760,Math.max(0,bounds.width-24)),height:panelHeight};
       setPreference(previous => {
@@ -70,7 +65,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     };
     constrain();
     const observer = new ResizeObserver(constrain);
-    observer.observe(root.current);
+    observer.observe(box.current);
     return () => observer.disconnect();
   },[floating,bounds,panelHeight]);
   useLayoutEffect(() => {
@@ -95,16 +90,16 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     return () => observer.disconnect();
   },[adjustable,bounds,mobile,panelHeight,short,viewport.height]);
 
-  const move = (position: Point, snap = false) => {
-    const rect = root.current?.getBoundingClientRect();
+  function move(position:Point, snap = false) {
+    const rect = box.current?.getBoundingClientRect();
     if (!rect) return;
-    const clamped = clampPosition(position, paneSize, rect);
+    const clamped = clampPosition(position,bounds,rect);
     if (snap) {
       if (clamped.x < 36) clamped.x = 12;
-      if (paneSize.width - rect.width - clamped.x < 36) clamped.x = Math.max(12, paneSize.width - rect.width - 12);
+      if (bounds.width - rect.width - clamped.x < 36) clamped.x = Math.max(12,bounds.width-rect.width-12);
     }
-    setPreference((previous) => ({ ...previous, position: clamped }));
-  };
+    setPreference(previous=>({...previous,position:clamped}));
+  }
 
   function toggleFloating() {
     if (floating) {
@@ -197,7 +192,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
           if(delta[e.key]){e.preventDefault();move({x:preference.position.x+delta[e.key].x,y:preference.position.y+delta[e.key].y});}
       }}><span aria-hidden="true">⠿</span><span className="controller-title">{t("时间导航")}</span></button>
       <div className="controller-quick-controls"><CollapsedTimeControls year={timelineProps.year} viewWindow={timelineProps.viewWindow} showRail={effectiveDensity==='collapsed'}
-        isPlaying={timelineProps.isPlaying} onYearChange={timelineProps.onYearChange} onYearCommit={timelineProps.onYearCommit} onPlayToggle={timelineProps.onPlayToggle} rangeControlsRef={setRangeControlsTarget} /></div>
+        isPlaying={timelineProps.isPlaying ?? false} onYearChange={timelineProps.onYearChange} onYearCommit={timelineProps.onYearCommit} onPlayToggle={timelineProps.onPlayToggle ?? (() => {})} rangeControlsRef={setRangeControlsTarget} /></div>
       <div className="controller-layout-actions">
         {!mobile && <button aria-label={t(floating?'停靠时间控制器':'悬浮时间控制器')} onClick={toggleFloating}><span className={floating?'dock-glyph':'float-glyph'} aria-hidden="true" />{t(floating?'停靠':'悬浮')}</button>}
         {floating && <button aria-label={t('归位')} title={t('归位')} onClick={resetFloatingPosition}><span className="reset-glyph" aria-hidden="true">↻</span>{t("归位")}</button>}
