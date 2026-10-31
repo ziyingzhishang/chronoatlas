@@ -1,4 +1,4 @@
-import { forwardRef, useEffect, useImperativeHandle, useRef, useState } from 'react';
+import { forwardRef, useEffect, useImperativeHandle, useRef, useState, type MutableRefObject } from 'react';
 import { Map as GLMap, setWorkerUrl, type GeoJSONSource, type RasterTileSource } from 'maplibre-gl';
 import workerUrl from 'maplibre-gl/dist/maplibre-gl-worker.mjs?url';
 import 'maplibre-gl/dist/maplibre-gl.css';
@@ -11,6 +11,7 @@ import type { HistoricalState, SelectedEntity } from '../domain/types';
 import { ASIA_VIEW, BASEMAPS, basemapTiles, buildLocalMapData, buildWorldMapData, createMapStyle, layerGroups,
   type Basemap, type CameraState, type MapAction, type MapLayer } from '../map/history-map';
 import { formatSourceField } from '../i18n/source-display';
+import { createThrottledResize } from '../map/throttled-resize';
 
 export interface MapHandle {
   perform: (action: MapAction) => void;
@@ -19,6 +20,8 @@ export interface MapHandle {
 }
 interface Props {
   state: HistoricalState;
+  deferResize?: boolean;
+  worldDataPending?: boolean;
   selectedEntity: SelectedEntity;
   visibleLayers: Set<MapLayer>;
   basemap: Basemap;
@@ -41,15 +44,20 @@ function updateLocalHistory(map:GLMap,state:HistoricalState,t:(text:string)=>str
 const mapDuration = (duration:number) => typeof window !== 'undefined' && window.matchMedia?.('(prefers-reduced-motion: reduce)').matches ? 0 : duration;
 
 const emptyFeatures:GeoJSON.FeatureCollection={type:'FeatureCollection',features:[]};
-function clearWorldHistory(map:GLMap){
+function clearWorldHistory(map:GLMap,hasWorldData:MutableRefObject<boolean>){
+  if(!hasWorldData.current)return;
   (map.getSource('worldBoundaries') as GeoJSONSource).setData(emptyFeatures);
   (map.getSource('worldPolityLabels') as GeoJSONSource).setData(emptyFeatures);
+  hasWorldData.current=false;
 }
 
-function updateWorldHistory(map:GLMap,state:HistoricalState,t:(text:string)=>string){
+function updateWorldHistory(map:GLMap,state:HistoricalState,t:(text:string)=>string,hasWorldData:MutableRefObject<boolean>){
   const data=buildWorldMapData(state,t);
+  const hasData=data.worldBoundaries.features.length>0||data.worldPolityLabels.features.length>0;
+  if(!hasData&&!hasWorldData.current)return;
   (map.getSource('worldBoundaries') as GeoJSONSource).setData(data.worldBoundaries);
   (map.getSource('worldPolityLabels') as GeoJSONSource).setData(data.worldPolityLabels);
+  hasWorldData.current=hasData;
 }
 
 const boundaryLayerVariants=(id:string)=>[id,`world-${id}`];
@@ -113,9 +121,12 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
   const readyMap = useRef<GLMap>();
   const historyUpdater=useRef<ReturnType<typeof createLatestFrameUpdater<HistoricalState>>>();
   const worldUpdater=useRef<ReturnType<typeof createLatestFrameUpdater<{state:HistoricalState;revision:number}>>>();
+  const hasWorldData=useRef(false);
   const lastAppliedRevision=useRef(0);
   const lastRefreshToken=useRef(props.refreshToken);
   const latest = useRef(props);
+  const wasResizeDeferred = useRef(Boolean(props.deferResize));
+  const resizeMap = useRef<(immediate?:boolean) => void>(()=>{});
   latest.current = props;
   const failedSources = useRef(new Set<string>());
   const [ready, setReady] = useState(false);
@@ -152,15 +163,18 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
     mapRef.current = map;
     worldUpdater.current=createLatestFrameUpdater(({state,revision})=>{
       if(readyMap.current!==map||revision!==lastAppliedRevision.current)return;
-      updateWorldHistory(map,state,translator.current);
+      updateWorldHistory(map,state,translator.current,hasWorldData);
     });
     historyUpdater.current=createLatestFrameUpdater((state,revision)=>{
       if(readyMap.current!==map||revision<lastAppliedRevision.current)return;
       lastAppliedRevision.current=revision;
       updateLocalHistory(map,state,translator.current);
-      clearWorldHistory(map);
+      const hasWorldPolity=state.activePolities.some(polity=>polity.region==='world');
+      if(!hasWorldPolity){
+        if(!latest.current.worldDataPending)clearWorldHistory(map,hasWorldData);
+      }
       latest.current.onRenderedYearChange(state.year);
-      worldUpdater.current?.push({state,revision});
+      if(hasWorldPolity)worldUpdater.current?.push({state,revision});
     });
     const canvas = map.getCanvas();
     canvas.setAttribute('aria-label', translator.current('可交互历史地图，方向键平移，加减键缩放，Shift 加方向键旋转或俯仰'));
@@ -203,12 +217,22 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
       const type = hit.layer.id.startsWith('place-') || hit.layer.id.startsWith('capital-') ? 'place' : hit.layer.id === 'event-rings' ? 'event' : 'polity';
       latest.current.onSelectEntity({ type, id: String(hit.properties.entityId) });
     });
-    const observer = new ResizeObserver(() => {map.resize();updateScale();});
+    const resizeScheduler=createThrottledResize(()=>{
+      if(mapRef.current!==map||readyMap.current!==map)return;
+      map.resize();
+      updateScale();
+    });
+    resizeMap.current=immediate=>immediate?resizeScheduler.flush():resizeScheduler.schedule();
+    const observer = new ResizeObserver(() => {
+      resizeScheduler.schedule(!latest.current.deferResize);
+    });
     observer.observe(container.current);
     const contextLost = () => setFatal(true);
     canvas.addEventListener('webglcontextlost', contextLost);
     return () => {
       observer.disconnect();
+      resizeScheduler.cancel();
+      resizeMap.current=()=>{};
       historyUpdater.current?.dispose();
       historyUpdater.current=undefined;
       worldUpdater.current?.dispose();
@@ -220,9 +244,15 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
     };
   }, [attempt]);
 
+  useEffect(()=>{
+    const deferred=Boolean(props.deferResize);
+    if(wasResizeDeferred.current&&!deferred)resizeMap.current(true);
+    wasResizeDeferred.current=deferred;
+  },[props.deferResize]);
+
   useEffect(() => {
     if (ready && mapRef.current && readyMap.current === mapRef.current) historyUpdater.current?.push(props.state);
-  }, [ready, props.state,t]);
+  }, [ready, props.state,props.worldDataPending,t]);
 
   useEffect(() => {
     if (ready && mapRef.current && readyMap.current === mapRef.current) mapRef.current.setProjection({ type: props.projection });

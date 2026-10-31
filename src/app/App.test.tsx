@@ -1,5 +1,5 @@
 import { act, render, screen, within } from '@testing-library/react';
-import { afterEach, expect, test, vi } from 'vitest';
+import { afterEach, beforeEach, expect, test, vi } from 'vitest';
 import { App } from './App';
 import userEvent from '@testing-library/user-event';
 import { mapInstances } from '../test/maplibre-mock';
@@ -9,6 +9,7 @@ import type { MapReleaseCompliance } from '../compliance/map-release';
 import { bundledReleaseManifest } from '../content/bundled-content';
 
 afterEach(() => vi.restoreAllMocks());
+beforeEach(() => localStorage.clear());
 
 test('keeps secondary controls closed until requested', async () => {
   vi.spyOn(Date.prototype, 'getFullYear').mockReturnValue(2026);

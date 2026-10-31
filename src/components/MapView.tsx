@@ -10,6 +10,8 @@ import { formatHistoricalYear } from '../domain/timeline';
 export { allLayers, type MapLayer } from '../map/history-map';
 interface MapViewProps {
   state: HistoricalState;
+  deferResize?: boolean;
+  worldDataPending?: boolean;
   refreshToken?:number;
   selectedEntity: SelectedEntity;
   visibleLayers: Set<MapLayer>;
@@ -60,18 +62,18 @@ export function MapView(props: MapViewProps) {
         <button aria-pressed={basemap === 'satellite'} onClick={() => setBasemap('satellite')}><span aria-hidden="true">◉</span> {t("卫星影像")}</button>
       </div>
       <div className="map-scope" role="group" aria-label={t("地图范围")}>
-        <button onClick={() => act('asia')}>{t("亚洲复位")}</button><button onClick={() => act('china')}>{t("中原放大")}</button><button onClick={() => act('world')}>{t("全球")}</button>
+        <button onClick={() => act('asia')}><span className="scope-glyph scope-asia" aria-hidden="true" />{t("亚洲复位")}</button><button onClick={() => act('china')}><span className="scope-glyph scope-china" aria-hidden="true" />{t("中原放大")}</button><button onClick={() => act('world')}><span className="scope-glyph scope-world" aria-hidden="true" />{t("全球")}</button>
       </div>
     </div>
     </>)}
     <div className="map-stage">
-      <HistoricalMapCanvas ref={map} {...props} state={displayed} basemap={basemap} projection={projection} refreshToken={props.refreshToken??0} onCameraChange={setCamera} onRenderedYearChange={setRenderedYear} onCameraHistoryChange={setCanGoBackCamera} />
+      <HistoricalMapCanvas ref={map} {...props} state={displayed} deferResize={props.deferResize} worldDataPending={props.worldDataPending} basemap={basemap} projection={projection} refreshToken={props.refreshToken??0} onCameraChange={setCamera} onRenderedYearChange={setRenderedYear} onCameraHistoryChange={setCanGoBackCamera} />
       <div className="map-navigation" role="group" aria-label={t("地图视角操作")}>
-        <button aria-label={t("放大地图")} title={t("放大")} onClick={() => act('zoomIn')}>＋</button>
-        <button aria-label={t("缩小地图")} title={t("缩小")} onClick={() => act('zoomOut')}>−</button>
-        <button className="projection-button" aria-label={t(projection === 'globe' ? '切换平铺视图' : '切换球形视图')} aria-pressed={projection === 'globe'} title={t(projection === 'globe' ? '切换平铺视图' : '切换球形视图')} onClick={() => setProjection(value => value === 'globe' ? 'mercator' : 'globe')}>{projection === 'globe' ? '◉' : '◌'}</button>
+        <button aria-label={t("放大地图")} title={t("放大")} onClick={() => act('zoomIn')}><span className="map-scale-glyph" aria-hidden="true">＋<i>┼</i></span></button>
+        <button aria-label={t("缩小地图")} title={t("缩小")} onClick={() => act('zoomOut')}><span className="map-scale-glyph" aria-hidden="true">−<i>┼</i></span></button>
+        <button className="projection-button" aria-label={t(projection === 'globe' ? '切换平铺视图' : '切换球形视图')} aria-pressed={projection === 'globe'} title={t(projection === 'globe' ? '切换平铺视图' : '切换球形视图')} onClick={() => setProjection(value => value === 'globe' ? 'mercator' : 'globe')}><span className={projection==='globe'?'globe-glyph':'flat-glyph'} aria-hidden="true"><i/></span></button>
         {workspace&&props.workspacePanel!=='layers'&&<details className="quick-layer-control">
-          <summary aria-label={t('地图图层')} title={t('地图图层')}>◈</summary>
+          <summary aria-label={t('地图图层')} title={t('地图图层')}><span className="layer-stack-glyph" aria-hidden="true">▰</span></summary>
           <fieldset className="quick-layer-popover" aria-label={t('快捷图层')}>
             <legend>{t('地图图层')}</legend>
             {allLayers.map(layer=><label key={layer}><input type="checkbox" checked={visibleLayers.has(layer)} onChange={event=>props.onLayerChange?.(layer,event.target.checked)}/>{t(({boundaries:'历史疆域',places:'历史地名',modernReference:'现代参照',events:'历史事件'} as const)[layer])}</label>)}
@@ -79,9 +81,9 @@ export function MapView(props: MapViewProps) {
             {props.onShowWorldChange&&<label><input type="checkbox" checked={props.showWorld??false} onChange={event=>props.onShowWorldChange?.(event.target.checked)}/>{t('同期世界疆域')}</label>}
           </fieldset>
         </details>}
-        {workspace&&<button className="map-reset" onClick={()=>act('asia')}>{t("复位")}</button>}
+        {workspace&&<button className="map-reset" aria-label={t("亚洲复位")} title={t("亚洲复位")} onClick={()=>act('asia')}><svg className="location-reset-glyph" viewBox="0 0 24 24" aria-hidden="true" focusable="false"><path d="M12 21s7-5.2 7-11a7 7 0 1 0-14 0c0 5.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.25"/></svg></button>}
         {canGoBackCamera&&<button className="map-back" aria-label={t("返回上个视角")} title={t("返回上个视角")} onClick={()=>map.current?.restorePrevious()}>{t("返回")}</button>}
-        <details className="map-angle" open={workspace?undefined:true}><summary>{t("视角")}</summary>
+        <details className="map-angle" open={workspace?undefined:true}><summary aria-label={t("地图视角操作")} title={t("地图视角操作")}><span className="compass-glyph" aria-hidden="true">✥</span></summary>
         <span className="nav-divider" />
         <button aria-label={t("向左旋转30度")} title={t("向左旋转 30°")} onClick={() => act('rotateLeft')}>↶</button>
         <button aria-label={t("向右旋转30度")} title={t("向右旋转 30°")} onClick={() => act('rotateRight')}>↷</button>
