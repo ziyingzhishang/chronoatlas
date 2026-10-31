@@ -28,7 +28,7 @@ button:disabled { cursor: not-allowed; opacity: .35; }
 .year-form { display:flex; align-items:end; gap:7px; }
 .year-form button, .timeline-navigation button, .scale-controls button, .year-steppers button, .snapshot-nodes button { background:transparent; border:1px solid #666044; color:var(--paper-muted); padding:6px 10px; cursor:pointer; border-radius:3px; font-size:12px; }
 .year-form button { padding:8px 10px; }
-.timeline-navigation { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; margin-top:20px; }
+.timeline-navigation { display:flex; justify-content:space-between; flex-wrap:wrap; gap:12px; }
 .range-presets { display:flex; gap:6px; flex-wrap:wrap; }
 .timeline-navigation button[aria-pressed=true], .snapshot-nodes button[aria-pressed=true] { background:#c6a15b26; border-color:var(--gold); color:var(--gold); }
 .tongjian-button small { margin-left:7px; opacity:.7; }

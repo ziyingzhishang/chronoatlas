@@ -6,12 +6,12 @@ import { CollapsedTimeControls } from './CollapsedTimeControls';
 
 afterEach(() => localStorage.clear());
 
-test('shows the current historical reading and steps across the absent year zero', async () => {
+test('expanded controller actions show the current year and step across the absent year zero', async () => {
   const onYearChange = vi.fn();
   const onPlayToggle = vi.fn();
   render(<LocaleProvider><CollapsedTimeControls
     year={-1}
-    eraLabel="西汉"
+    showRail={false}
     isPlaying={false}
     onYearChange={onYearChange}
     onPlayToggle={onPlayToggle}
@@ -19,7 +19,6 @@ test('shows the current historical reading and steps across the absent year zero
 
   const controls = screen.getByRole('group', { name: '简明时间控制' });
   expect(controls).toHaveTextContent('前1年');
-  expect(controls).toHaveTextContent('西汉');
   await userEvent.click(screen.getByRole('button', { name: '下一年' }));
   expect(onYearChange).toHaveBeenCalledWith(1);
   await userEvent.click(screen.getByRole('button', { name: '播放' }));
@@ -29,7 +28,7 @@ test('shows the current historical reading and steps across the absent year zero
 test('exposes pause while playback is active and disables the upper timeline boundary', () => {
   render(<LocaleProvider><CollapsedTimeControls
     year={2026}
-    eraLabel="中华人民共和国"
+    showRail={false}
     isPlaying
     onYearChange={() => {}}
     onPlayToggle={() => {}}

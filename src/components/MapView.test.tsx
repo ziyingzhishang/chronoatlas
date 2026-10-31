@@ -69,6 +69,15 @@ test('offers mercator and globe projection controls in the map toolbar', async (
   expect(screen.getByRole('button', { name: '切换平铺视图' })).toHaveAttribute('aria-pressed', 'true');
 });
 
+test('workspace map navigation uses an accessible location icon and a text-free angle toggle', () => {
+  const { container } = render(<MapView state={getHistoricalState(-221)} selectedEntity={undefined} visibleLayers={new Set(allLayers)} onSelectEntity={vi.fn()} workspacePanel={null} />);
+  const reset = screen.getByRole('button', { name: '亚洲复位' });
+  expect(reset.querySelector('svg')).toBeInTheDocument();
+  const angleToggle = container.querySelector('.map-angle summary');
+  expect(angleToggle).toHaveAttribute('aria-label', '地图视角操作');
+  expect(angleToggle).not.toHaveTextContent('视角');
+});
+
 test('labels the maximum reference with its source period and allows hiding it', async () => {
   const state = getHistoricalState(937);
   const base = state.boundaries[0];

@@ -48,6 +48,19 @@ test('the map receives a bundled worker asset instead of inferring a path inside
   expect(setWorkerUrl).toHaveBeenCalledWith(expect.stringContaining('maplibre-gl-worker'));
 });
 
+test('defers resize work while a docked time panel is being dragged and resizes once afterward',async()=>{
+  const initial=props();
+  const {rerender}=render(<HistoricalMapCanvas {...initial} deferResize/>);
+  const map=mapInstances.at(-1)!;
+  act(()=>map.emit('style.load'));
+  map.resize.mockClear();
+  rerender(<HistoricalMapCanvas {...initial} deferResize/>);
+  expect(map.resize).not.toHaveBeenCalled();
+  rerender(<HistoricalMapCanvas {...initial} deferResize={false}/>);
+  await waitFor(()=>expect(map.resize).toHaveBeenCalledOnce());
+  expect(mapInstances.at(-1)).toBe(map);
+});
+
 test('a worker startup failure is visible and retry recreates the renderer',async()=>{
   render(<HistoricalMapCanvas {...props()}/>);
   const map=mapInstances.at(-1)!;
@@ -90,12 +103,57 @@ test('submits local boundaries before deferring an independently replaceable wor
   act(()=>map.emit('style.load'));
   const local=map.getSource('boundaries')!.setData.mock.lastCall![0];
   expect(local.features.some((feature:GeoJSON.Feature)=>feature.properties?.polityId==='world-test')).toBe(false);
-  expect(map.getSource('worldBoundaries')!.setData.mock.lastCall![0].features).toEqual([]);
+  expect(map.getSource('worldBoundaries')!.setData).not.toHaveBeenCalled();
   await waitFor(()=>expect(map.getSource('worldBoundaries')!.setData.mock.lastCall![0].features).toHaveLength(1));
   const world=map.getSource('worldBoundaries')!.setData.mock.lastCall![0];
   expect(world.features.map((feature:GeoJSON.Feature)=>feature.properties?.polityId)).toEqual(['world-test']);
   expect(map.getSource('boundaries')!.setData.mock.invocationCallOrder[0])
     .toBeLessThan(map.getSource('worldBoundaries')!.setData.mock.invocationCallOrder[0]);
+});
+
+test('keeps the last rendered world layer visible until the latest historical revision is ready',async()=>{
+  const withWorld=(id:string)=>{
+    const state=getHistoricalState(800);
+    const localPolity=state.activePolities[0];
+    const localBoundary=state.boundaries.find(boundary=>boundary.polityId===localPolity.id)!;
+    state.activePolities.push({...localPolity,id,region:'world'});
+    state.boundaries.push({...localBoundary,id:`boundary-${id}`,polityId:id});
+    return state;
+  };
+  const first=withWorld('world-first');
+  const {rerender}=render(<HistoricalMapCanvas {...props()} state={first}/>);
+  const map=mapInstances.at(-1)!;
+  act(()=>map.emit('style.load'));
+  await waitFor(()=>expect(map.getSource('worldBoundaries')!.setData.mock.lastCall![0].features).toHaveLength(1));
+  const oldData=map.getSource('worldBoundaries')!.setData.mock.lastCall![0];
+  const second=withWorld('world-second');
+  map.getSource('worldBoundaries')!.setData.mockClear();
+  rerender(<HistoricalMapCanvas {...props()} state={second}/>);
+  await waitFor(()=>expect(map.getSource('worldBoundaries')!.setData.mock.lastCall![0].features[0].properties?.polityId).toBe('world-second'));
+  expect(map.getSource('worldBoundaries')!.setData.mock.calls.some(([data])=>data.features.length===0)).toBe(false);
+  expect(oldData.features[0].properties?.polityId).toBe('world-first');
+});
+
+test('preserves the last world geometry during a cross-century data load and clears it after a local-only state commits',async()=>{
+  const withWorld=getHistoricalState(800);
+  const localPolity=withWorld.activePolities[0];
+  const localBoundary=withWorld.boundaries.find(boundary=>boundary.polityId===localPolity.id)!;
+  withWorld.activePolities.push({...localPolity,id:'world-held',region:'world'});
+  withWorld.boundaries.push({...localBoundary,id:'boundary-world-held',polityId:'world-held'});
+  const {rerender}=render(<HistoricalMapCanvas {...props()} state={withWorld}/>);
+  const map=mapInstances.at(-1)!;
+  act(()=>map.emit('style.load'));
+  await waitFor(()=>expect(map.getSource('worldBoundaries')!.setData.mock.lastCall![0].features).toHaveLength(1));
+  const worldSource=map.getSource('worldBoundaries')!.setData;
+  const localSource=map.getSource('boundaries')!.setData;
+  worldSource.mockClear();
+  localSource.mockClear();
+  const localOnly=getHistoricalState(900);
+  rerender(<HistoricalMapCanvas {...props()} state={localOnly} worldDataPending/>);
+  await waitFor(()=>expect(localSource).toHaveBeenCalled());
+  expect(worldSource).not.toHaveBeenCalled();
+  rerender(<HistoricalMapCanvas {...props()} state={localOnly} worldDataPending={false}/>);
+  await waitFor(()=>expect(worldSource.mock.lastCall![0].features).toEqual([]));
 });
 
 test('clears stale world boundaries when the next selected year has no world slice',async()=>{
