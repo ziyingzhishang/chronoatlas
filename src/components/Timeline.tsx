@@ -7,9 +7,10 @@ import { useHistoricalContent } from '../content/ContentContext';
 export interface HistoricalPeriod { id:string; name:string; start:number; end:number; color:string; lane:number; approximate?:boolean; intervals?:readonly (readonly [number,number])[]; }
 import {
   TIMELINE_MAX_YEAR, TIMELINE_MIN_YEAR, TONGJIAN_RANGE, formatHistoricalYear,
-  fitWindow, indexToYear, makeTicks, yearPosition, yearToIndex, type YearWindow,
+  fitWindow, indexToYear, yearPosition, yearToIndex, type YearWindow,
 } from '../domain/timeline';
 import { localizeEvents } from '../i18n/content';
+import { makeRulerTicks } from '../domain/timeline-ruler';
 import { snapTimelineYear, timelineSnapCandidates } from '../domain/timeline-snap';
 import { alignedSourceScroll, sliderThumbCenter } from './timeline-alignment';
 
@@ -97,8 +98,10 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   yearCommitRef.current=onYearCommit;
   const [trackWidth,setTrackWidth]=useState(600);
   const [snappedYear,setSnappedYear]=useState<number|null>(null);
-  const [waveYear,setWaveYear]=useState<number|null>(null);
-  const reducedMotion=globalThis.window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false;
+  const [previewYear,setPreviewYear]=useState<number|null>(null);
+  const [rulerWidth,setRulerWidth]=useState(600);
+  const ruler=useRef<HTMLDivElement>(null);
+  const focusYear=previewYear ?? year;
   const nodeTrack=useRef<HTMLDivElement>(null);
   const sourceDescriptionId = useId();
   const [localWindow, setLocalWindow] = useState<YearWindow>(dynastyRange);
@@ -108,7 +111,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   const startIndex = yearToIndex(window[0]), endIndex = yearToIndex(window[1]);
   const index = yearToIndex(year), span = endIndex - startIndex;
   const inView = index >= startIndex && index <= endIndex;
-  const ticks = useMemo(() => makeTicks(window), [window]);
+  const ticks = useMemo(() => makeRulerTicks(window,focusYear,rulerWidth), [window,focusYear,rulerWidth]);
   const currentPeriods = periodAtYear(year);
   const windowChanges = [...boundaryYears].filter(y=>y>=window[0]&&y<=window[1]).sort((a,b)=>a-b);
   const nearestChange = windowChanges.reduce<number|null>((nearest,candidate)=>nearest===null||Math.abs(yearToIndex(candidate)-index)<Math.abs(yearToIndex(nearest)-index)?candidate:nearest,null);
@@ -123,11 +126,15 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   }
   useEffect(()=>{
     const element=markerTrack.current??track.current;
-    if(!element)return;
-    const update=()=>setTrackWidth(element.clientWidth||600);
-    update();const observer=new ResizeObserver(update);observer.observe(element);
-    return ()=>observer.disconnect();
-  },[]);
+    if(!element||!ruler.current)return;
+    const update=()=>{
+      setTrackWidth(element.clientWidth||600);
+      setRulerWidth(ruler.current?.clientWidth||600);
+    };
+    update();const observer=new ResizeObserver(update);
+    observer.observe(element);observer.observe(ruler.current);
+    return()=>observer.disconnect();
+  },[annotationLayer]);
   useLayoutEffect(() => {
     const row = nodeTrack.current;
     const input = slider.current;
@@ -190,6 +197,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   useEffect(() => {
     setDraft(String(year));
     setError('');
+    setPreviewYear(null);
   }, [year]);
 
   function chooseRange(range: YearWindow) {
@@ -280,10 +288,10 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
           style={{ left: `${p.left}%`, width: `${p.width}%`, top: `${p.lane * 32}px`, background: `${p.color}55`, borderColor: p.color }}
           onClick={() => focusPeriod(p)}><span>{p.width > 2.3 ? t(p.name) : ''}</span></button>)}
       </div>
-      <div className="year-ruler" aria-label={t("年份刻度")} data-wave-active={waveYear!==null}>
-      {ticks.map(tick => {const distance=waveYear===null||reducedMotion?Infinity:Math.abs(yearPosition(tick.year,window)-yearPosition(waveYear,window))*trackWidth;const waveScale=waveYear===null||reducedMotion?1:1+Math.exp(-distance/70)*.55*(.65+.35*Math.cos(distance/13));return <span key={tick.year} className={tick.major ? 'year-tick major' : 'year-tick'} style={{ left: `${tick.position}%`, '--wave-scale':waveScale } as React.CSSProperties}>
-          {tick.major && <span>{t(shortYear(tick.year))}</span>}
-        </span>;})}
+      <div ref={ruler} className="year-ruler" aria-label={t("年份刻度")} data-focus-year={focusYear}>
+      {ticks.map(tick => <span key={tick.year} data-year={tick.year} data-local={tick.local} className={`year-tick${tick.major?' major':''}${tick.current?' is-current':''}`} style={{left:`${tick.position}%`,'--tick-scale':tick.scale} as React.CSSProperties}>
+        {tick.showLabel && <span className="year-tick-label" style={{left:`${tick.labelOffset}px`}}>{t(shortYear(tick.year))}</span>}
+      </span>)}
       </div>
       {inView && <div className="year-cursor" style={{ left: `${yearPosition(year, window)}%` }} aria-hidden="true"><span>◆</span></div>}
     </div>
@@ -295,9 +303,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
       </div>
     </div>
     {(annotationLayer === 'events' || (annotationLayer === undefined && onEventGroup))&&<div ref={markerTrack} className="timeline-event-markers" aria-label={t("时间轴事件标记")}>{clusters.map(group=><button key={group.items[0].id} style={{left:`${group.position}%`}} title={group.items.map(e=>e.title).join(listSeparator)} aria-label={t(group.items.length===1?`事件：${group.items[0].title}`:`查看${formatHistoricalYear(group.year)}附近${group.items.length}个事件`)} onClick={()=>group.items.length===1?selectEvent(group.items[0]):onEventGroup?.(group.items.map(e=>e.id))}><span aria-hidden="true">◆</span>{group.items.length>1&&<small>{group.items.length}</small>}</button>)}</div>}
-    {!hideSupplementary && <details className="timeline-events" hidden={!expanded || annotationLayer !== undefined}><summary>{t("历史转折快捷跳转")}</summary><div className="key-nodes" aria-label={t("关键历史节点")}>
-      {localizedEvents.map(node => <button key={node.id} className="key-node" aria-label={t(`跳转到${node.title}`)} onClick={() => selectEvent(node)}>{node.title}<small>{t(shortYear(node.year))}</small></button>)}
-    </div></details>}
+
     </div></div>
     <div className="timeline-bottom-controls">
     {!hideSupplementary && (annotationLayer === undefined || annotationLayer === 'changes') && <div className="snapshot-nodes" aria-label={t("可用疆域断面")} role="group">
@@ -307,8 +313,8 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
     </div>}
     <input ref={slider} hidden={density==='collapsed'} className="timeline-slider" data-snapped={snappedYear!==null} type="range" min={startIndex} max={endIndex} step={1} value={Math.max(startIndex, Math.min(endIndex, index))}
       aria-label={t("选择历史年份")} aria-valuetext={t(formatHistoricalYear(inView ? year : indexToYear(Math.max(startIndex, Math.min(endIndex, index)))))}
-      onInput={e=>{const raw=indexToYear(Number(e.currentTarget.value));const snapped=snapTimelineYear(raw,snapCandidates,window,e.currentTarget.clientWidth||trackWidth);sliderSnappedYear.current=snapped===raw?null:snapped;setSnappedYear(sliderSnappedYear.current);setWaveYear(snapped);onYearChange(snapped);}}
-      onPointerUp={()=>{setSnappedYear(null);setWaveYear(null);}} onKeyUp={()=>{setSnappedYear(null);setWaveYear(null);}} />
+      onInput={e=>{const raw=indexToYear(Number(e.currentTarget.value));const snapped=snapTimelineYear(raw,snapCandidates,window,e.currentTarget.clientWidth||trackWidth);sliderSnappedYear.current=snapped===raw?null:snapped;setSnappedYear(sliderSnappedYear.current);setPreviewYear(snapped);onYearChange(snapped);}}
+      onPointerUp={()=>{setSnappedYear(null);setPreviewYear(null);}} onKeyUp={()=>{setSnappedYear(null);setPreviewYear(null);}} />
     </div>
   </section>;
 }

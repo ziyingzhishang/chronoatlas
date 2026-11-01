@@ -61,33 +61,15 @@ test('source-change nodes stay in one chronologically ordered row', async () => 
 
 });
 
-test('turns off ruler magnification when reduced motion is requested',()=>{
+test('keeps static ruler focus when reduced motion is requested',()=>{
   const original=window.matchMedia;
   Object.defineProperty(window,'matchMedia',{configurable:true,value:()=>({matches:true,media:'(prefers-reduced-motion: reduce)',addEventListener:vi.fn(),removeEventListener:vi.fn()})});
-  render(<Timeline year={800} onYearChange={vi.fn()} isPlaying={false} onPlayToggle={vi.fn()}/>);
-  fireEvent.input(screen.getByRole('slider'),{target:{value:String(yearToIndex(616))}});
-  const ticks=[...document.querySelectorAll<HTMLElement>('.year-tick')];
-  expect(ticks.length).toBeGreaterThan(0);
-  expect(ticks.every(tick=>tick.style.getPropertyValue('--wave-scale')==='1')).toBe(true);
-  Object.defineProperty(window,'matchMedia',{configurable:true,value:original});
-});
-
-test('offers a key-node button for Qin unification', async () => {
-  const onYearChange = vi.fn();
-  const user = userEvent.setup();
-  render(<Timeline year={-403} onYearChange={onYearChange} isPlaying={false} onPlayToggle={vi.fn()} />);
-
-  await user.click(screen.getByText('历史转折快捷跳转'));
-  await user.click(screen.getByRole('button', { name: '跳转到秦统一六国' }));
-  expect(onYearChange).toHaveBeenCalledWith(-221);
-});
-
-test('event shortcut can open the shared event detail rather than only changing the year',async()=>{
-  const select=vi.fn();
-  render(<Timeline year={800} onYearChange={vi.fn()} isPlaying={false} onPlayToggle={vi.fn()} onEventSelect={select}/>);
-  await userEvent.click(screen.getByText('历史转折快捷跳转'));
-  await userEvent.click(screen.getByRole('button',{name:'跳转到赤壁之战'}));
-  expect(select).toHaveBeenCalledWith(expect.objectContaining({id:'red-cliffs',year:208}));
+  try {
+    render(<Timeline year={800} onYearChange={vi.fn()}/>);
+    expect(document.querySelector('.year-tick.is-current[data-year="800"]')).toHaveStyle({'--tick-scale':'1.8'});
+    fireEvent.input(screen.getByRole('slider'),{target:{value:String(yearToIndex(616))}});
+    expect(document.querySelector('.year-tick.is-current[data-year="617"]')).toHaveStyle({'--tick-scale':'1.8'});
+  } finally { Object.defineProperty(window,'matchMedia',{configurable:true,value:original}); }
 });
 
 test('focuses the chosen dynasty without changing the current year', async () => {
@@ -216,4 +198,13 @@ test('mounting the source annotation layer aligns years without changing the cur
     const row=document.querySelector<HTMLElement>('.snapshot-node-track')!;
     await waitFor(()=>expect(row.scrollLeft).toBeGreaterThan(0));
   } finally { width.mockRestore();scrollWidth.mockRestore();rect.mockRestore(); }
+});
+
+test('removes shortcut lists while retaining event markers and permanent ruler focus',()=>{
+  render(<Timeline year={800} onYearChange={vi.fn()} onEventGroup={vi.fn()}/>);
+  expect(screen.queryByText('历史转折快捷跳转')).not.toBeInTheDocument();
+  expect(screen.getByLabelText('时间轴事件标记')).toBeInTheDocument();
+  expect(document.querySelector('.year-tick.is-current[data-year="800"]')).toHaveStyle({'--tick-scale':'1.8'});
+  fireEvent.input(screen.getByRole('slider'),{target:{value:String(yearToIndex(616))}});
+  expect(document.querySelector('.year-tick.is-current[data-year="617"]')).toHaveStyle({'--tick-scale':'1.8'});
 });
