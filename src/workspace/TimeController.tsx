@@ -22,11 +22,13 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
   const resizeFrame = useRef<number|null>(null);
   const [panelHeight, setPanelHeight] = useState<number>(() => preference.panelHeight ?? 50);
   const [resizeActive,setResizeActive]=useState(false);
+  const naturalHeight = useRef(400);
   const [measuredPanelMax,setMeasuredPanelMax]=useState<number>();
   const [rangeControlsTarget,setRangeControlsTarget]=useState<HTMLDivElement|null>(null);
   const {mobile,short} = layoutFor(viewport.width, viewport.height);
   const floating = !mobile && preference.mode === 'floating';
-  const effectiveDensity = panelHeight <= 56 ? 'collapsed' : panelHeight < 220 ? 'compact' : 'expanded';
+  const visiblePanelHeight = clampPanelHeight(panelHeight, naturalHeight.current, viewport.height, mobile || short);
+  const effectiveDensity = visiblePanelHeight <= 56 ? 'collapsed' : visiblePanelHeight < 220 ? 'compact' : 'expanded';
   const adjustable = true;
 
   useLayoutEffect(() => {
@@ -48,14 +50,14 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     try { localStorage.setItem(storageKey,JSON.stringify(preference)); } catch { /* Private/storage-disabled mode still works. */ }
   },[preference]);
   useLayoutEffect(() => {
-    box.current?.querySelector<HTMLElement>('.controller-content')?.toggleAttribute('inert', panelHeight <= 50);
-  },[panelHeight]);
+    box.current?.querySelector<HTMLElement>('.controller-content')?.toggleAttribute('inert', visiblePanelHeight <= 50);
+  },[visiblePanelHeight]);
   useLayoutEffect(() => {
     if (!floating || !box.current) return;
     const constrain = () => {
       const rect = box.current?.getBoundingClientRect();
       if (!rect) return;
-      const size = {width:rect.width || Math.min(760,Math.max(0,bounds.width-24)),height:panelHeight};
+      const size = {width:rect.width || Math.min(760,Math.max(0,bounds.width-24)),height:visiblePanelHeight};
       setPreference(previous => {
         const initialPosition = previous.position.x === 24 && previous.position.y === 80
           ? defaultFloatingPosition(bounds,size) : previous.position;
@@ -67,7 +69,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     const observer = new ResizeObserver(constrain);
     observer.observe(box.current);
     return () => observer.disconnect();
-  },[floating,bounds,panelHeight]);
+  },[floating,bounds,visiblePanelHeight]);
   useLayoutEffect(() => {
     if (!adjustable || !box.current) return;
     const controller = box.current;
@@ -76,11 +78,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     const constrain = () => {
       const natural = naturalPanelHeight(content, controller.querySelector<HTMLElement>('.controller-handlebar'));
       setMeasuredPanelMax(clampPanelHeight(Number.POSITIVE_INFINITY,natural,viewport.height,mobile||short));
-      const next = clampPanelHeight(panelHeight, natural, viewport.height, mobile || short);
-      if (next !== panelHeight) {
-        setPanelHeight(next);
-        setPreference(previous => ({...previous,panelHeight:next}));
-      }
+
     };
     constrain();
     const observer = new ResizeObserver(constrain);
@@ -106,7 +104,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
       setPreference(previous=>({...previous,mode:'docked'}));
       return;
     }
-    const size = {width:Math.min(760,Math.max(0,bounds.width-24)),height:panelHeight};
+    const size = {width:Math.min(760,Math.max(0,bounds.width-24)),height:visiblePanelHeight};
     setPreference(previous=>({
       ...previous,
       mode:'floating',
@@ -155,11 +153,15 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     return next;
   }
   function naturalPanelHeight(content?:HTMLElement|null, header?:HTMLElement|null) {
-    return Math.max(180,(content?.scrollHeight ?? 0) + (header?.offsetHeight || 50));
+    const measured = Math.max(180,(content?.scrollHeight ?? 0) + (header?.offsetHeight || 50));
+    // Keep the full-content ceiling when responsive sections leave the DOM.
+    if (content?.querySelector('.snapshot-nodes')) naturalHeight.current = measured;
+    else naturalHeight.current = Math.max(400, naturalHeight.current, measured);
+    return naturalHeight.current;
   }
 
   const mode = timelineProps.mode ?? 'explore';
-  const activeHeight = panelHeight;
+  const activeHeight = visiblePanelHeight;
   const contentElement = box.current?.querySelector<HTMLElement>('.controller-content');
   const naturalMax = naturalPanelHeight(contentElement, box.current?.querySelector<HTMLElement>('.controller-handlebar'));
   const panelMax = measuredPanelMax ?? clampPanelHeight(Number.POSITIVE_INFINITY, naturalMax, viewport.height, mobile || short);
@@ -174,7 +176,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
   </div>;
   return <>
   <div className={`time-controller ${floating?'is-floating':'is-docked'} mode-${mode} ${mobile||short?'is-small-viewport':''}`} data-density={effectiveDensity}
-    ref={box} style={{...(floating?{left:preference.position.x,top:preference.position.y}:{}),height:panelHeight,...(mobile||short?{maxHeight:'30dvh'}:{})}}>
+    ref={box} style={{...(floating?{left:preference.position.x,top:preference.position.y}:{}),height:visiblePanelHeight,...(mobile||short?{maxHeight:'30dvh'}:{})}}>
     <div className="controller-handlebar">
       <button className="controller-grip" aria-label={t(floating?'移动时间控制器':'切换时间控制器密度')} title={t(floating?'拖动移动；方向键微调':'点击展开或收起')}
         onClick={()=>{if(!floating)resize(effectiveDensity==='collapsed'?naturalPanelHeight(box.current?.querySelector<HTMLElement>('.controller-content'),box.current?.querySelector<HTMLElement>('.controller-handlebar')):50);}}
@@ -194,13 +196,13 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
       <div className="controller-quick-controls"><CollapsedTimeControls year={timelineProps.year} viewWindow={timelineProps.viewWindow} showRail={effectiveDensity==='collapsed'}
         isPlaying={timelineProps.isPlaying ?? false} onYearChange={timelineProps.onYearChange} onYearCommit={timelineProps.onYearCommit} onPlayToggle={timelineProps.onPlayToggle ?? (() => {})} rangeControlsRef={setRangeControlsTarget} /></div>
       <div className="controller-layout-actions">
-        {!mobile && <button aria-label={t(floating?'停靠时间控制器':'悬浮时间控制器')} onClick={toggleFloating}><span className={floating?'dock-glyph':'float-glyph'} aria-hidden="true" />{t(floating?'停靠':'悬浮')}</button>}
-        {floating && <button aria-label={t('归位')} title={t('归位')} onClick={resetFloatingPosition}><span className="reset-glyph" aria-hidden="true">↻</span>{t("归位")}</button>}
-        <button aria-label={t(effectiveDensity==='collapsed'?'展开时间控制器':'收起时间控制器')} aria-expanded={effectiveDensity!=='collapsed'} aria-controls="time-controller-content"
-          onClick={toggleDensity}><span className={effectiveDensity==='collapsed'?'expand-glyph':'collapse-glyph'} aria-hidden="true" />{t(effectiveDensity==='collapsed'?'展开':'收起')}</button>
+        {!mobile && <button title={t(floating?'停靠时间控制器':'悬浮时间控制器')} aria-label={t(floating?'停靠时间控制器':'悬浮时间控制器')} onClick={toggleFloating}><span className={floating?'dock-glyph':'float-glyph'} aria-hidden="true" /><span className="controller-action-label">{t(floating?'停靠':'悬浮')}</span></button>}
+        {floating && <button aria-label={t('归位')} title={t('归位')} onClick={resetFloatingPosition}><span className="reset-glyph" aria-hidden="true">↻</span><span className="controller-action-label">{t("归位")}</span></button>}
+        <button aria-label={t(effectiveDensity==='collapsed'?'展开时间控制器':'收起时间控制器')} aria-expanded={effectiveDensity!=='collapsed'} aria-controls="time-controller-content" title={t(effectiveDensity==='collapsed'?'展开时间控制器':'收起时间控制器')}
+          onClick={toggleDensity}><span className={effectiveDensity==='collapsed'?'expand-glyph':'collapse-glyph'} aria-hidden="true" /><span className="controller-action-label">{t(effectiveDensity==='collapsed'?'展开':'收起')}</span></button>
       </div>
     </div>
-    {resizeHandle}<div id="time-controller-content" className="controller-content" aria-hidden={panelHeight<=50}><Timeline {...timelineProps} density="expanded" showPrimaryControls={false} rangeControlsTarget={rangeControlsTarget}/></div>
+    {resizeHandle}<div id="time-controller-content" className="controller-content" aria-hidden={visiblePanelHeight<=50}><Timeline {...timelineProps} density="expanded" showPrimaryControls={false} rangeControlsTarget={rangeControlsTarget}/></div>
   </div>
   </>;
 }

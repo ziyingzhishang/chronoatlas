@@ -55,6 +55,36 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
     ? [boundary.validFrom, boundary.validTo === -1 ? 1 : boundary.validTo + 1]
     : [boundary.snapshotYear]))].filter(candidate => candidate <= TIMELINE_MAX_YEAR && candidate !== 0).sort((a, b) => a - b), [historySource]);
   const periodAtYear = (target: number) => periodBands.filter(period => period.start <= target && target <= period.end);
+  const root = useRef<HTMLElement>(null);
+  const yearEntryFocused = useRef(false);
+  const [controllerSize, setControllerSize] = useState<{width:number;height:number}|null>(null);
+  const hideYearEntry = controllerSize !== null && controllerSize.width < 600;
+  const hideSupplementary = controllerSize !== null && (globalThis.window.innerHeight < 700 || controllerSize.height < 400);
+  useLayoutEffect(() => {
+    const controller = root.current?.closest<HTMLElement>('.time-controller');
+    if (!controller) return;
+    const measure = () => {
+      const rect = controller.getBoundingClientRect();
+      const width = controller.clientWidth || rect.width;
+      const height = rect.height;
+      // Hidden or detached controllers have no usable layout to classify.
+      if (width <= 0 || height <= 0) return;
+      const active = document.activeElement;
+      const form = controller.querySelector('.controller-range-navigation .year-form') ?? root.current?.querySelector('.year-form');
+      if (width < 600 && (yearEntryFocused.current || (active && form?.contains(active)))) {
+        (controller.querySelector<HTMLButtonElement>('.range-presets button[aria-pressed="true"]') ?? controller.querySelector<HTMLButtonElement>('.range-presets button'))?.focus();
+        yearEntryFocused.current = false;
+      }
+      setControllerSize(previous => previous?.width === width && previous?.height === height ? previous : {width,height});
+    };
+    const clearYearFocus = (event: PointerEvent) => { if (!(event.target instanceof Element && event.target.closest('.year-form'))) yearEntryFocused.current = false; };
+    document.addEventListener('pointerdown', clearYearFocus);
+    measure();
+    const observer = new ResizeObserver(measure);
+    observer.observe(controller);
+    globalThis.window.addEventListener('resize', measure);
+    return () => { observer.disconnect(); globalThis.window.removeEventListener('resize', measure); document.removeEventListener('pointerdown', clearYearFocus); };
+  }, []);
   const listSeparator=locale==='en' ? ', ' : '、';
   const expanded = density === 'expanded';
   const track = useRef<HTMLDivElement>(null);
@@ -74,6 +104,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   const nodeTrack=useRef<HTMLDivElement>(null);
   const nodeToggle=useRef<HTMLButtonElement>(null);
   const nodeGroup=useRef<HTMLDivElement>(null);
+  useEffect(() => { if (hideSupplementary) setNodesExpanded(false); }, [hideSupplementary]);
   const [nodePopoverPosition,setNodePopoverPosition]=useState<{left:number;top:number;width:number;maxHeight:number}>();
   const audioContext=useRef<AudioContext|null>(null);
   const lastSoundNode=useRef<number|null>(null);
@@ -202,7 +233,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
     onKeyDown={event=>{if(event.key==='Escape'){setNodesExpanded(false);nodeToggle.current?.focus();}}}>
     {windowChanges.map(y => <button data-year={y} key={y} aria-label={t(`查看${formatHistoricalYear(y)}疆域断面`)} aria-pressed={nearestChange===y} className={nearestChange===y?'is-nearest':''} onClick={() => {onYearChange(y);setNodesExpanded(false);}}>{t(shortYear(y))}</button>)}
   </div>;
-  const yearForm = <form className="year-form" noValidate onSubmit={e => { e.preventDefault(); commitYear(); }}>
+  const yearForm = <form className="year-form" hidden={hideYearEntry} onFocusCapture={() => { yearEntryFocused.current = true; }} onBlurCapture={event => { if (event.relatedTarget) yearEntryFocused.current = event.currentTarget.contains(event.relatedTarget as Node); }} noValidate onSubmit={e => { e.preventDefault(); commitYear(); }}>
       <label className="year-entry"><span>{t("精确跳转 · 公元前填负数")}</span>
         <input aria-label={t("输入历史年份")} type="number" step="1" value={draft} min={TIMELINE_MIN_YEAR} max={TIMELINE_MAX_YEAR} aria-invalid={!!error}
           onChange={e => { setDraft(e.target.value); setError(''); }} />
@@ -216,7 +247,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
     </div>
     {yearForm}
   </>;
-  return <section className={`timeline-panel density-${density}`} aria-label={t("历史时间轴")}>
+  return <section ref={root} className={`timeline-panel density-${density}`} aria-label={t("历史时间轴")}>
     {annotationLayer === undefined && showPrimaryControls && <div className="section-heading">
       <div>
         {expanded && showPrimaryControls && <span className="eyebrow">{t("中国历史 · 编年导航")}</span>}
@@ -273,7 +304,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
         {!inView && <><span className="timeline-out-of-view">{t("当前年份不在本视窗内")}</span><button onClick={() => setWindow(fitWindow(index, span))}>{t("回到所选年份")}</button></>}
       </div>
     </div>
-    {(annotationLayer === undefined || annotationLayer === 'changes') && <div ref={nodeGroup} className="snapshot-nodes" aria-label={t("可用疆域断面")} data-expanded={nodesExpanded} role="group">
+    {!hideSupplementary && (annotationLayer === undefined || annotationLayer === 'changes') && <div ref={nodeGroup} className="snapshot-nodes" aria-label={t("可用疆域断面")} data-expanded={nodesExpanded} role="group">
     <div className="snapshot-nodes-heading"><span>{t("资料变化节点")}</span><button ref={nodeToggle} type="button" className="nodes-toggle" aria-expanded={nodesExpanded} aria-controls="snapshot-node-track" aria-label={t(nodesExpanded?'收起资料变化节点':'展开资料变化节点')} onClick={()=>setNodesExpanded(value=>!value)}>{t(nodesExpanded?'收起':'展开')}</button>
       <div className="snapshot-node-navigation">
         <button disabled={previousChange===undefined} onClick={()=>previousChange!==undefined&&onYearChange(previousChange)}>{t("上一资料变化")}</button>
@@ -286,8 +317,8 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
       {!boundaryYears.some(y => y >= window[0] && y <= window[1]) && <small>{t("此视窗无疆域断面，可缩小时间轴查看其他资料")}</small>}
     </div>}
     {(annotationLayer === 'events' || (annotationLayer === undefined && onEventGroup))&&<div ref={markerTrack} className="timeline-event-markers" aria-label={t("时间轴事件标记")}>{clusters.map(group=><button key={group.items[0].id} style={{left:`${group.position}%`}} title={group.items.map(e=>e.title).join(listSeparator)} aria-label={t(group.items.length===1?`事件：${group.items[0].title}`:`查看${formatHistoricalYear(group.year)}附近${group.items.length}个事件`)} onClick={()=>group.items.length===1?selectEvent(group.items[0]):onEventGroup?.(group.items.map(e=>e.id))}><span aria-hidden="true">◆</span>{group.items.length>1&&<small>{group.items.length}</small>}</button>)}</div>}
-    <details className="timeline-events" hidden={!expanded || annotationLayer !== undefined}><summary>{t("历史转折快捷跳转")}</summary><div className="key-nodes" aria-label={t("关键历史节点")}>
+    {!hideSupplementary && <details className="timeline-events" hidden={!expanded || annotationLayer !== undefined}><summary>{t("历史转折快捷跳转")}</summary><div className="key-nodes" aria-label={t("关键历史节点")}>
       {localizedEvents.map(node => <button key={node.id} className="key-node" aria-label={t(`跳转到${node.title}`)} onClick={() => selectEvent(node)}>{node.title}<small>{t(shortYear(node.year))}</small></button>)}
-    </div></details>
+    </div></details>}
   </section>;
 }

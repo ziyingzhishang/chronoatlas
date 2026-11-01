@@ -224,20 +224,21 @@ test('restores a saved intermediate panel height and constrains it after a short
   Object.defineProperty(window,'innerHeight',{configurable:true,value:480,writable:true});
   fireEvent(window,new Event('resize'));
   await waitFor(()=>expect(panel).toHaveStyle({height:'144px',maxHeight:'30dvh'}));
-  expect(JSON.parse(localStorage.getItem('history-workspace-v1')??'{}').panelHeight).toBe(144);
+  expect(JSON.parse(localStorage.getItem('history-workspace-v1')??'{}').panelHeight).toBe(220);
   Object.defineProperty(window,'innerWidth',{configurable:true,value:originalWidth,writable:true});
   Object.defineProperty(window,'innerHeight',{configurable:true,value:originalHeight,writable:true});
   fireEvent(window,new Event('resize'));
+  await waitFor(()=>expect(panel).toHaveStyle({height:'220px'}));
   if(originalScrollHeight)Object.defineProperty(HTMLElement.prototype,'scrollHeight',originalScrollHeight);
   else Reflect.deleteProperty(HTMLElement.prototype,'scrollHeight');
 });
 
-test('expanded timeline exposes only one primary year and playback control set',async()=>{
+test('expanded timeline omits playback and year step actions',async()=>{
   render(<TimeController year={800} onYearChange={()=>{}} isPlaying={false} onPlayToggle={()=>{}}/>);
   await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));
   expect(screen.getByRole('slider')).toBeInTheDocument();
-  expect(screen.getAllByRole('button',{name:'播放'})).toHaveLength(1);
-  expect(screen.getAllByRole('button',{name:'上一年'})).toHaveLength(1);
-  expect(screen.getAllByRole('button',{name:'下一年'})).toHaveLength(1);
+  expect(screen.queryByRole('button',{name:'播放'})).not.toBeInTheDocument();
+  expect(screen.queryByRole('button',{name:'上一年'})).not.toBeInTheDocument();
+  expect(screen.queryByRole('button',{name:'下一年'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'精简时间控制器'})).not.toBeInTheDocument();
 });

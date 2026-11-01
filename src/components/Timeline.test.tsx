@@ -1,4 +1,4 @@
-import { fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test, vi } from 'vitest';
 import { Timeline } from './Timeline';
@@ -179,4 +179,42 @@ test('can move directly to the next available source change', async () => {
   render(<Timeline year={-213} onYearChange={change} isPlaying={false} onPlayToggle={vi.fn()} />);
   await userEvent.click(screen.getByRole('button',{name:'下一资料变化'}));
   expect(change).toHaveBeenCalledWith(-212);
+});
+
+test.each([false, true])('narrow controller preserves focus with custom range %s', (customRange) => {
+  let width = 760;
+  const callbacks: ResizeObserverCallback[] = [];
+  vi.stubGlobal('ResizeObserver', class { constructor(cb: ResizeObserverCallback) { callbacks.push(cb); } observe() {} disconnect() {} });
+  const rect = vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+    return { width, height: 500, x:0,y:0,top:0,left:0,right:width,bottom:500,toJSON(){} };
+  });
+  try {
+    render(<div className="time-controller"><Timeline year={800} onYearChange={vi.fn()} viewWindow={customRange ? [618,907] : undefined}/></div>);
+    const input = screen.getByRole('spinbutton');
+    input.focus();
+    width = 599;
+    act(() => callbacks.forEach(cb => cb([], {} as ResizeObserver)));
+    expect(input.closest('form')).toHaveAttribute('hidden');
+    expect(screen.getByRole('button', {name:customRange ? '全历史' : '王朝至今'})).toHaveFocus();
+  } finally { rect.mockRestore(); vi.unstubAllGlobals(); }
+});
+
+test('short controller closes supplementary popovers and restores sections without reopening them', async () => {
+  let height = 500;
+  const callbacks: ResizeObserverCallback[] = [];
+  vi.stubGlobal('ResizeObserver', class { constructor(cb: ResizeObserverCallback) { callbacks.push(cb); } observe() {} disconnect() {} });
+  const rect = vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({width:760,height,x:0,y:0,top:0,left:0,right:760,bottom:height,toJSON(){}}));
+  try {
+    render(<div className="time-controller"><Timeline year={800} onYearChange={vi.fn()}/></div>);
+    await userEvent.click(screen.getByRole('button', {name:'展开资料变化节点'}));
+    expect(document.body.querySelector('.snapshot-node-track[data-expanded="true"]')).not.toBeNull();
+    height = 399;
+    act(() => callbacks.forEach(cb => cb([], {} as ResizeObserver)));
+    expect(screen.queryByLabelText('可用疆域断面')).not.toBeInTheDocument();
+    expect(screen.queryByText('历史转折快捷跳转')).not.toBeInTheDocument();
+    expect(document.body.querySelector('.snapshot-node-track')).toBeNull();
+    height = 400;
+    act(() => callbacks.forEach(cb => cb([], {} as ResizeObserver)));
+    expect(screen.getByRole('button', {name:'展开资料变化节点'})).toHaveAttribute('aria-expanded','false');
+  } finally { rect.mockRestore(); vi.unstubAllGlobals(); }
 });

@@ -1,12 +1,11 @@
 import { render, screen } from '@testing-library/react';
-import userEvent from '@testing-library/user-event';
 import { afterEach, expect, test, vi } from 'vitest';
 import { LocaleProvider } from '../i18n/locale';
 import { CollapsedTimeControls } from './CollapsedTimeControls';
 
 afterEach(() => localStorage.clear());
 
-test('expanded controller actions show the current year and step across the absent year zero', async () => {
+test('expanded controls omit the duplicate year and year step actions', () => {
   const onYearChange = vi.fn();
   const onPlayToggle = vi.fn();
   render(<LocaleProvider><CollapsedTimeControls
@@ -18,14 +17,15 @@ test('expanded controller actions show the current year and step across the abse
   /></LocaleProvider>);
 
   const controls = screen.getByRole('group', { name: '简明时间控制' });
-  expect(controls).toHaveTextContent('前1年');
-  await userEvent.click(screen.getByRole('button', { name: '下一年' }));
-  expect(onYearChange).toHaveBeenCalledWith(1);
-  await userEvent.click(screen.getByRole('button', { name: '播放' }));
-  expect(onPlayToggle).toHaveBeenCalledOnce();
+  expect(controls).not.toHaveTextContent('前1年');
+  expect(screen.queryByRole('button', { name: '上一年' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: '下一年' })).not.toBeInTheDocument();
+  expect(onYearChange).not.toHaveBeenCalled();
+  expect(screen.queryByRole('button', { name: '播放' })).not.toBeInTheDocument();
+  expect(onPlayToggle).not.toHaveBeenCalled();
 });
 
-test('exposes pause while playback is active and disables the upper timeline boundary', () => {
+test('omits playback actions even while playback is active', () => {
   render(<LocaleProvider><CollapsedTimeControls
     year={2026}
     showRail={false}
@@ -34,6 +34,6 @@ test('exposes pause while playback is active and disables the upper timeline bou
     onPlayToggle={() => {}}
   /></LocaleProvider>);
 
-  expect(screen.getByRole('button', { name: '暂停' })).toBeInTheDocument();
-  expect(screen.getByRole('button', { name: '下一年' })).toBeDisabled();
+  expect(screen.queryByRole('button', { name: '暂停' })).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', { name: '下一年' })).not.toBeInTheDocument();
 });
