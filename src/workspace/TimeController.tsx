@@ -22,12 +22,12 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
   const resizeFrame = useRef<number|null>(null);
   const [panelHeight, setPanelHeight] = useState<number>(() => preference.panelHeight ?? 50);
   const [resizeActive,setResizeActive]=useState(false);
-  const naturalHeight = useRef(400);
-  const [measuredPanelMax,setMeasuredPanelMax]=useState<number>();
+  const [measuredNaturalHeight,setMeasuredNaturalHeight]=useState(400);
   const [rangeControlsTarget,setRangeControlsTarget]=useState<HTMLDivElement|null>(null);
   const {mobile,short} = layoutFor(viewport.width, viewport.height);
   const floating = !mobile && preference.mode === 'floating';
-  const visiblePanelHeight = clampPanelHeight(panelHeight, naturalHeight.current, viewport.height, mobile || short);
+  const availableHeight = Math.max(50, Math.min(bounds.height, viewport.height) - (floating ? 124 : 64));
+  const visiblePanelHeight = clampPanelHeight(panelHeight, availableHeight, viewport.height, mobile || short);
   const effectiveDensity = visiblePanelHeight <= 56 ? 'collapsed' : visiblePanelHeight < 220 ? 'compact' : 'expanded';
   const adjustable = true;
 
@@ -77,8 +77,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     const naturalContent = content?.firstElementChild as HTMLElement|null|undefined;
     const constrain = () => {
       const natural = naturalPanelHeight(content, controller.querySelector<HTMLElement>('.controller-handlebar'));
-      setMeasuredPanelMax(clampPanelHeight(Number.POSITIVE_INFINITY,natural,viewport.height,mobile||short));
-
+      setMeasuredNaturalHeight(natural);
     };
     constrain();
     const observer = new ResizeObserver(constrain);
@@ -136,7 +135,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     const content = box.current?.querySelector<HTMLElement>('.controller-content');
     const header = box.current?.querySelector<HTMLElement>('.controller-handlebar');
     const natural = naturalPanelHeight(content,header);
-    const clampedHeight = clampPanelHeight(height, natural, viewport.height, mobile || short);
+    const clampedHeight = clampPanelHeight(height, Math.min(availableHeight, Math.max(panelHeight,natural)), viewport.height, mobile || short);
     const next = floating && anchoredBottomY !== undefined
       ? Math.min(clampedHeight, Math.max(50, anchoredBottomY - 64))
       : clampedHeight;
@@ -153,18 +152,14 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     return next;
   }
   function naturalPanelHeight(content?:HTMLElement|null, header?:HTMLElement|null) {
-    const measured = Math.max(180,(content?.scrollHeight ?? 0) + (header?.offsetHeight || 50));
-    // Keep the full-content ceiling when responsive sections leave the DOM.
-    if (content?.querySelector('.snapshot-nodes')) naturalHeight.current = measured;
-    else naturalHeight.current = Math.max(400, naturalHeight.current, measured);
-    return naturalHeight.current;
+    // The timeline's intrinsic height excludes free space allocated to its scroll viewport.
+    const timeline = content?.firstElementChild as HTMLElement|null|undefined;
+    return Math.max(400,(timeline?.scrollHeight ?? 0) + (header?.offsetHeight || 50));
   }
 
   const mode = timelineProps.mode ?? 'explore';
   const activeHeight = visiblePanelHeight;
-  const contentElement = box.current?.querySelector<HTMLElement>('.controller-content');
-  const naturalMax = naturalPanelHeight(contentElement, box.current?.querySelector<HTMLElement>('.controller-handlebar'));
-  const panelMax = measuredPanelMax ?? clampPanelHeight(Number.POSITIVE_INFINITY, naturalMax, viewport.height, mobile || short);
+  const panelMax = clampPanelHeight(Number.POSITIVE_INFINITY, Math.min(availableHeight,Math.max(panelHeight,measuredNaturalHeight)),viewport.height,mobile||short);
   const resizeHandle = <div className="controller-resize-handle" role="separator" aria-orientation="horizontal"
     aria-label={t('调整时间控制器高度')} aria-valuemin={Math.min(50,panelMax)} aria-valuemax={panelMax} aria-valuenow={Math.min(activeHeight,panelMax)}
     tabIndex={0} onPointerDown={e=>{if(e.button!==0)return; if(effectiveDensity==='collapsed')setPanelHeight(50); resizeDrag.current={pointer:e.pointerId,startY:e.clientY,height:activeHeight,...(floating?{bottomY:preference.position.y+activeHeight}:{})}; e.currentTarget.setPointerCapture?.(e.pointerId); box.current?.setAttribute('data-resizing','true');setResizeActive(true);if(!floating)onResizeInteractionChange?.(true);}}

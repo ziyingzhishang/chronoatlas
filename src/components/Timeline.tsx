@@ -11,7 +11,6 @@ import {
 } from '../domain/timeline';
 import { localizeEvents } from '../i18n/content';
 import { snapTimelineYear, timelineSnapCandidates } from '../domain/timeline-snap';
-import { playMechanicalTick } from '../domain/mechanical-sound';
 
 export interface TimelineProps {
   annotationLayer?: 'none'|'events'|'changes';
@@ -97,17 +96,9 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   yearCommitRef.current=onYearCommit;
   const [trackWidth,setTrackWidth]=useState(600);
   const [snappedYear,setSnappedYear]=useState<number|null>(null);
-  const [nodesExpanded,setNodesExpanded]=useState(false);
-  const [soundEnabled,setSoundEnabled]=useState(()=>{try{return localStorage.getItem('timeline-snap-sound')==='true';}catch{return false;}});
   const [waveYear,setWaveYear]=useState<number|null>(null);
   const reducedMotion=globalThis.window.matchMedia?.('(prefers-reduced-motion: reduce)').matches??false;
   const nodeTrack=useRef<HTMLDivElement>(null);
-  const nodeToggle=useRef<HTMLButtonElement>(null);
-  const nodeGroup=useRef<HTMLDivElement>(null);
-  useEffect(() => { if (hideSupplementary) setNodesExpanded(false); }, [hideSupplementary]);
-  const [nodePopoverPosition,setNodePopoverPosition]=useState<{left:number;top:number;width:number;maxHeight:number}>();
-  const audioContext=useRef<AudioContext|null>(null);
-  const lastSoundNode=useRef<number|null>(null);
   const [localWindow, setLocalWindow] = useState<YearWindow>(dynastyRange);
   const window = viewWindow ?? localWindow;
   const [draft, setDraft] = useState(String(year));
@@ -117,8 +108,6 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   const inView = index >= startIndex && index <= endIndex;
   const ticks = useMemo(() => makeTicks(window), [window]);
   const currentPeriods = periodAtYear(year);
-  const previousChange = boundaryYears.filter(y=>y<year).at(-1);
-  const nextChange = boundaryYears.find(y=>y>year);
   const windowChanges = [...boundaryYears].filter(y=>y>=window[0]&&y<=window[1]).sort((a,b)=>a-b);
   const nearestChange = windowChanges.reduce<number|null>((nearest,candidate)=>nearest===null||Math.abs(yearToIndex(candidate)-index)<Math.abs(yearToIndex(nearest)-index)?candidate:nearest,null);
   const localizedEvents=useMemo(()=>localizeEvents(events,locale),[locale]);
@@ -145,39 +134,7 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
     if(!trackRect||!activeRect||activeRect.left<trackRect.left||activeRect.right>trackRect.right){
       active?.scrollIntoView?.({behavior:globalThis.window.matchMedia?.('(prefers-reduced-motion: reduce)').matches?'auto':'smooth',block:'nearest',inline:'center'});
     }
-  },[nearestChange,nodesExpanded]);
-  useLayoutEffect(()=>{
-    if(!nodesExpanded)return;
-    const reposition=()=>{
-      const anchor=nodeToggle.current?.getBoundingClientRect();
-      if(!anchor)return;
-      const margin=8;
-      const maxHeight=Math.min(globalThis.window.innerHeight*.3,320);
-      const width=Math.min(380,globalThis.window.innerWidth-24);
-      const left=Math.max(12,Math.min(anchor.right-width,globalThis.window.innerWidth-width-12));
-      const below=globalThis.window.innerHeight-anchor.bottom-margin;
-      const top=below>=Math.min(180,maxHeight)||anchor.top<maxHeight+margin
-        ?Math.min(anchor.bottom+margin,globalThis.window.innerHeight-maxHeight-margin)
-        :Math.max(margin,anchor.top-maxHeight-margin);
-      setNodePopoverPosition(previous=>previous&&previous.left===left&&previous.top===top&&previous.width===width&&previous.maxHeight===maxHeight
-        ?previous:{left,top,width,maxHeight});
-    };
-    reposition();
-    globalThis.window.addEventListener('resize',reposition);
-    document.addEventListener('scroll',reposition,true);
-    return()=>{globalThis.window.removeEventListener('resize',reposition);document.removeEventListener('scroll',reposition,true);};
-  },[nodesExpanded]);
-  useEffect(()=>{
-    if(!nodesExpanded)return;
-    const closeOutside=(event:PointerEvent)=>{
-      const target=event.target as Node;
-      if(!nodeTrack.current?.contains(target)&&!nodeGroup.current?.contains(target))setNodesExpanded(false);
-    };
-    document.addEventListener('pointerdown',closeOutside);
-    return()=>document.removeEventListener('pointerdown',closeOutside);
-  },[nodesExpanded]);
-  useEffect(()=>{try{localStorage.setItem('timeline-snap-sound',String(soundEnabled));}catch{/* Optional preference. */}},[soundEnabled]);
-  useEffect(()=>()=>{void audioContext.current?.close().catch(()=>{});},[]);
+  },[nearestChange,hideSupplementary,window[0],window[1]]);
   useEffect(()=>{
     const input=slider.current;
     if(!input)return;
@@ -228,10 +185,8 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
   });
 
   const displayedViewLabel = viewLabel ?? `${formatHistoricalYear(window[0])}—${formatHistoricalYear(window[1])}`;
-  const nodeTrackContent=<div id="snapshot-node-track" className="snapshot-node-track" data-expanded={nodesExpanded} ref={nodeTrack} aria-label={t('按年份排序的资料变化年份')}
-    style={nodesExpanded?{position:'fixed',left:nodePopoverPosition?.left??12,top:nodePopoverPosition?.top??12,width:nodePopoverPosition?.width??Math.min(380,globalThis.window.innerWidth-24),maxHeight:'min(30dvh, 320px)',overflowY:'auto',overflowX:'hidden',zIndex:20}:undefined}
-    onKeyDown={event=>{if(event.key==='Escape'){setNodesExpanded(false);nodeToggle.current?.focus();}}}>
-    {windowChanges.map(y => <button data-year={y} key={y} aria-label={t(`查看${formatHistoricalYear(y)}疆域断面`)} aria-pressed={nearestChange===y} className={nearestChange===y?'is-nearest':''} onClick={() => {onYearChange(y);setNodesExpanded(false);}}>{t(shortYear(y))}</button>)}
+  const nodeTrackContent=<div id="snapshot-node-track" className="snapshot-node-track" ref={nodeTrack} aria-label={t('按年份排序的资料变化年份')}>
+    {windowChanges.map(y => <button data-year={y} key={y} aria-label={t(`查看${formatHistoricalYear(y)}疆域断面`)} aria-pressed={nearestChange===y} className={nearestChange===y?'is-nearest':''} onClick={() => onYearChange(y)}>{t(shortYear(y))}</button>)}
   </div>;
   const yearForm = <form className="year-form" hidden={hideYearEntry} onFocusCapture={() => { yearEntryFocused.current = true; }} onBlurCapture={event => { if (event.relatedTarget) yearEntryFocused.current = event.currentTarget.contains(event.relatedTarget as Node); }} noValidate onSubmit={e => { e.preventDefault(); commitYear(); }}>
       <label className="year-entry"><span>{t("精确跳转 · 公元前填负数")}</span>
@@ -295,8 +250,8 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
     </div>
     <input ref={slider} hidden={density==='collapsed'} className="timeline-slider" data-snapped={snappedYear!==null} type="range" min={startIndex} max={endIndex} step={1} value={Math.max(startIndex, Math.min(endIndex, index))}
       aria-label={t("选择历史年份")} aria-valuetext={t(formatHistoricalYear(inView ? year : indexToYear(Math.max(startIndex, Math.min(endIndex, index)))))}
-      onInput={e=>{const raw=indexToYear(Number(e.currentTarget.value));const snapped=snapTimelineYear(raw,snapCandidates,window,e.currentTarget.clientWidth||trackWidth);sliderSnappedYear.current=snapped===raw?null:snapped;setSnappedYear(sliderSnappedYear.current);setWaveYear(snapped);if(sliderSnappedYear.current!==null&&boundaryYears.includes(snapped)){if(soundEnabled&&lastSoundNode.current!==snapped){playMechanicalTick(audioContext.current);lastSoundNode.current=snapped;}}else lastSoundNode.current=null;onYearChange(snapped);}}
-      onPointerUp={()=>{setSnappedYear(null);setWaveYear(null);lastSoundNode.current=null;}} onKeyUp={()=>{setSnappedYear(null);setWaveYear(null);lastSoundNode.current=null;}} />
+      onInput={e=>{const raw=indexToYear(Number(e.currentTarget.value));const snapped=snapTimelineYear(raw,snapCandidates,window,e.currentTarget.clientWidth||trackWidth);sliderSnappedYear.current=snapped===raw?null:snapped;setSnappedYear(sliderSnappedYear.current);setWaveYear(snapped);onYearChange(snapped);}}
+      onPointerUp={()=>{setSnappedYear(null);setWaveYear(null);}} onKeyUp={()=>{setSnappedYear(null);setWaveYear(null);}} />
     <div className="timeline-bottom-line" hidden={!expanded}>
       <div className="year-steppers">
         {showPrimaryControls && <><button disabled={index === 0} onClick={() => onYearChange(indexToYear(index - 1))}>{t("上一年")}</button>
@@ -304,16 +259,8 @@ export function Timeline({ year, onYearChange, onYearCommit, isPlaying, onPlayTo
         {!inView && <><span className="timeline-out-of-view">{t("当前年份不在本视窗内")}</span><button onClick={() => setWindow(fitWindow(index, span))}>{t("回到所选年份")}</button></>}
       </div>
     </div>
-    {!hideSupplementary && (annotationLayer === undefined || annotationLayer === 'changes') && <div ref={nodeGroup} className="snapshot-nodes" aria-label={t("可用疆域断面")} data-expanded={nodesExpanded} role="group">
-    <div className="snapshot-nodes-heading"><span>{t("资料变化节点")}</span><button ref={nodeToggle} type="button" className="nodes-toggle" aria-expanded={nodesExpanded} aria-controls="snapshot-node-track" aria-label={t(nodesExpanded?'收起资料变化节点':'展开资料变化节点')} onClick={()=>setNodesExpanded(value=>!value)}>{t(nodesExpanded?'收起':'展开')}</button>
-      <div className="snapshot-node-navigation">
-        <button disabled={previousChange===undefined} onClick={()=>previousChange!==undefined&&onYearChange(previousChange)}>{t("上一资料变化")}</button>
-        <button disabled={nextChange===undefined} onClick={()=>nextChange!==undefined&&onYearChange(nextChange)}>{t("下一资料变化")}</button>
-        <span>{t("色带按时长排列 · 重叠表示并立 · 点击朝代放大")}</span>
-      </div>
-    </div>
-      {nodesExpanded&&<div className="snapshot-node-options"><button type="button" className="sound-toggle" aria-pressed={soundEnabled} aria-label={t(soundEnabled?'关闭吸附提示音':'开启吸附提示音')} onClick={()=>{setSoundEnabled(value=>{const next=!value;if(next){try{const Context=globalThis.AudioContext;if(Context){audioContext.current??=new Context();const context=audioContext.current;void context.resume().catch(()=>{});}}catch{/* Optional audio enhancement. */}}return next;})}}><span aria-hidden="true">{soundEnabled?'♫':'♪̸'}</span>{t(soundEnabled?'提示音开':'提示音关')}</button></div>}
-      {nodesExpanded?createPortal(nodeTrackContent,document.body):nodeTrackContent}
+    {!hideSupplementary && (annotationLayer === undefined || annotationLayer === 'changes') && <div className="snapshot-nodes" aria-label={t("可用疆域断面")} role="group">
+      {nodeTrackContent}
       {!boundaryYears.some(y => y >= window[0] && y <= window[1]) && <small>{t("此视窗无疆域断面，可缩小时间轴查看其他资料")}</small>}
     </div>}
     {(annotationLayer === 'events' || (annotationLayer === undefined && onEventGroup))&&<div ref={markerTrack} className="timeline-event-markers" aria-label={t("时间轴事件标记")}>{clusters.map(group=><button key={group.items[0].id} style={{left:`${group.position}%`}} title={group.items.map(e=>e.title).join(listSeparator)} aria-label={t(group.items.length===1?`事件：${group.items[0].title}`:`查看${formatHistoricalYear(group.year)}附近${group.items.length}个事件`)} onClick={()=>group.items.length===1?selectEvent(group.items[0]):onEventGroup?.(group.items.map(e=>e.id))}><span aria-hidden="true">◆</span>{group.items.length>1&&<small>{group.items.length}</small>}</button>)}</div>}

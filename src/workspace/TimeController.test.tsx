@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { fireEvent, render, screen, waitFor } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { afterEach, expect, test, vi } from 'vitest';
 import { TimeController } from './TimeController';
@@ -18,7 +18,7 @@ test('collapsed controller preserves the year and exposes a compact historical r
   expect(screen.queryByRole('button',{name:'下一年'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'播放'})).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button',{name:'悬浮时间控制器'}));
-  Object.defineProperty(document.querySelector('.controller-content'), 'scrollHeight', { configurable: true, value: 600 });
+  Object.defineProperty(document.querySelector('.timeline-panel'), 'scrollHeight', { configurable: true, value: 600 });
   await userEvent.click(screen.getByRole('button',{name:'展开时间控制器'}));
   expect(screen.getByRole('slider')).toHaveAttribute('aria-valuetext', '前1年');
   await userEvent.click(screen.getByRole('button',{name:'收起时间控制器'}));
@@ -107,7 +107,7 @@ test('floating mode clamps to the containing map pane instead of the viewport', 
 
 test('expanded controller exposes a keyboard-resizable panel handle', async () => {
   render(<Demo />);
-  Object.defineProperty(document.querySelector('.controller-content'), 'scrollHeight', { configurable: true, value: 600 });
+  Object.defineProperty(document.querySelector('.timeline-panel'), 'scrollHeight', { configurable: true, value: 600 });
   const resizeHandle = screen.getByRole('separator', { name: '调整时间控制器高度' });
   expect(resizeHandle).toHaveAttribute('aria-valuemin', '50');
   resizeHandle.focus();
@@ -118,7 +118,7 @@ test('expanded controller exposes a keyboard-resizable panel handle', async () =
 
 test('collapsed panel can be dragged open from its resize handle without switching density stops', async () => {
   render(<Demo />);
-  Object.defineProperty(document.querySelector('.controller-content'), 'scrollHeight', { configurable: true, value: 600 });
+  Object.defineProperty(document.querySelector('.timeline-panel'), 'scrollHeight', { configurable: true, value: 600 });
   const resizeHandle = screen.getByRole('separator', { name: '调整时间控制器高度' });
   expect(resizeHandle).toHaveAttribute('aria-valuenow', '50');
   resizeHandle.focus();
@@ -151,7 +151,7 @@ test('floating resize dragged down keeps the bottom edge fixed while the top fol
   localStorage.setItem('history-workspace-v1',JSON.stringify({mode:'floating',position:{x:80,y:100},panelHeight:150}));
   const {container}=render(<Demo/>);
   const panel=container.querySelector<HTMLElement>('.time-controller')!;
-  Object.defineProperty(panel.querySelector('.controller-content'),'scrollHeight',{configurable:true,value:600});
+  Object.defineProperty(panel.querySelector('.timeline-panel'),'scrollHeight',{configurable:true,value:600});
   const handle=screen.getByRole('separator',{name:'调整时间控制器高度'});
   const pointer=(type:string,clientY:number)=>{const event=new MouseEvent(type,{bubbles:true,button:0,clientY});Object.defineProperty(event,'pointerId',{value:4});fireEvent(handle,event);};
   pointer('pointerdown',200);
@@ -165,7 +165,7 @@ test('floating resize dragged up grows from the top while keeping the bottom edg
   localStorage.setItem('history-workspace-v1',JSON.stringify({mode:'floating',position:{x:80,y:200},panelHeight:150}));
   const {container}=render(<Demo/>);
   const panel=container.querySelector<HTMLElement>('.time-controller')!;
-  Object.defineProperty(panel.querySelector('.controller-content'),'scrollHeight',{configurable:true,value:600});
+  Object.defineProperty(panel.querySelector('.timeline-panel'),'scrollHeight',{configurable:true,value:600});
   const handle=screen.getByRole('separator',{name:'调整时间控制器高度'});
   const pointer=(type:string,clientY:number)=>{const event=new MouseEvent(type,{bubbles:true,button:0,clientY});Object.defineProperty(event,'pointerId',{value:5});fireEvent(handle,event);};
   pointer('pointerdown',200);
@@ -178,7 +178,7 @@ test('floating resize dragged up grows from the top while keeping the bottom edg
 test('floating resize respects pane top and bottom boundaries while keeping the bottom anchored', async()=>{
   localStorage.setItem('history-workspace-v1',JSON.stringify({mode:'floating',position:{x:80,y:108},panelHeight:600}));
   const originalScrollHeight=Object.getOwnPropertyDescriptor(HTMLElement.prototype,'scrollHeight');
-  Object.defineProperty(HTMLElement.prototype,'scrollHeight',{configurable:true,get(){return this.classList?.contains('controller-content')?1000:0;}});
+  Object.defineProperty(HTMLElement.prototype,'scrollHeight',{configurable:true,get(){return this.classList?.contains('timeline-panel')?1000:0;}});
   try {
     const {container}=render(<Demo/>);
     const panel=container.querySelector<HTMLElement>('.time-controller')!;
@@ -199,7 +199,7 @@ test('floating keyboard resize keeps the bottom edge fixed for both arrow direct
   localStorage.setItem('history-workspace-v1',JSON.stringify({mode:'floating',position:{x:80,y:100},panelHeight:150}));
   const {container}=render(<Demo/>);
   const panel=container.querySelector<HTMLElement>('.time-controller')!;
-  Object.defineProperty(panel.querySelector('.controller-content'),'scrollHeight',{configurable:true,value:600});
+  Object.defineProperty(panel.querySelector('.timeline-panel'),'scrollHeight',{configurable:true,value:600});
   const handle=screen.getByRole('separator',{name:'调整时间控制器高度'});
   handle.focus();
   await userEvent.keyboard('{ArrowUp}');
@@ -213,7 +213,7 @@ test('restores a saved intermediate panel height and constrains it after a short
   const originalWidth=window.innerWidth;
   const originalHeight=window.innerHeight;
   const originalScrollHeight=Object.getOwnPropertyDescriptor(HTMLElement.prototype,'scrollHeight');
-  Object.defineProperty(HTMLElement.prototype,'scrollHeight',{configurable:true,get(){return this.classList?.contains('controller-content')?600:0;}});
+  Object.defineProperty(HTMLElement.prototype,'scrollHeight',{configurable:true,get(){return this.classList?.contains('timeline-panel')?600:0;}});
   localStorage.setItem('history-workspace-v1',JSON.stringify({mode:'docked',position:{x:24,y:80},panelHeight:220}));
   Object.defineProperty(window,'innerWidth',{configurable:true,value:1440,writable:true});
   Object.defineProperty(window,'innerHeight',{configurable:true,value:900,writable:true});
@@ -241,4 +241,26 @@ test('expanded timeline omits playback and year step actions',async()=>{
   expect(screen.queryByRole('button',{name:'上一年'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'下一年'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'精简时间控制器'})).not.toBeInTheDocument();
+});
+
+test.each(['docked','floating'] as const)('keeps the %s panel height when dynasty focus reduces intrinsic content', async (mode) => {
+  let contentHeight = 600;
+  const callbacks: ResizeObserverCallback[] = [];
+  vi.stubGlobal('ResizeObserver', class { constructor(cb: ResizeObserverCallback) { callbacks.push(cb); } observe() {} disconnect() {} });
+  const original = Object.getOwnPropertyDescriptor(HTMLElement.prototype,'scrollHeight');
+  Object.defineProperty(HTMLElement.prototype,'scrollHeight',{configurable:true,get(){return this.classList?.contains('controller-content') || this.classList?.contains('timeline-panel') ? contentHeight : 0;}});
+  localStorage.setItem('history-workspace-v1',JSON.stringify({mode,position:{x:24,y:80},panelHeight:520}));
+  try {
+    const {container} = render(<Demo/>);
+    const panel = container.querySelector<HTMLElement>('.time-controller')!;
+    expect(panel).toHaveStyle({height:'520px'});
+    await userEvent.click(screen.getByRole('button',{name:/^聚焦秦 /}));
+    contentHeight = 200;
+    for (let i=0;i<5;i++) act(()=>callbacks.forEach(cb=>cb([],{} as ResizeObserver)));
+    expect(panel).toHaveStyle({height:'520px'});
+    expect(JSON.parse(localStorage.getItem('history-workspace-v1')!).panelHeight).toBe(520);
+  } finally {
+    if(original) Object.defineProperty(HTMLElement.prototype,'scrollHeight',original);
+    else Reflect.deleteProperty(HTMLElement.prototype,'scrollHeight');
+  }
 });

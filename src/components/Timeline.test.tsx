@@ -4,9 +4,9 @@ import { expect, test, vi } from 'vitest';
 import { Timeline } from './Timeline';
 import { yearToIndex } from '../domain/timeline';
 import { LocaleProvider } from '../i18n/locale';
-import { playMechanicalTick } from '../domain/mechanical-sound';
 
-vi.mock('../domain/mechanical-sound',()=>({playMechanicalTick:vi.fn()}));
+const defaultResizeObserver = globalThis.ResizeObserver;
+
 
 test('English timeline exposes dates, period choices and validation in the selected language', async () => {
   localStorage.setItem('history-locale', 'en');
@@ -53,38 +53,12 @@ test('slider magnetic feedback snaps nearby drags onto historical dates', () => 
   expect(slider).toHaveAttribute('data-snapped','true');
 });
 
-test('source-change nodes start in a single ordered row and can reveal the complete list', async () => {
+test('source-change nodes stay in one chronologically ordered row', async () => {
   render(<Timeline year={800} onYearChange={vi.fn()} isPlaying={false} onPlayToggle={vi.fn()} />);
   const nodes=screen.getByRole('group',{name:'可用疆域断面'});
-  expect(nodes).toHaveAttribute('data-expanded','false');
   const years=[...nodes.querySelectorAll<HTMLButtonElement>('button[data-year]')].map(button=>Number(button.dataset.year));
   expect(years).toEqual([...years].sort((a,b)=>a-b));
-  await userEvent.click(screen.getByRole('button',{name:'展开资料变化节点'}));
-  expect(nodes).toHaveAttribute('data-expanded','true');
-  expect(document.getElementById('snapshot-node-track')).toHaveAttribute('data-expanded','true');
-  expect(document.getElementById('snapshot-node-track')).toHaveStyle({maxHeight:'min(30dvh, 320px)',overflowY:'auto'});
-});
 
-test('source-change snap sound is off by default and remembers an explicit opt-in', async () => {
-  localStorage.removeItem('timeline-snap-sound');
-  render(<Timeline year={800} onYearChange={vi.fn()} isPlaying={false} onPlayToggle={vi.fn()} />);
-  await userEvent.click(screen.getByRole('button',{name:'展开资料变化节点'}));
-  const toggle=screen.getByRole('button',{name:'开启吸附提示音'});
-  expect(toggle).toHaveAttribute('aria-pressed','false');
-  await userEvent.click(toggle);
-  expect(localStorage.getItem('timeline-snap-sound')).toBe('true');
-  expect(screen.getByRole('button',{name:'关闭吸附提示音'})).toHaveAttribute('aria-pressed','true');
-});
-
-test('plays the optional tick only when a drag snaps onto a source-change year',()=>{
-  localStorage.setItem('timeline-snap-sound','true');
-  vi.mocked(playMechanicalTick).mockClear();
-  render(<Timeline year={800} onYearChange={vi.fn()} isPlaying={false} onPlayToggle={vi.fn()}/>);
-  const slider=screen.getByRole('slider');
-  fireEvent.input(slider,{target:{value:String(yearToIndex(617))}});
-  expect(playMechanicalTick).not.toHaveBeenCalled();
-  fireEvent.input(slider,{target:{value:String(yearToIndex(616))}});
-  expect(playMechanicalTick).toHaveBeenCalledOnce();
 });
 
 test('turns off ruler magnification when reduced motion is requested',()=>{
@@ -174,40 +148,14 @@ test('submitting the selected year recenters a viewport that was panned away', a
   expect(Number(screen.getByRole('slider').getAttribute('max'))).toBeGreaterThanOrEqual(yearToIndex(800));
 });
 
-test('can move directly to the next available source change', async () => {
-  const change=vi.fn();
-  render(<Timeline year={-213} onYearChange={change} isPlaying={false} onPlayToggle={vi.fn()} />);
-  await userEvent.click(screen.getByRole('button',{name:'下一资料变化'}));
-  expect(change).toHaveBeenCalledWith(-212);
-});
-
-test.each([false, true])('narrow controller preserves focus with custom range %s', (customRange) => {
-  let width = 760;
-  const callbacks: ResizeObserverCallback[] = [];
-  vi.stubGlobal('ResizeObserver', class { constructor(cb: ResizeObserverCallback) { callbacks.push(cb); } observe() {} disconnect() {} });
-  const rect = vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
-    return { width, height: 500, x:0,y:0,top:0,left:0,right:width,bottom:500,toJSON(){} };
-  });
-  try {
-    render(<div className="time-controller"><Timeline year={800} onYearChange={vi.fn()} viewWindow={customRange ? [618,907] : undefined}/></div>);
-    const input = screen.getByRole('spinbutton');
-    input.focus();
-    width = 599;
-    act(() => callbacks.forEach(cb => cb([], {} as ResizeObserver)));
-    expect(input.closest('form')).toHaveAttribute('hidden');
-    expect(screen.getByRole('button', {name:customRange ? '全历史' : '王朝至今'})).toHaveFocus();
-  } finally { rect.mockRestore(); vi.unstubAllGlobals(); }
-});
-
-test('short controller closes supplementary popovers and restores sections without reopening them', async () => {
+test('short controller hides supplementary years and restores the inline list', async () => {
   let height = 500;
   const callbacks: ResizeObserverCallback[] = [];
   vi.stubGlobal('ResizeObserver', class { constructor(cb: ResizeObserverCallback) { callbacks.push(cb); } observe() {} disconnect() {} });
   const rect = vi.spyOn(HTMLElement.prototype, 'getBoundingClientRect').mockImplementation(() => ({width:760,height,x:0,y:0,top:0,left:0,right:760,bottom:height,toJSON(){}}));
   try {
     render(<div className="time-controller"><Timeline year={800} onYearChange={vi.fn()}/></div>);
-    await userEvent.click(screen.getByRole('button', {name:'展开资料变化节点'}));
-    expect(document.body.querySelector('.snapshot-node-track[data-expanded="true"]')).not.toBeNull();
+    expect(screen.getByLabelText('可用疆域断面')).toBeInTheDocument();
     height = 399;
     act(() => callbacks.forEach(cb => cb([], {} as ResizeObserver)));
     expect(screen.queryByLabelText('可用疆域断面')).not.toBeInTheDocument();
@@ -215,6 +163,20 @@ test('short controller closes supplementary popovers and restores sections witho
     expect(document.body.querySelector('.snapshot-node-track')).toBeNull();
     height = 400;
     act(() => callbacks.forEach(cb => cb([], {} as ResizeObserver)));
-    expect(screen.getByRole('button', {name:'展开资料变化节点'})).toHaveAttribute('aria-expanded','false');
-  } finally { rect.mockRestore(); vi.unstubAllGlobals(); }
+    expect(screen.getByLabelText('可用疆域断面')).toBeInTheDocument();
+    expect(document.querySelector('body > .snapshot-node-track')).toBeNull();
+  } finally { rect.mockRestore(); vi.unstubAllGlobals(); vi.stubGlobal('ResizeObserver',defaultResizeObserver); }
+});
+
+test('source years remain clickable without the removed heading and popover controls', async () => {
+  const change = vi.fn();
+  render(<Timeline year={800} onYearChange={change}/>);
+  expect(screen.queryByText('资料变化节点')).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', {name:'展开资料变化节点'})).not.toBeInTheDocument();
+  expect(screen.queryByRole('button', {name:'上一资料变化'})).not.toBeInTheDocument();
+  const row = screen.getByRole('group', {name:'可用疆域断面'});
+  const button = row.querySelector<HTMLButtonElement>('button[data-year="800"]')!;
+  expect(button).toHaveAttribute('aria-pressed','true');
+  await userEvent.click(button);
+  expect(change).toHaveBeenCalledWith(800);
 });
