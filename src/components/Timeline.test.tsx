@@ -1,4 +1,4 @@
-import { act, fireEvent, render, screen } from '@testing-library/react';
+import { act, fireEvent, render, screen, waitFor } from '@testing-library/react';
 import userEvent from '@testing-library/user-event';
 import { expect, test, vi } from 'vitest';
 import { Timeline } from './Timeline';
@@ -179,4 +179,41 @@ test('source years remain clickable without the removed heading and popover cont
   expect(button).toHaveAttribute('aria-pressed','true');
   await userEvent.click(button);
   expect(change).toHaveBeenCalledWith(800);
+});
+
+test('footer places source years before the final slider and identifies the nearest real source', () => {
+  render(<Timeline year={801} viewWindow={[800,830]} onYearChange={vi.fn()}/>);
+  const slider = screen.getByRole('slider');
+  const footer = slider.closest('.timeline-bottom-controls');
+  expect(footer).not.toBeNull();
+  expect(footer!.lastElementChild).toBe(slider);
+  expect(footer).toContainElement(screen.getByRole('group',{name:'可用疆域断面'}));
+  expect(screen.getByText('最近资料：800年')).toBeInTheDocument();
+  expect(document.querySelector('button[data-year="801"]')).toBeNull();
+  expect(document.querySelector('.timeline-main-content')).toContainElement(screen.getByLabelText('按实际时长排列的朝代'));
+});
+
+test('empty source windows show a factual message without synthetic year buttons', () => {
+  render(<Timeline year={801} viewWindow={[801,802]} onYearChange={vi.fn()}/>);
+  expect(screen.getByText('此视窗无疆域断面，可缩小时间轴查看其他资料')).toBeInTheDocument();
+  expect(document.querySelector('.snapshot-node-track button')).toBeNull();
+  expect(screen.queryByText(/最近资料：/)).not.toBeInTheDocument();
+});
+
+test('mounting the source annotation layer aligns years without changing the current year', async () => {
+  const width = vi.spyOn(HTMLElement.prototype,'clientWidth','get').mockReturnValue(500);
+  const scrollWidth = vi.spyOn(HTMLElement.prototype,'scrollWidth','get').mockReturnValue(2000);
+  const rect = vi.spyOn(HTMLElement.prototype,'getBoundingClientRect').mockImplementation(function(this: HTMLElement) {
+    const left = this.matches('button[data-year]') ? 900 : 0;
+    const w = this.matches('button[data-year]') ? 40 : 500;
+    return {x:left,y:0,left,top:0,width:w,height:30,right:left+w,bottom:30,toJSON(){}};
+  });
+  try {
+    const props={year:800,viewWindow:[800,830] as [number,number],onYearChange:vi.fn()};
+    const {rerender}=render(<Timeline {...props} annotationLayer="none"/>);
+    expect(document.querySelector('.snapshot-node-track')).toBeNull();
+    rerender(<Timeline {...props} annotationLayer="changes"/>);
+    const row=document.querySelector<HTMLElement>('.snapshot-node-track')!;
+    await waitFor(()=>expect(row.scrollLeft).toBeGreaterThan(0));
+  } finally { width.mockRestore();scrollWidth.mockRestore();rect.mockRestore(); }
 });

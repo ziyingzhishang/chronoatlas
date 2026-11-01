@@ -74,7 +74,8 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     if (!adjustable || !box.current) return;
     const controller = box.current;
     const content = controller.querySelector<HTMLElement>('.controller-content');
-    const naturalContent = content?.firstElementChild as HTMLElement|null|undefined;
+    const naturalContent = content?.querySelector<HTMLElement>('.timeline-main-content');
+    const footer = content?.querySelector<HTMLElement>('.timeline-bottom-controls');
     const constrain = () => {
       const natural = naturalPanelHeight(content, controller.querySelector<HTMLElement>('.controller-handlebar'));
       setMeasuredNaturalHeight(natural);
@@ -84,6 +85,7 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     observer.observe(controller);
     if (content) observer.observe(content);
     if (naturalContent) observer.observe(naturalContent);
+    if (footer) observer.observe(footer);
     return () => observer.disconnect();
   },[adjustable,bounds,mobile,panelHeight,short,viewport.height]);
 
@@ -152,9 +154,13 @@ export function TimeController({ onResizeInteractionChange, ...timelineProps }: 
     return next;
   }
   function naturalPanelHeight(content?:HTMLElement|null, header?:HTMLElement|null) {
-    // The timeline's intrinsic height excludes free space allocated to its scroll viewport.
-    const timeline = content?.firstElementChild as HTMLElement|null|undefined;
-    return Math.max(400,(timeline?.scrollHeight ?? 0) + (header?.offsetHeight || 50));
+    // Measure the intrinsic body and footer, never the allocated scroll viewport.
+    const body = content?.querySelector<HTMLElement>('.timeline-main-content');
+    const footer = content?.querySelector<HTMLElement>('.timeline-bottom-controls');
+    const scroller = content?.querySelector<HTMLElement>('.timeline-scroll-body');
+    const css = scroller ? getComputedStyle(scroller) : undefined;
+    const padding = (parseFloat(css?.paddingTop ?? '')||0)+(parseFloat(css?.paddingBottom ?? '')||0);
+    return Math.max(400,(body?.scrollHeight ?? 0)+(footer?.offsetHeight ?? 0)+padding+(header?.offsetHeight || 50));
   }
 
   const mode = timelineProps.mode ?? 'explore';

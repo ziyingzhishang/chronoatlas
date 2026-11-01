@@ -429,3 +429,30 @@
   .collapsed-range-controls { height:44px; }
   .controller-layout-actions button { min-width:44px; }
 }
+
+/* The status card grows with its text; the search field keeps its own height. */
+.workspace-header .map-status-hud { height:auto; min-height:72px; gap:4px; line-height:1.4; }
+.map-status-primary { flex-wrap:wrap; row-gap:4px; }
+.map-status-era,.map-status-view { max-width:100%; white-space:normal; overflow-wrap:anywhere; }
+.map-status-window { overflow:visible; white-space:normal; overflow-wrap:anywhere; text-overflow:clip; }
+
+/* Only the body scrolls. Source years and the final slider stay at the bottom. */
+.time-controller .controller-content { overflow:hidden; scrollbar-gutter:auto; }
+.time-controller .timeline-panel { display:flex; flex-direction:column; height:100%; min-height:0; box-sizing:border-box; padding:0 !important; }
+.time-controller .timeline-scroll-body { flex:1 1 auto; min-height:0; overflow:auto; overscroll-behavior:contain; scrollbar-gutter:stable; padding:6px 24px 0; }
+.timeline-main-content { min-width:0; }
+.timeline-bottom-controls { --timeline-side-padding:24px; flex:0 0 auto; min-width:0; padding:0 var(--timeline-side-padding) 10px; background:#1c2722; }
+.snapshot-nearest-note { grid-column:1/-1; color:#c9bd9f; }
+.timeline-bottom-controls .snapshot-node-track { scroll-behavior:auto; width:calc(100% + 2 * var(--timeline-side-padding)); margin-inline:calc(-1 * var(--timeline-side-padding)); }
+.timeline-bottom-controls .snapshot-node-track::before,.timeline-bottom-controls .snapshot-node-track::after { content:""; flex:0 0 var(--source-edge-space,100%); pointer-events:none; }
+.timeline-bottom-controls .snapshot-node-track:empty { display:none; }
+.workspace .timeline-slider { --timeline-thumb-size:20px; box-sizing:border-box; border:0; flex:none; }
+.workspace .timeline-slider::-webkit-slider-thumb { box-sizing:border-box; width:var(--timeline-thumb-size); height:var(--timeline-thumb-size); }
+.workspace .timeline-slider::-moz-range-thumb { box-sizing:border-box; width:var(--timeline-thumb-size); height:var(--timeline-thumb-size); }
+@media (max-width:640px) {
+  .time-controller .timeline-scroll-body { padding:5px 14px 0; }
+  .timeline-bottom-controls { --timeline-side-padding:14px; padding:0 var(--timeline-side-padding) 8px; }
+}
+@media (max-width:767px), (pointer:coarse) {
+  .timeline-bottom-controls .timeline-slider { height:44px; }
+}
