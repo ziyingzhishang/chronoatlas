@@ -4,6 +4,18 @@ const sourceIds = ['zizhi-tongjian'];
 
 export const personDetails: PersonDetail[] = [
   {
+    personId: 'li-keyong', biography: '李克用是晚唐河东节度使，895年受封晋王并统领河东军政集团。其子李存勖承接这一集团，907年以后与后梁争衡，923年转入后唐阶段。',
+    aliases: ['晋王', '唐太祖'], offices: [{ title: '晋王、河东军政领袖', polityId: 'jin_hedong', placeId: 'taiyuan', validFrom: 895, validTo: 908, datePrecision: 'range', sourceIds: ['hedong-jin-907-923-primary-sources'] }],
+    keyEvents: ['hedong-jin-stage-start-895'], sourceIds: ['hedong-jin-907-923-primary-sources'],
+    uncertaintyNote: '晋王名号来自唐廷册封，唐亡后集团继续使用天祐年号并保持区域事实自主；该导航阶段不等于史料确证的正式独立国号，现有史料也不足以复原895—923年连续直接控制边界。',
+  },
+  {
+    personId: 'xiang-yu', biography: '项羽（项籍）是秦末楚汉战争领袖。史书记其自立为西楚霸王、都彭城；封域记载不等于逐年直接控制边界。',
+    aliases: ['项籍', '西楚霸王'], offices: [{ title: '项羽政权领袖', polityId: 'xiang_yu', placeId: 'pengcheng', validFrom: -206, validTo: -202, datePrecision: 'range', sourceIds: ['xiang-yu-regime-206-202-primary-sources'] }],
+    keyEvents: ['chu-han-contention', 'han-pengcheng-battle-205'], sourceIds: ['xiang-yu-regime-206-202-primary-sources', 'xuzhou-pengcheng-historical-location'],
+    uncertaintyNote: '项羽生年未在本项目确认；政权采用描述性名称。前202年是年内终止转换年，彭城中心不覆盖全年，九郡封域不作精确疆界。',
+  },
+  {
     personId: 'liu-bang', biography: '刘邦出身平民，经历秦末战争与楚汉竞争，最终建立汉朝，并以长安作为帝国政治中心。',
     aliases: ['汉高祖'], offices: [{ title: '汉王', polityId: 'han_western', validFrom: -206, validTo: -202, datePrecision: 'range', sourceIds }],
     keyEvents: ['changan-han-capital', 'han-imperial-accession'], sourceIds,

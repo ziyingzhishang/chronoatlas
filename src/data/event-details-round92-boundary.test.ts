@@ -16,8 +16,10 @@ const reviewBoundaryReasons = {
   'eastern-zhou-founded-eighth-batch': 'formation-approximation',
   'former-liang-founded': 'formation-approximation',
   'later-qin-founded': 'unlocated-historical-place',
+  'later-shu-suppresses-quzhou-revolt-934': 'participant-identity-not-modeled',
   'goguryeo-founded': 'formation-approximation',
   'han-wudi-expands-changan': 'participant-endpoint-review',
+  'han-pengcheng-battle-205': 'participant-identity-not-modeled',
   'qi-warring-founded-eighth-batch': 'traditional-periodization',
   'qin-state-founded-eighth-batch': 'traditional-periodization',
   'republic-chongqing-wartime-center': 'wartime-political-center-range',
@@ -39,6 +41,8 @@ const reviewBoundaryReasons = {
   'western-liao-emperor-1132': 'formation-approximation',
   'western-liao-ended-1218': 'formation-approximation',
   'western-xia-ended-1227': 'formation-approximation',
+  'western-yan-ended-394': 'participant-identity-not-modeled',
+  'western-yan-founded': 'participant-identity-not-modeled',
   'jin-ended-1234': 'formation-approximation',
   'min-ended-945': 'termination-approximation',
   'southern-song-ended-1279': 'formation-approximation',
@@ -49,12 +53,16 @@ const reviewBoundaryReasons = {
   'wuhan-national-government-1927': 'participant-identity-not-modeled',
   'western-zhou-founded-eighth-batch': 'traditional-periodization',
   'xia-early-founded-eighth-batch': 'traditional-periodization',
+  'xia-sixteen-states-founded-eighth-batch': 'traditional-periodization',
   'xiongnu-founded': 'formation-approximation',
   'xiongnu-termination-upper-bound-93': 'termination-approximation',
   'xuanzang-at-ximing-658': 'multi-year-process',
   'yongli-regime-ended-1662': 'location-approximation',
   'shangyang-palace-built': 'construction-range',
   'yan-warring-founded-eighth-batch': 'traditional-periodization',
+  'yang-wu-captures-ezhou-905': 'participant-identity-not-modeled',
+  'yang-wu-captures-hongzhou-906': 'participant-identity-not-modeled',
+  'yuan-shikai-died-1916': 'participant-identity-not-modeled',
   'zhou-conquest': 'traditional-periodization',
   'zhao-wuling-reforms-307': 'reform-process-approximation',
 } as const;
@@ -65,7 +73,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 176, 'needs-review': 55, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 201, 'needs-review': 63, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -117,10 +125,16 @@ describe('event details ninety-second round boundary audit', () => {
       .sort();
 
     expect(participantGapIds).toEqual([
+      'later-shu-suppresses-quzhou-revolt-934',
       'national-government-formed-guangzhou-1925',
       'northeast-reflag-1928',
       'qing-ended-1912',
+      'western-yan-ended-394',
+      'western-yan-founded',
       'wuhan-national-government-1927',
+      'yang-wu-captures-ezhou-905',
+      'yang-wu-captures-hongzhou-906',
+      'yuan-shikai-died-1916',
     ]);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);

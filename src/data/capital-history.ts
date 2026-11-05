@@ -80,6 +80,7 @@ const seed = (polityId:string, [placeId, _name, validFrom, validTo, role='primar
 });
 
 const explicit: Record<string, Seed[]> = {
+  xiang_yu:[['pengcheng','彭城（政权中心参照）',-206,-203,'primary','actual','medium','史书记项羽自立为西楚霸王、都彭城。此处仅表示有来源支持的城市级中心参照；前202年为政权年内终止转换年，不以该点覆盖全年，也不表示封域或疆界。']],
   jin_hedong:[['taiyuan','晋阳政治军事中心（非正式都城）',895,922,'de_facto','actual','low','晋阳（今太原一带）为李克用、李存勖河东军政集团的重要政治军事根据地；本记录仅作区域中心参照，不称正式都城，不指认具体古城点位，也不表示河东边界。895—906年处于唐廷册封晋王的制度背景，907年后承唐名义与区域自主并存；923年称帝建后唐，为政权形态转换年，不以此点覆盖全年。']],
   han_warring:[['xinzheng','新郑',-403,-230]], zhao_warring:[['handan','邯郸',-403,-228]],
   wei_warring:[['anyi','安邑',-403,-344],['kaifeng','大梁',-343,-225]],

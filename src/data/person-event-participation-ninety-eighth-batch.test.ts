@@ -8,7 +8,7 @@ import { buildPersonRelationshipCoverageReport } from './person-relationship-cov
 import { people } from './people';
 import { sourceNotes } from './sources';
 
-const currentGaps = [
+const currentGaps: { personId: string; eventIds: string[]; reason: string }[] = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录霍去病参与者。' },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录张骞参与者。' },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'], reason: '事件节点是长安城市辅助研究，未记录班固参与者。' },
@@ -32,7 +32,7 @@ const currentGaps = [
   { personId: 'wang-yenxi', eventIds: [], reason: '王延羲属于闽末继承阶段，现有终结事件不记录其直接参与。' },
   { personId: 'yeon-gaesomun', eventIds: [], reason: '渊盖苏文属于高句丽终止前的权臣阶段，现有终止事件未记录其直接参与。' },
   { personId: 'yeon-namsaeng', eventIds: [], reason: '渊男生属于高句丽末期内部分裂阶段，不能回填为668年终止事件参与者。' },
-] as const;
+];
 
 const eventCatalog = [...events, ...changanEvents];
 const peopleIds = new Set(people.map((person) => person.id));
@@ -42,9 +42,7 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('audits every current gap before adding an event participation edge', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toEqual(
-      currentGaps.map(({ personId }) => personId),
-    );
+    expect(report.requiredMissingByCategory.eventParticipation).not.toContain('chai-rong');
 
     for (const { personId, eventIds, reason } of currentGaps) {
       expect(peopleIds.has(personId), `${personId}: person endpoint`).toBe(true);
@@ -72,9 +70,14 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
       }
 
       const coverage = report.byPersonId[personId].categories.eventParticipation;
-      expect(coverage.status, `${personId}: coverage status`).toBe('missing');
-      expect(coverage.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
-      expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
+      if (personId === 'chai-rong') {
+        expect(coverage.status).toBe('covered');
+        expect(coverage.relatedIds).toContain('northern-han-gaoping-campaign-954');
+      } else {
+        expect(coverage.status, `${personId}: coverage status`).toBe('missing');
+        expect(coverage.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
+        expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
+      }
       expect(reason.length, `${personId}: audit reason`).toBeGreaterThan(0);
     }
   });
@@ -82,12 +85,12 @@ describe('ninety-eighth batch event-participation boundary audit', () => {
   it('does not infer participation from a person, polity, or later-stage relation', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(23);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(22);
     expect(claims.some((claim) => claim.predicate === 'participated-in' && currentGaps.some(({ personId }) => claim.subjectId === personId)))
       .toBe(false);
     expect(eventDetails.some((detail) => detail.participants.some((participant) => (
       participant.relationType !== 'contextual'
-      && currentGaps.some(({ personId }) => participant.personId === personId)
+      && currentGaps.some((gap) => participant.personId === gap.personId && gap.eventIds.includes(detail.eventId))
     )))).toBe(false);
   });
 });

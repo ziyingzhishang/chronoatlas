@@ -4461,7 +4461,7 @@ const details: HistoricalEventDetail[] = [
   {
     eventId: 'han-pengcheng-battle-205',
     participants: [{ personId: 'liu-bang', role: '率汉军及诸侯联军进入彭城的汉王', relationType: 'direct', note: '彭城战事及其败退只反映前205年一次军事转折，不表示汉方全年疆域。' }],
-    polityIds: ['han_western'],
+    polityIds: ['han_western', 'xiang_yu'],
     causes: ['汉军还定三秦后向东推进。', '彭城成为汉、楚争夺中的重要城市节点。'],
     consequences: ['项羽回师反击，汉军在彭城一带败退。', '战役结果不等于汉、楚当年全年控制区或连续边界。'],
     phases: [{ label: '楚军反击、汉军败退', startYear: -205, endYear: -205, summary: '只标彭城城市级区域参照，不绘行军路线、战线或疆界。' }],

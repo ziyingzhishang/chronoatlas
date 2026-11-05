@@ -6,6 +6,9 @@ import { people } from './people';
 import { sourceNotes } from './sources';
 
 const targetPeople = [
+  'xiang-yu',
+  'liu-heita',
+  'li-keyong',
   'xiongnu-southern-chanyu-48',
   'zhizhi-chanyu',
   'xiongnu-northern-chanyu-91',
@@ -21,6 +24,9 @@ const targetPeople = [
 ] as const;
 
 const expectedRelations = [
+  ['claim-xiang-yu-enemy-liu-bang-release-closure', 'xiang-yu', 'enemy-of', 'liu-bang'],
+  ['claim-liu-heita-enemy-li-shimin-release-closure', 'liu-heita', 'enemy-of', 'li-shimin'],
+  ['claim-li-keyong-parent-li-cunxu-release-closure', 'li-keyong', 'parent-of', 'li-cunxu'],
   ['claim-xiongnu-southern-chanyu-48-grandchild-huhanye', 'xiongnu-southern-chanyu-48', 'grandchild-of', 'huhanye'],
   ['claim-zhizhi-sibling-huhanye-closure', 'zhizhi-chanyu', 'sibling-of', 'huhanye'],
   ['claim-xiongnu-northern-chanyu-91-enemy-dou-xian', 'xiongnu-northern-chanyu-91', 'enemy-of', 'dou-xian'],

@@ -45,7 +45,7 @@ describe('heritage coverage twelfth batch', () => {
 
     expect(missing).toEqual([]);
     expect(twelfthBatch).toHaveLength(10);
-    expect(remainingUnlinkedPolities.map((polity) => polity.polityId)).toEqual([]);
+    expect(remainingUnlinkedPolities.map((polity) => polity.polityId)).toEqual(['xiang_yu', 'western_yan']);
   });
 
   it('provides source-backed, time-aware details for every selected heritage node', () => {

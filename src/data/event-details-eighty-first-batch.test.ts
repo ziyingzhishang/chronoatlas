@@ -26,7 +26,7 @@ const targetPhases = {
     endYear: 641,
   },
   'western-zhou-founded-eighth-batch': {
-    label: '克商约年与封邦秩序分层',
+    label: '商周更替约年与封邦秩序分层',
     startYear: -1046,
     endYear: -1000,
   },

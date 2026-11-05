@@ -9,6 +9,14 @@ const detail = (record: PolityDetail): PolityDetail => record;
 
 export const polityDetails: PolityDetail[] = [
   detail({
+    polityId: 'xiang_yu', perspectiveSummary: '项羽政权是秦亡后在分封秩序与楚汉战争中形成的短期政治力量。项目采用描述性名称，不据“西楚霸王”称号预设正式国号，也不把分封范围直接画作稳定疆界。',
+    foundationProcess: ['前206年项羽入关后主持分封，自立为西楚霸王并都彭城。', '楚汉战争期间，彭城作为项羽政权的中心参照；各地控制随战事变化。', '前202年项羽败亡，政权在年内终止；该年不以年度实体有效期回填全年疆域。'],
+    turningPoints: [turn(-206, '分封并以彭城为都', '史书记项羽自立为西楚霸王、都彭城；九郡封域说法不作为逐年直接控制边界。', 'chu-han-contention'), turn(-205, '彭城之战', '楚军回师彭城并击败汉军；战役结果不直接证明全年城池控制。', 'han-pengcheng-battle-205'), turn(-203, '鸿沟约和', '年末楚汉约和，项羽政权仍然存在；约和不等同于测定边界。', 'chu-han-contention'), turn(-202, '项羽政权终止', '项羽败亡，汉方取得政治主导；诸侯承接和地方秩序重建仍需另行表达。')],
+    principalFigureIds: ['xiang-yu'], capitalPhases: [capital('pengcheng', -206, -203, 'primary', 'actual', '只表示彭城城市级政治中心参照；不表示封域、疆界或前202年全年控制。')],
+    heritageIds: [], eventIds: ['chu-han-contention', 'han-pengcheng-battle-205'], claimIds: ['claim-xiang-yu-ruled-xiang-yu-release-closure'], sourceIds: ['xiang-yu-regime-206-202-primary-sources', 'xuzhou-pengcheng-historical-location'],
+    uncertaintyNote: '来源支持项羽自立为西楚霸王、都彭城及楚汉战争节点，但“梁、楚地九郡”所指有不同考释，不足以复原逐年直接控制边界；前202年按政权终止年处理，不画疆域，不将事件或城市中心推为遗产关联。',
+  }),
+  detail({
     polityId: 'qin', perspectiveSummary: '秦帝国以统一战争结束战国列国并建立皇帝—郡县式中央政权；本条从秦帝国自身的建制、整合与短促崩解理解其历史。',
     foundationProcess: ['秦王政完成统一六国，前221年建立帝国。', '咸阳承接秦国晚期都城，成为帝国的正式政治中心。', '统一后的制度、交通与军事整合并未在建国节点瞬间完成。'],
     turningPoints: [turn(-221, '统一六国', '统一完成，秦帝国进入新的中央集权阶段。', 'qin-unification'), turn(-214, '北方经营', '北方军事防务与交通建设加强，但具体控制范围须按来源时段理解。'), turn(-209, '末年危机', '徭役、战争与地方反抗叠加，中央政权迅速失去稳定。')],
@@ -77,7 +85,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['前秦崩解后拓跋部重新聚合。', '386年拓跋珪复代并改国号为魏。', '平城与洛阳分别代表早期和后期首都阶段。'],
     turningPoints: [turn(386, '北魏建立', '北魏政权进入形成阶段。', 'northern-wei-founded'), turn(439, '统一北方', '北魏成为北方主要统一政权。'), turn(494, '迁都洛阳', '孝文帝迁都与改革改变国家制度与文化空间。'), turn(534, '北魏分裂终止', '孝武帝元修离开洛阳，东魏与西魏分别在邺、长安承接，北魏统一中央政权终止。', 'northern-wei-ended-534')],
     principalFigureIds: ['tuoba-gui', 'tuoba-tao', 'yuan-hong', 'yuan-xiu'], capitalPhases: [capital('shengle', 386, 397), capital('pingcheng', 398, 494), capital('luoyang', 495, 534)],
-    heritageIds: ['luoyang-han-wei-city-site', 'yungang-grottoes', 'yongning-temple-pagoda-site'], eventIds: ['northern-wei-founded', 'northern-wei-ended-534'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei', 'claim-yuan-xiu-ruled-northern-wei', 'claim-yuan-xiu-participated-northern-wei-ended-534'], sourceIds: modernSources,
+    heritageIds: ['luoyang-han-wei-city-site', 'yungang-grottoes', 'yongning-temple-pagoda-site'], eventIds: ['northern-wei-founded', 'northern-wei-xiaowu-departs-luoyang-534', 'northern-wei-ended-534'], claimIds: ['claim-tuoba-gui-founded-northern-wei', 'claim-tuoba-tao-ruled-northern-wei', 'claim-yuan-hong-ruled-northern-wei', 'claim-yuan-xiu-ruled-northern-wei', 'claim-yuan-xiu-participated-northern-wei-ended-534'], sourceIds: modernSources,
     uncertaintyNote: '北魏疆域变化很大，首都迁移不等于控制范围同步变化；534年前后洛阳中央秩序瓦解是过程性终止节点，东魏、西魏的正式建政和地方承接需分别记录。平城、洛阳及后续邺、长安遗存属于多政权叠压城市层。',
   }),
   detail({
@@ -93,7 +101,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['李渊控制长安并承接隋末政治资源。', '618年受禅建立唐朝。', '唐初仍经历地方战争与制度整合，后形成长安—洛阳双中心。'],
     turningPoints: [turn(618, '唐建立', '李渊在长安即位建唐。', 'tang-founded'), turn(626, '玄武门之变', '皇位继承与中央权力重新排列。'), turn(755, '安史之乱', '长安、洛阳与中央—地方关系受到重大冲击。', 'an-lushan-rebellion')],
     principalFigureIds: ['li-yuan', 'li-shimin', 'li-longji', 'wu-zhao', 'xuan-zang'], capitalPhases: [capital('changan', 618, 907), capital('luoyang', 618, 907, 'secondary', 'formal', '东都与阶段性政治中心')],
-    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'tang-founded-changan', 'sui-ended-618', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'daming-palace-built', 'tang-changan-end', 'court-moves-luoyang', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
+    heritageIds: ['tang-changan-city-site', 'daming-palace-site', 'xingqing-palace-site', 'xiao-yan-ta', 'big-wild-goose-pagoda', 'huaqing-palace', 'luoyang-sui-tang-city-site', 'shangyang-palace-site'], eventIds: ['tang-founded', 'tang-founded-changan', 'sui-ended-618', 'tang-captures-luoyang-621', 'xuanwu-gate', 'an-lushan-rebellion', 'ximing-temple-built', 'xuanzang-at-ximing-658', 'daming-palace-built', 'tang-changan-end', 'court-moves-luoyang', 'shangyang-palace-built', 'shangyang-palace-completed-679'], claimIds: ['claim-tang-changan-capital', 'claim-li-yuan-founded-tang', 'claim-li-shimin-ruled-tang', 'claim-tang-city-heritage', 'claim-daming-palace-heritage'], sourceIds: modernSources,
     uncertaintyNote: '双都制度、行幸与战乱中的临时中心不能混写为正式迁都；遗产节点展示城市和建筑层，不直接证明帝国疆域。',
   }),
   detail({
@@ -378,7 +386,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['朱温在宣武军及中原战事中积累军政资源。', '907年受唐禅建立后梁，五代中原王朝由此开始。', '后梁主要都城先为大梁，909年迁洛阳，913年新君在大梁即位后复都；各地控制仍须与地方政权实际自治分层理解。'],
     turningPoints: [turn(907, '后梁建立', '朱温受唐禅建立后梁，五代分期进入新阶段。', 'later-liang-five-dynasties-founded'), turn(909, '后梁迁都洛阳', '开平三年正月，梁帝由大梁迁入洛阳，朝廷中心转至洛阳。'), turn(913, '后梁复都大梁', '朱友贞在大梁即位，后梁政治中心复归大梁。'), turn(923, '后梁覆亡', '后唐军队攻入开封，朱友贞自尽，后梁政权结束；开封城市层继续承接后唐。', 'later-liang-ended-923')],
     principalFigureIds: ['zhu-wen', 'zhu-youzhen'], capitalPhases: [capital('kaifeng', 907, 908, 'primary', 'formal', '后梁建立初期大梁为都，今河南省开封市。'), capital('kaifeng', 909, 912, 'secondary', 'formal', '909年迁都洛阳后，大梁仍称东都并设留守。'), capital('luoyang', 909, 912, 'primary', 'formal', '909年迁都洛阳，913年复归大梁前的主要朝廷中心。'), capital('kaifeng', 913, 923, 'primary', 'formal', '913年朱友贞在大梁即位后复都，今河南省开封市。')],
-    heritageIds: ['later-liang-kaifeng-city-layer'], eventIds: ['later-liang-five-dynasties-founded', 'later-liang-ended-923'], claimIds: ['claim-zhu-youzhen-ruled-later-liang', 'claim-zhu-youzhen-participated-later-liang-ended-923', 'claim-zhu-youzhen-enemy-li-cunxu-termination-923', 'claim-li-cunxu-participated-later-liang-ended-923'], sourceIds: modernSources,
+    heritageIds: ['later-liang-kaifeng-city-layer'], eventIds: ['later-liang-five-dynasties-founded', 'later-liang-court-returns-to-daliang-909', 'later-liang-moves-capital-to-luoyang-909', 'later-liang-ended-923'], claimIds: ['claim-zhu-youzhen-ruled-later-liang', 'claim-zhu-youzhen-participated-later-liang-ended-923', 'claim-zhu-youzhen-enemy-li-cunxu-termination-923', 'claim-li-cunxu-participated-later-liang-ended-923'], sourceIds: modernSources,
     uncertaintyNote: '后梁开封遗产以城市考古历史层表达，不把现存建筑或北宋东京城复原直接归为后梁原构；923年称帝、攻入开封、末帝终局和地方接收是连续但可分层的过程，后梁建政事件与十六国后凉严格区分。',
   }),
   detail({
@@ -569,7 +577,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['辛亥革命后各省和临时政府推动共和政体建立。', '1912年孙中山在南京就任临时大总统。', '此后中央政治中心在北京、南京之间变化，抗战时期重庆为战时中央驻地。'],
     turningPoints: [turn(1912, '中华民国建立', '南京临时政府成立，共和政权进入新阶段。', 'republic-founded'), turn(1928, '南京国民政府建立', '中央政治中心回到南京。'), turn(1937, '战时迁驻重庆', '重庆成为战时中央驻地，但不等同于永久迁都。'), turn(1949, '中央政府迁台', '1949年内政治军事中心多次迁移；12月中央政府迁台，以台北作为年末所在地参照。全年控制范围不据此单点或来源轮廓推定。')],
     principalFigureIds: ['sun-yat-sen'], capitalPhases: [capital('beijing', 1912, 1927), capital('yingtian', 1928, 1937), capital('chongqing', 1938, 1945, 'temporary', 'actual', '战时陪都／中央驻地，不等同永久迁都。'), capital('yingtian', 1946, 1948), capital('taipei', 1949, 1949, 'de_facto', 'actual', '1949年12月中央政府迁台后的年末城市级所在地参照；不表示全年唯一中心或边界。')],
-    heritageIds: ['republic-nanjing-presidential-palace-site'], eventIds: ['republic-founded', 'republic-chongqing-wartime-center'], claimIds: [], sourceIds: [...modernSources, 'taiwan-archives-government-relocation-1949', 'academy-chinese-studies-republic-retreat-1949', 'taipei-city-geographical-location'],
+    heritageIds: ['republic-nanjing-presidential-palace-site'], eventIds: ['republic-founded', 'republic-chongqing-wartime-center', 'yuan-shikai-died-1916'], claimIds: [], sourceIds: [...modernSources, 'taiwan-archives-government-relocation-1949', 'academy-chinese-studies-republic-retreat-1949', 'taipei-city-geographical-location'],
     uncertaintyNote: '中华民国大陆时期包含临时政府、北洋政府、南京政府与战时驻地等不同阶段。1949年中央政府先后迁移并于12月迁台；本项目只把台北作为年末城市参照，未将低置信度年度轮廓解释为全年直接控制疆界。',
   }),
   detail({
@@ -625,7 +633,7 @@ export const polityDetails: PolityDetail[] = [
     foundationProcess: ['努尔哈赤通过战争、联盟和八旗组织整合建州女真。', '1616年建立后金，赫图阿拉是早期政治中心。', '后金继续向辽东推进，改国号为清与入关分别属于后续阶段。'],
     turningPoints: [turn(1616, '后金建立', '努尔哈赤建立后金并确立汗国体制。', 'later-jin-founded'), turn(1625, '迁往盛京阶段', '政治中心由赫图阿拉转向辽东更大的城市空间。'), turn(1636, '改国号为清', '后金国家形态转入清政权阶段。', 'qing-founded')],
     principalFigureIds: ['nurhaci', 'hongtaiji'], capitalPhases: [capital('heturnala', 1616, 1625), capital('shengjing', 1626, 1636)],
-    heritageIds: ['later-jin-hetu-ala-city-site', 'qing-shengjing-palace-city-site'], eventIds: ['later-jin-founded'], claimIds: ['claim-nurhaci-parent-hongtaiji'], sourceIds: modernSources,
+    heritageIds: ['later-jin-hetu-ala-city-site', 'qing-shengjing-palace-city-site'], eventIds: ['later-jin-founded', 'qing-founded'], claimIds: ['claim-nurhaci-parent-hongtaiji'], sourceIds: modernSources,
     uncertaintyNote: '1616年是后金建政节点，辽阳及盛京阶段不应前推为建政当日的正式中心；1636年改国号为清、1644年入关不属于后金建立事件本身。',
   }),
   detail({

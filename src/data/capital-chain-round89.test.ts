@@ -12,6 +12,7 @@ const auditedPolityIds = ['jin_later', 'han_later'] as const;
 const evidenceBoundaryPolityIds = [
   'yan_warring',
   'later_yan',
+  'western_yan',
   'jin_hedong',
   'xiongnu',
   'silla',
@@ -30,7 +31,7 @@ describe('eighty-ninth capital chain audit', () => {
   it('keeps all fourteen evidence-boundary polities outside qualified coverage', () => {
     const report = getCapitalCoverageReport();
 
-    expect(report.summary.qualifiedPolities).toBe(74);
+    expect(report.summary.qualifiedPolities).toBe(75);
     expect(report.summary.gapPolityIds).toEqual([...evidenceBoundaryPolityIds]);
     for (const polityId of evidenceBoundaryPolityIds) {
       const item = report.polities.find((polity) => polity.polityId === polityId);

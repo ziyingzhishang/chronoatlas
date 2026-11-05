@@ -22,7 +22,7 @@ describe('Cao Wei termination closure', () => {
     expect(detail).toMatchObject({
       eventId: 'wei-three-ended-265',
       polityIds: ['wei_three', 'jin_western'],
-      locationIds: ['luoyang'],
+      locationIds: ['weizhou', 'luoyang'],
     });
     expect(detail?.participants.map((participant) => participant.personId)).toEqual(
       expect.arrayContaining(['cao-huan', 'sima-yan']),

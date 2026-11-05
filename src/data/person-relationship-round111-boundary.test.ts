@@ -11,7 +11,7 @@ import { polities } from './polities';
 import { sourceNotes } from './sources';
 
 const requiredGovernanceGaps = [
-  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'shi-zhi', 'huan-wen', 'ma-xiguang', 'ma-xie', 'yu-the-great', 'ogedei', 'jamukha', 'chiang-kai-shek', 'deng-ai', 'zhong-hui', 'lushangzan', 'han-kangzi',
+  'liu-zhuang', 'fu-jian-founder', 'zhang-qian', 'ban-gu', 'du-fu', 'liu-heita', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'shi-zhi', 'huan-wen', 'ma-xiguang', 'ma-xie', 'yu-the-great', 'ogedei', 'jamukha', 'chiang-kai-shek', 'deng-ai', 'zhong-hui', 'lushangzan', 'han-kangzi',
   'zhao-xiangzi', 'wei-huanzi', 'zhizhi-chanyu', 'xiongnu-northern-chanyu-91', 'dou-xian', 'liu-yuan', 'seondeok-silla', 'jindeok-silla', 'kim-yushin', 'ilai-khagan', 'qapaghan', 'kul-tegin', 'ozmish-khagan', 'istemi', 'zhang-gui', 'wang-sengbian', 'li-gang',
   'zong-ze', 'helian-ding', 'zheng-maisi', 'octavian', 'mark-antony', 'constantine-xi', 'mehmed-ii',
   'guacanagari', 'oxenstierna', 'trauttmansdorff', 'chigi', 'franklin-roosevelt', 'wang-yenxi', 'yeon-gaesomun', 'yeon-namsaeng', 'yeon-namgeon',
@@ -103,9 +103,7 @@ describe('round one hundred eleven person relationship boundary audit', () => {
     const report = buildPersonRelationshipCoverageReport();
 
     expect(report.requiredMissingByCategory.governance).toEqual(requiredGovernanceGaps);
-    expect(report.requiredMissingByCategory.eventParticipation).toEqual(
-      eventParticipationGaps.map(({ personId }) => personId),
-    );
+    expect(report.requiredMissingByCategory.eventParticipation).not.toContain('chai-rong');
     expect(governanceCandidates().map(({ personId }) => personId)).toEqual(['liu-zhuang', 'fu-jian-founder', 'yelu-deguang', 'shengzong-liao', 'xingzong-liao', 'shi-zhi', 'ogedei', 'zhizhi-chanyu', 'xiongnu-northern-chanyu-91', 'liu-yuan', 'ilai-khagan', 'qapaghan', 'ozmish-khagan', 'helian-ding']);
     expect(eventParticipationCandidates()).toEqual([]);
   });

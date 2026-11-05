@@ -77,7 +77,7 @@ describe('round 132 reciprocal kinship relationship coverage', () => {
   it('preserves the frozen required-gap baseline because every pair already had a direct kinship edge', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(169);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(170);
     for (const personId of ['li-shimin', 'li-yuan', 'hongtaiji', 'nurhaci', 'shunzhi']) {
       expect(report.byPersonId[personId].categories.kinship.status, personId).toBe('covered');
     }

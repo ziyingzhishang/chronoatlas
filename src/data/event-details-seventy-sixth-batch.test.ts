@@ -10,7 +10,7 @@ const targetPhases = {
   'tibetan-founded': { label: '高原核心与对外交涉并行', startYear: 629, endYear: 641 },
   'xiongnu-founded': { label: '草原联盟与边疆交涉并行', startYear: -209, endYear: -198 },
   'western-zhou-founded-eighth-batch': { label: '封邦秩序与王畿承接', startYear: -1046, endYear: -1000 },
-  'zhou-conquest': { label: '克商后周初承接', startYear: -1046, endYear: -1043 },
+  'zhou-conquest': { label: '商周更替约年与周初承接', startYear: -1046, endYear: -1043 },
 } as const;
 
 const targetConsequences = {

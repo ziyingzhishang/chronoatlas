@@ -127,7 +127,6 @@ function hasSemanticBoundary(candidate: Candidate, category: BoundaryCategory): 
 describe('round 124 capital and city closure boundary', () => {
   it('keeps the exact post-round-123 residual set and verifies its source/time/place/polity endpoints', () => {
     const residual = discoverResiduals();
-
     expect(residual.map(key).sort()).toEqual(Object.keys(categories).sort());
 
     for (const candidate of residual) {

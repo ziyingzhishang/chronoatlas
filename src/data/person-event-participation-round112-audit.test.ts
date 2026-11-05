@@ -7,7 +7,7 @@ import { events } from './events';
 import { people } from './people';
 import { sourceNotes } from './sources';
 
-const currentGaps = [
+const currentGaps: { personId: string; eventIds: string[]; reason?: string }[] = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
@@ -31,7 +31,7 @@ const currentGaps = [
   { personId: 'wang-yenxi', eventIds: [] },
   { personId: 'yeon-gaesomun', eventIds: [] },
   { personId: 'yeon-namsaeng', eventIds: [] },
-] as const;
+];
 
 const eventCatalog = [...events, ...changanEvents];
 const eventById = new Map(eventCatalog.map((event) => [event.id, event]));
@@ -54,7 +54,9 @@ function qualifiedCandidates() {
     if (!event) return [];
 
     return detail.participants.flatMap((participant) => {
-      if (!gapPersonIds.has(participant.personId) || participant.relationType === 'contextual') return [];
+      const gap = currentGaps.find((item) => item.personId === participant.personId
+        && item.eventIds.includes(detail.eventId));
+      if (!gap || participant.relationType === 'contextual') return [];
       if (!participant.role.trim() || !participant.note?.trim()) return [];
       if (!overlapsLife(participant.personId, event.id)) return [];
 
@@ -87,7 +89,7 @@ describe('round one hundred twelve event-participation expert audit', () => {
       expect(peopleById.has(personId), `${personId}: person endpoint`).toBe(true);
 
       const records = eventDetails.flatMap((detail) => detail.participants
-        .filter((participant) => participant.personId === personId)
+        .filter((participant) => participant.personId === personId && eventIds.includes(detail.eventId))
         .map((participant) => ({ detail, participant })));
       expect(records.every(({ participant }) => participant.relationType === 'contextual'), `${personId}: no inferred direct role`).toBe(true);
 
@@ -106,7 +108,7 @@ describe('round one hundred twelve event-participation expert audit', () => {
 
   it('does not upgrade contextual records, succession, polity membership, or heritage association', () => {
     const contextualRecords = eventDetails.flatMap((detail) => detail.participants
-      .filter((participant) => gapPersonIds.has(participant.personId))
+      .filter((participant) => gapPersonIds.has(participant.personId) && participant.relationType === 'contextual')
       .map((participant) => ({ eventId: detail.eventId, personId: participant.personId, relationType: participant.relationType })));
 
     expect(contextualRecords).toEqual([

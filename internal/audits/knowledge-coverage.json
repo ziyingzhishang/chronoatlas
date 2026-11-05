@@ -2972,7 +2972,8 @@
       "entityKey": "event:han-pengcheng-battle-205",
       "label": "楚汉彭城之战",
       "polityIds": [
-        "han_western"
+        "han_western",
+        "xiang_yu"
       ],
       "checks": [
         {
@@ -3012,7 +3013,8 @@
           "relatedIds": [
             "chu-han-contention",
             "han_western",
-            "liu-bang"
+            "liu-bang",
+            "xiang_yu"
           ]
         },
         {
@@ -29698,6 +29700,7 @@
             "claim:claim-li-cunxu-participated-later-liang-ended-923",
             "claim:claim-li-cunxu-ruled-jin-hedong",
             "claim:claim-li-cunxu-ruled-tang-later-closure",
+            "claim:claim-li-keyong-parent-li-cunxu-release-closure",
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
             "claim:claim-wang-yan-enemy-li-cunxu-termination-925",
@@ -29715,6 +29718,7 @@
             "former-shu-ended-925",
             "jin_hedong",
             "later-liang-ended-923",
+            "li-keyong",
             "meng-zhixiang",
             "tang-later-founded",
             "tang_later",
@@ -29976,9 +29980,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "人物详情记录不存在或缺少生平摘要。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-keyong"
+          ],
           "relatedIds": []
         },
         {
@@ -29995,13 +30001,15 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-keyong-parent-li-cunxu-release-closure",
             "claim:claim-li-keyong-ruled-jin-hedong",
             "event-detail:hedong-jin-stage-start-895",
             "person-polity:li-keyong:jin_hedong"
           ],
           "relatedIds": [
             "hedong-jin-stage-start-895",
-            "jin_hedong"
+            "jin_hedong",
+            "li-cunxu"
           ]
         },
         {
@@ -30205,6 +30213,7 @@
             "claim:claim-li-yuan-appointed-li-shimin",
             "claim:claim-li-yuan-parent-li-shimin",
             "claim:claim-li-zhi-child-li-shimin-fiftyfourth",
+            "claim:claim-liu-heita-enemy-li-shimin-release-closure",
             "claim:claim-songtsen-gampo-enemy-li-shimin-ninetyfourth",
             "claim:claim-songtsen-gampo-related-li-shimin",
             "claim:claim-wei-zheng-ally-li-shimin-seventysixth",
@@ -30221,6 +30230,7 @@
             "ilai-khagan",
             "li-yuan",
             "li-zhi",
+            "liu-heita",
             "songtsen-gampo",
             "tang",
             "tang-captures-luoyang-621",
@@ -30772,6 +30782,7 @@
             "claim:claim-liu-bang-participated-chu-han-contention-fortyfourth",
             "claim:claim-liu-bang-participated-han-imperial-accession",
             "claim:claim-modu-enemy-liu-bang",
+            "claim:claim-xiang-yu-enemy-liu-bang-release-closure",
             "claim:claim-xiao-he-served-liu-bang",
             "event-detail:changan-han-capital",
             "event-detail:changle-palace-built",
@@ -30789,6 +30800,7 @@
             "han-xin",
             "han_western",
             "modu-chanyu",
+            "xiang-yu",
             "xiao-he"
           ]
         },
@@ -31255,9 +31267,11 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-heita-enemy-li-shimin-release-closure",
             "event-detail:liu-heita-establishes-handong-kingdom-622"
           ],
           "relatedIds": [
+            "li-shimin",
             "liu-heita-establishes-handong-kingdom-622"
           ]
         },
@@ -38909,9 +38923,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "人物详情记录不存在或缺少生平摘要。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiang-yu"
+          ],
           "relatedIds": []
         },
         {
@@ -38919,7 +38935,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "xiang-yu-regime-206-202-primary-sources"
+            "xiang-yu-regime-206-202-primary-sources",
+            "xuzhou-pengcheng-historical-location"
           ],
           "relatedIds": []
         },
@@ -38928,11 +38945,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiang-yu-enemy-liu-bang-release-closure",
+            "claim:claim-xiang-yu-ruled-xiang-yu-release-closure",
             "event-detail:chu-han-contention",
             "person-polity:xiang-yu:xiang_yu"
           ],
           "relatedIds": [
             "chu-han-contention",
+            "liu-bang",
             "xiang_yu"
           ]
         },
@@ -49358,9 +49378,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "当前目录没有独立的政权详情记录，需由后续批次补充。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "政权详情包含政权视角摘要、建立过程、转折、人物、首都阶段、事件关联与不确定性。",
+          "evidenceIds": [
+            "xiang_yu"
+          ],
           "relatedIds": []
         },
         {
@@ -49368,7 +49390,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "han-king-chuhan-206-203-primary-sources"
+            "han-king-chuhan-206-203-primary-sources",
+            "xiang-yu-regime-206-202-primary-sources",
+            "xuzhou-pengcheng-historical-location"
           ],
           "relatedIds": []
         },
@@ -49377,11 +49401,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiang-yu-ruled-xiang-yu-release-closure",
             "event-detail:chu-han-contention",
+            "event-detail:han-pengcheng-battle-205",
             "person:xiang-yu"
           ],
           "relatedIds": [
             "chu-han-contention",
+            "han-pengcheng-battle-205",
             "xiang-yu"
           ]
         },
@@ -51270,20 +51297,6 @@
     },
     {
       "entityType": "person",
-      "entityId": "li-keyong",
-      "entityKey": "person:li-keyong",
-      "label": "李克用",
-      "dimension": "detail",
-      "kind": "data-missing",
-      "polityIds": [
-        "jin_hedong"
-      ],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物详情记录不存在或缺少生平摘要。"
-    },
-    {
-      "entityType": "person",
       "entityId": "li-shi",
       "entityKey": "person:li-shi",
       "label": "李势",
@@ -51897,20 +51910,6 @@
       "entityId": "xiang-yu",
       "entityKey": "person:xiang-yu",
       "label": "项羽",
-      "dimension": "detail",
-      "kind": "data-missing",
-      "polityIds": [
-        "xiang_yu"
-      ],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物详情记录不存在或缺少生平摘要。"
-    },
-    {
-      "entityType": "person",
-      "entityId": "xiang-yu",
-      "entityKey": "person:xiang-yu",
-      "label": "项羽",
       "dimension": "time",
       "kind": "uncertain",
       "polityIds": [
@@ -52275,20 +52274,6 @@
       ],
       "relatedIds": [],
       "note": "政权详情记录存在但缺少政权视角、建立过程、关键转折、人物、首都阶段、事件关联或不确定性字段。"
-    },
-    {
-      "entityType": "polity",
-      "entityId": "xiang_yu",
-      "entityKey": "polity:xiang_yu",
-      "label": "项羽政权",
-      "dimension": "detail",
-      "kind": "data-missing",
-      "polityIds": [
-        "xiang_yu"
-      ],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "当前目录没有独立的政权详情记录，需由后续批次补充。"
     }
   ],
   "byKey": {
@@ -55262,7 +55247,8 @@
       "entityKey": "event:han-pengcheng-battle-205",
       "label": "楚汉彭城之战",
       "polityIds": [
-        "han_western"
+        "han_western",
+        "xiang_yu"
       ],
       "checks": [
         {
@@ -55302,7 +55288,8 @@
           "relatedIds": [
             "chu-han-contention",
             "han_western",
-            "liu-bang"
+            "liu-bang",
+            "xiang_yu"
           ]
         },
         {
@@ -81988,6 +81975,7 @@
             "claim:claim-li-cunxu-participated-later-liang-ended-923",
             "claim:claim-li-cunxu-ruled-jin-hedong",
             "claim:claim-li-cunxu-ruled-tang-later-closure",
+            "claim:claim-li-keyong-parent-li-cunxu-release-closure",
             "claim:claim-meng-zhixiang-ally-li-cunxu-seventyeighth",
             "claim:claim-meng-zhixiang-served-li-cunxu",
             "claim:claim-wang-yan-enemy-li-cunxu-termination-925",
@@ -82005,6 +81993,7 @@
             "former-shu-ended-925",
             "jin_hedong",
             "later-liang-ended-923",
+            "li-keyong",
             "meng-zhixiang",
             "tang-later-founded",
             "tang_later",
@@ -82266,9 +82255,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "人物详情记录不存在或缺少生平摘要。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "li-keyong"
+          ],
           "relatedIds": []
         },
         {
@@ -82285,13 +82276,15 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-li-keyong-parent-li-cunxu-release-closure",
             "claim:claim-li-keyong-ruled-jin-hedong",
             "event-detail:hedong-jin-stage-start-895",
             "person-polity:li-keyong:jin_hedong"
           ],
           "relatedIds": [
             "hedong-jin-stage-start-895",
-            "jin_hedong"
+            "jin_hedong",
+            "li-cunxu"
           ]
         },
         {
@@ -82495,6 +82488,7 @@
             "claim:claim-li-yuan-appointed-li-shimin",
             "claim:claim-li-yuan-parent-li-shimin",
             "claim:claim-li-zhi-child-li-shimin-fiftyfourth",
+            "claim:claim-liu-heita-enemy-li-shimin-release-closure",
             "claim:claim-songtsen-gampo-enemy-li-shimin-ninetyfourth",
             "claim:claim-songtsen-gampo-related-li-shimin",
             "claim:claim-wei-zheng-ally-li-shimin-seventysixth",
@@ -82511,6 +82505,7 @@
             "ilai-khagan",
             "li-yuan",
             "li-zhi",
+            "liu-heita",
             "songtsen-gampo",
             "tang",
             "tang-captures-luoyang-621",
@@ -83062,6 +83057,7 @@
             "claim:claim-liu-bang-participated-chu-han-contention-fortyfourth",
             "claim:claim-liu-bang-participated-han-imperial-accession",
             "claim:claim-modu-enemy-liu-bang",
+            "claim:claim-xiang-yu-enemy-liu-bang-release-closure",
             "claim:claim-xiao-he-served-liu-bang",
             "event-detail:changan-han-capital",
             "event-detail:changle-palace-built",
@@ -83079,6 +83075,7 @@
             "han-xin",
             "han_western",
             "modu-chanyu",
+            "xiang-yu",
             "xiao-he"
           ]
         },
@@ -83545,9 +83542,11 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-liu-heita-enemy-li-shimin-release-closure",
             "event-detail:liu-heita-establishes-handong-kingdom-622"
           ],
           "relatedIds": [
+            "li-shimin",
             "liu-heita-establishes-handong-kingdom-622"
           ]
         },
@@ -91199,9 +91198,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "人物详情记录不存在或缺少生平摘要。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "人物详情包含生平、任职、关键事件和不确定性字段。",
+          "evidenceIds": [
+            "xiang-yu"
+          ],
           "relatedIds": []
         },
         {
@@ -91209,7 +91210,8 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "xiang-yu-regime-206-202-primary-sources"
+            "xiang-yu-regime-206-202-primary-sources",
+            "xuzhou-pengcheng-historical-location"
           ],
           "relatedIds": []
         },
@@ -91218,11 +91220,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiang-yu-enemy-liu-bang-release-closure",
+            "claim:claim-xiang-yu-ruled-xiang-yu-release-closure",
             "event-detail:chu-han-contention",
             "person-polity:xiang-yu:xiang_yu"
           ],
           "relatedIds": [
             "chu-han-contention",
+            "liu-bang",
             "xiang_yu"
           ]
         },
@@ -101648,9 +101653,11 @@
         },
         {
           "dimension": "detail",
-          "status": "data-missing",
-          "note": "当前目录没有独立的政权详情记录，需由后续批次补充。",
-          "evidenceIds": [],
+          "status": "covered",
+          "note": "政权详情包含政权视角摘要、建立过程、转折、人物、首都阶段、事件关联与不确定性。",
+          "evidenceIds": [
+            "xiang_yu"
+          ],
           "relatedIds": []
         },
         {
@@ -101658,7 +101665,9 @@
           "status": "covered",
           "note": "实体及其详情至少有一个可解析的来源 ID。",
           "evidenceIds": [
-            "han-king-chuhan-206-203-primary-sources"
+            "han-king-chuhan-206-203-primary-sources",
+            "xiang-yu-regime-206-202-primary-sources",
+            "xuzhou-pengcheng-historical-location"
           ],
           "relatedIds": []
         },
@@ -101667,11 +101676,14 @@
           "status": "covered",
           "note": "至少存在一条可追踪的图谱关联。",
           "evidenceIds": [
+            "claim:claim-xiang-yu-ruled-xiang-yu-release-closure",
             "event-detail:chu-han-contention",
+            "event-detail:han-pengcheng-battle-205",
             "person:xiang-yu"
           ],
           "relatedIds": [
             "chu-han-contention",
+            "han-pengcheng-battle-205",
             "xiang-yu"
           ]
         },
@@ -102447,15 +102459,15 @@
     "person": {
       "totalEntities": 286,
       "statusCounts": {
-        "covered": 1336,
-        "data-missing": 2,
+        "covered": 1338,
+        "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
         "uncertain": 92,
         "not-applicable": 0
       },
       "gapCounts": {
-        "data-missing": 2,
+        "data-missing": 0,
         "relationship-missing": 0,
         "source-missing": 0,
         "uncertain": 92
@@ -102496,7 +102508,6 @@
         "person:kul-tegin",
         "person:kutlug-ilterish",
         "person:langdarma",
-        "person:li-keyong",
         "person:li-shi",
         "person:li-xian-western-xia",
         "person:li-xin",
@@ -102559,22 +102570,21 @@
     "polity": {
       "totalEntities": 90,
       "statusCounts": {
-        "covered": 448,
-        "data-missing": 2,
+        "covered": 449,
+        "data-missing": 1,
         "relationship-missing": 0,
         "source-missing": 0,
         "uncertain": 0,
         "not-applicable": 0
       },
       "gapCounts": {
-        "data-missing": 2,
+        "data-missing": 1,
         "relationship-missing": 0,
         "source-missing": 0,
         "uncertain": 0
       },
       "entitiesWithGaps": [
-        "polity:western_yan",
-        "polity:xiang_yu"
+        "polity:western_yan"
       ]
     }
   },
@@ -103444,30 +103454,15 @@
         "person:li-keyong",
         "polity:jin_hedong"
       ],
-      "gaps": [
-        {
-          "entityType": "person",
-          "entityId": "li-keyong",
-          "entityKey": "person:li-keyong",
-          "label": "李克用",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "jin_hedong"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物详情记录不存在或缺少生平摘要。"
-        }
-      ],
+      "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 1,
-        "person-person-relationship-missing": 1,
+        "person-person-relationship-missing": 0,
         "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "河东晋王政权：有 2 项学习闭环任务，待补遗产关联 1 项、人物关系 1 项。"
+      "summary": "河东晋王政权：有 1 项学习闭环任务，待补遗产关联 1 项。"
     },
     "jin_jurchen": {
       "polityId": "jin_jurchen",
@@ -106753,38 +106748,11 @@
       "polityName": "项羽政权",
       "entityKeys": [
         "event:chu-han-contention",
+        "event:han-pengcheng-battle-205",
         "person:xiang-yu",
         "polity:xiang_yu"
       ],
       "gaps": [
-        {
-          "entityType": "polity",
-          "entityId": "xiang_yu",
-          "entityKey": "polity:xiang_yu",
-          "label": "项羽政权",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "xiang_yu"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "当前目录没有独立的政权详情记录，需由后续批次补充。"
-        },
-        {
-          "entityType": "person",
-          "entityId": "xiang-yu",
-          "entityKey": "person:xiang-yu",
-          "label": "项羽",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "xiang_yu"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物详情记录不存在或缺少生平摘要。"
-        },
         {
           "entityType": "person",
           "entityId": "xiang-yu",
@@ -106820,12 +106788,12 @@
       ],
       "taskCounts": {
         "polity-heritage-missing": 1,
-        "person-person-relationship-missing": 1,
+        "person-person-relationship-missing": 0,
         "event-participant-missing": 0,
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "项羽政权：有 2 项学习闭环任务，待补遗产关联 1 项、人物关系 1 项。"
+      "summary": "项羽政权：有 1 项学习闭环任务，待补遗产关联 1 项。"
     },
     "xin": {
       "polityId": "xin",
@@ -107735,52 +107703,6 @@
       ],
       "relatedIds": [],
       "note": "事件详情没有参与人物，需补充事件中的人物及其角色。"
-    },
-    {
-      "taskKind": "person-person-relationship-missing",
-      "perspective": "polity",
-      "subjectId": "li-keyong",
-      "subjectKey": "person:li-keyong",
-      "subjectLabel": "李克用",
-      "entityType": "person",
-      "entityId": "li-keyong",
-      "polityIds": [
-        "jin_hedong"
-      ],
-      "placeIds": [],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物尚未建立可核验的人物—人物关系，需补充君臣、亲属、同僚、联盟或对立关系。"
-    },
-    {
-      "taskKind": "person-person-relationship-missing",
-      "perspective": "polity",
-      "subjectId": "liu-heita",
-      "subjectKey": "person:liu-heita",
-      "subjectLabel": "刘黑闼",
-      "entityType": "person",
-      "entityId": "liu-heita",
-      "polityIds": [],
-      "placeIds": [],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物尚未建立可核验的人物—人物关系，需补充君臣、亲属、同僚、联盟或对立关系。"
-    },
-    {
-      "taskKind": "person-person-relationship-missing",
-      "perspective": "polity",
-      "subjectId": "xiang-yu",
-      "subjectKey": "person:xiang-yu",
-      "subjectLabel": "项羽",
-      "entityType": "person",
-      "entityId": "xiang-yu",
-      "polityIds": [
-        "xiang_yu"
-      ],
-      "placeIds": [],
-      "evidenceIds": [],
-      "relatedIds": [],
-      "note": "人物尚未建立可核验的人物—人物关系，需补充君臣、亲属、同僚、联盟或对立关系。"
     },
     {
       "taskKind": "polity-heritage-missing",
@@ -110592,22 +110514,7 @@
         "person:liu-bang",
         "polity:xiang_yu"
       ],
-      "gaps": [
-        {
-          "entityType": "polity",
-          "entityId": "xiang_yu",
-          "entityKey": "polity:xiang_yu",
-          "label": "项羽政权",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "xiang_yu"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "当前目录没有独立的政权详情记录，需由后续批次补充。"
-        }
-      ],
+      "gaps": [],
       "taskCounts": {
         "polity-heritage-missing": 1,
         "person-person-relationship-missing": 0,
@@ -111088,20 +110995,6 @@
         "polity:jin_hedong"
       ],
       "gaps": [
-        {
-          "entityType": "person",
-          "entityId": "li-keyong",
-          "entityKey": "person:li-keyong",
-          "label": "李克用",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "jin_hedong"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物详情记录不存在或缺少生平摘要。"
-        },
         {
           "entityType": "person",
           "entityId": "liu-jiyuan",
@@ -111636,20 +111529,6 @@
           "entityId": "xiang-yu",
           "entityKey": "person:xiang-yu",
           "label": "项羽",
-          "dimension": "detail",
-          "kind": "data-missing",
-          "polityIds": [
-            "xiang_yu"
-          ],
-          "evidenceIds": [],
-          "relatedIds": [],
-          "note": "人物详情记录不存在或缺少生平摘要。"
-        },
-        {
-          "entityType": "person",
-          "entityId": "xiang-yu",
-          "entityKey": "person:xiang-yu",
-          "label": "项羽",
           "dimension": "time",
           "kind": "uncertain",
           "polityIds": [
@@ -111702,7 +111581,7 @@
         "event-location-missing": 0,
         "relationship-missing": 0
       },
-      "summary": "咸阳市：有 4 项待核验缺口。"
+      "summary": "咸阳市：有 3 项待核验缺口。"
     },
     "xingqing": {
       "placeId": "xingqing",

@@ -50,10 +50,10 @@ describe('seventy-fifth batch high-confidence alliance relationships', () => {
   it('closes only the evidenced alliance gaps and leaves kinship and event gaps unchanged', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.governance).toHaveLength(53);
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(169);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(111);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(23);
+    expect(report.requiredMissingByCategory.governance).toHaveLength(54);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(170);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(112);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(22);
     expect(report.byPersonId['qin-shi-huang'].categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['meng-tian'].categories.allianceConflict.status).toBe('covered');
     expect(report.byPersonId['liu-bingzhong'].categories.allianceConflict.status).toBe('covered');

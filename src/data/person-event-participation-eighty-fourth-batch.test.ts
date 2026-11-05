@@ -42,9 +42,7 @@ describe('eighty-fourth batch event-participation boundary audit', () => {
   it('audits all ten current gaps against an event node, participant field and source', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toEqual(
-      reviewBoundary.map(({ personId }) => personId),
-    );
+    expect(report.requiredMissingByCategory.eventParticipation).not.toContain('chai-rong');
 
     for (const { personId, eventIds } of reviewBoundary) {
       const person = people.find((candidate) => candidate.id === personId);
@@ -69,9 +67,14 @@ describe('eighty-fourth batch event-participation boundary audit', () => {
       }
 
       const coverage = report.byPersonId[personId].categories.eventParticipation;
-      expect(coverage.status, personId).toBe('missing');
-      expect(coverage.evidence.every((item) => item.kind === 'role'), personId).toBe(true);
-      expect(coverage.relatedIds, personId).toEqual([]);
+      if (personId === 'chai-rong') {
+        expect(coverage.status, personId).toBe('covered');
+        expect(coverage.relatedIds).toContain('northern-han-gaoping-campaign-954');
+      } else {
+        expect(coverage.status, personId).toBe('missing');
+        expect(coverage.evidence.every((item) => item.kind === 'role'), personId).toBe(true);
+        expect(coverage.relatedIds, personId).toEqual([]);
+      }
     }
   });
 

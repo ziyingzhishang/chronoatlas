@@ -61,7 +61,7 @@ describe('第六批政权建政事件', () => {
       } else {
         expect(report.byPolity(polityId)?.establishmentEventIds).toEqual(polityId === 'xiongnu'
           ? [eventId, 'xiongnu-southern-northern-split-48']
-          : [eventId]);
+          : polityId === 'later_jin' ? [eventId, 'qing-founded'] : [eventId]);
       }
     }
   });

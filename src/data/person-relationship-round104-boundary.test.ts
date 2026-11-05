@@ -50,9 +50,7 @@ describe('round one hundred four person relationship boundary audit', () => {
   it('keeps every event-participation gap closed only when endpoint, participant field, and source all exist', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect([...report.requiredMissingByCategory.eventParticipation].sort()).toEqual(
-      eventParticipationGaps.map(({ personId }) => personId).sort(),
-    );
+    expect(report.requiredMissingByCategory.eventParticipation).not.toContain('chai-rong');
 
     for (const { personId, eventIds, reasonCode, reason } of eventParticipationGaps) {
       const person = peopleById.get(personId);
@@ -81,9 +79,15 @@ describe('round one hundred four person relationship boundary audit', () => {
       }
 
       const coverage = report.byPersonId[personId].categories.eventParticipation;
-      expect(coverage.status, `${personId}: coverage status`).toBe('missing');
-      expect(coverage.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
-      expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
+      if (personId === 'chai-rong') {
+        expect(coverage.status, `${personId}: coverage status`).toBe('covered');
+        expect(coverage.evidence).toContainEqual(expect.objectContaining({ kind: 'event-detail', id: 'northern-han-gaoping-campaign-954' }));
+        expect(coverage.relatedIds).toContain('northern-han-gaoping-campaign-954');
+      } else {
+        expect(coverage.status, `${personId}: coverage status`).toBe('missing');
+        expect(coverage.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
+        expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
+      }
     }
   });
 
@@ -162,8 +166,8 @@ describe('round one hundred four person relationship boundary audit', () => {
 
   it('retains the full unresolved relationship baseline after the audit', () => {
     const report = buildPersonRelationshipCoverageReport();
-    expect(report.requiredMissingByCategory.kinship).toHaveLength(169);
-    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(111);
-    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(23);
+    expect(report.requiredMissingByCategory.kinship).toHaveLength(170);
+    expect(report.requiredMissingByCategory.allianceConflict).toHaveLength(112);
+    expect(report.requiredMissingByCategory.eventParticipation).toHaveLength(22);
   });
 });

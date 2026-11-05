@@ -19,8 +19,8 @@ describe('fourth-batch capital history coverage', () => {
   it('qualifies the selected high-confidence Sixteen Kingdoms and Five Dynasties polities', () => {
     const report = getCapitalCoverageReport();
 
-    expect(report.summary.totalPolities).toBe(88);
-    expect(report.summary.qualifiedPolities).toBe(74);
+    expect(report.summary.totalPolities).toBe(90);
+    expect(report.summary.qualifiedPolities).toBe(75);
     expect(report.summary.gapPolityIds).not.toEqual(expect.arrayContaining([...targetPolityIds]));
 
     for (const polityId of targetPolityIds) {

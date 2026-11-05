@@ -6,6 +6,7 @@ const targetPolityIds = ['zhou_eastern', 'wu_zhou', 'zhou_later'] as const;
 const researchPolityIds = [
   'yan_warring',
   'later_yan',
+  'western_yan',
   'jin_hedong',
   'xiongnu',
   'silla',
@@ -81,7 +82,7 @@ describe('sixth-batch capital history audit', () => {
 
   it('keeps unresolved mobile, disputed, or specialist-research items explicit', () => {
     const report = getCapitalCoverageReport();
-    expect(report.summary.qualifiedPolities).toBe(74);
+    expect(report.summary.qualifiedPolities).toBe(75);
     expect(report.polities.filter((polity) => !polity.qualified).map((polity) => polity.polityId))
       .toEqual(researchPolityIds);
 

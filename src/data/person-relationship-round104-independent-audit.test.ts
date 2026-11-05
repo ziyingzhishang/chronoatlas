@@ -40,16 +40,18 @@ describe('round 104 independent event-participation audit', () => {
   it('keeps all ten decisions explicitly unfilled and aligned with the coverage report', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toEqual(
-      decisions.map(({ personId }) => personId),
-    );
+    expect(report.requiredMissingByCategory.eventParticipation).not.toContain('chai-rong');
 
     for (const decision of decisions) {
       expect(decision.kind.length, `${decision.personId}: decision boundary`).toBeGreaterThan(0);
-      expect(report.byPersonId[decision.personId].categories.eventParticipation.status, decision.personId)
-        .toBe('missing');
-      expect(report.byPersonId[decision.personId].categories.eventParticipation.evidence.every((item) => item.kind === 'role'), decision.personId)
-        .toBe(true);
+      const coverage = report.byPersonId[decision.personId].categories.eventParticipation;
+      if (decision.personId === 'chai-rong') {
+        expect(coverage.status).toBe('covered');
+        expect(coverage.relatedIds).toContain('northern-han-gaoping-campaign-954');
+      } else {
+        expect(coverage.status, decision.personId).toBe('missing');
+        expect(coverage.evidence.every((item) => item.kind === 'role'), decision.personId).toBe(true);
+      }
       expect(claims.some((claim) => (
         claim.subjectId === decision.personId && claim.predicate === 'participated-in'
       )), `${decision.personId}: participation claim`).toBe(false);

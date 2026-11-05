@@ -6,6 +6,7 @@ import { sourceById } from './sources';
 const unresolvedIds = [
   'yan_warring',
   'later_yan',
+  'western_yan',
   'xiongnu',
   'tuyuhun',
   'turkic',
@@ -26,8 +27,8 @@ describe('eighty-third-batch capital evidence boundary audit', () => {
   it('keeps all fourteen unresolved cases reproducibly outside qualified coverage', () => {
     const report = getCapitalCoverageReport();
 
-    expect(report.summary.totalPolities).toBe(88);
-    expect(report.summary.qualifiedPolities).toBe(74);
+    expect(report.summary.totalPolities).toBe(90);
+    expect(report.summary.qualifiedPolities).toBe(75);
     expect(report.summary.gapPolityIds).toEqual(expect.arrayContaining([...unresolvedIds]));
     expect(report.summary.gapPolityIds).toHaveLength(unresolvedIds.length);
 

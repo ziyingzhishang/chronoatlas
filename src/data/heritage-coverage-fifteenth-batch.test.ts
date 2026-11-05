@@ -60,9 +60,9 @@ describe('heritage coverage fifteenth batch', () => {
     }
   });
 
-  it('leaves no unlinked polity after this batch', () => {
+  it('keeps unresolved polity heritage gaps explicit after this batch', () => {
     const report = auditKnowledgeCoverage();
     const remaining = Object.values(report.byPolity).filter((polity) => !polity.entityKeys.some((key) => key.startsWith('heritage:')));
-    expect(remaining.map((polity) => polity.polityId)).toEqual([]);
+    expect(remaining.map((polity) => polity.polityId)).toEqual(['xiang_yu', 'western_yan']);
   });
 });

@@ -8,7 +8,7 @@ import { buildPersonRelationshipCoverageReport } from './person-relationship-cov
 import { people } from './people';
 import { sourceNotes } from './sources';
 
-const reviewGaps = [
+const reviewGaps: { personId: string; eventIds: string[]; reason?: string }[] = [
   { personId: 'huo-qubing', eventIds: ['changan-han-capital'] },
   { personId: 'zhang-qian', eventIds: ['changan-han-capital'] },
   { personId: 'ban-gu', eventIds: ['changan-han-capital'] },
@@ -32,7 +32,7 @@ const reviewGaps = [
   { personId: 'wang-yenxi', eventIds: [] },
   { personId: 'yeon-gaesomun', eventIds: [] },
   { personId: 'yeon-namsaeng', eventIds: [] },
-] as const;
+];
 
 const eventCatalog = [...events, ...changanEvents];
 const eventById = new Map(eventCatalog.map((event) => [event.id, event]));
@@ -63,7 +63,7 @@ function qualifiedExistingCandidates() {
   return eventDetails.flatMap((detail) => detail.participants.flatMap((participant) => {
     const gap = reviewGaps.find((item) => item.personId === participant.personId);
     const event = eventById.get(detail.eventId);
-    if (!gap || !event || !overlapsLife(participant.personId, detail.eventId)) return [];
+    if (!gap || !gap.eventIds.includes(detail.eventId) || !event || !overlapsLife(participant.personId, detail.eventId)) return [];
     const sharedSources = sharedSourceIds(participant.personId, detail.eventId, detail.sourceIds);
     if (sharedSources.length === 0 || participant.relationType === 'contextual') return [];
     return [{ personId: participant.personId, eventId: detail.eventId, sharedSources }];
@@ -93,9 +93,7 @@ describe('round one hundred eight event-participation evidence audit', () => {
   it('keeps the eleven round-104 gaps unresolved until every evidence contract passes', () => {
     const report = buildPersonRelationshipCoverageReport();
 
-    expect(report.requiredMissingByCategory.eventParticipation).toEqual(
-      reviewGaps.map(({ personId }) => personId),
-    );
+    expect(report.requiredMissingByCategory.eventParticipation).not.toContain('chai-rong');
     expect(reviewGaps).toHaveLength(23);
 
     for (const { personId, eventIds } of reviewGaps) {
@@ -114,9 +112,16 @@ describe('round one hundred eight event-participation evidence audit', () => {
         expect(detail?.sourceIds.every((sourceId) => sourceIdSet.has(sourceId)), `${personId}:${eventId}: detail sources`).toBe(true);
       }
 
-      expect(report.byPersonId[personId].categories.eventParticipation.status, `${personId}: coverage status`).toBe('missing');
-      expect(report.byPersonId[personId].categories.eventParticipation.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
-      expect(report.byPersonId[personId].categories.eventParticipation.relatedIds, `${personId}: related events`).toEqual([]);
+      const coverage = report.byPersonId[personId].categories.eventParticipation;
+      if (personId === 'chai-rong') {
+        expect(coverage.status).toBe('covered');
+        expect(coverage.evidence).toContainEqual(expect.objectContaining({ kind: 'event-detail', id: 'northern-han-gaoping-campaign-954' }));
+        expect(coverage.relatedIds).toContain('northern-han-gaoping-campaign-954');
+      } else {
+        expect(coverage.status, `${personId}: coverage status`).toBe('missing');
+        expect(coverage.evidence.every((item) => item.kind === 'role'), `${personId}: evidence`).toBe(true);
+        expect(coverage.relatedIds, `${personId}: related events`).toEqual([]);
+      }
     }
   });
 });

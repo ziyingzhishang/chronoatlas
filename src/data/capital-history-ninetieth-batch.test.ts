@@ -7,6 +7,7 @@ import { sourceById } from './sources';
 const evidenceBoundaryPolityIds = [
   'yan_warring',
   'later_yan',
+  'western_yan',
   'jin_hedong',
   'xiongnu',
   'silla',
@@ -27,7 +28,7 @@ describe('ninetieth-batch capital and city record audit', () => {
   it('keeps all fourteen unresolved cases outside qualified coverage for an explicit evidence reason', () => {
     const report = getCapitalCoverageReport();
 
-    expect(report.summary.qualifiedPolities).toBe(74);
+    expect(report.summary.qualifiedPolities).toBe(75);
     expect(report.summary.gapPolityIds).toEqual([...evidenceBoundaryPolityIds]);
 
     for (const polityId of evidenceBoundaryPolityIds) {

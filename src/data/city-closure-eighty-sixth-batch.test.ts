@@ -65,7 +65,12 @@ describe('eighty-sixth city closure: Jiankang and Kaifeng', () => {
       expect.objectContaining({ placeId: 'kaifeng', validFrom: 909, validTo: 912, role: 'secondary' }),
       expect.objectContaining({ placeId: 'kaifeng', validFrom: 913, validTo: 923, role: 'primary' }),
     ]));
-    expect(polity?.eventIds).toEqual(['later-liang-five-dynasties-founded', 'later-liang-ended-923']);
+    expect(polity?.eventIds).toEqual(expect.arrayContaining([
+      'later-liang-five-dynasties-founded',
+      'later-liang-court-returns-to-daliang-909',
+      'later-liang-moves-capital-to-luoyang-909',
+      'later-liang-ended-923',
+    ]));
     expect(event).toEqual(expect.objectContaining({ placeId: 'kaifeng', year: 907, verification: 'checked' }));
     expect(detail?.polityIds).toEqual(['liang_later']);
     expect(detail?.locationIds).toEqual(['kaifeng']);

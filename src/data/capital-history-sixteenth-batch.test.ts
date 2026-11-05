@@ -32,14 +32,15 @@ describe('sixteenth-batch capital evidence review', () => {
     expect(recordsFor('mongol').every((record) => record.notes?.includes('第十六轮首都证据复核'))).toBe(true);
   });
 
-  it('preserves the 88-polity audit and fourteen unresolved evidence boundaries', () => {
+  it('preserves the 90-polity audit and fourteen unresolved evidence boundaries', () => {
     const report = getCapitalCoverageReport();
-    expect(report.summary.totalPolities).toBe(88);
-    expect(report.summary.qualifiedPolities).toBe(74);
+    expect(report.summary.totalPolities).toBe(90);
+    expect(report.summary.qualifiedPolities).toBe(75);
     expect(report.summary.gapPolityIds).toEqual(expect.arrayContaining([
       'xiongnu',
       'yan_warring',
       'later_yan',
+      'western_yan',
       'tuyuhun',
       'xia_early',
       'shang',
@@ -52,6 +53,6 @@ describe('sixteenth-batch capital evidence review', () => {
       'jin_hedong',
       'silla',
     ]));
-    expect(report.summary.gapPolityIds).toHaveLength(14);
+    expect(report.summary.gapPolityIds).toHaveLength(15);
   });
 });

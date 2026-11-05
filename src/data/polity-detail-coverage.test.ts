@@ -36,15 +36,17 @@ describe('polity detail coverage audit', () => {
   it('audits every polity and exposes explicit covered and uncovered IDs', () => {
     const report = buildPolityDetailCoverageReport({ catalog: baseCatalog });
 
-    expect(report.totalPolities).toBe(89);
-    expect(report.items).toHaveLength(89);
+    expect(report.totalPolities).toBe(polities.length);
+    expect(report.items).toHaveLength(polities.length);
     expect(report.coveredPolityIds).toContain('qin');
     expect(report.uncoveredPolityIds).toEqual(['western_yan']);
-    expect(report.detailCoverageRate).toBe(88 / 89);
+    expect(report.detailCoverageRate).toBe(89 / 90);
     expect(report.items.find((item) => item.polityId === 'qin')?.knowledgeDetailStatus)
       .toBe(report.items.find((item) => item.polityId === 'qin')?.detailStatus);
     expect(report.items.find((item) => item.polityId === 'western_yan')?.missingAssociationTypes)
       .toEqual(['claims', 'heritage', 'people']);
+    expect(report.items.find((item) => item.polityId === 'xiang_yu')?.missingAssociationTypes)
+      .toEqual(['heritage']);
   });
 
   it('counts a polity without a detail record as uncovered against the full catalog', () => {
