@@ -29,7 +29,19 @@
 .event-search-results button:hover { background:#354735; border-color:#c6a15b; }
 .event-search-results button[aria-selected=true] { background:#354735; border-color:#c6a15b; box-shadow:inset 3px 0 #c6a15b; }
 .event-search-results span { color:#aeb8a8; font:10px system-ui,sans-serif; }
+.workspace .event-search-filters select { min-height:44px; font-size:12px; }
+.workspace .event-search-results button { min-height:44px; }
+.workspace .event-search-results span { color:#aeb8a8; font:12px/1.45 system-ui,sans-serif; }
 .event-search-popover>.event-detail { max-height:420px; overflow:auto; margin:8px 0 0; padding:12px; border:1px solid #7b8062; border-radius:6px; background:#202d25; }
+.global-search-groups { gap:10px; }
+.global-search-group { display:grid; gap:5px; padding-top:8px; border-top:1px solid #536247; }
+.global-search-group h3 { display:flex; align-items:center; justify-content:space-between; margin:0; color:#e8e3d4; font:600 13px/1.4 system-ui,sans-serif; }
+.global-search-group h3 span { color:#aeb8a8; font:12px/1.4 system-ui,sans-serif; }
+.global-search-list { display:grid; gap:5px; margin:0; padding:0; list-style:none; }
+.global-search-result { display:flex; gap:5px; min-width:0; }
+.workspace .global-search-result>button:first-child { flex:1; min-width:0; }
+.workspace .global-search-result>.global-search-locate { flex:0 0 auto; width:60px; justify-content:center; text-align:center; }
+.workspace .event-search-results .global-search-more { display:block; width:100%; min-height:40px; text-align:center; color:#e8e3d4; }
 .directory-popover { position:absolute; top:calc(100% + var(--workspace-gap)); left:0; width:100%; max-height:min(62dvh,540px); overflow:hidden; box-sizing:border-box; z-index:15; padding:8px; border:1px solid #7b8062; border-radius:7px; background:#18211ff5; box-shadow:0 12px 28px #07100a88; backdrop-filter:blur(8px); }
 .directory-popover-heading { display:flex; align-items:center; justify-content:space-between; min-height:28px; padding:0 2px 6px; border-bottom:1px solid #61705266; color:#efd79d; font-size:12px; }
 .directory-popover-heading button { min-height:28px !important; padding:0 8px !important; color:#bdc6af !important; font-size:18px !important; }

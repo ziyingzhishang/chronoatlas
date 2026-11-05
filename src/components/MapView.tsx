@@ -22,7 +22,7 @@ interface MapViewProps {
   onClearSelection?: () => void;
   workspacePanel?: PanelName|null;
   panelTarget?: HTMLDivElement|null;
-  focusRequest?: {id:string;nonce:number};
+  focusRequest?: {type:'event'|'place';id:string;nonce:number};
 }
 
 export function MapView(props: MapViewProps) {
@@ -36,7 +36,7 @@ export function MapView(props: MapViewProps) {
   const [renderedYear,setRenderedYear]=useState<number>();
   const [canGoBackCamera,setCanGoBackCamera]=useState(false);
   const map = useRef<MapHandle>(null);
-  useEffect(()=>{if(props.focusRequest)map.current?.focus({type:'event',id:props.focusRequest.id});},[props.focusRequest]);
+  useEffect(()=>{if(props.focusRequest)map.current?.focus({type:props.focusRequest.type,id:props.focusRequest.id});},[props.focusRequest]);
   const act = (action: MapAction) => map.current?.perform(action);
   const workspace = props.workspacePanel !== undefined;
   const auxiliary = (name:PanelName,children:ReactNode) => !workspace ? children : props.panelTarget && props.workspacePanel===name ? createPortal(children,props.panelTarget) : null;
