@@ -1,0 +1,199 @@
+{
+  "topicId": "out-of-ledger-western-yan-384-394",
+  "polityId": "western_yan",
+  "yearCount": 11,
+  "years": [
+    {
+      "year": 384,
+      "conclusion": "慕容泓在关中组织燕军，西燕政权进入形成阶段；年内的起兵与军事活动不能概括为稳定控制边界。",
+      "mapExpression": "historical-conclusion-only",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol105-western-yan-384-394"
+      ],
+      "evidenceGap": "《资治通鉴》卷一〇五可核对慕容泓起兵及相关活动，但不足以复原全年直接控制地区的连续边界；不把西燕势力、军事占领或后燕轮廓当作疆域。"
+    },
+    {
+      "year": 385,
+      "conclusion": "慕容冲进入长安并称帝，西燕政治中心阶段性在长安；这反映年内军事控制与建制变化，不表示已稳定接收关中全境。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol105-western-yan-384-394",
+        "zizhi-tongjian-vol106-western-yan-384-394"
+      ],
+      "evidenceGap": "长安点仅表示慕容冲称帝及西燕阶段中心的城市级参照；《资治通鉴》记年内战事与控制变化，不支持关中全域或全年稳定疆界。疆域面保持留空。"
+    },
+    {
+      "year": 386,
+      "conclusion": "慕容冲死后西燕经历数次权力更替，慕容永率众东迁，并于十月进据长子、即皇帝位；长子点仅代表年末中心阶段。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol106-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "长子点只表示《资治通鉴》记载慕容永于十月进据长子后的年末阶段中心。CHGIS记录长子县治区域点，注释指向今县城西南；旧城具体位置仍有考证差异。此点不表示全年控制面、城垣或遗址界址。"
+    },
+    {
+      "year": 387,
+      "conclusion": "西燕政权延续，政治活动处于长子及河东、上党相关区域；军事往来不能等同于完整行政控制。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol107-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "CHGIS长子县记录将县治点置于今长子县城西南并引《魏书·地形志》“慕容永所都”；历史旧城的精确对应仍有地望差异。点位只作阶段中心参照，不支持连续疆界或周边直接控制范围。"
+    },
+    {
+      "year": 388,
+      "conclusion": "西燕由慕容永统治，延续长子一带的政治中心阶段；本年结论不据后续疆域反推。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol107-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "CHGIS长子县记录将县治点置于今长子县城西南并引《魏书·地形志》“慕容永所都”；历史旧城的精确对应仍有地望差异。点位只作阶段中心参照，不支持连续疆界或周边直接控制范围。"
+    },
+    {
+      "year": 389,
+      "conclusion": "西燕政权延续，慕容永政权与邻近势力并存；可确认的是政权持续而非一条稳定边界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol107-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "CHGIS长子县记录将县治点置于今长子县城西南并引《魏书·地形志》“慕容永所都”；历史旧城的精确对应仍有地望差异。点位只作阶段中心参照，不支持连续疆界或周边直接控制范围。"
+    },
+    {
+      "year": 390,
+      "conclusion": "西燕延续，长子区域仍是其政权活动背景；未发现足以改变年度空间表达的确定边界依据。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol107-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "CHGIS长子县记录将县治点置于今长子县城西南并引《魏书·地形志》“慕容永所都”；历史旧城的精确对应仍有地望差异。点位只作阶段中心参照，不支持连续疆界或周边直接控制范围。"
+    },
+    {
+      "year": 391,
+      "conclusion": "西燕政权延续，与后燕及其他政权的竞争仍在；不据战争方向或名义关系绘制疆界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol107-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "CHGIS长子县记录将县治点置于今长子县城西南并引《魏书·地形志》“慕容永所都”；历史旧城的精确对应仍有地望差异。点位只作阶段中心参照，不支持连续疆界或周边直接控制范围。"
+    },
+    {
+      "year": 392,
+      "conclusion": "翟钊败后奔长子，西燕主慕容永授予其官爵；这一记载证明政治接纳，不证明西燕直接控制翟钊原辖七郡。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol108-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "CHGIS长子县记录将县治点置于今长子县城西南并引《魏书·地形志》“慕容永所都”；历史旧城的精确对应仍有地望差异。点位只作阶段中心参照，不支持连续疆界或周边直接控制范围。"
+    },
+    {
+      "year": 393,
+      "conclusion": "西燕政权延续，与后燕分立；本年度材料尚未形成可支持地图范围变化的逐年控制结论。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changzi_western_yan",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol108-western-yan-384-394",
+        "chgis-changzi-western-yan-center"
+      ],
+      "evidenceGap": "CHGIS长子县记录将县治点置于今长子县城西南并引《魏书·地形志》“慕容永所都”；历史旧城的精确对应仍有地望差异。点位只作阶段中心参照，不支持连续疆界或周边直接控制范围。"
+    },
+    {
+      "year": 394,
+      "conclusion": "后燕军在台壁击败西燕，继而围取长子并杀慕容永，西燕中央政权终止；战败、围城和接收发生在年内，不合成为全年疆界。",
+      "mapExpression": "historical-conclusion-only",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [],
+      "sourceIds": [
+        "zizhi-tongjian-vol108-western-yan-384-394",
+        "shui-jing-zhu-taibi-location",
+        "licheng-gazetteer-taibi-location",
+        "xu-ning-taibi-location-study"
+      ],
+      "evidenceGap": "《黎城县志》旧志称台壁在县东十五里；徐宁2015年硕士论文表3-1考于县东北约5公里北台村；《水经注疏》注家另据涅水与水系方位提出黎城西北及襄垣北一带的辨析。几种古今地名比定不完全一致，且均未给出可复核的战场坐标或遗址测绘；本年保留战事史实，不添加事件点或疆域面。"
+    }
+  ],
+  "coexistenceNotes": [
+    "西燕与后燕、前秦、后秦及北魏等政权在相关年份并存；政权并列不表示疆域相邻或边界已知。",
+    "长安、长子、台壁分别涉及中心、迁徙与战事：仅385年以长安城市点、386—393年以长子区域点表示有来源支持的阶段中心；394年转换年不指定中心。上述点位不等同于疆域几何。",
+    "台账外记录单独保留，不改变原 90 段主台账计数；来源使用权与公开地图条件仍需独立核验。",
+    "394年台壁古地望有黎城东十五里、东北北台村及结合涅水水系提出的西北/襄垣北等说；现有材料没有可复核的战场坐标，故只记录争议，不落事件点。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-vol105-western-yan-384-394",
+      "use": "《资治通鉴》卷一〇五，核对 384—385 年慕容泓起兵、慕容冲进入长安及相关政权变动；只支持逐年历史结论，不支持完整控制边界。"
+    },
+    {
+      "id": "zizhi-tongjian-vol106-western-yan-384-394",
+      "use": "《资治通鉴》卷一〇六，核对 386 年慕容冲死后西燕继承冲突、慕容永率众东迁及长子相关记载；不据迁徙路线推导疆界。"
+    },
+    {
+      "id": "zizhi-tongjian-vol107-western-yan-384-394",
+      "use": "《资治通鉴》卷一〇七，核对 387—391 年西燕政权延续及相关地区政治军事活动；战争和归附不视为年度直接控制面。"
+    },
+    {
+      "id": "zizhi-tongjian-vol108-western-yan-384-394",
+      "use": "《资治通鉴》卷一〇八，核对 392 年翟钊投奔长子并受西燕授官、393—394 年台壁战事、长子陷落及慕容永被杀；不把受封地区或战果直接并入疆域。"
+    },
+    {
+      "id": "chgis-changzi-western-yan-center",
+      "use": "China Historical GIS时段地名 Changzi Xian（前247—397），空间点 N 36.11639, E 112.86315；来源说明引《魏书·地形志》慕容永所都，并据《水经注疏》《读史方舆纪要》讨论县治在今长子县城西南及旧城位置。仅作低置信度政治中心区域参照，不表示城垣、遗址保护界址或疆域。页面标示CC BY-NC 4.0；公开展示和商业使用需另行核验。"
+    },
+    {
+      "id": "shui-jing-zhu-taibi-location",
+      "use": "《水经注疏》卷十浊漳水注，杨守敬、熊会贞辨析台壁与潞县、黎城、涅水及黄须水的相对方位，指出古地名的现代比定存在不同说法；不提供战场经纬度。"
+    },
+    {
+      "id": "licheng-gazetteer-taibi-location",
+      "use": "《古今图书集成·职方典·黎城县志》记台壁在县东十五里古台壁地并叙394年战事，属于旧志里程和地望考说，不是遗址调查或测绘坐标。"
+    },
+    {
+      "id": "xu-ning-taibi-location-study",
+      "use": "徐宁《魏晋北朝时期的河东坞壁》（山西师范大学硕士论文，2015）表3-1第22页将台壁列为今黎城县东北约5公里北台村，引用《魏书》卷95；未给出古台壁遗址或战场坐标。论文版权声明属山西师范大学，复用权限另核。"
+    }
+  ],
+  "territoryReview": {
+    "territoryBoundary": "leave-unfilled",
+    "geometryIds": [],
+    "historicalReview": "partial",
+    "mappingReview": "pending",
+    "licenseReview": "pending",
+    "publicationReview": "pending"
+  }
+}

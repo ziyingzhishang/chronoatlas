@@ -1,0 +1,38 @@
+{
+  "decisionId": "gap-western_liang-410-421",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "jinshu-vol87-li-hao",
+      "use": "《晋书》卷87用于核对李暠、李歆时期酒泉中枢、417年继承变化、420年李歆败亡及李恂西奔等传记时序，不据此推导逐年边界。"
+    },
+    {
+      "id": "zizhi-tongjian-vol118-western-liang",
+      "use": "《资治通鉴》卷118用于核对420年李歆东伐、败亡、北凉进入酒泉及李恂年末返回敦煌的年内转折；因此该年地图留空，不压为全年单一中心。"
+    },
+    {
+      "id": "zizhi-tongjian-vol119-western-liang",
+      "use": "《资治通鉴》卷119用于核对421年北凉围攻敦煌、引水灌城和李恂政权终止；敦煌只作终局城市中心参照。"
+    }
+  ],
+  "reviewLimitations": [
+    "410—421年共12条年度记录，疆域面均留空；仅以酒泉或敦煌表达可确认的城市中心阶段。",
+    "420年年内酒泉失守、李歆败亡、李恂返敦煌并另立残余政权，主体和中心均发生转换，保持留空不回填邻年点。",
+    "421年敦煌终局中心不表示全年独立控制；本审核不替代来源使用权或公开地图合规审核。"
+  ],
+  "yearCount": 12,
+  "years": [
+    {"year":410,"conclusion":"李暠继续以酒泉为政治中心。北凉军事压力与年内战事不表示可按一条稳定边界复原全年控制。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"《晋书》卷87所载西凉阶段和河西战争支持酒泉为中枢，但未给出410年可重建的连续边界。"},
+    {"year":411,"conclusion":"西凉仍以酒泉为政治中心，李暠采取守境、农战和安抚策略；政治声索及军事行动不等于完整直接控制。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"只有政治中心和战争阶段证据，缺乏本年连续控制边缘的空间材料。"},
+    {"year":412,"conclusion":"酒泉仍是西凉中枢。北凉势力与南凉战争改变河西格局，但不能据相邻势力的战争或名义辖区推绘西凉边界。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"未见足以将各郡逐一对应至本年度直接控制范围的空间依据。"},
+    {"year":413,"conclusion":"李暠继续以酒泉为中枢；《晋书》记载向东、向西经营及与北凉的冲突，但行动路线和声索不构成全年疆界。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"军事行动与区域经营不能转换为连续边界；只保留政治中心点。"},
+    {"year":414,"conclusion":"南凉覆亡后河西诸政权力量关系再变，西凉仍以酒泉为中枢；邻国灭亡不意味着西凉自动接管其范围。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"没有证据支持把南凉旧地、北凉势力范围或出兵范围并入西凉直接控制面。"},
+    {"year":415,"conclusion":"李暠政权继续以酒泉为中枢；现有年度资料未支持更精确的边界判断。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"可确认政权阶段和中心，未见可逐年校核的边界坐标。"},
+    {"year":416,"conclusion":"李暠仍以酒泉为政治中心，李歆作为继承人参与军政事务。统治延续和继承安排不能替代疆界证据。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"无本年直接控制边缘的可靠空间资料，不绘疆域面。"},
+    {"year":417,"conclusion":"李暠去世，李歆继位并改元嘉兴，西凉中央中枢仍在酒泉。继位是年内政治变化，不代表疆界稳定或扩大。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao"],"evidenceGap":"《晋书》卷87记李暠卒与李歆承统，但未提供417年逐年直接控制边缘。"},
+    {"year":418,"conclusion":"李歆继续以酒泉为政治中心，西凉与北凉对峙。双方军事部署及竞争区域不等于清晰的年度国界。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao","zizhi-tongjian-vol118-western-liang"],"evidenceGap":"史料没有给出可重建的连续边界；不将战线表达为国界。"},
+    {"year":419,"conclusion":"酒泉仍为李歆政权中枢。该年结论只标明政治中心阶段，不把次年远征或败亡提前到本年。","mapExpression":"control-center-point","capitalPlaceId":"jiuquan","territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao","zizhi-tongjian-vol118-western-liang"],"evidenceGap":"年度边界资料缺失，且次年将发生决定性政权崩解，不以420年结果倒推本年。"},
+    {"year":420,"conclusion":"李歆自酒泉东伐，先后败于怀城、蓼泉并被杀；北凉进入酒泉。其弟李恂等西奔后，李恂于年末返回敦煌并另立政权。年内发生酒泉失守与中心西移，不能用一个全年点或疆域面概括。","mapExpression":"leave-unfilled","capitalPlaceId":null,"territoryBoundary":null,"sourceIds":["jinshu-vol87-li-hao","zizhi-tongjian-vol118-western-liang"],"evidenceGap":"年内先后涉及酒泉、战场与敦煌，且李恂据敦煌属覆亡后残余政权阶段；年度地图不压平为单一西凉控制点。"},
+    {"year":421,"conclusion":"西凉残余政权据敦煌。北凉围城并引水灌城，敦煌陷落，李恂政权终止；敦煌只作覆亡前终局中心参照，不表示全年独立控制或整个河西范围。","mapExpression":"terminal-control-center-point","capitalPlaceId":"dunhuang","territoryBoundary":null,"sourceIds":["zizhi-tongjian-vol119-western-liang"],"evidenceGap":"可定位终局城市但年内政权终止时点不等于全年控制；无稳定全年边界依据，不绘疆域面。"}
+  ]
+}

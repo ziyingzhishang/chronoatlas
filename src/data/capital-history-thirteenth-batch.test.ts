@@ -45,7 +45,9 @@ describe('thirteenth-batch unresolved capital evidence quality', () => {
     expect(recordsFor('tuyuhun').every((record) => record.role === 'disputed')).toBe(true);
     expect(recordsFor('xia_early').every((record) => record.role === 'disputed')).toBe(true);
     expect(recordsFor('shang').every((record) => record.role === 'disputed')).toBe(true);
-    expect(recordsFor('western_qin').some((record) => record.role === 'de_facto')).toBe(true);
+    expect(recordsFor('western_qin')).toEqual(expect.arrayContaining([
+      expect.objectContaining({ placeId: 'fuhan', validFrom: 412, validTo: 431, role: 'primary', status: 'actual' }),
+    ]));
     expect(recordsFor('ming_southern').every((record) => record.status === 'actual')).toBe(true);
   });
 });

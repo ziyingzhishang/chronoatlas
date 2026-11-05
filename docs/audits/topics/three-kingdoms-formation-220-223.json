@@ -1,0 +1,165 @@
+{
+  "decisionIds": [
+    "gap-wei_three-220-223",
+    "gap-shu_three-221-223"
+  ],
+  "from": 220,
+  "to": 223,
+  "yearCount": 8,
+  "years": [
+    {
+      "polityId": "wei_three",
+      "year": 220,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "曹丕受禅建立魏，以洛阳为中央政治中心；汉廷原名义辖区不自动等于曹魏全年直接控制区，魏疆域仍留空。",
+      "evidenceGap": "受禅和都城可确认，但政权交接、地方归属及实际控制变化不足以复原220年连续疆界。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd"
+      ]
+    },
+    {
+      "polityId": "wei_three",
+      "year": 221,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "魏以洛阳为都，刘备于成都称帝建蜀汉；孙权受魏封吴王的名义关系另行区分，魏疆域仍留空。",
+      "evidenceGap": "各政权名号、册封关系及军事活动不能代替魏在本年的直接控制边界证据。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd"
+      ]
+    },
+    {
+      "polityId": "wei_three",
+      "year": 222,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "魏以洛阳为中央政治中心；吴自立并改元黄武，蜀吴战争与夷陵战事构成并存背景，魏疆域仍留空。",
+      "evidenceGap": "战争进退、政权自立和既有吴近似来源几何都不足以给出魏的逐年实控边缘。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd"
+      ]
+    },
+    {
+      "polityId": "wei_three",
+      "year": 223,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "魏继续以洛阳为政治中心，蜀汉刘备去世、刘禅继位，吴政权亦继续存在；魏全年疆域仍留空。",
+      "evidenceGap": "政权承接和对峙信息不足以复原魏在223年全年连续直接控制疆界。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd"
+      ]
+    },
+    {
+      "polityId": "wu_three",
+      "year": 221,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "wuchang",
+      "territoryBoundary": null,
+      "conclusion": "黄初二年孙权受魏封吴王，并自公安迁都鄂、改名武昌；吴王政权的江东军政中心可确认，名义受封与222年自立改元的阶段分别记录。",
+      "evidenceGap": "史料支持武昌政治中心，不能由此推出吴在本年的连续直接控制边界，也不把222年起的吴来源几何倒推至221年。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "wuchang-wu-capital-location",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd"
+      ]
+    },
+    {
+      "polityId": "shu_three",
+      "year": 221,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "chengdu",
+      "territoryBoundary": null,
+      "conclusion": "刘备在成都即帝位、蜀汉正式建政；成都作为中央政治中心参照，不表示全境边缘，蜀疆域仍留空。",
+      "evidenceGap": "建政和都城事实不足以恢复蜀汉逐年直接控制范围，不以益州概称转换为精确疆界。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd"
+      ]
+    },
+    {
+      "polityId": "shu_three",
+      "year": 222,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "chengdu",
+      "territoryBoundary": null,
+      "conclusion": "夷陵战败后蜀汉仍以成都为政治中心；军事失败不等于益州全境即时易手，本年蜀疆域仍留空。",
+      "evidenceGap": "夷陵战役及撤退记载不能直接还原年度控制边缘，也不能绘成魏蜀吴间稳定边界。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd"
+      ]
+    },
+    {
+      "polityId": "shu_three",
+      "year": 223,
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "chengdu",
+      "mapEventIds": ["liu-bei-dies-at-yongan-223"],
+      "territoryBoundary": null,
+      "conclusion": "刘备卒于永安宫、刘禅继位；成都继续作为蜀汉中央政治中心参照，奉节宝塔坪一带以区域级事件点表示。蜀汉疆域仍留空。",
+      "evidenceGap": "皇位承接不能证明各地全年控制状态，且不以224年及其后轮廓倒推本年疆界；永安宫的具体建筑位置尚无可直接使用的考古测绘坐标。",
+      "sourceIds": [
+        "three-kingdoms-formation-220-223-primary-sources",
+        "modern-geography-reference",
+        "three-kingdoms-overview-map-1935-pd",
+        "liu-bei-death-and-yongan-palace-location",
+        "baotaiping-site-amap-reference"
+      ]
+    }
+  ],
+  "coexistenceNotes": [
+    "220年仅形成曹魏，221年蜀汉正式建政；孙权受魏封王不等于吴已于221年完成本项目所定的独立政权起年。",
+    "220年东汉Cliopatria来源轮廓（来源区间215—220年）因汉魏年内交替，不能证明东汉全年直接控制或转作曹魏疆域；现以 conflict:han-wei-transition:220 暂扣该轮廓，仅影响220年运行帧，保留原始几何且不裁切、不转交。219年仍显示原来源面；220年魏疆域仍留空，仅显示洛阳D级中心点。",
+    "吴王政权从221年起纳入项目序列：221年仅显示武昌D级中心点，吴自222年起显示Cliopatria v0.2.1 record 1312（来源区间222—237年，CC BY 4.0）近似时段几何；本次未重绘或裁切。逐断面几何核对显示魏洛阳、蜀成都两个D级中心点均在吴来源多边形之外，魏、蜀本年也无面状边界，因此当前数据没有可判定的政权面重叠；该计算只说明现有图形未互相压盖，不代表历史边界或相邻线已校定。",
+    "魏、蜀中心点和吴来源几何同断面显示时，点位与范围面各自表达不同证据性质；不自动修剪或拼接几何。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "three-kingdoms-formation-220-223-primary-sources",
+      "use": "《资治通鉴》卷六十九、七十及《三国志》相关本纪逐年核对曹魏受禅、蜀汉建政、吴自立、夷陵战争和刘备去世后的政权承接；不将名义关系或军事行动转绘为疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "洛阳与成都使用项目地点表中的现代城市近似坐标，仅表示政治中心，不表示古城垣或行政边界。"
+    },
+    {
+      "id": "wuchang-wu-capital-location",
+      "use": "《资治通鉴》卷69支持221年孙权迁都鄂、改名武昌；鄂州地方资料定位吴王城遗址，联合国地名专家组城市坐标用于区域级近似点，不表示古城墙或疆界。"
+    },
+    {
+      "id": "liu-bei-death-and-yongan-palace-location",
+      "use": "《资治通鉴》卷70记223年刘备卒于永安宫；重庆考古及夔州历史空间研究将永安宫城讨论在奉节宝塔坪一带，同时提示传统宫址定位风险。仅支持区域级事件参照，不定位宫殿建筑或城垣。"
+    },
+    {
+      "id": "baotaiping-site-amap-reference",
+      "use": "高德地图宝塔坪遗址POI提供区域坐标，转换至WGS84近似坐标后用于区域参照点；不作考古测绘或遗址边界。来源权利及公开展示条件待审核。"
+    },
+    {
+      "id": "three-kingdoms-overview-map-1935-pd",
+      "use": "Albert Herrmann、Georg Westermann 1935年地图概览，图题涵盖220—265/280年；Commons标记Public Domain Mark 1.0。仅用于比较宽时段的三国空间框架，不作为220—223年逐年疆界，不复用或数字化图线。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "220—223年魏、221—223年蜀汉疆域边界均保持留空，coverage sourceBoundaryIds为空。",
+    "中心点属于D级位置参照，不是直接控制范围；未经独立历史与制图审核签核。",
+    "吴的原始几何是另一个政权的近似时段模型，许可、历史适用性与公开展示条件仍须分别复核。"
+  ]
+}

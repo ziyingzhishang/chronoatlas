@@ -1,0 +1,22 @@
+{
+  "decisionId": "gap-prc-1949-1949",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "prc",
+      "year": 1949,
+      "conclusion": "10月1日中华人民共和国中央人民政府在北京成立，中央政府委员会举行首次会议并举行成立典礼。此事件确认新政权和政治中心形成，但不表示全年各地均已纳入同一直接行政控制。",
+      "mapExpression": "event-and-capital-points",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": ["ccdi-prc-chronology-1949", "modern-geography-reference"],
+      "evidenceGap": "来源支持1949年10月的政权建立事件及北京中心点；年内战事、地区接收和行政建制仍分期变化，不足以据此复原中华人民共和国全年直接控制疆界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "北京点表示中央人民政府成立与首都中心的城市近似定位，不表示天安门广场精确坐标，也不表示古迹或边界。",
+    "1949年疆域面保持留空；不将成立宣告、后续实际接收或1950年以后轮廓合并为全年实控范围。",
+    "此记录的来源使用权及公开地图条件仍需独立核验。"
+  ]
+}

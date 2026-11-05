@@ -1,0 +1,890 @@
+{
+  "decisionId": "gap-zhou_western--1046--1001",
+  "yearCount": 46,
+  "years": [
+    {
+      "polityId": "zhou_western",
+      "year": -1046,
+      "conclusion": "本项目沿用传统年表将商周更替约置于前1046年；张鹏程2023年依据铭文历日重建认为前1046年为初次伐商、前1044年为克商，克商纪年存在学术分歧。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference",
+        "western-zhou-chronology-zhang-2023"
+      ],
+      "evidenceGap": "传统断代与2023年铭文历日重建对克商年份不同；本项目保留前1046年导航约年，同时登记前1046初次伐商、前1044克商的学术方案。两种纪年均不足以复原本年全年王室直接控制边界，疆域面留空；来源期段面clio-110-shang--1100也因商周交替年控制时序未定而暂挂，仅保留原始来源，不裁剪或转交；丰镐点只表示王室中心参照。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1045,
+      "conclusion": "在张鹏程2023年重建的前1046初次伐商、前1044克商方案中，前1045处于两次征商行动之间；项目传统年表仍以约前1046年作为商周更替导航节点。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference",
+        "western-zhou-chronology-zhang-2023"
+      ],
+      "evidenceGap": "前1045年在该研究纪年中是初次伐商与克商之间的年份，其他年表对商周更替节点处理不同；本年没有可复原的王室直接控制边界，疆域面留空，丰镐点只表示中心参照。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1044,
+      "conclusion": "张鹏程2023年依据《武成》《世俘》及铭文历日重建将前1044年定为克商年；本项目仍沿用传统前1046年王朝更替约年，并保留两种纪年。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference",
+        "western-zhou-chronology-zhang-2023"
+      ],
+      "evidenceGap": "前1044年为一项现代年表重建提出的克商年，项目导航仍采用前1046年约年；历史日期分歧不提供全年王室直接控制边界，疆域面留空，丰镐点只表示中心参照。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1043,
+      "conclusion": "武王卒后与周公摄政：继承和摄政造成政治秩序转换，管蔡之乱及相关东征记载显示控制范围快速变化。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1042,
+      "conclusion": "武王卒后与周公摄政：继承和摄政造成政治秩序转换，管蔡之乱及相关东征记载显示控制范围快速变化。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1041,
+      "conclusion": "成王时期东征与秩序重建：东征、平定东夷及成周经营扩大王室支配，但征服、来服和封建不等于每年直接行政边界。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1040,
+      "conclusion": "成王时期东征与秩序重建：东征、平定东夷及成周经营扩大王室支配，但征服、来服和封建不等于每年直接行政边界。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1039,
+      "conclusion": "成王时期东征与秩序重建：东征、平定东夷及成周经营扩大王室支配，但征服、来服和封建不等于每年直接行政边界。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1038,
+      "conclusion": "成王时期东征与秩序重建：东征、平定东夷及成周经营扩大王室支配，但征服、来服和封建不等于每年直接行政边界。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1037,
+      "conclusion": "成王时期东征与秩序重建：东征、平定东夷及成周经营扩大王室支配，但征服、来服和封建不等于每年直接行政边界。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1036,
+      "conclusion": "成王时期东征与秩序重建：东征、平定东夷及成周经营扩大王室支配，但征服、来服和封建不等于每年直接行政边界。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1035,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1034,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1033,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1032,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1031,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1030,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1029,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1028,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1027,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1026,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1025,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1024,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1023,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1022,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1021,
+      "conclusion": "成王后期与分封秩序稳定化：分封诸侯、迁徙人口和土地赏赐形成多层政治秩序；诸侯封国不能简单并入王室直辖面。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1020,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1019,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1018,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1017,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1016,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1015,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1014,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1013,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1012,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1011,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1010,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1009,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1008,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1007,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1006,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1005,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1004,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1003,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1002,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    },
+    {
+      "polityId": "zhou_western",
+      "year": -1001,
+      "conclusion": "康王早期：成康秩序与北方、东方关系可由文献和器物铭文交叉核验，但没有可重发布的逐年边界几何，且早期纪年存在学术争议。",
+      "mapExpression": "capital-center-point",
+      "directBoundary": null,
+      "sourceIds": [
+        "western-zhou-national-museum",
+        "western-zhou-epic",
+        "china-chronology",
+        "cliopatria",
+        "map-regulation",
+        "capital-history-reference",
+        "western-zhou-capital-archaeology",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可说明王室活动、分封关系或军事影响，但不足以复原本公历年全年稳定且可重复发布的王室直接控制边界；不得将诸侯封国、征服/来服范围或后世轮廓合并为疆域面。 本年另以丰镐都邑区显示低精度王室中心参照点；该点不表示王畿范围、诸侯封国、军事影响或王室直接控制疆界。",
+      "centerPlaceId": "fenghao"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "46个公历年逐年登记结论；项目沿用前1046年传统商周更替约年，张鹏程2023年重建将前1046年视为初次伐商、前1044年视为克商，三年分别记录异说，不把单一纪年视为定论。",
+    "宜侯夨簋所见土地、城邑和人口赏赐可说明分封秩序，不等于王室直辖边界。",
+    "不把军事征服、来服/朝贡、诸侯封国或Cliopatria前1000年以后的轮廓当作本段直接疆域。",
+    "留空是证据与表达判断，不代表否认西周政权存在；几何与来源许可、公开地图审核分别处理。"
+  ]
+}

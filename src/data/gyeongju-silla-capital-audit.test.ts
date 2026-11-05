@@ -38,13 +38,21 @@ describe('庆州—新罗王京城市审计', () => {
       polityId: 'silla',
       placeId: 'jincheng_silla',
       validFrom: -57,
-      validTo: 100,
+      validTo: 377,
       confidence: 'medium',
     });
     expect(laterCapital).toMatchObject({
       polityId: 'silla',
       placeId: 'wolseong_silla',
       validFrom: 101,
+      validTo: 377,
+      role: 'disputed',
+      status: 'uncertain',
+      confidence: 'low',
+    });
+    expect(capitalHistory.find(
+      (item) => item.polityId === 'silla' && item.placeId === 'wolseong_silla' && item.validFrom === 378,
+    )).toMatchObject({
       validTo: 935,
       confidence: 'medium',
     });

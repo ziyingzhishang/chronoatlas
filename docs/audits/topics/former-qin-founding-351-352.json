@@ -1,0 +1,93 @@
+{
+  "decisionId": "gap-former_qin-351-352",
+  "polityId": "former_qin",
+  "years": [
+    {
+      "year": 351,
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "conclusion": "苻健于350年十月进至长安，十一月入城并以此为都；351年正月称天王、大单于，建元皇始、置百官。四月又击退东晋梁州刺史司马勋于五丈原。",
+      "evidenceGap": "《资治通鉴》卷九十八将至长安及入城明确系于350年十月、十一月；卷九十九记351年称天王和五丈原战事。长安虽为政治中心，名号、军事胜负和未逐郡县核实的建政过程不足以证明关中各郡形成全年稳定直接控制边界。",
+      "sourceIds": [
+        "former-qin-founding-351-352-primary-sources",
+        "former-qin-situation-map-351-394",
+        "modern-geography-reference",
+        "wuzhangyuan-gazetteer-location"
+      ],
+      "mapEventIds": [
+        "former-qin-defeats-jin-at-wuzhangyuan-351"
+      ]
+    },
+    {
+      "year": 352,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "conclusion": "苻健于本年即皇帝位，政权由称天王阶段转为称帝阶段。地方志对石安县撤置、改名与迁置的时间和关系记载不一：有志记352年撤销，另有志记357年（或365年）改灵武及其他置郡、侨置沿革，暂存异说，不据此绘制疆界。",
+      "evidenceGap": "《陕西省志·行政建置志》记石安县于352年撤销；秦都区志记357年石安改灵武，并注明《晋书·地理志》作365年；渭城区志、咸阳市志对故渭城石安、咸阳郡辖县和侨置灵武的关系又有不同叙述。现有资料尚不能判定这些记录指同一县治、迁置或不同阶段，且未提供可复原的石安县界或可唯一落点的352年古城坐标；称帝节点和县制沿革均不足以复原关中全年直接控制边界，不以之后战争或后期轮廓回填。",
+      "sourceIds": [
+        "former-qin-founding-351-352-primary-sources",
+        "former-qin-situation-map-351-394",
+        "modern-geography-reference",
+        "changling-chgis-han-only",
+        "shaanxi-administrative-establishment-gazetteer-shian-352",
+        "xianyang-qindu-gazetteer-shian-352",
+        "xianyang-weicheng-gazetteer-shian-352",
+        "xianyang-city-gazetteer-shian-352"
+      ]
+    }
+  ],
+  "coexistenceNotes": [
+    "351年东晋仍然并存；《资治通鉴》卷九十九记杜洪、张琚召晋梁州刺史司马勋入秦川，苻健四月于五丈原击退晋军。战事和军事胜负不能直接转成关中疆界。",
+    "中心点仅表示长安政治中心，不把战争、称号、名义辖区或邻近政权的范围自动转换为疆界。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "former-qin-founding-351-352-primary-sources",
+      "use": "《资治通鉴》卷九十八明确记350年十月苻健至长安、杜洪与张琚出奔，十一月苻健入长安；卷九十九记351年称天王、改元及四月五丈原击退司马勋。《晋书》卷一一二互校入城、定都和351、352年的名号节点。入长安不能误记为351年事件，称号和战事也不推导控制范围。"
+    },
+    {
+      "id": "xianyang-qindu-gazetteer-shian-352",
+      "use": "《咸阳市秦都区志》记后赵建平二年（331）于旧渭城置石安县，并将前秦永兴元年（357）记作石安改灵武，附注《晋书·地理志》作建元元年（365）。与《陕西省志·行政建置志》352年撤县说不一致；不提供古城精确坐标、县界或全域控制线。"
+    },
+    {
+      "id": "shaanxi-administrative-establishment-gazetteer-shian-352",
+      "use": "《陕西省志》第二卷《行政建置志》“咸阳市—渭城区”条明确记后赵331年设石安、前秦352年撤销并设灵武，另记北魏复设石安、隋583年撤销。该志序言自述东晋南北朝政区资料互有差异、不能确定者并存诸说；本条与咸阳市区志记载不一，故保留为一说，不据此绘制县界。"
+    },
+    {
+      "id": "xianyang-weicheng-gazetteer-shian-352",
+      "use": "《咸阳市渭城区志》记后赵329年在故渭城置石安，又记前秦352年置咸阳郡、辖石安等县及“在石安西灵武乡置石安县”。这一说法包含县名、治所或迁置关系，不能与省志、秦都区志的沿革简单视作相同过程；未提供可核验的古城坐标或县界。"
+    },
+    {
+      "id": "xianyang-city-gazetteer-shian-352",
+      "use": "《咸阳市志》记前秦置咸阳郡、侨置灵武县，并记352年分池阳置泾阳、三原护军；未称石安县于352年废除，且后文仍记北周咸阳郡有石安、583年撤石安入泾阳。用于提示沿革阶段需区分，不提供352年疆界或古城坐标。"
+    },
+    {
+      "id": "former-qin-situation-map-351-394",
+      "use": "地图索引提供351—394年东晋、前秦形势的宽时段参考，仅用于确认该时期的并存政权背景；跨44年的图件不能证明351或352年逐年疆界，也未复制图像、描摹边线或转录几何。"
+    },
+    {
+      "id": "changling-chgis-han-only",
+      "use": "TGAZ / CHGIS长陵县记录为前202年至公元13年，点位据《汉书·地理志》注释定位在咸阳东北窑店一带。其时段止于东汉初，不能作为352年前秦咸阳郡治或石安县治坐标，不将该点沿用到前秦中心图层。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "长安点沿用现代西安市近似中心坐标，仅表示政治中心位置，不代表古长安城垣、郡县界线或关中完整控制区。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1485（clio-1485-former_qin-353）来源时段为353—370年，snapshot 353，low confidence，control type unspecified。仅用于确认该来源不覆盖351—352年，不向前延伸几何。"
+    },
+    {
+      "id": "wuzhangyuan-gazetteer-location",
+      "use": "《岐山县志》记五丈原位于岐山县南部，与《晋书·苻健载记》记351年苻健、司马勋在五丈原交战合用，只支持今岐山县五丈原区域级事件点；不定位阵地、战线或疆界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "351、352年疆域面均留空，coverage sourceBoundaryIds为空；长安D级点位不是疆域边界。352年石安县沿革在省志、秦都区志、渭城区志和咸阳市志之间有异说，未定位可唯一对应的古城坐标或县界；不能将任一沿革说直接转作疆域线。",
+    "现有东晋、前秦形势图索引跨351—394年，不能证明351或352年逐年边界；未据其创建几何。来源使用权、历史疆域复原、制图审核和公开地图展示条件分别核验；本记录不将史料可得性等同于几何或公开使用授权。",
+    "351年新增五丈原区域事件点，来源只支持区域参照；前秦351年疆域面仍留空。"
+  ]
+}

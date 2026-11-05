@@ -8,7 +8,7 @@ import { sourceById } from './sources';
 
 const targets = [
   { eventId: 'changan-xin-founded', personId: 'wang-mang', year: 9, datePrecision: 'year', scope: '受禅建新' },
-  { eventId: 'changan-later-qin', personId: 'yao-chang', year: 384, datePrecision: 'year', scope: '384年形成与386年前后据长安' },
+  { eventId: 'changan-later-qin', personId: 'yao-chang', year: 386, datePrecision: 'year', scope: '386年取得长安并称帝' },
   { eventId: 'tang-founded-changan', personId: 'li-yuan', year: 618, datePrecision: 'year', scope: '618年唐建国政治节点' },
 ] as const;
 
@@ -45,7 +45,7 @@ describe('政权建立事件详情参与端点闭合', () => {
     expect(report.unresolvedEventIds).toEqual([]);
     expect(itemsById.get('tang-founded-changan')?.status).toBe('covered');
     expect(itemsById.get('changan-xin-founded')?.status).toBe('needs-review');
-    expect(itemsById.get('changan-later-qin')?.status).toBe('needs-review');
+    expect(itemsById.get('changan-later-qin')?.status).toBe('covered');
 
     for (const target of targets) {
       const item = itemsById.get(target.eventId);

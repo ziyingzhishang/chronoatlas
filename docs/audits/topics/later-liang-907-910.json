@@ -1,0 +1,72 @@
+{
+  "decisionId": "gap-liang_later-907-910",
+  "yearCount": 4,
+  "years": [
+    {
+      "polityId": "liang_later",
+      "year": 907,
+      "conclusion": "朱温受唐禅建立后梁，以大梁（汴州，改置开封府）为中央政治中心；唐旧名义辖区及各方镇不能整体视为后梁实控。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "kaifeng",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "modern-geography-reference"],
+      "evidenceGap": "建国和都城位置可确认，但唐末方镇及并存政权的年度直接控制范围不能从受禅事件推定。"
+    },
+    {
+      "polityId": "liang_later",
+      "year": 908,
+      "conclusion": "后梁以大梁为政治中心；吴、吴越、淮南、晋、岐、楚、蜀等政权关系与战事并存。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "kaifeng",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "modern-geography-reference"],
+      "evidenceGap": "外交往来、方镇归属和战事不能合并为全年稳定边界。"
+    },
+    {
+      "polityId": "liang_later",
+      "year": 909,
+      "conclusion": "正月后梁迁主要朝廷中心至洛阳，大梁仍为东都并设留守；秋季皇帝又还大梁。地图分别标迁都与返都城市节点，不表示迁行路线。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "luoyang",
+      "secondaryCenterPlaceIds": ["kaifeng"],
+      "mapEventIds": ["later-liang-moves-capital-to-luoyang-909", "later-liang-court-returns-to-daliang-909"],
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "later-liang-capital-move-909-primary", "modern-geography-reference"],
+      "evidenceGap": "两都和年内巡行只支持都城节点及阶段变化，不表示固定驻跸、迁行路线或控制范围；河东晋、岐及其他地方军政势力仍并存，疆域面留空。"
+    },
+    {
+      "polityId": "liang_later",
+      "year": 910,
+      "conclusion": "后梁主要朝廷中心在洛阳，大梁保留东都地位；梁晋战争及幽州、沧州等地方军事局势持续变化。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "secondaryCenterPlaceIds": ["kaifeng"],
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "modern-geography-reference"],
+      "evidenceGap": "政权关系、争战和名义归属不足以复原逐年直接控制线；不将后续范围倒填。"
+    }
+  ],
+  "coexistenceNotes": [
+    "907—910年吴、吴越、楚、前蜀、岐、河东晋及地方势力并存；河东晋属于台账外待排序缺口，不能与五代后晋混同。没有已审核相交边界时不进行裁剪。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian",
+      "use": "《资治通鉴》卷266核对907年建梁，卷267核对908—910年政局及909年迁都洛阳、大梁设东都留守与两都活动；史料支持中心阶段和政治时序，不提供后梁逐年疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目开封、洛阳近似城市点表达D级政治中心；不表示五代城垣或行政控制面。"
+    },
+    {
+      "id": "later-liang-capital-move-909-primary",
+      "use": "《资治通鉴》卷267支持909年正月迁都洛阳、任命大梁东都留守及秋季还大梁；不提供两都间路线或疆界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "907—910年后梁疆域面留空；不把唐旧疆域、藩镇名义关系或战时占领当作直接边界。",
+    "909—910年以洛阳为主要朝廷中心、大梁为东都副都；中心点不表示全年固定驻跸或两都之间的控制连线。",
+    "河东晋缺口另行排序；来源使用权和公开地图条件另行审核。"
+  ]
+}

@@ -1,0 +1,31 @@
+{
+  "decisionId": "gap-song_south-1279-1279",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "songshi-vol47-last-emperor",
+      "use": "《宋史》卷47《瀛国公二王附》用于核对祥兴二年崖山战局、赵昺结局和宋亡，支持南宋终止的历史结论；崖山终局事件不提供1279年全年疆界或可代表全域的中心点。"
+    },
+    {
+      "id": "yuan-nationalities-history",
+      "use": "项目登记的元代史料综述作交叉背景来源；该网页本轮在线工具无法读取，因此本年度终止判断以可访问的《宋史》卷47为主，综述链接待维护。"
+    }
+  ],
+  "reviewLimitations": [
+    "1279年可确认政权终止，但此前海上抵抗与二月终局不构成全年稳定疆界；地图保持留空。",
+    "崖山是终局事件地点，不作南宋全年政治中心或疆域边界；不回填1278年轮廓。",
+    "元代史料综述链接本轮无法读取；本审核不替代来源使用权与公开地图合规审核。"
+  ],
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 1279,
+      "conclusion": "祥兴二年二月，元军攻破崖山海上宋军阵列，赵昺投海，南宋政权终止。史料可确认政权终局，但年内仍包含终局前的海上军政抵抗。",
+      "mapExpression": "leave-unfilled",
+      "capitalPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["songshi-vol47-last-emperor", "yuan-nationalities-history"],
+      "evidenceGap": "《宋史》卷47可核对终局叙事，但崖山海战地点、末期抵抗范围和全年直接控制范围不是同一空间对象；没有足以复原1279全年疆界的空间证据。地图可单独显示低精度事件区域参照点，但不把它当作全年政治中心、直接控制点或边界。"
+    }
+  ]
+}

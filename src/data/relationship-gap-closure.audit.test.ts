@@ -70,6 +70,8 @@ describe('relationship gap closure evidence audit', () => {
     expect(report.polities.flatMap((item) => item.gaps)
       .filter((gap) => gap.code === 'unresolved-event-reference')).toEqual([]);
     expect(detailReport.items.filter((item) => item.unresolvedReferenceIds.events.length > 0)).toEqual([]);
-    expect(detailReport.uncoveredPolityIds).toEqual([]);
+    expect(detailReport.uncoveredPolityIds).toEqual(['western_yan']);
+    expect(detailReport.items.find((item) => item.polityId === 'western_yan')?.missingAssociationTypes)
+      .toEqual(['claims', 'heritage', 'people']);
   });
 });

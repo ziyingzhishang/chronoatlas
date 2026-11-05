@@ -8,6 +8,9 @@ import { heritageAssets } from './heritage';
 import { people } from './people';
 import { getPersonDetail } from './person-details';
 import { getPolityDetail } from './polity-details';
+import { getHistoricalState } from '../domain/history-state';
+import { bundledHistoricalStateSource } from '../content/bundled-adapter';
+import { boundaryCatalog } from './boundaries';
 
 describe('Cheng Han termination closure', () => {
   test('records the 347 Eastern Jin conquest of Chengdu as the termination event', () => {
@@ -20,6 +23,32 @@ describe('Cheng Han termination closure', () => {
       expect.objectContaining({ personId: 'li-shi' }),
       expect.objectContaining({ personId: 'huan-wen' }),
     ]));
+  });
+
+  test('does not present the brief 347 Chengdu occupation as a full-year Jin takeover', () => {
+    const event = events.find((item) => item.id === 'cheng-han-ended-347');
+    const detail = eventDetails.find((item) => item.eventId === 'cheng-han-ended-347');
+
+    expect(event?.impact).toContain('四月邓定、隗文等再入据成都');
+    expect(event?.impact).toContain('不表示东晋全年稳定控制巴蜀');
+    expect(event?.impact).not.toContain('东晋重新取得巴蜀');
+    expect(detail?.phases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ label: '桓温攻取成都、李势出降' }),
+      expect.objectContaining({ label: '桓温还江陵后成都再度易手' }),
+    ]));
+    expect(detail?.sourceIds).toContain('cheng-han-fall-347-primary-sources');
+  });
+
+  test('holds the low-confidence Eastern Jin interval outline only in the 347 transition year', () => {
+    const source = boundaryCatalog.find(boundary => boundary.id === 'clio-1477-jin_eastern-347');
+
+    expect(source?.geometry.type).toBe('MultiPolygon');
+    expect(source?.geometryReviewHolds).toEqual(expect.arrayContaining([
+      expect.objectContaining({ conflictId: 'conflict:jin-chenghan-transition:347', years: [347] }),
+    ]));
+    expect(getHistoricalState(346).boundaries.some(boundary => boundary.id === source?.id)).toBe(false);
+    expect(getHistoricalState(347).boundaries.some(boundary => boundary.id === source?.id)).toBe(false);
+    expect(getHistoricalState(348).boundaries.some(boundary => boundary.id === source?.id)).toBe(true);
   });
 
   test('keeps Chengdu and its historical layer continuous after Cheng Han ends', () => {

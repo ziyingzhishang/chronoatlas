@@ -1,0 +1,286 @@
+{
+  "decisionIds": [
+    "gap-ming-1368-1374",
+    "gap-northern_yuan-1368-1374"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "ming-yuan-northern-frontier-1368-1374",
+      "use": "《明太祖实录》及《元史》用于按年核对1368年明廷建立与元廷北撤、1369年上都转应昌、1370年应昌陷落后北走和林及其间北伐战事。台湾中研院明清研究资料提及1368—1372年黑水城文书中的北元文书，支持政权延续；Cambridge Archaeological Journal考古研究支持和林城址及聚落定位。现代资料用于政权延续和中心地点核对，不支撑年度疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "用于应天、上都、应昌、和林等城市或遗址的现代近似坐标定位，仅支撑地图中心点；不承担历史边界和古城精确范围证明。"
+    }
+  ],
+  "reviewLimitations": [
+    "本断面包含明与北元各7条政权—年度结论，共14条；逐年只表达政治中心，1369、1370年北元多点表示年内先后驻地，不连成路线、不解释为同时控制区。",
+    "1368—1374年没有足够的逐年边缘州县直接控制资料支撑连续疆界面；两政权coverage决策均维持leave-unfilled，未添加边界几何。",
+    "明实录在线页面注明录文尚未完成；《元史》卷47可访问。黑水城文书研究和和林考古资料作为现代补充，不替代本纪史料，也不提供年度边界。",
+    "中心点位置为现代近似定位，不表示城垣、实际统治范围或跨年边界；来源使用权与公开地图条件另行审核。"
+  ],
+  "yearCount": 14,
+  "years": [
+    {
+      "year": 1368,
+      "polityId": "ming",
+      "conclusion": "洪武元年在应天即位并建号大明；北伐与攻取大都发生于年内，不能据后续势力范围倒推全年疆界。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          118.8,
+          32.06
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "应天点仅定位明廷中心；洪武元年内建国、北伐及攻取大都时序不同，不能用年末战果代表全年稳定控制边缘。"
+    },
+    {
+      "year": 1369,
+      "polityId": "ming",
+      "conclusion": "洪武二年继续经营北方新占地区与西北战事；应天仍为首都。北方军镇初设和战事进退不支持把后世政区画成连续控制线。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          118.8,
+          32.06
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "北方新占地区仍在经营且西北战事、军卫建置持续变化；应天首都点不说明明廷对边地的连续直接控制线。"
+    },
+    {
+      "year": 1370,
+      "polityId": "ming",
+      "conclusion": "洪武三年继续北征并攻取应昌；应天为中央政治中心。军事占领点不等于全年疆界。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          118.8,
+          32.06
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "明军攻取应昌等北征战果不等于全年稳定控制线；蒙古部众移动、军卫设置和后续行政建置均不能直接拼成洪武三年疆界。"
+    },
+    {
+      "year": 1371,
+      "polityId": "ming",
+      "conclusion": "洪武四年中央仍在应天；西南战事与北方蒙古部众活动并存，本点不表达控制强度或边界。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          118.8,
+          32.06
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "西南战事与北方部众活动同时存在；应天点只定位中央，未见可据以划定明廷全年北方直接控制外缘的材料。"
+    },
+    {
+      "year": 1372,
+      "polityId": "ming",
+      "conclusion": "洪武五年明军深入漠北受挫；西北经略及羁縻军卫亦处在变动中，边境和名义声索不等于直接控制。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          118.8,
+          32.06
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "相关史料足以定位中央政治中心或年内阶段性驻地，但不提供该公历年度连续直接控制边界；军事占领、汗廷移动、军卫设置和羁縻关系均不作为疆界线。"
+    },
+    {
+      "year": 1373,
+      "polityId": "ming",
+      "conclusion": "洪武六年应天仍为中央政治中心；辽东、蒙古及西北方向军政关系尚未形成可据以绘制的稳定年度边界。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          118.8,
+          32.06
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "相关史料足以定位中央政治中心或年内阶段性驻地，但不提供该公历年度连续直接控制边界；军事占领、汗廷移动、军卫设置和羁縻关系均不作为疆界线。"
+    },
+    {
+      "year": 1374,
+      "polityId": "ming",
+      "conclusion": "洪武七年应天仍为中央政治中心；北疆防务与归附关系继续变化，疆界面留空。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          118.8,
+          32.06
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "相关史料足以定位中央政治中心或年内阶段性驻地，但不提供该公历年度连续直接控制边界；军事占领、汗廷移动、军卫设置和羁縻关系均不作为疆界线。"
+    },
+    {
+      "year": 1368,
+      "polityId": "northern_yuan",
+      "conclusion": "元廷离开大都后向北迁；上都为该年可确认的北迁政治中心参照。此点不表示北元全境。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          116.18,
+          42.36
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "上都只表示元廷北迁后的阶段性政治中心；大都失守与汗廷移动发生于年内，不支持把北撤路线或旧元轮廓当成北元全年疆界。"
+    },
+    {
+      "year": 1369,
+      "polityId": "northern_yuan",
+      "conclusion": "年内明军攻取上都后，元顺帝转驻应昌；两点表示先后中心，不是同时控制区或迁徙通道。",
+      "mapExpression": "ordered-center-points",
+      "centerCoordinates": [
+        [
+          116.18,
+          42.36
+        ],
+        [
+          116.79,
+          43.24
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "上都失守后顺帝转驻应昌；两中心为先后节点，既不构成迁徙线，也不能说明周边部众的连续控制范围。"
+    },
+    {
+      "year": 1370,
+      "polityId": "northern_yuan",
+      "conclusion": "应昌陷落后，元昭宗率少数随从北走和林；两点表示先后中心，不能解释为全年领土或同等控制。",
+      "mapExpression": "ordered-center-points",
+      "centerCoordinates": [
+        [
+          116.79,
+          43.24
+        ],
+        [
+          102.83,
+          47.2
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "应昌陷落、顺帝去世及昭宗北走和林是年内不同阶段；点位只定位前后汗廷中心，不表示同一时点或连续全年领土。"
+    },
+    {
+      "year": 1371,
+      "polityId": "northern_yuan",
+      "conclusion": "元室北迁后和林仍是汗廷重要政治中心；不据汗廷位置推定草原部众边界。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          102.83,
+          47.2
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "相关史料足以定位中央政治中心或年内阶段性驻地，但不提供该公历年度连续直接控制边界；军事占领、汗廷移动、军卫设置和羁縻关系均不作为疆界线。"
+    },
+    {
+      "year": 1372,
+      "polityId": "northern_yuan",
+      "conclusion": "明军三路北征与北元军在漠北交战；和林只作政治中心参照，交战范围不作疆界。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          102.83,
+          47.2
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "和林为汗廷中心而非控制边缘；明军三路北征、战场和行军路线不能拼成北元领土边界。"
+    },
+    {
+      "year": 1373,
+      "polityId": "northern_yuan",
+      "conclusion": "和林仍为元室流亡朝廷的政治中心参照；汗廷移动及部众关系不支持绘制固定年度边界。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          102.83,
+          47.2
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "相关史料足以定位中央政治中心或年内阶段性驻地，但不提供该公历年度连续直接控制边界；军事占领、汗廷移动、军卫设置和羁縻关系均不作为疆界线。"
+    },
+    {
+      "year": 1374,
+      "polityId": "northern_yuan",
+      "conclusion": "现有可核史料不足以复原北元逐年直接控制范围；以和林作为阶段性政治中心参照，疆界明确留空。",
+      "mapExpression": "control-center-point",
+      "centerCoordinates": [
+        [
+          102.83,
+          47.2
+        ]
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "ming-yuan-northern-frontier-1368-1374",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "相关史料足以定位中央政治中心或年内阶段性驻地，但不提供该公历年度连续直接控制边界；军事占领、汗廷移动、军卫设置和羁縻关系均不作为疆界线。"
+    }
+  ]
+}

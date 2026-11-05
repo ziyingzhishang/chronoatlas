@@ -13,6 +13,8 @@ import { ASIA_VIEW, BASEMAPS, basemapTiles, buildLocalMapData, buildWorldMapData
 import { formatSourceField } from '../i18n/source-display';
 import { createThrottledResize } from '../map/throttled-resize';
 
+const BASEMAP_LOADING_TIMEOUT_MS = 12_000;
+
 export interface MapHandle {
   perform: (action: MapAction) => void;
   focus: (entity: Exclude<SelectedEntity, undefined>) => void;
@@ -274,6 +276,14 @@ export const HistoricalMapCanvas = forwardRef<MapHandle, Props>(function Histori
     const map = mapRef.current;
     if (ready && map && readyMap.current === map) setTileStatus(failedSources.current.has(props.basemap) ? 'error' : map.isSourceLoaded(props.basemap) ? 'ready' : 'loading');
   }, [ready, props.basemap]);
+
+  useEffect(() => {
+    if (!ready || tileStatus !== 'loading') return;
+    const timeout = window.setTimeout(() => {
+      setTileStatus(status => status === 'loading' ? 'error' : status);
+    }, BASEMAP_LOADING_TIMEOUT_MS);
+    return () => window.clearTimeout(timeout);
+  }, [ready, props.basemap, tileStatus]);
 
   useImperativeHandle(ref, () => ({
     restorePrevious() {

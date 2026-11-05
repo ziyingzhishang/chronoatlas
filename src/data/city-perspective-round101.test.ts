@@ -30,7 +30,7 @@ describe('第101轮城市视角审计：临安历史层', () => {
     const item = report.items.find((entry) => entry.eventId === 'song-linan-center-formed');
 
     expect(item?.status).toBe('covered');
-    expect(item?.locationIds).toEqual(expect.arrayContaining(['linan', 'yingtian', 'jiankang']));
+    expect(item?.locationIds).toEqual(expect.arrayContaining(['linan', 'song_yingtian', 'jiankang']));
     expect(item?.polityIds).toContain('song_south');
     expect(item?.sourceComplete).toBe(true);
   });

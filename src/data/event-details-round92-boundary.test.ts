@@ -8,7 +8,6 @@ const reviewBoundaryReasons = {
   'changan-former-qin': 'formation-approximation',
   'changan-gengshi': 'participant-endpoint-review',
   'changan-han-capital': 'participant-endpoint-review',
-  'changan-later-qin': 'participant-endpoint-review',
   'changan-xin-founded': 'participant-endpoint-review',
   'chu-han-contention': 'multi-year-process',
   'chu-warring-founded-eighth-batch': 'traditional-periodization',
@@ -16,6 +15,7 @@ const reviewBoundaryReasons = {
   'daming-palace-built': 'construction-range',
   'eastern-zhou-founded-eighth-batch': 'formation-approximation',
   'former-liang-founded': 'formation-approximation',
+  'later-qin-founded': 'unlocated-historical-place',
   'goguryeo-founded': 'formation-approximation',
   'han-wudi-expands-changan': 'participant-endpoint-review',
   'qi-warring-founded-eighth-batch': 'traditional-periodization',
@@ -43,6 +43,10 @@ const reviewBoundaryReasons = {
   'min-ended-945': 'termination-approximation',
   'southern-song-ended-1279': 'formation-approximation',
   'dali-ended-1253': 'formation-approximation',
+  'national-government-formed-guangzhou-1925': 'participant-identity-not-modeled',
+  'northeast-reflag-1928': 'participant-identity-not-modeled',
+  'qing-ended-1912': 'participant-identity-not-modeled',
+  'wuhan-national-government-1927': 'participant-identity-not-modeled',
   'western-zhou-founded-eighth-batch': 'traditional-periodization',
   'xia-early-founded-eighth-batch': 'traditional-periodization',
   'xiongnu-founded': 'formation-approximation',
@@ -61,7 +65,7 @@ describe('event details ninety-second round boundary audit', () => {
     const reviewItems = report.items.filter((item) => item.status === 'needs-review');
     const reviewIds = Object.keys(reviewBoundaryReasons).sort();
 
-    expect(report.statusCounts).toEqual({ covered: 171, 'needs-review': 51, unresolved: 0 });
+    expect(report.statusCounts).toEqual({ covered: 176, 'needs-review': 55, unresolved: 0 });
     expect(reviewItems.map((item) => item.eventId)).toEqual(reviewIds);
 
     reviewItems.forEach((item) => {
@@ -79,7 +83,7 @@ describe('event details ninety-second round boundary audit', () => {
         expect(item.needsReviewChecks, item.eventId).toEqual(
           expect.arrayContaining(['timePrecision']),
         );
-        expect(item.needsReviewChecks.every((check) => check === 'timePrecision' || check === 'uncertaintyNote' || check === 'participants'), item.eventId)
+        expect(item.needsReviewChecks.every((check) => check === 'timePrecision' || check === 'uncertaintyNote' || check === 'participants' || check === 'locations'), item.eventId)
           .toBe(true);
         expect(['approximate', 'range'], item.eventId).toContain(item.timePrecision);
       } else {
@@ -112,7 +116,12 @@ describe('event details ninety-second round boundary audit', () => {
       .map((item) => item.eventId)
       .sort();
 
-    expect(participantGapIds).toEqual([]);
+    expect(participantGapIds).toEqual([
+      'national-government-formed-guangzhou-1925',
+      'northeast-reflag-1928',
+      'qing-ended-1912',
+      'wuhan-national-government-1927',
+    ]);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.participantIds)
       .toEqual(['liu-bang', 'xiao-he']);
     expect(report.items.find((item) => item.eventId === 'changan-han-capital')?.timePrecisionStatus).toBe('confirmed');

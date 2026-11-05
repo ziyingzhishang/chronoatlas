@@ -14,10 +14,12 @@ import { getPolityDetail } from './polity-details';
 import { places } from './places';
 import { polities } from './polities';
 import { sourceById, sourceNotes } from './sources';
+import { getHistoricalState } from '../domain/history-state';
+import { buildMapData } from '../map/history-map';
 
 const terminationEvents = [
   { id: 'western-qin-surrendered-later-qin-400', year: 400, placeId: 'jincheng' },
-  { id: 'western-qin-restored-409', year: 409, placeId: 'jincheng' },
+  { id: 'western-qin-restored-409', year: 409, placeId: 'dujianshan' },
   { id: 'western-qin-ended-431', year: 431, placeId: 'fuhan' },
 ] as const;
 
@@ -31,14 +33,16 @@ describe('Western Qin termination closure', () => {
       expect(event).toMatchObject({
         id: expected.id,
         year: expected.year,
-        placeId: expected.placeId,
         datePrecision: 'year',
       });
+      if (expected.placeId) expect(event?.placeId).toBe(expected.placeId);
+      else expect(event).not.toHaveProperty('placeId');
       expect(detail).toMatchObject({
         eventId: expected.id,
         polityIds: expect.arrayContaining(['western_qin']),
-        locationIds: expect.arrayContaining([expected.placeId]),
       });
+      if (expected.placeId) expect(detail?.locationIds).toContain(expected.placeId);
+      else expect(detail?.locationIds).toEqual([]);
       expect(detail?.sourceIds.length).toBeGreaterThan(0);
       expect(detail?.sourceIds.every((sourceId) => sourceById[sourceId])).toBe(true);
       expect(review).toMatchObject({ eventId: expected.id, status: 'confirmed', expectedPrecision: 'year', timelineStrategy: 'year-marker' });
@@ -67,6 +71,23 @@ describe('Western Qin termination closure', () => {
     expect(polity?.turningPoints.map((point) => point.year)).toEqual(expect.arrayContaining([385, 400, 409, 431]));
   });
 
+  it('shows the 409 restoration event at a regional Dujian Mountain reference without inventing annual territory', () => {
+    const state = getHistoricalState(409);
+    const event = state.events.find((item) => item.id === 'western-qin-restored-409');
+    const map = buildMapData(state);
+
+    expect(event).toMatchObject({
+      placeId: 'dujianshan',
+      coordinates: [104.22, 36.71],
+      locationPrecision: 'approximate',
+    });
+    expect(map.events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [104.22, 36.71] },
+      properties: expect.objectContaining({ entityId: 'western-qin-restored-409' }),
+    }));
+    expect(state.boundaries.some((boundary) => boundary.polityId === 'western_qin')).toBe(false);
+  });
+
   it('records the last ruler, transition figures, offices, and person-event relations', () => {
     expect(people.find((person) => person.id === 'qifu-mumo')).toMatchObject({
       name: '乞伏暮末',
@@ -93,8 +114,9 @@ describe('Western Qin termination closure', () => {
   it('keeps capital stages and the Yuanchuan/Jincheng heritage reference modern-place traceable', () => {
     const capitals = capitalHistory.filter((record) => record.polityId === 'western_qin');
     expect(capitals).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'jincheng', validFrom: 385, validTo: 400 }),
-      expect.objectContaining({ placeId: 'guzang', validFrom: 409, validTo: 431 }),
+      expect.objectContaining({ placeId: 'yongshi_western_qin', validFrom: 385, validTo: 387 }),
+      expect.objectContaining({ placeId: 'jincheng', validFrom: 388, validTo: 400 }),
+      expect.objectContaining({ placeId: 'fuhan', validFrom: 412, validTo: 431 }),
     ]));
     for (const capital of capitals) {
       expect(places.some((place) => place.id === capital.placeId), capital.placeId).toBe(true);
@@ -104,7 +126,7 @@ describe('Western Qin termination closure', () => {
 
     const heritage = heritageAssets.find((asset) => asset.id === 'western-qin-yuanchuan-city-candidate');
     const detail = getHeritageDetail('western-qin-yuanchuan-city-candidate');
-    expect(heritage).toMatchObject({ placeId: 'jincheng', modernStatus: 'uncertain', constructionFrom: 385, constructionTo: 431 });
+    expect(heritage).toMatchObject({ placeId: 'yongshi_western_qin', modernStatus: 'uncertain', constructionFrom: 385, constructionTo: 431 });
     expect(detail).toMatchObject({
       associatedPolities: expect.arrayContaining(['western_qin', 'later_qin', 'xia']),
       associatedEvents: expect.arrayContaining([

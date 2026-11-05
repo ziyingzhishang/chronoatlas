@@ -24,7 +24,7 @@ describe('fifth-batch capital history coverage', () => {
       .map((polity) => polity.polityId);
 
     expect(gaps).toHaveLength(0);
-    expect(report.summary.qualifiedPolities).toBe(79);
+    expect(report.summary.qualifiedPolities).toBeGreaterThanOrEqual(priorityPolityIds.length);
   });
 
   it('records the historically attested fixed capitals for all selected polities', () => {
@@ -41,7 +41,10 @@ describe('fifth-batch capital history coverage', () => {
       expect.objectContaining({ placeId: 'chengdu', validFrom: 221, validTo: 263, role: 'primary', status: 'formal', confidence: 'high' }),
     ]);
     expect(recordsFor('wu_three')).toEqual([
-      expect.objectContaining({ placeId: 'jiankang', validFrom: 222, validTo: 280, role: 'primary', status: 'formal', confidence: 'high' }),
+      expect.objectContaining({ placeId: 'wuchang', validFrom: 221, validTo: 229, role: 'primary', status: 'actual' }),
+      expect.objectContaining({ placeId: 'jiankang', validFrom: 229, validTo: 264, role: 'primary', status: 'formal', confidence: 'high' }),
+      expect.objectContaining({ placeId: 'wuchang', validFrom: 265, validTo: 265, role: 'primary', status: 'actual' }),
+      expect.objectContaining({ placeId: 'jiankang', validFrom: 266, validTo: 280, role: 'primary', status: 'formal', confidence: 'high' }),
     ]);
     expect(recordsFor('song_southern')).toEqual([
       expect.objectContaining({ placeId: 'jiankang', validFrom: 420, validTo: 479, role: 'primary', status: 'formal', confidence: 'high' }),

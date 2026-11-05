@@ -1,0 +1,31 @@
+{
+  "decisionId": "gap-qi_southern-479-479",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "qi_southern",
+      "year": 479,
+      "conclusion": "三月宋顺帝下诏禅位；五月萧道成于南郊即皇帝位，改元建元，刘宋中央政权转为南齐。建康及其南郊为可定位的建政政治中心节点。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-qi-founding-479-primary-source", "modern-geography-reference"],
+      "evidenceGap": "禅代发生于年内，刘宋与南齐按公历年均标记为活动政权不代表全年同时控制同一疆域。史料与建康近似城市坐标只支持建政中心点，不支持南齐在479年完整接收刘宋旧境或复原逐年疆界。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "southern-qi-founding-479-primary-source",
+      "use": "《资治通鉴》卷135《齐纪一》记宋顺帝禅位、萧道成受玺绶并于南郊即皇帝位、改元建元；《南齐书》卷1《高帝纪上》作交叉核对。支持479年政权转换时序和建康政治节点，不直接提供疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目places目录中建康（今南京）近似坐标表达D级政治中心点；不表示南郊祭坛精确位置、建康城垣或地方接收边界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "479年南齐疆域面留空；中心点只标记建政节点，不表示整年连续直接控制范围。",
+    "不将刘宋既有疆域或南齐后续疆域直接当作479年南齐完整疆界；来源使用权和公开地图条件另行审核。"
+  ]
+}

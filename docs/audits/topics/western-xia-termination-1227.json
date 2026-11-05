@@ -1,0 +1,27 @@
+{
+  "decisionId": "gap-western_xia-1227-1227",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "yuanshi-vol1-taizu-xixia",
+      "use": "《元史》卷1用于核对蒙古征夏及1227年西夏终局。该纪事支持战争和政权终止结论，不提供西夏1227年全年直接控制边界；《资治通鉴》止于959年，不适用于本年，已从本项来源清单移除。"
+    }
+  ],
+  "reviewLimitations": [
+    "1227年可确认西夏政权终止，但年内围城、投降、末帝结局和地方接收不构成全年稳定疆界；地图留空。",
+    "中兴府终局事件不代表全域政治中心或疆界；不回填1226年轮廓。",
+    "本审核不替代来源使用权和公开地图合规审核。"
+  ],
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 1227,
+      "conclusion": "蒙古军围攻西夏中兴府，西夏末帝李睍降后被杀，西夏独立政权终止。终局事件发生在年内，不能将此前年度疆域视作全年持续控制。",
+      "mapExpression": "leave-unfilled",
+      "capitalPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["yuanshi-vol1-taizu-xixia"],
+      "evidenceGap": "史籍支持战争结局和政权终止，但不能提供西夏1227年全年直接控制边界。围城、投降、杀末帝和后续地方接收属于不同空间与时点，不以中兴府或年初旧轮廓代替全年疆界。"
+    }
+  ]
+}

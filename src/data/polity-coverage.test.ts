@@ -45,6 +45,19 @@ describe('global polity coverage audit', () => {
     expect(han.eventIds).toEqual(expect.arrayContaining(['han-imperial-accession', 'chu-han-contention']));
   });
 
+  it('models the Hedong Jin princely regime as a sourced stage without conflating it with Later Jin', () => {
+    const hedongJin = report.byPolity('jin_hedong');
+
+    expect(hedongJin).toMatchObject({
+      hasEstablishmentNode:true,
+      establishmentEventIds:['hedong-jin-stage-start-895'],
+      personIds:expect.arrayContaining(['li-keyong','li-cunxu']),
+      sourceIds:expect.arrayContaining(['hedong-jin-907-923-primary-sources']),
+    });
+    expect(hedongJin.gaps).toEqual([]);
+    expect(report.byPolity('jin_later').eventIds).not.toContain('hedong-jin-stage-start-895');
+  });
+
   it('keeps newly covered evidence distinct from unresolved gaps', () => {
     const reportItem = report.byPolity('han_warring');
 

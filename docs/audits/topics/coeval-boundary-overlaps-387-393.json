@@ -1,0 +1,92 @@
+{
+  "startYear": 387,
+  "endYear": 393,
+  "reviewStatus": "pending-review",
+  "summary": "The corrected annual screening found no interior overlaps in 387–391 and one repeated overlap pair (Eastern Jin–Goguryeo) in each of 392 and 393. Boundary-only contacts are excluded; detected area intersections trigger review, not claims of shared direct control.",
+  "method": "For each year, compare valid Cliopatria v0.2.1 GeoJSON longitude/latitude polygon rings. Detect strictly interior vertices sampled along every source edge and proper boundary-segment crossings; boundary-only contacts do not count as area overlap. This conservative screen triggers review only and does not establish a historical frontier, clip areas, or reassign territory.",
+  "years": [
+    {
+      "year": 387,
+      "activeSourceOutlineCount": 10,
+      "overlapPairs": [],
+      "heldBoundaryIds": []
+    },
+    {
+      "year": 388,
+      "activeSourceOutlineCount": 10,
+      "overlapPairs": [],
+      "heldBoundaryIds": []
+    },
+    {
+      "year": 389,
+      "activeSourceOutlineCount": 10,
+      "overlapPairs": [],
+      "heldBoundaryIds": []
+    },
+    {
+      "year": 390,
+      "activeSourceOutlineCount": 10,
+      "overlapPairs": [],
+      "heldBoundaryIds": []
+    },
+    {
+      "year": 391,
+      "activeSourceOutlineCount": 10,
+      "overlapPairs": [],
+      "heldBoundaryIds": []
+    },
+    {
+      "year": 392,
+      "activeSourceOutlineCount": 10,
+      "overlapPairs": [
+        {
+          "boundaryIds": [
+            "clio-1564-jin_eastern-390",
+            "clio-1570-goguryeo-392"
+          ],
+          "polityIds": [
+            "jin_eastern",
+            "goguryeo"
+          ]
+        }
+      ],
+      "heldBoundaryIds": [
+        "clio-1564-jin_eastern-390",
+        "clio-1570-goguryeo-392"
+      ]
+    },
+    {
+      "year": 393,
+      "activeSourceOutlineCount": 10,
+      "overlapPairs": [
+        {
+          "boundaryIds": [
+            "clio-1564-jin_eastern-390",
+            "clio-1570-goguryeo-392"
+          ],
+          "polityIds": [
+            "jin_eastern",
+            "goguryeo"
+          ]
+        }
+      ],
+      "heldBoundaryIds": [
+        "clio-1564-jin_eastern-390",
+        "clio-1570-goguryeo-392"
+      ]
+    }
+  ],
+  "runtimeDisposition": "Only source outlines involved in a detected interior overlap are held in that year: Eastern Jin and Goguryeo in 392–393. Other outlines remain available under their existing source intervals and any separate review holds. Political-center and event points remain eligible to render. No polygon is clipped or transferred.",
+  "sourceNotes": [
+    {
+      "id": "cliopatria",
+      "use": "Compared polygons are Cliopatria v0.2.1 source records (CC BY 4.0), labeled low-confidence interval models with unspecified control type. Geometric intersection alone does not prove direct control, disputed control, or a historical frontier. Preserve attribution and provenance; historical suitability and public display require separate review."
+    }
+  ],
+  "reviewLimitations": [
+    "The preflight detects geometric interior overlap but does not determine historical control or the correct frontier.",
+    "Absence of a detected overlap does not validate a low-confidence interval model as an accurate annual historical boundary.",
+    "The source geometries remain unchanged and are not clipped, split, or reassigned.",
+    "This corrected screen supersedes earlier contact-sensitive counts for 387 and 394; boundary-only contacts are not treated as polygon-interior overlap."
+  ]
+}

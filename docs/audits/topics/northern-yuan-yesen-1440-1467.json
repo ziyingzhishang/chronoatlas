@@ -1,0 +1,310 @@
+{
+  "decisionId": "gap-northern_yuan-1440-1467",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "northern-yuan-yesen",
+      "use": "韩国国史编纂委员会《朝鲜初期的对外关系·北方民族的蠢动》用于交叉核对脱欢死后也先继承、瓦剌与东蒙古关系、1448年前后东西扩展、1449年土木之变、1450年送还英宗，以及1454年也先与脱脱不花斗争和蒙古再分裂。该综述描述势力与军事影响范围，不提供逐年稳定疆界；逐年未获得边界证据的年份仍明确留空。"
+    },
+    {
+      "id": "dpm-tumu-incident",
+      "use": "故宫博物院条目核对1449年土木堡战事、英宗被俘和土木堡位于今怀来东的大致位置；只支持事件，不支持北元疆界。"
+    },
+    {
+      "id": "tumu-village-coordinate-escholarship-thesis",
+      "use": "论文给出今土木村地图位置坐标40°22′53″N, 115°36′23″E；仅转为土木之变近似事件点，不视为历史堡址考古测绘或政权中心。"
+    }
+  ],
+  "reviewLimitations": [
+    "1440—1467年共28条逐年结论；全部年度疆域留空，不补汗廷中心点。1449年仅增加土木堡战事的近似事件点；联盟、军事实力、朝贡、贸易、入侵和势力范围不等同单一北元政权的直接控制疆界。",
+    "韩国史总论可交叉核对关键阶段与1449、1450、1454年转折，但其为阶段性综述，不足以提供每一公历年的边缘州县控制。未记具体年度事件的行保留明确证据缺口。",
+    "原年度记录所列中国国家博物馆来源实际为1387年明代巡牌，超出本段范围，已从28条年度来源列表移除。",
+    "《明实录·英宗实录》维基文库页面显示序文，跳转的中研院史籍数据库本轮不可读；故不作为本段已核年度来源，待获得可访问正文后再作交叉核验。",
+    "影响范围、边防区及军事行动不绘为疆界；不将1519年几何或相邻断面回填。来源使用权与公开地图条件另行审核。"
+  ],
+  "yearCount": 28,
+  "years": [
+    {
+      "year": 1440,
+      "conclusion": "也先承接脱欢死后的瓦剌权力，并继续推动蒙古诸部整合。来源叙事主要回顾其势力形成，未给出本年可定位的控制边缘。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "跨年权力承接可以作为政治背景，不能据此确定1440年汗廷位置或北元边界。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1441,
+      "conclusion": "现有来源未列出可独立校定至1441年的政权边缘事件；瓦剌与东蒙古诸部关系只能按长期变化审慎描述。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少1441年逐年空间记录；联盟关系、朝贡及军事实力不能转为直接疆界。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1442,
+      "conclusion": "现有可追溯概述未能确认本年发生改变控制边缘的单一事件。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少1442年边界或稳定驻地依据；继续留空，不沿用1440年前后的任何轮廓。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1443,
+      "conclusion": "也先统领瓦剌势力继续增强的阶段；来源未提供1443年可用于定位疆域外缘的年度记录。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "政治势力上升不等于边界移动证据；汗廷和部众活动范围仍不可定界。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1444,
+      "conclusion": "蒙古东部诸部与西北瓦剌关系仍处于竞争和整合过程中；未见适用于本年的连续空间材料。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "明方边防与蒙古各部关系不能合成为北元的直接控制面。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1445,
+      "conclusion": "可确认本年属于土木之变前蒙古诸部重组背景；现有来源未给出特定年度边界变化。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少本年疆域边缘、行政界线或稳定驻地证据。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1446,
+      "conclusion": "也先势力向西域交通节点扩展属跨年过程；现有史料概述不能把某个具体控制起讫精确落在本年。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "贸易、征服影响与直接持续行政控制性质不同，不能绘成北元年界。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1447,
+      "conclusion": "蒙古诸部竞争延续；本年没有已核定的边界变化记录或可用于作点的固定汗廷坐标。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少可定位空间依据，最大轮廓不得前推。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1448,
+      "conclusion": "明廷限制女真部族与瓦剌接触，反映边疆外交与贸易管制；该命令不证明明或瓦剌对相关地区的完整直接控制。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "边关贸易限制是关系证据，不是北元疆界坐标；女真、蒙古和明方辖属分开处理。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1449,
+      "conclusion": "正统十四年七月也先分兵入明，八月土木堡明军溃败、英宗被俘；故宫资料定位土木堡于今怀来东，论文给出现土木村的近似坐标。其后明廷改立郕王并组织北京防守；军事胜利、俘虏和短期进军不构成稳定占领边界。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen",
+        "dpm-tumu-incident",
+        "tumu-village-coordinate-escholarship-thesis"
+      ],
+      "evidenceGap": "土木村近似事件点不等于北元或瓦剌政治中心、持续占领地或疆界；本年仍没有全年度直接控制边缘资料，不绘北京行军线，不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1450,
+      "conclusion": "也先与明议和并送还英宗；其对明政策转变与蒙古内部也先、脱脱不花竞争相关。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "返还皇帝及议和体现外交和权力态势，无法推出本年边界或固定汗廷位置。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1451,
+      "conclusion": "也先与脱脱不花权力竞争持续；现有概述未提供足以确证本年的政权边缘变化。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "名义大汗、太师军事权和部众归属不能压为一个直接控制区。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1452,
+      "conclusion": "汗位继承与部众支持仍是也先和脱脱不花竞争的背景；未能据现有来源确认本年的稳定空间控制边缘。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少1452年边界资料；不将1450或1454年的政局倒推为全年疆域。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1453,
+      "conclusion": "也先与脱脱不花关系继续恶化的跨年阶段；具体的汗廷驻地和各部控制边缘无可靠年度定位。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "政治竞争并非疆界记录；地图继续留空。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1454,
+      "conclusion": "也先杀害脱脱不花及其家族并自称大元天圣可汗；当年也先随后被部下杀死，蒙古势力再次分裂。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "政权名号和汗位变动发生在年内不同阶段；没有可重建全年的连续控制面。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1455,
+      "conclusion": "也先死后瓦剌与鞑靼分立的局势延续；概述没有为本年给出单一汗廷位置或控制边缘。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "分裂后的多个政治集团不能作为统一北元多边形处理；留空。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1456,
+      "conclusion": "瓦剌与鞑靼等政治集团关系延续变动；未找到可核的本年直接控制范围资料。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "联盟、汗统和边患记载不足以确定1456年度疆界。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1457,
+      "conclusion": "现有来源仅支持本年处于分裂后的蒙古政治阶段，未能核实可映射到具体区域的稳定政治中心。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "没有年度空间边缘或固定都城证据。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1458,
+      "conclusion": "北方蒙古政治仍处多个集团并存背景；未见可据以绘制本年北元边界的逐年材料。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "不以明代边墙、贡道或1519年轮廓回填。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1459,
+      "conclusion": "现有来源未记录本年能明确归属于单一北元中枢的空间边界变化。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少直接控制边缘和经审核地图依据，保持空白。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1460,
+      "conclusion": "瓦剌、鞑靼及相关部众的长期重组背景继续；本年没有可核定的固定汗廷点或连续控制线。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "势力影响区与直接行政或军事控制需分开；不绘面、不放推测点。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1461,
+      "conclusion": "未发现本年可独立校定的北元疆界变化或固定政治中心记录。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "年度史料空缺明确记录；不能从前后年政治概况插值。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1462,
+      "conclusion": "可确认蒙古各集团处于长期分立背景，但现有来源未支持具体到1462年的边界描绘。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少本年边界及驻地材料。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1463,
+      "conclusion": "也先死后的蒙古权力分立延续；未有可追溯材料确定单一北元政权对诸部的年度直接管辖范围。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "汗统主张与多集团实际权力不等同。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1464,
+      "conclusion": "来源没有提供可用于本年重建北元边缘的可定位记录；明方边境记载不能补足蒙古各部的控制区。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "不得将明方防御或羁縻称谓反向视为北元国界。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1465,
+      "conclusion": "明蒙边境及蒙古诸部关系仍属变化背景；本年北元年度空间范围未有足够的直接证据。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "不把1468年以后轮廓提前覆盖到1465年。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1466,
+      "conclusion": "朝鲜史总论记载明辽东方面对女真部族采取边疆经略；这属于邻接地区事件，不等同北元本年范围。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "女真与蒙古诸部关系及明方经略不可混作北元直接边界。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    },
+    {
+      "year": 1467,
+      "conclusion": "明与朝鲜联合出兵攻击建州女真；此为东北邻接边疆事件，不能据此划定北元疆界。",
+      "mapExpression": "leave-unfilled",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-yuan-yesen"
+      ],
+      "evidenceGap": "缺少本年北元自身连续控制范围证据；建州女真战事不作为北元几何。本年未形成可审查的年度直接控制空间几何；不以影响、军事活动、朝贡关系或相邻年份最大范围替代。"
+    }
+  ]
+}

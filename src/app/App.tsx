@@ -28,7 +28,7 @@ import type { HistoricalContentRepository, ReleaseSnapshotRepository } from '../
 import { useSingleTopicView } from '../workspace/useSingleTopicView';
 import { WorkspaceShell } from '../workspace/WorkspaceShell';
 import { MapStatusHud } from '../components/MapStatusHud';
-import { formatPresentDistance, primaryPolityName, yearsFromPresent } from '../presentation/map-status';
+import { formatPresentDistance, polityDisplayName, yearsFromPresent } from '../presentation/map-status';
 import { OfflineDataManager, type OfflineManager } from '../components/OfflineDataManager';
 import type { ReleaseManifest } from '../content/release-types';
 import { MapReleaseStatus } from '../components/MapReleaseStatus';
@@ -84,7 +84,7 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
     () => localizeState(getHistoricalState(historySource, currentYear, { world: world.slice }), locale),
     [currentYear, historySource, world.slice, locale],
   );
-  const eraLabel = primaryPolityName(historicalState.activePolities);
+  const eraLabel = polityDisplayName(historicalState.activePolities, historicalState.year);
   const distanceLabel = formatPresentDistance(yearsFromPresent(currentYear, new Date().getFullYear()), locale);
   const timelineWindowLabel = `${t('当前视窗')} · ${formatHistoricalYear(timelineWindow[0])}—${formatHistoricalYear(timelineWindow[1])}`;
   const localizedEvents=useMemo(()=>localizeEvents(events,locale),[locale]);

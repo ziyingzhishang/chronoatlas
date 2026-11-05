@@ -1,0 +1,76 @@
+{
+  "decisionIds": [
+    "gap-former_shu-907-910"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-former-shu-907-910",
+      "use": "《资治通鉴》卷266—267：在线文本及卷目覆盖907年王建在成都即帝位、908年祭祀与军演、909年太子判六军及910年岐王求巴剑二州等节点；仅用作事件编年，不将军政措施转换成边线。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 3618（clio-3618-former_shu-911）来源时段为911—921年，snapshot 911，low confidence，control type unspecified。仅作为时间范围排除依据，不复制或向前延伸其几何，也不据其推定907—910年前蜀边界。"
+    }
+  ],
+  "reviewLimitations": [
+    "907—910年4条均保留成都中心及事件说明，疆界面留空；称帝、军演、军权和索地交涉不提供全境州县连续直接控制线。",
+    "所引维基文库页面为古籍转录而非地图数据；地名、封号、战事和行政任命只支撑对应历史结论，不代表已核实边界。引用时保留卷次与页面；来源使用权及公开地图条件另行审核。",
+    "相邻 Cliopatria record 3618 始于911年、来源区间至921年，为低置信度且控制性质未定的时段模型；不向907—910年回填，也不把该来源时段当作早期前蜀疆界证据。"
+  ],
+  "yearCount": 4,
+  "years": [
+    {
+      "year": 907,
+      "polityId": "former_shu",
+      "conclusion": "蜀王王建与晋王李克用议定“各帝一方”；九月在成都即皇帝位，国号大蜀。成都为中央政治中心，称帝节点不代表该年全境边缘已经稳定。",
+      "mapExpression": "chengdu-capital-point-and-regional-event-note",
+      "capitalPlaceId": "chengdu",
+      "regionalExtent": "以成都为中枢的巴蜀地方政权。现有材料未给出907年边缘州县的逐项归属和连续界线。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-former-shu-907-910"
+      ],
+      "evidenceGap": "史料可确认成都称帝和大蜀建政，但称帝及中央名号本身不足以复原全年直接控制的周缘州县或疆界几何。"
+    },
+    {
+      "year": 908,
+      "polityId": "former_shu",
+      "conclusion": "蜀主举行南郊祭祀、大赦并改元武成；史书另记讲武于星宿山。改元、祭祀与军演显示中央制度和军力活动，不能把军演规模解释为疆域范围。",
+      "mapExpression": "chengdu-capital-point-and-regional-event-note",
+      "capitalPlaceId": "chengdu",
+      "regionalExtent": "成都政治中心及蜀地中央活动；星宿山军演地点不作为疆界节点。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-former-shu-907-910"
+      ],
+      "evidenceGap": "现有本年记事支持中央仪式与军队活动，未列出该年的州县控制边缘，不能据军演规模转为地图疆域。"
+    },
+    {
+      "year": 909,
+      "polityId": "former_shu",
+      "conclusion": "蜀主命太子王宗懿判六军并开永和府，属于军事统辖和宫廷制度安排。现有本年记事未提供足以重绘前蜀边界的领土转移证据。",
+      "mapExpression": "chengdu-capital-point-and-regional-event-note",
+      "capitalPlaceId": "chengdu",
+      "regionalExtent": "成都中央政治中心；六军统辖与府署设置是制度信息，不作领土边界表达。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-former-shu-907-910"
+      ],
+      "evidenceGap": "材料支持太子军事职掌和政治中心，但没有各州县年度受控状况或连续空间边界，亦不以年内邻政权战线代替前蜀疆界。"
+    },
+    {
+      "year": 910,
+      "polityId": "former_shu",
+      "conclusion": "岐王向蜀索取巴、剑二州，王建以“若与之地，是弃民也”拒绝，表明此时蜀方拒绝将两州交给岐。该交涉是两州归属的重要节点，但不等于已查明全州每县的全年控制状态。",
+      "mapExpression": "chengdu-capital-point-and-regional-event-note",
+      "capitalPlaceId": "chengdu",
+      "regionalExtent": "成都为中枢；巴、剑二州处于岐王求地、王建拒绝让地的交涉范围，不将州名外推为精确边线。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-former-shu-907-910"
+      ],
+      "evidenceGap": "史料证明索地与拒绝割地，但没有巴、剑州具体县界、驻军线或逐地行政记录；不能据此绘成精确多边形。"
+    }
+  ]
+}

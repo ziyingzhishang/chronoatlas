@@ -50,7 +50,7 @@ test('opens the more information as a bottom-right HUD', async () => {
 test('opens a deep entity drawer from the polity study view and supports back navigation', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
   await userEvent.click(screen.getByRole('button', { name: /^李世民$/ }));
   expect(screen.getByRole('dialog', { name: '李世民' })).toHaveClass('entity-drawer');
   expect(screen.queryByRole('complementary', { name: '政权目录' })).not.toBeInTheDocument();
@@ -83,7 +83,7 @@ test('opens a resizable event topic beside the map from the event search result 
 test('opens polity detail from the compact card in the existing entity drawer', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
   await userEvent.click(screen.getByRole('button', { name: '展开政权详情' }));
 
   const drawer = screen.getByRole('dialog', { name: '唐' });
@@ -96,7 +96,7 @@ test('opens polity detail from the compact card in the existing entity drawer', 
 test('opens relationship targets and keeps the summary-to-detail drawer hierarchy', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
   await userEvent.click(screen.getByRole('link', { name: '李世民' }));
 
   const personDrawer = screen.getByRole('dialog', { name: '李世民' });
@@ -107,7 +107,7 @@ test('opens relationship targets and keeps the summary-to-detail drawer hierarch
 test('opens event and heritage details from the polity study summary', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
 
   await userEvent.click(screen.getByRole('button', { name: '唐在长安建立' }));
   const eventDrawer = screen.getByRole('dialog', { name: '唐在长安建立' });
@@ -130,7 +130,7 @@ test('opens event and heritage details from the polity study summary', async () 
 test('opens the capital place detail from the polity study summary', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
   await userEvent.click(screen.getByRole('button', { name: '长安' }));
 
   const placeDrawer = screen.getByRole('dialog', { name: '长安' });
@@ -141,7 +141,7 @@ test('opens the capital place detail from the polity study summary', async () =>
 test('opens an ended historical polity from the city study view in the topic split', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
   await userEvent.click(screen.getByRole('button', { name: '长安' }));
 
   const cityDrawer = screen.getByRole('dialog', { name: '长安' });
@@ -157,7 +157,7 @@ test('opens an ended historical polity from the city study view in the topic spl
 test('keeps the city perspective continuous from the city timeline to event and heritage drawers', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
   await userEvent.click(screen.getByRole('button', { name: '长安' }));
 
   const cityDrawer = screen.getByRole('dialog', { name: '长安' });
@@ -181,7 +181,7 @@ test('keeps the city perspective continuous from the city timeline to event and 
 test('opens the complete heritage drawer from the city relation panel', async () => {
   render(<App />);
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
-  await userEvent.click(screen.getByRole('button', { name: /唐/ }));
+  await userEvent.click(screen.getByRole('button', { name: /^唐\s+中国历史$/ }));
   await userEvent.click(screen.getByRole('button', { name: '长安' }));
 
   const cityDrawer = screen.getByRole('dialog', { name: '长安' });

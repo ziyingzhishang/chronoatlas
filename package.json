@@ -13,7 +13,7 @@
     "postbuild": "node scripts/strip-source-map-references.mjs dist && node scripts/inject-service-worker-manifest.mjs dist",
     "preview": "vite preview",
     "test": "vitest",
-    "audit:coverage": "node scripts/audit-coverage.mjs",
+    "audit:coverage": "vite-node scripts/audit-coverage.mjs",
     "build:knowledge-coverage": "vite-node scripts/build-knowledge-coverage.mjs",
     "prebuild": "npm run verify:release-schema-types && npm run build:knowledge-coverage",
     "freeze:short-gaps": "node scripts/freeze-short-gaps.mjs",

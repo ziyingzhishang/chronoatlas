@@ -1,0 +1,68 @@
+{
+  "decisionIds": ["gap-shu_three-263-263", "gap-wei_three-265-265"],
+  "years": [
+    {
+      "polityId": "shu_three",
+      "year": 263,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "chengdu",
+      "territoryBoundary": null,
+      "conclusion": "魏军分路伐蜀，姜维退守剑阁，邓艾由阴平趋成都，刘禅年内投降；成都点仅作蜀汉终止年中枢参照。",
+      "evidenceGap": "军队进击、成都投降与后续接管有先后，不能压缩成蜀汉或魏全年稳定控制疆界，也不以262年轮廓回填。",
+      "sourceIds": ["shu-fall-263-primary-source", "modern-geography-reference", "three-kingdoms-overview-map-1935-pd"]
+    },
+    {
+      "polityId": "wei_three",
+      "year": 265,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "魏年初至禅代前以洛阳为政治中心；八月司马昭去世，十二月魏晋禅代，吴冬季迁都武昌且仍然并存。",
+      "evidenceGap": "年内禅代造成魏晋交接时点差异，吴仍存续；洛阳点和晋朝跨年来源几何均不足以证明任一方全年疆界。",
+      "sourceIds": ["wei-jin-transition-265-primary-sources", "modern-geography-reference", "three-kingdoms-overview-map-1935-pd"]
+    },
+    {
+      "polityId": "wu_three",
+      "year": 265,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "wuchang",
+      "territoryBoundary": null,
+      "conclusion": "吴于本年冬季由建业迁都武昌；年度地图以迁都后的年末政治中心点表示，吴政权仍与魏晋禅代并存。",
+      "evidenceGap": "迁都日期只精确到冬季，且Cliopatria 263—269年近似几何跨越本年迁都阶段；点位不能支持疆界，原来源面仅在265年挂起待审。",
+      "sourceIds": ["wei-jin-transition-265-primary-sources", "wuchang-wu-capital-location", "modern-geography-reference", "three-kingdoms-overview-map-1935-pd"]
+    }
+  ],
+  "coexistenceNotes": [
+    "263年蜀汉灭亡发生于年内，魏军占领与姜维后续行动属于不同阶段；吴仍存续。",
+    "265年十二月曹魏禅代后西晋建立，吴仍存续并在冬季迁都武昌；不能把晋统一或吴疆域变化提前到全年。",
+    "clio-1376-jin_western-265原始跨年近似来源几何完整保留；因魏晋禅代在265年末发生，已对265年增加requires-review运行时拦截，266年起仍按来源时段显示。吴的clio-1373-wu_three-263几何是263—269年低置信度未定性时段模型，因265年吴迁都在年内发生，对265年单年挂requires-review并以武昌年末中心点表达；两条来源几何均未因此成为逐年审核或已审核发布几何。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "shu-fall-263-primary-source",
+      "use": "《资治通鉴》卷七十八·魏纪十核对伐蜀部署、剑阁、阴平道、成都投降和蜀汉终止；记录事件先后，不据此重建战线或全年直接控制边界。"
+    },
+    {
+      "id": "wei-jin-transition-265-primary-sources",
+      "use": "《资治通鉴》卷七十九核对司马昭去世、吴迁都武昌、曹魏禅代和曹奂迁封；用于政权转换及并存关系，不推导全年疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "成都与洛阳为现代城市近似中心，仅表示政治中心/交接地点，不代表古代城垣或行政边界。"
+    },
+    {
+      "id": "wuchang-wu-capital-location",
+      "use": "《资治通鉴》卷79支持265年冬吴迁都武昌；鄂州地方资料定位吴王城遗址，联合国地名专家组城市坐标用于区域级近似点，不表示古城墙或疆界。"
+    },
+    {
+      "id": "three-kingdoms-overview-map-1935-pd",
+      "use": "Herrmann、Westermann 1935年三国概览图题涵盖220—265/280年，Commons标记Public Domain Mark 1.0；作为跨时段交叉参考，不作为263年或265年逐年疆界，不复用或数字化地图图像和边线。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "263年蜀汉及265年曹魏疆域面均保持留空，coverage sourceBoundaryIds为空。",
+    "中心点不代表全年持续控制；魏晋禅代、蜀汉覆亡及并存政权不自动转换为边界线。",
+    "相邻政权源几何仍需独立历史与制图审核；来源使用权及公开地图条件分别核验。"
+  ]
+}

@@ -1,0 +1,101 @@
+{
+  "decisionIds": [
+    "gap-wuyue-907-910"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-wuyue-907-910",
+      "use": "《资治通鉴》卷266—268：在线文本按907—910年纪年覆盖钱镠受封、吴越与淮南争苏州／东洲、湖州高澧叛附及钱镠巡湖任命钱镖等节点。"
+    },
+    {
+      "id": "wuyue-period-history-geography",
+      "use": "《中国大百科全书·中国历史（3）》吴越条：项目来源记录用于杭州政治中心及区域历史背景；本轮原链接返回502，须复查版本和段落。本条不依赖概述重建年度边界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻的 Cliopatria v0.2.1 record 3631（clio-3631-wuyue-911）来源时段为911—946年，snapshot 911，low confidence，control type unspecified。该时段不覆盖907—910年；仅作为禁止向前回填的时间范围核对，不复制或延伸其几何，也不据此推定吴越早期控制边界。"
+    },
+    {
+      "id": "suzhou-city-history-official",
+      "use": "苏州市人民政府《苏州概览》说明苏州古城春秋始建且城市位置延续至今；仅支持苏州事件点与现代姑苏古城城区的近似对应，不用于复原909年城墙或战场。"
+    },
+    {
+      "id": "chgis-huzhou-758-1225",
+      "use": "CHGIS湖州治所时间地名记录（hvd_32341）覆盖758—1225年，说明治乌程县（今湖州市），给出坐标120.09931°E、30.86496°N。仅用于湖州城区级区域事件点，不作为城垣、战场或疆界证据；页面标注CC BY-NC 4.0，未复制几何。"
+    }
+  ],
+  "reviewLimitations": [
+    "907—910年共4条；杭州政治中心点保留，疆界面不绘。苏州、东洲战事及湖州叛附、再任命体现局部变化，不能合并成全境连续边界。",
+    "百科条目链接本轮返回502，记为链接维护事项；《资治通鉴》在线转录可访问。封王、战线和地方长官任命不等同于全境稳定控制。",
+    "相邻 Cliopatria record 3631 从911年起、来源区间至946年，属于低置信度且控制性质未定的时段模型；不向907—910年回填，也不把其许可或时间覆盖当作早期历史边界证据。",
+    "909年苏州围城与解围以现代姑苏古城区域近似点表示；苏州城市点、战事及湖州叛附均不替代全境直接控制边界。"
+  ],
+  "yearCount": 4,
+  "years": [
+    {
+      "year": 907,
+      "polityId": "wuyue",
+      "conclusion": "后梁册封钱镠为吴越王，吴越进入十国分期；杭州继续作为钱氏政治中心。后梁册封与吴越对中原保持名义臣属，并不证明后梁直接控制两浙。",
+      "mapExpression": "hangzhou-capital-point-no-boundary",
+      "capitalPlaceId": "hangzhou",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-wuyue-907-910",
+        "wuyue-period-history-geography"
+      ],
+      "evidenceGap": "史料可确认王号和政治中心，不能以封号或都城推导吴越全境的年度边界。"
+    },
+    {
+      "year": 908,
+      "polityId": "wuyue",
+      "conclusion": "吴越王钱镠遣王景仁向后梁陈取淮南之策；吴与吴越在苏州、常州东洲交战，东洲曾被吴越军攻取后又被淮南军夺回。战事显示局部控制反复，不能把单次占领画成稳定边界。",
+      "mapExpression": "hangzhou-capital-point-no-boundary",
+      "capitalPlaceId": "hangzhou",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-wuyue-907-910",
+        "wuyue-period-history-geography"
+      ],
+      "evidenceGap": "战场和城镇易手有记载，但该年不存在覆盖全境、可按年复原的连续边界；东洲几何也不应代替吴越全境。"
+    },
+    {
+      "year": 909,
+      "polityId": "wuyue",
+      "conclusion": "吴军再围苏州，吴越军驰援并击退围军；同年湖州刺史高澧叛附淮南，湖州控制出现地方叛乱与外部介入。苏州守住与湖州失控不能合并为一条疆界。",
+      "mapExpression": "capital-and-event-points",
+      "capitalPlaceId": "hangzhou",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-wuyue-907-910",
+        "wuyue-period-history-geography",
+        "suzhou-city-history-official",
+        "chgis-huzhou-758-1225",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "苏州解围与湖州叛附同时发生但地点状态不同；城市级事件点不足以确定湖州州境及吴越全年连续控制边界。",
+      "mapEventIds": [
+        "wuyue-relieves-suzhou-909",
+        "wuyue-huzhou-revolt-909"
+      ]
+    },
+    {
+      "year": 910,
+      "polityId": "wuyue",
+      "conclusion": "高澧率部奔吴后，吴越王钱镠巡湖州并任钱镖为刺史，显示吴越对湖州恢复或重申地方任命；史料未明言逐县交接完成，故不将此节点解释为全州或全境全年稳定控制。",
+      "mapExpression": "capital-and-event-points",
+      "capitalPlaceId": "hangzhou",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-wuyue-907-910",
+        "wuyue-period-history-geography",
+        "chgis-huzhou-758-1225",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "政治中心与湖州任命事件可定位至城市区域；任命不证明逐县接收或全年连续控制边界。",
+      "mapEventIds": [
+        "wuyue-restores-huzhou-910"
+      ]
+    }
+  ]
+}

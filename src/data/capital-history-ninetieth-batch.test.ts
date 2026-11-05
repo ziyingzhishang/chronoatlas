@@ -5,12 +5,18 @@ import { places } from './places';
 import { sourceById } from './sources';
 
 const evidenceBoundaryPolityIds = [
+  'yan_warring',
+  'later_yan',
+  'jin_hedong',
   'xiongnu',
+  'silla',
   'tuyuhun',
   'turkic',
   'xia_early',
   'shang',
+  'qin_state',
   'western_qin',
+  'western_liang',
   'northern_yuan',
   'ming_southern',
 ] as const;
@@ -18,10 +24,10 @@ const evidenceBoundaryPolityIds = [
 const recordsFor = (polityId: string) => capitalHistory.filter((record) => record.polityId === polityId);
 
 describe('ninetieth-batch capital and city record audit', () => {
-  it('keeps all eight unresolved cases outside qualified coverage for an explicit evidence reason', () => {
+  it('keeps all fourteen unresolved cases outside qualified coverage for an explicit evidence reason', () => {
     const report = getCapitalCoverageReport();
 
-    expect(report.summary.qualifiedPolities).toBe(79);
+    expect(report.summary.qualifiedPolities).toBe(74);
     expect(report.summary.gapPolityIds).toEqual([...evidenceBoundaryPolityIds]);
 
     for (const polityId of evidenceBoundaryPolityIds) {

@@ -15,9 +15,10 @@ const luoyangPhases = [
   ['han_eastern', 25, 220, 'primary', 'formal', 'high'],
   ['wei_three', 220, 265, 'primary', 'formal', 'high'],
   ['jin_western', 265, 311, 'primary', 'formal', 'high'],
-  ['wei_northern', 495, 534, 'primary', 'formal', 'medium'],
+  ['wei_northern', 495, 534, 'primary', 'formal', 'high'],
   ['sui', 605, 618, 'primary', 'formal', 'high'],
   ['tang', 618, 907, 'secondary', 'formal', 'high'],
+  ['liang_later', 909, 912, 'primary', 'formal', 'high'],
   ['wu_zhou', 690, 705, 'primary', 'formal', 'high'],
   ['tang_later', 923, 936, 'primary', 'formal', 'high'],
 ] as const;

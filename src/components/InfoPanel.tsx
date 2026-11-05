@@ -27,6 +27,16 @@ const controlLabels = {
   unspecified: '原始资料未细分控制类型',
 } as const;
 
+function polityBoundaryStatus(boundary: BoundaryState) {
+  if (boundary.presentation === 'maximum') return '使用最大参考';
+  if (boundary.evidence.derivation === 'cultural-core'
+    || boundary.evidence.derivation === 'control-centers'
+    || boundary.evidence.derivation === 'influence-area') {
+    return boundaryStatusLabel(boundary);
+  }
+  return controlLabels[boundary.controlType];
+}
+
 const range = (from:number,to:number) => from===to ? formatHistoricalYear(from) : `${formatHistoricalYear(from)}—${formatHistoricalYear(to)}`;
 const uniquePolities = (items: readonly Polity[]) => [...new Map(items.map((polity) => [polity.id, polity])).values()];
 
@@ -136,7 +146,7 @@ export function InfoPanel({ state, selectedEntity, onYearChange, onOpenEntity, p
             <dt>{t("首都沿革")}</dt>
             <dd>{currentCapitalTerms.length > 0 ? currentCapitalTerms.map(record => `${t(formatHistoricalYear(record.validFrom))}—${t(formatHistoricalYear(record.validTo))}`).join(listSeparator) : t("暂无已核验沿革")}</dd>
             <dt>{t("当前状态")}</dt>
-            <dd>{state.boundaries.filter((boundary) => boundary.polityId === selected.id).map((boundary) => t(controlLabels[boundary.controlType])).join(listSeparator) || t('暂无疆域几何')}</dd>
+            <dd>{state.boundaries.filter((boundary) => boundary.polityId === selected.id).map(boundary => t(polityBoundaryStatus(boundary))).join(listSeparator) || t('暂无疆域几何')}</dd>
           </dl>
           {state.boundaries.filter(b => b.polityId === selected.id).map(b => <ReaderNotes key={b.id} className="boundary-source" note={{
             dateDescription: range(b.validFrom, b.validTo),

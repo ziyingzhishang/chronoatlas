@@ -24,7 +24,7 @@ describe('eighty-seventh ancient-capital closures: Ji/Beijing and Pingcheng/Dato
     expect(place?.sourceIds.every(sourceId => sourceById[sourceId])).toBe(true);
     expect(polity?.eventIds).toContain('yan-warring-founded-eighth-batch');
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'ji', validFrom: -403, validTo: -222 }),
+      expect.objectContaining({ placeId: 'ji', validFrom: -403, validTo: -227 }),
     ]));
     expect(event).toEqual(expect.objectContaining({ placeId: 'ji', year: -403 }));
     expect(event?.sourceIds.every(sourceId => sourceById[sourceId])).toBe(true);
@@ -54,12 +54,14 @@ describe('eighty-seventh ancient-capital closures: Ji/Beijing and Pingcheng/Dato
     expect(polity?.eventIds).toContain('northern-wei-founded');
     expect(polity?.heritageIds).toContain('yungang-grottoes');
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'pingcheng', validFrom: 386, validTo: 494 }),
+      expect.objectContaining({ placeId: 'shengle', validFrom: 386, validTo: 397 }),
+      expect.objectContaining({ placeId: 'pingcheng', validFrom: 398, validTo: 494 }),
     ]));
-    expect(event).toEqual(expect.objectContaining({ placeId: 'pingcheng', year: 386 }));
+    expect(event).toEqual(expect.objectContaining({ year: 386 }));
+    expect(event?.placeId).toBeUndefined(); // 牛川即位与迁居盛乐分属年内不同阶段
     expect(event?.sourceIds.every(sourceId => sourceById[sourceId])).toBe(true);
     expect(detail?.polityIds).toContain('wei_northern');
-    expect(detail?.locationIds).toContain('pingcheng');
+    expect(detail?.locationIds).toContain('shengle');
     expect(detail?.participants.map(item => item.personId)).toContain('tuoba-gui');
     expect(people.some(person => person.id === 'tuoba-gui')).toBe(true);
     expect(heritage).toEqual(expect.objectContaining({ placeId: 'pingcheng' }));

@@ -8,10 +8,10 @@ import { sourceNotes } from './sources';
 
 const targetLocations = {
   'western-liang-state-founded': ['dunhuang', 'jiuquan', 'liangzhou'],
-  'western-liao-founded': ['balasagun'],
   'dali-founded': ['dali_city', 'yangjumei'],
-  'song-southward': ['kaifeng', 'yingtian', 'linan'],
+  'song-southward': ['kaifeng', 'song_yingtian', 'linan'],
   'northern-yuan-founded': ['beiyuan_core'],
+  'tumu-incident-1449': ['tumu-village'],
   'southern-ming-founded': ['yingtian', 'yangzhou', 'fuzhou', 'guangzhou', 'zhaoqing'],
   'qing-enters-pass': ['shengjing', 'beijing'],
   'republic-founded': ['jiankang'],
@@ -19,6 +19,32 @@ const targetLocations = {
 } as const;
 
 describe('twenty-third-batch event location closure', () => {
+  it('keeps the 1124 Western Liao migration unlocated instead of backfilling Balasagun', () => {
+    const event = events.find((candidate) => candidate.id === 'western-liao-founded');
+    const detail = eventDetails.find((candidate) => candidate.eventId === 'western-liao-founded');
+    const report = auditKnowledgeCoverage();
+
+    expect(event).toMatchObject({year:1124, verification:'partial'});
+    expect(event?.coordinates).toBeUndefined();
+    expect(detail?.locationIds).toEqual([]);
+    expect(detail?.uncertaintyNote).toContain('1134年作为');
+    expect(report.tasks.some((task) => (
+      task.taskKind === 'event-location-missing' && task.entityId === 'western-liao-founded'
+    ))).toBe(true);
+  });
+
+  it('keeps Southern Song accession at Song Yingtian in Shangqiu, distinct from Ming Yingtian in Nanjing', () => {
+    const event = events.find((candidate) => candidate.id === 'southern-song-founded');
+    const detail = eventDetails.find((candidate) => candidate.eventId === 'southern-song-founded');
+
+    expect(event).toMatchObject({placeId:'song_yingtian', year:1127});
+    expect(detail?.locationIds).toContain('song_yingtian');
+    expect(places.find((place) => place.id === 'song_yingtian')).toMatchObject({
+      historicalName:'南京应天府', modernName:'商丘市一带', longitude:115.65, latitude:34.45,
+    });
+    expect(event?.placeId).not.toBe('yingtian');
+  });
+
   it('closes the selected Han-successor, Dali, Liang, Liao-Song, Qing and modern location gaps', () => {
     const report = auditKnowledgeCoverage();
     const missingLocationIds = new Set(
@@ -41,6 +67,25 @@ describe('twenty-third-batch event location closure', () => {
     ))).toBe(false);
     expect(detail?.locationIds).toEqual(['sishui-northbank']);
     expect(detail?.uncertaintyNote).toContain('定陶');
+  });
+
+  it('links the Tumu event marker to a low-confidence regional place without implying a fort-site survey', () => {
+    const event = events.find((candidate) => candidate.id === 'tumu-incident-1449');
+    const detail = eventDetails.find((candidate) => candidate.eventId === 'tumu-incident-1449');
+    const place = places.find((candidate) => candidate.id === 'tumu-village');
+
+    expect(event).toMatchObject({year:1449, coordinates:[115.6064,40.3814], locationPrecision:'approximate'});
+    expect(detail?.locationIds).toEqual(['tumu-village']);
+    expect(place).toMatchObject({
+      longitude:115.6064,
+      latitude:40.3814,
+      validFrom:1449,
+      validTo:1449,
+      pointType:'regional-reference',
+      mappingStatus:'regional',
+      confidence:'low',
+    });
+    expect(place?.notes).toContain('不认定土木堡遗址或精确战场坐标');
   });
 
   it('resolves every selected location, polity, event and source reference', () => {

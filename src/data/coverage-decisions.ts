@@ -12,6 +12,7 @@ export interface CoverageDecision {
   polityId: string;
   from: number;
   to: number;
+  annualAudit?: string;
   verdict: GapVerdict;
   sourceBoundaryIds: string[];
   citationIds: string[];

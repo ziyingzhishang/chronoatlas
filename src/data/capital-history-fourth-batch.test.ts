@@ -19,8 +19,8 @@ describe('fourth-batch capital history coverage', () => {
   it('qualifies the selected high-confidence Sixteen Kingdoms and Five Dynasties polities', () => {
     const report = getCapitalCoverageReport();
 
-    expect(report.summary.totalPolities).toBe(87);
-    expect(report.summary.qualifiedPolities).toBe(79);
+    expect(report.summary.totalPolities).toBe(88);
+    expect(report.summary.qualifiedPolities).toBe(74);
     expect(report.summary.gapPolityIds).not.toEqual(expect.arrayContaining([...targetPolityIds]));
 
     for (const polityId of targetPolityIds) {
@@ -33,10 +33,10 @@ describe('fourth-batch capital history coverage', () => {
       expect.objectContaining({ placeId: 'chengdu', validFrom: 304, validTo: 347, role: 'primary', status: 'formal', confidence: 'high' }),
     ]);
     expect(recordsFor('former_qin')).toEqual([
-      expect.objectContaining({ placeId: 'changan', validFrom: 351, validTo: 394, role: 'primary', status: 'formal', confidence: 'high' }),
+      expect.objectContaining({ placeId: 'changan', validFrom: 351, validTo: 385, role: 'primary', status: 'formal', confidence: 'high' }),
     ]);
     expect(recordsFor('later_qin')).toEqual([
-      expect.objectContaining({ placeId: 'changan', validFrom: 384, validTo: 417, role: 'primary', status: 'formal', confidence: 'high' }),
+      expect.objectContaining({ placeId: 'changan', validFrom: 386, validTo: 417, role: 'primary', status: 'formal', confidence: 'high' }),
     ]);
     expect(recordsFor('xia')).toEqual([
       expect.objectContaining({ placeId: 'zhitong', validFrom: 413, validTo: 431, role: 'primary', status: 'formal', confidence: 'high' }),
@@ -45,8 +45,11 @@ describe('fourth-batch capital history coverage', () => {
       { placeId: 'zhangye', validFrom: 397, validTo: 400 },
       { placeId: 'guzang', validFrom: 401, validTo: 439 },
     ]);
-    expect(recordsFor('liang_later')).toEqual([
-      expect.objectContaining({ placeId: 'kaifeng', validFrom: 907, validTo: 923, role: 'primary', status: 'formal', confidence: 'high' }),
+    expect(recordsFor('liang_later').map(({ placeId, validFrom, validTo, role }) => ({ placeId, validFrom, validTo, role }))).toEqual([
+      { placeId: 'kaifeng', validFrom: 907, validTo: 908, role: 'primary' },
+      { placeId: 'kaifeng', validFrom: 909, validTo: 912, role: 'secondary' },
+      { placeId: 'luoyang', validFrom: 909, validTo: 912, role: 'primary' },
+      { placeId: 'kaifeng', validFrom: 913, validTo: 923, role: 'primary' },
     ]);
     expect(recordsFor('tang_later')).toEqual([
       expect.objectContaining({ placeId: 'luoyang', validFrom: 923, validTo: 936, role: 'primary', status: 'formal', confidence: 'high' }),

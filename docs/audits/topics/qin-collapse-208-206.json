@@ -1,0 +1,69 @@
+{
+  "decisionId": "gap-qin--208--206",
+  "yearCount": 3,
+  "years": [
+    {
+      "year": -208,
+      "conclusion": "按《咸阳市秦都区志》年表，秦二世二年李斯被杀，秦廷仍在咸阳；反秦战争和地方控制瓦解持续。Lander研究将约前230—前206年东、南新征区域概括为控制较弱，但该累计范围不说明前208年各县归属。咸阳点只表示秦廷中心参照，不代表原秦疆域仍由秦直接控制。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "xianyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "qin-collapse-timeline-shiji",
+        "qin-regional-control-lander",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "Lander所绘东、南新征区是约前230—前206年累计范围，不能确定起义后各县的归属；战争和地方响应使直接控制范围快速变化，现有材料不足以复原全年边界，咸阳点不外推为关中或统一秦疆域。"
+    },
+    {
+      "year": -207,
+      "conclusion": "按《咸阳市秦都区志》年表，刘邦军八月入武关，赵高逼秦二世自杀，子婴继位为秦王并于九月诛赵高。秦廷及其政治中心仍在咸阳，但关中军事局势已快速改变。Lander研究将约前230—前206年东、南新征区域概括为控制较弱；此累计范围不能识别前207年秦仍控制的县域。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "xianyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "qin-collapse-timeline-shiji",
+        "modern-geography-reference",
+        "qin-han-wuguan-location-debate",
+        "qin-regional-control-lander"
+      ],
+      "evidenceGap": "Lander所列新征区覆盖约前230—前206年累计征服过程，不支持前207年逐县归属判断。入武关路线和政变事件不能作为控制边界；陕西地方志只定位到今丹凤县东南一带，秦、汉时期武关地望及遗址对应仍有争议，故不绘制精确事件点；也没有可证明前207年全年稳定直辖范围的几何资料。"
+    },
+    {
+      "year": -206,
+      "conclusion": "按项目采用的陕西地方志公历年表，子婴继位列前207年，前206年刘邦入关中后子婴迎降、秦亡，项羽随后入咸阳并焚秦宫，关中继而分封给雍、塞、翟三王。《史记·秦楚之际月表》使用秦历岁首并以汉元年编年，现代换算与地方志可能把秦亡时点列作前207或前206；本项目保留前206年末段记录。",
+      "mapExpression": "leave-unfilled",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": [
+        "qin-collapse-timeline-shiji",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "秦、汉王、项羽和三秦政权在年内相继进入；咸阳仅能定位秦廷年内末段，年度地图不显示秦全年中心点，也不能将多主体势力合并为单一疆界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "qin-collapse-timeline-shiji",
+      "use": "并列核对《史记·秦楚之际月表》《项羽本纪》与《咸阳市秦都区志》秦末年表：史记按秦历/汉元年记子婴降，地方志按公历年表列前206年。用于事件与纪年口径校勘，不据此推演疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "仅提供咸阳现代地理参照点；不代表秦咸阳城垣、关中范围或秦末实际控制边界。"
+    },
+    {
+      "id": "qin-han-wuguan-location-debate",
+      "use": "用于说明武关遗址与秦汉时期关址对应存在不同观点；不得据现代武关镇或现存遗址坐标反推前207年入关事件的精确地点。"
+    },
+    {
+      "id": "qin-regional-control-lander",
+      "use": "Lander正文与图1把东、南新征区列作约前230—前206年累计范围，并指出秦对这些地区控制较弱。仅用于说明秦末控制力与地区差异；不能逐县判断前208、前207年控制归属，不能据此绘制边界。"
+    }
+  ],
+  "reviewLimitations": [
+    "前208至前207年咸阳点仅作为政权中心参照；前206年发生年内政权转移，年度图不显示秦的全年中心点。前208至前206年均无疆域面，coverage sourceBoundaryIds为空。",
+    "前207/前206纪年差异保留并列口径；按地方志公历年表登记末年变化，不把《史记》秦历月份强行折算为无争议的唯一日期。",
+    "史事及中心参照的来源核对已完成；独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ]
+}

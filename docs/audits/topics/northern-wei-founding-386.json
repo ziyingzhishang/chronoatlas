@@ -1,0 +1,38 @@
+{
+  "decisionId": "gap-wei_northern-386-386",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "wei_northern",
+      "year": 386,
+      "conclusion": "正月拓跋珪在牛川即代王位；二月迁居定襄之盛乐，四月改称魏王。七月返回盛乐，八月因部众骚动北迁贺兰部，十月由弩山迁至牛川并击败拓跋窟咄。398年迁都平城。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "shengle",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-wei-founding-386-primary-source",
+        "shengle-site-archaeology-reference"
+      ],
+      "evidenceGap": "盛乐遗址有可追溯考古坐标，故保留迁居盛乐阶段的D级中心参照；386年同时经历牛川即位、往返盛乐、迁往贺兰部和再移至牛川。牛川与贺兰部没有经核的项目坐标，单一年度点不能代表全年唯一中心、移动路线或直接控制范围；史料也不足以复原年度疆界。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "northern-wei-founding-386-primary-source",
+      "use": "《资治通鉴》卷106与《魏书》卷2《太祖纪》逐条核对386年正月牛川即位、二月幸定襄盛乐、四月改称魏王、七月返盛乐、八月北迁贺兰部及十月再至牛川的年内时序；《魏书》卷3用于核对398年迁都平城。"
+    },
+    {
+      "id": "shengle-site-archaeology-reference",
+      "use": "《内蒙古和林格尔土城子（一）：城址发掘报告》（科学出版社，2022，ISBN 978-7-03-073397-9）记录遗址坐标东经111°48′45″、北纬40°27′30″；地方文物资料称遗址又名盛乐古城。坐标只作遗址近似中心，不表示城垣或疆界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1543（clio-1543-wei_northern-387）来源时段为387—393年，snapshot 387，low confidence，control type unspecified。该几何不覆盖386年；不向前回填盛乐迁居年。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "386年疆域边界继续留空；现有地图点仅表达有考古坐标依据的盛乐阶段，不覆盖所有年内迁徙和军事活动。",
+    "考古遗址坐标与历史城市范围、城垣范围分别判断；来源使用权与公开地图条件另行审核。"
+  ]
+}

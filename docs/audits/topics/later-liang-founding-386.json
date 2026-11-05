@@ -1,0 +1,30 @@
+{
+  "decisionId": "gap-later_liang-386-386",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "later-liang-founding-386-primary",
+      "use": "《资治通鉴》卷106把吕光入姑臧、自领凉州刺史列在太元十年（385）秋段；386年条记张大豫屯姑臧城外、为吕光击败，并于十二月吕光自称凉州牧、酒泉公。《晋书》卷122及《武威市志》用于核对吕光据姑臧与386年建政节点。此处区分385年取得姑臧与386年政权名号、政治实体形成；资料支持姑臧城市级中心和年内军事转折，不支持386年稳定直接控制边界，也不以后期最大范围或其他凉州政权范围前推。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1552（clio-1552-later_liang-387）来源时段为387—396年，snapshot 387，low confidence，control type unspecified。仅用于确认其不覆盖386年，不向前延伸几何。"
+    }
+  ],
+  "reviewLimitations": [
+    "386年可确认姑臧中心点，疆域面留空；中心点不代表城墙范围或全年控制区。",
+    "本审核不替代来源使用权、地方志地图许可或公开地图合规审核。"
+  ],
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 386,
+      "conclusion": "吕光延续据姑臧的统治，386年获前秦苻坚死讯后改元太安，十二月自称凉州牧、酒泉公，后凉政权在本年形成。年内张大豫兵进姑臧城外，吕光将其击败；姑臧可确认为政治中心，但战事和名号不足以复原边界，也不等于后凉后期全部河西地区均已稳定直接控制。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": ["later-liang-founding-386-primary"],
+      "evidenceGap": "文献与地方史志支持姑臧中心，但没有足以复原386年稳定直接控制边界的逐年空间依据；不把后凉后期最大范围或其他凉州政权范围前推。"
+    }
+  ]
+}

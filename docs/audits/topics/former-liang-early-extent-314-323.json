@@ -1,0 +1,150 @@
+{
+  "decisionId": "gap-former_liang-314-323",
+  "yearCount": 10,
+  "years": [
+    {
+      "year": 314,
+      "conclusion": "张轨去世，张寔由州人推摄父职并获晋廷授凉州诸职；姑臧是河西军政中心。任命和城市中心不等于有可复原的连续疆界。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 315,
+      "conclusion": "张寔继续以晋朝凉州刺史、西平公等身份治理河西，姑臧作为中心参照；现有来源未记本年可定位的边界变化。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 316,
+      "conclusion": "西晋灭亡后，张氏政权继续据守河西并保持晋臣名义；姑臧中心可确认，全年边缘控制线无逐年空间依据。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 317,
+      "conclusion": "西晋覆亡后的建兴五年，张氏继续以姑臧为中心维持河西地方统治并使用晋建兴年号；晋廷南迁后的政治归属不说明河西边界。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 318,
+      "conclusion": "张寔继续奉晋统并与江东晋廷联系；不能由其政治归属或朝贡往来推定跨区域连续疆界。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 319,
+      "conclusion": "张寔仍在姑臧掌握河西军政，现有材料不足以确定本年河西边界或各郡实际控制线。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 320,
+      "conclusion": "张寔遇害，张茂承接凉州军政并采用永元年号；继承和年号变化不单独证明疆域扩张。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 321,
+      "conclusion": "张茂继续以姑臧为中心治理凉州，内部稳固行动与对外名义关系分层记录；本年没有可描界的连续范围资料。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian"
+      ],
+      "evidenceGap": "城市中心和政治关系可证；本年直接控制边缘、年内战事造成的边界变化或边地归属不能可靠复原，不据后期最大轮廓回填。"
+    },
+    {
+      "year": 322,
+      "conclusion": "张茂派军取得陇西、南安并设置秦州，令韩璞镇冀城；显示河西以东军事行政扩展，不能据此补出郡县边界。",
+      "mapExpression": "capital-center-and-qinzhou-establishment-event-point",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian",
+        "gansu-tianshui-jicheng-longcheng-geography"
+      ],
+      "evidenceGap": "地方志可将秦州刺史镇冀城对应到今甘谷境内，地图仅以低置信度现代城区参照点标示行政设治节点，不定位古城治所；取得郡地与设置秦州仍不足以复原各郡县边缘或全年直接控制线，不据后期轮廓回填。",
+      "mapEventIds": [
+        "former-liang-establishes-qinzhou-jicheng-322"
+      ]
+    },
+    {
+      "year": 323,
+      "conclusion": "前赵刘曜西击凉州、围陇城，遣刘咸攻驻冀城的韩璞并沿河施压；张茂遣使称藩。称藩不等于前赵当年直接接收姑臧或整个河西。",
+      "mapExpression": "capital-center-and-frontier-campaign-event-points",
+      "capitalPlaceId": "guzang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "former-liang-early-years-jinshu-tongjian",
+        "zizhi-tongjian-former-liang-323-frontier-campaign",
+        "gansu-tianshui-jicheng-longcheng-geography"
+      ],
+      "evidenceGap": "《资治通鉴》可定位刘曜围陇城、刘咸攻冀城两处军事节点；地方志将其分别约束到今张家川一带和甘谷境内，地图仅以低置信度现代区域参照点表示，不定位古城中心或战场阵地。战事、沿河驻军溃散及张茂称藩仍不足以复原前凉或前赵全年直接控制边界，不据后期轮廓回填。",
+      "mapEventIds": [
+        "former-zhao-siege-longcheng-323",
+        "former-zhao-attack-jicheng-323"
+      ]
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "former-liang-early-years-jinshu-tongjian",
+      "use": "《晋书》卷八十六核对张轨在姑臧经营河西、张轨卒后州人推张寔摄父位、张茂承接以及323年刘曜西击凉州后张茂遣使称藩；《资治通鉴》卷九十二直接记323年军事态势和称藩。甘肃地方史志用于交叉核对322年陇西、南安和秦州节点。以上资料支持城市中心与政治/军事转折，不能复原314—323逐年边界。"
+    },
+    {
+      "id": "zizhi-tongjian-former-liang-323-frontier-campaign",
+      "use": "《资治通鉴》卷九十二记323年刘曜围陇城、遣刘咸攻韩璞于冀城，另记呼延晏攻桑壁及张茂沿河诸戍溃散；用于两个区域事件点和军事压力结论，不用于绘制疆域。"
+    },
+    {
+      "id": "gansu-tianshui-jicheng-longcheng-geography",
+      "use": "《甘谷县志》《天水市志》将冀城约束于今甘谷境内、陇城约束于今张家川一带；《甘谷县志》322年条将驻冀城将领记作“韩瑶”，与《晋书》卷86所见“韩璞”异文。本审核按正史采用韩璞，地方志仅用于地望参照，不据其姓名异文改写人物结论；两志均不确定具体古城址或交战阵地。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1445（clio-1445-former_liang-324）来源时段为324—372年，snapshot 324，low confidence，control type unspecified。该记录仅用于确认后续时段范围，不回填314—323年或用作前凉早期边界证据。"
+    }
+  ],
+  "reviewLimitations": [
+    "前314—323年10条年度结论逐年列出；每年显示姑臧中心参照，322年显示冀城秦州设治区域点、323年显示陇城和冀城战事区域点；territoryBoundary均为空，运行时无前凉疆域面。",
+    "322年《晋书》记取陇西、南安、设置秦州并令韩璞镇冀城；《甘谷县志》作韩瑶，属姓名异文。本审核按正史采用韩璞，地方志仅作地望参照。上述记录不能推出郡县界或全年控制线；323年向前赵称藩不等于前赵直接接收姑臧、河西。",
+    "早期甘肃地方志旧PDF链接曾返回404，已补入《天水市志》《甘谷县志》可访问版本作为322—323年区域地望参照；公开展示与来源使用权仍待单独审核。"
+  ]
+}

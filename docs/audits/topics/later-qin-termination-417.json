@@ -1,0 +1,35 @@
+{
+  "decisionId": "gap-later_qin-417-417",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "later_qin",
+      "year": 417,
+      "conclusion": "年初后秦仍以长安为都；东晋刘裕北伐军当年攻取长安，姚泓出降，后秦统一政治结构终止。都城失守、末帝出降和地方接收属于年内不同环节。",
+      "mapExpression": "transition-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceIds": ["later-qin-termination-417-primary-source", "modern-geography-reference"],
+      "evidenceGap": "史料支持长安交接节点和后秦终止，不足以复原年内战线、东晋对关中的持续直接控制或全年边界。"
+    }
+  ],
+  "coexistenceNotes": [
+    "东晋军攻取长安和后秦中央政权终止在年内先后发生；长安点仅作交接中心参照，不表示关中已由东晋全年稳定控制。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "later-qin-termination-417-primary-source",
+      "use": "《资治通鉴》卷118与《晋书》卷119核对刘裕北伐进入长安、姚泓出降及后秦终止的年内次序；支持政治转换，不直接提供疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目长安（今西安区域）近似城市坐标表达D级交接中心点，不表示古城城垣或关中控制边界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "417年疆域面留空，不以416年后秦轮廓回填。",
+    "后秦终止、东晋军事占领和地方行政接收不合并成全年控制范围。",
+    "来源使用权与公开地图条件另行审核。"
+  ]
+}

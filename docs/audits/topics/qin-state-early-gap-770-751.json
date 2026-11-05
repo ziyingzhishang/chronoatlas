@@ -1,0 +1,278 @@
+{
+  "decisionId": "gap-qin_state--770--751",
+  "sourceNotes": [
+    {
+      "id": "qin-early-state-annals-and-local-archaeology",
+      "use": "《史记·秦本纪》核对秦襄公护送周平王、受封“岐以西”及早期戎秦冲突；甘肃考古综述和陕西地方志用于早期活动区与都邑迁移背景。合并资料可支持秦国早期存在和空间活动线索，但不能细化20个公历年的逐年边界，封授范围不等同直接稳定控制。"
+    }
+  ],
+  "reviewLimitations": [
+    "前770至前751年20个公历年逐年登记秦国存在/早期经营判断及相同的控制空间证据缺口；20年均为leave-unfilled，boundaryGeometry为空。",
+    "前770年“岐以西”属于传统封授叙事，戎秦攻守与早期都邑遗址分布不能替代逐年直接控制边界；不借用后世秦国或战国疆域轮廓。",
+    "来源核对已完成；逐年控制边界仍缺证据，独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ],
+  "yearCount": 20,
+  "years": [
+    {
+      "year": -770,
+      "conclusion": "传统年表将本年作为秦襄公护送周平王东迁、受封为诸侯的节点。岐以西是史书和周代封授叙事中的范围，并非本年可直接恢复的连续实控边界。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -769,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -768,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -767,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -766,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -765,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -764,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -763,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示西犬丘（礼县区域）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "xiquanquiu"
+    },
+    {
+      "year": -762,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -761,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -760,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -759,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -758,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -757,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -756,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -755,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -754,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -753,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -752,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    },
+    {
+      "year": -751,
+      "conclusion": "史料与考古研究支持秦国延续及早期都邑、军事活动的分期考辨；现有逐年记录不足以判断边界线或稳定连续实控范围。 本年可显示汧渭之会（魏家崖周边）的低置信度都邑中心参照；这不是疆域边界。",
+      "mapExpression": "capital-center-point",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "modern-geography-reference",
+        "qin-early-capital-sites-archaeology",
+        "qin-early-state-annals-and-local-archaeology"
+      ],
+      "evidenceGap": "封授、军事进退、都邑迁徙和遗址分布不能替代逐年直接控制边界；后续需按当年事件及地点证据再审。",
+      "centerPlaceId": "qianwei"
+    }
+  ],
+  "reviewStatus": "source-checked"
+}

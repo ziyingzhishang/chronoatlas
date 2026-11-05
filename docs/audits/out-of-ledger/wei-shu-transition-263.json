@@ -1,0 +1,42 @@
+{
+  "decisionId": "out-of-ledger-wei_three-263",
+  "polityId": "wei_three",
+  "yearCount": 1,
+  "reviewStatus": "source-checked",
+  "years": [
+    {
+      "year": 263,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "魏于263年分路伐蜀，十月刘禅投降，魏军随后接管蜀地。洛阳点只表示魏的中央政治中心；同一年度包含征服前后不同阶段。",
+      "evidenceGap": "Cliopatria 的魏来源轮廓覆盖263—264年，控制性质未定且不是逐年测绘；不能证明263年全年直接控制范围或准确刻画蜀地接收时点。",
+      "sourceIds": ["shu-fall-263-primary-source", "modern-geography-reference"]
+    }
+  ],
+  "geometryReviewHold": {
+    "boundaryId": "clio-1371-wei_three-263",
+    "conflictId": "conflict:shu-wei-transition:263",
+    "years": [263],
+    "status": "requires-review",
+    "handling": "保留来源几何，仅在263年拦截；264年继续按来源时间段显示。不裁剪、不将蜀地轮廓改归魏。"
+  },
+  "sourceNotes": [
+    {
+      "id": "shu-fall-263-primary-source",
+      "use": "《资治通鉴》卷七十八记魏军伐蜀、邓艾由阴平趋成都、刘禅投降及魏随后接管；确认263年年内控制阶段变化，不推导全年疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "洛阳现代城市近似坐标仅作中央政治中心参照，不代表古城垣或行政边界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "原始魏轮廓为263—264年未定控制语义的时段模型；保留来源几何及CC BY 4.0署名，不视为逐年直接疆界。"
+    }
+  ],
+  "reviewLimitations": [
+    "本条属于90段主coverage台账之外的年内几何冲突发现；已登记和拦截，待排入后续独立历史、制图及公开使用审核。",
+    "未裁剪Cliopatria原始几何，也未依据投降事件自动生成魏对蜀地的接收边界。"
+  ]
+}

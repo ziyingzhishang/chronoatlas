@@ -1,0 +1,99 @@
+{
+  "decisionId": "gap-han_western--206--203",
+  "reviewStatus": "source-checked",
+  "yearCount": 4,
+  "years": [
+    {
+      "year": -206,
+      "conclusion": "项羽封刘邦为汉王，都南郑；《史记》记王巴、蜀、汉中，《汉书》记四十一县，《华阳国志》传本及校勘对县数另有异文。分封范围和县数记载不能据以复原各县精确边界或逐地控制强度。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "nanzheng",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "han-king-chuhan-206-203-primary-sources",
+        "han-shu-gaodi-kingdom-41-counties",
+        "huayang-guozhi-han-king-fief",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "《史记》记王巴、蜀、汉中而未载县数；《汉书》作四十一县，《华阳国志》传本及校勘对县数有三十一、四十一等异文讨论。封域大区可确认，但县数与山地间辖境不足以复原连续边界。"
+    },
+    {
+      "year": -205,
+      "conclusion": "汉军出汉中还定三秦，随后向东作战，经历彭城败退等局势变化；《资治通鉴》记年末汉王还都栎阳。栎阳点只代表年末中心节点，不表示全年控制范围。",
+      "mapExpression": "control-center-point-and-battle-event-point",
+      "centerPlaceId": "liyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "han-king-chuhan-206-203-primary-sources",
+        "modern-geography-reference",
+        "shiji-gaozubenji-pengcheng-battle-205",
+        "xuzhou-pengcheng-historical-location"
+      ],
+      "evidenceGap": "军事推进、彭城战败和年末还都显示本年控制快速变化；新增彭城战事城市级事件点以呈现战局转折，坐标只是徐州市区区域参照，不是战场或占领范围。栎阳都城点不能外推成汉方全年疆域或所有曾占地区。",
+      "mapEventIds": [
+        "han-pengcheng-battle-205"
+      ]
+    },
+    {
+      "year": -204,
+      "conclusion": "汉、楚围绕荥阳、成皋与粮道持续争夺，城池控制和战线多次变化。荥阳点仅表示可定位的前线参照，不判定为汉方全年稳定直接控制。",
+      "mapExpression": "frontline-reference-point",
+      "centerPlaceId": "xingyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "han-king-chuhan-206-203-primary-sources",
+        "zhengzhou-xingyang-old-city-site",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "文本能确认荥阳、成皋战事，但无法确定本年度逐时控制线；前线位置不能填色成汉方疆域。"
+    },
+    {
+      "year": -203,
+      "conclusion": "前203年末，汉、楚约定以洪沟为界中分天下，楚军解而东归；汉王原欲西归，张良、陈平劝其乘楚疲食尽追击。该约定与追击决策是年末节点，不足以证明分界已稳定执行为全年直接控制边界。",
+      "mapExpression": "frontline-reference-point",
+      "centerPlaceId": "xingyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "han-king-chuhan-206-203-primary-sources",
+        "zhengzhou-xingyang-old-city-site",
+        "honggou-canal-course-study-2017",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "年末约和记录的是拟议分界与楚军暂退，不能单独证明边界已完成交接或持续执行；洪沟河道及谈判约定均不等于全年直接控制线。‘汉四年冬十月’属于传统历月，本条按项目常用年表映射至前203公历年；未核定日级历算前，不将其等同某个公历月份或声称覆盖全年。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "han-king-chuhan-206-203-primary-sources",
+      "use": "《史记·高祖本纪》《项羽本纪》及《资治通鉴》卷九、卷十用于核对前206年汉王受封与南郑都城、前205年还都栎阳、前204—前203年荥阳成皋战事及鸿沟约和；战事和约定不直接形成全年边界。"
+    },
+    {
+      "id": "huayang-guozhi-han-king-fief",
+      "use": "《华阳国志》巴志、汉中志及校勘材料用于核对前206年汉王受封巴、蜀、汉中及县数传本异文；《史记》未载县数，异文不用于推导县界或封域多边形。"
+    },
+    {
+      "id": "han-shu-gaodi-kingdom-41-counties",
+      "use": "《汉书·高帝纪上》明确记载“王巴、蜀、汉中四十一县，都南郑”；作为四十一县说的直接出处，与《华阳国志》异文并列核对，不据县数推复县界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "项目现代地理位置参照用于南郑、栎阳、荥阳的近似定位；点位表示都城或前线参照，不表示古城垣、全年控制或争夺线。"
+    },
+    {
+      "id": "zhengzhou-xingyang-old-city-site",
+      "use": "郑州市文物局公布荥阳故城位于今古荥镇、并记载汉代城址及历代军事地位；用于荥阳区域点位核对，不把汉代城址范围前推为楚汉城界或全年控制区。"
+    },
+    {
+      "id": "honggou-canal-course-study-2017",
+      "use": "《地理学报》研究梳理战国至魏晋鸿沟渠首和引水口迁移，指出具体经流地望存在歧见；用于限制将“洪沟”直接数字化为单一、确定的前203年控制边界，不复用其河道图。"
+    },
+    {
+      "id": "shiji-gaozubenji-pengcheng-battle-205",
+      "use": "《史记·高祖本纪》用于确认汉二年（前205）刘邦入彭城后项羽回师反击及汉军败退；只支持战事和年度转折，不提供战场阵地或汉楚全年边界。"
+    },
+    {
+      "id": "xuzhou-pengcheng-historical-location",
+      "use": "中央研究院地名规范资料库将彭城故治对应今徐州市区；联合国地名专家组徐州坐标用于城市级区域点，不作为古城遗址、战场测绘或疆域依据。"
+    }
+  ]
+}

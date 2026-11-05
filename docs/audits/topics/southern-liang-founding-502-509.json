@@ -1,0 +1,115 @@
+{
+  "decisionId": "gap-liang_southern-502-509",
+  "yearCount": 8,
+  "years": [
+    {
+      "polityId": "liang_southern",
+      "year": 502,
+      "conclusion": "萧衍于建康受南齐和帝禅让，建立南梁；本年是年中政权转换，建康中心点只表示建梁后的中央政治中心阶段。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "不能把南齐旧境直接等同于南梁年初或全年实控区；禅代及中心坐标不支持502年疆域面或地方接收边界。"
+    },
+    {
+      "polityId": "liang_southern",
+      "year": 503,
+      "conclusion": "梁廷继续以建康为中央政治中心，南梁与北魏的军事竞争延续。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "战事地点和军事行动具有阶段性，不能据此绘制稳定疆界或直辖边界。"
+    },
+    {
+      "polityId": "liang_southern",
+      "year": 504,
+      "conclusion": "梁魏边境攻防继续，战役得失与政治中心建康分开记录。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "战场、短期占领和敌军推进均不能单独证明稳定行政控制；本年疆域面留空。"
+    },
+    {
+      "polityId": "liang_southern",
+      "year": 505,
+      "conclusion": "天监四年梁廷在建康运行，中央政务与梁魏边境军事行动并行。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "中心参照不表达战线、北界或地方州郡逐年的直接控制范围。"
+    },
+    {
+      "polityId": "liang_southern",
+      "year": 506,
+      "conclusion": "梁魏军事行动在多个边境地点持续，不能将各战场拼接成连续政权边界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "史料所载军事得失和临时进退不足以复原年度直接控制线；保留建康中心点，不绘疆域面。"
+    },
+    {
+      "polityId": "liang_southern",
+      "year": 507,
+      "conclusion": "钟离及邵阳洲附近发生梁魏大规模战事，南梁援军击退北魏军；地图事件点只作钟离城区域近似参照，南梁中央政治中心仍以建康表达。",
+      "mapExpression": "capital-and-event-points",
+      "mapEventIds": ["battle-zhongli-507"],
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "liang-zhongli-battle-507-primary", "zhongli-site-fengyang-local", "zhongli-chgis-location", "modern-geography-reference"],
+      "evidenceGap": "战役胜负不是全年边界测绘；钟离点为区域近似参照，战场阵地、邵阳洲古今对应及临时战线仍不确定。建康中心点亦不代表北界或钟离战线。"
+    },
+    {
+      "polityId": "liang_southern",
+      "year": 508,
+      "conclusion": "梁廷继续以建康为中央政治中心，南北政权竞争延续。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "往年战役控制区不自动延长至本年；现有证据不足以支持年度疆域几何。"
+    },
+    {
+      "polityId": "liang_southern",
+      "year": 509,
+      "conclusion": "南梁中央政权继续以建康为政治中心，北方军事态势须按具体事件和时间节点分别判断。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liang-founding-502-509-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "史料支持中央中心延续但不能单凭编年和战事恢复逐年实控边界；不向前回填后续较稳定时期轮廓。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "liang-founding-502-509-primary-sources",
+      "use": "《资治通鉴》卷145《梁纪一》核对502—504年受禅建梁与早期局势，卷146《梁纪二》核对505—507年政务及边境战争，卷147《梁纪三》核对508—509年梁廷政务和南北关系。《梁书》卷1—2《武帝纪》作建政史料交叉参照。支持逐年政权与事件判断，不直接提供完整疆界。"
+    },
+    {
+      "id": "liang-zhongli-battle-507-primary",
+      "use": "《资治通鉴》卷146及《梁书》卷12《韦叡传》、卷17《曹景宗传》交叉核对天监五年至六年钟离攻守与507年援军、撤军过程；只支持战事与地点判断，不提供疆界。"
+    },
+    {
+      "id": "zhongli-site-fengyang-local",
+      "use": "凤阳县地方资料将钟离城遗址定位在凤阳县板桥镇古城村，并介绍遗址城垣；用于确定古钟离城的现代区域对应，不确定507年具体战场。"
+    },
+    {
+      "id": "zhongli-chgis-location",
+      "use": "CHGIS地名规范数据库钟离县点坐标32.90163°N、117.64022°E，所列时段为23—125；仅作钟离区域的宽泛近似参照，不作为507年县治、古城中心或战场的精确坐标。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "仅使用项目places目录的建康（今南京）近似城市坐标表达D级控制中心点，不表示历史城垣、南梁全境或各年相同的地方控制范围。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "502—509年均保留疆域面空缺；建康点只表达中央政治中心。",
+    "梁魏战争、战区、军事进退及短期占领不等于稳定直接控制或年度边界。",
+    "不以南齐旧境或后续南梁轮廓回填本段；来源使用权和公开地图条件另行审核。"
+  ]
+}

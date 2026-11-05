@@ -1,0 +1,68 @@
+{
+  "decisionId": "gap-cheng_han-304-305",
+  "polityId": "cheng_han",
+  "from": 304,
+  "to": 305,
+  "yearCount": 2,
+  "years": [
+    {
+      "year": 304,
+      "mapExpression": "late-year-control-center-point",
+      "centerPlaceId": "chengdu",
+      "territoryBoundary": null,
+      "conclusion": "304年十一月李雄攻克成都、罗尚弃城，李雄于年内称成都王；成都点仅表示年末建政中心参照。",
+      "evidenceGap": "取得成都与称王都发生在年内后段，无法用全年点表达月内转移；史书概述不能直接确定外围郡县实控边界。",
+      "sourceIds": ["cheng-han-founding-304-305-primary-sources", "modern-geography-reference"]
+    },
+    {
+      "year": 305,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "chengdu",
+      "territoryBoundary": null,
+      "conclusion": "305年李雄继续以成都为政治中心，六月称帝、国号蜀，八月遣李骧攻汉安；成都点不表示全年控制面。",
+      "evidenceGap": "称帝、改国号和向汉安用兵能确认政权建制与军事活动，但不足以重建该年直接控制边界或认定攻占区。《华阳国志》记汉安在江阳郡治东五百里，《光绪内江县志》转述为四百里并主张内江说；《民国江安县志》比较水道与沿革后仍称不能确指。里程、方位与后世考辨只能约束相对区域，不能无争议地换算为唯一现代坐标，故不添加战事事件点。",
+      "sourceIds": ["cheng-han-founding-304-305-primary-sources", "modern-geography-reference", "jinshu-dilizhi-jiangyang-hanan", "guangxu-neijiang-hanan-distinction", "huayang-guozhi-hanan-relative-location", "republican-jiangan-gazetteer-hanan-review"]
+    }
+  ],
+  "coexistenceNotes": [
+    "304—305年汉赵政权也处于形成阶段，但其左国城、黎亭等中心坐标尚未完成项目级校核；不使用县城代理点制造边界冲突。成汉305年攻汉安虽有《晋书》记载，汉安古今地望存在同名辨析，故只保留军事活动结论、不落事件坐标。",
+    "304年李雄夺取成都的年末节点与305年建制变化分开记录，不将306年或更晚来源轮廓倒推。",
+    "304—305年只有成都D级政治中心点；不把‘尽有成都之地’、军事行动或名义辖区转绘成直接疆界。Cliopatria记录1407的西晋287—305年来源轮廓跨越成汉建政，已对304—305年挂requires-review并从运行帧隐藏；保留原几何，不自动裁切或转给成汉。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "cheng-han-founding-304-305-primary-sources",
+      "use": "《晋书》卷四·惠帝纪与卷一二一·李雄载记互校304年末攻克成都、称成都王以及305年称帝、改国号、攻汉安；注意年号纪年换算，不据概述语推定边界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "成都坐标采用现代城市近似中心，表示政治中心参照，不表示古成都城垣或成汉行政边界。"
+    },
+    {
+      "id": "jinshu-dilizhi-jiangyang-hanan",
+      "use": "《晋书·地理志》将汉安列于江阳郡，用于提示305年战事目标的同名地理辨析；不据此独立确定战场坐标。"
+    },
+    {
+      "id": "guangxu-neijiang-hanan-distinction",
+      "use": "《光绪内江县志》区分内江汉安与江阳郡汉安，作为地望同名风险的后世考证；不直接提供305年战场的唯一现代位置。"
+    },
+    {
+      "id": "huayang-guozhi-hanan-relative-location",
+      "use": "《华阳国志》记汉安在江阳郡治东五百里，提供相对方位线索；不将古代里程机械换算为现代直线距离或战场坐标。"
+    },
+    {
+      "id": "republican-jiangan-gazetteer-hanan-review",
+      "use": "《民国江安县志》比较《华阳国志》里程、水道与江安和内江沿革，指出地望不能确指；用于记录争议及定位限制，不作唯一地望结论。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1423（clio-1423-cheng_han-306）来源时段为306—310年，snapshot 306，low confidence，control type unspecified。仅用于确认其不覆盖304—305年；不向前延伸来源几何。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "304—305年疆域面保持留空，sourceBoundaryIds为空；不从相邻年份或最大轮廓回填。",
+    "304年晚年中心点不表达月内占领前的状态；305年称帝和攻汉安不表示全年疆界。",
+    "汉赵并存政权的点位仍待核；成汉攻汉安的目标地点也未唯一落实到现代坐标。史料核对、制图审核、来源使用权与公开地图条件分层处理。"
+  ]
+}

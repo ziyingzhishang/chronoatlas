@@ -8,6 +8,8 @@ import { heritageAssets } from './heritage';
 import { people } from './people';
 import { getPersonDetail } from './person-details';
 import { getPolityDetail } from './polity-details';
+import { getHistoricalState } from '../domain/history-state';
+import { buildMapData } from '../map/history-map';
 
 describe('Southern Yan termination closure', () => {
   test('records the 410 Guanggu conquest as the termination event', () => {
@@ -26,13 +28,34 @@ describe('Southern Yan termination closure', () => {
     ]));
   });
 
+  test('renders the 410 Guanggu termination marker beside the Western Liang center without adding borders', () => {
+    const map = buildMapData(getHistoricalState(410));
+
+    expect(map.events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [118.48, 36.70] },
+      properties: expect.objectContaining({ entityId: 'southern-yan-ended-410', name: '南燕政权终止' }),
+    }));
+    expect(map.boundaries.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [118.48, 36.70] },
+      properties: expect.objectContaining({ polityId: 'southern_yan', derivation: 'control-centers' }),
+    }));
+    expect(map.boundaries.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [98.49, 39.74] },
+      properties: expect.objectContaining({ polityId: 'western_liang', derivation: 'control-centers' }),
+    }));
+    expect(map.boundaries.features.filter((feature) =>
+      ['southern_yan', 'western_liang'].includes(String(feature.properties?.polityId))
+      && feature.geometry.type !== 'Point')).toHaveLength(0);
+  });
+
   test('keeps Guanggu and its modern Qingzhou heritage continuous after termination', () => {
     const polity = getPolityDetail('southern_yan');
     const heritage = heritageAssets.find((item) => item.id === 'southern-yan-guanggu-city-site');
     const detail = getHeritageDetail('southern-yan-guanggu-city-site');
 
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'guanggu', validFrom: 398, validTo: 410 }),
+      expect.objectContaining({ placeId: 'huatai', validFrom: 398, validTo: 398 }),
+      expect.objectContaining({ placeId: 'guanggu', validFrom: 400, validTo: 410 }),
     ]));
     expect(polity?.eventIds).toContain('southern-yan-ended-410');
     expect(polity?.heritageIds).toContain('southern-yan-guanggu-city-site');

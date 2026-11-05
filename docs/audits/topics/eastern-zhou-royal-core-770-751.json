@@ -1,0 +1,286 @@
+{
+  "decisionId": "gap-zhou_eastern--770--751",
+  "yearCount": 20,
+  "years": [
+    {
+      "year": -770,
+      "conclusion": "传统断年下周王室东迁洛邑，项目沿用前770年作为分期导航年；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持王室东迁洛邑及王室以洛邑为政治中心，但现有逐年材料没有提供可审查的王畿直接控制边界；洛邑中心点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -769,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -768,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -767,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -766,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -765,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -764,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -763,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -762,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -761,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -760,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -759,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -758,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -757,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -756,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -755,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -754,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -753,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -752,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    },
+    {
+      "year": -751,
+      "conclusion": "洛邑/洛阳继续作为东周王室政治中心的城市级参照；诸侯封国与王畿边界不能从都城记录推定。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-eastward",
+        "eastern-zhou-luoyang-royal-center",
+        "modern-geography-reference"
+      ],
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史料支持洛邑为东周王室政治中心，但诸侯列国并立，现有逐年材料没有提供可审查的王畿直接控制边界；都城点不代表王室控制范围，边界留空。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "shiji-zhou-benji-eastward",
+      "use": "《史记》卷四《周本纪》用于核对幽王死后周王室东迁洛邑的传统记载；前770年作为项目年表导航口径，不据此推定迁徙精确日期或王畿边界。"
+    },
+    {
+      "id": "eastern-zhou-luoyang-royal-center",
+      "use": "国家社科成果介绍结合文献与考古辨析东周王城、成周遗址及洛邑地望；用于支持城市级政治中心表达，研究中的城址关系和营建年代不直接转为精确城墙或疆界。"
+    },
+    {
+      "id": "capital-history-reference",
+      "use": "项目洛阳都城阶段仅为现代城市级近似参照；不代表东周王城遗址、宫城或王畿界线。"
+    }
+  ],
+  "reviewLimitations": [
+    "前770至前751年20条年度结论均无王畿几何；逐年洛阳中心点是城市级参照。",
+    "诸侯封国范围、周王畿边界和洛邑城墙位置不能由王都记载直接推导。",
+    "来源核对已完成；独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ]
+}

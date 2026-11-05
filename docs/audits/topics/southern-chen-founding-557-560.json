@@ -1,0 +1,69 @@
+{
+  "decisionId": "gap-chen_southern-557-560",
+  "yearCount": 4,
+  "years": [
+    {
+      "polityId": "chen_southern",
+      "year": 557,
+      "conclusion": "梁敬帝向陈霸先禅位，陈霸先在建康即皇帝位，南陈建立。建康点只表示南陈建政后的中央政治中心。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-chen-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "年内政权转换和都城不能证明南陈即时完整接收梁末旧境；缺少逐界核验的地方实控边界依据。"
+    },
+    {
+      "polityId": "chen_southern",
+      "year": 558,
+      "conclusion": "南陈中央政治继续以建康为中心，政权初期的地方接收与梁末军政格局仍须分地判断。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-chen-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "都城中心不等于江南全境直接控制线；疆域面留空。"
+    },
+    {
+      "polityId": "chen_southern",
+      "year": 559,
+      "conclusion": "陈霸先去世，陈蒨继位；建康中央政治中心延续。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-chen-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "皇帝更替不是疆界变化的充分证据；梁末地方名义归属亦不直接代表实际控制。"
+    },
+    {
+      "polityId": "chen_southern",
+      "year": 560,
+      "conclusion": "陈文帝初期南陈中央政权继续以建康为政治中心。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-chen-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "现有史料支持政权与中心判断，但不足以复原南陈逐年直接控制边界；不以之后疆域回填。"
+    }
+  ],
+  "coexistenceNotes": [
+    "557—560年北周和北齐为北方并存政权；北齐 Cliopatria record 2068（555—560）为低置信、控制性质未明的时段模型，只作来源范围参考，不解读为已校定的直接疆界。建康点只表达南陈中心，不与长安中心连成控制区，也不推断三方边界。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "southern-chen-founding-557-primary-sources",
+      "use": "《资治通鉴》卷167《陈纪一》核对557—559年梁敬帝禅位、陈朝建立、陈霸先去世及陈蒨继位；卷168《陈纪二》核对560年陈文帝初期政务。《陈书》卷1—2作高祖、世祖纪交叉参照。只支持政权时序和中心判断，不提供疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "仅使用项目places目录的建康（今南京）近似城市坐标表达D级中心点，不表示城垣、旧梁全境或南陈地方州郡接收边界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "北齐 Cliopatria v0.2.1 record 2068 覆盖555—560年，数据置信度低且 controlType 为 unspecified；仅说明557—560同断面存在该来源时段轮廓，不据此断言直接控制或已校定边界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "557—560年南陈疆域面留空；建康中心点不代表地方直辖范围。",
+    "同期北周、北齐的存在不表示可由两个中心点推导政权边界；空间冲突不自动裁切。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

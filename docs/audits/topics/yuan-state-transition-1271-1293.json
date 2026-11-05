@@ -1,0 +1,400 @@
+{
+  "decisionId": "gap-yuan-1271-1293",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "yuanshi-shizu-1271-1293",
+      "use": "《元史》卷7—17世祖本纪按至元八年至三十年逐年核对国号、襄樊战事、对外征伐、海都及乃颜冲突、行政建置等。抽核卷7、卷17在线文本及卷次范围；纪传的政令、战事、归附和路府设置不自动等于全年连续直接控制边界。维基文库数字文本注明CC BY-SA 4.0，引用保留卷次与出处。"
+    },
+    {
+      "id": "yuan-nationalities-history",
+      "use": "国家民委“元代历史沿革与疆域行政建置”用于元朝建国、统一南宋及行省建置背景；宏观疆域叙述不是1271—1293逐年疆界源。本轮页面无法访问，记作链接维护事项，不据其独立判边。"
+    },
+    {
+      "id": "capital-history-reference",
+      "use": "项目首都与政治中心综合核验资料用于大都、上都点位及双都参照；北京市文物局资料确认大都新城始建于1267年、1272年正式定名。大都点从1272年起显示；政治中心点只表示中枢位置，不推导城垣或国界。"
+    },
+    {
+      "id": "historical-basemaps",
+      "use": "Historical Basemaps world_1279.geojson feature 246 对应 hb-1279-yuan-246，提供1279单年大陆尺度参考轮廓，原始元数据为低置信度、controlType unspecified。项目README说明地图仍在制作中并要求与其他资料核验；因缺少1279逐界依据，维持年度疆域留空并挂requires-review门禁，保留来源几何但不进入运行时地图。许可登记为GPL-3.0，公开使用条件仍需单独核对。"
+    }
+  ],
+  "reviewLimitations": [
+    "1271—1293年共23条公历年度记录，疆界几何留空；大都正式定名于1272年，因此1271年仅显示上都政治中心点，1272年起显示大都、上都点；coverage决策的sourceBoundaryIds为空。",
+    "元史本纪记录政令、战争、受降、行政建置和边疆事务，无法为每年提供全境连续的直接控制边缘；属国、军事占领、汗廷活动和行政路府设置分层处理。",
+    "Historical Basemaps存在1279年元朝单年轮廓，但来源自述仍为work in progress；原始几何保留在目录，hb-1279-yuan-246只在1279挂requires-review并从运行时拦截，不以低置信度单年快照替代年度直接控制审核。",
+    "国家民委元史概述页面本轮无法访问；《元史》卷7、卷17可访问并按本纪口径核对。未用该概述中的地图图像，不从后期轮廓或相邻年度最大范围回填。",
+    "大都、上都点仅为现代近似政治中心定位。古籍、网页数字文本许可、地图审图与公开展示条件分开审核。"
+  ],
+  "yearCount": 23,
+  "years": [
+    {
+      "year": 1271,
+      "conclusion": "至元八年，元廷颁改国号为大元后的制度命令，并与南宋战事并行。此年确认元朝国号成立，不等于完成对南宋及蒙古各区域的统一。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷七至元八年；建国制度与战事并行。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1272,
+      "conclusion": "至元九年，元廷继续营建大都、处理对南宋战争与行省军政事务；都城营建不表示全国控制已稳定。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷七至元九年；都城建设与战争延续。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1273,
+      "conclusion": "至元十年，元军攻取樊城、襄阳守将吕文焕降；南宋战争局势转折，但军事受降不是全境边界测绘。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷八至元十年；樊城、襄阳受降及西南军政。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1274,
+      "conclusion": "至元十一年，大都宫阙和朝仪建设推进，元廷部署南征；宫城落成与南征准备不能推出疆界。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷八至元十一年；大都朝仪、南征部署。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1275,
+      "conclusion": "至元十二年，元军大举南下并推进江淮战事，地方受降与军事推进持续发生。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷八至元十二年；南征与沿线受降。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1276,
+      "conclusion": "至元十三年，临安朝廷投降，元军进入南宋都城；南宋残余政权和抵抗仍延续。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷九至元十三年；临安受降与宋室南迁。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1277,
+      "conclusion": "至元十四年，南宋残余势力继续抵抗，元廷对已降地区实施军政接管；不能把临安受降视作所有地区同时完成接收。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷九至元十四年；残余宋军与地方接管。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1278,
+      "conclusion": "至元十五年，元军继续在四川及南方追讨宋军残部，战区控制仍呈阶段变化。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷九至元十五年；四川等地战事。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1279,
+      "conclusion": "至元十六年，崖山战事后宋帝赵昺及随从赴海，史书记川蜀平定；政权终止与地方行政整合仍需区分。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference",
+        "historical-basemaps"
+      ],
+      "evidenceGap": "卷十至元十六年；崖山终局、川蜀军政分区。Historical Basemaps record 246虽提供1279单年大陆尺度粗略轮廓，但项目README要求进一步核验；该图不区分直接控制、依附和争议范围，已挂待审并隐藏。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少本年可复核的连续控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1280,
+      "conclusion": "至元十七年，元廷在既有征服后继续设置地方军政机构，并规划对日远征；日本远征计划不代表对日控制。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十至元十七年；行省、军政与对日部署。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1281,
+      "conclusion": "至元十八年，元丽关系、边疆军事和对日远征行动并存；高丽贡使/从属关系与元朝直接疆界不是同一概念。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十至元十八年；高丽往来与对外军事行动。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1282,
+      "conclusion": "至元十九年，元廷处置内乱并继续调整地方治理；叛乱镇压和行政建置不能单独作为年度边界线。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十一至元十九年；内乱与行政调整。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1283,
+      "conclusion": "至元二十年，云南、安南等方向军政及交涉仍见于本纪；军事远征、招谕和朝贡不等同直接管辖。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十一至元二十年；西南边疆军政与外交。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1284,
+      "conclusion": "至元二十一年，元廷持续经营地方行政与边疆军事，年度本纪未提供可转换为连续疆界的空间边缘资料。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十二至元二十一年；地方行政与边疆事务。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1285,
+      "conclusion": "至元二十二年，海都等蒙古诸王冲突持续，属于元廷与蒙古西北势力的战争关系，不能简化为稳定国界。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十二至元二十二年；与海都等的军事冲突。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1286,
+      "conclusion": "至元二十三年，元廷继续应对北方军事冲突并处理内政；战场位置不覆盖全年控制状态。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十二至元二十三年；北方军事与朝廷治理。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1287,
+      "conclusion": "至元二十四年，诸王乃颜叛乱及东北方向军事行动使直接军政控制存在变化；战事不能替代边界核定。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十三至元二十四年；乃颜之乱及东北战事。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1288,
+      "conclusion": "至元二十五年，元廷镇压东北叛乱并继续调整北方军政；胜负和名义辖属不足以还原连续年度边缘。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十三至元二十五年；东北战事后续。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1289,
+      "conclusion": "至元二十六年，中央继续处理财政、行政与边地事务；可确认政权延续，不能据此绘制逐年疆界。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十四至元二十六年；行政与边地事务。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1290,
+      "conclusion": "至元二十七年，元廷军政活动涉及北方及西南边疆；各地建置和军镇记录不等于同质的直接控制面。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十四至元二十七年；边疆军政记录。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1291,
+      "conclusion": "至元二十八年，元廷继续处理对海上贸易及蒙古人口出境的限制，并设置东川路等地方机构；行政路界不自动构成国家外边界。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十六校勘记引用至元二十八年条；行政设置与海上往来。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1292,
+      "conclusion": "至元二十九年，元朝延续对外军事和地方行政活动；本纪记事不足以确定所有边缘地区的直接控制状态。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十六至元二十九年；边疆事务。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    },
+    {
+      "year": 1293,
+      "conclusion": "至元三十年，忽必烈统治晚期朝廷仍处理边务与治理；年末政治状态不应用后续元代成熟版图反推。",
+      "mapExpression": "political-center-points",
+      "capitalPlaceIds": [
+        "dadu",
+        "shangdu"
+      ],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "yuanshi-shizu-1271-1293",
+        "yuan-nationalities-history",
+        "capital-history-reference"
+      ],
+      "evidenceGap": "卷十七至元三十年；统治晚期政务与边务。都城/政治中心点只标识中枢位置，不表示城垣、行政外缘或直接控制边界；缺少该公历年度连续、可定位的直接控制边缘资料，疆域几何留空。"
+    }
+  ]
+}

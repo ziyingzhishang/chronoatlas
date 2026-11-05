@@ -1,0 +1,23 @@
+{
+  "decisionId": "gap-later_jin-1636-1636",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "later_jin",
+      "year": 1636,
+      "conclusion": "皇太极于盛京即皇帝位、改国号为大清，后金阶段在年内转入清朝阶段。",
+      "mapExpression": "leave-unfilled",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["dpm-hongtaiji-biography"],
+      "evidenceGap": "来源可确认政权转换发生于盛京，但未提供转换前后各自的全年直接控制边界；不把先前后金疆域断面延用全年，也不将清后续疆域倒填。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "后金1636年疆域面留空；盛京仅作为清建立事件地点，不代表后金全年控制范围。",
+    "清建立事件详情关联后金与清，以表达同年改国号承接；此政权关联不表示两幅疆域同时存在，也不替代年内控制边缘证据。",
+    "改国号、即皇帝位和后续疆域扩展分层记录；不把1636年之后的控制范围回填。",
+    "盛京坐标为现代沈阳市城市参照点，不表示当年宫城或城墙边界；公开展示与来源使用条件须另行核对。"
+  ]
+}

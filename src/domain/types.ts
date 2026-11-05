@@ -231,6 +231,11 @@ export interface BoundaryState {
   memberOf?: string;
   mapRepresentation?: 'direct-boundary' | 'licensed-digitization' | 'reference-boundary' | 'cultural-core' | 'control-centers' | 'influence-area' | 'maximum-reference';
   evidence: BoundaryEvidence;
+  geometryReviewHolds?: Array<{
+    conflictId: string;
+    years: number[];
+    status: 'requires-review' | 'resolved';
+  }>;
 }
 
 export interface HistoricalEvent {

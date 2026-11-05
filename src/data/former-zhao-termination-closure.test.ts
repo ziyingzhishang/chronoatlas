@@ -27,7 +27,11 @@ describe('Former Zhao termination closure', () => {
     const detail = getHeritageDetail('former-zhao-changan-city-layer');
 
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'changan', validFrom: 304, validTo: 329 }),
+      expect.objectContaining({ placeId: 'pingyang', validFrom: 309, validTo: 318 }),
+      expect.objectContaining({ placeId: 'changan', validFrom: 319, validTo: 329 }),
+    ]));
+    expect(polity?.capitalPhases).not.toEqual(expect.arrayContaining([
+      expect.objectContaining({ placeId: 'changan', validFrom: 304 }),
     ]));
     expect(polity?.eventIds).toContain('former-zhao-ended-329');
     expect(heritage).toMatchObject({ placeId: 'changan' });

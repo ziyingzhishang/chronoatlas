@@ -43,12 +43,14 @@ describe('eleventh-batch unresolved capital evidence audit', () => {
     expect(recordsFor('xiongnu').every((record) => record.role === 'mobile_court')).toBe(true);
     expect(recordsFor('turkic').map((record) => [record.validFrom, record.validTo])).toEqual([
       [552, 630],
-      [682, 744],
+      [682, 743],
     ]);
     expect(recordsFor('tuyuhun').every((record) => record.role === 'disputed')).toBe(true);
     expect(recordsFor('xia_early').every((record) => record.role === 'disputed')).toBe(true);
     expect(recordsFor('shang').every((record) => record.role === 'disputed')).toBe(true);
-    expect(recordsFor('western_qin').some((record) => record.role === 'de_facto')).toBe(true);
+    expect(recordsFor('western_qin')).toEqual(expect.arrayContaining([
+      expect.objectContaining({ placeId: 'fuhan', validFrom: 412, validTo: 431, role: 'primary', status: 'actual' }),
+    ]));
     expect(recordsFor('northern_yuan').every((record) => record.role === 'mobile_court')).toBe(true);
     expect(recordsFor('ming_southern').every((record) => record.status === 'actual')).toBe(true);
   });

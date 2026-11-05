@@ -66,9 +66,12 @@ function isEstablishmentDetailForPolity(
   eventSummary?: string,
   eventCategory?: string,
 ): boolean {
+  if (eventTitle?.includes('项羽政权') && polity.id !== 'xiang_yu') return false;
   if (eventCategory?.includes('政权终结')) return false;
   if (eventCategory === '称帝／政权制度化' || eventCategory === '权力继承／政权形成') return false;
+  if (eventCategory === '政权建立／更替') return true;
   const text = [eventTitle, eventSummary, eventText(detail)].filter(Boolean).join(' ');
+  if (/项羽政权/.test(text) && polity.id !== 'xiang_yu') return false;
   if (!establishmentText.test(text)) return false;
   if (/建立.*政治条件|建国.*条件/.test(text)) return false;
   if (/建立(?:新政权|大齐政权)/.test(text)) return false;

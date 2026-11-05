@@ -51,11 +51,13 @@ describe('西凉建政节点闭环审计', () => {
     ]));
     expect(westernCapitalTerms).toEqual(expect.arrayContaining([
       expect.objectContaining({ placeId: 'dunhuang', validFrom: 400, validTo: 404 }),
-      expect.objectContaining({ placeId: 'jiuquan', validFrom: 405, validTo: 421 }),
+      expect.objectContaining({ placeId: 'jiuquan', validFrom: 405, validTo: 420 }),
+      expect.objectContaining({ placeId: 'dunhuang', validFrom: 421, validTo: 421 }),
     ]));
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
       expect.objectContaining({ placeId: 'dunhuang', validFrom: 400, validTo: 404 }),
-      expect.objectContaining({ placeId: 'jiuquan', validFrom: 405, validTo: 421 }),
+      expect.objectContaining({ placeId: 'jiuquan', validFrom: 405, validTo: 420 }),
+      expect.objectContaining({ placeId: 'dunhuang', validFrom: 421, validTo: 421 }),
     ]));
     expect(places.find((place) => place.id === 'dunhuang')).toMatchObject({ modernName: '敦煌市' });
     expect(places.find((place) => place.id === 'jiuquan')).toMatchObject({ modernName: '酒泉市' });

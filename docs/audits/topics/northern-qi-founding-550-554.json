@@ -1,0 +1,79 @@
+{
+  "decisionId": "gap-qi_northern-550-554",
+  "yearCount": 5,
+  "years": [
+    {
+      "polityId": "qi_northern",
+      "year": 550,
+      "conclusion": "东魏孝静帝在邺禅位于高洋，北齐建立并以邺为政治中心。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "ye",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-qi-founding-550-554-sources", "modern-geography-reference"],
+      "evidenceGap": "年内禅代与东魏旧名义辖区不能证明北齐即时稳定接收所有地方；疆域面留空。"
+    },
+    {
+      "polityId": "qi_northern",
+      "year": 551,
+      "conclusion": "北齐中央政治以邺为中心，东魏至北齐的地方军政接收仍需分区考察。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "ye",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-qi-founding-550-554-sources", "modern-geography-reference"],
+      "evidenceGap": "邺都中心点不构成华北东部直接控制边界；不把后续轮廓倒填。"
+    },
+    {
+      "polityId": "qi_northern",
+      "year": 552,
+      "conclusion": "北齐继续以邺为政治中心。《北齐书》记天保三年（552）自黄栌岭起长城、北至社平戍，四百余里并置三十六戍；长城工程反映边防部署，不等同于北齐政权边界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "ye",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-qi-founding-550-554-sources", "northern-qi-great-wall-552-ai-chong-2007", "modern-geography-reference"],
+      "evidenceGap": "艾冲（2007）提出黄栌岭至社平戍的县域级路线考辨并认为与东魏肆州北山长城衔接，但这不是实测线路；历史地名比定、墙体年代归属及多时期复用仍待分段核验。现有材料不足以落可追溯的线状几何，更不能把防御工事当作政权边界；同期突厥汗权及北方军事活动亦不能推出北齐直接控制范围。"
+    },
+    {
+      "polityId": "qi_northern",
+      "year": 553,
+      "conclusion": "北齐中央政治仍以邺为中心，北方政权关系和军事行动持续变化。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "ye",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-qi-founding-550-554-sources", "modern-geography-reference"],
+      "evidenceGap": "出兵、盟属或对外关系不等同于直辖；没有逐界依据时疆域面留空。"
+    },
+    {
+      "polityId": "qi_northern",
+      "year": 554,
+      "conclusion": "北齐继续以邺为都；与西魏及草原各方之间的实控关系需按地区和战事分别判断。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "ye",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-qi-founding-550-554-sources", "modern-geography-reference"],
+      "evidenceGap": "现有证据支持邺都中心与政权延续，不足以复原北齐逐年稳定疆界；不以后年版图回填。"
+    }
+  ],
+  "coexistenceNotes": [
+    "552—554年第一突厥汗国与北齐同时存在；邺点与于都斤—鄂尔浑区域参照点性质不同，不连接、不裁剪，也不据此推演相邻疆界。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "northern-qi-founding-550-554-sources",
+      "use": "《资治通鉴》卷163—165逐年核对550—554年北齐建政、邺都与相关政事；《北齐书》卷2交叉参照高洋受禅与早期朝廷。支持政权时序和邺都中心，不直接提供可复原的逐年边界。"
+    },
+    {
+      "id": "northern-qi-great-wall-552-ai-chong-2007",
+      "use": "艾冲《北朝诸国长城再探索——兼与朱大渭先生商榷》（《烟台大学学报（哲学社会科学版）》2007年第20卷第4期）讨论552年黄栌岭至社平戍长城的地名比定和路线，提出其经今吕梁若干县域并与东魏肆州北山长城衔接。该线路是学术地望重建，不是考古测绘，不作为北齐疆界几何。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目places目录中邺（今临漳一带）近似城市坐标表达D级都城中心点，不表示邺城考古边界或北齐疆域。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "550—554年北齐疆域面留空；邺都中心点不表示东魏旧辖区已被北齐稳定接收。",
+    "同期第一突厥汗国的移动政治核心参照点不表示固定都城、直接控制或与北齐之间的边界。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

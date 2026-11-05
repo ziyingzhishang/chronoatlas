@@ -1,0 +1,400 @@
+{
+  "decisionIds": [
+    "gap-southern_tang-937-959"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-southern-tang-937-959",
+      "use": "《资治通鉴》卷281—294作为937—959年逐年编年主来源，核对杨吴禅代、南唐建国、李璟承继、灭闽灭楚、后周南征、958年割地称臣及959年政局。在线抽核卷281、283、284、292、294的卷目和本纪文本；地方事件仍按年度记录，不把军事战线或臣属关系推为连续国界。"
+    },
+    {
+      "id": "song-history-nantang",
+      "use": "《宋史》卷478南唐世家用于交叉校核李氏世系、迁豫章、向后周割地称臣及南唐覆亡等节点；作为后出纪传材料与《通鉴》互证，不单独提供年度疆界。"
+    },
+    {
+      "id": "southern-tang-nanjing",
+      "use": "南京市地方志办公室《南唐建国与金陵都城资料》用于南唐建国及金陵中心定位；原 PDF 本轮因文件体积过大未能在线解析，列为来源访问／版本复核事项，不用其提取地图或边界。"
+    },
+    {
+      "id": "southern-tang-local-administration",
+      "use": "龙南市政府《历史沿革表》记937—953年龙南一带隶南唐虔州昭信军节度、953年后改隶变化；只支持赣南局部行政沿革，不代表南唐全境或连续边界。"
+    },
+    {
+      "id": "southern-tang-periods",
+      "use": "韩国国史编纂委员会五代十国综述用于后周与南唐关系、政权阶段的交叉背景；阶段综述不作为年度边界来源。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "记录相邻的 Cliopatria v0.2.1 record 3842（snapshot 960、source interval 960—969、low confidence、control type unspecified）作为时间范围排除依据。该记录不覆盖937—959年，本段不复制、不向前延伸该几何，也不据此确认早期南唐控制边界。"
+    },
+    {
+      "id": "chgis-jianzhou-758-1161",
+      "use": "CHGIS时间地名录提供建州治所的坐标和时间沿革，明确建州治在建安县（今建瓯），并记943年王延政以建州为殷国都、945年殷国灭后建州归南唐。只用于建州城市级区域点及中心迁移校核，不提供或授权复用闽国/南唐边界几何；页面标注CC BY-NC 4.0。"
+    }
+  ],
+  "reviewLimitations": [
+    "937—959年共23条年度结论，均为明确历史结论／区域事件说明并留空连续疆界面；未把后周军队、割地条约、地方藩镇或朝贡关系拼成南唐国界。",
+    "《资治通鉴》在线卷本按年核对关键卷次，《宋史》卷478作为后出纪传参校；地方行政材料仅适用于龙南局部，不能推及全境。",
+    "南京地方志 PDF 页面因文件体积过大未能解析，尚待版本及原文页码复核；没有从该 PDF 复制几何。来源使用权和公开地图条件另行审核。",
+    "保大十一年（953）赣南建置及958年后周割地称臣涉及范围和时间阶段变化，但当前资料仍不足以形成23年逐年、全境连续直接控制边界。",
+    "相邻 Cliopatria record 3842 从960年起，不得回填937—959年；该几何为低置信度、控制性质未定的时段模型，其数据许可不自动证明历史适用性或公开地图使用条件。"
+  ],
+  "yearCount": 23,
+  "years": [
+    {
+      "year": 937,
+      "polityId": "southern_tang",
+      "conclusion": "徐知诰受杨溥禅让，建国号齐、改元升元并以金陵为都；年内政权转换不能由后期疆域轮廓代表。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-nanjing",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可确认禅代、建国和金陵都城；点位仅表示政治中心，不能确定全年逐州直接控制边界。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 938,
+      "polityId": "southern_tang",
+      "conclusion": "升元二年南唐以金陵为政治中心延续；目前来源未给出可以重建该年直接控制界线的逐州资料。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-nanjing",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "都城点只表示金陵政治中心，不等于边界证据；不以960年轮廓逆推本年。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 939,
+      "polityId": "southern_tang",
+      "conclusion": "升元三年改国号为唐（史称南唐），政权身份发生变化；改号本身不构成疆域变更或边界依据。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "编年资料确认改国号，但未提供本年全境直接控制的连续空间范围。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 940,
+      "polityId": "southern_tang",
+      "conclusion": "南唐政权以金陵为中心延续；未见足以据以绘制该年全境边界的年度空间资料。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "地方行政材料仅覆盖部分沿革，不足以将节度辖区解释为完整直接控制线。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 941,
+      "polityId": "southern_tang",
+      "conclusion": "南唐仍以金陵为政治中心；现有记载不能将这一年度的军政区划转化为连续、可发布的国界。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "缺少逐州直接控制记录和相应历史坐标；名义辖区不作为疆域面。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 942,
+      "polityId": "southern_tang",
+      "conclusion": "李昪在位末期南唐中枢仍在金陵；没有可核定该公历年度完整控制边缘的地图证据。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "编年叙事支持政权阶段与中心，不支持从政治中心外推连续疆界。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 943,
+      "polityId": "southern_tang",
+      "conclusion": "李昪去世，李璟继位；这是君主更替年，不能把后续扩张疆域回填至全年。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "modern-geography-reference",
+        "chgis-jianzhou-758-1161"
+      ],
+      "evidenceGap": "继位及中枢可确认，缺少覆盖年内变化的直接控制边界。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 944,
+      "polityId": "southern_tang",
+      "conclusion": "李璟在位，南唐朝廷以金陵为中心；对周边政权的外交和军事关系不等同于南唐直接管辖。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "没有可重建全境的年度界线；政治影响与臣属关系不表达为疆域。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 945,
+      "polityId": "southern_tang",
+      "conclusion": "南唐攻取建州，闽主王延政降，闽国中央政权终结；闽地各州随后仍有不同地方势力和接管过程，不能认定福建全境当年稳定直辖。",
+      "mapExpression": "capital-and-event-points",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference",
+        "chgis-jianzhou-758-1161"
+      ],
+      "evidenceGap": "政权终结、建州攻取与各州接管并非同一时点；现有资料不足以表示全年逐地控制。建州治所点仅作区域定位。",
+      "centerPlaceId": "jiankang",
+      "mapEventIds": [
+        "min-ended-945"
+      ]
+    },
+    {
+      "year": 946,
+      "polityId": "southern_tang",
+      "conclusion": "南唐在攻取建州后继续谋取福州，史料记其攻下福州外城；李弘义退守并向吴越求援，不能据此认定南唐稳定直辖福州或福建全境。泉州地方权力关系另按阶段核对。",
+      "mapExpression": "capital-and-event-points",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "泉漳地方权力、南唐册命和中央驻军是不同关系，缺少逐地直接控制证据。",
+      "centerPlaceId": "jiankang",
+      "mapEventIds": [
+        "southern-tang-assaults-fuzhou-946"
+      ]
+    },
+    {
+      "year": 947,
+      "polityId": "southern_tang",
+      "conclusion": "南唐军在福州方向受挫；泉州留从效遣退南唐戍军，说明泉漳实际自治与名义臣属并存。福州及周边控制不能据南唐名义声索一并绘入。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料反映战争和地方实际权力分立，但不提供该年连续边界坐标。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 948,
+      "polityId": "southern_tang",
+      "conclusion": "南唐仍以金陵为中枢，闽地及泉漳地方势力未能据现有资料简化为一条稳定的中央控制边界。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "各地归附、藩镇和直接行政控制须分层；尚无足以覆盖全境的年度边界来源。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 949,
+      "polityId": "southern_tang",
+      "conclusion": "泉州升清源军并兼领南州（漳州），留从效受命治理；节度使任命和实际区域自治并存，不将其辖区自动视为南唐中央直接控制。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "州镇任命可确认行政名义，不能单独确定本年中央实际控制强度或清源军精确边界。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 950,
+      "polityId": "southern_tang",
+      "conclusion": "南唐在李璟时期继续经营江南；清源军等地方军政关系仍须与中央直接控制分别记录。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "来源未能逐地确认全境直接控制，也没有可发布的年度边界几何。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 951,
+      "polityId": "southern_tang",
+      "conclusion": "南唐乘楚国内乱出兵并攻取潭州等地，马楚中央政权终结；楚故地随后仍由刘言、周行逢等地方势力控制部分地区，不能把最大范围等同当年稳定直辖。",
+      "mapExpression": "capital-and-event-points",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "军事占领、地方反抗和名义归附并存，史料未形成逐地连续控制线。",
+      "centerPlaceId": "jiankang",
+      "mapEventIds": [
+        "ma-chu-ended-951"
+      ]
+    },
+    {
+      "year": 952,
+      "polityId": "southern_tang",
+      "conclusion": "楚地战后南唐与当地军政势力关系继续变化；不能据攻取潭州或对楚地的名义声索推定湖南全境直接控制。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "缺少对各州实际接管、反复易手和全年状态的完整空间记录。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 953,
+      "polityId": "southern_tang",
+      "conclusion": "南唐仍处理楚地及周边藩镇关系；行政编制或节度使名义不能替代本年各地直接控制核验。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-local-administration",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "现有地方行政资料局部且不足以恢复全政权年度边界。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 954,
+      "polityId": "southern_tang",
+      "conclusion": "南唐以金陵为政治中心，北方后周建立并与南唐形成新的军事对峙背景；边境和势力范围尚无可复用年度几何。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "政权并存和军事态势不提供精确边界，不能由后续战线倒推本年控制范围。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 955,
+      "polityId": "southern_tang",
+      "conclusion": "后周开始大举南征，南唐淮北边境进入战时变化；前线推进和城镇守军不构成全年疆界。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "年内战线持续变化，缺少按日期和州县接管状况划定的直接控制面。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 956,
+      "polityId": "southern_tang",
+      "conclusion": "后周南征攻取南唐淮南多处州城，南唐亦有反攻和收复；战线反复，不能将年末或后续边界概括为全年控制。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "攻守双方在多地反复，缺少能够代表整个公历年的连续控制边界。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 957,
+      "polityId": "southern_tang",
+      "conclusion": "后周再次攻入淮南并逐步压缩南唐北部据点；各州易手时间不一，不能以战役占领线代替全年国界。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "前线和州城控制在年内变化，尚无逐时段可追溯、可重发布的空间依据。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 958,
+      "polityId": "southern_tang",
+      "conclusion": "南唐战败后向后周称臣并割让江北十四州、六十县，政权改称江南国主；割地和受封关系不等同于双方全部直接控制界线。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "条约、地方交接和前线收束存在时间差，现有记录不足以生成958年全年的精确双方边界。",
+      "centerPlaceId": "jiankang"
+    },
+    {
+      "year": 959,
+      "polityId": "southern_tang",
+      "conclusion": "南唐在割让江北后继续以江南为核心，并处于对后周称臣的政治关系中；后周政局变化不意味着南唐疆域或臣属关系当年自动改变。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-southern-tang-937-959",
+        "song-history-nantang",
+        "southern-tang-periods",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "臣属关系、江南核心和实际边界是不同结论；没有支持本年连续边界的空间资料。",
+      "centerPlaceId": "jiankang"
+    }
+  ],
+  "spatialDecision": "937—959年23条逐年结论均以低置信度D级点位表示金陵／建康政治中心，疆界面仍全部留空。割地称臣、军事战线、藩镇设置、地方归附及单一区域沿革不能合成全年连续直接控制边界；不使用后期疆域或相邻年份轮廓回填。来源使用权与公开地图条件另行审核。"
+}

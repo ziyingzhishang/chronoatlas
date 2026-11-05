@@ -26,7 +26,9 @@ const data = {
 };
 
 const stages = [
-  { polityId: 'liang_later', from: 907, to: 923, heritageId: 'later-liang-kaifeng-city-layer', eventId: 'later-liang-five-dynasties-founded', personId: 'zhu-wen' },
+  { polityId: 'liang_later', from: 907, to: 908, heritageId: 'later-liang-kaifeng-city-layer', eventId: 'later-liang-five-dynasties-founded', personId: 'zhu-wen' },
+  { polityId: 'liang_later', from: 909, to: 912, heritageId: 'later-liang-kaifeng-city-layer', eventId: 'later-liang-five-dynasties-founded', personId: 'zhu-wen' },
+  { polityId: 'liang_later', from: 913, to: 923, heritageId: 'later-liang-kaifeng-city-layer', eventId: 'later-liang-five-dynasties-founded', personId: 'zhu-wen' },
   { polityId: 'jin_later', from: 936, to: 947, heritageId: 'kaifeng-later-jin-han-city-layer', eventId: 'later-jin-ended-947', personId: 'shi-jingtang' },
   { polityId: 'han_later', from: 947, to: 951, heritageId: 'kaifeng-later-jin-han-city-layer', eventId: 'later-han-ended-951', personId: 'liu-zhiyuan' },
   { polityId: 'zhou_later', from: 951, to: 960, heritageId: 'kaifeng-later-zhou-city-layer', eventId: 'later-zhou-ended-960', personId: 'guo-wei' },
@@ -35,7 +37,7 @@ const stages = [
 ] as const;
 
 describe('开封跨政权城市连续性审计', () => {
-  it('connects six capital stages to one modern place and a dated heritage layer', () => {
+  it('connects every dated capital stage to one modern place and its heritage layer', () => {
     const place = places.find((candidate) => candidate.id === 'kaifeng');
     expect(place).toMatchObject({ historicalName: '开封', modernName: '开封市' });
 

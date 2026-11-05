@@ -21,8 +21,8 @@ describe('round eighty-eighth navigable closure: Luosie and Dali', () => {
     const city = byId(places, 'luosie');
 
     expect(polity?.eventIds).toContain(event?.id);
-    expect(event).toEqual(expect.objectContaining({ placeId: 'luosie', year: 618 }));
-    expect(detail?.locationIds).toContain('luosie');
+    expect(event).toEqual(expect.objectContaining({ placeId: 'yalong', year: 618 }));
+    expect(detail?.locationIds).toContain('yalong');
     expect(capital).toEqual(expect.objectContaining({ placeId: 'luosie', validFrom: 630, validTo: 842 }));
     expect(heritage?.placeId).toBe('luosie');
     expect(heritageDetail?.associatedPolities).toContain('tibetan_empire');
@@ -73,7 +73,7 @@ describe('round eighty-eighth navigable closure: Luosie and Dali', () => {
     expect(capital).toEqual(expect.objectContaining({ placeId: 'taihe', validFrom: 738, validTo: 778 }));
     expect(heritage?.placeId).toBe('taihe');
     expect(heritageDetail?.associatedEvents).toContain(event?.id);
-    expect(city?.modernAdministrativeUnit).toBe('云南省大理市');
+    expect(city?.modernAdministrativeUnit).toBe('云南省大理市太和街道太和村');
   });
 
   it('requires source records for both newly navigable event endpoints', () => {

@@ -101,13 +101,13 @@ test('labels the maximum reference with its source period and allows hiding it',
   expect(screen.getByRole('status', { name: '疆域资料状态' })).toHaveTextContent('最大范围参考');
   expect(map.getSource('boundaries')!.setData.mock.lastCall![0].features.length).toBeGreaterThan(0);
   await userEvent.click(screen.getByRole('checkbox', { name: '显示最大范围参考' }));
-  await waitFor(() => expect(map.getSource('boundaries')!.setData.mock.lastCall![0].features.some((f: GeoJSON.Feature)=>f.properties?.polityId==='southern_tang')).toBe(false));
+  await waitFor(() => expect(map.getSource('boundaries')!.setData.mock.lastCall![0].features.some((f: GeoJSON.Feature)=>f.properties?.maximum===true)).toBe(false));
   const updates=map.getSource('boundaries')!.setData.mock.calls.length;
   act(()=>map.emit('moveend'));
   expect(map.getSource('boundaries')!.setData.mock.calls.length).toBe(updates);
   expect(screen.getByRole('region', { name: '历史地图' })).toHaveAttribute('data-year', '937');
   await userEvent.click(screen.getByRole('checkbox', { name: '显示最大范围参考' }));
-  await waitFor(() => expect(map.getSource('boundaries')!.setData.mock.lastCall![0].features.some((f: GeoJSON.Feature) => f.properties?.polityId === 'southern_tang')).toBe(true));
+  await waitFor(() => expect(map.getSource('boundaries')!.setData.mock.lastCall![0].features.some((f: GeoJSON.Feature) => f.properties?.maximum===true)).toBe(true));
 });
 
 test('coverage separates local catalog and contemporaneous world figures', () => {

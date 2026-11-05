@@ -1,0 +1,112 @@
+{
+  "decisionId": "gap-tang-618-622",
+  "yearCount": 5,
+  "years": [
+    {
+      "polityId": "tang",
+      "year": 618,
+      "conclusion": "唐在长安建立中央政权；薛举、李轨、王世充等势力仍并存。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "tang_changan",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian",
+        "modern-geography-reference",
+        "sui-tang-changan-gis-study"
+      ],
+      "evidenceGap": "长安中央中心可确认，多政权并立和军事冲突中的逐年控制线不能由建国事件复原；疆域面留空。"
+    },
+    {
+      "polityId": "tang",
+      "year": 619,
+      "conclusion": "唐中央政治以长安为中心，与刘武周、宋金刚、王世充、窦建德等势力间的冲突和交涉仍在持续。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "tang_changan",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian",
+        "modern-geography-reference",
+        "sui-tang-changan-gis-study"
+      ],
+      "evidenceGap": "军事行动和政权交涉不能自动转换为全年连续的直接控制范围。"
+    },
+    {
+      "polityId": "tang",
+      "year": 620,
+      "conclusion": "唐以长安为政治中心，针对刘武周等势力的军事行动及地方政权关系变化继续。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "tang_changan",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian",
+        "modern-geography-reference",
+        "sui-tang-changan-gis-study"
+      ],
+      "evidenceGap": "有战事和归附记载，但不支持据此绘制唐初全年边界；疆域面留空。"
+    },
+    {
+      "polityId": "tang",
+      "year": 621,
+      "conclusion": "唐中央中心仍在长安；唐军攻取洛阳并击败窦建德，地方接收和政权归属随战事变化。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "tang_changan",
+      "mapEventIds": ["tang-captures-luoyang-621"],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian",
+        "modern-geography-reference",
+        "sui-tang-changan-gis-study"
+      ],
+      "evidenceGap": "攻城、战胜或降附不等于全年稳定行政边界，疆域面留空。"
+    },
+    {
+      "polityId": "tang",
+      "year": 622,
+      "conclusion": "唐中央政治继续以长安为中心；刘黑闼自称汉东王、定都洺州，唐军继续作战，统一战争尚未结束。地图另标洺州州治区域点，不表示唐朝控制该地。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "tang_changan",
+      "mapEventIds": ["liu-heita-establishes-handong-kingdom-622"],
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian",
+        "tang-early-years-primary-sources",
+        "mingzhou-chgis-hvd-87888",
+        "modern-geography-reference",
+        "sui-tang-changan-gis-study"
+      ],
+      "evidenceGap": "洺州点只表示并存对手的政治中心区域；本年仍有州县争夺，不能据此复原唐或汉东王的全年控制边缘，也不得用唐后期疆域或首都点推导控制面。"
+    }
+  ],
+  "coexistenceNotes": [
+    "618—622年逐年标题列示当前政权数据中的高句丽、新罗、吐谷浑、突厥，以及《资治通鉴》卷185—190明确记载的薛举、李轨、王世充、刘武周、宋金刚、窦建德、刘黑闼等唐初对手；标题文字只是并存关系提示，不表示这些中央争夺政权都已有独立政权实体或疆域几何。",
+    "唐都长安中心点与622年汉东王洺州事件点分别表达中央政务中心和对手政权中心，不表示对手政权或争夺州县归唐直接控制，战争不自动裁剪或生成几何。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian",
+      "use": "《资治通鉴》卷185—190逐年核对唐在长安建政、周边政权并存、攻取与归附，以及622年刘黑闼仍在洺州活动。支持政治中心和时序判断，不直接提供唐初逐年边界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目长安近似城市坐标表达D级中央政治中心点，不表示关中范围、古城垣或唐初控制边界。"
+    },
+    {
+      "id": "sui-tang-changan-gis-study",
+      "use": "研究报告给出隋唐长安城区范围；其边界框中点仅用于唐初长安的低置信度区域定位，不是宫城、城址中心或城垣依据。"
+    },
+    {
+      "id": "tang-early-years-primary-sources",
+      "use": "《资治通鉴》卷185—190逐年核对唐初建政、战争及并存势力；卷190支持622年刘黑闼称汉东王、改元天造并定都洺州。"
+    },
+    {
+      "id": "mingzhou-chgis-hvd-87888",
+      "use": "CHGIS记录洺州617—622年及其州治坐标，说明治永年县、今广府镇；只支持州治区域参照点。页面标注CC BY-NC 4.0，公开使用权待审。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "618—622年疆域几何留空；不以唐后期疆域倒填唐初统一战争时期。",
+    "长安点只表达政治中心，不表达关中外部控制，也不裁切同期割据政权几何。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

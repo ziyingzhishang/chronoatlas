@@ -1,0 +1,55 @@
+{
+  "decisionId": "gap-southern_yan-398-401",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "southern-yan-formation-primary-sources",
+      "use": "《晋书》卷127及《资治通鉴》卷110—111用于核对398年南迁滑台、称燕王，399年滑台失守后南燕将士出城赴慕容德、转向青齐并进据广固，以及400年在广固称帝的纪年。399年可标迁往广固的事件目的地，但不能据此把广固标为全年中心；材料也不支持逐年连续控制边界。滑台采用地方文物资料提供的滑县城区附近区域近似参照，不指认精确古城址。"
+    }
+  ],
+  "reviewLimitations": [
+    "398—401年共4条年度记录，疆域面均留空；仅398、400、401年显示区域/城市中心点。",
+    "399年滑台已失，南燕部众转向青齐并进据广固；地图仅标迁移目的地事件点，不把滑台或广固作为全年政治中心。",
+    "中心点不代表城垣、全年实控区或稳定疆界；本审核不替代来源使用权与公开地图合规审核。"
+  ],
+  "yearCount": 4,
+  "years": [
+    {
+      "year": 398,
+      "conclusion": "慕容德率部由邺南迁滑台并称燕王，南燕政权形成。滑台为城市区域级政治中心参照。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "huatai",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-yan-formation-primary-sources"],
+      "evidenceGap": "滑台古城范围和精确遗址坐标尚未核定；缺乏该年直接控制边缘的空间依据，不绘疆域面。"
+    },
+    {
+      "year": 399,
+      "conclusion": "滑台因内部事变降魏，慕容云率将士家属出滑台赴慕容德；慕容德转向青齐，年内进据广固。迁移目的地可作事件点，但滑台、广固均不代表本年全年政治中心。",
+      "mapExpression": "guanggu-destination-event-point-no-annual-center",
+      "mapEventIds": ["southern-yan-moved-to-guanggu-399"],
+      "capitalPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["southern-yan-formation-primary-sources"],
+      "evidenceGap": "《资治通鉴》卷111将滑台降魏、慕容云出滑台、慕容德进据广固系于399年，而把广固称帝记在400年；因此仅显示迁移目的地事件点，不把广固前推为全年政治中心，不绘疆域面。"
+    },
+    {
+      "year": 400,
+      "conclusion": "慕容德在广固称帝，广固成为可确认的政治中心。称帝和据城不等于拥有史料未逐年划定的固定边界。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "guanggu",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-yan-formation-primary-sources"],
+      "evidenceGap": "没有足以复原400年全年直接控制边缘的逐年空间材料；不把后期最大范围倒推至本年。"
+    },
+    {
+      "year": 401,
+      "conclusion": "广固继续作为南燕政治中心。现有核查材料不足以支持与前后年不同的精确疆界。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "guanggu",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-yan-formation-primary-sources"],
+      "evidenceGap": "无可重发布的逐年边界依据，继续不绘疆域面，不以402年或后期轮廓回填。"
+    }
+  ]
+}

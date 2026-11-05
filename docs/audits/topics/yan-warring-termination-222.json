@@ -1,0 +1,40 @@
+{
+  "decisionId": "gap-yan_warring--222--222",
+  "yearCount": 1,
+  "years": [
+    {
+      "year": -222,
+      "conclusion": "秦始皇二十五年，王贲攻辽东并俘燕王喜，燕国最后政权终结。燕王喜此前在秦军攻取蓟后东保辽东；薛兰霞、杨玉生2011年研究将辽阳列为燕最后都城，但燕都迁徙地点与年代存在学术分歧，传世编年史并未点名该驻地。本年仅以今辽阳市城区作低置信度区域政治中心参照，不定位战国襄平城址，也不表示燕国全年直接控制辽东或疆域边界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "liaoyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol7-yan-termination",
+        "shiji-qin-shihuang-yan-termination",
+        "yan-capital-relocation-liaoyang-2011",
+        "china-chronology"
+      ],
+      "evidenceGap": "《资治通鉴》与《史记》确认燕王退保辽东及秦攻辽东俘王喜，但未点名驻地；薛兰霞、杨玉生2011年提出辽阳为燕最后都城的研究结论，可支持低置信度区域中心参照，但迁都序列仍有分歧，现代辽阳市城区代表点不等于已确认的战国襄平城址。该研究没有提供前222年全年直接控制边界，故只显示政治中心参照，疆域几何继续留空。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-vol7-yan-termination",
+      "use": "《资治通鉴》卷七记秦攻辽东并俘燕王喜；可确认燕政权终结及战事所在的大区域，不能单凭“辽东”确定燕廷驻地或全年控制边界。"
+    },
+    {
+      "id": "shiji-qin-shihuang-yan-termination",
+      "use": "《史记·秦始皇本纪》作为燕终结史事的交叉核对来源；用于确认事件，不转换为地图边界。"
+    },
+    {
+      "id": "yan-capital-relocation-liaoyang-2011",
+      "use": "薛兰霞、杨玉生《论燕国的五座都城》第93页把燕王喜弃蓟后退至辽阳、五年后被俘列为燕最后都城阶段。此为一种学术研究结论，作者指出燕都迁徙问题史料有限；仅据此建立低置信度区域中心参照，不采纳为精确襄平坐标或边界几何。"
+    }
+  ],
+  "reviewLimitations": [
+    "前222年采用低置信度辽阳区域政治中心参照；燕疆域面和sourceBoundaryIds继续为空。",
+    "《资治通鉴》记燕王退保辽东但未明确辽阳；辽阳作为最后都城来自2011年一项研究结论，其他迁都序列仍有分歧。现代辽阳市中心坐标不等同战国襄平精确城址。",
+    "来源事实核对已完成；独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ]
+}

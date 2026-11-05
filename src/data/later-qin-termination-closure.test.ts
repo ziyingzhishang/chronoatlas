@@ -6,6 +6,8 @@ import { changanEvents } from './changan-study';
 import { getPersonDetail } from './person-details';
 import { polityDetails } from './polity-details';
 import { heritageDetails } from './heritage-details';
+import { getHistoricalState } from '../domain/history-state';
+import { buildMapData } from '../map/history-map';
 
 describe('Later Qin termination closure', () => {
   it('records the 417 Changan termination from the polity perspective', () => {
@@ -31,5 +33,17 @@ describe('Later Qin termination closure', () => {
     expect(heritage?.associatedEvents).toEqual(expect.arrayContaining(['later-qin-falls-changan']));
     expect(heritage?.associatedPeople).toContain('yao-hong');
     expect(heritage?.associatedPolities).toEqual(expect.arrayContaining(['later_qin', 'jin_eastern']));
+  });
+
+  it('renders the 417 Changan transfer event while retaining only the transition center', () => {
+    const state = getHistoricalState(417);
+    const map = buildMapData(state);
+
+    expect(map.events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [108.94, 34.34] },
+      properties: expect.objectContaining({ entityId: 'later-qin-falls-changan' }),
+    }));
+    expect(map.boundaries.features.some((feature) => feature.properties?.polityId === 'later_qin'
+      && feature.geometry.type !== 'Point')).toBe(false);
   });
 });

@@ -64,7 +64,7 @@ describe('雅砻—吐蕃早期政治中心城市审计', () => {
     expect(detail?.presentDayValue).toBeTruthy();
 
     expect(polity?.id).toBe('tibetan_empire');
-    expect(founded?.placeId).toBe('luosie');
+    expect(founded?.placeId).toBe('yalong');
     expect(center?.placeId).toBe('yalong');
     for (const sourceId of asset?.sourceIds ?? []) {
       expect(sourceById[sourceId]).toBeDefined();

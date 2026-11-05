@@ -1,0 +1,35 @@
+{
+  "decisionId": "gap-qi_northern-577-577",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "qi_northern",
+      "year": 577,
+      "conclusion": "年初高恒在邺即位；北周军先后攻取晋阳、邺及山东诸州，高恒出奔后北齐中央政权于年内终止。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "ye",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-qi-termination-577-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "北齐年初控制、北周军事攻取和各地行政接收并非同一时点；全年疆域面留空，不将年初旧境或年末接收面作为全年的确定边界。"
+    }
+  ],
+  "coexistenceNotes": [
+    "577年北周与北齐在年内发生政权转换；邺点只标示转换城市，不代表战场范围、双方疆界或所有地方同日完成接收。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "northern-qi-termination-577-primary-sources",
+      "use": "《资治通鉴》卷173《陈纪七》与《北齐书》卷8《幼主纪》核验高恒即位、北周攻取晋阳和邺及北齐中央政权终止的年内时序。支持政权终止和城市节点，不直接提供全年疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "项目places目录中的邺（今临漳一带）近似定位仅用于城市转换中心点，不表示城墙考古范围。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "577年北齐全年疆域面留空，不能沿用576年完整控制轮廓。",
+    "不把北周年末接收范围前推至年初，也不将战争与地方接收简化成单一边界。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

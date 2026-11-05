@@ -1,0 +1,82 @@
+{
+  "decisionId": "gap-former_zhao-304-305",
+  "polityId": "former_zhao",
+  "years": [
+    {
+      "year": 304,
+      "mapExpression": "historical-conclusion-only",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "conclusion": "刘渊称汉王，刘氏政权形成；《晋书》载记记其政治中心与左国城相关，地方遗址资料将左国城对应到今方山县峪口镇南村一带。称王节点与后续称帝、改国号分开记录。",
+      "evidenceGap": "遗址与村级地点对应已有资料支持；国务院名录只记南村城址为战国至晋、位于方山县，没有保护区界址或遗址中心坐标，地方研究也未提供可复核经纬度或测绘边界。不以南村村域或现代离石城区中心代点。另有公开历史图将左国城标在111.14°E、37.52°N，与高德离石区行政地名点37.517797°N、111.150325°E几乎重合；该值不是南村遗址坐标，已排除，不作为地图点。",
+      "sourceIds": [
+        "former-zhao-founding-304-305-primary-sources",
+        "zuoguo-city-nancun-location-study",
+        "zuoguo-site-local-overview-2024",
+        "jiangshan-map-zuoguo-coordinate-crosscheck",
+        "amap-lishi-district-coordinate",
+        "state-council-sixth-national-key-cultural-site-nancun"
+      ]
+    },
+    {
+      "year": 305,
+      "mapExpression": "historical-conclusion-only",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "conclusion": "离石大饥，刘渊迁屯黎亭就粮，并留太尉宏守离石；记载显示驻屯位置变化。",
+      "evidenceGap": "《水经注》、后世地理考释及古壶关道研究可将黎亭相关记载约束在上党、壶关区域，但现有材料对古壶关故城、黎亭与黎侯故城的具体对应仍有分歧，不能确定黎亭唯一遗址或坐标；史载“迁屯就粮”是临时驻屯，不等于政治中心或全年控制疆界变更，故不以现代行政驻地代点。",
+      "sourceIds": [
+        "former-zhao-founding-304-305-primary-sources",
+        "liting-historical-geography-references",
+        "liting-huguan-route-study"
+      ]
+    }
+  ],
+  "coexistenceNotes": [
+    "汉赵与成汉在304—305年并存；不依据两方政权名号、未经核验的都城坐标或后期疆域拼接相邻边界。",
+    "304年左国城已有南村遗址级地点对应，但无经纬度可用于可信地图点；305年的黎亭与离石分别记述，不将不同地点合并成一个中心。西晋record 1407轮廓因成汉建政年内变化而在304—305年挂待审；此处只确认政权并存，不声称左国城与该轮廓有可精确校验的空间重叠。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "former-zhao-founding-304-305-primary-sources",
+      "use": "《资治通鉴》卷八十五、卷八十六与《晋书》卷一〇一·刘元海载记互校304年刘渊称汉王及左国城背景、305年离石大饥和迁屯黎亭、留太尉守离石。用于年度史实结论，不据此推导逐年直接疆界或未校核坐标。"
+    },
+    {
+      "id": "liting-historical-geography-references",
+      "use": "《水经注》卷十浊漳水条、《汉书·地理志》应劭注与《读史方舆纪要》长治县条提供黎亭与上党、壶关、黎侯岭一带的地理关系；结合古壶关道研究后，相关故城、黎亭与黎侯故城的具体对应仍有不同解释，不能确定单一现代点位。仅用于区域定位和说明证据缺口，不作为前赵政治中心点或疆界依据。"
+    },
+    {
+      "id": "liting-huguan-route-study",
+      "use": "李裕群《从邺城到晋阳——古壶关道上一座被盗北齐石窟的复原》讨论古壶关道及古壶关故城位置，并引述《水经注》黎亭材料，可补充区域关系；论文并非黎亭遗址调查，不能确定黎亭唯一遗址或坐标，也不提供305年迁屯点位。仅用于说明地理背景，不作为前赵中心点或疆界依据。"
+    },
+    {
+      "id": "zuoguo-city-nancun-location-study",
+      "use": "闫卫星《方山县南村左国城王庭探究》将左国城定位到方山县峪口镇南村；国务院第六批全国重点文物保护单位名录确认南村城址为战国至晋遗址。此为遗址/村级定位，不包含可录入的点坐标或城址测绘边界。"
+    },
+    {
+      "id": "zuoguo-site-local-overview-2024",
+      "use": "吕网融媒《“吕梁国宝”系列⑧方山南村城址》（2024-02-05）综合地方志称南村城址南北约3.5公里、东西约2.5公里、总体分布约9平方公里，并区分战国皋狼城、汉县城与晋代左国城的扩展层次。该总体尺度不表示单一时期城界或前赵疆域，文中无可复核坐标、方向控制点或测绘几何；用于补充多期遗址空间背景，不能据以落点或画面。"
+    },
+    {
+      "id": "state-council-sixth-national-key-cultural-site-nancun",
+      "use": "国务院第六批国保名录列南村城址为战国至晋、位于山西省方山县；名录没有遗址保护界址坐标或左国城分期点位，故只作遗址身份与年代交叉核对。"
+    },
+    {
+      "id": "jiangshan-map-zuoguo-coordinate-crosscheck",
+      "use": "《江山时序》西晋专题公开列左国城坐标111.14°E、37.52°N；该二手位置接近离石区中心，不能作为方山县南村遗址坐标，仅登记为排除候选。"
+    },
+    {
+      "id": "amap-lishi-district-coordinate",
+      "use": "高德地图离石区行政地名参考点37.517797°N、111.150325°E，用于核对并排除与该城区点几乎重合的二手左国城坐标；不表示遗址位置。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1428（clio-1428-former_zhao-306）来源时段为306—310年，snapshot 306，low confidence，control type unspecified。仅作为时段排除依据，不回填304—305年；该来源轮廓在306—310年另有政治中心阶段冲突，当前已挂requires-review并从运行时扣留。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "304—305年无疆域几何，coverage sourceBoundaryIds为空；国务院名录确认南村城址为战国至晋遗址，地点研究将左国城对应到南村。2024年地方遗址概述给出南村城址多期整体约3.5×2.5公里的尺度，但没有坐标、方向控制点或测绘几何，不能把整体范围转作304年左国城点位或前赵疆域；故不以南村村域或县城中心代点。111.14°E、37.52°N的公开二手地图候选与现代离石行政点几乎重合，已排除，不把离石城区代作南村遗址。黎亭可由古地理材料约束到上党、壶关区域，但古壶关故城、黎亭与黎侯故城的具体对应仍有分歧，且属临时迁屯地点，不作为政权中心。",
+    "史料存在不等于坐标、边界可绘性、来源使用权和公开地图展示条件均已通过审核。"
+  ]
+}

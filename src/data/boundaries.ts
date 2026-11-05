@@ -3,9 +3,20 @@ import intervals from './generated/cliopatria-china.json';
 import curated from './generated/curated-boundaries.json';
 import type { BoundaryState } from '../domain/types';
 import { specialHistoricalExtents } from './special-historical-extents';
+import { boundaryGeometryConflicts } from './boundary-conflicts';
 
 type CuratedBoundaryRecord = Omit<BoundaryState, 'geometry'> & {geometrySourceId: string};
-const importedBoundaries = [...intervals, ...raw] as BoundaryState[];
+type GeometryReviewHold = NonNullable<BoundaryState['geometryReviewHolds']>[number];
+const heldByBoundary = new Map<string, BoundaryState['geometryReviewHolds']>();
+for (const conflict of boundaryGeometryConflicts) {
+  const holds = heldByBoundary.get(conflict.boundaryId) ?? [];
+  holds.push({conflictId: conflict.conflictId, years: [...conflict.years], status: conflict.status as GeometryReviewHold['status']});
+  heldByBoundary.set(conflict.boundaryId, holds);
+}
+const importedBoundaries = ([...intervals, ...raw] as BoundaryState[]).map(boundary => {
+  const holds = heldByBoundary.get(boundary.id);
+  return holds ? {...boundary, geometryReviewHolds: holds} : boundary;
+});
 const importedById = new Map(importedBoundaries.map(boundary => [boundary.id, boundary]));
 const curatedBoundaries = (curated as CuratedBoundaryRecord[]).map(record => {
   const source = importedById.get(record.geometrySourceId);

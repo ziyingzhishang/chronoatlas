@@ -32,6 +32,7 @@ const expectedEventIds = [
   'turkic-restored-682',
   'turkic-ended-744',
   'chu-han-contention',
+  'han-pengcheng-battle-205',
   'silla-founded',
   'silla-tang-war-670-676',
   'silla-ended-935',
@@ -42,6 +43,7 @@ const expectedEventIds = [
   'former-liang-founded',
   'changan-former-qin',
   'western-liang-state-founded',
+  'western-liang-jiuquan-fell-420',
   'western-liang-ended-421',
   'tibetan-founded',
   'tibetan-yalong-center',
@@ -99,12 +101,12 @@ describe('event time evidence review', () => {
     const report = reviewEventTimeCoverage();
 
     expect(report.isComplete).toBe(true);
-    expect(report.totalReviewed).toBe(85);
+    expect(report.totalReviewed).toBe(87);
     expect(report.missingEventIds).toEqual([]);
     expect(report.missingDetailEventIds).toEqual([]);
     expect(report.sourceMismatches).toEqual([]);
     expect(report.precisionMismatches).toEqual([]);
-    expect(report.statusCounts).toEqual({ confirmed: 49, approximate: 36, unknown: 0 });
+    expect(report.statusCounts).toEqual({ confirmed: 51, approximate: 36, unknown: 0 });
   });
 
   it('derives evidence sources and precision from the existing detail and event records', () => {

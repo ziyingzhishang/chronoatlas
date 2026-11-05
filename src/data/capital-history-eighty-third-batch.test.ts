@@ -4,24 +4,30 @@ import { capitalHistory } from './capital-history';
 import { sourceById } from './sources';
 
 const unresolvedIds = [
+  'yan_warring',
+  'later_yan',
   'xiongnu',
   'tuyuhun',
   'turkic',
   'xia_early',
   'shang',
+  'qin_state',
   'western_qin',
+  'western_liang',
   'northern_yuan',
   'ming_southern',
+  'jin_hedong',
+  'silla',
 ] as const;
 
 const recordsFor = (polityId: string) => capitalHistory.filter((record) => record.polityId === polityId);
 
 describe('eighty-third-batch capital evidence boundary audit', () => {
-  it('keeps the eight unresolved cases reproducibly outside qualified coverage', () => {
+  it('keeps all fourteen unresolved cases reproducibly outside qualified coverage', () => {
     const report = getCapitalCoverageReport();
 
-    expect(report.summary.totalPolities).toBe(87);
-    expect(report.summary.qualifiedPolities).toBe(79);
+    expect(report.summary.totalPolities).toBe(88);
+    expect(report.summary.qualifiedPolities).toBe(74);
     expect(report.summary.gapPolityIds).toEqual(expect.arrayContaining([...unresolvedIds]));
     expect(report.summary.gapPolityIds).toHaveLength(unresolvedIds.length);
 
@@ -51,10 +57,15 @@ describe('eighty-third-batch capital evidence boundary audit', () => {
       expect(records.every((record) => record.confidence === 'low'), polityId).toBe(true);
     }
 
-    expect(recordsFor('western_qin').some((record) => record.role === 'de_facto' && record.status === 'actual')).toBe(true);
+    expect(recordsFor('western_qin')).toEqual(expect.arrayContaining([
+      expect.objectContaining({ placeId: 'fuhan', validFrom: 412, validTo: 431, role: 'primary', status: 'actual', confidence: 'low' }),
+    ]));
     expect(recordsFor('western_qin').some((record) => record.confidence === 'low')).toBe(true);
     expect(recordsFor('ming_southern').every((record) => record.status === 'actual')).toBe(true);
     expect(recordsFor('ming_southern').every((record) => record.role !== 'primary' || record.status !== 'formal')).toBe(true);
+    expect(recordsFor('silla')).toEqual(expect.arrayContaining([
+      expect.objectContaining({placeId:'wolseong_silla',validFrom:101,validTo:377,role:'disputed',status:'uncertain',confidence:'low'}),
+    ]));
   });
 
   it('requires every unresolved record to remain source-backed and modern-place traceable', () => {

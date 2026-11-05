@@ -1,0 +1,135 @@
+{
+  "decisionIds": [
+    "gap-later_yan-384-386",
+    "gap-later_qin-384-386"
+  ],
+  "yearCount": 6,
+  "years": [
+    {
+      "polityId": "later_yan",
+      "year": 384,
+      "mapExpression": "event-location-point",
+      "centerPlaceId": "xingyang",
+      "territoryBoundary": null,
+      "conclusion": "慕容垂至荥阳，群下推其称燕王，后燕进入建政阶段。",
+      "evidenceGap": "《资治通鉴》记慕容垂至荥阳称燕王；地图点沿用荥阳故城区域级近似定位，只表示建政事件发生区域，不定位精确现场、全年政治中心或控制疆界。",
+      "sourceIds": [
+        "later-yan-qin-founding-384-386-primary-sources",
+        "xingyang-historical-city-location-study",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "polityId": "later_yan",
+      "year": 385,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "zhongshan_lunu",
+      "territoryBoundary": null,
+      "conclusion": "后燕围邺未下，四月撤围；年末慕容垂北至中山并始定都。年内战事与驻军行动持续变化。",
+      "evidenceGap": "《资治通鉴》记围邺未下、撤围和年末定都中山；定都事件支持年末中心参照，但不足以连续复原全年中心变化或直接控制边界。定州城区点不定位古城和城垣，也不表示疆界。",
+      "sourceIds": [
+        "later-yan-qin-founding-384-386-primary-sources",
+        "later-yan-zhongshan-location-gazetteer",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "polityId": "later_yan",
+      "year": 386,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "zhongshan_lunu",
+      "territoryBoundary": null,
+      "conclusion": "慕容垂在中山称帝，后燕制度与政治中心阶段发生转换。",
+      "evidenceGap": "点位仅为今定州城区级低置信度区域参照，不定位中山古城或城垣；称帝和中心迁转不能证明全年控制范围或边界。",
+      "sourceIds": [
+        "later-yan-qin-founding-384-386-primary-sources",
+        "later-yan-zhongshan-location-gazetteer",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "polityId": "later_qin",
+      "year": 384,
+      "mapExpression": "historical-conclusion-only",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "conclusion": "姚苌在渭北马牧起兵，自称大将军、大单于、万年秦王，建元白雀。",
+      "evidenceGap": "《陕西省志·大事记》将马牧释为“渭北牧马之地”，可确认渭河北侧区域，但未给出具体地望、遗址或坐标；起兵和称号不等于已能确定的全年疆界。",
+      "sourceIds": [
+        "later-yan-qin-founding-384-386-primary-sources",
+        "shanxi-chronicle-weibei-mamu"
+      ]
+    },
+    {
+      "polityId": "later_qin",
+      "year": 385,
+      "mapExpression": "historical-conclusion-only",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "conclusion": "姚苌年初留将攻新平、自击安定；四月新平守将苟辅粮尽出降后遭坑杀；十月西燕军攻新平南，战败降后秦。前秦、西燕与后秦多线交战，战事结局不代表全年稳定控制。",
+      "evidenceGap": "《彬县志》记漆县城在今县城西南塬上并称毁于姚苌之乱（约385年），《直隶邠州志》则将汉漆县故城考在今彬州治所附近；两者支持彬州区域地望，但都没有提供可复核坐标、古城界址或本年各次攻守的具体地点，因此不标全年中心或事件点。西燕交战、前秦攻守及部众归附也不能合并为一条全年直接控制区；不将长安提前作后秦都城。",
+      "sourceIds": [
+        "later-yan-qin-founding-384-386-primary-sources",
+        "binxian-gazetteer-qixian-site",
+        "zhili-binzhou-gazetteer-qi-county-location"
+      ]
+    },
+    {
+      "polityId": "later_qin",
+      "year": 386,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "conclusion": "姚苌取得长安后称帝、定国号大秦；年内仍向安定等地用兵。",
+      "evidenceGap": "长安点仅表示取得长安后的D级政治中心参照；年内持续用兵，不能据此推断全年稳定控制范围或疆界。",
+      "sourceIds": [
+        "later-yan-qin-founding-384-386-primary-sources",
+        "modern-geography-reference"
+      ]
+    }
+  ],
+  "coexistenceNotes": [
+    "384年后燕、后秦形成，与仍然并存的前秦、东晋、西燕分层记录；385年西秦建政后同断面政权增加；386年代（北魏）与后凉形成，和西燕、前秦、东晋、西秦、后燕、后秦并存。HUD逐年列出并存政权；西燕年度结论见docs/audits/out-of-ledger/western-yan-384-394.json。西燕仅在385年显示长安阶段中心点、386年显示长子年末阶段中心点，不显示疆域面；并存文字不表示边界已校定或彼此不重叠。",
+    "后燕与后秦在384—386年并存，分别记录各自的称号、中心和军事行动；没有足够空间依据时不以现代边界裁切或消解潜在控制重叠。",
+    "联盟、名义声索、战场和军事影响不与直接控制混为一谈。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "later-yan-qin-founding-384-386-primary-sources",
+      "use": "《资治通鉴》卷105—106用于逐年核对慕容垂于荥阳称燕王、385年围邺未下后撤围并于年末定都中山、386年称帝，以及姚苌在渭北马牧起兵、取得长安并于年内进军安定等时序；《晋书》卷111《慕容垂载记》、卷116《姚苌载记》作传记交叉核对。用于历史结论，不据战事推导边界。"
+    },
+    {
+      "id": "shanxi-chronicle-weibei-mamu",
+      "use": "《陕西省志·大事记》第一卷将马牧解释为“渭北牧马之地”，补充384年姚苌起兵地点的区域判断；该材料未给出马牧的具体地望或坐标，不据此添加精确地图点或疆域。"
+    },
+    {
+      "id": "binxian-gazetteer-qixian-site",
+      "use": "《彬县志》称漆县城在今县城西南塬上，并记约385年毁于姚苌之乱；只作为新平相关战事的区域候选线索，不足以确认具体城址和各事件位置。"
+    },
+    {
+      "id": "zhili-binzhou-gazetteer-qi-county-location",
+      "use": "《直隶邠州志》卷二引《后汉书》注、《元和郡县志》等，将汉漆县故城考在今彬州治所附近；未提供坐标或界址。与《彬县志》的西南塬说法共同支持彬州区域地望，但不足以确定385年各次新平战事的地图位置。"
+    },
+    {
+      "id": "later-yan-zhongshan-location-gazetteer",
+      "use": "《晋书》卷9记386年慕容垂于中山即帝位；《畿辅通志》将卢奴故城定位于今定州治所，并记后燕沿用旧宫、在中山小城南营建都城。支持386年增加定州城区级低置信度参照点，不支持精确古城坐标或疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "项目中成都、洛阳、邺、长安与荥阳等现代地点参照只作城市或区域级定位；荥阳点复用项目既有楚汉前线近似点，并以历史地望研究交叉确认古荥镇一带的位置关系，不指认后燕称王的精确现场。均不代表古城垣或疆界；资料使用权和公开展示条件另行核查。"
+    },
+    {
+      "id": "xingyang-historical-city-location-study",
+      "use": "《释析〈民国荥阳县城图〉》考证历史荥阳故城位于今郑州市惠济区古荥镇周围；只支持古荥区域级地点对应，不提供慕容垂称王的精确现场或疆界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "后燕相邻 Cliopatria v0.2.1 record 1553（clio-1553-later_yan-387）来源时段为387—389年；后秦相邻 record 1555（clio-1555-later_qin-387）为387—393年。两者均为低置信度、控制性质未定的时段模型，只用于确认不覆盖384—386建政段，不向前回填。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "6条年度记录均不含确定疆域边界；384年后燕新增荥阳事件区域点，385年末后燕中山、386年后燕中山与后秦长安保留D级中心点，其余年份为历史结论。后秦385年细化新平、安定战事，但古城地点仅有西南塬区域线索，未新增事件点。所有点均不代表控制面；中山为定州城区级近似，荥阳为荥阳故城区域级近似，使用权与公开展示条件待审核。",
+    "本审核不替代来源使用权、现代底图许可或公开地图合规审核。"
+  ]
+}

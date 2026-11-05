@@ -1,0 +1,89 @@
+{
+  "decisionId": "gap-sui-581-586",
+  "yearCount": 6,
+  "years": [
+    {
+      "polityId": "sui",
+      "year": 581,
+      "conclusion": "隋受禅建立，以长安为政治中心；陈朝仍在江南并存。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "modern-geography-reference"],
+      "evidenceGap": "建政与长安中心可确认，陈隋并存且史料未提供足以复原全年直接控制线的依据；疆域面留空。"
+    },
+    {
+      "polityId": "sui",
+      "year": 582,
+      "conclusion": "隋以长安为政治中心，开皇二年开始营建大兴新都；迁都尚未完成。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "modern-geography-reference"],
+      "evidenceGap": "营建新都的城址不能代替疆界；陈仍存，边界面无充分证据。"
+    },
+    {
+      "polityId": "sui",
+      "year": 583,
+      "conclusion": "隋迁入新建的大兴城并以之为都；陈朝仍存。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "daxing",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "sui-tang-changan-gis-study", "modern-geography-reference"],
+      "evidenceGap": "城区范围资料只支持低置信度区域参照点，边界框中点不等于大兴宫或考古城址中心；也不提供陈隋政权边界。"
+    },
+    {
+      "polityId": "sui",
+      "year": 584,
+      "conclusion": "隋以大兴为都，陈隋仍并存，隋尚未统一江南。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "daxing",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "sui-tang-changan-gis-study", "modern-geography-reference"],
+      "evidenceGap": "政治中心点不表示隋的完整控制区；疆域面留空。"
+    },
+    {
+      "polityId": "sui",
+      "year": 585,
+      "conclusion": "隋中央政治以大兴为中心；陈朝仍存，南北统一尚未发生。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "daxing",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "sui-tang-changan-gis-study", "modern-geography-reference"],
+      "evidenceGap": "现有逐年资料支持都城中心和并存关系，不足以复原全年精确疆界；不以隋后期版图回填。"
+    },
+    {
+      "polityId": "sui",
+      "year": 586,
+      "conclusion": "隋中央政治继续以大兴为中心，陈朝仍存。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "daxing",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian", "sui-tang-changan-gis-study", "modern-geography-reference"],
+      "evidenceGap": "城区范围资料只支持低置信度区域参照点，边界框中点不等于大兴宫或考古城址中心；589年灭陈后的统一疆域不得倒填。"
+    }
+  ],
+  "coexistenceNotes": [
+    "581—586年陈隋并存；中心点不表示疆界，不能将隋后期统一版图回填至本段。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian",
+      "use": "《资治通鉴》卷175核对隋受禅、陈隋并存和大兴营建迁都时序；支持中心与政权关系判断，不直接支持年度边界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目长安区域近似坐标表达D级政治中心点。583年后虽以大兴为都，现有点位无法区分隋大兴城与汉长安城的精确中心或城垣。"
+    },
+    {
+      "id": "sui-tang-changan-gis-study",
+      "use": "引用研究报告的隋唐长安城区范围；其边界框中点仅作为583—586年大兴的低置信度区域参照，不指认宫城中心、考古城址中心或疆界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "581—586年疆域面留空；隋统一南方发生于589年，不得回填。",
+    "582年营建、583年迁都已分别记录，现有点位仍是长安区域近似参照，不是古城垣几何。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

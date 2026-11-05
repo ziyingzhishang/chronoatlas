@@ -1,0 +1,220 @@
+{
+  "decisionId": "gap-republic-1916-1929",
+  "yearCount": 14,
+  "years": [
+    {
+      "polityId": "republic",
+      "year": 1916,
+      "conclusion": "袁世凯6月去世，黎元洪继任北京政府大总统；北洋派系失去共同领袖，中央名义仍在北京，地方军政控制开始明显分裂。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "nopss-beiyang-government-1916-1928",
+        "frus-yuan-shikai-death-1916"
+      ],
+      "evidenceGap": "北京为中央政权政治中心不等于全国由北京直接控制；没有可核实的全国年度直辖边界。",
+      "mapEventIds": [
+        "yuan-shikai-died-1916"
+      ]
+    },
+    {
+      "polityId": "republic",
+      "year": 1917,
+      "conclusion": "北京政府继续以北京为政治中心；广州护法军政府成立，南北出现竞争性政治中心，不能合并为一个连续控制区。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928"
+      ],
+      "evidenceGap": "北京和广州代表并存政权中心；政权名义、军事支持与各省实际行政控制不一致。",
+      "mapEventIds": [
+        "guangzhou-protection-government-1917"
+      ]
+    },
+    {
+      "polityId": "republic",
+      "year": 1918,
+      "conclusion": "北京政府仍是列强承认的中央政府之一，广州南方政权及地方军政势力继续并存；中央承认不代表全国直接控制。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "nopss-beiyang-government-1916-1928"
+      ],
+      "evidenceGap": "可确认的政治中心不能复原南北政府和地方军队之间的年度控制线。"
+    },
+    {
+      "polityId": "republic",
+      "year": 1919,
+      "conclusion": "北京仍是北京政府中心，南方反对派和区域军政力量持续存在；外交代表权、五四运动及国内控制空间各属不同层次。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928"
+      ],
+      "evidenceGap": "政治中心和国际承认不能作为各省当年稳定直辖的空间证据。"
+    },
+    {
+      "polityId": "republic",
+      "year": 1920,
+      "conclusion": "北京政府中心仍在北京；直皖战争等北洋派系冲突改变北方权力格局，南方与各省地方势力仍不在统一稳定的中央控制下。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "guangzhou-cppcc-warlord-wars-1920-1924",
+        "nopss-beiyang-government-1916-1928"
+      ],
+      "evidenceGap": "战役胜负和军阀势力消长不等于全年行政接收或闭合边界。"
+    },
+    {
+      "polityId": "republic",
+      "year": 1921,
+      "conclusion": "孙中山在广州就任非常大总统，广州南方政权与北京政府并立；仅以北京和广州政治中心点表达。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928"
+      ],
+      "evidenceGap": "广州政权与北京政府的实际军事、行政控制范围不能由两个城市点推成边界。",
+      "mapEventIds": [
+        "sun-extraordinary-president-guangzhou-1921"
+      ]
+    },
+    {
+      "polityId": "republic",
+      "year": 1922,
+      "conclusion": "北京政府仍以北京为中央政治中心，南方政权及直奉等北洋军系各自掌握区域军力；年度战事改变势力关系而未形成全国统一控制。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "nopss-beiyang-government-1916-1928",
+        "guangzhou-cppcc-warlord-wars-1920-1924"
+      ],
+      "evidenceGap": "派系战争的战线与省级行政、税收和驻军控制并不重合，无法形成可复核的全国年度多边界。"
+    },
+    {
+      "polityId": "republic",
+      "year": 1923,
+      "conclusion": "北京政府与广州南方政治力量仍并存，孙中山在广州建立陆海军大元帅大本营；地方政权和军队保有明显自主权。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928"
+      ],
+      "evidenceGap": "中央制度和政权中心资料不支持北京或广州对全境的直接控制边界。"
+    },
+    {
+      "polityId": "republic",
+      "year": 1924,
+      "conclusion": "第二次直奉战争和北京政变后，北京政府的最高权力结构再次变化，段祺瑞出任临时执政；北方与南方及地方军政体系仍分裂。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "nopss-beiyang-government-1916-1928",
+        "guangzhou-cppcc-warlord-wars-1920-1924"
+      ],
+      "evidenceGap": "北京权力更迭、战事和各地接管并非同一时间过程，不可推定全年全国疆界。"
+    },
+    {
+      "polityId": "republic",
+      "year": 1925,
+      "conclusion": "北京政府和南方政治军事中心继续并立；孙中山去世后，广州国民党力量继续组织政府与军队，地方军阀仍控制区域行政和驻军。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "mod-guangzhou-government-1925"
+      ],
+      "evidenceGap": "北京政治中心与广州区域政权均不能代表各自或全国的全年直接统治范围。"
+    },
+    {
+      "polityId": "republic",
+      "year": 1926,
+      "conclusion": "北京政府仍控制中央名义及部分北方区域；国民革命军从广州出师北伐，随着战事推进控制和联盟范围变化，不存在稳定的全年统一疆域。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "mod-northern-expedition-1926"
+      ],
+      "evidenceGap": "北伐军推进、地方响应和中央政府名义均不代表全年的连续行政控制边界。",
+      "mapEventIds": [
+        "northern-expedition-launched-1926"
+      ]
+    },
+    {
+      "polityId": "republic",
+      "year": 1927,
+      "conclusion": "北京政府仍在北京；年内武汉与南京国民政府阶段性并存并发生宁汉分裂与合作，数个中心争夺民国中央代表权。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "beijing",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "beijing-minguo-periodization-1912-1928",
+        "taiwan-archives-nationalist-split-1927"
+      ],
+      "evidenceGap": "北京、武汉、南京代表不同时段的竞争性政权中心；北伐战线、事件点和政治声明不构成年度控制边界。",
+      "mapEventIds": [
+        "wuhan-national-government-1927",
+        "nanjing-government-founded-1927"
+      ]
+    },
+    {
+      "polityId": "republic",
+      "year": 1928,
+      "conclusion": "6月南京国民政府接收北平，张作霖退回东北；12月东北易帜后国民政府取得名义统一，但地方实力派仍掌握重要军政权力。",
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "yingtian",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dpm-nanjing-government-beiping-1928",
+        "nopss-beiyang-government-1916-1928",
+        "nlpi-northeast-reflag-1928"
+      ],
+      "evidenceGap": "接收北平和东北易帜相隔半年；东北和各地实际军政权力未在同一时点转为南京直接控制。",
+      "mapEventIds": [
+        "northeast-reflag-1928"
+      ]
+    },
+    {
+      "polityId": "republic",
+      "year": 1929,
+      "conclusion": "南京国民政府作为中央政治中心延续，1928年形式统一后地方实力派仍掌握区域军队、财政及行政；本年不绘制全国统一直辖疆域面。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "yingtian",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "nlpi-northeast-reflag-1928",
+        "beijing-minguo-periodization-1912-1928"
+      ],
+      "evidenceGap": "形式上的统一及中央政府名义不足以证明各地区已由南京稳定直接控制。"
+    }
+  ],
+  "coexistenceNotes": [
+    "1917年广州护法军政府与北京政府并立；1921年广州非常大总统政权与北京政府并立。",
+    "1927年北京政府、武汉国民政府、南京国民政府在年内并存或先后合作；不裁剪、不拼接其军事影响范围。",
+    "1928年6月接收北平与12月东北易帜属于不同阶段；东北易帜表示名义归属变化，不等于各地实际军政控制同时移交。"
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "1916—1927年北京点表示北京政府中央政治中心；其对全国的法理声索、国际承认和地区实际控制分开处理。",
+    "广州、武汉、南京事件点表示相应竞争政府阶段的城市中心，不代表周边省份边界或全年控制。",
+    "1928—1929年南京点表示国民政府中央政治中心；形式统一不推定为全国直接行政控制。",
+    "本段14个公历年均不含政权疆域面；所有城市点仅作政治中心或事件定位。来源使用权及公开地图要求另行核对。"
+  ]
+}

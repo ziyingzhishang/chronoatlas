@@ -1,0 +1,41 @@
+{
+  "decisionId": "gap-zhou_eastern--256--256",
+  "yearCount": 1,
+  "years": [
+    {
+      "year": -256,
+      "conclusion": "按《史记》和《资治通鉴》传统口径，周赧王与周王室祭祀秩序在本年终结；本年仅显示洛阳城市级中心参照。此结论不把前249年东周君国的终止提前。",
+      "mapExpression": "capital-center-point",
+      "royalDomainBoundary": null,
+      "sourceIds": [
+        "shiji-zhou-benji-final-256",
+        "zizhi-tongjian-vol5-256",
+        "zhou-termination-chronology-255-256",
+        "modern-geography-reference"
+      ],
+      "chronologyNote": "部分研究讨论前255/前256之别；项目采用前256年口径。",
+      "centerPlaceId": "luoyang",
+      "evidenceGap": "史籍支持周王室于本年终止及洛阳中心参照，但没有提供前256年全年王畿直接控制边界；不把前249年东周君国终止提前，也不从邻年轮廓推定本年王畿。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "shiji-zhou-benji-final-256",
+      "use": "《史记》卷四《周本纪》记周赧王五十九年秦攻西周、周君与赧王终局及周民东迁；用于支持周王室终局的传统纪年，不提供王畿边界或君王最后驻地的精确坐标。"
+    },
+    {
+      "id": "zizhi-tongjian-vol5-256",
+      "use": "《资治通鉴》卷五用于项目采用前256年编年口径与周王室终结事件；不将投降叙事推导为全年连续实控界线。"
+    },
+    {
+      "id": "zhou-termination-chronology-255-256",
+      "use": "Early China论文用于记录西周兼并节点的前255/前256纪年异说；项目沿用前256年台账口径，不把纪年选择当作空间边界证据。"
+    }
+  ],
+  "reviewLimitations": [
+    "前256年周王室疆域面继续留空，仅洛阳为都城城市级参照。",
+    "周王室祭祀秩序终结与前249年东周君国终止分别建模；不合并为一个实体或提前终止。",
+    "传统纪年与前255/前256异说已登记；来源核对已完成，独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ]
+}

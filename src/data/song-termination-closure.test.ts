@@ -41,7 +41,7 @@ describe('Southern Song termination closure', () => {
     expect(people.find((item) => item.id === 'lu-xiufu')).toBeDefined();
     expect(personDetails.find((item) => item.personId === 'zhao-bing')?.keyEvents).toContain('southern-song-ended-1279');
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'linan', validFrom: 1127, validTo: 1279 }),
+      expect.objectContaining({ placeId: 'linan', validFrom: 1138, validTo: 1279 }),
     ]));
     expect(polity?.eventIds).toContain('southern-song-ended-1279');
     expect(polity?.heritageIds).toContain('linan-southern-song-imperial-city-site');

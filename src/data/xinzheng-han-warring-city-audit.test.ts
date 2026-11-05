@@ -8,6 +8,8 @@ import { people } from './people';
 import { places } from './places';
 import { polities } from './polities';
 import { sourceById } from './sources';
+import hanWarringTerminationAudit from '../../docs/audits/topics/han-warring-termination-230.json';
+import coverageDecisions from './coverage-decisions.json';
 
 describe('新郑韩国城市视角历史链审计', () => {
   it('keeps the Warring States Han capital, Zhenghan archaeology and Qin transition connected to modern Xinzheng', () => {
@@ -20,7 +22,18 @@ describe('新郑韩国城市视角历史链审计', () => {
     const eventIds = new Set(events.map((event) => event.id));
     const peopleIds = new Set(people.map((person) => person.id));
 
-    expect(place).toMatchObject({ modernName: '新郑市', modernAdministrativeUnit: '河南省郑州市新郑市' });
+    expect(place).toMatchObject({
+      modernName: '新郑市',
+      modernAdministrativeUnit: '河南省郑州市新郑市',
+      pointType: 'regional-reference',
+      mappingStatus: 'regional',
+      confidence: 'low',
+    });
+    expect(place?.sourceIds).toContain('xinzheng-government-history');
+    expect(hanWarringTerminationAudit.years[0].sourceIds).toContain('xinzheng-government-history');
+    expect(coverageDecisions.find((decision) => decision.id === 'gap-han_warring--230--230')?.citationIds)
+      .toContain('xinzheng-government-history');
+    expect(sourceById['xinzheng-government-history']?.urlOrCitation).toBe('https://www.xinzheng.gov.cn/lsyg.jhtml');
     expect(capital).toMatchObject({ polityId: 'han_warring', placeId: 'xinzheng', validFrom: -403, validTo: -230 });
     expect(asset).toMatchObject({ placeId: 'xinzheng', constructionFrom: -403, constructionTo: -230 });
     expect(asset?.sourceIds.every((sourceId) => sourceIds.has(sourceId))).toBe(true);

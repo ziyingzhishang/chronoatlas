@@ -14,18 +14,27 @@ import { getPolityDetail } from './polity-details';
 import { polities } from './polities';
 import { places } from './places';
 import { sourceById, sourceNotes } from './sources';
+import { getHistoricalState } from '../domain/history-state';
+import { buildMapData } from '../map/history-map';
 
 const terminationEventId = 'western-liang-ended-421';
+const jiuquanFallEventId = 'western-liang-jiuquan-fell-420';
 const closureClaimIds = [
   'claim-li-xin-ruled-western-liang-closure',
-  'claim-li-xin-participated-western-liang-ended-421',
-  'claim-li-xin-enemy-juqu-mengxun-termination-421',
+  'claim-li-xin-participated-western-liang-jiuquan-fall-420',
+  'claim-li-xin-enemy-juqu-mengxun-western-liang-420',
+  'claim-juqu-mengxun-participated-western-liang-jiuquan-fall-420',
   'claim-juqu-mengxun-participated-western-liang-ended-421',
   'claim-northern-liang-succeeded-western-liang-421',
 ];
 
 describe('Western Liang termination closure', () => {
-  it('records the 421 Jiuquan termination and Northern Liang succession', () => {
+  it('separates the 420 Jiuquan loss from the 421 Dunhuang termination', () => {
+    const jiuquanFall = events.find((item) => item.id === jiuquanFallEventId);
+    expect(jiuquanFall).toMatchObject({id: jiuquanFallEventId, year: 420, placeId: 'jiuquan'});
+    expect(getEventDetail(jiuquanFallEventId)?.participants.map((participant) => participant.personId))
+      .toEqual(expect.arrayContaining(['li-xin', 'juqu-mengxun']));
+
     const event = events.find((item) => item.id === terminationEventId);
     const detail = getEventDetail(terminationEventId);
     const review = eventTimeReview.find((item) => item.eventId === terminationEventId);
@@ -33,16 +42,16 @@ describe('Western Liang termination closure', () => {
     expect(event).toMatchObject({
       id: terminationEventId,
       year: 421,
-      placeId: 'jiuquan',
+      placeId: 'dunhuang',
       datePrecision: 'year',
     });
     expect(detail).toMatchObject({
       eventId: terminationEventId,
       polityIds: expect.arrayContaining(['western_liang', 'northern_liang']),
-      locationIds: expect.arrayContaining(['jiuquan']),
+      locationIds: expect.arrayContaining(['dunhuang']),
     });
     expect(detail?.participants.map((participant) => participant.personId)).toEqual(
-      expect.arrayContaining(['li-xin', 'juqu-mengxun']),
+      expect.arrayContaining(['juqu-mengxun']),
     );
     expect(review).toMatchObject({
       eventId: terminationEventId,
@@ -52,17 +61,42 @@ describe('Western Liang termination closure', () => {
     });
   });
 
+  it('renders the 421 Dunhuang termination event without extending Western Liang territory', () => {
+    const state = getHistoricalState(421);
+    const map = buildMapData(state);
+
+    expect(map.events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [94.66, 40.14] },
+      properties: expect.objectContaining({ entityId: terminationEventId }),
+    }));
+    expect(map.boundaries.features.filter((feature) => feature.properties?.polityId === 'western_liang'
+      && feature.geometry.type !== 'Point')).toHaveLength(0);
+  });
+
+  it('renders the 420 Jiuquan loss as an event while leaving the annual Western Liang map unfilled', () => {
+    const state = getHistoricalState(420);
+    const map = buildMapData(state);
+
+    expect(map.events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [98.49, 39.74] },
+      properties: expect.objectContaining({ entityId: jiuquanFallEventId }),
+    }));
+    expect(state.boundaries.some((boundary) => boundary.polityId === 'western_liang')).toBe(false);
+    expect(map.boundaries.features.some((feature) => feature.properties?.polityId === 'western_liang')).toBe(false);
+  });
+
   it('keeps the 400—404 Dunhuang and 405—421 Jiuquan capital phases distinct', () => {
     const capitals = capitalHistory.filter((record) => record.polityId === 'western_liang');
     expect(capitals).toEqual(expect.arrayContaining([
       expect.objectContaining({ placeId: 'dunhuang', validFrom: 400, validTo: 404 }),
-      expect.objectContaining({ placeId: 'jiuquan', validFrom: 405, validTo: 421 }),
+      expect.objectContaining({ placeId: 'jiuquan', validFrom: 405, validTo: 420 }),
+      expect.objectContaining({ placeId: 'dunhuang', validFrom: 421, validTo: 421 }),
     ]));
-    expect(capitals).toHaveLength(2);
+    expect(capitals).toHaveLength(3);
     expect(places.find((place) => place.id === 'dunhuang')).toMatchObject({ modernAdministrativeUnit: '甘肃省酒泉市敦煌市' });
     expect(places.find((place) => place.id === 'jiuquan')).toMatchObject({ modernAdministrativeUnit: '甘肃省酒泉市' });
     expect(getPolityDetail('western_liang')).toMatchObject({
-      eventIds: expect.arrayContaining(['western-liang-state-founded', terminationEventId]),
+      eventIds: expect.arrayContaining(['western-liang-state-founded', jiuquanFallEventId, terminationEventId]),
       heritageIds: expect.arrayContaining(['dunhuang-western-liang-city-site', 'jiuquan-western-liang-city-site']),
       principalFigureIds: expect.arrayContaining(['li-hao', 'li-xin']),
     });
@@ -77,9 +111,9 @@ describe('Western Liang termination closure', () => {
     });
     expect(getPersonDetail('li-hao')?.keyEvents).toEqual(expect.arrayContaining(['western-liang-state-founded']));
     expect(getPersonDetail('li-xin')).toMatchObject({
-      keyEvents: expect.arrayContaining([terminationEventId]),
+      keyEvents: expect.arrayContaining([jiuquanFallEventId]),
       offices: expect.arrayContaining([
-        expect.objectContaining({ polityId: 'western_liang', placeId: 'jiuquan', validFrom: 417, validTo: 421, datePrecision: 'range' }),
+        expect.objectContaining({ polityId: 'western_liang', placeId: 'jiuquan', validFrom: 417, validTo: 420, datePrecision: 'range' }),
       ]),
     });
 
@@ -88,7 +122,7 @@ describe('Western Liang termination closure', () => {
     expect(dunhuang?.associatedEvents).toEqual(expect.arrayContaining(['western-liang-state-founded', terminationEventId]));
     expect(jiuquan).toMatchObject({
       associatedPolities: expect.arrayContaining(['western_liang', 'northern_liang']),
-      associatedEvents: expect.arrayContaining([terminationEventId]),
+      associatedEvents: expect.arrayContaining([jiuquanFallEventId]),
       associatedPeople: expect.arrayContaining(['li-xin', 'juqu-mengxun']),
     });
     expect(heritageAssets.find((asset) => asset.id === 'jiuquan-western-liang-city-site')).toMatchObject({
@@ -102,9 +136,10 @@ describe('Western Liang termination closure', () => {
     const closureClaims = closureClaimIds.map((id) => claims.find((claim) => claim.id === id));
     expect(closureClaims.every(Boolean)).toBe(true);
     expect(closureClaims).toEqual(expect.arrayContaining([
-      expect.objectContaining({ subjectId: 'li-xin', predicate: 'ruled', objectId: 'western_liang', validFrom: 417, validTo: 421 }),
-      expect.objectContaining({ subjectId: 'li-xin', predicate: 'participated-in', objectId: terminationEventId, validFrom: 421, validTo: 421 }),
-      expect.objectContaining({ subjectId: 'li-xin', predicate: 'enemy-of', objectId: 'juqu-mengxun', validFrom: 421, validTo: 421 }),
+      expect.objectContaining({ subjectId: 'li-xin', predicate: 'ruled', objectId: 'western_liang', validFrom: 417, validTo: 420 }),
+      expect.objectContaining({ subjectId: 'li-xin', predicate: 'participated-in', objectId: jiuquanFallEventId, validFrom: 420, validTo: 420 }),
+      expect.objectContaining({ subjectId: 'li-xin', predicate: 'enemy-of', objectId: 'juqu-mengxun', validFrom: 420, validTo: 420 }),
+      expect.objectContaining({ subjectId: 'juqu-mengxun', predicate: 'participated-in', objectId: jiuquanFallEventId, validFrom: 420, validTo: 420 }),
       expect.objectContaining({ subjectId: 'juqu-mengxun', predicate: 'participated-in', objectId: terminationEventId, validFrom: 421, validTo: 421 }),
       expect.objectContaining({ subjectId: 'northern_liang', predicate: 'succeeded', objectId: 'western_liang', validFrom: 421, validTo: 421 }),
     ]));

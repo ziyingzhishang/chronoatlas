@@ -10,7 +10,7 @@ import { sourceById } from './sources';
 
 const stages = [
   { placeId: 'dunhuang', heritageId: 'dunhuang-western-liang-city-site', eventIds: ['western-liang-state-founded', 'western-liang-ended-421'], personIds: ['li-hao', 'li-xin'] },
-  { placeId: 'jiuquan', heritageId: 'jiuquan-western-liang-city-site', eventIds: ['western-liang-state-founded', 'western-liang-ended-421'], personIds: ['li-hao', 'li-xin', 'juqu-mengxun'] },
+  { placeId: 'jiuquan', heritageId: 'jiuquan-western-liang-city-site', eventIds: ['western-liang-state-founded', 'western-liang-jiuquan-fell-420'], personIds: ['li-hao', 'li-xin', 'juqu-mengxun'] },
 ] as const;
 
 describe('西凉敦煌—酒泉城市视角历史链审计', () => {

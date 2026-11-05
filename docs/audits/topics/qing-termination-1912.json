@@ -1,0 +1,22 @@
+{
+  "decisionId": "gap-qing-1912-1912",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "qing",
+      "year": 1912,
+      "conclusion": "2月12日清帝颁布退位诏书，清朝中央皇权终止；中华民国临时政府已于1月1日在南京成立，之后的南北政权交接并非同一瞬间完成。",
+      "mapExpression": "leave-unfilled",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["dpm-xuantong-abdication", "chnmuseum-xuantong-abdication"],
+      "evidenceGap": "文献支持退位日期和政权转换，但不能说明清朝在1912年全年的实际控制区域；诏书的全国统一表述属于政治主张，不等于已完成空间接收。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "1912年清疆域面保持空白，不把1911年断面延用全年。",
+    "北京仅作为退位事件的城市近似定位，不表示诏书签署的具体建筑或空间边界。",
+    "中华民国成立、清帝退位、优待条件和各地政权接收分别核对；公开展示和来源使用条件另行审核。"
+  ]
+}

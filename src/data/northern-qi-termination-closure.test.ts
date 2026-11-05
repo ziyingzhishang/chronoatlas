@@ -7,6 +7,8 @@ import { getHeritageDetail } from './heritage-details';
 import { people } from './people';
 import { getPersonDetail } from './person-details';
 import { getPolityDetail } from './polity-details';
+import { getHistoricalState } from '../domain/history-state';
+import { buildMapData } from '../map/history-map';
 
 describe('Northern Qi termination closure', () => {
   it('records the 577 termination and Northern Zhou succession at Ye', () => {
@@ -30,6 +32,22 @@ describe('Northern Qi termination closure', () => {
       expect.arrayContaining(['gao-heng', 'yuwen-yong']),
     );
     expect(review).toMatchObject({ status: 'confirmed', expectedPrecision: 'year', timelineStrategy: 'year-marker' });
+  });
+
+  it('renders the Ye termination event while leaving the annual Northern Qi boundary unfilled', () => {
+    const state = getHistoricalState(577);
+    const map = buildMapData(state);
+
+    expect(map.events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [114.37, 36.33] },
+      properties: expect.objectContaining({ entityId: 'northern-qi-ended-577' }),
+    }));
+    expect(map.boundaries.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [114.37, 36.33] },
+      properties: expect.objectContaining({ polityId: 'qi_northern', evidenceLevel: 'D', derivation: 'control-centers' }),
+    }));
+    expect(map.boundaries.features.some((feature) => feature.properties?.polityId === 'qi_northern'
+      && feature.geometry.type !== 'Point')).toBe(false);
   });
 
   it('keeps Ye capital and archaeological layers connected after Northern Qi ends', () => {

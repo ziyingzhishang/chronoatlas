@@ -11,7 +11,7 @@ describe('tenth-batch unresolved capital quality audit', () => {
     expect(records).toHaveLength(2);
     expect(records.map(({ validFrom, validTo }) => [validFrom, validTo])).toEqual([
       [552, 630],
-      [682, 744],
+      [682, 743],
     ]);
     expect(records.every((record) => record.placeId === 'uhtuken')).toBe(true);
     expect(records.every((record) => record.role === 'mobile_court')).toBe(true);

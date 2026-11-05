@@ -88,8 +88,10 @@ await mkdir(`${root}public/data/licenses`,{recursive:true});
 await writeFile(`${root}src/data/generated/cliopatria-china.json`,JSON.stringify(china));
 // Only the relevant century is downloaded by the browser. Shared geometries are deduplicated per chunk.
 const chunks = [];
-for (let start=-3400;start<=2000;start+=100) {
-  const end=Math.min(start+99,2024);
+const chunkStarts = Array.from({length:34},(_,index)=>-3400+index*100)
+  .concat(1,Array.from({length:20},(_,index)=>100+index*100));
+for (const start of chunkStarts) {
+  const end=start===1?99:Math.min(start+99,2024);
   const records=world.filter(b=>b.validFrom<=end && b.validTo>=start);
   const ids=new Set(records.map(b=>b.polityId));
   const filename=`${start}.json`;

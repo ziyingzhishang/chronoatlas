@@ -14,8 +14,9 @@ import { sourceById } from './sources';
 describe('新罗统一战争与庆州王京闭环', () => {
   it('periodizes the Jinseong–Wolseong capital record', () => {
     expect(capitalHistory.filter((item) => item.polityId === 'silla').map(({ placeId, validFrom, validTo }) => ({ placeId, validFrom, validTo }))).toEqual([
-      { placeId: 'jincheng_silla', validFrom: -57, validTo: 100 },
-      { placeId: 'wolseong_silla', validFrom: 101, validTo: 935 },
+      { placeId: 'jincheng_silla', validFrom: -57, validTo: 377 },
+      { placeId: 'wolseong_silla', validFrom: 101, validTo: 377 },
+      { placeId: 'wolseong_silla', validFrom: 378, validTo: 935 },
     ]);
     expect(places.find((place) => place.id === 'jincheng_silla')).toEqual(expect.objectContaining({
       mappingStatus: 'approximate',

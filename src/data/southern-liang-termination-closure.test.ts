@@ -8,6 +8,8 @@ import { heritageAssets } from './heritage';
 import { people } from './people';
 import { getPersonDetail } from './person-details';
 import { getPolityDetail } from './polity-details';
+import { getHistoricalState } from '../domain/history-state';
+import { buildMapData } from '../map/history-map';
 
 describe('Southern Liang termination closure', () => {
   test('records the 414 Western Qin conquest as the termination event', () => {
@@ -24,6 +26,19 @@ describe('Southern Liang termination closure', () => {
       expect.objectContaining({ personId: 'tufa-rutan' }),
       expect.objectContaining({ personId: 'qifu-chipan' }),
     ]));
+  });
+
+  test('renders the Ledu termination marker while keeping the 414 territorial overlap review separate', () => {
+    const state = getHistoricalState(414);
+    const map = buildMapData(state);
+
+    expect(map.events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [102.40, 36.48] },
+      properties: expect.objectContaining({ entityId: 'southern-liang-ended-414' }),
+    }));
+    expect(state.boundaries.some((boundary) => boundary.id === 'clio-1684-western_qin-414')).toBe(false);
+    expect(map.boundaries.features.some((feature) => feature.properties?.polityId === 'western_qin'
+      && feature.geometry.type !== 'Point')).toBe(false);
   });
 
   test('keeps the Ledu capital phase and modern candidate heritage continuous', () => {

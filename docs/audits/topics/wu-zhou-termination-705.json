@@ -1,0 +1,39 @@
+{
+  "decisionId": "gap-wu_zhou-705-705",
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 705,
+      "conclusion": "神龙元年正月发生宫廷政变，武则天传位，唐中宗即位；二月初四恢复唐国号，神都恢复东都称谓。洛阳是这一政权转换前后的朝廷所在城市，但武周只存在于本年部分时段。",
+      "mapExpression": "luoyang-city-reference-during-part-year-transition",
+      "capitalPlaceId": "luoyang",
+      "wuzhouBoundaryGeometry": null,
+      "sourceIds": [
+        "wu-zhou-termination-tongjian-207-208",
+        "zizhi-tongjian"
+      ],
+      "evidenceGap": "来源支持政权转换、月份节点和城市中心，不支持将全年压为武周单一时点的直接疆域面；年粒度无法表示政权交接日及其后的控制状态。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "wu-zhou-termination-tongjian-207-208",
+      "use": "《资治通鉴》卷二百七记录705年正月政变和传位过程；卷二百八记录二月初四恢复唐国号、神都复称东都。用于确认同一公历年内的政权转换，不提供全年武周边界。"
+    },
+    {
+      "id": "zizhi-tongjian",
+      "use": "仅作洛阳历史城市及朝廷所在地的通用参照来源；洛阳点不表示宫城、王畿或武周直接控制范围。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "Cliopatria v0.2.1 record 2642源时段为705—749年、低置信度且未说明控制性质。因705年内复唐，不能将该轮廓当作全年唐直接控制边界；现仅在705年挂待审，保留原几何并于706年恢复显示。"
+    }
+  ],
+  "reviewLimitations": [
+    "705年只显示洛阳城市参照，不绘武周疆域面；本年武周仅占年内一段时间。",
+    "年粒度表达不能将政权交接前的武周范围外推到全年，也不将复唐后的疆域自动归为武周。",
+    "唐Cliopatria record 2642（705—749）跨越武周终止及复唐，705年轮廓不能代表全年稳定的唐直接控制，已登记conflict:wu-zhou-tang-transition:705并仅在705年从运行时暂扣；原几何保留，不裁切或转归，706年恢复。",
+    "来源核对已完成；独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ]
+}

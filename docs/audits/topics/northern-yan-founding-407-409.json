@@ -1,0 +1,49 @@
+{
+  "decisionId": "gap-northern_yan-407-409",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-vol114-115-northern-yan",
+      "use": "《资治通鉴》卷114—115用于核对407年高云取代慕容熙、408年龙城阶段延续及409年冯跋掌权的政治时序。该记载支持龙城区域中心参照，不支持继承后燕全部辖区或绘制逐年边界。"
+    },
+    {
+      "id": "capital-history-reference",
+      "use": "项目首都与政治中心资料用于龙城地图点的区域级定位；朝阳、和龙等古城对应有异说，点位不指认唯一古城址或城垣。"
+    }
+  ],
+  "reviewLimitations": [
+    "407—409年共3条年度记录，仅显示龙城区域中心参照，疆域面均留空。",
+    "政权分期名称与统治者更替不代表边界继承或领土扩大；不以旧后燕、410年或后期轮廓回填。",
+    "龙城现代定位存在异说；本审核不替代来源使用权和公开地图合规审核。"
+  ],
+  "yearCount": 3,
+  "years": [
+    {
+      "year": 407,
+      "conclusion": "高云在龙城取代后燕末帝慕容熙，后燕政权阶段终止，新燕政权进入形成期。史学分期常称北燕，但不把政权名称争议扩大为边界判断。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "longcheng",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian-vol114-115-northern-yan", "capital-history-reference"],
+      "evidenceGap": "龙城是区域级现代参照，朝阳与和龙等地点对应存在差异；只标区域中心，不标古城精确坐标或疆域。"
+    },
+    {
+      "year": 408,
+      "conclusion": "龙城继续作为辽西燕政权的政治中心参照；现有年度依据未支持从后燕末年军政范围复原新政权的稳定边界。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "longcheng",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian-vol114-115-northern-yan", "capital-history-reference"],
+      "evidenceGap": "中心点只表示龙城及周边区域政治中枢，不以军事活动、名义辖区或同期后燕轮廓推定全年直接控制。"
+    },
+    {
+      "year": 409,
+      "conclusion": "冯跋掌权，辽西燕政权进入冯氏统治阶段；龙城中枢延续。高云阶段与冯跋掌权按不同政治节点记录。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "longcheng",
+      "territoryBoundary": null,
+      "sourceIds": ["zizhi-tongjian-vol114-115-northern-yan", "capital-history-reference"],
+      "evidenceGap": "政权内部更替和龙城区域中心可确认，但没有409年可重建的连续疆域边界；不以410年或后期最大范围回填。"
+    }
+  ]
+}

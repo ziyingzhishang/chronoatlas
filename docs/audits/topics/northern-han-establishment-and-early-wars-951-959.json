@@ -1,0 +1,178 @@
+{
+  "decisionIds": [
+    "gap-northern_han-951-959"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "gaoping-battlefield-location",
+      "use": "954年高平之战以今泽州县巴公镇作为巴公原区域的低置信度近似参照，不定位精确战场或战线。"
+    },
+    {
+      "id": "zizhi-tongjian-northern-han-951-959",
+      "use": "《资治通鉴》卷290—294按年核对951年刘崇据晋阳称帝及十二州说、952年边境战、954年高平战和刘旻去世、956年围晋阳、957年改元及958—959年边防战事。在线卷本核对了卷目和各段编年范围，事件只作为政治／军事结论，不直接转译为年界。"
+    },
+    {
+      "id": "xin-wudai-shi-difang-northern-han",
+      "use": "《新五代史·职方考第三》将后周末年太原以北的东汉（北汉）记为十州，并说明五代州数受废省、陷没等影响。与《通鉴》951年十二州叙述形成时间与统计口径差异，不能把任一州目当作连续实控边界。"
+    },
+    {
+      "id": "china-admin-history-five-dynasties-northern-han-map",
+      "use": "《中国行政区划通史·五代十国卷》学术评介用于确认存在959年后周—北汉政区示意图这一待查地图参考；原书地图未取得、未提取几何、未核清授权，不用于数字化边界。"
+    },
+    {
+      "id": "shihui-pass-location-reference",
+      "use": "《大清一统志》记石会关在榆社县西二十五里；历史地名资料进一步比定在今榆社县西北。两者只支持石会关所在的区域级参照，不提供可核验坐标或六寨位置，不生成事件点或疆界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 3859（clio-3859-northern_han-960）来源时段为960—969年，snapshot 960，low confidence，control type unspecified。该条仅作951—959年不得回填的时段排除依据；959年学术政区图仍只作待查断面参考，两者均未用于生成本段几何。"
+    }
+  ],
+  "reviewLimitations": [
+    "951—959年共9条年度结论；逐年显示太原政治中心和有来源的军事／继承事件，不添加疆界多边形。",
+    "951年《通鉴》所记十二州与《新五代史·职方考》在后周末年所列十州有时段和统计口径差异；959年地图为后续断面，不能向前回填或独立证明每年控制。",
+    "《地理学报》评介确认原书地图参考，但原书地图版权、数字化及公开展示条件未核清，当前不复制其几何；仅将其登记为后续复核线索。",
+    "战场、围城、军寨易手和叛附不能推成全年连续直接控制线；政权中心点与区域事件说明不等于疆界。来源许可及公开地图条件另行审核。",
+    "相邻 Cliopatria record 3859 始于960年、来源区间至969年，为低置信度且控制性质未定的时段模型；不向951—959年回填，也不把其时段与959年待查学术政区图合并推算疆界。"
+  ],
+  "yearCount": 9,
+  "years": [
+    {
+      "year": 951,
+      "polityId": "northern_han",
+      "conclusion": "刘崇在晋阳即皇帝位，《资治通鉴》称其所有并、汾、忻、代、岚、宪、隆、蔚、沁、辽、麟、石十二州；《新五代史·职方考》与959年政区研究呈现十州或更少的州数口径，且名义州目不等同逐州实控。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "晋阳为政治中心；十二州为《通鉴》记载的建国时声称范围，州数与边地控制另有异说。",
+      "mapExpression": "taiyuan-capital-point-and-claimed-extent-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "xin-wudai-shi-difang-northern-han",
+        "china-admin-history-five-dynasties-northern-han-map"
+      ],
+      "evidenceGap": "十二州名录、十州职方考与959年政区图目之间存在口径及时间差异；蔚州等州的实际控制和各州外缘仍须据州县沿革逐年核验，现有数字不能直接生成北汉外界。"
+    },
+    {
+      "year": 952,
+      "polityId": "northern_han",
+      "conclusion": "《资治通鉴》记北汉将领乔赟入寇府州，被折德扆击退。该条可定位边境军事行动，不能据进军路线或交战地推定北汉取得府州。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "以太原为政治中心；府州方向有军事冲突，未见本年可复原的边界变化。",
+      "mapExpression": "taiyuan-capital-point-and-border-event-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "china-admin-history-five-dynasties-northern-han-map"
+      ],
+      "evidenceGap": "入寇与被击退只说明战事，不构成取得府州或形成连续边界的证据；959年示意图不能单独回推本年。"
+    },
+    {
+      "year": 953,
+      "polityId": "northern_han",
+      "conclusion": "本次核对的《资治通鉴》相关卷次未找到足以支持北汉年度疆界变化的953年直接控制记录；北汉中枢仍在晋阳。此为限定史料范围内的结论，不表示本年无战事或地方变化。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "目前只能确认晋阳政治中心；本年周边各州控制细节和边界变化待进一步对勘《旧五代史》、方志及政区沿革研究。",
+      "mapExpression": "taiyuan-capital-point-and-explicit-evidence-gap",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "xin-wudai-shi-difang-northern-han",
+        "china-admin-history-five-dynasties-northern-han-map"
+      ],
+      "evidenceGap": "已核编年材料未提供本年可绘边界，作为959年断面的政区研究也不能替代953年直接证据；须逐年校勘后再判断能否增加区域表达。"
+    },
+    {
+      "year": 954,
+      "polityId": "northern_han",
+      "conclusion": "北汉与辽援军南下，与后周军在高平交战后败退；《资治通鉴》并记刘旻忧愤成疾、将国事交刘承钧并于年末去世。军事失败和君主更替改变政局，但尚不足以逐州重建全年边界。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "晋阳仍为北汉政治中心；高平战场及退兵路线表示军事活动，不表示后周或北汉的连续控制界。",
+      "mapExpression": "taiyuan-capital-point-and-bagongyuan-event-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "china-admin-history-five-dynasties-northern-han-map",
+        "gaoping-battlefield-location"
+      ],
+      "evidenceGap": "战场、追击路线与年末继承记录不足以判定各州在全年不同阶段的实际控制边界；《通鉴考异》另指出刘旻卒年及改元记载互有出入。",
+      "mapEventIds": [
+        "northern-han-gaoping-campaign-954"
+      ]
+    },
+    {
+      "year": 955,
+      "polityId": "northern_han",
+      "conclusion": "刘承钧承接北汉政权，在辽支持关系下继续统治；本年未据已核材料确认足以绘制的州级边界调整。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "太原政治中心延续；王位承继、对辽称臣及名义关系不等同新的直接疆界。",
+      "mapExpression": "taiyuan-capital-point-and-succession-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "xin-wudai-shi-difang-northern-han",
+        "china-admin-history-five-dynasties-northern-han-map"
+      ],
+      "evidenceGap": "承继和外交关系无法确认州县直接控制；仍需核对刘旻卒年争议及本年地方建置、叛附记录。"
+    },
+    {
+      "year": 956,
+      "polityId": "northern_han",
+      "conclusion": "后周军攻围晋阳，北汉向辽求援；周军撤退时曾取得若干州县，但多数周置刺史弃城，北汉又攻取代州。战线和一度占领均为年内变化，不能简化成全年单一边界。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "晋阳围城及代州攻取可作区域军事事件标注；未据此重建周、汉逐州的年末控制面。",
+      "mapExpression": "taiyuan-capital-point-and-siege-event-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "china-admin-history-five-dynasties-northern-han-map"
+      ],
+      "evidenceGap": "攻围、撤军、州县弃守与代州易手先后发生；现有条文没有给出可用于年度几何的完整逐州清单及其控制起止时间。"
+    },
+    {
+      "year": 957,
+      "polityId": "northern_han",
+      "conclusion": "刘承钧于正月大赦并改元天会，北汉政权延续、仍以太原为中枢；纪年变化本身不表示疆域变化。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "太原政治中心；本次核对未发现可据以描绘本年边界的完整州县控制记录。",
+      "mapExpression": "taiyuan-capital-point-and-era-change-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "xin-wudai-shi-difang-northern-han",
+        "china-admin-history-five-dynasties-northern-han-map"
+      ],
+      "evidenceGap": "改元和政权延续不足以推出直接疆界；959年学术地图是后续断面，不能作为本年边界的唯一依据。"
+    },
+    {
+      "year": 958,
+      "polityId": "northern_han",
+      "conclusion": "《资治通鉴》记后周显德五年六月昭义节度使李筠奏击北汉石会关、拔其六寨；同月晋州奏李谦溥击破孝义。石会关可作今榆社县西北区域级地名参照，不能精确定位六寨或复原战线。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "太原为政治中心；石会关故址记在今榆社县西北一带，孝义为另一个战事地名。仅作区域叙述，不建立具体事件坐标，也不把寨群、战场连接成北汉疆界。",
+      "mapExpression": "taiyuan-capital-point-and-border-loss-event-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "china-admin-history-five-dynasties-northern-han-map",
+        "shihui-pass-location-reference"
+      ],
+      "evidenceGap": "石会关与孝义的历史记载未提供可核验的精确坐标；六寨失守及孝义战败也未提供周汉全线、据点持续控制时间或相邻州县归属，无法据此绘制事件点或完整年度面。"
+    },
+    {
+      "year": 959,
+      "polityId": "northern_han",
+      "conclusion": "后周北伐期间，李重进在北井击败北汉军；《资治通鉴》未给出足以将北井可靠对应到现代坐标的地理信息。学界有959年后周—北汉政区示意图可供逐州复核，但其断面图不能单独证明本年每月或全年持续控制。",
+      "capitalPlaceId": "taiyuan",
+      "regionalExtent": "以太原为北汉政治中心；参考959年政区图和州县沿革逐项核边，当前尚未从获准可复用的几何源完成数字化。",
+      "mapExpression": "taiyuan-capital-point-and-research-map-reference",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-northern-han-951-959",
+        "xin-wudai-shi-difang-northern-han",
+        "china-admin-history-five-dynasties-northern-han-map"
+      ],
+      "evidenceGap": "北井的具体历史地望尚未可靠考定；959年后周—北汉政区图可供断面核查，但不能替代951—958年逐年控制证据，也不能单独证明本年每月或全年持续控制；图件使用权和可复用条件尚未核清。攻守记录不补足全年逐州直接控制，须取得原书并完成历史地理、制图及来源使用审查后再决定是否建立并发布几何。"
+    }
+  ]
+}

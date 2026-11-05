@@ -1,0 +1,50 @@
+{
+  "decisionIds": [
+    "gap-jingnan-924-925"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-jingnan-924-925",
+      "use": "《资治通鉴》卷273—274：在线卷本用于核对924年高季兴封南平王及925年后唐灭前蜀后的荆南政局；封爵和邻国变化不等同荆南疆域变化。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 3728（clio-3728-jingnan-926）来源时段为926—935年，snapshot 926，low confidence，control type unspecified。仅作时间范围排除依据，不复制或向前延伸其几何，也不据其推定924—925年荆南疆界。"
+    }
+  ],
+  "reviewLimitations": [
+    "924—925年2条仅保留江陵中心和政权结论，疆界留空；节度使名义辖区与政权延续不足以复原逐县直接控制边界。",
+    "所引维基文库页面为古籍转录而非地图数据；地名、封号、战事和行政任命只支撑对应历史结论，不代表已核实边界。引用时保留卷次与页面；来源使用权及公开地图条件另行审核。",
+    "相邻 Cliopatria record 3728 始于926年、来源区间至935年，为低置信度且控制性质未定的时段模型；不向924—925年回填，也不把该来源时段当作早期荆南疆界证据。"
+  ],
+  "yearCount": 2,
+  "years": [
+    {
+      "year": 924,
+      "polityId": "jingnan",
+      "conclusion": "后唐同光二年三月，高季兴仍以荆南节度使身份受封南平王；江陵为其政治中心。封王记录确认政权名号变化，不说明封域等同实际边界。",
+      "capitalPlaceId": "jiangling",
+      "regionalExtent": "以江陵为政治中心。现有本年记录未提供可连续复原的荆南州县控制边界。",
+      "mapExpression": "jiangling-capital-point-and-historical-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-jingnan-924-925"
+      ],
+      "evidenceGap": "进封南平王及节度使名义不足以确定实际控制的州县清单、相邻势力边界或全年连续领土；不据封爵绘制疆域。"
+    },
+    {
+      "year": 925,
+      "polityId": "jingnan",
+      "conclusion": "荆南仍处高季兴统治时期，中心在江陵。同光三年后唐灭前蜀，高季兴闻讯忧惧；此为邻国格局变化，不能解释为荆南疆域扩张。",
+      "capitalPlaceId": "jiangling",
+      "regionalExtent": "仅确认江陵政治中心；本年度疆域范围和边界未能从所核编年材料中确定。",
+      "mapExpression": "jiangling-capital-point-and-historical-note",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-jingnan-924-925"
+      ],
+      "evidenceGap": "年度政权延续和中心城市不足以复原边界；未找到足以支撑空间表达的925年州县控制或边界记录，故留空等待新证据。"
+    }
+  ]
+}

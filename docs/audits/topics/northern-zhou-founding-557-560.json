@@ -1,0 +1,69 @@
+{
+  "decisionId": "gap-zhou_northern-557-560",
+  "yearCount": 4,
+  "years": [
+    {
+      "polityId": "zhou_northern",
+      "year": 557,
+      "conclusion": "西魏恭帝在长安禅位，宇文觉承接政权，建立北周。长安点只表示西魏至北周中央政权承接的政治中心。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-zhou-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "禅代和都城承接不能证明北周即时继承西魏所有地方的直接控制；疆域面留空。"
+    },
+    {
+      "polityId": "zhou_northern",
+      "year": 558,
+      "conclusion": "北周中央政权继续以长安为政治中心，长安以外的军政控制须依区域与具体战事分别判断。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-zhou-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "长安中心点不表示关中以外全境或与北齐之间的直接疆界。"
+    },
+    {
+      "polityId": "zhou_northern",
+      "year": 559,
+      "conclusion": "北周政权继续在长安运行，皇室及权臣政治关系变化不改变以长安为中央政治中心的表达。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-zhou-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "宫廷权力变化不能直接推出疆界；北齐方向不自动分割、裁切或涂色。"
+    },
+    {
+      "polityId": "zhou_northern",
+      "year": 560,
+      "conclusion": "周明帝去世后宇文邕继位，北周中央政权仍以长安为政治中心。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "changan",
+      "territoryBoundary": null,
+      "sourceIds": ["northern-zhou-founding-557-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "继位和都城位置都不构成北周与北齐的边界证据；不以后来疆域轮廓倒填。"
+    }
+  ],
+  "coexistenceNotes": [
+    "557—560年南陈以建康为中心、北齐同时存在；北齐 Cliopatria record 2068（555—560）为低置信、控制性质未明的时段模型，只作来源范围参考，不解读为已校定的直接疆界。长安点只表示北周政治中心，不与建康点连成控制区，也不推断三方边界。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "northern-zhou-founding-557-primary-sources",
+      "use": "《资治通鉴》卷167《陈纪一》核对557年魏恭帝禅代、北周承接及557—559年政权初期；卷168《陈纪二》核对560年周明帝去世、宇文邕继位。《周书》卷2—3《闵帝纪》《明帝纪》作交叉参照。只支持政权时序和长安中心判断，不提供疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "仅使用项目places目录的长安（今西安）近似城市坐标表达D级中心点，不表示城垣、关中以外的控制范围或北周疆界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "北齐 Cliopatria v0.2.1 record 2068 覆盖555—560年，数据置信度低且 controlType 为 unspecified；仅说明557—560同断面存在该来源时段轮廓，不据此断言直接控制或已校定边界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "557—560年北周疆域面留空；长安中心点不代表全境。",
+    "同期南陈、北齐不表示可由中心点推导政权边界；空间冲突不自动裁切。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

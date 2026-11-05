@@ -1,0 +1,173 @@
+{
+  "decisionId": "gap-dali-937-946",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "dali-duan-siping-official",
+      "use": "云南地方史料综述用于核对937年段思平建政、羊苴咩城都城及段思平在位阶段；其地方叙述与学术研究的建国年口径并存，不能单独裁定绝对年代。"
+    },
+    {
+      "id": "dali-history-research-nopss",
+      "use": "国家社科基金成果《大理国史研究》采用938年建国口径，并说明大理史料稀少；用于记录937/938异说及早期整合背景，不据部落徭役关系推画边界。"
+    },
+    {
+      "id": "dali-early-lineage-study",
+      "use": "林超民《大理国史研究的视角》用于核对段氏早期世系和段思平、段思英、段思良年表；线上仓储 PDF 本轮返回429，引用限于项目已有书目摘录，须维护链接并复查原文页码。"
+    },
+    {
+      "id": "dali-early-history-nagoya",
+      "use": "名古屋大学《中国西南民族史》课程资料提供937、938、944、945年事件年表，与946年世系口径交叉对读；课程资料的945年记载保留为异说，不作为唯一裁决。"
+    },
+    {
+      "id": "dali-yangjumei-mct",
+      "use": "文化和旅游部转载考古报道用于确认羊苴咩城作为南诏、大理都城及遗址位于今大理古城一带；只支持近似政治中心点，不支持城垣复原或国界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "仅登记相邻的 Cliopatria v0.2.1 record 3812（snapshot 947、source interval 947—969、low confidence、control type unspecified）作为时间范围排除核对。该记录不覆盖937—946年，本段不复制、不前推，也不从该几何推导早期控制边界。"
+    }
+  ],
+  "reviewLimitations": [
+    "937—946年共10条年度记录；每年仅保留羊苴咩城D级政治中心点，不创建疆界面。",
+    "建国年存在937与938两种口径；段思英、段思良交接存在945与946两种口径，逐条保留异说，不压成单一确定年份。",
+    "名古屋仓储论文本轮访问返回429、云南地方官方页面返回502；两处记录为链接维护事项，不将访问失败当作史料否定。课程 PDF、国家社科成果页及文旅部考古报道可访问。",
+    "现有材料不足以逐年复原大理直接控制边缘；不以南诏旧辖区、三十七部关系、后世版图或文化影响替代疆界证据。来源使用权与公开地图审核另行处理。",
+    "Cliopatria record 3812 从947年起，不覆盖937—946年；其低置信度、控制性质未定的几何不得向前回填。该来源几何的署名和公开发布条件仍须按项目许可流程核验。"
+  ],
+  "yearCount": 10,
+  "years": [
+    {
+      "year": 937,
+      "conclusion": "段思平起兵推翻杨干贞的大义宁政权，在大理建立新政权并以羊苴咩城为都；地方史料与部分研究采用937年，另有国家社科成果以938年为建国年。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-duan-siping-official",
+        "dali-history-research-nopss",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "政权创建及都城有资料支持，但建国绝对年份存在937/938年口径差异；羊苴咩城坐标为今大理古城一带的近似点，不代表城垣或大理国疆界。"
+    },
+    {
+      "year": 938,
+      "conclusion": "早期大理政权继续整合；研究资料记载段思平任命董迦罗等为相、侯，并减免滇东三十七部徭役。该年也被部分学术成果采用为建国起点。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-history-research-nopss",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "分封、徭役安排和部落关系不能还原为连续的直接控制边界；都城点仅作政治中心参照。"
+    },
+    {
+      "year": 939,
+      "conclusion": "大理处于段思平统治时期，羊苴咩城沿用为都城参照；现有资料未提供可据以重建本年度疆界的连续空间记录。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-duan-siping-official",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "在位年表支持政权及其阶段性都城延续，但缺少939年直接控制范围的逐年记录；不可把政权核心区外推为精确疆界。"
+    },
+    {
+      "year": 940,
+      "conclusion": "大理处于段思平统治时期；现有综合研究未列出可校定为940年的政权边缘或边界变化，羊苴咩城仍作都城点参照。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-duan-siping-official",
+        "dali-history-research-nopss",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "没有940年逐年边界资料。政权延续和都城位置不等于已知各地行政控制状态。"
+    },
+    {
+      "year": 941,
+      "conclusion": "大理处于段思平统治时期；本年度未见可核定的边界变化记录，羊苴咩城作为政权中心参照。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-duan-siping-official",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "资料可以支持王统阶段及都城定位，不能据此描绘941年连续直接控制边缘。"
+    },
+    {
+      "year": 942,
+      "conclusion": "大理处于段思平统治时期；现有可追溯资料未提供本年度疆界变动的可靠记录，地图仅标羊苴咩城政治中心参照。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-duan-siping-official",
+        "dali-history-research-nopss",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "缺少942年边界资料；不能从南诏旧辖区或后世大理版图倒推出本年度直接控制疆域。"
+    },
+    {
+      "year": 943,
+      "conclusion": "大理仍在段思平统治阶段；羊苴咩城作为都城参照。本年度无足够逐年空间材料说明实际控制范围及其边缘。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-duan-siping-official",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "仅能确认在位阶段和政治中心参照；不得以三十七部的归附、徭役安排或文化联系替代疆界证据。"
+    },
+    {
+      "year": 944,
+      "conclusion": "段思平去世，子段思英继位；记年资料将此列为王位交接阶段。羊苴咩城继续作为都城参照。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-duan-siping-official",
+        "dali-early-lineage-study",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "王位交接可确认，但不能说明各地接管时点或边缘变化；年度疆界仍无可靠空间依据。"
+    },
+    {
+      "year": 945,
+      "conclusion": "早期段氏王统进入继承争议阶段。部分研究将段思英在位及段思良夺位系于945年，另有世系研究将段思良在位起点列为946年；本年不裁定争议为确定日期。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-early-lineage-study",
+        "dali-early-history-nagoya",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "段思英与段思良交接的纪年存在异说；羊苴咩城点只表示政治中心，不能据王位更替推断疆界不变或扩张。"
+    },
+    {
+      "year": 946,
+      "conclusion": "段思良继承阶段的起点在部分世系研究中列为946年，另有研究将废段思英、段思良即位放在945年；早期大理政权的羊苴咩城中心参照继续使用。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "yangjumei",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "dali-early-lineage-study",
+        "dali-early-history-nagoya",
+        "dali-yangjumei-mct"
+      ],
+      "evidenceGap": "即位年份口径不一，不能将冲突压成单一确定年份；没有946年连续直接控制边界资料，仍留空疆界。"
+    }
+  ]
+}

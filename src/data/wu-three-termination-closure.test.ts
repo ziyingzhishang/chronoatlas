@@ -27,7 +27,10 @@ describe('wu_three termination closure', () => {
     const wu = polityDetails.find((item) => item.polityId === 'wu_three')
     const heritage = heritageDetails.find((item) => item.heritageId === 'jiankang-six-dynasties-city-site')
     const asset = heritageAssets.find((item) => item.id === 'jiankang-six-dynasties-city-site')
-    expect(wu?.capitalPhases).toEqual(expect.arrayContaining([expect.objectContaining({ placeId: 'jiankang', validFrom: 222, validTo: 280 })]))
+    expect(wu?.capitalPhases).toEqual(expect.arrayContaining([
+      expect.objectContaining({ placeId: 'wuchang', validFrom: 221, validTo: 229 }),
+      expect.objectContaining({ placeId: 'jiankang', validFrom: 266, validTo: 280 }),
+    ]))
     expect(wu?.eventIds).toContain('jin-unification')
     expect(asset?.placeId).toBe('jiankang')
     expect(heritage?.associatedEvents).toContain('jin-unification')

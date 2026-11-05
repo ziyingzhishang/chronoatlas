@@ -1,0 +1,35 @@
+{
+  "decisionId": "gap-song_northern-960-960",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "songshi-vol1-taizu",
+      "use": "《宋史》卷1用于核对显德七年（960）陈桥事变、赵匡胤回师开封、受禅即位和建宋节点；支持开封作为建政后政治中心，不支持全年疆界。"
+    },
+    {
+      "id": "xuzizhi-tongjian-changbian-vol1",
+      "use": "《续资治通鉴长编》卷1《建隆元年》用于核对960年初边患、陈桥事变和宋初与辽、北汉等政权并存及军事局势，说明统一战争未完成。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "项目开封城市近似坐标只定位中央政治中心，不表示古城垣、陈桥兵变地点或北宋全年边界。"
+    }
+  ],
+  "reviewLimitations": [
+    "960年后周至北宋政权更替发生在年内，辽、北汉及南方诸政权仍并存；疆域面留空。",
+    "开封中心点不代表全年直接控制范围；不把战争、属国关系或后世统一范围转成960年边界。",
+    "本审核不替代来源使用权及公开地图合规审核。"
+  ],
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 960,
+      "conclusion": "后周于年内禅代，赵匡胤回师开封受禅建宋；建政后以开封为中央政治中心。辽、北汉及南方诸政权仍并存，统一战争尚未完成。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "kaifeng",
+      "territoryBoundary": null,
+      "sourceIds": ["songshi-vol1-taizu", "xuzizhi-tongjian-changbian-vol1", "modern-geography-reference"],
+      "evidenceGap": "史料支持建政节点和开封政治中心，但不足以复原960全年连续直接控制边界。后周与北宋为年内先后政权；不把年内更替、战争范围、藩属关系或后世统一轮廓合并成北宋年度疆界。"
+    }
+  ]
+}

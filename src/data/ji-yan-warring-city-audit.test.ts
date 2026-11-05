@@ -34,7 +34,7 @@ describe('蓟—战国燕都城城市审计', () => {
       polityId: 'yan_warring',
       placeId: 'ji',
       validFrom: -403,
-      validTo: -222,
+      validTo: -227,
     });
     expect(asset).toMatchObject({
       placeId: 'ji',
@@ -72,5 +72,23 @@ describe('蓟—战国燕都城城市审计', () => {
           people.some((item) => item.id === id),
       ).toBe(true);
     }
+  });
+
+  it('separates the last Ji capital year from the low-confidence Liaoyang phase', () => {
+    const liaoyang = capitalHistory.find(
+      (item) => item.polityId === 'yan_warring' && item.placeId === 'liaoyang',
+    );
+    const place = places.find((item) => item.id === 'liaoyang');
+
+    expect(liaoyang).toMatchObject({
+      polityId: 'yan_warring',
+      placeId: 'liaoyang',
+      validFrom: -226,
+      validTo: -222,
+      confidence: 'low',
+    });
+    expect(place?.mappingStatus).toBe('regional');
+    expect(place?.confidence).toBe('low');
+    expect(place?.sourceIds).toContain('yan-capital-relocation-liaoyang-2011');
   });
 });

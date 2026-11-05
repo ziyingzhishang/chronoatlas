@@ -2,6 +2,7 @@ import { describe, expect, it } from 'vitest';
 import { eventDetails } from './event-details';
 import { events } from './events';
 import { auditPolityCoverage } from './polity-coverage';
+import { sourceNotes } from './sources';
 
 const targets = [
   { polityId: 'wei_northern', eventId: 'northern-wei-founded' },
@@ -18,6 +19,7 @@ describe('政权建政事件第二批', () => {
   it('为目标政权建立独立、可定位且带完整叙事字段的事件节点', () => {
     const eventById = new Map(events.map((event) => [event.id, event]));
     const detailById = new Map(eventDetails.map((detail) => [detail.eventId, detail]));
+    const sourceIds = new Set(sourceNotes.map((source) => source.id));
 
     for (const target of targets) {
       const event = eventById.get(target.eventId);
@@ -27,8 +29,9 @@ describe('政权建政事件第二批', () => {
       expect(detail, target.eventId).toBeDefined();
       expect(event).toMatchObject({
         category: '政权建立／更替',
-        sourceIds: expect.arrayContaining(['zizhi-tongjian', 'china-chronology']),
       });
+      expect(event?.sourceIds.length).toBeGreaterThan(0);
+      expect(event?.sourceIds.every((sourceId) => sourceIds.has(sourceId)), target.eventId).toBe(true);
       expect(event?.background).toBeTruthy();
       expect(event?.process).toBeTruthy();
       expect(event?.impact).toBeTruthy();
@@ -39,9 +42,10 @@ describe('政权建政事件第二批', () => {
         causes: expect.any(Array),
         consequences: expect.any(Array),
         phases: expect.any(Array),
-        sourceIds: expect.arrayContaining(['zizhi-tongjian', 'china-chronology']),
         uncertaintyNote: expect.any(String),
       });
+      expect(detail?.sourceIds.length).toBeGreaterThan(0);
+      expect(detail?.sourceIds.every((sourceId) => sourceIds.has(sourceId)), target.eventId).toBe(true);
       expect(detail?.phases?.length ?? 0).toBeGreaterThan(0);
       expect(detail?.causes?.length ?? 0).toBeGreaterThan(0);
       expect(detail?.consequences?.length ?? 0).toBeGreaterThan(0);

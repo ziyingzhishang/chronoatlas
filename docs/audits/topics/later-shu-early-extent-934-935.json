@@ -1,0 +1,58 @@
+{
+  "decisionIds": [
+    "gap-later_shu-934-935"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "quzhou-historical-geography",
+      "use": "渠州治流江县比定今渠县；仅支持934年渠州事件的城市级区域参照，不定位古城、叛乱现场或疆界。"
+    },
+    {
+      "id": "zizhi-tongjian-later-shu-934-935",
+      "use": "《资治通鉴》卷278—279：在线卷本用于核对934年孟知祥在成都称帝、五镇任命、渠州叛乱平定及935年蜀大赦等年内节点；不把行政任命和地方冲突扩大成全境边界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 3784（clio-3784-later_shu-936）来源时段为936—946年，snapshot 936，low confidence，control type unspecified。仅作时段排除依据，不复制或向前延伸其几何，也不据其推定934—935年后蜀疆界。"
+    }
+  ],
+  "reviewLimitations": [
+    "934—935年2条保留成都中心和地方军政事件，疆界面留空；本轮事件材料未提供五镇逐县直接控制、年内稳定状态或连续几何。",
+    "所引维基文库页面为古籍转录而非地图数据；地名、封号、战事和行政任命只支撑对应历史结论，不代表已核实边界。引用时保留卷次与页面；来源使用权及公开地图条件另行审核。",
+    "相邻 Cliopatria record 3784 始于936年、来源区间至946年，为低置信度且控制性质未定的时段模型；不向934—935年回填，也不把该来源时段当作建政初期后蜀疆界证据。"
+  ],
+  "yearCount": 2,
+  "years": [
+    {
+      "year": 934,
+      "polityId": "later_shu",
+      "conclusion": "正月孟知祥部将吏劝进后在成都即皇帝位；随后朝廷调整五镇节度使任命，渠州都押牙文景琛据城叛，果州刺史李延厚讨平。前两者说明中央建政与行政整合，渠州事件显示局部控制波动，均不足以单独给出全境连续疆界。",
+      "mapExpression": "chengdu-capital-point-and-quzhou-event-point",
+      "capitalPlaceId": "chengdu",
+      "regionalExtent": "成都为新政权中枢；五镇与渠州事件作为行政、地方军政变化记录，不据其名目推出精确全境边线。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-later-shu-934-935",
+        "quzhou-historical-geography"
+      ],
+      "evidenceGap": "史料支持成都称帝、五镇任命及渠州叛乱平定，但未给出各镇逐县直接控制状况、渠州冲突范围或连续边界坐标；934年建政也不代表年初全境已经稳定。",
+      "mapEventIds": [
+        "later-shu-suppresses-quzhou-revolt-934"
+      ]
+    },
+    {
+      "year": 935,
+      "polityId": "later_shu",
+      "conclusion": "蜀主孟知祥仍以成都为政治中心；《资治通鉴》记本年蜀大赦，现有记事未见可核的显著领土变更。大赦及年号、中央政务不等于边界证据。",
+      "mapExpression": "chengdu-capital-point-and-regional-event-note",
+      "capitalPlaceId": "chengdu",
+      "regionalExtent": "以成都为中心的后蜀政权；现有本年材料没有提供可用于扩绘或裁定州县边缘的疆域范围。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-later-shu-934-935"
+      ],
+      "evidenceGap": "可核年内记录支持后蜀中央延续和大赦节点，但没有逐县年度控制清单或边界坐标；不以936年或更晚材料反推本年边线。"
+    }
+  ]
+}

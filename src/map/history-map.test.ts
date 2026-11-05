@@ -20,6 +20,39 @@ test('capital map data only includes capitals active in the selected year', () =
   expect(after.capitalPlaces.features.filter(f => f.properties?.polityId === 'wei_northern').map(f => f.properties?.placeId)).toEqual(['luoyang']);
 });
 
+test('shows the Republic government seat in Taipei at the end of 1949 while keeping the uncertain annual outline off the map', () => {
+  const state = getHistoricalState(1949);
+  const map = buildMapData(state);
+  const republicCenters = map.capitalPlaces.features.filter(feature => feature.properties?.polityId === 'republic');
+
+  expect(republicCenters).toHaveLength(1);
+  expect(republicCenters[0]).toMatchObject({
+    geometry: { type: 'Point', coordinates: [121.5556, 25.0872] },
+    properties: { placeId: 'taipei', role: 'de_facto', status: 'actual' },
+  });
+  expect(map.capitalPlaces.features.some(feature => feature.properties?.polityId === 'prc' && feature.properties?.placeId === 'beijing')).toBe(true);
+  expect(map.boundaries.features.some(feature => feature.properties?.polityId === 'republic')).toBe(false);
+});
+
+test('renders Later Liang primary and secondary capitals across its 909 relocation', () => {
+  const beforeMove = buildMapData(getHistoricalState(908));
+  const relocationYear = buildMapData(getHistoricalState(909));
+  const afterMove = buildMapData(getHistoricalState(910));
+
+  expect(beforeMove.capitalPlaces.features
+    .filter(feature => feature.properties?.polityId === 'liang_later')
+    .map(feature => [feature.properties?.placeId, feature.properties?.role]))
+    .toEqual([['kaifeng', 'primary']]);
+  expect(relocationYear.capitalPlaces.features
+    .filter(feature => feature.properties?.polityId === 'liang_later')
+    .map(feature => [feature.properties?.placeId, feature.properties?.role]).sort())
+    .toEqual([['kaifeng', 'secondary'], ['luoyang', 'primary']]);
+  expect(afterMove.capitalPlaces.features
+    .filter(feature => feature.properties?.polityId === 'liang_later')
+    .map(feature => [feature.properties?.placeId, feature.properties?.role]).sort())
+    .toEqual([['kaifeng', 'secondary'], ['luoyang', 'primary']]);
+});
+
 test('separates local and world boundaries into independent sources',()=>{
   const state=getHistoricalState(800);
   const localPolity=state.activePolities[0];
@@ -129,4 +162,14 @@ test('map features expose evidence metadata and style layers preserve B/C/D dist
   });
   expect(style.layers.find(layer=>layer.id==='boundary-d-centers')).toMatchObject({type:'circle'});
   expect(style.layers.find(layer=>layer.id==='boundary-d-area')).toMatchObject({type:'fill'});
+});
+
+test('does not carry the Erlitou reference point into years before its archaeological date range', () => {
+  const before = buildMapData(getHistoricalState(-1751));
+  const firstSupportedYear = buildMapData(getHistoricalState(-1750));
+
+  expect(before.places.features.some(feature => feature.properties?.entityId === 'erlitou')).toBe(false);
+  expect(before.capitalPlaces.features.some(feature => feature.properties?.placeId === 'erlitou')).toBe(false);
+  expect(firstSupportedYear.places.features.some(feature => feature.properties?.entityId === 'erlitou')).toBe(true);
+  expect(firstSupportedYear.capitalPlaces.features.some(feature => feature.properties?.placeId === 'erlitou')).toBe(true);
 });

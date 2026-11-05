@@ -64,7 +64,8 @@ describe('second-batch capital history coverage', () => {
 
   it('preserves the existing multi-capital Northern Wei and Liao records', () => {
     expect(recordsFor('wei_northern').map(({ placeId, validFrom, validTo }) => ({ placeId, validFrom, validTo }))).toEqual([
-      { placeId: 'pingcheng', validFrom: 386, validTo: 494 },
+      { placeId: 'shengle', validFrom: 386, validTo: 397 },
+      { placeId: 'pingcheng', validFrom: 398, validTo: 494 },
       { placeId: 'luoyang', validFrom: 495, validTo: 534 },
     ]);
     expect(recordsFor('khitan').map(({ placeId, validFrom, validTo }) => ({ placeId, validFrom, validTo }))).toEqual([

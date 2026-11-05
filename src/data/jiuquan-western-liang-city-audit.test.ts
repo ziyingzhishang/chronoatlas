@@ -36,7 +36,7 @@ describe('酒泉—西凉后期都城城市审计', () => {
       polityId: 'western_liang',
       placeId: 'jiuquan',
       validFrom: 405,
-      validTo: 421,
+      validTo: 420,
     });
     expect(asset).toMatchObject({
       placeId: 'jiuquan',
@@ -49,7 +49,7 @@ describe('酒泉—西凉后期都城城市审计', () => {
       expect.arrayContaining(['western_liang', 'northern_liang']),
     );
     expect(detail?.associatedEvents).toEqual(
-      expect.arrayContaining(['western-liang-state-founded', 'western-liang-ended-421']),
+      expect.arrayContaining(['western-liang-state-founded', 'western-liang-jiuquan-fell-420']),
     );
     expect(detail?.associatedPeople).toEqual(
       expect.arrayContaining(['li-hao', 'li-xin', 'juqu-mengxun']),
@@ -67,7 +67,7 @@ describe('酒泉—西凉后期都城城市审计', () => {
     expect(polity?.id).toBe('western_liang');
     expect(successor?.id).toBe('northern_liang');
     expect(founded?.placeId).toBe('dunhuang');
-    expect(ended?.placeId).toBe('jiuquan');
+    expect(ended?.placeId).toBe('dunhuang');
     for (const sourceId of asset?.sourceIds ?? []) {
       expect(sourceById[sourceId]).toBeDefined();
     }

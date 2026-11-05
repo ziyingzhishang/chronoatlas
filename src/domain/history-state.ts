@@ -50,9 +50,11 @@ export function getHistoricalState(
   for (const polity of activePolities) {
     if (polity.id === 'wu_zhou' && year === 705 || polity.id === 'later_jin' && year === 1636) continue;
     const records = boundariesByPolity.get(polity.id) ?? [];
-    const intervals = records.filter(b => b.temporalKind === 'interval' && b.validFrom <= year && year <= b.validTo);
+    const intervals = records.filter(b => b.temporalKind === 'interval' && b.validFrom <= year && year <= b.validTo
+      && !b.geometryReviewHolds?.some(hold => hold.status === 'requires-review' && hold.years.includes(year)));
     if (intervals.length) { boundaries.push(...intervals.map(b => ({ ...b, presentation: b.presentation ?? 'interval' as const }))); continue; }
-    const exact = records.filter(b => !b.temporalKind && b.snapshotYear === year);
+    const exact = records.filter(b => !b.temporalKind && b.snapshotYear === year
+      && !b.geometryReviewHolds?.some(hold => hold.status === 'requires-review' && hold.years.includes(year)));
     if (exact.length) boundaries.push(...exact.map(b => ({ ...b, presentation: 'snapshot' as const })));
   }
   const covered = new Set(boundaries.map(b => b.polityId));

@@ -1,0 +1,35 @@
+{
+  "decisionId": "gap-tang_later-936-936",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "tang_later",
+      "year": 936,
+      "conclusion": "年初后唐中央仍在洛阳；五月石敬瑭在太原举兵，契丹军随后入援，十一月石敬瑭受册称帝并许割十六州，十二月后晋军进入洛阳、后唐末帝自焚，后唐中央政权终止。",
+      "mapExpression": "transition-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "sourceIds": ["later-tang-termination-936-primary-source", "modern-geography-reference"],
+      "evidenceGap": "举兵、外援、名义割让、战役结果、洛阳终局与地方接收时点不同；洛阳点不表示后唐全年控制或后晋全境。"
+    }
+  ],
+  "coexistenceNotes": [
+    "后晋与契丹的军事合作、十六州名义割让和后唐地方控制瓦解不能合并成一方全年疆界；太原起兵点与洛阳终局点表示不同阶段。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "later-tang-termination-936-primary-source",
+      "use": "《资治通鉴》卷280按月核对936年后唐末年、石敬瑭起兵、契丹援军、受册和洛阳终局。支持年内转换过程，不直接提供可绘疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目洛阳近似城市坐标标记年内终局中心，不表示五代城垣或后唐全年范围。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "936年疆域面留空，不能沿用后唐前一年轮廓。",
+    "后晋起兵、契丹军事实力、十六州名义割让和地方接收分别处理。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

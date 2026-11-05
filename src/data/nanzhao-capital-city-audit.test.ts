@@ -29,7 +29,7 @@ describe('南诏阶段性都城城市审计', () => {
     expect(place).toMatchObject({
       id: 'taihe',
       modernName: '太和城遗址',
-      modernAdministrativeUnit: '云南省大理市',
+      modernAdministrativeUnit: '云南省大理市太和街道太和村',
       mappingStatus: 'exact',
       confidence: 'high',
     });

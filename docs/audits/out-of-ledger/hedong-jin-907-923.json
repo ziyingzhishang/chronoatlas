@@ -1,0 +1,52 @@
+{
+  "decisionId": "out-of-ledger-hedong-jin-907-923",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "hedong-jin-907-923-primary-sources",
+      "use": "《资治通鉴》卷260—265记895—906年李克用受封晋王、河东军政集团延续及唐末战事；卷266—272记907—922年晋王集团与后梁争衡、晋阳根据地及923年李存勖称帝建后唐。支持项目区分晋王军政阶段，不等于史料承认其为独立主权国家；不能据此复原连续疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "仅用于今太原城市点的显示坐标，不表示五代晋阳古城的考古范围或精确中心。"
+    }
+  ],
+  "reviewLimitations": [
+    "河东晋王政权为本项目对907年后李克用、李存勖事实军政集团的导航建模名称；其沿用唐天祐年号并主张唐统承续，不能简单等同正式独立国号或现代主权国家。",
+    "895—922年以晋阳显示低置信度区域政治军事中心参照；895—906年为唐廷册封下的河东军政集团阶段，907年后承唐名义与区域自主并存。不从中心点、晋王名义、对梁战争、州镇归附或唐朝名义辖地推导疆域多边形。",
+    "923年为李存勖称帝建后唐的政权形态转换年；不显示河东晋王政权全年中心或疆域面，后唐中心另按其当年阶段表示。",
+    "历史史料来源与点位使用条件已作来源登记；独立历史复核、制图复核、资料权利及公开地图审核仍须分别完成。"
+  ],
+  "yearCount": 29,
+  "years": [
+    {"year":895,"conclusion":"唐昭宗进封李克用为晋王，晋王名号承接其河东军政集团；这仍处在唐廷册封关系中，不能据封爵推为独立国家。晋阳作区域政治军事中心参照。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷260支持封爵及河东军政活动，但不提供晋王集团全年连续直接控制边界；中心点不表示晋阳古城精确城址。"},
+    {"year":896,"conclusion":"李克用仍以晋王身份统领河东军政，唐廷与藩镇名义关系和实际区域自主并存；晋阳作中心参照，不由军事活动范围推定疆界。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷260叙事可核该阶段政治主体和河东活动，未提供可复原的全年连续控制边缘。"},
+    {"year":897,"conclusion":"李克用晋王集团延续其河东军政基础；与唐廷及周边藩镇的关系依具体事件变化，晋阳仅作区域中心参照。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷261记载不能转换为全年固定疆界；不把名义节镇辖区或出兵方向当作直接控制面。"},
+    {"year":898,"conclusion":"河东军政集团在李克用统领下继续存在，晋阳为中心参照；其唐廷册封身份不等于对唐朝名义辖地的实际控制。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷261支持政权阶段延续与相关军政活动，但没有该年连续、可定位的直接控制边缘。"},
+    {"year":899,"conclusion":"李克用仍据河东维持晋王军政集团；其部将和邻镇的军事行动、归属关系需分别判断，晋阳只作中心参照。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷261所记战事和藩镇关系不足以复原全年直接疆域。"},
+    {"year":900,"conclusion":"李克用大规模整治晋阳城堑，直接支持晋阳为其重要军政据点；城防工程不等同政权边界或周边全域控制。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷262记有晋阳城堑工程及对外军事行动，但没有可复原的全年连续直接控制边缘。"},
+    {"year":901,"conclusion":"李克用继续以晋王身份经营河东军政，晋阳维持中心参照；名义官职和区域军事网络不合并为统一疆域。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷262未提供足以确定全年直接控制范围的边界资料。"},
+    {"year":902,"conclusion":"河东晋王集团继续依托晋阳；梁军对晋阳的军事压力及攻守变化表明中心处于战事环境，不能将其周边战线画作稳定疆界。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷263所记围攻和战事不能支撑全年连续控制边界；点位仅表示政治军事中心参照。"},
+    {"year":903,"conclusion":"李克用及河东军政集团延续，晋阳仍作区域中心参照；前后战事和地方关系变化不视为该年全年疆域。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷263记载的战局不足以复原全年连续直接控制边缘。"},
+    {"year":904,"conclusion":"唐末河东晋王集团仍以李克用为领袖并维持区域军政自主；晋阳仅作中心参照，不将唐朝名义行政范围归为其实际疆域。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷264的政务与战事记录未给出全年连续、可定位的直接控制边界。"},
+    {"year":905,"conclusion":"李克用所统河东军政集团延续至唐亡前，晋阳作为核心中心参照；晋王封号仍来自唐廷，不能据此推断现代意义主权疆域。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷264记事不足以恢复全年连续边界，不把藩镇名义辖区当作实控几何。"},
+    {"year":906,"conclusion":"唐末李克用仍统领河东晋王军政集团，晋阳作区域中心参照；907年唐亡后的政权形态变化不前推至本年。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"卷265记载支持阶段主体和活动，但未提供全年连续直接控制边缘；本年仍处唐末制度背景。"},
+    {"year":907,"conclusion":"后梁代唐后，李克用仍以晋王名义统领河东军政并沿用唐天祐年号；河东晋王集团与后梁并存。晋阳作为其政治军事根据地参照。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"史料可支持晋王集团、河东军政及晋阳中心参照，但未提供可复原全年的连续直接控制边缘；太原点只作区域近似定位。"},
+    {"year":908,"conclusion":"李克用去世后，李存勖承接晋王及河东军政领导权；该承继不表示原唐名义辖地整体转为晋王直接控制。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"编年记载支持晋王承继与晋阳根据地，但无法逐年确定所辖州镇的稳定边界。"},
+    {"year":909,"conclusion":"李存勖继续以晋王身份主持河东军政，晋阳仍作为政权根本；晋与后梁及河北诸镇的关系随军事行动变化。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"战争、州镇往来及名义关系不足以确定全年连续直接控制区；不据此绘边界。"},
+    {"year":910,"conclusion":"晋王李存勖维持河东政权并继续与后梁争衡；晋阳为其政治军事中心参照。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"军事胜负和藩镇归附具有阶段性，现有编年叙事不足以复原全年固定疆界。"},
+    {"year":911,"conclusion":"李存勖继续以晋王统领河东军政，与后梁的军事竞争延续；晋阳仍是其核心根据地参照。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"编年史支持政权主体与中心，但未提供足以绘制连续直接控制边界的逐年地理材料。"},
+    {"year":912,"conclusion":"晋王政权继续依托河东军政网络与后梁对峙；对外扩展、州镇联系与晋阳政治军事中心分层记录。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"不能将战事范围、盟约或州镇名义关系合并为该年连续直辖疆界。"},
+    {"year":913,"conclusion":"李存勖仍以晋王名义统领河东政权，晋阳为根据地参照；与后梁之间的争夺未形成可从中心点推定的固定边界。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"史料可核政治中心及持续政权主体，不能复原全年直接控制的连续边缘。"},
+    {"year":914,"conclusion":"晋王李存勖继续经营河东并争夺后梁控制下的区域；晋阳仍作核心政治军事参照。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"军事推进和州镇控制的年内变化不支持绘制全年的单一边界。"},
+    {"year":915,"conclusion":"晋王政权继续以河东为政治军事基础，与后梁及其地方军镇的冲突、联盟分别理解；不把阶段性势力变化称作全年疆域。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"编年记录未提供可验证的全年度连续控制界线。"},
+    {"year":916,"conclusion":"李存勖仍为晋王，晋阳为河东军政根本；晋与后梁的争衡持续，实际控制随战争和地方关系改变。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"没有足以确定全年直接行政控制边缘的空间证据，不以战线或名义辖区代替。"},
+    {"year":917,"conclusion":"河东晋王集团继续存在并以晋阳为政治军事中心参照；与后梁的战争及其他藩镇联系不等同于稳定领土边界。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"中心可作区域参照，不能从军事事件及地方势力承认关系恢复全年疆域。"},
+    {"year":918,"conclusion":"李存勖继续以晋王身份主持河东军政，晋阳中心参照延续；梁晋竞争和地方控制存在年内变动。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"史料未提供连续、可定位的全年直接控制边缘。"},
+    {"year":919,"conclusion":"河东晋王政权延续，晋阳作为其根据地政治军事中心；各地交战、归附及对唐统的政治表述分别记录。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"名义承唐和局部战争结果不等同全年度直接疆界。"},
+    {"year":920,"conclusion":"李存勖仍统领晋王政权，依托晋阳维持河东军政并与后梁争衡；中心参照不代表集团所有活动范围。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"资料不足以在公历年度尺度上画出连续直接控制边界。"},
+    {"year":921,"conclusion":"河东晋王集团持续与后梁竞争并经营其军政网络，晋阳保持核心参照；阶段性军事得失不作疆域几何。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"没有支持该年全域连续直接控制边缘的逐年空间证据。"},
+    {"year":922,"conclusion":"李存勖仍以晋王身份统领河东军政，晋阳为政治军事根据地参照；随后称帝建后唐发生于923年，不能前推。","mapExpression":"control-center-point","centerPlaceId":"taiyuan","territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources","modern-geography-reference"],"evidenceGap":"晋王名义、晋阳中心及战事不足以证明该年完整直辖疆界；923年后唐制度与领土不回填。"},
+    {"year":923,"conclusion":"李存勖于魏州称帝、建国号唐，晋王阶段转入后唐中央政权；本年为年内制度与军事控制转换，不以晋阳中心或后唐后续范围表示全年晋王疆域。","mapExpression":"transition-year-no-area","centerPlaceId":null,"territoryBoundary":null,"sourceIds":["hedong-jin-907-923-primary-sources"],"evidenceGap":"称帝与战局转折发生在年内；无依据将晋阳或后唐后续几何解释为河东晋王政权923年全年疆域。"}
+  ]
+}

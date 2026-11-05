@@ -9,6 +9,8 @@ import { people } from './people';
 import { getPersonDetail } from './person-details';
 import { getPolityDetail } from './polity-details';
 import { sourceById } from './sources';
+import { getHistoricalState } from '../domain/history-state';
+import { buildLocalMapData } from '../map/history-map';
 
 describe('Min termination closure', () => {
   it('records the 945 Southern Tang conquest as the Min termination event', () => {
@@ -18,13 +20,14 @@ describe('Min termination closure', () => {
     expect(event).toMatchObject({
       id: 'min-ended-945',
       year: 945,
-      placeId: 'fuzhou',
+      placeId: 'jianzhou',
+      coordinates: [118.32378, 27.03886],
       datePrecision: 'approximate',
     });
     expect(detail).toMatchObject({
       eventId: 'min-ended-945',
       polityIds: expect.arrayContaining(['min', 'southern_tang']),
-      locationIds: ['fuzhou'],
+      locationIds: ['jianzhou'],
     });
     expect(detail?.participants).toEqual(expect.arrayContaining([
       expect.objectContaining({ personId: 'wang-yanzheng' }),
@@ -34,6 +37,45 @@ describe('Min termination closure', () => {
     for (const sourceId of [...(event?.sourceIds ?? []), ...(detail?.sourceIds ?? [])]) {
       expect(sourceById[sourceId], sourceId).toBeDefined();
     }
+    expect(buildLocalMapData(getHistoricalState(945)).events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [118.32378, 27.03886] },
+      properties: expect.objectContaining({ entityId: 'min-ended-945' }),
+    }));
+  });
+
+  it('moves Min political-center mapping from Fuzhou to Jianzhou before its 945 termination', () => {
+    const state942 = getHistoricalState(942);
+    const state943 = getHistoricalState(943);
+    const fuzhou = buildLocalMapData(state942).capitalPlaces.features
+      .filter(feature => feature.properties?.polityId === 'min');
+    const jianzhou = buildLocalMapData(state943).capitalPlaces.features
+      .filter(feature => feature.properties?.polityId === 'min');
+
+    expect(fuzhou).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [119.30, 26.08] },
+      properties: expect.objectContaining({ placeId: 'fuzhou' }),
+    }));
+    expect(jianzhou).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [118.32378, 27.03886] },
+      properties: expect.objectContaining({ placeId: 'jianzhou' }),
+    }));
+  });
+
+  it('maps the separate 946 Southern Tang assault on Fuzhou as an event point', () => {
+    const event = events.find((item) => item.id === 'southern-tang-assaults-fuzhou-946');
+    const detail = eventDetails.find((item) => item.eventId === 'southern-tang-assaults-fuzhou-946');
+
+    expect(event).toMatchObject({
+      year: 946,
+      placeId: 'fuzhou',
+      coordinates: [119.30, 26.08],
+      sourceIds: expect.arrayContaining(['zizhi-tongjian-southern-tang-937-959']),
+    });
+    expect(detail).toMatchObject({ polityIds: ['southern_tang'], locationIds: ['fuzhou'] });
+    expect(buildLocalMapData(getHistoricalState(946)).events.features).toContainEqual(expect.objectContaining({
+      geometry: { type: 'Point', coordinates: [119.30, 26.08] },
+      properties: expect.objectContaining({ entityId: 'southern-tang-assaults-fuzhou-946' }),
+    }));
   });
 
   it('connects the last ruler and Fuzhou heritage succession', () => {

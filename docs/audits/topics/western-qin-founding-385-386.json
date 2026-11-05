@@ -1,0 +1,40 @@
+{
+  "decisionId": "gap-western_qin-385-386",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "western-qin-early-center-jinshu-106",
+      "use": "《晋书》卷125用于核对太元十年乞伏国仁建义、置十二郡、筑勇士城而居，以及388年乞伏乾归继位后迁金城；《资治通鉴》卷106将建义、筑勇士城条系于太元十年九月，并交叉核对军事背景；《榆中县志》记录勇士城故址考证。上述材料支持历史结论和区域级中心参照，不支持385—386年连续疆界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1542（clio-1542-western_qin-387）来源时段为387—393年，snapshot 387，low confidence，control type unspecified。仅作后续时段排除依据，不回填385—386年。"
+    }
+  ],
+  "reviewLimitations": [
+    "385—386年共2条年度记录，疆域面均留空；385年中心仅适用于九月建政后的年内阶段。",
+    "夏官营仅作低置信度区域中心参照，勇士城精确遗址仍有考证差异；中心点不表示城址或疆界。",
+    "本审核不替代来源使用权、现代底图许可或公开地图合规审核。"
+  ],
+  "yearCount": 2,
+  "years": [
+    {
+      "year": 385,
+      "conclusion": "太元十年九月，乞伏国仁自立、建元建义、置十二郡并筑勇士城居之。该政权与中心仅在公历年后段形成。",
+      "mapExpression": "regional-capital-point-part-year",
+      "capitalPlaceId": "yongshi_western_qin",
+      "territoryBoundary": null,
+      "sourceIds": ["western-qin-early-center-jinshu-106"],
+      "evidenceGap": "可确认建政和勇士城中心；古城的精确遗址对应存在异说，现点为夏官营镇区域参照，不表示精确城址或逐年疆界。"
+    },
+    {
+      "year": 386,
+      "conclusion": "乞伏国仁延续建义政权，以勇士城为政治中心参照；各部归附、军事征伐和名义授封不能直接转为连续控制边界。",
+      "mapExpression": "regional-capital-point",
+      "capitalPlaceId": "yongshi_western_qin",
+      "territoryBoundary": null,
+      "sourceIds": ["western-qin-early-center-jinshu-106"],
+      "evidenceGap": "中心和若干军事事件可考，未发现支持本年连续边界线的空间证据；不以388年迁金城或387年以后扩张回填。"
+    }
+  ]
+}

@@ -20,7 +20,9 @@ describe('fourteenth-batch unresolved capital evidence review', () => {
     expect(recordsFor('shang').every((record) => (
       record.role === 'disputed' && record.status === 'uncertain' && record.confidence === 'low'
     ))).toBe(true);
-    expect(recordsFor('western_qin').some((record) => record.role === 'de_facto' && record.status === 'actual')).toBe(true);
+    expect(recordsFor('western_qin')).toEqual(expect.arrayContaining([
+      expect.objectContaining({ placeId: 'fuhan', validFrom: 412, validTo: 431, role: 'primary', status: 'actual', confidence: 'low' }),
+    ]));
   });
 
   it('keeps the supplementary cases non-formal and names their historical scope', () => {

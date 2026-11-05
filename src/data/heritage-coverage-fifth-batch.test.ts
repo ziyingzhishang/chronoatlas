@@ -17,7 +17,7 @@ const fifthBatch = [
   { id: 'guzang-baita-temple-site', placeId: 'guzang', polityIds: ['former_liang', 'northern_liang', 'later_liang'], personIds: [], eventIds: ['former-liang-founded'] },
   { id: 'tongwan-south-gate-site', placeId: 'zhitong', polityIds: ['xia'], personIds: ['heliAN-bobo'], eventIds: ['xia-sixteen-states-founded-eighth-batch'] },
   { id: 'tuyuhun-fuqisi-city-candidate', placeId: 'tuyuhun_core', polityIds: ['tuyuhun'], personIds: [], eventIds: ['tuyuhun-founded'] },
-  { id: 'western-qin-yuanchuan-city-candidate', placeId: 'jincheng', polityIds: ['western_qin'], personIds: [], eventIds: ['western-qin-founded'] },
+  { id: 'western-qin-yuanchuan-city-candidate', placeId: 'yongshi_western_qin', polityIds: ['western_qin'], personIds: [], eventIds: ['western-qin-founded'] },
 ] as const;
 
 describe('heritage coverage fifth batch', () => {

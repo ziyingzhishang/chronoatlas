@@ -1,0 +1,37 @@
+{
+  "decisionId": "gap-jin_jurchen-1115-1125",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "jinshi-vol2-taizu",
+      "use": "《金史》卷2《太祖纪》用于逐年核对1115—1123年建国、攻辽、州县归附、燕京接管及太祖去世等政治军事节点。战役、投降和州县归附并不构成全年连续控制边界。"
+    },
+    {
+      "id": "jinshi-vol3-taizong",
+      "use": "《金史》卷3《太宗纪》用于核对1123—1125年皇位交接、宋金议地、西夏关系、辽天祚帝被俘及攻宋进程；外交安排、臣属关系和战线均不作为直接疆界。"
+    },
+    {
+      "id": "capital-history-reference",
+      "use": "项目政治中心资料用于会宁府/上京早期中心阶段和现代区域近似定位；点位不表示金上京城垣或金朝直接控制范围。"
+    }
+  ],
+  "reviewLimitations": [
+    "1115—1125年共11条年度记录，全部仅显示会宁府中心参照，疆域面均留空。",
+    "攻取州县、降附、宋金分地交涉、西夏臣属关系、辽亡及攻宋分别属于战事、地方归附或外交关系，不合并为金朝全年边界。",
+    "会宁府位置为现代遗址区域近似参照；本审核不替代底图、来源使用权或公开地图合规审核。"
+  ],
+  "yearCount": 11,
+  "years": [
+    {"year":1115,"conclusion":"完颜阿骨打建国称帝，国号大金；金军攻取宁江州并在东北方向击败辽军，女真、渤海等部众陆续归附。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"会宁府仅作早期政治中心点。初年军事胜利、部众归附和战场范围不足以复原全年直接控制疆界。"},
+    {"year":1116,"conclusion":"金军攻取黄龙府并击退辽军；辽东京地区发生高永昌起事，女真政权势力继续扩展，地方接管仍在变化。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"战役、叛乱和城市易手不等于全年度稳定控制；会宁府点不代表辽东京及其周边疆域。"},
+    {"year":1117,"conclusion":"金改用天辅年号，平定东京及南路的部分辽军与地方势力，并获多处州县归附。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"史籍所见州县归附和军事行动分布不构成连续控制边界，未绘全年疆域。"},
+    {"year":1118,"conclusion":"金继续接纳辽属州县和各族部众，整编新附人口；同时与辽议和，并与宋往来讨论共同伐辽及战后分地。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"归附、盟约和宋金分地交涉分别涉及控制、外交关系和名义安排，不能合绘为直接疆界。"},
+    {"year":1119,"conclusion":"辽遣使册封阿骨打，金认为册文不合而拒绝；金军继续部署，并与辽维持反复交涉。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"册封与战争部署不提供逐年边界；不把名义臣属关系或军事驻地当作疆界。"},
+    {"year":1120,"conclusion":"金太祖亲征，五月攻取辽上京临潢府；因路远、军队疲惫等因素停止深入并回师，战果不等于稳定控制辽全境。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"攻取上京是明确的战事节点，不能单独确定该城及周边全年直接控制状态或辽金连续边界。"},
+    {"year":1121,"conclusion":"金军平定部分内乱并接纳辽将耶律余睹等归附，随后筹备西向征辽但受天气等因素影响改变行动。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"将领归附、军事筹备和临时调兵不能转换为西向连续控制区。"},
+    {"year":1122,"conclusion":"金军攻取辽中京及周边多处州县；十二月进军燕京，辽官降并开始安抚燕京州县。辽朝政局与地方归附继续变动。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","capital-history-reference"],"evidenceGap":"多处州县降附、复叛和燕京年末接管不能合并成稳定全年疆界，缺乏可逐年描定的直接控制边缘。"},
+    {"year":1123,"conclusion":"金朝继续处置辽旧州县并与宋议定燕京六州分割；八、九月太祖去世、太宗即位，政治交接与地方接管仍在变化。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol2-taizu","jinshi-vol3-taizong","capital-history-reference"],"evidenceGap":"皇位交接、州县安抚与宋金外交安排不是同一边界结论；不把条约分地或会宁府点画成全年疆界。"},
+    {"year":1124,"conclusion":"金朝与宋就山西诸镇的交割反复议定，最终未按先前承诺割让；金同时与西夏订立臣属关系和西部地界安排。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol3-taizong","capital-history-reference"],"evidenceGap":"条约交涉、臣属关系与金朝直接行政控制边界性质不同，不能用外交约定重建全年国界。"},
+    {"year":1125,"conclusion":"金军俘获辽天祚帝，辽中央政权终结；金军随后调兵大举攻宋，战争前线和新占区域仍在迅速变化。","mapExpression":"control-center-point","capitalPlaceId":"huining","territoryBoundary":null,"sourceIds":["jinshi-vol3-taizong","capital-history-reference"],"evidenceGap":"辽亡、对宋战争和地方接收发生于年内不同阶段；现有资料不足以复原金朝全年直接控制边界，不回填1126年后的版图。"}
+  ]
+}

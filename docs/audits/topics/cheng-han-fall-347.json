@@ -1,0 +1,39 @@
+{
+  "decisionIds": ["gap-cheng_han-347-347"],
+  "years": [
+    {
+      "polityId": "cheng_han",
+      "year": 347,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "chengdu",
+      "territoryBoundary": null,
+      "conclusion": "永和三年春桓温军入蜀，李势降；桓温留成都三十日后还江陵。四月丁巳邓定、隗文等入据成都。成都点只标示成汉中枢及年内战事、控制转折所在城市，不能据此表述为四月晋军持续占据成都。",
+      "evidenceGap": "《资治通鉴》记桓温离成都还江陵后，四月当地军队入据成都，年内控制状态复杂；现有史料不足以复原逐时控制线。成都点不表示成汉或东晋全年控制，也不据此转移成汉既有疆域。",
+      "sourceIds": ["cheng-han-fall-347-primary-sources", "modern-geography-reference"]
+    }
+  ],
+  "coexistenceNotes": [
+    "东晋在347年持续存在。桓温春季攻取成都并于留驻三十日后还江陵；四月丁巳邓定、隗文等入据成都。不能把桓温春季的军事控制表述为四月晋军仍据成都或全年东晋稳定控制。",
+    "Cliopatria record 1477（clio-1477-jin_eastern-347）是低置信度、控制性质未定的347—370年东晋区间轮廓，空间上包含成都参照点。该来源面只在347年按 conflict:jin-chenghan-transition:347 暂扣；原始几何保留、不裁切、不转给成汉，348年起恢复原来源时段。",
+    "成汉政权终止和东晋接收是不同时间节点；战事路线、投降与入据均不自动构成边界。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "cheng-han-fall-347-primary-sources",
+      "use": "《晋书》卷九十八·桓温传、卷一二一·李势载记与《资治通鉴》卷九十七互校：桓温攻取成都、李势投降，桓温留成都三十日后还江陵；同年四月丁巳邓定、隗文等入据成都。该时序不支持‘四月晋军入据成都’的说法，也不用于重建全年疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "成都现代城市近似中心坐标，仅标示政治中心及年内交接地点，不代表古城垣、行政边界或完整控制范围。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "此前 Cliopatria v0.2.1 record 1459（clio-1459-cheng_han-338）有效至346年，来源时段为338—346年；不将成汉终止前的来源轮廓延伸至347年。东晋 record 1477（clio-1477-jin_eastern-347）为347—370年低置信度区间模型，覆盖成都参照点；因347年短期攻取后撤军、四月当地势力复入，只在347年挂 requires-review，不据此断定东晋全年控制。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "347年疆域面保持留空，coverage sourceBoundaryIds为空；D级成都中心点不属于确定疆域边界。",
+    "历史时序可据史料核对；东晋来源区间面仅在347年待审拦截，不代表对该来源整体时段的永久否定；全年空间边界、几何制图审核、来源使用权及公开地图展示条件仍需分别审核。"
+  ]
+}

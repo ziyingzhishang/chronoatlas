@@ -1,0 +1,93 @@
+{
+  "decisionId": "gap-western_liang-400-406",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "jinshu-vol87-li-hao",
+      "use": "《晋书》卷87用于核对李暠敦煌阶段、405年义熙元年迁居酒泉及迁治后中心；支持中心时序，不提供400—406年逐年连续控制边界。"
+    },
+    {
+      "id": "zizhi-tongjian-vol111-western-liang",
+      "use": "《资治通鉴》卷111用于核对400年唐瑶移檄六郡推李暠为凉公及西凉政权形成。"
+    },
+    {
+      "id": "zizhi-tongjian-vol112-western-liang",
+      "use": "《资治通鉴》卷112用于核对401年酒泉、凉宁二郡归属变化；行政归属事件不等于可绘制连续边界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "敦煌、酒泉点位均为现代城市近似参照，仅用于定位政治中心，不表示古城、周边辖区或疆界。"
+    }
+  ],
+  "reviewLimitations": [
+    "400—406年共7条年度记录，全部只显示敦煌或酒泉城市级中心参照，疆域面均留空。",
+    "401年郡级归属变化不提供闭合空间边界；405年中心迁移后不把酒泉点位反向套用于此前年份。",
+    "中心点不表示古城垣或控制边缘；本审核不替代来源使用权与公开地图合规审核。"
+  ],
+  "yearCount": 7,
+  "years": [
+    {
+      "year": 400,
+      "conclusion": "唐瑶移檄六郡推李暠为凉公，西凉政权形成；敦煌为早期政治中心参照。史载六郡及官员任命不能直接转换为闭合边界。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "dunhuang",
+      "territoryBoundary": null,
+      "sourceIds": ["jinshu-vol87-li-hao", "zizhi-tongjian-vol111-western-liang"],
+      "evidenceGap": "没有逐年直接控制边界的空间依据；敦煌仅作城市中心点，不表示周边领土范围。"
+    },
+    {
+      "year": 401,
+      "conclusion": "敦煌仍为西凉政治中心。《资治通鉴》卷112记酒泉、凉宁二郡从北凉转归西凉，支持局部行政归属变化，不足以重建相连的控制边界。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "dunhuang",
+      "territoryBoundary": null,
+      "sourceIds": ["jinshu-vol87-li-hao", "zizhi-tongjian-vol112-western-liang"],
+      "evidenceGap": "史料记有政权归属节点，但没有县郡边界几何或足以绘制连续疆域的年度空间依据；不把转归记录画成精确疆界。"
+    },
+    {
+      "year": 402,
+      "conclusion": "西凉延续以敦煌为中心的早期阶段；未见足以支持本年独立疆域轮廓的逐年材料。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "dunhuang",
+      "territoryBoundary": null,
+      "sourceIds": ["jinshu-vol87-li-hao"],
+      "evidenceGap": "《晋书》卷87叙述敦煌阶段及后续迁居酒泉，但不提供402年可复原的控制边缘；只显示中心点。"
+    },
+    {
+      "year": 403,
+      "conclusion": "敦煌继续作为西凉早期政治中心参照；不将相邻政权竞争或军事活动视为稳定疆界。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "dunhuang",
+      "territoryBoundary": null,
+      "sourceIds": ["jinshu-vol87-li-hao"],
+      "evidenceGap": "没有本年连续直接控制边界的空间材料，不绘疆域面。"
+    },
+    {
+      "year": 404,
+      "conclusion": "西凉仍处敦煌中心阶段；次年迁居酒泉，不能将迁治后的中心反向套用于本年。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "dunhuang",
+      "territoryBoundary": null,
+      "sourceIds": ["jinshu-vol87-li-hao"],
+      "evidenceGap": "史料支持迁治前的敦煌与迁治后的酒泉阶段，但无本年疆界资料；不根据邻年补绘。"
+    },
+    {
+      "year": 405,
+      "conclusion": "《晋书》卷87记义熙元年李暠迁居酒泉，西凉政治中心转至酒泉。迁治和军事备战本身不证明完整控制范围。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "jiuquan",
+      "territoryBoundary": null,
+      "sourceIds": ["jinshu-vol87-li-hao"],
+      "evidenceGap": "酒泉是可定位的政治中心参照；缺乏逐年控制边缘和可重发布的精确疆界几何。"
+    },
+    {
+      "year": 406,
+      "conclusion": "西凉以酒泉为政治中心参照。对河西、东向地区的政治声索或军事活动不等同于全年直接控制。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "jiuquan",
+      "territoryBoundary": null,
+      "sourceIds": ["jinshu-vol87-li-hao"],
+      "evidenceGap": "没有406年可核实的连续直接控制边界；保留酒泉中心点，不以其后扩张或其他政权几何代替。"
+    }
+  ]
+}

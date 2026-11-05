@@ -1,0 +1,46 @@
+{
+  "decisionId": "gap-former_qin-394-394",
+  "polityId": "former_qin",
+  "years": [
+    {
+      "year": 394,
+      "mapExpression": "event-location-point",
+      "mapEventIds": ["former-qin-defeated-at-mawei-394"],
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "conclusion": "年初姚苌死后，苻登留苻广守雍、苻崇守胡空堡并率军东进；四月废桥、马嵬一带战败，先退雍、继至平凉并入马毛山；七月在山南迎接西秦援军时被姚兴擒杀，苻崇奔湟中继位；十月苻崇与杨定攻西秦失败，二人被杀，前秦后期政权终止。",
+      "evidenceGap": "史料呈现多次战败、迁移据点、继位和政权终止，无法用单一城市点代表全年中枢；地图仅以马嵬区域点表示四月战事，不将其当作全年中心或控制界线。战场及移动路线也不能复原全年直接控制疆域。",
+      "sourceIds": [
+        "former-qin-termination-394-primary-sources",
+        "mawei-xingping-historical-location",
+        "xingping-gazetteer-mawei-regional-location"
+      ]
+    }
+  ],
+  "coexistenceNotes": [
+    "394年后秦和西秦仍为独立政权；苻登向西秦求援、与后秦交战，不把联盟、战场、求援或名义辖区合成前秦疆界。",
+    "苻登七月被杀后苻崇短暂继位，十月苻崇败亡；两个政权终止阶段分开记录。",
+    "同断面来源轮廓经修正后的内部面积相交筛查，未检测到394年多边形内部重叠；早期将边界接触误报为相交的临时拦截已撤销。来源低置信度时段模型的历史准确性仍待审核，前秦疆域继续留空。详见coeval-boundary-overlaps-394.json。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "former-qin-termination-394-primary-sources",
+      "use": "《资治通鉴》卷一〇八按年初、四月、七月、十月区分苻登东进、废桥与马嵬败退、山南被擒杀及苻崇败亡；《晋书》卷一一五·苻登载记交叉核对胡空堡、雍、平凉等据点迁移。用于历史时序，不据战场或迁移推导边界。"
+    },
+    {
+      "id": "mawei-xingping-historical-location",
+      "use": "陕西师范大学陕西地方文化资源引《凤翔县志》将马嵬堡战事对应今兴平马嵬坡；《雍正陕西通志》记马嵬堡在旧兴平县西约三十里并引相关战事。仅支持今兴平马嵬街道区域级事件点，不定位战场阵地、战线、全年中心或疆界。"
+    },
+    {
+      "id": "xingping-gazetteer-mawei-regional-location",
+      "use": "《兴平县志》记马嵬镇位于县西部、距县城12.5公里，并保留马嵬驿等地名沿革；旧志及其他地理考说对马嵬店、马嵬坡的县城里距有异。只用于交叉确认旧兴平县西部的区域地望，不能给出394年具体战场坐标、堡址界线或战线。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "394年无前秦疆域几何、无年度中心点；coverage sourceBoundaryIds为空，长安不再作为该年末期中枢参照。",
+    "东晋、后燕、后秦、北魏、高句丽、新罗、吐谷浑、西秦和后凉来源轮廓经修正后的筛查未发现394年内部面积相交；未因几何重叠而隐藏、裁切或转归。来源时段模型本身仍需独立历史与制图审核，详见coeval-boundary-overlaps-394.json。",
+    "古地名的逐点定位不足以替代疆界证据；史料结论、可绘性、来源使用权和公开地图展示条件分别审核。",
+    "新增394年四月马嵬战事区域事件点；该点不改变年度地图表达中无中心点、无疆域面的结论。"
+  ]
+}

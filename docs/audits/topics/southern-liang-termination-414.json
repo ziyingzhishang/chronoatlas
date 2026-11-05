@@ -1,0 +1,27 @@
+{
+  "decisionId": "gap-southern_liang-414-414",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "southern-liang-termination-414-primary",
+      "use": "《资治通鉴》卷116、《晋书》卷126及临夏地方志用于核对南凉傉檀出征乙弗、西秦袭取乐都、迁徙王族与官民及傉檀归降的年内过程。证据支持乐都作为失守前阶段性中心，不支持南凉全年独立或连续控制边界；与西秦414—416年来源几何的时段冲突维持待审，不自动裁剪。"
+    }
+  ],
+  "reviewLimitations": [
+    "414年包含乐都失守及政权交接，中心点仅代表南凉覆亡前阶段，疆域面留空。",
+    "西秦414—416年来源几何与南凉414年年内控制阶段存在时间冲突，须单独制图审核；本条不授权自动拆分或裁切。",
+    "本审核不替代来源使用权、地方志地图许可或公开地图合规审核。"
+  ],
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 414,
+      "conclusion": "南凉在本年年初仍以乐都为政治中心。西秦乞伏炽磐趁秃发傉檀出征乙弗时攻取乐都、任命守将并迁徙南凉王族及官民；傉檀随后归降。乐都只代表南凉覆亡前的部分年度中心，年末河湟政权格局已转入西秦控制阶段。",
+      "mapExpression": "capital-center-point-part-year",
+      "capitalPlaceId": "ledu",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-liang-termination-414-primary"],
+      "evidenceGap": "史料支持乐都阶段性中心及年内易手，不能证明南凉在414年全年持续独立，也不足以复原易手前后的逐年直接控制边缘；不绘南凉疆域面，不把西秦后续控制轮廓回填。"
+    }
+  ]
+}

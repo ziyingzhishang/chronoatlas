@@ -1,0 +1,35 @@
+{
+  "decisionId": "gap-jin_later-947-947",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "jin_later",
+      "year": 947,
+      "conclusion": "正月契丹进入开封，后晋末帝石重贵出降并被北迁，后晋中央政权终止；二月刘知远在太原即位，五月后汉南下进入洛阳、开封，六月复汴州为东京并改国号汉。",
+      "mapExpression": "transition-center-point",
+      "centerPlaceId": "kaifeng",
+      "territoryBoundary": null,
+      "sourceIds": ["later-jin-termination-947-primary-sources", "modern-geography-reference"],
+      "evidenceGap": "契丹阶段性占领、后晋终止、后汉在太原建政和后来接收开封依次发生；开封点不表示后晋全年控制或任何一方的全境。"
+    }
+  ],
+  "coexistenceNotes": [
+    "947年契丹在河南的占领和撤军、后晋覆亡、后汉建政及各镇归附分属不同阶段；太原和开封中心点不构成三方边界。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "later-jin-termination-947-primary-sources",
+      "use": "《资治通鉴》卷286—287核对契丹入汴、后晋终止、刘知远在太原即位、后汉南下进入洛阳及开封后改东京和改国号。支持城市转换时序，不直接提供全年疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "开封、太原采用项目近似现代城市点位，不表示五代城墙、晋阳古城范围或政权边界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "947年后晋疆域面留空，不把契丹军事占领或后汉后续接收等同全年直辖。",
+    "开封与太原点表示年内阶段，不表示同时控制、边界线或完整领土。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

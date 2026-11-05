@@ -1,0 +1,38 @@
+{
+  "decisionId": "gap-zhou_later-951-959",
+  "yearCount": 9,
+  "years": [
+    {"polityId":"zhou_later","year":951,"conclusion":"郭威受禅建立后周；刘旻在太原建立北汉，北方新政权并存。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","secondaryCenterPlaceIds":["taiyuan"],"territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"后周与北汉中心可定位，不能据中心推导双方边界或后周全境。"},
+    {"polityId":"zhou_later","year":952,"conclusion":"后周中央政务延续于开封，边防和地方军镇关系仍变化。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"缺少可复原全年连续控制线的逐界证据。"},
+    {"polityId":"zhou_later","year":953,"conclusion":"后周中央中心仍在开封；军事和地方事务不能合并为单一年度疆线。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"中心点只表达中央政治所在地，疆域面留空。"},
+    {"polityId":"zhou_later","year":954,"conclusion":"郭威去世、柴荣继位；北汉与契丹军南下，后周在高平战事中获胜。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"战场、追击和战后地方接管不是固定疆界。"},
+    {"polityId":"zhou_later","year":955,"conclusion":"后周向秦州、凤州方向用兵并取得阶段进展。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"军事进展不足以单独确定秦凤区域全年控制边界。"},
+    {"polityId":"zhou_later","year":956,"conclusion":"后周南征淮南，战争改变部分州郡军政控制。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"不将进军路线、围城范围或阶段性占领画成全年疆界。"},
+    {"polityId":"zhou_later","year":957,"conclusion":"淮南战事继续，江北城市和州郡控制转换具有阶段性。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"不能用单一战役结果拼接区域边界。"},
+    {"polityId":"zhou_later","year":958,"conclusion":"南唐割让江北地、称臣并奉后周正朔。名义秩序变化不等于南唐江南地区由后周直接管辖。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference"],"evidenceGap":"条约割地和奉正朔须与直接行政控制区分；疆域面留空。"},
+    {"polityId":"zhou_later","year":959,"conclusion":"后周北向攻辽取得关南部分地区；柴荣去世、幼主继位后北向军事行动停止。学术评介确认有959年后周—北汉政区示意图，另已找到该图的IKCEST在线图目，可作该断面州县关系的后续复核线索。","mapExpression":"control-center-point","centerPlaceId":"kaifeng","territoryBoundary":null,"sourceIds":["later-zhou-formation-951-959-primary-sources","modern-geography-reference","china-admin-history-five-dynasties-northern-han-map"],"evidenceGap":"959年政区图是单一断面参考，不能替代951—958年逐年控制证据；当前仅核到在线图目及其来源、比例尺元数据，交互图层细节尚未核阅、几何未提取且使用权未核。前线和阶段战果仍不能拼成全年疆界，也不向960年倒填。"}
+  ],
+  "coexistenceNotes": [
+    "951年北汉与后周并存，后周与南唐等政权在后续年份交战或建立名义关系；中心点不裁切、不表示相邻边界。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "later-zhou-formation-951-959-primary-sources",
+      "use": "《资治通鉴》卷290—294逐年核对后周建政、继承、北汉与契丹战事、秦凤与淮南战事、南唐关系及959年北征。支持年度政局与事件判断，不直接提供可绘疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "使用项目开封近似城市点表达后周中央政治中心；951年另有北汉太原中心点，均不代表古城垣或疆域。"
+    },
+    {
+      "id": "china-admin-history-five-dynasties-northern-han-map",
+      "use": "《地理学报》书评确认李晓杰《中国行政区划通史·五代十国卷》附有959年后周与北汉政区示意图；另找到IKCEST在线图目（https://ikcest-drr.data.ac.cn/map/m2f40），页面说明其据郭沫若编《中国历史地图集》第二册、比例尺1:1200万。当前只核对到图目及元数据，图层细节尚未核阅；仅作为959年断面州县关系的后续复核线索，不向前回推951—958年，不提取或复制几何，来源与图件授权及公开展示条件待核。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "951—959年后周疆域面留空，不以战线、条约名义、臣属关系或959年战果替代直接边界。",
+    "951年北汉太原中心只表达并存政权中心，不能据两中心点推导分界。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

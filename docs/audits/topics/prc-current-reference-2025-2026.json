@@ -1,0 +1,33 @@
+{
+  "decisionId": "gap-prc-2025-2026",
+  "yearCount": 2,
+  "years": [
+    {
+      "polityId": "prc",
+      "year": 2025,
+      "conclusion": "2025年中华人民共和国内政权连续；地图仅将2024年同政权来源轮廓作为最近年份参考，不据此声称已取得2025年独立测绘或逐界控制审核。",
+      "mapExpression": "nearest-same-polity-reference",
+      "centerPlaceId": null,
+      "territoryBoundary": "clio-13616-prc-2024",
+      "sourceIds": ["cliopatria", "map-regulation", "mnr-standard-map-service-2026"],
+      "evidenceGap": "没有2025年独立边界成果。2024年来源轮廓为低置信、控制性质未指定的近似时段模型，只按既有C级审核决策作为过渡参考，不解释为逐界核实的国境。"
+    },
+    {
+      "polityId": "prc",
+      "year": 2026,
+      "conclusion": "截至2026-11-04，中华人民共和国政权连续；使用2024年同政权来源轮廓作C级近邻参考。2026年尚未结束，本条记录仅覆盖截至审核日可确认的政权与来源状态，年末后须复核。",
+      "mapExpression": "nearest-same-polity-reference",
+      "centerPlaceId": null,
+      "territoryBoundary": "clio-13616-prc-2024",
+      "sourceIds": ["cliopatria", "map-regulation", "mnr-standard-map-service-2026"],
+      "evidenceGap": "没有2026年独立边界成果，且2026公历年仍在进行。不得把2024年参考解释为2026全年直接控制疆界；年末需校验新发布资料与政局变化。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "两年均引用同一来源记录 clio-13616-prc-2024；该几何是Cliopatria v0.2.1 record 13616的近似模型，置信度低、controlType未指定，不是逐年测绘成果。",
+    "运行时以C级、nearest-same-polity和reference标记显示过渡参考；不得描述为2025或2026官方边界，也不得用于替代直接控制审核。",
+    "2026年按截至2026-11-04的年内审核记录；2026年结束后重新核对年度变化及更新来源。",
+    "公开地图另须依据现行标准地图和审图规则核对国界表达、审图号与批准条件。本记录没有从官方标准地图复制几何，也不构成发布许可。"
+  ]
+}

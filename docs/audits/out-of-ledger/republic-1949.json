@@ -1,0 +1,59 @@
+{
+  "topicId": "out-of-ledger-republic-1949-transition",
+  "polityId": "republic",
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 1949,
+      "conclusion": "1949年中华民国中央政府在内战中多次迁移；年末中央政府迁台。台北点仅表示迁台后的年末城市级政府所在地。",
+      "mapExpression": "year-end-control-center-point",
+      "centerPlaceId": "taipei",
+      "territoryBoundary": null,
+      "sourceBoundaryIds": [
+        "clio-13089-republic-1949"
+      ],
+      "sourceIds": [
+        "taiwan-archives-government-relocation-1949",
+        "academy-chinese-studies-republic-retreat-1949",
+        "taipei-city-geographical-location",
+        "cliopatria",
+        "cliopatria-map-image-1949",
+        "prc-liberated-areas-map-1949-reference"
+      ],
+      "evidenceGap": "Cliopatria 1949轮廓是低置信度单年近似模型，未说明直接控制、名义范围或图示时点；1949年内政权建立、战事推进和中央政府迁移使单一年度边界不能代表全年实控。几何留待逐界历史与制图复核，当前不进入运行时。 Cliopatria原始图像集可追溯到1949年C382-1949.PNG帧；其论文说明原始复合图像按不规则时点编制并人工将地图边界转绘到统一底图。该来源可证明本条几何所据图面，但不能由单一地图颜色确认1949年全年或年末实际控制语义。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceImageReview": {
+    "image": "C382-1949.PNG",
+    "url": "https://github.com/Seshat-Global-History-Databank/cliopatria/blob/v0.2.1/original_map_images/C382-1949.PNG",
+    "reviewedAt": "2026-11-05",
+    "method": "manual-visual-inspection",
+    "dimensions": { "width": 4800, "height": 2400 },
+    "legendEntities": ["Republic of China", "Communist Party of China"],
+    "observations": [
+      "The legend assigns separate colors to the Republic of China and the Communist Party of China, and the East Asia map uses both colors in mainland China.",
+      "The image has no visible title or caption specifying an intra-year date or whether colors denote effective control, a government's claim, or another political classification."
+    ],
+    "temporalControlSemantics": "not-specified",
+    "geometryAlignment": "not-verified",
+    "conclusion": "Visual review confirms the source image distinguishes the two named entities, but does not establish the 1949 time slice or the semantic and exact spatial correspondence of Cliopatria record 13089. Keep the outline held from runtime."
+  },
+  "reviewLimitations": [
+    "台北为城市级年末政府所在地参照，不代表中央机关办公处的精确坐标。",
+    "不将中华民国大陆时期来源轮廓解释为1949年全年直接控制疆界、法理声索或中华人民共和国疆界。",
+    "原始几何保留但1949年运行时拦截；其适用语义待独立历史与制图复核。",
+    "来源使用权、署名和公开地图条件仍须单独核验。",
+    "已人工核对C382-1949.PNG原图（4800×2400）：图例分别列出Republic of China与Communist Party of China，东亚区域显示两者不同颜色；原图未注明1949年内时点或颜色所代表的控制/声索语义，且未完成图像配准及record 13089矢量的逐界对应。因此只确认来源图像中的实体标签，不将其轮廓解释为全年或年末实控疆界，运行时继续拦截。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "cliopatria-map-image-1949",
+      "use": "已人工查看Cliopatria v0.2.1原始图像C382-1949.PNG（4800×2400）。图例分别标出Republic of China与Communist Party of China，东亚区域使用不同颜色；画面没有可见标题或说明限定1949年内时点，也未说明颜色表示实控、声索或其他政治分类。该核对支持record 13089的实体标签背景，但没有完成原图配准或矢量逐界核验，不能据此确认其1949年疆域语义。论文另说明来源图由不规则时点的复合图像人工转绘到统一底图。"
+    },
+    {
+      "id": "prc-liberated-areas-map-1949-reference",
+      "use": "补充核对1949年解放区省级行政设置背景。平台说明其地图源自2003年行政区划沿革图集；该图不是逐月实控线资料，行政区划不等同于全年疆界，本项目不复制或转绘其几何。"
+    }
+  ]
+}

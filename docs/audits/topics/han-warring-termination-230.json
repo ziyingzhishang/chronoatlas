@@ -1,0 +1,55 @@
+{
+  "decisionId": "gap-han_warring--230--230",
+  "reviewStatus": "source-checked",
+  "yearCount": 1,
+  "years": [
+    {
+      "year": -230,
+      "conclusion": "秦王政十七年，内史腾攻灭韩国并俘韩王安，以韩地置颍川郡。新郑作为战国韩国都城，仅表达该年韩国受降前的政治中心；年内韩国政权终止，秦接收过程不作全年连续疆界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "xinzheng",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol6-han-termination",
+        "shiji-han-shijia-termination-230",
+        "han-warring-late-territory-li-xiaojie-2001",
+        "han-warring-late-territory-zhang-jianyu-2023",
+        "china-chronology",
+        "capital-history-reference",
+        "xinzheng-government-history"
+      ],
+      "evidenceGap": "《资治通鉴》卷六与《史记·韩世家》记韩国终结、韩王安被俘及韩地纳入秦；李晓杰2001年研究按方位复原韩国疆域变迁，张建宇2023年结合兵器铭文指出韩国在前233年仍控制部分黄河沿岸城邑。后者距本条目三年，且前230年发生年内灭国，不能直接据此前一年的城邑信息假定前230年全年稳定边界；‘尽入其地’和颍川郡名也不提供精确郡界。疆域多边形继续留空，新郑点位仅作政治中心参照。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-vol6-han-termination",
+      "use": "《资治通鉴》卷六秦始皇十七年直接记载内史腾灭韩、虏韩王安、以韩地置颍川郡；支持政权终止和接收事实，不提供郡界坐标。"
+    },
+    {
+      "id": "shiji-han-shijia-termination-230",
+      "use": "《史记·韩世家》记韩王安九年秦俘王安、尽入其地并置颍川郡；用于交叉核对灭韩与接收结论，不将其概述转为精确边界。"
+    },
+    {
+      "id": "han-warring-late-territory-li-xiaojie-2001",
+      "use": "李晓杰按方位和阶段梳理战国韩国疆域，并以王安九年韩地尽入秦为终点；用于校正本条目对韩国晚期疆域的背景判断，不复制其地图或复原线。"
+    },
+    {
+      "id": "han-warring-late-territory-zhang-jianyu-2023",
+      "use": "张建宇结合传世史料与战国兵器铭文，论证部分黄河沿岸城邑在前233年仍属韩国；此距前230年三年，不能直接移用为前230全年控制区或边界。"
+    },
+    {
+      "id": "xinzheng-government-history",
+      "use": "新郑市人民政府历史沿革记载战国时新郑为韩国都城、郑县治所在韩都及秦代设县；用于核对历史地点与现代新郑的关联，不作为城垣坐标或疆界证据。"
+    },
+    {
+      "id": "capital-history-reference",
+      "use": "仅辅助新郑作为韩国都城阶段参照；现代城市或古城遗址点不等于韩国国境线。"
+    }
+  ],
+  "reviewLimitations": [
+    "前230年韩国疆域面继续留空，coverage sourceBoundaryIds为空。",
+    "新郑点只表达受降前政治中心参照，不代表韩国全境；秦置颍川郡不表示该郡边界已复原。",
+    "历史事实与地图表达已完成来源核对；独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ]
+}

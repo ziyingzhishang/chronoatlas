@@ -14,7 +14,6 @@ describe('元两都与元北转换闭环', () => {
     expect(capitalHistory.filter((item) => item.polityId === 'yuan').map(({ placeId, validFrom, validTo, status }) => ({ placeId, validFrom, validTo, status }))).toEqual([
       { placeId: 'shangdu', validFrom: 1271, validTo: 1273, status: 'formal' },
       { placeId: 'shangdu', validFrom: 1274, validTo: 1364, status: 'seasonal' },
-      { placeId: 'dadu', validFrom: 1271, validTo: 1271, status: 'actual' },
       { placeId: 'dadu', validFrom: 1272, validTo: 1368, status: 'formal' },
     ]);
   });

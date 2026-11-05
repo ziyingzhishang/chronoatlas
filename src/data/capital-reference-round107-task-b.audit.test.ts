@@ -39,15 +39,15 @@ const collectCandidates = () => {
 
 describe('round 107 task B Sui-Tang capital reference audit', () => {
   it('closes the Sui Daxing capital-stage event with aligned endpoints', () => {
-    const capital = capitalHistory.find((term) => term.polityId === 'sui' && term.placeId === 'changan');
+    const capital = capitalHistory.find((term) => term.polityId === 'sui' && term.placeId === 'daxing');
     const event = events.find((item) => item.id === 'daxing-capital');
     const eventDetail = getEventDetail('daxing-capital');
     const detail = getPolityDetail('sui');
 
-    expect(capital).toMatchObject({ polityId: 'sui', placeId: 'changan', validFrom: 581, validTo: 604 });
-    expect(event).toMatchObject({ id: 'daxing-capital', year: 583, placeId: 'changan' });
+    expect(capital).toMatchObject({ polityId: 'sui', placeId: 'daxing', validFrom: 583, validTo: 604 });
+    expect(event).toMatchObject({ id: 'daxing-capital', year: 583, placeId: 'daxing' });
     expect(eventDetail?.polityIds).toContain('sui');
-    expect(eventDetail?.locationIds).toContain('changan');
+    expect(eventDetail?.locationIds).toContain('daxing');
     expect(event?.year).toBeGreaterThanOrEqual(capital?.validFrom ?? Number.POSITIVE_INFINITY);
     expect(event?.year).toBeLessThanOrEqual(capital?.validTo ?? Number.NEGATIVE_INFINITY);
     expect(detail?.eventIds).toContain('daxing-capital');

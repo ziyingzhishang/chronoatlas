@@ -1,0 +1,110 @@
+{
+  "decisionId": "gap-qin--221--219",
+  "reviewStatus": "source-checked",
+  "yearCount": 3,
+  "years": [
+    {
+      "year": -221,
+      "conclusion": "秦灭齐后完成统一。秦廷宣布天下分为三十六郡，进入帝国郡县治理阶段；郡名、设置过程与各郡边界仍有考订问题，统一并不意味着每处新征服区域控制强度完全相同。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "xianyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "shiji-qin-unification-administration",
+        "shiji-qin-qi-termination-221",
+        "china-chronology",
+        "modern-geography-reference",
+        "qin-historical-atlas-volume2",
+        "qin-empire-at-height-map-land",
+        "qin-dynasty-territory-map-221-206-cc0",
+        "jiangshan-qin-map-phase-221-216"
+      ],
+      "evidenceGap": "史料支持统一、郡县建制及咸阳都城，但不能单独重建前221年每郡的精确边线。《史记》记秦于该年得齐王建；Cliopatria齐国轮廓覆盖前222—前221年，未给年内边界转换时点，故其前221年几何待审并从运行时隐藏。谭图秦代图可作边界研究参照；Lander的“全盛期”图将新征服区域表述为约前230—前206年累计范围；《江山时序》把前221—前216年列为一阶段，但代表快照为前218年且注明疆域为示意性近似。以上均不能直接当作前221年单年边界。咸阳仅作中央政治中心参照。"
+    },
+    {
+      "year": -220,
+      "conclusion": "秦始皇二十七年，里耶秦简见洞庭、巴、南等郡兵器输往内史，苍梧等郡亦见于转输文书研究，显示南方郡级行政网络与中央间存在具体资源调度联系。该运输记录不代表郡与郡之间的全部空间均受同等直接控制。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "xianyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "liye-qin-slip-weapons-220",
+        "qin-regional-control-lander",
+        "modern-geography-reference",
+        "qin-historical-atlas-volume2",
+        "qin-empire-at-height-map-land",
+        "qin-dynasty-territory-map-221-206-cc0",
+        "jiangshan-qin-map-phase-221-216"
+      ],
+      "evidenceGap": "运输简文可证明特定行政资源联系，不提供连续领土边界；南方控制强度与郡界范围仍需按区域和考古资料逐项复核。《江山时序》的前221—前216年阶段图以前218年为代表快照，只能作邻近时期格局参照，不能确定前220年边线。"
+    },
+    {
+      "year": -219,
+      "conclusion": "秦始皇二十八年东行郡县，巡至邹峄、泰山、琅邪等地并刻石纪功。2023年秦郡研究述评归纳多种齐地郡制断代：较有共识的是统一初有齐（临淄）与琅邪二郡，之后出现分置济北、即墨（胶东）的调整；有研究把该调整的起点定在前219年，但具体郡目和建置时间仍有争论。巡行与郡级设置反映中央政治活动和行政调整，不等于连续、均质的实际控制边界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "xianyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "shiji-qin-unification-administration",
+        "qin-shihuang-28th-year-eastern-tour",
+        "modern-geography-reference",
+        "qin-historical-atlas-volume2",
+        "qin-empire-at-height-map-land",
+        "qin-dynasty-territory-map-221-206-cc0",
+        "jiangshan-qin-map-phase-221-216",
+        "qin-qi-commandery-setup-review-2023"
+      ],
+      "evidenceGap": "巡行记载支持事件与若干到访节点；研究述评显示齐地郡级区划在统一后发生调整，且前219年作为济北、即墨分置起点只是学界诸说之一。郡目、边界和分置年代仍有争议，材料不能复原全年疆界；咸阳仍只表示中央政治中心，不表现巡行线路或郡县范围。《江山时序》的秦初分期止于前216年且代表快照为前218年，不能替代前219年疆域复原。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "shiji-qin-unification-administration",
+      "use": "《史记·秦始皇本纪》记前221年初并天下、置三十六郡及前219年东行郡县；用于政权、建制与巡行史事，郡数和到访节点不直接复原年度边界。"
+    },
+    {
+      "id": "shiji-qin-qi-termination-221",
+      "use": "《史记·秦始皇本纪》秦王政二十六年记王贲攻齐、得齐王建；支持齐政权终止在前221年，不提供年内控制转换边界。"
+    },
+    {
+      "id": "china-chronology",
+      "use": "公历年与秦王政纪年的换算参照；用于对齐前221—前219年条目，不作为空间边界依据。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "历史地名与现代地理定位参照，辅助核对都城和东巡地点；不提供秦代疆界。"
+    },
+    {
+      "id": "liye-qin-slip-weapons-220",
+      "use": "《Early China》论文据里耶秦简讨论前220年洞庭、南、苍梧、巴等郡兵器转输内史；用于确认行政资源联系，不据此绘制郡际连续控制面。"
+    },
+    {
+      "id": "qin-regional-control-lander",
+      "use": "Brian Lander《Making Use of the Land》讨论秦帝国行政能力、生态区域差异和南方控制强度；用于限定‘直接控制’解释，不提供前221年可直接采用的几何。"
+    },
+    {
+      "id": "qin-shihuang-28th-year-eastern-tour",
+      "use": "《史记·秦始皇本纪》二十八年条及识典古籍文本，核对前219年东巡郡县和邹峄、泰山、琅邪等节点；巡行路线不等同控制边界。"
+    },
+    {
+      "id": "qin-historical-atlas-volume2",
+      "use": "秦代疆域与郡级政区的传统历史地图参考；需回核原图图幅、图例和断代，不复制图像或矢量边线，项目复绘和公开许可未核。"
+    },
+    {
+      "id": "qin-empire-at-height-map-land",
+      "use": "Brian Lander的秦帝国全盛期示意图据谭图和Korolkov研究改绘；图注将新征服区概括为约前230—前206年累计区域，不视为前221年单年疆界；图件许可未核。"
+    },
+    {
+      "id": "jiangshan-qin-map-phase-221-216",
+      "use": "《江山时序》将前221—前216年列作秦初第一阶段，列36个政区，代表快照为前218年；页面明确称历史疆域和政区为示意性近似、非精确测绘。用于寻找秦初政区与地点参照，不证明本审计三个年度的边线；地图数据和第三方底图许可未核，未复制或转绘。"
+    },
+    {
+      "id": "qin-dynasty-territory-map-221-206-cc0",
+      "use": "Ian Remsen的CC0秦代疆域图，图示时段为前221—前206年；用作可复核的宽时段地图参考，不作为前221—前219年逐年疆界，未提取几何。"
+    },
+    {
+      "id": "qin-qi-commandery-setup-review-2023",
+      "use": "郭涛2023年述评归纳秦统一后齐地郡制的不同考订，并指出济北、即墨（胶东）分置起始年代存在不同说法；用于补充前219年郡级行政调整背景和断代不确定性，不据此绘制郡界或连续疆域。"
+    }
+  ]
+}

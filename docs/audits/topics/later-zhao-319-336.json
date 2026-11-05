@@ -1,0 +1,318 @@
+{
+  "decisionId": "gap-later_zhao-319-336",
+  "polityId": "later_zhao",
+  "years": [
+    {
+      "year": 319,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "石勒在襄国称赵王，后赵建政；同年仍与晋军及地方势力争夺。",
+      "evidenceGap": "建政与当年军事争夺不能合成全年直接控制边界；现有史料未提供可复原的逐年县郡控制清单。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 320,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵继续在中原与晋及地方军政势力交战，各处驻军和攻守并存。",
+      "evidenceGap": "战事及驻军位置不能证明完整行政控制线；不以相邻年份轮廓插值。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 321,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵政权延续，编年记载未给出可直接转绘的完整逐年边界。",
+      "evidenceGap": "可确认政治中心参照，缺少逐年直接控制范围的可审核空间材料。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 322,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵与并存政权的空间关系仍受军事行动影响，襄国为中央政治中心参照。",
+      "evidenceGap": "名义辖区及战事报道不足以推定全年稳定直接控制疆界。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 323,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "徐、兖之间多处坞堡归附后赵，后赵设置守宰安抚；襄国仍为中央政治中心参照。",
+      "evidenceGap": "史书未列明归附坞堡的名称、数量与逐一位置，不能据此确定直接控制边缘或绘制区域边界；政治中心点只表示襄国位置。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 324,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵将领在下邳、彭城等地活动，并与前赵在河东、弘农发生攻掠冲突。",
+      "evidenceGap": "军队到达、攻守与前线进退不等同于全域直接控制，不能据此绘制确定边界。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 325,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "襄国仍为后赵政治中心参照；现有材料不足以恢复全域年度控制范围。",
+      "evidenceGap": "史料未提供可核验的逐年行政空间清单或足以复原疆界的地图依据。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 326,
+      "mapExpression": "xiangguo-capital-center-and-ye-palace-garrison-event-point",
+      "mapEventIds": ["later-zhao-ye-palace-and-garrison-326"],
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "石勒营建邺宫并遣太子石弘镇邺、配置禁兵；邺是宫室与军事据点，襄国仍为中央政治中心，正式迁都在335年另记。",
+      "evidenceGap": "《资治通鉴》可定位邺宫营建与镇守邺事件；地图采用临漳一带低精度区域参照点，不定位宫室建筑或驻军营地。宫室营建与驻军不证明周边全域直接控制，也不能据此把邺标作全年第二首都或疆界。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "later-zhao-326-ye-palace-primary",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 327,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵继续存在，相关编年记载有北方军事活动，政治中心参照仍为襄国。",
+      "evidenceGap": "军事活动记录未形成可直接转绘的年度控制线。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 328,
+      "mapExpression": "capital-and-event-points",
+      "mapEventIds": ["later-zhao-captures-liu-yao-at-luoyang-328"],
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵与前赵在洛阳西阳门交战，石勒大破刘曜并将其俘获；战役胜利重创前赵中军，但后赵攻取长安、前赵中央政权终止记于329年，不能据此写成328年完成全境接管。",
+      "evidenceGap": "地图以洛阳城区近似点标记西阳门战役，不定位城门或战场阵地；战场与一次战果不能替代全年稳定疆界，襄国点只表示中央政治中心。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 329,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵攻灭前赵并取得长安等地；军事胜利、地方接管和控制整合发生于不同阶段。",
+      "evidenceGap": "“灭国”或取得城市不表示全年完成对相关区域的全面接管，不据此扩大疆域几何。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 330,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "石勒称帝，后赵中央制度名号改变，政治中心参照仍为襄国。",
+      "evidenceGap": "称帝和制度名号变化不提供直接控制范围或边界证据。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 331,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵政权延续并向周边施加军事压力，襄国仍为中央政治中心参照。",
+      "evidenceGap": "现有来源不足以复原全年直接控制边界，不将军事压力或影响范围画成疆域。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 332,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "后赵朝廷出现继承与石虎权势问题，中心仍可定位于襄国。",
+      "evidenceGap": "朝廷权力变化不提供疆界材料，襄国中心点不表示全年直接控制范围。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 333,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "石勒去世、石弘继位，石虎掌握禁军和朝政；继承转折发生在年内。",
+      "evidenceGap": "继承及权力转移不能证明疆界静止或改变的范围；不绘全年稳定疆域面。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 334,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "xiangguo"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "石虎废石弘、自专后赵政权；碑刻研究另据《东魏程哲碑》记赵太和七年程荫任玄氏令，提示县级行政记录存在。襄国仍作年度中枢参照。",
+      "evidenceGap": "碑文所见玄氏令提供县级官职证据，但不能确定玄氏县的现代位置或县界；废立事件及中央权力变化也不足以复原年内逐时控制线。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "later-zhao-administrative-epigraphy-2022",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 335,
+      "mapExpression": "within-year-center-transition-points",
+      "centerPlaceIds": [
+        "xiangguo",
+        "ye"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "石虎九月迁都邺；迁都前以襄国为中枢，迁都后以邺为中枢。两点提示年内转换，不表示全年并列双都。",
+      "evidenceGap": "月内中心转换不能压缩成全年单一中心或两地并列状态；迁都事件也不提供逐年疆界。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    },
+    {
+      "year": 336,
+      "mapExpression": "control-center-point",
+      "centerPlaceIds": [
+        "ye"
+      ],
+      "territoryBoundary": null,
+      "conclusion": "石虎在邺继续营建，并迁运洛阳旧物；邺为中央政治中心参照。",
+      "evidenceGap": "营建及物资转运不等于疆域扩张，现有材料未给出可审核的年度直接控制边界。",
+      "sourceIds": [
+        "later-zhao-319-336-chronicles",
+        "capital-history-reference",
+        "modern-geography-reference"
+      ]
+    }
+  ],
+  "coexistenceNotes": [
+    "319—336年后赵与前赵、东晋及地方军政力量并存或交战；不把战事、攻掠或降附自动解释成全年直接控制。",
+    "328—329年后赵与前赵战争及前赵覆亡存在年内时序，不能据政权终止事件直接推导完成全面接管。",
+    "335年襄国与邺分别表示正式迁都前后中心阶段，不代表全年并列同等首都。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "later-zhao-319-336-chronicles",
+      "use": "《资治通鉴》卷九十一至九十五按年核对319—336年政权、战争、继承、迁都及营建事件；《晋书》卷一〇四至一〇六补核石勒、石弘、石虎及邺宫。史料支持政治中心和事件次序，不足以把征服概括语重绘为逐年直接疆界。"
+    },
+    {
+      "id": "later-zhao-326-ye-palace-primary",
+      "use": "《资治通鉴》卷九十三与《晋书》卷一〇四记326年石勒营建邺宫、令世子石弘镇邺并配置禁兵；用于邺城事件点，不表示都城迁移或全年疆域变化。"
+    },
+    {
+      "id": "later-zhao-administrative-epigraphy-2022",
+      "use": "魏军刚《出土文献与十六国政区补考》引用《东魏程哲碑》记赵太和七年（334）程荫任玄氏令，补强后赵县级行政记录。该引文不能确定玄氏县现代位置或县界，仅用于补充政区存在证据，不产生地图点或疆域几何。"
+    },
+    {
+      "id": "capital-history-reference",
+      "use": "项目地点与都城沿革资料用于襄国、邺的中心参照及历史时段核对，不代替疆域边界证据。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "中心点使用现代城市近似坐标，仅表示政治中心位置，不代表古城垣、行政边界或周边完整实控范围。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 1457（clio-1457-later_zhao-337）来源时段为337—346年，snapshot 337，low confidence，control type unspecified。仅用于确认其不覆盖319—336年，不复制或向前延伸几何。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "319—336年18个有效公历年均保留逐年结论；疆域几何留空，coverage sourceBoundaryIds为空。",
+    "政治中心点为D级参照，非直接疆界；335年两点表示年内迁都转换。",
+    "来源几何不自动纳入审核结论；历史边界、制图、来源使用权与公开地图展示条件分别审核。"
+  ]
+}

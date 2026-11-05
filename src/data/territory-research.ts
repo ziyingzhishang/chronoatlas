@@ -47,8 +47,48 @@ export interface TerritoryResearchYearConclusion {
   year: number;
   status: 'inherited-for-review';
   proposedRepresentation?: TerritoryRepresentation;
+  mapExpression?: string;
+  centerPlaceId?: string | null;
+  centerPlaceIds?: string[];
+  mapEventIds?: string[];
   sourceIds: string[];
   conclusion: string;
+  evidenceGap?: string;
+  auditFile?: string;
+}
+
+interface AnnualAuditRow {
+  year: number;
+  polityId?: string;
+  centerPlaceId?: string | null;
+  capitalPlaceId?: string | null;
+  centerPlaceIds?: string[];
+  mapEventIds?: string[];
+  conclusion: string;
+  evidenceGap?: string;
+  sourceIds: string[];
+  mapExpression?: string;
+  [key: string]: unknown;
+}
+
+interface AnnualAudit {
+  decisionId?: string;
+  decisionIds?: string[];
+  reviewStatus?: 'source-checked' | string;
+  polityId?: string;
+  years?: AnnualAuditRow[];
+}
+
+const annualAuditFiles = import.meta.glob<AnnualAudit>('../../docs/audits/topics/*.json', {
+  eager: true,
+  import: 'default',
+});
+
+const annualAuditsByDecisionId = new Map<string, { file: string; audit: AnnualAudit }>();
+for (const [file, audit] of Object.entries(annualAuditFiles)) {
+  for (const decisionId of audit.decisionIds ?? (audit.decisionId ? [audit.decisionId] : [])) {
+    annualAuditsByDecisionId.set(decisionId, { file: file.replace('../../', ''), audit });
+  }
 }
 
 export interface TerritoryGeometryConflict {
@@ -134,6 +174,7 @@ export function expandCivilYears(from: number, to: number): number[] {
 }
 
 function buildTask(decision: CoverageDecision): TerritoryResearchTask {
+  const auditReviewStatus = annualAuditsByDecisionId.get(decision.id)?.audit.reviewStatus;
   return {
     taskId: `territory-research:${decision.id}:v1`,
     polityId: decision.polityId,
@@ -144,7 +185,7 @@ function buildTask(decision: CoverageDecision): TerritoryResearchTask {
     pilot: pilotDecisionIds.has(decision.id),
     researchQuestion: `在${decision.from}至${decision.to}年间，${decision.polityId}的直接控制、军事占领、羁縻或属国关系、文化核心与影响范围分别能被哪些史料和空间证据支持？`,
     previousDecisionId: decision.id,
-    status: 'queued',
+    status: auditReviewStatus === 'source-checked' ? 'source-checked' : 'queued',
     proposedRepresentation: representationFromVerdict(decision.verdict),
     sourceIds: [...decision.citationIds],
     historicalDecision: decision.rationale,
@@ -156,18 +197,29 @@ function buildTask(decision: CoverageDecision): TerritoryResearchTask {
 
 export const territoryResearchTasks: TerritoryResearchTask[] = coverageDecisions.map(buildTask);
 
-export const territoryResearchYearConclusions: TerritoryResearchYearConclusion[] = territoryResearchTasks.flatMap((task) =>
-  expandCivilYears(task.from, task.to).map((year) => ({
-    taskId: task.taskId,
-    previousDecisionId: task.previousDecisionId,
-    polityId: task.polityId,
-    year,
-    status: 'inherited-for-review' as const,
-    proposedRepresentation: task.proposedRepresentation,
-    sourceIds: [...task.sourceIds],
-    conclusion: task.historicalDecision ?? '既有结论待逐年复核。',
-  })),
-);
+export const territoryResearchYearConclusions: TerritoryResearchYearConclusion[] = territoryResearchTasks.flatMap((task) => {
+  const linkedAudit = annualAuditsByDecisionId.get(task.previousDecisionId);
+  return expandCivilYears(task.from, task.to).map((year) => {
+    const auditRow = linkedAudit?.audit.years?.find((row) => row.year === year
+      && (!row.polityId || row.polityId === task.polityId));
+    return {
+      taskId: task.taskId,
+      previousDecisionId: task.previousDecisionId,
+      polityId: task.polityId,
+      year,
+      status: 'inherited-for-review' as const,
+      proposedRepresentation: task.proposedRepresentation,
+      mapExpression: auditRow?.mapExpression,
+      centerPlaceId: auditRow?.centerPlaceId !== undefined ? auditRow.centerPlaceId : auditRow?.capitalPlaceId,
+      centerPlaceIds: auditRow?.centerPlaceIds?.length ? [...auditRow.centerPlaceIds] : undefined,
+      mapEventIds: auditRow?.mapEventIds?.length ? [...auditRow.mapEventIds] : undefined,
+      sourceIds: auditRow?.sourceIds?.length ? [...auditRow.sourceIds] : [...task.sourceIds],
+      conclusion: auditRow?.conclusion ?? task.historicalDecision ?? '既有结论待逐年复核。',
+      evidenceGap: auditRow?.evidenceGap,
+      auditFile: auditRow ? linkedAudit?.file : undefined,
+    };
+  });
+});
 
 export function validateTerritoryResearchTask(task: TerritoryResearchTask): string[] {
   const problems: string[] = [];

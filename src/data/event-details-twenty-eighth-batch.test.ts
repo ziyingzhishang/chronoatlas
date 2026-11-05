@@ -61,6 +61,6 @@ describe('event details twenty-eighth batch', () => {
 
     expect(missingParticipantIds.has(boundaryEventId)).toBe(false);
     expect(eventDetails.find((detail) => detail.eventId === boundaryEventId)?.participants.map((participant) => participant.personId))
-      .toEqual(['chen-xu']);
+      .toEqual(['chen-baxian']);
   });
 });

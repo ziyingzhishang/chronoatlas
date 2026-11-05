@@ -35,15 +35,19 @@ describe('月城—新罗后期王京宫城审计', () => {
       polityId: 'silla',
       placeId: 'wolseong_silla',
       validFrom: 101,
-      validTo: 935,
-      confidence: 'medium',
+      validTo: 377,
+      role: 'disputed',
+      status: 'uncertain',
+      confidence: 'low',
     });
     expect(asset).toMatchObject({
       placeId: 'wolseong_silla',
-      constructionFrom: 101,
+      constructionFrom: 350,
       constructionTo: 935,
       modernStatus: 'archaeological-site',
     });
+    expect(asset?.description).toContain('约4世纪中叶');
+    expect(asset?.sourceIds).toContain('silla-wolseong-archaeological-chronology');
     expect(detail?.modernLocation).toContain('庆州市月城遗址');
     expect(detail?.associatedPolities).toContain('silla');
     expect(detail?.associatedEvents).toEqual(

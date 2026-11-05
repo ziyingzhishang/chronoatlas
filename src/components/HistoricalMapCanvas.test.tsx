@@ -206,6 +206,25 @@ test('a tile failure keeps history and offers a retry of the active basemap', as
   expect(screen.queryByRole('button', { name: '重试' })).not.toBeInTheDocument();
 });
 
+test('a basemap that stays pending eventually shows the readable-history fallback and retry', () => {
+  vi.useFakeTimers();
+  try {
+    render(<HistoricalMapCanvas {...props()} />);
+    const map = mapInstances.at(-1)!;
+    map.isSourceLoaded = () => false;
+    act(() => map.emit('style.load'));
+
+    expect(screen.getByText(/正在加载地貌/)).toBeInTheDocument();
+    act(() => vi.advanceTimersByTime(12_000));
+
+    expect(screen.getByText(/历史图层仍可阅读/)).toBeInTheDocument();
+    expect(screen.getByRole('button', { name: '重试' })).toBeInTheDocument();
+    expect(map.remove).not.toHaveBeenCalled();
+  } finally {
+    vi.useRealTimers();
+  }
+});
+
 test('camera controls rotate relative to current bearing, reset north, and focus a real place', () => {
   const ref = createRef<MapHandle>();
   render(<HistoricalMapCanvas ref={ref} {...props()} />);

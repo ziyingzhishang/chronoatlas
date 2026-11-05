@@ -1,0 +1,35 @@
+{
+  "decisionId": "gap-goguryeo--37--37",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "goguryeo",
+      "year": -37,
+      "conclusion": "《三国史记》以汉建昭二年为东明圣王元年，记朱蒙自北扶余南来、至纥升骨城／卒本并建立高句丽；这是传统建国纪年与起源叙事。",
+      "mapExpression": "founding-site-candidate-only",
+      "centerPlaceId": "wunvshan",
+      "territoryBoundary": null,
+      "sourceIds": ["goguryeo-founding-traditional-source", "goguryeo-capital-unesco"],
+      "evidenceGap": "纥升骨城与五女山遗址仅为早期中心候选，不能据建国叙事确认仪式现场、现代考古的单一形成时点或前37年直接控制范围。"
+    }
+  ],
+  "coexistenceNotes": [
+    "本年地点仅保留早期中心候选，不并列后续阶段的国内城，也不由候选城址推导疆域。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "goguryeo-founding-traditional-source",
+      "use": "《三国史记》卷13及韩国史数据库校注记东明圣王元年、朱蒙与纥升骨城／卒本建国叙事，支持传统纪年内容和早期地点候选，不提供疆界。"
+    },
+    {
+      "id": "goguryeo-capital-unesco",
+      "use": "UNESCO世界遗产构件1135-001给出五女山城点位N41°19′47.406″ E125°25′6.384″，支持地图上的遗产地点参照；不提供政权疆界，也不能单独确认前37年建国仪式现场。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "前37年高句丽疆域面留空，不用国内城或后期最大轮廓回填。",
+    "五女山／纥升骨城只作为候选地点，不标注为确证建国仪式现场。",
+    "传统纪年不等于现代考古确认的唯一建国日期；不包含公元0年。"
+  ]
+}

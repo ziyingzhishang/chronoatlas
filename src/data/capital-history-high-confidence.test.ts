@@ -35,9 +35,13 @@ describe('high-confidence capital history coverage', () => {
     expect(recordsFor('song_northern')).toMatchObject([
       { placeId: 'kaifeng', validFrom: 960, validTo: 1127, role: 'primary', status: 'formal', confidence: 'high' },
     ]);
-    expect(recordsFor('song_south')).toMatchObject([
-      { placeId: 'linan', validFrom: 1127, validTo: 1279, role: 'de_facto', status: 'actual', confidence: 'high' },
-    ]);
+    expect(recordsFor('song_south')).toEqual(expect.arrayContaining([
+      expect.objectContaining({ placeId: 'song_yingtian', validFrom: 1127, validTo: 1127, role: 'temporary', status: 'actual', confidence: 'medium' }),
+      expect.objectContaining({ placeId: 'yangzhou', validFrom: 1127, validTo: 1129, role: 'temporary', status: 'actual', confidence: 'medium' }),
+      expect.objectContaining({ placeId: 'shaoxing', validFrom: 1129, validTo: 1132, role: 'temporary', status: 'actual', confidence: 'medium' }),
+      expect.objectContaining({ placeId: 'linan', validFrom: 1131, validTo: 1136, role: 'primary', status: 'actual', confidence: 'high' }),
+      expect.objectContaining({ placeId: 'linan', validFrom: 1138, validTo: 1279, role: 'primary', status: 'formal', confidence: 'high' }),
+    ]));
     expect(recordsFor('western_xia')).toMatchObject([
       { placeId: 'xingqing', validFrom: 1038, validTo: 1227, role: 'primary', status: 'formal', confidence: 'high' },
     ]);
@@ -49,7 +53,6 @@ describe('high-confidence capital history coverage', () => {
     expect(recordsFor('yuan')).toEqual(expect.arrayContaining([
       expect.objectContaining({ placeId: 'shangdu', role: 'primary', validFrom: 1271, validTo: 1273 }),
       expect.objectContaining({ placeId: 'shangdu', role: 'secondary', validFrom: 1274, validTo: 1364 }),
-      expect.objectContaining({ placeId: 'dadu', role: 'primary', validFrom: 1271, validTo: 1271 }),
       expect.objectContaining({ placeId: 'dadu', role: 'primary', validFrom: 1272, validTo: 1368 }),
     ]));
     expect(recordsFor('ming').map(({ placeId, validFrom, validTo, role }) => ({ placeId, validFrom, validTo, role }))).toEqual([
@@ -65,7 +68,8 @@ describe('high-confidence capital history coverage', () => {
       expect.objectContaining({ placeId: 'beijing', validFrom: 1912, validTo: 1927 }),
       expect.objectContaining({ placeId: 'yingtian', validFrom: 1928, validTo: 1937 }),
       expect.objectContaining({ placeId: 'chongqing', validFrom: 1938, validTo: 1945, role: 'temporary', status: 'actual' }),
-      expect.objectContaining({ placeId: 'yingtian', validFrom: 1946, validTo: 1949 }),
+      expect.objectContaining({ placeId: 'yingtian', validFrom: 1946, validTo: 1948 }),
+      expect.objectContaining({ placeId: 'taipei', validFrom: 1949, validTo: 1949, role: 'de_facto', status: 'actual', confidence: 'high' }),
     ]));
     expect(recordsFor('prc')).toMatchObject([
       { placeId: 'beijing', validFrom: 1949, validTo: 2026, role: 'primary', status: 'formal', confidence: 'high' },

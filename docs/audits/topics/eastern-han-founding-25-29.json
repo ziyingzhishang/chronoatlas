@@ -1,0 +1,75 @@
+{
+  "decisionId": "gap-han_eastern-25-29",
+  "polityId": "han_eastern",
+  "from": 25,
+  "to": 29,
+  "yearCount": 5,
+  "years": [
+    {
+      "year": 25,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "《后汉书》卷一上记刘秀六月己未于鄗南即位、十月入洛阳定都；秦进才（2016）对读《后汉书》《后汉纪》等，指出即位日期异文与历日记法存在差异。地图仅标记十月以后洛阳中央政治中心，不表达全年疆界。",
+      "evidenceGap": "秦进才（2016）转引1987年千秋亭遗址碑所载1985年县文物调查，称遗址在十五里铺村西、旧调查范围约500米×300米；文中另称考古队有较新的勘探数据，但未给出可直接录入的坐标或该队范围尺寸。高邑县地方介绍另有今地说法，尚不能复核到项目可用遗址点。年内迁都和更始政权延续也不支持全年疆界。",
+      "sourceIds": ["han-eastern-founding-primary-sources", "han-hao-enthronement-site-study", "modern-geography-reference"]
+    },
+    {
+      "year": 26,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "建武二年洛阳为东汉中央政治中心，朝廷封功臣、恢复制度并继续对各地军事整合；本点不示疆界。",
+      "evidenceGap": "都城位置明确，但北方及中原军事控制仍在调整，现有材料不足以复原全年连续直接控制边界。",
+      "sourceIds": ["han-eastern-founding-primary-sources", "modern-geography-reference"]
+    },
+    {
+      "year": 27,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "建武三年赤眉降汉，刘永、彭宠、张步等区域势力仍存，洛阳继续作为东汉中央中枢；本点不示疆界。",
+      "evidenceGap": "归降、地方势力并存及军事征讨不等同于全国连续直辖，不能据战事或名义关系绘制疆界。",
+      "sourceIds": ["han-eastern-founding-primary-sources", "modern-geography-reference"]
+    },
+    {
+      "year": 28,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "建武四年东汉以洛阳为中央政治中心，地方征讨与政权整合仍在继续；本点不示全年稳定疆界。",
+      "evidenceGap": "编年史可追踪部分军事行动，未提供足以重建该年全国直接控制边缘的逐年空间证据。",
+      "sourceIds": ["han-eastern-founding-primary-sources", "modern-geography-reference"]
+    },
+    {
+      "year": 29,
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "conclusion": "建武五年洛阳仍为东汉中央政治中心，中央对各地的军政整合仍处于逐步恢复阶段；本点不示疆界。",
+      "evidenceGap": "没有足以支持本年全年稳定控制边缘的逐年材料，不以其后疆域或30年断面倒推。",
+      "sourceIds": ["han-eastern-founding-primary-sources", "modern-geography-reference"]
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "han-eastern-founding-primary-sources",
+      "use": "《后汉书》卷一上与《资治通鉴》卷四十、四十一核对25年鄗南即位、十月迁都及26—29年战事和政权整合；用于政治中心与年内转折，不推导疆界。"
+    },
+    {
+      "id": "han-hao-enthronement-site-study",
+      "use": "秦进才《汉光武帝刘秀鄗南即位处文献述论》（《石家庄学院学报》2016年第5期，35—48页，DOI:10.13573/j.cnki.sjzxyxb.2016.05.006）对读《后汉书》《后汉纪》等即位年月、历日异文，并将千秋亭遗址定位于今柏乡县龙华乡十五里铺村西一带。论文转引1987年遗址碑所载1985年县文物调查范围约500米×300米，同时说明考古队另有较新的勘探数据，但网页未提供该队范围尺寸或可直接录入的经纬度；故不以村庄或行政中心代替坛址坐标。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "洛阳坐标为现代城市近似位置，仅表示中央政治中心，不代表汉代城垣或行政边界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "25年洛阳点仅表示十月以后中央中枢；鄗南暂不落点，待权威遗址坐标核验。",
+    "25—29年疆域保持留空，sourceBoundaryIds为空；未依据相邻年份或最大轮廓回填。",
+    "史料核对与地图表达记录不代表独立历史专家或制图审核签核。",
+    "来源文本、数字转录授权、第三方地图材料使用权与公开地图要求分别核验。"
+  ]
+}

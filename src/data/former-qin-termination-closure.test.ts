@@ -13,7 +13,9 @@ describe('Former Qin termination closure', () => {
     const detail = eventDetails.find((item) => item.eventId === 'former-qin-ended-394');
     const polity = polityDetails.find((item) => item.polityId === 'former_qin');
 
-    expect(event).toMatchObject({ id: 'former-qin-ended-394', year: 394, placeId: 'changan' });
+    expect(event).toMatchObject({ id: 'former-qin-ended-394', year: 394 });
+    expect(event?.placeId).toBeUndefined();
+    expect(detail?.locationIds).not.toContain('changan');
     expect(detail?.participants.map((item) => item.personId)).toEqual(expect.arrayContaining(['fu-deng', 'yao-xing']));
     expect(detail?.polityIds).toEqual(expect.arrayContaining(['former_qin']));
     expect(polity?.eventIds).toContain('former-qin-ended-394');

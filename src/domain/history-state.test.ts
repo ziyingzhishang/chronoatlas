@@ -32,8 +32,10 @@ test('returns active polities and places for the selected year', () => {
   const state = getHistoricalState(-221);
   expect(state.year).toBe(-221);
   expect(state.activePolities.map((item) => item.id)).toContain('qin');
-  expect(state.boundaries.find(b=>b.polityId==='qin')).toBeUndefined();
-  expect(state.coverage.missingPolityIds).toContain('qin');
+  expect(state.boundaries.find(b=>b.polityId==='qin')).toMatchObject({
+    geometry:{type:'Point'}, evidence:{evidenceLevel:'D',derivation:'control-centers'},
+  });
+  expect(state.coverage.missingPolityIds).not.toContain('qin');
 });
 
 test('supports early and later Chinese history without inventing boundaries', () => {
@@ -52,6 +54,42 @@ test('exposes the original interval rather than pretending annual precision', ()
   expect(tang.coverage.snapshotYear).toBeUndefined();
   expect(getHistoricalState(800).boundaries.find(b=>b.polityId==='tang')?.temporalKind).toBe('interval');
   expect(getHistoricalState(960).boundaries.some(b => b.polityId === 'tang')).toBe(false);
+});
+
+test('applies a geometry review hold only to its listed years', () => {
+  const polity = { id: 'held-polity', name: '待审政权', type: 'dynasty', startYear: 1948, endYear: 1950, color: '#000', description: '', sourceIds: [] } satisfies Polity;
+  const boundary = {
+    id: 'held-boundary', polityId: polity.id, validFrom: 1948, validTo: 1950, snapshotYear: 1948,
+    sourceName: 'fixture', sourceUrl: 'https://example.test', vertexCount: 1,
+    geometry: { type: 'Point', coordinates: [100, 30] }, controlType: 'unspecified', confidence: 'low', sourceIds: [],
+    temporalKind: 'interval', geometryReviewHolds: [{ conflictId: 'conflict:test', years: [1949], status: 'requires-review' }],
+    evidence: { evidenceLevel: 'A', derivation: 'direct-source', reviewStatus: 'source-checked', citations: [], uncertaintyNote: '' },
+  } satisfies BoundaryState;
+  const source = {
+    polities: [polity], boundaries: [boundary], places: [] as Place[], events: [] as HistoricalEvent[], capitalTerms: [] as CapitalTerm[],
+    modernSovereignty: [],
+  };
+
+  expect(getHistoricalState(source, 1948).boundaries.map(item => item.id)).toEqual(['held-boundary']);
+  expect(getHistoricalState(source, 1949).boundaries).toEqual([]);
+  expect(getHistoricalState(source, 1950).boundaries.map(item => item.id)).toEqual(['held-boundary']);
+});
+
+test('keeps a held exact-year snapshot out of its runtime frame', () => {
+  const polity = { id: 'snapshot-polity', name: '快照政权', type: 'dynasty', startYear: 1949, endYear: 1949, color: '#000', description: '', sourceIds: [] } satisfies Polity;
+  const boundary = {
+    id: 'held-snapshot', polityId: polity.id, validFrom: 1949, validTo: 1949, snapshotYear: 1949,
+    sourceName: 'fixture', sourceUrl: 'https://example.test', vertexCount: 1,
+    geometry: { type: 'MultiPolygon', coordinates: [] }, controlType: 'unspecified', confidence: 'low', sourceIds: [],
+    geometryReviewHolds: [{ conflictId: 'hold:test', years: [1949], status: 'requires-review' }],
+    evidence: { evidenceLevel: 'B', derivation: 'licensed-digitization', reviewStatus: 'source-checked', citations: [], uncertaintyNote: '' },
+  } satisfies BoundaryState;
+  const source = {
+    polities: [polity], boundaries: [boundary], places: [] as Place[], events: [] as HistoricalEvent[], capitalTerms: [] as CapitalTerm[],
+    modernSovereignty: [],
+  };
+
+  expect(getHistoricalState(source, 1949).boundaries).toEqual([]);
 });
 
 test('does not leak a polity after its end year', () => {

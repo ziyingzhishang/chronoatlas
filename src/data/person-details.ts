@@ -52,9 +52,9 @@ export const personDetails: PersonDetail[] = [
     uncertaintyNote: '“统一北方”的概括与各地实际控制并不等价，详情保留前秦扩张叙事的范围限制。',
   },
   {
-    personId: 'fu-deng', biography: '苻登是前秦后期君主。淝水之战后，他在关中与后秦长期争夺，394年在马嵬败亡，前秦统一政治结构随之终止。',
-    aliases: ['前秦高帝', '前秦末帝'], offices: [{ title: '前秦皇帝', polityId: 'former_qin', placeId: 'changan', validFrom: 386, validTo: 394, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['former-qin-ended-394'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '苻登的称号、活动范围与马嵬终局属于前秦后期连续过程；本详情不把其个人败亡等同于长安城市遗产消失。',
+    personId: 'fu-deng', biography: '苻登是前秦后期君主。淝水之战后，他在关中与后秦长期争夺；394年四月败于马嵬后转往雍、平凉，七月在山南被擒杀。前秦政治结构随后终止。',
+    aliases: ['前秦高帝', '前秦末帝'], offices: [{ title: '前秦皇帝', polityId: 'former_qin', validFrom: 386, validTo: 394, datePrecision: 'range', sourceIds: ['former-qin-termination-394-primary-sources', 'zizhi-tongjian'] }],
+    keyEvents: ['former-qin-ended-394'], sourceIds: ['former-qin-termination-394-primary-sources', 'zizhi-tongjian', 'china-chronology'], uncertaintyNote: '苻登后期的驻屯与行军中心在胡空堡、雍、平凉及关中战场之间转移，不使用长安作为386—394年统一地点标记；394年马嵬败退与山南被擒杀分开记录。',
   },
   {
     personId: 'fu-jian-founder', biography: '苻健是前秦早期建立者。351年，他在关中建立秦政权并以长安为早期政治中心；其后苻坚的统治与北方扩张属于另一阶段。',
@@ -97,9 +97,12 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'yao-chang', biography: '姚苌在十六国后期建立后秦，后秦以长安为都，长安再次成为关中政权更替的中心。',
-    aliases: [], offices: [{ title: '后秦皇帝', polityId: 'later_qin', placeId: 'changan', validFrom: 384, validTo: 393, datePrecision: 'range', sourceIds }],
+    aliases: [], offices: [
+      { title: '万年秦王', polityId: 'later_qin', validFrom: 384, validTo: 385, datePrecision: 'range', sourceIds },
+      { title: '后秦皇帝', polityId: 'later_qin', placeId: 'changan', validFrom: 386, validTo: 393, datePrecision: 'range', sourceIds },
+    ],
     keyEvents: ['changan-later-qin'], sourceIds,
-    uncertaintyNote: '后秦建立与占据长安是相关但不同层次的历史过程，按事件和任职分别记录。',
+    uncertaintyNote: '姚苌384年在渭北自称万年秦王，386年取得长安并称帝；称王与长安都城阶段按时间和地点分别记录。',
   },
   {
     personId: 'yang-jian', biography: '杨坚建立隋朝，并在汉长安城东南营建大兴城，开启隋唐长安城市空间的新阶段。',
@@ -324,6 +327,12 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['han-later-founded'], sourceIds, uncertaintyNote: '后汉建立经历太原即位与进入开封两个阶段，不能将单一即位地点等同于全政权即时控制范围。',
   },
   {
+    personId: 'liu-heita', biography: '刘黑闼是窦建德旧部与河北军政力量中的重要领袖。《资治通鉴》记其622年自称汉东王、改元天造并定都洺州。',
+    offices: [{ title: '汉东王', placeId: 'mingzhou', validFrom: 622, validTo: 622, datePrecision: 'year', sourceIds: ['tang-early-years-primary-sources'], uncertaintyNote: '此条仅记录卷190载明的622年称王和定都节点，不据此推定后续政权时段或疆界。'}],
+    aliases: ['汉东王'], keyEvents: ['liu-heita-establishes-handong-kingdom-622'], sourceIds: ['tang-early-years-primary-sources'],
+    uncertaintyNote: '洺州仅作政治中心区域参照；本条不定义汉东政权的年度边界或完整行政控制范围。',
+  },
+  {
     personId: 'liu-chengyou', biography: '刘承祐是后汉末帝。950年前后后汉禁军与朝廷矛盾升级，951年郭威受禅建立后周，后汉中央政权终止。',
     aliases: ['后汉隐帝', '隐帝'], offices: [{ title: '后汉末帝', polityId: 'han_later', placeId: 'kaifeng', validFrom: 948, validTo: 951, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
     keyEvents: ['later-han-ended-951'], sourceIds: ['zizhi-tongjian', 'china-chronology'], uncertaintyNote: '刘承祐个人结局、950年前后禁军冲突、951年郭威受禅和后汉中央政权终止分别表达；刘氏旧部在太原的延续不等同于后汉中央政权继续存在。',
@@ -475,8 +484,11 @@ export const personDetails: PersonDetail[] = [
   },
   {
     personId: 'tuoba-gui', biography: '拓跋珪在前秦崩溃后的北方重建部众，复代改魏，北魏政权由此形成。',
-    aliases: ['魏道武帝'], offices: [{ title: '北魏皇帝', polityId: 'wei_northern', placeId: 'pingcheng', validFrom: 386, validTo: 409, datePrecision: 'range', sourceIds }],
-    keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '386年复代、改国号与随后北魏制度和控制范围扩展分属不同阶段；平城是早期政治中心参照。',
+    aliases: ['魏道武帝'], offices: [
+      { title: '代王、魏王', polityId: 'wei_northern', placeId: 'shengle', validFrom: 386, validTo: 397, datePrecision: 'range', sourceIds },
+      { title: '北魏君主', polityId: 'wei_northern', placeId: 'pingcheng', validFrom: 398, validTo: 409, datePrecision: 'range', sourceIds },
+    ],
+    keyEvents: ['northern-wei-founded'], sourceIds, uncertaintyNote: '386年先在牛川即代王位，随后迁居盛乐；398年迁都平城。牛川未作坐标标注，盛乐和平城不得合并为同一地点或提前后者的都城时段。',
   },
   {
     personId: 'han-shizhong', biography: '韩世忠是南宋重要将领，参与宋金战争并与岳飞共同构成南宋军事网络。',
@@ -895,9 +907,9 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['western-liang-state-founded'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao', 'zizhi-tongjian-vol111-western-liang'], uncertaintyNote: '400年为西凉建政确定年；397—399年受命敦煌与405年迁治酒泉分别是前置和后续阶段，不能压成固定单一都城。',
   },
   {
-    personId: 'li-xin', biography: '李歆承继李暠后的西凉政权，417—421年以酒泉为主要政治中心；421年沮渠蒙逊攻取酒泉，西凉政权终止。',
-    aliases: ['西凉后主', '西凉末主'], offices: [{ title: '西凉末主', polityId: 'western_liang', placeId: 'jiuquan', validFrom: 417, validTo: 421, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao'] }],
-    keyEvents: ['western-liang-ended-421'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao'], uncertaintyNote: '李歆承继李暠与421年酒泉失守属于相连但不同阶段；421年采用政权终止年份级节点，不把酒泉城市或敦煌地方社会写成同日消失。',
+    personId: 'li-xin', biography: '李歆承继李暠后的西凉政权，417—420年以酒泉为主要政治中心；420年出征北凉败亡，沮渠蒙逊进入酒泉。',
+    aliases: ['西凉后主', '西凉末主'], offices: [{ title: '西凉末主', polityId: 'western_liang', placeId: 'jiuquan', validFrom: 417, validTo: 420, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology', 'jinshu-vol87-li-hao'] }],
+    keyEvents: ['western-liang-jiuquan-fell-420'], sourceIds: ['jinshu-vol87-li-hao', 'zizhi-tongjian-vol118-western-liang'], uncertaintyNote: '李歆于420年败亡、酒泉失守；李恂在敦煌的残余政权延续至421年，二者分年记录。',
   },
   {
     personId: 'gao-jixing', biography: '高季兴在五代中原政权更替中经营江陵，924年前后形成荆南地方政权并维持其相对独立。',
@@ -932,7 +944,7 @@ export const personDetails: PersonDetail[] = [
   {
     personId: 'li-jing', biography: '李璟是李昪之子，942年继位为南唐中主，先后灭闽、楚，后周南征后割地称臣并迁居豫章，961年去世后由李煜继位。',
     aliases: ['李景通', '南唐中主', '元宗'], offices: [{ title: '南唐皇帝', polityId: 'southern_tang', placeId: 'jiankang', validFrom: 943, validTo: 960, datePrecision: 'range', sourceIds: ['song-history-nantang', 'palace-museum-li-jing'] }, { title: '南唐后期君主／豫章政治中心', polityId: 'southern_tang', placeId: 'nanchang', validFrom: 961, validTo: 961, datePrecision: 'year', sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记为迁于豫章，属于李璟去世前的短时段中心，不代表南唐长期正式迁都。' }],
-    keyEvents: ['southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'min-ended-945', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang'], sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记李璟942年袭位；项目事件以943年作为政权承接目录节点，保留史料纪年与事件分期差异；945年攻闽与福州承接仍按过程性约年展示。'
+    keyEvents: ['southern-tang-li-jing-succeeds', 'southern-tang-conquers-min', 'min-ended-945', 'southern-tang-conquers-chu', 'southern-tang-cedes-huainan', 'southern-tang-moves-nanchang'], sourceIds: ['song-history-nantang', 'palace-museum-li-jing'], uncertaintyNote: '《宋史》记李璟942年袭位；项目事件以943年作为政权承接目录节点，保留史料纪年与事件分期差异；945年建州陷落与闽政权终止按过程性约年展示，946年福州外城战事另行记录。'
   },
   {
     personId: 'liu-yan', biography: '刘龑承接兄长刘隐在广州经营的岭南军政资源，917年称帝，918年改国号为汉，南汉进入正式建政阶段。',
@@ -1405,9 +1417,9 @@ export const personDetails: PersonDetail[] = [
     keyEvents: ['un-founded'], sourceIds: ['un-charter-treaty', 'un-history-official'], uncertaintyNote: '其角色是美国代表与会议组织者，不等于个人代表所有国家的批准行为；签署与10月24日生效仍是不同节点。',
   },
   {
-    personId: 'wang-yanzheng', biography: '王延政是闽末代君主。闽末继承冲突和南唐军事介入后，福州在945年前后失守，王延政降服，闽政权终止。',
+    personId: 'wang-yanzheng', biography: '王延政是闽末代君主。闽末继承冲突和南唐军事介入后，建州于945年陷落，王延政降服，闽政权终止。',
     aliases: ['闽末代君主', '大殷末主'], offices: [{ title: '闽王／大殷末主', polityId: 'min', placeId: 'fuzhou', validFrom: 943, validTo: 945, datePrecision: 'range', sourceIds: ['zizhi-tongjian', 'china-chronology'] }],
-    keyEvents: ['min-ended-945'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang'], uncertaintyNote: '王延政在位与福州失守采用945年前后的阶段表达；南唐攻闽、王延政降服及福建各地后续接收不是同一日期完成。',
+    keyEvents: ['min-ended-945'], sourceIds: ['zizhi-tongjian', 'china-chronology', 'song-history-nantang'], uncertaintyNote: '王延政降服与建州陷落采用945年的阶段表达；南唐攻闽、王延政降服及福建各地后续接收不是同一日期完成。',
   },
   {
     personId: 'wang-yenxi', biography: '王延羲是王审知之后的闽王，闽末宫廷继承与权力冲突的重要人物；其统治阶段为945年闽政权终止前的前置背景。',

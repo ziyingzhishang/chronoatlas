@@ -12,12 +12,12 @@ const overlaps = (from: number | undefined, to: number | undefined, year: number
 
 describe('round 107 capital chain task C', () => {
   it('closes only the independently anchored Southern Song Linan center event', () => {
-    const capital = capitalHistory.find((term) => term.polityId === 'song_south' && term.placeId === 'linan');
+    const capital = capitalHistory.find((term) => term.polityId === 'song_south' && term.placeId === 'linan' && term.validFrom === 1138);
     const event = events.find((item) => item.id === 'song-linan-center-formed');
     const detail = getEventDetail('song-linan-center-formed');
     const polityDetail = getPolityDetail('song_south');
 
-    expect(capital).toMatchObject({ polityId: 'song_south', placeId: 'linan', validFrom: 1127, validTo: 1279 });
+    expect(capital).toMatchObject({ polityId: 'song_south', placeId: 'linan', validFrom: 1138, validTo: 1279, role: 'primary', status: 'formal' });
     expect(event).toMatchObject({ id: 'song-linan-center-formed', year: 1138, placeId: 'linan' });
     expect(detail?.polityIds).toContain('song_south');
     expect(detail?.locationIds).toContain('linan');

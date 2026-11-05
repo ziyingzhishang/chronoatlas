@@ -1,6 +1,7 @@
 import type { Person } from '../domain/types';
 
 export const people: Person[] = [
+  { id: 'xiang-yu', name: '项羽', aliases: ['项籍', '西楚霸王'], deathYear: -202, roles: ['军事领袖', '诸侯统治者'], polityIds: ['xiang_yu'], description: '秦末楚汉战争领袖，史书记其自立为西楚霸王、王梁楚九郡、都彭城；九郡范围有异说。', sourceIds: ['xiang-yu-regime-206-202-primary-sources'] },
   { id: 'liu-bang', name: '刘邦', aliases: ['汉高祖'], birthYear: -256, deathYear: -195, roles: ['皇帝', '起兵领袖'], polityIds: ['han_western'], description: '楚汉战争后建立汉朝，定都长安。', sourceIds: ['zizhi-tongjian'] },
   { id: 'liu-che', name: '刘彻', aliases: ['汉武帝'], birthYear: -156, deathYear: -87, roles: ['皇帝', '帝陵营建者'], polityIds: ['han_western'], description: '汉武帝，西汉中期君主；其作寿陵开启茂陵长期营建。', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-western-han-mausoleums'] },
   { id: 'liu-xun', name: '刘询', aliases: ['汉宣帝'], birthYear: -91, deathYear: -49, roles: ['皇帝', '帝陵营建者'], polityIds: ['han_western'], description: '汉宣帝，西汉晚期君主；元康元年在杜东原营建杜陵。', sourceIds: ['zizhi-tongjian', 'xian-local-chronicle-duling'] },
@@ -12,7 +13,7 @@ export const people: Person[] = [
   { id: 'sima-ye', name: '司马邺', aliases: ['晋愍帝', '西晋末帝'], deathYear: 318, roles: ['皇帝', '末代君主'], polityIds: ['jin_western'], description: '司马邺是西晋末帝，316年长安失守后出降，西晋北方中央政权由此终止；317年东晋建政是后续晋室承接。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'sima-dewen', name: '司马德文', aliases: ['晋恭帝', '东晋末帝'], birthYear: 386, deathYear: 421, roles: ['皇帝', '末代君主'], polityIds: ['jin_eastern'], description: '司马德文是东晋末帝，420年在建康向刘裕禅位，东晋中央政权由此终止；建康城市遗产继续进入刘宋及南朝层。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'fu-jian', name: '苻坚', birthYear: 338, deathYear: 385, roles: ['皇帝'], polityIds: ['former_qin'], description: '前秦君主，以长安为核心经营关中并北伐扩张。', sourceIds: ['zizhi-tongjian'] },
-  { id: 'fu-deng', name: '苻登', aliases: ['前秦高帝', '前秦末帝'], birthYear: 343, deathYear: 394, roles: ['皇帝', '末代统治者', '军事领袖'], polityIds: ['former_qin'], description: '苻登是前秦后期君主，394年在马嵬败于后秦，前秦政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
+  { id: 'fu-deng', name: '苻登', aliases: ['前秦高帝', '前秦末帝'], birthYear: 343, deathYear: 394, roles: ['皇帝', '末代统治者', '军事领袖'], polityIds: ['former_qin'], description: '苻登是前秦后期君主，394年四月败于马嵬后转往雍、平凉，七月在山南被后秦擒杀。', sourceIds: ['former-qin-termination-394-primary-sources', 'zizhi-tongjian', 'china-chronology'] },
   { id: 'fu-jian-founder', name: '苻健', aliases: ['前秦景明帝'], deathYear: 355, roles: ['皇帝', '建国者'], polityIds: ['former_qin'], description: '苻健在后赵瓦解后的关中建立秦政权，是前秦早期建政与长安政治中心形成的关键人物。', sourceIds: ['jinshu-vol112-fu-jian', 'zizhi-tongjian'] },
   { id: 'yao-chang', name: '姚苌', birthYear: 330, deathYear: 393, roles: ['皇帝', '军事领袖'], polityIds: ['later_qin'], description: '后秦建立者，后秦以长安为都。', sourceIds: ['zizhi-tongjian'] },
   { id: 'yang-jian', name: '杨坚', aliases: ['隋文帝'], birthYear: 541, deathYear: 604, roles: ['皇帝'], polityIds: ['sui'], description: '建立隋朝；隋初在长安营建大兴城。', sourceIds: ['zizhi-tongjian'] },
@@ -43,7 +44,8 @@ export const people: Person[] = [
   { id: 'an-lushan', name: '安禄山', birthYear: 703, deathYear: 757, roles: ['将领', '叛乱领袖'], polityIds: ['tang'], description: '安禄山发动叛乱，安史之乱使长安政治秩序受到重大冲击。', sourceIds: ['zizhi-tongjian'] },
   { id: 'zhu-wen', name: '朱温', aliases: ['朱全忠'], birthYear: 852, deathYear: 912, roles: ['皇帝', '军事领袖'], polityIds: ['liang_later'], description: '朱温建立后梁，唐亡后长安不再是中原王朝持续稳定的首都。', sourceIds: ['zizhi-tongjian'] },
   { id: 'zhu-youzhen', name: '朱友贞', aliases: ['后梁末帝', '朱瑱'], deathYear: 923, roles: ['皇帝', '末代统治者'], polityIds: ['liang_later'], description: '朱友贞是后梁末帝；923年后唐军攻入开封后自尽，后梁政权由此终止，但开封城市历史层继续承接后唐及后续政权。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
-  { id: 'li-cunxu', name: '李存勖', aliases: ['唐庄宗'], birthYear: 885, deathYear: 926, roles: ['皇帝', '军事领袖'], polityIds: ['tang_later'], description: '李存勖建立后唐，五代时期长安的政治地位已不同于唐代。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'li-keyong', name: '李克用', aliases: ['晋王', '唐太祖'], birthYear: 856, deathYear: 908, roles: ['晋王', '河东军政领袖'], polityIds: ['jin_hedong'], description: '晚唐河东节度使，895年进封晋王；其河东军政集团在唐亡后由李存勖承接。晋王名号与区域事实自主并存，不能简单等同正式独立建国。', sourceIds: ['hedong-jin-907-923-primary-sources'] },
+  { id: 'li-cunxu', name: '李存勖', aliases: ['唐庄宗', '晋王'], birthYear: 885, deathYear: 926, roles: ['晋王', '皇帝', '军事领袖'], polityIds: ['jin_hedong', 'tang_later'], description: '李存勖承接李克用的河东晋王军政集团，907—922年与后梁争衡，923年称帝建立后唐；后唐政权阶段与此前晋王阶段分开呈现。', sourceIds: ['zizhi-tongjian', 'hedong-jin-907-923-primary-sources'] },
   { id: 'li-congke', name: '李从珂', aliases: ['唐末帝', '后唐末帝'], birthYear: 885, deathYear: 936, roles: ['皇帝', '末代统治者', '军事领袖'], polityIds: ['tang_later'], description: '李从珂是后唐末帝；936年后晋军队推进至洛阳后，后唐中央政权终止，但洛阳城市与地方社会继续进入后晋及后续历史层。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'yuan-hong', name: '元宏', aliases: ['拓跋宏', '北魏孝文帝'], birthYear: 467, deathYear: 499, roles: ['皇帝', '改革者'], polityIds: ['wei_northern'], description: '北魏孝文帝，迁都洛阳并推动汉化与制度改革。', sourceIds: ['zizhi-tongjian'] },
   { id: 'yuan-xiu', name: '元修', aliases: ['北魏孝武帝', '北魏末帝'], birthYear: 510, deathYear: 535, roles: ['皇帝', '末代君主'], polityIds: ['wei_northern'], description: '元修是北魏末代皇帝，534年前后离开洛阳西奔长安；北魏统一中央政权随东西魏分立而终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
@@ -57,6 +59,7 @@ export const people: Person[] = [
   { id: 'shi-jingtang', name: '石敬瑭', aliases: ['晋高祖'], birthYear: 892, deathYear: 942, roles: ['皇帝', '军事领袖'], polityIds: ['jin_later'], description: '石敬瑭借助契丹力量建立后晋，开封成为后晋的中原政治中心。', sourceIds: ['zizhi-tongjian'] },
   { id: 'shi-chonggui', name: '石重贵', aliases: ['出帝', '后晋末帝'], birthYear: 914, deathYear: 974, roles: ['皇帝', '末代君主'], polityIds: ['jin_later'], description: '石重贵是后晋末帝，947年契丹攻取开封后出降，后晋中央政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'liu-zhiyuan', name: '刘知远', aliases: ['汉高祖'], birthYear: 895, deathYear: 948, roles: ['皇帝', '军事领袖'], polityIds: ['han_later'], description: '刘知远在后晋覆亡后建立后汉，先据太原，后进入开封。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'liu-heita', name: '刘黑闼', roles: ['起兵领袖', '汉东王'], description: '刘黑闼依托河北军政力量反唐；《资治通鉴》记622年自称汉东王、改元天造并以洺州为都。其政权中心与活动范围不等于已核定的年度疆界。', sourceIds: ['tang-early-years-primary-sources'] },
   { id: 'liu-chengyou', name: '刘承祐', aliases: ['后汉隐帝', '隐帝'], birthYear: 930, deathYear: 951, roles: ['皇帝', '末代君主'], polityIds: ['han_later'], description: '刘承祐是后汉末帝。950年前后后汉禁军与朝廷冲突加剧，951年郭威受禅建立后周，后汉中央政权终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'guo-wei', name: '郭威', aliases: ['周太祖'], birthYear: 904, deathYear: 954, roles: ['皇帝', '军事领袖'], polityIds: ['zhou_later'], description: '郭威受禅建立后周，成为五代后期中原政权整顿的关键人物。', sourceIds: ['zizhi-tongjian'] },
   { id: 'chai-rong', name: '柴荣', aliases: ['郭荣', '周世宗'], birthYear: 921, deathYear: 959, roles: ['皇帝', '军事改革者'], polityIds: ['zhou_later'], description: '柴荣（郭荣）是郭威养子与后周第二位皇帝，推动后周军政整顿和北伐，为960年政权转换留下直接前史。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
@@ -87,7 +90,7 @@ export const people: Person[] = [
   { id: 'li-shi', name: '李势', aliases: ['成汉末帝'], deathYear: 361, roles: ['皇帝', '末代统治者'], polityIds: ['cheng_han'], description: '李势是成汉末代君主，347年东晋桓温攻取成都后出降，成汉政权由此终止。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'huan-wen', name: '桓温', birthYear: 312, deathYear: 373, roles: ['将领', '军事领袖', '政治家'], polityIds: ['jin_eastern'], description: '桓温是东晋重要将领，347年西征攻取成都，结束成汉独立政权。', sourceIds: ['zizhi-tongjian', 'china-chronology'] },
   { id: 'xiao-yan', name: '萧衍', aliases: ['梁武帝'], birthYear: 464, deathYear: 549, roles: ['皇帝', '军事领袖'], polityIds: ['liang_southern'], description: '萧衍受禅建立南梁，建康继续作为南朝政治与文化中心。', sourceIds: ['zizhi-tongjian'] },
-  { id: 'tuoba-gui', name: '拓跋珪', aliases: ['魏道武帝'], birthYear: 371, deathYear: 409, roles: ['皇帝', '军事领袖'], polityIds: ['wei_northern'], description: '拓跋珪复代改魏，北魏政权由此形成，平城成为早期政治中心。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'tuoba-gui', name: '拓跋珪', aliases: ['魏道武帝'], birthYear: 371, deathYear: 409, roles: ['皇帝', '军事领袖'], polityIds: ['wei_northern'], description: '拓跋珪386年于牛川复代、随后迁居盛乐并改称魏王；398年迁都平城。', sourceIds: ['northern-wei-founding-386-primary-source'] },
   { id: 'han-shizhong', name: '韩世忠', aliases: ['韩良臣'], birthYear: 1089, deathYear: 1151, roles: ['将领', '抗金将领'], polityIds: ['song_south'], description: '韩世忠是南宋重要将领，参与宋金战争并与岳飞等将领共同构成南宋军事网络。', sourceIds: ['zizhi-tongjian'] },
   { id: 'sima-rui', name: '司马睿', aliases: ['晋元帝'], birthYear: 276, deathYear: 323, roles: ['皇帝', '宗室'], polityIds: ['jin_eastern'], description: '司马睿在西晋北方秩序崩解后于建康重建晋室，东晋政权由此形成。', sourceIds: ['zizhi-tongjian'] },
   { id: 'yuwen-yong', name: '宇文邕', aliases: ['北周武帝'], birthYear: 543, deathYear: 578, roles: ['皇帝', '军事领袖'], polityIds: ['zhou_northern'], description: '宇文邕是北周重要君主，推进北周军政整合并为隋统一北方奠定条件。', sourceIds: ['zizhi-tongjian'] },

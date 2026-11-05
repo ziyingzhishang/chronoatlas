@@ -1,0 +1,58 @@
+{
+  "decisionId": "gap-ming_southern-1659-1662",
+  "yearCount": 4,
+  "years": [
+    {
+      "polityId": "ming_southern",
+      "year": 1659,
+      "conclusion": "永历帝朱由榔及朝廷在清军压力下由云南撤往缅甸；故宫人物资料记经永昌、腾越而入缅，研究资料记该年抵达阿瓦一带。撤退路线不能作为南明控制疆域。",
+      "mapExpression": "leave-unfilled",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["dpm-zhu-youlang-biography", "cambridge-southwest-southeast-1652-1662", "chnmuseum-yongli-capture-edict"],
+      "evidenceGap": "史料支持流亡路线和避难区域，但路线、行在及军队移动不等于该年连续直接控制区；留空南明疆域面。"
+    },
+    {
+      "polityId": "ming_southern",
+      "year": 1660,
+      "conclusion": "永历朝廷仍处缅甸流亡阶段，南明军队的滇缅军事行动与朝廷驻留空间需区分；战争进退不足以证明本年稳定控制范围。",
+      "mapExpression": "leave-unfilled",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["cambridge-southwest-southeast-1652-1662", "dpm-zhu-youlang-biography"],
+      "evidenceGap": "现有来源可核对流亡和战事阶段，未给出可验证的年度行政边缘；不把行军路线或名义辖区绘作疆域。"
+    },
+    {
+      "polityId": "ming_southern",
+      "year": 1661,
+      "conclusion": "永历帝及随行朝廷仍处缅甸及滇缅交涉、军事压力阶段；清军、缅方与南明余部的活动分别记录，不合并为南明直接控制面。",
+      "mapExpression": "leave-unfilled",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["cambridge-southwest-southeast-1652-1662", "chnmuseum-yongli-capture-edict"],
+      "evidenceGap": "政权君主和随行朝廷的所在、交涉与各军行动不能说明稳定疆界；不从滇缅路线、战场或名义正朔推定领土。"
+    },
+    {
+      "polityId": "ming_southern",
+      "year": 1662,
+      "conclusion": "永历帝被缅方执献清军并押解回云南，年内在昆明遇害；这是永历政权主要政治延续终止的年份级结论。昆明事件点属于终结事件，不表示全年控制范围。",
+      "mapExpression": "leave-unfilled",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": ["chnmuseum-yongli-capture-edict", "ming-shi-vol120-southern-ming", "dpm-zhu-youlang-biography"],
+      "evidenceGap": "终结地点可以作为事件点呈现，但永历帝被捕、押解和昆明处置不等于南明全年疆域；部分地方抗清力量另有结局，不以永历终结替代。"
+    }
+  ],
+  "coexistenceNotes": [
+    "1659—1661年永历帝及随行朝廷在缅甸流亡，不据此推定南明对缅甸或滇缅通道的直接统治。",
+    "1662年永历政权主要政治延续终结不等于所有地方抗清力量同时终止；台湾明郑等另按各自政权和时间处理。",
+    "不将流亡路线、军事行动、朝廷名义或终结事件点绘为连续疆域；不以1658年以前最大范围或后续清朝轮廓填补。"
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "1659—1662四年均未发现足以恢复全年直接控制边界的证据，明确留空。",
+    "阶段史料支持流亡、交涉、战事和终结事件，但不足以确定年度稳定控制区。",
+    "昆明只作为既有1662年终结事件地点，不在本批新增疆域几何。",
+    "史料结论、地点表达、几何审核和来源使用权分别处理；公开地图另行核验。"
+  ]
+}

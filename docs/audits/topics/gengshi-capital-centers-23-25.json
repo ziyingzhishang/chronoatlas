@@ -1,0 +1,68 @@
+{
+  "decisionId": "gap-gengshi-23-25",
+  "yearCount": 3,
+  "years": [
+    {
+      "year": 23,
+      "conclusion": "刘玄在宛一带形成政权后，年度都城表以宛为主要中心参照。年内军事和政治中心变化不代表更始政权已直接控制其号令所及的全部地区。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "wan_nanyang",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "gengshi-capital-chronology-tongjian",
+        "gengshi-official"
+      ],
+      "evidenceGap": "宛为更始政权早期主要中心，但起兵、受降与军事行动的记载不足以确定本年连续直接控制边界；中心点不表示号令所及地区，疆域面留空。"
+    },
+    {
+      "year": 24,
+      "conclusion": "更始政权以洛阳为阶段性中心，年内再迁长安；本年度主都城表采用洛阳参照，迁驻节点另见事件记录。迁都不构成全年连续疆域证明。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "luoyang",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "gengshi-capital-chronology-tongjian",
+        "gengshi-official"
+      ],
+      "evidenceGap": "本年由洛阳迁长安，事件次序无法表达为单一全年控制边界；洛阳中心点仅作年度主要中心参照，不把年内驻地、归附或军事进展合并成疆域面。"
+    },
+    {
+      "year": 25,
+      "conclusion": "更始政权以长安为末期中心参照，政权统治在本年瓦解；中心点不表示对关中以外地区的全年直接控制。",
+      "mapExpression": "capital-center-point",
+      "capitalPlaceId": "changan",
+      "boundaryGeometry": null,
+      "sourceIds": [
+        "gengshi-capital-chronology-tongjian",
+        "gengshi-official",
+        "zizhi-tongjian-vol40-gengshi-25"
+      ],
+      "evidenceGap": "长安为更始政权末期中心，但政权在本年瓦解，现有材料不足以确定全年稳定直接控制边界；中心点不外推为关中以外疆域。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "gengshi-capital-chronology-tongjian",
+      "use": "《资治通鉴》卷三十九记更始政权由宛起事、至洛阳及24年由洛阳迁长安；支持中心转换时序，不支持把号令或军事活动转为连续疆界。"
+    },
+    {
+      "id": "gengshi-official",
+      "use": "陕西地方志按年记录24年更始由洛阳迁都长安，结合项目引用资料核对宛、洛阳、长安中心点的年份；城市级点仅作阶段中心参照。"
+    },
+    {
+      "id": "zizhi-tongjian-vol40-gengshi-25",
+      "use": "卷四十建武元年逐月记录刘秀六月即位、赤眉九月入长安及更始出走、刘秀十月入洛阳定都；用于核对25年年内更始与东汉交替，不推导全年疆界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "Cliopatria v0.2.1 record 1136的源时段为23—29年；项目仅将其目录有效年裁到新朝终止的23年。该低置信度、未说明控制性质的时段轮廓跨越更始建政和长安年内易手，故只在23年挂待审，不裁切或转归给更始。"
+    }
+  ],
+  "reviewLimitations": [
+    "前23、24、25年只使用已核对的阶段中心参照；24年洛阳迁长安按年内先后保留双中心序列，25年根据卷四十记载核对更始失去长安及东汉迁都洛阳的年内先后。",
+    "三年均无连续疆域面；中心、迁都、军事号令和地方归附均不等同全年稳定直接控制。",
+    "23年新朝Cliopatria record 1136源时段模型跨越更始政权形成及长安年内易手，目录有效期虽裁到23年仍不能作为稳定全年新朝实控面，已登记conflict:xin-gengshi-transition:23并仅在23年从运行时暂扣；原几何保留，未裁切或转归。",
+    "来源核对已完成；独立历史复核、制图复核、来源使用权及公开展示审核仍待完成。"
+  ]
+}

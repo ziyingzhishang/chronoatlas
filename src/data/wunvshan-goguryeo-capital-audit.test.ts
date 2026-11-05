@@ -8,8 +8,22 @@ import { people } from './people';
 import { places } from './places';
 import { polities } from './polities';
 import { sourceById } from './sources';
+import { getHistoricalState } from '../domain/history-state';
+import { buildLocalMapData } from '../map/history-map';
 
 describe('纥升骨城高句丽城市视角历史链审计', () => {
+  it('shows Wunvushan as a founding-site candidate in 37 BCE without a Goguryeo territory polygon', () => {
+    const state = getHistoricalState(-37);
+    const mapData = buildLocalMapData(state);
+
+    expect(mapData.capitalPlaces.features).toContainEqual(expect.objectContaining({
+      geometry: expect.objectContaining({ type: 'Point', coordinates: [125.41844, 41.329835] }),
+      properties: expect.objectContaining({ placeId: 'wunvshan', polityId: 'goguryeo' }),
+    }));
+    expect(mapData.boundaries.features.some((feature) => feature.properties?.entityId === 'goguryeo')).toBe(false);
+    expect(state.activePolities.some((polity) => polity.id === 'goguryeo')).toBe(true);
+  });
+
   it('keeps the traditional founding phase, early mountain-capital heritage and later Guonei transition connected to Huanren', () => {
     const asset = heritageAssets.find((candidate) => candidate.id === 'wunvshan-goguryeo-early-capital-site');
     const detail = getHeritageDetail('wunvshan-goguryeo-early-capital-site');
@@ -20,7 +34,13 @@ describe('纥升骨城高句丽城市视角历史链审计', () => {
     const eventIds = new Set(events.map((event) => event.id));
     const peopleIds = new Set(people.map((person) => person.id));
 
-    expect(place).toMatchObject({ modernName: '五女山城遗址', modernAdministrativeUnit: '辽宁省本溪市桓仁县' });
+    expect(place).toMatchObject({
+      modernName: '五女山城遗址',
+      modernAdministrativeUnit: '辽宁省本溪市桓仁县',
+      longitude: 125.41844,
+      latitude: 41.329835,
+    });
+    expect(place?.sourceIds).toContain('goguryeo-capital-unesco');
     expect(capital).toMatchObject({ polityId: 'goguryeo', placeId: 'wunvshan', validFrom: -37, validTo: 2 });
     expect(asset).toMatchObject({ placeId: 'wunvshan', constructionFrom: -37, constructionTo: 2 });
     expect(asset?.sourceIds.every((sourceId) => sourceIds.has(sourceId))).toBe(true);

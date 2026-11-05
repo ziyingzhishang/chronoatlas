@@ -21,7 +21,7 @@ describe('广固南燕城市视角历史链审计', () => {
     const peopleIds = new Set(people.map((person) => person.id));
 
     expect(place).toMatchObject({ modernName: '青州市一带', modernAdministrativeUnit: '山东省潍坊市青州市' });
-    expect(capital).toMatchObject({ polityId: 'southern_yan', placeId: 'guanggu', validFrom: 398, validTo: 410 });
+    expect(capital).toMatchObject({ polityId: 'southern_yan', placeId: 'guanggu', validFrom: 400, validTo: 410 });
     expect(asset).toMatchObject({ placeId: 'guanggu', constructionFrom: 398, constructionTo: 410 });
     expect(asset?.sourceIds.every((sourceId) => sourceIds.has(sourceId))).toBe(true);
     expect(detail).toBeDefined();

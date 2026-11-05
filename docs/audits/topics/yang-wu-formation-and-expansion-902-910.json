@@ -1,0 +1,161 @@
+{
+  "decisionIds": [
+    "gap-wu_ten-902-910"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-vol263-267-yang-wu",
+      "use": "《资治通鉴》卷263—267：在线文本覆盖杨行密受封、继承及吴军攻取节点；本次重点按卷次核对902—910年编年。"
+    },
+    {
+      "id": "yang-wu-expansion-history-geography",
+      "use": "《中国历史地理概论（下册）》南方九国及北汉节：项目来源记录用于江西扩张阶段和州名交叉对照；本轮原链接超时，须复查页面与版本。本条不依赖该概述绘制边界。"
+    },
+    {
+      "id": "yang-wu-ezhou-modern-location",
+      "use": "历史地理研究与武汉地方资料用于确认五代鄂州治江夏对应今武汉武昌，避免与三国时期今鄂州的武昌混同；只支持城市级近似事件点，不提供精确战场或州界。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "记录相邻的 Cliopatria v0.2.1 record 3646（snapshot 911、来源区间911—946，项目有效期911—937，low confidence、control type unspecified）作为时间范围排除依据。它不覆盖902—910年，本段不复制、不向前延伸该几何，也不据此确认早期杨吴控制边界。"
+    }
+  ],
+  "reviewLimitations": [
+    "902—910年共9条逐年结论均维持疆界留空；战役、州城攻取、受封和后期辖境概述均不足以证明全年连续控制线。",
+    "历史地理教材链接本轮超时，记为来源维护事项；《资治通鉴》在线转录可访问。没有从名义封号或后续疆域反推年度多边形。",
+    "相邻 Cliopatria record 3646 的首个来源年为911年，且控制性质未定，不可向前填补902—910年；该数据许可不自动证明其历史适用性或公开地图使用条件。905年事件点仅是鄂州治所城市级近似位置，五代鄂州治江夏（今武汉武昌）不得与三国武昌（今鄂州）混同。"
+  ],
+  "yearCount": 9,
+  "years": [
+    {
+      "year": 902,
+      "polityId": "wu_ten",
+      "conclusion": "天复二年杨行密受封吴王，都扬州。该年确认的是吴王名号与淮南政治中心；受封范围不直接等同于逐州实控边界。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "yang-wu-expansion-history-geography",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可确认政治中心及吴王封号，未提供当年各州控制状况的连续边界；不以后续杨吴范围回填。",
+      "centerPlaceId": "yangzhou"
+    },
+    {
+      "year": 903,
+      "polityId": "wu_ten",
+      "conclusion": "杨行密政权以扬州为中心延续。现有逐年记载未给出足以重建该年各州直接控制线的资料。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "政治延续不等于边界证据；无法将方镇名义辖区转换为本年连续直接控制面。",
+      "centerPlaceId": "yangzhou"
+    },
+    {
+      "year": 904,
+      "polityId": "wu_ten",
+      "conclusion": "杨行密仍以淮南为政权基础、扬州为政治中心。史料和现有研究不足以据此确定各州边界及实际控制强弱。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "未发现可复用的904年连续疆界资料；军镇区划和势力范围概述不能替代逐年边界校核。",
+      "centerPlaceId": "yangzhou"
+    },
+    {
+      "year": 905,
+      "polityId": "wu_ten",
+      "conclusion": "天祐二年杨行密去世，杨渥继位；吴军西取鄂州。鄂州战事和占取节点不证明其全境在全年持续受直接控制。",
+      "mapExpression": "capital-and-event-points",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "yang-wu-expansion-history-geography",
+        "yang-wu-ezhou-modern-location",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "有继位和攻取鄂州的军事记录，但没有同年度连续控制线；事件点按五代鄂州治江夏（今武汉武昌）作城市级近似定位，不将其与三国武昌（今鄂州）混同，也不把战役目标、城池占领或后续辖境画成疆界。",
+      "centerPlaceId": "yangzhou",
+      "mapEventIds": [
+        "yang-wu-captures-ezhou-905"
+      ]
+    },
+    {
+      "year": 906,
+      "polityId": "wu_ten",
+      "conclusion": "杨渥继位后，吴军在江西方向取得江州、饶州、洪州等地。此为阶段性军事扩展结论，不能视为三州全部区域在全年稳定直接控制。",
+      "mapExpression": "capital-and-event-points",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "yang-wu-expansion-history-geography",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料记载州城与战事，不给出州界、乡县接管过程及全年控制状态；现有概述地图无逐年可追溯几何。",
+      "centerPlaceId": "yangzhou",
+      "mapEventIds": [
+        "yang-wu-captures-hongzhou-906"
+      ]
+    },
+    {
+      "year": 907,
+      "polityId": "wu_ten",
+      "conclusion": "后梁代唐，淮南杨氏政权继续存在并沿用天祐年号；前两年江西战事形成的控制态势不能仅凭年号或名义辖区判定为全年稳定边界。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "政权并存与对后梁名义关系不提供直接控制线；江西各地控制连续性仍需州县级史料核验。",
+      "centerPlaceId": "yangzhou"
+    },
+    {
+      "year": 908,
+      "polityId": "wu_ten",
+      "conclusion": "杨隆演继位，杨吴政权中枢仍在广陵（扬州）；该年未取得足以精确表达边界的逐年空间资料。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "继承和政治中心可确认，但不能由都城或上一年战事推定全境。",
+      "centerPlaceId": "yangzhou"
+    },
+    {
+      "year": 909,
+      "polityId": "wu_ten",
+      "conclusion": "杨隆演继位后继续向江西用兵，后世历史地理概述记其取得抚、信、袁、吉、虔诸州并扩至江西大部。该阶段性记述未给出各地实际接管日期和可复用边界。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "yang-wu-expansion-history-geography",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "州级扩张叙述支持区域变化，不支持在公历年尺度上把州域整块绘为确定控制区；须补核州县记载及历史地图依据。",
+      "centerPlaceId": "yangzhou"
+    },
+    {
+      "year": 910,
+      "polityId": "wu_ten",
+      "conclusion": "杨吴仍以广陵为中心，江西扩张已进入其后期疆域形成过程；“尽有今江西”等概括不能证明910年每一地区全年均由其直接控制。",
+      "mapExpression": "capital-center-point",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-vol263-267-yang-wu",
+        "yang-wu-expansion-history-geography",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "缺少覆盖910全年的州县直接控制记录和可重发布坐标；保留结论，不把后期轮廓倒推到本年。",
+      "centerPlaceId": "yangzhou"
+    }
+  ]
+}

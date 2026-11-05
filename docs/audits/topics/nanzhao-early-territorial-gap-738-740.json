@@ -1,0 +1,58 @@
+{
+  "decisionId": "gap-nanzhao-738-740",
+  "yearCount": 3,
+  "years": [
+    {
+      "polityId": "nanzhao",
+      "year": 738,
+      "conclusion": "《资治通鉴》卷214将蒙归义受封、皮罗阁请合六诏获准、军事整合及迁居太和城写于开元二十六年（738）条下；《旧唐书》及城市史研究将迁居系于739年，故保留纪年差异。",
+      "mapExpression": "event-location-point",
+      "centerPlaceId": "taihe",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "nanzhao-formation-zizhi-214",
+        "nanzhao-taihe-site-whitrap",
+        "china-chronology"
+      ],
+      "evidenceGap": "太和城是遗址/政治中心点，不代表城垣或南诏控制边界。合六诏、册封和征服叙事无法给出可投影的精确界线；不绘疆域多边形。迁居纪年存在738/739异文。"
+    },
+    {
+      "polityId": "nanzhao",
+      "year": 739,
+      "conclusion": "太和城政治中心阶段延续；《旧唐书》及城市史研究以开元二十七年（739）为迁居年。都城点只显示南诏政治中心，不表示洱海区域以外的控制边缘。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "taihe",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "nanzhao-formation-zizhi-214",
+        "china-chronology",
+        "nanzhao-royal-titles-bryson-2015",
+        "nanzhao-taihe-site-whitrap",
+        "nanzhao-taihe-capital-period-reference"
+      ],
+      "evidenceGap": "太和城都城阶段可由迁入与779年迁出记载限定；未提供该年南诏直接控制边缘，不据都城阶段绘制疆域面，也不以741年或后期轮廓回填。"
+    },
+    {
+      "polityId": "nanzhao",
+      "year": 740,
+      "conclusion": "太和城仍为项目所采都城阶段内的南诏政治中心；史料未提供本年疆界变化或直接控制边缘。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "taihe",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "nanzhao-formation-zizhi-214",
+        "china-chronology",
+        "nanzhao-royal-titles-bryson-2015",
+        "nanzhao-taihe-site-whitrap",
+        "nanzhao-taihe-capital-period-reference"
+      ],
+      "evidenceGap": "太和城政治中心阶段不提供740年连续疆域证据；册封、战争和后续区域势力叙述均不足以确定边缘，不以前后年份插值或套用最大轮廓。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "738年只显示太和城迁居事件点；《资治通鉴》和《旧唐书》存在738/739迁居纪年差异，事件点不表示疆域。",
+    "739、740年显示太和城政治中心点，疆域面继续留空；不把中心点推为洱海区域外控制边缘，也不以741年边界回填。",
+    "历史结论、遗址点定位和来源使用权分别审核；现代遗产图件或地图不得据此复制发布。"
+  ]
+}

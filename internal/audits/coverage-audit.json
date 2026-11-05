@@ -30,19 +30,30 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "capital-history-reference",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "han-warring-late-territory-li-xiaojie-2001",
+          "han-warring-late-territory-zhang-jianyu-2023",
+          "shiji-han-shijia-termination-230",
+          "xinzheng-government-history",
+          "songshi-vol1-taizu",
+          "xuzizhi-tongjian-changbian-vol1",
+          "zizhi-tongjian",
+          "zizhi-tongjian-vol6-han-termination"
         ],
-        "historicalTransitionCheck": "gap-han_warring--230--230逐段复核：前230年为韩被秦灭亡之年，年内控制变化使前一年轮廓不能代表全年。",
-        "rationale": "前230年为韩被秦灭亡之年，年内控制变化使前一年轮廓不能代表全年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见docs/audits/topics/han-warring-termination-230.json：秦王政十七年内史腾攻灭韩国、俘韩王安、以韩地置颍川郡。《史记·韩世家》互证终结和接收；李晓杰（2001）与张建宇（2023）为韩国晚期疆域提供历史地理和兵器铭文背景，但后者确认的前233年城邑不能直接移作前230年全年边界。新郑市人民政府沿革页用于核对新郑与韩国都城及秦代县治的历史关联，不提供测绘坐标。新郑仅作韩国受降前政治中心区域参照。",
+        "rationale": "保留新郑D级政治中心区域点和疆界留空。《史记》《资治通鉴》确认年内灭韩与领土接收；新郑市人民政府沿革页仅交叉核对都城和县治关联；近年历史地理研究指出韩王安时期仍有部分黄河沿岸城邑，但没有提供可直接套用于前230年全年、且能区分征服前后状态的审核几何。不能把‘尽入其地’、颍川郡名或前233年城邑复原线当成精确边界；本段sourceBoundaryIds仍为空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/han-warring-termination-230.json"
       }
     ],
-    "visualRecords": 6,
+    "visualRecords": 7,
     "definiteBoundaryRecords": 6,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "zhao_warring",
@@ -119,14 +130,20 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "capital-history-reference",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "zizhi-tongjian",
+          "zizhi-tongjian-vol7-chu-termination",
+          "shiji-chu-shijia-termination-223",
+          "shiji-qin-shihuang-chu-war-224-223",
+          "chu-conquest-chronology-tao-ran-2019"
         ],
-        "historicalTransitionCheck": "gap-chu_warring--223--223逐段复核：前223年为楚被秦攻灭的转折年，不能把前224年的残存范围平移为全年疆域。",
-        "rationale": "前223年为楚被秦攻灭的转折年，不能把前224年的残存范围平移为全年疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见docs/audits/topics/chu-warring-termination-223.json：《史记·楚世家》《六国年表》及《资治通鉴》记负刍于前223年被俘，《史记·秦始皇本纪》另记前224年虏荆王；专题研究对史料差异及寿春控制先后提出不同解释。",
+        "rationale": "疆域与寿春中心点均留空。年内楚政权终结和秦接收楚地可确认，但前224—前223年俘王记载存在篇章差异，寿春在楚亡前的控制归属未定；不将都城阶段外推为本年控制点，sourceBoundaryIds为空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/chu-warring-termination-223.json"
       }
     ],
     "visualRecords": 12,
@@ -164,19 +181,25 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "shiji-qin-shihuang-yan-termination",
+          "yan-capital-relocation-liaoyang-2011",
+          "zizhi-tongjian",
+          "zizhi-tongjian-vol7-yan-termination"
         ],
-        "historicalTransitionCheck": "gap-yan_warring--222--222逐段复核：前222年为燕最终灭亡阶段，辽东残余与秦接管过程不宜压成单一面。",
-        "rationale": "前222年为燕最终灭亡阶段，辽东残余与秦接管过程不宜压成单一面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见docs/audits/topics/yan-warring-termination-222.json：秦始皇二十五年王贲攻辽东、俘燕王喜，燕国残余政权终结。《资治通鉴》未明确辽东驻地；薛兰霞、杨玉生2011年研究将辽阳列为燕最后都城之一说法，支持低置信度区域中心参照，不提供精确襄平坐标或疆域边界。",
+        "rationale": "前222年为燕国残余灭亡年。以《资治通鉴》及《史记》确认辽东战事、俘燕王喜；采用薛兰霞、杨玉生关于燕最后都城辽阳的一种研究结论，显示今辽阳市城区的低置信度区域政治中心参照。燕都迁徙地点与年代仍有学术分歧，点位不定位精确古城址、不表示辽东全域或燕国直接控制边界。燕疆域面继续留空，sourceBoundaryIds为空，不回填邻年或其他阶段几何。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/yan-warring-termination-222.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "qi_warring",
@@ -232,17 +255,28 @@
         "polityId": "qin",
         "from": -221,
         "to": -219,
+        "annualAudit": "docs/audits/topics/qin-unification-221-219.json",
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "qin-dynasty-territory-map-221-206-cc0",
+          "shiji-qin-qi-termination-221",
+          "liye-qin-slip-weapons-220",
+          "modern-geography-reference",
+          "qin-empire-at-height-map-land",
+          "qin-historical-atlas-volume2",
+          "jiangshan-qin-map-phase-221-216",
+          "qin-regional-control-lander",
+          "qin-shihuang-28th-year-eastern-tour",
+          "shiji-qin-unification-administration",
+          "qin-qi-commandery-setup-review-2023"
         ],
-        "historicalTransitionCheck": "gap-qin--221--219逐段复核：前221年完成灭齐统一，随后仍在重组郡县并向南北扩展，三年并非稳定断面。",
-        "rationale": "前221年完成灭齐统一，随后仍在重组郡县并向南北扩展，三年并非稳定断面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见docs/audits/topics/qin-unification-221-219.json：前221年灭齐统一、初置三十六郡；《史记》记秦于该年得齐王建。Cliopatria齐国轮廓覆盖前222—前221年，年内转换边界未明，前221年快照已挂待审并从运行时隐藏。前220年里耶秦简见洞庭、巴、南等郡兵器输内史；前219年东行郡县。另登记谭图秦图、Lander秦帝国全盛期图、Ian Remsen的CC0前221—前206年图，以及《江山时序》前221—前216年分期图（代表快照前218年）作为交叉参考；均不能单独证明三个目标年份的逐年疆界，未提取几何。 2023年秦郡研究述评归纳齐地郡级区划在统一后有分置调整，但对济北、即墨建置年份和齐地郡目仍有异说；仅补充行政沿革背景，不据此复原边界。",
+        "rationale": "逐年补入前221—前219年史事、史源及可追溯的历史地图参考，运行时显示咸阳D级中央政治中心参照点。郡制、兵器转输与巡行路线不直接构成连续控制边界；现有地图分别是前221—前206年、约前230—前206年累计范围，或前221—前216年阶段且以218年为代表快照，均不能精确到逐年疆界。齐国来源轮廓在前221年存在同断面政权转换冲突，已保持原几何并挂待审，不自动裁切。三年疆域面继续留空，sourceBoundaryIds保持为空；新登记地图仅作交叉核对，许可未明的数据未复制或复绘，其他图件许可也不替代项目公开地图审核。 2023年秦郡研究述评进一步确认齐地郡制在统一后有阶段性分置，部分学说将济北、即墨（胶东）调整起点定在前219年，但郡目和断代均存在争议；将此记为年度行政背景，不把政区设置信息推导为精确疆域面。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-04"
       },
       {
         "id": "gap-qin--208--206",
@@ -252,19 +286,26 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
+          "qin-collapse-timeline-shiji",
+          "qin-regional-control-lander",
+          "qin-han-wuguan-location-debate",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-qin--208--206逐段复核：前208至前206年处在秦末战争和秦政权覆亡阶段，最大版图会严重夸大实际控制。",
-        "rationale": "前208至前206年处在秦末战争和秦政权覆亡阶段，最大版图会严重夸大实际控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见docs/audits/topics/qin-collapse-208-206.json：前208年秦廷与地方战乱并存；Lander研究将约前230—前206年东、南新征区概括为控制较弱，但这是累计空间、不能确定起义后逐县归属。前207年子婴继位、刘邦入武关；前206年按陕西地方志口径记子婴迎降、项羽入咸阳并分封关中。秦历与公历换算差异单独保留。",
+        "rationale": "逐年记录秦末史事与纪年差异；前208、前207年显示咸阳D级秦廷中心参照，并将Lander关于新征区域控制较弱的研究作为区域背景而非逐县边界证据。前206年秦汉政权在年内交接，年度图不显示秦的全年中心点。秦末战事与三分关中使全年控制快速变化，三年疆域面继续留空，sourceBoundaryIds为空，不回填统一时期最大几何。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/qin-collapse-208-206.json"
       }
     ],
-    "visualRecords": 3,
+    "visualRecords": 6,
     "definiteBoundaryRecords": 3,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "han_western",
@@ -298,17 +339,25 @@
         "polityId": "han_western",
         "from": -206,
         "to": -203,
+        "annualAudit": "docs/audits/topics/han-king-chuhan-206-203.json",
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "han-king-chuhan-206-203-primary-sources",
+          "han-shu-gaodi-kingdom-41-counties",
+          "huayang-guozhi-han-king-fief",
+          "honggou-canal-course-study-2017",
+          "zhengzhou-xingyang-old-city-site",
+          "modern-geography-reference",
+          "shiji-gaozubenji-pengcheng-battle-205",
+          "xuzhou-pengcheng-historical-location"
         ],
-        "historicalTransitionCheck": "gap-han_western--206--203逐段复核：前206至前203年处在受封汉王及楚汉战争阶段，不能反推后来的西汉统一疆域。",
-        "rationale": "前206至前203年处在受封汉王及楚汉战争阶段，不能反推后来的西汉统一疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见docs/audits/topics/han-king-chuhan-206-203.json：前206年汉王都南郑；前205年年末还都栎阳；前204—前203年荥阳、成皋争夺；前203年末洪沟约和、楚军东归及汉方追击决策。四年疆域均无足够边界证据。 前205年增列彭城战事事件点，依据《史记·高祖本纪》及彭城故治今徐州市区的历史地名资料；坐标仅作城市级区域参照。",
+        "rationale": "逐年保留汉王中心/前线表达：前206年南郑，前205年年末栎阳，前204—前203年荥阳争夺前线点。分封、军事推进、前线争夺和约和不等于连续疆界；sourceBoundaryIds继续为空，不把后续西汉统一轮廓倒填至楚汉战争阶段。 前205年新增彭城战事区域点以呈现汉军东进后的重大败绩，与年末栎阳中心分层显示；不定位战场、战线或占领范围，不转成疆域几何。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02"
       },
       {
         "id": "gap-han_western-6-9",
@@ -318,19 +367,27 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "han-xin-transition-primary-sources",
+          "wang-mang-spatial-reforms-xiong-2019",
+          "huaili-han-chgis-hvd-70705",
+          "modern-geography-reference",
+          "wan-county-chgis-hvd-82610",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-han_western-6-9逐段复核：6至9年包含西汉末期权力转移及新朝建立，前期轮廓不能覆盖整个区间。",
-        "rationale": "6至9年包含西汉末期权力转移及新朝建立，前期轮廓不能覆盖整个区间。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/han-xin-transition-6-9.json；6年王莽居摄，四月刘崇与张绍攻宛未能入城而败、羌人入侵西海郡；7年翟义于东郡、赵明与霍鸿于槐里起兵，史载郡国皆震、翟义至山阳时众十余万；8年二月平定赵明、霍鸿，岁末王莽即真、定国号为新并改以当年十二月为始建国元年正月；卷三十七按新正朔记公历9年正月去汉号。公历年度与新正朔年次交叠，前期西汉统一疆域不能代表6—9年全年实控。",
+        "rationale": "逐年记录6—8年西汉末期长安中央政治中心参照；6年另以CHGIS/TGAZ宛县治点标记刘崇进攻目标，原典记未能入城，不表示占领。7年起兵和8年平叛各增加槐里县治区域级近似事件点，不定位营地或战场，也不把响应范围转成控制区。其他地方起兵、边疆入侵及响应范围说明局部压力，不提供连续控制边界。8年岁末发生政权转换，长安点不等于全年实控。9年按改正朔后的新朝年次记录政权转换，但Cliopatria record 1120为低置信度、控制语义未定的9—13年区间模型，已仅在9年挂requires-review并从运行帧隐藏；10—13年来源时段恢复。西汉本段所有年份疆域面继续留空，sourceBoundaryIds保持为空；不把政治中心、名义辖区、军事事件图或新朝区间轮廓当作经审核的逐年实控边界，也不以邻年或最大轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-10-20",
+        "annualAudit": "docs/audits/topics/han-xin-transition-6-9.json"
       }
     ],
-    "visualRecords": 8,
+    "visualRecords": 15,
     "definiteBoundaryRecords": 8,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "xin",
@@ -385,19 +442,25 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "han-eastern-founding-primary-sources",
+          "han-hao-enthronement-site-study",
+          "modern-geography-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-han_eastern-25-29逐段复核：25至29年为东汉建立及逐步恢复控制阶段，30年轮廓不能倒推至建国初年。",
-        "rationale": "25至29年为东汉建立及逐步恢复控制阶段，30年轮廓不能倒推至建国初年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/eastern-han-founding-25-29.json：25年六月刘秀于鄗南即位、十月入洛阳定都；更始政权当年仍在长安延续至败亡，东汉初年不能视为从年初起已控制其后疆域。26年洛阳中央开始封功臣、调兵整合；27年赤眉降汉但刘永、彭宠等势力仍存；28年区域性征讨继续；29年建武五年仍处于逐步平定阶段。未以30年断面倒推。",
+        "rationale": "逐年补入25—29年东汉中央政治中心的D级洛阳参照点。25年点位仅表示十月定都后的洛阳中枢；六月鄗南即位地点虽有文献与考古研究，今地对应存在不同说法，且缺少本项目可追溯的精确坐标，故不将县级中心冒充登基坛。26—29年逐年点位只表示洛阳中央中枢。更始、赤眉、刘永、彭宠、张步等政权或地方势力及军事活动不转译为稳定疆界；本段sourceBoundaryIds保持为空，不把邻年或最大轮廓回填至建武初年。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-04",
+        "annualAudit": "docs/audits/topics/eastern-han-founding-25-29.json"
       }
     ],
-    "visualRecords": 17,
+    "visualRecords": 22,
     "definiteBoundaryRecords": 17,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "wei_three",
@@ -431,17 +494,24 @@
         "polityId": "wei_three",
         "from": 220,
         "to": 223,
+        "annualAudit": "docs/audits/topics/three-kingdoms-formation-220-223.json",
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
+          "three-kingdoms-formation-220-223-primary-sources",
+          "three-kingdoms-overview-map-1935-pd",
+          "wuchang-wu-capital-location",
+          "liu-bei-death-and-yongan-palace-location",
+          "baotaiping-site-amap-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-wei_three-220-223逐段复核：220至223年包含曹魏建国、蜀汉与孙吴名号变化，三方控制仍在调整。",
-        "rationale": "220至223年包含曹魏建国、蜀汉与孙吴名号变化，三方控制仍在调整。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/three-kingdoms-formation-220-223.json：220年曹丕受禅建魏；221年蜀汉建政，孙权受魏封吴王并迁都武昌，吴王政权只显示D级武昌中心点；222年孙权自立吴王并改元黄武；223年刘备卒于永安宫、刘禅继位，新增奉节宝塔坪一带的区域级事件参照点。登记1935年三国概览图作宽时段交叉参考，不据其图题提取逐年边界。魏各年仅以洛阳点表示中枢。",
+        "rationale": "220—223年魏各年只显示洛阳D级政治中心点，不把汉廷名义辖区、册封关系、战事或吴的来源几何解释为魏的全年直接疆界。汉魏交替年220暂扣低置信度东汉来源轮廓，仅限当年，保留原始几何并于219年正常显示；不裁切或转交。1935年地图题注覆盖220—265/280年，仅供宽时段交叉参考，未数字化。魏疆域面继续留空，sourceBoundaryIds为空，不以邻年或最大轮廓回填。221年吴王阶段另以武昌D级中心点表示并明确疆域留空；吴的222—237年Cliopatria几何仍保留原始时间与许可说明，不据此裁剪魏蜀边界。223年新增事件点仅为奉节宝塔坪区域参照，不定位永安宫具体建筑，蜀汉疆域面继续留空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       },
       {
         "id": "gap-wei_three-265-265",
@@ -451,19 +521,26 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
+          "shu-fall-263-primary-source",
+          "three-kingdoms-overview-map-1935-pd",
+          "wei-jin-transition-265-primary-sources",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-wei_three-265-265逐段复核：265年发生魏晋禅代，曹魏终年轮廓具有明显的年内时点歧义。",
-        "rationale": "265年发生魏晋禅代，曹魏终年轮廓具有明显的年内时点歧义。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/three-kingdoms-terminations-263-265.json：265年八月司马昭卒、十二月魏晋禅代；吴仍存续并于冬季迁都武昌。洛阳D级点仅表示魏禅代前的中央政治中心，不能代表全年疆界。另登记220—265/280年三国概览图作宽时段参考，不据其绘制265年边界。",
+        "rationale": "编年史支持魏晋禅代和吴政权并存，洛阳点只标示禅代前政治中心及交接地点，不表示全年控制范围。1935年概览图时段宽，不提供265年逐年控制线；该图未被数字化。265年曹魏疆域继续留空，不以邻年轮廓或西晋来源区间回填。西晋Cliopatria跨年近似几何保留在来源目录，但因禅代发生于年末，已在265年挂requires-review并从运行时隐藏；266年起仍按来源时段显示，等待历史与制图审核。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/three-kingdoms-terminations-263-265.json"
       }
     ],
-    "visualRecords": 3,
+    "visualRecords": 6,
     "definiteBoundaryRecords": 3,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "shu_three",
@@ -497,17 +574,23 @@
         "polityId": "shu_three",
         "from": 221,
         "to": 223,
+        "annualAudit": "docs/audits/topics/three-kingdoms-formation-220-223.json",
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
+          "three-kingdoms-formation-220-223-primary-sources",
+          "three-kingdoms-overview-map-1935-pd",
+          "liu-bei-death-and-yongan-palace-location",
+          "baotaiping-site-amap-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-shu_three-221-223逐段复核：221至223年包含蜀汉建国、夷陵战争与刘备去世，不能用224年断面回填。",
-        "rationale": "221至223年包含蜀汉建国、夷陵战争与刘备去世，不能用224年断面回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/three-kingdoms-formation-220-223.json：221年刘备在成都称帝建蜀汉；222年夷陵战败后蜀汉仍以成都为中枢；223年刘备卒于永安宫、刘禅继位，并新增奉节宝塔坪一带的区域级事件参照点。登记1935年三国概览图作宽时段参考，不据其图题提取逐年边界。成都仍仅表示政治中心。",
+        "rationale": "221—223年逐年只显示成都D级政治中心点；223年另有奉节宝塔坪一带的低置信度区域事件参照点，不定位永安宫具体建筑。称帝、夷陵战败及皇位承接不足以复原全年直接控制边缘；1935年地图题注覆盖220—265/280年，只作比较背景且未数字化。不把战事、归降、名义关系或吴的来源几何混画为蜀汉疆界。蜀汉疆域面继续留空，sourceBoundaryIds为空，不以224年后轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       },
       {
         "id": "gap-shu_three-263-263",
@@ -517,19 +600,26 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
+          "shu-fall-263-primary-source",
+          "three-kingdoms-overview-map-1935-pd",
+          "wei-jin-transition-265-primary-sources",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-shu_three-263-263逐段复核：263年蜀汉在魏灭蜀战争中覆亡，上一年轮廓不代表该年持续变化的控制。",
-        "rationale": "263年蜀汉在魏灭蜀战争中覆亡，上一年轮廓不代表该年持续变化的控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/three-kingdoms-terminations-263-265.json：263年魏军分路进蜀、姜维退守剑阁、邓艾由阴平趋成都，刘禅年内投降；成都点仅作蜀汉终止年中枢参照。另登记220—265/280年三国概览图作宽时段参考，不据其绘制263年边界。",
+        "rationale": "已加入成都D级政治中心点，表示蜀汉终止年前的中央所在地，不等于全年疆域。魏军进攻、成都投降及后续降附不能压成一个稳定控制面；1935年三国概览图时段宽且未被数字化，不能提供263年逐年边线。因此本段疆域仍明确留空，不把262年轮廓回填，也不把战线或名义降附画成直接疆界；吴仍存续，不据其同断面范围自动裁剪魏军或蜀汉几何。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/three-kingdoms-terminations-263-265.json"
       }
     ],
-    "visualRecords": 3,
+    "visualRecords": 5,
     "definiteBoundaryRecords": 3,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "wu_three",
@@ -549,9 +639,11 @@
     "review": "已核对标识、存续期和几何结构；非逐界史料复核",
     "note": "来源日期与目录日期不一致处取交集，缺年另标最大参考，不外推为实况。",
     "gapDecisions": [],
-    "visualRecords": 4,
+    "visualRecords": 6,
     "definiteBoundaryRecords": 4,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "jin_western",
@@ -632,14 +724,21 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "cheng-han-founding-304-305-primary-sources",
+          "jinshu-dilizhi-jiangyang-hanan",
+          "guangxu-neijiang-hanan-distinction",
+          "huayang-guozhi-hanan-relative-location",
+          "republican-jiangan-gazetteer-hanan-review",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-cheng_han-304-305逐段复核：304至305年为成汉政权草创期，306年的控制面不能直接回推。",
-        "rationale": "304至305年为成汉政权草创期，306年的控制面不能直接回推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/cheng-han-founding-304-305.json：304年十一月李雄攻克成都并于年内称成都王，点位仅示年末中心；305年六月称帝、国号蜀，八月遣李骧攻汉安。《华阳国志》记汉安在江阳郡治东五百里，《光绪内江县志》作四百里并主张内江说，《民国江安县志》比较水道沿革后仍称不能确指；相对里程不足以定唯一现代坐标，故不落事件点。汉赵同期建政但相关中心未有项目级核定坐标，未以行政中心代点。西晋Cliopatria record 1407轮廓覆盖成都D级点且时段跨越304—305年建政变化，已对这两年挂requires-review并从运行时隐藏，不裁切或转归。",
+        "rationale": "逐年保留成都D级政治中心参照，304年点特指年末取得成都后的中心，305年点表示建政时期成都中枢。史籍未给出足以复原两年直接控制边界的逐年空间材料；相邻Cliopatria v0.2.1 record 1423（clio-1423-cheng_han-306）仅覆盖306—310年，不回填至304—305年。西晋Cliopatria record 1407（clio-1407-jin_western-287）为287—305年区间轮廓，几何包含成都中心点但不区分李雄304年末攻取成都及成汉建政后的控制变化，故该西晋轮廓仅在304—305年挂requires-review并从运行时隐藏，原几何保留、不裁切或转给成汉。成汉疆域仍留空，不把“尽有成都之地”、军事攻掠或名义辖区转成边界。305年汉安目标虽有《华阳国志》相对方位和后世地志辨析，但里程异文与诸说分歧未形成唯一现代定位，故不添加事件坐标。汉赵左国城与黎亭坐标待核；不据无坐标资料宣称其与西晋轮廓有精确空间重叠。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/cheng-han-founding-304-305.json"
       },
       {
         "id": "gap-cheng_han-347-347",
@@ -649,19 +748,24 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "cheng-han-fall-347-primary-sources",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-cheng_han-347-347逐段复核：347年成汉被东晋桓温所灭，终结年不采用此前最大范围。",
-        "rationale": "347年成汉被东晋桓温所灭，终结年不采用此前最大范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/cheng-han-fall-347.json：347年《资治通鉴》记桓温留成都三十日后还江陵，同年四月丁巳邓定、隗文等入据成都；不支持‘四月晋军入据成都’。年内控制转折不能用一张全年稳定边界表现。",
+        "rationale": "已加入成都D级政治中心参照，表示成汉终止年战事与控制转折的城市位置，不代表成汉或东晋全年实控。此前Cliopatria v0.2.1 record 1459（clio-1459-cheng_han-338）只覆盖338—346年，不延伸至347年；东晋record 1477（clio-1477-jin_eastern-347）从347年起的低置信度时段面覆盖成都，但桓温撤军、地方军队入据等年内时序不支持全年稳定控制。该东晋来源面现仅在347年暂扣，348年恢复；不裁切或转移。成汉本段sourceBoundaryIds仍为空，不使用此前最大范围回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/cheng-han-fall-347.json"
       }
     ],
-    "visualRecords": 3,
+    "visualRecords": 6,
     "definiteBoundaryRecords": 3,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "former_zhao",
@@ -694,19 +798,30 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "amap-lishi-district-coordinate",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "former-zhao-founding-304-305-primary-sources",
+          "jiangshan-map-zuoguo-coordinate-crosscheck",
+          "zuoguo-site-local-overview-2024",
+          "liting-historical-geography-references",
+          "liting-huguan-route-study",
+          "state-council-sixth-national-key-cultural-site-nancun",
+          "zizhi-tongjian",
+          "zuoguo-city-nancun-location-study"
         ],
-        "historicalTransitionCheck": "gap-former_zhao-304-305逐段复核：304至305年为汉赵政权建立初期，名号与控制范围尚未形成稳定年度断面。",
-        "rationale": "304至305年为汉赵政权建立初期，名号与控制范围尚未形成稳定年度断面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/former-zhao-founding-304-305.json：304年刘渊称汉王，汉赵政权形成且记载与左国城相关；地方遗址资料对应到方山县峪口镇南村，国务院名录将南村城址列为战国至晋遗址，但只提供县级位置。305年离石大饥，刘渊迁屯黎亭并留太尉守离石；《水经注》与后世地理考释将黎亭约束在上党、壶关区域，但古今地望解释仍不足以形成单一坐标，且“迁屯就粮”不等于政权中心迁移。新核入古壶关道研究可补充区域参照，但不能确定黎亭唯一遗址或坐标。",
+        "rationale": "逐年记录304年刘渊称汉王及左国城建政背景、305年迁屯黎亭并留将守离石。地方遗址研究将左国城对应到方山县峪口镇南村；国务院名录确认南村城址为战国至晋遗址。新补2024年地方遗址概述称南村城址多期整体约南北3.5公里、东西2.5公里，但未提供坐标、方向控制点或测绘边界，无法据此形成前赵304年中心点或历史疆域几何，因此仍不以村域或县城中心代点。新核入《水经注》《汉书·地理志》应劭注和《读史方舆纪要》地理材料，可将黎亭约束在上党、壶关一带，但古今地望仍不一致；305年迁屯为临时就粮，不作为政治中心点。相邻Cliopatria v0.2.1 record 1428（clio-1428-former_zhao-306）覆盖306—310年，不能回填304—305年；该后续几何本身因政权中心阶段变化仍挂requires-review并从运行时扣留。西晋record 1407仅因成都点与建政年内变化在304—305年待审；不据左国城区域级定位宣称其与西晋轮廓存在精确空间重叠。驻屯移动也不能推出全年直接疆界，本段保持leave-unfilled；并存断面不按两朝都城推算相邻边界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/former-zhao-founding-304-305.json"
       }
     ],
-    "visualRecords": 3,
+    "visualRecords": 5,
     "definiteBoundaryRecords": 3,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "later_zhao",
@@ -739,19 +854,27 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "capital-history-reference",
           "china-chronology",
+          "cliopatria",
+          "later-zhao-319-336-chronicles",
+          "later-zhao-administrative-epigraphy-2022",
+          "later-zhao-326-ye-palace-primary",
+          "modern-geography-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-later_zhao-319-336逐段复核：319至336年覆盖后赵政权建立、迁都与兼并扩张阶段，337年来源断面不能代表十八年间的连续变化。",
-        "rationale": "319至336年覆盖后赵政权建立、迁都与兼并扩张阶段，337年来源断面不能代表十八年间的连续变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/later-zhao-319-336.json：319年石勒在襄国称赵王；326年营建邺宫、遣石弘镇邺并配置禁兵；328年洛阳西阳门决战、刘曜被俘，新增洛阳城区级事件点；329年后赵攻取长安、前赵中央终止，战争胜利与后续接管分年表达；330年石勒称帝；333年石勒死、石弘继位而石虎掌权；334年石虎废弘，并据《东魏程哲碑》研究补入程荫任玄氏令的政区存在记录，但玄氏县无可核现代定位或县界；335年九月正式迁都邺；336年继续在邺营建。320—325、327、331—332年另有逐年政治中心结论，但战争控制未形成可直接转绘的完整年界。",
+        "rationale": "319—336年已逐年加入D级政治中心点：319—334襄国；326另显示临漳一带邺宫与驻军事件区域点，但不取代襄国中心或列作第二都；328增加洛阳西阳门战役城区级事件点，不定位具体战场或代表前赵全境接收；334年碑刻研究另证后赵设置玄氏令，但现代地望与县界不明，不据以加点或绘县域；335同时显示迁都前襄国与九月后的邺城以提示年内转换；336以邺为中心。相邻Cliopatria v0.2.1 record 1457（clio-1457-later_zhao-337）仅覆盖337—346年，低置信度且控制性质未定，不向前赵早期回填。疆域面仍留空，因为编年史记录的战事、降附和征服不能直接代表全年稳定控制。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-zhao-319-336.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 21,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "former_yan",
@@ -810,14 +933,24 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "former-qin-founding-351-352-primary-sources",
+          "former-qin-situation-map-351-394",
+          "changling-chgis-han-only",
+          "modern-geography-reference",
+          "shaanxi-administrative-establishment-gazetteer-shian-352",
+          "wuzhangyuan-gazetteer-location",
+          "xianyang-qindu-gazetteer-shian-352",
+          "xianyang-weicheng-gazetteer-shian-352",
+          "xianyang-city-gazetteer-shian-352",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-former_qin-351-352逐段复核：351至352年为前秦建立和称帝阶段，353年轮廓不反推至草创期。",
-        "rationale": "351至352年为前秦建立和称帝阶段，353年轮廓不反推至草创期。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/former-qin-founding-351-352.json：《资治通鉴》卷九十八记350年十月苻健至长安、十一月入城；卷九十九记351年称天王、四月五丈原击退晋军；352年即皇帝位。另有351—394年东晋、前秦形势图索引，仅作宽时段背景，不能作为351或352年疆界依据。TGAZ / CHGIS长陵县点位时段仅为前202年至公元13年，不能转作352年咸阳郡治或石安县治坐标。不能把350年入城错置为351年，也不能以称号变化、战事或军事胜负代表疆域变化。陕西省志记352年撤石安，秦都区志记357年（并注《晋书·地理志》作365年）改灵武，渭城区志及咸阳市志另述县名、治所与侨置沿革；现存地方志说法不一，不将单一说法当作已定结论，且无古城坐标或县界。",
+        "rationale": "已分别加入351、352年长安D级政治中心点，并为351年五丈原战事加入低置信度区域事件点，区分350年入长安、351年称天王和五丈原战事、352年称帝。现存东晋、前秦形势图跨351—394年，不能证明这两年的逐年边界；相邻Cliopatria v0.2.1 record 1485（clio-1485-former_qin-353）仅覆盖353—370年，低置信度且控制性质未定，不向351—352年回填。TGAZ / CHGIS长陵县的108.85463°E、34.41219°N点位时段为前202年至公元13年，不能续作352年咸阳郡治或石安县治坐标。前秦早期控制范围仍缺逐年边界证据，疆域面留空，不以之后轮廓或后期最大范围回填。陕西省志、秦都区志、渭城区志和咸阳市志对石安、灵武沿革的年份及治所关系记载不一，均无可绘的352年界线或可唯一定位的古城点；因此保留异说，不新增地图点或疆域面。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-04",
+        "annualAudit": "docs/audits/topics/former-qin-founding-351-352.json"
       },
       {
         "id": "gap-former_qin-394-394",
@@ -827,19 +960,25 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "former-qin-termination-394-primary-sources",
+          "zizhi-tongjian",
+          "mawei-xingping-historical-location",
+          "xingping-gazetteer-mawei-regional-location"
         ],
-        "historicalTransitionCheck": "gap-former_qin-394-394逐段复核：394年为前秦灭亡年，末期据点变化不适合用此前疆域替代。",
-        "rationale": "394年为前秦灭亡年，末期据点变化不适合用此前疆域替代。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/former-qin-termination-394.json：394年年初苻登出兵东进；四月在废桥、马嵬一带败退，经雍、平凉入马毛山；七月在山南被姚兴擒杀，苻崇继位；十月苻崇与杨定败亡。不同战事和政权终止阶段分别记录，不以长安代作全年中心。",
+        "rationale": "疆域面留空，不回填邻年或前秦最大轮廓。史料显示苻登394年由胡空堡出兵、马嵬败退、转往雍和平凉，最终在山南被擒杀，苻崇随后亦败。现有资料不足以将这组移动统一定位为年度中心；《雍正陕西通志》《兴平县志》可交叉支持马嵬堡在旧兴平县西部的区域地望，但旧志里距存在差异，均不能落实具体战场坐标；另为四月马嵬战事单独保留低置信度区域事件点。同步修正原将长安延长至394年的都城记录，避免错误位置进入地图。同断面来源轮廓经严格内点、边界采样与严格线段相交复核，未检测到多边形内部面积重叠；先前接触式扫描将边界接触误报为重叠，相关拦截已撤销。来源本身仍是低置信度时段模型，不能据此视为历史疆界已审核通过。详见docs/audits/topics/coeval-boundary-overlaps-394.json。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/former-qin-termination-394.json"
       }
     ],
-    "visualRecords": 8,
+    "visualRecords": 10,
     "definiteBoundaryRecords": 8,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "later_yan",
@@ -872,19 +1011,26 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "later-yan-zhongshan-location-gazetteer",
+          "later-yan-qin-founding-384-386-primary-sources",
+          "modern-geography-reference",
+          "zizhi-tongjian",
+          "xingyang-historical-city-location-study"
         ],
-        "historicalTransitionCheck": "gap-later_yan-384-386逐段复核：384至386年为后燕建立与扩张阶段，387年断面不能代表此前三年。",
-        "rationale": "384至386年为后燕建立与扩张阶段，387年断面不能代表此前三年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/later-yan-qin-founding-384-386.json：384年慕容垂至荥阳称燕王，地图只标荥阳区域级事件点；385年后燕围邺未下、四月撤围，年末定都中山，地图显示定州城区级D级中心参照；386年于中山称帝并继续显示该区域参照。战争与建制转换期间没有可据以复原的连续疆界，不以387年断面倒推。",
+        "rationale": "384—386年疆域面留空，不以387年或后期最大轮廓回填。384年以荥阳故城区域级近似点标记《资治通鉴》所记称王事件，不把事件位置当作全年政治中心；《资治通鉴》记385年后燕围邺未下、四月撤围，年末北至中山并始定都，故年度点改为定州城区级中山区域参照；386年依据《晋书》与《畿辅通志》关于中山、卢奴故城及今定州治所的记载，继续显示该区域参照。相邻Cliopatria v0.2.1 record 1553（clio-1553-later_yan-387）仅覆盖387—389年，不回填后燕建政段；所有点都不代表边界或全年稳定控制。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-yan-qin-founding-384-386.json"
       }
     ],
-    "visualRecords": 6,
+    "visualRecords": 8,
     "definiteBoundaryRecords": 6,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "later_qin",
@@ -921,14 +1067,20 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "binxian-gazetteer-qixian-site",
           "china-chronology",
+          "cliopatria",
+          "later-yan-qin-founding-384-386-primary-sources",
+          "modern-geography-reference",
+          "shanxi-chronicle-weibei-mamu",
+          "zhili-binzhou-gazetteer-qi-county-location",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-later_qin-384-386逐段复核：384至386年为后秦建立及早期战争阶段，后续轮廓不作逆向平移。",
-        "rationale": "384至386年为后秦建立及早期战争阶段，后续轮廓不作逆向平移。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/later-yan-qin-founding-384-386.json：384年姚苌在渭北马牧起兵称万年秦王；385年据点与战事迁移；386年取得长安、称帝，并于年内出兵安定。仅386年长安保留D级政治中心点，不表示全年疆域。",
+        "rationale": "384—386年疆域面留空，不以长安都城或后秦后期范围回填。384年渭北马牧和385年流动战事缺少可核的项目地点坐标；386年长安取得后可标D级政治中心参照，但该点不代表全年稳定直接控制，也不生成疆域边界。相邻Cliopatria v0.2.1 record 1555（clio-1555-later_qin-387）仅覆盖387—393年，不回填384—386年。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-yan-qin-founding-384-386.json"
       },
       {
         "id": "gap-later_qin-417-417",
@@ -938,19 +1090,24 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "later-qin-termination-417-primary-source",
+          "modern-geography-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-later_qin-417-417逐段复核：417年后秦被东晋刘裕所灭，灭亡年的实际控制不能用416年前轮廓代替。",
-        "rationale": "417年后秦被东晋刘裕所灭，灭亡年的实际控制不能用416年前轮廓代替。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/later-qin-termination-417.json。417年刘裕军北伐入关并攻取长安，姚泓出降，后秦政治结构终止；军事占领与政权终止是年内连续节点。",
+        "rationale": "417年疆域面留空，不以416年后秦轮廓回填。史料能确认长安年内失守和姚泓出降，故仅增加长安D级交接中心参照点；年内战线、地方接收和东晋是否稳定控制关中均不能由此点复原。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-qin-termination-417.json"
       }
     ],
-    "visualRecords": 8,
+    "visualRecords": 10,
     "definiteBoundaryRecords": 8,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "xia",
@@ -983,14 +1140,18 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "gaoping-historical-geography-reference",
+          "xia-battle-geography-shinianhai-1992",
+          "xia-founding-407-409-primary-sources",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-xia-407-409逐段复核：407至409年为赫连氏夏政权建立初期；本条不是上古夏代，410年轮廓不回填。",
-        "rationale": "407至409年为赫连氏夏政权建立初期；本条不是上古夏代，410年轮廓不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/xia-founding-407-409.json：407年赫连勃勃在高平川袭杀没弈干（《晋书》作没奕于）、收并部众并建立夏；408年齐难伐夏，夏军退保河曲并追至木城；409年夏军攻掠平凉并进屯依力川。统万城413年始筑，不作前推。",
+        "rationale": "407—409年疆域面留空，不以410年后续轮廓或413年统万城坐标回填。相邻Cliopatria record 1660（clio-1660-xia-410）覆盖410—413年，record 1687（clio-1687-xia-414）覆盖414—416年，record 1691（clio-1691-xia-417）覆盖417—425年；均为低置信度、控制性质未定的时段模型，不能倒填夏政权建立即407—409年的疆域。史料足以记录政权建立和逐年军事转折，但高平川、河曲、木城、依力川等地点未能全部对应现有高置信项目坐标；史念海（1992）进一步整理河曲约在鄂尔多斯东北、木城约在榆林东南但无确址，并记《资治通鉴》异文“大城”；该线索仍不足以落战场点。年度地图暂不强加代理点，待新地望证据后再评估地图表达。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/xia-founding-407-409.json"
       }
     ],
     "visualRecords": 4,
@@ -1055,13 +1216,14 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "northern-wei-founding-386-primary-source",
+          "shengle-site-archaeology-reference"
         ],
-        "historicalTransitionCheck": "gap-wei_northern-386-386逐段复核：386年为北魏重建并改国号的起点，387年轮廓不足以证明建国当年边界。",
-        "rationale": "386年为北魏重建并改国号的起点，387年轮廓不足以证明建国当年边界。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/northern-wei-founding-386.json：386年正月拓跋珪在牛川即代王位，二月迁居定襄盛乐，四月改称魏王；年内还有迁往贺兰部及回到牛川的军事移动。盛乐D级点仅作可定位阶段中心参照，不代表全年单一中心；398年才迁都平城。",
+        "rationale": "386年可在迁居盛乐后的阶段以考古遗址近似中心作D级控制中心参照，不能代表年初牛川即位地点或全年全部活动，也不构成疆界。相邻Cliopatria v0.2.1 record 1543（clio-1543-wei_northern-387）仅覆盖387—393年，不向前回填386年。缺少可逐界复核的386年疆域依据，疆域面继续留空；不以398年平城阶段倒填。来源使用权与公开地图条件另行核查。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/northern-wei-founding-386.json"
       },
       {
         "id": "gap-wei_northern-534-534",
@@ -1072,18 +1234,22 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "northern-wei-termination-534-primary-sources",
+          "northern-wei-termination-calendar-conversion",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-wei_northern-534-534逐段复核：534年北魏分裂为东魏、西魏，旧政权终年没有可稳定表达的单一疆域。",
-        "rationale": "534年北魏分裂为东魏、西魏，旧政权终年没有可稳定表达的单一疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/northern-wei-termination-534.json。核对《资治通鉴》卷156、《魏书》卷11《出帝纪》及卷12《孝静纪》，并按《中国历代朔闰表》区分农历编年与公历年：公历534年七月孝武帝元修离洛阳入关中，十月元善见在邺即位并迁都；史书所记闰十二月元修被害、元宝炬称帝换算为公历535年。年内转折不等于可复原疆界。",
+        "rationale": "534年北魏统一中央政权在迁徙和权力分裂过程中终止，年内不同阶段的洛阳、邺及西奔长安不能合成一条稳定的北魏全年疆界；西魏正式建立在535年。Cliopatria record 1982（clio-1982-wei_eastern-534）覆盖534—545年，但东魏政权在534年内形成，来源模型未区分年内控制转换，已仅在534年挂requires-review并拦截该疆域面；邺都城点仍可显示，535年起保留原始来源几何。该年疆域面留空，不把后来东魏或西魏的几何当作北魏年终边界，也不据首都/即位点推定控制区。 洛阳离京起点和邺城东魏建政分别以现代城市区域事件点显示，不作为全年中心或疆界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/northern-wei-termination-534.json"
       }
     ],
-    "visualRecords": 14,
+    "visualRecords": 15,
     "definiteBoundaryRecords": 14,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "song_southern",
@@ -1116,19 +1282,25 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "liu-song-founding-420-425-primary-sources",
+          "liu-song-administrative-evolution-yao-2025",
+          "modern-geography-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-song_southern-420-425逐段复核：420至425年处在刘宋代晋建国及早期北方战事阶段，426年后的轮廓不宜回填。",
-        "rationale": "420至425年处在刘宋代晋建国及早期北方战事阶段，426年后的轮廓不宜回填。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/liu-song-founding-420-425.json。核对《资治通鉴》卷119—120：420年刘裕在建康受禅建宋；421年政权延续；422年刘裕去世、刘义符继位；423年少帝朝政权延续；424年少帝被废，刘义隆入建康即位；425年文帝开始亲理政务。六年中心点只表达建康政治中心，疆域面留空。",
+        "rationale": "420—425年疆域面继续留空，不以426年以后轮廓倒推建国期疆界。姚乐（2025）对《宋书·州郡志》及其他地志中的刘宋政区沿革、治所和地望作补订，说明相关行政地理需逐项辨析；该研究并非420—425年逐年疆界测绘，不能据政区条目生成早期边界。Cliopatria record 1709（clio-1709-song_southern-426）仅覆盖426—438年，属低置信度、控制性质未定的时段模型，不回填刘宋建国六年。地图增加D级建康控制中心点，只表示可定位的中央政治中心，不表示刘宋逐年直接控制区、420年全年无缝控制或北伐战果。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/liu-song-founding-420-425.json"
       }
     ],
-    "visualRecords": 4,
+    "visualRecords": 5,
     "definiteBoundaryRecords": 4,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "qi_southern",
@@ -1162,18 +1334,21 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "modern-geography-reference",
+          "southern-qi-founding-479-primary-source"
         ],
-        "historicalTransitionCheck": "gap-qi_southern-479-479逐段复核：479年发生宋齐禅代，南齐建立当年的接管过程不等同于480年断面。",
-        "rationale": "479年发生宋齐禅代，南齐建立当年的接管过程不等同于480年断面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/southern-qi-founding-479.json。核对《资治通鉴》卷135《齐纪一》及《南齐书》卷1《高帝纪上》：479年三月宋顺帝下诏禅位，五月萧道成于南郊即位称帝；建康D级中心点只表示建政节点，年内转换不能当作双方边界或地方接收完成。",
+        "rationale": "479年是刘宋终止与南齐建政的年内交接点，不能视为南齐完整接收刘宋旧境的稳定年界。Cliopatria record 1860（clio-1860-song_southern-476）为476—479年低置信度、控制性质未定的时段模型，已在479年登记requires-review并从运行时拦截；保留478年来源面，480年南齐record 1897（clio-1897-qi_southern-480）只从480年起显示，不把旧面裁剪或转归南齐。疆域面继续留空；增加建康D级控制中心点仅表示受禅建齐的中央政治节点，不据建康位置推定控制范围或地方接收。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/southern-qi-founding-479.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "liang_southern",
@@ -1207,18 +1382,24 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "liang-founding-502-509-primary-sources",
+          "liang-zhongli-battle-507-primary",
+          "zhongli-site-fengyang-local",
+          "zhongli-chgis-location",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-liang_southern-502-509逐段复核：502至509年包含梁代齐建国及初期南北战争，后续最大范围会掩盖逐年控制变化。",
-        "rationale": "502至509年包含梁代齐建国及初期南北战争，后续最大范围会掩盖逐年控制变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/southern-liang-founding-502-509.json。核对《资治通鉴》卷145—147《梁纪》及《梁书》卷1—2《武帝纪》：天监元年至八年（502—509）逐年核对；502年建梁，503—509年梁廷以建康为中央政治中心，期间发生梁魏边境战事。军事进退与战役结果不构成稳定疆界。",
+        "rationale": "502年为南齐终止与南梁建政的年内交接点；南梁502—509年疆域面继续留空，不从南齐旧境或后续南梁轮廓倒推逐年控制线。Cliopatria record 1928（clio-1928-qi_southern-500）为500—502年低置信度、控制性质未定的时段模型，已仅在502年登记requires-review并从运行时拦截；record 1937（clio-1937-liang_southern-510）从510年起，不向前回填。两者均保留原始几何，不裁剪或改归。地图新增建康D级控制中心点，仅表达中央政治中心；507年钟离之战增加钟离城区域近似事件点，依据《资治通鉴》《梁书》记事、凤阳地方遗址资料及CHGIS钟离地名坐标交叉定位。该坐标仅作宽泛地区参照，CHGIS条目标注时段23—125，故不称其为507年精确县治或战场坐标；战区不转绘为直接疆界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/southern-liang-founding-502-509.json"
       }
     ],
-    "visualRecords": 5,
+    "visualRecords": 6,
     "definiteBoundaryRecords": 5,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "chen_southern",
@@ -1252,18 +1433,21 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "modern-geography-reference",
+          "southern-chen-founding-557-primary-sources"
         ],
-        "historicalTransitionCheck": "gap-chen_southern-557-560逐段复核：557至560年为陈朝建立并应对周边战争的初期，561年轮廓不向前外推。",
-        "rationale": "557至560年为陈朝建立并应对周边战争的初期，561年轮廓不向前外推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年核对详见docs/audits/topics/southern-chen-founding-557-560.json及并存断面docs/audits/topics/chen-zhou-transition-557-560.md。《资治通鉴》卷167—168、《陈书》卷1—2支持557年受禅建陈、559年陈霸先去世及陈蒨继位等时序；中心点仅用项目建康坐标，不据此推导疆界。",
+        "rationale": "557—560年疆域面留空，避免把梁末战区或南陈后期轮廓当作建国初期直辖界。Cliopatria record 2080（南梁，555—557）跨越557年南梁终止与南陈建政，已仅在557年挂requires-review并从运行时拦截；555—556年原来源几何保持不变，不裁切或转归南陈。同期北齐record 2068（555—560）为低置信、控制性质未明的来源时段参考，不解读为已校定疆界。地图显示建康D级控制中心点，仅表示中央政治中心；禅代、继位和战事不等于疆界。与北周并列显示时不自动裁剪重叠，也不将南北两地中心连成控制范围。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/southern-chen-founding-557-560.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "wei_eastern",
@@ -1345,13 +1529,15 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "modern-geography-reference",
+          "northern-qi-founding-550-554-sources",
+          "northern-qi-great-wall-552-ai-chong-2007"
         ],
-        "historicalTransitionCheck": "gap-qi_northern-550-554逐段复核：550至554年为北齐建国初期及北方格局调整期，555年轮廓不回填。",
-        "rationale": "550至554年为北齐建国初期及北方格局调整期，555年轮廓不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/northern-qi-founding-550-554.json，并见与第一突厥汗国并存断面docs/audits/topics/northern-qi-turkic-founding-550-554.md。《资治通鉴》卷163—165、《北齐书》卷2支持北齐建政时序和邺都中心；《北齐书》及艾冲（2007）还记载并考辨552年黄栌岭至社平戍长城与36戍，不直接提供政权疆界。",
+        "rationale": "550年东魏禅代、北齐建政属于年内转换。东魏Cliopatria record 2059（clio-2059-wei_eastern-546）为546—550年低置信度、控制性质未定的时段模型，已仅在550年挂requires-review并拦截；保留549年来源面，不裁剪或改归北齐。北齐550—554年疆域面留空，不把555年开始的record 2068（clio-2068-qi_northern-555）或后续轮廓倒推至建政期。地图显示邺D级都城中心点，只表示政治中心，不代表北齐旧东魏辖区或与西魏的完整边界。552年史料另载自黄栌岭起长城、北至社平戍四百余里并置36戍；艾冲（2007）提出的县域级线路重建与东魏肆州北山长城衔接，不能直接作为政权疆界，也无本项目已授权的线路几何可用，因此记入逐年防务结论但不绘制多边形或线段。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/northern-qi-founding-550-554.json"
       },
       {
         "id": "gap-qi_northern-577-577",
@@ -1362,18 +1548,21 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "modern-geography-reference",
+          "northern-qi-termination-577-primary-sources"
         ],
-        "historicalTransitionCheck": "gap-qi_northern-577-577逐段复核：577年北齐被北周攻灭，灭亡年不能沿用576年的完整控制范围。",
-        "rationale": "577年北齐被北周攻灭，灭亡年不能沿用576年的完整控制范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/northern-qi-termination-577.json。核对《资治通鉴》卷173与《北齐书》卷8：577年初北齐高恒在邺即位；北周军先后攻取晋阳、邺及山东诸州，北齐中央政权在年内终止，军事攻取与地方接收持续发生。",
+        "rationale": "577年年内邺由北齐中心转为北周接管节点，不能沿用576年完整北齐疆域，也不能把北周最终接收范围前推到年初。北周Cliopatria record 2147（clio-2147-zhou_northern-577）覆盖577—581年，低置信度且控制性质未定；由于年内攻取晋阳、邺及多地并终止北齐中央政权，已将该面仅在577年登记requires-review并从运行时拦截，不裁剪或前推后续控制。疆域面留空；地图只显示邺D级政权转换中心点，不表示双方边界、攻城范围或全部地方同日完成接收。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/northern-qi-termination-577.json"
       }
     ],
-    "visualRecords": 3,
+    "visualRecords": 5,
     "definiteBoundaryRecords": 3,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "zhou_northern",
@@ -1407,18 +1596,21 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "modern-geography-reference",
+          "northern-zhou-founding-557-primary-sources"
         ],
-        "historicalTransitionCheck": "gap-zhou_northern-557-560逐段复核：557至560年为北周建国初期，西魏旧制转换与对外战争使边界并不稳定。",
-        "rationale": "557至560年为北周建国初期，西魏旧制转换与对外战争使边界并不稳定。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年核对详见docs/audits/topics/northern-zhou-founding-557-560.json及并存断面docs/audits/topics/chen-zhou-transition-557-560.md。《资治通鉴》卷167—168、《周书》卷2—3支持557年禅代及560年继位时序；中心点仅用项目长安坐标，不据此推导疆界。",
+        "rationale": "557—560年疆域面留空，不把西魏或后续北周轮廓向前平移。Cliopatria record 2099（西魏，555—557）跨越557年西魏终止与北周建政，已仅在557年挂requires-review并从运行时拦截；555—556年原来源几何保持不变，不裁切或转归北周。同期北齐record 2068（555—560）为低置信、控制性质未明的来源时段参考，不解读为已校定疆界。地图显示长安D级控制中心点，不能代表关中以外控制范围。与南陈、北齐并存期间，冲突区域不自动裁剪或推断；中心点不构成政权间边界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/northern-zhou-founding-557-560.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "sui",
@@ -1448,22 +1640,27 @@
         "polityId": "sui",
         "from": 581,
         "to": 586,
+        "annualAudit": "docs/audits/topics/sui-founding-581-586.json",
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
+          "sui-tang-changan-gis-study",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-sui-581-586逐段复核：581至586年为隋代周建国并整合北方阶段，灭陈统一尚未发生，不能使用后期最大版图。",
-        "rationale": "581至586年为隋代周建国并整合北方阶段，灭陈统一尚未发生，不能使用后期最大版图。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/sui-founding-581-586.json。581至582年以长安为政治中心；582年开始营建大兴城，583年迁都后逐年以大兴为都。陈朝仍存至589年，隋未统一南方。只补有据的都城中心点，不用隋后期最大版图，也不据都城点推演边界。",
+        "rationale": "本段疆域几何仍留空：581—582年补长安中心参照，583—586年补迁都大兴后的中心参照，均为D级控制中心点而非疆域。北周Cliopatria record 2147（clio-2147-zhou_northern-577）覆盖577—581年，低置信度且控制性质未定；隋代在581年建立，故该来源面已在581年挂requires-review并拦截，保留580年来源面且不裁剪或改归隋。史料能支持隋建国、都城迁移和陈隋并存，但不足以复原逐年精确边界；故不把后期统一版图或中心点外推成疆域。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
-    "visualRecords": 5,
+    "visualRecords": 7,
     "definiteBoundaryRecords": 5,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "tang",
@@ -1493,22 +1690,29 @@
         "polityId": "tang",
         "from": 618,
         "to": 622,
+        "annualAudit": "docs/audits/topics/tang-founding-618-622.json",
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "mingzhou-chgis-hvd-87888",
+          "modern-geography-reference",
+          "sui-tang-changan-gis-study",
+          "tang-early-years-primary-sources",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-tang-618-622逐段复核：618至622年为唐建立并逐步消灭各地割据势力的统一战争阶段。",
-        "rationale": "618至622年为唐建立并逐步消灭各地割据势力的统一战争阶段。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/tang-founding-618-622.json。618年唐在长安建国，但薛举、李轨、刘武周、王世充、窦建德等势力仍并存；621年唐攻取洛阳，622年刘黑闼自称汉东王、定都洺州。地图以CHGIS州治点作对手政权中心区域参照，不表示唐朝控制该地。战争和归附使直接控制区逐年变化。",
+        "rationale": "618年为隋末唐初及多方势力并存的年内转换期。隋Cliopatria record 2257（clio-2257-sui-617）是617—618年低置信度、控制性质未定的时段模型，已仅在618年挂requires-review并拦截；保留617年来源几何，不裁剪或改归唐。唐record 2281（clio-2281-tang-623）从623年开始，不向前回填。本段疆域几何仍留空，补入618—622年长安中央政治中心参照点，并以《资治通鉴》卷190和CHGIS洺州（617—622）条目补入622年刘黑闼汉东王都城的州治区域事件点。CHGIS页面标注CC BY-NC 4.0，该坐标的公开展示权利待独立核验。编年史可支持唐在长安建国及统一战争中政权并存、攻取与归附节点，但不足以在现有可复用空间资料上复原每年连续边界；不以该政权后期最大疆域、军事占领或名义辖区替代直接疆界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
-    "visualRecords": 31,
+    "visualRecords": 32,
     "definiteBoundaryRecords": 31,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "liang_later",
@@ -1541,19 +1745,25 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "later-liang-capital-move-909-primary",
+          "later-liang-capital-timeline-primary",
+          "modern-geography-reference",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-liang_later-907-910逐段复核：907至910年为后梁代唐及五代格局形成期，911年断面不能倒推。",
-        "rationale": "907至910年为后梁代唐及五代格局形成期，911年断面不能倒推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/later-liang-907-910.json。907—908年后梁以大梁为都；909年正月迁都洛阳、秋季又还大梁，全年洛阳为主要中心、大梁为东都；910年仍以洛阳为主要朝廷中心。卷267支持909年两次城市节点，不提供迁行路线或疆界。唐亡后吴、吴越、楚、前蜀等并立，晋据河东，后梁对外战争与藩镇关系变动，不能视为连续稳定疆界。",
+        "rationale": "本段疆域几何仍留空，按迁都阶段分别补入907—908年大梁、909—910年洛阳的D级主要政治中心点；909—910年大梁作为东都副都另由首都阶段数据显示。本轮依《资治通鉴》卷267补入909年正月迁至洛阳、秋季还大梁两个事件点，只记录城市节点，不画迁行路线。史料可定位都城转换和并立政权，但现有数据不能复原逐年直接控制边界；唐末名义辖区、藩镇归附、战时占领均不绘成后梁确定疆界。与吴、吴越、楚、前蜀及河东晋等并存政权核对时，当前目录无该断面的已审核边界面可作冲突裁切；未建模的河东晋政权记为后续缺口。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-liang-907-910.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 4,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "tang_later",
@@ -1590,14 +1800,15 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "later-tang-founding-923-925-sources",
+          "weizhou-regional-location-chgis",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-tang_later-923-925逐段复核：923至925年包含后唐建国、灭后梁及灭前蜀，控制范围快速变化。",
-        "rationale": "923至925年包含后唐建国、灭后梁及灭前蜀，控制范围快速变化。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/later-tang-founding-923-925.json。《资治通鉴》卷272—274核对923年魏州称帝、攻取开封与后梁终止，924年洛阳政务及925年攻蜀、成都陷落和前蜀终止。称帝、攻取都城和地方接收是不同过程。",
+        "rationale": "923—925年疆域面留空，因后唐建政、灭梁与攻蜀使控制范围快速变化。地图显示魏州即位区域事件点、后唐迁入洛阳后的中央政治中心D级点，并在925年以成都城市级事件点标记前蜀终止；魏州点依据时段为621—626年的CHGIS魏州治贵乡县记录作低置信度区域定位，不是923年仪式坛址。三处均不画作全年直接疆界或完整接收范围；来源授权与公开展示条件另行核对。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-tang-founding-923-925.json"
       },
       {
         "id": "gap-tang_later-936-936",
@@ -1607,19 +1818,21 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "later-tang-termination-936-primary-source",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-tang_later-936-936逐段复核：936年后唐灭亡并由后晋取代，终结年不采用此前疆域。",
-        "rationale": "936年后唐灭亡并由后晋取代，终结年不采用此前疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/later-tang-termination-936.json。依据《资治通鉴》卷280逐月复核：936年五月石敬瑭在太原举兵，九月契丹军至晋阳，十一月受册称帝并许割十六州；晋安寨失守、后唐军相继崩解，十二月后晋军进入洛阳、后唐末帝自焚。后唐年初中央仍在洛阳，年内控制持续瓦解，不能用此前疆域代表全年。",
+        "rationale": "936年疆域面继续留空，因为政权起兵、外援入境、名义割让、战役结果、洛阳终局和地方接收发生于不同时间。仅增加洛阳D级转换中心参照；它不表示全年后唐直辖区、后晋接收区或割让十六州范围，也不以邻年最大轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-tang-termination-936.json"
       }
     ],
-    "visualRecords": 1,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 1,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "jin_later",
@@ -1652,19 +1865,21 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "later-jin-termination-947-primary-sources",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-jin_later-947-947逐段复核：947年后晋覆亡并出现契丹接管与中原政权重组，不宜画成固定面。",
-        "rationale": "947年后晋覆亡并出现契丹接管与中原政权重组，不宜画成固定面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/later-jin-termination-947.json。依据《资治通鉴》卷286—287逐阶段核对：947年正月契丹进入开封、后晋末帝出降并被北迁，后晋中央终止；二月刘知远在太原即位，五月后汉军南下，进入洛阳与开封，六月复以汴州为东京并改国号汉。契丹在河南的占领和撤军、后晋覆亡、后汉建政及各镇归附发生于不同阶段。",
+        "rationale": "947年后晋疆域面留空。开封仅作为后晋终结与契丹阶段性占领、后汉后来接收的城市转换节点；太原仅作为后汉早期政治中心。分别登记后晋开封终止点、契丹开封占领点及后汉太原／开封中心点，均为D级参考，不表示三方全年疆域或同时直辖。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-jin-termination-947.json"
       }
     ],
-    "visualRecords": 1,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 1,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "han_later",
@@ -1684,9 +1899,11 @@
     "review": "已核对标识、存续期和几何结构；非逐界史料复核",
     "note": "来源日期与目录日期不一致处取交集，缺年另标最大参考，不外推为实况。",
     "gapDecisions": [],
-    "visualRecords": 1,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 1,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "zhou_later",
@@ -1719,19 +1936,22 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "later-zhou-formation-951-959-primary-sources",
+          "modern-geography-reference",
+          "china-admin-history-five-dynasties-northern-han-map"
         ],
-        "historicalTransitionCheck": "gap-zhou_later-951-959逐段复核：951至959年为后周建国、北伐与政权扩张阶段，且紧接960年宋代周，单一最大面不可靠。",
-        "rationale": "951至959年为后周建国、北伐与政权扩张阶段，且紧接960年宋代周，单一最大面不可靠。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/later-zhou-territorial-gap-951-959.json。依据《资治通鉴》卷290—294逐年核对：951年后周受禅建立、北汉在太原建政；952—953年后周政权延续并与诸镇、周边政权互动，暂无逐年完整疆界；954年郭威去世、柴荣继位，北汉与契丹联军进攻并发生高平战事；955年后周进取秦州、凤州方向；956—957年南征淮南，战事和州郡接收逐步变化；958年南唐割江北地并奉后周正朔，不能据名义臣属推定江南直辖；959年后周北向攻辽取得部分关南地，柴荣去世后停兵。每年均不以战役线、臣属名义或959年战果回填连续边界。",
+        "rationale": "951—959年后周疆域面继续留空。新增开封D级政治中心点（951—959）和北汉951年太原D级中心点，用于展示同期政权中心；不绘后周控制边界。高平之战、秦凤与淮南军事行动、南唐割地称臣及959年北征分别属于战事、阶段性接收或名义秩序，不足以拼成逐年稳定疆界。学术评介确认的959年后周—北汉政区图仅作断面核对线索，不能回推此前各年；原图、几何提取及使用权仍待核。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-zhou-territorial-gap-951-959.json"
       }
     ],
-    "visualRecords": 1,
+    "visualRecords": 2,
     "definiteBoundaryRecords": 1,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "xiongnu",
@@ -1764,14 +1984,15 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "capital-history-reference",
+          "xiongnu-longcheng-central-mongolia-candidate",
+          "shiji-xiongnu-modu"
         ],
-        "historicalTransitionCheck": "gap-xiongnu--209--209逐段复核：前209年前后处在冒顿单于权力重组阶段，前208年断面不能证明起始年范围。",
-        "rationale": "前209年前后处在冒顿单于权力重组阶段，前208年断面不能证明起始年范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/xiongnu-formation-209-bce.json。依据《史记·匈奴列传》核对秦二世元年（传统换算约前209年）冒顿射杀头曼、自立为单于及后续部众整合。该年可确认权力继承节点；文本不提供可绘制疆界，也不能把冒顿后续扩张倒推为继位当年的直接控制。",
+        "rationale": "前209年匈奴疆域面继续留空。冒顿即单于的编年节点可确认；地图另显示蒙古高原中部低置信度移动中心候选区域示意点，该点关联和日门塔拉三连城的考古候选研究，但不是遗址坐标，且不能确定为前209年单于庭。缺乏该年固定单于庭位置的依据；候选参照不等于固定首都或国家边界，不使用邻年或后期轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/xiongnu-formation-209-bce.json"
       }
     ],
     "visualRecords": 22,
@@ -1809,14 +2030,14 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "goguryeo-capital-unesco",
+          "goguryeo-founding-traditional-source"
         ],
-        "historicalTransitionCheck": "gap-goguryeo--37--37逐段复核：前37年是高句丽传统建国纪年，后一年来源断面不足以证明建国当年疆域。",
-        "rationale": "前37年是高句丽传统建国纪年，后一年来源断面不足以证明建国当年疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/goguryeo-founding-37-bce.json。依据《三国史记》高句丽本纪及韩国史数据库校注，前37年为东明圣王元年，朱蒙自北扶余南来、至纥升骨城／卒本并建立高句丽是传统建国叙事。该传统纪年可记录，但不等于现代考古确认的单一事件时点或逐年疆界。",
+        "rationale": "前37年疆域面继续留空。纥升骨城与五女山城只能作为高句丽早期中心候选参照，不能断定为已确认建国仪式现场；前37年的政治实体边缘和直接控制范围无法由建国叙事确定，故不以国内城或后续疆域倒填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/goguryeo-founding-37-bce.json"
       }
     ],
     "visualRecords": 25,
@@ -1855,15 +2076,19 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "cliopatria",
           "silla-encykorea",
-          "silla-samguksagi-db",
           "silla-periodization",
-          "cliopatria"
+          "silla-samguksagi-db",
+          "silla-gyeongju-unesco",
+          "mcbride-korea-early-medieval-2020",
+          "silla-wolseong-archaeological-chronology"
         ],
-        "historicalTransitionCheck": "新罗前57—377年逐年核对435个民用年：按王统与阶段事件复核后，早期建国、地方整合、4世纪王权增强及377/382年对外关系变化均不能转换为可重发布的年度边界；全部年份明确留空。",
-        "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 682—891年统一新罗最大轮廓与前57—377年历史阶段不相容，不能回填；王统编年、外交记录和影响范围也不等于直接控制边界。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/silla-early-gap-57-bce-377.json。新罗前57—377年共434个有效民用年（不含公元0年）；年度边界面全部留空。现代学术综述约以300年为新罗王国形成期，传统王统纪年与现代政权分期并存，不能据单一分期反推精确疆界。地图以金城／徐罗伐的庆州王京区域点为中心参照；传统纪年所记101年筑月城、迁居仅保留为史料记载，月城为争议候选点。考古研究将月城西城墙营建约置于4世纪中叶至5世纪初，不据此确认101年迁都。所有点位均不代表连续控制疆界；统一新罗几何不得回填。旧表误含公元0年，现已更正并重编号。 Historical Basemaps在前1、100、200、300年的粗略多边形已登记待审，相关帧不进入运行时。",
+        "rationale": "逐年结论保留新罗疆域面留空，不以统一新罗或最大轮廓回填；前57—377年显示金城／徐罗伐的庆州王京区域参照点，101—377年另标月城／半月城争议候选遗址点。月城传统迁居纪年与考古城垣年代分别记录，不确证101年迁都。点位不表示古城垣、直接控制范围或国界；并存政权关系、朝贡、战争影响仍不转为疆域几何。前1、100、200、300年的Historical Basemaps大陆尺度快照仍保留原始源数据，但不符合本段年度边界结论，已挂待审并从对应帧隐藏。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-21"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/silla-early-gap-57-bce-377.json"
       }
     ],
     "visualRecords": 11,
@@ -1929,14 +2154,14 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "turkic-founding-552-554-sources",
+          "turkic-orkhon-heritage"
         ],
-        "historicalTransitionCheck": "gap-turkic-552-554逐段复核：552至554年为突厥汗国建立与快速扩张阶段，555年轮廓不作逆推。",
-        "rationale": "552至554年为突厥汗国建立与快速扩张阶段，555年轮廓不作逆推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论详见docs/audits/topics/turkic-founding-552-554.json，并见与北齐并存断面docs/audits/topics/northern-qi-turkic-founding-550-554.md。《周书》卷50、《北史》卷99及《资治通鉴》卷164—165支持汗权建立和早期承继，不支持精确疆界或固定中心。",
+        "rationale": "552—554年疆域面留空，不将联盟、部众网络或对柔然的军事胜利转为稳定控制边界。地图只提供于都斤—鄂尔浑的低置信度移动政治核心区域参照，坐标为既有区域点，controlType保持unspecified；不视作固定都城或精确战场。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/turkic-founding-552-554.json"
       },
       {
         "id": "gap-turkic-661-744",
@@ -1946,21 +2171,27 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "turkic-history-db",
-          "turkic-orkhon-heritage",
-          "turkic-orkhon-collection",
           "cliopatria",
-          "zizhi-tongjian"
+          "turkic-history-db",
+          "turkic-orkhon-collection",
+          "turkic-orkhon-heritage",
+          "zizhi-tongjian",
+          "zizhi-tongjian-215-turkic-collapse-742-744",
+          "capital-history-reference",
+          "turkic-otuken-second-khaganate-study"
         ],
-        "historicalTransitionCheck": "突厥661—744年逐年核对84个民用年：先区分西突厥余部、唐朝羁縻体系与682年后突厥复兴，再核对汗位更迭、碑铭年代和744年覆亡；没有任何年份具备可重发布的直接控制边界，全部明确留空。",
-        "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 561—576年第一突厥汗国最大轮廓不能跨越政权重组、后突厥复兴和744年继承转换回填；臣属、征伐、碑铭叙事与文化影响范围均不直接等于现代意义国界。法律与发布标注：仅保留来源与许可说明，不复制现代译文或受保护图件；项目当前仍为research-only，未取得审图号，不作为公开标准地图发布。",
+        "historicalTransitionCheck": "突厥661—744年逐年核对84个民用年：区分西突厥余部、唐朝羁縻体系与682年后突厥复兴。742年《资治通鉴》记拔悉密、回纥、葛逻禄攻杀骨咄叶护、突厥余众立乌苏米施；744年乌苏被杀后突厥余众又立白眉，回纥骨力裴罗另受册为怀仁可汗；745年史料才记回纥击杀白眉。682—743年逐年显示于都斤政治核心区域参照点；84年疆域边界全部留空。逐年结构化结论见docs/audits/topics/turkic-khaganates-661-744.json，专题来源及发布说明见docs/audits/topics/turkic-khaganates.md。",
+        "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 561—576年第一突厥汗国最大轮廓不能跨越政权重组、后突厥复兴和744年继承转换回填；臣属、征伐、碑铭叙事与文化影响范围均不直接等于现代意义国界。法律与发布标注：仅保留来源与许可说明，不复制现代译文或受保护图件；项目当前仍为research-only，未取得审图号，不作为公开标准地图发布。 682—743年另以移动汗廷核心区域点作参照，不表示直接控制边界、固定首都或完整部众范围。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-21"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/turkic-khaganates-661-744.json"
       }
     ],
-    "visualRecords": 24,
+    "visualRecords": 25,
     "definiteBoundaryRecords": 24,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "tibetan_empire",
@@ -1993,19 +2224,25 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "modern-geography-reference",
+          "tibetan-empire-early-history-ucpress",
+          "tibetan-yarlung-polities-uva",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-tibetan_empire-618-622逐段复核：618至622年处在吐蕃早期整合阶段，同时期唐建国事件不构成吐蕃边界证据。",
-        "rationale": "618至622年处在吐蕃早期整合阶段，同时期唐建国事件不构成吐蕃边界证据。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "618—622逐年核对：618仅为项目沿用的吐蕃形成约年映射；Uebach将松赞干布在位起年列作617年，并把国家形成前史追溯到朗日松赞时期，故不能将618写成学界一致认可的建政年。619—622没有逐年可核的边界变化记录。雅砻河谷可作为早期政治核心的区域参照，但不能据此推导全高原直接控制线；同期唐朝建立不构成吐蕃边界证据。结构化逐年结论见docs/audits/topics/tibetan-empire-early-formation-618-622.json，专题论证见同名Markdown文件。",
+        "rationale": "逐年结论：618年是项目沿用的形成约年映射；Uebach记松赞干布在位起年为617年，并将其父朗日松赞时期联盟视为国家形成前史，确切即位/建政节点及项目断年存在口径差异。619—622年没有可逐年复原的直接控制边界。Uebach记载前王系居于雅砻河谷支谷，故五年采用低置信度雅砻河谷区域核心参照点；该点不裁定精确建政年、逐年控制强度或疆域。五年疆域面均留空，不以相邻年份、后期最大疆域或唐建国事件回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/tibetan-empire-early-formation-618-622.json"
       }
     ],
-    "visualRecords": 25,
+    "visualRecords": 26,
     "definiteBoundaryRecords": 25,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "nanzhao",
@@ -2038,19 +2275,26 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "nanzhao-formation-zizhi-214",
+          "nanzhao-royal-titles-bryson-2015",
+          "nanzhao-taihe-capital-period-reference",
+          "nanzhao-taihe-site-whitrap",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-nanzhao-738-740逐段复核：738至740年为南诏受封和早期整合阶段，741年轮廓不能自动代表前三年。",
-        "rationale": "738至740年为南诏受封和早期整合阶段，741年轮廓不能自动代表前三年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "738—740逐年核对：《资治通鉴》卷214把迁居太和城写在738年条下，《旧唐书·南诏蛮》将其系于739年；城市史研究倾向739年，并依据779年迁往羊苴咩城限定太和城约40年政治中心阶段。738年只显示迁居事件点，739—740年显示太和城D级政治中心点；三年疆域面均留空，不以中心或事件推定洱海核心以外的边界。结构化逐年台账见docs/audits/topics/nanzhao-early-territorial-gap-738-740.json。",
+        "rationale": "逐年结论保留738/739迁居纪年异文：738年《资治通鉴》条下记录迁居，739年《旧唐书》有明确纪年，现代城市史研究倾向采用739年。738年仅显示事件点；739—740年依据迁入与779年迁出阶段显示太和城政治中心点，不表示城垣或南诏疆界。三年均不绘疆域多边形，不以中心点、741年轮廓、后期最大范围或唐廷封号推定直接控制边界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/nanzhao-early-territorial-gap-738-740.json"
       }
     ],
-    "visualRecords": 9,
+    "visualRecords": 10,
     "definiteBoundaryRecords": 9,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "khitan",
@@ -2070,9 +2314,11 @@
     "review": "已核对标识、存续期和几何结构；非逐界史料复核",
     "note": "来源日期与目录日期不一致处取交集，缺年另标最大参考，不外推为实况。",
     "gapDecisions": [],
-    "visualRecords": 9,
+    "visualRecords": 10,
     "definiteBoundaryRecords": 9,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "xia_early",
@@ -2098,12 +2344,14 @@
         "verdict": "cultural-core",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "erlitou-chronology-cass-2022",
           "erlitou-official"
         ],
-        "historicalTransitionCheck": "夏代约年跨度缺少可重发布的国家边界资料；二里头来源只支持文化核心定位，不能外推封闭疆界。",
-        "rationale": "以二里头遗址附近的D级文化核心点替代空白提示，但明确不作为夏代国界或完整文化分布。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/xia-early-cultural-core-annual-2070-1600.json；逐年核对前2070至前1600年共471个公历年：前2070至前1751年无证据支持把二里头文化点前推；前1750至前1600年仅显示D级文化核心参考。中国社科院科技考古资料给二里头遗址约前1750—前1530年的年代框架，但不等同夏代完整年代或疆界。",
+        "rationale": "逐年结论分两段：前2070至前1751年不提供二里头点位，因为现有测年来源不支持该遗址文化前推；前1750至前1600年显示二里头遗址附近D级考古文化核心点，不表示当年夏王朝直接控制或完整文化分布。二里头遗址绝对年代约前1750—前1530年与项目采用的夏代传统约年前2070—前1600年并不重合，遗址与夏王朝的对应不确定；因此全段不绘国界，不将遗址点泛化到471年。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/xia-early-cultural-core-annual-2070-1600.json"
       }
     ],
     "visualRecords": 1,
@@ -2165,17 +2413,22 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "western-zhou-national-museum",
-          "western-zhou-epic",
           "china-chronology",
-          "zizhi-tongjian",
           "cliopatria",
-          "map-regulation"
+          "map-regulation",
+          "western-zhou-epic",
+          "western-zhou-national-museum",
+          "zizhi-tongjian",
+          "capital-history-reference",
+          "western-zhou-capital-archaeology",
+          "modern-geography-reference",
+          "western-zhou-chronology-zhang-2023"
         ],
-        "historicalTransitionCheck": "西周前1046—前1001年逐年核对46个民用年：按灭商接管、周公摄政、成王东征、分封秩序和康王早期分期复核；王室直辖、诸侯封国、征服与来服关系无法转换为可重发布的年度单一边界，全部明确留空。",
-        "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria前1000年以后轮廓不能回填前1046—前1001年；西周早期的分封、军事征服、盟誓和影响范围不等同于王室直接控制。合规标注：不复制未明确授权的历史地图或现代图件，保留来源与版本；依据《地图管理条例》公开地图和历史地图可能涉及审核与审图号，项目当前仍为research-only，不作为官方标准地图发布。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/western-zhou-annual-1046-1001.json，专题论证见 docs/audits/topics/western-zhou-annual-1046-1001.md；前1046—前1001年46个民用年均显示丰镐都邑区王室中心参照点。前1046年沿用项目传统商周更替约年；张鹏程2023年研究提出前1046年为初次伐商、前1044年为克商，故对应三年分别登记纪年异说；各年王室直辖、诸侯封国、征服与来服关系仍不足以转换为年度疆域边界，疆域面全部留空。",
+        "rationale": "本段逐年记录46年西周早期政权与史源，地图显示丰镐都邑区低精度王室中心参照点；丰、镐是沣河两岸的都邑群，点位不表示单一宫城。项目保留前1046年传统商周更替导航约年，同时登记张鹏程2023年铭文历日重建的前1046初次伐商、前1044克商方案，不把其中任何一种当作无争议定论。现有来源不足以重建每年王室直接控制边界；不把分封、征服或朝贡范围合并为疆域面，也不回填前1000年以后轮廓。资料来源与公开地图许可另行审核。 本项目当前为 research-only，仍需完成独立历史审核、制图审核及来源权利、公开地图审核。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-21"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/western-zhou-annual-1046-1001.json"
       }
     ],
     "visualRecords": 2,
@@ -2214,33 +2467,42 @@
         "polityId": "zhou_eastern",
         "from": -770,
         "to": -751,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "eastern-zhou-luoyang-royal-center",
+          "shiji-zhou-benji-eastward",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-zhou_eastern--770--751逐段复核：前770至前751年始于周王室东迁，早期王畿与诸侯关系处在重组阶段，后期轮廓无法回推。",
-        "rationale": "前770至前751年始于周王室东迁，早期王畿与诸侯关系处在重组阶段，后期轮廓无法回推。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/eastern-zhou-royal-core-770-751.json；前770—前751逐年核对：前770年按传统断年记录周王室迁洛邑；前769—前751年洛邑继续作为王室政治中心。洛阳城市级中心可确认，但春秋早期王城具体位置及营建阶段仍有考古争议，诸侯封国和王畿线不能据此复原。",
+        "rationale": "逐年结论：前770—前751年均以洛邑/洛阳作为东周王室正式政治中心的城市级参照，来源含《史记·周本纪》和东周王城文献—考古研究；地图通过现有都城点表达，不新增疆域面。现有研究指出平王迁入洛邑的地望可在洛阳区域讨论，但春秋早期王城遗址营建、城墙及具体位置仍有争议；故20年均无王畿边界几何，不能将诸侯势力、后期疆域或后世洛阳城墙当作周王室直接控制线。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/eastern-zhou-royal-core-770-751.json"
       },
       {
         "id": "gap-zhou_eastern--256--256",
         "polityId": "zhou_eastern",
         "from": -256,
         "to": -256,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "shiji-zhou-benji-final-256",
+          "zhou-termination-chronology-255-256",
+          "zizhi-tongjian",
+          "zizhi-tongjian-vol5-256",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-zhou_eastern--256--256逐段复核：前256年秦灭东周王室，王畿终结年的范围不能由前257年前记录平移。",
-        "rationale": "前256年秦灭东周王室，王畿终结年的范围不能由前257年前记录平移。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/eastern-zhou-termination-256.json；前256年按《史记·周本纪》和《资治通鉴》卷5记周赧王、西周君及周王室终局；秦灭东周小国的另一节点为前249年，不与本条合并。对前255/前256纪年异说保留注记。年内仅有洛阳城市级中心参照，无王畿面。",
+        "rationale": "前256年以《史记》传统纪年和《资治通鉴》卷5作为周王室、周赧王及西周政治秩序终局的项目口径；部分研究讨论前255/前256之别。此条不代表秦在同年灭尽所有称作“东周”的小国：东周君国延续至前249年，须另行记录。地图仅沿用洛阳城市级参照点，因赧王迁居西周、东西周分治和年内秦军接收过程，现有来源不足以恢复当年周王室王畿边界或准确宫城位置；不以邻年几何回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/eastern-zhou-termination-256.json"
       }
     ],
     "visualRecords": 5,
@@ -2278,13 +2540,17 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "modern-geography-reference",
+          "qin-early-capital-sites-archaeology",
+          "qin-early-state-annals-and-local-archaeology"
         ],
-        "historicalTransitionCheck": "gap-qin_state--770--751逐段复核：前770至前751年为秦受封并经营关中早期，来源未提供足以重建这二十年逐界变化的几何。",
-        "rationale": "前770至前751年为秦受封并经营关中早期，来源未提供足以重建这二十年逐界变化的几何。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/qin-state-early-gap-770-751.json；逐年核对前770至前751年：史书记录秦襄公受封岐以西及秦戎冲突，地方志与考古综述显示早期中心和路线分阶段变化；材料不提供可重建逐年实控边界的界线。",
+        "rationale": "《史记·秦本纪》及地方史、考古综述支持秦国政治存在、传统封授和早期活动，但名义封地、战事、都邑迁徙与遗址分布不能直接等同于稳定连续的逐年控制面；秦早期都邑地望也有研究分歧。因此保持 leave-unfilled，逐年记录证据限制，不以邻年几何或后世最大范围回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/qin-state-early-gap-770-751.json"
       }
     ],
     "visualRecords": 12,
@@ -2315,12 +2581,15 @@
         "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "gengshi-official"
+          "gengshi-capital-chronology-tongjian",
+          "gengshi-official",
+          "zizhi-tongjian-vol40-gengshi-25"
         ],
-        "historicalTransitionCheck": "已核对23年宛城与洛阳、24年由洛阳迁都长安、25年政权覆亡前后的中心变化；资料不足以形成连续边界。",
-        "rationale": "按年显示宛城、洛阳、长安的D级控制中心，不连接成面，也不声称是更始政权疆域。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/gengshi-capital-centers-23-25.json；已核对23年宛城与洛阳阶段、年内更始军入长安，24年由洛阳迁都长安、25年政权覆亡前后的中心变化；资料不足以形成连续边界。新朝record 1136轮廓跨越23年政权交替，只在23年挂待审。",
+        "rationale": "按年显示宛城、洛阳、长安的城市级中心点，年内迁驻由事件记录补充；中心点不代表号令所及全部地区的直接控制，不连接成面，也不声称是更始政权疆域。新朝Cliopatria record 1136源时段为23—29年但项目目录有效期仅到新朝终止的23年；因年内长安易手不具备稳定全年控制依据，原几何保留并只在23年暂扣，不裁切或转归给更始。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/gengshi-capital-centers-23-25.json"
       }
     ],
     "visualRecords": 3,
@@ -2360,14 +2629,16 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "wu-zhou-termination-tongjian-207-208",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-wu_zhou-705-705逐段复核：705年神龙政变后武周结束、唐复辟，政权更替年不保留旧朝完整疆域面。",
-        "rationale": "705年神龙政变后武周结束、唐复辟，政权更替年不保留旧朝完整疆域面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/wu-zhou-termination-705.json；逐年核对705年： 《资治通鉴》卷207记正月政变、太子监国和武则天传位，卷208记二月初四恢复唐国号；洛阳在年内政权转换前后仍是朝廷城市。",
+        "rationale": "705年是同一公历年内武周终止、唐复辟的政权转换年。史料足以记录神龙政变、传位、复唐和洛阳城市中心，但年粒度不足以将某一时点疆界代表为武周全年范围。故武周疆域面继续 leave-unfilled，仅以洛阳城市级参照说明中心延续，不以邻年或唐代最大轮廓回填。唐Cliopatria record 2642（705—749，低置信度、控制性质未明）虽列入705年运行区间，仍跨越复唐节点，已登记conflict:wu-zhou-tang-transition:705并仅在705年暂扣；原几何不裁切或转归，706年恢复。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/wu-zhou-termination-705.json"
       }
     ],
     "visualRecords": 2,
@@ -2402,17 +2673,21 @@
         "polityId": "former_liang",
         "from": 314,
         "to": 323,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "former-liang-early-years-jinshu-tongjian",
+          "gansu-tianshui-jicheng-longcheng-geography",
+          "zizhi-tongjian-former-liang-323-frontier-campaign",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-former_liang-314-323逐段复核：314至323年处在前凉政权形成及西北局势重组期，后续来源面不代表草创十年。",
-        "rationale": "314至323年处在前凉政权形成及西北局势重组期，后续来源面不代表草创十年。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/former-liang-early-extent-314-323.json；逐年核对314—323年：张轨死后张寔奉晋命承接凉州职权；317—319年持续以晋臣名义治理河西；320年张寔遇害后张茂接掌；322年向陇西、南安扩展并置秦州；323年刘曜围陇城、遣刘咸攻冀城并沿河施压，张茂遣使称藩。地图只增加两处低置信度区域事件参照，姑臧中心按年显示，疆域仍留空。",
+        "rationale": "《晋书》卷86、《资治通鉴》卷92及甘肃地方志支持张氏在姑臧的城市级政治中心及314—323年的承袭、行政、军事与名义关系变化。323年史料具体记刘曜围陇城、刘咸攻驻冀城的韩璞，地方志将两处分别约束至今张家川一带和甘谷境内；因此添加区域级事件点，坐标不是古城或阵地。相邻Cliopatria v0.2.1 record 1445（clio-1445-former_liang-324）仅覆盖324—372年，低置信度且控制性质未定，不向前凉早期回填。地图逐年显示姑臧中心点；疆域面继续留空，不把战事、前凉后期范围或前赵宗主关系画成直接边界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/former-liang-early-extent-314-323.json"
       }
     ],
     "visualRecords": 2,
@@ -2451,17 +2726,19 @@
         "polityId": "western_qin",
         "from": 385,
         "to": 386,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
+          "cliopatria",
+          "western-qin-early-center-jinshu-106",
           "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-western_qin-385-386逐段复核：385至386年为西秦建立初期，387年断面不足以支持向前回填。",
-        "rationale": "385至386年为西秦建立初期，387年断面不足以支持向前回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/western-qin-founding-385-386.json；逐年核对385—386年：385年九月乞伏国仁建义、置十二郡并筑勇士城而居；386年沿勇士城阶段继续。388年国仁死后乞伏乾归继位并迁金城，故金城中心不得提前回填至本段。",
+        "rationale": "《晋书》卷125与《资治通鉴》卷106明确记录385年建政并筑勇士城。地图逐年显示勇士城的低置信度区域中心参照，精确遗址比定仍有争议；相邻Cliopatria v0.2.1 record 1542（clio-1542-western_qin-387）仅覆盖387—393年，不回填至385—386年。本段没有足以恢复直接控制边缘的边界证据，疆域面继续留空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/western-qin-founding-385-386.json"
       },
       {
         "id": "gap-western_qin-409-409",
@@ -2471,14 +2748,15 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "western-qin-restoration-jinshu-125",
+          "dujianshan-historical-geography",
+          "songliang-modern-location-reference"
         ],
-        "historicalTransitionCheck": "gap-western_qin-409-409逐段复核：409年为西秦复国节点，前后来源属于不同存续阶段，不能机械桥接。",
-        "rationale": "409年为西秦复国节点，前后来源属于不同存续阶段，不能机械桥接。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/western-qin-restoration-409.json；逐年核对409年：年初乞伏乾归仍处于后秦控制关系；二月乞伏炽磐取枹罕，四月乾归到枹罕收众二万并迁都度坚山，七月复即秦王位。都城迁移和复立明确，但具体遗址位置及该年稳定直接控制范围不足以绘界。",
+        "rationale": "《资治通鉴》卷115记录409年从枹罕到度坚山的军事与政治移动，并记七月复位；《白银区志》将度坚山比定在三县交界宋家梁一带，现代宋梁地名坐标只支持低置信度区域事件标记，不是遗址精确坐标。年度政权疆域及中心仍留空；地图不显示金城、姑臧或其他阶段的全年中心，也不将部众归集、军事攻取或后秦册封关系混成全年实控疆域。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/western-qin-restoration-409.json"
       }
     ],
     "visualRecords": 7,
@@ -2513,17 +2791,17 @@
         "polityId": "later_liang",
         "from": 386,
         "to": 386,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "later-liang-founding-386-primary"
         ],
-        "historicalTransitionCheck": "gap-later_liang-386-386逐段复核：386年为后凉政权形成初期，387年来源轮廓不证明起始年控制范围。",
-        "rationale": "386年为后凉政权形成初期，387年来源轮廓不证明起始年控制范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/later-liang-founding-386.json；逐年核对386年：吕光于385年已入姑臧；386年改元太安、年末自称凉州牧与酒泉公，张大豫屯姑臧城西后为吕光击败。姑臧仍为中心，后凉后期或其他凉州政权的控制轮廓不用于回填。",
+        "rationale": "《资治通鉴》卷106将吕光入姑臧列于385年秋段，386年记张大豫进屯姑臧城西后为吕光击败及吕光十二月自称凉州牧、酒泉公；《晋书》卷122和《武威市志》支持姑臧中心与386年后凉形成节点。地图只显示姑臧城市中心点，不绘疆域面；相邻Cliopatria v0.2.1 record 1552（clio-1552-later_liang-387）从387年起且为低置信度、控制性质未定的时段几何，不回填386年。史料不能证明该年已稳定直接控制后凉后期范围，也不以都城或军事活动范围代替边界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/later-liang-founding-386.json"
       }
     ],
     "visualRecords": 3,
@@ -2558,17 +2836,16 @@
         "polityId": "southern_liang",
         "from": 414,
         "to": 414,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "southern-liang-termination-414-primary"
         ],
-        "historicalTransitionCheck": "gap-southern_liang-414-414逐段复核：414年南凉覆亡并归于西秦，终结年不采用此前完整控制面。",
-        "rationale": "414年南凉覆亡并归于西秦，终结年不采用此前完整控制面。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/southern-liang-termination-414.json；逐年核对414年：年内西秦攻取乐都、迁徙南凉王族与官民，秃发傉檀随后归降；乐都只代表南凉覆亡前的部分年度政治中心，不代表全年独立统治。",
+        "rationale": "《资治通鉴》卷116与《晋书》卷126支持乐都失守和南凉终止过程，地方志系于414年五月。地图只显示乐都年内阶段性中心点，不绘南凉疆域面。西秦来源几何覆盖414—416年，与南凉414年年内易手存在时间口径冲突，已登记为待审并在414年运行时拦截该面；不自动裁剪原几何，也不据军事攻取或后续西秦控制范围回填重叠边界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/southern-liang-termination-414.json"
       }
     ],
     "visualRecords": 2,
@@ -2607,39 +2884,39 @@
         "polityId": "southern_yan",
         "from": 398,
         "to": 401,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "southern-yan-formation-primary-sources"
         ],
-        "historicalTransitionCheck": "gap-southern_yan-398-401逐段复核：398至401年为南燕建立和定都过程，402年断面不能回填草创阶段。",
-        "rationale": "398至401年为南燕建立和定都过程，402年断面不能回填草创阶段。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/southern-yan-founding-398-401.json；逐年核对398—401年：398年慕容德率众南迁滑台并称燕王；399年苻广之乱、滑台降魏、慕容云率部出滑台赴德，慕容德转向青齐并进据广固；广固只作目的地事件点，不作全年中心。400年慕容德在广固称帝，401年广固仍为政治中心。故398年显示滑台中心、399年显示广固迁移事件点但全年中心留空、400—401年显示广固中心；不以邻年或后期轮廓回填。",
+        "rationale": "《晋书》卷127与《资治通鉴》卷110—111支持398—399年的迁移和政治变化，卷111将399年慕容德进据广固列入该年。地图显示398年滑台区域中心参照、399年广固迁移目的地事件点、400—401年广固中心参照；399年事件点不代表广固全年中心。相邻Cliopatria v0.2.1 record 1627（clio-1627-southern_yan-402）只覆盖402—406年，属低置信度、控制性质未定的时段模型，不回填398—401年。没有足以复原全年直接控制边界的逐年空间依据，sourceBoundaryIds保持为空，疆域面留空；不把出征、军事占领、名义关系或后期最大范围画作稳定疆界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/southern-yan-founding-398-401.json"
       },
       {
         "id": "gap-southern_yan-410-410",
         "polityId": "southern_yan",
         "from": 410,
         "to": 410,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "southern-yan-termination-410-primary-sources"
         ],
-        "historicalTransitionCheck": "gap-southern_yan-410-410逐段复核：410年南燕被东晋刘裕攻灭，灭亡年控制范围持续收缩。",
-        "rationale": "410年南燕被东晋刘裕攻灭，灭亡年控制范围持续收缩。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/southern-yan-termination-410.json；逐年核对410年：正月慕容超仍登广固城并朝见群臣；二月刘裕攻破广固，慕容超突围被获，后被送往建康处斩；刘裕随后夷广固城隍。广固仅为覆亡前的年内终局中心，不代表南燕全年延续或东晋全年稳定控制。",
+        "rationale": "《资治通鉴》卷115明确记录广固围城、城破、慕容超被获和南燕终止。地图只显示广固作为年内终局中心的D级点位，不绘南燕疆域面，也不把刘裕军攻城、战役推进或随后处置城防转换成东晋直接控制边界；sourceBoundaryIds保持为空，不以邻年或最大疆域回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/southern-yan-termination-410.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 6,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "western_liang",
@@ -2673,39 +2950,44 @@
         "polityId": "western_liang",
         "from": 400,
         "to": 406,
-        "verdict": "leave-unfilled",
+        "annualAudit": "docs/audits/topics/western-liang-founding-400-406.json",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "jinshu-vol87-li-hao",
+          "modern-geography-reference",
+          "zizhi-tongjian-vol111-western-liang",
+          "zizhi-tongjian-vol112-western-liang"
         ],
-        "historicalTransitionCheck": "gap-western_liang-400-406逐段复核：400至406年为西凉建立及河西诸政权竞争阶段，不以其他年份最大轮廓替代。",
-        "rationale": "400至406年为西凉建立及河西诸政权竞争阶段，不以其他年份最大轮廓替代。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/western-liang-founding-400-406.json；逐年核对400—406年：400年唐瑶移檄六郡推李暠为凉公，敦煌为早期政治中心；401年《资治通鉴》卷112记酒泉、凉宁二郡转归西凉，但此行政变化不等于可重建连续边界；402—404年沿敦煌阶段记录；405年《晋书》卷87明确记李暠迁居酒泉；406年以酒泉为中心。",
+        "rationale": "逐年审计记录400—406年全部七个公历年。400—404年只显示敦煌政治中心点，405—406年显示迁治后的酒泉点；401年并列记载酒泉、凉宁转归西凉，但不把局部行政归属和军事竞争推成精确疆界。并存的北凉Cliopatria record 1604（clio-1604-northern_liang-397，397—401）与record 1636（clio-1636-northern_liang-402，402—425），以及西凉record 1651（clio-1651-western_liang-407，407—409），均为低置信度、控制性质未定的时段几何，不能代替西凉400—406年疆界，也不向前后填补。现有史料不足以复原逐年直接控制边界，故不关联疆域几何；不以北凉、西凉其他年份最大轮廓或邻年几何回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02"
       },
       {
         "id": "gap-western_liang-410-421",
         "polityId": "western_liang",
         "from": 410,
         "to": 421,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "jinshu-vol87-li-hao",
+          "zizhi-tongjian-vol118-western-liang",
+          "zizhi-tongjian-vol119-western-liang"
         ],
-        "historicalTransitionCheck": "gap-western_liang-410-421逐段复核：410至421年西凉在河西战争中持续调整并最终覆亡，单一参考面会夸大稳定性。",
-        "rationale": "410至421年西凉在河西战争中持续调整并最终覆亡，单一参考面会夸大稳定性。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/western-liang-termination-410-421.json；逐年复核410—421年：410—416年李暠以酒泉为中枢并持续面对北凉进攻；417年李暠卒、李歆继位，酒泉中枢延续；418—419年李歆仍以酒泉为都并处于与北凉对峙中；420年李歆东伐败亡、北凉进入酒泉、李恂冬季返据敦煌，年内中心转换不可压成全年单点；421年北凉围攻并水灌敦煌，李恂政权终止。",
+        "rationale": "逐年审计记录410—421年全部十二个有效公历年。410—419年显示酒泉中心点；420年因酒泉失守、李恂年末重入敦煌而明确留空，不以年首或年末单点代表全年；421年只显示西凉终局据点敦煌的城市级参照。全段不添加疆域多边形，不把北凉军事占领或年内政权转换混画为全年稳定边界，也不以邻年或最大轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/western-liang-termination-410-421.json"
       }
     ],
-    "visualRecords": 1,
+    "visualRecords": 19,
     "definiteBoundaryRecords": 1,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "northern_yan",
@@ -2735,22 +3017,25 @@
         "polityId": "northern_yan",
         "from": 407,
         "to": 409,
-        "verdict": "leave-unfilled",
+        "verdict": "control-centers",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "capital-history-reference",
+          "modern-geography-reference",
+          "zizhi-tongjian-vol114-115-northern-yan"
         ],
-        "historicalTransitionCheck": "gap-northern_yan-407-409逐段复核：407至409年为北燕政权形成与内部更替阶段，410年断面不作逆推。",
-        "rationale": "407至409年为北燕政权形成与内部更替阶段，410年断面不作逆推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见docs/audits/topics/northern-yan-founding-407-409.json：407年高云在龙城取代慕容熙、后燕阶段终止并进入新燕政权形成；408年龙城中枢延续；409年冯跋掌权，北燕进入冯氏统治阶段。407—408年依据见《资治通鉴》卷114，409年见卷115；北燕起点称谓和龙城现代对应有分期与定位异说。",
+        "rationale": "逐年审计记录407—409年全部三个公历年。只显示龙城区域级政治中心点；地点目录将龙城映射为朝阳及和龙一带的低精度区域参照，不能据此认定唯一古城坐标。Cliopatria record 1657（clio-1657-northern_yan-410）仅覆盖410—425年，是低置信度、控制性质未定的时段模型，不回填407—409年；407年承接后燕、409年冯跋掌权均属于年内政权转换，不把点位推成全年疆界。没有逐年直接控制边界的空间依据，sourceBoundaryIds保持为空，不以北燕后期或后燕最大轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/northern-yan-founding-407-409.json"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 5,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "song_northern",
@@ -2783,18 +3068,25 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "modern-geography-reference",
+          "songshi-vol1-taizu",
+          "xuzizhi-tongjian-changbian-vol1",
+          "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "gap-song_northern-960-960逐段复核：960年北宋建立但统一战争尚未完成，961年轮廓也不能等同于建国当日。",
-        "rationale": "960年北宋建立但统一战争尚未完成，961年轮廓也不能等同于建国当日。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/northern-song-founding-960.json；gap-song_northern-960-960逐年复核：960年后周禅代，北宋建政后以开封为政治中心；与辽、北汉及南方政权并存，统一战争尚未完成。",
+        "rationale": "《续资治通鉴长编》卷一支持960年建宋及开封政治中心，但不提供足以复原全年连续疆界的空间证据。Cliopatria后周record 3861（clio-3861-zhou_later-960）为960年单年低置信度、控制性质未定的轮廓，跨越年内禅代，已挂requires-review并从运行时拦截；不裁剪或改归北宋。北宋record 3909（clio-3909-song_northern-961）从961年开始，不向前回填。地图只增加开封政治中心参照点，疆界仍明确留空；不将后世统一范围回填为建国当年实况。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-10-20",
+        "annualAudit": "docs/audits/topics/northern-song-founding-960.json"
       }
     ],
-    "visualRecords": 7,
+    "visualRecords": 8,
     "definiteBoundaryRecords": 7,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "song_south",
@@ -2831,13 +3123,16 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "southern-song-court-route-study",
+          "southern-song-linan-academic-study"
         ],
-        "historicalTransitionCheck": "gap-song_south-1127-1138逐段复核：1127至1138年包括南宋建立、迁驻与宋金战争，政治中心和实际控制均多次变化。",
-        "rationale": "1127至1138年包括南宋建立、迁驻与宋金战争，政治中心和实际控制均多次变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/southern-song-southward-1127-1138.json；gap-song_south-1127-1138逐年复核：1127—1138年已分别登记朝廷驻跸中心与路线节点；宋金战争、皇帝多次迁驻和建康/临安行在交替均不能推成全年疆界。",
+        "rationale": "高桥弘臣对《建炎以来系年要录》等资料的梳理及复旦学报研究支持1127—1138年朝廷中心迁驻节点，地图据此逐年增加 D 级中心参照；这些资料不支持同期宋军直接控制的连续疆界。金朝Cliopatria record 4811（clio-4811-jin_jurchen-1126）覆盖1126—1138年，作为金朝来源轮廓单独显示，不用于补成南宋疆界，也不按朝廷驻跸点裁剪或归属。本段疆界仍明确留空，不以控制中心、军事进退、行在或后期轮廓充当国界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-10-20",
+        "annualAudit": "docs/audits/topics/southern-song-southward-1127-1138.json"
       },
       {
         "id": "gap-song_south-1279-1279",
@@ -2847,18 +3142,23 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "songshi-vol47-last-emperor",
+          "yuan-nationalities-history"
         ],
-        "historicalTransitionCheck": "gap-song_south-1279-1279逐段复核：1279年南宋在崖山战役后灭亡，上一年轮廓不能代表终结年实际控制。",
-        "rationale": "1279年南宋在崖山战役后灭亡，上一年轮廓不能代表终结年实际控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/southern-song-termination-1279.json；gap-song_south-1279-1279逐年复核：《宋史》卷47记祥兴二年崖山终局和宋亡；终局事件不能代表全年疆界，上一年轮廓不回填。",
+        "rationale": "《宋史》卷47支持1279年南宋政权终止，但终局战场和年内残余抵抗范围不足以复原全年直接控制边界。地图明确留空，不把崖山事件点、上一年或其他年代的疆域轮廓冒充终结年实况。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-10-20",
+        "annualAudit": "docs/audits/topics/southern-song-termination-1279.json"
       }
     ],
-    "visualRecords": 5,
+    "visualRecords": 17,
     "definiteBoundaryRecords": 5,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "western_xia",
@@ -2891,13 +3191,15 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "yuanshi-vol1-taizu-xixia"
         ],
-        "historicalTransitionCheck": "gap-western_xia-1227-1227逐段复核：1227年西夏在蒙古战争中灭亡，终结年不沿用1226年的完整疆域。",
-        "rationale": "1227年西夏在蒙古战争中灭亡，终结年不沿用1226年的完整疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/western-xia-termination-1227.json；gap-western_xia-1227-1227逐年复核：《元史》卷一支持1227年西夏终局；终局事件不构成全年疆界，1226年轮廓不回填。",
+        "rationale": "《元史》卷一支持蒙古征夏及西夏在1227年终止，但围城、投降、末帝结局与地方接收不能复原全年的直接控制边界。西夏Cliopatria record 5454（1220—1226）不延至终止年；蒙古record 5505（clio-5505-mongol-1227，1227—1235）为低置信度、控制性质未定的时段模型，已在1227年挂requires-review并拦截，因其无法表示围城、终局与地方接收的年内时序。保留原几何不裁剪；1228年起蒙古来源面按原时段显示。地图明确留空，不将中兴府点、军事范围或上一年轮廓冒充终止年疆界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-10-20",
+        "annualAudit": "docs/audits/topics/western-xia-termination-1227.json"
       }
     ],
     "visualRecords": 7,
@@ -2935,18 +3237,24 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "capital-history-reference",
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "jinshi-vol2-taizu",
+          "jinshi-vol3-taizong"
         ],
-        "historicalTransitionCheck": "gap-jin_jurchen-1115-1125逐段复核：1115至1125年为金建国、灭辽并向宋推进的快速扩张期，不能以1126年以后轮廓倒推。",
-        "rationale": "1115至1125年为金建国、灭辽并向宋推进的快速扩张期，不能以1126年以后轮廓倒推。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/jurchen-jin-founding-1115-1125.json；gap-jin_jurchen-1115-1125逐年复核：《金史》卷二、三记录建国、攻辽、州县归附、燕京接管、宋金交涉及辽亡；会宁府逐年显示为政治中心点，不能以1126年后轮廓倒推疆界。",
+        "rationale": "《金史》卷二、三支持1115—1125年金朝政治与战争过程；会宁府有1115—1153年阶段性都城记录，可逐年显示D级政治中心参照点，但战争、州县归附、外交分地和政权交接不足以复原逐年连续疆界。本段sourceBoundaryIds仍为空，不把中心点或后期版图冒充直接控制边界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/jurchen-jin-founding-1115-1125.json"
       }
     ],
-    "visualRecords": 5,
+    "visualRecords": 6,
     "definiteBoundaryRecords": 5,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "western_liao",
@@ -2979,13 +3287,14 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
-          "china-chronology"
+          "iranica-qara-ketay",
+          "liaoshi-vol30-yelu-dashi"
         ],
-        "historicalTransitionCheck": "gap-western_liao-1124-1125逐段复核：1124至1125年为西辽建立与向中亚迁移扩张阶段，1126年断面不回填。",
-        "rationale": "1124至1125年为西辽建立与向中亚迁移扩张阶段，1126年断面不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/western-liao-migration-1124-1125.json；gap-western_liao-1124-1125逐年核对《辽史》卷三十与现代学术综述：1124年记耶律大石驻可敦城、驻北庭都护府并聚合七州十八部，但现代遗址定位及称号、纪年换算仍有分歧；1125年辽中央终结，追随集团继续迁徙。1126年断面不回填。",
+        "rationale": "已为1124、1125年分别登记史料结论。《辽史》卷三十记1124年可敦城临时驻留及聚合部众，但现代遗址对应和精确坐标尚不足以支撑事件点；也不足以证明全年稳定的直接控制区或连续疆界。故两年均明确留空，不把迁徙路线、部众聚合或后期西辽轮廓冒充当年疆域。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/western-liao-migration-1124-1125.json"
       }
     ],
     "visualRecords": 8,
@@ -3024,18 +3333,24 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "dali-duan-siping-official",
+          "dali-early-history-nagoya",
+          "dali-early-lineage-study",
+          "dali-history-research-nopss",
+          "dali-yangjumei-mct"
         ],
-        "historicalTransitionCheck": "gap-dali-937-946逐段复核：937至946年为大理政权建立与早期整合阶段，947年来源断面不足以覆盖此前十年。",
-        "rationale": "937至946年为大理政权建立与早期整合阶段，947年来源断面不足以覆盖此前十年。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审计见 docs/audits/topics/dali-early-polity-937-946.json；gap-dali-937-946逐年核对云南地方史料、国家社科成果及名古屋大学研究资料：保留937/938建国与945/946继位异说；逐年登记王统阶段和羊苴咩城中心。Cliopatria record 3812的来源区间从947年开始，不覆盖本段，不向前回填。",
+        "rationale": "已为937—946年分别登记政权结论、来源及证据缺口。羊苴咩城有都城传统和南诏—大理都城遗址依据，逐年以低置信度D级政治中心点表达；建国及继位年份存在异说，早期逐年直接疆界资料不足。相邻的 clio-3812-dali-947 是低置信度、控制性质未定的947—969年来源区间，时间上不覆盖本段，因此sourceBoundaryIds继续为空；不将都城、部众关系或后世轮廓冒充疆界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/dali-early-polity-937-946.json"
       }
     ],
-    "visualRecords": 4,
+    "visualRecords": 5,
     "definiteBoundaryRecords": 4,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "mongol",
@@ -3090,22 +3405,28 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "yuan-nationalities-history",
-          "yuan-li-bingzhong",
-          "yuan-goryeo-records",
+          "capital-history-reference",
           "cliopatria",
-          "zizhi-tongjian",
-          "map-regulation"
+          "map-regulation",
+          "yuan-goryeo-records",
+          "yuan-li-bingzhong",
+          "yuan-nationalities-history",
+          "historical-basemaps",
+          "yuanshi-shizu-1271-1293",
+          "zizhi-tongjian"
         ],
-        "historicalTransitionCheck": "元1271—1293年逐年核对23个民用年：按改国号、南宋接管、1279年覆亡、统一后整合、对日战争、行省建置与边疆军政变化复核；没有任何年份具备可重发布的直接控制边界，全部明确留空。",
-        "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 1352年轮廓不能回填1271—1293年的建国、战争、接管和行政整合过程；元朝名义疆域、行省范围、军镇和属国关系不自动等于逐年直接控制边界。合规标注：不复制未明确授权的历史地图或现代译文，保留来源与版本；依据《地图管理条例》公开历史地图和互联网地图服务需核验审核与审图号，项目当前仍为research-only。",
+        "historicalTransitionCheck": "逐年校核docs/audits/topics/yuan-state-transition-1271-1293.json所列1271—1293年23项结论，按《元史》至元八年至三十年本纪换算公历；另以低置信度D级点标记大都、上都政治中心。南宋受降与终局、行省建置、战争、军镇和属国关系均未被推作连续年度边界。补登记Historical Basemaps world_1279.geojson feature 246：低置信度大陆尺度快照不作为1279年直接疆界，已仅在1279年挂requires-review。",
+        "rationale": "本段23个有效公历年均有独立结论、来源及空间证据缺口；增加大都与上都政治中心点，但sourceBoundaryIds保持为空，不发布疆域多边形。蒙古Cliopatria record 5808（1260—1271）为低置信度、控制性质未定的宽时段模型；由于1271年元朝建号与蒙古帝国权力碎片化并存，无法判明轮廓所指的年末直接控制或名义范围，已仅在1271年挂requires-review并拦截，不改归元；1270年仍显示原始来源几何。Historical Basemaps record 246是1279年低置信度、控制语义未定的单年大陆尺度轮廓；来源README要求进一步核验，故仅在1279年挂requires-review并隐藏，原始几何保留。现有Cliopatria 1352年轮廓及1294年起的元朝轮廓均不能回填本段；元朝名义疆域、行省范围、军镇和属国关系不自动等于逐年直接控制边界。原典本纪支持年度政治军事过程，不能提供本段连续直接控制边缘。合规标注：保留来源版本和许可，不复制未明确授权的地图或现代译文；公开历史地图及互联网地图服务需核验适用审核与审图号，项目当前仍为research-only。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-21"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/yuan-state-transition-1271-1293.json"
       }
     ],
-    "visualRecords": 3,
+    "visualRecords": 4,
     "definiteBoundaryRecords": 3,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "northern_yuan",
@@ -3143,13 +3464,16 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "ming-yuan-northern-frontier-1368-1374",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-northern_yuan-1368-1374逐段复核：1368至1374年为元廷退出大都后北迁重组阶段，控制范围与明军推进同步变化。",
-        "rationale": "1368至1374年为元廷退出大都后北迁重组阶段，控制范围与明军推进同步变化。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "同断面共同逐年审计见 docs/audits/topics/ming-northern-yuan-formation-1368-1374.json；gap-northern_yuan-1368-1374逐年核对：1368年北撤至上都阶段，1369年上都失守后转驻应昌，1370年应昌失守后元昭宗北走和林；1371至1374年和林仅作为汗廷政治中心参照。14条政权—年度结论均不推定直接控制边界。",
+        "rationale": "逐年补入有史料支持的北迁汗廷中心点，但不将中心点、明军占领、蒙古部众活动范围或后续最大几何解释为北元疆界。1375年以后的北元几何不向前桥接；本条疆域结论继续留空，sourceBoundaryIds保持为空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-10-20",
+        "annualAudit": "docs/audits/topics/ming-northern-yuan-formation-1368-1374.json"
       },
       {
         "id": "gap-northern_yuan-1440-1467",
@@ -3159,21 +3483,27 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
+          "cliopatria",
+          "map-regulation",
+          "ming-shilu-yingzong-1440-1467",
           "northern-yuan-early-ming",
           "northern-yuan-yesen",
-          "cliopatria",
-          "china-chronology",
-          "map-regulation"
+          "dpm-tumu-incident",
+          "tumu-village-coordinate-escholarship-thesis"
         ],
-        "historicalTransitionCheck": "北元1440—1467年逐年核对28个民用年：按也先扩张、明蒙战争、1449年土木之变、也先与脱脱不花并立、1454年分裂及其后瓦剌与鞑靼重组复核；政权身份和直接控制均不稳定，没有可重发布的年度单一边界，全部明确留空。",
-        "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 1519年北元轮廓不能回填1440—1467年的部族联盟、汗权竞争和明蒙边疆战争；明方防御线、蒙古名义汗统、瓦剌军事权力和部众影响范围不自动等于北元直接控制边界。合规标注：不复制未明确授权的历史地图或现代译文，保留来源与版本；依据《地图管理条例》公开历史地图和互联网地图服务需核验审核与审图号，项目当前仍为research-only。",
+        "historicalTransitionCheck": "见docs/audits/topics/northern-yuan-yesen-1440-1467.json：1440—1467年28个有效公历年各有独立结论和证据缺口，区分也先/脱脱不花权力竞争、1449年土木之变、1450年遣返英宗、1454年也先及其政权终局，以及1466—1467年女真邻接边事；1449年另显示有据可查的土木村近似事件点，但无一年有可重审的连续直接控制几何。",
+        "rationale": "本次逐年疆域结论保留leave-unfilled，sourceBoundaryIds为空；1449年土木村近似点只表示有来源的战事位置，不是政权中心、直接控制区或疆界。现有Cliopatria 1519年北元轮廓不回填1440—1467年；明方防御线、朝贡、蒙古名义汗统、瓦剌军事权力、东蒙古部众和邻接女真事务分别处理。公开历史地图及互联网地图服务仍须另核来源权利、审核与审图号；项目当前为research-only。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-21"
+        "reviewedAt": "2026-11-02",
+        "annualAudit": "docs/audits/topics/northern-yuan-yesen-1440-1467.json"
       }
     ],
-    "visualRecords": 17,
+    "visualRecords": 24,
     "definiteBoundaryRecords": 17,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "ming",
@@ -3206,18 +3536,23 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "ming-yuan-northern-frontier-1368-1374",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-ming-1368-1374逐段复核：1368至1374年为明建国、北伐及全国整合阶段，后续轮廓不能代表每个起始年份。",
-        "rationale": "1368至1374年为明建国、北伐及全国整合阶段，后续轮廓不能代表每个起始年份。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "同断面共同逐年审计见 docs/audits/topics/ming-northern-yuan-formation-1368-1374.json；gap-ming-1368-1374逐年核对：洪武元年至七年应天均为明廷中央政治中心；其间北伐、攻取应昌、漠北战事与西北军卫经略持续变化。逐年中心点可确认，但不能由首都或军队活动推导逐年直接控制疆界。",
+        "rationale": "逐年补入应天政治中心参照，疆域结论继续留空。明军占领、卫所建置、羁縻关系、名义声索和直接控制范围分别判断；不将1375年以后的最大参考几何倒推至本段，sourceBoundaryIds保持为空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-10-20",
+        "annualAudit": "docs/audits/topics/ming-northern-yuan-formation-1368-1374.json"
       }
     ],
-    "visualRecords": 27,
+    "visualRecords": 34,
     "definiteBoundaryRecords": 27,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "ming_southern",
@@ -3254,13 +3589,18 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "ming-shi-vol120-southern-ming",
+          "modern-geography-reference",
+          "southern-ming-hongguang",
+          "southern-ming-overview"
         ],
-        "historicalTransitionCheck": "gap-ming_southern-1644-1644逐段复核：1644年南明建立且多方政权并立，1645年的来源面不能代表全年。",
-        "rationale": "1644年南明建立且多方政权并立，1645年的来源面不能代表全年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "1644年南明年度结论与阶段中心见docs/audits/topics/southern-ming-formation-1644.json：南京仅表示弘光政权在本年内的阶段中心；无南明直接疆域几何。",
+        "rationale": "“南明”为后世对多个阶段政权的统称。1644年南京弘光阶段在年内建立，清廷入关与南京朝廷并存；中心点不表示南明从年初到年末的统一首都或控制区。缺少可复原的全年直接边界，故sourceBoundaryIds为空，不以1645年或南明其他阶段轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/southern-ming-formation-1644.json"
       },
       {
         "id": "gap-ming_southern-1659-1662",
@@ -3270,13 +3610,19 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "cambridge-southwest-southeast-1652-1662",
+          "china-chronology",
+          "chnmuseum-yongli-capture-edict",
           "cliopatria",
-          "china-chronology"
+          "dpm-zhu-youlang-biography",
+          "ming-shi-vol120-southern-ming",
+          "southern-ming-yongli"
         ],
-        "historicalTransitionCheck": "gap-ming_southern-1659-1662逐段复核：1659至1662年为南明残余政权持续收缩并终结阶段，最大轮廓会夸大控制。",
-        "rationale": "1659至1662年为南明残余政权持续收缩并终结阶段，最大轮廓会夸大控制。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "1659—1662年逐年结论见docs/audits/topics/southern-ming-termination-1659-1662.json：1659—1661年记录永历朝廷流亡和交涉阶段，1662年记录昆明终结事件；四年均无南明直接疆域几何。",
+        "rationale": "永历帝及朝廷的撤退、缅甸流亡、滇缅军事活动和1662年昆明终结均可按阶段记述，但路线与战事不等于南明全年直接控制疆域。终结地点可作为事件点，不构成疆域面；台湾明郑及其他地方抗清力量应按各自时间另行处理。故本段四年留空，不以早期最大范围或后续政权轮廓回填。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/southern-ming-termination-1659-1662.json"
       }
     ],
     "visualRecords": 3,
@@ -3318,13 +3664,16 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "dpm-hetu-ala",
+          "dpm-nurhaci-chronology"
         ],
-        "historicalTransitionCheck": "gap-later_jin-1616-1618逐段复核：1616至1618年为后金建立和早期扩张阶段，1619年断面不向前平移。",
-        "rationale": "1616至1618年为后金建立和早期扩张阶段，1619年断面不向前平移。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审核见 docs/audits/topics/later-jin-founding-1616-1618.json：赫图阿拉有史料支持作为都城点；本段不绘疆域面，1619年断面不向前平移。",
+        "rationale": "1616至1618年可确认后金建立及赫图阿拉都城，但现有来源不足以复原逐年直接控制的闭合疆界。因此保留都城点并明确留空疆域面，不以军事行动或其他年代轮廓代替所选年份实况。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-jin-founding-1616-1618.json"
       },
       {
         "id": "gap-later_jin-1636-1636",
@@ -3334,13 +3683,15 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "dpm-hongtaiji-biography"
         ],
-        "historicalTransitionCheck": "gap-later_jin-1636-1636逐段复核：1636年后金改国号为清，旧政权终年与新政权转换不能画作稳定旧疆域。",
-        "rationale": "1636年后金改国号为清，旧政权终年与新政权转换不能画作稳定旧疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审核见 docs/audits/topics/later-jin-termination-1636.json：故宫资料记1636年在盛京改国号为清；旧政权终年不补绘全年疆域。",
+        "rationale": "1636年皇太极于盛京即位并改国号为清，是年内政权身份转换；来源没有给出转换前后各自可复原的全年疆界。后金疆域面留空，改国号事件仅以盛京地点表达。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/later-jin-termination-1636.json"
       }
     ],
     "visualRecords": 5,
@@ -3379,13 +3730,16 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-chronology",
+          "chnmuseum-xuantong-abdication",
           "cliopatria",
-          "china-chronology"
+          "dpm-xuantong-abdication"
         ],
-        "historicalTransitionCheck": "gap-qing-1912-1912逐段复核：1912年清帝退位并建立共和政权，年内政权转换不采用1911年轮廓。",
-        "rationale": "1912年清帝退位并建立共和政权，年内政权转换不采用1911年轮廓。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年审核见 docs/audits/topics/qing-termination-1912.json：国家博物馆与故宫资料记1912年2月12日清帝退位；不将诏书领土主张视为当日实际接收。",
+        "rationale": "1912年2月12日清帝退位，清朝中央政权终止；民国政府成立、退位诏书和各地实际接收并非同一时点。无法据此确定清朝全年疆域，故疆域面明确留空，只在事件图层标记北京城市近似点。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/qing-termination-1912.json"
       }
     ],
     "visualRecords": 64,
@@ -3423,13 +3777,23 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "beijing-minguo-periodization-1912-1928",
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "dpm-nanjing-government-beiping-1928",
+          "frus-yuan-shikai-death-1916",
+          "guangzhou-cppcc-warlord-wars-1920-1924",
+          "mod-guangzhou-government-1925",
+          "mod-northern-expedition-1926",
+          "nlpi-northeast-reflag-1928",
+          "nopss-beiyang-government-1916-1928",
+          "taiwan-archives-nationalist-split-1927"
         ],
-        "historicalTransitionCheck": "gap-republic-1916-1929逐段复核：1916至1929年经历中央权威分裂、军阀割据和北伐，名义疆域不能冒充统一实际控制。",
-        "rationale": "1916至1929年经历中央权威分裂、军阀割据和北伐，名义疆域不能冒充统一实际控制。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "historicalTransitionCheck": "逐年审核见 docs/audits/topics/republic-warlord-era-1916-1929.json：北京、广州、武汉、南京和东北多中心分立；1928年北平接收与东北易帜分属不同阶段。",
+        "rationale": "1916—1928年北京政府名义中央与区域军政权力分离，1917年广州护法政府、1921年广州非常政府、1927年武汉与南京政府并存，1928年北伐接收北平和年底东北易帜仍未意味着各地由南京直接控制。1929年形式统一后地方实力派仍掌握区域军政。按年份保留北京或南京政治中心点及事件点，政权疆域面留空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/republic-warlord-era-1916-1929.json"
       }
     ],
     "visualRecords": 17,
@@ -3471,13 +3835,16 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "ccdi-prc-chronology-1949",
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-prc-1949-1949逐段复核：1949年中华人民共和国成立且全国控制格局仍在变化，1950年轮廓不回填建国年。",
-        "rationale": "1949年中华人民共和国成立且全国控制格局仍在变化，1950年轮廓不回填建国年。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/prc-founding-1949.json：1949年10月1日中央人民政府在北京成立；事件点只定位成立地，全年政权疆域面留空。",
+        "rationale": "1949年10月1日中央人民政府在北京成立，但该建政事件与全年各地实际军事、行政接收并非同一时点。地图仅显示北京事件/政治中心点；全国实际控制范围不由成立宣告推定，1950年轮廓也不回填1949年。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03",
+        "annualAudit": "docs/audits/topics/prc-founding-1949.json"
       },
       {
         "id": "gap-prc-2025-2026",
@@ -3489,13 +3856,16 @@
           "clio-13616-prc-2024"
         ],
         "citationIds": [
+          "china-chronology",
           "cliopatria",
-          "china-chronology"
+          "map-regulation",
+          "mnr-standard-map-service-2026"
         ],
-        "historicalTransitionCheck": "gap-prc-2025-2026逐段复核：2025至2026年没有已知政权更替，采用同一政权2024年来源轮廓仅作C级临近参考。",
-        "rationale": "2025至2026年没有已知政权更替，采用同一政权2024年来源轮廓仅作C级临近参考。该轮廓不是2025或2026年独立测绘结果，也不是公开发布所需的官方标准地图。",
+        "historicalTransitionCheck": "逐年记录见 docs/audits/topics/prc-current-reference-2025-2026.json：2025年完整公历年与截至2026-11-04的2026年均仅采用2024年同政权来源轮廓作C级近邻参考；2026年结束后需复核全年变化。",
+        "rationale": "2025年及截至2026-11-04的2026年，沿用同一政权2024年来源轮廓作C级近邻参考；它不是2025或2026年独立测绘结果、不是官方国界线画法标准样图，也不代表经逐界核验的直接控制边界。2026仍是未结束公历年，年末后须复核。公开展示前须另核官方标准地图要求、审图号与发布批准，不得把本参考几何直接当作合规国界底图。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-04",
+        "annualAudit": "docs/audits/topics/prc-current-reference-2025-2026.json"
       }
     ],
     "visualRecords": 8,
@@ -3533,19 +3903,26 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "modern-geography-reference",
+          "yang-wu-expansion-history-geography",
+          "yang-wu-ezhou-modern-location",
+          "zizhi-tongjian",
+          "zizhi-tongjian-vol263-267-yang-wu"
         ],
-        "historicalTransitionCheck": "gap-wu_ten-902-910逐段复核：902至910年处在杨吴政权形成、唐亡和地方秩序重组期，911年断面不作逆推。",
-        "rationale": "902至910年处在杨吴政权形成、唐亡和地方秩序重组期，911年断面不作逆推。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "annualAudit": "docs/audits/topics/yang-wu-formation-and-expansion-902-910.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/yang-wu-formation-and-expansion-902-910.json：902年吴王受封并都扬州；905年杨渥继位并西取鄂州，事件点按五代鄂州治江夏（今武汉武昌）定位，不与三国武昌（今鄂州）混同；906年秦裴攻取洪州、钟匡时被俘，江西其他州县接收另行核验；908年杨隆演继位；909年后续取江西诸州。902—910年逐年显示广陵（扬州）D级政治中心点，905、906年分别增加鄂州、洪州攻取事件点；按政权继承、唐梁更替和战事扩张分别核验，不将战事等同全年控制。",
+        "rationale": "902—910年逐年显示扬州/广陵城市级政治中心参照；906年另以今南昌城区近似点定位秦裴攻取洪州及俘获钟匡时的事件。事件点依据《资治通鉴》杨吴编年及现代地点近似坐标，只表示城市攻取节点，不表示江西全境或全年连续实控。现有史料和历史地理概述未提供可重发布的逐年连续控制边界。相邻 Cliopatria 轮廓 clio-3646-wu_ten-911 的来源区间始于911年，且为低置信度、控制性质未定模型，不覆盖902—910年；本段sourceBoundaryIds保持为空，不将州城攻取、方镇辖区、后期范围或911年轮廓解释成当年全域直接疆界。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
-    "visualRecords": 1,
+    "visualRecords": 2,
     "definiteBoundaryRecords": 1,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "southern_tang",
@@ -3578,22 +3955,30 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "cliopatria",
+          "map-regulation",
+          "song-history-nantang",
+          "southern-tang-local-administration",
           "southern-tang-nanjing",
           "southern-tang-periods",
-          "southern-tang-local-administration",
-          "cliopatria",
           "zizhi-tongjian",
-          "map-regulation"
+          "zizhi-tongjian-southern-tang-937-959",
+          "capital-history-reference",
+          "modern-geography-reference",
+          "chgis-jianzhou-758-1161"
         ],
-        "historicalTransitionCheck": "南唐937—959年逐年核对23个民用年：按杨吴禅代、南唐建国、939年改国号、闽地战争、楚亡、后周南征、958年割地称臣及959年政局转折复核；没有任何年份具备可重发布的直接控制边界，全部明确留空。",
-        "rationale": "本段逐年登记为已核查但无可重发布年度疆域：现有Cliopatria 960年轮廓不能回填937—959年的建国、区域战争、行政整合和后周南征收缩；节度辖区、战争占领、奉正朔和臣属关系不自动等于南唐逐年直接控制边界。合规标注：不复制未明确授权的历史地图或现代译文，保留来源与版本；依据《地图管理条例》公开历史地图和互联网地图服务需核验审核与审图号，项目当前仍为research-only。",
+        "annualAudit": "docs/audits/topics/southern-tang-formation-and-contraction-937-959.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/southern-tang-formation-and-contraction-937-959.json：937年禅代建国、939年改号、943年君主更替、945年闽亡、946—949年泉漳地方权力、951年楚亡及后续楚地割据、955—958年后周南征和割地、959年江南政权延续分别核对。937—959年逐年以D级金陵／建康都城中心点表示政治中心；945年另显示建州闽亡、946年另显示福州外城战事、951年另显示长沙城市级事件点；相邻Cliopatria record 3842的来源区间从960年起，不回填该面；23个民用年均不含公元0年。",
+        "rationale": "逐年记录南唐建政、区域战争和控制关系变化，并以D级城市点表示937—959年的金陵政治中心；945年增加建州闽政权终止事件点，946年另增加福州外城战事点；建州政治中心于943年由福州转移至建州，951年增加长沙马楚终止／承接事件点，均只表示事件城市，不表示周边区域边界；CHGIS建州点位只作治所区域参照，许可标注为CC BY-NC 4.0且未复制其几何。现有依据不足以生成任一公历年的全境连续直接控制面，疆界几何继续留空。节度辖区、战争占领、奉正朔、臣属或地方归附不自动等于中央直接控制。相邻Cliopatria轮廓clio-3842-southern_tang-960的来源区间从960年开始，且为低置信度、控制性质未定模型，不覆盖937—959年；本段sourceBoundaryIds保持为空。保留来源及版本；公开展示另核版权许可、地图内容审核与审图号，项目当前仍为research-only。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-21"
+        "reviewedAt": "2026-11-04"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   },
   {
     "id": "wuyue",
@@ -3626,14 +4011,20 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "wuyue-period-history-geography",
+          "zizhi-tongjian",
+          "zizhi-tongjian-wuyue-907-910",
+          "suzhou-city-history-official",
+          "chgis-huzhou-758-1225",
+          "modern-geography-reference"
         ],
-        "historicalTransitionCheck": "gap-wuyue-907-910逐段复核：907至910年处在唐亡后吴越政权名号与区域秩序重组期，911年断面不回填。",
-        "rationale": "907至910年处在唐亡后吴越政权名号与区域秩序重组期，911年断面不回填。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "annualAudit": "docs/audits/topics/wuyue-formation-and-contested-huzhou-907-910.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/wuyue-formation-and-contested-huzhou-907-910.json：907年钱镠受封吴越王；908—909年与淮南争夺苏州、东洲，909年吴越援军解苏州之围；909年湖州刺史高澧叛附淮南并有苏州解围；910年钱镠巡湖州并任命钱镖，湖州事件按治所城市级参照点显示。分别核验王号、战事和湖州任命，不以局部得失当作全年边界。",
+        "rationale": "逐年史料可确认杭州政治中心、吴越王号及908—910年苏州、东洲、湖州的控制变化；这些城市战事与地方任命不足以生成该段任一年的全境连续直接控制边界。继续保留疆域面为空，使用既有杭州政治中心点，并在909年以城市级近似点标记苏州解围及湖州叛附事件，910年另标记钱镠巡湖任命；相邻Cliopatria v0.2.1 record 3631（clio-3631-wuyue-911）来源时段为911—946年、低置信度且控制性质未定，不得回填907—910年或据此确认本段边界。 湖州点据CHGIS治所记录，仅作城区级事件位置参照；其许可标注为CC BY-NC 4.0，本项目未复制其几何。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-04"
       }
     ],
     "visualRecords": 4,
@@ -3671,14 +4062,18 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
-          "cliopatria",
+          "chgis-min-regime-909-943",
           "china-chronology",
-          "zizhi-tongjian"
+          "cliopatria",
+          "fuzhou-wang-shenzhi-history",
+          "zizhi-tongjian",
+          "zizhi-tongjian-min-909-910"
         ],
-        "historicalTransitionCheck": "gap-min-909-910逐段复核：909至910年为闽政权形成初期，911年来源面不足以证明此前控制范围。",
-        "rationale": "909至910年为闽政权形成初期，911年来源面不足以证明此前控制范围。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "annualAudit": "docs/audits/topics/min-founding-and-fujian-region-909-910.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/min-founding-and-fujian-region-909-910.json：909年王审知受封闽王，福州为政治中心；CHGIS考证闽国领福、泉、建、漳、汀五州且辖境大体相当今福建。910年闽政权与区域沿革延续，但没有可复原的州县级年度直接控制边界。",
+        "rationale": "本段补录两年政权结论、福州中心点及五州区域范围说明。CHGIS历史地理考证支持区域概述，但该页只有福州点位且未提供可重用的闽国多边形；相邻Cliopatria v0.2.1 record 3596（clio-3596-min-911）仅覆盖911—935年，低置信度且控制性质未定，不向前回填至909—910年；故不以今福建省界或邻年轮廓冒充本段精确边界。CHGIS页面标注CC BY-NC 4.0，本项目未复制其几何，公开展示和商业用途需另核授权。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
     "visualRecords": 2,
@@ -3739,13 +4134,14 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "zizhi-tongjian-chu-907-910",
+          "youkou-historical-geography"
         ],
-        "historicalTransitionCheck": "gap-chu_ten-907-910逐段复核：907至910年为马楚在唐亡后的政权形成期，911年断面不作逆推。",
-        "rationale": "907至910年为马楚在唐亡后的政权形成期，911年断面不作逆推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "annualAudit": "docs/audits/topics/ma-chu-regional-expansion-907-910.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/ma-chu-regional-expansion-907-910.json：907年马殷受封楚王；908年楚军取岭南六州；909年未见可核的边界变化；910年侵荆南败于油口。长沙作为政治中心，910年另标油口区域级军事事件点；各年均无可复原的连续疆界。",
+        "rationale": "本段补录四年逐年结论、长沙政治中心及908年岭南六州攻取、910年油口战败等区域事件。史料能证明军事行动和地名，不能单独证明六州全境逐县稳定受控或荆南边界变化；油口仅采用公安县北部低置信度区域参照，不定位古河道、军营或战场。相邻Cliopatria v0.2.1 record 3641（clio-3641-chu_ten-911）仅覆盖911—925年，低置信度且控制性质未定，不向前回填至907—910年；疆界几何继续留空，不以908年战果或后续轮廓补画。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
     "visualRecords": 3,
@@ -3784,13 +4180,13 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "zizhi-tongjian-former-shu-907-910"
         ],
-        "historicalTransitionCheck": "gap-former_shu-907-910逐段复核：907至910年为前蜀称帝和制度建立阶段，911年轮廓不能自动代表建国初期。",
-        "rationale": "907至910年为前蜀称帝和制度建立阶段，911年轮廓不能自动代表建国初期。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "annualAudit": "docs/audits/topics/former-shu-early-extent-907-910.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/former-shu-early-extent-907-910.json：907年王建在成都称帝；908年改元武成；909年命太子判六军；910年拒绝岐王索取巴、剑二州。成都中心可确认，逐年连续边界不可复原。",
+        "rationale": "本段补录907—910年建政、年号、军事职掌与州地交涉等逐年结论。史料明确表明910年巴、剑二州未交岐，但不能由此推定前蜀全境边界或巴、剑州逐县稳定控制；相邻Cliopatria v0.2.1 record 3618（clio-3618-former_shu-911）仅覆盖911—921年，低置信度且控制性质未定，不向前回填至907—910年。其余年份也没有完整可绘边线，故保留成都政治中心和区域事件说明，疆域几何继续留空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
     "visualRecords": 2,
@@ -3829,13 +4225,14 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "zizhi-tongjian-later-shu-934-935",
+          "quzhou-historical-geography"
         ],
-        "historicalTransitionCheck": "gap-later_shu-934-935逐段复核：934至935年为后蜀建立初期，936年来源轮廓不向前外推。",
-        "rationale": "934至935年为后蜀建立初期，936年来源轮廓不向前外推。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "annualAudit": "docs/audits/topics/later-shu-early-extent-934-935.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/later-shu-early-extent-934-935.json：934年孟知祥在成都称帝并处理五镇任命，渠州叛乱被平定；另标渠州治所区域级事件点。935年蜀大赦，未见足以重绘疆界的年度领土变更。936年以后轮廓不向前回填。",
+        "rationale": "本段补录934—935年后蜀建政、五镇任命、渠州叛乱与平定及935年政务节点。成都中心可确认，另以今渠县城区低置信度近似点表示渠州事件，不定位州城或战场。六镇旧有军政范围和羁縻、州镇任命不等于可复原的连续年度边界；相邻Cliopatria v0.2.1 record 3784（clio-3784-later_shu-936）仅覆盖936—946年，低置信度且控制性质未定，不向前回填至934—935年；疆域几何继续留空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
     "visualRecords": 3,
@@ -3874,13 +4271,13 @@
         "sourceBoundaryIds": [],
         "citationIds": [
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "zizhi-tongjian-jingnan-924-925"
         ],
-        "historicalTransitionCheck": "gap-jingnan-924-925逐段复核：924至925年为荆南政权形成初期，926年断面不足以证明草创期疆域。",
-        "rationale": "924至925年为荆南政权形成初期，926年断面不足以证明草创期疆域。因此本段明确留空，不以该政权其他年代的最大或最近轮廓冒充所选年份实况。",
+        "annualAudit": "docs/audits/topics/jingnan-early-polity-924-925.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/jingnan-early-polity-924-925.json：924年高季兴受封南平王；925年荆南政权延续、江陵为政治中心。册封和中心城市均不足以确定边界，926年及后续轮廓不向前回填。",
+        "rationale": "本段补录924年进封南平王和925年政权延续的年度记录，并以江陵作为政治中心点。王号、节度使名义与治所不能证明年度实际州县控制或连续边界；相邻Cliopatria v0.2.1 record 3728（clio-3728-jingnan-926）仅覆盖926—935年，低置信度且控制性质未定，不向前回填至924—925年。未发现足以支持疆域几何的直接证据，故继续留空。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
     "visualRecords": 3,
@@ -3918,18 +4315,24 @@
         "verdict": "leave-unfilled",
         "sourceBoundaryIds": [],
         "citationIds": [
+          "china-admin-history-five-dynasties-northern-han-map",
           "cliopatria",
-          "china-chronology",
-          "zizhi-tongjian"
+          "xin-wudai-shi-difang-northern-han",
+          "zizhi-tongjian-northern-han-951-959",
+          "gaoping-battlefield-location",
+          "shihui-pass-location-reference"
         ],
-        "historicalTransitionCheck": "gap-northern_han-951-959逐段复核：951至959年为北汉建立及与后周、辽关系调整阶段，960年后来源面不能回填。",
-        "rationale": "951至959年为北汉建立及与后周、辽关系调整阶段，960年后来源面不能回填。在没有可重发布的逐年直接几何前，本段明确留空，不把同政权最大断面当作实况。",
+        "annualAudit": "docs/audits/topics/northern-han-establishment-and-early-wars-951-959.json",
+        "historicalTransitionCheck": "逐年结论见 docs/audits/topics/northern-han-establishment-and-early-wars-951-959.json：951年建国时《通鉴》记称十二州，而《新五代史·职方考》及历史地理图目存在十州或更少的口径；952年府州方向交战，954年高平之战败退并于年末发生刘旻继承，另标巴公原区域级战事点；956年后周围晋阳并发生州县易手，957年改元天会，958年六月记石会关六寨及孝义战事，959年记李重进于北井破北汉军。年内战线与短时占领不等于全年连续疆界。",
+        "rationale": "补录951—959年逐年政局、边战与晋阳政治中心，并登记《通鉴》十二州声称与《新五代史》十州记载的口径差异。954年增加今泽州县巴公镇区域级低置信度事件点，不定位精确战场或战线；高平战败、晋阳围城、代州及石会关等处攻守仍只支持相应事件或局部变化。958年石会关故址仅能作榆社西北区域参照，不足以定位六寨；959年北井地望未定。959年学术政区图可供后续逐州校核，但未核得允许复用且已完成逐年控制验证的几何。相邻Cliopatria v0.2.1 record 3859（clio-3859-northern_han-960）仅覆盖960—969年，低置信度且控制性质未定，不向前回填至951—959年。疆域面继续留空，待历史地图来源、逐年州县沿革及使用权分别审核后再决定是否制图。",
         "reviewStatus": "reviewed",
-        "reviewedAt": "2026-10-20"
+        "reviewedAt": "2026-11-03"
       }
     ],
-    "visualRecords": 2,
+    "visualRecords": 3,
     "definiteBoundaryRecords": 2,
-    "nonBoundaryRepresentations": []
+    "nonBoundaryRepresentations": [
+      "control-centers"
+    ]
   }
 ]

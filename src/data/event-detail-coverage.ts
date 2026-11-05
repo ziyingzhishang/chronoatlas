@@ -167,7 +167,9 @@ function buildItem(
     if (!present(detail.uncertaintyNote)) missingChecks.push('uncertaintyNote');
 
     if (participantIds.length === 0) needsReviewChecks.push('participants');
-    if (locationIds.length === 0) needsReviewChecks.push('locations');
+    const coordinateLocation = Boolean(event.locationPrecision)
+      && (event.coordinates?.every(Number.isFinite) ?? false);
+    if (locationIds.length === 0 && !coordinateLocation) needsReviewChecks.push('locations');
     // Precisely dated world-history records may intentionally stand alone:
     // they can describe a city transfer, treaty, institutional change, or
     // international organization without requiring an invented polity or

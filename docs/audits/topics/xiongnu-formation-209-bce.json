@@ -1,0 +1,36 @@
+{
+  "decisionId": "gap-xiongnu--209--209",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "xiongnu",
+      "year": -209,
+      "conclusion": "按传统纪年换算约前209年，冒顿射杀头曼、自立为单于，随后继续整合匈奴部众。",
+      "mapExpression": "uncertain-mobile-court-candidate",
+      "centerPlaceId": null,
+      "candidatePlaceIds": ["xiongnu_core"],
+      "territoryBoundary": null,
+      "sourceIds": ["shiji-xiongnu-modu", "xiongnu-longcheng-central-mongolia-candidate"],
+      "evidenceGap": "地图仅显示蒙古高原中部的低置信度移动中心候选区域示意点。和日门塔拉三连城的龙城／单于庭认定与分期仍有待复核，不能落实为前209年固定单于庭；史料不支持该年连续疆界。"
+    }
+  ],
+  "coexistenceNotes": [
+    "此处记录政治主体和年度事件，不将移动性单于庭候选或后续冒顿扩张范围回填为前209年控制面。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "shiji-xiongnu-modu",
+      "use": "《史记·匈奴列传》核对头曼单于、冒顿射杀头曼并自立为单于及随后整合部众的叙述；传统年换算约前209年，不提供可绘年度边界。"
+    },
+    {
+      "id": "xiongnu-longcheng-central-mongolia-candidate",
+      "use": "中蒙联合考古队相关报道将和日门塔拉三连城列为龙城／单于庭候选地；认定与年代归属仍需复核，地图坐标只是区域示意点，不表示前209年单于庭的精确位置。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "前209年匈奴疆域面留空，不以邻年或后期扩张轮廓回填。",
+    "单于庭具有移动性，不新增固定首都点或边界几何。",
+    "传统纪年换算保持约年性质；不包含公元0年。"
+  ]
+}

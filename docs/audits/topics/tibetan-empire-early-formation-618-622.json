@@ -1,0 +1,87 @@
+{
+  "decisionId": "gap-tibetan_empire-618-622",
+  "yearCount": 5,
+  "years": [
+    {
+      "polityId": "tibetan_empire",
+      "year": 618,
+      "conclusion": "项目以618年作为既有年度数据的吐蕃形成约年映射；Uebach将松赞干布在位起年列作617年，并把国家形成前史上溯到朗日松赞时期，故618年不等于无争议的建政节点。雅砻河谷只作早期核心的阶段参照。",
+      "mapExpression": "political-core-reference-point",
+      "centerPlaceId": "yalong",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "tibetan-empire-early-history-ucpress",
+        "tibetan-yarlung-polities-uva",
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "evidenceGap": "本项目沿用618年形成约年，但研究对松赞干布即位和早期建政年代存在不同口径；区域核心不等于直接控制边界。"
+    },
+    {
+      "polityId": "tibetan_empire",
+      "year": 619,
+      "conclusion": "纳入形成阶段延续期；所核来源未提供可独立定年的本年直接控制边界变化。",
+      "mapExpression": "political-core-reference-point",
+      "centerPlaceId": "yalong",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "tibetan-empire-early-history-ucpress",
+        "tibetan-yarlung-polities-uva",
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "evidenceGap": "现有学术综述提供阶段背景，没有619年逐年边界记录；不以邻年或后期最大疆域回填。"
+    },
+    {
+      "polityId": "tibetan_empire",
+      "year": 620,
+      "conclusion": "未发现可将政治核心外推为确定控制范围的本年证据。",
+      "mapExpression": "political-core-reference-point",
+      "centerPlaceId": "yalong",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "tibetan-empire-early-history-ucpress",
+        "tibetan-yarlung-polities-uva",
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "evidenceGap": "现有来源无法将本年早期政治核心外推为确定控制范围；留空不代表断言当年没有政治活动。"
+    },
+    {
+      "polityId": "tibetan_empire",
+      "year": 621,
+      "conclusion": "未发现可复原本年直接控制边界的逐年材料。",
+      "mapExpression": "political-core-reference-point",
+      "centerPlaceId": "yalong",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "tibetan-empire-early-history-ucpress",
+        "tibetan-yarlung-polities-uva",
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "evidenceGap": "没有可复原621年直接控制边界的逐年材料；不将后续扩张叙事提前套用。"
+    },
+    {
+      "polityId": "tibetan_empire",
+      "year": 622,
+      "conclusion": "仍处于早期形成阶段；本年可用来源不足以支持疆域线或区域控制面。",
+      "mapExpression": "political-core-reference-point",
+      "centerPlaceId": "yalong",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "tibetan-empire-early-history-ucpress",
+        "tibetan-yarlung-polities-uva",
+        "china-chronology",
+        "zizhi-tongjian"
+      ],
+      "evidenceGap": "所核来源不足以支持622年疆域线或区域控制面；不以雅砻核心点代表国家疆域。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "618年按项目沿用的形成传统约年登记，不代表无争议的即位或建政日期。",
+    "Uebach研究章节和弗吉尼亚大学Mandala专题支持阶段判断，不含618—622逐年疆界；雅砻河谷不是疆域多边形或全年控制证明。",
+    "同期唐朝建立不构成吐蕃边界证据；历史来源、地图许可和公开展示条件分别审核。"
+  ]
+}

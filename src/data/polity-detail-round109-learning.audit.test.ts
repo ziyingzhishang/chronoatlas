@@ -114,11 +114,11 @@ function buildAuditReport() {
 }
 
 describe('Round 109 政权详情学习入口审计', () => {
-  it('covers all 87 polity details and resolves every five-field reference', () => {
+  it('covers all 88 polity details and resolves every five-field reference', () => {
     const report = buildAuditReport();
 
-    expect(report.totalPolities).toBe(87);
-    expect(report.detailCount).toBe(87);
+    expect(report.totalPolities).toBe(88);
+    expect(report.detailCount).toBe(88);
     expect(report.unresolved).toEqual({ people: [], capital: [], events: [], eventDetails: [], heritage: [], claims: [] });
     expect(report.directDrawerGaps).toEqual([]);
   });

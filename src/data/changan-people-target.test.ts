@@ -8,4 +8,5 @@ describe('Chang’an pilot people target', () => {
     expect(new Set(personDetails.map((detail) => detail.personId)).size).toBe(personDetails.length);
     expect(people.every((person) => personDetails.some((detail) => detail.personId === person.id))).toBe(true);
   });
+
 });

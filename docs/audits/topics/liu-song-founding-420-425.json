@@ -1,0 +1,87 @@
+{
+  "decisionId": "gap-song_southern-420-425",
+  "yearCount": 6,
+  "years": [
+    {
+      "polityId": "song_southern",
+      "year": 420,
+      "conclusion": "六月东晋恭帝司马德文在建康禅位，刘裕于丁卯即皇帝位、改元，完成中央政权转换。建康点只表示刘宋建立后的政治中心阶段。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liu-song-founding-420-425-primary-sources", "liu-song-administrative-evolution-yao-2025", "modern-geography-reference"],
+      "evidenceGap": "禅代发生在年中；东晋与刘宋不可作为同一政权的完整年度控制范围。史料和项目坐标不支持刘宋420年逐界疆域或建康城垣范围。"
+    },
+    {
+      "polityId": "song_southern",
+      "year": 421,
+      "conclusion": "刘宋永初二年，中央政权延续，建康仍为都城与中央政治中心；现有记载可核对政务及对外事件，不能据此复原年度疆界。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liu-song-founding-420-425-primary-sources", "liu-song-administrative-evolution-yao-2025", "modern-geography-reference"],
+      "evidenceGap": "可确认中央政权延续和都城中心，缺少逐界核验的年度直接控制范围依据；中心点不代表地方辖区或边界。"
+    },
+    {
+      "polityId": "song_southern",
+      "year": 422,
+      "conclusion": "五月刘裕去世，太子刘义符即位；刘宋中央政权和建康政治中心延续，继承本身不证明疆域边界变化。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liu-song-founding-420-425-primary-sources", "liu-song-administrative-evolution-yao-2025", "modern-geography-reference"],
+      "evidenceGap": "可确认君主继承和建康中央政务，不能据即位事件推定逐年控制边界；疆域几何留空。"
+    },
+    {
+      "polityId": "song_southern",
+      "year": 423,
+      "conclusion": "少帝刘义符在位，刘宋中央政权延续，建康仍为中央政治中心；年内北方战事不作为刘宋控制线的直接证据。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liu-song-founding-420-425-primary-sources", "liu-song-administrative-evolution-yao-2025", "modern-geography-reference"],
+      "evidenceGap": "军事对峙、北伐意图与局部战事不能替代行政控制边界证据；不将任何战区表达为刘宋疆域。"
+    },
+    {
+      "polityId": "song_southern",
+      "year": 424,
+      "conclusion": "四月徐羡之等废少帝刘义符；八月宜都王刘义隆抵建康并即皇帝位，改元元嘉。政权继承和宫廷权力变化未使中央政治中心离开建康。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liu-song-founding-420-425-primary-sources", "liu-song-administrative-evolution-yao-2025", "modern-geography-reference"],
+      "evidenceGap": "年内废立与皇帝由江陵至建康是阶段性政治事件，不足以界定全年直接控制区；中心点不表示地方接收或军队控制范围。"
+    },
+    {
+      "polityId": "song_southern",
+      "year": 425,
+      "conclusion": "元嘉二年正月文帝刘义隆开始亲理政务，刘宋中央政权以建康为政治中心。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "jiankang",
+      "territoryBoundary": null,
+      "sourceIds": ["liu-song-founding-420-425-primary-sources", "liu-song-administrative-evolution-yao-2025", "modern-geography-reference"],
+      "evidenceGap": "史料可支持政权和政治中心结论，但不足以复原420—425年逐年直辖疆界；不以426年后稳定期或北伐结果倒推。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "liu-song-founding-420-425-primary-sources",
+      "use": "《资治通鉴》卷119—120逐年核对420年刘裕在建康受禅、421年永初二年中央政权延续、422年刘裕去世和刘义符即位、423年少帝朝政局、424年废立与刘义隆抵建康即位，以及425年亲理政务。只支持政权时序和政治中心判断，不提供疆界几何。"
+    },
+    {
+      "id": "liu-song-administrative-evolution-yao-2025",
+      "use": "姚乐《刘宋政区建置沿革补考》（《历史地理研究》2025年第45卷第3期，37—49页，DOI:10.20166/j.issn.2096-6822.L20240268）根据正史纪传与历代地志补订刘宋政区建置、沿革和部分治所地望。此研究覆盖刘宋时期行政地理考辨，不提供420—425年逐年疆界；据此保持政区志与建国初期直接控制疆域的区分。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "仅将项目places目录中的建康（今南京）近似坐标用于D级控制中心点；不表示历史城垣、都城建成区边缘、刘宋地方直辖范围或疆界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "六年均保留疆域面空缺；建康D级点只表达政治中心，不代替疆域图。",
+    "420年政权在年中转换，424年发生废立；按政权有效阶段解释中心点，不将点解释为全年连续控制。",
+    "《宋书·州郡志》及后世地志记录的是有断限、需考辨的政区沿革；姚乐（2025）所作补订可供研究刘宋行政地理，但不足以复原420—425年逐年疆界，不能把跨期政区资料当作建国初期的直接控制边界。",
+    "来源使用权及公开地图展示条件另行核查。"
+  ]
+}

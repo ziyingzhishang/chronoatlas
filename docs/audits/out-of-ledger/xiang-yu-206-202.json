@@ -1,0 +1,24 @@
+{
+  "decisionId": "out-of-ledger-xiang-yu-206-202",
+  "polityId": "xiang_yu",
+  "from": -206,
+  "to": -202,
+  "yearCount": 5,
+  "years": [
+    { "year": -206, "mapExpression": "control-center-point", "centerPlaceId": "pengcheng", "territoryBoundary": null, "conclusion": "项羽自立为西楚霸王，王梁、楚地九郡，都彭城；封刘邦为汉王并分封三秦。项目以“项羽政权”作描述名，不据称号预设正式国号。", "evidenceGap": "九郡所指有不同考释，分封记载不足以确认年内逐郡直接控制或精确边界。", "sourceIds": ["xiang-yu-regime-206-202-primary-sources", "xuzhou-pengcheng-historical-location"] },
+    { "year": -205, "mapExpression": "control-center-point", "centerPlaceId": "pengcheng", "territoryBoundary": null, "conclusion": "楚军回师彭城，汉军战败；彭城仍作为项羽政权中心参照，汉方年末还都栎阳。", "evidenceGap": "战事导致年内城池控制变化，城市级中心点不能表达年内时序或稳定边界。", "sourceIds": ["xiang-yu-regime-206-202-primary-sources", "xuzhou-pengcheng-historical-location"] },
+    { "year": -204, "mapExpression": "control-center-point", "centerPlaceId": "pengcheng", "territoryBoundary": null, "conclusion": "项羽政权与汉王政权持续并存，双方争夺荥阳、成皋与粮道；彭城仅作为项羽政权中心参照。", "evidenceGap": "前线和交通争夺不等同于稳定边界，现有材料不足以逐地标注双方全年直接控制。", "sourceIds": ["xiang-yu-regime-206-202-primary-sources", "han-king-chuhan-206-203-primary-sources"] },
+    { "year": -203, "mapExpression": "control-center-point", "centerPlaceId": "pengcheng", "territoryBoundary": null, "conclusion": "年末汉楚鸿沟约和、楚军暂退；项羽政权仍然存在，彭城为中心参照。", "evidenceGap": "约和与撤军发生在年末，不代表全年边界交接或经测定的鸿沟控制线。", "sourceIds": ["xiang-yu-regime-206-202-primary-sources", "han-king-chuhan-206-203-primary-sources"] },
+    { "year": -202, "mapExpression": "termination-conclusion-no-annual-center", "centerPlaceId": null, "territoryBoundary": null, "conclusion": "垓下战败后项羽至乌江自刎，项羽政权终止；该年为年内终结转换，不表示全年仍由项羽控制彭城。", "evidenceGap": "终结事件可以确认，但不能用年度实体有效期或后期战事回填年初至终结前的连续疆域。", "sourceIds": ["xiang-yu-regime-206-202-primary-sources"] }
+  ],
+  "sourceNotes": [
+    { "id": "xiang-yu-regime-206-202-primary-sources", "use": "《史记·项羽本纪》《高祖本纪》及《资治通鉴》卷九、卷十用于核对封王都彭城、楚汉战事、鸿沟约和及项羽终结；不据战果或分封名义推导全年边界。" },
+    { "id": "xuzhou-pengcheng-historical-location", "use": "采用项目已有彭城城市级近似参考点，只表示政治中心参照，不表示古城址、战场或疆界。" }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "本项为90段coverage台账之外登记的候选复核；新增年度结论不改变原台账的90段及1451条有效年份统计。",
+    "-206至-203年只显示彭城中心点，五年疆域面全部留空；不复制比较地图轮廓，也不把九郡、战区或约和线绘成面。",
+    "“项羽政权”为描述性导航名；史书称“西楚霸王”，正式国号口径不在本记录中作定论。历史审核、制图审核、来源使用权和公开展示条件仍须分别复核。"
+  ]
+}

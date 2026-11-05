@@ -11,7 +11,7 @@ const targetParticipants = {
   'western-qin-founded': ['qifu-guoren', 'qifu-gangui'],
   'southern-yan-founded': ['murong-de', 'murong-chao'],
   'northern-yan-founded': ['gao-yun', 'feng-ba', 'feng-hong'],
-  'southern-chen-founded': ['chen-xu'],
+  'southern-chen-founded': ['chen-baxian'],
   'nanzhao-founded': ['piluo-ge', 'geluofeng'],
 } as const;
 
@@ -57,12 +57,10 @@ describe('event details thirty-second batch', () => {
     });
   });
 
-  it('labels Southern Chen as a successor-stage endpoint rather than inventing its founder', () => {
-    const participant = eventDetails
-      .find((detail) => detail.eventId === 'southern-chen-founded')
-      ?.participants.find((candidate) => candidate.personId === 'chen-xu');
+  it('identifies Chen Baxian as the founder and does not move the founding event to Chen Xu', () => {
+    const participants = eventDetails.find((detail) => detail.eventId === 'southern-chen-founded')?.participants ?? [];
 
-    expect(participant?.role).toContain('后期');
-    expect(participant?.note).toContain('陈霸先');
+    expect(participants.map((participant) => participant.personId)).toContain('chen-baxian');
+    expect(participants.some((participant) => participant.personId === 'chen-xu')).toBe(false);
   });
 });

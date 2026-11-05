@@ -7,13 +7,14 @@ export const polities: Polity[] = [
   { id: 'chu_warring', name: '楚', type: 'kingdom', startYear: -403, endYear: -223, color: '#755c8d', description: '战国七雄之一，疆域主要在江汉与江淮。', sourceIds: ['zizhi-tongjian'] },
   { id: 'yan_warring', name: '燕', type: 'kingdom', startYear: -403, endYear: -222, color: '#668398', description: '战国七雄之一，都城蓟。', sourceIds: ['zizhi-tongjian'] },
   { id: 'qi_warring', name: '齐', type: 'kingdom', startYear: -403, endYear: -221, color: '#a87578', description: '战国七雄之一，都城临淄。', sourceIds: ['zizhi-tongjian'] },
-  { id: 'qin', name: '秦', type: 'dynasty', startYear: -221, endYear: -206, capitalPlaceId: 'xianyang', color: '#b54f45', description: '秦统一六国后建立的中央集权帝国。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'qin', name: '秦', type: 'dynasty', startYear: -221, endYear: -206, capitalPlaceId: 'xianyang', color: '#b54f45', description: '秦统一六国后建立的中央集权帝国。', sourceIds: ['zizhi-tongjian', 'qin-qi-commandery-setup-review-2023'] },
   { id: 'han_western', name: '西汉', type: 'dynasty', startYear: -206, endYear: 9, capitalPlaceId: 'changan', color: '#bd9556', description: '汉高祖至孺子婴时期的汉朝政权。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'xiang_yu', name: '项羽政权', type: 'regime', startYear: -206, endYear: -202, capitalPlaceId: 'pengcheng', color: '#8c6d8f', description: '项羽受封并自立为西楚霸王、都彭城的阶段。采用“项羽政权”作为描述性名称，不据称号断定正式国号；九郡范围及逐年直接控制边界留待逐项考证。', sourceIds: ['han-king-chuhan-206-203-primary-sources'] },
   { id: 'xin', name: '新', type: 'regime', startYear: 9, endYear: 23, capitalPlaceId: 'changan', color: '#8c7762', description: '王莽建立的新朝。', sourceIds: ['zizhi-tongjian'] },
   { id: 'han_eastern', name: '东汉', type: 'dynasty', startYear: 25, endYear: 220, capitalPlaceId: 'luoyang', color: '#d0aa62', description: '光武帝中兴后至汉献帝时期的汉朝政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'wei_three', name: '魏', type: 'kingdom', startYear: 220, endYear: 265, capitalPlaceId: 'luoyang', color: '#8e9b72', description: '三国时期曹魏政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'shu_three', name: '蜀汉', type: 'kingdom', startYear: 221, endYear: 263, capitalPlaceId: 'chengdu', color: '#b46e4f', description: '三国时期刘备建立的政权。', sourceIds: ['zizhi-tongjian'] },
-  { id: 'wu_three', name: '吴', type: 'kingdom', startYear: 222, endYear: 280, capitalPlaceId: 'jiankang', color: '#5f8793', description: '三国时期孙吴政权。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'wu_three', name: '吴', type: 'kingdom', startYear: 221, endYear: 280, capitalPlaceId: 'jiankang', color: '#5f8793', description: '221年受魏封吴王并迁都武昌的孙权政权；222年改元黄武、自立，229年称帝。名义册封、独立阶段与帝号建立分别记录。', sourceIds: ['zizhi-tongjian', 'three-kingdoms-formation-220-223-primary-sources', 'wuchang-wu-capital-location'] },
   { id: 'jin_western', name: '西晋', type: 'dynasty', startYear: 265, endYear: 316, capitalPlaceId: 'luoyang', color: '#b79b68', description: '司马氏建立并短暂统一中国的晋朝。', sourceIds: ['zizhi-tongjian'] },
   { id: 'jin_eastern', name: '东晋', type: 'dynasty', startYear: 317, endYear: 420, capitalPlaceId: 'jiankang', color: '#a88b6e', description: '晋室南渡后在江南延续的政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'cheng_han', name: '成汉', type: 'regime', startYear: 304, endYear: 347, capitalPlaceId: 'chengdu', color: '#9c6c59', description: '十六国时期巴蜀地区的政权。', sourceIds: ['zizhi-tongjian'] },
@@ -22,6 +23,7 @@ export const polities: Polity[] = [
   { id: 'former_yan', name: '前燕', type: 'regime', startYear: 337, endYear: 370, capitalPlaceId: 'ye', color: '#5e8492', description: '十六国时期活动于辽东、河北的政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'former_qin', name: '前秦', type: 'regime', startYear: 351, endYear: 394, capitalPlaceId: 'changan', color: '#9f7b57', description: '十六国时期一度统一北方的政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'later_yan', name: '后燕', type: 'regime', startYear: 384, endYear: 407, capitalPlaceId: 'ye', color: '#668399', description: '十六国后期活动于河北、辽东的政权。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'western_yan', name: '西燕', type: 'regime', startYear: 384, endYear: 394, color: '#8b7491', description: '慕容泓、慕容冲及慕容永等在关中和上党一带建立、迁徙并终结的十六国政权；本项目逐年记录政权结论，边界证据不足时留空。', sourceIds: ['zizhi-tongjian'] },
   { id: 'later_qin', name: '后秦', type: 'regime', startYear: 384, endYear: 417, capitalPlaceId: 'changan', color: '#88745f', description: '十六国后期活动于关中、陇右的政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'xia', name: '夏', type: 'regime', startYear: 407, endYear: 431, capitalPlaceId: 'zhitong', color: '#826d8d', description: '十六国后期活动于河套与陕北的政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'northern_liang', name: '北凉', type: 'regime', startYear: 397, endYear: 439, capitalPlaceId: 'guzang', color: '#648293', description: '十六国后期河西走廊的政权。', sourceIds: ['zizhi-tongjian'] },
@@ -37,6 +39,7 @@ export const polities: Polity[] = [
   { id: 'sui', name: '隋', type: 'dynasty', startYear: 581, endYear: 618, capitalPlaceId: 'changan', color: '#c3a45f', description: '隋文帝重新统一南北的帝国。', sourceIds: ['zizhi-tongjian'] },
   { id: 'tang', name: '唐', type: 'dynasty', startYear: 618, endYear: 907, capitalPlaceId: 'changan', color: '#c79b4d', description: '唐代中国的中央政权。', sourceIds: ['zizhi-tongjian'] },
   { id: 'liang_later', name: '后梁', type: 'dynasty', startYear: 907, endYear: 923, capitalPlaceId: 'kaifeng', color: '#a76558', description: '五代中的第一个中原王朝。', sourceIds: ['zizhi-tongjian'] },
+  { id: 'jin_hedong', name: '河东晋王政权', type: 'local_rule', startYear: 895, endYear: 923, capitalPlaceId: 'taiyuan', color: '#728391', description: '唐末至五代前期李克用、李存勖父子所统河东军政集团。895年受封晋王后以河东节度体系为基础；907年后沿用唐天祐年号并主张复唐，维持事实上的区域自主；923年李存勖称帝建后唐，年内完成政权形态转换。本项目与936年石敬瑭建立的后晋分别建模。', sourceIds: ['hedong-jin-907-923-primary-sources'] },
   { id: 'tang_later', name: '后唐', type: 'dynasty', startYear: 923, endYear: 936, capitalPlaceId: 'luoyang', color: '#769083', description: '五代中的第二个中原王朝。', sourceIds: ['zizhi-tongjian'] },
   { id: 'jin_later', name: '后晋', type: 'dynasty', startYear: 936, endYear: 947, capitalPlaceId: 'kaifeng', color: '#7d8196', description: '五代中的第三个中原王朝。', sourceIds: ['zizhi-tongjian'] },
   { id: 'han_later', name: '后汉', type: 'dynasty', startYear: 947, endYear: 951, capitalPlaceId: 'kaifeng', color: '#a98076', description: '五代中的第四个中原王朝。', sourceIds: ['zizhi-tongjian'] },
@@ -90,6 +93,26 @@ export const polities: Polity[] = [
     ['jingnan', '荆南', 924, 963, '#718f83', '十国之一，江陵附近政权。'],
     ['northern_han', '北汉', 951, 979, '#8388a1', '十国之一，河东地区政权。'],
   ] as [string, string, number, number, string, string, string?][]).map(([id, name, startYear, endYear, color, description, capitalPlaceId]): Polity => ({
-    id, name, startYear, endYear, color, description, capitalPlaceId, type: 'dynasty', sourceIds: ['china-chronology'],
+    id, name, startYear, endYear, color, description, capitalPlaceId, type: 'dynasty',
+    sourceIds: id === 'min'
+      ? ['china-chronology', 'chgis-min-regime-909-943']
+      : id === 'chu_ten'
+        ? ['china-chronology', 'zizhi-tongjian-chu-907-910']
+        : id === 'former_shu'
+          ? ['china-chronology', 'zizhi-tongjian-former-shu-907-910']
+          : id === 'later_shu'
+            ? ['china-chronology', 'zizhi-tongjian-later-shu-934-935', 'quzhou-historical-geography']
+            : id === 'jingnan'
+              ? ['china-chronology', 'zizhi-tongjian-jingnan-924-925']
+              : id === 'northern_han'
+                ? [
+                  'china-chronology',
+                  'zizhi-tongjian-northern-han-951-959',
+                  'xin-wudai-shi-difang-northern-han',
+                  'china-admin-history-five-dynasties-northern-han-map',
+                  'gaoping-battlefield-location',
+                  'shihui-pass-location-reference',
+                ]
+                : ['china-chronology'],
   })),
 ];

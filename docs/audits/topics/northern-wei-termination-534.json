@@ -1,0 +1,41 @@
+{
+  "decisionId": "gap-wei_northern-534-534",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "wei_northern",
+      "year": 534,
+      "conclusion": "公历534年七月孝武帝元修被迫离洛阳入关中，高欢入洛阳；十月高欢在邺拥立元善见，改元天平并迁都邺，东部政权转换已成。史书所记永熙三年闰十二月落在公历535年，元修被害及元宝炬称帝、建立西魏均属535年，不前推至本年。",
+      "mapExpression": "event-location-points",
+      "mapEventIds": ["northern-wei-xiaowu-departs-luoyang-534", "eastern-wei-founded"],
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "sourceIds": [
+        "northern-wei-termination-534-primary-sources",
+        "northern-wei-termination-calendar-conversion",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "史料可确认统一政权终止过程、帝位更替及洛阳、邺、关中等政治节点，却不足以逐时点复原各方实际控制边界；编年农历年跨公历年，须按公历口径处理闰十二月。不能将邺或关中单点当作全年中心，也不能将东魏后续疆域或535年西魏疆域回填为534年北魏疆界。 事件图层可分别标记洛阳离京节点和邺城东魏建政点；两点仅表达事件地点，不是公历534年全年中心或疆界。"
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "northern-wei-termination-534-primary-sources",
+      "use": "《资治通鉴》卷156及《魏书》卷11《出帝纪》核对孝武帝西迁与洛阳政局；《魏书》卷12《孝静纪》核对534年十月元善见在邺即位、改元天平、迁都邺，以及同卷后续闰十二月事件。只支持年度政权转折和地点次序，不直接提供疆界。"
+    },
+    {
+      "id": "northern-wei-termination-calendar-conversion",
+      "use": "按公历年度整理时，用《中国历代朔闰表》（据张培瑜等《中国古代历法》，科学出版社，2008）核对南北朝历法朔闰；永熙三年闰十二月跨入公历535年，故孝武帝之死和元宝炬即位不计入公历534年。此为历法换算辅助依据，不替代本纪事件原文。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "洛阳采用项目既有现代城市区域参照点（112.45,34.62）标记孝武帝离京起点；邺采用项目既有邺城区域参照点（114.37,36.33）标记东魏建政。两个事件点不等同古城城垣、控制范围、年度中心或疆界。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "534年统一北魏疆域继续留空；年内政权转折和政治中心不构成直接控制范围或边界证据。",
+    "东魏和西魏各自的后续疆域不得回填为534年北魏边界；农历纪年和公历年度边界分开处理；来源使用权和公开地图条件另行审核。",
+    "事件图层新增洛阳离京与邺城建政区域点，仅在534年显示；中心点和年度疆域面仍留空。"
+  ]
+}

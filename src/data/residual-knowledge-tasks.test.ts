@@ -49,7 +49,7 @@ describe('2026-10-23 residual knowledge task audit', () => {
     });
   });
 
-  it('closes the supported tasks and keeps the audited task set empty', () => {
+  it('keeps unresolved event locations and participant identities explicitly open', () => {
     const report = auditKnowledgeCoverage();
     const taskKeys = new Set(report.tasks.map((task) => `${task.taskKind}:${task.entityId}`));
 
@@ -57,6 +57,19 @@ describe('2026-10-23 residual knowledge task audit', () => {
     expect(taskKeys.has('event-participant-missing:changan-han-capital')).toBe(false);
     expect(taskKeys.has('event-participant-missing:tang-changan-end')).toBe(false);
 
-    expect([...taskKeys].sort()).toEqual([]);
+    expect([...taskKeys].sort()).toEqual([
+      'event-location-missing:battle-zhongli-507',
+      'event-location-missing:later-qin-founded',
+      'event-location-missing:western-liao-founded',
+      'event-participant-missing:later-shu-suppresses-quzhou-revolt-934',
+      'event-participant-missing:national-government-formed-guangzhou-1925',
+      'event-participant-missing:northeast-reflag-1928',
+      'event-participant-missing:qing-ended-1912',
+      'event-participant-missing:wuhan-national-government-1927',
+      'event-participant-missing:yang-wu-captures-hongzhou-906',
+      'event-participant-missing:yuan-shikai-died-1916',
+      'person-person-relationship-missing:li-keyong',
+      'polity-heritage-missing:jin_hedong',
+    ]);
   });
 });

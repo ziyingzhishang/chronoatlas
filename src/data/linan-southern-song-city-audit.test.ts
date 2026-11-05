@@ -14,14 +14,14 @@ describe('临安南宋城市视角历史链审计', () => {
     const asset = heritageAssets.find((candidate) => candidate.id === 'linan-southern-song-imperial-city-site');
     const detail = getHeritageDetail('linan-southern-song-imperial-city-site');
     const place = places.find((candidate) => candidate.id === 'linan');
-    const capital = capitalHistory.find((candidate) => candidate.polityId === 'song_south' && candidate.placeId === 'linan');
+    const capital = capitalHistory.find((candidate) => candidate.polityId === 'song_south' && candidate.placeId === 'linan' && candidate.validFrom === 1138);
     const sourceIds = new Set(Object.keys(sourceById));
     const polityIds = new Set(polities.map((polity) => polity.id));
     const eventIds = new Set(events.map((event) => event.id));
     const peopleIds = new Set(people.map((person) => person.id));
 
     expect(place).toMatchObject({ modernName: '杭州市', modernAdministrativeUnit: '浙江省杭州市' });
-    expect(capital).toMatchObject({ polityId: 'song_south', placeId: 'linan', validFrom: 1127, validTo: 1279, status: 'actual' });
+    expect(capital).toMatchObject({ polityId: 'song_south', placeId: 'linan', validFrom: 1138, validTo: 1279, role: 'primary', status: 'formal' });
     expect(asset).toMatchObject({ placeId: 'linan', constructionFrom: 1127, constructionTo: 1279 });
     expect(asset?.sourceIds.every((sourceId) => sourceIds.has(sourceId))).toBe(true);
     expect(detail).toBeDefined();

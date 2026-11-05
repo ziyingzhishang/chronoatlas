@@ -28,7 +28,10 @@ describe('round 112 capital reference task C', () => {
     });
     expect(polity?.eventIds).toContain('later-liang-five-dynasties-founded');
     expect(polity?.eventIds).not.toContain('five-dynasties');
-    expect(capital).toMatchObject({ validFrom: 907, validTo: 923 });
+    expect(capital).toMatchObject({ validFrom: 907, validTo: 908, role: 'primary' });
+    expect(capitalHistory).toContainEqual(expect.objectContaining({
+      polityId: 'liang_later', placeId: 'luoyang', validFrom: 909, validTo: 912, role: 'primary',
+    }));
   });
 
   it('classifies the remaining five candidates without forced closure', () => {
@@ -47,7 +50,7 @@ describe('round 112 capital reference task C', () => {
     expect(northernSong).toMatchObject({
       eventId: 'northern-song-founded',
       polityIds: ['song_northern'],
-      locationIds: ['kaifeng'],
+      locationIds: expect.arrayContaining(['kaifeng']),
     });
     expect(genericSong?.phases?.some((phase) => phase.startYear === 960 && phase.endYear === 960)).toBe(true);
     expect(northernSong?.phases?.some((phase) => phase.startYear === 960 && phase.endYear === 960)).toBe(true);

@@ -1,0 +1,34 @@
+{
+  "decisionId": "gap-song_south-1127-1138",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "southern-song-court-route-study",
+      "use": "高桥弘臣《南宋上供米输送问题》引用《建炎以来系年要录》《宋会要辑稿》等资料，核对1127年应天即位后迁扬州、1129—1130年江南迁驻路线、1132年由绍兴移居临安及1134—1138年平江/建康驻跸阶段。本文支持皇帝驻跸节点，不支持宋金全年控制边界。"
+    },
+    {
+      "id": "southern-song-linan-academic-study",
+      "use": "朱溢《南宋三省与临安的城市空间》（《复旦学报》2017年第3期）原文用于补充绍兴元年十一月筹备移跸、1132年正月抵临安，并给出绍兴四年九月至五年二月驻平江、绍兴六年九月至八年二月驻建康、1138年二月后长驻临安的区间。链接采用复旦大学文史研究院文章页；传统纪年逐年映射到公历年，不把区间描述转成疆域边界。"
+    }
+  ],
+  "reviewLimitations": [
+    "1127—1138年共12条年度记录，均为朝廷中心或迁驻节点；疆域面留空，不将多点连接为迁徙线。",
+    "1129年包含海上航段，年度点位不是完整路线或沿途控制区；同年多点表示先后节点，不表示同时驻跸。",
+    "多个年度点表示同一年内先后驻跸，无法表达日级停留时长；本审核不替代来源使用权和公开地图合规审核。"
+  ],
+  "yearCount": 12,
+  "years": [
+    {"year":1127,"conclusion":"五月高宗在应天即位，十月移居扬州；两点表示年内先后政治中心。","mapExpression":"control-center-point","capitalPlaceIds":["song_yingtian","yangzhou"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study"],"evidenceGap":"中心迁驻有据，但不能据驻跸地点推导全年直接控制疆界。"},
+    {"year":1128,"conclusion":"扬州为阶段性驻跸中心。","mapExpression":"control-center-point","capitalPlaceIds":["yangzhou"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study"],"evidenceGap":"有朝廷中心依据，无可复原的逐年连续边界。"},
+    {"year":1129,"conclusion":"金军追击期间朝廷多次迁驻，记录扬州、杭州、建康、越州、明州、温州、台州等来源明确的路线节点。","mapExpression":"control-center-point","capitalPlaceIds":["yangzhou","linan","jiankang","shaoxing","mingzhou_song","wenzhou_song","taizhou_song"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study","southern-song-linan-academic-study"],"evidenceGap":"节点不含海上航段，也不代表沿途实控；不连成迁徙线或疆域。"},
+    {"year":1130,"conclusion":"迁徙路线于四月前后抵达绍兴（越州），此后暂居。","mapExpression":"control-center-point","capitalPlaceIds":["shaoxing"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study"],"evidenceGap":"驻跸中心不能确定全年控制边缘。"},
+    {"year":1131,"conclusion":"年内先驻绍兴；十一月开始筹备移跸临安，记录两个先后中心。","mapExpression":"control-center-point","capitalPlaceIds":["shaoxing","linan"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study","southern-song-linan-academic-study"],"evidenceGap":"年内先后节点不是同时驻跸，也不足以推出疆界。"},
+    {"year":1132,"conclusion":"绍兴二年正月由绍兴移居临安，年内先后驻跸。","mapExpression":"control-center-point","capitalPlaceIds":["shaoxing","linan"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study","southern-song-linan-academic-study"],"evidenceGap":"只标朝廷中心，不将行在转换推作控制线。"},
+    {"year":1133,"conclusion":"临安为稳定驻跸中心。","mapExpression":"control-center-point","capitalPlaceIds":["linan"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study"],"evidenceGap":"驻跸证据不等同全年连续疆界证据。"},
+    {"year":1134,"conclusion":"绍兴四年九月高宗为应对金、齐联军赴平江府；临安与平江为年内先后驻跸中心。","mapExpression":"control-center-point","capitalPlaceIds":["linan","pingjiang"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study","southern-song-linan-academic-study"],"evidenceGap":"驻平江阶段据研究记为绍兴四年九月至五年二月；年内驻跸不能表示控制边界或同时驻留。"},
+    {"year":1135,"conclusion":"绍兴五年二月结束平江驻跸后返回临安；记录年内先后中心。","mapExpression":"control-center-point","capitalPlaceIds":["linan","pingjiang"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study","southern-song-linan-academic-study"],"evidenceGap":"平江阶段于二月结束；城市点不表示停留时长、同时驻留或疆域范围。"},
+    {"year":1136,"conclusion":"绍兴六年九月高宗为指挥对金北伐来到建康；临安与建康为年内先后中心。","mapExpression":"control-center-point","capitalPlaceIds":["linan","jiankang"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study","southern-song-linan-academic-study"],"evidenceGap":"驻建康阶段据研究记为绍兴六年九月至八年二月；北伐计划和驻跸地点不能推成直接控制边界。"},
+    {"year":1137,"conclusion":"朝廷处于建康驻跸和北伐阶段。","mapExpression":"control-center-point","capitalPlaceIds":["jiankang"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study"],"evidenceGap":"中心有据，北伐阶段不足以复原全年疆界。"},
+    {"year":1138,"conclusion":"绍兴八年二月驻建康阶段结束，高宗返回临安并长驻；临安中心的制度定位与1127年建政分开记录。","mapExpression":"control-center-point","capitalPlaceIds":["jiankang","linan"],"territoryBoundary":null,"sourceIds":["southern-song-court-route-study","southern-song-linan-academic-study"],"evidenceGap":"研究所列驻跸区间止于绍兴八年二月；行在稳定不等同疆域边界确定，本段无可审核的连续直接控制几何。"}
+  ]
+}

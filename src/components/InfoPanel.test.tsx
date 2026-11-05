@@ -5,12 +5,13 @@ import { getHistoricalState } from '../domain/history-state';
 import { InfoPanel } from './InfoPanel';
 import { LocaleProvider } from '../i18n/locale';
 import { localizeState } from '../i18n/content';
+import { buildLocalMapData } from '../map/history-map';
 
 test('shows current polities when no entity is selected', () => {
   render(<InfoPanel state={getHistoricalState(937)} selectedEntity={undefined} />);
   expect(screen.getByText('南唐')).toBeInTheDocument();
   expect(screen.queryByText('使用最大参考')).not.toBeInTheDocument();
-  expect(screen.getAllByText('暂无国家边界资料').length).toBeGreaterThan(0);
+  expect(screen.getAllByText('展示控制中心／影响范围').length).toBeGreaterThan(0);
 });
 
 test('does not expose coverage workflow state on the reader surface', async () => {
@@ -66,6 +67,98 @@ test('keeps city audit reports and coordinates out of the reader panel', () => {
   expect(screen.queryByTestId('knowledge-coverage-panel')).not.toBeInTheDocument();
   expect(document.body).not.toHaveTextContent('坐标');
   expect(document.body).not.toHaveTextContent('34.33°N');
+});
+
+test('shows the early Min five-prefecture description with its source while preserving the unfilled boundary status', () => {
+  const state = getHistoricalState(909);
+  render(<LocaleProvider><InfoPanel state={state} selectedEntity={{ type: 'polity', id: 'min' }} /></LocaleProvider>);
+
+  expect(screen.getByText(/909—910年闽国资料概述福、泉、建、漳、汀五州/)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: 'CHGIS 时间地名录：闽国（909—943）' })).toEqual(
+    expect.arrayContaining([
+      expect.objectContaining({ href: 'https://tgaz.fudan.edu.cn/tgaz/placename/hvd_100000' }),
+    ]),
+  );
+  expect(screen.getByText('暂无疆域几何')).toBeInTheDocument();
+  expect(buildLocalMapData(state).boundaries.features.some(feature => (
+    feature.properties?.polityId === 'min' && feature.geometry.type.endsWith('Polygon')
+  ))).toBe(false);
+});
+
+test('shows Ma Chu early territorial events as sourced context without implying a boundary', () => {
+  const state = getHistoricalState(908);
+  render(<LocaleProvider><InfoPanel state={state} selectedEntity={{ type: 'polity', id: 'chu_ten' }} /></LocaleProvider>);
+
+  expect(screen.getByText(/针对907—910年：《资治通鉴》记907年马殷受封楚王、908年楚军攻取岭南六州/)).toBeInTheDocument();
+  expect(screen.getByText(/不足以证明六州全境全年稳定受控/)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: '《资治通鉴》卷二百六十六至二百六十七·后梁纪一至二' }).length).toBeGreaterThan(0);
+  expect(screen.getByText('暂无疆域几何')).toBeInTheDocument();
+  expect(buildLocalMapData(state).boundaries.features.some(feature => (
+    feature.properties?.polityId === 'chu_ten' && feature.geometry.type.endsWith('Polygon')
+  ))).toBe(false);
+});
+
+test('shows Former Shu early territorial events as sourced context without implying a boundary', () => {
+  const state = getHistoricalState(910);
+  render(<LocaleProvider><InfoPanel state={state} selectedEntity={{ type: 'polity', id: 'former_shu' }} /></LocaleProvider>);
+
+  expect(screen.getByText(/针对907—910年前蜀：《资治通鉴》记907年王建在成都即帝位、908年讲武、909年太子判六军/)).toBeInTheDocument();
+  expect(screen.getByText(/910年求取巴、剑二州的交涉不等于已查明各县全年控制/)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: '《资治通鉴》卷二百六十六至二百六十七·后梁纪一至二（前蜀初期）' }).length).toBeGreaterThan(0);
+  expect(screen.getByText('暂无疆域几何')).toBeInTheDocument();
+  expect(buildLocalMapData(state).boundaries.features.some(feature => (
+    feature.properties?.polityId === 'former_shu' && feature.geometry.type.endsWith('Polygon')
+  ))).toBe(false);
+});
+
+test('shows Later Shu founding and Quzhou events as sourced context without implying a boundary', () => {
+  const state = getHistoricalState(934);
+  render(<LocaleProvider><InfoPanel state={state} selectedEntity={{ type: 'polity', id: 'later_shu' }} /></LocaleProvider>);
+
+  expect(screen.getByText(/针对934—935年后蜀：《资治通鉴》卷278—279记934年孟知祥在成都称帝、五镇任命及渠州叛乱平定，935年蜀大赦/)).toBeInTheDocument();
+  expect(screen.getByText(/不能证明全境连续边界/)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: '《资治通鉴》卷二百七十八至二百七十九·后唐纪七至八（后蜀初期）' }).length).toBeGreaterThan(0);
+  expect(screen.getAllByText('《渠县志》沿革及渠州历史地名资料').length).toBeGreaterThan(0);
+  expect(screen.getByText('暂无疆域几何')).toBeInTheDocument();
+  expect(buildLocalMapData(state).boundaries.features.some(feature => (
+    feature.properties?.polityId === 'later_shu' && feature.geometry.type.endsWith('Polygon')
+  ))).toBe(false);
+});
+
+test('shows Jingnan investiture and neighboring regime change as context without implying a boundary', () => {
+  const state = getHistoricalState(925);
+  render(<LocaleProvider><InfoPanel state={state} selectedEntity={{ type: 'polity', id: 'jingnan' }} /></LocaleProvider>);
+
+  expect(screen.getByText(/针对924—925年荆南：《资治通鉴》卷273记924年高季兴进封南平王；卷274记925年后蜀灭亡，高季兴闻讯忧惧/)).toBeInTheDocument();
+  expect(screen.getByText(/封爵和邻国政权更替不能说明荆南疆域变化/)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: '《资治通鉴》卷二七三至二七四·荆南早期' }).length).toBeGreaterThan(0);
+  expect(screen.getByText('暂无疆域几何')).toBeInTheDocument();
+  expect(buildLocalMapData(state).boundaries.features.some(feature => (
+    feature.properties?.polityId === 'jingnan' && feature.geometry.type.endsWith('Polygon')
+  ))).toBe(false);
+});
+
+test('shows Northern Han claimed prefectures and wartime limits with the supporting sources', () => {
+  const state = getHistoricalState(951);
+  render(<LocaleProvider><InfoPanel state={state} selectedEntity={{ type: 'polity', id: 'northern_han' }} /></LocaleProvider>);
+
+  expect(screen.getByText(/针对951—959年北汉：951年《资治通鉴》所称十二州与《新五代史·职方考》所列十州有时间和统计口径差异/)).toBeInTheDocument();
+  expect(screen.getByText(/州目和959年政区图均不足以证明每年实控边界/)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: '《资治通鉴》卷二九〇至二九四·北汉建立与后周战争' }).length).toBeGreaterThan(0);
+  expect(screen.getAllByRole('link', { name: '《新五代史》卷六十·职方考第三' }).length).toBeGreaterThan(0);
+  expect(screen.getAllByRole('link', { name: '《中国行政区划通史·五代十国卷》及其学术评介' }).length).toBeGreaterThan(0);
+  expect(screen.getByText('展示控制中心／影响范围')).toBeInTheDocument();
+  expect(screen.queryByText('直接控制')).not.toBeInTheDocument();
+  expect(buildLocalMapData(state).boundaries.features.some(feature => (
+    feature.properties?.polityId === 'northern_han' && feature.geometry.type.endsWith('Polygon')
+  ))).toBe(false);
+});
+
+test('shows the debated Qin commandery changes in Qi with their research reference', () => {
+  render(<LocaleProvider><InfoPanel state={getHistoricalState(-219)} selectedEntity={{ type: 'polity', id: 'qin' }} /></LocaleProvider>);
+
+  expect(screen.getByText(/齐地郡级区划在统一后出现阶段性调整/)).toBeInTheDocument();
+  expect(screen.getAllByRole('link', { name: '秦代齐地置郡研究述评' }).length).toBeGreaterThan(0);
 });
 
 test('uses the full event catalog in a non-Changan city study view', () => {

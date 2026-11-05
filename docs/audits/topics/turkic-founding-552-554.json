@@ -1,0 +1,55 @@
+{
+  "decisionId": "gap-turkic-552-554",
+  "yearCount": 3,
+  "years": [
+    {
+      "polityId": "turkic",
+      "year": 552,
+      "conclusion": "土门击败柔然并自号伊利可汗，形成突厥汗权；《周书》记战事在怀荒以北。战场位置与汗廷区域核心分开表达。",
+      "mapExpression": "political-core-reference",
+      "centerPlaceId": "uhtuken",
+      "territoryBoundary": null,
+      "sourceIds": ["turkic-founding-552-554-sources", "turkic-orkhon-heritage"],
+      "evidenceGap": "史料支持汗权建立与战事，不足以确定固定都城或可绘疆界；于都斤—鄂尔浑仅作低置信度移动政治核心区域参照。"
+    },
+    {
+      "polityId": "turkic",
+      "year": 553,
+      "conclusion": "土门之后汗位由其子科罗承接，随后汗位与草原诸部关系变化；汗权仍是移动性草原政治网络。",
+      "mapExpression": "political-core-reference",
+      "centerPlaceId": "uhtuken",
+      "territoryBoundary": null,
+      "sourceIds": ["turkic-founding-552-554-sources", "turkic-orkhon-heritage"],
+      "evidenceGap": "传世史籍对承继记载存在异文，不能据单一叙述恢复年度固定中心、全部部众控制或边界。"
+    },
+    {
+      "polityId": "turkic",
+      "year": 554,
+      "conclusion": "十一月突厥再攻柔然，柔然举国奔齐；北齐出兵迎纳柔然，突厥请降。战局变化不能确定双方直接边界。",
+      "mapExpression": "political-core-reference",
+      "centerPlaceId": "uhtuken",
+      "territoryBoundary": null,
+      "sourceIds": ["turkic-founding-552-554-sources", "turkic-orkhon-heritage"],
+      "evidenceGap": "《资治通鉴》记有十一月战局，但未给出可定位战场或边界；柔然奔齐、北齐迎纳、突厥请降不等同于疆域交接，也不等同于稳定边界。区域参照点不表示最大势力范围或确定疆界。"
+    }
+  ],
+  "coexistenceNotes": [
+    "552—554年北齐与突厥并存。邺为近似古都中心点，鄂尔浑为移动核心的概略区域点；两者不连接、不裁剪，不推演双方空间关系。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "turkic-founding-552-554-sources",
+      "use": "《周书》卷50、《北史》卷99与《资治通鉴》卷164—165交叉核对552—554年土门击败柔然、汗号和早期承继；《资治通鉴》卷165记554年十一月突厥再攻柔然、柔然奔齐、北齐迎纳及突厥请降。史籍支持汗权建立和草原政治网络，不给出固定汗廷位置或边界。"
+    },
+    {
+      "id": "turkic-orkhon-heritage",
+      "use": "项目已有于都斤—鄂尔浑区域参照资料仅用于蒙古国中部移动政治核心的概略定位，不作为固定城址、战场或疆界依据。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "552—554年突厥疆域面留空；史料中的战胜、扩张和部众关系不直接绘成疆域。",
+    "于都斤—鄂尔浑使用低置信度区域参照点，controlType维持unspecified，不表达精确控制。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}

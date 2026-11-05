@@ -4,12 +4,18 @@ import { capitalHistory } from './capital-history';
 
 const targetPolityIds = ['zhou_eastern', 'wu_zhou', 'zhou_later'] as const;
 const researchPolityIds = [
+  'yan_warring',
+  'later_yan',
+  'jin_hedong',
   'xiongnu',
+  'silla',
   'tuyuhun',
   'turkic',
   'xia_early',
   'shang',
+  'qin_state',
   'western_qin',
+  'western_liang',
   'northern_yuan',
   'ming_southern',
 ] as const;
@@ -61,9 +67,21 @@ describe('sixth-batch capital history audit', () => {
     }
   });
 
+  it('records Later Yan at Zhongshan from its year-end 385 capital transition', () => {
+    expect(recordsFor('later_yan')).toEqual([
+      expect.objectContaining({
+        placeId: 'zhongshan_lunu', validFrom: 385, validTo: 396,
+        role: 'primary', status: 'actual', confidence: 'low',
+        sourceIds: expect.arrayContaining(['later-yan-zhongshan-location-gazetteer']),
+        notes: expect.stringContaining('年末'),
+      }),
+      expect.objectContaining({placeId: 'longcheng', validFrom: 398, validTo: 407}),
+    ]);
+  });
+
   it('keeps unresolved mobile, disputed, or specialist-research items explicit', () => {
     const report = getCapitalCoverageReport();
-    expect(report.summary.qualifiedPolities).toBe(79);
+    expect(report.summary.qualifiedPolities).toBe(74);
     expect(report.polities.filter((polity) => !polity.qualified).map((polity) => polity.polityId))
       .toEqual(researchPolityIds);
 

@@ -1,0 +1,63 @@
+{
+  "decisionIds": [
+    "gap-min-909-910"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "zizhi-tongjian-min-909-910",
+      "use": "《资治通鉴》卷266—267用于核对王审知受梁封闽王及闽政权早期编年；册封和中央记事不直接证明五州逐县全年实控。"
+    },
+    {
+      "id": "chgis-min-regime-909-943",
+      "use": "CHGIS时间地名录记闽国时段909—943、福州治所及福泉建漳汀五州；其文字说明辖境大体沿袭唐福建方镇，页面空间信息为福州点位，不提供可直接复用的疆域多边形。页面标注CC BY-NC 4.0。"
+    },
+    {
+      "id": "fuzhou-wang-shenzhi-history",
+      "use": "福州市政府王审知人物资料记893年据福州、据全闽及909—910封闽王等；福州党史方志网按年记909受封、910县治变化。用于交叉核对政治中心和地方治理节点，注意封王年份表述有口径差异。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻的 Cliopatria v0.2.1 record 3596（clio-3596-min-911）来源时段为911—935年，snapshot 911，low confidence，control type unspecified。仅作为时段排除依据；不复制或向前延伸其几何，也不据其推定909—910年疆界。"
+    }
+  ],
+  "reviewLimitations": [
+    "909—910年共2条；区域史地资料支持五州概述和福州中心，但不提供可直接复用且适用于两年的精确疆界几何。",
+    "地方资料与事件分期对封闽王的909/910年表述并非完全一致，沿用编年和CHGIS政权分期，不将差异转换为确定的边界变化。",
+    "CHGIS仅引用文字结论与福州点位，不复制其空间数据；五州和今福建省概述不等同于逐县直接控制线。来源许可、历史审图和公开地图条件另行审核。",
+    "相邻 Cliopatria record 3596 始于911年、来源区间至935年，为低置信度且控制性质未定的时段模型；不向909—910年回填，亦不把该来源时段当作早期闽疆界证据。"
+  ],
+  "yearCount": 2,
+  "years": [
+    {
+      "year": 909,
+      "polityId": "min",
+      "conclusion": "王审知受后梁封为闽王，闽进入十国政权分期，福州为政治中心。CHGIS沿革考证记载闽政权领福、泉、建、漳、汀五州，范围大体沿袭唐代福建方镇；后梁册封不等于后梁对福建直接统治。",
+      "mapExpression": "fuzhou-capital-point-and-regional-extent-note",
+      "capitalPlaceId": "fuzhou",
+      "regionalExtent": "福、泉、建、漳、汀五州；CHGIS依据旧方镇沿革称其辖境大体相当今福建省。此为区域历史范围说明，不是精确年度边界线。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-min-909-910",
+        "chgis-min-regime-909-943",
+        "fuzhou-wang-shenzhi-history"
+      ],
+      "evidenceGap": "史料与历史地理资料足以确认都城和五州区域范围概述，但未提供可直接重用且适用于909年的连续精确疆界几何。"
+    },
+    {
+      "year": 910,
+      "polityId": "min",
+      "conclusion": "闽政权仍由王审知在福州治理，延续闽王受封后的福建地方政权阶段。现有来源未显示本年五州范围发生明确变更；福、泉、建、漳、汀仅作为政权区域概述，不据其名义辖境推定边缘县份全年稳定受控。",
+      "mapExpression": "fuzhou-capital-point-and-regional-extent-note",
+      "capitalPlaceId": "fuzhou",
+      "regionalExtent": "福、泉、建、漳、汀五州；CHGIS沿革资料将该范围概括为大体相当今福建省，不能作为精确年度边界线。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-min-909-910",
+        "chgis-min-regime-909-943",
+        "fuzhou-wang-shenzhi-history"
+      ],
+      "evidenceGap": "未发现足以复原910年州县级直接控制边缘的连续坐标；保留政治中心和区域范围说明，不外推为确定疆界。"
+    }
+  ]
+}

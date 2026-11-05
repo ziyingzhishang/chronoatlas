@@ -1,0 +1,50 @@
+{
+  "decisionId": "gap-ming_southern-1644-1644",
+  "yearCount": 1,
+  "years": [
+    {
+      "polityId": "ming_southern",
+      "year": 1644,
+      "conclusion": "1644年明廷在北京崩溃后，南方形成多个延续明统的政治力量；朱由崧于南京监国并即帝位，开启弘光阶段。南京点仅表示该年内弘光政权的政治中心，不表示南明统一政权从年初起全年的单一首都。",
+      "mapExpression": "phase-center-point",
+      "centerPlaceId": "yingtian",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "southern-ming-overview",
+        "southern-ming-hongguang",
+        "ming-shi-vol120-southern-ming",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "1644年是明清鼎革和南明多中心体系形成年；皇位承接与南京中心可确认，但各军镇、地方势力、旧明名义辖区及清军进军占领的时间不同，不能合成全年的南明直接疆域。1645年来源轮廓不适用于本年，不以其他阶段最大疆域回填。"
+    }
+  ],
+  "coexistenceNotes": [
+    "“南明”是后世对多个延续明统阶段的统称；1644年地图点只标识南京弘光阶段的中心，不把1645年后的福州、广州、肇庆中心倒推至本年。",
+    "清廷1644年入关并迁入北京与南京弘光阶段并存；两个城市中心不意味着任一政权全年直接控制其周边未核实区域。",
+    "没有可审核的南明年度疆界几何；不裁剪或拼接明、清及其他势力的候选范围。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "southern-ming-overview",
+      "use": "故宫博物院专题用于区分弘光、隆武、绍武、永历等阶段及“南明”总称，不据此认定1644年已有单一南明中央。"
+    },
+    {
+      "id": "southern-ming-hongguang",
+      "use": "故宫博物院弘光专题用于核对朱由崧1644年在南京监国、即位及南京阶段的时间范围；南京仅作阶段中心。"
+    },
+    {
+      "id": "ming-shi-vol120-southern-ming",
+      "use": "《明史》卷120用于朱由崧宗室身份和南明诸王人物关系参照，不由人物传记推导边界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "应天府以项目地点表中的南京现代城市点定位，不表示明代城墙、府界或弘光控制范围。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "单年地图表达限于弘光政权的南京阶段中心点；不表达连续领土面。",
+    "中心点所属阶段在1644年内开始，不能解释为该阶段覆盖全年每一时点。",
+    "史实、古今地点对应、几何审核和来源使用权分别处理；历史地图公开发布仍需独立合规审核。"
+  ]
+}

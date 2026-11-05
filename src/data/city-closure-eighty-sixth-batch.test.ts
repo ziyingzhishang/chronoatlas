@@ -23,10 +23,14 @@ describe('eighty-sixth city closure: Jiankang and Kaifeng', () => {
     expect(place?.aliases).toEqual(expect.arrayContaining(['建业']));
     expect(place?.modernName).toBe('南京市');
     expect(capitalHistory).toEqual(expect.arrayContaining([
-      expect.objectContaining({ polityId: 'wu_three', placeId: 'jiankang', validFrom: 222, validTo: 280 }),
+      expect.objectContaining({ polityId: 'wu_three', placeId: 'wuchang', validFrom: 221, validTo: 229 }),
+      expect.objectContaining({ polityId: 'wu_three', placeId: 'wuchang', validFrom: 265, validTo: 265 }),
+      expect.objectContaining({ polityId: 'wu_three', placeId: 'jiankang', validFrom: 266, validTo: 280 }),
     ]));
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'jiankang', validFrom: 222, validTo: 280 }),
+      expect.objectContaining({ placeId: 'wuchang', validFrom: 221, validTo: 229 }),
+      expect.objectContaining({ placeId: 'wuchang', validFrom: 265, validTo: 265 }),
+      expect.objectContaining({ placeId: 'jiankang', validFrom: 266, validTo: 280 }),
     ]));
     expect(polity?.eventIds).toContain('wu-three-founded');
     expect(event).toEqual(expect.objectContaining({ placeId: 'jiankang', year: 229, verification: 'checked' }));
@@ -52,10 +56,14 @@ describe('eighty-sixth city closure: Jiankang and Kaifeng', () => {
     expect(place?.aliases).toEqual(expect.arrayContaining(['大梁', '汴州']));
     expect(place?.modernName).toBe('开封市');
     expect(capitalHistory).toEqual(expect.arrayContaining([
-      expect.objectContaining({ polityId: 'liang_later', placeId: 'kaifeng', validFrom: 907, validTo: 923, confidence: 'high' }),
+      expect.objectContaining({ polityId: 'liang_later', placeId: 'kaifeng', validFrom: 907, validTo: 908, role: 'primary', confidence: 'high' }),
+      expect.objectContaining({ polityId: 'liang_later', placeId: 'kaifeng', validFrom: 909, validTo: 912, role: 'secondary', confidence: 'high' }),
+      expect.objectContaining({ polityId: 'liang_later', placeId: 'kaifeng', validFrom: 913, validTo: 923, role: 'primary', confidence: 'high' }),
     ]));
     expect(polity?.capitalPhases).toEqual(expect.arrayContaining([
-      expect.objectContaining({ placeId: 'kaifeng', validFrom: 907, validTo: 923 }),
+      expect.objectContaining({ placeId: 'kaifeng', validFrom: 907, validTo: 908, role: 'primary' }),
+      expect.objectContaining({ placeId: 'kaifeng', validFrom: 909, validTo: 912, role: 'secondary' }),
+      expect.objectContaining({ placeId: 'kaifeng', validFrom: 913, validTo: 923, role: 'primary' }),
     ]));
     expect(polity?.eventIds).toEqual(['later-liang-five-dynasties-founded', 'later-liang-ended-923']);
     expect(event).toEqual(expect.objectContaining({ placeId: 'kaifeng', year: 907, verification: 'checked' }));

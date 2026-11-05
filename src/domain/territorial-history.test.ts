@@ -1,5 +1,7 @@
 import { expect, test } from 'vitest';
 import { getHistoricalState } from './history-state';
+import { boundaryCatalog } from '../data/boundaries';
+import { isDefiniteBoundary } from './boundary-evidence';
 
 test('fills the three kingdoms with three separate period geometries', () => {
   const state = getHistoricalState(250);
@@ -8,7 +10,7 @@ test('fills the three kingdoms with three separate period geometries', () => {
 });
 
 test('does not paint a maximum reference across the Qin unification transition', () => {
-  expect(getHistoricalState(-221).boundaries.some(b => b.polityId === 'qin')).toBe(false);
+  expect(getHistoricalState(-221).boundaries.some(b => b.polityId === 'qin' && isDefiniteBoundary(b))).toBe(false);
   expect(getHistoricalState(-218).boundaries.some(b => b.polityId === 'qin')).toBe(true);
 });
 
@@ -31,7 +33,7 @@ test('Jin succession cannot carry a Western Jin maximum into Eastern Jin', () =>
 });
 
 test('legacy fallback option cannot recreate an explicitly unfilled transition', () => {
-  expect(getHistoricalState(-221, {maximumFallback:true}).boundaries.some(b=>b.polityId==='qin')).toBe(false);
+  expect(getHistoricalState(-221, {maximumFallback:true}).boundaries.some(b=>b.polityId==='qin' && isDefiniteBoundary(b))).toBe(false);
   expect(getHistoricalState(-210, {maximumFallback:false}).boundaries.some(b=>b.polityId==='qin')).toBe(true);
 });
 
@@ -46,9 +48,15 @@ test('world context is filtered to the requested year and never retains a stale 
 
 test('Sixteen Kingdoms transition gaps stay unfilled while sourced neighbors remain visible', () => {
   expect(getHistoricalState(400).boundaries.map(b=>b.polityId)).toEqual(expect.arrayContaining(['western_qin','later_liang','southern_liang']));
-  expect(getHistoricalState(400).boundaries.map(b=>b.polityId)).not.toContain('western_liang');
+  const westernLiangAtFoundation = getHistoricalState(400).boundaries.find(b=>b.polityId === 'western_liang');
+  expect(westernLiangAtFoundation).toMatchObject({geometry:{type:'Point'}, evidence:{derivation:'control-centers'}});
+  expect(isDefiniteBoundary(westernLiangAtFoundation!)).toBe(false);
+  expect(getHistoricalState(399).boundaries.map(b=>b.polityId)).not.toContain('western_liang');
   expect(getHistoricalState(407).boundaries.map(b=>b.polityId)).toContain('western_liang');
-  expect(getHistoricalState(400).boundaries.map(b=>b.polityId)).not.toContain('southern_yan');
+  const southernYanAtFoundation = getHistoricalState(400).boundaries.find(b=>b.polityId === 'southern_yan');
+  expect(southernYanAtFoundation).toMatchObject({geometry:{type:'Point'}, evidence:{derivation:'control-centers'}});
+  expect(isDefiniteBoundary(southernYanAtFoundation!)).toBe(false);
+  expect(getHistoricalState(399).boundaries.map(b=>b.polityId)).not.toContain('southern_yan');
   expect(getHistoricalState(402).boundaries.map(b=>b.polityId)).toContain('southern_yan');
   expect(getHistoricalState(360).boundaries.map(b=>b.polityId)).toContain('former_liang');
   expect(getHistoricalState(420).boundaries.map(b=>b.polityId)).toContain('northern_yan');
@@ -66,4 +74,14 @@ test('Western Qin is absent during its interruption, even when maximum fallback 
     expect(state.boundaries.map(b=>b.polityId)).not.toContain('western_qin');
   }
   expect(getHistoricalState(409).activePolities.map(p=>p.id)).toContain('western_qin');
+});
+
+test('holds the 1949 Republic of China source outline for historical and cartographic review', () => {
+  const source = boundaryCatalog.find(boundary => boundary.id === 'clio-13089-republic-1949');
+  expect(source).toBeDefined();
+  expect(source?.geometryReviewHolds).toEqual(expect.arrayContaining([
+    expect.objectContaining({ conflictId: 'conflict:republic-prc-transition:1949', years: [1949], status: 'requires-review' }),
+  ]));
+  expect(getHistoricalState(1949).boundaries.some(boundary => boundary.id === source?.id)).toBe(false);
+  expect(getHistoricalState(1948).boundaries.some(boundary => boundary.id === 'clio-13073-republic-1948')).toBe(true);
 });

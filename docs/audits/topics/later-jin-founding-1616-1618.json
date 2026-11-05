@@ -1,0 +1,43 @@
+{
+  "decisionId": "gap-later_jin-1616-1618",
+  "yearCount": 3,
+  "years": [
+    {
+      "polityId": "later_jin",
+      "year": 1616,
+      "conclusion": "努尔哈赤在赫图阿拉建立后金并建都于此。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "heturnala",
+      "territoryBoundary": null,
+      "sourceIds": ["dpm-nurhaci-chronology", "dpm-hetu-ala"],
+      "evidenceGap": "都城位置可确认，但建政节点和都城点不足以界定当年后金直接控制疆域。"
+    },
+    {
+      "polityId": "later_jin",
+      "year": 1617,
+      "conclusion": "赫图阿拉仍为后金都城；故宫年表记科尔沁来朝，此事不据以推定臣属或疆域控制。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "heturnala",
+      "territoryBoundary": null,
+      "sourceIds": ["dpm-nurhaci-chronology", "dpm-hetu-ala"],
+      "evidenceGap": "来朝记录可说明政治交往，不能单独证明稳定臣属关系或划定政权边界。"
+    },
+    {
+      "polityId": "later_jin",
+      "year": 1618,
+      "conclusion": "赫图阿拉仍为后金都城；努尔哈赤发布七大恨并对明用兵，但战事起点不构成全年控制边界。",
+      "mapExpression": "capital-point",
+      "centerPlaceId": "heturnala",
+      "territoryBoundary": null,
+      "sourceIds": ["dpm-nurhaci-chronology", "dpm-hetu-ala"],
+      "evidenceGap": "军事行动来源没有提供可复原的年度闭合疆界；不把战事、势力扩张或后续轮廓绘作直接控制面。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "三年均以赫图阿拉都城点表示政治中心，territoryBoundary 保持 null。",
+    "1616年‘后金建立’事件另在事件图层显示赫图阿拉近似点；该事件点与都城点分属不同图层，不表示城墙或疆界。",
+    "1619年萨尔浒战事及之后的疆域断面不回填1616至1618年；本段都城点来自独立的建都记载。",
+    "点位仅供历史地图定位，不表示遗址城墙、行政边界或后金全部控制区域；公开展示与来源使用条件须另行核对。"
+  ]
+}

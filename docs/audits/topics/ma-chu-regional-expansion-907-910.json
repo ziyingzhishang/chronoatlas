@@ -1,0 +1,84 @@
+{
+  "decisionIds": [
+    "gap-chu_ten-907-910"
+  ],
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "youkou-historical-geography",
+      "use": "地名工具书将油口比定为油水入长江处、约在今公安县北部；仅支持低置信度区域级事件点，不定位910年河道、军营或战场。"
+    },
+    {
+      "id": "zizhi-tongjian-chu-907-910",
+      "use": "《资治通鉴》卷266—267：在线文本按907—910年纪年核对马殷受封楚王、908年攻取岭南州名及910年进攻荆南失败等记载；攻取节点只记为军事事件，不等同各州全年稳定直接控制。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "相邻 Cliopatria v0.2.1 record 3641（clio-3641-chu_ten-911）来源时段为911—925年，snapshot 911，low confidence，control type unspecified。仅作时间范围排除依据，不复制或向前延伸其几何，也不据其推定907—910年马楚边界。"
+    }
+  ],
+  "reviewLimitations": [
+    "907—910年共4条；长沙政治中心点及区域事件说明保留，不绘疆界面。908年攻取的六州、910年军队行进地名均缺少逐县接管和全年控制证据。",
+    "事件编年可核；既有范围概述若无法提供对应年份、州县控制状态与可追溯几何，不能用于补画年度控制线。",
+    "相邻 Cliopatria record 3641 始于911年、来源区间至925年，为低置信度且控制性质未定的时段模型；不向907—910年回填，也不把该来源时段当作早期马楚疆界证据。"
+  ],
+  "yearCount": 4,
+  "years": [
+    {
+      "year": 907,
+      "polityId": "chu_ten",
+      "conclusion": "后梁以武安节度使马殷为楚王，楚由唐末藩镇进入十国政权分期；潭州（长沙）为其政治中心。封王承认与后梁的名义关系，不代表后梁直接控制湖南。",
+      "mapExpression": "changsha-capital-point-and-regional-event-note",
+      "capitalPlaceId": "changsha",
+      "regionalExtent": "以潭州（长沙）为政治中心的湖南地方政权；本年封王记录不提供可据以画线的控制边缘。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-chu-907-910"
+      ],
+      "evidenceGap": "可确认楚王受封及中心城市，但现有本年材料没有州县级年度控制范围，也没有连续疆界依据。"
+    },
+    {
+      "year": 908,
+      "polityId": "chu_ten",
+      "conclusion": "楚军先与荆南在沙头交战后议和，继而遣吕师周击岭南，史载取昭、贺、梧、蒙、龚、富六州。此为军事攻取和区域扩展记载；不将六州名目直接等同于全年稳定控制其全境。",
+      "mapExpression": "changsha-capital-point-and-regional-event-note",
+      "capitalPlaceId": "changsha",
+      "regionalExtent": "史载向岭南攻取昭、贺、梧、蒙、龚、富六州；该记述支持区域变化说明，不构成可复原的连续边界。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-chu-907-910"
+      ],
+      "evidenceGap": "史料记攻取六州但未给出州县接管、控制持续时间和边界坐标；战事和州名不足以支撑六州全境的年度直接控制多边形。"
+    },
+    {
+      "year": 909,
+      "polityId": "chu_ten",
+      "conclusion": "本段可核史料未显示马楚在908年攻取六州后，于909年发生足以重绘政权边缘的明确疆域变更。沿用长沙政治中心和上一年攻取事件作为背景，不把军事成果扩写成已核实的州县治理线。",
+      "mapExpression": "changsha-capital-point-and-regional-event-note",
+      "capitalPlaceId": "changsha",
+      "regionalExtent": "以长沙为中心；908年岭南六州战事成果仅作前情，不作为909年全境稳定控制范围。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-chu-907-910"
+      ],
+      "evidenceGap": "卷267未提供909年六州逐地接收或边缘县份年度控制资料；保持未定，不以908年战事或后续疆域反推。"
+    },
+    {
+      "year": 910,
+      "polityId": "chu_ten",
+      "conclusion": "楚王马殷遣军侵荆南，驻于油口，后被高季昌击败，史载斩首五千并追至白田后还。该次战败表明进军不能直接解释为取得荆南领土；长沙政治中心延续。",
+      "mapExpression": "changsha-capital-point-and-youkou-event-point",
+      "capitalPlaceId": "changsha",
+      "regionalExtent": "以长沙为中心；油口、白田为战事地点，不表示楚对其间区域建立稳定控制。",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "zizhi-tongjian-chu-907-910",
+        "youkou-historical-geography"
+      ],
+      "evidenceGap": "战役记载说明楚军入侵与败退；油口仅有低置信度区域比定，不提供楚境或荆南边界坐标，也不得把军队抵达范围绘为疆域。",
+      "mapEventIds": [
+        "ma-chu-defeated-at-youkou-910"
+      ]
+    }
+  ]
+}

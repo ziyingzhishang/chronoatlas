@@ -1,0 +1,80 @@
+{
+  "decisionId": "gap-han_western-6-9",
+  "polityId": "han_western",
+  "from": 6,
+  "to": 9,
+  "yearCount": 4,
+  "years": [
+    {
+      "year": 6,
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "changan",
+      "mapEventIds": ["liu-chong-attacks-wan-6"],
+      "territoryBoundary": null,
+      "conclusion": "居摄元年四月，安众侯刘崇与张绍率从者进攻宛，未能入城而败；同年西羌庞怙、傅幡等反攻西海郡太守。长安仍是中央政治中枢参照，宛地事件点仅表示进攻目标城市，不表示占领。",
+      "evidenceGap": "宛地进攻与西海郡边疆冲突分属不同区域，不说明两地之间的连续控制，也不能恢复汉廷全年直接控制边缘。宛点只表示城市级近似位置，不构成战线或疆界。",
+      "sourceIds": ["han-xin-transition-primary-sources", "wang-mang-spatial-reforms-xiong-2019", "modern-geography-reference", "wan-county-chgis-hvd-82610"]
+    },
+    {
+      "year": 7,
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "changan",
+      "mapEventIds": ["huaili-rebellion-7"],
+      "territoryBoundary": null,
+      "conclusion": "翟义于东郡起兵并移檄郡国，史载郡国皆震；至山阳时众十余万。槐里赵明、霍鸿亦于同年起兵并攻烧官寺，目标指向长安。王莽调兵镇压，长安仍作为中央政治中枢参照，全年控制范围不明。",
+      "evidenceGap": "十余郡国的响应是军事动员和政治响应范围，并不等于持续占领或直接控制；槐里点仅标县治所在区域，不能定位赵明、霍鸿的具体营地、战线或全年稳定控制边缘。",
+      "sourceIds": ["han-xin-transition-primary-sources", "wang-mang-spatial-reforms-xiong-2019", "huaili-han-chgis-hvd-70705", "modern-geography-reference"]
+    },
+    {
+      "year": 8,
+      "mapExpression": "capital-and-event-points",
+      "centerPlaceId": "changan",
+      "mapEventIds": ["huaili-rebellion-suppressed-8"],
+      "territoryBoundary": null,
+      "conclusion": "《资治通鉴》卷三十六记初始元年二月平定前一年起兵的赵明、霍鸿；同年冬王莽即真天子位、定国号为新，并改以当年十二月为始建国元年正月。长安点仅代表政权更替前的中央中枢参照，不表示全年控制范围。",
+      "evidenceGap": "槐里起兵与平叛行动不确定各地全年归属；事件点仅回标叛乱所在县治区域，不确认具体交战地点或各地控制变化。岁末又发生汉、新政权转换，长安点不等于全年疆界。",
+      "sourceIds": ["han-xin-transition-primary-sources", "wang-mang-spatial-reforms-xiong-2019", "huaili-han-chgis-hvd-70705", "modern-geography-reference"]
+    },
+    {
+      "year": 9,
+      "mapExpression": "existing-xin-reference-held-for-review",
+      "centerPlaceId": null,
+      "territoryBoundary": null,
+      "conclusion": "按王莽改正朔后的纪年，公历9年延续为始建国元年；《资治通鉴》卷三十七于该年正月记去汉号并确定新朝名号。原有新朝轮廓仅为9—13年区间参考，因本年政权转换及其未获逐年边界审核，运行帧暂不显示。",
+      "evidenceGap": "王莽在前一年年末、卷三十六初始元年（8）冬已即真并改以十二月为始建国元年正月，卷三十七再按该正朔记9年；公历年度与改历年次交叠。Cliopatria record 1120为低置信度、控制语义未定的9—13年区间模型，不足以确认公历9年全年新朝直接控制边界；仅在9年挂requires-review，原始几何保留，10年起按原来源时段恢复。",
+      "sourceIds": ["han-xin-transition-primary-sources", "wang-mang-spatial-reforms-xiong-2019", "cliopatria"]
+    }
+  ],
+  "sourceNotes": [
+    {
+      "id": "han-xin-transition-primary-sources",
+      "use": "《汉书》王莽传及《资治通鉴》卷三十六、三十七核对6—9年居摄、地方起兵、前8年冬王莽即真并改历、前9年按新正朔记去汉号；不将记载转绘为疆界。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "长安点采用现代西安市近似中心坐标，仅表示政治中心参照，不代表汉长安城垣或行政边界。"
+    },
+    {
+      "id": "wan-county-chgis-hvd-82610",
+      "use": "CHGIS/TGAZ 宛县条目（前272—13年）记治今河南南阳市并提供坐标；用于公元6年进攻宛事件的城市级近似点，不表示刘崇攻入、占领宛或任何控制边界。页面标示CC BY-NC 4.0，授权及公开展示条件另审。"
+    },
+    {
+      "id": "huaili-han-chgis-hvd-70705",
+      "use": "CHGIS/TGAZ 槐里县（前204—13年）将县治定位于今兴平东南南佐村一带；供7年起兵与8年平定事件作县治区域级近似参照，不定位营地、战场或军队控制线。页面标示CC BY-NC 4.0，授权及公开展示条件另审。"
+    },
+    {
+      "id": "wang-mang-spatial-reforms-xiong-2019",
+      "use": "论文据《汉书·地理志》与CHGIS整理王莽时期空间组织，并在图1绘出新朝16年前军事事件及概括性汉疆线；用于补充前6年宛地与西海郡事件、前7年翟义及槐里赵明、霍鸿起兵、前8年二月平乱等年度背景，不将军事事件图或行政改革复原为逐年疆界。论文图件版权属作者，本项目未复用或数字化。"
+    },
+    {
+      "id": "cliopatria",
+      "use": "Cliopatria record 1120原始时段为9—13年，是近似区间模型、控制语义未定。仅在9年挂requires-review并从运行帧隐藏，10—13年原来源时段恢复；不作为已审核的逐年直接控制线。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "疆域边界保持留空，sourceBoundaryIds为空。",
+    "史料核对与空间表达记录不代表独立历史专家或制图审核签核。",
+    "宛县点位使用CHGIS/TGAZ CC BY-NC 4.0数据；来源授权与公开地图展示条件仍须单独核验。来源文本、数字转录版本和公开地图要求分别处理。"
+  ]
+}

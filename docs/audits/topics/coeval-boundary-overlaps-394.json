@@ -1,0 +1,22 @@
+{
+  "year": 394,
+  "reviewStatus": "pending-review",
+  "summary": "No polygon-interior overlap was detected by the corrected screening method. Boundary-only contact does not count as interior overlap; a geometric trigger would require review and would not imply shared historical control.",
+  "method": "Compare source GeoJSON longitude/latitude polygon rings valid in the year using strictly interior edge samples and proper boundary-segment crossings; boundary-only contacts are excluded.",
+  "activeSourceOutlineCount": 9,
+  "overlapPairs": [],
+  "heldBoundaryIds": [],
+  "runtimeDisposition": "No source outline is held by this overlap audit. Original source geometries and validity intervals remain unchanged; this result does not validate the historical accuracy of those low-confidence interval models.",
+  "sourceNotes": [
+    {
+      "id": "cliopatria",
+      "use": "Compared polygons are Cliopatria v0.2.1 source records (CC BY 4.0), labeled low-confidence interval models with unspecified control type. Geometric intersection alone does not prove direct control, disputed control, or a historical frontier. Preserve attribution and provenance; historical suitability and public display require separate review."
+    }
+  ],
+  "reviewLimitations": [
+    "The screen detects geometric area overlap only; it does not identify historical control or an authoritative boundary.",
+    "No detected overlap does not establish that a source interval polygon is a historically accurate annual frontier.",
+    "Source geometries are preserved and are not clipped, split, or reassigned."
+  ],
+  "supersedes": "Earlier contact-sensitive preflight counts for this year. Boundary-only contacts are excluded from interior-overlap findings."
+}

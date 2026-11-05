@@ -1,0 +1,26 @@
+{
+  "decisionId": "gap-southern_yan-410-410",
+  "reviewStatus": "source-checked",
+  "sourceNotes": [
+    {
+      "id": "southern-yan-termination-410-primary-sources",
+      "use": "《资治通鉴》卷115按月记410年正月慕容超登广固、二月刘裕攻破广固及南燕终止；《晋书》卷128用于慕容超传记交叉核对。材料支持广固作为覆亡前的年内终局中心，不支持南燕全年边界或东晋全年稳定接收疆域。"
+    }
+  ],
+  "reviewLimitations": [
+    "410年正月至二月发生攻城和政权终止；广固点仅表示覆亡前阶段，疆域面留空。",
+    "攻城、突围、俘获和后续处置不能转绘为全年稳定边界；本审核不替代来源使用权与公开地图合规审核。"
+  ],
+  "yearCount": 1,
+  "years": [
+    {
+      "year": 410,
+      "conclusion": "正月慕容超仍登广固城；二月刘裕攻破广固，南燕政权终止，慕容超被俘并送往建康。广固仅为覆亡前的年内终局中心。",
+      "mapExpression": "control-center-point",
+      "capitalPlaceId": "guanggu",
+      "territoryBoundary": null,
+      "sourceIds": ["southern-yan-termination-410-primary-sources"],
+      "evidenceGap": "围城、突围、城破和东晋随后处置广固均在年内发生，不能据此画出南燕全年疆界或东晋全年稳定控制边界。"
+    }
+  ]
+}

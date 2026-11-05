@@ -36,19 +36,19 @@ describe('金城—西秦前期阶段性中心城市审计', () => {
     expect(capital).toMatchObject({
       polityId: 'western_qin',
       placeId: 'jincheng',
-      validFrom: 385,
+      validFrom: 388,
       validTo: 400,
       role: 'primary',
       status: 'actual',
       confidence: 'medium',
     });
     expect(asset).toMatchObject({
-      placeId: 'jincheng',
+      placeId: 'yongshi_western_qin',
       constructionFrom: 385,
       constructionTo: 431,
       modernStatus: 'uncertain',
     });
-    expect(detail?.modernLocation).toContain('兰州');
+    expect(detail?.modernLocation).toContain('榆中');
     expect(detail?.associatedPolities).toEqual(
       expect.arrayContaining(['western_qin', 'later_qin', 'xia']),
     );
@@ -74,9 +74,9 @@ describe('金城—西秦前期阶段性中心城市审计', () => {
     expect(detail?.presentDayValue).toBeTruthy();
 
     expect(polity?.id).toBe('western_qin');
-    expect(founded?.id).toBe('western-qin-founded');
+    expect(founded).toMatchObject({ id: 'western-qin-founded', placeId: 'yongshi_western_qin' });
     expect(surrendered?.placeId).toBe('jincheng');
-    expect(restored?.placeId).toBe('jincheng');
+    expect(restored).toMatchObject({ placeId: 'dujianshan', locationPrecision: 'approximate' });
     expect(ended?.placeId).toBe('fuhan');
     for (const sourceId of asset?.sourceIds ?? []) {
       expect(sourceById[sourceId]).toBeDefined();

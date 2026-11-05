@@ -1,0 +1,75 @@
+{
+  "decisionId": "gap-tang_later-923-925",
+  "yearCount": 3,
+  "years": [
+    {
+      "polityId": "tang_later",
+      "year": 923,
+      "conclusion": "同光元年四月李存勖在魏州即皇帝位；随后后唐军攻入开封，后梁终止，后唐迁入洛阳后以洛阳为中央政治中心。魏州即位事件、开封攻取与后续中心是不同空间结论。",
+      "mapExpression": "control-center-point-and-accession-event-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "later-tang-founding-923-925-sources",
+        "weizhou-regional-location-chgis",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "魏州点依据时段为621—626年的CHGIS魏州记录作区域级近似定位，不是923年即位坛址或精确城址；事件点仅表示称帝地点。年内军事取胜、迁入洛阳和地方接收不同步，疆域面留空。",
+      "mapEventIds": [
+        "tang-later-founded"
+      ]
+    },
+    {
+      "polityId": "tang_later",
+      "year": 924,
+      "conclusion": "后唐中央政治中心继续在洛阳，政权处理建政后的军政事务。",
+      "mapExpression": "control-center-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "later-tang-founding-923-925-sources",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "建政后的中央政务可确认，但不据中心点推定对后梁旧地或各方镇的稳定接收边界。"
+    },
+    {
+      "polityId": "tang_later",
+      "year": 925,
+      "conclusion": "后唐中央仍以洛阳为中心；后唐军攻蜀，成都陷落，前蜀中央政权终止。攻取成都不证明年内已稳定直辖巴蜀。",
+      "mapExpression": "control-center-point-and-chengdu-conquest-event-point",
+      "centerPlaceId": "luoyang",
+      "territoryBoundary": null,
+      "sourceIds": [
+        "later-tang-founding-923-925-sources",
+        "modern-geography-reference"
+      ],
+      "evidenceGap": "成都城市级事件点仅表示攻取与政权终止节点，地方接收过程不等同于全年稳定控制面；不以后唐后续范围回填。",
+      "mapEventIds": [
+        "former-shu-ended-925"
+      ]
+    }
+  ],
+  "coexistenceNotes": [
+    "923年后梁终止、后唐建政与迁都分别发生于年内不同阶段；925年攻取成都也不把前蜀旧境自动转为后唐全年直接疆域。"
+  ],
+  "sourceNotes": [
+    {
+      "id": "later-tang-founding-923-925-sources",
+      "use": "《资治通鉴》卷272核对923年后唐建政、攻梁与开封终局；卷273核对924年政务；卷274核对925年攻蜀、成都陷落和前蜀终止。支持中心阶段和事件时序，不直接提供边界。"
+    },
+    {
+      "id": "weizhou-regional-location-chgis",
+      "use": "CHGIS魏州记录（621—626年）提供贵乡县治点与大名县一带地望。其时段不覆盖923年，故仅作为魏州区域的低置信度近似参照，不称即位坛址或准确城址；授权条件需另核。"
+    },
+    {
+      "id": "modern-geography-reference",
+      "use": "洛阳近似城市坐标仅表达D级中央政治中心；成都事件采用项目城市级近似点标记925年攻取和政权终止。两点均不表示五代城垣、后唐疆界或蜀地行政接收范围。"
+    }
+  ],
+  "reviewStatus": "source-checked",
+  "reviewLimitations": [
+    "923—925年疆域面留空；魏州称帝、开封易手和攻取成都分别记录，不连成后唐疆域。",
+    "魏州即位事件点仅作区域近似定位；洛阳中心点不表示年初中心、全境稳定接收或四川直辖范围。",
+    "来源使用权和公开地图条件另行审核。"
+  ]
+}
