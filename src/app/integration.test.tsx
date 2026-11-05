@@ -153,8 +153,8 @@ test('modern city hits stay under one historical place and locating does not cha
   await userEvent.type(screen.getByRole('searchbox', { name: '搜索历史内容' }), '西安市');
   const placeGroup = screen.getByRole('group', { name: /地点/ });
   const results = within(placeGroup).getAllByRole('button').filter(result => result.hasAttribute('aria-pressed'));
-  expect(results.filter(result => result.textContent?.includes('长安'))).toHaveLength(1);
-  expect(within(placeGroup).getByText(/今名命中/)).toBeInTheDocument();
+  expect(results.filter(result => result.querySelector('strong')?.textContent?.trim() === '长安')).toHaveLength(1);
+  expect(results.find(result => result.querySelector('strong')?.textContent?.trim() === '长安')).toHaveTextContent('今名命中');
   await userEvent.click(screen.getByRole('button', { name: '定位到地点：长安' }));
   expect(map).toHaveAttribute('data-year', year);
   expect(mapInstances.at(-1)!.flyTo).toHaveBeenCalled();
