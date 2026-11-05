@@ -36,6 +36,8 @@ test('satellite enhances territory fill and restores relief styling without repl
   rerender(<HistoricalMapCanvas {...initial} basemap="satellite"/>);
   const satellite=map.setPaintProperty.mock.calls.find(c=>c[0]==='boundary-fill'&&c[1]==='fill-opacity')?.[2];
   expect(satellite).toEqual(['case',['==',['get','maximum'],true],0.14,['match',['get','confidence'],'high',0.5,'medium',0.42,0.34]]);
+  expect(map.setPaintProperty).toHaveBeenCalledWith('priority-place-names','text-color','#fff4d8');
+  expect(map.setPaintProperty).toHaveBeenCalledWith('place-selected-name','text-halo-color','#182b27');
   map.setPaintProperty.mockClear();
   rerender(<HistoricalMapCanvas {...initial}/>);
   expect(map.setPaintProperty).toHaveBeenCalledWith('boundary-fill','fill-opacity',['get','opacity']);
@@ -279,6 +281,18 @@ test('selected maximum outlines remain dashed instead of acquiring a solid highl
   expect(map.setFilter).toHaveBeenCalledWith('boundary-disputed-selected',['all',['!=',['get','maximum'],true],['==',['get','controlType'],'disputed'],['==',['get','entityId'],'qin']]);
   expect(map.setFilter).toHaveBeenCalledWith('boundary-influence-selected',['all',['!=',['get','maximum'],true],['==',['get','controlType'],'influence'],['==',['get','entityId'],'qin']]);
   expect(map.setFilter).toHaveBeenCalledWith('boundary-maximum-selected',['all',['==',['get','evidenceLevel'],'C'],['==',['get','entityId'],'qin']]);
+});
+
+test('selected non-capital places keep a low-zoom marker and label without selecting capital markers', () => {
+  const state=getHistoricalState(800);
+  state.places.push({id:'selected-site',historicalName:'选中遗址',aliases:[],longitude:110,latitude:34,pointType:'archaeological-site',sourceIds:[]});
+  render(<HistoricalMapCanvas {...props()} state={state} selectedEntity={{type:'place',id:'selected-site'}}/>);
+  const map=mapInstances.at(-1)!;
+  act(()=>map.emit('style.load'));
+  const filter=['all',['==',['get','entityId'],'selected-site'],['==',['get','isCapital'],false]];
+  expect(map.setFilter).toHaveBeenCalledWith('place-selected',filter);
+  expect(map.setFilter).toHaveBeenCalledWith('place-selected-name',filter);
+  expect(map.setFilter).toHaveBeenCalledWith('capital-selected',['==',['get','placeId'],'selected-site']);
 });
 
 test('focusing across the date line uses the short wrapped longitude interval', () => {

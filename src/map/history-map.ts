@@ -56,8 +56,13 @@ function buildBoundaryData(state:HistoricalState,region:'local'|'world',t:(text:
 
 export function buildLocalMapData(state:HistoricalState,t:(text:string)=>string=text=>text){
   const local=buildBoundaryData(state,'local',t);
+  const activePolityIds=new Set(state.activePolities.map(polity=>polity.id));
+  const activeCapitalPlaceIds=new Set((state.capitalTerms??[])
+    .filter(term=>activePolityIds.has(term.polityId))
+    .map(term=>term.placeId));
   const places = collection(state.places.map(place => point([place.longitude, place.latitude], {
     entityId: place.id, name: place.historicalName, modernName: place.modernName ? `${t('今·')}${place.modernName}` : '',
+    isCapital:activeCapitalPlaceIds.has(place.id), pointType:place.pointType??'unclassified',
   })));
   const events = collection(state.events.flatMap(event => {
     return event.coordinates && event.locationPrecision ? [point(event.coordinates, { entityId: event.id, name: event.title })] : [];
@@ -98,8 +103,8 @@ export function buildMapData(state: HistoricalState, t:(text:string)=>string=tex
 const boundaryLayerIds=['boundary-fill', 'boundary-d-area', 'boundary-line', 'boundary-digitized', 'boundary-maximum', 'boundary-d-centers', 'boundary-indirect', 'boundary-disputed', 'boundary-influence', 'boundary-selected', 'boundary-digitized-selected', 'boundary-d-centers-selected', 'boundary-indirect-selected', 'boundary-disputed-selected', 'boundary-influence-selected', 'boundary-maximum-selected'] as const;
 export const layerGroups: Record<MapLayer, string[]> = {
   boundaries: [...boundaryLayerIds,...boundaryLayerIds.map(id=>`world-${id}`),'polity-names','world-polity-names'],
-  places: ['place-dots', 'place-selected', 'place-names', 'capital-dots', 'capital-names'],
-  modernReference: ['modern-names', 'modern-sovereignty-fill', 'modern-sovereignty-line', 'modern-sovereignty-label'],
+  places: ['place-dots', 'priority-place-dots', 'place-selected', 'capital-selected', 'place-selected-name', 'place-names', 'priority-place-names', 'capital-dots', 'capital-names'],
+  modernReference: ['modern-names', 'priority-modern-names', 'modern-sovereignty-fill', 'modern-sovereignty-line', 'modern-sovereignty-label'],
   events: ['event-rings'],
 };
 
@@ -154,20 +159,35 @@ export function createMapStyle(): StyleSpecification {
         'text-field': ['get', 'name'], 'text-font': font, 'text-size': 20,
         'text-letter-spacing': 0.15, 'text-padding': 10, 'text-max-width': 6,
       }, paint: labelPaint },
-      { id: 'place-dots', type: 'circle', source: 'places', paint: { 'circle-radius': 4, 'circle-color': '#953f32', 'circle-stroke-color': '#fff5de', 'circle-stroke-width': 1.5 } },
+      { id: 'place-dots', type: 'circle', source: 'places', minzoom:6.5, filter:['==',['get','isCapital'],false], paint: { 'circle-radius': 4, 'circle-color': '#953f32', 'circle-stroke-color': '#fff5de', 'circle-stroke-width': 1.5 } },
+      { id: 'priority-place-dots', type:'circle', source:'places', minzoom:4.5, maxzoom:6.5, filter:['all',['==',['get','isCapital'],false],['in',['get','pointType'],['literal',['ancient-city-site','archaeological-site']]]], paint:{'circle-radius':4,'circle-color':'#953f32','circle-stroke-color':'#fff5de','circle-stroke-width':1.5} },
       { id: 'capital-dots', type: 'circle', source: 'capitalPlaces', paint: { 'circle-radius': 7, 'circle-color': '#c6a15b', 'circle-stroke-color': '#5e3724', 'circle-stroke-width': 2 } },
-      { id: 'place-selected', type: 'circle', source: 'places', filter: ['==', ['get', 'entityId'], ''], paint: { 'circle-radius': 9, 'circle-color': '#c6a15b', 'circle-opacity': 0.35, 'circle-stroke-color': '#703222', 'circle-stroke-width': 2 } },
+      { id:'capital-selected',type:'circle',source:'capitalPlaces',filter:['==',['get','placeId'],''],paint:{'circle-radius':10,'circle-color':'#e6b955','circle-stroke-color':'#492d1c','circle-stroke-width':2.5} },
+      { id: 'place-selected', type: 'circle', source: 'places', filter: ['all',['==', ['get', 'entityId'], ''],['==',['get','isCapital'],false]], paint: { 'circle-radius': 9, 'circle-color': '#c6a15b', 'circle-opacity': 0.35, 'circle-stroke-color': '#703222', 'circle-stroke-width': 2 } },
       { id: 'event-rings', type: 'circle', source: 'events', paint: { 'circle-radius': 11, 'circle-color': '#ba4b3e', 'circle-opacity': 0.15, 'circle-stroke-color': '#ba4b3e', 'circle-stroke-width': 2 } },
-      { id: 'place-names', type: 'symbol', source: 'places', layout: {
+      { id: 'place-names', type: 'symbol', source: 'places', minzoom:6.5, filter:['==',['get','isCapital'],false], layout: {
         'text-field': ['get', 'name'], 'text-font': font, 'text-size': 13,
         'text-variable-anchor': ['top', 'bottom', 'left', 'right'], 'text-radial-offset': 0.8,
         'text-padding': 3, 'text-max-width': 7,
       }, paint: labelPaint },
+      { id:'priority-place-names', type:'symbol', source:'places', minzoom:4.5, maxzoom:6.5, filter:['all',['==',['get','isCapital'],false],['in',['get','pointType'],['literal',['ancient-city-site','archaeological-site']]]], layout:{
+        'text-field':['get','name'],'text-font':font,'text-size':13,
+        'text-variable-anchor':['top','bottom','left','right'],'text-radial-offset':0.8,'text-padding':3,'text-max-width':7,
+      }, paint:labelPaint },
+      { id:'place-selected-name', type:'symbol', source:'places', minzoom:0, filter:['all',['==',['get','entityId'],''],['==',['get','isCapital'],false]], layout:{
+        'text-field':['get','name'],'text-font':font,'text-size':14,
+        'text-variable-anchor':['top','bottom','left','right'],'text-radial-offset':0.9,'text-padding':3,'text-max-width':7,
+        'text-allow-overlap':true,'text-ignore-placement':true,
+      }, paint:{...labelPaint,'text-color':'#6d4b22'} },
       { id: 'capital-names', type: 'symbol', source: 'capitalPlaces', layout: {
         'text-field': ['format', ['get', 'name'], {}, '\n', {}, ['get', 'modernName'], {}], 'text-font': font, 'text-size': 14,
         'text-variable-anchor': ['top', 'bottom', 'left', 'right'], 'text-radial-offset': 0.9, 'text-padding': 3,
       }, paint: { ...labelPaint, 'text-color': '#6d4b22' } },
-      { id: 'modern-names', type: 'symbol', source: 'places', minzoom: 4.5, layout: {
+      { id: 'modern-names', type: 'symbol', source: 'places', minzoom: 6.5, filter:['==',['get','isCapital'],false], layout: {
+        'text-field': ['get', 'modernName'], 'text-font': font, 'text-size': 10,
+        'text-anchor': 'top', 'text-offset': [0, 2.3], 'text-padding': 2,
+      }, paint: { ...labelPaint, 'text-color': '#596555', 'text-halo-width': 1.5 } },
+      { id: 'priority-modern-names', type: 'symbol', source: 'places', minzoom: 4.5, maxzoom: 6.5, filter:['all',['==',['get','isCapital'],false],['in',['get','pointType'],['literal',['ancient-city-site','archaeological-site']]]], layout: {
         'text-field': ['get', 'modernName'], 'text-font': font, 'text-size': 10,
         'text-anchor': 'top', 'text-offset': [0, 2.3], 'text-padding': 2,
       }, paint: { ...labelPaint, 'text-color': '#596555', 'text-halo-width': 1.5 } },

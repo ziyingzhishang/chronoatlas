@@ -1,7 +1,8 @@
 import { expect, test } from 'vitest';
 import { getHistoricalState } from '../domain/history-state';
-import { buildMapData, createMapStyle } from './history-map';
+import { buildMapData, createMapStyle, layerGroups } from './history-map';
 import { localizeState } from '../i18n/content';
+import { periods } from '../data/periods';
 
 test('map data follows the year and keeps stable entity identifiers', () => {
   const tang = buildMapData(getHistoricalState(800));
@@ -51,6 +52,56 @@ test('renders Later Liang primary and secondary capitals across its 909 relocati
     .filter(feature => feature.properties?.polityId === 'liang_later')
     .map(feature => [feature.properties?.placeId, feature.properties?.role]).sort())
     .toEqual([['kaifeng', 'secondary'], ['luoyang', 'primary']]);
+});
+
+test('every historical period marks only rendered active capitals as capitals', () => {
+  const sampleYears = periods.flatMap(period => period.intervals
+    ? period.intervals.map(([start, end]) => Math.floor((start + end) / 2))
+    : [Math.floor((period.start + period.end) / 2)]);
+
+  for (const year of sampleYears) {
+    const data = buildMapData(getHistoricalState(year));
+    const renderedCapitalIds = new Set(data.capitalPlaces.features.map(feature => feature.properties?.placeId));
+    const markedCapitalIds = new Set(data.places.features
+      .filter(feature => feature.properties?.isCapital === true)
+      .map(feature => feature.properties?.entityId));
+    expect([...markedCapitalIds].sort(), `capital flags at ${year}`).toEqual([...renderedCapitalIds].sort());
+  }
+});
+
+test('place features carry current capital and existing point-type display metadata', () => {
+  const state = getHistoricalState(800);
+  state.places = [
+    { id: 'capital', historicalName: '长安', aliases: [], longitude: 108.9, latitude: 34.3, pointType: 'ancient-city-site', sourceIds: [] },
+    { id: 'archaeological', historicalName: '遗址城', aliases: [], longitude: 109, latitude: 34, pointType: 'archaeological-site', sourceIds: [] },
+    { id: 'other', historicalName: '普通地点', aliases: [], longitude: 110, latitude: 33, pointType: 'regional-reference', sourceIds: [] },
+  ];
+  state.capitalTerms = [{ polityId: 'tang', placeId: 'capital', validFrom: 618, validTo: 907, role: 'primary', status: 'formal', confidence: 'high', sourceIds: [] }];
+
+  const features = buildMapData(state).places.features;
+  expect(features.map(feature => [feature.properties?.entityId, feature.properties?.isCapital, feature.properties?.pointType])).toEqual([
+    ['capital', true, 'ancient-city-site'],
+    ['archaeological', false, 'archaeological-site'],
+    ['other', false, 'regional-reference'],
+  ]);
+});
+
+test('historical place layers reveal non-capitals by zoom tier and keep selected labels available at every zoom', () => {
+  const layers = createMapStyle().layers;
+  expect(layers.find(layer => layer.id === 'priority-place-dots')).toMatchObject({ minzoom: 4.5, maxzoom: 6.5, filter: ['all', ['==', ['get', 'isCapital'], false], ['in', ['get', 'pointType'], ['literal', ['ancient-city-site', 'archaeological-site']]]] });
+  expect(layers.find(layer => layer.id === 'place-dots')).toMatchObject({ minzoom: 6.5, filter: ['==', ['get', 'isCapital'], false] });
+  expect(layers.find(layer => layer.id === 'priority-place-names')).toMatchObject({ minzoom: 4.5, maxzoom: 6.5 });
+  expect(layers.find(layer => layer.id === 'place-names')).toMatchObject({ minzoom: 6.5 });
+  expect(layers.find(layer => layer.id === 'priority-modern-names')).toMatchObject({ minzoom: 4.5, maxzoom: 6.5, filter: ['all', ['==', ['get', 'isCapital'], false], ['in', ['get', 'pointType'], ['literal', ['ancient-city-site', 'archaeological-site']]]] });
+  expect(layers.find(layer => layer.id === 'modern-names')).toMatchObject({ minzoom: 6.5, filter: ['==', ['get', 'isCapital'], false] });
+  expect(layers.find(layer => layer.id === 'place-selected-name')).toMatchObject({ minzoom: 0, filter: ['all', ['==', ['get', 'entityId'], ''], ['==', ['get', 'isCapital'], false]] });
+  expect(layers.find(layer => layer.id === 'capital-selected')).toMatchObject({ filter: ['==', ['get', 'placeId'], ''] });
+  expect(layers.find(layer => layer.id === 'capital-names')?.minzoom).toBeUndefined();
+  expect(layers.find(layer => layer.id === 'polity-names')?.minzoom).toBeUndefined();
+  expect(layerGroups.modernReference).toContain('priority-modern-names');
+  expect(layerGroups.modernReference).toContain('modern-names');
+  expect(layerGroups.places).not.toContain('priority-modern-names');
+  expect(layerGroups.places).not.toContain('modern-names');
 });
 
 test('separates local and world boundaries into independent sources',()=>{

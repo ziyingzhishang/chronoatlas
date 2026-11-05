@@ -1,4 +1,4 @@
-import { useEffect, useMemo, useState } from 'react';
+import { useEffect, useMemo, useRef, useState } from 'react';
 import { getHistoricalState } from '../domain/history-state';
 import { formatHistoricalYear, getTimelineYears, indexToYear, yearToIndex, type YearWindow } from '../domain/timeline';
 import type { HistoricalEvent, SelectedEntity } from '../domain/types';
@@ -15,7 +15,7 @@ import '../styles/workspace.css';
 import { useWorldSlice } from '../data/world';
 import { LocaleProvider, localeNames, readLocale, useLocale } from '../i18n/locale';
 import { localizeState } from '../i18n/content';
-import { contentSearchText, localizeEvents } from '../i18n/content';
+import { localizeEvents } from '../i18n/content';
 import { queryEvents } from '../domain/events';
 import { MapReadingGuide } from '../components/MapReadingGuide';
 import { EntityDrawer } from '../components/EntityDrawer';
@@ -34,6 +34,7 @@ import type { ReleaseManifest } from '../content/release-types';
 import { MapReleaseStatus } from '../components/MapReleaseStatus';
 import type { MapReleaseCompliance } from '../compliance/map-release';
 import mapReleaseCompliance from '../../public/data/map-release-compliance.json';
+import { buildGlobalSearchIndex, type GlobalSearchType } from '../domain/global-search';
 
 export interface OfflineRuntimeView {
   availableManifest: ReleaseManifest;
@@ -68,8 +69,13 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
   const [eventSearchRegion,setEventSearchRegion]=useState('');
   const [eventSearchCategory,setEventSearchCategory]=useState('');
   const [eventSearchOpen,setEventSearchOpen]=useState(false);
+  const [expandedSearchGroups,setExpandedSearchGroups]=useState<Set<GlobalSearchType>>(()=>new Set());
+  const eventSearchInput=useRef<HTMLInputElement>(null);
+  const eventSearchPopover=useRef<HTMLDivElement>(null);
+  const eventSearchScrollTop=useRef(0);
+  const restoreEventSearch=useRef(false);
   const [directoryOpen,setDirectoryOpen]=useState(false);
-  const [focusRequest,setFocusRequest]=useState<{id:string;nonce:number}|undefined>();
+  const [focusRequest,setFocusRequest]=useState<{type:'event'|'place';id:string;nonce:number}|undefined>();
   const [mapRefreshToken,setMapRefreshToken]=useState(0);
   const [panelResizeDeferred,setPanelResizeDeferred]=useState(false);
   const [timelineWindow,setTimelineWindow]=useState<YearWindow>(DEFAULT_TIMELINE_WINDOW);
@@ -88,13 +94,26 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
   const distanceLabel = formatPresentDistance(yearsFromPresent(currentYear, new Date().getFullYear()), locale);
   const timelineWindowLabel = `${t('当前视窗')} · ${formatHistoricalYear(timelineWindow[0])}—${formatHistoricalYear(timelineWindow[1])}`;
   const localizedEvents=useMemo(()=>localizeEvents(events,locale),[locale]);
-  const eventSearchMatches=useMemo(()=>queryEvents(localizedEvents,{region:eventSearchRegion,category:eventSearchCategory}).filter(event=>!eventSearchQuery.trim()||contentSearchText(event).includes(eventSearchQuery.trim().toLocaleLowerCase())).slice(0,6),[localizedEvents,eventSearchQuery,eventSearchRegion,eventSearchCategory]);
+  const searchableEvents=useMemo(()=>[...new Map([...events,...detailEvents].map(event=>[event.id,event])).values()],[events,detailEvents]);
+  const localizedDetailEvents=useMemo(()=>localizeEvents(detailEvents,locale),[detailEvents,locale]);
+  const localizedSearchEvents=useMemo(()=>localizeEvents(searchableEvents,locale),[searchableEvents,locale]);
+  const globalSearchIndex=useMemo(()=>buildGlobalSearchIndex({events:searchableEvents,eventDetails:catalog.eventDetails as unknown as Record<string,unknown>[],people,personDetails:personDetails as unknown as Record<string,unknown>[],polities,polityDetails:catalog.polityDetails as unknown as Record<string,unknown>[],places,heritage,heritageDetails:heritageDetails as unknown as Record<string,unknown>[],claims,sources:catalog.sources,capitalTerms:catalog.capitalTerms},value=>t(value)),[searchableEvents,catalog.eventDetails,catalog.polityDetails,catalog.sources,catalog.capitalTerms,people,personDetails,polities,places,heritage,heritageDetails,claims,t]);
+  const categoryOptions=globalSearchIndex.categories;
+  const globalResults=useMemo(()=>globalSearchIndex.search(eventSearchQuery,{region:(eventSearchRegion||undefined) as 'china'|'world'|undefined,category:eventSearchCategory||undefined}),[globalSearchIndex,eventSearchQuery,eventSearchRegion,eventSearchCategory]);
   const timelineEvents=useMemo(()=>{
-    const filtered=queryEvents(localizedEvents,{region:eventSearchRegion,category:eventSearchCategory}).filter(event=>event.year <= timelineWindow[1] && (event.endYear ?? event.year) >= timelineWindow[0]);
+    if(eventSearchCategory&&!eventSearchCategory.startsWith('event:'))return [];
+    const eventCategory=eventSearchCategory.startsWith('event:')?eventSearchCategory.slice('event:'.length):'';
+    const filtered=queryEvents(localizedEvents,{region:eventSearchRegion,category:eventCategory}).filter(event=>event.year <= timelineWindow[1] && (event.endYear ?? event.year) >= timelineWindow[0]);
     if(eventGroup?.length)return filtered.filter(event=>eventGroup.includes(event.id));
-    const current=eventsAtYear(filtered,currentYear);
-    return (current.length ? current : [...filtered].sort((a,b)=>Math.abs(a.year-currentYear)-Math.abs(b.year-currentYear))).slice(0,6);
+    return eventsAtYear(filtered,currentYear).slice(0,6);
   },[localizedEvents,currentYear,eventSearchRegion,eventSearchCategory,timelineWindow,eventGroup]);
+
+  useEffect(()=>{
+    if(!eventSearchOpen||detailEntity||!restoreEventSearch.current)return;
+    if(eventSearchPopover.current)eventSearchPopover.current.scrollTop=eventSearchScrollTop.current;
+    eventSearchInput.current?.focus({preventScroll:true});
+    restoreEventSearch.current=false;
+  },[eventSearchOpen,detailEntity]);
 
   useEffect(() => {
     if (!isPlaying) return undefined;
@@ -124,6 +143,7 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
   }
 
   function changeYear(year:number){setCurrentYear(year);setSelectedEntity(undefined);setEventGroup(undefined);setIsPlaying(false);}
+  function viewEventYear(year:number,eventId:string){setCurrentYear(year);setEventGroup(undefined);setIsPlaying(false);setSelectedEntity({type:'event',id:eventId});setEventSearchOpen(true);}
   function commitYear(year:number){changeYear(year);setMapRefreshToken(token=>token+1);}
   function togglePlayback(){
     if(isPlaying){setIsPlaying(false);setMapRefreshToken(token=>token+1);return;}
@@ -145,10 +165,14 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
     if(entity.type==='event'){const event=events.find(e=>e.id===entity.id);if(event)selectEvent(event);return;}
     setSelectedEntity(entity);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(true);
   }
-  function selectEvent(event:HistoricalEvent){setCurrentYear(eventYear(event,currentYear));setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
+  function previewEvent(event:HistoricalEvent){setIsPlaying(false);setEventGroup(undefined);setSelectedEntity({type:'event',id:event.id});setPanel(null);setEventSearchOpen(true);}
+  function selectEvent(event:HistoricalEvent){viewEventYear(eventYear(event,currentYear),event.id);setPanel(null);}
   function openDetail(entity: DetailEntity) {
     if (detailEntity?.type === entity.type && detailEntity.id === entity.id) return;
-    if (!detailEntity) setDetailOrigin({ directoryOpen, eventSearchOpen });
+    if (!detailEntity) {
+      setDetailOrigin({ directoryOpen, eventSearchOpen });
+      if(eventSearchOpen){eventSearchScrollTop.current=eventSearchPopover.current?.scrollTop??0;restoreEventSearch.current=true;}
+    }
     if (detailEntity && (detailEntity.type !== entity.type || detailEntity.id !== entity.id)) {
       const title = detailTitle(detailEntity, catalog);
       setDetailHistory((history) => [...history, { entity: detailEntity, title }].slice(-12));
@@ -182,8 +206,26 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
     }
   }
   const worldMessage=!showWorld?'开启后随所选年份显示全球政权。':world.status==='loading'?'正在加载本世纪世界资料…':world.status==='error'?'世界资料加载失败；中国图层不受影响。':world.status==='unavailable'?'世界来源仅覆盖前3400—2024年，本年不沿用旧图。':`世界 ${historicalState.activePolities.filter(p=>p.region==='world').length} 个来源实体 · 未逐国独立校勘`;
-  const visibleSearchEvents=eventSearchQuery.trim()?eventSearchMatches:timelineEvents;
-  const selectedSearchEvent=selectedEntity?.type==='event'?visibleSearchEvents.find(event=>event.id===selectedEntity.id):undefined;
+  const visibleSearchEvents=timelineEvents;
+  const selectedSearchEvent=selectedEntity?.type==='event'&&(
+    eventSearchQuery.trim()?globalResults.some(result=>result.type==='event'&&result.id===selectedEntity.id):visibleSearchEvents.some(event=>event.id===selectedEntity.id)
+  )?localizedSearchEvents.find(event=>event.id===selectedEntity.id):undefined;
+  const groupedGlobalResults=useMemo(()=>{
+    const groups:GlobalSearchType[]=['event','person','polity','place','heritage'];
+    return groups.map(type=>({type,results:globalResults.filter(result=>result.type===type)})).filter(group=>group.results.length>0);
+  },[globalResults]);
+  function openSearchResult(type:GlobalSearchType,id:string){
+    if(type==='event'){
+      const event=localizedSearchEvents.find(item=>item.id===id);
+      if(event)previewEvent(event);
+      return;
+    }
+    openDetail({type,id});
+  }
+  function locateSearchPlace(id:string){
+    setSelectedEntity({type:'place',id});setEventSearchOpen(false);setDirectoryOpen(true);
+    setFocusRequest(previous=>({type:'place',id,nonce:(previous?.nonce??0)+1}));
+  }
   const titles:Record<PanelName,string>={layers:'图层与底图',events:'历史转折',details:'地域与政权',more:'阅读说明与来源'};
   return <main className="workspace">
     <WorkspaceShell
@@ -197,19 +239,27 @@ function HistoryWorkspace({ offlineRuntime, mapReleaseCompliance: compliance }: 
           distanceLabel={distanceLabel} windowLabel={timelineWindowLabel} expanded={directoryOpen}
           onToggle={()=>{setSelectedEntity(undefined);setPanel(null);setEventSearchOpen(false);setDirectoryOpen(value=>!value);}} />
         <div className="event-search-dock-wrap" onBlur={e=>{if(!e.currentTarget.contains(e.relatedTarget as Node|null))setEventSearchOpen(false);}}>
-          <label className="event-search-dock"><span className="sr-only">{t('查找历史转折')}</span><input type="search" aria-label={t('搜索历史事件')} placeholder={t('搜索事件、背景或影响')} value={eventSearchQuery} onFocus={()=>{setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>setEventSearchQuery(e.target.value)}/></label>
+          <label className="event-search-dock"><span className="sr-only">{t('搜索历史内容')}</span><input ref={eventSearchInput} type="search" aria-label={t('搜索历史内容')} placeholder={t('搜索事件、人物、政权、古今地名与遗址')} value={eventSearchQuery} onFocus={()=>{setDirectoryOpen(false);setEventSearchOpen(true);}} onChange={e=>{setEventSearchQuery(e.target.value);setExpandedSearchGroups(new Set());}}/></label>
           {directoryOpen&&!eventSearchOpen&&(
               <DirectoryPopover id="directory-popover" state={historicalState} selectedEntity={selectedEntity} onSelectEntity={selectEntity} onBackToDirectory={()=>setSelectedEntity(undefined)} onClose={()=>{setSelectedEntity(undefined);setDirectoryOpen(false);}} onYearChange={changeYear} onOpenEntity={openDetail}/>
           )}
-          {eventSearchOpen&&<div className="event-search-popover">
-            <div className="event-search-filters"><select aria-label={t('事件地域')} value={eventSearchRegion} onChange={e=>setEventSearchRegion(e.target.value)}><option value="">{t('全部地域')}</option><option value="china">{t('中国历史')}</option><option value="world">{t('同期世界')}</option></select><select aria-label={t('事件类别')} value={eventSearchCategory} onChange={e=>setEventSearchCategory(e.target.value)}><option value="">{t('全部类别')}</option>{[...new Set(events.map(e=>e.category).filter((value): value is string=>Boolean(value)))].map(category=><option key={category} value={category}>{t(category)}</option>)}</select></div>
-            <div className="event-search-results" role="listbox" aria-label={t('搜索历史事件')}>
-              {visibleSearchEvents.map((event:HistoricalEvent)=><button key={event.id} type="button" role="option" aria-selected={selectedEntity?.type==='event'&&selectedEntity.id===event.id} onClick={()=>selectEvent(event)}><strong>{t(event.title)}</strong><span>{t(event.category??'历史转折')} · {t(event.region==='world'?'同期世界':'中国历史')}</span></button>)}
-              {!visibleSearchEvents.length&&<p className="detail-note">{t(eventSearchQuery.trim()?'没有符合筛选条件的事件':'本年暂无已收录事件')}</p>}
-            </div>
-            {selectedSearchEvent&&<EventDetailCard event={selectedSearchEvent} year={currentYear} onYearChange={changeYear} onBack={()=>setSelectedEntity(undefined)} onOpenEntity={openDetail} onLocate={event=>{
+          {eventSearchOpen&&<div ref={eventSearchPopover} className="event-search-popover">
+            <div className="event-search-filters"><select aria-label={t('搜索地域')} value={eventSearchRegion} onChange={e=>setEventSearchRegion(e.target.value)}><option value="">{t('全部地域')}</option><option value="china">{t('中国历史')}</option><option value="world">{t('同期世界')}</option></select><select aria-label={t('搜索类别')} value={eventSearchCategory} onChange={e=>setEventSearchCategory(e.target.value)}><option value="">{t('全部类别')}</option>{categoryOptions.map(option=><option key={option.value} value={option.value}>{option.label}</option>)}</select></div>
+            {!eventSearchQuery.trim()?<div className="event-search-results" role="listbox" aria-label={t('本年历史事件')}>
+              {visibleSearchEvents.map((event:HistoricalEvent)=><button key={event.id} type="button" role="option" aria-selected={selectedEntity?.type==='event'&&selectedEntity.id===event.id} onClick={()=>previewEvent(event)}><strong>{t(event.title)}</strong><span>{t(event.category??'历史转折')} · {t(event.region==='world'?'同期世界':'中国历史')}</span></button>)}
+              {!visibleSearchEvents.length&&<p className="detail-note">{t('本年暂无已收录事件')}</p>}
+            </div>:<div className="event-search-results global-search-groups" aria-label={t('搜索历史内容')}>
+              {groupedGlobalResults.map(group=>{const expanded=expandedSearchGroups.has(group.type);const shown=expanded?group.results:group.results.slice(0,5);return <section key={group.type} className="global-search-group" role="group" aria-label={`${t(({event:'事件',person:'人物',polity:'政权',place:'地点',heritage:'遗址遗产'} as Record<GlobalSearchType,string>)[group.type])} · ${group.results.length}`}>
+                <h3>{t(({event:'事件',person:'人物',polity:'政权',place:'地点',heritage:'遗址遗产'} as Record<GlobalSearchType,string>)[group.type])}<span>{group.results.length}</span></h3>
+                <ul className="global-search-list">{shown.map(result=>{const detail=result.type==='event'?localizedSearchEvents.find(item=>item.id===result.id):undefined;const caption=result.type==='event'?`${formatHistoricalYear(result.year??detail?.year??currentYear)} · ${t(result.category??'历史转折')}`:result.type==='place'?[result.modernName?`${t('今名')} ${t(result.modernName)}`:'',result.matchKind==='modern-name'?t('今名命中'):t('历史地名')].filter(Boolean).join(' · '):result.category?t(categoryOptions.find(option=>option.value===result.categoryValue)?.label??result.category):t(result.matchKind==='related'?'关联资料命中':result.matchKind==='content'?'正文命中':result.matchKind==='alias'?'别名命中':'名称命中');const selected=selectedEntity?.type===result.type&&selectedEntity.id===result.id;return <li className="global-search-result" key={result.key}><button type="button" aria-pressed={selected} onClick={()=>openSearchResult(result.type,result.id)}><strong>{t(result.title)}</strong><span>{caption}</span></button>{result.type==='place'&&<button type="button" className="global-search-locate" aria-label={`${t('定位到地点')}：${t(result.title)}`} onClick={()=>locateSearchPlace(result.id)}>{t('定位')}</button>}</li>})}</ul>
+                {group.results.length>5&&<button type="button" className="global-search-more" onClick={()=>setExpandedSearchGroups(previous=>{const next=new Set(previous);if(next.has(group.type))next.delete(group.type);else next.add(group.type);return next;})}>{t(expanded?'收起结果':'更多结果')} · {group.results.length}</button>}
+              </section>})}
+              {!globalResults.length&&<p className="detail-note">{t('没有符合搜索条件的历史内容')}</p>}
+            </div>}
+            {selectedSearchEvent&&<EventDetailCard event={selectedSearchEvent} year={currentYear} onYearChange={year=>viewEventYear(year,selectedSearchEvent.id)} onBack={()=>setSelectedEntity(undefined)} onOpenEntity={openDetail} onLocate={event=>{
+              viewEventYear(eventYear(event,currentYear),event.id);
               setVisibleLayers(layers=>new Set([...layers,'events']));
-              setFocusRequest(previous=>({id:event.id,nonce:(previous?.nonce??0)+1}));
+              setFocusRequest(previous=>({type:'event',id:event.id,nonce:(previous?.nonce??0)+1}));
             }}/>}
           </div>}
         </div>

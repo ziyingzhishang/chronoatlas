@@ -63,7 +63,7 @@ function updateWorldHistory(map:GLMap,state:HistoricalState,t:(text:string)=>str
 }
 
 const boundaryLayerVariants=(id:string)=>[id,`world-${id}`];
-const interactiveMapLayers=['place-dots','place-names','capital-dots','capital-names','event-rings',...[
+const interactiveMapLayers=['place-dots','priority-place-dots','place-names','priority-place-names','modern-names','priority-modern-names','place-selected','place-selected-name','capital-dots','capital-selected','capital-names','event-rings',...[
   'boundary-fill','boundary-d-area','boundary-line','boundary-digitized','boundary-maximum','boundary-d-centers',
   'boundary-indirect','boundary-disputed','boundary-influence','boundary-selected','boundary-digitized-selected',
   'boundary-d-centers-selected','boundary-indirect-selected','boundary-disputed-selected','boundary-influence-selected','boundary-maximum-selected',
@@ -87,7 +87,11 @@ function updatePresentation(map: GLMap, props: Props) {
     }
   }
   for(const id of boundaryLayerVariants('boundary-maximum-selected'))map.setFilter(id, ['all',['==',['get','evidenceLevel'],'C'],['==', ['get', 'entityId'], selectedPolity]]);
-  map.setFilter('place-selected', ['==', ['get', 'entityId'], props.selectedEntity?.type === 'place' ? props.selectedEntity.id : '']);
+  const selectedPlace=props.selectedEntity?.type === 'place' ? props.selectedEntity.id : '';
+  const selectedPlaceFilter=['all',['==',['get','entityId'],selectedPlace],['==',['get','isCapital'],false]] as any;
+  map.setFilter('place-selected', selectedPlaceFilter);
+  map.setFilter('place-selected-name', selectedPlaceFilter);
+  map.setFilter('capital-selected',['==',['get','placeId'],selectedPlace]);
   const dark = props.basemap === 'satellite';
   for(const id of boundaryLayerVariants('boundary-fill'))map.setPaintProperty(id, 'fill-opacity', boundaryOpacity(props.basemap));
   for (const id of ['boundary-fill', 'boundary-d-area', 'boundary-line', 'boundary-digitized', 'boundary-maximum', 'boundary-indirect', 'boundary-disputed', 'boundary-influence']) {
@@ -104,7 +108,7 @@ function updatePresentation(map: GLMap, props: Props) {
   }
   map.setPaintProperty('modern-sovereignty-fill', 'fill-color', ['get', dark ? 'satelliteColor' : 'color']);
   map.setPaintProperty('modern-sovereignty-line', 'line-color', ['get', dark ? 'satelliteColor' : 'color']);
-  for (const id of ['polity-names','world-polity-names', 'place-names', 'capital-names', 'modern-names', 'modern-sovereignty-label']) {
+  for (const id of ['polity-names','world-polity-names', 'place-names', 'priority-place-names', 'place-selected-name', 'capital-names', 'modern-names', 'priority-modern-names', 'modern-sovereignty-label']) {
     map.setPaintProperty(id, 'text-color', dark ? '#fff4d8' : id === 'modern-names' ? '#596555' : '#253731');
     map.setPaintProperty(id, 'text-halo-color', dark ? '#182b27' : '#fff7df');
   }

@@ -45,10 +45,10 @@ export function CityHistoryTimeline({ nodes, missingData = [], onOpenEntity }: C
       {visibleNodes.map((node) => <li key={node.id} data-entity-type={node.type}>
         <span className="city-history-timeline-year">{formatYear(node.year, node.periodLabel)}</span>
         <button type="button" onClick={() => onOpenEntity(node.entity)}>{node.label}</button>
-        <ReaderNotes className="city-history-timeline-evidence" note={{
+        {node.evidence.uncertaintyNotes.length > 0 && <ReaderNotes className="city-history-timeline-evidence" note={{
           uncertainty: node.evidence.uncertaintyNotes.join('；') || undefined,
           sources: [],
-        }} />
+        }} />}
       </li>)}
       {visibleNodes.length === 0 && <li className="detail-note">暂无符合筛选条件的节点</li>}
     </ol>

@@ -234,7 +234,7 @@ main { min-height: 100vh; }
 .city-history-timeline-heading { display:flex; align-items:baseline; justify-content:space-between; gap:8px; }
 .city-history-timeline-heading h2 { margin:2px 0 8px; color:var(--gold); font-size:15px; font-weight:500; }
 .city-history-timeline-filters { display:flex; flex-wrap:wrap; gap:4px; margin-bottom:10px; }
-.city-history-timeline-filters button { border:1px solid rgba(198,161,91,.3); padding:3px 7px; color:var(--paper-muted); background:transparent; font-size:11px; }
+.city-history-timeline-filters button { min-height:44px; border:1px solid rgba(198,161,91,.3); padding:8px 10px; color:var(--paper-muted); background:transparent; font-size:12px; }
 .city-history-timeline-filters button[aria-pressed="true"] { color:var(--panel); background:var(--gold); }
 .city-history-timeline-missing { margin-bottom:8px; padding:6px 8px; border-left:2px solid #c67b5c; color:var(--paper-muted); font-size:11px; }
 .city-history-timeline-missing p { margin:2px 0; }
@@ -242,7 +242,7 @@ main { min-height: 100vh; }
 .city-history-timeline-list::before { position:absolute; top:4px; bottom:4px; left:3px; width:1px; background:rgba(198,161,91,.35); content:""; }
 .city-history-timeline-list li { position:relative; display:grid; grid-template-columns:74px 1fr; gap:8px; align-items:center; min-height:28px; }
 .city-history-timeline-list li::before { position:absolute; left:-12px; width:6px; height:6px; border:1px solid var(--gold); border-radius:50%; background:var(--panel); content:""; }
-.city-history-timeline-year { color:var(--paper-muted); font-size:10px; white-space:nowrap; }
+.city-history-timeline-year { color:var(--paper-muted); font-size:12px; white-space:nowrap; }
 .city-history-timeline-list li button { border:0; padding:3px 5px; color:var(--paper); background:transparent; text-align:left; font-size:12px; }
 .city-history-timeline-list li button:hover { color:var(--gold); background:rgba(198,161,91,.1); }
 .relationship-graph { overflow:hidden; border:1px solid rgba(198,161,91,.16); padding:8px; background:rgba(8,12,16,.26); }
@@ -258,13 +258,13 @@ main { min-height: 100vh; }
 .relationship-node-person circle { fill:rgba(119,145,129,.7); }
 .relationship-node-heritage circle { fill:rgba(164,125,85,.7); }
 .relationship-node text { fill:var(--paper); font-size:10px; }
-.relationship-graph-text { list-style:none; margin:4px 0 0; padding:0; color:var(--paper-muted); font-size:11px; line-height:1.6; }
+.relationship-graph-text { list-style:none; margin:4px 0 0; padding:0; color:var(--paper-muted); font-size:12px; line-height:1.7; }
 .relationship-graph-text button { border:0; padding:2px 0; color:inherit; background:transparent; text-align:left; }
 .relationship-graph-text button:hover { color:var(--gold); }
 .relationship-category { margin-top:8px; }
 .relationship-category h4 { margin:0; color:var(--paper); font-size:11px; }
 .relationship-category ul { list-style:none; margin:2px 0 0; padding:0; }
-.relationship-category-empty { margin:2px 0 0; color:var(--paper-muted); font-size:10px; }
+.relationship-category-empty { margin:2px 0 0; color:var(--paper-muted); font-size:12px; line-height:1.6; }
 .relationship-coverage-summary { margin:8px 0 12px; padding:8px; border:1px solid rgba(198,161,91,.2); background:rgba(8,12,16,.18); }
 .relationship-coverage-summary h5 { margin:0; color:var(--gold); font-size:11px; }
 .relationship-coverage-audit-note { margin:4px 0 7px; color:var(--paper-muted); font-size:10px; line-height:1.5; }
@@ -274,13 +274,13 @@ main { min-height: 100vh; }
 .person-relationship-graph-edges { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; list-style:none; margin:0; padding:0; }
 .person-relationship-graph-edge button,.person-relationship-graph-edge > span { display:block; width:100%; border:1px solid rgba(119,160,178,.22); padding:5px 6px; color:var(--paper-muted); background:rgba(255,255,255,.025); text-align:left; font-size:10px; }
 .person-relationship-graph-edge button:hover { color:var(--gold); border-color:rgba(198,161,91,.55); }
-.person-relationship-graph-edge small { display:block; margin-top:2px; color:var(--paper-muted); font-size:9px; line-height:1.35; }
+.person-relationship-graph-edge small { display:block; margin-top:2px; color:var(--paper-muted); font-size:11px; line-height:1.5; }
 .relationship-coverage-grid { display:grid; grid-template-columns:repeat(2,minmax(0,1fr)); gap:5px; list-style:none; margin:0; padding:0; }
 .relationship-coverage-item { display:grid; grid-template-columns:1fr auto; gap:2px 7px; padding:5px 6px; border-left:2px solid var(--gold-soft); background:rgba(255,255,255,.025); }
 .relationship-coverage-item strong { font-size:10px; font-weight:500; }
 .relationship-coverage-category { color:var(--paper); font-size:11px; }
-.relationship-coverage-note { grid-column:1 / -1; color:var(--paper-muted); font-size:10px; line-height:1.4; }
-.person-relation-meta { display:block; margin-top:2px; color:var(--paper-muted); font-size:10px; line-height:1.4; }
+.relationship-coverage-note { grid-column:1 / -1; color:var(--paper-muted); font-size:12px; line-height:1.6; }
+.person-relation-meta { display:block; margin-top:2px; color:var(--paper-muted); font-size:11px; line-height:1.5; }
 .relationship-coverage-covered { border-left-color:#8fa68b; }
 .relationship-coverage-covered strong { color:#c4d4bb; }
 .relationship-coverage-required { border-left-color:var(--vermilion); }

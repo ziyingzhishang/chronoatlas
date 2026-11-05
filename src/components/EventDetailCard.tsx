@@ -26,9 +26,10 @@ export function EventDetailCard({ event, onYearChange, onBack, onLocate, onOpenE
     <p className="event-lead">{t(event.summary)}</p>
     <p className="event-verification">{t(event.verification === 'checked' ? '已核对所列出处' : '部分依据待进一步核验')}{t(event.locationPrecision === 'approximate' ? ' · 地点为约址' : '')}</p>
     <div className="event-jumps">
+      <button type="button" onClick={() => onYearChange(event.year)}>{t('查看该时期')}</button>
       <button disabled={event.year === TIMELINE_MIN_YEAR} onClick={() => onYearChange(indexToYear(yearToIndex(event.year) - 1))}>{t('事件前一年')}</button>
       <button disabled={(event.endYear ?? event.year) === TIMELINE_MAX_YEAR} onClick={() => onYearChange(indexToYear(yearToIndex(event.endYear ?? event.year) + 1))}>{t('事件后一年')}</button>
-      {event.coordinates && onLocate && <button onClick={() => onLocate(event)}>{t('定位')}{t(event.locationPrecision === 'approximate' ? '约址' : '地点')}</button>}
+      {event.coordinates && onLocate && <button onClick={() => onLocate(event)}>{t(event.locationPrecision === 'approximate' ? '定位到约址' : '定位到地点')}</button>}
     </div>
     {onOpenEntity && <button type="button" onClick={() => onOpenEntity({ type: 'event', id: event.id })}>{t('打开完整事件详情')}</button>}
     {([['背景', event.background], ['经过', event.process], ['影响', event.impact], ['地图解读', event.mapNote]] as const).map(([label, text]) => text && <section className="event-paragraph" key={label}><h4>{t(label)}</h4><p>{t(text)}</p></section>)}

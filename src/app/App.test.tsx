@@ -21,19 +21,19 @@ test('keeps secondary controls closed until requested', async () => {
   expect(screen.queryByRole('button', { name: '事件' })).not.toBeInTheDocument();
   expect(screen.queryByRole('button', { name: '详情' })).not.toBeInTheDocument();
   expect(screen.getByRole('navigation', { name: '工作台工具' })).toHaveClass('workspace-tool-nav');
-  expect(screen.getByRole('searchbox', { name: '搜索历史事件' })).toBeInTheDocument();
+  expect(screen.getByRole('searchbox', { name: '搜索历史内容' })).toBeInTheDocument();
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
   expect(screen.getByRole('complementary', { name: '政权目录' })).toBeInTheDocument();
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
   expect(screen.queryByRole('complementary', { name: '政权目录' })).not.toBeInTheDocument();
   await userEvent.click(screen.getByRole('button', { name: '当前历史状态' }));
   expect(screen.getByRole('complementary', { name: '政权目录' })).toBeInTheDocument();
-  await userEvent.click(screen.getByRole('searchbox', { name: '搜索历史事件' }));
+  await userEvent.click(screen.getByRole('searchbox', { name: '搜索历史内容' }));
   expect(screen.queryByRole('complementary', { name: '政权目录' })).not.toBeInTheDocument();
-  expect(screen.getByRole('combobox', { name: '事件地域' })).toBeInTheDocument();
-  expect(screen.getByRole('option', { name: /安史之乱/ })).toBeInTheDocument();
-  await userEvent.type(screen.getByRole('searchbox', { name: '搜索历史事件' }), '秦统一');
-  expect(screen.getByRole('option', { name: /秦统一六国/ })).toBeInTheDocument();
+  expect(screen.getByRole('combobox', { name: '搜索地域' })).toBeInTheDocument();
+  expect(screen.getByText('本年暂无已收录事件')).toBeInTheDocument();
+  await userEvent.type(screen.getByRole('searchbox', { name: '搜索历史内容' }), '秦统一');
+  expect(screen.getByRole('button', { name: /秦统一六国/ })).toBeInTheDocument();
   expect(screen.queryByRole('status', { name: '疆域资料状态' })).not.toBeInTheDocument();
   expect(screen.queryByRole('complementary',{name:'历史信息'})).not.toBeInTheDocument();
   expect(screen.queryByRole('button',{name:'全历史'})).not.toBeInTheDocument();
@@ -61,10 +61,10 @@ test('opens a deep entity drawer from the polity study view and supports back na
 
 test('opens a resizable event topic beside the map from the event search result card', async () => {
   render(<App />);
-  const search = screen.getByRole('searchbox', { name: '搜索历史事件' });
+  const search = screen.getByRole('searchbox', { name: '搜索历史内容' });
 
   await userEvent.type(search, '秦统一');
-  await userEvent.click(screen.getByRole('option', { name: /秦统一六国/ }));
+  await userEvent.click(screen.getByRole('button', { name: /秦统一六国/ }));
   await userEvent.click(screen.getByRole('button', { name: '打开完整事件详情' }));
 
   const drawer = screen.getByRole('dialog', { name: '秦统一六国' });
@@ -76,7 +76,7 @@ test('opens a resizable event topic beside the map from the event search result 
   expect(mapPane).toContainElement(screen.getByRole('button', { name: '展开时间控制器' }).closest('.time-controller'));
   expect(drawer).not.toContainElement(divider);
   expect(divider).toHaveAttribute('aria-valuenow', '44');
-  expect(within(drawer).getByText('地图时点：前221年')).toBeInTheDocument();
+  expect(within(drawer).getByText('地图时点：800年')).toBeInTheDocument();
   expect(within(drawer).getByRole('article', { name: '事件详情' })).toBeInTheDocument();
 });
 
